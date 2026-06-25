@@ -90,7 +90,7 @@ DB는 `config.yaml`의 `paths.*`에 다음 형태로 저장된다:
 | 구성 | 무엇 | 준비물 |
 |------|------|--------|
 | 파서 | Upstage Document Parse (원격 API) | `UP_TOKEN` (env) |
-| Reader / 이미지 해석 | **선택**: GPT-4.1 mini(OpenAI) 또는 Claude(Anthropic) · 멀티모달 | `OPENAI_API_KEY` 또는 `ANTHROPIC_API_KEY` |
+| Reader / 이미지 해석 | **선택**: Claude Code 내장(기본·권장) / GPT-4.1 mini(OpenAI) / Claude API · 멀티모달 | 기본은 **키 불필요**(로컬 `claude` CLI). API 쓰면 `OPENAI_API_KEY`/`ANTHROPIC_API_KEY` |
 | 임베더 | sentence-transformers (로컬 자동 로드) | **GPU 불필요** |
 | 런타임 | Python 3.10+ | `pyyaml numpy requests sentence-transformers tiktoken pypdf pikepdf` |
 

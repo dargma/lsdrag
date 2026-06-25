@@ -20,6 +20,8 @@ READER_PRESETS = {
                   "model": "claude-sonnet-4-6", "api_key_env": "ANTHROPIC_API_KEY"},
     "claude": {"endpoint": "https://api.anthropic.com/v1/chat/completions",
                "model": "claude-sonnet-4-6", "api_key_env": "ANTHROPIC_API_KEY"},
+    # Claude Code 내장 모델 — 외부 API·키 없이 로컬 `claude` CLI 사용(지금 도는 그 모델).
+    "claude_code": {"endpoint": "", "model": "claude-code-builtin", "api_key_env": ""},
 }
 
 

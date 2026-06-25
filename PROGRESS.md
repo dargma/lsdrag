@@ -27,8 +27,9 @@
 
 - **파서**: Upstage Document Parse API (`POST /v1/document-digitization`, `model=document-parse`).
   원격 API, 로컬 파서 서버 없음. 키 = **`UP_TOKEN`**(env). 추후 사내 파서 API로 교체(어댑터만).
-- **Reader/VLM**: 설치 시 `reader.provider`로 선택 — OpenAI(GPT-4.1 mini, 키 `OPENAI_API_KEY`) 또는
-  Claude(Anthropic, 키 `ANTHROPIC_API_KEY`). 둘 다 멀티모달·OpenAI 호환 엔드포인트 → 동일 코드.
+- **Reader/VLM**: `reader.provider`로 선택 — **`claude_code`(기본·권장, 로컬 `claude` CLI, 키 불필요)** /
+  `openai`(GPT-4.1 mini) / `anthropic`(Claude API). claude_code는 `src/agent/claude_cli.py`가 루프·VLM을 CLI로 구동.
+  비교(`examples/EVAL_reader_claude_vs_gpt.md`): Claude가 다이어그램 해석 우수·환각 적음.
   멀티모달이라 VLM 겸용 → `image_read`의 별도 VLM 백엔드 불필요.
 - **임베더**: A-RAG 내장 sentence-transformers. config의 `embedding.model`. 로컬 자동 로드, GPU 불필요.
 - **GPU 자체 서빙 없음.** 임베더 로컬, Reader·파서는 외부 API.

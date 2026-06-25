@@ -27,11 +27,12 @@ paths:
 
 # ── [3. 검색] Reader/VLM + agent loop (교체 경계: reader 블록) ─────────
 # 설치 시 Reader를 선택: provider 한 줄만 바꾸면 endpoint/model/key가 프리셋으로 채워진다.
-#   provider: openai     → GPT-4.1 mini (키: OPENAI_API_KEY)
-#   provider: anthropic  → Claude (Claude Code에서 쓰는 모델, 키: ANTHROPIC_API_KEY)
+#   provider: claude_code → 지금 Claude Code에서 도는 모델(로컬 `claude` CLI) — API·키 불필요(권장)
+#   provider: openai      → GPT-4.1 mini (키: OPENAI_API_KEY)
+#   provider: anthropic   → Claude API (키: ANTHROPIC_API_KEY, 모델 선택 가능)
 # endpoint/model/api_key_env를 직접 적으면 프리셋보다 우선(override). 키는 env, 평문 금지.
 reader:
-  provider: openai
+  provider: claude_code
   # model: "gpt-4.1-mini"          # (선택) 프리셋 override. anthropic이면 예: "claude-sonnet-4-6"
   # api_key_env: "OPENAI_API_KEY"  # (선택) 프리셋 override
 

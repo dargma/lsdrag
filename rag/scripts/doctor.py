@@ -50,8 +50,10 @@ def c_deps(cfg=None) -> Result:
 
 def c_keys(cfg) -> Result:
     up = cfg.get("parser.api_key_env", "UP_TOKEN")
-    rd = cfg.reader_config()["api_key_env"]  # 선택한 Reader 프로바이더의 키
-    miss = [e for e in (up, rd) if not os.environ.get(e)]
+    miss = [up] if not os.environ.get(up) else []
+    rok, rdetail, rfix = _reader_ok(cfg)        # claude_code면 키 대신 CLI 확인
+    if not rok:
+        return Result(False, f"parser key {'ok' if not miss else 'missing'}; reader: {rdetail}", rfix)
     return Result(not miss, "keys present" if not miss else f"missing env: {miss}",
                   ".env 에 키 설정(평문 커밋 금지) 후 export.")
 
@@ -63,12 +65,21 @@ def c_parser(cfg) -> Result:
     return Result(True, "key set (live call deferred)", "")  # 실제 호출은 빌드/스모크에서
 
 
-def c_reader(cfg) -> Result:
+def _reader_ok(cfg):
+    """선택한 Reader가 쓸 준비됐나 → (ok, detail, fix)."""
     rc = cfg.reader_config()
+    if rc["provider"] == "claude_code":
+        import shutil
+        if shutil.which("claude"):
+            return True, "provider=claude_code (로컬 claude CLI, 키 불필요)", ""
+        return False, "claude CLI 없음", "Claude Code 설치 필요(provider=claude_code)."
     if not os.environ.get(rc["api_key_env"]):
-        return Result(False, f"{rc['api_key_env']} 없음 (provider={rc['provider']})",
-                      f".env 에 {rc['api_key_env']} 설정.")
-    return Result(True, f"provider={rc['provider']}, model={rc['model']}", "")
+        return False, f"{rc['api_key_env']} 없음 (provider={rc['provider']})", f".env 에 {rc['api_key_env']} 설정."
+    return True, f"provider={rc['provider']}, model={rc['model']}", ""
+
+
+def c_reader(cfg) -> Result:
+    return Result(*_reader_ok(cfg))
 
 
 def c_embedder(cfg) -> Result:
@@ -91,10 +102,8 @@ def c_index(cfg) -> Result:
 
 
 def c_multimodal(cfg) -> Result:
-    rc = cfg.reader_config()
-    if not os.environ.get(rc["api_key_env"]):
-        return Result(False, f"{rc['api_key_env']} 없음", "멀티모달은 Reader 키 필요.")
-    return Result(True, f"reader multimodal path ready ({rc['provider']}, live call deferred)", "")
+    ok, detail, fix = _reader_ok(cfg)
+    return Result(ok, f"multimodal via {detail}" if ok else detail, fix)
 
 
 def c_smoke(cfg) -> Result:
@@ -103,8 +112,9 @@ def c_smoke(cfg) -> Result:
         IndexStore.load(cfg.index_paths(), cfg.get("embedding.model"))
     except Exception as e:
         return Result(False, f"index not ready: {str(e).splitlines()[0]}", "먼저 인덱스 빌드.")
-    if not os.environ.get(cfg.reader_config()["api_key_env"]):
-        return Result(False, "Reader 키 없음 → 실제 답변 불가", ".env 키 설정.")
+    rok, rdetail, rfix = _reader_ok(cfg)
+    if not rok:
+        return Result(False, f"Reader 준비 안 됨 → 답변 불가: {rdetail}", rfix)
     return Result(True, "ready for live query", "")
 
 

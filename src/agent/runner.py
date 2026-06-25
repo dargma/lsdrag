@@ -74,14 +74,17 @@ def build_agent(cfg: Config, reader_fn: Optional[Callable[[str], str]] = None) -
     paths = cfg.index_paths()
     model_name = cfg.get("embedding.model", "sentence-transformers/all-MiniLM-L6-v2")
     store = IndexStore.load(paths, model_name)  # 빈/없는 인덱스면 명확한 에러(가드)
-    reader_fn = reader_fn or make_reader_vlm(cfg)
-    tools = default_tools(paths, model_name, reader_fn, store.page_index, store.chunks)
     rc = cfg.reader_config()
-    llm = LLMClient(
-        model=rc["model"],
-        api_key=_reader_key(rc),
-        base_url=rc["endpoint"].replace("/chat/completions", ""),
-    )
+    if rc["provider"] == "claude_code":
+        # Claude Code 내장 모델(claude CLI) — 외부 Reader API·키 불필요.
+        from src.agent.claude_cli import ClaudeCliLLMClient, claude_cli_reader
+        reader_fn = reader_fn or claude_cli_reader()
+        llm = ClaudeCliLLMClient()
+    else:
+        reader_fn = reader_fn or make_reader_vlm(cfg)
+        llm = LLMClient(model=rc["model"], api_key=_reader_key(rc),
+                        base_url=rc["endpoint"].replace("/chat/completions", ""))
+    tools = default_tools(paths, model_name, reader_fn, store.page_index, store.chunks)
     from src.retrieval import build_registry
     return BaseAgent(
         llm_client=llm, tools=build_registry(tools), system_prompt=SYSTEM_PROMPT,
