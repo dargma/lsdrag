@@ -54,14 +54,17 @@ class PageIndex:
         return sorted({e.doc_id for e in self._entries})
 
     # ── 조회 (없으면 빈 결과, 예외 아님) ─────────────────────────
-    def query(self, page: Optional[int] = None, figure_no: Optional[str] = None,
+    def query(self, page=None, figure_no: Optional[str] = None,
               heading: Optional[str] = None, doc_id: Optional[str] = None,
               block_type: Optional[str] = None) -> List[PageEntry]:
         res = self._entries
         if doc_id is not None:
             res = [e for e in res if e.doc_id == doc_id]
         if page is not None:
-            res = [e for e in res if e.page_no == page]
+            # page는 split-local 번호(int) 또는 인쇄된 페이지 라벨(예 "E2-2797")로 조회 가능.
+            ps = str(page)
+            res = [e for e in res
+                   if str(e.page_no) == ps or (e.page_label and ps in e.page_label)]
         if figure_no is not None:
             res = [e for e in res if e.figure_no == str(figure_no)]
         if block_type is not None:

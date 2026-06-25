@@ -58,6 +58,31 @@ def test_g2_missing_location_empty_graceful():
     assert "No structural match" in out and log["hits"] == 0
 
 
+def test_query_by_printed_page_label():
+    # page 파라미터로 인쇄된 페이지 라벨도 조회 가능해야(에이전트가 보는 값)
+    pi = PageIndex()
+    pi.add_doc(ParsedDoc(doc_id="d1", title="t", blocks=[
+        ParsedBlock(text="body", page_no=17, block_type="text",
+                    page_label="E2-2801", chunk_id="d1:0"),
+    ]))
+    out, log = PageIndexSearchTool(pi, {"d1:0": "body"}).execute(_Ctx(), page="E2-2801")
+    assert log["hits"] == 1 and "E2-2801" in out
+
+
+def test_colocated_figure_surfaced_for_image_read():
+    # 텍스트가 걸린 페이지에 figure가 있으면(번호 없어도) 이미지가 노출돼 image_read 가능
+    pi = PageIndex()
+    pi.add_doc(ParsedDoc(doc_id="d1", title="t", blocks=[
+        ParsedBlock(text="exclusive access text", page_no=17, block_type="text", chunk_id="d1:0"),
+        ParsedBlock(text="", page_no=17, block_type="figure", figure_no=None,
+                    image_path="data/images/p17.png", chunk_id="d1:1"),
+    ]))
+    out, log = PageIndexSearchTool(pi, {"d1:0": "exclusive access text"}).execute(
+        _Ctx(), heading=None, doc_id="d1", page=17)
+    assert "data/images/p17.png" in log["images"]
+    assert "image_read" in out
+
+
 # ── G3: image_read dedup ─────────────────────────────────────
 def test_g3_image_read_no_double_vlm():
     calls = {"n": 0}
