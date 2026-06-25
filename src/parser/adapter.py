@@ -146,20 +146,23 @@ def _synthesize_figure_captions(blocks: List[ParsedBlock]) -> None:
     트리거하지 못한다. 그림 자체 텍스트가 비면, 같은 페이지의 본문/헤딩 + 페이지 라벨로 합성 캡션을
     넣어 (1) 토픽 검색에 걸리고 (2) 어디서 어떻게 읽는지(page_index_search→image_read)를 알린다.
     """
-    by_page = {}
+    page_texts = {}
     for b in blocks:
-        if b.block_type == "text" and b.text:
-            by_page.setdefault(b.page_no, b.text)
+        if b.block_type in ("text", "caption") and b.text:
+            page_texts.setdefault(b.page_no, []).append(b.text)
     for b in blocks:
         if b.block_type != "figure":
             continue
         if b.text and len(b.text.strip()) > 8:
             continue  # 실제 캡션이 있으면 보존
         loc = b.page_label or f"page {b.page_no}"
-        ctx = (b.heading or by_page.get(b.page_no, "") or "").strip().replace("\n", " ")[:120]
         page_q = b.page_label or b.page_no
-        b.text = (f"[Figure/diagram on {loc}] {ctx} "
-                  f"(This is an image. To read it: page_index_search(page='{page_q}') "
+        ctx = (b.heading or "").strip().replace("\n", " ")[:100]
+        # 같은 페이지 본문을 검색 미끼로 — 토픽 용어(예: exclusive access)가 캡션에 포함되게.
+        snippet = " ".join(page_texts.get(b.page_no, []))[:260].replace("\n", " ")
+        b.text = (f"[Figure / diagram / state diagram / illustration on {loc}] {ctx}. "
+                  f"Context: {snippet} "
+                  f"(This is an IMAGE. To read it: page_index_search(page='{page_q}') "
                   f"then image_read on the listed image file.)").strip()
 
 
