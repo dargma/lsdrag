@@ -56,8 +56,11 @@ class PageIndexSearchTool(BaseTool):
         if not all_hits:
             log = {"tool": self.name, "hits": 0}
             _safe_log(context, self.name, 0, log)
-            return (f"No structural match (page={page}, figure_no={figure_no}, "
-                    f"heading={heading}, doc_id={doc_id})."), log
+            # 무비난·행동지향: 실패를 막다른 길로 두지 않고 다음 한 걸음을 제시.
+            return ("No structural match for "
+                    f"(page={page}, figure_no={figure_no}, heading={heading}). "
+                    "Next: try the TOPIC instead — keyword_search or semantic_search for the subject, "
+                    "or a shorter heading; the page label may differ from what you typed."), log
 
         cap = max(1, min(int(top_k or self.MAX_ENTRIES), 20))
         hits = all_hits[:cap]

@@ -1,5 +1,5 @@
 <h1 align="center">LSD-RAG</h1>
-<p align="center"><b>기술 문서에서 어느 페이지·어느 그림·표 안의 값까지 짚고,<br/>다이어그램까지 읽어주는 agentic RAG. Claude Code <code>/rag</code> 한 줄로.</b></p>
+<p align="center"><b>두꺼운 매뉴얼을 뒤지는 대신 — 당신이 찾는 답이 <u>몇 페이지·어느 그림·어느 표</u>에 있는지까지<br/>짚어주고 다이어그램까지 읽어주는 agentic RAG. Claude Code <code>/rag</code> 한 줄로.</b></p>
 
 <p align="center">
   <img alt="License" src="https://img.shields.io/badge/license-MIT-green">
@@ -18,8 +18,8 @@
 - 🖼️ **그림을 읽는다** — 멀티모달 Reader가 다이어그램을 해석해 텍스트로 설명(별도 VLM 백엔드 불필요).
 - 🧭 **agentic** — 에이전트가 질문에 맞는 도구(의미검색·구조검색·이미지읽기)를 스스로 선택.
 - 🧩 **세 단계 완전 분리** — 파싱·임베더·Reader를 다른 부품으로 통째 교체 가능(사내 이식 쉬움).
-- ➕ **문서 증분 관리** — 전체 재빌드 없이 문서만 추가/제거. 삭제도 한 명령.
-- 🩺 **설치가 스스로 점검** — `doctor`가 9단계로 막힌 지점과 조치를 사람 말로 알려준다.
+- ➕ **부담 없이 시작·되돌리기** — 문서 추가/제거·삭제 모두 한 명령, 인덱스만 건드린다(원본 PDF·시스템 안전).
+- 🩺 **막혀도 혼자 안 헤맨다** — `doctor`가 어디서 막혔는지와 *다음에 뭘 하면 되는지*를 사람 말로 알려준다(스택트레이스 X).
 
 ## Quick Start
 ```bash
@@ -28,7 +28,7 @@ cp -r rag ~/.claude/skills/rag                 # skill 설치
 python -m src.indexing.build --config config.yaml   # 문서 → 인덱스
 python rag/scripts/doctor.py --json            # 전부 ✅면 끝
 ```
-자세한 절차 → [INSTALL.md](INSTALL.md)
+막히면 `doctor`가 *다음에 뭘 하면 되는지*를 짚어준다 — 처음이라도 헤매지 않는다. 자세한 절차 → [INSTALL.md](INSTALL.md)
 
 ## Usage
 
