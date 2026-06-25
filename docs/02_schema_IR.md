@@ -9,8 +9,10 @@
 
 ## 설계 결정
 - 최소 필드:
-  - `ParsedBlock{ text, page_no, heading, block_type, figure_no, image_path, bbox? }`
+  - `ParsedBlock{ text, page_no, heading, block_type, figure_no, image_path, bbox?, chunk_id, page_label? }`
   - `ParsedDoc{ doc_id, title, date, blocks[] }`
+  - `page_no`=파서 기준(분할 doc 로컬), `page_label`=문서에 인쇄된 페이지 표기(예 "E2-2804", 없으면 None).
+  - `figure_no`=문서의 실제 figure 라벨(캡션 'Figure N'), Upstage element id 아님.
 - `block_type`은 최소 집합 `"text" | "table" | "figure" | "caption"`으로 시작, 확장 가능하게.
 - 이미지·구조 필드(`figure_no`, `image_path`, `page_no`)는 **필수 후보** — Page Index(04)가 의존.
 - JSON 직렬화/역직렬화 **무손실**(파서 API 응답이 이 형식으로 떨어진다).

@@ -13,7 +13,16 @@ Upstage가 이미 원격 API이므로 **로컬 파서 서버를 만들지 않는
 - 엔드포인트·모델·키는 config/env에서 읽는다. **키 평문 금지** — `UP_TOKEN`(env).
 - Upstage→IR 매핑(사실 8): `heading1`→heading, `figure`/`chart`→block_type=figure, `table`→table,
   `caption`→caption, 나머지→text. `page`→page_no, `coordinates`→bbox.
-- figure/chart 요소는 `base64_encoding=['figure','chart','table']`로 받아 파일로 저장하고 IR `image_path`에 경로 채움(image_read가 사용).
+- **이미지 crop은 figure/chart만**: `base64_encoding=['figure','chart']`로 받아 파일 저장 + IR `image_path`.
+  표는 이미지로 안 남긴다(HTML/markdown 구조로 chunk에 보존 — image_read 불필요).
+- **clean text 추출**: Upstage가 `content.html`만 채우는 경우가 있어 `output_formats=['text','markdown','html']`를
+  요청하고, adapter가 `text>markdown>HTML태그제거` 순으로 **깨끗한 텍스트**를 뽑는다(표는 markdown 구조 보존).
+  HTML 오염은 page_index 헤딩 매칭을 망가뜨리므로 필수.
+- **page_label(P3)**: footer/header에서 문서에 인쇄된 페이지 표기를 추출해 `ParsedBlock.page_label`에 채운다.
+  다중 포맷 일반화(예 `E2-2804`/`D1-1234`/`12-3`/`Page 45`/순수숫자). split-local `page_no`와 별개.
+- **figure_no = 실제 캡션 라벨**: Upstage element id가 아니라 캡션의 'Figure N'을 쓴다(없으면 None).
+- **figure 검색성**: 무번호 figure는 같은 페이지 헤딩·본문 스니펫 + 페이지 라벨로 **합성 캡션**을 넣어
+  semantic/keyword 검색에 노출(→ 에이전트가 image_read 트리거).
 - 분할 PDF 다문서: 각 PDF가 별도 `doc_id`. sync 100p 한도 안(50~70p)이라 async 불필요.
 
 ## 예시 문서 처리 방침 (ARM 매뉴얼)
