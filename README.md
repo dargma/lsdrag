@@ -45,7 +45,15 @@ cp examples/parts/ARMv8-Reference-Manual_part1.pdf ./data/docs_in/
 python -m src.indexing.build --config config.yaml
 ```
 이 한 줄이 내부에서: **Upstage로 파싱 → 공통 IR로 변환 → 임베딩 + Page Index(페이지·Figure·표 메타) → 인덱스 저장**.
-산출물은 `config.yaml`의 `paths.*`에 쌓인다(`chunks`, `index`, `page_index`, `images`).
+
+DB는 `config.yaml`의 `paths.*`에 다음 형태로 저장된다:
+| 파일 | 형태 |
+|------|------|
+| `index/chunks.json` | `[{id, text}]` — 청크 본문 |
+| `index/sentence_index.pkl` | `{sentences, embeddings, sentence_to_chunk, chunks}` — 벡터(A-RAG 호환) |
+| `page_index/page_index.json` | 구조 인덱스(page·figure·table·heading + chunk_id + image_path) |
+| `index/manifest.json` | doc_id → chunk_ids·image_paths (증분 add/remove용) |
+| `data/images/*.png` | **figure만** crop 저장(표는 HTML 구조로 chunk에 보존, 이미지 불필요) |
 문서를 더 넣거나 빼려면 전체 재빌드 없이:
 ```bash
 python rag/scripts/docs.py add  새문서.pdf      # 추가(파싱→인덱스 증분)
@@ -65,14 +73,23 @@ python rag/scripts/docs.py list                 # 현재 색인된 문서
   그 그림을 image_read(VLM)가 읽어 비트필드(M/A/C/…)를 설명.
 ```
 
-## How it works
-<p align="center"><img src="docs/fig1_teaser.png" width="92%" alt="parse → build → search pipeline"></p>
+## How it works — 실제 검색 예시 (ARM v8-A 매뉴얼)
+> 아래는 fresh clone에서 **실제 Upstage·GPT-4.1 mini로 돌린 결과**다(자세한 검증은
+> [`examples/REPORT.md`](examples/REPORT.md)).
 
-**parse → build → search** 세 단계가 완전히 분리된다.
-- **Build(offline)**: 문서 → `Parse`(Upstage→IR) → `Build`(임베딩 + Page Index) → **Index store**(벡터 + 페이지·Figure·표 메타 + 그림).
-- **Ask(online)**: 질문 → `Search`(agentic) 가 도구를 스스로 골라 Index store를 읽고, 필요하면 그림을 VLM으로 해석 → 위치를 짚은 답.
+**질문**: “ARM exclusive memory access 상태 전이 다이어그램 — 어디에 있고 무엇을 의미하나?”
 
-각 단계는 통째로 교체 가능 — 파서는 `src/parser/adapter.py`, Reader·임베더는 `config.yaml` 한 곳.
+**에이전트의 검색 경로**
+1. `page_index_search` → 해당 figure의 **위치를 특정**하고 본문 + 이미지 경로를 함께 반환.
+2. `image_read(VLM)` → 그 자리에서 **잘라낸(crop) 그림을 GPT-4.1 mini가 직접 읽음**:
+
+<p align="center"><img src="docs/example_located_figure.png" width="72%" alt="located figure read by the agent"></p>
+
+**답변(요지)**: *Open Access ↔ Exclusive Access 두 상태를 `LoadExcl`로 전이하고,
+`StoreExcl`/`Store`/`CLREX`가 `n`·`!n` 비트 상태와 `Marked_address`에 따라 모니터를 갱신·해제한다.*
+→ **위치를 짚고(page_index) + 그림까지 읽어(VLM)** 근거 있는 답을 만든다.
+
+세 단계는 완전히 분리되어 통째로 교체 가능 — 파서는 `src/parser/adapter.py`, Reader·임베더는 `config.yaml` 한 곳.
 
 ## Requirements
 | 구성 | 무엇 | 준비물 |

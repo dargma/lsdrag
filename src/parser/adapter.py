@@ -7,9 +7,23 @@ from __future__ import annotations
 
 import base64
 import os
+import re
 from typing import Any, Callable, Dict, List, Optional
 
 from src.schema import ParsedBlock, ParsedDoc, IRValidationError
+
+# 문서의 실제 figure 라벨(예: "Figure D1-3", "Figure E2-1", "Figure 2.5") 추출용.
+# Upstage element id가 아니라 캡션에 적힌 진짜 번호를 쓴다.
+_FIGURE_LABEL = re.compile(r"Figure\s+([A-Z]?\d[\w.\-]*)", re.I)
+
+
+def _strip_html(s: str) -> str:
+    return re.sub(r"<[^>]+>", " ", s or "").strip()
+
+
+def _figure_label_in(text: str) -> Optional[str]:
+    m = _FIGURE_LABEL.search(_strip_html(text or ""))
+    return m.group(1).rstrip(".-") if m else None  # 끝의 문장부호 제거('2.'→'2', '2.5' 유지)
 
 # Upstage category → IR block_type (사실 8)
 _CATEGORY_BLOCK_TYPE = {
@@ -70,15 +84,38 @@ def upstage_to_ir(
             page_no=page,
             block_type=bt,
             heading=current_heading,
-            figure_no=str(el.get("id")) if bt == "figure" else None,
+            figure_no=None,  # 실제 문서 라벨은 아래 post-pass에서 캡션으로 채운다
             image_path=image_path,
             bbox=_coords_to_bbox(el.get("coordinates")),
             chunk_id=chunk_id,
         ))
 
+    _assign_figure_labels(blocks)
     doc = ParsedDoc(doc_id=doc_id, title=title, blocks=blocks, date=date)
     doc.validate()
     return doc
+
+
+def _assign_figure_labels(blocks: List[ParsedBlock]) -> None:
+    """figure 블록에 '문서의 실제 figure 번호'를 부여(Upstage element id 사용 금지).
+
+    근거: 같은 페이지의 caption/인접 블록 텍스트에 적힌 'Figure X'. 없으면 None으로 둔다
+    (번호 없는 inline 그림 — page_index_search는 page로 조회 가능).
+    """
+    for i, b in enumerate(blocks):
+        if b.block_type != "figure":
+            continue
+        label = _figure_label_in(b.text)
+        if not label:
+            # 같은 페이지의 caption 우선, 그다음 인접 블록을 좁게 탐색
+            window = [c for c in blocks[max(0, i - 2):i + 3]
+                      if c.page_no == b.page_no and c is not b]
+            window.sort(key=lambda c: 0 if c.block_type == "caption" else 1)
+            for c in window:
+                label = _figure_label_in(c.text)
+                if label:
+                    break
+        b.figure_no = label  # 진짜 라벨 또는 None
 
 
 def _coords_to_bbox(coords: Any) -> Optional[List[float]]:

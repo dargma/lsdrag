@@ -8,7 +8,7 @@ parser:
   endpoint: "https://api.upstage.ai/v1/document-digitization"
   model: "document-parse"
   api_key_env: "UP_TOKEN"          # 키는 이 환경변수에서 읽는다 (평문 금지)
-  base64_categories: ["figure", "chart", "table"]   # 이미지로 받을 카테고리
+  base64_categories: ["figure", "chart"]   # 이미지로 crop할 카테고리(표는 HTML 구조로 저장, 이미지 불필요)
 
 # ── [2. DB 구축] 임베더 + 저장 경로 (교체 경계: embedding.model) ───────
 embedding:

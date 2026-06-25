@@ -47,6 +47,13 @@ def test_figure_image_path_filled():
     assert fig.image_path and saved, "figure image must be saved + path set"
 
 
+def test_figure_no_is_real_caption_label_not_element_id():
+    # 캡션 "Figure 2. SCTLR_EL1" → figure_no "2" (Upstage element id 3 아님)
+    doc = _convert({})
+    fig = [b for b in doc.blocks if b.block_type == "figure"][0]
+    assert fig.figure_no == "2", f"expected real label '2', got {fig.figure_no!r}"
+
+
 def test_page_and_bbox():
     doc = _convert({})
     assert doc.blocks[0].page_no == 12

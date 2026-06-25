@@ -12,19 +12,22 @@ import requests
 KEY = os.environ["OPENAI_API_KEY"]
 
 PROMPT = (
-    "A clean academic system-architecture diagram in the style of a Google Research / DeepMind paper figure. "
-    "Flat schematic vector style, thin precise strokes, generous white background, restrained muted palette "
-    "(slate gray, muted blue, soft green accents), subtle drop shadows, professional and minimal. NO cartoon "
-    "characters, NO mascots, NO faces — purely a technical schematic with labeled rectangular modules and "
-    "directed arrows showing data flow left to right. "
-    "Left module: a hardware technical document / datasheet page icon containing a small register table and a "
-    "bitfield row. Arrow into a 'Parse' block, then an 'Index' block depicted as a database cylinder annotated "
-    "with page/figure/table location tags. A central rounded module labeled like an agentic retriever, with "
-    "three thin branch arrows to small tool chips reading 'locate page', 'find figure', 'read diagram (vision)'. "
-    "Right side: a clean result card pinpointing a specific page and figure, next to a small highlighted "
-    "register bitfield diagram and a minimalist microchip die icon representing hardware design. "
-    "Crisp thin typography for labels, isometric-free flat layout, balanced grid composition, high resolution, "
-    "the sober aesthetic of a top-tier ML conference system figure. No real logos."
+    "A polished, vibrant system-architecture figure in the style of a top-tier AI lab paper (ByteDance / "
+    "DeepMind / OpenAI), modern flat-vector design with tasteful gradients, rounded modules, crisp icons, "
+    "soft shadows and a confident accent palette (indigo, teal, coral, amber) on a clean white background. "
+    "Professional and visually rich but uncluttered. NO cartoon mascots or faces — labeled modules and "
+    "directed data-flow arrows, left to right. "
+    "LEFT — a hardware technical manual page showing THREE modalities together: a paragraph of text, a small "
+    "REGISTER bitfield table, and a figure/diagram thumbnail (multimodal input). "
+    "MIDDLE-LOWER — a 'Parse' block feeding an 'Index' database cylinder labeled with three location chips: "
+    "PAGE, FIGURE, TABLE (a page-index that pinpoints locations). "
+    "MIDDLE-TOP — a glowing central 'Agent' module (agentic RAG) depicted as a hub that autonomously routes to "
+    "three tool chips with mini icons: 'semantic search', 'page-index lookup', and 'read figure (vision/VLM)'. "
+    "RIGHT — a highlighted result card that pinpoints an exact page and a numbered figure, fusing text + a "
+    "register bitfield table + the read diagram into one grounded answer, beside a sleek microchip die icon "
+    "for hardware design. Subtle connecting arrows from the Index to the Agent (the agent reads the index). "
+    "Clean thin typography, balanced composition, high resolution, the energetic yet rigorous aesthetic of a "
+    "flagship AI systems paper teaser figure. No real logos."
 )
 
 
