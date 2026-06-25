@@ -15,9 +15,31 @@ from src.schema import IRValidationError, ParsedBlock, ParsedDoc
 # 문서의 실제 figure 라벨(예: "Figure D1-3", "Figure E2-1", "Figure 2.5") 추출용.
 # Upstage element id가 아니라 캡션에 적힌 진짜 번호를 쓴다.
 _FIGURE_LABEL = re.compile(r"Figure\s+([A-Z]?\d[\w.\-]*)", re.I)
-# 문서에 인쇄된 페이지 표기(P3). 예: ARM "E2-2804", "D1-1234" (챕터-페이지).
-_PAGE_LABEL = re.compile(r"\b([A-Z][A-Z0-9]?\d*-\d{2,})\b")
 _FOOTER_CATEGORIES = {"footer", "header"}
+
+# 인쇄된 페이지 표기 추출(P3) — 다른 HW 문서로 일반화. 흔한 포맷을 순서대로 시도:
+#   ARM류 "E2-2804"/"D1-1234" · 숫자 챕터-페이지 "12-3" · "Page 45"/"p. 45" · 짧은 순수 숫자 footer.
+_PAGE_PATTERNS = [
+    re.compile(r"\b([A-Z]{1,3}\d{0,3}-\d{2,5})\b"),       # E2-2804, D1-1234, A-12
+    re.compile(r"\b(\d{1,3}-\d{1,5})\b"),                  # 12-3, 5-1
+    re.compile(r"\b(?:page|pg|p\.)\s*([A-Za-z0-9.\-]+)", re.I),  # Page 45, p. A-3 (단어 경계)
+]
+_PURE_NUM = re.compile(r"^\s*(\d{1,5})\s*$")
+
+
+def _extract_page_label(text: str) -> Optional[str]:
+    t = (text or "").strip()
+    if not t:
+        return None
+    for pat in _PAGE_PATTERNS:
+        m = pat.search(t)
+        if m:
+            return m.group(1)
+    if len(t) <= 12:  # footer가 사실상 페이지 숫자만인 경우
+        m = _PURE_NUM.match(t)
+        if m:
+            return m.group(1)
+    return None
 
 
 def _strip_html(s: str) -> str:
@@ -88,9 +110,9 @@ def upstage_to_ir(
         if category in _HEADING_CATEGORIES:
             current_heading = text or current_heading
         if category in _FOOTER_CATEGORIES and page not in page_labels:
-            m = _PAGE_LABEL.search(_strip_html(text))
-            if m:
-                page_labels[page] = m.group(1)
+            lbl = _extract_page_label(_strip_html(text))
+            if lbl:
+                page_labels[page] = lbl
 
         image_path = None
         if bt == "figure":
@@ -155,15 +177,12 @@ def _synthesize_figure_captions(blocks: List[ParsedBlock]) -> None:
             continue
         if b.text and len(b.text.strip()) > 8:
             continue  # 실제 캡션이 있으면 보존
-        loc = b.page_label or f"page {b.page_no}"
-        page_q = b.page_label or b.page_no
-        ctx = (b.heading or "").strip().replace("\n", " ")[:100]
-        # 같은 페이지 본문을 검색 미끼로 — 토픽 용어(예: exclusive access)가 캡션에 포함되게.
-        snippet = " ".join(page_texts.get(b.page_no, []))[:260].replace("\n", " ")
-        b.text = (f"[Figure / diagram / state diagram / illustration on {loc}] {ctx}. "
-                  f"Context: {snippet} "
-                  f"(This is an IMAGE. To read it: page_index_search(page='{page_q}') "
-                  f"then image_read on the listed image file.)").strip()
+        loc = b.page_label or f"p{b.page_no}"
+        # 검색 발견성을 위한 최소 캡션: 위치 + 동의어 + 같은 페이지 토픽 스니펫(짧게).
+        # '읽는 법' 안내는 인덱스에 박지 않는다(매 검색마다 토큰 낭비) — tool 응답이 안내한다.
+        ctx = (b.heading or "").strip().replace("\n", " ")[:70]
+        snippet = " ".join(page_texts.get(b.page_no, []))[:130].replace("\n", " ")
+        b.text = f"[figure/diagram on {loc}] {ctx} {snippet}".strip()
 
 
 def _coords_to_bbox(coords: Any) -> Optional[List[float]]:

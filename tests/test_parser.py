@@ -59,6 +59,20 @@ def test_table_keeps_markdown_structure():
     assert "| A | B |" in doc.blocks[0].text  # 표는 markdown 구조 보존
 
 
+def test_page_label_generalizes_across_formats():
+    # 일반화: 다른 HW 문서의 흔한 페이지 표기들도 추출돼야(ARM 전용 아님)
+    from src.parser.adapter import _extract_page_label
+    cases = {
+        "E2-2804": "E2-2804", "D1-1234": "D1-1234",   # ARM류
+        "12-3": "12-3", "5-1": "5-1",                  # 숫자 챕터-페이지
+        "Page 45": "45", "p. A-3": "A-3",              # Page/p.
+        "  237  ": "237",                              # 순수 숫자 footer
+        "see chapter 4 for details": None,             # 본문 문장은 라벨 아님
+    }
+    for text, expect in cases.items():
+        assert _extract_page_label(text) == expect, (text, _extract_page_label(text))
+
+
 def test_page_label_from_footer():
     # P3: footer "E2-2804" → page 13 블록들이 인쇄 페이지 표기를 가진다(분할 로컬 page_no와 별개)
     doc = _convert({})
