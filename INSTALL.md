@@ -36,6 +36,18 @@ python rag/scripts/doctor.py --check parser --check reader --check embedder   # 
 ```
 파서(Upstage)·Reader(GPT-4.1 mini)·임베더(A-RAG 내장) 각각 확인. 자체 GPU 서빙 없음.
 
+### 임베더 모델 다운로드 (최초 1회)
+A-RAG 임베더는 `config.yaml`의 `embedding.model`(기본 `sentence-transformers/all-MiniLM-L6-v2`)을
+**최초 빌드/조회 시 HuggingFace에서 자동 다운로드**한다(소형, 수십 초, GPU 불필요).
+```bash
+# (선택) 미리 받아두기 — 첫 빌드 지연 제거
+python -c "from sentence_transformers import SentenceTransformer; SentenceTransformer('sentence-transformers/all-MiniLM-L6-v2')"
+# (선택) 캐시 위치 지정 / 오프라인
+export HF_HOME=/path/to/hf_cache       # 다운로드·캐시 디렉터리
+# export HF_HUB_OFFLINE=1              # 사전 캐시 후 오프라인 강제
+```
+중요: **질의 임베더와 인덱스 임베더가 같은 모델**이어야 한다(벡터공간 일치). `embedding.model`을 바꾸면 인덱스 재빌드.
+
 ## 3단계: 예시 문서 준비 (ARM 매뉴얼 — 이미지+테이블 있는 중간 1조각만)
 전부 빌드하지 않는다. **figure와 table이 함께 들어있는 중간 본문 조각 1개**만 쓴다
 (표지·목차는 표/그림이 없어 구조·이미지 질의 검증이 안 됨).

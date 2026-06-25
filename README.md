@@ -1,18 +1,18 @@
-<h1 align="center">lsdrag</h1>
-<p align="center"><b>기술 문서에 정확히 답한다 — 어느 페이지·어느 그림·표 안의 값까지 짚고,<br/>다이어그램까지 읽어주는 agentic RAG. Claude Code <code>/rag</code> 한 줄로.</b></p>
+<h1 align="center">LSD-RAG</h1>
+<p align="center"><b><ins>L</ins>ocate · <ins>S</ins>tructure · <ins>D</ins>iagram —<br/>기술 문서에서 어느 페이지·어느 그림·표 안의 값까지 짚고, 다이어그램까지 읽어주는 agentic RAG.<br/>Claude Code <code>/rag</code> 한 줄로.</b></p>
 
 <p align="center">
   <img alt="License" src="https://img.shields.io/badge/license-MIT-green">
   <img alt="Python" src="https://img.shields.io/badge/python-3.10+-blue">
 </p>
 
-<p align="center"><img src="docs/hero.png" width="78%" alt="lsdrag — an agent that reads hardware manuals: locate the page, find the figure, read the diagram"></p>
+<p align="center"><img src="docs/hero.png" width="78%" alt="LSD-RAG — an agent that reads hardware manuals: locate the page, find the figure, read the diagram"></p>
 <p align="center"><sub>HW 매뉴얼을 읽는 에이전트 — <b>locate page · find figure · read diagram</b> 도구를 스스로 골라, 답이 <b>몇 페이지·어느 Figure</b>에 있는지 짚는다.</sub></p>
 
 ## What & Why
 방대한 매뉴얼·스펙·레퍼런스에 질문하면, **"어느 페이지·어느 Figure·어느 표"** 까지 짚어 답하고
 필요하면 그 **그림(비트필드 다이어그램 등)을 직접 읽어** 설명하는 사내용 agentic RAG다.
-일반 검색이 "비슷한 문장 조각"을 돌려주고 마는 자리에서, lsdrag는 위치를 특정하고 시각 정보까지 근거로 삼는다.
+일반 검색이 "비슷한 문장 조각"을 돌려주고 마는 자리에서, LSD-RAG는 위치를 특정하고 시각 정보까지 근거로 삼는다.
 
 - 🎯 **위치까지 답한다** — 페이지·Figure·표를 짚어 인용한다. "어디에 있나"에 정확히 답.
 - 🖼️ **그림을 읽는다** — 멀티모달 Reader가 다이어그램을 해석해 텍스트로 설명(별도 VLM 백엔드 불필요).
@@ -35,8 +35,9 @@ python rag/scripts/doctor.py --json            # 전부 ✅면 끝
 ### 1) 문서 준비 — 큰 PDF를 파서가 소화할 크기로 분할
 ```bash
 # 매뉴얼을 ≤100p 조각으로 자르고, 그림+표가 있는 본문 1조각만 사용
+# (검증된 예: 2785-2810 구간 = 상태 다이어그램 figure + 표 포함)
 python scripts/split_pdf.py --input examples/ARMv8-Reference-Manual.pdf \
-    --ranges "1500-1560" --out examples/parts/
+    --ranges "2785-2810" --out examples/parts/
 cp examples/parts/ARMv8-Reference-Manual_part1.pdf ./data/docs_in/
 ```
 
@@ -113,7 +114,9 @@ lsdrag/
 ```
 
 ## Install
-요약은 위 Quick Start, 전체 절차는 [INSTALL.md](INSTALL.md). 삭제: `python rag/scripts/uninstall.py`.
+**Claude Code에 그냥 말로 시키면 된다** — *"이 repo의 rag skill 설치해줘"* 라고 하면
+[INSTALL.md](INSTALL.md)를 따라 단계마다 `doctor`로 self-check하며, 실패하면 멈추고 조치를 알려준 뒤 진행한다.
+수동 요약은 위 Quick Start. 삭제: `python rag/scripts/uninstall.py`.
 
 ## Credits & License
 MIT. 검색 엔진은 [A-RAG](https://github.com/Ayanami0730/arag)(@`a44de6b`, MIT)를 vendoring해 확장.
