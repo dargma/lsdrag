@@ -36,6 +36,29 @@ def test_categories_mapped():
     assert types == ["text", "text", "table", "figure", "caption", "text"], types
 
 
+def test_html_only_content_is_stripped_clean():
+    # Upstage가 content.html만 채우고 text/markdown 빈 경우 → 태그 제거된 clean text
+    resp = {"elements": [
+        {"id": 0, "category": "heading1", "page": 1,
+         "content": {"html": "<br><h1 id='1' style='font-size:16px'>Exclusive Access</h1>",
+                     "markdown": "", "text": ""}},
+        {"id": 1, "category": "paragraph", "page": 1,
+         "content": {"html": "<p id='2' data-category='paragraph'>A Store-Exclusive performs...</p>",
+                     "markdown": "", "text": ""}},
+    ]}
+    doc = upstage_to_ir(resp, doc_id="d", title="d")
+    body = doc.blocks[1]
+    assert "<" not in body.text and "Store-Exclusive" in body.text, body.text
+    assert body.heading == "Exclusive Access"  # 헤딩도 태그 제거 → 매칭 가능
+
+
+def test_table_keeps_markdown_structure():
+    resp = {"elements": [{"id": 0, "category": "table", "page": 1,
+        "content": {"markdown": "| A | B |\n| --- | --- |\n| 1 | 2 |", "html": "<table>..</table>", "text": ""}}]}
+    doc = upstage_to_ir(resp, doc_id="d", title="d")
+    assert "| A | B |" in doc.blocks[0].text  # 표는 markdown 구조 보존
+
+
 def test_page_label_from_footer():
     # P3: footer "E2-2804" → page 13 블록들이 인쇄 페이지 표기를 가진다(분할 로컬 page_no와 별개)
     doc = _convert({})

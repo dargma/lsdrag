@@ -81,7 +81,28 @@ loop7 (tool 호출 없음 → 완료 판단, 최종 답변 생성)
 | P7 | 임베더 최초 실행 시 **모델 다운로드(~25s)** | 오프라인/첫 빌드 지연 | **✅ 반영**: INSTALL에 다운로드·HF 캐시·오프라인 가이드 |
 | P8 | `figure_no`가 **Upstage element id**였음 — 실제 figure 번호 아님 | 가짜 번호 시나리오 | **✅ 수정**: 캡션의 'Figure N' 추출(없으면 None). 회귀 고정 |
 
+## 5-b. page_index 섬세 검증 (우리가 추가한 부분 — 가장 중요)
+
+**먼저 원본 무결성 확인**: vendored A-RAG의 `agent/base.py`(loop)·`core/llm.py`·`core/context.py`·tools 3종은
+upstream `a44de6b`와 **byte 단위 IDENTICAL**(diff 무차이). 우리 변경은 ① system_prompt를 파라미터로 전달
+(원본 default 대체, 코드 수정 아님) ② AgentContext 서브클래스 주입뿐.
+
+**발견(P10) — page_index가 실전에서 작동 안 했음**: Upstage가 `output_formats` 미요청 시 `content.text`/`markdown`을
+빈 값으로 주고 `content.html`만 채운다. adapter가 html로 폴백 → **헤딩·본문이 raw HTML로 오염**.
+그 결과 라이브 run에서 에이전트의 `page_index_search(heading="AArch32 exclusive memory access model")` → **hits=0**,
+조용히 keyword_search로 폴백 → **page_index가 실제로 기여하지 못함**(침묵 실패).
+
+**수정**: client가 `output_formats=["text","markdown","html"]` 요청 + adapter가 HTML 태그 제거(표는 markdown 구조 보존).
+재파싱 결과 헤딩이 clean(`"Clear global monitor event"` 등), 표는 markdown(`| Gathering | … |`).
+
+**재검증(라이브)**: 
+- `page_index_search(heading="Store-Exclusive")` → **hits=31**, 반환 헤더 `[… page E2-2800]`(실제 페이지 라벨).
+- 실제 에이전트 질의 "Store-Exclusive 동작은 몇 페이지?" → 에이전트가 **page_index_search 호출(hits=31)** →
+  **1 loop**으로 *"manual page labeled E2-2800"* 정답. page_index가 read_chunk 우회하며 위치+본문 제공(설계대로).
+
 ## 6. 수정 요약 / 후속
-- **✅ 수정 완료**: P1(분할 48MB→1MB) · P3(실제 page_label) · P5(IR 캐시 재사용) · P7(임베더 가이드) · P8(figure_no 라벨).
+- **✅ 수정 완료**: **P10(page_index HTML 오염 → 헤딩 매칭 복구, 가장 중요)** · P1(분할 48MB→1MB) ·
+  P3(실제 page_label) · P5(IR 캐시 재사용) · P7(임베더 가이드) · P8(figure_no 라벨). P4(표 HTML)도 markdown으로 해소.
+- 원본 무결성: agent loop/llm/context/tools 모두 upstream과 IDENTICAL(우리는 prompt 파라미터 + context 서브클래스만).
 - 문서 현황: `rag-build --list`가 doc별 chunk·figure·table·page 표 제공.
-- **남은 과제**: P2(figure 있는 구간 선택은 데이터 특성), P4(figure HTML→캡션 정제).
+- **남은 과제**: P2(figure 있는 구간 선택은 데이터 특성).

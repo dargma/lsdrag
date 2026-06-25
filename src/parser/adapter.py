@@ -41,11 +41,21 @@ def _block_type(category: str) -> str:
     return _CATEGORY_BLOCK_TYPE.get(category, "text")
 
 
-def _text_of(content: Any) -> str:
-    """content{html,markdown,text} 중 text 우선, 없으면 markdown/html."""
+def _clean_text(content: Any, block_type: str) -> str:
+    """깨끗한 텍스트 추출. Upstage가 html만 채우는 경우가 있어 태그를 벗긴다.
+
+    - 표: 구조 보존이 중요 → markdown(있으면) 우선, 없으면 html 원형 유지.
+    - 그 외(본문·헤딩·캡션): text > markdown > **html은 태그 제거**. → page_index 헤딩 매칭이 깨끗해진다.
+    """
     if isinstance(content, dict):
-        return content.get("text") or content.get("markdown") or content.get("html") or ""
-    return str(content or "")
+        text = content.get("text") or ""
+        md = content.get("markdown") or ""
+        html = content.get("html") or ""
+    else:
+        text, md, html = str(content or ""), "", ""
+    if block_type == "table":
+        return (md or html or text).strip()
+    return (text or md or _strip_html(html)).strip()
 
 
 def upstage_to_ir(
@@ -72,8 +82,8 @@ def upstage_to_ir(
     for el in elements:
         category = el.get("category", "paragraph")
         page = int(el.get("page", 1) or 1)
-        text = _text_of(el.get("content"))
         bt = _block_type(category)
+        text = _clean_text(el.get("content"), bt)
 
         if category in _HEADING_CATEGORIES:
             current_heading = text or current_heading

@@ -36,9 +36,14 @@ def parse_pdf(
     endpoint: str = DEFAULT_ENDPOINT,
     model: str = DEFAULT_MODEL,
     base64_categories: Optional[List[str]] = None,
+    output_formats: Optional[List[str]] = None,
     timeout: int = 120,
 ) -> Dict[str, Any]:
-    """PDF 1개를 Upstage로 파싱해 원시 응답(dict)을 반환. (adapter가 IR로 변환)"""
+    """PDF 1개를 Upstage로 파싱해 원시 응답(dict)을 반환. (adapter가 IR로 변환)
+
+    output_formats: content에 채울 표현. 기본 ["text","markdown","html"] —
+    text를 요청해야 content.text가 채워져 HTML 오염을 피한다(없으면 adapter가 태그 제거).
+    """
     key = _require_key(api_key_env)
     if not os.path.exists(pdf_path):
         raise ParserConfigError(f"입력 PDF가 없습니다: {pdf_path}")
@@ -48,6 +53,7 @@ def parse_pdf(
         raise ParserConfigError("requests 미설치. `pip install requests`") from e
 
     data = {"model": model}
+    data["output_formats"] = str(output_formats or ["text", "markdown", "html"])
     if base64_categories:
         # Upstage는 리스트를 반복 필드로 받는다
         data["base64_encoding"] = str(base64_categories)
