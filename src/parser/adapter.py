@@ -111,6 +111,7 @@ def upstage_to_ir(
     for b in blocks:  # P3: 인쇄된 페이지 표기 부여(footer는 보통 블록 뒤에 오므로 post-pass)
         b.page_label = page_labels.get(b.page_no)
     _assign_figure_labels(blocks)
+    _synthesize_figure_captions(blocks)
     doc = ParsedDoc(doc_id=doc_id, title=title, blocks=blocks, date=date)
     doc.validate()
     return doc
@@ -136,6 +137,30 @@ def _assign_figure_labels(blocks: List[ParsedBlock]) -> None:
                 if label:
                     break
         b.figure_no = label  # 진짜 라벨 또는 None
+
+
+def _synthesize_figure_captions(blocks: List[ParsedBlock]) -> None:
+    """figure를 '검색 가능'하게 만든다(C01/C11/C13 개선).
+
+    무번호 inline 그림은 캡션이 없어 semantic/keyword로 발견이 안 되고 → 에이전트가 image_read를
+    트리거하지 못한다. 그림 자체 텍스트가 비면, 같은 페이지의 본문/헤딩 + 페이지 라벨로 합성 캡션을
+    넣어 (1) 토픽 검색에 걸리고 (2) 어디서 어떻게 읽는지(page_index_search→image_read)를 알린다.
+    """
+    by_page = {}
+    for b in blocks:
+        if b.block_type == "text" and b.text:
+            by_page.setdefault(b.page_no, b.text)
+    for b in blocks:
+        if b.block_type != "figure":
+            continue
+        if b.text and len(b.text.strip()) > 8:
+            continue  # 실제 캡션이 있으면 보존
+        loc = b.page_label or f"page {b.page_no}"
+        ctx = (b.heading or by_page.get(b.page_no, "") or "").strip().replace("\n", " ")[:120]
+        page_q = b.page_label or b.page_no
+        b.text = (f"[Figure/diagram on {loc}] {ctx} "
+                  f"(This is an image. To read it: page_index_search(page='{page_q}') "
+                  f"then image_read on the listed image file.)").strip()
 
 
 def _coords_to_bbox(coords: Any) -> Optional[List[float]]:
