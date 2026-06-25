@@ -14,6 +14,7 @@
 | `eval_subset.json` | 비교용 21문항 서브셋 |
 | `build_longctx_set.py` / `eval_longctx.json` | long-context/멀티홉 셋 생성기 / 20문항(aggregation·crossref·multihop) |
 | `eval_longctx_benchmark.py` | multi-source recall + synthesis coverage 측정 |
+| `eval_hipporag.py` | HippoRAG 2와 동등 조건 비교(같은 corpus·reader). `pip install --no-deps hipporag` + vllm/gritlm 스텁 + OpenAI 경로. `HIPPO_PASSAGES`/`HIPPO_SAVE_DIR` env. 결과 `results/COMPARE_hipporag_lsdrag.md` |
 | `results/` | 검증·벤치마크 결과 보고서(REPORT/VERIFICATION/EVAL/BENCHMARK/LONGCTX) |
 
 ## 실행 (개발자만)
