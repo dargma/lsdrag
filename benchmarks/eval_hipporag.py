@@ -1,7 +1,11 @@
 """HippoRAG 2를 lsdrag와 '동등 조건'으로 평가 — 같은 페이지 passage·같은 평가셋·같은 Reader(gpt-4.1-mini)·같은 지표.
 vllm/gritlm는 스텁(OpenAI 경로만). 결과: benchmarks/results/HIPPORAG_<set>.md
 """
-import json, os, string, sys, time
+import json
+import os
+import string
+import time
+
 from hipporag import HippoRAG
 
 _ART={"a","an","the"}
