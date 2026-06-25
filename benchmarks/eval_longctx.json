@@ -1,0 +1,302 @@
+{
+ "doc": "ARMv8 매뉴얼의 '파싱된 일부'(~1800p, 20조각, 전체 6354p 아님) — data/ir_full",
+ "note": "long-context/멀티홉 — 여러 출처 통합/집계/참조추적. 지표: multi-source recall + synthesis/token F1. (파싱된 구간 한정)",
+ "items": [
+  {
+   "category": "aggregation",
+   "question": "Read the entire table on page D1-1895 (section 'There are a small number of AArch32 System registe') and list ALL of its row entries (there are 5).",
+   "gold_answers": [
+    "DACR",
+    "DBGVCR",
+    "FPEXC",
+    "IFSR",
+    "SDER"
+   ],
+   "gold_set": [
+    "DACR",
+    "DBGVCR",
+    "FPEXC",
+    "IFSR",
+    "SDER"
+   ],
+   "gold_sources": [
+    "D1-1895"
+   ],
+   "id": "L01"
+  },
+  {
+   "category": "aggregation",
+   "question": "Read the entire table on page D1-1896 (section 'D1.20.2 State of the general-purpose registers on ') and list ALL of its row entries (there are 3).",
+   "gold_answers": [
+    "SCR_EL3.RW",
+    "0",
+    "1"
+   ],
+   "gold_set": [
+    "SCR_EL3.RW",
+    "0",
+    "1"
+   ],
+   "gold_sources": [
+    "D1-1896"
+   ],
+   "id": "L02"
+  },
+  {
+   "category": "aggregation",
+   "question": "Read the entire table on page D1-1897 (section 'D1 The AArch64 System Level Programmers’ Model D1.') and list ALL of its row entries (there are 3).",
+   "gold_answers": [
+    "SCR_EL3.RW",
+    "0",
+    "1"
+   ],
+   "gold_set": [
+    "SCR_EL3.RW",
+    "0",
+    "1"
+   ],
+   "gold_sources": [
+    "D1-1897"
+   ],
+   "id": "L03"
+  },
+  {
+   "category": "aggregation",
+   "question": "Read the entire table on page D1-1897 (section 'D1.20.3 SPSR, ELR, and AArch64 SP relationships on') and list ALL of its row entries (there are 3).",
+   "gold_answers": [
+    "SPSR_svc",
+    "SPSR_hyp",
+    "ELR_hyp"
+   ],
+   "gold_set": [
+    "SPSR_svc",
+    "SPSR_hyp",
+    "ELR_hyp"
+   ],
+   "gold_sources": [
+    "D1-1897"
+   ],
+   "id": "L04"
+  },
+  {
+   "category": "aggregation",
+   "question": "Read the entire table on page D1-1900 (section 'D1.21.2 Support for Exception levels and Execution') and list ALL of its row entries (there are 4).",
+   "gold_answers": [
+    "Number of Exception levels",
+    "Four",
+    "Three",
+    "Two"
+   ],
+   "gold_set": [
+    "Number of Exception levels",
+    "Four",
+    "Three",
+    "Two"
+   ],
+   "gold_sources": [
+    "D1-1900"
+   ],
+   "id": "L05"
+  },
+  {
+   "category": "aggregation",
+   "question": "Read the entire table on page D2-1908 (section 'Software Step exceptions') and list ALL of its row entries (there are 3).",
+   "gold_answers": [
+    "Debug exception",
+    "Breakpoint Instruction exceptions",
+    "Breakpoint exceptions"
+   ],
+   "gold_set": [
+    "Debug exception",
+    "Breakpoint Instruction exceptions",
+    "Breakpoint exceptions"
+   ],
+   "gold_sources": [
+    "D2-1908"
+   ],
+   "id": "L06"
+  },
+  {
+   "category": "aggregation",
+   "question": "Read the entire table on page D2-1909 (section 'D2 AArch64 Self-hosted Debug D2.1 About self-hoste') and list ALL of its row entries (there are 4).",
+   "gold_answers": [
+    "Debug exception",
+    "Watchpoint exceptions",
+    "Vector Catch exceptions",
+    "Software Step exceptions"
+   ],
+   "gold_set": [
+    "Debug exception",
+    "Watchpoint exceptions",
+    "Vector Catch exceptions",
+    "Software Step exceptions"
+   ],
+   "gold_sources": [
+    "D2-1909"
+   ],
+   "id": "L07"
+  },
+  {
+   "category": "aggregation",
+   "question": "Read the entire table on page D2-1912 (section 'D2 AArch64 Self-hosted Debug D2.3 Routing debug ex') and list ALL of its row entries (there are 3).",
+   "gold_answers": [
+    "NS",
+    "0",
+    "1"
+   ],
+   "gold_set": [
+    "NS",
+    "0",
+    "1"
+   ],
+   "gold_sources": [
+    "D2-1912"
+   ],
+   "id": "L08"
+  },
+  {
+   "category": "crossref",
+   "question": "The content on page D1-1896 about 'D1.20.2 State of the general-purpose registers on ' refers the reader to another printed page for related detail. Which page does it point to? (Both pages must be consulted.)",
+   "gold_answers": [
+    "D1-1901"
+   ],
+   "gold_sources": [
+    "D1-1896",
+    "D1-1901"
+   ],
+   "id": "L09"
+  },
+  {
+   "category": "crossref",
+   "question": "The content on page D1-1897 about 'D1 The AArch64 System Level Programmers’ Model D1.' refers the reader to another printed page for related detail. Which page does it point to? (Both pages must be consulted.)",
+   "gold_answers": [
+    "D1-1901"
+   ],
+   "gold_sources": [
+    "D1-1897",
+    "D1-1901"
+   ],
+   "id": "L10"
+  },
+  {
+   "category": "crossref",
+   "question": "The content on page D1-1899 about 'D1.21 The effect of implementation choices on the ' refers the reader to another printed page for related detail. Which page does it point to? (Both pages must be consulted.)",
+   "gold_answers": [
+    "D1-1900"
+   ],
+   "gold_sources": [
+    "D1-1899",
+    "D1-1900"
+   ],
+   "id": "L11"
+  },
+  {
+   "category": "crossref",
+   "question": "The content on page D1-1899 about 'D1.21.1 Implication of Exception levels implemente' refers the reader to another printed page for related detail. Which page does it point to? (Both pages must be consulted.)",
+   "gold_answers": [
+    "D1-1901"
+   ],
+   "gold_sources": [
+    "D1-1899",
+    "D1-1901"
+   ],
+   "id": "L12"
+  },
+  {
+   "category": "crossref",
+   "question": "The content on page D1-1900 about 'D1 The AArch64 System Level Programmers’ Model D1.' refers the reader to another printed page for related detail. Which page does it point to? (Both pages must be consulted.)",
+   "gold_answers": [
+    "D1-1899"
+   ],
+   "gold_sources": [
+    "D1-1900",
+    "D1-1899"
+   ],
+   "id": "L13"
+  },
+  {
+   "category": "crossref",
+   "question": "The content on page D1-1900 about 'D1 The AArch64 System Level Programmers’ Model D1.' refers the reader to another printed page for related detail. Which page does it point to? (Both pages must be consulted.)",
+   "gold_answers": [
+    "D1-1902"
+   ],
+   "gold_sources": [
+    "D1-1900",
+    "D1-1902"
+   ],
+   "id": "L14"
+  },
+  {
+   "category": "multihop",
+   "question": "What happens when a hardware watchpoint is programmed for a data address range and halting is allowed with EDSCR.HDE set to 1?",
+   "gold_answers": [
+    "hardware breakpoints and watchpoints cause entry to Debug state instead of causing debug exceptions. In Debug state, the PE is halted."
+   ],
+   "gold_sources": [
+    "D2-1907",
+    "D2-1908"
+   ],
+   "id": "L15"
+  },
+  {
+   "category": "multihop",
+   "question": "What is the preferred return address for a Software Step exception compared to other exception-generating instructions like SVC?",
+   "gold_answers": [
+    "The preferred return address is the address of the breakpoint instruction, not the next instruction."
+   ],
+   "gold_sources": [
+    "D2-1920",
+    "D2-1967"
+   ],
+   "id": "L16"
+  },
+  {
+   "category": "multihop",
+   "question": "How can a debugger configure watchpoints and breakpoints so that a Breakpoint debug event is only generated when both a watchpoint and a breakpoint match, considering the specific registers for watchpoints?",
+   "gold_answers": [
+    "A debugger can link a breakpoint that is programmed with an address and a breakpoint that is programmed with anything other than an address together, so that a Breakpoint debug event is only generated if both breakpoints match."
+   ],
+   "gold_sources": [
+    "D2-1921",
+    "D2-1940"
+   ],
+   "id": "L17"
+  },
+  {
+   "category": "multihop",
+   "question": "What are the conditions describing the PE state and configuration when the implementation includes ARMv8.1-VHE and EL2 uses AArch64 with HCR_EL2.E2H set to 1?",
+   "gold_answers": [
+    "• The implementation includes ARMv8.1-VHE. • The PE is in Non-secure state. • EL2 using AArch64 and HCR_EL2.E2H is set to 1. • The PE is executing at EL0 and HCR_EL2.TGE is 1, or the PE is executing at EL2."
+   ],
+   "gold_sources": [
+    "D2-1926",
+    "D2-1929"
+   ],
+   "id": "L18"
+  },
+  {
+   "category": "multihop",
+   "question": "What conditions related to data address and Context ID matches can trigger this breakpoint, as described across pages D2-1926 and D2-1927?",
+   "gold_answers": [
+    "— A successful data address match, defined by a Linked watchpoint that links to this breakpoint, see Watchpoint data address comparisons on page D2-1944. — A successful Context ID match defined by this breakpoint, as described in Breakpoint context comparisons on page D2-1934."
+   ],
+   "gold_sources": [
+    "D2-1926",
+    "D2-1927"
+   ],
+   "id": "L19"
+  },
+  {
+   "category": "multihop",
+   "question": "Where does the PE record information about a Breakpoint exception?",
+   "gold_answers": [
+    "Information about the exception in the Exception Syndrome Register (ESR) at the Exception level the exception is taken to."
+   ],
+   "gold_sources": [
+    "D2-1938",
+    "D2-1952"
+   ],
+   "id": "L20"
+  }
+ ]
+}
