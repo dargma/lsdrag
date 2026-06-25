@@ -68,7 +68,7 @@ def main():
         cfg._d.setdefault("reader", {})["provider"] = os.environ["RAG_READER_PROVIDER"]
     provider = cfg.reader_config()["provider"]
     agent = build_agent(cfg)
-    set_path = os.environ.get("RAG_EVAL_SET") or os.path.join(os.path.dirname(__file__), "eval_set.json")
+    set_path = os.environ.get("RAG_EVAL_SET") or os.path.join(os.path.dirname(__file__), "eval_set_100.json")
     data = json.load(open(set_path, encoding="utf-8"))
 
     # 공정한 F1을 위해 간결 답변 요청(생성형↔짧은 gold 불일치 완화). 검색 trajectory엔 영향 없음.

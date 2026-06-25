@@ -91,4 +91,4 @@ gold를 **원문에서 추출·verbatim 검증**(무오류), **모델 비의존*
 - **가장 적은 자원**: MiniLM(22M, CPU) + claude_code(키 0) → 외부 비용 없이 동작, 정확도도 양호.
 
 > 측정 환경: NVIDIA L4, eval_set_100(파싱 부분). 서브셋 21은 표본이 작아 절대수치보다 경향으로 해석.
-> 원시 로그: `cmp_*.md`, `BENCHMARK.md`(MiniLM-openai 99), `BENCHMARK_qwen.md`(Qwen-openai 99).
+> 원시 로그: `BENCHMARK.md`(MiniLM-openai 99), `BENCHMARK_qwen.md`(Qwen-openai 99).

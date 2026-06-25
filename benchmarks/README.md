@@ -11,8 +11,10 @@
 | `eval_benchmark.py` | 독립 골드셋으로 Recall/F1/EM + 평균 LLM호출수·시간 측정. `RAG_EVAL_SET`·`RAG_READER_PROVIDER` 지원 |
 | `build_eval_set.py` | 파싱 IR에서 gold를 추출/검증해 평가셋 생성(무오류) |
 | `eval_set_100.json` | 독립 벤치마크 99문항(표/그림/텍스트 + 도구5종 균형). 모델-비의존 |
-| `eval_set.json` / `eval_subset.json` | 초기 12문항 / 비교용 21문항 서브셋 |
-| `results/` | 검증·벤치마크 결과 보고서(REPORT/VERIFICATION/EVAL/BENCHMARK) |
+| `eval_subset.json` | 비교용 21문항 서브셋 |
+| `build_longctx_set.py` / `eval_longctx.json` | long-context/멀티홉 셋 생성기 / 20문항(aggregation·crossref·multihop) |
+| `eval_longctx_benchmark.py` | multi-source recall + synthesis coverage 측정 |
+| `results/` | 검증·벤치마크 결과 보고서(REPORT/VERIFICATION/EVAL/BENCHMARK/LONGCTX) |
 
 ## 실행 (개발자만)
 ```bash
