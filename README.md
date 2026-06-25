@@ -91,7 +91,7 @@ DB는 `config.yaml`의 `paths.*`에 다음 형태로 저장된다:
 | 파서 | Upstage Document Parse (원격 API) | `UP_TOKEN` (env) |
 | Reader / 이미지 해석 | GPT-4.1 mini · 멀티모달 (원격 API) | `OPENAI_API_KEY` (env) |
 | 임베더 | sentence-transformers (로컬 자동 로드) | **GPU 불필요** |
-| 런타임 | Python 3.10+ | `pyyaml numpy requests sentence-transformers tiktoken pypdf` |
+| 런타임 | Python 3.10+ | `pyyaml numpy requests sentence-transformers tiktoken pypdf pikepdf` |
 
 > 자체 GPU 서빙 없음(임베더는 로컬·소형, 파서·Reader는 외부 API).
 > 각 구성은 통째로 교체 가능 — 파서는 `src/parser/adapter.py`, Reader·임베더는 `config.yaml` 한 곳.

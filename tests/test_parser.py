@@ -18,6 +18,7 @@ MOCK_RESPONSE = {
         {"id": 3, "category": "figure", "page": 13, "content": {"text": "bitfield diagram"},
          "base64_encoding": base64.b64encode(b"PNGDATA").decode()},
         {"id": 4, "category": "caption", "page": 13, "content": {"text": "Figure 2. SCTLR_EL1"}},
+        {"id": 5, "category": "footer", "page": 13, "content": {"text": "E2-2804"}},
     ]
 }
 
@@ -32,7 +33,16 @@ def _convert(saved):
 def test_categories_mapped():
     doc = _convert({})
     types = [b.block_type for b in doc.blocks]
-    assert types == ["text", "text", "table", "figure", "caption"], types
+    assert types == ["text", "text", "table", "figure", "caption", "text"], types
+
+
+def test_page_label_from_footer():
+    # P3: footer "E2-2804" → page 13 블록들이 인쇄 페이지 표기를 가진다(분할 로컬 page_no와 별개)
+    doc = _convert({})
+    p13 = [b for b in doc.blocks if b.page_no == 13]
+    assert p13 and all(b.page_label == "E2-2804" for b in p13)
+    p12 = [b for b in doc.blocks if b.page_no == 12]
+    assert all(b.page_label is None for b in p12)  # footer 없는 페이지는 None
 
 
 def test_heading_propagates():

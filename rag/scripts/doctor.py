@@ -39,13 +39,13 @@ def c_skill(cfg=None) -> Result:
 
 def c_deps(cfg=None) -> Result:
     missing = []
-    for m in ["yaml", "numpy", "requests", "sentence_transformers", "tiktoken", "pypdf"]:
+    for m in ["yaml", "numpy", "requests", "sentence_transformers", "tiktoken", "pypdf", "pikepdf"]:
         try:
             __import__(m)
         except ImportError:
             missing.append(m)
     return Result(not missing, "all imports ok" if not missing else f"missing: {missing}",
-                  "pip install pyyaml numpy requests sentence-transformers tiktoken pypdf")
+                  "pip install pyyaml numpy requests sentence-transformers tiktoken pypdf pikepdf")
 
 
 def c_keys(cfg) -> Result:

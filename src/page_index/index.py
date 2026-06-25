@@ -24,6 +24,7 @@ class PageEntry:
     heading: Optional[str] = None
     figure_no: Optional[str] = None
     image_path: Optional[str] = None
+    page_label: Optional[str] = None  # 문서에 인쇄된 페이지 표기(예: "E2-2804")
 
 
 class PageIndex:
@@ -41,6 +42,7 @@ class PageIndex:
                 chunk_id=b.chunk_id or f"{doc.doc_id}:{len(self._entries)}",
                 page_no=b.page_no, block_type=b.block_type, text=b.text,
                 heading=b.heading, figure_no=b.figure_no, image_path=b.image_path,
+                page_label=b.page_label,
             ))
 
     def remove_doc(self, doc_id: str) -> int:

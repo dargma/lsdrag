@@ -76,5 +76,11 @@
   doctor C1~C9(이중모드 출력, 막힌단계서 정지). 회귀 4건(G1진단력·G2정상·G7패키징분리). pypdf 설치.
 - 2026-06-25: **10_persona ✅** — 6 페르소나(installer/verifier/user/user2/leader/designer) 병렬 + synthesizer.
   user2=설치~사용 전반 직관성(1급 축). 회귀 3건(병렬완주·종합판정·사망격리). 종합판정: 수용, 직관성 1.00.
-- 2026-06-25: **전체 9/9 모듈 회귀 통과.** 실제 파싱·DB빌드·라이브 질의는 키 준비 후(구조·게이트는 완성).
+- 2026-06-25: **전체 9/9 모듈 회귀 통과.**
+- 2026-06-25: **라이브 통합 검증** — fresh clone에서 실제 Upstage·GPT-4.1 mini로 파싱(figure crop)→DB빌드→
+  page_index검색→멀티모달 image_read→**agentic 7-step 자율 루프**까지 end-to-end 동작 확인(`examples/REPORT.md`).
+- 2026-06-25: **검증 중 발견 문제 수정** — P1(split 48MB→1MB, pikepdf) · P3(footer 실제 page_label, "E2-2804") ·
+  P5(IR 캐시 재사용) · P7(임베더 가이드) · P8(figure_no=실제 캡션 라벨). 회귀 고정. 남은 과제 P2·P4.
+- 2026-06-25: **코드 리뷰**(Google 스타일) — ruff(F,I) 우리 코드 clean, vendor 원본 보존. import 부트스트랩을
+  패키지 __init__로 이동(린터 안전). 하드코딩 경로 0. 문서 현황(status) 뷰 추가. hero 그림 = gpt-image-1(최신).
 - (문서 스캐폴딩 완료. 마스터 명세를 11개 파일로 분할·재가공.)

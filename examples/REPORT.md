@@ -72,17 +72,16 @@ loop7 (tool 호출 없음 → 완료 판단, 최종 답변 생성)
 ## 5. 과정에서 드러난 문제 (개선 과제)
 | # | 문제 | 영향 | 개선안 |
 |---|------|------|--------|
-| P1 | `split_pdf` 결과가 26p인데도 **~48MB** (pypdf가 공유 리소스를 그대로 복사) | Upstage 50MB sync 한도에 근접, 100p 분할 시 초과 위험 | 분할 시 content stream 압축 / `pikepdf` 리소스 subset / 페이지수 더 작게 |
+| P1 | `split_pdf` 결과가 26p인데도 **~48MB** (pypdf가 공유 리소스를 그대로 복사) | Upstage 50MB sync 한도 근접 | **✅ 수정**: pikepdf `remove_unreferenced_resources()` → 같은 구간 **48MB→1.0MB** (라이브 확인) |
 | P2 | 레지스터-인덱스 구간(5880–5930)은 **table만, figure 0** | 잘못 고르면 이미지 검증 불가 | figure는 다이어그램 챕터(예: 2785–2810). 비트필드 '레이아웃'은 table로 분류됨 |
-| P3 | `page_no`가 **분할 doc 로컬 기준**(p17 = 원본 ≈2801); 실제 페이지는 footer "E2-2804" 형식 | 사용자가 원본 페이지로 오해 | footer 패턴을 page_label로 추출해 표시(후속) |
-| P8 | `figure_no`가 **Upstage element id**(예 349)였음 — 문서의 실제 figure 번호 아님 | "page X, figure Y" 시나리오가 가짜 번호 | **수정 완료**: 캡션의 실제 'Figure N' 라벨 추출(없으면 None). 이 ARM 상태도는 번호 없는 inline 그림 → page로만 조회. 번호 시나리오는 캡션 있는 figure로 시연 |
-
-> 후속 반영: P8(figure_no 실제 라벨화)은 `src/parser/adapter.py`에서 완료, `tests/test_parser.py`에 회귀 고정.
-| P4 | figure 블록 `text`가 **raw HTML**(`<figure id=..><img alt=..>`) | 캡션 가독성↓ | adapter에서 alt/캡션 추출해 정제 |
-| P5 | `/rag-build`(cmd_build)가 **PDF를 재파싱** (rag-parse 캐시 IR 미사용) | Upstage 중복 호출(비용) | 빌드가 `data/ir/*.json` 캐시를 우선 사용하도록 |
+| P3 | `page_no`가 **분할 doc 로컬 기준**; 실제 페이지는 footer "E2-2804" 형식 | 사용자가 원본 페이지로 오해 | **✅ 수정**: footer에서 `page_label` 추출. 라이브 확인 — E2-2785…E2-2792 실제 표기 획득. page_index_search가 page_label로 표시 |
+| P5 | `/rag-build`가 PDF를 **재파싱**(rag-parse 캐시 IR 미사용) | Upstage 중복 호출(비용) | **✅ 수정**: `_get_ir()`가 `data/ir/*.json` 캐시를 PDF보다 최신이면 재사용 |
+| P4 | figure 블록 `text`가 **raw HTML**(`<figure id=..><img alt=..>`) | 캡션 가독성↓ | (미해결) adapter에서 alt/캡션 추출해 정제 |
 | P6 | ARM PDF는 **래스터 이미지 0개**(전부 벡터) | — | (긍정) Upstage가 벡터 figure도 crop·base64 제공 → image_read 정상 동작 |
-| P7 | 임베더 최초 실행 시 **모델 다운로드(~25s)** | 오프라인/첫 빌드 지연 | INSTALL에 다운로드·캐시 가이드 추가(아래) |
+| P7 | 임베더 최초 실행 시 **모델 다운로드(~25s)** | 오프라인/첫 빌드 지연 | **✅ 반영**: INSTALL에 다운로드·HF 캐시·오프라인 가이드 |
+| P8 | `figure_no`가 **Upstage element id**였음 — 실제 figure 번호 아님 | 가짜 번호 시나리오 | **✅ 수정**: 캡션의 'Figure N' 추출(없으면 None). 회귀 고정 |
 
-## 6. 권장 후속
-- P1·P5는 빌드 효율/안정성 직결 → 우선 개선.
-- 문서 add/remove 현황은 `rag-build --list`를 **풍부한 status**(doc별 chunk·figure·table·페이지·갱신시각)로 확장.
+## 6. 수정 요약 / 후속
+- **✅ 수정 완료**: P1(분할 48MB→1MB) · P3(실제 page_label) · P5(IR 캐시 재사용) · P7(임베더 가이드) · P8(figure_no 라벨).
+- 문서 현황: `rag-build --list`가 doc별 chunk·figure·table·page 표 제공.
+- **남은 과제**: P2(figure 있는 구간 선택은 데이터 특성), P4(figure HTML→캡션 정제).

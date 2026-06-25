@@ -15,6 +15,9 @@ from src.schema import IRValidationError, ParsedBlock, ParsedDoc
 # 문서의 실제 figure 라벨(예: "Figure D1-3", "Figure E2-1", "Figure 2.5") 추출용.
 # Upstage element id가 아니라 캡션에 적힌 진짜 번호를 쓴다.
 _FIGURE_LABEL = re.compile(r"Figure\s+([A-Z]?\d[\w.\-]*)", re.I)
+# 문서에 인쇄된 페이지 표기(P3). 예: ARM "E2-2804", "D1-1234" (챕터-페이지).
+_PAGE_LABEL = re.compile(r"\b([A-Z][A-Z0-9]?\d*-\d{2,})\b")
+_FOOTER_CATEGORIES = {"footer", "header"}
 
 
 def _strip_html(s: str) -> str:
@@ -64,6 +67,7 @@ def upstage_to_ir(
 
     blocks: List[ParsedBlock] = []
     current_heading: Optional[str] = None
+    page_labels: Dict[int, str] = {}  # page_no → 인쇄된 페이지 표기(footer/header에서)
 
     for el in elements:
         category = el.get("category", "paragraph")
@@ -73,6 +77,10 @@ def upstage_to_ir(
 
         if category in _HEADING_CATEGORIES:
             current_heading = text or current_heading
+        if category in _FOOTER_CATEGORIES and page not in page_labels:
+            m = _PAGE_LABEL.search(_strip_html(text))
+            if m:
+                page_labels[page] = m.group(1)
 
         image_path = None
         if bt == "figure":
@@ -90,6 +98,8 @@ def upstage_to_ir(
             chunk_id=chunk_id,
         ))
 
+    for b in blocks:  # P3: 인쇄된 페이지 표기 부여(footer는 보통 블록 뒤에 오므로 post-pass)
+        b.page_label = page_labels.get(b.page_no)
     _assign_figure_labels(blocks)
     doc = ParsedDoc(doc_id=doc_id, title=title, blocks=blocks, date=date)
     doc.validate()

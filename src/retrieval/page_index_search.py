@@ -56,7 +56,8 @@ class PageIndexSearchTool(BaseTool):
         parts, images = [], []
         for e in hits:
             full = self._chunks.get(e.chunk_id, e.text)
-            head = f"[{e.doc_id} p{e.page_no}" + (f" fig {e.figure_no}" if e.figure_no else "") + "]"
+            page = f"page {e.page_label}" if e.page_label else f"p{e.page_no}"
+            head = f"[{e.doc_id} {page}" + (f" fig {e.figure_no}" if e.figure_no else "") + "]"
             parts.append(f"{head}\n{full}")
             if e.image_path:
                 images.append(e.image_path)

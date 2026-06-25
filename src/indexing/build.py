@@ -23,8 +23,11 @@ def _log(step, total, name, status="ok"):
     print(f"[{step}/{total}] {name} ... {status}")
 
 
+def _doc_id(pdf: str) -> str:
+    return os.path.splitext(os.path.basename(pdf))[0]
+
+
 def _parse_to_ir(cfg: Config, pdf: str) -> ParsedDoc:
-    doc_id = os.path.splitext(os.path.basename(pdf))[0]
     resp = parse_pdf(
         pdf,
         api_key_env=cfg.get("parser.api_key_env", "UP_TOKEN"),
@@ -32,7 +35,22 @@ def _parse_to_ir(cfg: Config, pdf: str) -> ParsedDoc:
         model=cfg.get("parser.model", "document-parse"),
         base64_categories=cfg.get("parser.base64_categories"),
     )
-    return upstage_to_ir(resp, doc_id=doc_id, title=doc_id, images_dir=cfg.path("images_out"))
+    return upstage_to_ir(resp, doc_id=_doc_id(pdf), title=_doc_id(pdf),
+                         images_dir=cfg.path("images_out"))
+
+
+def _get_ir(cfg: Config, pdf: str) -> ParsedDoc:
+    """P5: 캐시된 IR(data/ir/<doc_id>.json)이 PDF보다 최신이면 재사용 → Upstage 중복 호출 방지.
+    없거나 PDF가 더 최신이면 파싱하고 캐시에 저장(`/rag-parse` 산출과 동일 경로)."""
+    ir_path = os.path.join(cfg.path("ir_out"), f"{_doc_id(pdf)}.json")
+    if os.path.exists(ir_path) and os.path.getmtime(ir_path) >= os.path.getmtime(pdf):
+        with open(ir_path, encoding="utf-8") as f:
+            return ParsedDoc.from_dict(json.load(f))
+    doc = _parse_to_ir(cfg, pdf)
+    os.makedirs(os.path.dirname(ir_path), exist_ok=True)
+    with open(ir_path, "w", encoding="utf-8") as f:
+        json.dump(doc.to_dict(), f, ensure_ascii=False)
+    return doc
 
 
 def _load_or_build_store(cfg: Config) -> IndexStore:
@@ -52,7 +70,7 @@ def cmd_build(cfg: Config) -> int:
         print(f"⚠️ 입력 PDF 없음: {cfg.path('docs_in')}. split_pdf로 준비하세요.", file=sys.stderr)
         return 2
     for i, pdf in enumerate(pdfs, 1):
-        store.add_doc(_parse_to_ir(cfg, pdf), embed)
+        store.add_doc(_get_ir(cfg, pdf), embed)
         _log(i, len(pdfs), os.path.basename(pdf))
     store.save(cfg.index_paths())
     print(f"[05_indexing] built {len(store.doc_ids())} docs, {len(store.chunks)} chunks.")
@@ -62,7 +80,7 @@ def cmd_build(cfg: Config) -> int:
 def cmd_add(cfg: Config, pdf: str) -> int:
     store = _load_or_build_store(cfg)
     embed = default_embedder(store.model_name)
-    store.add_doc(_parse_to_ir(cfg, pdf), embed)
+    store.add_doc(_get_ir(cfg, pdf), embed)
     store.save(cfg.index_paths())
     print(f"[05_indexing] added. now {len(store.doc_ids())} docs: {store.doc_ids()}")
     return 0

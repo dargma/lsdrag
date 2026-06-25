@@ -20,13 +20,14 @@ class IRValidationError(ValueError):
 class ParsedBlock:
     """문서의 한 블록. 구조 필드(page_no/figure_no/image_path)는 Page Index(04)가 의존."""
     text: str
-    page_no: int
+    page_no: int                       # 파서 기준(분할 doc 로컬) 페이지 번호
     block_type: str = "text"
     heading: Optional[str] = None
     figure_no: Optional[str] = None
     image_path: Optional[str] = None
     bbox: Optional[List[float]] = None
-    chunk_id: Optional[str] = None  # 인덱스/PageIndex가 참조하는 안정 ID
+    chunk_id: Optional[str] = None     # 인덱스/PageIndex가 참조하는 안정 ID
+    page_label: Optional[str] = None   # 문서에 인쇄된 실제 페이지 표기(예: "E2-2804"). 없으면 None
 
     def validate(self) -> None:
         if not isinstance(self.text, str):
