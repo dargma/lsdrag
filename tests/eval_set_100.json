@@ -1,0 +1,1355 @@
+{
+ "doc": "ARMv8-Reference-Manual (expanded parse, data/ir_full)",
+ "note": "독립 벤치마크. gold는 원문에서 추출/검증(무오류). Reader LLM 교체 시 공통 기준.",
+ "items": [
+  {
+   "category": "figure-loc",
+   "tool": "page_index_search",
+   "question": "Which printed page label has the figure/diagram in the section about 'D1.21.1 Implication of Exception levels implemented'?",
+   "gold_answers": [
+    "D1-1899"
+   ],
+   "gold_page": "D1-1899",
+   "gold_keywords": [
+    "D1.21.1"
+   ],
+   "id": "E001"
+  },
+  {
+   "category": "figure-loc",
+   "tool": "page_index_search",
+   "question": "Which printed page label has the figure/diagram in the section about 'For the level 1 descriptor n is 42, and for the level 2 desc'?",
+   "gold_answers": [
+    "D4-2061"
+   ],
+   "gold_page": "D4-2061",
+   "gold_keywords": [
+    "For"
+   ],
+   "id": "E002"
+  },
+  {
+   "category": "figure-loc",
+   "tool": "page_index_search",
+   "question": "Which printed page label has the figure/diagram in the section about 'D7 AArch64 System Register Descriptions D7.2 General system '?",
+   "gold_answers": [
+    "D7-2259"
+   ],
+   "gold_page": "D7-2259",
+   "gold_keywords": [
+    "D7"
+   ],
+   "id": "E003"
+  },
+  {
+   "category": "figure-loc",
+   "tool": "page_index_search",
+   "question": "Which printed page label has the figure/diagram in the section about 'Field descriptions'?",
+   "gold_answers": [
+    "D7-2319"
+   ],
+   "gold_page": "D7-2319",
+   "gold_keywords": [
+    "Field"
+   ],
+   "id": "E004"
+  },
+  {
+   "category": "figure-loc",
+   "tool": "page_index_search",
+   "question": "Which printed page label has the figure/diagram in the section about 'ContextID2, bits [63:32]'?",
+   "gold_answers": [
+    "D7-2564"
+   ],
+   "gold_page": "D7-2564",
+   "gold_keywords": [
+    "ContextID2,"
+   ],
+   "id": "E005"
+  },
+  {
+   "category": "figure-loc",
+   "tool": "page_index_search",
+   "question": "Which printed page label has the figure/diagram in the section about 'When HCR_EL2.E2H == 1:'?",
+   "gold_answers": [
+    "D7-2676"
+   ],
+   "gold_page": "D7-2676",
+   "gold_keywords": [
+    "When"
+   ],
+   "id": "E006"
+  },
+  {
+   "category": "figure-loc",
+   "tool": "page_index_search",
+   "question": "Which printed page label has the figure/diagram in the section about 'E2.9.6 Use of WFE and SEV instructions by spin-locks'?",
+   "gold_answers": [
+    "E2-2804"
+   ],
+   "gold_page": "E2-2804",
+   "gold_keywords": [
+    "E2.9.6"
+   ],
+   "id": "E007"
+  },
+  {
+   "category": "figure-loc",
+   "tool": "page_index_search",
+   "question": "Which printed page label has the figure/diagram in the section about 'F3.1.3 Special data instructions and branch and exchange'?",
+   "gold_answers": [
+    "F3-2882"
+   ],
+   "gold_page": "F3-2882",
+   "gold_keywords": [
+    "F3.1.3"
+   ],
+   "id": "E008"
+  },
+  {
+   "category": "figure-loc",
+   "tool": "page_index_search",
+   "question": "Which printed page label has the figure/diagram in the section about 'Load/store dual (immediate)'?",
+   "gold_answers": [
+    "F3-2916"
+   ],
+   "gold_page": "F3-2916",
+   "gold_keywords": [
+    "Load/store"
+   ],
+   "id": "E009"
+  },
+  {
+   "category": "figure-loc",
+   "tool": "page_index_search",
+   "question": "Which printed page label has the figure/diagram in the section about 'F4.1.6 Data-processing register (register shift)'?",
+   "gold_answers": [
+    "F4-2955"
+   ],
+   "gold_page": "F4-2955",
+   "gold_keywords": [
+    "F4.1.6"
+   ],
+   "id": "E010"
+  },
+  {
+   "category": "figure-loc",
+   "tool": "page_index_search",
+   "question": "Which printed page label has the figure/diagram in the section about 'Decode for all variants of this encoding'?",
+   "gold_answers": [
+    "F5-3023"
+   ],
+   "gold_page": "F5-3023",
+   "gold_keywords": [
+    "Decode"
+   ],
+   "id": "E011"
+  },
+  {
+   "category": "figure-loc",
+   "tool": "page_index_search",
+   "question": "Which printed page label has the figure/diagram in the section about 'A1'?",
+   "gold_answers": [
+    "F5-3144"
+   ],
+   "gold_page": "F5-3144",
+   "gold_keywords": [
+    "A1"
+   ],
+   "id": "E012"
+  },
+  {
+   "category": "figure-loc",
+   "tool": "page_index_search",
+   "question": "Which printed page label has the figure/diagram in the section about 'F5.1.102 LSRS (immediate)'?",
+   "gold_answers": [
+    "F5-3245"
+   ],
+   "gold_page": "F5-3245",
+   "gold_keywords": [
+    "F5.1.102"
+   ],
+   "id": "E013"
+  },
+  {
+   "category": "figure-loc",
+   "tool": "page_index_search",
+   "question": "Which printed page label has the figure/diagram in the section about 'F5.1.139 PUSH (multiple registers)'?",
+   "gold_answers": [
+    "F5-3333"
+   ],
+   "gold_page": "F5-3333",
+   "gold_keywords": [
+    "F5.1.139"
+   ],
+   "id": "E014"
+  },
+  {
+   "category": "figure-loc",
+   "tool": "page_index_search",
+   "question": "Which printed page label has the figure/diagram in the section about 'SUBS{ }{ } { ,} SP, #'?",
+   "gold_answers": [
+    "F5-3569"
+   ],
+   "gold_page": "F5-3569",
+   "gold_keywords": [
+    "SUBS{"
+   ],
+   "id": "E015"
+  },
+  {
+   "category": "table-loc",
+   "tool": "keyword_search",
+   "question": "Which printed page label contains the table mentioning 'PMCNTENSET[x] == 0'?",
+   "gold_answers": [
+    "D5-2150"
+   ],
+   "gold_page": "D5-2150",
+   "gold_keywords": [
+    "PMCNTENSET[x]"
+   ],
+   "id": "E016"
+  },
+  {
+   "category": "table-loc",
+   "tool": "keyword_search",
+   "question": "Which printed page label contains the table mentioning 'Support for FCSE.'?",
+   "gold_answers": [
+    "D7-2372"
+   ],
+   "gold_page": "D7-2372",
+   "gold_keywords": [
+    "Support"
+   ],
+   "id": "E017"
+  },
+  {
+   "category": "table-loc",
+   "tool": "keyword_search",
+   "question": "Which printed page label contains the table mentioning 'Implemented and disabled. ExternalSecureInvasiveDebugEnabled() == FALSE.'?",
+   "gold_answers": [
+    "D7-2555"
+   ],
+   "gold_page": "D7-2555",
+   "gold_keywords": [
+    "Implemented"
+   ],
+   "id": "E018"
+  },
+  {
+   "category": "table-loc",
+   "tool": "keyword_search",
+   "question": "Which printed page label contains the table mentioning '19 16 15'?",
+   "gold_answers": [
+    "F4-2969"
+   ],
+   "gold_page": "F4-2969",
+   "gold_keywords": [
+    "19"
+   ],
+   "id": "E019"
+  },
+  {
+   "category": "table-loc",
+   "tool": "keyword_search",
+   "question": "Which printed page label contains the table mentioning 'is preferred when'?",
+   "gold_answers": [
+    "F5-3161"
+   ],
+   "gold_page": "F5-3161",
+   "gold_keywords": [
+    "is"
+   ],
+   "id": "E020"
+  },
+  {
+   "category": "table-loc",
+   "tool": "keyword_search",
+   "question": "Which printed page label contains the table mentioning '5 4 3'?",
+   "gold_answers": [
+    "F5-3265"
+   ],
+   "gold_page": "F5-3265",
+   "gold_keywords": [
+    "5"
+   ],
+   "id": "E021"
+  },
+  {
+   "category": "table-loc",
+   "tool": "keyword_search",
+   "question": "Which printed page label contains the table mentioning '0 0 0 1 1'?",
+   "gold_answers": [
+    "F5-3372"
+   ],
+   "gold_page": "F5-3372",
+   "gold_keywords": [
+    "0"
+   ],
+   "id": "E022"
+  },
+  {
+   "category": "table-loc",
+   "tool": "keyword_search",
+   "question": "Which printed page label contains the table mentioning 'when rotate = 01'?",
+   "gold_answers": [
+    "F5-3588"
+   ],
+   "gold_page": "F5-3588",
+   "gold_keywords": [
+    "when"
+   ],
+   "id": "E023"
+  },
+  {
+   "category": "heading-loc",
+   "tool": "page_index_search",
+   "question": "On which printed page label is the section titled 'D1 The AArch64 System Level Programmers’ Model D1.20 Interprocessing'?",
+   "gold_answers": [
+    "D1-1891"
+   ],
+   "gold_page": "D1-1891",
+   "gold_keywords": [
+    "D1"
+   ],
+   "id": "E024"
+  },
+  {
+   "category": "heading-loc",
+   "tool": "page_index_search",
+   "question": "On which printed page label is the section titled 'Whether the address accessed:'?",
+   "gold_answers": [
+    "D3-1991"
+   ],
+   "gold_page": "D3-1991",
+   "gold_keywords": [
+    "Whether"
+   ],
+   "id": "E025"
+  },
+  {
+   "category": "heading-loc",
+   "tool": "page_index_search",
+   "question": "On which printed page label is the section titled 'Memory type and Cacheability'?",
+   "gold_answers": [
+    "D4-2090"
+   ],
+   "gold_page": "D4-2090",
+   "gold_keywords": [
+    "Memory"
+   ],
+   "id": "E026"
+  },
+  {
+   "category": "heading-loc",
+   "tool": "page_index_search",
+   "question": "On which printed page label is the section titled 'D6 The Generic Timer in AArch64 state D6.2 The AArch64 view of the Gen'?",
+   "gold_answers": [
+    "D6-2188"
+   ],
+   "gold_page": "D6-2188",
+   "gold_keywords": [
+    "D6"
+   ],
+   "id": "E027"
+  },
+  {
+   "category": "heading-loc",
+   "tool": "page_index_search",
+   "question": "On which printed page label is the section titled 'This encoding is used by:'?",
+   "gold_answers": [
+    "D7-2281"
+   ],
+   "gold_page": "D7-2281",
+   "gold_keywords": [
+    "This"
+   ],
+   "id": "E028"
+  },
+  {
+   "category": "heading-loc",
+   "tool": "page_index_search",
+   "question": "On which printed page label is the section titled 'D7 AArch64 System Register Descriptions D7.2 General system control re'?",
+   "gold_answers": [
+    "D7-2377"
+   ],
+   "gold_page": "D7-2377",
+   "gold_keywords": [
+    "D7"
+   ],
+   "id": "E029"
+  },
+  {
+   "category": "heading-loc",
+   "tool": "page_index_search",
+   "question": "On which printed page label is the section titled 'Defined values are:'?",
+   "gold_answers": [
+    "D7-2481"
+   ],
+   "gold_page": "D7-2481",
+   "gold_keywords": [
+    "Defined"
+   ],
+   "id": "E030"
+  },
+  {
+   "category": "heading-loc",
+   "tool": "page_index_search",
+   "question": "On which printed page label is the section titled 'VA[48:2], bits [48:2]'?",
+   "gold_answers": [
+    "D7-2586"
+   ],
+   "gold_page": "D7-2586",
+   "gold_keywords": [
+    "VA[48:2],"
+   ],
+   "id": "E031"
+  },
+  {
+   "category": "heading-loc",
+   "tool": "page_index_search",
+   "question": "On which printed page label is the section titled 'D7.5.5 CNTHP_TVAL_EL2, Counter-timer Hypervisor Physical Timer TimerVa'?",
+   "gold_answers": [
+    "D7-2685"
+   ],
+   "gold_page": "D7-2685",
+   "gold_keywords": [
+    "D7.5.5"
+   ],
+   "id": "E032"
+  },
+  {
+   "category": "heading-loc",
+   "tool": "page_index_search",
+   "question": "On which printed page label is the section titled 'See also Memory access restrictions on page E2-2791.'?",
+   "gold_answers": [
+    "E2-2788"
+   ],
+   "gold_page": "E2-2788",
+   "gold_keywords": [
+    "See"
+   ],
+   "id": "E033"
+  },
+  {
+   "category": "heading-loc",
+   "tool": "page_index_search",
+   "question": "On which printed page label is the section titled 'Advanced SIMD load single structure to all lanes'?",
+   "gold_answers": [
+    "F3-2924"
+   ],
+   "gold_page": "F3-2924",
+   "gold_keywords": [
+    "Advanced"
+   ],
+   "id": "E034"
+  },
+  {
+   "category": "heading-loc",
+   "tool": "page_index_search",
+   "question": "On which printed page label is the section titled 'F5 T32 and A32 Base Instruction Set Instruction Descriptions F5.1 Alph'?",
+   "gold_answers": [
+    "F5-3066"
+   ],
+   "gold_page": "F5-3066",
+   "gold_keywords": [
+    "F5"
+   ],
+   "id": "E035"
+  },
+  {
+   "category": "heading-loc",
+   "tool": "page_index_search",
+   "question": "On which printed page label is the section titled 'Decode for this encoding'?",
+   "gold_answers": [
+    "F5-3192"
+   ],
+   "gold_page": "F5-3192",
+   "gold_keywords": [
+    "Decode"
+   ],
+   "id": "E036"
+  },
+  {
+   "category": "heading-loc",
+   "tool": "page_index_search",
+   "question": "On which printed page label is the section titled 'ORR, rotate right with extend variant'?",
+   "gold_answers": [
+    "F5-3306"
+   ],
+   "gold_page": "F5-3306",
+   "gold_keywords": [
+    "ORR,"
+   ],
+   "id": "E037"
+  },
+  {
+   "category": "heading-loc",
+   "tool": "page_index_search",
+   "question": "On which printed page label is the section titled 'Operation for all encodings'?",
+   "gold_answers": [
+    "F5-3553"
+   ],
+   "gold_page": "F5-3553",
+   "gold_keywords": [
+    "Operation"
+   ],
+   "id": "E038"
+  },
+  {
+   "category": "heading-loc",
+   "tool": "page_index_search",
+   "question": "On which printed page label is the section titled 'F6 T32 and A32 Advanced SIMD and floating-point Instruction Descriptio'?",
+   "gold_answers": [
+    "F6-3690"
+   ],
+   "gold_page": "F6-3690",
+   "gold_keywords": [
+    "F6"
+   ],
+   "id": "E039"
+  },
+  {
+   "category": "concept",
+   "tool": "semantic_search",
+   "question": "What section covers Interprocessing in the AArch64 manual?",
+   "gold_answers": [
+    "D1.20 Interprocessing"
+   ],
+   "gold_page": "D1-1891",
+   "gold_keywords": [
+    "d1",
+    "20",
+    "interprocessing"
+   ],
+   "id": "E040"
+  },
+  {
+   "category": "concept",
+   "tool": "semantic_search",
+   "question": "What happens if the access size differs from the address region being watched?",
+   "gold_answers": [
+    "The access size is smaller or larger than the address region being watched."
+   ],
+   "gold_page": "D2-1947",
+   "gold_keywords": [
+    "access",
+    "size",
+    "is"
+   ],
+   "id": "E041"
+  },
+  {
+   "category": "concept",
+   "tool": "semantic_search",
+   "question": "How is a synchronous external abort on an instruction fetch handled?",
+   "gold_answers": [
+    "using the Instruction Abort exception"
+   ],
+   "gold_page": "D3-1997",
+   "gold_keywords": [
+    "using",
+    "instruction",
+    "abort"
+   ],
+   "id": "E042"
+  },
+  {
+   "category": "concept",
+   "tool": "semantic_search",
+   "question": "What is the benefit of using concatenated translation tables?",
+   "gold_answers": [
+    "avoids the overhead of an additional level"
+   ],
+   "gold_page": "D4-2047",
+   "gold_keywords": [
+    "avoids",
+    "overhead",
+    "of"
+   ],
+   "id": "E043"
+  },
+  {
+   "category": "concept",
+   "tool": "semantic_search",
+   "question": "What type of memory is described with Inner Shareable and Write-Back attributes?",
+   "gold_answers": [
+    "Inner Shareable, Inner Write-Back, Outer Write-Back Normal memory"
+   ],
+   "gold_page": "D4-2088",
+   "gold_keywords": [
+    "inner",
+    "shareable",
+    "inner"
+   ],
+   "id": "E044"
+  },
+  {
+   "category": "concept",
+   "tool": "semantic_search",
+   "question": "What is discussed regarding TLB lockdown in the manual?",
+   "gold_answers": [
+    "The interaction of TLB lockdown with TLB maintenance instructions"
+   ],
+   "gold_page": "D4-2131",
+   "gold_keywords": [
+    "interaction",
+    "of",
+    "tlb"
+   ],
+   "id": "E045"
+  },
+  {
+   "category": "concept",
+   "tool": "semantic_search",
+   "question": "Who holds the copyright for the ARM manual content?",
+   "gold_answers": [
+    "ARM Limited or its affiliates"
+   ],
+   "gold_page": "D5-2172",
+   "gold_keywords": [
+    "arm",
+    "limited",
+    "or"
+   ],
+   "id": "E046"
+  },
+  {
+   "category": "concept",
+   "tool": "semantic_search",
+   "question": "Does this control cause any instructions to be trapped?",
+   "gold_answers": [
+    "This control does not cause any instructions to be trapped."
+   ],
+   "gold_page": "D7-2232",
+   "gold_keywords": [
+    "this",
+    "control",
+    "does"
+   ],
+   "id": "E047"
+  },
+  {
+   "category": "concept",
+   "tool": "semantic_search",
+   "question": "What address does FAR_EL1 hold if a memory fault comes from a DC ZVA instruction?",
+   "gold_answers": [
+    "the address specified in the register argument"
+   ],
+   "gold_page": "D7-2288",
+   "gold_keywords": [
+    "address",
+    "specified",
+    "in"
+   ],
+   "id": "E048"
+  },
+  {
+   "category": "concept",
+   "tool": "semantic_search",
+   "question": "What happens if HCR_EL2.TID3 equals 1 for non-secure read accesses from EL1?",
+   "gold_answers": [
+    "Non-secure read accesses to this register from EL1 are trapped to EL2"
+   ],
+   "gold_page": "D7-2348",
+   "gold_keywords": [
+    "non",
+    "secure",
+    "read"
+   ],
+   "id": "E049"
+  },
+  {
+   "category": "concept",
+   "tool": "semantic_search",
+   "question": "Under what conditions does the statement apply when EL3 is implemented?",
+   "gold_answers": [
+    "EL3 is implemented and is using AArch64 and SCR_EL3.NS == 1"
+   ],
+   "gold_page": "D7-2410",
+   "gold_keywords": [
+    "el3",
+    "is",
+    "implemented"
+   ],
+   "id": "E050"
+  },
+  {
+   "category": "concept",
+   "tool": "semantic_search",
+   "question": "What are the possible values of the MMU enable bit for EL2&0 stage 1 address translation?",
+   "gold_answers": [
+    "Possible values of this bit are"
+   ],
+   "gold_page": "D7-2474",
+   "gold_keywords": [
+    "possible",
+    "values",
+    "of"
+   ],
+   "id": "E051"
+  },
+  {
+   "category": "concept",
+   "tool": "semantic_search",
+   "question": "To which AArch32 system register is VBAR_EL2[31:0] mapped?",
+   "gold_answers": [
+    "AArch32 System register HVBAR"
+   ],
+   "gold_page": "D7-2538",
+   "gold_keywords": [
+    "aarch32",
+    "system",
+    "register"
+   ],
+   "id": "E052"
+  },
+  {
+   "category": "concept",
+   "tool": "semantic_search",
+   "question": "What does ARM strongly recommend about bits ROMADDR[(PAsize-1):32] in AArch32 systems?",
+   "gold_answers": [
+    "bits ROMADDR[(PAsize-1):32] are zero"
+   ],
+   "gold_page": "D7-2608",
+   "gold_keywords": [
+    "bits",
+    "romaddr",
+    "pasize"
+   ],
+   "id": "E053"
+  },
+  {
+   "category": "concept",
+   "tool": "semantic_search",
+   "question": "What does the clock frequency indicate?",
+   "gold_answers": [
+    "the system counter clock frequency, in Hz"
+   ],
+   "gold_page": "D7-2673",
+   "gold_keywords": [
+    "system",
+    "counter",
+    "clock"
+   ],
+   "id": "E054"
+  },
+  {
+   "category": "concept",
+   "tool": "semantic_search",
+   "question": "Which PSTATE fields can be accessed at EL0?",
+   "gold_answers": [
+    "which PSTATE fields can be directly accessed at EL0"
+   ],
+   "gold_page": "E1-2736",
+   "gold_keywords": [
+    "which",
+    "pstate",
+    "fields"
+   ],
+   "id": "E055"
+  },
+  {
+   "category": "concept",
+   "tool": "semantic_search",
+   "question": "What does the BigEndian() pseudocode function determine?",
+   "gold_answers": [
+    "the current endianness of the data"
+   ],
+   "gold_page": "E2-2781",
+   "gold_keywords": [
+    "current",
+    "endianness",
+    "of"
+   ],
+   "id": "E056"
+  },
+  {
+   "category": "concept",
+   "tool": "semantic_search",
+   "question": "What section covers Advanced SIMD data-processing instructions?",
+   "gold_answers": [
+    "F1. 13 Advanced SIMD data-processing instructions"
+   ],
+   "gold_page": "F1-2835",
+   "gold_keywords": [
+    "f1",
+    "13",
+    "advanced"
+   ],
+   "id": "E057"
+  },
+  {
+   "category": "concept",
+   "tool": "semantic_search",
+   "question": "Who holds the copyright for the ARM manual on page F3-2929?",
+   "gold_answers": [
+    "ARM Limited or its affiliates"
+   ],
+   "gold_page": "F3-2929",
+   "gold_keywords": [
+    "arm",
+    "limited",
+    "or"
+   ],
+   "id": "E058"
+  },
+  {
+   "category": "concept",
+   "tool": "semantic_search",
+   "question": "Where can I find the alphabetical list of T32 and A32 base instructions?",
+   "gold_answers": [
+    "F5.1 Alphabetical list of T32 and A32 base instruction set instructions"
+   ],
+   "gold_page": "F5-3049",
+   "gold_keywords": [
+    "f5",
+    "1",
+    "alphabetical"
+   ],
+   "id": "E059"
+  },
+  {
+   "category": "concept",
+   "tool": "semantic_search",
+   "question": "Which mode might the LDC pseudocode trap to?",
+   "gold_answers": [
+    "Hyp mode"
+   ],
+   "gold_page": "F5-3140",
+   "gold_keywords": [
+    "hyp",
+    "mode"
+   ],
+   "id": "E060"
+  },
+  {
+   "category": "concept",
+   "tool": "semantic_search",
+   "question": "Who holds the copyright for the ARM manual on page F5-3223?",
+   "gold_answers": [
+    "ARM Limited or its affiliates"
+   ],
+   "gold_page": "F5-3223",
+   "gold_keywords": [
+    "arm",
+    "limited",
+    "or"
+   ],
+   "id": "E061"
+  },
+  {
+   "category": "concept",
+   "tool": "semantic_search",
+   "question": "Which ORR instruction variant is used inside an IT block?",
+   "gold_answers": [
+    "ORR { } { ,} , // Inside IT block"
+   ],
+   "gold_page": "F5-3307",
+   "gold_keywords": [
+    "orr",
+    "inside",
+    "it"
+   ],
+   "id": "E062"
+  },
+  {
+   "category": "concept",
+   "tool": "semantic_search",
+   "question": "What section contains the alphabetical list of T32 and A32 instructions?",
+   "gold_answers": [
+    "F5.1 Alphabetical list of T32 and A32 base instruction set instructions"
+   ],
+   "gold_page": "F5-3404",
+   "gold_keywords": [
+    "f5",
+    "1",
+    "alphabetical"
+   ],
+   "id": "E063"
+  },
+  {
+   "category": "concept",
+   "tool": "semantic_search",
+   "question": "What is the preferred syntax for the Empty Descending stack instruction?",
+   "gold_answers": [
+    "STMDA{ }{ } {!},"
+   ],
+   "gold_page": "F5-3501",
+   "gold_keywords": [
+    "stmda"
+   ],
+   "id": "E064"
+  },
+  {
+   "category": "table",
+   "tool": "keyword_search",
+   "question": "Why is HIFAR an alias of the Secure IFAR when EL3 uses AArch32?",
+   "gold_answers": [
+    "This is because when EL3 is using AArch32, HIFAR is an alias of the Secure IFAR."
+   ],
+   "gold_page": "D1-1891",
+   "gold_keywords": [
+    "this",
+    "is",
+    "because"
+   ],
+   "id": "E065"
+  },
+  {
+   "category": "table",
+   "tool": "read_chunk",
+   "question": "What is the resultant shareability if stage 1 is Non-shareable and stage 2 is Outer Shareable?",
+   "gold_answers": [
+    "Outer Shareable"
+   ],
+   "gold_page": "D4-2097",
+   "gold_keywords": [
+    "outer",
+    "shareable"
+   ],
+   "id": "E066"
+  },
+  {
+   "category": "table",
+   "tool": "keyword_search",
+   "question": "What does a status bit value of 1 indicate for the floating-point overflow exception?",
+   "gold_answers": [
+    "Overflow floating-point exception occurred during execution of the reported instruction."
+   ],
+   "gold_page": "D7-2282",
+   "gold_keywords": [
+    "overflow",
+    "floating",
+    "point"
+   ],
+   "id": "E067"
+  },
+  {
+   "category": "table",
+   "tool": "read_chunk",
+   "question": "What does the value 0001 add to the ARM instruction set?",
+   "gold_answers": [
+    "Adds the LDM (exception return), LDM (user registers), and STM (user registers) instruction versions."
+   ],
+   "gold_page": "D7-2358",
+   "gold_keywords": [
+    "adds",
+    "ldm",
+    "exception"
+   ],
+   "id": "E068"
+  },
+  {
+   "category": "table",
+   "tool": "keyword_search",
+   "question": "What is the Accessibility setting for EL1 when NS=1 and TGE=0?",
+   "gold_answers": [
+    "RW"
+   ],
+   "gold_page": "D7-2406",
+   "gold_keywords": [
+    "rw"
+   ],
+   "id": "E069"
+  },
+  {
+   "category": "table",
+   "tool": "read_chunk",
+   "question": "What type of memory is described by code 01?",
+   "gold_answers": [
+    "Normal memory, Outer Write-Back Read-Allocate Write-Allocate Cacheable"
+   ],
+   "gold_page": "D7-2493",
+   "gold_keywords": [
+    "normal",
+    "memory",
+    "outer"
+   ],
+   "id": "E070"
+  },
+  {
+   "category": "table",
+   "tool": "keyword_search",
+   "question": "What is the accessibility of the control when E2H is x, TGE is 0, and NS is 1 at EL1?",
+   "gold_answers": [
+    "RW"
+   ],
+   "gold_page": "D7-2596",
+   "gold_keywords": [
+    "rw"
+   ],
+   "id": "E071"
+  },
+  {
+   "category": "table",
+   "tool": "read_chunk",
+   "question": "What is the value of op1 for CNTP_CVAL_EL0?",
+   "gold_answers": [
+    "011"
+   ],
+   "gold_page": "D7-2700",
+   "gold_keywords": [
+    "011"
+   ],
+   "id": "E072"
+  },
+  {
+   "category": "table",
+   "tool": "keyword_search",
+   "question": "What instruction corresponds to decode field L value 0?",
+   "gold_answers": [
+    "STRH (immediate)"
+   ],
+   "gold_page": "F3-2879",
+   "gold_keywords": [
+    "strh",
+    "immediate"
+   ],
+   "id": "E073"
+  },
+  {
+   "category": "table",
+   "tool": "read_chunk",
+   "question": "What instruction is decoded when o1=1 and o2=0?",
+   "gold_answers": [
+    "SMC"
+   ],
+   "gold_page": "F3-2920",
+   "gold_keywords": [
+    "smc"
+   ],
+   "id": "E074"
+  },
+  {
+   "category": "table",
+   "tool": "keyword_search",
+   "question": "What is the bit pattern for the 'cond' field in the instruction encoding?",
+   "gold_answers": [
+    "31 28"
+   ],
+   "gold_page": "F4-2967",
+   "gold_keywords": [
+    "31",
+    "28"
+   ],
+   "id": "E075"
+  },
+  {
+   "category": "table",
+   "tool": "read_chunk",
+   "question": "What happens if the PC is used as the destination register in the ADD variant?",
+   "gold_answers": [
+    "the instruction is a branch to the address calculated by the operation"
+   ],
+   "gold_page": "F5-3028",
+   "gold_keywords": [
+    "instruction",
+    "is",
+    "branch"
+   ],
+   "id": "E076"
+  },
+  {
+   "category": "table",
+   "tool": "keyword_search",
+   "question": "Which bits correspond to the fields Rn and Rt in the table?",
+   "gold_answers": [
+    "Rn Rt"
+   ],
+   "gold_page": "F5-3129",
+   "gold_keywords": [
+    "rn",
+    "rt"
+   ],
+   "id": "E077"
+  },
+  {
+   "category": "table",
+   "tool": "read_chunk",
+   "question": "What is the bit range for the Rt field in the table?",
+   "gold_answers": [
+    "15 14 13 12 11 10 9"
+   ],
+   "gold_page": "F5-3228",
+   "gold_keywords": [
+    "15",
+    "14",
+    "13"
+   ],
+   "id": "E078"
+  },
+  {
+   "category": "table",
+   "tool": "keyword_search",
+   "question": "What is the bit range for the 'imm5' field in the instruction encoding?",
+   "gold_answers": [
+    "16 15 14 13 12"
+   ],
+   "gold_page": "F5-3318",
+   "gold_keywords": [
+    "16",
+    "15",
+    "14"
+   ],
+   "id": "E079"
+  },
+  {
+   "category": "table",
+   "tool": "read_chunk",
+   "question": "What is the bit pattern for bits 15 to 11 in the table?",
+   "gold_answers": [
+    "1 0"
+   ],
+   "gold_page": "F5-3413",
+   "gold_keywords": [
+    "1",
+    "0"
+   ],
+   "id": "E080"
+  },
+  {
+   "category": "table",
+   "tool": "keyword_search",
+   "question": "What field in the table specifies the base register for the instruction?",
+   "gold_answers": [
+    "Rn"
+   ],
+   "gold_page": "F5-3506",
+   "gold_keywords": [
+    "rn"
+   ],
+   "id": "E081"
+  },
+  {
+   "category": "figure",
+   "tool": "image_read",
+   "question": "At which Exception Level does the Secure monitor operate?",
+   "gold_answers": [
+    "EL3 Secure monitor"
+   ],
+   "gold_page": "D1-1899",
+   "gold_keywords": [
+    "el3",
+    "secure",
+    "monitor"
+   ],
+   "id": "E082"
+  },
+  {
+   "category": "figure",
+   "tool": "image_read",
+   "question": "Which bits in the descriptor are reserved for software use?",
+   "gold_answers": [
+    "Reserved for software use"
+   ],
+   "gold_page": "D4-2068",
+   "gold_keywords": [
+    "reserved",
+    "for",
+    "software"
+   ],
+   "id": "E083"
+  },
+  {
+   "category": "figure",
+   "tool": "image_read",
+   "question": "What bits in the register are labeled as RES0?",
+   "gold_answers": [
+    "63 44 43 40 39 4 3 0 RES0"
+   ],
+   "gold_page": "D7-2317",
+   "gold_keywords": [
+    "63",
+    "44",
+    "43"
+   ],
+   "id": "E084"
+  },
+  {
+   "category": "figure",
+   "tool": "image_read",
+   "question": "Which bit in the register indicates the WXN feature?",
+   "gold_answers": [
+    "WXN"
+   ],
+   "gold_page": "D7-2456",
+   "gold_keywords": [
+    "wxn"
+   ],
+   "id": "E085"
+  },
+  {
+   "category": "figure",
+   "tool": "image_read",
+   "question": "Which bit indicates the 'TXfull' status in the register?",
+   "gold_answers": [
+    "TXfull"
+   ],
+   "gold_page": "D7-2610",
+   "gold_keywords": [
+    "txfull"
+   ],
+   "id": "E086"
+  },
+  {
+   "category": "figure",
+   "tool": "image_read",
+   "question": "What is the value of item_01 in the third column?",
+   "gold_answers": [
+    "5"
+   ],
+   "gold_page": "F2-2859",
+   "gold_keywords": [
+    "5"
+   ],
+   "id": "E087"
+  },
+  {
+   "category": "figure",
+   "tool": "image_read",
+   "question": "What is the value of item_01 at the data point labeled 1211?",
+   "gold_answers": [
+    "0"
+   ],
+   "gold_page": "F4-2975",
+   "gold_keywords": [
+    "0"
+   ],
+   "id": "E088"
+  },
+  {
+   "category": "figure",
+   "tool": "image_read",
+   "question": "What is the label of the immediate value field shown in the figure?",
+   "gold_answers": [
+    "imm6"
+   ],
+   "gold_page": "F5-3121",
+   "gold_keywords": [
+    "imm6"
+   ],
+   "id": "E089"
+  },
+  {
+   "category": "negative",
+   "tool": "any",
+   "question": "What is the die area of the processor in square millimetres?",
+   "gold_answers": [
+    "no",
+    "not in this document",
+    "does not"
+   ],
+   "gold_keywords": [],
+   "id": "E090"
+  },
+  {
+   "category": "negative",
+   "tool": "any",
+   "question": "Which company manufactured this specific silicon chip?",
+   "gold_answers": [
+    "no",
+    "not in this document",
+    "does not"
+   ],
+   "gold_keywords": [],
+   "id": "E091"
+  },
+  {
+   "category": "negative",
+   "tool": "any",
+   "question": "What is the typical power consumption in milliwatts?",
+   "gold_answers": [
+    "no",
+    "not in this document",
+    "does not"
+   ],
+   "gold_keywords": [],
+   "id": "E092"
+  },
+  {
+   "category": "negative",
+   "tool": "any",
+   "question": "What is the pinout of the JTAG debug connector?",
+   "gold_answers": [
+    "no",
+    "not in this document",
+    "does not"
+   ],
+   "gold_keywords": [],
+   "id": "E093"
+  },
+  {
+   "category": "negative",
+   "tool": "any",
+   "question": "Which physical GPIO pins are used for the debug UART?",
+   "gold_answers": [
+    "no",
+    "not in this document",
+    "does not"
+   ],
+   "gold_keywords": [],
+   "id": "E094"
+  },
+  {
+   "category": "negative",
+   "tool": "any",
+   "question": "What is the maximum clock frequency in MHz for this part?",
+   "gold_answers": [
+    "no",
+    "not in this document",
+    "does not"
+   ],
+   "gold_keywords": [],
+   "id": "E095"
+  },
+  {
+   "category": "negative",
+   "tool": "any",
+   "question": "What is the unit price of this processor?",
+   "gold_answers": [
+    "no",
+    "not in this document",
+    "does not"
+   ],
+   "gold_keywords": [],
+   "id": "E096"
+  },
+  {
+   "category": "negative",
+   "tool": "any",
+   "question": "What is the operating temperature range in degrees Celsius?",
+   "gold_answers": [
+    "no",
+    "not in this document",
+    "does not"
+   ],
+   "gold_keywords": [],
+   "id": "E097"
+  },
+  {
+   "category": "negative",
+   "tool": "any",
+   "question": "What package type (BGA/QFP) is this chip delivered in?",
+   "gold_answers": [
+    "no",
+    "not in this document",
+    "does not"
+   ],
+   "gold_keywords": [],
+   "id": "E098"
+  },
+  {
+   "category": "negative",
+   "tool": "any",
+   "question": "How many transistors does this implementation contain?",
+   "gold_answers": [
+    "no",
+    "not in this document",
+    "does not"
+   ],
+   "gold_keywords": [],
+   "id": "E099"
+  }
+ ]
+}
