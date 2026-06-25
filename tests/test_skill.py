@@ -11,22 +11,27 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DOCTOR = os.path.join(ROOT, "rag", "scripts", "doctor.py")
 
 
-def _run(args, env_overrides):
+def _run(args, env_overrides, config_path=None):
     env = dict(os.environ)
     env.update(env_overrides)
-    env["RAG_CONFIG"] = os.path.join(ROOT, "config.yaml")
+    env["RAG_CONFIG"] = config_path or os.path.join(ROOT, "config.yaml")
     return subprocess.run([sys.executable, DOCTOR] + args,
                           cwd=ROOT, env=env, capture_output=True, text=True)
 
 
 def test_g1_keys_check_fails_when_key_removed():
-    # OPENAI_API_KEY 제거 → keys 체크 fail, 조치 안내
-    out = _run(["--check", "keys", "--json"], {"OPENAI_API_KEY": ""})
-    # 마지막 JSON 라인 파싱
+    # provider=openai 에서 OPENAI_API_KEY 제거 → keys 체크 fail. engine.root="." 유지 위해 ROOT에 임시 config.
+    p = os.path.join(ROOT, ".test_openai_config.yaml")
+    base = open(os.path.join(ROOT, "config.yaml"), encoding="utf-8").read()
+    open(p, "w", encoding="utf-8").write(base.replace("provider: claude_code", "provider: openai"))
+    try:
+        out = _run(["--check", "keys", "--json"], {"OPENAI_API_KEY": ""}, p)
+    finally:
+        os.remove(p)
     lines = [l for l in out.stdout.strip().splitlines() if l.startswith("{")]
     rec = json.loads(lines[-1])
     assert rec["name"] == "keys" and rec["status"] == "fail"
-    assert "OPENAI_API_KEY" in rec["msg"]
+    assert "OPENAI_API_KEY" in (rec["msg"] + rec.get("fix", ""))
 
 
 def test_g1_index_check_fails_without_build():
