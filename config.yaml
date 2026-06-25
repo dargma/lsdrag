@@ -1,0 +1,37 @@
+# config.yaml — 경로·모델·엔드포인트의 단일 출처.
+# 키(시크릿)는 여기 두지 마라. 환경변수/.env 에서만 읽는다.
+# 단계별로 묶었다: [1 파싱] [2 DB 구축] [3 검색]. 단계를 통째로 바꾸려면 그 블록만 손댄다.
+
+# ── [1. 파싱] 파서 (교체 경계: adapter.py + 아래 블록) ────────────────
+parser:
+  provider: upstage
+  endpoint: "https://api.upstage.ai/v1/document-digitization"
+  model: "document-parse"
+  api_key_env: "UP_TOKEN"          # 키는 이 환경변수에서 읽는다 (평문 금지)
+  base64_categories: ["figure", "chart", "table"]   # 이미지로 받을 카테고리
+
+# ── [2. DB 구축] 임베더 + 저장 경로 (교체 경계: embedding.model) ───────
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2"   # 예: "Qwen/Qwen3-Embedding-0.6B"
+  # 작은 모델이라 로컬 자동 로드. 별도 서빙·GPU 불필요.
+
+engine:
+  root: "."                         # 엔진(src/) 위치. 배포된 skill이 이걸로 엔진을 찾는다(절대경로 하드코딩 금지)
+
+paths:
+  docs_in:     "./data/docs_in"     # 입력 PDF (분할본)
+  ir_out:      "./data/ir"          # 파싱 산출 IR(JSON)
+  images_out:  "./data/images"      # figure/chart 이미지 (image_path가 가리킴)
+  index:       "./data/index"       # 벡터 인덱스
+  page_index:  "./data/page_index"  # 구조 메타데이터 인덱스
+
+# ── [3. 검색] Reader/VLM + agent loop (교체 경계: reader 블록) ─────────
+reader:
+  provider: openai
+  endpoint: "https://api.openai.com/v1/chat/completions"
+  model: "gpt-4.1-mini"             # 멀티모달 → VLM 겸용 (별도 VLM 백엔드 없음)
+  api_key_env: "OPENAI_API_KEY"
+
+agent:
+  max_loops: 10
+  max_token_budget: 128000

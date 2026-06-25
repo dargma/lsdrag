@@ -1,0 +1,12 @@
+# 시크릿 — 절대 커밋 금지
+.env
+# 데이터·산출물
+/data/
+/examples/parts/
+examples/*.pdf
+# 파이썬
+__pycache__/
+*.pyc
+.venv/
+__pycache__/
+*.pyc
