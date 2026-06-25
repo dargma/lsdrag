@@ -1,7 +1,7 @@
 """질의 파이프라인 진입점 (07). 인덱스 로드 → 5 tool registry → BaseAgent.run.
 
 - 이미지 추적: vendor base.py의 AgentContext 참조를 ImageAgentContext로 교체(loop·vendor 불변).
-- Reader = OpenAI(GPT-4.1 mini) 또는 Claude(Anthropic) — 설치 시 config.reader.provider로 선택. image_read VLM도 동일.
+- Reader = claude_code(내장)/openai/anthropic — 설치 시 config.reader.provider로 선택. image_read VLM도 동일.
 """
 from __future__ import annotations
 
@@ -20,6 +20,26 @@ from src.retrieval import default_tools
 
 # loop·vendor를 건드리지 않고 이미지 추적 컨텍스트를 주입(서브클래스 우선).
 _agent_base.AgentContext = ImageAgentContext
+
+
+def _patch_fp16_embedder():
+    """쿼리 임베더(vendor semantic_search)를 CUDA에서 fp16으로 로드 — 대형 임베더(8B 등) OOM 회피.
+    소형 모델엔 품질 영향 무시 가능. vendor 파일은 수정하지 않고 모듈 참조만 교체."""
+    try:
+        import arag.tools.semantic_search as _ss
+        import torch
+        _orig = _ss.SentenceTransformer
+
+        def _fp16(model_name_or_path, **kw):
+            if torch.cuda.is_available() and "model_kwargs" not in kw:
+                kw["model_kwargs"] = {"torch_dtype": "float16"}
+            return _orig(model_name_or_path, **kw)
+        _ss.SentenceTransformer = _fp16
+    except Exception:
+        pass
+
+
+_patch_fp16_embedder()
 
 
 def _reader_key(rc: Dict[str, str]) -> str:

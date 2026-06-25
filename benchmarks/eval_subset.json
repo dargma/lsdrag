@@ -1,0 +1,293 @@
+{
+ "doc": "ARMv8-Reference-Manual (expanded parse, data/ir_full)",
+ "note": "claude_code vs openai 비교용 균형 서브셋",
+ "items": [
+  {
+   "category": "figure-loc",
+   "tool": "page_index_search",
+   "question": "Which printed page label has the figure/diagram in the section about 'D1.21.1 Implication of Exception levels implemented'?",
+   "gold_answers": [
+    "D1-1899"
+   ],
+   "gold_page": "D1-1899",
+   "gold_keywords": [
+    "D1.21.1"
+   ],
+   "id": "E001"
+  },
+  {
+   "category": "figure-loc",
+   "tool": "page_index_search",
+   "question": "Which printed page label has the figure/diagram in the section about 'For the level 1 descriptor n is 42, and for the level 2 desc'?",
+   "gold_answers": [
+    "D4-2061"
+   ],
+   "gold_page": "D4-2061",
+   "gold_keywords": [
+    "For"
+   ],
+   "id": "E002"
+  },
+  {
+   "category": "figure-loc",
+   "tool": "page_index_search",
+   "question": "Which printed page label has the figure/diagram in the section about 'D7 AArch64 System Register Descriptions D7.2 General system '?",
+   "gold_answers": [
+    "D7-2259"
+   ],
+   "gold_page": "D7-2259",
+   "gold_keywords": [
+    "D7"
+   ],
+   "id": "E003"
+  },
+  {
+   "category": "table-loc",
+   "tool": "keyword_search",
+   "question": "Which printed page label contains the table mentioning 'PMCNTENSET[x] == 0'?",
+   "gold_answers": [
+    "D5-2150"
+   ],
+   "gold_page": "D5-2150",
+   "gold_keywords": [
+    "PMCNTENSET[x]"
+   ],
+   "id": "E016"
+  },
+  {
+   "category": "table-loc",
+   "tool": "keyword_search",
+   "question": "Which printed page label contains the table mentioning 'Support for FCSE.'?",
+   "gold_answers": [
+    "D7-2372"
+   ],
+   "gold_page": "D7-2372",
+   "gold_keywords": [
+    "Support"
+   ],
+   "id": "E017"
+  },
+  {
+   "category": "table-loc",
+   "tool": "keyword_search",
+   "question": "Which printed page label contains the table mentioning 'Implemented and disabled. ExternalSecureInvasiveDebugEnabled() == FALSE.'?",
+   "gold_answers": [
+    "D7-2555"
+   ],
+   "gold_page": "D7-2555",
+   "gold_keywords": [
+    "Implemented"
+   ],
+   "id": "E018"
+  },
+  {
+   "category": "heading-loc",
+   "tool": "page_index_search",
+   "question": "On which printed page label is the section titled 'D1 The AArch64 System Level Programmers’ Model D1.20 Interprocessing'?",
+   "gold_answers": [
+    "D1-1891"
+   ],
+   "gold_page": "D1-1891",
+   "gold_keywords": [
+    "D1"
+   ],
+   "id": "E024"
+  },
+  {
+   "category": "heading-loc",
+   "tool": "page_index_search",
+   "question": "On which printed page label is the section titled 'Whether the address accessed:'?",
+   "gold_answers": [
+    "D3-1991"
+   ],
+   "gold_page": "D3-1991",
+   "gold_keywords": [
+    "Whether"
+   ],
+   "id": "E025"
+  },
+  {
+   "category": "heading-loc",
+   "tool": "page_index_search",
+   "question": "On which printed page label is the section titled 'Memory type and Cacheability'?",
+   "gold_answers": [
+    "D4-2090"
+   ],
+   "gold_page": "D4-2090",
+   "gold_keywords": [
+    "Memory"
+   ],
+   "id": "E026"
+  },
+  {
+   "category": "concept",
+   "tool": "semantic_search",
+   "question": "What section covers Interprocessing in the AArch64 manual?",
+   "gold_answers": [
+    "D1.20 Interprocessing"
+   ],
+   "gold_page": "D1-1891",
+   "gold_keywords": [
+    "d1",
+    "20",
+    "interprocessing"
+   ],
+   "id": "E040"
+  },
+  {
+   "category": "concept",
+   "tool": "semantic_search",
+   "question": "What happens if the access size differs from the address region being watched?",
+   "gold_answers": [
+    "The access size is smaller or larger than the address region being watched."
+   ],
+   "gold_page": "D2-1947",
+   "gold_keywords": [
+    "access",
+    "size",
+    "is"
+   ],
+   "id": "E041"
+  },
+  {
+   "category": "concept",
+   "tool": "semantic_search",
+   "question": "How is a synchronous external abort on an instruction fetch handled?",
+   "gold_answers": [
+    "using the Instruction Abort exception"
+   ],
+   "gold_page": "D3-1997",
+   "gold_keywords": [
+    "using",
+    "instruction",
+    "abort"
+   ],
+   "id": "E042"
+  },
+  {
+   "category": "table",
+   "tool": "keyword_search",
+   "question": "Why is HIFAR an alias of the Secure IFAR when EL3 uses AArch32?",
+   "gold_answers": [
+    "This is because when EL3 is using AArch32, HIFAR is an alias of the Secure IFAR."
+   ],
+   "gold_page": "D1-1891",
+   "gold_keywords": [
+    "this",
+    "is",
+    "because"
+   ],
+   "id": "E065"
+  },
+  {
+   "category": "table",
+   "tool": "read_chunk",
+   "question": "What is the resultant shareability if stage 1 is Non-shareable and stage 2 is Outer Shareable?",
+   "gold_answers": [
+    "Outer Shareable"
+   ],
+   "gold_page": "D4-2097",
+   "gold_keywords": [
+    "outer",
+    "shareable"
+   ],
+   "id": "E066"
+  },
+  {
+   "category": "table",
+   "tool": "keyword_search",
+   "question": "What does a status bit value of 1 indicate for the floating-point overflow exception?",
+   "gold_answers": [
+    "Overflow floating-point exception occurred during execution of the reported instruction."
+   ],
+   "gold_page": "D7-2282",
+   "gold_keywords": [
+    "overflow",
+    "floating",
+    "point"
+   ],
+   "id": "E067"
+  },
+  {
+   "category": "figure",
+   "tool": "image_read",
+   "question": "At which Exception Level does the Secure monitor operate?",
+   "gold_answers": [
+    "EL3 Secure monitor"
+   ],
+   "gold_page": "D1-1899",
+   "gold_keywords": [
+    "el3",
+    "secure",
+    "monitor"
+   ],
+   "id": "E082"
+  },
+  {
+   "category": "figure",
+   "tool": "image_read",
+   "question": "Which bits in the descriptor are reserved for software use?",
+   "gold_answers": [
+    "Reserved for software use"
+   ],
+   "gold_page": "D4-2068",
+   "gold_keywords": [
+    "reserved",
+    "for",
+    "software"
+   ],
+   "id": "E083"
+  },
+  {
+   "category": "figure",
+   "tool": "image_read",
+   "question": "What bits in the register are labeled as RES0?",
+   "gold_answers": [
+    "63 44 43 40 39 4 3 0 RES0"
+   ],
+   "gold_page": "D7-2317",
+   "gold_keywords": [
+    "63",
+    "44",
+    "43"
+   ],
+   "id": "E084"
+  },
+  {
+   "category": "negative",
+   "tool": "any",
+   "question": "What is the die area of the processor in square millimetres?",
+   "gold_answers": [
+    "no",
+    "not in this document",
+    "does not"
+   ],
+   "gold_keywords": [],
+   "id": "E090"
+  },
+  {
+   "category": "negative",
+   "tool": "any",
+   "question": "Which company manufactured this specific silicon chip?",
+   "gold_answers": [
+    "no",
+    "not in this document",
+    "does not"
+   ],
+   "gold_keywords": [],
+   "id": "E091"
+  },
+  {
+   "category": "negative",
+   "tool": "any",
+   "question": "What is the typical power consumption in milliwatts?",
+   "gold_answers": [
+    "no",
+    "not in this document",
+    "does not"
+   ],
+   "gold_keywords": [],
+   "id": "E092"
+  }
+ ]
+}

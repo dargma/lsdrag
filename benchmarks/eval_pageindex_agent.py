@@ -138,7 +138,7 @@ def main():
     head = (f"\n**요약: {n_pass}/{n_total} 케이스 의도 충족.**  "
             + " · ".join(f"{c}:{v.split()[0]}" for c, d, v in summary) + "\n")
     lines.insert(2, head)
-    out_dir = os.path.join(cfg.base_dir, "examples")
+    out_dir = os.path.join(cfg.base_dir, "benchmarks", "results")
     os.makedirs(out_dir, exist_ok=True)
     report = os.path.join(out_dir, "EVAL_pageindex_agent.md")
     with open(report, "w", encoding="utf-8") as f:

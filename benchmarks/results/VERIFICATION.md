@@ -126,7 +126,7 @@ export UP_TOKEN=...  OPENAI_API_KEY=...
 python scripts/split_pdf.py --input <manual.pdf> --ranges "<figure+table 구간>" --out examples/parts/
 cp examples/parts/<part>.pdf data/docs_in/
 python -m src.indexing.build --config config.yaml          # 파싱→DB
-python tests/eval_pageindex_agent.py                       # 20 케이스 라이브 평가 → EVAL_*.md
+python benchmarks/eval_pageindex_agent.py                       # 20 케이스 라이브 평가 → EVAL_*.md
 ```
 
 ---

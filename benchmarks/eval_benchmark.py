@@ -15,8 +15,8 @@ import os
 import string
 import sys
 
-from src.config import Config
 from src.agent.runner import build_agent
+from src.config import Config
 
 _ARTICLES = {"a", "an", "the"}
 
@@ -73,22 +73,32 @@ def main():
 
     # 공정한 F1을 위해 간결 답변 요청(생성형↔짧은 gold 불일치 완화). 검색 trajectory엔 영향 없음.
     concise = " Answer in as few words as possible (just the key term/label, no explanation)."
+    import time
     from collections import defaultdict
     rows, sum_f1, sum_em, sum_rec, n = [], 0.0, 0, 0, 0
+    sum_loops, sum_time = 0, 0.0
     by_cat, by_tool = defaultdict(lambda: [0, 0.0, 0, 0]), defaultdict(lambda: [0, 0.0, 0, 0])
     for it in data["items"]:
+        t0 = time.time()
         res = agent.run(it["question"] + concise)
+        dt = time.time() - t0
+        loops = res.get("loops") or len(res.get("trajectory", [])) or 1   # LLM 호출 수(루프)
         ans = res.get("answer", "") or ""
         retrieved = " ".join(str(t.get("tool_result", "")) for t in res.get("trajectory", []))
         rec = retrieval_recall(it, retrieved)
         f1, em = f1_em(ans, it["gold_answers"])
         sum_f1 += f1; sum_em += em; sum_rec += rec; n += 1
+        sum_loops += loops; sum_time += dt
         for agg, k in ((by_cat, it.get("category", "?")), (by_tool, it.get("tool", "?"))):
             agg[k][0] += 1; agg[k][1] += f1; agg[k][2] += em; agg[k][3] += rec
         rows.append((it["id"], it.get("category", ""), it.get("tool", ""), rec, f1, em, ans[:80]))
         print(f"{it['id']} [{it.get('category')}/{it.get('tool')}]: recall={rec} F1={f1:.2f} EM={em}", flush=True)
 
     mr, mf, me = sum_rec / n, sum_f1 / n, sum_em / n
+    ml, mt = sum_loops / n, sum_time / n
+    # 머신리더블 한 줄(비교표 집계용)
+    print(f"SUMMARY provider={provider} n={n} recall={mr:.4f} f1={mf:.4f} em={me:.4f} "
+          f"avg_llm_calls={ml:.2f} avg_time_s={mt:.2f}", flush=True)
 
     def _bd(agg):
         out = []
@@ -101,7 +111,9 @@ def main():
              f"\n## 집계\n\n| 지표 | 값 |\n|------|----|\n"
              f"| 검색 Recall (gold 출처 검색율) | **{mr:.2%}** |\n"
              f"| 답변 F1 (토큰, gold max) | **{mf:.3f}** |\n"
-             f"| 답변 EM (완전/포함 일치) | **{me:.2%}** |\n",
+             f"| 답변 EM (완전/포함 일치) | **{me:.2%}** |\n"
+             f"| 평균 LLM 호출 수 (루프) | **{ml:.2f}** |\n"
+             f"| 평균 답변 시간 (초) | **{mt:.2f}** |\n",
              "\n## 카테고리별 (컨텍스트: 표/그림/텍스트)\n\n| category | n | Recall | F1 | EM |\n|----|:-:|:-:|:-:|:-:|",
              _bd(by_cat),
              "\n## 도구별 (의도 도구 커버리지)\n\n| tool | n | Recall | F1 | EM |\n|----|:-:|:-:|:-:|:-:|",
@@ -109,7 +121,7 @@ def main():
              "\n## 문항별\n\n| ID | cat | tool | Recall | F1 | EM | 답변(발췌) |\n|----|----|----|:-:|:-:|:-:|----|"]
     for cid, cat, tool, rec, f1, em, a in rows:
         lines.append(f"| {cid} | {cat} | {tool} | {rec} | {f1:.2f} | {em} | {a.replace(chr(124), '/')} |")
-    out = os.path.join(cfg.base_dir, "examples", "BENCHMARK.md")
+    out = os.environ.get("RAG_BENCH_OUT") or os.path.join(cfg.base_dir, "benchmarks", "results", "BENCHMARK.md")
     os.makedirs(os.path.dirname(out), exist_ok=True)
     open(out, "w", encoding="utf-8").write("\n".join(lines))
     print(f"\n=== recall={mr:.2%} F1={mf:.3f} EM={me:.2%} → {out} ===")

@@ -62,8 +62,9 @@ vendoring 기준은 단 하나: **"우리 파이프라인(파싱→DB→검색) 
 
 이 repo에는 **두 종류**의 파일이 섞여 있다. 절대 뒤섞지 마라.
 
-- **개발 전용 (지금 만들 때만, 배포 금지)**: `CLAUDE.md`, `PROGRESS.md`, `docs/`, `_MASTER.md`, `tests/`.
-  → 엔진을 *만드는* 나를 위한 지시서·추적·검증. **배포되는 skill에는 한 줄도 들어가면 안 된다.**
+- **개발 전용 (지금 만들 때만, 배포 금지)**: `CLAUDE.md`, `PROGRESS.md`, `docs/`, `_MASTER.md`, `tests/`, `benchmarks/`.
+  → 엔진을 *만드는* 나를 위한 지시서·추적·검증·평가. **배포되는 skill에는 한 줄도 들어가면 안 된다.**
+  → `benchmarks/`는 **내부 테스트·평가 전용**(eval 하네스·셋·결과). 엔진/skill 런타임이 import하지 않는다.
 - **배포 산출물 (사용자에게 가는 것)**:
   - **skill** = `rag/`(SKILL.md, scripts/) → `~/.claude/skills/rag/`로 복사. **얇은 껍데기.**
   - **엔진** = `src/` + `config.yaml`(+ `.env`) → 사용자가 둔 위치. skill이 config로 가리킨다.

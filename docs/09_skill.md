@@ -25,7 +25,7 @@
 ## 패키징 경계 (개발 지시서는 배포 금지 — 대원칙 5)
 배포되는 skill에는 **개발 전용 파일이 한 줄도 들어가면 안 된다.**
 - **skill에 들어가는 것**: `rag/SKILL.md`, `rag/scripts/*`(run·docs·doctor·uninstall), 그리고 엔진(`src/`)·`config.yaml`을 가리키는 참조.
-- **절대 들어가지 않는 것**: `CLAUDE.md`, `PROGRESS.md`, `docs/`, `_MASTER.md`, `tests/`, `examples/`.
+- **절대 들어가지 않는 것**: `CLAUDE.md`, `PROGRESS.md`, `docs/`, `_MASTER.md`, `tests/`, `examples/`, `benchmarks/`(내부 평가).
 - `rag/` 스크립트는 **`docs/`·`CLAUDE.md`를 런타임에 읽지 않는다.** `src/`(엔진) + `config.yaml`에만 의존 → 지시서 없이 단독 동작.
 - 엔진 위치는 `config.yaml`의 `engine.root`로 해석(절대경로 하드코딩 금지). skill 위치는 `${CLAUDE_SKILL_DIR}`.
 - **게이트 G7(분리)**: `~/.claude/skills/rag/`에 개발 전용 파일이 0개. skill만으로 스모크 질의가 답을 낸다(docs/ 삭제해도 동작).

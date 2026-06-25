@@ -46,7 +46,7 @@
 
 ## 개발/배포 분리 (대원칙 5)
 
-- **개발 전용 (배포 금지)**: `CLAUDE.md`, `PROGRESS.md`, `docs/`, `_MASTER.md`, `tests/`, `examples/`.
+- **개발 전용 (배포 금지)**: `CLAUDE.md`, `PROGRESS.md`, `docs/`, `_MASTER.md`, `tests/`, `examples/`, `benchmarks/`(내부 평가).
 - **배포 산출물**: skill=`rag/` → `~/.claude/skills/rag/` · 엔진=`src/`+`config.yaml`+`.env` · 안내=`README.md`,`INSTALL.md`.
 - `rag/` 스크립트는 `docs/`·`CLAUDE.md`를 런타임에 안 읽는다. `src/`+`config.yaml`에만 의존. (09_skill G7로 검증)
 

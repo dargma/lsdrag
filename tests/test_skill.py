@@ -52,7 +52,7 @@ def test_g2_deps_and_skill_pass():
 
 def test_g7_packaging_no_dev_files():
     # 배포 대상 스킬 패밀리에 개발 전용 파일이 섞이지 않았는지(대원칙 5)
-    forbidden = {"CLAUDE.md", "PROGRESS.md", "docs", "_MASTER.md", "tests", "examples", "src"}
+    forbidden = {"CLAUDE.md", "PROGRESS.md", "docs", "_MASTER.md", "tests", "examples", "src", "benchmarks"}
     bad = ("CLAUDE.md", "PROGRESS.md", "_MASTER", "open('docs", 'open("docs', "/docs/0")
     for skill in ("rag", "rag-build", "rag-parse"):
         sdir = os.path.join(ROOT, skill)
