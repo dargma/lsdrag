@@ -1,5 +1,5 @@
 <h1 align="center">LSD-RAG</h1>
-<p align="center"><b><ins>L</ins>ocate · <ins>S</ins>tructure · <ins>D</ins>iagram —<br/>기술 문서에서 어느 페이지·어느 그림·표 안의 값까지 짚고, 다이어그램까지 읽어주는 agentic RAG.<br/>Claude Code <code>/rag</code> 한 줄로.</b></p>
+<p align="center"><b>기술 문서에서 어느 페이지·어느 그림·표 안의 값까지 짚고,<br/>다이어그램까지 읽어주는 agentic RAG. Claude Code <code>/rag</code> 한 줄로.</b></p>
 
 <p align="center">
   <img alt="License" src="https://img.shields.io/badge/license-MIT-green">
@@ -55,24 +55,17 @@ DB는 `config.yaml`의 `paths.*`에 다음 형태로 저장된다:
 | `page_index/page_index.json` | 구조 인덱스(page·figure·table·heading + chunk_id + image_path) |
 | `index/manifest.json` | doc_id → chunk_ids·image_paths (증분 add/remove용) |
 | `data/images/*.png` | **figure만** crop 저장(표는 HTML 구조로 chunk에 보존, 이미지 불필요) |
-문서를 더 넣거나 빼려면 전체 재빌드 없이:
-```bash
-python rag/scripts/docs.py add  새문서.pdf      # 추가(파싱→인덱스 증분)
-python rag/scripts/docs.py remove <doc_id>      # 제거
-python rag/scripts/docs.py list                 # 현재 색인된 문서
-```
 
-> Claude Code 안에서는 슬래시 커맨드로도: `/rag-parse <pdf>`(파싱 점검) · `/rag-build`(DB 빌드·문서 add/remove) · `/rag <질문>`(검색).
+### 3) Claude Code 스킬 명령어
+설치 후 Claude Code 대화창에 아래 슬래시 명령을 입력하면 된다(내부 복잡성은 감춰진다).
 
-### 3) 질문하기
-```
-> /rag SCTLR_EL1 레지스터는 무엇을 제어하나?
-< 시스템 동작 제어… (근거 페이지와 함께)
+| 명령 | 하는 일 | 예시 |
+|------|---------|------|
+| `/rag-parse <pdf>` | **파싱 점검** — 문서를 IR로 변환해 표·그림 추출 상태 확인(빌드 전) | `/rag-parse manual.pdf` |
+| `/rag-build` | **DB 빌드 / 문서 관리** — 인덱스 생성, 증분 add·remove, 현황(`--list`) | `/rag-build`<br>`/rag-build --add new.pdf`<br>`/rag-build --remove <doc_id>`<br>`/rag-build --list` |
+| `/rag <질문>` | **검색·질의응답** — 에이전트가 page_index·VLM을 자동으로 골라 답 | `/rag SCTLR_EL1 비트필드는 몇 페이지 어느 figure에 있나?` |
 
-> /rag SCTLR_EL1 비트필드는 몇 페이지 어느 figure에 있나?
-< page_index_search로 위치 특정 → 13페이지 Figure 2.
-  그 그림을 image_read(VLM)가 읽어 비트필드(M/A/C/…)를 설명.
-```
+`/rag` 질의 시 에이전트가 어떤 단계로 도구를 호출하는지는 위 대표 그림의 trajectory를 참고.
 
 ## How it works — 실제 검색 예시 (ARM v8-A 매뉴얼)
 > 아래는 fresh clone에서 **실제 Upstage·GPT-4.1 mini로 돌린 결과**다(자세한 검증은

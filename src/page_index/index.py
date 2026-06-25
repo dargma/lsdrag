@@ -8,8 +8,8 @@ from __future__ import annotations
 
 import json
 import os
-from dataclasses import dataclass, asdict
-from typing import Any, Dict, List, Optional
+from dataclasses import asdict, dataclass
+from typing import List, Optional
 
 from src.schema import ParsedDoc
 

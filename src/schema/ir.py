@@ -5,7 +5,7 @@ JSON 직렬화/역직렬화는 무손실이어야 한다.
 """
 from __future__ import annotations
 
-from dataclasses import dataclass, field, asdict
+from dataclasses import asdict, dataclass, field
 from typing import Any, Dict, List, Optional
 
 # block_type 최소 집합 (확장 가능)

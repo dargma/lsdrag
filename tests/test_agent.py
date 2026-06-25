@@ -7,13 +7,13 @@ import json
 import os
 import tempfile
 
-import src.agent.runner as runner  # import 시 컨텍스트 패치 발생
 import arag.agent.base as agent_base
 from arag.agent.base import BaseAgent
 
+import src.agent.runner  # noqa: F401  # side effect: vendor AgentContext를 ImageAgentContext로 패치
 from src.agent.context import ImageAgentContext
 from src.page_index import PageIndex
-from src.retrieval import PageIndexSearchTool, ImageReadTool, build_registry
+from src.retrieval import ImageReadTool, PageIndexSearchTool, build_registry
 from src.schema import ParsedBlock, ParsedDoc
 
 

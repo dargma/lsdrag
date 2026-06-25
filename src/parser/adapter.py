@@ -10,7 +10,7 @@ import os
 import re
 from typing import Any, Callable, Dict, List, Optional
 
-from src.schema import ParsedBlock, ParsedDoc, IRValidationError
+from src.schema import IRValidationError, ParsedBlock, ParsedDoc
 
 # 문서의 실제 figure 라벨(예: "Figure D1-3", "Figure E2-1", "Figure 2.5") 추출용.
 # Upstage element id가 아니라 캡션에 적힌 진짜 번호를 쓴다.

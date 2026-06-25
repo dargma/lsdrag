@@ -6,10 +6,8 @@
 from __future__ import annotations
 
 import base64
-import os
 from typing import Any, Callable, Dict, Optional
 
-import src.agent  # noqa: F401  (vendor path 부트스트랩)
 import arag.agent.base as _agent_base
 from arag.agent.base import BaseAgent
 from arag.core.llm import LLMClient

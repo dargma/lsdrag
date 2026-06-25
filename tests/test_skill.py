@@ -21,9 +21,7 @@ def _run(args, env_overrides):
 
 def test_g1_keys_check_fails_when_key_removed():
     # OPENAI_API_KEY 제거 → keys 체크 fail, 조치 안내
-    env = {k: v for k, v in os.environ.items()}
-    out = _run(["--check", "keys", "--json"],
-               {**{k: os.environ.get(k, "") for k in []}, "OPENAI_API_KEY": ""})
+    out = _run(["--check", "keys", "--json"], {"OPENAI_API_KEY": ""})
     # 마지막 JSON 라인 파싱
     lines = [l for l in out.stdout.strip().splitlines() if l.startswith("{")]
     rec = json.loads(lines[-1])

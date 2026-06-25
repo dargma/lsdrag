@@ -4,7 +4,7 @@
 """
 import json
 
-from src.schema import ParsedBlock, ParsedDoc, IRValidationError
+from src.schema import IRValidationError, ParsedBlock, ParsedDoc
 
 
 def _sample() -> ParsedDoc:

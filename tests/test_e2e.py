@@ -6,13 +6,12 @@ import json
 import os
 import tempfile
 
-import src.agent.runner  # noqa: F401  (컨텍스트 패치)
 from arag.agent.base import BaseAgent
 from arag.tools.base import BaseTool
 
+import src.agent.runner  # noqa: F401  (컨텍스트 패치)
 from src.indexing import IndexStore
-from src.page_index import PageIndex
-from src.retrieval import PageIndexSearchTool, ImageReadTool, build_registry
+from src.retrieval import ImageReadTool, PageIndexSearchTool, build_registry
 from src.schema import ParsedBlock, ParsedDoc
 from tests.e2e.golden import GOLDEN_SET, grade, summarize
 from tests.test_indexing import fake_embed

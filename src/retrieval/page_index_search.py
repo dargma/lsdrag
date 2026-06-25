@@ -7,7 +7,6 @@ from __future__ import annotations
 
 from typing import Any, Dict, Optional, Tuple
 
-import src.agent  # noqa: F401  (vendor path 부트스트랩)
 from arag.tools.base import BaseTool
 
 from src.page_index import PageIndex

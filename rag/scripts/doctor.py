@@ -10,9 +10,8 @@ from __future__ import annotations
 import argparse
 import json
 import os
-import sys
 
-from _bootstrap import load_engine, find_config
+from _bootstrap import load_engine
 
 CHECKS = ["skill", "deps", "keys", "parser", "reader", "embedder", "index", "multimodal", "smoke"]
 TITLES = {

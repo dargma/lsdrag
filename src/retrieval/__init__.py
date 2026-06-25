@@ -1,11 +1,10 @@
 """검색 단계 tool 5종 (06). vendor 3종 + 신규 2종을 ToolRegistry에 등록."""
-from typing import Any, Callable, List, Optional
+from typing import Any, Callable, List
 
-import src.agent  # noqa: F401  (vendor path 부트스트랩)
 from arag.tools.registry import ToolRegistry
 
-from .page_index_search import PageIndexSearchTool
 from .image_read import ImageReadTool
+from .page_index_search import PageIndexSearchTool
 
 __all__ = ["PageIndexSearchTool", "ImageReadTool", "build_registry", "default_tools"]
 

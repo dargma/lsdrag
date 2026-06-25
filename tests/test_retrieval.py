@@ -6,11 +6,11 @@ import os
 import tempfile
 from typing import Any, Dict, Tuple
 
-import src.agent  # noqa: F401
 from arag.tools.base import BaseTool
 
+import src.agent  # noqa: F401
 from src.page_index import PageIndex
-from src.retrieval import PageIndexSearchTool, ImageReadTool, build_registry
+from src.retrieval import ImageReadTool, PageIndexSearchTool, build_registry
 from src.schema import ParsedBlock, ParsedDoc
 
 
