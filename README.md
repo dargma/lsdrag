@@ -68,8 +68,9 @@ DB는 `config.yaml`의 `paths.*`에 다음 형태로 저장된다:
 `/rag` 질의 시 에이전트가 어떤 단계로 도구를 호출하는지는 위 대표 그림의 trajectory를 참고.
 
 ## How it works — 실제 검색 예시 (ARM v8-A 매뉴얼)
-> 아래는 fresh clone에서 **실제 Upstage·GPT-4.1 mini로 돌린 결과**다(자세한 검증은
-> [`examples/REPORT.md`](examples/REPORT.md)).
+> 아래는 fresh clone에서 **실제 Upstage·GPT-4.1 mini로 돌린 결과**다.
+> **무엇을 풀고·어떤 단계로·왜 효과적인지** 체계적 정리 → [`examples/VERIFICATION.md`](examples/VERIFICATION.md)
+> (원시 로그: [`REPORT.md`](examples/REPORT.md) · [`EVAL_pageindex_agent.md`](examples/EVAL_pageindex_agent.md)).
 
 **질문**: “ARM exclusive memory access 상태 전이 다이어그램 — 어디에 있고 무엇을 의미하나?”
 
