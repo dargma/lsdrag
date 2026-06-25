@@ -7,10 +7,16 @@
 ## 시작 전 설정
 **경로·모델은 `config.yaml` 한 곳**(데이터 위치를 바꾸려면 `paths.*`만 고친다. 기본은 repo 내 `./data/`).
 **키는 env만** — 평문 커밋 금지(`.env`는 gitignore).
+**Reader(LLM) 선택** — `config.yaml`의 `reader.provider`로 한 줄 선택(endpoint/model/key는 프리셋 자동):
+- `provider: openai` → GPT-4.1 mini (키 `OPENAI_API_KEY`)
+- `provider: anthropic` → **Claude**(Claude Code에서 쓰는 모델, 키 `ANTHROPIC_API_KEY`)
 ```bash
-cp .env.example .env        # 그 후 .env에 값 채우기
-export UP_TOKEN="..."       # 파서(Upstage)        ← 또는 .env에 기입
-export OPENAI_API_KEY="..." # Reader(GPT-4.1 mini)  ← 또는 .env에 기입
+cp .env.example .env         # 그 후 .env에 값 채우기
+export UP_TOKEN="..."        # 파서(Upstage)            ← 또는 .env
+# 선택한 Reader의 키만:
+export OPENAI_API_KEY="..."  # provider: openai 인 경우
+# 또는
+export ANTHROPIC_API_KEY="..." # provider: anthropic(Claude) 인 경우
 ```
 키 노출 시 즉시 재발급.
 

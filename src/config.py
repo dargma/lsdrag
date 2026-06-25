@@ -9,11 +9,37 @@ from typing import Any, Dict
 
 import yaml
 
+# Reader(LLM/VLM) 프로바이더 프리셋 — 설치 시 한 줄(reader.provider)로 선택.
+# 둘 다 OpenAI 호환 chat/completions 엔드포인트라 동일 코드로 동작(멀티모달·tool calling 지원).
+READER_PRESETS = {
+    # OpenAI GPT-4.1 mini (기본)
+    "openai": {"endpoint": "https://api.openai.com/v1/chat/completions",
+               "model": "gpt-4.1-mini", "api_key_env": "OPENAI_API_KEY"},
+    # Claude(Anthropic) — Claude Code에서 쓰는 모델을 Reader로. OpenAI 호환 엔드포인트 사용.
+    "anthropic": {"endpoint": "https://api.anthropic.com/v1/chat/completions",
+                  "model": "claude-sonnet-4-6", "api_key_env": "ANTHROPIC_API_KEY"},
+    "claude": {"endpoint": "https://api.anthropic.com/v1/chat/completions",
+               "model": "claude-sonnet-4-6", "api_key_env": "ANTHROPIC_API_KEY"},
+}
+
 
 class Config:
     def __init__(self, data: Dict[str, Any], base_dir: str) -> None:
         self._d = data
         self.base_dir = base_dir
+
+    def reader_config(self) -> Dict[str, str]:
+        """Reader 설정을 provider 프리셋 + 명시적 override로 해석.
+        사용자는 reader.provider(openai|anthropic|claude) 한 줄만 정하면 되고,
+        endpoint/model/api_key_env를 config에 적으면 그게 우선한다."""
+        prov = (self.get("reader.provider") or "openai").lower()
+        preset = dict(READER_PRESETS.get(prov, READER_PRESETS["openai"]))
+        for k in ("endpoint", "model", "api_key_env"):
+            v = self.get(f"reader.{k}")
+            if v:
+                preset[k] = v
+        preset["provider"] = prov
+        return preset
 
     @classmethod
     def load(cls, path: str = "config.yaml") -> "Config":

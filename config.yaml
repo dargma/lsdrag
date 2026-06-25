@@ -26,11 +26,14 @@ paths:
   page_index:  "./data/page_index"  # 구조 메타데이터 인덱스
 
 # ── [3. 검색] Reader/VLM + agent loop (교체 경계: reader 블록) ─────────
+# 설치 시 Reader를 선택: provider 한 줄만 바꾸면 endpoint/model/key가 프리셋으로 채워진다.
+#   provider: openai     → GPT-4.1 mini (키: OPENAI_API_KEY)
+#   provider: anthropic  → Claude (Claude Code에서 쓰는 모델, 키: ANTHROPIC_API_KEY)
+# endpoint/model/api_key_env를 직접 적으면 프리셋보다 우선(override). 키는 env, 평문 금지.
 reader:
   provider: openai
-  endpoint: "https://api.openai.com/v1/chat/completions"
-  model: "gpt-4.1-mini"             # 멀티모달 → VLM 겸용 (별도 VLM 백엔드 없음)
-  api_key_env: "OPENAI_API_KEY"
+  # model: "gpt-4.1-mini"          # (선택) 프리셋 override. anthropic이면 예: "claude-sonnet-4-6"
+  # api_key_env: "OPENAI_API_KEY"  # (선택) 프리셋 override
 
 agent:
   max_loops: 10

@@ -50,7 +50,7 @@ def c_deps(cfg=None) -> Result:
 
 def c_keys(cfg) -> Result:
     up = cfg.get("parser.api_key_env", "UP_TOKEN")
-    rd = cfg.get("reader.api_key_env", "OPENAI_API_KEY")
+    rd = cfg.reader_config()["api_key_env"]  # 선택한 Reader 프로바이더의 키
     miss = [e for e in (up, rd) if not os.environ.get(e)]
     return Result(not miss, "keys present" if not miss else f"missing env: {miss}",
                   ".env 에 키 설정(평문 커밋 금지) 후 export.")
@@ -64,10 +64,11 @@ def c_parser(cfg) -> Result:
 
 
 def c_reader(cfg) -> Result:
-    env = cfg.get("reader.api_key_env", "OPENAI_API_KEY")
-    if not os.environ.get(env):
-        return Result(False, f"{env} 없음", f".env 에 {env} 설정.")
-    return Result(True, f"key set, model={cfg.get('reader.model')}", "")
+    rc = cfg.reader_config()
+    if not os.environ.get(rc["api_key_env"]):
+        return Result(False, f"{rc['api_key_env']} 없음 (provider={rc['provider']})",
+                      f".env 에 {rc['api_key_env']} 설정.")
+    return Result(True, f"provider={rc['provider']}, model={rc['model']}", "")
 
 
 def c_embedder(cfg) -> Result:
@@ -90,10 +91,10 @@ def c_index(cfg) -> Result:
 
 
 def c_multimodal(cfg) -> Result:
-    env = cfg.get("reader.api_key_env", "OPENAI_API_KEY")
-    if not os.environ.get(env):
-        return Result(False, f"{env} 없음", "멀티모달은 Reader 키 필요.")
-    return Result(True, "reader multimodal path ready (live call deferred)", "")
+    rc = cfg.reader_config()
+    if not os.environ.get(rc["api_key_env"]):
+        return Result(False, f"{rc['api_key_env']} 없음", "멀티모달은 Reader 키 필요.")
+    return Result(True, f"reader multimodal path ready ({rc['provider']}, live call deferred)", "")
 
 
 def c_smoke(cfg) -> Result:
@@ -102,7 +103,7 @@ def c_smoke(cfg) -> Result:
         IndexStore.load(cfg.index_paths(), cfg.get("embedding.model"))
     except Exception as e:
         return Result(False, f"index not ready: {str(e).splitlines()[0]}", "먼저 인덱스 빌드.")
-    if not os.environ.get(cfg.get("reader.api_key_env", "OPENAI_API_KEY")):
+    if not os.environ.get(cfg.reader_config()["api_key_env"]):
         return Result(False, "Reader 키 없음 → 실제 답변 불가", ".env 키 설정.")
     return Result(True, "ready for live query", "")
 
