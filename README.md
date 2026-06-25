@@ -6,8 +6,8 @@
   <img alt="Python" src="https://img.shields.io/badge/python-3.10+-blue">
 </p>
 
-<p align="center"><img src="docs/fig1_teaser.png" width="92%" alt="lsdrag — locate the page and figure, and read the diagram"></p>
-<p align="center"><sub><b>parse → build → search</b>, 세 단계가 완전히 분리되어 있고, 검색은 스스로 도구를 골라 답의 위치를 짚는다.</sub></p>
+<p align="center"><img src="docs/hero.png" width="78%" alt="lsdrag — an agent that reads hardware manuals: locate the page, find the figure, read the diagram"></p>
+<p align="center"><sub>HW 매뉴얼을 읽는 에이전트 — <b>locate page · find figure · read diagram</b> 도구를 스스로 골라, 답이 <b>몇 페이지·어느 Figure</b>에 있는지 짚는다.</sub></p>
 
 ## What & Why
 방대한 매뉴얼·스펙·레퍼런스에 질문하면, **"어느 페이지·어느 Figure·어느 표"** 까지 짚어 답하고
@@ -53,6 +53,8 @@ python rag/scripts/docs.py remove <doc_id>      # 제거
 python rag/scripts/docs.py list                 # 현재 색인된 문서
 ```
 
+> Claude Code 안에서는 슬래시 커맨드로도: `/rag-parse <pdf>`(파싱 점검) · `/rag-build`(DB 빌드·문서 add/remove) · `/rag <질문>`(검색).
+
 ### 3) 질문하기
 ```
 > /rag SCTLR_EL1 레지스터는 무엇을 제어하나?
@@ -62,6 +64,15 @@ python rag/scripts/docs.py list                 # 현재 색인된 문서
 < page_index_search로 위치 특정 → 13페이지 Figure 2.
   그 그림을 image_read(VLM)가 읽어 비트필드(M/A/C/…)를 설명.
 ```
+
+## How it works
+<p align="center"><img src="docs/fig1_teaser.png" width="92%" alt="parse → build → search pipeline"></p>
+
+**parse → build → search** 세 단계가 완전히 분리된다.
+- **Build(offline)**: 문서 → `Parse`(Upstage→IR) → `Build`(임베딩 + Page Index) → **Index store**(벡터 + 페이지·Figure·표 메타 + 그림).
+- **Ask(online)**: 질문 → `Search`(agentic) 가 도구를 스스로 골라 Index store를 읽고, 필요하면 그림을 VLM으로 해석 → 위치를 짚은 답.
+
+각 단계는 통째로 교체 가능 — 파서는 `src/parser/adapter.py`, Reader·임베더는 `config.yaml` 한 곳.
 
 ## Requirements
 | 구성 | 무엇 | 준비물 |

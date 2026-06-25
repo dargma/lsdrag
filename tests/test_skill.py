@@ -48,18 +48,19 @@ def test_g2_deps_and_skill_pass():
 
 
 def test_g7_packaging_no_dev_files():
-    # 배포 대상 rag/ 에 개발 전용 파일이 섞이지 않았는지(대원칙 5)
-    rag_dir = os.path.join(ROOT, "rag")
-    forbidden = {"CLAUDE.md", "PROGRESS.md", "docs", "_MASTER.md", "tests", "examples"}
-    present = set(os.listdir(rag_dir))
-    assert not (forbidden & present), f"dev files leaked into rag/: {forbidden & present}"
-    # rag/scripts 가 개발 지시서를 런타임에 읽거나 import하지 않는지(실제 의존만 검사)
+    # 배포 대상 스킬 패밀리에 개발 전용 파일이 섞이지 않았는지(대원칙 5)
+    forbidden = {"CLAUDE.md", "PROGRESS.md", "docs", "_MASTER.md", "tests", "examples", "src"}
     bad = ("CLAUDE.md", "PROGRESS.md", "_MASTER", "open('docs", 'open("docs', "/docs/0")
-    for fn in os.listdir(os.path.join(rag_dir, "scripts")):
-        if fn.endswith(".py"):
-            txt = open(os.path.join(rag_dir, "scripts", fn), encoding="utf-8").read()
-            hit = [b for b in bad if b in txt]
-            assert not hit, f"{fn} references dev artifact: {hit}"
+    for skill in ("rag", "rag-build", "rag-parse"):
+        sdir = os.path.join(ROOT, skill)
+        assert os.path.exists(os.path.join(sdir, "SKILL.md")), f"{skill}/SKILL.md missing"
+        present = set(os.listdir(sdir))
+        assert not (forbidden & present), f"dev files leaked into {skill}/: {forbidden & present}"
+        for fn in os.listdir(os.path.join(sdir, "scripts")):
+            if fn.endswith(".py"):
+                txt = open(os.path.join(sdir, "scripts", fn), encoding="utf-8").read()
+                hit = [b for b in bad if b in txt]
+                assert not hit, f"{skill}/{fn} references dev artifact: {hit}"
 
 
 if __name__ == "__main__":

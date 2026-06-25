@@ -1,8 +1,21 @@
 # 09 — skill (/rag 노출 + 문서 관리 + 설치/삭제)
 
 ## 목적
-완성된 엔진을 `/rag` skill로 노출. "rag skill 설치해줘" 시 Claude Code가 **단계별 self-check하며** 설치 완료.
-사용자가 문서를 추가/제거하고, skill을 손쉽게 삭제할 수 있어야 한다.
+완성된 엔진을 **스킬 패밀리**로 노출. 검색뿐 아니라 파싱·DB 빌드도 Claude Code 슬래시 커맨드로 쓴다.
+"rag skill 설치해줘" 시 Claude Code가 **단계별 self-check하며** 설치 완료. 문서 추가/제거·손쉬운 삭제 포함.
+
+## 스킬 패밀리 (슬래시 커맨드)
+각 단계(파싱→DB빌드→검색)를 독립 슬래시 커맨드로. 모두 **얇은 껍데기**(엔진 `src/`를 config로 호출).
+
+| 커맨드 | skill 폴더 | 하는 일 | 호출 엔진 |
+|--------|-----------|---------|-----------|
+| `/rag <질문>` | `rag/` | **검색**(질의→답변) | `src.agent.runner` |
+| `/rag-build` | `rag-build/` | **DB 빌드**(파싱→IR→인덱스) + 증분 add/remove/list | `src.indexing.build` |
+| `/rag-parse <pdf>` | `rag-parse/` | **파싱만**(문서→IR 확인, 빌드 전 점검) | `src.parser` |
+
+- 세 skill은 각각 `.../skills/<name>/SKILL.md`로 설치(중첩 금지). 모두 같은 `config.yaml`·`.env`를 본다.
+- 각 skill은 자기 `scripts/_bootstrap.py`로 engine.root를 resolve(자기완결, 개발 지시서 비의존 — 대원칙 5).
+- 문서 add/remove/list는 `/rag-build`의 서브명령(`add/remove/list`)으로 통합(별도 docs 커맨드 불필요).
 
 ## 선행 / 산출물
 - 선행: 08(엔진 동작 확인).

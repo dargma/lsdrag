@@ -20,9 +20,13 @@ python rag/scripts/doctor.py --check deps --check keys     # C2, C3
 ```
 ✅ OK면 다음. ⚠️ 실패하면 출력된 조치를 따른다.
 
-## 1단계: skill 배치 (중첩 금지)
+## 1단계: skill 패밀리 배치 (중첩 금지)
+검색·DB빌드·파싱 세 슬래시 커맨드를 각각 설치한다.
 ```bash
-mkdir -p ~/.claude/skills && cp -r rag ~/.claude/skills/rag
+mkdir -p ~/.claude/skills
+cp -r rag       ~/.claude/skills/rag         # /rag        검색(질의)
+cp -r rag-build ~/.claude/skills/rag-build   # /rag-build  DB 빌드 + 문서 add/remove/list
+cp -r rag-parse ~/.claude/skills/rag-parse   # /rag-parse  파싱(IR 점검)
 python rag/scripts/doctor.py --check skill                 # C1
 ```
 
