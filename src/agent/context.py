@@ -9,7 +9,6 @@ from __future__ import annotations
 from arag.core.context import AgentContext
 
 
-
 class ImageAgentContext(AgentContext):
     def __init__(self) -> None:
         super().__init__()

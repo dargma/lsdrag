@@ -11,7 +11,6 @@ from typing import Any, Callable, Dict, Tuple
 
 from arag.tools.base import BaseTool
 
-
 # reader_fn(image_path) -> 설명 텍스트. 실제는 Reader(VLM) 호출, 테스트는 mock 주입.
 ReaderFn = Callable[[str], str]
 

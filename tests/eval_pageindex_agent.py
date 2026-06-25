@@ -12,8 +12,8 @@ import os
 import sys
 import traceback
 
-from src.config import Config
 from src.agent.runner import build_agent
+from src.config import Config
 
 # ── 20 케이스: (id, 난이도, 질문, 의도/체크) ─────────────────────────────
 # expect_tools: 이 도구들이 trajectory에 나와야 함(부분집합)
