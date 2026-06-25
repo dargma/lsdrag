@@ -79,9 +79,21 @@ def cmd_remove(cfg: Config, doc_id: str) -> int:
     return 0
 
 
-def cmd_list(cfg: Config) -> int:
+def cmd_list(cfg: Config, as_json: bool = False) -> int:
     store = _load_or_build_store(cfg)
-    print(json.dumps({d: len(store.manifest[d]["chunk_ids"]) for d in store.doc_ids()}, indent=2))
+    st = store.status()
+    if as_json:
+        print(json.dumps(st, ensure_ascii=False, indent=2))
+        return 0
+    # 사람용 현황 표
+    if not st["docs"]:
+        print("색인된 문서가 없습니다. `--add <pdf>` 또는 빌드로 문서를 추가하세요.")
+        return 0
+    print(f"색인 현황 — 문서 {st['total_docs']}개 · 청크 {st['total_chunks']} · figure {st['total_figures']}")
+    print(f"{'doc_id':<34} {'pages':>9} {'chunks':>7} {'figs':>5} {'tables':>7} {'imgs':>5}")
+    print("-" * 72)
+    for did, d in st["docs"].items():
+        print(f"{did:<34} {d['pages']:>9} {d['chunks']:>7} {d['figures']:>5} {d['tables']:>7} {d['images']:>5}")
     return 0
 
 
@@ -89,6 +101,7 @@ def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--config", default="config.yaml")
     ap.add_argument("--add"); ap.add_argument("--remove"); ap.add_argument("--list", action="store_true")
+    ap.add_argument("--json", action="store_true", help="--list 현황을 JSON으로")
     args = ap.parse_args()
     cfg = Config.load(args.config)
     if args.add:
@@ -96,7 +109,7 @@ def main() -> int:
     if args.remove:
         return cmd_remove(cfg, args.remove)
     if args.list:
-        return cmd_list(cfg)
+        return cmd_list(cfg, as_json=args.json)
     return cmd_build(cfg)
 
 

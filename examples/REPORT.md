@@ -53,6 +53,22 @@ IR → 임베딩 → 인덱스. 산출물(= `config.yaml`의 `paths.*`):
 **결론: 파싱(crop 포함) → DB(인덱스+page_index+이미지) → page_index 구조검색 → 멀티모달 이미지 이해까지
 의도한 flow가 실제 ARM 문서·실제 API에서 end-to-end로 동작함을 확인.**
 
+### 4-b. agentic 루프 라이브 검증 (실제 GPT-4.1 mini가 스스로 tool 선택)
+스크립트가 아닌 **진짜 LLM 주도** 루프를 라이브로 실행. 질문:
+"AArch32 exclusive memory access 모델에서 Open↔Exclusive Access 전이 연산은?"
+GPT-4.1 mini가 7 loop에 걸쳐 **스스로 도구를 선택**:
+```
+loop1 page_index_search(heading="AArch32 exclusive memory access model")
+loop2 keyword_search(["Open Access","Exclusive Access", ...])
+loop3 read_chunk([:239, :361])
+loop4 keyword_search(["Load-Exclusive","CLREX","global/local monitor"])
+loop5 read_chunk([:282, :285])
+loop6 read_chunk([:361])
+loop7 (tool 호출 없음 → 완료 판단, 최종 답변 생성)
+```
+→ Load-Exclusive로 Exclusive Access 전이, local/global monitor의 마킹 등 **근거 있는 답** 생성.
+**agentic LLM 방식(자율 도구 선택 + 다단계 추론)이 실제로 동작함을 확인.**
+
 ## 5. 과정에서 드러난 문제 (개선 과제)
 | # | 문제 | 영향 | 개선안 |
 |---|------|------|--------|

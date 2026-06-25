@@ -98,6 +98,26 @@ class IndexStore:
     def doc_ids(self) -> List[str]:
         return sorted(self.manifest)
 
+    def status(self) -> Dict[str, Any]:
+        """문서 관리 현황 — doc별 chunk·figure·table·page 범위 + 전체 합계."""
+        docs = {}
+        for did in self.doc_ids():
+            ents = self.page_index.query(doc_id=did)
+            pages = sorted({e.page_no for e in ents})
+            docs[did] = {
+                "chunks": len(self.manifest[did]["chunk_ids"]),
+                "figures": sum(1 for e in ents if e.block_type == "figure"),
+                "tables": sum(1 for e in ents if e.block_type == "table"),
+                "images": len(self.manifest[did].get("image_paths", [])),
+                "pages": f"{pages[0]}–{pages[-1]}" if pages else "-",
+            }
+        return {
+            "docs": docs,
+            "total_docs": len(docs),
+            "total_chunks": len(self.chunks),
+            "total_figures": sum(d["figures"] for d in docs.values()),
+        }
+
     # ── 영속화 (A-RAG 호환 산출물) ──────────────────────────────
     def save(self, paths: Dict[str, str]) -> None:
         os.makedirs(paths["index"], exist_ok=True)

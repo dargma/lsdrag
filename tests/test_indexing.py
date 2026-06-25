@@ -88,6 +88,15 @@ def test_remove_then_readd_idempotent():
     assert store.embeddings.shape[0] == len(store.sentences)
 
 
+def test_status_view():
+    store = IndexStore()
+    store.add_doc(_doc("a"), fake_embed)
+    st = store.status()
+    assert st["total_docs"] == 1 and st["total_chunks"] == 2
+    assert st["docs"]["a"]["figures"] == 1 and st["docs"]["a"]["tables"] == 0
+    assert st["docs"]["a"]["pages"] != "-"
+
+
 if __name__ == "__main__":
     for name, fn in sorted(globals().items()):
         if name.startswith("test_") and callable(fn):
