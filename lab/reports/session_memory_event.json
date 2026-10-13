@@ -1,0 +1,15 @@
+{
+  "event": "parser CUDA OOM during concurrent GPU work",
+  "date": "2026-10-13",
+  "failed_allocation_mib": 80,
+  "free_at_failure_mib": 51.19,
+  "actions": [
+    "Paused own parser client to avoid repeated connection failures",
+    "Stopped idle own Reader server to release about 31 GiB",
+    "Restarted parser with GPU fraction 0.15",
+    "Queued parser-client resume after health check and retry of incomplete documents",
+    "Queued Reader restart after Qwen index completes"
+  ],
+  "other_session_processes_modified": false,
+  "logs": "/content/local_fast/lsdrag-work/recovery/parser-retry.log"
+}
