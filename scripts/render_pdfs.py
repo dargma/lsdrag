@@ -8,7 +8,6 @@ import asyncio
 from datetime import datetime, timezone
 import hashlib
 import json
-import os
 from pathlib import Path
 import time
 
@@ -48,8 +47,9 @@ async def render(args):
                         new Promise(resolve => setTimeout(resolve, 15000))
                       ]);
                     }""")
-                    record["images"] = await page.evaluate("""() => Array.from(document.images).map(i => ({src:i.currentSrc || i.src, alt:i.alt, loaded:i.complete && i.naturalWidth>0, width:i.naturalWidth, height:i.naturalHeight}))""")
+                    record["images"] = await page.evaluate("""() => Array.from(document.images).map(i => ({src:i.currentSrc || i.src, explicit_src:!!i.getAttribute('src'), alt:i.alt, loaded:i.complete && i.naturalWidth>0, width:i.naturalWidth, height:i.naturalHeight, article_content:!!i.closest('.mw-parser-output') && !i.closest('.ambox,.navbox,.metadata,.mbox-image,.mw-indicators')}))""")
                     record["image_load_failures"] = sum(not im["loaded"] for im in record["images"])
+                    record["article_image_load_failures"] = sum(not im["loaded"] and im["explicit_src"] and im["article_content"] for im in record["images"])
                     await page.emulate_media(media="screen")
                     tmp = path.with_suffix(".partial.pdf")
                     await page.pdf(path=str(tmp), print_background=True)
@@ -63,7 +63,7 @@ async def render(args):
                     record["bytes"] = tmp.stat().st_size
                     record["final_url"] = page.url
                     # A PDF with missing images remains auditable but is not valid for final QC.
-                    record["status"] = "ok" if not record["image_load_failures"] else "image_load_incomplete"
+                    record["status"] = "ok" if not record["article_image_load_failures"] else "image_load_incomplete"
                     tmp.replace(path)
                     path.with_suffix(".txt").write_text(text)
                 except Exception as error:
