@@ -40,7 +40,7 @@ def memgallery_scorer(checkout):
     revision = subprocess.check_output(["git", "rev-parse", "HEAD"], cwd=checkout, text=True).strip()
     if revision != MEMGALLERY_REVISION:
         raise ValueError("Unexpected Mem-Gallery evaluator revision")
-    if subprocess.check_output(["git", "status", "--porcelain", "--untracked-files=no", "--", str(path)], cwd=checkout, text=True).strip():
+    if subprocess.check_output(["git", "status", "--porcelain", "--untracked-files=no", "--", str(path.parent)], cwd=checkout, text=True).strip():
         raise ValueError("Official Mem-Gallery evaluation source has modifications")
     spec = importlib.util.spec_from_file_location("lsdrag_official_memgallery_evaluation", path)
     module = importlib.util.module_from_spec(spec)
@@ -88,3 +88,20 @@ def paired_comparison(baseline, variant, metric, seed=20261013, samples=10000):
         losses = int(((a == 1) & (b == 0)).sum())
         result.update(gains=gains, losses=losses, mcnemar_exact_pvalue=float(binomtest(gains, gains + losses, .5).pvalue) if gains + losses else 1.)
     return result
+
+
+def cluster_paired_bootstrap(baseline, variant, metric, seed=20261013, samples=10000):
+    if set(baseline) != set(variant) or not baseline:
+        raise ValueError("Cluster comparison requires identical nonempty question ID sets")
+    clusters = {}
+    for qid in sorted(baseline):
+        a, b = baseline[qid], variant[qid]
+        if a["scenario"] != b["scenario"]:
+            raise ValueError("Question cluster mismatch")
+        clusters.setdefault(a["scenario"], []).append(b[metric] - a[metric])
+    values = [clusters[k] for k in sorted(clusters)]
+    sums = np.array([sum(v) for v in values])
+    counts = np.array([len(v) for v in values])
+    indices = np.random.default_rng(seed).integers(0, len(values), size=(samples, len(values)))
+    boot = sums[indices].sum(axis=1) / counts[indices].sum(axis=1)
+    return {"questions": len(baseline), "clusters": len(values), "difference": float(sums.sum() / counts.sum()), "cluster_bootstrap_95ci": np.quantile(boot, [.025, .975]).tolist(), "seed": seed, "samples": samples, "resampling_unit": "scenario; all its questions move together"}

@@ -23,5 +23,6 @@ if subprocess.check_output(["git", "status", "--porcelain", "--untracked-files=n
     raise ValueError("Upstream tracked files have modifications")
 arguments = a.arguments[1:] if a.arguments[:1] == ["--"] else a.arguments
 environment = dict(os.environ)
+environment.setdefault("HF_HOME", str(Path(environment.get("LSDRAG_WORK_ROOT", "/content/local_fast/lsdrag-work")) / "hf"))
 environment["PYTHONPATH"] = str(root / "src") + os.pathsep + environment.get("PYTHONPATH", "")
 raise SystemExit(subprocess.call([sys.executable, str(root / "scripts" / (a.operation + ".py")), *arguments], env=environment))

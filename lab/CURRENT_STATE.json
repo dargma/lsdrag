@@ -31,6 +31,14 @@
       "port": 8102,
       "session_id": 86509,
       "log": "/content/local_fast/lsdrag-work/reader-development-server.log"
+    },
+    "B0_development": {
+      "session_id": 9612,
+      "log": "/content/local_fast/lsdrag-work/development-B0.log"
+    },
+    "MemGallery_development_oracle_scoring": {
+      "session_id": 79157,
+      "log": "/content/local_fast/lsdrag-work/memgallery-development-oracle-score.log"
     }
   },
   "standard_parser_smoke_passed": true,
@@ -97,7 +105,8 @@
     "C1": {
       "questions": 50,
       "directory": "/content/local_fast/lsdrag-work/results/development_C1",
-      "score_status": "pending"
+      "score_status": "complete; EM=.02 F1=.044; developmental diagnostic only",
+      "summary": "lab/reports/development_C1_metrics.json"
     }
   },
   "development_visual_mapping": {

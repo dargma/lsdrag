@@ -1,6 +1,6 @@
 import pytest
 
-from lsdrag.metrics import contain_all, document_read_scores, paired_comparison
+from lsdrag.metrics import contain_all, document_read_scores, paired_comparison, cluster_paired_bootstrap
 
 
 def test_list_containment_requires_all_answers():
@@ -25,3 +25,12 @@ def test_pairing_and_statistics():
     assert result["mcnemar_exact_pvalue"] == 1
     with pytest.raises(ValueError, match="identical"):
         paired_comparison(a, {"q3": {"em": 1}}, "em")
+
+
+def test_cluster_bootstrap_keeps_related_questions_together():
+    a = {"q1": {"em": 0, "scenario": "a"}, "q2": {"em": 0, "scenario": "a"}, "q3": {"em": 1, "scenario": "b"}}
+    b = {"q1": {"em": 1, "scenario": "a"}, "q2": {"em": 1, "scenario": "a"}, "q3": {"em": 0, "scenario": "b"}}
+    result = cluster_paired_bootstrap(a, b, "em")
+    assert result["clusters"] == 2 and result["questions"] == 3
+    assert result["difference"] == pytest.approx(1 / 3)
+    assert result["cluster_bootstrap_95ci"] == [-1, 1]
