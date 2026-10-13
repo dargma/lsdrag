@@ -1,7 +1,7 @@
 {
   "stage": "development_parsing",
   "status": "in_progress",
-  "goal": "Complete B0, V1, V2, C1 evaluation on 200 image-related M3DocVQA questions and the final report",
+  "goal": "Complete B0/V1/V2/C1 on 50 image-related M3DocVQA questions, supplementary Mem-Gallery 50-question B0/V1/V2 and oracle-evidence Reader evaluation, and final report",
   "plan": "docs/EXPERIMENT_PLAN.md",
   "work_root": "/content/local_fast/lsdrag-work",
   "arag_revision": "a44de6b2216bf6791979c4b6ac4ae106212fa1a6",
@@ -12,7 +12,10 @@
     "missing PDF/images remediation",
     "gold page and figure mapping",
     "IR and retrieval indexes",
-    "B0/V1/V2/C1 implementation and evaluation"
+    "B0/V1/V2/C1 implementation and evaluation",
+    "Freeze a new 50-question M3DocVQA evaluation manifest before final runs; retain old 200-candidate provenance",
+    "Inspect official Mem-Gallery schema and evaluation code; select 25 VS + 25 VR without outcome-based selection",
+    "Run supplementary Mem-Gallery comparison and oracle-evidence Reader diagnostic separately from M3DocVQA"
   ],
   "reader_candidate": "google/gemma-4-E4B-it",
   "model_weights_downloaded": true,
@@ -38,5 +41,20 @@
   },
   "standard_parser_smoke_passed": true,
   "preflight_backup": "lab/reports/preflight_backup.json",
-  "implementation_status": "IR, index builder, retrieval and evidence delivery tracking implemented; eight unit tests pass; agent loop and evaluations pending"
+  "implementation_status": "IR, index builder, retrieval and evidence delivery tracking implemented; eight unit tests pass; agent loop and evaluations pending",
+  "approved_evaluation_scope": {
+    "m3docvqa_questions": 50,
+    "mem_gallery_questions": 50,
+    "mem_gallery_strata": {
+      "visual_centric_search": 25,
+      "visual_centric_reasoning": 25
+    },
+    "mem_gallery_arms": [
+      "B0",
+      "V1",
+      "V2"
+    ],
+    "oracle_evidence_reader_diagnostic": true,
+    "execution_inputs_updated": false
+  }
 }

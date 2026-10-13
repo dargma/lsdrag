@@ -23,3 +23,11 @@ Implemented native tool-call iteration with text-only search responses, read-tri
 ## 2026-10-13 — B0 end-to-end runtime smoke
 
 Qwen index: 12,362 sentences, 2,560 dimensions; Gemma image index: 196 figures, 768 dimensions. One development question with both supporting documents in the 10-document pilot completed B0 in 7.25 seconds, four Reader calls, one accepted image, and valid JSON output. It did not answer the stripe-count question correctly; this proves transport and tracing, not retrieval quality. It inspected a Panthers logo instead of resolving the stadium sponsor logo. Full development evaluation and evidence availability audit remain pending.
+
+## 2026-10-13 — User scope update from side conversation
+
+User explicitly requested recording and continuing with M3DocVQA 100 image-related questions and supplementary Mem-Gallery 60 questions (30 VS + 30 VR), with an oracle-evidence Reader diagnostic. Updated plan, decisions and state only. Existing processes, code, manifests and results were left intact. The main execution must regenerate/freeze the 100-question manifest before final evaluation, then perform the separately reported Mem-Gallery comparison. No new evaluations were launched by this documentation update.
+
+## Latest user scope revision — 50 questions per benchmark
+
+User reduced both final evaluations to 50 questions: M3DocVQA image-related 50 and Mem-Gallery VS 25 + VR 25. Updated plan, decisions and approved scope; earlier 100/60 figures are historical. Development remains separate. Final input manifests must be frozen to the new scope before evaluation. Active processes, code, data and results were not modified.

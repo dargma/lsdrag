@@ -48,7 +48,7 @@ def compare(source, target):
                 area = abs(cv2.contourArea(corners))
                 plausible = bool(np.isfinite(corners).all() and cv2.isContourConvex(corners) and inside and area > 100 and area < tw * th * 1.1)
                 record.update(sift_inliers=inliers, sift_inlier_ratio=inliers / len(good), projected_corners=(corners / [tw, th]).tolist(), geometric_match=plausible and inliers >= 6 and inliers / len(good) >= .4)
-    record["near_duplicate"] = distance <= 4 and aspect < .08
+    record["near_duplicate"] = bool(distance <= 4 and aspect < .08)
     record["proposal_score"] = float((1000 if record["near_duplicate"] else 0) + (100 if record["geometric_match"] else 0) + min(record["sift_inliers"], 90) - distance / 100)
     return record
 
