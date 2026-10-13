@@ -46,6 +46,8 @@ def main():
         "image_after_tool_as_user": history + [assistant, {"role": "tool", "tool_call_id": call_id, "content": "Figure f1 loaded. Its image follows in the next message."}, {"role": "user", "content": blocks}],
     }
     for name, messages in attempts.items():
+        # Run the server with --mm-processor-cache-gb 0. A rejected tool-role
+        # image otherwise leaves a frontend-only cache entry in vLLM 0.20.
         status, response, seconds = call(messages)
         text = response.get("choices", [{}])[0].get("message", {}).get("content", "") or ""
         report[name] = {"http_status": status, "response": response, "seconds": seconds, "recognized_color_and_shape": status == 200 and "red" in text.lower() and "circle" in text.lower()}

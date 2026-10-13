@@ -1,5 +1,5 @@
 {
-  "stage": "environment_preflight",
+  "stage": "development_parsing",
   "status": "in_progress",
   "goal": "Complete B0, V1, V2, C1 evaluation on 200 image-related M3DocVQA questions and the final report",
   "plan": "docs/EXPERIMENT_PLAN.md",
@@ -8,9 +8,11 @@
   "reader_model_finalized": false,
   "evaluation_manifest_frozen": false,
   "pending_checks": [
-    "MinerU saved-image parse smoke",
-    "Gemma reader tool calls and image delivery",
-    "PDF image quality and evidence mapping"
+    "standard-tier parser throughput and QC",
+    "missing PDF/images remediation",
+    "gold page and figure mapping",
+    "IR and retrieval indexes",
+    "B0/V1/V2/C1 implementation and evaluation"
   ],
   "reader_candidate": "google/gemma-4-E4B-it",
   "model_weights_downloaded": true,
@@ -18,5 +20,7 @@
     "google/embeddinggemma-2",
     "Qwen/Qwen3-Embedding-4B"
   ],
-  "selection_manifest": "lab/registry/selection.json"
+  "selection_manifest": "lab/registry/selection.json",
+  "reader_smoke_passed": true,
+  "image_transport": "tool result then user image"
 }

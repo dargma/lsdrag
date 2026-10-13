@@ -1,0 +1,8 @@
+# Installed into a venv sharing the preinstalled torch 2.11.0+cu130 environment.
+# Embedding dependencies live in a separate environment (see embedding-requirements).
+vllm==0.20.0
+transformers==5.6.2
+mineru==4.0.12
+mineru-vl-utils==2.0.7
+playwright==1.63.0
+word2number==1.1

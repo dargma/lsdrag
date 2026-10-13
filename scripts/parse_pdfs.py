@@ -17,8 +17,9 @@ def main():
     p.add_argument("--model", default="mineru-2604")
     p.add_argument("--pages", default="all")
     p.add_argument("--limit", type=int, default=0)
+    p.add_argument("--tier", choices=["standard", "advanced"], default="standard")
     args = p.parse_args()
-    parser = MinerUParser(tier="advanced", image_analysis=False, vlm_config=VlmConfig(server_url=args.server, model=args.model, max_concurrency=8))
+    parser = MinerUParser(tier=args.tier, image_analysis=False, vlm_config=VlmConfig(server_url=args.server, model=args.model, max_concurrency=8))
     files = sorted(args.input.glob("*.pdf")) if args.input.is_dir() else [args.input]
     if args.limit:
         files = files[:args.limit]
@@ -26,7 +27,7 @@ def main():
     for path in files:
         dest = args.output / path.stem
         start = time.monotonic()
-        record = {"document_id": path.stem, "pages_requested": args.pages, "model": args.model, "image_analysis": False, "status": "failed"}
+        record = {"document_id": path.stem, "pages_requested": args.pages, "model": args.model, "tier": args.tier, "image_analysis": False, "status": "failed"}
         try:
             result = parser.parse(path, page_range=args.pages)
             result.save(FileBasedDataWriter(str(dest)))

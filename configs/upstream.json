@@ -1,0 +1,6 @@
+{
+  "arag": {"url": "https://github.com/Ayanami0730/arag", "revision": "a44de6b2216bf6791979c4b6ac4ae106212fa1a6", "license_declared_by_pyproject": "MIT"},
+  "m3docrag": {"url": "https://github.com/bloomberg/m3docrag", "revision": "29e6ac2294d6b87075a1d45b8a8df175b214248a", "license": "Apache-2.0"},
+  "mmqa_metadata": {"url": "https://github.com/allenai/multimodalqa/tree/master/dataset", "file_hashes": "lab/registry/selection.json"},
+  "models": {"revisions_and_sizes": "lab/reports/model_preflight.json"}
+}
