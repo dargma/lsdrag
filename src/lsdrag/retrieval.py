@@ -35,18 +35,22 @@ class VectorIndex:
         if self.vectors.shape != (len(self.rows), self.manifest["dimension"]):
             raise ValueError("Index shape mismatch")
 
-    def search(self, query_vector, limit, identity="chunk_id", allowed=None):
+    def search(self, query_vector, limit, identity="chunk_id", allowed=None, row_limit=None):
         query = normalized_float32(np.asarray(query_vector).reshape(1, -1))[0]
         scores = self.vectors @ query
         # Stable order makes tied retrieval deterministic across experimental arms.
         order = np.argsort(-scores, kind="stable")
+        if row_limit is not None:
+            order = order[:row_limit]
         output, seen = [], set()
+        self.last_matches = {}
         for index in order:
             row = self.rows[int(index)]
             key = row[identity]
             if key in seen or (allowed is not None and key not in allowed):
                 continue
             output.append((key, float(scores[index])))
+            self.last_matches[key] = row.get("text")
             seen.add(key)
             if len(output) >= limit:
                 break
@@ -70,11 +74,11 @@ class Retrieval:
             self.query_cache[key] = self.embedders[channel].encode([query], "query")[0]
         return self.query_cache[key]
 
-    def snippet(self, chunk_id):
+    def snippet(self, chunk_id, matched=None):
         c = self.chunks[chunk_id]
-        return {"chunk_id": chunk_id, "document_id": c["document_id"], "page_index": c["page_index"], "kind": c["kind"], "snippet": c["text"][:300]}
+        return {"chunk_id": chunk_id, "document_id": c["document_id"], "page_index": c["page_index"], "kind": c["kind"], "snippet": (matched or c["text"])[:300]}
 
-    def keyword_search(self, keywords, top_k=20):
+    def keyword_search(self, keywords, top_k=5):
         if isinstance(keywords, str):
             keywords = [keywords]
         if not keywords or any(not isinstance(k, str) or not k.strip() for k in keywords):
@@ -82,18 +86,20 @@ class Retrieval:
         terms = [k.lower() for k in keywords]
         scored = [(sum(c["text"].lower().count(t) * len(t) for t in terms), key) for key, c in self.chunks.items()]
         scored.sort(key=lambda pair: (-pair[0], pair[1]))
-        return [self.snippet(key) for score, key in scored[:max(1, min(20, top_k))] if score > 0]
+        import re
+        return [self.snippet(key, " ... ".join(s for s in re.split(r"[.!?\n]+", self.chunks[key]["text"]) if any(t in s.lower() for t in terms))) for score, key in scored[:max(1, min(20, top_k))] if score > 0]
 
     def semantic_search(self, query, top_k=5):
         top_k = max(1, min(20, top_k))
         channel = "gemma" if self.arm == "C1" else "qwen"
         count = self.candidate_count if self.arm in {"V1", "V2"} else top_k
-        text = self.indexes[channel + "_text"].search(self.query_vector(channel, query), count)
+        text = self.indexes[channel + "_text"].search(self.query_vector(channel, query), count, row_limit=count * 3)
         identities = [key for key, _ in text]
         if self.arm in {"V1", "V2"}:
             images = self.indexes["gemma_image"].search(self.query_vector("gemma", query), count)
             identities = reciprocal_rank_fusion([identities, [key for key, _ in images]])
-        return [self.snippet(key) for key in identities[:top_k]]
+        matches = self.indexes[channel + "_text"].last_matches
+        return [self.snippet(key, matches.get(key)) for key in identities[:top_k]]
 
     def image_search(self, query, document_ids=None, top_k=5):
         if self.arm != "V2":
