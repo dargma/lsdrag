@@ -44,7 +44,7 @@ def one(benchmark, arm):
         args += ['--visual-mapping', REPO / 'lab/reports/development_alignment_review.json']
     command(f'{benchmark}-{arm}-score', RUNTIME, 'score_memgallery.py' if mem else 'score_m3doc.py', args)
     command(f'{benchmark}-{arm}-backup', RUNTIME, 'backup_local.py', [
-        '--source-root', ROOT, '--destination', '/content/drive/MyDrive/lsdrag-backups/20261013/three-arm-iter8',
+        '--source-root', ROOT, '--destination', f'/content/drive/MyDrive/lsdrag-backups/20261013/three-arm-iter8/{benchmark}/{arm}',
         '--include', str(run.relative_to(ROOT)), '--include', str((OUT / benchmark / (arm + '_scores')).relative_to(ROOT)),
         '--report', OUT / benchmark / (arm + '_backup.json')])
 
