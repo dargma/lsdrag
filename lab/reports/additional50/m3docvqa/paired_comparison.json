@@ -1,0 +1,1787 @@
+{
+  "baseline_arm": "B0",
+  "baseline_metrics_sha256": "4215a3c72e1caf7825c90af2a91851a3a4a3f08459f9aac9e188fb29254f2cb6",
+  "benchmark": "m3docvqa",
+  "comparisons": {
+    "C1": {
+      "groups": {
+        "image": {
+          "all_documents_read": {
+            "baseline_mean": 0.8095238095238095,
+            "bootstrap_samples": 10000,
+            "difference": 0.0,
+            "excluded_unscored_questions": 0,
+            "gain_question_ids": [
+              "c7f4813597ef22351158fb5d10871914",
+              "d088c84d89e29777cfa9dc280a2b4049"
+            ],
+            "gains": 2,
+            "loss_question_ids": [
+              "5ce3a2f7d444bacd9ff948a7097283fe",
+              "be0baecf90a40b1ba8230d9c771f75ca"
+            ],
+            "losses": 2,
+            "mcnemar_exact_pvalue": 1.0,
+            "metric": "all_documents_read",
+            "n": 21,
+            "paired_bootstrap_95ci": [
+              -0.19047619047619047,
+              0.19047619047619047
+            ],
+            "seed": 20261013,
+            "variant_mean": 0.8095238095238095
+          },
+          "contain": {
+            "baseline_mean": 0.09523809523809523,
+            "bootstrap_samples": 10000,
+            "difference": 0.19047619047619047,
+            "excluded_unscored_questions": 0,
+            "gain_question_ids": [
+              "4e54f543dbf46d64d45805209b73932b",
+              "58665e1fc2c65c0aeb34292d5d2d4be7",
+              "bb8047fd4f786699571458e9c823e3d6",
+              "d088c84d89e29777cfa9dc280a2b4049"
+            ],
+            "gains": 4,
+            "loss_question_ids": [],
+            "losses": 0,
+            "mcnemar_exact_pvalue": 0.125,
+            "metric": "contain",
+            "n": 21,
+            "paired_bootstrap_95ci": [
+              0.047619047619047616,
+              0.38095238095238093
+            ],
+            "seed": 20261013,
+            "variant_mean": 0.2857142857142857
+          },
+          "document_recall": {
+            "baseline_mean": 0.8095238095238095,
+            "bootstrap_samples": 10000,
+            "difference": 0.0,
+            "excluded_unscored_questions": 0,
+            "gain_question_ids": [
+              "c7f4813597ef22351158fb5d10871914",
+              "d088c84d89e29777cfa9dc280a2b4049"
+            ],
+            "gains": 2,
+            "loss_question_ids": [
+              "5ce3a2f7d444bacd9ff948a7097283fe",
+              "be0baecf90a40b1ba8230d9c771f75ca"
+            ],
+            "losses": 2,
+            "mcnemar_exact_pvalue": 1.0,
+            "metric": "document_recall",
+            "n": 21,
+            "paired_bootstrap_95ci": [
+              -0.19047619047619047,
+              0.19047619047619047
+            ],
+            "seed": 20261013,
+            "variant_mean": 0.8095238095238095
+          },
+          "em": {
+            "baseline_mean": 0.0,
+            "bootstrap_samples": 10000,
+            "difference": 0.0,
+            "excluded_unscored_questions": 0,
+            "gain_question_ids": [],
+            "gains": 0,
+            "loss_question_ids": [],
+            "losses": 0,
+            "mcnemar_exact_pvalue": 1.0,
+            "metric": "em",
+            "n": 21,
+            "paired_bootstrap_95ci": [
+              0.0,
+              0.0
+            ],
+            "seed": 20261013,
+            "variant_mean": 0.0
+          },
+          "f1": {
+            "baseline_mean": 0.028095238095238093,
+            "bootstrap_samples": 10000,
+            "difference": 0.04714285714285714,
+            "excluded_unscored_questions": 0,
+            "metric": "f1",
+            "n": 21,
+            "paired_bootstrap_95ci": [
+              0.0038095238095238104,
+              0.10476190476190476
+            ],
+            "seed": 20261013,
+            "variant_mean": 0.07523809523809523
+          },
+          "figure_candidate_recall": {
+            "baseline_mean": 0.15789473684210525,
+            "bootstrap_samples": 10000,
+            "difference": 0.15789473684210525,
+            "excluded_unscored_questions": 2,
+            "gain_question_ids": [
+              "4e54f543dbf46d64d45805209b73932b",
+              "bb8047fd4f786699571458e9c823e3d6",
+              "c7f4813597ef22351158fb5d10871914",
+              "d088c84d89e29777cfa9dc280a2b4049"
+            ],
+            "gains": 4,
+            "loss_question_ids": [
+              "d7abf11e4f64b4d59904422b17940dfc"
+            ],
+            "losses": 1,
+            "mcnemar_exact_pvalue": 0.375,
+            "metric": "figure_candidate_recall",
+            "n": 19,
+            "paired_bootstrap_95ci": [
+              -0.05263157894736842,
+              0.3684210526315789
+            ],
+            "seed": 20261013,
+            "variant_mean": 0.3157894736842105
+          },
+          "figure_delivery_recall": {
+            "baseline_mean": 0.15789473684210525,
+            "bootstrap_samples": 10000,
+            "difference": 0.15789473684210525,
+            "excluded_unscored_questions": 2,
+            "gain_question_ids": [
+              "4e54f543dbf46d64d45805209b73932b",
+              "bb8047fd4f786699571458e9c823e3d6",
+              "c7f4813597ef22351158fb5d10871914",
+              "d088c84d89e29777cfa9dc280a2b4049"
+            ],
+            "gains": 4,
+            "loss_question_ids": [
+              "d7abf11e4f64b4d59904422b17940dfc"
+            ],
+            "losses": 1,
+            "mcnemar_exact_pvalue": 0.375,
+            "metric": "figure_delivery_recall",
+            "n": 19,
+            "paired_bootstrap_95ci": [
+              -0.05263157894736842,
+              0.3684210526315789
+            ],
+            "seed": 20261013,
+            "variant_mean": 0.3157894736842105
+          },
+          "image_evidence_page_recall": {
+            "baseline_mean": 0.2631578947368421,
+            "bootstrap_samples": 10000,
+            "difference": 0.15789473684210525,
+            "excluded_unscored_questions": 2,
+            "gain_question_ids": [
+              "9aa0dd5dd754fdc4a68eabc639a34f35",
+              "bb8047fd4f786699571458e9c823e3d6",
+              "c7f4813597ef22351158fb5d10871914",
+              "d088c84d89e29777cfa9dc280a2b4049"
+            ],
+            "gains": 4,
+            "loss_question_ids": [
+              "d7abf11e4f64b4d59904422b17940dfc"
+            ],
+            "losses": 1,
+            "mcnemar_exact_pvalue": 0.375,
+            "metric": "image_evidence_page_recall",
+            "n": 19,
+            "paired_bootstrap_95ci": [
+              -0.05263157894736842,
+              0.3684210526315789
+            ],
+            "seed": 20261013,
+            "variant_mean": 0.42105263157894735
+          },
+          "llm_accuracy": {
+            "baseline_mean": 0.0,
+            "bootstrap_samples": 10000,
+            "difference": 0.047619047619047616,
+            "excluded_unscored_questions": 0,
+            "gain_question_ids": [
+              "58665e1fc2c65c0aeb34292d5d2d4be7"
+            ],
+            "gains": 1,
+            "loss_question_ids": [],
+            "losses": 0,
+            "mcnemar_exact_pvalue": 1.0,
+            "metric": "llm_accuracy",
+            "n": 21,
+            "paired_bootstrap_95ci": [
+              0.0,
+              0.14285714285714285
+            ],
+            "seed": 20261013,
+            "variant_mean": 0.047619047619047616
+          }
+        },
+        "image+table": {
+          "all_documents_read": {
+            "baseline_mean": 0.04,
+            "bootstrap_samples": 10000,
+            "difference": 0.0,
+            "excluded_unscored_questions": 0,
+            "gain_question_ids": [],
+            "gains": 0,
+            "loss_question_ids": [],
+            "losses": 0,
+            "mcnemar_exact_pvalue": 1.0,
+            "metric": "all_documents_read",
+            "n": 25,
+            "paired_bootstrap_95ci": [
+              0.0,
+              0.0
+            ],
+            "seed": 20261013,
+            "variant_mean": 0.04
+          },
+          "contain": {
+            "baseline_mean": 0.08,
+            "bootstrap_samples": 10000,
+            "difference": 0.08,
+            "excluded_unscored_questions": 0,
+            "gain_question_ids": [
+              "6fa7d97e320c00a54b369558ad136224",
+              "dd920fa1a56fece13a4585ff36c7e016"
+            ],
+            "gains": 2,
+            "loss_question_ids": [],
+            "losses": 0,
+            "mcnemar_exact_pvalue": 0.5,
+            "metric": "contain",
+            "n": 25,
+            "paired_bootstrap_95ci": [
+              0.0,
+              0.2
+            ],
+            "seed": 20261013,
+            "variant_mean": 0.16
+          },
+          "document_recall": {
+            "baseline_mean": 0.33,
+            "bootstrap_samples": 10000,
+            "difference": 0.06571428571428571,
+            "excluded_unscored_questions": 0,
+            "metric": "document_recall",
+            "n": 25,
+            "paired_bootstrap_95ci": [
+              -0.02,
+              0.15714285714285714
+            ],
+            "seed": 20261013,
+            "variant_mean": 0.3957142857142857
+          },
+          "em": {
+            "baseline_mean": 0.0,
+            "bootstrap_samples": 10000,
+            "difference": 0.04,
+            "excluded_unscored_questions": 0,
+            "gain_question_ids": [
+              "55a8521c8d80b20fab7ee5b766503643"
+            ],
+            "gains": 1,
+            "loss_question_ids": [],
+            "losses": 0,
+            "mcnemar_exact_pvalue": 1.0,
+            "metric": "em",
+            "n": 25,
+            "paired_bootstrap_95ci": [
+              0.0,
+              0.12
+            ],
+            "seed": 20261013,
+            "variant_mean": 0.04
+          },
+          "f1": {
+            "baseline_mean": 0.0164,
+            "bootstrap_samples": 10000,
+            "difference": 0.0464,
+            "excluded_unscored_questions": 0,
+            "metric": "f1",
+            "n": 25,
+            "paired_bootstrap_95ci": [
+              0.0,
+              0.12119999999999999
+            ],
+            "seed": 20261013,
+            "variant_mean": 0.0628
+          },
+          "figure_candidate_recall": {
+            "baseline_mean": 0.0,
+            "bootstrap_samples": 10000,
+            "difference": 0.0,
+            "excluded_unscored_questions": 10,
+            "gain_question_ids": [],
+            "gains": 0,
+            "loss_question_ids": [],
+            "losses": 0,
+            "mcnemar_exact_pvalue": 1.0,
+            "metric": "figure_candidate_recall",
+            "n": 15,
+            "paired_bootstrap_95ci": [
+              0.0,
+              0.0
+            ],
+            "seed": 20261013,
+            "variant_mean": 0.0
+          },
+          "figure_delivery_recall": {
+            "baseline_mean": 0.0,
+            "bootstrap_samples": 10000,
+            "difference": 0.0,
+            "excluded_unscored_questions": 10,
+            "gain_question_ids": [],
+            "gains": 0,
+            "loss_question_ids": [],
+            "losses": 0,
+            "mcnemar_exact_pvalue": 1.0,
+            "metric": "figure_delivery_recall",
+            "n": 15,
+            "paired_bootstrap_95ci": [
+              0.0,
+              0.0
+            ],
+            "seed": 20261013,
+            "variant_mean": 0.0
+          },
+          "image_evidence_page_recall": {
+            "baseline_mean": 0.06666666666666667,
+            "bootstrap_samples": 10000,
+            "difference": -0.06666666666666667,
+            "excluded_unscored_questions": 10,
+            "gain_question_ids": [],
+            "gains": 0,
+            "loss_question_ids": [
+              "eb436f004ebafb0427bfab8c6466572c"
+            ],
+            "losses": 1,
+            "mcnemar_exact_pvalue": 1.0,
+            "metric": "image_evidence_page_recall",
+            "n": 15,
+            "paired_bootstrap_95ci": [
+              -0.2,
+              0.0
+            ],
+            "seed": 20261013,
+            "variant_mean": 0.0
+          },
+          "llm_accuracy": {
+            "baseline_mean": 0.04,
+            "bootstrap_samples": 10000,
+            "difference": 0.04,
+            "excluded_unscored_questions": 0,
+            "gain_question_ids": [
+              "dd920fa1a56fece13a4585ff36c7e016"
+            ],
+            "gains": 1,
+            "loss_question_ids": [],
+            "losses": 0,
+            "mcnemar_exact_pvalue": 1.0,
+            "metric": "llm_accuracy",
+            "n": 25,
+            "paired_bootstrap_95ci": [
+              0.0,
+              0.12
+            ],
+            "seed": 20261013,
+            "variant_mean": 0.08
+          }
+        },
+        "image+text": {
+          "all_documents_read": {
+            "baseline_mean": 0.0,
+            "bootstrap_samples": 10000,
+            "difference": 0.0,
+            "excluded_unscored_questions": 0,
+            "gain_question_ids": [],
+            "gains": 0,
+            "loss_question_ids": [],
+            "losses": 0,
+            "mcnemar_exact_pvalue": 1.0,
+            "metric": "all_documents_read",
+            "n": 4,
+            "paired_bootstrap_95ci": [
+              0.0,
+              0.0
+            ],
+            "seed": 20261013,
+            "variant_mean": 0.0
+          },
+          "contain": {
+            "baseline_mean": 0.25,
+            "bootstrap_samples": 10000,
+            "difference": -0.25,
+            "excluded_unscored_questions": 0,
+            "gain_question_ids": [],
+            "gains": 0,
+            "loss_question_ids": [
+              "79c46102455f37942fcd1004316f547b"
+            ],
+            "losses": 1,
+            "mcnemar_exact_pvalue": 1.0,
+            "metric": "contain",
+            "n": 4,
+            "paired_bootstrap_95ci": [
+              -0.75,
+              0.0
+            ],
+            "seed": 20261013,
+            "variant_mean": 0.0
+          },
+          "document_recall": {
+            "baseline_mean": 0.375,
+            "bootstrap_samples": 10000,
+            "difference": 0.0,
+            "excluded_unscored_questions": 0,
+            "metric": "document_recall",
+            "n": 4,
+            "paired_bootstrap_95ci": [
+              0.0,
+              0.0
+            ],
+            "seed": 20261013,
+            "variant_mean": 0.375
+          },
+          "em": {
+            "baseline_mean": 0.25,
+            "bootstrap_samples": 10000,
+            "difference": -0.25,
+            "excluded_unscored_questions": 0,
+            "gain_question_ids": [],
+            "gains": 0,
+            "loss_question_ids": [
+              "79c46102455f37942fcd1004316f547b"
+            ],
+            "losses": 1,
+            "mcnemar_exact_pvalue": 1.0,
+            "metric": "em",
+            "n": 4,
+            "paired_bootstrap_95ci": [
+              -0.75,
+              0.0
+            ],
+            "seed": 20261013,
+            "variant_mean": 0.0
+          },
+          "f1": {
+            "baseline_mean": 0.25,
+            "bootstrap_samples": 10000,
+            "difference": -0.235,
+            "excluded_unscored_questions": 0,
+            "metric": "f1",
+            "n": 4,
+            "paired_bootstrap_95ci": [
+              -0.75,
+              0.045
+            ],
+            "seed": 20261013,
+            "variant_mean": 0.015
+          },
+          "figure_candidate_recall": {
+            "baseline_mean": 0.0,
+            "bootstrap_samples": 10000,
+            "difference": 0.0,
+            "excluded_unscored_questions": 1,
+            "gain_question_ids": [],
+            "gains": 0,
+            "loss_question_ids": [],
+            "losses": 0,
+            "mcnemar_exact_pvalue": 1.0,
+            "metric": "figure_candidate_recall",
+            "n": 3,
+            "paired_bootstrap_95ci": [
+              0.0,
+              0.0
+            ],
+            "seed": 20261013,
+            "variant_mean": 0.0
+          },
+          "figure_delivery_recall": {
+            "baseline_mean": 0.0,
+            "bootstrap_samples": 10000,
+            "difference": 0.0,
+            "excluded_unscored_questions": 1,
+            "gain_question_ids": [],
+            "gains": 0,
+            "loss_question_ids": [],
+            "losses": 0,
+            "mcnemar_exact_pvalue": 1.0,
+            "metric": "figure_delivery_recall",
+            "n": 3,
+            "paired_bootstrap_95ci": [
+              0.0,
+              0.0
+            ],
+            "seed": 20261013,
+            "variant_mean": 0.0
+          },
+          "image_evidence_page_recall": {
+            "baseline_mean": 0.0,
+            "bootstrap_samples": 10000,
+            "difference": 0.0,
+            "excluded_unscored_questions": 1,
+            "gain_question_ids": [],
+            "gains": 0,
+            "loss_question_ids": [],
+            "losses": 0,
+            "mcnemar_exact_pvalue": 1.0,
+            "metric": "image_evidence_page_recall",
+            "n": 3,
+            "paired_bootstrap_95ci": [
+              0.0,
+              0.0
+            ],
+            "seed": 20261013,
+            "variant_mean": 0.0
+          },
+          "llm_accuracy": {
+            "baseline_mean": 0.25,
+            "bootstrap_samples": 10000,
+            "difference": -0.25,
+            "excluded_unscored_questions": 0,
+            "gain_question_ids": [],
+            "gains": 0,
+            "loss_question_ids": [
+              "79c46102455f37942fcd1004316f547b"
+            ],
+            "losses": 1,
+            "mcnemar_exact_pvalue": 1.0,
+            "metric": "llm_accuracy",
+            "n": 4,
+            "paired_bootstrap_95ci": [
+              -0.75,
+              0.0
+            ],
+            "seed": 20261013,
+            "variant_mean": 0.0
+          }
+        },
+        "overall": {
+          "all_documents_read": {
+            "baseline_mean": 0.36,
+            "bootstrap_samples": 10000,
+            "difference": 0.0,
+            "excluded_unscored_questions": 0,
+            "gain_question_ids": [
+              "c7f4813597ef22351158fb5d10871914",
+              "d088c84d89e29777cfa9dc280a2b4049"
+            ],
+            "gains": 2,
+            "loss_question_ids": [
+              "5ce3a2f7d444bacd9ff948a7097283fe",
+              "be0baecf90a40b1ba8230d9c771f75ca"
+            ],
+            "losses": 2,
+            "mcnemar_exact_pvalue": 1.0,
+            "metric": "all_documents_read",
+            "n": 50,
+            "paired_bootstrap_95ci": [
+              -0.08,
+              0.08
+            ],
+            "seed": 20261013,
+            "variant_mean": 0.36
+          },
+          "contain": {
+            "baseline_mean": 0.1,
+            "bootstrap_samples": 10000,
+            "difference": 0.1,
+            "excluded_unscored_questions": 0,
+            "gain_question_ids": [
+              "4e54f543dbf46d64d45805209b73932b",
+              "58665e1fc2c65c0aeb34292d5d2d4be7",
+              "6fa7d97e320c00a54b369558ad136224",
+              "bb8047fd4f786699571458e9c823e3d6",
+              "d088c84d89e29777cfa9dc280a2b4049",
+              "dd920fa1a56fece13a4585ff36c7e016"
+            ],
+            "gains": 6,
+            "loss_question_ids": [
+              "79c46102455f37942fcd1004316f547b"
+            ],
+            "losses": 1,
+            "mcnemar_exact_pvalue": 0.125,
+            "metric": "contain",
+            "n": 50,
+            "paired_bootstrap_95ci": [
+              0.0,
+              0.2
+            ],
+            "seed": 20261013,
+            "variant_mean": 0.2
+          },
+          "document_recall": {
+            "baseline_mean": 0.535,
+            "bootstrap_samples": 10000,
+            "difference": 0.032857142857142856,
+            "excluded_unscored_questions": 0,
+            "metric": "document_recall",
+            "n": 50,
+            "paired_bootstrap_95ci": [
+              -0.05714285714285714,
+              0.12285714285714285
+            ],
+            "seed": 20261013,
+            "variant_mean": 0.5678571428571428
+          },
+          "em": {
+            "baseline_mean": 0.02,
+            "bootstrap_samples": 10000,
+            "difference": 0.0,
+            "excluded_unscored_questions": 0,
+            "gain_question_ids": [
+              "55a8521c8d80b20fab7ee5b766503643"
+            ],
+            "gains": 1,
+            "loss_question_ids": [
+              "79c46102455f37942fcd1004316f547b"
+            ],
+            "losses": 1,
+            "mcnemar_exact_pvalue": 1.0,
+            "metric": "em",
+            "n": 50,
+            "paired_bootstrap_95ci": [
+              -0.06,
+              0.06
+            ],
+            "seed": 20261013,
+            "variant_mean": 0.02
+          },
+          "f1": {
+            "baseline_mean": 0.04,
+            "bootstrap_samples": 10000,
+            "difference": 0.0242,
+            "excluded_unscored_questions": 0,
+            "metric": "f1",
+            "n": 50,
+            "paired_bootstrap_95ci": [
+              -0.034805,
+              0.08100499999999992
+            ],
+            "seed": 20261013,
+            "variant_mean": 0.0642
+          },
+          "figure_candidate_recall": {
+            "baseline_mean": 0.08108108108108109,
+            "bootstrap_samples": 10000,
+            "difference": 0.08108108108108109,
+            "excluded_unscored_questions": 13,
+            "gain_question_ids": [
+              "4e54f543dbf46d64d45805209b73932b",
+              "bb8047fd4f786699571458e9c823e3d6",
+              "c7f4813597ef22351158fb5d10871914",
+              "d088c84d89e29777cfa9dc280a2b4049"
+            ],
+            "gains": 4,
+            "loss_question_ids": [
+              "d7abf11e4f64b4d59904422b17940dfc"
+            ],
+            "losses": 1,
+            "mcnemar_exact_pvalue": 0.375,
+            "metric": "figure_candidate_recall",
+            "n": 37,
+            "paired_bootstrap_95ci": [
+              -0.02702702702702703,
+              0.1891891891891892
+            ],
+            "seed": 20261013,
+            "variant_mean": 0.16216216216216217
+          },
+          "figure_delivery_recall": {
+            "baseline_mean": 0.08108108108108109,
+            "bootstrap_samples": 10000,
+            "difference": 0.08108108108108109,
+            "excluded_unscored_questions": 13,
+            "gain_question_ids": [
+              "4e54f543dbf46d64d45805209b73932b",
+              "bb8047fd4f786699571458e9c823e3d6",
+              "c7f4813597ef22351158fb5d10871914",
+              "d088c84d89e29777cfa9dc280a2b4049"
+            ],
+            "gains": 4,
+            "loss_question_ids": [
+              "d7abf11e4f64b4d59904422b17940dfc"
+            ],
+            "losses": 1,
+            "mcnemar_exact_pvalue": 0.375,
+            "metric": "figure_delivery_recall",
+            "n": 37,
+            "paired_bootstrap_95ci": [
+              -0.02702702702702703,
+              0.1891891891891892
+            ],
+            "seed": 20261013,
+            "variant_mean": 0.16216216216216217
+          },
+          "image_evidence_page_recall": {
+            "baseline_mean": 0.16216216216216217,
+            "bootstrap_samples": 10000,
+            "difference": 0.05405405405405406,
+            "excluded_unscored_questions": 13,
+            "gain_question_ids": [
+              "9aa0dd5dd754fdc4a68eabc639a34f35",
+              "bb8047fd4f786699571458e9c823e3d6",
+              "c7f4813597ef22351158fb5d10871914",
+              "d088c84d89e29777cfa9dc280a2b4049"
+            ],
+            "gains": 4,
+            "loss_question_ids": [
+              "d7abf11e4f64b4d59904422b17940dfc",
+              "eb436f004ebafb0427bfab8c6466572c"
+            ],
+            "losses": 2,
+            "mcnemar_exact_pvalue": 0.6875,
+            "metric": "image_evidence_page_recall",
+            "n": 37,
+            "paired_bootstrap_95ci": [
+              -0.08108108108108109,
+              0.1891891891891892
+            ],
+            "seed": 20261013,
+            "variant_mean": 0.21621621621621623
+          },
+          "llm_accuracy": {
+            "baseline_mean": 0.04,
+            "bootstrap_samples": 10000,
+            "difference": 0.02,
+            "excluded_unscored_questions": 0,
+            "gain_question_ids": [
+              "58665e1fc2c65c0aeb34292d5d2d4be7",
+              "dd920fa1a56fece13a4585ff36c7e016"
+            ],
+            "gains": 2,
+            "loss_question_ids": [
+              "79c46102455f37942fcd1004316f547b"
+            ],
+            "losses": 1,
+            "mcnemar_exact_pvalue": 1.0,
+            "metric": "llm_accuracy",
+            "n": 50,
+            "paired_bootstrap_95ci": [
+              -0.04,
+              0.08
+            ],
+            "seed": 20261013,
+            "variant_mean": 0.06
+          }
+        }
+      },
+      "metrics_sha256": "dd0f38f7805db6d8744536c95f2a23c63428f5483c243fa6171b09674bfcea92"
+    },
+    "G1": {
+      "groups": {
+        "image": {
+          "all_documents_read": {
+            "baseline_mean": 0.8095238095238095,
+            "bootstrap_samples": 10000,
+            "difference": 0.09523809523809523,
+            "excluded_unscored_questions": 0,
+            "gain_question_ids": [
+              "c7f4813597ef22351158fb5d10871914",
+              "d088c84d89e29777cfa9dc280a2b4049"
+            ],
+            "gains": 2,
+            "loss_question_ids": [],
+            "losses": 0,
+            "mcnemar_exact_pvalue": 0.5,
+            "metric": "all_documents_read",
+            "n": 21,
+            "paired_bootstrap_95ci": [
+              0.0,
+              0.23809523809523808
+            ],
+            "seed": 20261013,
+            "variant_mean": 0.9047619047619048
+          },
+          "contain": {
+            "baseline_mean": 0.09523809523809523,
+            "bootstrap_samples": 10000,
+            "difference": 0.3333333333333333,
+            "excluded_unscored_questions": 0,
+            "gain_question_ids": [
+              "29a94164b22263351cc79f515a5b8e8b",
+              "4e54f543dbf46d64d45805209b73932b",
+              "58665e1fc2c65c0aeb34292d5d2d4be7",
+              "ab10cadf36dffc54555f88b60e3bb872",
+              "bb8047fd4f786699571458e9c823e3d6",
+              "be0baecf90a40b1ba8230d9c771f75ca",
+              "d088c84d89e29777cfa9dc280a2b4049"
+            ],
+            "gains": 7,
+            "loss_question_ids": [],
+            "losses": 0,
+            "mcnemar_exact_pvalue": 0.015625,
+            "metric": "contain",
+            "n": 21,
+            "paired_bootstrap_95ci": [
+              0.14285714285714285,
+              0.5238095238095238
+            ],
+            "seed": 20261013,
+            "variant_mean": 0.42857142857142855
+          },
+          "document_recall": {
+            "baseline_mean": 0.8095238095238095,
+            "bootstrap_samples": 10000,
+            "difference": 0.09523809523809523,
+            "excluded_unscored_questions": 0,
+            "gain_question_ids": [
+              "c7f4813597ef22351158fb5d10871914",
+              "d088c84d89e29777cfa9dc280a2b4049"
+            ],
+            "gains": 2,
+            "loss_question_ids": [],
+            "losses": 0,
+            "mcnemar_exact_pvalue": 0.5,
+            "metric": "document_recall",
+            "n": 21,
+            "paired_bootstrap_95ci": [
+              0.0,
+              0.23809523809523808
+            ],
+            "seed": 20261013,
+            "variant_mean": 0.9047619047619048
+          },
+          "em": {
+            "baseline_mean": 0.0,
+            "bootstrap_samples": 10000,
+            "difference": 0.14285714285714285,
+            "excluded_unscored_questions": 0,
+            "gain_question_ids": [
+              "29a94164b22263351cc79f515a5b8e8b",
+              "4e54f543dbf46d64d45805209b73932b",
+              "be0baecf90a40b1ba8230d9c771f75ca"
+            ],
+            "gains": 3,
+            "loss_question_ids": [],
+            "losses": 0,
+            "mcnemar_exact_pvalue": 0.25,
+            "metric": "em",
+            "n": 21,
+            "paired_bootstrap_95ci": [
+              0.0,
+              0.2857142857142857
+            ],
+            "seed": 20261013,
+            "variant_mean": 0.14285714285714285
+          },
+          "f1": {
+            "baseline_mean": 0.028095238095238093,
+            "bootstrap_samples": 10000,
+            "difference": 0.2061904761904762,
+            "excluded_unscored_questions": 0,
+            "metric": "f1",
+            "n": 21,
+            "paired_bootstrap_95ci": [
+              0.07428571428571427,
+              0.3642976190476189
+            ],
+            "seed": 20261013,
+            "variant_mean": 0.23428571428571432
+          },
+          "figure_candidate_recall": {
+            "baseline_mean": 0.15789473684210525,
+            "bootstrap_samples": 10000,
+            "difference": 0.5789473684210527,
+            "excluded_unscored_questions": 2,
+            "gain_question_ids": [
+              "1fb8350bf0c31954296712889c72635a",
+              "299e684293fffb0f9dca76a1092c83f9",
+              "29a94164b22263351cc79f515a5b8e8b",
+              "4e54f543dbf46d64d45805209b73932b",
+              "9aa0dd5dd754fdc4a68eabc639a34f35",
+              "a6cb73d18b79117f01e6d814c07a60f7",
+              "ab10cadf36dffc54555f88b60e3bb872",
+              "bb8047fd4f786699571458e9c823e3d6",
+              "be0baecf90a40b1ba8230d9c771f75ca",
+              "c7f4813597ef22351158fb5d10871914",
+              "d088c84d89e29777cfa9dc280a2b4049"
+            ],
+            "gains": 11,
+            "loss_question_ids": [],
+            "losses": 0,
+            "mcnemar_exact_pvalue": 0.0009765625,
+            "metric": "figure_candidate_recall",
+            "n": 19,
+            "paired_bootstrap_95ci": [
+              0.3684210526315789,
+              0.7894736842105263
+            ],
+            "seed": 20261013,
+            "variant_mean": 0.7368421052631579
+          },
+          "figure_delivery_recall": {
+            "baseline_mean": 0.15789473684210525,
+            "bootstrap_samples": 10000,
+            "difference": 0.3684210526315789,
+            "excluded_unscored_questions": 2,
+            "gain_question_ids": [
+              "29a94164b22263351cc79f515a5b8e8b",
+              "9aa0dd5dd754fdc4a68eabc639a34f35",
+              "ab10cadf36dffc54555f88b60e3bb872",
+              "bb8047fd4f786699571458e9c823e3d6",
+              "be0baecf90a40b1ba8230d9c771f75ca",
+              "c7f4813597ef22351158fb5d10871914",
+              "d088c84d89e29777cfa9dc280a2b4049"
+            ],
+            "gains": 7,
+            "loss_question_ids": [],
+            "losses": 0,
+            "mcnemar_exact_pvalue": 0.015625,
+            "metric": "figure_delivery_recall",
+            "n": 19,
+            "paired_bootstrap_95ci": [
+              0.15789473684210525,
+              0.5789473684210527
+            ],
+            "seed": 20261013,
+            "variant_mean": 0.5263157894736842
+          },
+          "image_evidence_page_recall": {
+            "baseline_mean": 0.2631578947368421,
+            "bootstrap_samples": 10000,
+            "difference": 0.3157894736842105,
+            "excluded_unscored_questions": 2,
+            "gain_question_ids": [
+              "29a94164b22263351cc79f515a5b8e8b",
+              "9aa0dd5dd754fdc4a68eabc639a34f35",
+              "bb8047fd4f786699571458e9c823e3d6",
+              "be0baecf90a40b1ba8230d9c771f75ca",
+              "c7f4813597ef22351158fb5d10871914",
+              "d088c84d89e29777cfa9dc280a2b4049"
+            ],
+            "gains": 6,
+            "loss_question_ids": [],
+            "losses": 0,
+            "mcnemar_exact_pvalue": 0.03125,
+            "metric": "image_evidence_page_recall",
+            "n": 19,
+            "paired_bootstrap_95ci": [
+              0.10526315789473684,
+              0.5263157894736842
+            ],
+            "seed": 20261013,
+            "variant_mean": 0.5789473684210527
+          },
+          "llm_accuracy": {
+            "baseline_mean": 0.0,
+            "bootstrap_samples": 10000,
+            "difference": 0.19047619047619047,
+            "excluded_unscored_questions": 0,
+            "gain_question_ids": [
+              "29a94164b22263351cc79f515a5b8e8b",
+              "4e54f543dbf46d64d45805209b73932b",
+              "ab10cadf36dffc54555f88b60e3bb872",
+              "be0baecf90a40b1ba8230d9c771f75ca"
+            ],
+            "gains": 4,
+            "loss_question_ids": [],
+            "losses": 0,
+            "mcnemar_exact_pvalue": 0.125,
+            "metric": "llm_accuracy",
+            "n": 21,
+            "paired_bootstrap_95ci": [
+              0.047619047619047616,
+              0.38095238095238093
+            ],
+            "seed": 20261013,
+            "variant_mean": 0.19047619047619047
+          }
+        },
+        "image+table": {
+          "all_documents_read": {
+            "baseline_mean": 0.04,
+            "bootstrap_samples": 10000,
+            "difference": 0.0,
+            "excluded_unscored_questions": 0,
+            "gain_question_ids": [],
+            "gains": 0,
+            "loss_question_ids": [],
+            "losses": 0,
+            "mcnemar_exact_pvalue": 1.0,
+            "metric": "all_documents_read",
+            "n": 25,
+            "paired_bootstrap_95ci": [
+              0.0,
+              0.0
+            ],
+            "seed": 20261013,
+            "variant_mean": 0.04
+          },
+          "contain": {
+            "baseline_mean": 0.08,
+            "bootstrap_samples": 10000,
+            "difference": 0.08,
+            "excluded_unscored_questions": 0,
+            "gain_question_ids": [
+              "81088e10057564782ada42345f1b51bc",
+              "eb436f004ebafb0427bfab8c6466572c"
+            ],
+            "gains": 2,
+            "loss_question_ids": [],
+            "losses": 0,
+            "mcnemar_exact_pvalue": 0.5,
+            "metric": "contain",
+            "n": 25,
+            "paired_bootstrap_95ci": [
+              0.0,
+              0.2
+            ],
+            "seed": 20261013,
+            "variant_mean": 0.16
+          },
+          "document_recall": {
+            "baseline_mean": 0.33,
+            "bootstrap_samples": 10000,
+            "difference": 0.06,
+            "excluded_unscored_questions": 0,
+            "metric": "document_recall",
+            "n": 25,
+            "paired_bootstrap_95ci": [
+              -0.06,
+              0.18
+            ],
+            "seed": 20261013,
+            "variant_mean": 0.39
+          },
+          "em": {
+            "baseline_mean": 0.0,
+            "bootstrap_samples": 10000,
+            "difference": 0.0,
+            "excluded_unscored_questions": 0,
+            "gain_question_ids": [],
+            "gains": 0,
+            "loss_question_ids": [],
+            "losses": 0,
+            "mcnemar_exact_pvalue": 1.0,
+            "metric": "em",
+            "n": 25,
+            "paired_bootstrap_95ci": [
+              0.0,
+              0.0
+            ],
+            "seed": 20261013,
+            "variant_mean": 0.0
+          },
+          "f1": {
+            "baseline_mean": 0.0164,
+            "bootstrap_samples": 10000,
+            "difference": 0.0204,
+            "excluded_unscored_questions": 0,
+            "metric": "f1",
+            "n": 25,
+            "paired_bootstrap_95ci": [
+              0.0,
+              0.0516
+            ],
+            "seed": 20261013,
+            "variant_mean": 0.0368
+          },
+          "figure_candidate_recall": {
+            "baseline_mean": 0.0,
+            "bootstrap_samples": 10000,
+            "difference": 0.5333333333333333,
+            "excluded_unscored_questions": 10,
+            "gain_question_ids": [
+              "13c2a1185b4afbdb3ff93e673e6aa82a",
+              "172ac97087bb92ca50b403a424a509c6",
+              "365b34e9cb7444118c99eaef4da43fca",
+              "3d1604090633d52b80305ba9462fd678",
+              "81088e10057564782ada42345f1b51bc",
+              "dd920fa1a56fece13a4585ff36c7e016",
+              "f32cf8a73a497551baac289e96ad0db8",
+              "f7703b97595e6c85b989ce719c6bb279"
+            ],
+            "gains": 8,
+            "loss_question_ids": [],
+            "losses": 0,
+            "mcnemar_exact_pvalue": 0.0078125,
+            "metric": "figure_candidate_recall",
+            "n": 15,
+            "paired_bootstrap_95ci": [
+              0.26666666666666666,
+              0.8
+            ],
+            "seed": 20261013,
+            "variant_mean": 0.5333333333333333
+          },
+          "figure_delivery_recall": {
+            "baseline_mean": 0.0,
+            "bootstrap_samples": 10000,
+            "difference": 0.06666666666666667,
+            "excluded_unscored_questions": 10,
+            "gain_question_ids": [
+              "81088e10057564782ada42345f1b51bc"
+            ],
+            "gains": 1,
+            "loss_question_ids": [],
+            "losses": 0,
+            "mcnemar_exact_pvalue": 1.0,
+            "metric": "figure_delivery_recall",
+            "n": 15,
+            "paired_bootstrap_95ci": [
+              0.0,
+              0.2
+            ],
+            "seed": 20261013,
+            "variant_mean": 0.06666666666666667
+          },
+          "image_evidence_page_recall": {
+            "baseline_mean": 0.06666666666666667,
+            "bootstrap_samples": 10000,
+            "difference": 0.0,
+            "excluded_unscored_questions": 10,
+            "gain_question_ids": [
+              "81088e10057564782ada42345f1b51bc"
+            ],
+            "gains": 1,
+            "loss_question_ids": [
+              "eb436f004ebafb0427bfab8c6466572c"
+            ],
+            "losses": 1,
+            "mcnemar_exact_pvalue": 1.0,
+            "metric": "image_evidence_page_recall",
+            "n": 15,
+            "paired_bootstrap_95ci": [
+              -0.2,
+              0.2
+            ],
+            "seed": 20261013,
+            "variant_mean": 0.06666666666666667
+          },
+          "llm_accuracy": {
+            "baseline_mean": 0.04,
+            "bootstrap_samples": 10000,
+            "difference": 0.0,
+            "excluded_unscored_questions": 0,
+            "gain_question_ids": [],
+            "gains": 0,
+            "loss_question_ids": [],
+            "losses": 0,
+            "mcnemar_exact_pvalue": 1.0,
+            "metric": "llm_accuracy",
+            "n": 25,
+            "paired_bootstrap_95ci": [
+              0.0,
+              0.0
+            ],
+            "seed": 20261013,
+            "variant_mean": 0.04
+          }
+        },
+        "image+text": {
+          "all_documents_read": {
+            "baseline_mean": 0.0,
+            "bootstrap_samples": 10000,
+            "difference": 0.25,
+            "excluded_unscored_questions": 0,
+            "gain_question_ids": [
+              "63c77b00f520740f47db2debd3eb11e9"
+            ],
+            "gains": 1,
+            "loss_question_ids": [],
+            "losses": 0,
+            "mcnemar_exact_pvalue": 1.0,
+            "metric": "all_documents_read",
+            "n": 4,
+            "paired_bootstrap_95ci": [
+              0.0,
+              0.75
+            ],
+            "seed": 20261013,
+            "variant_mean": 0.25
+          },
+          "contain": {
+            "baseline_mean": 0.25,
+            "bootstrap_samples": 10000,
+            "difference": 0.0,
+            "excluded_unscored_questions": 0,
+            "gain_question_ids": [],
+            "gains": 0,
+            "loss_question_ids": [],
+            "losses": 0,
+            "mcnemar_exact_pvalue": 1.0,
+            "metric": "contain",
+            "n": 4,
+            "paired_bootstrap_95ci": [
+              0.0,
+              0.0
+            ],
+            "seed": 20261013,
+            "variant_mean": 0.25
+          },
+          "document_recall": {
+            "baseline_mean": 0.375,
+            "bootstrap_samples": 10000,
+            "difference": 0.125,
+            "excluded_unscored_questions": 0,
+            "metric": "document_recall",
+            "n": 4,
+            "paired_bootstrap_95ci": [
+              0.0,
+              0.375
+            ],
+            "seed": 20261013,
+            "variant_mean": 0.5
+          },
+          "em": {
+            "baseline_mean": 0.25,
+            "bootstrap_samples": 10000,
+            "difference": 0.0,
+            "excluded_unscored_questions": 0,
+            "gain_question_ids": [],
+            "gains": 0,
+            "loss_question_ids": [],
+            "losses": 0,
+            "mcnemar_exact_pvalue": 1.0,
+            "metric": "em",
+            "n": 4,
+            "paired_bootstrap_95ci": [
+              0.0,
+              0.0
+            ],
+            "seed": 20261013,
+            "variant_mean": 0.25
+          },
+          "f1": {
+            "baseline_mean": 0.25,
+            "bootstrap_samples": 10000,
+            "difference": 0.0175,
+            "excluded_unscored_questions": 0,
+            "metric": "f1",
+            "n": 4,
+            "paired_bootstrap_95ci": [
+              0.0,
+              0.052500000000000005
+            ],
+            "seed": 20261013,
+            "variant_mean": 0.2675
+          },
+          "figure_candidate_recall": {
+            "baseline_mean": 0.0,
+            "bootstrap_samples": 10000,
+            "difference": 0.3333333333333333,
+            "excluded_unscored_questions": 1,
+            "gain_question_ids": [
+              "79c46102455f37942fcd1004316f547b"
+            ],
+            "gains": 1,
+            "loss_question_ids": [],
+            "losses": 0,
+            "mcnemar_exact_pvalue": 1.0,
+            "metric": "figure_candidate_recall",
+            "n": 3,
+            "paired_bootstrap_95ci": [
+              0.0,
+              1.0
+            ],
+            "seed": 20261013,
+            "variant_mean": 0.3333333333333333
+          },
+          "figure_delivery_recall": {
+            "baseline_mean": 0.0,
+            "bootstrap_samples": 10000,
+            "difference": 0.3333333333333333,
+            "excluded_unscored_questions": 1,
+            "gain_question_ids": [
+              "79c46102455f37942fcd1004316f547b"
+            ],
+            "gains": 1,
+            "loss_question_ids": [],
+            "losses": 0,
+            "mcnemar_exact_pvalue": 1.0,
+            "metric": "figure_delivery_recall",
+            "n": 3,
+            "paired_bootstrap_95ci": [
+              0.0,
+              1.0
+            ],
+            "seed": 20261013,
+            "variant_mean": 0.3333333333333333
+          },
+          "image_evidence_page_recall": {
+            "baseline_mean": 0.0,
+            "bootstrap_samples": 10000,
+            "difference": 0.3333333333333333,
+            "excluded_unscored_questions": 1,
+            "gain_question_ids": [
+              "79c46102455f37942fcd1004316f547b"
+            ],
+            "gains": 1,
+            "loss_question_ids": [],
+            "losses": 0,
+            "mcnemar_exact_pvalue": 1.0,
+            "metric": "image_evidence_page_recall",
+            "n": 3,
+            "paired_bootstrap_95ci": [
+              0.0,
+              1.0
+            ],
+            "seed": 20261013,
+            "variant_mean": 0.3333333333333333
+          },
+          "llm_accuracy": {
+            "baseline_mean": 0.25,
+            "bootstrap_samples": 10000,
+            "difference": 0.0,
+            "excluded_unscored_questions": 0,
+            "gain_question_ids": [],
+            "gains": 0,
+            "loss_question_ids": [],
+            "losses": 0,
+            "mcnemar_exact_pvalue": 1.0,
+            "metric": "llm_accuracy",
+            "n": 4,
+            "paired_bootstrap_95ci": [
+              0.0,
+              0.0
+            ],
+            "seed": 20261013,
+            "variant_mean": 0.25
+          }
+        },
+        "overall": {
+          "all_documents_read": {
+            "baseline_mean": 0.36,
+            "bootstrap_samples": 10000,
+            "difference": 0.06,
+            "excluded_unscored_questions": 0,
+            "gain_question_ids": [
+              "63c77b00f520740f47db2debd3eb11e9",
+              "c7f4813597ef22351158fb5d10871914",
+              "d088c84d89e29777cfa9dc280a2b4049"
+            ],
+            "gains": 3,
+            "loss_question_ids": [],
+            "losses": 0,
+            "mcnemar_exact_pvalue": 0.25,
+            "metric": "all_documents_read",
+            "n": 50,
+            "paired_bootstrap_95ci": [
+              0.0,
+              0.14
+            ],
+            "seed": 20261013,
+            "variant_mean": 0.42
+          },
+          "contain": {
+            "baseline_mean": 0.1,
+            "bootstrap_samples": 10000,
+            "difference": 0.18,
+            "excluded_unscored_questions": 0,
+            "gain_question_ids": [
+              "29a94164b22263351cc79f515a5b8e8b",
+              "4e54f543dbf46d64d45805209b73932b",
+              "58665e1fc2c65c0aeb34292d5d2d4be7",
+              "81088e10057564782ada42345f1b51bc",
+              "ab10cadf36dffc54555f88b60e3bb872",
+              "bb8047fd4f786699571458e9c823e3d6",
+              "be0baecf90a40b1ba8230d9c771f75ca",
+              "d088c84d89e29777cfa9dc280a2b4049",
+              "eb436f004ebafb0427bfab8c6466572c"
+            ],
+            "gains": 9,
+            "loss_question_ids": [],
+            "losses": 0,
+            "mcnemar_exact_pvalue": 0.00390625,
+            "metric": "contain",
+            "n": 50,
+            "paired_bootstrap_95ci": [
+              0.08,
+              0.3
+            ],
+            "seed": 20261013,
+            "variant_mean": 0.28
+          },
+          "document_recall": {
+            "baseline_mean": 0.535,
+            "bootstrap_samples": 10000,
+            "difference": 0.08,
+            "excluded_unscored_questions": 0,
+            "metric": "document_recall",
+            "n": 50,
+            "paired_bootstrap_95ci": [
+              0.0,
+              0.17
+            ],
+            "seed": 20261013,
+            "variant_mean": 0.615
+          },
+          "em": {
+            "baseline_mean": 0.02,
+            "bootstrap_samples": 10000,
+            "difference": 0.06,
+            "excluded_unscored_questions": 0,
+            "gain_question_ids": [
+              "29a94164b22263351cc79f515a5b8e8b",
+              "4e54f543dbf46d64d45805209b73932b",
+              "be0baecf90a40b1ba8230d9c771f75ca"
+            ],
+            "gains": 3,
+            "loss_question_ids": [],
+            "losses": 0,
+            "mcnemar_exact_pvalue": 0.25,
+            "metric": "em",
+            "n": 50,
+            "paired_bootstrap_95ci": [
+              0.0,
+              0.14
+            ],
+            "seed": 20261013,
+            "variant_mean": 0.08
+          },
+          "f1": {
+            "baseline_mean": 0.04,
+            "bootstrap_samples": 10000,
+            "difference": 0.09820000000000001,
+            "excluded_unscored_questions": 0,
+            "metric": "f1",
+            "n": 50,
+            "paired_bootstrap_95ci": [
+              0.0382,
+              0.1740049999999999
+            ],
+            "seed": 20261013,
+            "variant_mean": 0.1382
+          },
+          "figure_candidate_recall": {
+            "baseline_mean": 0.08108108108108109,
+            "bootstrap_samples": 10000,
+            "difference": 0.5405405405405406,
+            "excluded_unscored_questions": 13,
+            "gain_question_ids": [
+              "13c2a1185b4afbdb3ff93e673e6aa82a",
+              "172ac97087bb92ca50b403a424a509c6",
+              "1fb8350bf0c31954296712889c72635a",
+              "299e684293fffb0f9dca76a1092c83f9",
+              "29a94164b22263351cc79f515a5b8e8b",
+              "365b34e9cb7444118c99eaef4da43fca",
+              "3d1604090633d52b80305ba9462fd678",
+              "4e54f543dbf46d64d45805209b73932b",
+              "79c46102455f37942fcd1004316f547b",
+              "81088e10057564782ada42345f1b51bc",
+              "9aa0dd5dd754fdc4a68eabc639a34f35",
+              "a6cb73d18b79117f01e6d814c07a60f7",
+              "ab10cadf36dffc54555f88b60e3bb872",
+              "bb8047fd4f786699571458e9c823e3d6",
+              "be0baecf90a40b1ba8230d9c771f75ca",
+              "c7f4813597ef22351158fb5d10871914",
+              "d088c84d89e29777cfa9dc280a2b4049",
+              "dd920fa1a56fece13a4585ff36c7e016",
+              "f32cf8a73a497551baac289e96ad0db8",
+              "f7703b97595e6c85b989ce719c6bb279"
+            ],
+            "gains": 20,
+            "loss_question_ids": [],
+            "losses": 0,
+            "mcnemar_exact_pvalue": 1.9073486328125e-06,
+            "metric": "figure_candidate_recall",
+            "n": 37,
+            "paired_bootstrap_95ci": [
+              0.3783783783783784,
+              0.7027027027027027
+            ],
+            "seed": 20261013,
+            "variant_mean": 0.6216216216216216
+          },
+          "figure_delivery_recall": {
+            "baseline_mean": 0.08108108108108109,
+            "bootstrap_samples": 10000,
+            "difference": 0.24324324324324326,
+            "excluded_unscored_questions": 13,
+            "gain_question_ids": [
+              "29a94164b22263351cc79f515a5b8e8b",
+              "79c46102455f37942fcd1004316f547b",
+              "81088e10057564782ada42345f1b51bc",
+              "9aa0dd5dd754fdc4a68eabc639a34f35",
+              "ab10cadf36dffc54555f88b60e3bb872",
+              "bb8047fd4f786699571458e9c823e3d6",
+              "be0baecf90a40b1ba8230d9c771f75ca",
+              "c7f4813597ef22351158fb5d10871914",
+              "d088c84d89e29777cfa9dc280a2b4049"
+            ],
+            "gains": 9,
+            "loss_question_ids": [],
+            "losses": 0,
+            "mcnemar_exact_pvalue": 0.00390625,
+            "metric": "figure_delivery_recall",
+            "n": 37,
+            "paired_bootstrap_95ci": [
+              0.10810810810810811,
+              0.3783783783783784
+            ],
+            "seed": 20261013,
+            "variant_mean": 0.32432432432432434
+          },
+          "image_evidence_page_recall": {
+            "baseline_mean": 0.16216216216216217,
+            "bootstrap_samples": 10000,
+            "difference": 0.1891891891891892,
+            "excluded_unscored_questions": 13,
+            "gain_question_ids": [
+              "29a94164b22263351cc79f515a5b8e8b",
+              "79c46102455f37942fcd1004316f547b",
+              "81088e10057564782ada42345f1b51bc",
+              "9aa0dd5dd754fdc4a68eabc639a34f35",
+              "bb8047fd4f786699571458e9c823e3d6",
+              "be0baecf90a40b1ba8230d9c771f75ca",
+              "c7f4813597ef22351158fb5d10871914",
+              "d088c84d89e29777cfa9dc280a2b4049"
+            ],
+            "gains": 8,
+            "loss_question_ids": [
+              "eb436f004ebafb0427bfab8c6466572c"
+            ],
+            "losses": 1,
+            "mcnemar_exact_pvalue": 0.0390625,
+            "metric": "image_evidence_page_recall",
+            "n": 37,
+            "paired_bootstrap_95ci": [
+              0.05405405405405406,
+              0.35135135135135137
+            ],
+            "seed": 20261013,
+            "variant_mean": 0.35135135135135137
+          },
+          "llm_accuracy": {
+            "baseline_mean": 0.04,
+            "bootstrap_samples": 10000,
+            "difference": 0.08,
+            "excluded_unscored_questions": 0,
+            "gain_question_ids": [
+              "29a94164b22263351cc79f515a5b8e8b",
+              "4e54f543dbf46d64d45805209b73932b",
+              "ab10cadf36dffc54555f88b60e3bb872",
+              "be0baecf90a40b1ba8230d9c771f75ca"
+            ],
+            "gains": 4,
+            "loss_question_ids": [],
+            "losses": 0,
+            "mcnemar_exact_pvalue": 0.125,
+            "metric": "llm_accuracy",
+            "n": 50,
+            "paired_bootstrap_95ci": [
+              0.02,
+              0.16
+            ],
+            "seed": 20261013,
+            "variant_mean": 0.12
+          }
+        }
+      },
+      "metrics_sha256": "7ebc33c3d959780ca00e538e4bbbffa00aaf97009c63a3aa25c2c93f7fef54bd"
+    }
+  },
+  "failure_audits": {
+    "B0": {
+      "caveat": "Metric disagreement is not a confirmed judge error. Delivered images do not establish that all text/table hops were read. Manual case review is required.",
+      "counts": {
+        "gold_images_delivered_but_em_incorrect": 3,
+        "gold_visual_evidence_not_all_retrieved_or_delivered": 33,
+        "metric_disagreement_requires_manual_review": 1,
+        "unmapped_visual_evidence": 13
+      },
+      "question_ids": {
+        "gold_images_delivered_but_em_incorrect": [
+          "a9b13ea4d008783e39b3cecc4faa2bfb",
+          "c465aacdd3cc5206159faf47beda45a6",
+          "d7abf11e4f64b4d59904422b17940dfc"
+        ],
+        "gold_visual_evidence_not_all_retrieved_or_delivered": [
+          "03def0a2b0c43fc1777f03321b151b74",
+          "06bc1d245498f3a0642b118b599cf1dd",
+          "13c2a1185b4afbdb3ff93e673e6aa82a",
+          "172ac97087bb92ca50b403a424a509c6",
+          "1fb8350bf0c31954296712889c72635a",
+          "299e684293fffb0f9dca76a1092c83f9",
+          "29a94164b22263351cc79f515a5b8e8b",
+          "2cd38c28acd439d9ae2e692bcd193b19",
+          "365b34e9cb7444118c99eaef4da43fca",
+          "3d1604090633d52b80305ba9462fd678",
+          "454a726486b3c8f44571833938ca7cf1",
+          "4778c9f3b15c46c0f7cb8779c3ca4b1c",
+          "4e54f543dbf46d64d45805209b73932b",
+          "58665e1fc2c65c0aeb34292d5d2d4be7",
+          "58c230238b7da1509064f8924522d0d0",
+          "5ce3a2f7d444bacd9ff948a7097283fe",
+          "6fa7d97e320c00a54b369558ad136224",
+          "81088e10057564782ada42345f1b51bc",
+          "9aa0dd5dd754fdc4a68eabc639a34f35",
+          "a6cb73d18b79117f01e6d814c07a60f7",
+          "ab10cadf36dffc54555f88b60e3bb872",
+          "bb8047fd4f786699571458e9c823e3d6",
+          "be0baecf90a40b1ba8230d9c771f75ca",
+          "c7b77e93ded0bb2893ba2ea2ebd70a19",
+          "c7f4813597ef22351158fb5d10871914",
+          "cbc0c25821c0cbc971e85bf72c392650",
+          "d088c84d89e29777cfa9dc280a2b4049",
+          "dab3aab85244cda2cdf7f19e932cc220",
+          "dd920fa1a56fece13a4585ff36c7e016",
+          "eb436f004ebafb0427bfab8c6466572c",
+          "ee9320e184758afe302643832e4b0759",
+          "f32cf8a73a497551baac289e96ad0db8",
+          "f7703b97595e6c85b989ce719c6bb279"
+        ],
+        "metric_disagreement_requires_manual_review": [
+          "03def0a2b0c43fc1777f03321b151b74"
+        ],
+        "unmapped_visual_evidence": [
+          "02b9d549ce55f93ac5e3abeb94b3553a",
+          "20eeccd19adb6f739680f234c37314ed",
+          "21a3594075157dbaaf7da17818192545",
+          "2ace94d753add7415811a581c0d926ab",
+          "424e731dec99fd3b36fb5ba2c59d1f16",
+          "55a8521c8d80b20fab7ee5b766503643",
+          "63c77b00f520740f47db2debd3eb11e9",
+          "7ba6264dfd4b7930f33c9ab5011d8619",
+          "a9b20789f331817da38816c812192916",
+          "a9b78e851b400ad359d918e3b8111b9e",
+          "d0b649f00bbaf8bfa76942d2b6cef64d",
+          "d50ba0f57869f462efde83fc1d22a634",
+          "f96c4164e11a453e21346329ccad501b"
+        ]
+      }
+    },
+    "C1": {
+      "caveat": "Metric disagreement is not a confirmed judge error. Delivered images do not establish that all text/table hops were read. Manual case review is required.",
+      "counts": {
+        "gold_images_delivered_but_em_incorrect": 6,
+        "gold_visual_evidence_not_all_retrieved_or_delivered": 31,
+        "metric_disagreement_requires_manual_review": 3,
+        "unmapped_visual_evidence": 12
+      },
+      "question_ids": {
+        "gold_images_delivered_but_em_incorrect": [
+          "4e54f543dbf46d64d45805209b73932b",
+          "a9b13ea4d008783e39b3cecc4faa2bfb",
+          "bb8047fd4f786699571458e9c823e3d6",
+          "c465aacdd3cc5206159faf47beda45a6",
+          "c7f4813597ef22351158fb5d10871914",
+          "d088c84d89e29777cfa9dc280a2b4049"
+        ],
+        "gold_visual_evidence_not_all_retrieved_or_delivered": [
+          "03def0a2b0c43fc1777f03321b151b74",
+          "06bc1d245498f3a0642b118b599cf1dd",
+          "13c2a1185b4afbdb3ff93e673e6aa82a",
+          "172ac97087bb92ca50b403a424a509c6",
+          "1fb8350bf0c31954296712889c72635a",
+          "299e684293fffb0f9dca76a1092c83f9",
+          "29a94164b22263351cc79f515a5b8e8b",
+          "2cd38c28acd439d9ae2e692bcd193b19",
+          "365b34e9cb7444118c99eaef4da43fca",
+          "3d1604090633d52b80305ba9462fd678",
+          "454a726486b3c8f44571833938ca7cf1",
+          "4778c9f3b15c46c0f7cb8779c3ca4b1c",
+          "58665e1fc2c65c0aeb34292d5d2d4be7",
+          "58c230238b7da1509064f8924522d0d0",
+          "5ce3a2f7d444bacd9ff948a7097283fe",
+          "6fa7d97e320c00a54b369558ad136224",
+          "79c46102455f37942fcd1004316f547b",
+          "81088e10057564782ada42345f1b51bc",
+          "9aa0dd5dd754fdc4a68eabc639a34f35",
+          "a6cb73d18b79117f01e6d814c07a60f7",
+          "ab10cadf36dffc54555f88b60e3bb872",
+          "be0baecf90a40b1ba8230d9c771f75ca",
+          "c7b77e93ded0bb2893ba2ea2ebd70a19",
+          "cbc0c25821c0cbc971e85bf72c392650",
+          "d7abf11e4f64b4d59904422b17940dfc",
+          "dab3aab85244cda2cdf7f19e932cc220",
+          "dd920fa1a56fece13a4585ff36c7e016",
+          "eb436f004ebafb0427bfab8c6466572c",
+          "ee9320e184758afe302643832e4b0759",
+          "f32cf8a73a497551baac289e96ad0db8",
+          "f7703b97595e6c85b989ce719c6bb279"
+        ],
+        "metric_disagreement_requires_manual_review": [
+          "03def0a2b0c43fc1777f03321b151b74",
+          "58665e1fc2c65c0aeb34292d5d2d4be7",
+          "dd920fa1a56fece13a4585ff36c7e016"
+        ],
+        "unmapped_visual_evidence": [
+          "02b9d549ce55f93ac5e3abeb94b3553a",
+          "20eeccd19adb6f739680f234c37314ed",
+          "21a3594075157dbaaf7da17818192545",
+          "2ace94d753add7415811a581c0d926ab",
+          "424e731dec99fd3b36fb5ba2c59d1f16",
+          "63c77b00f520740f47db2debd3eb11e9",
+          "7ba6264dfd4b7930f33c9ab5011d8619",
+          "a9b20789f331817da38816c812192916",
+          "a9b78e851b400ad359d918e3b8111b9e",
+          "d0b649f00bbaf8bfa76942d2b6cef64d",
+          "d50ba0f57869f462efde83fc1d22a634",
+          "f96c4164e11a453e21346329ccad501b"
+        ]
+      }
+    },
+    "G1": {
+      "caveat": "Metric disagreement is not a confirmed judge error. Delivered images do not establish that all text/table hops were read. Manual case review is required.",
+      "counts": {
+        "gold_candidate_found_but_not_all_delivered": 10,
+        "gold_images_delivered_but_em_incorrect": 9,
+        "gold_visual_evidence_not_all_retrieved_or_delivered": 14,
+        "metric_disagreement_requires_manual_review": 2,
+        "unmapped_visual_evidence": 13
+      },
+      "question_ids": {
+        "gold_candidate_found_but_not_all_delivered": [
+          "13c2a1185b4afbdb3ff93e673e6aa82a",
+          "172ac97087bb92ca50b403a424a509c6",
+          "1fb8350bf0c31954296712889c72635a",
+          "299e684293fffb0f9dca76a1092c83f9",
+          "365b34e9cb7444118c99eaef4da43fca",
+          "3d1604090633d52b80305ba9462fd678",
+          "a6cb73d18b79117f01e6d814c07a60f7",
+          "dd920fa1a56fece13a4585ff36c7e016",
+          "f32cf8a73a497551baac289e96ad0db8",
+          "f7703b97595e6c85b989ce719c6bb279"
+        ],
+        "gold_images_delivered_but_em_incorrect": [
+          "81088e10057564782ada42345f1b51bc",
+          "9aa0dd5dd754fdc4a68eabc639a34f35",
+          "a9b13ea4d008783e39b3cecc4faa2bfb",
+          "ab10cadf36dffc54555f88b60e3bb872",
+          "bb8047fd4f786699571458e9c823e3d6",
+          "c465aacdd3cc5206159faf47beda45a6",
+          "c7f4813597ef22351158fb5d10871914",
+          "d088c84d89e29777cfa9dc280a2b4049",
+          "d7abf11e4f64b4d59904422b17940dfc"
+        ],
+        "gold_visual_evidence_not_all_retrieved_or_delivered": [
+          "03def0a2b0c43fc1777f03321b151b74",
+          "06bc1d245498f3a0642b118b599cf1dd",
+          "2cd38c28acd439d9ae2e692bcd193b19",
+          "454a726486b3c8f44571833938ca7cf1",
+          "4778c9f3b15c46c0f7cb8779c3ca4b1c",
+          "58665e1fc2c65c0aeb34292d5d2d4be7",
+          "58c230238b7da1509064f8924522d0d0",
+          "5ce3a2f7d444bacd9ff948a7097283fe",
+          "6fa7d97e320c00a54b369558ad136224",
+          "c7b77e93ded0bb2893ba2ea2ebd70a19",
+          "cbc0c25821c0cbc971e85bf72c392650",
+          "dab3aab85244cda2cdf7f19e932cc220",
+          "eb436f004ebafb0427bfab8c6466572c",
+          "ee9320e184758afe302643832e4b0759"
+        ],
+        "metric_disagreement_requires_manual_review": [
+          "03def0a2b0c43fc1777f03321b151b74",
+          "ab10cadf36dffc54555f88b60e3bb872"
+        ],
+        "unmapped_visual_evidence": [
+          "02b9d549ce55f93ac5e3abeb94b3553a",
+          "20eeccd19adb6f739680f234c37314ed",
+          "21a3594075157dbaaf7da17818192545",
+          "2ace94d753add7415811a581c0d926ab",
+          "424e731dec99fd3b36fb5ba2c59d1f16",
+          "55a8521c8d80b20fab7ee5b766503643",
+          "63c77b00f520740f47db2debd3eb11e9",
+          "7ba6264dfd4b7930f33c9ab5011d8619",
+          "a9b20789f331817da38816c812192916",
+          "a9b78e851b400ad359d918e3b8111b9e",
+          "d0b649f00bbaf8bfa76942d2b6cef64d",
+          "d50ba0f57869f462efde83fc1d22a634",
+          "f96c4164e11a453e21346329ccad501b"
+        ]
+      }
+    }
+  },
+  "gold_sha256": "1f48a1ea0cc40cd00baa0d119ed4f6dd80b98ab0d7df9b122591ae8c9faa15ca",
+  "inference_limits": "Nominal unadjusted 95% intervals and exact McNemar p-values; subgroup/multiple-endpoint findings are exploratory. A 50-question sample does not establish benchmark-wide performance."
+}

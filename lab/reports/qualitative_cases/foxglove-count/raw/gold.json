@@ -1,0 +1,18 @@
+{
+  "answer": "5",
+  "clue": [
+    "D8:2",
+    "D8:3",
+    "D8:4",
+    "D8:5",
+    "D8:6"
+  ],
+  "point": "VR",
+  "qid": "Baking_Dessert_Daily_Life_Skill:qa0042",
+  "question": "How many foxglove flower images did Maya share in total during the autumn outing? Please answer using an Arabic numeral (e.g., “2” instead of “Two”).",
+  "scenario": "Baking_Dessert_Daily_Life_Skill",
+  "session_id": [
+    "D8"
+  ],
+  "source_qa_index": 42
+}

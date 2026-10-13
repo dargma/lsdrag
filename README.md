@@ -10,7 +10,9 @@ M3DocVQA 이미지 관련 50문항과 Mem-Gallery 50문항(VS 25·VR 25)으로 �
 
 현재 비교는 **B0 Qwen 텍스트, C1 Google 텍스트, G1 Google 텍스트+이미지**의 세 조건입니다. 동일 Reader VLM과 A-RAG 최대 8회 반복을 적용하며, 모든 조건에서 검색된 캡션의 연결 이미지를 읽을 수 있습니다. Mem-Gallery 질문은 텍스트만 입력합니다.
 
-[최신 결과 보고서](lab/reports/INTERIM_REPORT.md): 개발 M3DocVQA 50문항과 Mem-Gallery 10문항을 조건별 문항당 한 번씩 평가했습니다. 이미지 검색 recall은 개선됐지만 정답률 개선을 확정하기에는 표본이 작습니다. 별도 최종 평가는 아직 시작하지 않았습니다.
+[최신 결과 보고서](lab/reports/INTERIM_REPORT.md): 개발 결과에 M3DocVQA 50문항·Mem-Gallery 50문항을 추가했습니다. 추가 집합에서 Qwen 대비 Google multimodal의 EM은 M3DocVQA 2→8%, Mem-Gallery 28→32%입니다. 문서 이미지 전달 recall은 개선됐고, 추가 Mem-Gallery의 전달 recall은 거의 같습니다. 정답률 우위는 아직 확정되지 않았습니다.
+
+[정성 사례 원본 데이터](lab/reports/qualitative_cases/README.md): 벤치마크별 두 사례씩, 원본 질문·정답·세 조건의 전체 실행·관련 원문·이미지·캡션을 포함합니다. 다른 머신에서도 데이터 준비 없이 확인할 수 있습니다.
 
 주요 진입점은 `scripts/build_ir.py`, `scripts/build_index.py`, `scripts/run_experiment.py`, `scripts/score_m3doc.py`, `scripts/prepare_memgallery.py`, `scripts/score_memgallery.py`입니다. `--help`로 입력 경로와 실행 옵션을 확인할 수 있습니다. 데이터·모델·인덱스는 저장소 밖 로컬 디스크에 둡니다.
 

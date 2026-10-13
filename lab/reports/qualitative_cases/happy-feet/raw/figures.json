@@ -1,0 +1,110 @@
+[
+  {
+    "bbox": [
+      0.625,
+      0.271,
+      0.934,
+      0.631
+    ],
+    "caption": "",
+    "chunk_id": "2586ac327c53d3e002bc04e4e36deb2a:p0:b14:s0",
+    "document_id": "2586ac327c53d3e002bc04e4e36deb2a",
+    "document_ids": [
+      "2586ac327c53d3e002bc04e4e36deb2a"
+    ],
+    "figure_id": "2586ac327c53d3e002bc04e4e36deb2a:p0:f14",
+    "footnotes": "Theatrical release poster",
+    "has_caption": false,
+    "has_description": true,
+    "height": 793,
+    "image_path": "/content/local_fast/lsdrag-work/data/parsed_development/2586ac327c53d3e002bc04e4e36deb2a/images/page_0_image_14.jpg",
+    "image_ref": "images/page_0_image_14.jpg",
+    "image_sha256": "15bab1f21e8541c8d709c7860adeb11f7d9a8351b6fa88c5b8d5c7a9b4365919",
+    "page_index": 0,
+    "source_block_type": "image",
+    "title": "The Sugarland Express",
+    "url": "https://en.wikipedia.org/wiki/The_Sugarland_Express",
+    "width": 526
+  },
+  {
+    "bbox": [
+      0.625,
+      0.352,
+      0.934,
+      0.731
+    ],
+    "caption": "",
+    "chunk_id": "9cdee720ee3f2b29cd8d259ed0a0367c:p0:b18:s0",
+    "document_id": "9cdee720ee3f2b29cd8d259ed0a0367c",
+    "document_ids": [
+      "9cdee720ee3f2b29cd8d259ed0a0367c"
+    ],
+    "figure_id": "9cdee720ee3f2b29cd8d259ed0a0367c:p0:f18",
+    "footnotes": "Theatrical release poster",
+    "has_caption": false,
+    "has_description": true,
+    "height": 835,
+    "image_path": "/content/local_fast/lsdrag-work/data/parsed_development/9cdee720ee3f2b29cd8d259ed0a0367c/images/page_0_image_18.jpg",
+    "image_ref": "images/page_0_image_18.jpg",
+    "image_sha256": "bb3e1fece0855987917d12187ad44353019b1d1981fdbcd4dd375c7034727368",
+    "page_index": 0,
+    "source_block_type": "image",
+    "title": "All We Had",
+    "url": "https://en.wikipedia.org/wiki/All_We_Had",
+    "width": 526
+  },
+  {
+    "bbox": [
+      0.946,
+      0.304,
+      0.97,
+      0.328
+    ],
+    "caption": "",
+    "chunk_id": "b24748141f2c2af5dacc44d82f3cc514:p0:b11:s0",
+    "document_id": "b24748141f2c2af5dacc44d82f3cc514",
+    "document_ids": [
+      "b24748141f2c2af5dacc44d82f3cc514"
+    ],
+    "figure_id": "b24748141f2c2af5dacc44d82f3cc514:p0:f11",
+    "footnotes": "",
+    "has_caption": false,
+    "has_description": false,
+    "height": 54,
+    "image_path": "/content/local_fast/lsdrag-work/data/parsed_development/b24748141f2c2af5dacc44d82f3cc514/images/page_0_image_11.jpg",
+    "image_ref": "images/page_0_image_11.jpg",
+    "image_sha256": "4883b796c88f598417e0f45d91077b431668c9dd7129f10891188afd9502a0ef",
+    "page_index": 0,
+    "source_block_type": "image",
+    "title": "Happy Feet",
+    "url": "https://en.wikipedia.org/wiki/Happy_Feet",
+    "width": 41
+  },
+  {
+    "bbox": [
+      0.625,
+      0.384,
+      0.934,
+      0.758
+    ],
+    "caption": "",
+    "chunk_id": "b24748141f2c2af5dacc44d82f3cc514:p0:b16:s0",
+    "document_id": "b24748141f2c2af5dacc44d82f3cc514",
+    "document_ids": [
+      "b24748141f2c2af5dacc44d82f3cc514"
+    ],
+    "figure_id": "b24748141f2c2af5dacc44d82f3cc514:p0:f16",
+    "footnotes": "Theatrical release poster",
+    "has_caption": false,
+    "has_description": true,
+    "height": 824,
+    "image_path": "/content/local_fast/lsdrag-work/data/parsed_development/b24748141f2c2af5dacc44d82f3cc514/images/page_0_image_16.jpg",
+    "image_ref": "images/page_0_image_16.jpg",
+    "image_sha256": "1ec28ce42dabefe3333de6cf684ad6efbb9b52cb7ca4a9a62e4e0580dd7bb467",
+    "page_index": 0,
+    "source_block_type": "image",
+    "title": "Happy Feet",
+    "url": "https://en.wikipedia.org/wiki/Happy_Feet",
+    "width": 526
+  }
+]

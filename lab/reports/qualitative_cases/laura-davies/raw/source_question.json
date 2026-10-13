@@ -1,0 +1,66 @@
+{
+  "answers": [
+    {
+      "answer": "Laura Davies",
+      "image_instances": [
+        {
+          "doc_id": "fd4309c7e0ee8cdef87fd482ce1a1608",
+          "doc_part": "image"
+        }
+      ],
+      "modality": "image",
+      "table_indices": [],
+      "text_instances": [],
+      "type": "string"
+    }
+  ],
+  "metadata": {
+    "image_doc_ids": [
+      "e8b7ac2a638956fa1ef903e548d61f2d",
+      "f5d1d57768fd0ea02b14137da20c478b",
+      "87a28dacf0d2091b81c8eee4a3adaaaa",
+      "b461c7f80e3002a4161b268c203ae34c",
+      "0fc81a16a82fe299bfe39cf4690448cc",
+      "19b5b7729cf8ead12a0a3786b1ba3f9e",
+      "4d18defb487d4ea44c56cf24c9723e7f",
+      "fd4309c7e0ee8cdef87fd482ce1a1608",
+      "cb4017d4bf56e5bb03840b69f82a96f3"
+    ],
+    "intermediate_answers": [],
+    "modalities": [
+      "image"
+    ],
+    "pseudo_language_question": "Which [Player(s), in Order of Merit rankings of 2009 Ladies European Tour,] has very short blond hair?",
+    "rephrasing_meta": {
+      "accuracy": 1.0,
+      "confidence": 0.9988951349687826,
+      "edit_distance": 0.7441860465116279
+    },
+    "table_id": "20b2a2307782e39c22cd03f574ee542d",
+    "text_doc_ids": [
+      "0061a961788fe43dd47c85cb230db4a3",
+      "af893af5d1d7d8ea3f4f960ef63a8659",
+      "19637f6d90d401b30d57c21eaf8cf041",
+      "61e5bea437c0a29ad978db58c885d6fa",
+      "e9e38fc6f939e47edc0085e572404865",
+      "641092cba9d58fe2bf84da2e78a903f1",
+      "cc62bef5125839e11188eec250579ecd",
+      "08febc9f8b92ebd3a622842a61de54d8",
+      "97c0929fd3c2afbf1c2d627149122b43",
+      "78ee693d4a697d4d295b2a09a0a3f285"
+    ],
+    "type": "ImageListQ",
+    "wiki_entities_in_answers": [
+      "Laura Davies"
+    ],
+    "wiki_entities_in_question": []
+  },
+  "qid": "be0baecf90a40b1ba8230d9c771f75ca",
+  "question": "Which player with very short blond hair is included in the order of merit rankings of the 2009 Ladies European tour?",
+  "supporting_context": [
+    {
+      "doc_id": "fd4309c7e0ee8cdef87fd482ce1a1608",
+      "doc_part": "image"
+    }
+  ]
+}

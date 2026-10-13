@@ -1,0 +1,65 @@
+{
+  "answers": [
+    {
+      "answer": "Happy Feet",
+      "image_instances": [
+        {
+          "doc_id": "b24748141f2c2af5dacc44d82f3cc514",
+          "doc_part": "image"
+        }
+      ],
+      "modality": "image",
+      "table_indices": [],
+      "text_instances": [],
+      "type": "string"
+    }
+  ],
+  "metadata": {
+    "image_doc_ids": [
+      "f37444a65268f6e2ecbb30217a42f5a1",
+      "56fe27c35ff805f6e5ae58b14b3f91f0",
+      "b24748141f2c2af5dacc44d82f3cc514",
+      "2ff25fc689edc9e155a3d0899b281f40",
+      "13bc20af6c65049dd66dd4c2cee5ef00",
+      "fc5b9aba6ae6739496b3442130456e32",
+      "43e598def0ebe6ecbb595e795669c5d1",
+      "1952488c5b0cddae69f5a31fff8adac4"
+    ],
+    "intermediate_answers": [],
+    "modalities": [
+      "image"
+    ],
+    "pseudo_language_question": "Which [Film(s), in Filmography | Film of Khamani Griffin,] cover shows a penguin?",
+    "rephrasing_meta": {
+      "accuracy": 1.0,
+      "confidence": 0.9999476171577587,
+      "edit_distance": 0.5068493150684932
+    },
+    "table_id": "e1011d5ffb3c533d78a56e3c0a4bf218",
+    "text_doc_ids": [
+      "1ea26ec7c153d74192efeca652d78661",
+      "d7a347507108c8bf4e78a9bda02fcb93",
+      "5219c443bf4b4712e05bba9e14241b44",
+      "63ceeafd4cc069ad583e8f545105e5fa",
+      "f8be7b38f61a15d468264b9cfe8a6fa6",
+      "1f1b8d8cdb3888a488fefc2e6fa1fdb1",
+      "1cd781ff83e8775a55ada019892ce296",
+      "a2d8e4e6472ec1652ea5c7adac0ffa74",
+      "9601d025d80b6f46e40fd84822cda45b",
+      "3e144913d027d9b51f64114a15f3ae3b"
+    ],
+    "type": "ImageListQ",
+    "wiki_entities_in_answers": [
+      "Happy Feet"
+    ],
+    "wiki_entities_in_question": []
+  },
+  "qid": "8d3bf560c35d4b2798db545f1b0a7b94",
+  "question": "in Filmography of Khamani Griffin, which film cover shows a penguin?",
+  "supporting_context": [
+    {
+      "doc_id": "b24748141f2c2af5dacc44d82f3cc514",
+      "doc_part": "image"
+    }
+  ]
+}

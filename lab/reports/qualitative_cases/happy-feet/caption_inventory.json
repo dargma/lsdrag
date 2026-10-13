@@ -1,0 +1,38 @@
+[
+  {
+    "arm": "C1",
+    "figure_id": "b24748141f2c2af5dacc44d82f3cc514:p0:f11",
+    "image_path": "images/4883b796c88f598417e0f45d.jpg",
+    "has_caption": false,
+    "caption": "",
+    "footnotes": "",
+    "has_original_description": false
+  },
+  {
+    "arm": "G1",
+    "figure_id": "2586ac327c53d3e002bc04e4e36deb2a:p0:f14",
+    "image_path": "images/15bab1f21e8541c8d709c786.jpg",
+    "has_caption": false,
+    "caption": "",
+    "footnotes": "Theatrical release poster",
+    "has_original_description": true
+  },
+  {
+    "arm": "G1",
+    "figure_id": "9cdee720ee3f2b29cd8d259ed0a0367c:p0:f18",
+    "image_path": "images/bb3e1fece0855987917d1218.jpg",
+    "has_caption": false,
+    "caption": "",
+    "footnotes": "Theatrical release poster",
+    "has_original_description": true
+  },
+  {
+    "arm": "G1",
+    "figure_id": "b24748141f2c2af5dacc44d82f3cc514:p0:f16",
+    "image_path": "images/1ec28ce42dabefe3333de6cf.jpg",
+    "has_caption": false,
+    "caption": "",
+    "footnotes": "Theatrical release poster",
+    "has_original_description": true
+  }
+]

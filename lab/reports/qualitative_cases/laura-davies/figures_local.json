@@ -1,0 +1,142 @@
+[
+  {
+    "bbox": [
+      0.452,
+      0.0,
+      0.572,
+      0.137
+    ],
+    "caption": "",
+    "chunk_id": "1642d723cc70fb763b1de3ee919d7aad:p1:b1:s0",
+    "document_id": "1642d723cc70fb763b1de3ee919d7aad",
+    "document_ids": [
+      "1642d723cc70fb763b1de3ee919d7aad"
+    ],
+    "figure_id": "1642d723cc70fb763b1de3ee919d7aad:p1:f1",
+    "footnotes": "[Gwen Stefani](https://en.wikipedia.org/wiki/Gwen_Stefani)",
+    "has_caption": false,
+    "has_description": true,
+    "height": 302,
+    "image_path": "images/e7ec5cfc0ae59ac4a57c956c.jpg",
+    "image_ref": "images/page_1_image_2.jpg",
+    "image_sha256": "e7ec5cfc0ae59ac4a57c956c57b21943bc17bd931fd97534678e11beb955941d",
+    "page_index": 1,
+    "source_block_type": "image",
+    "title": "The Voice (American season 17)",
+    "url": "https://en.wikipedia.org/wiki/The_Voice_(American_season_17)",
+    "width": 205,
+    "original_image_path": "/content/local_fast/lsdrag-work/data/parsed_development/1642d723cc70fb763b1de3ee919d7aad/images/page_1_image_2.jpg"
+  },
+  {
+    "bbox": [
+      0.716,
+      0.01,
+      0.966,
+      0.283
+    ],
+    "caption": "",
+    "chunk_id": "6ff589c4593955eb0668d04835d5cb66:p9:b1:s0",
+    "document_id": "6ff589c4593955eb0668d04835d5cb66",
+    "document_ids": [
+      "6ff589c4593955eb0668d04835d5cb66"
+    ],
+    "figure_id": "6ff589c4593955eb0668d04835d5cb66:p9:f1",
+    "footnotes": "Leonova at the [2009 Junior World Championships](https://en.wikipedia.org/wiki/2009_World_Junior_Figure_Skating_Championships)",
+    "has_caption": false,
+    "has_description": true,
+    "height": 601,
+    "image_path": "images/2913967d773025dd9b695342.jpg",
+    "image_ref": "images/page_9_image_1.jpg",
+    "image_sha256": "2913967d773025dd9b695342dee972c39273520380e2768972f8db201ed0146b",
+    "page_index": 9,
+    "source_block_type": "image",
+    "title": "Alena Leonova",
+    "url": "https://en.wikipedia.org/wiki/Alena_Leonova",
+    "width": 426,
+    "original_image_path": "/content/local_fast/lsdrag-work/data/parsed_development/6ff589c4593955eb0668d04835d5cb66/images/page_9_image_1.jpg"
+  },
+  {
+    "bbox": [
+      0.715,
+      0.357,
+      0.969,
+      0.764
+    ],
+    "caption": "",
+    "chunk_id": "ac3040168311557c2e3874529528be8a:p3:b19:s0",
+    "document_id": "ac3040168311557c2e3874529528be8a",
+    "document_ids": [
+      "ac3040168311557c2e3874529528be8a"
+    ],
+    "figure_id": "ac3040168311557c2e3874529528be8a:p3:f19",
+    "footnotes": "",
+    "has_caption": false,
+    "has_description": false,
+    "height": 896,
+    "image_path": "images/4447cd7fa548f64dbdb1db77.jpg",
+    "image_ref": "images/page_3_image_19.jpg",
+    "image_sha256": "4447cd7fa548f64dbdb1db774d1584ac5af5857d1afd54fc38fe5d141e0bbed2",
+    "page_index": 3,
+    "source_block_type": "image",
+    "title": "Chulabhorn",
+    "url": "https://en.wikipedia.org/wiki/Chulabhorn",
+    "width": 433,
+    "original_image_path": "/content/local_fast/lsdrag-work/data/parsed_development/ac3040168311557c2e3874529528be8a/images/page_3_image_19.jpg"
+  },
+  {
+    "bbox": [
+      0.804,
+      0.234,
+      0.834,
+      0.256
+    ],
+    "caption": "",
+    "chunk_id": "fd4309c7e0ee8cdef87fd482ce1a1608:p0:b13:s0",
+    "document_id": "fd4309c7e0ee8cdef87fd482ce1a1608",
+    "document_ids": [
+      "fd4309c7e0ee8cdef87fd482ce1a1608"
+    ],
+    "figure_id": "fd4309c7e0ee8cdef87fd482ce1a1608:p0:f13",
+    "footnotes": "",
+    "has_caption": false,
+    "has_description": false,
+    "height": 50,
+    "image_path": "images/2e248afb99f3d27d7f2dffd9.jpg",
+    "image_ref": "images/page_0_image_13.jpg",
+    "image_sha256": "2e248afb99f3d27d7f2dffd9aebf2b6608f3f6a3dd2dbd273d5b45edc72f4eca",
+    "page_index": 0,
+    "source_block_type": "image",
+    "title": "Laura Davies",
+    "url": "https://en.wikipedia.org/wiki/Laura_Davies",
+    "width": 52,
+    "original_image_path": "/content/local_fast/lsdrag-work/data/parsed_final_additions/fd4309c7e0ee8cdef87fd482ce1a1608/images/page_0_image_13.jpg"
+  },
+  {
+    "bbox": [
+      0.617,
+      0.451,
+      0.894,
+      0.732
+    ],
+    "caption": "",
+    "chunk_id": "fd4309c7e0ee8cdef87fd482ce1a1608:p0:b18:s0",
+    "document_id": "fd4309c7e0ee8cdef87fd482ce1a1608",
+    "document_ids": [
+      "fd4309c7e0ee8cdef87fd482ce1a1608"
+    ],
+    "figure_id": "fd4309c7e0ee8cdef87fd482ce1a1608:p0:f18",
+    "footnotes": "",
+    "has_caption": false,
+    "has_description": false,
+    "height": 619,
+    "image_path": "images/432091348c329779a97b4f45.jpg",
+    "image_ref": "images/page_0_image_18.jpg",
+    "image_sha256": "432091348c329779a97b4f45f144fd3e44d3e4a4f947264af1557bf1bb1786e0",
+    "page_index": 0,
+    "source_block_type": "image",
+    "title": "Laura Davies",
+    "url": "https://en.wikipedia.org/wiki/Laura_Davies",
+    "width": 472,
+    "original_image_path": "/content/local_fast/lsdrag-work/data/parsed_final_additions/fd4309c7e0ee8cdef87fd482ce1a1608/images/page_0_image_18.jpg"
+  }
+]

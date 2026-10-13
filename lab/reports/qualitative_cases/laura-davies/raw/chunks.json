@@ -1,0 +1,420 @@
+[
+  {
+    "bbox": [
+      0.452,
+      0.0,
+      0.572,
+      0.137
+    ],
+    "chunk_id": "1642d723cc70fb763b1de3ee919d7aad:p1:b1:s0",
+    "document_id": "1642d723cc70fb763b1de3ee919d7aad",
+    "document_ids": [
+      "1642d723cc70fb763b1de3ee919d7aad"
+    ],
+    "figure_ids": [
+      "1642d723cc70fb763b1de3ee919d7aad:p1:f1"
+    ],
+    "id": "1642d723cc70fb763b1de3ee919d7aad:p1:b1:s0",
+    "kind": "image_caption",
+    "next_chunk_id": "1642d723cc70fb763b1de3ee919d7aad:p1:b2:s0",
+    "oversized_unit": false,
+    "page_index": 1,
+    "previous_chunk_id": "1642d723cc70fb763b1de3ee919d7aad:p1:b0:s0",
+    "source_block_index": 1,
+    "text": "The Voice (American season 17)\n[Gwen Stefani](https://en.wikipedia.org/wiki/Gwen_Stefani)",
+    "title": "The Voice (American season 17)",
+    "url": "https://en.wikipedia.org/wiki/The_Voice_(American_season_17)"
+  },
+  {
+    "bbox": [
+      0.716,
+      0.01,
+      0.966,
+      0.283
+    ],
+    "chunk_id": "6ff589c4593955eb0668d04835d5cb66:p9:b1:s0",
+    "document_id": "6ff589c4593955eb0668d04835d5cb66",
+    "document_ids": [
+      "6ff589c4593955eb0668d04835d5cb66"
+    ],
+    "figure_ids": [
+      "6ff589c4593955eb0668d04835d5cb66:p9:f1"
+    ],
+    "id": "6ff589c4593955eb0668d04835d5cb66:p9:b1:s0",
+    "kind": "image_caption",
+    "next_chunk_id": "6ff589c4593955eb0668d04835d5cb66:p10:b0:s0",
+    "oversized_unit": false,
+    "page_index": 9,
+    "previous_chunk_id": "6ff589c4593955eb0668d04835d5cb66:p9:b0:s1",
+    "source_block_index": 1,
+    "text": "Alena Leonova\nLeonova at the [2009 Junior World Championships](https://en.wikipedia.org/wiki/2009_World_Junior_Figure_Skating_Championships)",
+    "title": "Alena Leonova",
+    "url": "https://en.wikipedia.org/wiki/Alena_Leonova"
+  },
+  {
+    "bbox": [
+      0.715,
+      0.357,
+      0.969,
+      0.764
+    ],
+    "chunk_id": "ac3040168311557c2e3874529528be8a:p3:b19:s0",
+    "document_id": "ac3040168311557c2e3874529528be8a",
+    "document_ids": [
+      "ac3040168311557c2e3874529528be8a"
+    ],
+    "figure_ids": [
+      "ac3040168311557c2e3874529528be8a:p3:f19"
+    ],
+    "id": "ac3040168311557c2e3874529528be8a:p3:b19:s0",
+    "kind": "image_caption",
+    "next_chunk_id": "ac3040168311557c2e3874529528be8a:p3:b20:s0",
+    "oversized_unit": false,
+    "page_index": 3,
+    "previous_chunk_id": "ac3040168311557c2e3874529528be8a:p3:b18:s0",
+    "source_block_index": 19,
+    "text": "Chulabhorn\n[No caption. Nearby document text follows.]\n[Japan](https://en.wikipedia.org/wiki/Japan): Paulownia Dame Grand Cordon of the [Order of the Precious Crown](https://en.wikipedia.org/wiki/Order_of_the_Precious_Crown) [Nepalese Royal Family](https://en.wikipedia.org/wiki/Shah_dynasty): Member Grand Cross of the [Most Glorious Order of the Benevolent Ruler](https://en.wikipedia.org/wiki/Order_of_Ojaswi_Rajanya) [Netherlands](https://en.wikipedia.org/wiki/Netherlands): Knight Grand Cross of the [Order of Orange-Nassau](https://en.wikipedia.org/wiki/Order_of_Orange-Nassau)<sup>[33]</sup> [Peru](https://en.wikipedia.org/wiki/Peru): Knight Grand Cross of the [Order of Merit for Distinguished Services](http://www.medals.org.uk/peru/peru002.htm)",
+    "title": "Chulabhorn",
+    "url": "https://en.wikipedia.org/wiki/Chulabhorn"
+  },
+  {
+    "bbox": [
+      0.035,
+      0.773,
+      0.658,
+      0.817
+    ],
+    "chunk_id": "ac3040168311557c2e3874529528be8a:p3:b21:s0",
+    "document_id": "ac3040168311557c2e3874529528be8a",
+    "document_ids": [
+      "ac3040168311557c2e3874529528be8a"
+    ],
+    "figure_ids": [],
+    "id": "ac3040168311557c2e3874529528be8a:p3:b21:s0",
+    "kind": "text",
+    "next_chunk_id": "ac3040168311557c2e3874529528be8a:p3:b22:s0",
+    "oversized_unit": false,
+    "page_index": 3,
+    "previous_chunk_id": "ac3040168311557c2e3874529528be8a:p3:b20:s0",
+    "source_block_index": 21,
+    "text": "Chulabhorn\n[Peru](https://en.wikipedia.org/wiki/Peru): Knight Grand Cross of the [Order of Merit for Distinguished Services](http://www.medals.org.uk/peru/peru002.htm)",
+    "title": "Chulabhorn",
+    "url": "https://en.wikipedia.org/wiki/Chulabhorn"
+  },
+  {
+    "bbox": [
+      0.022,
+      0.588,
+      0.519,
+      0.807
+    ],
+    "chunk_id": "fd4309c7e0ee8cdef87fd482ce1a1608:p0:b10:s0",
+    "document_id": "fd4309c7e0ee8cdef87fd482ce1a1608",
+    "document_ids": [
+      "fd4309c7e0ee8cdef87fd482ce1a1608"
+    ],
+    "figure_ids": [],
+    "id": "fd4309c7e0ee8cdef87fd482ce1a1608:p0:b10:s0",
+    "kind": "text",
+    "next_chunk_id": "fd4309c7e0ee8cdef87fd482ce1a1608:p0:b11:s0",
+    "oversized_unit": false,
+    "page_index": 0,
+    "previous_chunk_id": "fd4309c7e0ee8cdef87fd482ce1a1608:p0:b9:s0",
+    "source_block_index": 10,
+    "text": "Laura Davies\nAs of 2018, Davies has 86 professional wins worldwide, with 20 on the [LPGA Tour](https://en.wikipedia.org/wiki/LPGA_Tour), including four [majors](https://en.wikipedia.org/wiki/Women's_majors).<sup>[6]</sup> From 1985 to 2010, she won at least one individual title somewhere in the world every season, except for 2005, and was the first golfer, male or female, to win tournaments on five continents in one year. She is a member of U.S.-based LPGA Tour and a life member of the Ladies European Tour.<sup>[7]</sup> She was inducted into the [World Golf Hall of Fame](https://en.wikipedia.org/wiki/World_Golf_Hall_of_Fame) in 2015.<sup>[8]</sup>",
+    "title": "Laura Davies",
+    "url": "https://en.wikipedia.org/wiki/Laura_Davies"
+  },
+  {
+    "bbox": [
+      0.804,
+      0.234,
+      0.834,
+      0.256
+    ],
+    "chunk_id": "fd4309c7e0ee8cdef87fd482ce1a1608:p0:b13:s0",
+    "document_id": "fd4309c7e0ee8cdef87fd482ce1a1608",
+    "document_ids": [
+      "fd4309c7e0ee8cdef87fd482ce1a1608"
+    ],
+    "figure_ids": [
+      "fd4309c7e0ee8cdef87fd482ce1a1608:p0:f13"
+    ],
+    "id": "fd4309c7e0ee8cdef87fd482ce1a1608:p0:b13:s0",
+    "kind": "image_caption",
+    "next_chunk_id": "fd4309c7e0ee8cdef87fd482ce1a1608:p0:b14:s0",
+    "oversized_unit": false,
+    "page_index": 0,
+    "previous_chunk_id": "fd4309c7e0ee8cdef87fd482ce1a1608:p0:b12:s0",
+    "source_block_index": 13,
+    "text": "Laura Davies\n[No caption. Nearby document text follows.]\nFor other people with similar names, see [Laura Davis](https://en.wikipedia.org/wiki/Laura_Davis_%28disambiguation%29). Amateur career [\\[ edit \\]](https://en.wikipedia.org/w/index.php?title=Laura_Davies&action=edit&section=1) **Dame Laura Jane Davies** (born 5 October 1963) is an English [professional golfer](https://en.wikipedia.org/wiki/Professional_golfer). She has achieved the status of her nation's most accomplished female golfer of modern times,<sup>[2][3]</sup> being the second non-American to finish at the top of the LPGA money list<sup>[2]</sup> as well as winning the [Ladies European Tour](https://en.wikipedia.org/wiki/Ladies_European_Tour) (LET) Order of Merit a record seven times: in 1985, 1986, 1992, 1996, 1999, 2004 and 2006.<sup>[4][5]</sup> A native of [Coventry](https://en.wikipedia.org/wiki/Coventry), Davies began as an amateur international player for Great Britain, compiling a notable record. She was the 1983 English Intermediate Champion, the 1984 [Welsh Ladies Open Stroke Play](https://en.wikipedia.org/wiki/Welsh_Ladies_Open_Stroke_Play_Championship)",
+    "title": "Laura Davies",
+    "url": "https://en.wikipedia.org/wiki/Laura_Davies"
+  },
+  {
+    "bbox": [
+      0.023,
+      0.376,
+      0.518,
+      0.57
+    ],
+    "chunk_id": "fd4309c7e0ee8cdef87fd482ce1a1608:p0:b14:s0",
+    "document_id": "fd4309c7e0ee8cdef87fd482ce1a1608",
+    "document_ids": [
+      "fd4309c7e0ee8cdef87fd482ce1a1608"
+    ],
+    "figure_ids": [],
+    "id": "fd4309c7e0ee8cdef87fd482ce1a1608:p0:b14:s0",
+    "kind": "text",
+    "next_chunk_id": "fd4309c7e0ee8cdef87fd482ce1a1608:p0:b15:s0",
+    "oversized_unit": false,
+    "page_index": 0,
+    "previous_chunk_id": "fd4309c7e0ee8cdef87fd482ce1a1608:p0:b13:s0",
+    "source_block_index": 14,
+    "text": "Laura Davies\n**Dame Laura Jane Davies** (born 5 October 1963) is an English [professional golfer](https://en.wikipedia.org/wiki/Professional_golfer). She has achieved the status of her nation's most accomplished female golfer of modern times,<sup>[2][3]</sup> being the second non-American to finish at the top of the LPGA money list<sup>[2]</sup> as well as winning the [Ladies European Tour](https://en.wikipedia.org/wiki/Ladies_European_Tour) (LET) Order of Merit a record seven times: in 1985, 1986, 1992, 1996, 1999, 2004 and 2006.<sup>[4][5]</sup>",
+    "title": "Laura Davies",
+    "url": "https://en.wikipedia.org/wiki/Laura_Davies"
+  },
+  {
+    "bbox": [
+      0.617,
+      0.451,
+      0.894,
+      0.732
+    ],
+    "chunk_id": "fd4309c7e0ee8cdef87fd482ce1a1608:p0:b18:s0",
+    "document_id": "fd4309c7e0ee8cdef87fd482ce1a1608",
+    "document_ids": [
+      "fd4309c7e0ee8cdef87fd482ce1a1608"
+    ],
+    "figure_ids": [
+      "fd4309c7e0ee8cdef87fd482ce1a1608:p0:f18"
+    ],
+    "id": "fd4309c7e0ee8cdef87fd482ce1a1608:p0:b18:s0",
+    "kind": "image_caption",
+    "next_chunk_id": "fd4309c7e0ee8cdef87fd482ce1a1608:p0:b19:s0",
+    "oversized_unit": false,
+    "page_index": 0,
+    "previous_chunk_id": "fd4309c7e0ee8cdef87fd482ce1a1608:p0:b17:s0",
+    "source_block_index": 18,
+    "text": "Laura Davies\n[No caption. Nearby document text follows.]\n**15 languages** [Read](https://en.wikipedia.org/wiki/Laura_Davies) [Edit](https://en.wikipedia.org/w/index.php?title=Laura_Davies&action=edit) [View history](https://en.wikipedia.org/w/index.php?title=Laura_Davies&action=history) ■ ■ **Personal information** **Full name Born**",
+    "title": "Laura Davies",
+    "url": "https://en.wikipedia.org/wiki/Laura_Davies"
+  },
+  {
+    "bbox": [
+      0.027,
+      0.329,
+      0.971,
+      0.894
+    ],
+    "chunk_id": "fd4309c7e0ee8cdef87fd482ce1a1608:p10:b3:s0",
+    "document_id": "fd4309c7e0ee8cdef87fd482ce1a1608",
+    "document_ids": [
+      "fd4309c7e0ee8cdef87fd482ce1a1608"
+    ],
+    "figure_ids": [],
+    "id": "fd4309c7e0ee8cdef87fd482ce1a1608:p10:b3:s0",
+    "kind": "table",
+    "next_chunk_id": "fd4309c7e0ee8cdef87fd482ce1a1608:p10:b4:s0",
+    "oversized_unit": false,
+    "page_index": 10,
+    "previous_chunk_id": "fd4309c7e0ee8cdef87fd482ce1a1608:p10:b2:s0",
+    "source_block_index": 3,
+    "text": "Laura Davies\n| No. | Year | Tournament | Opponent(s) | Result |\n| --- | --- | --- | --- | --- |\n| 1 | 1986 | British Olivetti Tournament[89] | Dale Reid | Lost to birdie on first extra hole |\n| 2 | 1987 | Bowring Ladies Scottish Open[90] | Dale Reid | Lost to par on second extra hole |\n| 3 | 1993 | Hennessy Ladies Cup[91] | Liselotte Neumann | Lost to birdie on first extra hole |\n| 4 | 1999 | McDonalds WPGA Championship[83] | Maria Hjorth | Won with par on second extra hole |\n| 5 | 1999 | Donegal Irish Ladies Open | Raquel Carriedo Elisabeth Esterl Sandrine Mendiburu | Mendiburu won with par on second extra holeEsterl eliminated by par on first extra hole |\n| 6 | 2002 | P4 Norwegian Masters[86][87] | Ana Larraneta | Won with birdie on second extra hole |\n| 7 | 2009 | UNIQA Ladies Golf Open | Linda Wessberg | Lost to bogey on second extra hole |\n| 8 | 2009 | Carta Sì Ladies Italian Open | Marianne Skarpnord | Lost to birdie on third extra hole |\n| 9 | 2010 | Hero Honda Women's Indian Open[88] | Tandi Cuningham Louise Friberg Nontaya Srisawang | Won with eagle on first extra hole |\n| 10 | 2012 | UniCredit Ladies German Open[92] | Anne-Lise Caudal | Lost to birdie on second extra hole |",
+    "title": "Laura Davies",
+    "url": "https://en.wikipedia.org/wiki/Laura_Davies"
+  },
+  {
+    "bbox": [
+      0.061,
+      0.546,
+      0.947,
+      0.586
+    ],
+    "chunk_id": "fd4309c7e0ee8cdef87fd482ce1a1608:p19:b10:s0",
+    "document_id": "fd4309c7e0ee8cdef87fd482ce1a1608",
+    "document_ids": [
+      "fd4309c7e0ee8cdef87fd482ce1a1608"
+    ],
+    "figure_ids": [],
+    "id": "fd4309c7e0ee8cdef87fd482ce1a1608:p19:b10:s0",
+    "kind": "text",
+    "next_chunk_id": "fd4309c7e0ee8cdef87fd482ce1a1608:p19:b11:s0",
+    "oversized_unit": false,
+    "page_index": 19,
+    "previous_chunk_id": "fd4309c7e0ee8cdef87fd482ce1a1608:p19:b9:s0",
+    "source_block_index": 10,
+    "text": "Laura Davies\n5. ^ [\"Laura Davies captures New Star Money List\"](https://web.archive.org/web/20070815143908/http://www.ladieseuropeantour.com/content/let_article_print.php?Id=8006) . Ladies European Tour. 29 October 2006. Archived from [the original](http://www.ladieseuropeantour.com/content/let_article_print.php?Id=8006) on 15 August 2007. Retrieved 2 May 2015.",
+    "title": "Laura Davies",
+    "url": "https://en.wikipedia.org/wiki/Laura_Davies"
+  },
+  {
+    "bbox": [
+      0.061,
+      0.499,
+      0.935,
+      0.54
+    ],
+    "chunk_id": "fd4309c7e0ee8cdef87fd482ce1a1608:p19:b9:s0",
+    "document_id": "fd4309c7e0ee8cdef87fd482ce1a1608",
+    "document_ids": [
+      "fd4309c7e0ee8cdef87fd482ce1a1608"
+    ],
+    "figure_ids": [],
+    "id": "fd4309c7e0ee8cdef87fd482ce1a1608:p19:b9:s0",
+    "kind": "text",
+    "next_chunk_id": "fd4309c7e0ee8cdef87fd482ce1a1608:p19:b10:s0",
+    "oversized_unit": false,
+    "page_index": 19,
+    "previous_chunk_id": "fd4309c7e0ee8cdef87fd482ce1a1608:p19:b8:s0",
+    "source_block_index": 9,
+    "text": "Laura Davies\n4. ^ **a b c d e f g** [\"LET Player Profile\"](https://web.archive.org/web/20141016212752/http://www.ladieseuropeantour.com/player_profile.php?id=50139) . Ladies European Tour. Archived from [the original](http://www.ladieseuropeantour.com/player_profile.php?id=50139) on 16 October 2014. Retrieved 2 May 2015.",
+    "title": "Laura Davies",
+    "url": "https://en.wikipedia.org/wiki/Laura_Davies"
+  },
+  {
+    "bbox": [
+      0.023,
+      0.263,
+      0.519,
+      0.484
+    ],
+    "chunk_id": "fd4309c7e0ee8cdef87fd482ce1a1608:p1:b3:s0",
+    "document_id": "fd4309c7e0ee8cdef87fd482ce1a1608",
+    "document_ids": [
+      "fd4309c7e0ee8cdef87fd482ce1a1608"
+    ],
+    "figure_ids": [],
+    "id": "fd4309c7e0ee8cdef87fd482ce1a1608:p1:b3:s0",
+    "kind": "text",
+    "next_chunk_id": "fd4309c7e0ee8cdef87fd482ce1a1608:p1:b4:s0",
+    "oversized_unit": false,
+    "page_index": 1,
+    "previous_chunk_id": "fd4309c7e0ee8cdef87fd482ce1a1608:p1:b2:s0",
+    "source_block_index": 3,
+    "text": "Laura Davies\nDavies turned professional in 1985. She started her professional career on the WPGET (now [Ladies European Tour](https://en.wikipedia.org/wiki/Ladies_European_Tour)) in 1985 when she won both [Rookie of the Year](https://en.wikipedia.org/wiki/LET_Rookie_of_the_Year) and [Order of Merit](https://en.wikipedia.org/wiki/LET_Order_of_Merit) titles.<sup>[4]</sup> She subsequently won the [Sports Journalists' Association](https://en.wikipedia.org/wiki/Sports_Journalists'_Association) Peter Wilson Trophy as International Newcomer of the Year 1985.<sup>[11]</sup> She repeated the Order of Merit win in 1986 having won four titles, one of which was the [Women's British Open](https://en.wikipedia.org/wiki/Women's_British_Open) (prior to it becoming a major).<sup>[4][12]</sup>",
+    "title": "Laura Davies",
+    "url": "https://en.wikipedia.org/wiki/Laura_Davies"
+  },
+  {
+    "bbox": [
+      0.053,
+      0.484,
+      0.917,
+      0.526
+    ],
+    "chunk_id": "fd4309c7e0ee8cdef87fd482ce1a1608:p20:b13:s0",
+    "document_id": "fd4309c7e0ee8cdef87fd482ce1a1608",
+    "document_ids": [
+      "fd4309c7e0ee8cdef87fd482ce1a1608"
+    ],
+    "figure_ids": [],
+    "id": "fd4309c7e0ee8cdef87fd482ce1a1608:p20:b13:s0",
+    "kind": "text",
+    "next_chunk_id": "fd4309c7e0ee8cdef87fd482ce1a1608:p20:b14:s0",
+    "oversized_unit": false,
+    "page_index": 20,
+    "previous_chunk_id": "fd4309c7e0ee8cdef87fd482ce1a1608:p20:b12:s0",
+    "source_block_index": 13,
+    "text": "Laura Davies\n29. ^ Cutler, Bethan (19 January 2006). [\"Laura Davies and Kirsty Taylor at the Women's World Cup of Golf\"](https://web.archive.org/web/20141016233751/http://www.ladieseuropeantour.com/main_article.php?id=4821&pid=1006) . Ladies European Tour. Archived from [the original](http://www.ladieseuropeantour.com/main_article.php?id=4821&pid=1006) on 16 October 2014. Retrieved 2 May 2015.",
+    "title": "Laura Davies",
+    "url": "https://en.wikipedia.org/wiki/Laura_Davies"
+  },
+  {
+    "bbox": [
+      0.053,
+      0.14,
+      0.929,
+      0.18
+    ],
+    "chunk_id": "fd4309c7e0ee8cdef87fd482ce1a1608:p20:b4:s0",
+    "document_id": "fd4309c7e0ee8cdef87fd482ce1a1608",
+    "document_ids": [
+      "fd4309c7e0ee8cdef87fd482ce1a1608"
+    ],
+    "figure_ids": [],
+    "id": "fd4309c7e0ee8cdef87fd482ce1a1608:p20:b4:s0",
+    "kind": "text",
+    "next_chunk_id": "fd4309c7e0ee8cdef87fd482ce1a1608:p20:b5:s0",
+    "oversized_unit": false,
+    "page_index": 20,
+    "previous_chunk_id": "fd4309c7e0ee8cdef87fd482ce1a1608:p20:b3:s0",
+    "source_block_index": 4,
+    "text": "Laura Davies\n20. ^ [\"LET Player Profile\"](https://web.archive.org/web/20141016212752/http://www.ladieseuropeantour.com/player_profile.php?id=50139) . Ladies European Tour. Archived from [the original](http://www.ladieseuropeantour.com/player_profile.php?id=50139) on 16 October 2014. Retrieved 2 May 2015.",
+    "title": "Laura Davies",
+    "url": "https://en.wikipedia.org/wiki/Laura_Davies"
+  },
+  {
+    "bbox": [
+      0.052,
+      0.001,
+      0.957,
+      0.042
+    ],
+    "chunk_id": "fd4309c7e0ee8cdef87fd482ce1a1608:p21:b0:s0",
+    "document_id": "fd4309c7e0ee8cdef87fd482ce1a1608",
+    "document_ids": [
+      "fd4309c7e0ee8cdef87fd482ce1a1608"
+    ],
+    "figure_ids": [],
+    "id": "fd4309c7e0ee8cdef87fd482ce1a1608:p21:b0:s0",
+    "kind": "text",
+    "next_chunk_id": "fd4309c7e0ee8cdef87fd482ce1a1608:p21:b1:s0",
+    "oversized_unit": false,
+    "page_index": 21,
+    "previous_chunk_id": "fd4309c7e0ee8cdef87fd482ce1a1608:p20:b29:s0",
+    "source_block_index": 0,
+    "text": "Laura Davies\n46. ^ Cutler, Bethan (23 July 2004). [\"Game of two-halves for footballing golfers\"](https://web.archive.org/web/20070927235948/http://www.ladieseuropeantour.com/content/let_content_feature.php?Id=4475) . Ladies European Tour. Archived from [the original](http://www.ladieseuropeantour.com/content/let_content_feature.php?Id=4475) on 27 September 2007. Retrieved 15 March 2007.",
+    "title": "Laura Davies",
+    "url": "https://en.wikipedia.org/wiki/Laura_Davies"
+  },
+  {
+    "bbox": [
+      0.023,
+      0.343,
+      0.557,
+      0.488
+    ],
+    "chunk_id": "fd4309c7e0ee8cdef87fd482ce1a1608:p2:b3:s0",
+    "document_id": "fd4309c7e0ee8cdef87fd482ce1a1608",
+    "document_ids": [
+      "fd4309c7e0ee8cdef87fd482ce1a1608"
+    ],
+    "figure_ids": [],
+    "id": "fd4309c7e0ee8cdef87fd482ce1a1608:p2:b3:s0",
+    "kind": "text",
+    "next_chunk_id": "fd4309c7e0ee8cdef87fd482ce1a1608:p2:b4:s0",
+    "oversized_unit": false,
+    "page_index": 2,
+    "previous_chunk_id": "fd4309c7e0ee8cdef87fd482ce1a1608:p2:b2:s0",
+    "source_block_index": 3,
+    "text": "Laura Davies\nIn 2004 Davies was the first woman to compete in the men's [European Tour](https://en.wikipedia.org/wiki/European_Tour), entering the ANZ Championship in [Sydney, Australia](https://en.wikipedia.org/wiki/Sydney,_Australia), playing from the same tees as the men.[16][17] She failed to make the cut, finishing second to last. She beat the LPGA Tour record for most eagles in a season, scoring 19 during the 2004 season.[[citation needed](https://en.wikipedia.org/wiki/Wikipedia:Citation_needed)]",
+    "title": "Laura Davies",
+    "url": "https://en.wikipedia.org/wiki/Laura_Davies"
+  },
+  {
+    "bbox": [
+      0.025,
+      0.0,
+      0.971,
+      0.949
+    ],
+    "chunk_id": "fd4309c7e0ee8cdef87fd482ce1a1608:p8:b0:s0",
+    "document_id": "fd4309c7e0ee8cdef87fd482ce1a1608",
+    "document_ids": [
+      "fd4309c7e0ee8cdef87fd482ce1a1608"
+    ],
+    "figure_ids": [],
+    "id": "fd4309c7e0ee8cdef87fd482ce1a1608:p8:b0:s0",
+    "kind": "table",
+    "next_chunk_id": "fd4309c7e0ee8cdef87fd482ce1a1608:p8:b0:s1",
+    "oversized_unit": false,
+    "page_index": 8,
+    "previous_chunk_id": "fd4309c7e0ee8cdef87fd482ce1a1608:p7:b3:s0",
+    "source_block_index": 0,
+    "text": "Laura Davies\n| 11 | 28 Oct 1990 | AGF Biarritz Ladies Open (Tournament shortened from 72 to 36 holes due to rain)[70] | -2 (63-73=136) | 1 stroke | Alison Nicholas |\n| --- | --- | --- | --- | --- | --- |\n| 12 | 21 Apr 1991 | Valextra Classic[71] | -7 (71-71-70-69=281) | 4 strokes | Tania Abitbol |\n| 13 | 28 Jun 1992 | European Ladies Open[72] | -11 (72-70-71-72=285) | 2 strokes | Catrin Nilsmark |\n| 14 | 2 Aug 1992 | Ladies English Open[73] | -11 (72-69-69-71=281) | 7 strokes | Tania AbitbolMarie-Laure de LorenziCorinne DibnahAlison Nicholas |\n| 15 | 20 Sep 1992 | BMW Italian Ladies' Open[74] | -14 (66-66-73-69=274) | 5 strokes | Sandrine Mendiburu |\n| 16 | 5 Sep 1993 | Waterford Dairies Ladies' English Open[75] | -11 (71-72-64-70=277) | 1 stroke | Marie-Laure de Lorenzi |\n| 17 | 31 Jul 1994 | Holiday Ireland Women's Open[76] | -6 (70-72-69-71=282) | 8 strokes | Carin KochHelen Wadsworth |\n| 18 | 7 Aug 1994 | The New Skoda Women's Scottish Open[76] | -10 (69-69-68-72=278) | 1 stroke | Karina ∅rum |\n| 19 | 10 Jun 1995 | Evian Masters[77] | -17 (68-67-69-67=271) | 5 strokes | Annika Sörenstam |\n| 20 | 30 Jul 1995 | Guardian Irish Holidays Open[78] | -25 (67-66-66-68=267) | 16 strokes | Åsa Gottmo |\n| 21 | 13 Aug 1995 | Woodpecker Women's Welsh Open[79] | -14 (68-69-71-70=278) | 3 strokes | Wendy Doolan |\n| 22 | 3 Sep 1995 | Wilkinson Sword Ladies' English Open[79] | -9 (72-67-70-70=279) | 1 stroke | Karina ∅rum |\n| 23 | 22 Jun 1996 | Evian Masters | -14 (72-69-65-68=274) | 4 strokes | Carin Koch |",
+    "title": "Laura Davies",
+    "url": "https://en.wikipedia.org/wiki/Laura_Davies"
+  }
+]

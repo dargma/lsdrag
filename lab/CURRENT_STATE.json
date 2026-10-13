@@ -1,15 +1,14 @@
 {
-  "stage": "development_evaluation",
-  "status": "additional50_preparation",
+  "stage": "comparison_report",
+  "status": "additional50_complete_report_updated",
   "goal": "Compare Qwen text, Google text-only, and Google-only multimodal retrieval with identical VLM, tools and 8 A-RAG agent iterations, no independent Reader-call limit; Mem-Gallery text queries only; no oracle condition",
   "plan": "docs/EXPERIMENT_PLAN.md",
   "work_root": "/content/local_fast/lsdrag-work",
   "arag_revision": "a44de6b2216bf6791979c4b6ac4ae106212fa1a6",
   "reader_model_finalized": true,
-  "evaluation_manifest_frozen": false,
+  "evaluation_manifest_frozen": true,
   "pending_checks": [
-    "Expand to at least 200 questions only after 20 continuous GPU-idle minutes; reuse completed predictions, no repeated solves",
-    "Final corpus visual alignment review and final evaluation remain separate"
+    "Automatic reading of retrieved image chunks remains an unmeasured improvement proposal."
   ],
   "reader_candidate": "google/gemma-4-E4B-it",
   "model_weights_downloaded": true,
@@ -22,7 +21,7 @@
   "image_transport": "tool result then user image",
   "standard_parser_smoke_passed": true,
   "preflight_backup": "lab/reports/preflight_backup.json",
-  "implementation_status": "28 tests passed; corrected three-arm development evaluation complete",
+  "implementation_status": "28 tests passed; all additional 300 predictions scored and backed up; self-contained qualitative bundles validated",
   "approved_evaluation_scope": {
     "m3docvqa_questions": 50,
     "mem_gallery_questions": 50,
@@ -118,11 +117,7 @@
       "log": "/content/local_fast/lsdrag-work/memgallery-development-B0.log"
     }
   },
-  "running_tasks": {
-    "additional50_coordinator": {
-      "log": "/content/local_fast/lsdrag-work/recovery/additional50-coordinator.log"
-    }
-  },
+  "running_tasks": {},
   "recovery": {
     "date": "2026-10-13",
     "restored_code_revision": "7aaa4f0",
@@ -211,7 +206,7 @@
     }
   },
   "additional_comparison": {
-    "status": "new_document_indexes_building",
+    "status": "complete_scored_backed_up",
     "questions_per_arm": {
       "m3docvqa": 50,
       "memgallery": 50
@@ -219,6 +214,30 @@
     "question_overlap_with_development": 0,
     "output_root": "/content/local_fast/lsdrag-work/results/three_arm_additional50",
     "new_document_count": 108,
-    "reused_document_count": 180
-  }
+    "reused_document_count": 180,
+    "summary": "lab/reports/INTERIM_REPORT.md",
+    "qualitative_cases": "lab/reports/qualitative_cases/README.md",
+    "image_mapping_scored_n": {
+      "m3docvqa": 37,
+      "memgallery": 50
+    },
+    "gpu_reader_stopped": true
+  },
+  "completed_additional_runs": {
+    "m3docvqa": {
+      "B0": "lab/reports/additional50/m3docvqa/B0_summary.json",
+      "C1": "lab/reports/additional50/m3docvqa/C1_summary.json",
+      "G1": "lab/reports/additional50/m3docvqa/G1_summary.json"
+    },
+    "memgallery": {
+      "B0": "lab/reports/additional50/memgallery/B0_summary.json",
+      "C1": "lab/reports/additional50/memgallery/C1_summary.json",
+      "G1": "lab/reports/additional50/memgallery/G1_summary.json"
+    }
+  },
+  "completed_unique_questions": {
+    "m3docvqa": 100,
+    "memgallery": 60
+  },
+  "additional_prepared_backup": "/content/local_fast/lsdrag-work/recovery/additional50-prepared-backup.json"
 }

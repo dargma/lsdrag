@@ -1,0 +1,9 @@
+{
+  "qid": "Architecture_Art_Culture_Exhibition_Technology:qa0068",
+  "question": "What specific artwork mentioned in the conversation would be interesting to compare with the attached modern art image? Please return the artwork name.",
+  "question_image_paths": [
+    "/content/local_fast/lsdrag-work/data/mem_gallery/data/image/Architecture_Art_Culture_Exhibition_Technology/QA_IMG_006.jpg"
+  ],
+  "scenario": "Architecture_Art_Culture_Exhibition_Technology",
+  "task_type": "VR"
+}
