@@ -1,7 +1,7 @@
 {
   "stage": "development_evaluation",
   "status": "in_progress",
-  "goal": "Complete B0/V1/V2/C1 on 50 image-related M3DocVQA questions, supplementary Mem-Gallery 50-question B0/V1/V2 and oracle-evidence Reader evaluation, and final report",
+  "goal": "Compare Qwen text, Google text-only, and Google-only multimodal retrieval with identical VLM, tools and 8 total iterations; Mem-Gallery text queries only; no oracle condition",
   "plan": "docs/EXPERIMENT_PLAN.md",
   "work_root": "/content/local_fast/lsdrag-work",
   "arag_revision": "a44de6b2216bf6791979c4b6ac4ae106212fa1a6",
@@ -38,10 +38,10 @@
     },
     "mem_gallery_arms": [
       "B0",
-      "V1",
-      "V2"
+      "C1",
+      "G1"
     ],
-    "oracle_evidence_reader_diagnostic": true,
+    "oracle_evidence_reader_diagnostic": false,
     "execution_inputs_updated": true,
     "m3docvqa_input_manifest_updated": true
   },
@@ -183,5 +183,22 @@
       "scripts/recovery/score_resumed_memgallery.py"
     ],
     "status": "restored indexes and final parses; resumed V2 runs scored and backed up"
+  },
+  "active_comparison": {
+    "arms": [
+      "B0",
+      "C1",
+      "G1"
+    ],
+    "max_iterations": 8,
+    "finalization_included": true,
+    "memgallery_question_image_policy": "text-only",
+    "common_prompt": "prompts/baseline.txt",
+    "rerun_development": {
+      "m3docvqa": 50,
+      "memgallery": 10
+    },
+    "output_root": "/content/local_fast/lsdrag-work/results/three_arm_iter8_textquery",
+    "status": "preparing"
   }
 }

@@ -40,3 +40,22 @@ def test_table_rows_keep_headers():
     assert len(parts) == 2
     assert all(p.startswith("| Name | Value |\n| --- | --- |") for p in parts)
     assert "| Second | 2 |" in parts[1]
+
+
+def test_google_multimodal_retrieves_images_without_qwen():
+    from lsdrag.retrieval import Retrieval
+    from types import SimpleNamespace
+    class FakeIndex:
+        last_matches = {}
+        def __init__(self, ranking): self.ranking = ranking
+        def search(self, *args, **kwargs): return [(key, 1.0) for key in self.ranking]
+    retrieval = Retrieval.__new__(Retrieval)
+    retrieval.arm = "G1"
+    retrieval.scoped = False
+    retrieval.candidate_count = 60
+    retrieval.query_cache = {}
+    retrieval.chunks = {key: {"chunk_id": key, "document_id": "d", "page_index": 0, "kind": "image_caption", "text": key} for key in ["caption", "visual"]}
+    retrieval.indexes = {"gemma_text": FakeIndex(["caption", "visual"]), "gemma_image": FakeIndex(["visual"])}
+    retrieval.embedders = {"gemma": SimpleNamespace(encode=lambda *args: np.array([[1., 0.]]))}
+    assert retrieval.semantic_search("captionless object", top_k=1)[0]["chunk_id"] == "visual"
+    assert list(retrieval.embedders) == ["gemma"]

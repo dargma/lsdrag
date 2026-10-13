@@ -83,7 +83,7 @@ class VectorIndex:
 
 class Retrieval:
     def __init__(self, corpus, indexes, embedders, arm, candidate_count=60, document_scope=None):
-        if arm not in {"B0", "V1", "V2", "C1"}:
+        if arm not in {"B0", "V1", "V2", "C1", "G1"}:
             raise ValueError(arm)
         self.arm = arm
         self.chunks = {r["chunk_id"]: r for r in read_jsonl(Path(corpus) / "chunks.jsonl")}
@@ -122,14 +122,14 @@ class Retrieval:
 
     def semantic_search(self, query, top_k=5):
         top_k = max(1, min(20, top_k))
-        channel = "gemma" if self.arm == "C1" else "qwen"
-        # Keep text candidate generation identical across arms. Only V1/V2
-        # add the image ranking; no hidden text-retrieval change accompanies it.
+        channel = "gemma" if self.arm in {"C1", "G1"} else "qwen"
+        # Use the same candidate budget across arms. G1 uses Google for
+        # both text and image rankings; legacy V1/V2 retain Qwen text.
         count = self.candidate_count
         allowed_chunks = set(self.chunks) if self.scoped else None
         text = self.indexes[channel + "_text"].search(self.query_vector(channel, query), count, allowed=allowed_chunks, row_limit=count * 3)
         identities = [key for key, _ in text]
-        if self.arm in {"V1", "V2"}:
+        if self.arm in {"V1", "V2", "G1"}:
             images = self.indexes["gemma_image"].search(self.query_vector("gemma", query), count, allowed=allowed_chunks)
             identities = reciprocal_rank_fusion([identities, [key for key, _ in images]])
         matches = self.indexes[channel + "_text"].last_matches

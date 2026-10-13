@@ -112,3 +112,6 @@ User clarified the primary question: what changes when replacing Qwen with Googl
 - M3 V2 recovery: all 50 scored; EM .10, F1 .1366, LLM accuracy .14. On 33 fully mapped questions, figure candidate recall .9091 and delivery recall .6364. This includes tool/prompt changes, not an isolated embedding replacement.
 - All 108 additional PDFs parsed; recovery-final backup verifies 2,715 files. Development indexes and resumed results backed up.
 - Reorganized INTERIM_REPORT.md into the seven requested sections with a red bold numeric SVG and four illustrated cases, two per benchmark. Included helpful visual-search examples, a fine-detail counting failure, and a date-constraint failure; exported actual trace excerpts and image provenance.
+
+### User revision: three isolated embedder conditions, eight iterations
+Replace mixed Qwen/Google V1/V2 comparisons with B0 Qwen-text, C1 Google-text, G1 Google-text+image. Same VLM/prompt/tools and caption-linked image delivery in every arm. Eight total Reader calls including finalization. Mem-Gallery input is text-only for all arms, source questions/gold unchanged; no oracle runs. Remeasure existing development 50+10 questions. Examples must be paired Qwen failures and G1 successes, conditional on overall evidence of improvement. Previous report archived.

@@ -1,4 +1,5 @@
 import hashlib
+import pytest
 from types import SimpleNamespace
 
 from PIL import Image
@@ -7,16 +8,17 @@ from lsdrag.agent import Agent, AgentConfig, parse_answer, tool_schemas
 
 
 def test_baseline_arms_have_identical_tool_schemas():
-    assert tool_schemas("B0") == tool_schemas("V1") == tool_schemas("C1")
+    assert tool_schemas("B0") == tool_schemas("V1") == tool_schemas("C1") == tool_schemas("G1")
     assert len(tool_schemas("V2")) == 5
 
 
-def test_transport_and_delivery_after_tool_results(tmp_path):
+@pytest.mark.parametrize("arm", ["B0", "C1", "G1"])
+def test_transport_and_delivery_after_tool_results(tmp_path, arm):
     path = tmp_path / "figure.png"
     Image.new("RGB", (8, 8), "red").save(path)
     chunk = {"document_id": "d", "page_index": 0, "kind": "image_caption", "text": "A circle", "figure_ids": ["f"]}
     figure = {"image_path": str(path), "image_sha256": hashlib.sha256(path.read_bytes()).hexdigest()}
-    retrieval = SimpleNamespace(arm="B0", chunks={"c": chunk}, figures={"f": figure}, keyword_search=lambda **_: [], semantic_search=lambda **_: [])
+    retrieval = SimpleNamespace(arm=arm, chunks={"c": chunk}, figures={"f": figure}, keyword_search=lambda **_: [], semantic_search=lambda **_: [])
 
     class FakeReader:
         count = 0
@@ -55,7 +57,7 @@ def test_v2_verification_stays_within_common_loop_budget():
                 assert tools is None  # Common max-loop finalization, not extra budget.
             return {"message": {"content": '{"answers":[],"citations":[]}'}, "finish_reason": "stop"}, {}
     reader = FakeReader()
-    result = Agent(retrieval, "test", AgentConfig(max_loops=1), reader).run("q", "test?")
+    result = Agent(retrieval, "test", AgentConfig(max_loops=2), reader).run("q", "test?")
     assert result["verification_requested"]
     assert result["stop_reason"] == "max_loops"
     assert result["loops"] == 2
@@ -73,3 +75,21 @@ def test_question_image_is_not_counted_as_retrieved_evidence(tmp_path):
     result = Agent(retrieval, "test", reader=FakeReader()).run("q", "test?", [question_image])
     assert result["question_image_count"] == 1
     assert result["unique_delivered_images"] == 0
+
+
+def test_eight_iterations_include_forced_final_call():
+    retrieval = SimpleNamespace(arm="G1", chunks={}, figures={}, keyword_search=lambda **_: [], semantic_search=lambda **_: [])
+    class RepeatingReader:
+        count = 0
+        def chat(self, messages, tools):
+            self.count += 1
+            if self.count == 8:
+                assert tools is None
+                return {"message": {"content": '{"answers":[],"citations":[]}'}, "finish_reason": "stop"}, {}
+            assert tools is not None
+            return {"message": {"content": None, "tool_calls": [{"id": str(self.count), "type": "function", "function": {"name": "semantic_search", "arguments": '{"query":"test"}'}}]}, "finish_reason": "tool_calls"}, {}
+    reader = RepeatingReader()
+    result = Agent(retrieval, "test", AgentConfig(max_loops=8), reader).run("q", "test?")
+    assert reader.count == result["loops"] == 8
+    assert result["stop_reason"] == "max_loops"
+    assert len(result["trajectory"]) == 7

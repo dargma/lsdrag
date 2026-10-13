@@ -14,7 +14,7 @@ from lsdrag.retrieval import Retrieval, VectorIndex
 
 def main():
     p = argparse.ArgumentParser()
-    p.add_argument("--arm", choices=["B0", "V1", "V2", "C1"], required=True)
+    p.add_argument("--arm", choices=["B0", "V1", "V2", "C1", "G1"], required=True)
     p.add_argument("--benchmark", choices=["m3docvqa", "memgallery"], default="m3docvqa")
     p.add_argument("--corpus", type=Path, required=True)
     p.add_argument("--indexes", type=Path, required=True)
@@ -24,7 +24,8 @@ def main():
     p.add_argument("--base-url", default="http://127.0.0.1:8102/v1")
     p.add_argument("--limit", type=int, default=0)
     p.add_argument("--resume", action="store_true")
-    p.add_argument("--max-loops", type=int, default=15)
+    p.add_argument("--max-loops", type=int, default=8)
+    p.add_argument("--question-image-policy", choices=["text-only", "original"], default="text-only")
     a = p.parse_args()
     questions = read_jsonl(a.questions)
     allowed = {"qid", "question"} if a.benchmark == "m3docvqa" else {"qid", "question", "scenario", "task_type", "question_image_paths"}
@@ -34,13 +35,15 @@ def main():
         raise ValueError("Duplicate question IDs")
     if a.limit:
         questions = questions[:a.limit]
-    channels = ["gemma_text"] if a.arm == "C1" else ["qwen_text"]
-    if a.arm in {"V1", "V2"}:
+    if a.benchmark == "memgallery" and a.question_image_policy == "text-only":
+        questions = [{**q, "question_image_paths": []} for q in questions]
+    channels = ["gemma_text"] if a.arm in {"C1", "G1"} else ["qwen_text"]
+    if a.arm in {"V1", "V2", "G1"}:
         channels.append("gemma_image")
     config = AgentConfig(base_url=a.base_url, max_loops=a.max_loops)
     prompt_path = Path(__file__).resolve().parents[1] / "prompts" / ("visual.txt" if a.arm == "V2" else "baseline.txt")
     question_image_hashes = {path: sha256(path) for q in questions for path in q.get("question_image_paths", [])}
-    identity = {"arm": a.arm, "benchmark": a.benchmark, "questions_sha256": sha256(a.questions), "question_ids": [q["qid"] for q in questions], "question_image_hashes": question_image_hashes, "corpus_sha256": sha256(a.corpus / "manifest.json"), "index_manifests": {c: sha256(a.indexes / c / "manifest.json") for c in channels}, "prompt_sha256": sha256(prompt_path), "config": asdict(config), "code_revision": subprocess.check_output(["git", "rev-parse", "HEAD"], text=True).strip()}
+    identity = {"arm": a.arm, "question_image_policy": a.question_image_policy, "iteration_budget_semantics": "total Reader calls, including finalization", "benchmark": a.benchmark, "questions_sha256": sha256(a.questions), "question_ids": [q["qid"] for q in questions], "question_image_hashes": question_image_hashes, "corpus_sha256": sha256(a.corpus / "manifest.json"), "index_manifests": {c: sha256(a.indexes / c / "manifest.json") for c in channels}, "prompt_sha256": sha256(prompt_path), "config": asdict(config), "code_revision": subprocess.check_output(["git", "rev-parse", "HEAD"], text=True).strip()}
     if subprocess.check_output(["git", "status", "--porcelain"], text=True).strip():
         raise ValueError("Commit code before running a tracked experiment")
     a.output.mkdir(parents=True, exist_ok=True)

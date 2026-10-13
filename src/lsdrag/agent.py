@@ -17,7 +17,7 @@ from .context import EvidenceContext
 class AgentConfig:
     base_url: str = "http://127.0.0.1:8102/v1"
     model: str = "gemma-reader"
-    max_loops: int = 15
+    max_loops: int = 8
     max_output_tokens: int = 1024
     context_limit: int = 32768
     max_images: int = 8
@@ -145,13 +145,15 @@ class Agent:
         status, stop_reason = "failed", None
         search_tokens, evidence_tokens = 0, 0
         verification_requested = False
-        for loop in range(self.config.max_loops + 1):
+        if self.config.max_loops < 1:
+            raise ValueError("max_loops must be positive")
+        for loop in range(self.config.max_loops):
             images = list(context.pending_images.values())
             if images:
                 messages.append(image_message(images, question))
-            forced = loop == self.config.max_loops or self._estimate_context(messages) + self.config.max_output_tokens > self.config.context_limit - 2048
+            forced = loop == self.config.max_loops - 1 or self._estimate_context(messages) + self.config.max_output_tokens > self.config.context_limit - 2048
             if forced:
-                stop_reason = "max_loops" if loop == self.config.max_loops else "context_budget"
+                stop_reason = "max_loops" if loop == self.config.max_loops - 1 else "context_budget"
                 messages.append({"role": "user", "content": "You have reached the limit. Do not call more tools. Return your final JSON answer using the evidence already available; leave answers empty if insufficient."})
             call_start = time.monotonic()
             try:
