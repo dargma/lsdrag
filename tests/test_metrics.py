@@ -14,6 +14,8 @@ def test_document_aliases_and_actual_reads():
     gold = {"supporting_context": [{"doc_id": "alias", "doc_part": "image"}], "metadata": {"type": "ImageQ"}}
     assert document_read_scores({"read_chunk_ids": ["c"]}, gold, chunks)["document_recall"] == 1
     assert document_read_scores({"read_chunk_ids": []}, gold, chunks)["document_recall"] == 0
+    result = document_read_scores({"read_chunk_ids": [], "trajectory": [{"tool_name": "semantic_search", "result": [{"chunk_id": "c"}]}]}, gold, chunks)
+    assert result["document_candidate_recall"] == 1 and result["document_recall"] == 0
 
 
 def test_pairing_and_statistics():

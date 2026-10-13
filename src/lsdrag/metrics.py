@@ -66,9 +66,15 @@ def answer_scores(prediction, gold, scorer):
 def document_read_scores(prediction, gold, chunks):
     required = {c["doc_id"] for c in gold["supporting_context"]}
     read = {alias for key in prediction["read_chunk_ids"] for alias in chunks[key]["document_ids"]}
+    candidates = set()
+    for event in prediction.get("trajectory", []):
+        if event["tool_name"].endswith("search") and isinstance(event["result"], list):
+            for item in event["result"]:
+                if item.get("chunk_id") in chunks:
+                    candidates.update(chunks[item["chunk_id"]]["document_ids"])
     if not required:
         raise ValueError("Question has no supporting documents")
-    return {"document_recall": len(required & read) / len(required), "all_documents_read": float(required <= read), "support_modalities": sorted({c["doc_part"] for c in gold["supporting_context"]}), "question_type": gold["metadata"]["type"]}
+    return {"document_recall": len(required & read) / len(required), "all_documents_read": float(required <= read), "any_document_read": float(bool(required & read)), "document_candidate_recall": len(required & candidates) / len(required), "all_documents_candidates": float(required <= candidates), "support_modalities": sorted({c["doc_part"] for c in gold["supporting_context"]}), "question_type": gold["metadata"]["type"]}
 
 
 def paired_comparison(baseline, variant, metric, seed=20261013, samples=10000):

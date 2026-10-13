@@ -82,7 +82,7 @@ def main():
             row["llm_judge_rubric_raw"] = raw_score if raw_score in {0., .25, .5, .75, 1.} else None
         rows.append(row)
     write_jsonl(a.output / "question_metrics.jsonl", rows)
-    metrics = ["em", "f1", "bleu1", "bleu2", "bleu4", "clue_read_recall", "all_clues_read", "image_delivery_recall", "loops", "seconds", "search_tokens", "unique_delivered_images"]
+    metrics = ["em", "f1", "bleu1", "bleu2", "bleu4", "clue_read_recall", "all_clues_read", "image_delivery_recall", "loops", "seconds", "search_tokens", "evidence_tokens", "prompt_tokens", "completion_tokens", "unique_delivered_images"]
     if reader:
         metrics.extend(["llm_judge_official", "llm_judge_rubric_raw"])
     def aggregate(group):
@@ -91,6 +91,7 @@ def main():
     for row in rows:
         groups[row["task_type"] + ("+question_image" if row["question_has_image"] else "+text_question")].append(row)
     summary = {"arm": manifest["arm"], "overall": aggregate(rows), "by_task_and_question_image": {k: aggregate(v) for k, v in groups.items()}, "gold_sha256": sha256(a.gold), "run_manifest_sha256": sha256(a.run / "run_manifest.json"), "official_judge": "official parser collapses five-level rubric to 0/.5/1; raw rubric scores also retained" if reader else "not run", "metric_scale": "0–1 except counts/time/tokens"}
+    summary["token_accounting"] = "search/evidence tokens use common tiktoken gpt-4o encoding; prompt/completion tokens are actual Reader API usage"
     dump_json(a.output / "summary.json", summary)
     print(json.dumps(summary))
 

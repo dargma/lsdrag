@@ -81,3 +81,9 @@ Mem-Gallery development oracle (10, clue-only version): EM .60, F1 .72045, offic
 - Collected and hash-verified all 288 frozen URLs (4,093 pages): 280 image-load-clean, 8 flagged (7 reused development distractors and 1 new support document). None of the final 50 questions has a missing PDF; one has an image-load-incomplete support document.
 - The remaining new missing asset is the cathedral image on N'Djamena, which returned HTTP 403 both with and without its tracking query. This is recorded, not silently substituted. Gold-image visual matching remains pending.
 - All 108 new PDFs (1,400 pages) entered standard-tier parsing. Mem-Gallery B0 development is running alongside M3 V2 development; development timings are affected by concurrent work and must not be presented as isolated serving benchmarks.
+
+### Evidence-stage and subgroup reporting
+- Mem-Gallery development B0 completed 10/10: EM 0.30, F1 0.435, official parsed judge 0.60, image-delivery recall 0.5333. V1 development inference also completed 10/10; scoring follows.
+- Added document candidate recall separately from read recall, tool counts, official question-type and reviewed original-description subgroup summaries. Search/evidence text volume uses tiktoken's gpt-4o encoding; Reader API prompt/completion counts are actual model usage and are explicitly distinguished.
+- Before any final model predictions, annotated the 50 final M3 question texts with a primary visual cue category. All 50 use a visual property; these categories are exploratory manual labels, not independently adjudicated. No answers or model outcomes were used.
+- Four metric tests pass, including a candidate found but unread case.
