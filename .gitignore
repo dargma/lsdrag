@@ -1,0 +1,16 @@
+.env
+.env.*
+!.env.example
+.venv*/
+__pycache__/
+*.pyc
+.pytest_cache/
+data/
+models/
+checkpoints/
+indexes/
+outputs/
+logs/
+*.safetensors
+*.pt
+*.bin

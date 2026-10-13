@@ -1,0 +1,11 @@
+{
+  "stage": "environment_preflight",
+  "status": "in_progress",
+  "goal": "Complete B0, V1, V2, C1 evaluation on 200 image-related M3DocVQA questions and the final report",
+  "plan": "docs/EXPERIMENT_PLAN.md",
+  "work_root": "/content/local_fast/lsdrag-work",
+  "arag_revision": "a44de6b2216bf6791979c4b6ac4ae106212fa1a6",
+  "reader_model_finalized": false,
+  "evaluation_manifest_frozen": false,
+  "pending_checks": ["model access and disk requirements", "official evaluation and evidence schema", "runtime installation and multimodal tool smoke tests"]
+}
