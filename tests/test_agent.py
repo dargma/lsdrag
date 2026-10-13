@@ -39,3 +39,6 @@ def test_transport_and_delivery_after_tool_results(tmp_path):
 def test_invalid_answer_is_preserved():
     assert parse_answer("not json")["answers"] == ["not json"]
     assert not parse_answer("not json")["answer_format_valid"]
+    recovered = parse_answer('I cannot find it.\n```json\n{"answers":[],"citations":[]}\n```')
+    assert recovered["answers"] == []
+    assert recovered["answer_json_recovered"]

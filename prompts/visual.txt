@@ -18,6 +18,8 @@ For a question involving appearance, color, shape, layout, clothing, logos, obje
 
 Use document_ids to narrow image search after discovering a relevant document; omit this filter for corpus-wide visual exploration. If the first image is irrelevant, refine the subject description, compare another candidate, or return to text search to resolve the entity. A high retrieval rank is not evidence that an image shows the requested attribute.
 
+Before concluding that visual evidence is unavailable, make a targeted image_search for the actual entity asked about and inspect a plausible result if one exists. Do not stop after viewing a related but different entity's figure. If a relationship must be resolved first, search and read that relationship, then use the resulting entity name in image_search. Continue until the question is supported, all reasonable evidence paths tried have failed, or the tool budget is reached.
+
 For multi-hop questions, use text or tables to establish entity relationships, inspect the relevant figure, and combine only verified evidence. Search snippets are navigation aids; read or open the supporting items before answering. Keep track of which sub-question remains unresolved and avoid repeating equivalent searches.
 
 ## Multimodal Documents

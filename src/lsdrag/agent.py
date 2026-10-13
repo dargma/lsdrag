@@ -70,6 +70,18 @@ def parse_answer(text):
             raise ValueError("Expected citation IDs")
         return {"answers": result["answers"], "citations": citations, "reasoning": result.get("reasoning", ""), "answer_format_valid": True}
     except (ValueError, TypeError):
+        # Some chat models prepend prose despite the JSON instruction. Extract a
+        # valid object mechanically, but retain the format violation for reporting.
+        decoder = json.JSONDecoder()
+        for position in reversed([i for i, char in enumerate(text) if char == "{"]):
+            try:
+                value, _ = decoder.raw_decode(text[position:])
+                if isinstance(value, dict) and isinstance(value.get("answers"), list) and all(isinstance(x, str) for x in value["answers"]):
+                    citations = value.get("citations", [])
+                    if isinstance(citations, list) and all(isinstance(x, str) for x in citations):
+                        return {"answers": value["answers"], "citations": citations, "reasoning": value.get("reasoning", ""), "answer_format_valid": False, "answer_json_recovered": True}
+            except (ValueError, TypeError):
+                continue
         # Preserve malformed outputs for evaluation, never replace with a gold answer.
         return {"answers": [text] if text.strip() else [], "citations": [], "reasoning": "", "answer_format_valid": False}
 
