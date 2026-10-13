@@ -22,5 +22,20 @@
   ],
   "selection_manifest": "lab/registry/selection.json",
   "reader_smoke_passed": true,
-  "image_transport": "tool result then user image"
+  "image_transport": "tool result then user image",
+  "running_tasks": {
+    "parser_server": {
+      "port": 8101,
+      "session_id": 56265,
+      "log": "/content/local_fast/lsdrag-work/parser-standard-v3-server.log"
+    },
+    "development_parse_pilot": {
+      "documents": 10,
+      "session_id": 23697,
+      "log": "/content/local_fast/lsdrag-work/parse-development-pilot.log",
+      "output": "/content/local_fast/lsdrag-work/data/parsed_development"
+    }
+  },
+  "standard_parser_smoke_passed": true,
+  "preflight_backup": "lab/reports/preflight_backup.json"
 }
