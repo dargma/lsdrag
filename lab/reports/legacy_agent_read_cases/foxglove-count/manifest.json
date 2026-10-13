@@ -1,0 +1,161 @@
+{
+  "schema_version": 1,
+  "qid": "Baking_Dessert_Daily_Life_Skill:qa0042",
+  "benchmark": "Mem-Gallery",
+  "split": "additional50",
+  "question_image_originally_present": false,
+  "question_image_provided": false,
+  "prediction_files_byte_identical_to_recorded_runs": true,
+  "purpose": "Self-contained inspection bundle for this selected qualitative case; includes recorded candidates/reads, original source rows/pages, captions and images; no inference replay or full benchmark/index bundle.",
+  "files": [
+    {
+      "path": "README.md",
+      "bytes": 3270,
+      "sha256": "70a76cfd738eaf9a2f30cd81696bc75ffe65d5e39c681aa825d7f83d6e0733d0"
+    },
+    {
+      "path": "caption_inventory.json",
+      "bytes": 6775,
+      "sha256": "b451e197e2eb81b70c55bf6ed26619eff9e88a0f142bb8abc1b56904ac70328a"
+    },
+    {
+      "path": "figures_local.json",
+      "bytes": 5937,
+      "sha256": "13d78bbf2300f444aaf8cd347166afa698f6af8a394f20e359b6412e5bb6f4e7"
+    },
+    {
+      "path": "images/013efb5e6dd26448231d5df7.jpg",
+      "bytes": 53695,
+      "sha256": "013efb5e6dd26448231d5df7384c0f06e2c339d0784ae037779c6c4c7bac989e"
+    },
+    {
+      "path": "images/017d34694cef84929f8c4ee6.jpg",
+      "bytes": 51670,
+      "sha256": "017d34694cef84929f8c4ee6d802006f865b6ab1b6ef19c62ccae97df069051c"
+    },
+    {
+      "path": "images/0c4131f4a377154fcb72db3e.jpg",
+      "bytes": 37454,
+      "sha256": "0c4131f4a377154fcb72db3e5b6d628b329b3d8b8248b4e959abccedd535cb8e"
+    },
+    {
+      "path": "images/1bdc29ae2ae983949f90df70.jpg",
+      "bytes": 40087,
+      "sha256": "1bdc29ae2ae983949f90df706608b81aeadc577d531badaaed81abfddcc7c0ff"
+    },
+    {
+      "path": "images/3c76c6debbb5048637b39c1f.jpg",
+      "bytes": 31996,
+      "sha256": "3c76c6debbb5048637b39c1fc5671e3f717ca1a475cdfe2d7f447d22070e3d9e"
+    },
+    {
+      "path": "images/52e6dff530845ebe0d3134f3.jpg",
+      "bytes": 45996,
+      "sha256": "52e6dff530845ebe0d3134f372bb92a1c3acd8270845747e15b6b1784c6b9564"
+    },
+    {
+      "path": "images/ad38fbbc80201b3a7cc50464.jpg",
+      "bytes": 40651,
+      "sha256": "ad38fbbc80201b3a7cc50464463a55fd13e95a6d9b8791d5167dc7bb0251bde5"
+    },
+    {
+      "path": "images/b7836a8e59aa2985e801e636.jpg",
+      "bytes": 42578,
+      "sha256": "b7836a8e59aa2985e801e636748288b415c4cec3ab89ac8c83274bd16b3cb3fb"
+    },
+    {
+      "path": "images/de152248757d12e2cde7a052.jpg",
+      "bytes": 28589,
+      "sha256": "de152248757d12e2cde7a052001f5eae583fef56283dbddd5d5b3439d07f27ba"
+    },
+    {
+      "path": "images/fe0aeaae29fc2ed1518be132.jpg",
+      "bytes": 98253,
+      "sha256": "fe0aeaae29fc2ed1518be132aaf1b9352e96182c5d5945ede7cb5871988dd51b"
+    },
+    {
+      "path": "metrics/B0.json",
+      "bytes": 755,
+      "sha256": "e306acb5ab797d6310bbde9de062925f5bac2f155c0fc18958f3e004b4011100"
+    },
+    {
+      "path": "metrics/C1.json",
+      "bytes": 784,
+      "sha256": "9e4eb446ddb07b73a3b6d58ca9737396664c1cf1a79bd381cd007fafa3eb32ba"
+    },
+    {
+      "path": "metrics/G1.json",
+      "bytes": 783,
+      "sha256": "0f1dc07938a27c8858dcb379e40bafc5c3a7638cf9bc17a25f42f49d687f664d"
+    },
+    {
+      "path": "predictions/B0.json",
+      "bytes": 13280,
+      "sha256": "53ceb5ac962d87e0ba232ebb8f4636df2dc04ee2a0fad19a79fc949a8a239b9f"
+    },
+    {
+      "path": "predictions/B0_run_manifest.json",
+      "bytes": 3497,
+      "sha256": "214740be554c73081d8a6a3ed31e92f29ddcf892aecf6ce012a157884b5963b6"
+    },
+    {
+      "path": "predictions/C1.json",
+      "bytes": 15472,
+      "sha256": "4174a6fc4abda172fdb151df07de1edba726734dd5bc439bd18a16b812aba4db"
+    },
+    {
+      "path": "predictions/C1_run_manifest.json",
+      "bytes": 3498,
+      "sha256": "291472bbfebf9694626d5affd490b16666d6b9938e8e1a649859441af8459d02"
+    },
+    {
+      "path": "predictions/G1.json",
+      "bytes": 15238,
+      "sha256": "9523a3e14785420ea79576d5150dac55db93381a8f16f065c9b2b401c586a675"
+    },
+    {
+      "path": "predictions/G1_run_manifest.json",
+      "bytes": 3585,
+      "sha256": "997aac0f07c4426ba78d69e7f20c918ad7d7ce1200ced502d8f90b91ef2f0d82"
+    },
+    {
+      "path": "raw/chunks.json",
+      "bytes": 7765,
+      "sha256": "d2c91f5dfb707283c8890b858bf6bed59d89b6f769580f4ba1339b32ce40bcf7"
+    },
+    {
+      "path": "raw/dialogue_sessions.json",
+      "bytes": 13363,
+      "sha256": "8f7b3fe12f62a9d6fd68c90c0881e948472bf8354d16eda984f905c951400386"
+    },
+    {
+      "path": "raw/figures.json",
+      "bytes": 5607,
+      "sha256": "44ad74e4f98a262ec3334edc7810bb9c54732a4cc7b82db69605bd85135ae103"
+    },
+    {
+      "path": "raw/gold.json",
+      "bytes": 445,
+      "sha256": "82f50cf82f2e44d90b398f5b5a91c1e3e16d43fafad55ad8d61061e25dfbd194"
+    },
+    {
+      "path": "raw/question.json",
+      "bytes": 329,
+      "sha256": "bf81a8560e25339b0b1e84a7509cd78c67905856f3469008773cdb1b79782b09"
+    },
+    {
+      "path": "raw/source_question.json",
+      "bytes": 320,
+      "sha256": "3871bd878a19a09d0ebbd732a83a7cbeee729f10d4f5fe16682497ee2ec8c011"
+    },
+    {
+      "path": "source_assets.json",
+      "bytes": 2513,
+      "sha256": "6427928182cecc56b99d4f632c047edc1920fa83e9f99299e34719b6ea59f645"
+    }
+  ],
+  "question_caption_originally_present": false,
+  "question_caption_provided": false,
+  "question_input_policy": "Original question text only; question image and its caption omitted; corpus image captions retained.",
+  "image_delivery_policy": "agent-read"
+}

@@ -39,7 +39,7 @@ EM, F1, LLM 판정 및 근거 후보/전달 recall을 같은 평가 코드로 �
 사용자가 GPU 유휴를 알리고 즉시 실행을 요청했다. 기존에 고정한 M3DocVQA 50문항과 Mem-Gallery 50문항(VS 25 + VR 25)을 사용한다. 기존 개발 문항과 ID 중복은 0이다. 조건별 한 번씩만 풀고 같은 Reader·프롬프트·max iteration 8·텍스트 질문 정책을 유지한다. M3는 사전 고정된 288문서 코퍼스, Mem-Gallery는 같은 코퍼스에서 해당 시나리오만 검색한다. 기존 개발 180문서 결과와 새 288문서 결과는 분리해 보고하며 단순 합산하지 않는다. 회복된 파싱 결과에서 이전 이미지 ID가 없으면 해당 대응은 검증 전까지 recall에서 제외한다. 실행: `python scripts/run_three_arm_comparison.py --evaluation-set additional50`.
 
 ## 검색 연결 이미지 자동 전달 수정
-기존 결과는 `agent-read` 정책(에이전트가 read_chunk를 선택해야 이미지 전달)으로 측정했다. 사용자 지시에 따라 현재 코드의 새 실행 기본값은 `search-linked`다. keyword_search/semantic_search가 반환한 이미지 연결 청크를 자동 읽기하고 다음 Reader 호출 전 실제 이미지를 넣는다. 세 조건에 같은 정책·search_linked 프롬프트·8 iteration·이미지 8개 예산을 적용한다. 질문 첨부 이미지·그 캡션은 이번 text-query 조건에서 제외하고 검색 자료 캡션과 이미지는 사용한다. 수정 후 벤치마크 성능은 아직 측정하지 않았다. 기존 문항을 다시 풀지 않으며 새 문항 manifest·새 output·새 실행 identity로만 다음 평가를 한다. [상세 구현 명세](IMPLEMENTING_GOOGLE_MULTIMODAL_EMBEDDING.md).
+기존 결과는 `agent-read` 정책(에이전트가 read_chunk를 선택해야 이미지 전달)으로 측정했다. 사용자 지시에 따라 현재 코드의 새 실행 기본값은 `search-linked`다. keyword_search/semantic_search가 반환한 이미지 연결 청크를 자동 읽기하고 다음 Reader 호출 전 실제 이미지를 넣는다. 세 조건에 같은 정책·search_linked 프롬프트·8 iteration·이미지 8개 예산을 적용한다. 질문 첨부 이미지·그 캡션은 이번 text-query 조건에서 제외하고 검색 자료 캡션과 이미지는 사용한다. 수정 후 성능은 아래 사용자 승인된 100문항 재측정으로 확인했다. 일반적인 다음 평가는 새 문항 manifest·새 output·새 실행 identity를 사용한다. [상세 구현 명세](IMPLEMENTING_GOOGLE_MULTIMODAL_EMBEDDING.md).
 
 ## 사용자 승인: 자동 전달 방식으로 100문항씩 재측정
 사용자가 수정 후 다시 측정하고 보고서까지 갱신하도록 명시적으로 승인했다. 1000은 오기이며 각 벤치마크 100문항으로 정정했다. 따라서 이번 측정은 이전 측정 문항 재실행 금지의 명시적 예외다. 수정 방식에서 조건별 문항당 한 번씩만 실행하고 오답 재시도나 best-of는 하지 않는다.
@@ -48,3 +48,7 @@ EM, F1, LLM 판정 및 근거 후보/전달 recall을 같은 평가 코드로 �
 - B0/C1/G1 모두 search-linked 자동 연결 이미지 읽기, 같은 search_linked 프롬프트·Reader·A-RAG max iteration 8·이미지 8개 예산. 질문 첨부 이미지·그 캡션 제외, 검색 근거 캡션·실제 이미지 사용.
 - 새 output: results/three_arm_search_linked100. 기존 agent-read 결과 불변. 최신 정성 사례도 새 실행에서 Qwen 오답/G1 정답으로 다시 선정, 질문·검색 캡션 구분과 원본 데이터 묶음 유지.
 - 선택·해시: lab/registry/search_linked100_selection.json. 실행: python scripts/run_three_arm_comparison.py --evaluation-set search-linked100.
+
+## 100문항 재측정 완료
+
+총 600개 조건-문항 풀이·채점·백업 완료. 검색 연결 이미지 전달 누락·예산 초과·종료 시 대기 이미지 0건. M3DocVQA(Qwen/Google text-only/Google multimodal) EM 2/0/7%, 이미지 전달 recall 11.4/11.4/54.3%(검증된 70문항). Mem-Gallery EM 24/19/22%, 전달 recall 53.7/51.5/55.1%(100문항). 이번 실행의 정성 사례 4개와 원본 데이터를 교체했다. 우리 Reader 서버는 완료 후 중단했다. [최신 보고서](../lab/reports/INTERIM_REPORT.md) · [실행 기록](../lab/reports/search_linked100/). 기존 agent-read 실험은 역사적 기록이며 현재 결과와 합산하지 않는다.

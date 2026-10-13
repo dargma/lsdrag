@@ -1,0 +1,64 @@
+{
+  "answers": [
+    {
+      "answer": "windmill",
+      "image_instances": [
+        {
+          "doc_id": "adf9637a449938d75d8d4a0c69edd4bd",
+          "doc_part": "image"
+        }
+      ],
+      "modality": "image",
+      "table_indices": [],
+      "text_instances": [],
+      "type": "string"
+    }
+  ],
+  "metadata": {
+    "image_doc_ids": [
+      "adf9637a449938d75d8d4a0c69edd4bd",
+      "4c0debd2d8cc53423f68c29490cce8a9",
+      "61f91119e5cb47a86cb1e829b1de31e7",
+      "1b49e9eb0f5e2a03b9cbf02563f301d4",
+      "1f168f9e57c737faafb6cf1202f8e9f8",
+      "6420197a9c257ad563bb0e46386ad2ce",
+      "2d2f6b25cc9cac365d7efb6ab8faaa76",
+      "6af26aaee209e8ec1373b74541b6c020",
+      "dc5396209588e8d97b9dcbebe856c681"
+    ],
+    "intermediate_answers": [],
+    "modalities": [
+      "image"
+    ],
+    "table_id": "c3a268deadcdc499ec4064313b8ac092",
+    "text_doc_ids": [
+      "445250a30cd74a296bd97d8c8a07e57e",
+      "1ddecd83fd5c740e6c098ccef2ded249",
+      "1259aa846f9bca4641e000249f5fde33",
+      "b60c0d084dd52eeac6e2ad70fa5f7a02",
+      "b81776b0d3852c8fa3e7705a349a7fbd",
+      "e5dc2b9df583547f065d4d967a7898e5",
+      "fd6e8ed135d3548c5239156e7344ee18",
+      "e294a0fd4e6b352a2207b9572f505d89",
+      "aa24dcd7b937e7cf495bab179fbbf7de",
+      "d5c47688cd68d021eab1e1c6cfd61f89"
+    ],
+    "type": "ImageQ",
+    "wiki_entities_in_answers": [],
+    "wiki_entities_in_question": [
+      {
+        "text": "Aria (manga)",
+        "url": "https://en.wikipedia.org/wiki/Aria_(manga)",
+        "wiki_title": "Aria (manga)"
+      }
+    ]
+  },
+  "qid": "8ddcc98208a9a3476003255054870ba1",
+  "question": "What is the large object in the middle left of Aria (manga)?",
+  "supporting_context": [
+    {
+      "doc_id": "adf9637a449938d75d8d4a0c69edd4bd",
+      "doc_part": "image"
+    }
+  ]
+}

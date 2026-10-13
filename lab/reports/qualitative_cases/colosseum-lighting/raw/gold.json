@@ -1,0 +1,14 @@
+{
+  "answer": "D6:IMG_002",
+  "clue": [
+    "D6:2"
+  ],
+  "point": "VS",
+  "qid": "Global_Travel_Sustainable_Fashion_Design:qa0042",
+  "question": "Which image did Sophie mention that showcases the Colosseum lit up beautifully?",
+  "scenario": "Global_Travel_Sustainable_Fashion_Design",
+  "session_id": [
+    "D6"
+  ],
+  "source_qa_index": 42
+}

@@ -1,0 +1,7 @@
+{
+  "qid": "Baking_Dessert_Daily_Life_Skill:qa0042",
+  "question": "How many foxglove flower images did Maya share in total during the autumn outing? Please answer using an Arabic numeral (e.g., “2” instead of “Two”).",
+  "question_image_paths": [],
+  "scenario": "Baking_Dessert_Daily_Life_Skill",
+  "task_type": "VR"
+}

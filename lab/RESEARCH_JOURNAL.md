@@ -146,3 +146,11 @@ User clarified that only A-RAG max iteration is eight, with no independent Reade
 - 1000 was corrected by user to 100 per benchmark. Original M3 frozen 50+50 retained in the common 288-document corpus; Mem frozen 60 retained plus 20 VS/20 VR chosen via seeded proportional scenario/question-image sampling before new outcomes. Same prepared indexes reused, no new parsing or index builds.
 - Explicit user authorization supersedes prior no-repeat rule for this policy remeasurement; still once per question per arm, no best-of. New results/three_arm_search_linked100 namespace. Qualitative cases and raw bundles will be regenerated from this policy, not reused as new evidence.
 - GPU was observed idle while CPU-only selection and documentation were prepared. Related plan and implementation instructions updated.
+
+## 2026-10-13 — search-linked100 완료 및 문서 갱신
+
+사용자 승인된 재측정: M3DocVQA 100 × 3, Mem-Gallery 100 × 3 = 600개 성공 풀이, 문항·조건별 한 번. 모두 채점·Drive 백업 완료. 기존 인덱스 재사용. M3DocVQA EM B0/C1/G1 2/0/7%, 전달 recall 11.4/11.4/54.3%(검증 완료 70문항); Mem-Gallery EM 24/19/22%, 전달 recall 53.7/51.5/55.1%(100문항). 검색 도구 반환 이미지의 실제 전달 누락, 예산 초과, 실패, 종료 대기 모두 0. 정답률 차이의 불확실성도 보고했다.
+
+정성 사례는 새 실행의 Aria 풍차, 고릴라 앨범, 폭스글러브 개수, 콜로세움 조명으로 교체하고 원본·전체 실행·실제 이미지·캡션·해시를 포함했다. 모두 Qwen 오답/G1 정답이지만 Mem 평균 개선을 뜻하지 않는다. Foxglove에서 Qwen 답은 3(이미지 4개), G1은 5(이미지 5개); Colosseum은 양쪽 모두 정답 이미지를 받았으며 두 후보 모두 야간이다. 캡션 없는 표지에도 픽셀 안 인쇄 문자는 있다. 기존 보고서·사례는 agent-read 역사적 기록으로 보존했다.
+
+우리 Reader(8102, gemma-reader) 프로세스 신원을 확인하고 모든 채점·백업 완료 뒤 SIGTERM으로 중단했다. 다른 세션 GPU 프로세스는 중단하지 않았다. 최신 보고서, README, 실험 계획, 구현 명세, 현재 상태를 완료 결과에 맞게 갱신했다.

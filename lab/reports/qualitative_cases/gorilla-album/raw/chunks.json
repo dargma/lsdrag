@@ -1,0 +1,248 @@
+[
+  {
+    "bbox": [
+      0.052,
+      0.62,
+      0.898,
+      0.661
+    ],
+    "chunk_id": "3e7945352b1a63f1c317ea55f7ebb335:p15:b15:s0",
+    "document_id": "3e7945352b1a63f1c317ea55f7ebb335",
+    "document_ids": [
+      "3e7945352b1a63f1c317ea55f7ebb335"
+    ],
+    "figure_ids": [],
+    "id": "3e7945352b1a63f1c317ea55f7ebb335:p15:b15:s0",
+    "kind": "text",
+    "next_chunk_id": "3e7945352b1a63f1c317ea55f7ebb335:p15:b16:s0",
+    "oversized_unit": false,
+    "page_index": 15,
+    "previous_chunk_id": "3e7945352b1a63f1c317ea55f7ebb335:p15:b14:s0",
+    "source_block_index": 15,
+    "text": "Josh Groban\n31. ^ [\"Album Cover, Title, & Release Date! | Official Josh Groban\"](http://www.joshgroban.com/news/2012-11-18/album-cover-title-release-date) . Joshgroban.com. November 18, 2012. [Archived](https://web.archive.org/web/20121127223854/http://www.joshgroban.com/news/2012-11-18/album-cover-title-release-date) from the original on November 27, 2012. Retrieved December 26, 2012.",
+    "title": "Josh Groban",
+    "url": "https://en.wikipedia.org/wiki/Josh_Groban"
+  },
+  {
+    "bbox": [
+      0.053,
+      0.891,
+      0.971,
+      0.931
+    ],
+    "chunk_id": "41dc98f6fcf3e153b4d6fd5dd1f48212:p10:b19:s0",
+    "document_id": "41dc98f6fcf3e153b4d6fd5dd1f48212",
+    "document_ids": [
+      "41dc98f6fcf3e153b4d6fd5dd1f48212"
+    ],
+    "figure_ids": [],
+    "id": "41dc98f6fcf3e153b4d6fd5dd1f48212:p10:b19:s0",
+    "kind": "text",
+    "next_chunk_id": "41dc98f6fcf3e153b4d6fd5dd1f48212:p10:b20:s0",
+    "oversized_unit": false,
+    "page_index": 10,
+    "previous_chunk_id": "41dc98f6fcf3e153b4d6fd5dd1f48212:p10:b18:s0",
+    "source_block_index": 19,
+    "text": "Freida Pinto\n53. ^ [\"Bruno Mars: Gorilla\"](https://timesofindia.indiatimes.com/top-10-controversial-music-videos/bruno-mars-gorilla/photostory/33186105.cms?) . [The Times of India](https://en.wikipedia.org/wiki/The_Times_of_India). [Archived](https://web.archive.org/web/20150626040443/http://timesofindia.indiatimes.com/entertainment/english/top-10/Bruno-Mars-Gorilla/photostory/33186105.cms) from the original on 26 June 2015. Retrieved 9 October 2018.",
+    "title": "Freida Pinto",
+    "url": "https://en.wikipedia.org/wiki/Freida_Pinto"
+  },
+  {
+    "bbox": [
+      0.597,
+      0.35,
+      0.968,
+      0.617
+    ],
+    "chunk_id": "67f530545c98903843783b4fe25edf58:p0:b15:s0",
+    "document_id": "67f530545c98903843783b4fe25edf58",
+    "document_ids": [
+      "67f530545c98903843783b4fe25edf58"
+    ],
+    "figure_ids": [
+      "67f530545c98903843783b4fe25edf58:p0:f15"
+    ],
+    "id": "67f530545c98903843783b4fe25edf58:p0:b15:s0",
+    "kind": "image_caption",
+    "next_chunk_id": "67f530545c98903843783b4fe25edf58:p0:b16:s0",
+    "oversized_unit": false,
+    "page_index": 0,
+    "previous_chunk_id": "67f530545c98903843783b4fe25edf58:p0:b14:s0",
+    "source_block_index": 15,
+    "text": "Unorthodox Jukebox\n[No caption. Nearby document text follows.]\n[Read](https://en.wikipedia.org/wiki/Unorthodox_Jukebox) [Edit](https://en.wikipedia.org/w/index.php?title=Unorthodox_Jukebox&action=edit) [View history](https://en.wikipedia.org/w/index.php?title=Unorthodox_Jukebox&action=history) **Released** December 7, 2012 **Studios** [Avatar](https://en.wikipedia.org/wiki/Avatar_Recording_Studios) (New York City) Daptone (Brooklyn) [Larrabee Sound](https://en.wikipedia.org/wiki/Larrabee_Sound_Studios) (Los Angeles) Levcon (Hollywood)",
+    "title": "Unorthodox Jukebox",
+    "url": "https://en.wikipedia.org/wiki/Unorthodox_Jukebox"
+  },
+  {
+    "bbox": [
+      0.026,
+      0.427,
+      0.971,
+      0.99
+    ],
+    "chunk_id": "67f530545c98903843783b4fe25edf58:p10:b3:s0",
+    "document_id": "67f530545c98903843783b4fe25edf58",
+    "document_ids": [
+      "67f530545c98903843783b4fe25edf58"
+    ],
+    "figure_ids": [],
+    "id": "67f530545c98903843783b4fe25edf58:p10:b3:s0",
+    "kind": "table",
+    "next_chunk_id": "67f530545c98903843783b4fe25edf58:p11:b0:s0",
+    "oversized_unit": false,
+    "page_index": 10,
+    "previous_chunk_id": "67f530545c98903843783b4fe25edf58:p10:b2:s0",
+    "source_block_index": 3,
+    "text": "Unorthodox Jukebox\nUnorthodox Jukebox standard edition\n| No. | Title | Writer(s) | Producer(s) | Length |\n| --- | --- | --- | --- | --- |\n| 1. | \"Young Girls\" | Bruno Mars · Philip Lawrence · Ari Levine · Jeff Bhasker · Emile Haynie · Mac Davis | The Smeezingtons · Bhasker · Haynie | 3:49 |\n| 2. | \"Locked Out of Heaven\" | Mars · Lawrence · Levine | The Smeezingtons · Bhasker · Haynie · Mark Ronson | 3:53 |\n| 3. | \"Gorilla\" | Mars · Lawrence · Levine | The Smeezingtons · Bhasker · Haynie · Ronson | 4:04 |\n| 4. | \"Treasure\" | Mars · Lawrence · Levine · Phredley Brown · Thibaut Berland · Christopher Khan | The Smeezingtons | 2:58 |\n| 5. | \"Moonshine\" | Mars · Lawrence · Levine · Andrew Wyatt · Bhasker · Ronson | The Smeezingtons · Bhasker · Ronson | 3:48 |\n| 6. | \"When I Was Your Man\" | Mars · Lawrence · Levine · Wyatt | The Smeezingtons | 3:33 |\n| 7. | \"Natalie\" | Mars · Lawrence · Levine · Benjamin Levin · Paul Epworth | The Smeezingtons · Benny Blanco[a] · Epworth[a] | 3:45 |\n| 8. | \"Show Me\" | Mars · Lawrence · Levine · Dwayne Chin-Quee · Mitchum Chin | The Smeezingtons · Dwayne \"Supa Dups\" Chin-Quee | 3:27 |",
+    "title": "Unorthodox Jukebox",
+    "url": "https://en.wikipedia.org/wiki/Unorthodox_Jukebox"
+  },
+  {
+    "bbox": [
+      0.632,
+      0.223,
+      0.9,
+      0.264
+    ],
+    "chunk_id": "67f530545c98903843783b4fe25edf58:p1:b7:s0",
+    "document_id": "67f530545c98903843783b4fe25edf58",
+    "document_ids": [
+      "67f530545c98903843783b4fe25edf58"
+    ],
+    "figure_ids": [],
+    "id": "67f530545c98903843783b4fe25edf58:p1:b7:s0",
+    "kind": "text",
+    "next_chunk_id": "67f530545c98903843783b4fe25edf58:p1:b8:s0",
+    "oversized_unit": false,
+    "page_index": 1,
+    "previous_chunk_id": "67f530545c98903843783b4fe25edf58:p1:b6:s0",
+    "source_block_index": 7,
+    "text": "Unorthodox Jukebox\n4. \"[Gorilla](https://en.wikipedia.org/wiki/Gorilla_%28song%29)\" Released: September 10, 2013",
+    "title": "Unorthodox Jukebox",
+    "url": "https://en.wikipedia.org/wiki/Unorthodox_Jukebox"
+  },
+  {
+    "bbox": [
+      0.043,
+      0.138,
+      0.954,
+      0.2
+    ],
+    "chunk_id": "67f530545c98903843783b4fe25edf58:p30:b3:s0",
+    "document_id": "67f530545c98903843783b4fe25edf58",
+    "document_ids": [
+      "67f530545c98903843783b4fe25edf58"
+    ],
+    "figure_ids": [],
+    "id": "67f530545c98903843783b4fe25edf58:p30:b3:s0",
+    "kind": "text",
+    "next_chunk_id": "67f530545c98903843783b4fe25edf58:p30:b4:s0",
+    "oversized_unit": false,
+    "page_index": 30,
+    "previous_chunk_id": "67f530545c98903843783b4fe25edf58:p30:b2:s0",
+    "source_block_index": 3,
+    "text": "Unorthodox Jukebox\n274. ^ [Bruno Mars / ブルーノ・マーズ 「Unorthodox Jukebox / アンオーソドックス・ジュークボックス 」](https://web.archive.org/web/20121210090109/http://wmg.jp/artist/brunomars/WPCR000014712.html) (in Japanese). Warner Music Japan. Archived from [the original](http://wmg.jp/artist/brunomars/WPCR000014712.html) on December 10, 2012. Retrieved December 12, 2012.",
+    "title": "Unorthodox Jukebox",
+    "url": "https://en.wikipedia.org/wiki/Unorthodox_Jukebox"
+  },
+  {
+    "bbox": [
+      0.022,
+      0.0,
+      0.695,
+      0.222
+    ],
+    "chunk_id": "67f530545c98903843783b4fe25edf58:p3:b0:s0",
+    "document_id": "67f530545c98903843783b4fe25edf58",
+    "document_ids": [
+      "67f530545c98903843783b4fe25edf58"
+    ],
+    "figure_ids": [],
+    "id": "67f530545c98903843783b4fe25edf58:p3:b0:s0",
+    "kind": "text",
+    "next_chunk_id": "67f530545c98903843783b4fe25edf58:p3:b1:s0",
+    "oversized_unit": false,
+    "page_index": 3,
+    "previous_chunk_id": "67f530545c98903843783b4fe25edf58:p2:b6:s0",
+    "source_block_index": 0,
+    "text": "Unorthodox Jukebox\nhave worked on the album.<sup>[3][9]</sup> The first song written for Unorthodox Jukebox was \"[Gorilla](https://en.wikipedia.org/wiki/Gorilla_%28song%29)\", which \"set the tone for the entire project\"; Mars explained in an interview granted to [MTV News](https://en.wikipedia.org/wiki/MTV_News) that it became its mascot hence the reason it ended up as the album cover.<sup>[10]</sup> In an interview for the [Rolling Stone](https://en.wikipedia.org/wiki/Rolling_Stone), Blanco confessed, \"I got a really cool song with him. Me and Paul [Epworth] just got together and Bruno wrote an amazing song on top of it. It kind of all came together\". He further explained that \"it's like some throwback [Nina Simone](https://en.wikipedia.org/wiki/Nina_Simone) type shit, like 'Sinnerman'\". Additionally, a \"pianolaced\" track was conceived for the album in its opening session.<sup>[9]</sup>",
+    "title": "Unorthodox Jukebox",
+    "url": "https://en.wikipedia.org/wiki/Unorthodox_Jukebox"
+  },
+  {
+    "bbox": [
+      0.021,
+      0.465,
+      0.971,
+      0.587
+    ],
+    "chunk_id": "67f530545c98903843783b4fe25edf58:p5:b3:s0",
+    "document_id": "67f530545c98903843783b4fe25edf58",
+    "document_ids": [
+      "67f530545c98903843783b4fe25edf58"
+    ],
+    "figure_ids": [],
+    "id": "67f530545c98903843783b4fe25edf58:p5:b3:s0",
+    "kind": "text",
+    "next_chunk_id": "67f530545c98903843783b4fe25edf58:p5:b4:s0",
+    "oversized_unit": false,
+    "page_index": 5,
+    "previous_chunk_id": "67f530545c98903843783b4fe25edf58:p5:b2:s0",
+    "source_block_index": 3,
+    "text": "Unorthodox Jukebox\n\"Gorilla\", confirmed as the next single for Unorthodox Jukebox,<sup>[53]</sup> was produced by the Smeezingtons, Mark Ronson, Jeff Bhasker and Emile Haynie, who previously handled the process for the record's lead single.<sup>[7]</sup> The track impacted American [pop radio](https://en.wikipedia.org/wiki/Contemporary_hit_radio) on September 10, 2013, thus peaking at number 22 on the Billboard Hot 100 and becoming the singer's first single not to reach the top ten there.<sup>[41][54]</sup> Mars performed the single for the first time during the [2013 MTV Video Music Awards](https://en.wikipedia.org/wiki/2013_MTV_Video_Music_Awards).<sup>[53]</sup>",
+    "title": "Unorthodox Jukebox",
+    "url": "https://en.wikipedia.org/wiki/Unorthodox_Jukebox"
+  },
+  {
+    "bbox": [
+      0.653,
+      0.833,
+      0.968,
+      0.972
+    ],
+    "chunk_id": "67f530545c98903843783b4fe25edf58:p5:b8:s0",
+    "document_id": "67f530545c98903843783b4fe25edf58",
+    "document_ids": [
+      "67f530545c98903843783b4fe25edf58"
+    ],
+    "figure_ids": [
+      "67f530545c98903843783b4fe25edf58:p5:f8"
+    ],
+    "id": "67f530545c98903843783b4fe25edf58:p5:b8:s0",
+    "kind": "image_caption",
+    "next_chunk_id": "67f530545c98903843783b4fe25edf58:p6:b0:s0",
+    "oversized_unit": false,
+    "page_index": 5,
+    "previous_chunk_id": "67f530545c98903843783b4fe25edf58:p5:b7:s0",
+    "source_block_index": 8,
+    "text": "Unorthodox Jukebox\n[No caption. Nearby document text follows.]\nSee also: [The Moonshine Jungle Tour](https://en.wikipedia.org/wiki/The_Moonshine_Jungle_Tour) On September 4, 2012, Mars reported to his fanbase that, \"You'll hear something in October. I promise\", after being asked for news regarding his second studio album.<sup>[57]</sup> On September 19, 2012, the singer announced the release of Unorthodox Jukebox via [Twitter](https://en.wikipedia.org/wiki/Twitter) after having worked on it for a year. He further posted a link to a \"Funny or Die\" video entitled \"Whatta Man\", where Mars starred himself in order to celebrate.<sup>[58]</sup> On September 28, 2012, Billboard",
+    "title": "Unorthodox Jukebox",
+    "url": "https://en.wikipedia.org/wiki/Unorthodox_Jukebox"
+  },
+  {
+    "bbox": [
+      0.653,
+      0.008,
+      0.969,
+      0.251
+    ],
+    "chunk_id": "bea253af5c65cce9e682cde1771431a2:p2:b5:s0",
+    "document_id": "bea253af5c65cce9e682cde1771431a2",
+    "document_ids": [
+      "bea253af5c65cce9e682cde1771431a2"
+    ],
+    "figure_ids": [
+      "bea253af5c65cce9e682cde1771431a2:p2:f5"
+    ],
+    "id": "bea253af5c65cce9e682cde1771431a2:p2:b5:s0",
+    "kind": "image_caption",
+    "next_chunk_id": "bea253af5c65cce9e682cde1771431a2:p2:b6:s0",
+    "oversized_unit": false,
+    "page_index": 2,
+    "previous_chunk_id": "bea253af5c65cce9e682cde1771431a2:p2:b4:s0",
+    "source_block_index": 5,
+    "text": "Incredible Bongo Band\nCover art of the 1973 album Bongo Rock",
+    "title": "Incredible Bongo Band",
+    "url": "https://en.wikipedia.org/wiki/Incredible_Bongo_Band"
+  }
+]

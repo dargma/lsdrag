@@ -1,0 +1,58 @@
+[
+  {
+    "bbox": [
+      0.598,
+      0.245,
+      0.968,
+      0.437
+    ],
+    "caption": "",
+    "chunk_id": "adf9637a449938d75d8d4a0c69edd4bd:p0:b13:s0",
+    "document_id": "adf9637a449938d75d8d4a0c69edd4bd",
+    "document_ids": [
+      "adf9637a449938d75d8d4a0c69edd4bd"
+    ],
+    "figure_id": "adf9637a449938d75d8d4a0c69edd4bd:p0:f13",
+    "footnotes": "",
+    "has_caption": false,
+    "has_description": false,
+    "height": 423,
+    "image_path": "images/b3e17b3a5c73a10c98ec0874.jpg",
+    "image_ref": "images/page_0_image_13.jpg",
+    "image_sha256": "b3e17b3a5c73a10c98ec08740ce5feb116ada35d5f5f6d19ae9792801581f0c4",
+    "page_index": 0,
+    "source_block_type": "image",
+    "title": "Aria (manga)",
+    "url": "https://en.wikipedia.org/wiki/Aria_(manga)",
+    "width": 630,
+    "original_image_path": "/content/local_fast/lsdrag-work/data/parsed_development/adf9637a449938d75d8d4a0c69edd4bd/images/page_0_image_13.jpg"
+  },
+  {
+    "bbox": [
+      0.801,
+      0.365,
+      0.967,
+      0.561
+    ],
+    "caption": "",
+    "chunk_id": "adf9637a449938d75d8d4a0c69edd4bd:p15:b10:s0",
+    "document_id": "adf9637a449938d75d8d4a0c69edd4bd",
+    "document_ids": [
+      "adf9637a449938d75d8d4a0c69edd4bd"
+    ],
+    "figure_id": "adf9637a449938d75d8d4a0c69edd4bd:p15:f10",
+    "footnotes": "Akari and Aika lost inside the Never-ending Waterways (from Aqua volume 1)",
+    "has_caption": false,
+    "has_description": true,
+    "height": 432,
+    "image_path": "images/b6dbe6b94be9c2125eab8571.jpg",
+    "image_ref": "images/page_15_image_10.jpg",
+    "image_sha256": "b6dbe6b94be9c2125eab8571a4848e10eb5125a142987a950adf3160217e3d76",
+    "page_index": 15,
+    "source_block_type": "image",
+    "title": "Aria (manga)",
+    "url": "https://en.wikipedia.org/wiki/Aria_(manga)",
+    "width": 283,
+    "original_image_path": "/content/local_fast/lsdrag-work/data/parsed_development/adf9637a449938d75d8d4a0c69edd4bd/images/page_15_image_10.jpg"
+  }
+]

@@ -1,0 +1,20 @@
+[
+  {
+    "arm": "G1",
+    "figure_id": "adf9637a449938d75d8d4a0c69edd4bd:p0:f13",
+    "image_path": "images/b3e17b3a5c73a10c98ec0874.jpg",
+    "has_caption": false,
+    "caption": "",
+    "footnotes": "",
+    "has_original_description": false
+  },
+  {
+    "arm": "G1",
+    "figure_id": "adf9637a449938d75d8d4a0c69edd4bd:p15:f10",
+    "image_path": "images/b6dbe6b94be9c2125eab8571.jpg",
+    "has_caption": false,
+    "caption": "",
+    "footnotes": "Akari and Aika lost inside the Never-ending Waterways (from Aqua volume 1)",
+    "has_original_description": true
+  }
+]

@@ -1,0 +1,67 @@
+{
+  "answers": [
+    {
+      "answer": "Unorthodox Jukebox",
+      "image_instances": [
+        {
+          "doc_id": "67f530545c98903843783b4fe25edf58",
+          "doc_part": "image"
+        }
+      ],
+      "modality": "image",
+      "table_indices": [],
+      "text_instances": [],
+      "type": "string"
+    }
+  ],
+  "metadata": {
+    "image_doc_ids": [
+      "2e04bbff2b7c240250b30a7958c92bb3",
+      "540567dfa0cd1d13b96b76fdbd72efd5",
+      "67f530545c98903843783b4fe25edf58",
+      "a603804796582a00b905f6c6495a8f9b",
+      "90d0acbd8f9b8c567ef419ca4a9716f4",
+      "708b99a4b1f14004645b3cfc968e34c2",
+      "b51ea3b5f334738864a1ddfcccc6ef4b",
+      "252cc91245738c7351bcbe074547f377",
+      "824c3361f09daa1243465b8c492866fe",
+      "7c8609f06bacf6feb21b35a356ff99cb"
+    ],
+    "intermediate_answers": [],
+    "modalities": [
+      "image"
+    ],
+    "pseudo_language_question": "Which [Album(s), in December of List of 2012 albums,] has a gorilla in poster?",
+    "rephrasing_meta": {
+      "accuracy": 1.0,
+      "confidence": 0.9984604031941746,
+      "edit_distance": 0.8433734939759037
+    },
+    "table_id": "bfdbef03674dafe5176f126499612e7c",
+    "text_doc_ids": [
+      "31ef1bf1ccb33693c73957f91b90e46b",
+      "fa18fc671f994a1bd87e9c6d3a222fd6",
+      "9e1734572df6963e6074aee143b4cb22",
+      "4b2faf610fdefa7406a2a46693eb30f8",
+      "498d6d293fcaff532ef72e290359cc7d",
+      "eccafc05d6d6777abfb8f4ede18e27b4",
+      "4a29bb7a7ab769228f510d0c19df35a8",
+      "cbe770bff874f7f56f811cfc1072a780",
+      "ccd7dd050a3de69a7ac14b66d4db4358",
+      "e3f9334956ab4248c360f9e297601161"
+    ],
+    "type": "ImageListQ",
+    "wiki_entities_in_answers": [
+      "Unorthodox Jukebox"
+    ],
+    "wiki_entities_in_question": []
+  },
+  "qid": "299e684293fffb0f9dca76a1092c83f9",
+  "question": "There is a gorilla on the poster for which album from the list of albums for December 2012?",
+  "supporting_context": [
+    {
+      "doc_id": "67f530545c98903843783b4fe25edf58",
+      "doc_part": "image"
+    }
+  ]
+}

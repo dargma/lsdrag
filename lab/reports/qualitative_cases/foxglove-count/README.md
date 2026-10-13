@@ -1,14 +1,14 @@
-# Mem-Gallery · 관련 사진을 빠짐없이 찾아 개수 세기
+# Mem-Gallery · 사진 누락과 개수 오류
 
-문항 `Baking_Dessert_Daily_Life_Skill:qa0042` · additional50. 모델·데이터 다운로드 없이 이 폴더의 JSON과 이미지를 열면 실행 현황을 확인할 수 있습니다.
+문항 `Baking_Dessert_Daily_Life_Skill:qa0042` · search-linked100. 모델·데이터 다운로드 없이 이 폴더의 JSON과 이미지를 열면 실행 현황을 확인할 수 있습니다.
 
 **원문 질문:** How many foxglove flower images did Maya share in total during the autumn outing? Please answer using an Arabic numeral (e.g., “2” instead of “Two”).
 
 **정답:** `"5"`
 
-**원 질문 첨부 이미지:** 없음. **이 질문 첨부 이미지의 실제 입력:** 없음. 검색 근거 이미지는 아래 별도로 표시한 실제 입력 기록이다.
+**원 질문 첨부 이미지:** 없음. **이 질문 첨부 이미지의 실제 입력:** 없음. 검색 근거 이미지는 아래 실제 입력 기록에 표시한다.
 
-**원 질문 이미지의 캡션:** 원 데이터에 없음. **이 질문 캡션의 실제 입력:** 없음. 검색 대상 이미지의 캡션은 검색용으로 사용하며 [캡션 목록](caption_inventory.json)에 기록했습니다.
+**원 질문 이미지의 캡션:** 원래 없음 · 실제 입력하지 않음. 검색 자료의 캡션은 사용.
 
 - [원본 질문](raw/question.json) · [정답·주석](raw/gold.json) · [원 데이터 질문](raw/source_question.json)
 - 전체 실행: [Qwen](predictions/B0.json) · [Google text-only](predictions/C1.json) · [Google multimodal](predictions/G1.json)
@@ -19,8 +19,8 @@
 
 | 조건 | 답변 | 실제 입력 이미지 수 |
 |---|---|---:|
-| Qwen | `["4"]` | 4 |
-| Google text-only | `["5"]` | 5 |
+| Qwen | `["3"]` | 4 |
+| Google text-only | `["4"]` | 5 |
 | Google multimodal | `["5"]` | 5 |
 
 ### Qwen
@@ -34,5 +34,3 @@
 ### Google multimodal
 
 <img src="images/0c4131f4a377154fcb72db3e.jpg" width="150" alt="실제 Reader 입력 이미지"> <img src="images/b7836a8e59aa2985e801e636.jpg" width="150" alt="실제 Reader 입력 이미지"> <img src="images/52e6dff530845ebe0d3134f3.jpg" width="150" alt="실제 Reader 입력 이미지"> <img src="images/ad38fbbc80201b3a7cc50464.jpg" width="150" alt="실제 Reader 입력 이미지"> <img src="images/013efb5e6dd26448231d5df7.jpg" width="150" alt="실제 Reader 입력 이미지">
-
-이 사례는 수정 전 `agent-read` 정책으로 측정했습니다. 현재 `search-linked` 자동 전달 코드의 성능 사례로 해석하지 않습니다.

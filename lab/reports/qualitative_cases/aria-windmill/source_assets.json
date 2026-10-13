@@ -1,0 +1,34 @@
+{
+  "/content/local_fast/lsdrag-work/data/gold_images/adf9637a449938d75d8d4a0c69edd4bd.jpg": {
+    "path": "images/251b2f7f07a930ab291243a1.jpg",
+    "sha256": "251b2f7f07a930ab291243a195317173d451f2f279a701e2240e45618a261155"
+  },
+  "/content/local_fast/lsdrag-work/data/parsed_development/adf9637a449938d75d8d4a0c69edd4bd/images/page_0_image_12.jpg": {
+    "path": "images/d808113d5a04a3787fe14863.jpg",
+    "sha256": "d808113d5a04a3787fe14863d98fc0b9a89cc0e133cba5a75c31849eb47a1145"
+  },
+  "/content/local_fast/lsdrag-work/data/parsed_development/adf9637a449938d75d8d4a0c69edd4bd/images/page_0_image_13.jpg": {
+    "path": "images/b3e17b3a5c73a10c98ec0874.jpg",
+    "sha256": "b3e17b3a5c73a10c98ec08740ce5feb116ada35d5f5f6d19ae9792801581f0c4"
+  },
+  "/content/local_fast/lsdrag-work/data/parsed_development/adf9637a449938d75d8d4a0c69edd4bd/images/page_0_table_16.jpg": {
+    "path": "images/becc458acf7acaba7028e417.jpg",
+    "sha256": "becc458acf7acaba7028e417a48e92b340c83dff1c77fb2fc069b2537aebac5a"
+  },
+  "/content/local_fast/lsdrag-work/data/parsed_development/adf9637a449938d75d8d4a0c69edd4bd/images/page_2_table_7.jpg": {
+    "path": "images/6344390dd9e00edf5a76fe9b.jpg",
+    "sha256": "6344390dd9e00edf5a76fe9b3f1e4bc8d90f0ece0b30b65982395362bd3636e2"
+  },
+  "/content/local_fast/lsdrag-work/data/parsed_development/adf9637a449938d75d8d4a0c69edd4bd/images/page_15_image_10.jpg": {
+    "path": "images/b6dbe6b94be9c2125eab8571.jpg",
+    "sha256": "b6dbe6b94be9c2125eab8571a4848e10eb5125a142987a950adf3160217e3d76"
+  },
+  "/content/local_fast/lsdrag-work/data/parsed_development/adf9637a449938d75d8d4a0c69edd4bd/images/page_28_image_12.jpg": {
+    "path": "images/3d29e000e5be8ae171776b76.jpg",
+    "sha256": "3d29e000e5be8ae171776b761310ac2c1dcbbe41e224aba8da378de6690d158e"
+  },
+  "/content/local_fast/lsdrag-work/data/parsed_development/adf9637a449938d75d8d4a0c69edd4bd/images/page_28_table_16.jpg": {
+    "path": "images/3e620097546eb1832fa34b80.jpg",
+    "sha256": "3e620097546eb1832fa34b8032823810b8b86bdc2463213184e53376224113ac"
+  }
+}

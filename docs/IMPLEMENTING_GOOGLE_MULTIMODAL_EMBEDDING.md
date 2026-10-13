@@ -4,7 +4,7 @@
 
 대상 모델은 `google/embeddinggemma-2`, 코드의 조건 이름은 `G1`이다. Reader VLM은 별도 모델 `google/gemma-4-E4B-it`이다. 임베더는 검색 벡터를 만들고, Reader는 찾은 근거의 텍스트와 이미지를 읽어 답한다.
 
-2026-10-13 기준. 본 저장소에는 Google-only 검색과 **검색 연결 이미지 자동 전달** 구현이 있다. [결과 보고서](../lab/reports/INTERIM_REPORT.md)의 기존 수치는 자동 전달 수정 **이전**의 `agent-read` 정책으로 측정했다. 수정된 `search-linked` 정책은 소프트웨어 테스트를 통과했지만 벤치마크 성능은 아직 측정하지 않았다. 사용자가 이후 각 벤치마크 100문항의 재측정을 명시적으로 승인했다. 이번 승인 범위에서는 수정 방식으로 조건별 문항당 한 번씩 다시 측정하며, 이전 수치를 수정된 구조의 성능으로 표시하지 않는다.
+2026-10-13 기준. Google-only 검색과 **검색 연결 이미지 자동 전달** 구현을 완료하고, 사용자 승인으로 각 벤치마크 100문항 × 세 조건을 한 번씩 재측정·채점했다(총 600회). [현재 결과 보고서](../lab/reports/INTERIM_REPORT.md)는 모두 `search-linked` 정책이다. M3DocVQA EM은 Qwen 2% / Google multimodal 7%, 전달 recall은 11.4% / 54.3%; Mem-Gallery EM은 24% / 22%, 전달 recall은 53.7% / 55.1%였다. 반환된 이미지 연결 결과의 전달 누락은 0건이다. 수정 전 `agent-read` 수치는 [역사적 보고서](../lab/reports/AGENT_READ_REPORT.md)로 분리했다.
 
 ## 1. 구현할 최종 동작
 
@@ -333,7 +333,7 @@ G1은 `gemma_text`, `gemma_image`, `embedders={"gemma": ...}`만 로드한다. `
 
 ### 수정 전 정책: `agent-read`
 
-검색 결과는 짧은 텍스트 목록이다. 에이전트가 별도로 `read_chunk`를 선택했을 때만 연결된 이미지를 전송한다. 보고서의 기존 벤치마크 수치는 이 정책으로 측정했다.
+검색 결과는 짧은 텍스트 목록이다. 에이전트가 별도로 `read_chunk`를 선택했을 때만 연결된 이미지를 전송한다. 수정 전 역사적 보고서의 벤치마크 수치는 이 정책으로 측정했다. 현재 100문항 보고서는 아래 search-linked 정책이다.
 
 정답 이미지가 검색됐다는 사실만으로 실제 입력을 보장하지 못했다. 기존 M3DocVQA 개발 G1은 정답 이미지 후보가 나온 27문항 중 9문항에서만 이미지를 전달했다. 나머지 18문항은 해당 이미지 청크를 읽지 않았다.
 
@@ -486,13 +486,13 @@ Gemma 4 Reader를 쓸 때 고정 revision을 별도 runtime 환경으로 다운�
 
 공정 비교는 같은 인자에서 `--arm B0`와 `--arm C1`, 각각 다른 output 디렉터리로 실행한다. B0용 `qwen_text`도 준비한다. Mem-Gallery이면 `--benchmark memgallery`, 해당 코퍼스·질문 manifest를 사용한다.
 
-이 문서의 명령은 자동 설치 스크립트가 아니다. 사용자 승인 없이 완료 문항을 반복하지 않는다. 이번 승인된 재측정은 아래 명령으로 실행한다.
+이 문서의 명령은 자동 설치 스크립트가 아니다. 사용자 승인 없이 완료 문항을 반복하지 않는다. 이번 승인된 재측정은 아래 명령으로 실행 완료했다. 완료된 문항을 다시 실행하는 지시가 아니며, 새 승인 없이 반복하지 않는다.
 
-### 이번 승인된 100문항 재측정
+### 이번 승인된 100문항 재측정 — 완료
 
 - M3DocVQA: 고정된 기존 100문항, 288문서 코퍼스, 새 전달 정책으로 각 조건 한 번씩.
 - Mem-Gallery: 기존 60 + 층화 선정 40, 총 100문항(VS 50 + VR 50).
-- 출력: `results/three_arm_search_linked100`.
+- 출력: `results/three_arm_search_linked100`. 600개 고유 조건-문항 실행 완료, 재시도 없음. 요약·문항별 지표·manifest·전달 감사는 [저장된 결과](../lab/reports/search_linked100/), 새 정성 사례 4개의 원본은 [이 묶음](../lab/reports/qualitative_cases/README.md)에 있다. 우리 Reader 서버는 채점·백업 완료 뒤 중단했다.
 - 선택 manifest: [search_linked100_selection.json](../lab/registry/search_linked100_selection.json).
 
 ```bash
@@ -584,7 +584,7 @@ python -m pytest -q
 | 질문 이미지 캡션을 질문 text에 추가 | 이번 비교에서는 제외; 원자료에만 보존 |
 | 정답 clue로 검색 범위 축소 | 공개 scenario/tenant 범위만 사용 |
 | max iteration 8을 Reader 총 호출 8로 구현 | 8 agent loops + 필요시 별도 최종 호출 |
-| automatic 방식으로 기존 결과를 재해석 | 이전 측정 정책 표기, 새 정책은 미측정 상태로 유지 |
+| automatic 방식으로 기존 결과를 재해석 | 이전 결과는 agent-read로 보관; 새 search-linked 100문항 결과만 현재 성능으로 표시 |
 
 ## 16. 다른 AI에게 넘길 구현 지시문
 

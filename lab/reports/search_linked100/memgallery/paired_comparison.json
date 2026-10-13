@@ -1,0 +1,2817 @@
+{
+  "baseline_arm": "B0",
+  "baseline_metrics_sha256": "a351ab791ce958cefafbce9c877cc874d70b7c1ede3e565f5e907158ee67fe16",
+  "benchmark": "memgallery",
+  "comparisons": {
+    "C1": {
+      "groups": {
+        "VR": {
+          "clue_read_recall": {
+            "baseline_mean": 0.3990952380952381,
+            "bootstrap_samples": 10000,
+            "difference": -0.01473809523809524,
+            "excluded_unscored_questions": 0,
+            "metric": "clue_read_recall",
+            "n": 50,
+            "paired_bootstrap_95ci": [
+              -0.05683333333333333,
+              0.02183333333333333
+            ],
+            "scenario_cluster_bootstrap": {
+              "cluster_bootstrap_95ci": [
+                -0.05432411058133137,
+                0.0173202906162465
+              ],
+              "clusters": 16,
+              "difference": -0.01473809523809524,
+              "questions": 50,
+              "resampling_unit": "scenario; all its questions move together",
+              "samples": 10000,
+              "seed": 20261013
+            },
+            "seed": 20261013,
+            "variant_mean": 0.38435714285714284
+          },
+          "em": {
+            "baseline_mean": 0.16,
+            "bootstrap_samples": 10000,
+            "difference": -0.08,
+            "excluded_unscored_questions": 0,
+            "gain_question_ids": [],
+            "gains": 0,
+            "loss_question_ids": [
+              "Architecture_Art_Culture_Exhibition_Technology:qa0068",
+              "Entrepreneurship_Blockchain_Economics_Logistics_Nature:qa0046",
+              "Nature_Economics_Programming_Student_Life:qa0021",
+              "Nature_Economics_Programming_Student_Life:qa0093"
+            ],
+            "losses": 4,
+            "mcnemar_exact_pvalue": 0.125,
+            "metric": "em",
+            "n": 50,
+            "paired_bootstrap_95ci": [
+              -0.16,
+              -0.02
+            ],
+            "scenario_cluster_bootstrap": {
+              "cluster_bootstrap_95ci": [
+                -0.18181818181818182,
+                0.0
+              ],
+              "clusters": 16,
+              "difference": -0.08,
+              "questions": 50,
+              "resampling_unit": "scenario; all its questions move together",
+              "samples": 10000,
+              "seed": 20261013
+            },
+            "seed": 20261013,
+            "variant_mean": 0.08
+          },
+          "f1": {
+            "baseline_mean": 0.17087478559176675,
+            "bootstrap_samples": 10000,
+            "difference": -0.07760108457613021,
+            "excluded_unscored_questions": 0,
+            "metric": "f1",
+            "n": 50,
+            "paired_bootstrap_95ci": [
+              -0.15537213247347148,
+              -0.0176783046533503
+            ],
+            "scenario_cluster_bootstrap": {
+              "cluster_bootstrap_95ci": [
+                -0.17444948366000998,
+                -0.0020533791376000855
+              ],
+              "clusters": 16,
+              "difference": -0.07760108457613021,
+              "questions": 50,
+              "resampling_unit": "scenario; all its questions move together",
+              "samples": 10000,
+              "seed": 20261013
+            },
+            "seed": 20261013,
+            "variant_mean": 0.0932737010156365
+          },
+          "image_delivery_recall": {
+            "baseline_mean": 0.43076190476190473,
+            "bootstrap_samples": 10000,
+            "difference": -0.0334047619047619,
+            "excluded_unscored_questions": 0,
+            "metric": "image_delivery_recall",
+            "n": 50,
+            "paired_bootstrap_95ci": [
+              -0.10166785714285716,
+              0.020500000000000004
+            ],
+            "scenario_cluster_bootstrap": {
+              "cluster_bootstrap_95ci": [
+                -0.09925504201680671,
+                0.011762943262411332
+              ],
+              "clusters": 16,
+              "difference": -0.0334047619047619,
+              "questions": 50,
+              "resampling_unit": "scenario; all its questions move together",
+              "samples": 10000,
+              "seed": 20261013
+            },
+            "seed": 20261013,
+            "variant_mean": 0.3973571428571428
+          },
+          "llm_judge_official": {
+            "baseline_mean": 0.35,
+            "bootstrap_samples": 10000,
+            "difference": -0.03,
+            "excluded_unscored_questions": 0,
+            "metric": "llm_judge_official",
+            "n": 50,
+            "paired_bootstrap_95ci": [
+              -0.07,
+              0.01
+            ],
+            "scenario_cluster_bootstrap": {
+              "cluster_bootstrap_95ci": [
+                -0.07,
+                0.0
+              ],
+              "clusters": 16,
+              "difference": -0.03,
+              "questions": 50,
+              "resampling_unit": "scenario; all its questions move together",
+              "samples": 10000,
+              "seed": 20261013
+            },
+            "seed": 20261013,
+            "variant_mean": 0.32
+          },
+          "llm_judge_rubric_raw": {
+            "baseline_mean": 0.265,
+            "bootstrap_samples": 10000,
+            "difference": -0.05,
+            "excluded_unscored_questions": 0,
+            "metric": "llm_judge_rubric_raw",
+            "n": 50,
+            "paired_bootstrap_95ci": [
+              -0.115,
+              0.0
+            ],
+            "scenario_cluster_bootstrap": {
+              "cluster_bootstrap_95ci": [
+                -0.12234042553191489,
+                0.00423728813559322
+              ],
+              "clusters": 16,
+              "difference": -0.05,
+              "questions": 50,
+              "resampling_unit": "scenario; all its questions move together",
+              "samples": 10000,
+              "seed": 20261013
+            },
+            "seed": 20261013,
+            "variant_mean": 0.215
+          }
+        },
+        "VR+question_image": {
+          "clue_read_recall": {
+            "baseline_mean": 0.07352941176470588,
+            "bootstrap_samples": 10000,
+            "difference": -0.009803921568627453,
+            "excluded_unscored_questions": 0,
+            "metric": "clue_read_recall",
+            "n": 17,
+            "paired_bootstrap_95ci": [
+              -0.08823529411764706,
+              0.058823529411764705
+            ],
+            "scenario_cluster_bootstrap": {
+              "cluster_bootstrap_95ci": [
+                -0.10714285714285714,
+                0.041666666666666664
+              ],
+              "clusters": 9,
+              "difference": -0.009803921568627453,
+              "questions": 17,
+              "resampling_unit": "scenario; all its questions move together",
+              "samples": 10000,
+              "seed": 20261013
+            },
+            "seed": 20261013,
+            "variant_mean": 0.06372549019607843
+          },
+          "em": {
+            "baseline_mean": 0.058823529411764705,
+            "bootstrap_samples": 10000,
+            "difference": -0.058823529411764705,
+            "excluded_unscored_questions": 0,
+            "gain_question_ids": [],
+            "gains": 0,
+            "loss_question_ids": [
+              "Architecture_Art_Culture_Exhibition_Technology:qa0068"
+            ],
+            "losses": 1,
+            "mcnemar_exact_pvalue": 1.0,
+            "metric": "em",
+            "n": 17,
+            "paired_bootstrap_95ci": [
+              -0.17647058823529413,
+              0.0
+            ],
+            "scenario_cluster_bootstrap": {
+              "cluster_bootstrap_95ci": [
+                -0.23076923076923078,
+                0.0
+              ],
+              "clusters": 9,
+              "difference": -0.058823529411764705,
+              "questions": 17,
+              "resampling_unit": "scenario; all its questions move together",
+              "samples": 10000,
+              "seed": 20261013
+            },
+            "seed": 20261013,
+            "variant_mean": 0.0
+          },
+          "f1": {
+            "baseline_mean": 0.0641711229946524,
+            "bootstrap_samples": 10000,
+            "difference": -0.0481283422459893,
+            "excluded_unscored_questions": 0,
+            "metric": "f1",
+            "n": 17,
+            "paired_bootstrap_95ci": [
+              -0.14438502673796788,
+              0.0
+            ],
+            "scenario_cluster_bootstrap": {
+              "cluster_bootstrap_95ci": [
+                -0.18881118881118877,
+                0.0
+              ],
+              "clusters": 9,
+              "difference": -0.0481283422459893,
+              "questions": 17,
+              "resampling_unit": "scenario; all its questions move together",
+              "samples": 10000,
+              "seed": 20261013
+            },
+            "seed": 20261013,
+            "variant_mean": 0.0160427807486631
+          },
+          "image_delivery_recall": {
+            "baseline_mean": 0.1372549019607843,
+            "bootstrap_samples": 10000,
+            "difference": -0.03529411764705882,
+            "excluded_unscored_questions": 0,
+            "metric": "image_delivery_recall",
+            "n": 17,
+            "paired_bootstrap_95ci": [
+              -0.17647058823529413,
+              0.07058823529411766
+            ],
+            "scenario_cluster_bootstrap": {
+              "cluster_bootstrap_95ci": [
+                -0.21428571428571427,
+                0.05000000000000001
+              ],
+              "clusters": 9,
+              "difference": -0.03529411764705882,
+              "questions": 17,
+              "resampling_unit": "scenario; all its questions move together",
+              "samples": 10000,
+              "seed": 20261013
+            },
+            "seed": 20261013,
+            "variant_mean": 0.10196078431372549
+          },
+          "llm_judge_official": {
+            "baseline_mean": 0.11764705882352941,
+            "bootstrap_samples": 10000,
+            "difference": -0.029411764705882353,
+            "excluded_unscored_questions": 0,
+            "metric": "llm_judge_official",
+            "n": 17,
+            "paired_bootstrap_95ci": [
+              -0.08823529411764706,
+              0.0
+            ],
+            "scenario_cluster_bootstrap": {
+              "cluster_bootstrap_95ci": [
+                -0.11538461538461539,
+                0.0
+              ],
+              "clusters": 9,
+              "difference": -0.029411764705882353,
+              "questions": 17,
+              "resampling_unit": "scenario; all its questions move together",
+              "samples": 10000,
+              "seed": 20261013
+            },
+            "seed": 20261013,
+            "variant_mean": 0.08823529411764706
+          },
+          "llm_judge_rubric_raw": {
+            "baseline_mean": 0.08823529411764706,
+            "bootstrap_samples": 10000,
+            "difference": -0.029411764705882353,
+            "excluded_unscored_questions": 0,
+            "metric": "llm_judge_rubric_raw",
+            "n": 17,
+            "paired_bootstrap_95ci": [
+              -0.1323529411764706,
+              0.04411764705882353
+            ],
+            "scenario_cluster_bootstrap": {
+              "cluster_bootstrap_95ci": [
+                -0.16071428571428573,
+                0.03125
+              ],
+              "clusters": 9,
+              "difference": -0.029411764705882353,
+              "questions": 17,
+              "resampling_unit": "scenario; all its questions move together",
+              "samples": 10000,
+              "seed": 20261013
+            },
+            "seed": 20261013,
+            "variant_mean": 0.058823529411764705
+          }
+        },
+        "VR+text_question": {
+          "clue_read_recall": {
+            "baseline_mean": 0.5668109668109668,
+            "bootstrap_samples": 10000,
+            "difference": -0.01727994227994228,
+            "excluded_unscored_questions": 0,
+            "metric": "clue_read_recall",
+            "n": 33,
+            "paired_bootstrap_95ci": [
+              -0.06825396825396825,
+              0.027023809523809478
+            ],
+            "scenario_cluster_bootstrap": {
+              "cluster_bootstrap_95ci": [
+                -0.07508569834183672,
+                0.030992621527777736
+              ],
+              "clusters": 14,
+              "difference": -0.01727994227994228,
+              "questions": 33,
+              "resampling_unit": "scenario; all its questions move together",
+              "samples": 10000,
+              "seed": 20261013
+            },
+            "seed": 20261013,
+            "variant_mean": 0.5495310245310245
+          },
+          "em": {
+            "baseline_mean": 0.21212121212121213,
+            "bootstrap_samples": 10000,
+            "difference": -0.09090909090909091,
+            "excluded_unscored_questions": 0,
+            "gain_question_ids": [],
+            "gains": 0,
+            "loss_question_ids": [
+              "Entrepreneurship_Blockchain_Economics_Logistics_Nature:qa0046",
+              "Nature_Economics_Programming_Student_Life:qa0021",
+              "Nature_Economics_Programming_Student_Life:qa0093"
+            ],
+            "losses": 3,
+            "mcnemar_exact_pvalue": 0.25,
+            "metric": "em",
+            "n": 33,
+            "paired_bootstrap_95ci": [
+              -0.21212121212121213,
+              0.0
+            ],
+            "scenario_cluster_bootstrap": {
+              "cluster_bootstrap_95ci": [
+                -0.2105661881977671,
+                0.0
+              ],
+              "clusters": 14,
+              "difference": -0.09090909090909091,
+              "questions": 33,
+              "resampling_unit": "scenario; all its questions move together",
+              "samples": 10000,
+              "seed": 20261013
+            },
+            "seed": 20261013,
+            "variant_mean": 0.12121212121212122
+          },
+          "f1": {
+            "baseline_mean": 0.22584333905088622,
+            "bootstrap_samples": 10000,
+            "difference": -0.09278401244317251,
+            "excluded_unscored_questions": 0,
+            "metric": "f1",
+            "n": 33,
+            "paired_bootstrap_95ci": [
+              -0.21165321165321166,
+              -0.001991921651081723
+            ],
+            "scenario_cluster_bootstrap": {
+              "cluster_bootstrap_95ci": [
+                -0.21343500202590382,
+                0.0
+              ],
+              "clusters": 14,
+              "difference": -0.09278401244317251,
+              "questions": 33,
+              "resampling_unit": "scenario; all its questions move together",
+              "samples": 10000,
+              "seed": 20261013
+            },
+            "seed": 20261013,
+            "variant_mean": 0.13305932660771372
+          },
+          "image_delivery_recall": {
+            "baseline_mean": 0.5819624819624819,
+            "bootstrap_samples": 10000,
+            "difference": -0.03243145743145743,
+            "excluded_unscored_questions": 0,
+            "metric": "image_delivery_recall",
+            "n": 33,
+            "paired_bootstrap_95ci": [
+              -0.11082251082251084,
+              0.026518759018758966
+            ],
+            "scenario_cluster_bootstrap": {
+              "cluster_bootstrap_95ci": [
+                -0.12466003401360545,
+                0.02959770114942529
+              ],
+              "clusters": 14,
+              "difference": -0.032431457431457436,
+              "questions": 33,
+              "resampling_unit": "scenario; all its questions move together",
+              "samples": 10000,
+              "seed": 20261013
+            },
+            "seed": 20261013,
+            "variant_mean": 0.5495310245310245
+          },
+          "llm_judge_official": {
+            "baseline_mean": 0.4696969696969697,
+            "bootstrap_samples": 10000,
+            "difference": -0.030303030303030304,
+            "excluded_unscored_questions": 0,
+            "metric": "llm_judge_official",
+            "n": 33,
+            "paired_bootstrap_95ci": [
+              -0.09090909090909091,
+              0.030303030303030304
+            ],
+            "scenario_cluster_bootstrap": {
+              "cluster_bootstrap_95ci": [
+                -0.07142857142857142,
+                0.0
+              ],
+              "clusters": 14,
+              "difference": -0.030303030303030304,
+              "questions": 33,
+              "resampling_unit": "scenario; all its questions move together",
+              "samples": 10000,
+              "seed": 20261013
+            },
+            "seed": 20261013,
+            "variant_mean": 0.4393939393939394
+          },
+          "llm_judge_rubric_raw": {
+            "baseline_mean": 0.3560606060606061,
+            "bootstrap_samples": 10000,
+            "difference": -0.06060606060606061,
+            "excluded_unscored_questions": 0,
+            "metric": "llm_judge_rubric_raw",
+            "n": 33,
+            "paired_bootstrap_95ci": [
+              -0.13636363636363635,
+              0.007575757575757576
+            ],
+            "scenario_cluster_bootstrap": {
+              "cluster_bootstrap_95ci": [
+                -0.13970588235294118,
+                0.0
+              ],
+              "clusters": 14,
+              "difference": -0.06060606060606061,
+              "questions": 33,
+              "resampling_unit": "scenario; all its questions move together",
+              "samples": 10000,
+              "seed": 20261013
+            },
+            "seed": 20261013,
+            "variant_mean": 0.29545454545454547
+          }
+        },
+        "VS": {
+          "clue_read_recall": {
+            "baseline_mean": 0.6333333333333333,
+            "bootstrap_samples": 10000,
+            "difference": 0.01,
+            "excluded_unscored_questions": 0,
+            "metric": "clue_read_recall",
+            "n": 50,
+            "paired_bootstrap_95ci": [
+              -0.06,
+              0.08
+            ],
+            "scenario_cluster_bootstrap": {
+              "cluster_bootstrap_95ci": [
+                -0.03773584905660377,
+                0.06668269230769207
+              ],
+              "clusters": 19,
+              "difference": 0.01,
+              "questions": 50,
+              "resampling_unit": "scenario; all its questions move together",
+              "samples": 10000,
+              "seed": 20261013
+            },
+            "seed": 20261013,
+            "variant_mean": 0.6433333333333334
+          },
+          "em": {
+            "baseline_mean": 0.32,
+            "bootstrap_samples": 10000,
+            "difference": -0.02,
+            "excluded_unscored_questions": 0,
+            "gain_question_ids": [
+              "Academic_Animal_Pet_Research_Life:qa0017",
+              "Baking_Dessert_Daily_Life_Skill:qa0068"
+            ],
+            "gains": 2,
+            "loss_question_ids": [
+              "Architecture_Art_Culture_Exhibition_Technology:qa0069",
+              "Education_Career_Research_Lifestyle:qa0096",
+              "Home_Repair_Maintenance_Cleaning:qa0001"
+            ],
+            "losses": 3,
+            "mcnemar_exact_pvalue": 1.0,
+            "metric": "em",
+            "n": 50,
+            "paired_bootstrap_95ci": [
+              -0.1,
+              0.06
+            ],
+            "scenario_cluster_bootstrap": {
+              "cluster_bootstrap_95ci": [
+                -0.1111111111111111,
+                0.06666666666666667
+              ],
+              "clusters": 19,
+              "difference": -0.02,
+              "questions": 50,
+              "resampling_unit": "scenario; all its questions move together",
+              "samples": 10000,
+              "seed": 20261013
+            },
+            "seed": 20261013,
+            "variant_mean": 0.3
+          },
+          "f1": {
+            "baseline_mean": 0.5764761904761905,
+            "bootstrap_samples": 10000,
+            "difference": -0.03161904761904762,
+            "excluded_unscored_questions": 0,
+            "metric": "f1",
+            "n": 50,
+            "paired_bootstrap_95ci": [
+              -0.08743333333333332,
+              0.007999999999999998
+            ],
+            "scenario_cluster_bootstrap": {
+              "cluster_bootstrap_95ci": [
+                -0.08861283643892338,
+                0.010526315789473682
+              ],
+              "clusters": 19,
+              "difference": -0.03161904761904762,
+              "questions": 50,
+              "resampling_unit": "scenario; all its questions move together",
+              "samples": 10000,
+              "seed": 20261013
+            },
+            "seed": 20261013,
+            "variant_mean": 0.5448571428571429
+          },
+          "image_delivery_recall": {
+            "baseline_mean": 0.6433333333333333,
+            "bootstrap_samples": 10000,
+            "difference": -0.01,
+            "excluded_unscored_questions": 0,
+            "metric": "image_delivery_recall",
+            "n": 50,
+            "paired_bootstrap_95ci": [
+              -0.07,
+              0.05
+            ],
+            "scenario_cluster_bootstrap": {
+              "cluster_bootstrap_95ci": [
+                -0.06818181818181818,
+                0.05
+              ],
+              "clusters": 19,
+              "difference": -0.01,
+              "questions": 50,
+              "resampling_unit": "scenario; all its questions move together",
+              "samples": 10000,
+              "seed": 20261013
+            },
+            "seed": 20261013,
+            "variant_mean": 0.6333333333333333
+          },
+          "llm_judge_official": {
+            "baseline_mean": 0.67,
+            "bootstrap_samples": 10000,
+            "difference": -0.01,
+            "excluded_unscored_questions": 0,
+            "metric": "llm_judge_official",
+            "n": 50,
+            "paired_bootstrap_95ci": [
+              -0.06,
+              0.03
+            ],
+            "scenario_cluster_bootstrap": {
+              "cluster_bootstrap_95ci": [
+                -0.061224489795918366,
+                0.02459016393442623
+              ],
+              "clusters": 19,
+              "difference": -0.01,
+              "questions": 50,
+              "resampling_unit": "scenario; all its questions move together",
+              "samples": 10000,
+              "seed": 20261013
+            },
+            "seed": 20261013,
+            "variant_mean": 0.66
+          },
+          "llm_judge_rubric_raw": {
+            "baseline_mean": 0.645,
+            "bootstrap_samples": 10000,
+            "difference": -0.025,
+            "excluded_unscored_questions": 0,
+            "metric": "llm_judge_rubric_raw",
+            "n": 50,
+            "paired_bootstrap_95ci": [
+              -0.075,
+              0.005
+            ],
+            "scenario_cluster_bootstrap": {
+              "cluster_bootstrap_95ci": [
+                -0.08173076923076923,
+                0.009615384615384616
+              ],
+              "clusters": 19,
+              "difference": -0.025,
+              "questions": 50,
+              "resampling_unit": "scenario; all its questions move together",
+              "samples": 10000,
+              "seed": 20261013
+            },
+            "seed": 20261013,
+            "variant_mean": 0.62
+          }
+        },
+        "VS+question_image": {
+          "clue_read_recall": {
+            "baseline_mean": 0.0,
+            "bootstrap_samples": 10000,
+            "difference": 0.0,
+            "excluded_unscored_questions": 0,
+            "gain_question_ids": [],
+            "gains": 0,
+            "loss_question_ids": [],
+            "losses": 0,
+            "mcnemar_exact_pvalue": 1.0,
+            "metric": "clue_read_recall",
+            "n": 10,
+            "paired_bootstrap_95ci": [
+              0.0,
+              0.0
+            ],
+            "scenario_cluster_bootstrap": {
+              "cluster_bootstrap_95ci": [
+                0.0,
+                0.0
+              ],
+              "clusters": 4,
+              "difference": 0.0,
+              "questions": 10,
+              "resampling_unit": "scenario; all its questions move together",
+              "samples": 10000,
+              "seed": 20261013
+            },
+            "seed": 20261013,
+            "variant_mean": 0.0
+          },
+          "em": {
+            "baseline_mean": 0.0,
+            "bootstrap_samples": 10000,
+            "difference": 0.0,
+            "excluded_unscored_questions": 0,
+            "gain_question_ids": [],
+            "gains": 0,
+            "loss_question_ids": [],
+            "losses": 0,
+            "mcnemar_exact_pvalue": 1.0,
+            "metric": "em",
+            "n": 10,
+            "paired_bootstrap_95ci": [
+              0.0,
+              0.0
+            ],
+            "scenario_cluster_bootstrap": {
+              "cluster_bootstrap_95ci": [
+                0.0,
+                0.0
+              ],
+              "clusters": 4,
+              "difference": 0.0,
+              "questions": 10,
+              "resampling_unit": "scenario; all its questions move together",
+              "samples": 10000,
+              "seed": 20261013
+            },
+            "seed": 20261013,
+            "variant_mean": 0.0
+          },
+          "f1": {
+            "baseline_mean": 0.0,
+            "bootstrap_samples": 10000,
+            "difference": 0.0,
+            "excluded_unscored_questions": 0,
+            "gain_question_ids": [],
+            "gains": 0,
+            "loss_question_ids": [],
+            "losses": 0,
+            "mcnemar_exact_pvalue": 1.0,
+            "metric": "f1",
+            "n": 10,
+            "paired_bootstrap_95ci": [
+              0.0,
+              0.0
+            ],
+            "scenario_cluster_bootstrap": {
+              "cluster_bootstrap_95ci": [
+                0.0,
+                0.0
+              ],
+              "clusters": 4,
+              "difference": 0.0,
+              "questions": 10,
+              "resampling_unit": "scenario; all its questions move together",
+              "samples": 10000,
+              "seed": 20261013
+            },
+            "seed": 20261013,
+            "variant_mean": 0.0
+          },
+          "image_delivery_recall": {
+            "baseline_mean": 0.0,
+            "bootstrap_samples": 10000,
+            "difference": 0.0,
+            "excluded_unscored_questions": 0,
+            "gain_question_ids": [],
+            "gains": 0,
+            "loss_question_ids": [],
+            "losses": 0,
+            "mcnemar_exact_pvalue": 1.0,
+            "metric": "image_delivery_recall",
+            "n": 10,
+            "paired_bootstrap_95ci": [
+              0.0,
+              0.0
+            ],
+            "scenario_cluster_bootstrap": {
+              "cluster_bootstrap_95ci": [
+                0.0,
+                0.0
+              ],
+              "clusters": 4,
+              "difference": 0.0,
+              "questions": 10,
+              "resampling_unit": "scenario; all its questions move together",
+              "samples": 10000,
+              "seed": 20261013
+            },
+            "seed": 20261013,
+            "variant_mean": 0.0
+          },
+          "llm_judge_official": {
+            "baseline_mean": 0.1,
+            "bootstrap_samples": 10000,
+            "difference": 0.0,
+            "excluded_unscored_questions": 0,
+            "metric": "llm_judge_official",
+            "n": 10,
+            "paired_bootstrap_95ci": [
+              0.0,
+              0.0
+            ],
+            "scenario_cluster_bootstrap": {
+              "cluster_bootstrap_95ci": [
+                0.0,
+                0.0
+              ],
+              "clusters": 4,
+              "difference": 0.0,
+              "questions": 10,
+              "resampling_unit": "scenario; all its questions move together",
+              "samples": 10000,
+              "seed": 20261013
+            },
+            "seed": 20261013,
+            "variant_mean": 0.1
+          },
+          "llm_judge_rubric_raw": {
+            "baseline_mean": 0.05,
+            "bootstrap_samples": 10000,
+            "difference": 0.0,
+            "excluded_unscored_questions": 0,
+            "metric": "llm_judge_rubric_raw",
+            "n": 10,
+            "paired_bootstrap_95ci": [
+              0.0,
+              0.0
+            ],
+            "scenario_cluster_bootstrap": {
+              "cluster_bootstrap_95ci": [
+                0.0,
+                0.0
+              ],
+              "clusters": 4,
+              "difference": 0.0,
+              "questions": 10,
+              "resampling_unit": "scenario; all its questions move together",
+              "samples": 10000,
+              "seed": 20261013
+            },
+            "seed": 20261013,
+            "variant_mean": 0.05
+          }
+        },
+        "VS+text_question": {
+          "clue_read_recall": {
+            "baseline_mean": 0.7916666666666666,
+            "bootstrap_samples": 10000,
+            "difference": 0.0125,
+            "excluded_unscored_questions": 0,
+            "metric": "clue_read_recall",
+            "n": 40,
+            "paired_bootstrap_95ci": [
+              -0.0625,
+              0.0875
+            ],
+            "scenario_cluster_bootstrap": {
+              "cluster_bootstrap_95ci": [
+                -0.046511627906976744,
+                0.08108108108108109
+              ],
+              "clusters": 19,
+              "difference": 0.0125,
+              "questions": 40,
+              "resampling_unit": "scenario; all its questions move together",
+              "samples": 10000,
+              "seed": 20261013
+            },
+            "seed": 20261013,
+            "variant_mean": 0.8041666666666668
+          },
+          "em": {
+            "baseline_mean": 0.4,
+            "bootstrap_samples": 10000,
+            "difference": -0.025,
+            "excluded_unscored_questions": 0,
+            "gain_question_ids": [
+              "Academic_Animal_Pet_Research_Life:qa0017",
+              "Baking_Dessert_Daily_Life_Skill:qa0068"
+            ],
+            "gains": 2,
+            "loss_question_ids": [
+              "Architecture_Art_Culture_Exhibition_Technology:qa0069",
+              "Education_Career_Research_Lifestyle:qa0096",
+              "Home_Repair_Maintenance_Cleaning:qa0001"
+            ],
+            "losses": 3,
+            "mcnemar_exact_pvalue": 1.0,
+            "metric": "em",
+            "n": 40,
+            "paired_bootstrap_95ci": [
+              -0.125,
+              0.075
+            ],
+            "scenario_cluster_bootstrap": {
+              "cluster_bootstrap_95ci": [
+                -0.1282051282051282,
+                0.08333333333333333
+              ],
+              "clusters": 19,
+              "difference": -0.025,
+              "questions": 40,
+              "resampling_unit": "scenario; all its questions move together",
+              "samples": 10000,
+              "seed": 20261013
+            },
+            "seed": 20261013,
+            "variant_mean": 0.375
+          },
+          "f1": {
+            "baseline_mean": 0.7205952380952381,
+            "bootstrap_samples": 10000,
+            "difference": -0.03952380952380953,
+            "excluded_unscored_questions": 0,
+            "metric": "f1",
+            "n": 40,
+            "paired_bootstrap_95ci": [
+              -0.10952380952380951,
+              0.009999999999999998
+            ],
+            "scenario_cluster_bootstrap": {
+              "cluster_bootstrap_95ci": [
+                -0.10173160173160173,
+                0.014643292682926693
+              ],
+              "clusters": 19,
+              "difference": -0.03952380952380953,
+              "questions": 40,
+              "resampling_unit": "scenario; all its questions move together",
+              "samples": 10000,
+              "seed": 20261013
+            },
+            "seed": 20261013,
+            "variant_mean": 0.6810714285714285
+          },
+          "image_delivery_recall": {
+            "baseline_mean": 0.8041666666666666,
+            "bootstrap_samples": 10000,
+            "difference": -0.0125,
+            "excluded_unscored_questions": 0,
+            "metric": "image_delivery_recall",
+            "n": 40,
+            "paired_bootstrap_95ci": [
+              -0.0875,
+              0.0625
+            ],
+            "scenario_cluster_bootstrap": {
+              "cluster_bootstrap_95ci": [
+                -0.08139534883720931,
+                0.06097560975609756
+              ],
+              "clusters": 19,
+              "difference": -0.0125,
+              "questions": 40,
+              "resampling_unit": "scenario; all its questions move together",
+              "samples": 10000,
+              "seed": 20261013
+            },
+            "seed": 20261013,
+            "variant_mean": 0.7916666666666666
+          },
+          "llm_judge_official": {
+            "baseline_mean": 0.8125,
+            "bootstrap_samples": 10000,
+            "difference": -0.0125,
+            "excluded_unscored_questions": 0,
+            "metric": "llm_judge_official",
+            "n": 40,
+            "paired_bootstrap_95ci": [
+              -0.075,
+              0.0375
+            ],
+            "scenario_cluster_bootstrap": {
+              "cluster_bootstrap_95ci": [
+                -0.06818181818181818,
+                0.038461538461538464
+              ],
+              "clusters": 19,
+              "difference": -0.0125,
+              "questions": 40,
+              "resampling_unit": "scenario; all its questions move together",
+              "samples": 10000,
+              "seed": 20261013
+            },
+            "seed": 20261013,
+            "variant_mean": 0.8
+          },
+          "llm_judge_rubric_raw": {
+            "baseline_mean": 0.79375,
+            "bootstrap_samples": 10000,
+            "difference": -0.03125,
+            "excluded_unscored_questions": 0,
+            "metric": "llm_judge_rubric_raw",
+            "n": 40,
+            "paired_bootstrap_95ci": [
+              -0.09375,
+              0.00625
+            ],
+            "scenario_cluster_bootstrap": {
+              "cluster_bootstrap_95ci": [
+                -0.09444444444444444,
+                0.013513513513513514
+              ],
+              "clusters": 19,
+              "difference": -0.03125,
+              "questions": 40,
+              "resampling_unit": "scenario; all its questions move together",
+              "samples": 10000,
+              "seed": 20261013
+            },
+            "seed": 20261013,
+            "variant_mean": 0.7625
+          }
+        },
+        "overall": {
+          "clue_read_recall": {
+            "baseline_mean": 0.5162142857142856,
+            "bootstrap_samples": 10000,
+            "difference": -0.0023690476190476196,
+            "excluded_unscored_questions": 0,
+            "metric": "clue_read_recall",
+            "n": 100,
+            "paired_bootstrap_95ci": [
+              -0.04270357142857143,
+              0.035334523809523795
+            ],
+            "scenario_cluster_bootstrap": {
+              "cluster_bootstrap_95ci": [
+                -0.036023675223514066,
+                0.029331544574351456
+              ],
+              "clusters": 19,
+              "difference": -0.0023690476190476196,
+              "questions": 100,
+              "resampling_unit": "scenario; all its questions move together",
+              "samples": 10000,
+              "seed": 20261013
+            },
+            "seed": 20261013,
+            "variant_mean": 0.5138452380952381
+          },
+          "em": {
+            "baseline_mean": 0.24,
+            "bootstrap_samples": 10000,
+            "difference": -0.05,
+            "excluded_unscored_questions": 0,
+            "gain_question_ids": [
+              "Academic_Animal_Pet_Research_Life:qa0017",
+              "Baking_Dessert_Daily_Life_Skill:qa0068"
+            ],
+            "gains": 2,
+            "loss_question_ids": [
+              "Architecture_Art_Culture_Exhibition_Technology:qa0068",
+              "Architecture_Art_Culture_Exhibition_Technology:qa0069",
+              "Education_Career_Research_Lifestyle:qa0096",
+              "Entrepreneurship_Blockchain_Economics_Logistics_Nature:qa0046",
+              "Home_Repair_Maintenance_Cleaning:qa0001",
+              "Nature_Economics_Programming_Student_Life:qa0021",
+              "Nature_Economics_Programming_Student_Life:qa0093"
+            ],
+            "losses": 7,
+            "mcnemar_exact_pvalue": 0.1796875,
+            "metric": "em",
+            "n": 100,
+            "paired_bootstrap_95ci": [
+              -0.11,
+              0.01
+            ],
+            "scenario_cluster_bootstrap": {
+              "cluster_bootstrap_95ci": [
+                -0.12871287128712872,
+                0.011366901776384488
+              ],
+              "clusters": 19,
+              "difference": -0.05,
+              "questions": 100,
+              "resampling_unit": "scenario; all its questions move together",
+              "samples": 10000,
+              "seed": 20261013
+            },
+            "seed": 20261013,
+            "variant_mean": 0.19
+          },
+          "f1": {
+            "baseline_mean": 0.3736754880339786,
+            "bootstrap_samples": 10000,
+            "difference": -0.05461006609758892,
+            "excluded_unscored_questions": 0,
+            "metric": "f1",
+            "n": 100,
+            "paired_bootstrap_95ci": [
+              -0.10271651280403564,
+              -0.015306010281055932
+            ],
+            "scenario_cluster_bootstrap": {
+              "cluster_bootstrap_95ci": [
+                -0.12025674211759649,
+                -0.006797290265050507
+              ],
+              "clusters": 19,
+              "difference": -0.054610066097588915,
+              "questions": 100,
+              "resampling_unit": "scenario; all its questions move together",
+              "samples": 10000,
+              "seed": 20261013
+            },
+            "seed": 20261013,
+            "variant_mean": 0.31906542193638976
+          },
+          "image_delivery_recall": {
+            "baseline_mean": 0.5370476190476191,
+            "bootstrap_samples": 10000,
+            "difference": -0.021702380952380952,
+            "excluded_unscored_questions": 0,
+            "metric": "image_delivery_recall",
+            "n": 100,
+            "paired_bootstrap_95ci": [
+              -0.06757232142857143,
+              0.019679464285714276
+            ],
+            "scenario_cluster_bootstrap": {
+              "cluster_bootstrap_95ci": [
+                -0.07789568433278317,
+                0.020882189017929244
+              ],
+              "clusters": 19,
+              "difference": -0.021702380952380952,
+              "questions": 100,
+              "resampling_unit": "scenario; all its questions move together",
+              "samples": 10000,
+              "seed": 20261013
+            },
+            "seed": 20261013,
+            "variant_mean": 0.515345238095238
+          },
+          "llm_judge_official": {
+            "baseline_mean": 0.51,
+            "bootstrap_samples": 10000,
+            "difference": -0.02,
+            "excluded_unscored_questions": 0,
+            "metric": "llm_judge_official",
+            "n": 100,
+            "paired_bootstrap_95ci": [
+              -0.055,
+              0.01
+            ],
+            "scenario_cluster_bootstrap": {
+              "cluster_bootstrap_95ci": [
+                -0.0625,
+                0.005681818181818182
+              ],
+              "clusters": 19,
+              "difference": -0.02,
+              "questions": 100,
+              "resampling_unit": "scenario; all its questions move together",
+              "samples": 10000,
+              "seed": 20261013
+            },
+            "seed": 20261013,
+            "variant_mean": 0.49
+          },
+          "llm_judge_rubric_raw": {
+            "baseline_mean": 0.455,
+            "bootstrap_samples": 10000,
+            "difference": -0.0375,
+            "excluded_unscored_questions": 0,
+            "metric": "llm_judge_rubric_raw",
+            "n": 100,
+            "paired_bootstrap_95ci": [
+              -0.0775,
+              -0.005
+            ],
+            "scenario_cluster_bootstrap": {
+              "cluster_bootstrap_95ci": [
+                -0.09482758620689655,
+                0.0022935779816513763
+              ],
+              "clusters": 19,
+              "difference": -0.0375,
+              "questions": 100,
+              "resampling_unit": "scenario; all its questions move together",
+              "samples": 10000,
+              "seed": 20261013
+            },
+            "seed": 20261013,
+            "variant_mean": 0.4175
+          }
+        }
+      },
+      "metrics_sha256": "ef8e7316882e276733aff335b625c01e502277bde4d17df0f2be303d5be0e95e"
+    },
+    "G1": {
+      "groups": {
+        "VR": {
+          "clue_read_recall": {
+            "baseline_mean": 0.3990952380952381,
+            "bootstrap_samples": 10000,
+            "difference": 0.025023809523809525,
+            "excluded_unscored_questions": 0,
+            "metric": "clue_read_recall",
+            "n": 50,
+            "paired_bootstrap_95ci": [
+              -0.02745357142857143,
+              0.07888095238095237
+            ],
+            "scenario_cluster_bootstrap": {
+              "cluster_bootstrap_95ci": [
+                -0.019643173758865252,
+                0.07976190476190476
+              ],
+              "clusters": 16,
+              "difference": 0.025023809523809525,
+              "questions": 50,
+              "resampling_unit": "scenario; all its questions move together",
+              "samples": 10000,
+              "seed": 20261013
+            },
+            "seed": 20261013,
+            "variant_mean": 0.4241190476190477
+          },
+          "em": {
+            "baseline_mean": 0.16,
+            "bootstrap_samples": 10000,
+            "difference": -0.02,
+            "excluded_unscored_questions": 0,
+            "gain_question_ids": [
+              "Baking_Dessert_Daily_Life_Skill:qa0042",
+              "Global_Travel_Sustainable_Fashion_Design:qa0060"
+            ],
+            "gains": 2,
+            "loss_question_ids": [
+              "Architecture_Art_Culture_Exhibition_Technology:qa0068",
+              "Entrepreneurship_Blockchain_Economics_Logistics_Nature:qa0046",
+              "Nature_Economics_Programming_Student_Life:qa0021"
+            ],
+            "losses": 3,
+            "mcnemar_exact_pvalue": 1.0,
+            "metric": "em",
+            "n": 50,
+            "paired_bootstrap_95ci": [
+              -0.1,
+              0.06
+            ],
+            "scenario_cluster_bootstrap": {
+              "cluster_bootstrap_95ci": [
+                -0.1176719840478564,
+                0.06896551724137931
+              ],
+              "clusters": 16,
+              "difference": -0.02,
+              "questions": 50,
+              "resampling_unit": "scenario; all its questions move together",
+              "samples": 10000,
+              "seed": 20261013
+            },
+            "seed": 20261013,
+            "variant_mean": 0.14
+          },
+          "f1": {
+            "baseline_mean": 0.17087478559176675,
+            "bootstrap_samples": 10000,
+            "difference": -0.016827584022292105,
+            "excluded_unscored_questions": 0,
+            "metric": "f1",
+            "n": 50,
+            "paired_bootstrap_95ci": [
+              -0.09950555012398703,
+              0.06494647899903769
+            ],
+            "scenario_cluster_bootstrap": {
+              "cluster_bootstrap_95ci": [
+                -0.1162831021578608,
+                0.07142857142857142
+              ],
+              "clusters": 16,
+              "difference": -0.016827584022292105,
+              "questions": 50,
+              "resampling_unit": "scenario; all its questions move together",
+              "samples": 10000,
+              "seed": 20261013
+            },
+            "seed": 20261013,
+            "variant_mean": 0.1540472015694746
+          },
+          "image_delivery_recall": {
+            "baseline_mean": 0.43076190476190473,
+            "bootstrap_samples": 10000,
+            "difference": 0.008023809523809522,
+            "excluded_unscored_questions": 0,
+            "metric": "image_delivery_recall",
+            "n": 50,
+            "paired_bootstrap_95ci": [
+              -0.06416964285714287,
+              0.07385773809523809
+            ],
+            "scenario_cluster_bootstrap": {
+              "cluster_bootstrap_95ci": [
+                -0.05705357142857142,
+                0.0703741804692891
+              ],
+              "clusters": 16,
+              "difference": 0.008023809523809523,
+              "questions": 50,
+              "resampling_unit": "scenario; all its questions move together",
+              "samples": 10000,
+              "seed": 20261013
+            },
+            "seed": 20261013,
+            "variant_mean": 0.43878571428571433
+          },
+          "llm_judge_official": {
+            "baseline_mean": 0.35,
+            "bootstrap_samples": 10000,
+            "difference": 0.0,
+            "excluded_unscored_questions": 0,
+            "metric": "llm_judge_official",
+            "n": 50,
+            "paired_bootstrap_95ci": [
+              -0.07,
+              0.07
+            ],
+            "scenario_cluster_bootstrap": {
+              "cluster_bootstrap_95ci": [
+                -0.06578947368421052,
+                0.06363636363636363
+              ],
+              "clusters": 16,
+              "difference": 0.0,
+              "questions": 50,
+              "resampling_unit": "scenario; all its questions move together",
+              "samples": 10000,
+              "seed": 20261013
+            },
+            "seed": 20261013,
+            "variant_mean": 0.35
+          },
+          "llm_judge_rubric_raw": {
+            "baseline_mean": 0.265,
+            "bootstrap_samples": 10000,
+            "difference": -0.005,
+            "excluded_unscored_questions": 0,
+            "metric": "llm_judge_rubric_raw",
+            "n": 50,
+            "paired_bootstrap_95ci": [
+              -0.085,
+              0.075
+            ],
+            "scenario_cluster_bootstrap": {
+              "cluster_bootstrap_95ci": [
+                -0.08522727272727272,
+                0.0673076923076923
+              ],
+              "clusters": 16,
+              "difference": -0.005,
+              "questions": 50,
+              "resampling_unit": "scenario; all its questions move together",
+              "samples": 10000,
+              "seed": 20261013
+            },
+            "seed": 20261013,
+            "variant_mean": 0.26
+          }
+        },
+        "VR+question_image": {
+          "clue_read_recall": {
+            "baseline_mean": 0.07352941176470588,
+            "bootstrap_samples": 10000,
+            "difference": -0.024509803921568627,
+            "excluded_unscored_questions": 0,
+            "metric": "clue_read_recall",
+            "n": 17,
+            "paired_bootstrap_95ci": [
+              -0.11274509803921569,
+              0.05882352941176469
+            ],
+            "scenario_cluster_bootstrap": {
+              "cluster_bootstrap_95ci": [
+                -0.10897435897435898,
+                0.010416666666666664
+              ],
+              "clusters": 9,
+              "difference": -0.024509803921568627,
+              "questions": 17,
+              "resampling_unit": "scenario; all its questions move together",
+              "samples": 10000,
+              "seed": 20261013
+            },
+            "seed": 20261013,
+            "variant_mean": 0.04901960784313725
+          },
+          "em": {
+            "baseline_mean": 0.058823529411764705,
+            "bootstrap_samples": 10000,
+            "difference": -0.058823529411764705,
+            "excluded_unscored_questions": 0,
+            "gain_question_ids": [],
+            "gains": 0,
+            "loss_question_ids": [
+              "Architecture_Art_Culture_Exhibition_Technology:qa0068"
+            ],
+            "losses": 1,
+            "mcnemar_exact_pvalue": 1.0,
+            "metric": "em",
+            "n": 17,
+            "paired_bootstrap_95ci": [
+              -0.17647058823529413,
+              0.0
+            ],
+            "scenario_cluster_bootstrap": {
+              "cluster_bootstrap_95ci": [
+                -0.23076923076923078,
+                0.0
+              ],
+              "clusters": 9,
+              "difference": -0.058823529411764705,
+              "questions": 17,
+              "resampling_unit": "scenario; all its questions move together",
+              "samples": 10000,
+              "seed": 20261013
+            },
+            "seed": 20261013,
+            "variant_mean": 0.0
+          },
+          "f1": {
+            "baseline_mean": 0.0641711229946524,
+            "bootstrap_samples": 10000,
+            "difference": -0.05682951146560319,
+            "excluded_unscored_questions": 0,
+            "metric": "f1",
+            "n": 17,
+            "paired_bootstrap_95ci": [
+              -0.17647058823529413,
+              0.005982053838484547
+            ],
+            "scenario_cluster_bootstrap": {
+              "cluster_bootstrap_95ci": [
+                -0.22816166883963496,
+                0.00423728813559322
+              ],
+              "clusters": 9,
+              "difference": -0.05682951146560319,
+              "questions": 17,
+              "resampling_unit": "scenario; all its questions move together",
+              "samples": 10000,
+              "seed": 20261013
+            },
+            "seed": 20261013,
+            "variant_mean": 0.0073416115290492155
+          },
+          "image_delivery_recall": {
+            "baseline_mean": 0.1372549019607843,
+            "bootstrap_samples": 10000,
+            "difference": -0.07450980392156863,
+            "excluded_unscored_questions": 0,
+            "metric": "image_delivery_recall",
+            "n": 17,
+            "paired_bootstrap_95ci": [
+              -0.23529411764705882,
+              0.06078431372549019
+            ],
+            "scenario_cluster_bootstrap": {
+              "cluster_bootstrap_95ci": [
+                -0.23076923076923078,
+                0.0
+              ],
+              "clusters": 9,
+              "difference": -0.07450980392156863,
+              "questions": 17,
+              "resampling_unit": "scenario; all its questions move together",
+              "samples": 10000,
+              "seed": 20261013
+            },
+            "seed": 20261013,
+            "variant_mean": 0.06274509803921569
+          },
+          "llm_judge_official": {
+            "baseline_mean": 0.11764705882352941,
+            "bootstrap_samples": 10000,
+            "difference": -0.029411764705882353,
+            "excluded_unscored_questions": 0,
+            "metric": "llm_judge_official",
+            "n": 17,
+            "paired_bootstrap_95ci": [
+              -0.11764705882352941,
+              0.058823529411764705
+            ],
+            "scenario_cluster_bootstrap": {
+              "cluster_bootstrap_95ci": [
+                -0.11538461538461539,
+                0.0
+              ],
+              "clusters": 9,
+              "difference": -0.029411764705882353,
+              "questions": 17,
+              "resampling_unit": "scenario; all its questions move together",
+              "samples": 10000,
+              "seed": 20261013
+            },
+            "seed": 20261013,
+            "variant_mean": 0.08823529411764706
+          },
+          "llm_judge_rubric_raw": {
+            "baseline_mean": 0.08823529411764706,
+            "bootstrap_samples": 10000,
+            "difference": -0.014705882352941176,
+            "excluded_unscored_questions": 0,
+            "metric": "llm_judge_rubric_raw",
+            "n": 17,
+            "paired_bootstrap_95ci": [
+              -0.14705882352941177,
+              0.11764705882352941
+            ],
+            "scenario_cluster_bootstrap": {
+              "cluster_bootstrap_95ci": [
+                -0.16071428571428573,
+                0.0625
+              ],
+              "clusters": 9,
+              "difference": -0.014705882352941176,
+              "questions": 17,
+              "resampling_unit": "scenario; all its questions move together",
+              "samples": 10000,
+              "seed": 20261013
+            },
+            "seed": 20261013,
+            "variant_mean": 0.07352941176470588
+          }
+        },
+        "VR+text_question": {
+          "clue_read_recall": {
+            "baseline_mean": 0.5668109668109668,
+            "bootstrap_samples": 10000,
+            "difference": 0.05054112554112554,
+            "excluded_unscored_questions": 0,
+            "metric": "clue_read_recall",
+            "n": 33,
+            "paired_bootstrap_95ci": [
+              -0.012337662337662342,
+              0.11742424242424242
+            ],
+            "scenario_cluster_bootstrap": {
+              "cluster_bootstrap_95ci": [
+                -0.005263157894736844,
+                0.1336798469387754
+              ],
+              "clusters": 14,
+              "difference": 0.05054112554112554,
+              "questions": 33,
+              "resampling_unit": "scenario; all its questions move together",
+              "samples": 10000,
+              "seed": 20261013
+            },
+            "seed": 20261013,
+            "variant_mean": 0.6173520923520923
+          },
+          "em": {
+            "baseline_mean": 0.21212121212121213,
+            "bootstrap_samples": 10000,
+            "difference": 0.0,
+            "excluded_unscored_questions": 0,
+            "gain_question_ids": [
+              "Baking_Dessert_Daily_Life_Skill:qa0042",
+              "Global_Travel_Sustainable_Fashion_Design:qa0060"
+            ],
+            "gains": 2,
+            "loss_question_ids": [
+              "Entrepreneurship_Blockchain_Economics_Logistics_Nature:qa0046",
+              "Nature_Economics_Programming_Student_Life:qa0021"
+            ],
+            "losses": 2,
+            "mcnemar_exact_pvalue": 1.0,
+            "metric": "em",
+            "n": 33,
+            "paired_bootstrap_95ci": [
+              -0.12121212121212122,
+              0.12121212121212122
+            ],
+            "scenario_cluster_bootstrap": {
+              "cluster_bootstrap_95ci": [
+                -0.11538461538461539,
+                0.12903225806451613
+              ],
+              "clusters": 14,
+              "difference": 0.0,
+              "questions": 33,
+              "resampling_unit": "scenario; all its questions move together",
+              "samples": 10000,
+              "seed": 20261013
+            },
+            "seed": 20261013,
+            "variant_mean": 0.21212121212121213
+          },
+          "f1": {
+            "baseline_mean": 0.22584333905088622,
+            "bootstrap_samples": 10000,
+            "difference": 0.0037794695091105703,
+            "excluded_unscored_questions": 0,
+            "metric": "f1",
+            "n": 33,
+            "paired_bootstrap_95ci": [
+              -0.11806459175898247,
+              0.12487436429839607
+            ],
+            "scenario_cluster_bootstrap": {
+              "cluster_bootstrap_95ci": [
+                -0.11369214945927954,
+                0.13224817581278875
+              ],
+              "clusters": 14,
+              "difference": 0.003779469509110572,
+              "questions": 33,
+              "resampling_unit": "scenario; all its questions move together",
+              "samples": 10000,
+              "seed": 20261013
+            },
+            "seed": 20261013,
+            "variant_mean": 0.22962280855999678
+          },
+          "image_delivery_recall": {
+            "baseline_mean": 0.5819624819624819,
+            "bootstrap_samples": 10000,
+            "difference": 0.05054112554112554,
+            "excluded_unscored_questions": 0,
+            "metric": "image_delivery_recall",
+            "n": 33,
+            "paired_bootstrap_95ci": [
+              -0.012337662337662342,
+              0.11742424242424242
+            ],
+            "scenario_cluster_bootstrap": {
+              "cluster_bootstrap_95ci": [
+                -0.005263157894736844,
+                0.1336798469387754
+              ],
+              "clusters": 14,
+              "difference": 0.05054112554112554,
+              "questions": 33,
+              "resampling_unit": "scenario; all its questions move together",
+              "samples": 10000,
+              "seed": 20261013
+            },
+            "seed": 20261013,
+            "variant_mean": 0.6325036075036075
+          },
+          "llm_judge_official": {
+            "baseline_mean": 0.4696969696969697,
+            "bootstrap_samples": 10000,
+            "difference": 0.015151515151515152,
+            "excluded_unscored_questions": 0,
+            "metric": "llm_judge_official",
+            "n": 33,
+            "paired_bootstrap_95ci": [
+              -0.07575757575757576,
+              0.10606060606060606
+            ],
+            "scenario_cluster_bootstrap": {
+              "cluster_bootstrap_95ci": [
+                -0.08,
+                0.10228001165501155
+              ],
+              "clusters": 14,
+              "difference": 0.015151515151515152,
+              "questions": 33,
+              "resampling_unit": "scenario; all its questions move together",
+              "samples": 10000,
+              "seed": 20261013
+            },
+            "seed": 20261013,
+            "variant_mean": 0.48484848484848486
+          },
+          "llm_judge_rubric_raw": {
+            "baseline_mean": 0.3560606060606061,
+            "bootstrap_samples": 10000,
+            "difference": 0.0,
+            "excluded_unscored_questions": 0,
+            "metric": "llm_judge_rubric_raw",
+            "n": 33,
+            "paired_bootstrap_95ci": [
+              -0.09848484848484848,
+              0.09848484848484848
+            ],
+            "scenario_cluster_bootstrap": {
+              "cluster_bootstrap_95ci": [
+                -0.10606060606060606,
+                0.10714285714285714
+              ],
+              "clusters": 14,
+              "difference": 0.0,
+              "questions": 33,
+              "resampling_unit": "scenario; all its questions move together",
+              "samples": 10000,
+              "seed": 20261013
+            },
+            "seed": 20261013,
+            "variant_mean": 0.3560606060606061
+          }
+        },
+        "VS": {
+          "clue_read_recall": {
+            "baseline_mean": 0.6333333333333333,
+            "bootstrap_samples": 10000,
+            "difference": 0.02,
+            "excluded_unscored_questions": 0,
+            "metric": "clue_read_recall",
+            "n": 50,
+            "paired_bootstrap_95ci": [
+              0.0,
+              0.05
+            ],
+            "scenario_cluster_bootstrap": {
+              "cluster_bootstrap_95ci": [
+                0.0,
+                0.049019607843137254
+              ],
+              "clusters": 19,
+              "difference": 0.02,
+              "questions": 50,
+              "resampling_unit": "scenario; all its questions move together",
+              "samples": 10000,
+              "seed": 20261013
+            },
+            "seed": 20261013,
+            "variant_mean": 0.6533333333333333
+          },
+          "em": {
+            "baseline_mean": 0.32,
+            "bootstrap_samples": 10000,
+            "difference": -0.02,
+            "excluded_unscored_questions": 0,
+            "gain_question_ids": [
+              "Academic_Animal_Pet_Research_Life:qa0017",
+              "Global_Travel_Sustainable_Fashion_Design:qa0042"
+            ],
+            "gains": 2,
+            "loss_question_ids": [
+              "AI_Robotics_Automation_Future_Tech:qa0051",
+              "Architecture_Art_Culture_Exhibition_Technology:qa0069",
+              "Education_Career_Research_Lifestyle:qa0096"
+            ],
+            "losses": 3,
+            "mcnemar_exact_pvalue": 1.0,
+            "metric": "em",
+            "n": 50,
+            "paired_bootstrap_95ci": [
+              -0.1,
+              0.06
+            ],
+            "scenario_cluster_bootstrap": {
+              "cluster_bootstrap_95ci": [
+                -0.10714285714285714,
+                0.07142857142857142
+              ],
+              "clusters": 19,
+              "difference": -0.02,
+              "questions": 50,
+              "resampling_unit": "scenario; all its questions move together",
+              "samples": 10000,
+              "seed": 20261013
+            },
+            "seed": 20261013,
+            "variant_mean": 0.3
+          },
+          "f1": {
+            "baseline_mean": 0.5764761904761905,
+            "bootstrap_samples": 10000,
+            "difference": -0.013333333333333332,
+            "excluded_unscored_questions": 0,
+            "metric": "f1",
+            "n": 50,
+            "paired_bootstrap_95ci": [
+              -0.064,
+              0.02666666666666667
+            ],
+            "scenario_cluster_bootstrap": {
+              "cluster_bootstrap_95ci": [
+                -0.06538461538461537,
+                0.02888888888888889
+              ],
+              "clusters": 19,
+              "difference": -0.013333333333333332,
+              "questions": 50,
+              "resampling_unit": "scenario; all its questions move together",
+              "samples": 10000,
+              "seed": 20261013
+            },
+            "seed": 20261013,
+            "variant_mean": 0.5631428571428572
+          },
+          "image_delivery_recall": {
+            "baseline_mean": 0.6433333333333333,
+            "bootstrap_samples": 10000,
+            "difference": 0.02,
+            "excluded_unscored_questions": 0,
+            "metric": "image_delivery_recall",
+            "n": 50,
+            "paired_bootstrap_95ci": [
+              0.0,
+              0.06
+            ],
+            "scenario_cluster_bootstrap": {
+              "cluster_bootstrap_95ci": [
+                0.0,
+                0.06976744186046512
+              ],
+              "clusters": 19,
+              "difference": 0.02,
+              "questions": 50,
+              "resampling_unit": "scenario; all its questions move together",
+              "samples": 10000,
+              "seed": 20261013
+            },
+            "seed": 20261013,
+            "variant_mean": 0.6633333333333333
+          },
+          "llm_judge_official": {
+            "baseline_mean": 0.67,
+            "bootstrap_samples": 10000,
+            "difference": -0.03,
+            "excluded_unscored_questions": 0,
+            "metric": "llm_judge_official",
+            "n": 50,
+            "paired_bootstrap_95ci": [
+              -0.09,
+              0.01
+            ],
+            "scenario_cluster_bootstrap": {
+              "cluster_bootstrap_95ci": [
+                -0.0784313725490196,
+                0.01282051282051282
+              ],
+              "clusters": 19,
+              "difference": -0.03,
+              "questions": 50,
+              "resampling_unit": "scenario; all its questions move together",
+              "samples": 10000,
+              "seed": 20261013
+            },
+            "seed": 20261013,
+            "variant_mean": 0.64
+          },
+          "llm_judge_rubric_raw": {
+            "baseline_mean": 0.645,
+            "bootstrap_samples": 10000,
+            "difference": -0.025,
+            "excluded_unscored_questions": 0,
+            "metric": "llm_judge_rubric_raw",
+            "n": 50,
+            "paired_bootstrap_95ci": [
+              -0.08,
+              0.025
+            ],
+            "scenario_cluster_bootstrap": {
+              "cluster_bootstrap_95ci": [
+                -0.08653846153846154,
+                0.03260869565217391
+              ],
+              "clusters": 19,
+              "difference": -0.025,
+              "questions": 50,
+              "resampling_unit": "scenario; all its questions move together",
+              "samples": 10000,
+              "seed": 20261013
+            },
+            "seed": 20261013,
+            "variant_mean": 0.62
+          }
+        },
+        "VS+question_image": {
+          "clue_read_recall": {
+            "baseline_mean": 0.0,
+            "bootstrap_samples": 10000,
+            "difference": 0.0,
+            "excluded_unscored_questions": 0,
+            "gain_question_ids": [],
+            "gains": 0,
+            "loss_question_ids": [],
+            "losses": 0,
+            "mcnemar_exact_pvalue": 1.0,
+            "metric": "clue_read_recall",
+            "n": 10,
+            "paired_bootstrap_95ci": [
+              0.0,
+              0.0
+            ],
+            "scenario_cluster_bootstrap": {
+              "cluster_bootstrap_95ci": [
+                0.0,
+                0.0
+              ],
+              "clusters": 4,
+              "difference": 0.0,
+              "questions": 10,
+              "resampling_unit": "scenario; all its questions move together",
+              "samples": 10000,
+              "seed": 20261013
+            },
+            "seed": 20261013,
+            "variant_mean": 0.0
+          },
+          "em": {
+            "baseline_mean": 0.0,
+            "bootstrap_samples": 10000,
+            "difference": 0.0,
+            "excluded_unscored_questions": 0,
+            "gain_question_ids": [],
+            "gains": 0,
+            "loss_question_ids": [],
+            "losses": 0,
+            "mcnemar_exact_pvalue": 1.0,
+            "metric": "em",
+            "n": 10,
+            "paired_bootstrap_95ci": [
+              0.0,
+              0.0
+            ],
+            "scenario_cluster_bootstrap": {
+              "cluster_bootstrap_95ci": [
+                0.0,
+                0.0
+              ],
+              "clusters": 4,
+              "difference": 0.0,
+              "questions": 10,
+              "resampling_unit": "scenario; all its questions move together",
+              "samples": 10000,
+              "seed": 20261013
+            },
+            "seed": 20261013,
+            "variant_mean": 0.0
+          },
+          "f1": {
+            "baseline_mean": 0.0,
+            "bootstrap_samples": 10000,
+            "difference": 0.0,
+            "excluded_unscored_questions": 0,
+            "gain_question_ids": [],
+            "gains": 0,
+            "loss_question_ids": [],
+            "losses": 0,
+            "mcnemar_exact_pvalue": 1.0,
+            "metric": "f1",
+            "n": 10,
+            "paired_bootstrap_95ci": [
+              0.0,
+              0.0
+            ],
+            "scenario_cluster_bootstrap": {
+              "cluster_bootstrap_95ci": [
+                0.0,
+                0.0
+              ],
+              "clusters": 4,
+              "difference": 0.0,
+              "questions": 10,
+              "resampling_unit": "scenario; all its questions move together",
+              "samples": 10000,
+              "seed": 20261013
+            },
+            "seed": 20261013,
+            "variant_mean": 0.0
+          },
+          "image_delivery_recall": {
+            "baseline_mean": 0.0,
+            "bootstrap_samples": 10000,
+            "difference": 0.0,
+            "excluded_unscored_questions": 0,
+            "gain_question_ids": [],
+            "gains": 0,
+            "loss_question_ids": [],
+            "losses": 0,
+            "mcnemar_exact_pvalue": 1.0,
+            "metric": "image_delivery_recall",
+            "n": 10,
+            "paired_bootstrap_95ci": [
+              0.0,
+              0.0
+            ],
+            "scenario_cluster_bootstrap": {
+              "cluster_bootstrap_95ci": [
+                0.0,
+                0.0
+              ],
+              "clusters": 4,
+              "difference": 0.0,
+              "questions": 10,
+              "resampling_unit": "scenario; all its questions move together",
+              "samples": 10000,
+              "seed": 20261013
+            },
+            "seed": 20261013,
+            "variant_mean": 0.0
+          },
+          "llm_judge_official": {
+            "baseline_mean": 0.1,
+            "bootstrap_samples": 10000,
+            "difference": -0.05,
+            "excluded_unscored_questions": 0,
+            "metric": "llm_judge_official",
+            "n": 10,
+            "paired_bootstrap_95ci": [
+              -0.15,
+              0.0
+            ],
+            "scenario_cluster_bootstrap": {
+              "cluster_bootstrap_95ci": [
+                -0.08823529411764706,
+                0.0
+              ],
+              "clusters": 4,
+              "difference": -0.05,
+              "questions": 10,
+              "resampling_unit": "scenario; all its questions move together",
+              "samples": 10000,
+              "seed": 20261013
+            },
+            "seed": 20261013,
+            "variant_mean": 0.05
+          },
+          "llm_judge_rubric_raw": {
+            "baseline_mean": 0.05,
+            "bootstrap_samples": 10000,
+            "difference": -0.025,
+            "excluded_unscored_questions": 0,
+            "metric": "llm_judge_rubric_raw",
+            "n": 10,
+            "paired_bootstrap_95ci": [
+              -0.075,
+              0.0
+            ],
+            "scenario_cluster_bootstrap": {
+              "cluster_bootstrap_95ci": [
+                -0.04411764705882353,
+                0.0
+              ],
+              "clusters": 4,
+              "difference": -0.025,
+              "questions": 10,
+              "resampling_unit": "scenario; all its questions move together",
+              "samples": 10000,
+              "seed": 20261013
+            },
+            "seed": 20261013,
+            "variant_mean": 0.025
+          }
+        },
+        "VS+text_question": {
+          "clue_read_recall": {
+            "baseline_mean": 0.7916666666666666,
+            "bootstrap_samples": 10000,
+            "difference": 0.025,
+            "excluded_unscored_questions": 0,
+            "metric": "clue_read_recall",
+            "n": 40,
+            "paired_bootstrap_95ci": [
+              0.0,
+              0.0625
+            ],
+            "scenario_cluster_bootstrap": {
+              "cluster_bootstrap_95ci": [
+                0.0,
+                0.05813953488372093
+              ],
+              "clusters": 19,
+              "difference": 0.025,
+              "questions": 40,
+              "resampling_unit": "scenario; all its questions move together",
+              "samples": 10000,
+              "seed": 20261013
+            },
+            "seed": 20261013,
+            "variant_mean": 0.8166666666666668
+          },
+          "em": {
+            "baseline_mean": 0.4,
+            "bootstrap_samples": 10000,
+            "difference": -0.025,
+            "excluded_unscored_questions": 0,
+            "gain_question_ids": [
+              "Academic_Animal_Pet_Research_Life:qa0017",
+              "Global_Travel_Sustainable_Fashion_Design:qa0042"
+            ],
+            "gains": 2,
+            "loss_question_ids": [
+              "AI_Robotics_Automation_Future_Tech:qa0051",
+              "Architecture_Art_Culture_Exhibition_Technology:qa0069",
+              "Education_Career_Research_Lifestyle:qa0096"
+            ],
+            "losses": 3,
+            "mcnemar_exact_pvalue": 1.0,
+            "metric": "em",
+            "n": 40,
+            "paired_bootstrap_95ci": [
+              -0.125,
+              0.075
+            ],
+            "scenario_cluster_bootstrap": {
+              "cluster_bootstrap_95ci": [
+                -0.1282051282051282,
+                0.08571428571428572
+              ],
+              "clusters": 19,
+              "difference": -0.025,
+              "questions": 40,
+              "resampling_unit": "scenario; all its questions move together",
+              "samples": 10000,
+              "seed": 20261013
+            },
+            "seed": 20261013,
+            "variant_mean": 0.375
+          },
+          "f1": {
+            "baseline_mean": 0.7205952380952381,
+            "bootstrap_samples": 10000,
+            "difference": -0.016666666666666666,
+            "excluded_unscored_questions": 0,
+            "metric": "f1",
+            "n": 40,
+            "paired_bootstrap_95ci": [
+              -0.08166666666666667,
+              0.0325
+            ],
+            "scenario_cluster_bootstrap": {
+              "cluster_bootstrap_95ci": [
+                -0.07727272727272726,
+                0.035897435897435895
+              ],
+              "clusters": 19,
+              "difference": -0.016666666666666666,
+              "questions": 40,
+              "resampling_unit": "scenario; all its questions move together",
+              "samples": 10000,
+              "seed": 20261013
+            },
+            "seed": 20261013,
+            "variant_mean": 0.7039285714285715
+          },
+          "image_delivery_recall": {
+            "baseline_mean": 0.8041666666666666,
+            "bootstrap_samples": 10000,
+            "difference": 0.025,
+            "excluded_unscored_questions": 0,
+            "metric": "image_delivery_recall",
+            "n": 40,
+            "paired_bootstrap_95ci": [
+              0.0,
+              0.075
+            ],
+            "scenario_cluster_bootstrap": {
+              "cluster_bootstrap_95ci": [
+                0.0,
+                0.08108108108108109
+              ],
+              "clusters": 19,
+              "difference": 0.025,
+              "questions": 40,
+              "resampling_unit": "scenario; all its questions move together",
+              "samples": 10000,
+              "seed": 20261013
+            },
+            "seed": 20261013,
+            "variant_mean": 0.8291666666666668
+          },
+          "llm_judge_official": {
+            "baseline_mean": 0.8125,
+            "bootstrap_samples": 10000,
+            "difference": -0.025,
+            "excluded_unscored_questions": 0,
+            "metric": "llm_judge_official",
+            "n": 40,
+            "paired_bootstrap_95ci": [
+              -0.0875,
+              0.025
+            ],
+            "scenario_cluster_bootstrap": {
+              "cluster_bootstrap_95ci": [
+                -0.08333333333333333,
+                0.02702702702702703
+              ],
+              "clusters": 19,
+              "difference": -0.025,
+              "questions": 40,
+              "resampling_unit": "scenario; all its questions move together",
+              "samples": 10000,
+              "seed": 20261013
+            },
+            "seed": 20261013,
+            "variant_mean": 0.7875
+          },
+          "llm_judge_rubric_raw": {
+            "baseline_mean": 0.79375,
+            "bootstrap_samples": 10000,
+            "difference": -0.025,
+            "excluded_unscored_questions": 0,
+            "metric": "llm_judge_rubric_raw",
+            "n": 40,
+            "paired_bootstrap_95ci": [
+              -0.09375,
+              0.0375
+            ],
+            "scenario_cluster_bootstrap": {
+              "cluster_bootstrap_95ci": [
+                -0.09782608695652174,
+                0.04285714285714286
+              ],
+              "clusters": 19,
+              "difference": -0.025,
+              "questions": 40,
+              "resampling_unit": "scenario; all its questions move together",
+              "samples": 10000,
+              "seed": 20261013
+            },
+            "seed": 20261013,
+            "variant_mean": 0.76875
+          }
+        },
+        "overall": {
+          "clue_read_recall": {
+            "baseline_mean": 0.5162142857142856,
+            "bootstrap_samples": 10000,
+            "difference": 0.022511904761904757,
+            "excluded_unscored_questions": 0,
+            "metric": "clue_read_recall",
+            "n": 100,
+            "paired_bootstrap_95ci": [
+              -0.006073214285714286,
+              0.05200029761904762
+            ],
+            "scenario_cluster_bootstrap": {
+              "cluster_bootstrap_95ci": [
+                0.0008332431457431446,
+                0.05044115544115545
+              ],
+              "clusters": 19,
+              "difference": 0.02251190476190476,
+              "questions": 100,
+              "resampling_unit": "scenario; all its questions move together",
+              "samples": 10000,
+              "seed": 20261013
+            },
+            "seed": 20261013,
+            "variant_mean": 0.5387261904761904
+          },
+          "em": {
+            "baseline_mean": 0.24,
+            "bootstrap_samples": 10000,
+            "difference": -0.02,
+            "excluded_unscored_questions": 0,
+            "gain_question_ids": [
+              "Academic_Animal_Pet_Research_Life:qa0017",
+              "Baking_Dessert_Daily_Life_Skill:qa0042",
+              "Global_Travel_Sustainable_Fashion_Design:qa0042",
+              "Global_Travel_Sustainable_Fashion_Design:qa0060"
+            ],
+            "gains": 4,
+            "loss_question_ids": [
+              "AI_Robotics_Automation_Future_Tech:qa0051",
+              "Architecture_Art_Culture_Exhibition_Technology:qa0068",
+              "Architecture_Art_Culture_Exhibition_Technology:qa0069",
+              "Education_Career_Research_Lifestyle:qa0096",
+              "Entrepreneurship_Blockchain_Economics_Logistics_Nature:qa0046",
+              "Nature_Economics_Programming_Student_Life:qa0021"
+            ],
+            "losses": 6,
+            "mcnemar_exact_pvalue": 0.75390625,
+            "metric": "em",
+            "n": 100,
+            "paired_bootstrap_95ci": [
+              -0.08,
+              0.04
+            ],
+            "scenario_cluster_bootstrap": {
+              "cluster_bootstrap_95ci": [
+                -0.1,
+                0.05357622887864816
+              ],
+              "clusters": 19,
+              "difference": -0.02,
+              "questions": 100,
+              "resampling_unit": "scenario; all its questions move together",
+              "samples": 10000,
+              "seed": 20261013
+            },
+            "seed": 20261013,
+            "variant_mean": 0.22
+          },
+          "f1": {
+            "baseline_mean": 0.3736754880339786,
+            "bootstrap_samples": 10000,
+            "difference": -0.015080458677812719,
+            "excluded_unscored_questions": 0,
+            "metric": "f1",
+            "n": 100,
+            "paired_bootstrap_95ci": [
+              -0.06587825280896882,
+              0.03341293769293292
+            ],
+            "scenario_cluster_bootstrap": {
+              "cluster_bootstrap_95ci": [
+                -0.08420655739391116,
+                0.04216358488221049
+              ],
+              "clusters": 19,
+              "difference": -0.015080458677812719,
+              "questions": 100,
+              "resampling_unit": "scenario; all its questions move together",
+              "samples": 10000,
+              "seed": 20261013
+            },
+            "seed": 20261013,
+            "variant_mean": 0.35859502935616583
+          },
+          "image_delivery_recall": {
+            "baseline_mean": 0.5370476190476191,
+            "bootstrap_samples": 10000,
+            "difference": 0.014011904761904757,
+            "excluded_unscored_questions": 0,
+            "metric": "image_delivery_recall",
+            "n": 100,
+            "paired_bootstrap_95ci": [
+              -0.02605982142857143,
+              0.0525145833333333
+            ],
+            "scenario_cluster_bootstrap": {
+              "cluster_bootstrap_95ci": [
+                -0.022663629283489098,
+                0.0557159863945578
+              ],
+              "clusters": 19,
+              "difference": 0.01401190476190476,
+              "questions": 100,
+              "resampling_unit": "scenario; all its questions move together",
+              "samples": 10000,
+              "seed": 20261013
+            },
+            "seed": 20261013,
+            "variant_mean": 0.5510595238095238
+          },
+          "llm_judge_official": {
+            "baseline_mean": 0.51,
+            "bootstrap_samples": 10000,
+            "difference": -0.015,
+            "excluded_unscored_questions": 0,
+            "metric": "llm_judge_official",
+            "n": 100,
+            "paired_bootstrap_95ci": [
+              -0.06,
+              0.025
+            ],
+            "scenario_cluster_bootstrap": {
+              "cluster_bootstrap_95ci": [
+                -0.06329113924050633,
+                0.02830188679245283
+              ],
+              "clusters": 19,
+              "difference": -0.015,
+              "questions": 100,
+              "resampling_unit": "scenario; all its questions move together",
+              "samples": 10000,
+              "seed": 20261013
+            },
+            "seed": 20261013,
+            "variant_mean": 0.495
+          },
+          "llm_judge_rubric_raw": {
+            "baseline_mean": 0.455,
+            "bootstrap_samples": 10000,
+            "difference": -0.015,
+            "excluded_unscored_questions": 0,
+            "metric": "llm_judge_rubric_raw",
+            "n": 100,
+            "paired_bootstrap_95ci": [
+              -0.0625,
+              0.0325
+            ],
+            "scenario_cluster_bootstrap": {
+              "cluster_bootstrap_95ci": [
+                -0.07849044850498339,
+                0.0397196261682243
+              ],
+              "clusters": 19,
+              "difference": -0.015,
+              "questions": 100,
+              "resampling_unit": "scenario; all its questions move together",
+              "samples": 10000,
+              "seed": 20261013
+            },
+            "seed": 20261013,
+            "variant_mean": 0.44
+          }
+        }
+      },
+      "metrics_sha256": "6e69df4e48981472883a880f461c4b79302e9dfc6374bb52353764c601105960"
+    }
+  },
+  "failure_audits": {
+    "B0": {
+      "caveat": "Metric disagreement is not a confirmed judge error. Delivered images do not establish that all text/table hops were read. Manual case review is required.",
+      "counts": {
+        "gold_images_delivered_but_em_incorrect": 18,
+        "gold_visual_evidence_not_all_retrieved_or_delivered": 58,
+        "metric_disagreement_requires_manual_review": 39
+      },
+      "question_ids": {
+        "gold_images_delivered_but_em_incorrect": [
+          "AI_Robotics_Automation_Future_Tech:qa0000",
+          "Academic_Animal_Pet_Research_Life:qa0017",
+          "Architecture_Art_Culture_Exhibition_Technology:qa0035",
+          "Baking_Dessert_Daily_Life_Skill:qa0068",
+          "Dog_Behavior_Research_Academic_Life:qa0017",
+          "Fashion_Personal_Care_Lifestyle_Shopping:qa0018",
+          "Fashion_Personal_Care_Lifestyle_Shopping:qa0023",
+          "Global_Travel_Sustainable_Fashion_Design:qa0042",
+          "Home_Repair_Maintenance_Cleaning:qa0022",
+          "Music_Dance_Theater_Performance_Learning:qa0047",
+          "Parenting_Commuting_Hobbies_Travel_Gear:qa0009",
+          "Parenting_Commuting_Hobbies_Travel_Gear:qa0010",
+          "Parenting_Commuting_Hobbies_Travel_Gear:qa0042",
+          "Python_Botany_AI_Student_Life:qa0001",
+          "Python_Botany_AI_Student_Life:qa0066",
+          "Python_Botany_AI_Student_Life:qa0103",
+          "Real_Estate_Home_Decor_DIY_Lifestyle:qa0057",
+          "Technology_Ethics_Future_Society:qa0002"
+        ],
+        "gold_visual_evidence_not_all_retrieved_or_delivered": [
+          "AI_Robotics_Automation_Future_Tech:qa0032",
+          "Academic_Animal_Pet_Research_Life:qa0005",
+          "Academic_Animal_Pet_Research_Life:qa0066",
+          "Architecture_Art_Culture_Exhibition_Technology:qa0006",
+          "Baking_Dessert_Daily_Life_Skill:qa0014",
+          "Baking_Dessert_Daily_Life_Skill:qa0042",
+          "Baking_Dessert_Daily_Life_Skill:qa0055",
+          "Baking_Dessert_Daily_Life_Skill:qa0063",
+          "Baking_Dessert_Daily_Life_Skill:qa0065",
+          "Dog_Behavior_Research_Academic_Life:qa0000",
+          "Dog_Behavior_Research_Academic_Life:qa0002",
+          "Dog_Behavior_Research_Academic_Life:qa0012",
+          "Dog_Behavior_Research_Academic_Life:qa0033",
+          "Dog_Behavior_Research_Academic_Life:qa0040",
+          "Education_Career_Research_Lifestyle:qa0017",
+          "Education_Career_Research_Lifestyle:qa0073",
+          "Global_Travel_Cultural_Sightseeing:qa0025",
+          "Global_Travel_Cultural_Sightseeing:qa0039",
+          "Global_Travel_Cultural_Sightseeing:qa0040",
+          "Global_Travel_Cultural_Sightseeing:qa0046",
+          "Global_Travel_Sustainable_Fashion_Design:qa0012",
+          "Global_Travel_Sustainable_Fashion_Design:qa0045",
+          "Global_Travel_Sustainable_Fashion_Design:qa0060",
+          "Global_Travel_Sustainable_Fashion_Design:qa0065",
+          "Global_Travel_Sustainable_Fashion_Design:qa0068",
+          "Home_Health_Lifestyle_Product:qa0021",
+          "Landscape_Travel_Architecture_Nature:qa0014",
+          "Landscape_Travel_Architecture_Nature:qa0016",
+          "Landscape_Travel_Architecture_Nature:qa0020",
+          "Landscape_Travel_Architecture_Nature:qa0060",
+          "Landscape_Travel_Architecture_Nature:qa0071",
+          "Landscape_Travel_Architecture_Nature:qa0075",
+          "Nature_Economics_Programming_Student_Life:qa0004",
+          "Nature_Economics_Programming_Student_Life:qa0031",
+          "Nature_Economics_Programming_Student_Life:qa0038",
+          "Nature_Economics_Programming_Student_Life:qa0129",
+          "Parenting_Commuting_Hobbies_Travel_Gear:qa0062",
+          "Python_Botany_AI_Student_Life:qa0008",
+          "Python_Botany_AI_Student_Life:qa0017",
+          "Python_Botany_AI_Student_Life:qa0024",
+          "Python_Botany_AI_Student_Life:qa0034",
+          "Python_Botany_AI_Student_Life:qa0057",
+          "Python_Botany_AI_Student_Life:qa0091",
+          "Python_Botany_AI_Student_Life:qa0096",
+          "Python_Botany_AI_Student_Life:qa0102",
+          "Python_Botany_AI_Student_Life:qa0130",
+          "Python_Botany_AI_Student_Life:qa0143",
+          "Python_Botany_AI_Student_Life:qa0158",
+          "Python_Botany_AI_Student_Life:qa0174",
+          "Python_Botany_AI_Student_Life:qa0177",
+          "Python_Botany_AI_Student_Life:qa0186",
+          "Real_Estate_Home_Decor_DIY_Lifestyle:qa0028",
+          "Real_Estate_Home_Decor_DIY_Lifestyle:qa0037",
+          "Real_Estate_Home_Decor_DIY_Lifestyle:qa0038",
+          "Real_Estate_Home_Decor_DIY_Lifestyle:qa0070",
+          "Technology_Ethics_Future_Society:qa0010",
+          "Technology_Ethics_Future_Society:qa0033",
+          "Technology_Ethics_Future_Society:qa0063"
+        ],
+        "metric_disagreement_requires_manual_review": [
+          "AI_Robotics_Automation_Future_Tech:qa0000",
+          "Academic_Animal_Pet_Research_Life:qa0017",
+          "Academic_Animal_Pet_Research_Life:qa0066",
+          "Architecture_Art_Culture_Exhibition_Technology:qa0006",
+          "Architecture_Art_Culture_Exhibition_Technology:qa0035",
+          "Baking_Dessert_Daily_Life_Skill:qa0042",
+          "Baking_Dessert_Daily_Life_Skill:qa0068",
+          "Dog_Behavior_Research_Academic_Life:qa0012",
+          "Dog_Behavior_Research_Academic_Life:qa0017",
+          "Dog_Behavior_Research_Academic_Life:qa0040",
+          "Education_Career_Research_Lifestyle:qa0073",
+          "Fashion_Personal_Care_Lifestyle_Shopping:qa0018",
+          "Fashion_Personal_Care_Lifestyle_Shopping:qa0023",
+          "Global_Travel_Cultural_Sightseeing:qa0025",
+          "Global_Travel_Sustainable_Fashion_Design:qa0042",
+          "Global_Travel_Sustainable_Fashion_Design:qa0060",
+          "Global_Travel_Sustainable_Fashion_Design:qa0068",
+          "Home_Health_Lifestyle_Product:qa0021",
+          "Home_Repair_Maintenance_Cleaning:qa0022",
+          "Landscape_Travel_Architecture_Nature:qa0075",
+          "Music_Dance_Theater_Performance_Learning:qa0047",
+          "Nature_Economics_Programming_Student_Life:qa0004",
+          "Nature_Economics_Programming_Student_Life:qa0129",
+          "Parenting_Commuting_Hobbies_Travel_Gear:qa0009",
+          "Parenting_Commuting_Hobbies_Travel_Gear:qa0010",
+          "Parenting_Commuting_Hobbies_Travel_Gear:qa0042",
+          "Python_Botany_AI_Student_Life:qa0017",
+          "Python_Botany_AI_Student_Life:qa0024",
+          "Python_Botany_AI_Student_Life:qa0034",
+          "Python_Botany_AI_Student_Life:qa0066",
+          "Python_Botany_AI_Student_Life:qa0096",
+          "Python_Botany_AI_Student_Life:qa0102",
+          "Python_Botany_AI_Student_Life:qa0103",
+          "Python_Botany_AI_Student_Life:qa0130",
+          "Python_Botany_AI_Student_Life:qa0177",
+          "Real_Estate_Home_Decor_DIY_Lifestyle:qa0057",
+          "Technology_Ethics_Future_Society:qa0002",
+          "Technology_Ethics_Future_Society:qa0033",
+          "Technology_Ethics_Future_Society:qa0063"
+        ]
+      }
+    },
+    "C1": {
+      "caveat": "Metric disagreement is not a confirmed judge error. Delivered images do not establish that all text/table hops were read. Manual case review is required.",
+      "counts": {
+        "gold_images_delivered_but_em_incorrect": 20,
+        "gold_visual_evidence_not_all_retrieved_or_delivered": 61,
+        "metric_disagreement_requires_manual_review": 45
+      },
+      "question_ids": {
+        "gold_images_delivered_but_em_incorrect": [
+          "AI_Robotics_Automation_Future_Tech:qa0000",
+          "Architecture_Art_Culture_Exhibition_Technology:qa0035",
+          "Baking_Dessert_Daily_Life_Skill:qa0042",
+          "Education_Career_Research_Lifestyle:qa0096",
+          "Entrepreneurship_Blockchain_Economics_Logistics_Nature:qa0046",
+          "Fashion_Personal_Care_Lifestyle_Shopping:qa0018",
+          "Fashion_Personal_Care_Lifestyle_Shopping:qa0023",
+          "Global_Travel_Sustainable_Fashion_Design:qa0042",
+          "Home_Repair_Maintenance_Cleaning:qa0001",
+          "Music_Dance_Theater_Performance_Learning:qa0047",
+          "Nature_Economics_Programming_Student_Life:qa0093",
+          "Parenting_Commuting_Hobbies_Travel_Gear:qa0009",
+          "Parenting_Commuting_Hobbies_Travel_Gear:qa0010",
+          "Parenting_Commuting_Hobbies_Travel_Gear:qa0042",
+          "Python_Botany_AI_Student_Life:qa0001",
+          "Python_Botany_AI_Student_Life:qa0066",
+          "Python_Botany_AI_Student_Life:qa0103",
+          "Real_Estate_Home_Decor_DIY_Lifestyle:qa0057",
+          "Real_Estate_Home_Decor_DIY_Lifestyle:qa0070",
+          "Technology_Ethics_Future_Society:qa0002"
+        ],
+        "gold_visual_evidence_not_all_retrieved_or_delivered": [
+          "AI_Robotics_Automation_Future_Tech:qa0032",
+          "Academic_Animal_Pet_Research_Life:qa0005",
+          "Academic_Animal_Pet_Research_Life:qa0066",
+          "Architecture_Art_Culture_Exhibition_Technology:qa0006",
+          "Architecture_Art_Culture_Exhibition_Technology:qa0068",
+          "Architecture_Art_Culture_Exhibition_Technology:qa0069",
+          "Baking_Dessert_Daily_Life_Skill:qa0014",
+          "Baking_Dessert_Daily_Life_Skill:qa0055",
+          "Baking_Dessert_Daily_Life_Skill:qa0063",
+          "Baking_Dessert_Daily_Life_Skill:qa0065",
+          "Dog_Behavior_Research_Academic_Life:qa0000",
+          "Dog_Behavior_Research_Academic_Life:qa0002",
+          "Dog_Behavior_Research_Academic_Life:qa0012",
+          "Dog_Behavior_Research_Academic_Life:qa0017",
+          "Dog_Behavior_Research_Academic_Life:qa0033",
+          "Dog_Behavior_Research_Academic_Life:qa0040",
+          "Education_Career_Research_Lifestyle:qa0017",
+          "Education_Career_Research_Lifestyle:qa0073",
+          "Global_Travel_Cultural_Sightseeing:qa0025",
+          "Global_Travel_Cultural_Sightseeing:qa0039",
+          "Global_Travel_Cultural_Sightseeing:qa0040",
+          "Global_Travel_Cultural_Sightseeing:qa0046",
+          "Global_Travel_Sustainable_Fashion_Design:qa0012",
+          "Global_Travel_Sustainable_Fashion_Design:qa0045",
+          "Global_Travel_Sustainable_Fashion_Design:qa0060",
+          "Global_Travel_Sustainable_Fashion_Design:qa0065",
+          "Global_Travel_Sustainable_Fashion_Design:qa0068",
+          "Home_Health_Lifestyle_Product:qa0021",
+          "Home_Repair_Maintenance_Cleaning:qa0022",
+          "Landscape_Travel_Architecture_Nature:qa0014",
+          "Landscape_Travel_Architecture_Nature:qa0016",
+          "Landscape_Travel_Architecture_Nature:qa0020",
+          "Landscape_Travel_Architecture_Nature:qa0060",
+          "Landscape_Travel_Architecture_Nature:qa0071",
+          "Landscape_Travel_Architecture_Nature:qa0075",
+          "Nature_Economics_Programming_Student_Life:qa0004",
+          "Nature_Economics_Programming_Student_Life:qa0021",
+          "Nature_Economics_Programming_Student_Life:qa0031",
+          "Nature_Economics_Programming_Student_Life:qa0038",
+          "Nature_Economics_Programming_Student_Life:qa0129",
+          "Parenting_Commuting_Hobbies_Travel_Gear:qa0062",
+          "Python_Botany_AI_Student_Life:qa0008",
+          "Python_Botany_AI_Student_Life:qa0017",
+          "Python_Botany_AI_Student_Life:qa0024",
+          "Python_Botany_AI_Student_Life:qa0034",
+          "Python_Botany_AI_Student_Life:qa0057",
+          "Python_Botany_AI_Student_Life:qa0091",
+          "Python_Botany_AI_Student_Life:qa0096",
+          "Python_Botany_AI_Student_Life:qa0102",
+          "Python_Botany_AI_Student_Life:qa0130",
+          "Python_Botany_AI_Student_Life:qa0143",
+          "Python_Botany_AI_Student_Life:qa0158",
+          "Python_Botany_AI_Student_Life:qa0174",
+          "Python_Botany_AI_Student_Life:qa0177",
+          "Python_Botany_AI_Student_Life:qa0186",
+          "Real_Estate_Home_Decor_DIY_Lifestyle:qa0028",
+          "Real_Estate_Home_Decor_DIY_Lifestyle:qa0037",
+          "Real_Estate_Home_Decor_DIY_Lifestyle:qa0038",
+          "Technology_Ethics_Future_Society:qa0010",
+          "Technology_Ethics_Future_Society:qa0033",
+          "Technology_Ethics_Future_Society:qa0063"
+        ],
+        "metric_disagreement_requires_manual_review": [
+          "AI_Robotics_Automation_Future_Tech:qa0000",
+          "Academic_Animal_Pet_Research_Life:qa0066",
+          "Architecture_Art_Culture_Exhibition_Technology:qa0006",
+          "Architecture_Art_Culture_Exhibition_Technology:qa0035",
+          "Architecture_Art_Culture_Exhibition_Technology:qa0068",
+          "Baking_Dessert_Daily_Life_Skill:qa0042",
+          "Dog_Behavior_Research_Academic_Life:qa0012",
+          "Dog_Behavior_Research_Academic_Life:qa0017",
+          "Dog_Behavior_Research_Academic_Life:qa0040",
+          "Education_Career_Research_Lifestyle:qa0073",
+          "Education_Career_Research_Lifestyle:qa0096",
+          "Entrepreneurship_Blockchain_Economics_Logistics_Nature:qa0046",
+          "Fashion_Personal_Care_Lifestyle_Shopping:qa0018",
+          "Fashion_Personal_Care_Lifestyle_Shopping:qa0023",
+          "Global_Travel_Cultural_Sightseeing:qa0025",
+          "Global_Travel_Sustainable_Fashion_Design:qa0042",
+          "Global_Travel_Sustainable_Fashion_Design:qa0060",
+          "Global_Travel_Sustainable_Fashion_Design:qa0068",
+          "Home_Health_Lifestyle_Product:qa0021",
+          "Home_Repair_Maintenance_Cleaning:qa0001",
+          "Home_Repair_Maintenance_Cleaning:qa0022",
+          "Landscape_Travel_Architecture_Nature:qa0075",
+          "Music_Dance_Theater_Performance_Learning:qa0047",
+          "Nature_Economics_Programming_Student_Life:qa0004",
+          "Nature_Economics_Programming_Student_Life:qa0021",
+          "Nature_Economics_Programming_Student_Life:qa0031",
+          "Nature_Economics_Programming_Student_Life:qa0093",
+          "Nature_Economics_Programming_Student_Life:qa0129",
+          "Parenting_Commuting_Hobbies_Travel_Gear:qa0009",
+          "Parenting_Commuting_Hobbies_Travel_Gear:qa0010",
+          "Parenting_Commuting_Hobbies_Travel_Gear:qa0042",
+          "Python_Botany_AI_Student_Life:qa0017",
+          "Python_Botany_AI_Student_Life:qa0024",
+          "Python_Botany_AI_Student_Life:qa0034",
+          "Python_Botany_AI_Student_Life:qa0066",
+          "Python_Botany_AI_Student_Life:qa0096",
+          "Python_Botany_AI_Student_Life:qa0102",
+          "Python_Botany_AI_Student_Life:qa0103",
+          "Python_Botany_AI_Student_Life:qa0130",
+          "Python_Botany_AI_Student_Life:qa0158",
+          "Python_Botany_AI_Student_Life:qa0177",
+          "Real_Estate_Home_Decor_DIY_Lifestyle:qa0057",
+          "Technology_Ethics_Future_Society:qa0002",
+          "Technology_Ethics_Future_Society:qa0033",
+          "Technology_Ethics_Future_Society:qa0063"
+        ]
+      }
+    },
+    "G1": {
+      "caveat": "Metric disagreement is not a confirmed judge error. Delivered images do not establish that all text/table hops were read. Manual case review is required.",
+      "counts": {
+        "gold_images_delivered_but_em_incorrect": 24,
+        "gold_visual_evidence_not_all_retrieved_or_delivered": 54,
+        "metric_disagreement_requires_manual_review": 40
+      },
+      "question_ids": {
+        "gold_images_delivered_but_em_incorrect": [
+          "AI_Robotics_Automation_Future_Tech:qa0000",
+          "AI_Robotics_Automation_Future_Tech:qa0051",
+          "Architecture_Art_Culture_Exhibition_Technology:qa0035",
+          "Architecture_Art_Culture_Exhibition_Technology:qa0069",
+          "Baking_Dessert_Daily_Life_Skill:qa0068",
+          "Dog_Behavior_Research_Academic_Life:qa0017",
+          "Education_Career_Research_Lifestyle:qa0073",
+          "Education_Career_Research_Lifestyle:qa0096",
+          "Entrepreneurship_Blockchain_Economics_Logistics_Nature:qa0046",
+          "Fashion_Personal_Care_Lifestyle_Shopping:qa0018",
+          "Fashion_Personal_Care_Lifestyle_Shopping:qa0023",
+          "Global_Travel_Cultural_Sightseeing:qa0025",
+          "Home_Repair_Maintenance_Cleaning:qa0022",
+          "Music_Dance_Theater_Performance_Learning:qa0047",
+          "Nature_Economics_Programming_Student_Life:qa0021",
+          "Parenting_Commuting_Hobbies_Travel_Gear:qa0009",
+          "Parenting_Commuting_Hobbies_Travel_Gear:qa0010",
+          "Parenting_Commuting_Hobbies_Travel_Gear:qa0042",
+          "Python_Botany_AI_Student_Life:qa0001",
+          "Python_Botany_AI_Student_Life:qa0066",
+          "Python_Botany_AI_Student_Life:qa0103",
+          "Real_Estate_Home_Decor_DIY_Lifestyle:qa0057",
+          "Technology_Ethics_Future_Society:qa0002",
+          "Technology_Ethics_Future_Society:qa0033"
+        ],
+        "gold_visual_evidence_not_all_retrieved_or_delivered": [
+          "AI_Robotics_Automation_Future_Tech:qa0032",
+          "Academic_Animal_Pet_Research_Life:qa0005",
+          "Academic_Animal_Pet_Research_Life:qa0066",
+          "Architecture_Art_Culture_Exhibition_Technology:qa0006",
+          "Architecture_Art_Culture_Exhibition_Technology:qa0068",
+          "Baking_Dessert_Daily_Life_Skill:qa0014",
+          "Baking_Dessert_Daily_Life_Skill:qa0055",
+          "Baking_Dessert_Daily_Life_Skill:qa0063",
+          "Baking_Dessert_Daily_Life_Skill:qa0065",
+          "Dog_Behavior_Research_Academic_Life:qa0000",
+          "Dog_Behavior_Research_Academic_Life:qa0002",
+          "Dog_Behavior_Research_Academic_Life:qa0012",
+          "Dog_Behavior_Research_Academic_Life:qa0033",
+          "Dog_Behavior_Research_Academic_Life:qa0040",
+          "Education_Career_Research_Lifestyle:qa0017",
+          "Global_Travel_Cultural_Sightseeing:qa0039",
+          "Global_Travel_Cultural_Sightseeing:qa0040",
+          "Global_Travel_Cultural_Sightseeing:qa0046",
+          "Global_Travel_Sustainable_Fashion_Design:qa0012",
+          "Global_Travel_Sustainable_Fashion_Design:qa0045",
+          "Global_Travel_Sustainable_Fashion_Design:qa0065",
+          "Global_Travel_Sustainable_Fashion_Design:qa0068",
+          "Home_Health_Lifestyle_Product:qa0021",
+          "Landscape_Travel_Architecture_Nature:qa0014",
+          "Landscape_Travel_Architecture_Nature:qa0016",
+          "Landscape_Travel_Architecture_Nature:qa0020",
+          "Landscape_Travel_Architecture_Nature:qa0060",
+          "Landscape_Travel_Architecture_Nature:qa0071",
+          "Landscape_Travel_Architecture_Nature:qa0075",
+          "Nature_Economics_Programming_Student_Life:qa0004",
+          "Nature_Economics_Programming_Student_Life:qa0031",
+          "Nature_Economics_Programming_Student_Life:qa0038",
+          "Nature_Economics_Programming_Student_Life:qa0129",
+          "Parenting_Commuting_Hobbies_Travel_Gear:qa0062",
+          "Python_Botany_AI_Student_Life:qa0008",
+          "Python_Botany_AI_Student_Life:qa0017",
+          "Python_Botany_AI_Student_Life:qa0024",
+          "Python_Botany_AI_Student_Life:qa0034",
+          "Python_Botany_AI_Student_Life:qa0057",
+          "Python_Botany_AI_Student_Life:qa0091",
+          "Python_Botany_AI_Student_Life:qa0096",
+          "Python_Botany_AI_Student_Life:qa0102",
+          "Python_Botany_AI_Student_Life:qa0130",
+          "Python_Botany_AI_Student_Life:qa0143",
+          "Python_Botany_AI_Student_Life:qa0158",
+          "Python_Botany_AI_Student_Life:qa0174",
+          "Python_Botany_AI_Student_Life:qa0177",
+          "Python_Botany_AI_Student_Life:qa0186",
+          "Real_Estate_Home_Decor_DIY_Lifestyle:qa0028",
+          "Real_Estate_Home_Decor_DIY_Lifestyle:qa0037",
+          "Real_Estate_Home_Decor_DIY_Lifestyle:qa0038",
+          "Real_Estate_Home_Decor_DIY_Lifestyle:qa0070",
+          "Technology_Ethics_Future_Society:qa0010",
+          "Technology_Ethics_Future_Society:qa0063"
+        ],
+        "metric_disagreement_requires_manual_review": [
+          "AI_Robotics_Automation_Future_Tech:qa0000",
+          "AI_Robotics_Automation_Future_Tech:qa0051",
+          "Academic_Animal_Pet_Research_Life:qa0066",
+          "Architecture_Art_Culture_Exhibition_Technology:qa0006",
+          "Architecture_Art_Culture_Exhibition_Technology:qa0035",
+          "Architecture_Art_Culture_Exhibition_Technology:qa0068",
+          "Baking_Dessert_Daily_Life_Skill:qa0063",
+          "Baking_Dessert_Daily_Life_Skill:qa0068",
+          "Dog_Behavior_Research_Academic_Life:qa0012",
+          "Dog_Behavior_Research_Academic_Life:qa0017",
+          "Education_Career_Research_Lifestyle:qa0073",
+          "Education_Career_Research_Lifestyle:qa0096",
+          "Entrepreneurship_Blockchain_Economics_Logistics_Nature:qa0046",
+          "Fashion_Personal_Care_Lifestyle_Shopping:qa0018",
+          "Fashion_Personal_Care_Lifestyle_Shopping:qa0023",
+          "Global_Travel_Cultural_Sightseeing:qa0025",
+          "Global_Travel_Sustainable_Fashion_Design:qa0068",
+          "Home_Health_Lifestyle_Product:qa0021",
+          "Home_Repair_Maintenance_Cleaning:qa0022",
+          "Landscape_Travel_Architecture_Nature:qa0075",
+          "Music_Dance_Theater_Performance_Learning:qa0047",
+          "Nature_Economics_Programming_Student_Life:qa0004",
+          "Nature_Economics_Programming_Student_Life:qa0021",
+          "Nature_Economics_Programming_Student_Life:qa0031",
+          "Parenting_Commuting_Hobbies_Travel_Gear:qa0009",
+          "Parenting_Commuting_Hobbies_Travel_Gear:qa0010",
+          "Parenting_Commuting_Hobbies_Travel_Gear:qa0042",
+          "Python_Botany_AI_Student_Life:qa0001",
+          "Python_Botany_AI_Student_Life:qa0024",
+          "Python_Botany_AI_Student_Life:qa0034",
+          "Python_Botany_AI_Student_Life:qa0066",
+          "Python_Botany_AI_Student_Life:qa0096",
+          "Python_Botany_AI_Student_Life:qa0102",
+          "Python_Botany_AI_Student_Life:qa0103",
+          "Python_Botany_AI_Student_Life:qa0130",
+          "Python_Botany_AI_Student_Life:qa0177",
+          "Real_Estate_Home_Decor_DIY_Lifestyle:qa0057",
+          "Technology_Ethics_Future_Society:qa0002",
+          "Technology_Ethics_Future_Society:qa0033",
+          "Technology_Ethics_Future_Society:qa0063"
+        ]
+      }
+    }
+  },
+  "gold_sha256": "d9a677c12fe258ac30bd3c1d89457abcfd3c69f22c055552b500dbb412d676da",
+  "inference_limits": "Nominal unadjusted 95% intervals and exact McNemar p-values; subgroup/multiple-endpoint findings are exploratory. A 50-question sample does not establish benchmark-wide performance."
+}

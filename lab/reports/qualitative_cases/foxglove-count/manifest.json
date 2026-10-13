@@ -2,16 +2,19 @@
   "schema_version": 1,
   "qid": "Baking_Dessert_Daily_Life_Skill:qa0042",
   "benchmark": "Mem-Gallery",
-  "split": "additional50",
+  "split": "search-linked100",
   "question_image_originally_present": false,
   "question_image_provided": false,
+  "question_caption_originally_present": false,
+  "question_caption_provided": false,
+  "image_delivery_policy": "search-linked",
   "prediction_files_byte_identical_to_recorded_runs": true,
   "purpose": "Self-contained inspection bundle for this selected qualitative case; includes recorded candidates/reads, original source rows/pages, captions and images; no inference replay or full benchmark/index bundle.",
   "files": [
     {
       "path": "README.md",
-      "bytes": 3270,
-      "sha256": "70a76cfd738eaf9a2f30cd81696bc75ffe65d5e39c681aa825d7f83d6e0733d0"
+      "bytes": 2959,
+      "sha256": "3b97a2e53760fbce542fb294d73931c9932d42e55606452cdc60361f55455e18"
     },
     {
       "path": "caption_inventory.json",
@@ -75,48 +78,48 @@
     },
     {
       "path": "metrics/B0.json",
-      "bytes": 755,
-      "sha256": "e306acb5ab797d6310bbde9de062925f5bac2f155c0fc18958f3e004b4011100"
+      "bytes": 752,
+      "sha256": "174609f4b9ed70ef50300c344562274a91e5c8b115cc9f01579f5e3904dfb62d"
     },
     {
       "path": "metrics/C1.json",
-      "bytes": 784,
-      "sha256": "9e4eb446ddb07b73a3b6d58ca9737396664c1cf1a79bd381cd007fafa3eb32ba"
+      "bytes": 752,
+      "sha256": "f566f2baea2e9e087e4a89dec8b808c019a23ef6767b780b567512a02afbdb78"
     },
     {
       "path": "metrics/G1.json",
-      "bytes": 783,
-      "sha256": "0f1dc07938a27c8858dcb379e40bafc5c3a7638cf9bc17a25f42f49d687f664d"
+      "bytes": 781,
+      "sha256": "5c0772e6c20d41add2b3acc264294cd20c60d85de671e823f496a50f3ef892e7"
     },
     {
       "path": "predictions/B0.json",
-      "bytes": 13280,
-      "sha256": "53ceb5ac962d87e0ba232ebb8f4636df2dc04ee2a0fad19a79fc949a8a239b9f"
+      "bytes": 12998,
+      "sha256": "cb00827b764260c2e195e991d3503dce868b12f1fa0b42a5a1ac50284a291328"
     },
     {
       "path": "predictions/B0_run_manifest.json",
-      "bytes": 3497,
-      "sha256": "214740be554c73081d8a6a3ed31e92f29ddcf892aecf6ce012a157884b5963b6"
+      "bytes": 6089,
+      "sha256": "e6a379e7e27ecc5c7ac472251156edeeb50226cc5bf2bf25ae4b71c79a63c1ec"
     },
     {
       "path": "predictions/C1.json",
-      "bytes": 15472,
-      "sha256": "4174a6fc4abda172fdb151df07de1edba726734dd5bc439bd18a16b812aba4db"
+      "bytes": 16344,
+      "sha256": "a523d4f7c7abe566da4d1e265374d26d852582ccd27fbf3ab7f3fca8e89dacea"
     },
     {
       "path": "predictions/C1_run_manifest.json",
-      "bytes": 3498,
-      "sha256": "291472bbfebf9694626d5affd490b16666d6b9938e8e1a649859441af8459d02"
+      "bytes": 6090,
+      "sha256": "2729bd02b45db39e250a7ad528fa47c1a5ce3abec37cb2436952781b6a803a81"
     },
     {
       "path": "predictions/G1.json",
-      "bytes": 15238,
-      "sha256": "9523a3e14785420ea79576d5150dac55db93381a8f16f065c9b2b401c586a675"
+      "bytes": 15035,
+      "sha256": "545d630f2e082b5c1d83289ca3a688781896537d4db8909e4773ed68f70ad0a2"
     },
     {
       "path": "predictions/G1_run_manifest.json",
-      "bytes": 3585,
-      "sha256": "997aac0f07c4426ba78d69e7f20c918ad7d7ce1200ced502d8f90b91ef2f0d82"
+      "bytes": 6177,
+      "sha256": "c532b7fcc806ef16613a618515e569b6c66f014ff1c422199114270a62827e79"
     },
     {
       "path": "raw/chunks.json",
@@ -153,9 +156,5 @@
       "bytes": 2513,
       "sha256": "6427928182cecc56b99d4f632c047edc1920fa83e9f99299e34719b6ea59f645"
     }
-  ],
-  "question_caption_originally_present": false,
-  "question_caption_provided": false,
-  "question_input_policy": "Original question text only; question image and its caption omitted; corpus image captions retained.",
-  "image_delivery_policy": "agent-read"
+  ]
 }

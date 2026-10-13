@@ -1,33 +1,31 @@
 {
   "stage": "comparison_report",
-  "status": "search_linked100_ready",
+  "status": "search_linked100_complete",
   "goal": "Compare Qwen text, Google text-only, and Google-only multimodal retrieval with identical VLM, tools and 8 A-RAG agent iterations, no independent Reader-call limit; Mem-Gallery text queries only; no oracle condition",
   "plan": "docs/EXPERIMENT_PLAN.md",
   "work_root": "/content/local_fast/lsdrag-work",
   "arag_revision": "a44de6b2216bf6791979c4b6ac4ae106212fa1a6",
   "reader_model_finalized": true,
   "evaluation_manifest_frozen": true,
-  "pending_checks": [
-    "Benchmark automatic image delivery on new questions only; keep previous measured-policy results separate."
-  ],
+  "pending_checks": [],
   "reader_candidate": "google/gemma-4-E4B-it",
   "model_weights_downloaded": true,
   "embedding_smoke_passed": [
     "google/embeddinggemma-2",
     "Qwen/Qwen3-Embedding-4B"
   ],
-  "selection_manifest": "lab/registry/selection_final50.json",
+  "selection_manifest": "lab/registry/search_linked100_selection.json",
   "reader_smoke_passed": true,
   "image_transport": "tool result then user image",
   "standard_parser_smoke_passed": true,
   "preflight_backup": "lab/reports/preflight_backup.json",
-  "implementation_status": "28 tests passed; all additional 300 predictions scored and backed up; self-contained qualitative bundles validated",
+  "implementation_status": "42 software tests passed; all 600 search-linked100 predictions scored and backed up; four current qualitative bundles validated",
   "approved_evaluation_scope": {
-    "m3docvqa_questions": 50,
-    "mem_gallery_questions": 50,
+    "m3docvqa_questions": 100,
+    "mem_gallery_questions": 100,
     "mem_gallery_strata": {
-      "visual_centric_search": 25,
-      "visual_centric_reasoning": 25
+      "visual_centric_search": 50,
+      "visual_centric_reasoning": 50
     },
     "mem_gallery_arms": [
       "B0",
@@ -215,8 +213,8 @@
     "output_root": "/content/local_fast/lsdrag-work/results/three_arm_additional50",
     "new_document_count": 108,
     "reused_document_count": 180,
-    "summary": "lab/reports/INTERIM_REPORT.md",
-    "qualitative_cases": "lab/reports/qualitative_cases/README.md",
+    "summary": "lab/reports/AGENT_READ_REPORT.md",
+    "qualitative_cases": "lab/reports/legacy_agent_read_cases/README.md",
     "image_mapping_scored_n": {
       "m3docvqa": 37,
       "memgallery": 50
@@ -237,7 +235,7 @@
   },
   "completed_unique_questions": {
     "m3docvqa": 100,
-    "memgallery": 60
+    "memgallery": 100
   },
   "additional_prepared_backup": "/content/local_fast/lsdrag-work/recovery/additional50-prepared-backup.json",
   "image_delivery_revision": {
@@ -250,11 +248,11 @@
     ],
     "question_attached_image_and_caption": "omitted; retrieved evidence captions and images supplied",
     "tests": "42 passed; synthetic mocked-reader only",
-    "benchmark_measurement": "not started; no completed question solved again",
+    "benchmark_measurement": "complete: 100 questions per benchmark, 3 arms, 600 successful solves; no returned-image delivery omissions",
     "implementation_doc": "docs/IMPLEMENTING_GOOGLE_MULTIMODAL_EMBEDDING.md"
   },
   "search_linked100": {
-    "status": "prepared_before_outcomes",
+    "status": "complete_scored_backed_up_reported",
     "questions_per_arm": {
       "m3docvqa": 100,
       "memgallery": 100
@@ -263,6 +261,27 @@
     "question_image_and_caption": "omitted; retrieved evidence captions and images supplied",
     "selection": "lab/registry/search_linked100_selection.json",
     "output_root": "/content/local_fast/lsdrag-work/results/three_arm_search_linked100",
-    "user_authorized_remeasurement": true
+    "user_authorized_remeasurement": true,
+    "predictions": 600,
+    "report": "lab/reports/INTERIM_REPORT.md",
+    "reader_server": "stopped after scoring and backup",
+    "qualitative_cases": "lab/reports/qualitative_cases/README.md"
+  },
+  "latest_report": "lab/reports/INTERIM_REPORT.md",
+  "previous_approved_evaluation_scope": {
+    "m3docvqa_questions": 100,
+    "mem_gallery_questions": 100,
+    "mem_gallery_strata": {
+      "visual_centric_search": 50,
+      "visual_centric_reasoning": 50
+    },
+    "mem_gallery_arms": [
+      "B0",
+      "C1",
+      "G1"
+    ],
+    "oracle_evidence_reader_diagnostic": false,
+    "execution_inputs_updated": true,
+    "m3docvqa_input_manifest_updated": true
   }
 }

@@ -1,0 +1,270 @@
+[
+  {
+    "bbox": [
+      0.598,
+      0.245,
+      0.968,
+      0.437
+    ],
+    "chunk_id": "adf9637a449938d75d8d4a0c69edd4bd:p0:b13:s0",
+    "document_id": "adf9637a449938d75d8d4a0c69edd4bd",
+    "document_ids": [
+      "adf9637a449938d75d8d4a0c69edd4bd"
+    ],
+    "figure_ids": [
+      "adf9637a449938d75d8d4a0c69edd4bd:p0:f13"
+    ],
+    "id": "adf9637a449938d75d8d4a0c69edd4bd:p0:b13:s0",
+    "kind": "image_caption",
+    "next_chunk_id": "adf9637a449938d75d8d4a0c69edd4bd:p0:b14:s0",
+    "oversized_unit": false,
+    "page_index": 0,
+    "previous_chunk_id": "adf9637a449938d75d8d4a0c69edd4bd:p0:b12:s0",
+    "source_block_index": 13,
+    "text": "Aria (manga)\n[No caption. Nearby document text follows.]\n[Read](https://en.wikipedia.org/wiki/Aria_%28manga%29) [Edit](https://en.wikipedia.org/w/index.php?title=Aria_%28manga%29&action=edit) [View history](https://en.wikipedia.org/w/index.php?title=Aria_%28manga%29&action=history) Cover of Aria volume 1 as published by [Mag Garden](https://en.wikipedia.org/wiki/Mag_Garden), featuring Akari Mizunashi **Genre** [Fantasy](https://en.wikipedia.org/wiki/Fantasy),<sup>[1]</sup> [iyashikei](https://en.wikipedia.org/wiki/Iyashikei),<sup>[2][3]</sup> [science fiction](https://en.wikipedia.org/wiki/Science_fiction)<sup>[4]</sup>",
+    "title": "Aria (manga)",
+    "url": "https://en.wikipedia.org/wiki/Aria_(manga)"
+  },
+  {
+    "bbox": [
+      0.026,
+      0.133,
+      0.13,
+      0.151
+    ],
+    "chunk_id": "adf9637a449938d75d8d4a0c69edd4bd:p0:b3:s0",
+    "document_id": "adf9637a449938d75d8d4a0c69edd4bd",
+    "document_ids": [
+      "adf9637a449938d75d8d4a0c69edd4bd"
+    ],
+    "figure_ids": [],
+    "id": "adf9637a449938d75d8d4a0c69edd4bd:p0:b3:s0",
+    "kind": "text",
+    "next_chunk_id": "adf9637a449938d75d8d4a0c69edd4bd:p0:b4:s0",
+    "oversized_unit": false,
+    "page_index": 0,
+    "previous_chunk_id": "adf9637a449938d75d8d4a0c69edd4bd:p0:b2:s0",
+    "source_block_index": 3,
+    "text": "Aria (manga)\n[Article](https://en.wikipedia.org/wiki/Aria_%28manga%29) [Talk](https://en.wikipedia.org/wiki/Talk:Aria_%28manga%29)",
+    "title": "Aria (manga)",
+    "url": "https://en.wikipedia.org/wiki/Aria_(manga)"
+  },
+  {
+    "bbox": [
+      0.024,
+      0.504,
+      0.168,
+      0.529
+    ],
+    "chunk_id": "adf9637a449938d75d8d4a0c69edd4bd:p10:b3:s0",
+    "document_id": "adf9637a449938d75d8d4a0c69edd4bd",
+    "document_ids": [
+      "adf9637a449938d75d8d4a0c69edd4bd"
+    ],
+    "figure_ids": [],
+    "id": "adf9637a449938d75d8d4a0c69edd4bd:p10:b3:s0",
+    "kind": "text",
+    "next_chunk_id": "adf9637a449938d75d8d4a0c69edd4bd:p10:b4:s0",
+    "oversized_unit": false,
+    "page_index": 10,
+    "previous_chunk_id": "adf9637a449938d75d8d4a0c69edd4bd:p10:b2:s0",
+    "source_block_index": 3,
+    "text": "Aria (manga)\nMedia [\\[ edit \\]](https://en.wikipedia.org/w/index.php?title=Aria_%28manga%29&action=edit&section=11)",
+    "title": "Aria (manga)",
+    "url": "https://en.wikipedia.org/wiki/Aria_(manga)"
+  },
+  {
+    "bbox": [
+      0.801,
+      0.365,
+      0.967,
+      0.561
+    ],
+    "chunk_id": "adf9637a449938d75d8d4a0c69edd4bd:p15:b10:s0",
+    "document_id": "adf9637a449938d75d8d4a0c69edd4bd",
+    "document_ids": [
+      "adf9637a449938d75d8d4a0c69edd4bd"
+    ],
+    "figure_ids": [
+      "adf9637a449938d75d8d4a0c69edd4bd:p15:f10"
+    ],
+    "id": "adf9637a449938d75d8d4a0c69edd4bd:p15:b10:s0",
+    "kind": "image_caption",
+    "next_chunk_id": "adf9637a449938d75d8d4a0c69edd4bd:p15:b11:s0",
+    "oversized_unit": false,
+    "page_index": 15,
+    "previous_chunk_id": "adf9637a449938d75d8d4a0c69edd4bd:p15:b9:s0",
+    "source_block_index": 10,
+    "text": "Aria (manga)\nAkari and Aika lost inside the Never-ending Waterways (from Aqua volume 1)",
+    "title": "Aria (manga)",
+    "url": "https://en.wikipedia.org/wiki/Aria_(manga)"
+  },
+  {
+    "bbox": [
+      0.062,
+      0.627,
+      0.962,
+      0.711
+    ],
+    "chunk_id": "adf9637a449938d75d8d4a0c69edd4bd:p16:b10:s0",
+    "document_id": "adf9637a449938d75d8d4a0c69edd4bd",
+    "document_ids": [
+      "adf9637a449938d75d8d4a0c69edd4bd"
+    ],
+    "figure_ids": [],
+    "id": "adf9637a449938d75d8d4a0c69edd4bd:p16:b10:s0",
+    "kind": "text",
+    "next_chunk_id": "adf9637a449938d75d8d4a0c69edd4bd:p16:b11:s0",
+    "oversized_unit": false,
+    "page_index": 16,
+    "previous_chunk_id": "adf9637a449938d75d8d4a0c69edd4bd:p16:b9:s0",
+    "source_block_index": 10,
+    "text": "Aria (manga)\n9. ^ Høgset, Stig. [\"Aria the Origination\"](http://www.themanime.org/viewreview.php?id=1060) . [T.H.E.M. Anime Reviews](https://en.wikipedia.org/wiki/THEM_Anime_Reviews). [Archived](https://web.archive.org/web/20081217155330/http://www.themanime.org/viewreview.php?id=1060) from the original on 17 December 2008. Retrieved 4 January 2009. \"Much like when I finished the Yokohama Kaidashi Kikou manga, the ending of Aria fills me with a certain sense of melancholia as much as happiness over having been given the chance to view it in its entirety.\"",
+    "title": "Aria (manga)",
+    "url": "https://en.wikipedia.org/wiki/Aria_(manga)"
+  },
+  {
+    "bbox": [
+      0.053,
+      0.208,
+      0.971,
+      0.292
+    ],
+    "chunk_id": "adf9637a449938d75d8d4a0c69edd4bd:p20:b5:s0",
+    "document_id": "adf9637a449938d75d8d4a0c69edd4bd",
+    "document_ids": [
+      "adf9637a449938d75d8d4a0c69edd4bd"
+    ],
+    "figure_ids": [],
+    "id": "adf9637a449938d75d8d4a0c69edd4bd:p20:b5:s0",
+    "kind": "text",
+    "next_chunk_id": "adf9637a449938d75d8d4a0c69edd4bd:p20:b6:s0",
+    "oversized_unit": false,
+    "page_index": 20,
+    "previous_chunk_id": "adf9637a449938d75d8d4a0c69edd4bd:p20:b4:s0",
+    "source_block_index": 5,
+    "text": "Aria (manga)\n76. ^ [Jun'ichi Satō](https://en.wikipedia.org/wiki/Jun'ichi_Sat%C5%8D) (Director) (2008). \"Venice, I'm Sorry\", part 6 (Aria The Animation DVD Collection (DVD 4/4)). USA: [Nozomi Entertainment](https://en.wikipedia.org/wiki/Nozomi_Entertainment). Event occurs at 12:30. \"We were just sailing along and a bottle came floating our way. All the sudden, there's this loud noise behind us. When we looked back, the bottle was flying through the air and landed on the ground.\"",
+    "title": "Aria (manga)",
+    "url": "https://en.wikipedia.org/wiki/Aria_(manga)"
+  },
+  {
+    "bbox": [
+      0.043,
+      0.001,
+      0.972,
+      0.064
+    ],
+    "chunk_id": "adf9637a449938d75d8d4a0c69edd4bd:p27:b0:s0",
+    "document_id": "adf9637a449938d75d8d4a0c69edd4bd",
+    "document_ids": [
+      "adf9637a449938d75d8d4a0c69edd4bd"
+    ],
+    "figure_ids": [],
+    "id": "adf9637a449938d75d8d4a0c69edd4bd:p27:b0:s0",
+    "kind": "text",
+    "next_chunk_id": "adf9637a449938d75d8d4a0c69edd4bd:p27:b1:s0",
+    "oversized_unit": false,
+    "page_index": 27,
+    "previous_chunk_id": "adf9637a449938d75d8d4a0c69edd4bd:p26:b18:s0",
+    "source_block_index": 0,
+    "text": "Aria (manga)\n218. ^ a b c [Friedman, Erica](https://en.wikipedia.org/wiki/Yuricon) (8 February 2005). [\"Yuri Manga: Aria, Volumes 1,2 and 3\"](http://okazu.yuricon.com/2005/02/08/yuri-manga-aria-volumes-12-and-3-english/) . Ozaku. [Yuricon](https://en.wikipedia.org/wiki/Yuricon). \"What really makes Aria work, though, is the sense of whimsy that fills the pages ... very chapter is filled with some moment of life that was totally worth having been there for.\"",
+    "title": "Aria (manga)",
+    "url": "https://en.wikipedia.org/wiki/Aria_(manga)"
+  },
+  {
+    "bbox": [
+      0.744,
+      0.792,
+      0.945,
+      0.844
+    ],
+    "chunk_id": "adf9637a449938d75d8d4a0c69edd4bd:p28:b13:s0",
+    "document_id": "adf9637a449938d75d8d4a0c69edd4bd",
+    "document_ids": [
+      "adf9637a449938d75d8d4a0c69edd4bd"
+    ],
+    "figure_ids": [],
+    "id": "adf9637a449938d75d8d4a0c69edd4bd:p28:b13:s0",
+    "kind": "text",
+    "next_chunk_id": "adf9637a449938d75d8d4a0c69edd4bd:p28:b14:s0",
+    "oversized_unit": false,
+    "page_index": 28,
+    "previous_chunk_id": "adf9637a449938d75d8d4a0c69edd4bd:p28:b12:s0",
+    "source_block_index": 13,
+    "text": "Aria (manga)\nWikimedia Commons has media related to [**Aria (manga)**](https://commons.wikimedia.org/wiki/Category:Aria%20%28manga%29).",
+    "title": "Aria (manga)",
+    "url": "https://en.wikipedia.org/wiki/Aria_(manga)"
+  },
+  {
+    "bbox": [
+      0.025,
+      0.066,
+      0.251,
+      0.088
+    ],
+    "chunk_id": "adf9637a449938d75d8d4a0c69edd4bd:p2:b1:s0",
+    "document_id": "adf9637a449938d75d8d4a0c69edd4bd",
+    "document_ids": [
+      "adf9637a449938d75d8d4a0c69edd4bd"
+    ],
+    "figure_ids": [],
+    "id": "adf9637a449938d75d8d4a0c69edd4bd:p2:b1:s0",
+    "kind": "text",
+    "next_chunk_id": "adf9637a449938d75d8d4a0c69edd4bd:p2:b2:s0",
+    "oversized_unit": false,
+    "page_index": 2,
+    "previous_chunk_id": "adf9637a449938d75d8d4a0c69edd4bd:p2:b0:s0",
+    "source_block_index": 1,
+    "text": "Aria (manga)\nAria Company [\\[ edit \\]](https://en.wikipedia.org/w/index.php?title=Aria_%28manga%29&action=edit&section=3)",
+    "title": "Aria (manga)",
+    "url": "https://en.wikipedia.org/wiki/Aria_(manga)"
+  },
+  {
+    "bbox": [
+      0.054,
+      0.896,
+      0.962,
+      0.965
+    ],
+    "chunk_id": "adf9637a449938d75d8d4a0c69edd4bd:p6:b16:s0",
+    "document_id": "adf9637a449938d75d8d4a0c69edd4bd",
+    "document_ids": [
+      "adf9637a449938d75d8d4a0c69edd4bd"
+    ],
+    "figure_ids": [],
+    "id": "adf9637a449938d75d8d4a0c69edd4bd:p6:b16:s0",
+    "kind": "text",
+    "next_chunk_id": "adf9637a449938d75d8d4a0c69edd4bd:p6:b17:s0",
+    "oversized_unit": false,
+    "page_index": 6,
+    "previous_chunk_id": "adf9637a449938d75d8d4a0c69edd4bd:p6:b15:s0",
+    "source_block_index": 16,
+    "text": "Aria (manga)\nPresident and namesake of Aria Company, and an Aqua cat. Aria is large and fat, massing 10 kg.<sup>[47]</sup> He is attracted to President Hime, who does not appear to reciprocate his sentiments; his pursuit of her is a common [comic relief](https://en.wikipedia.org/wiki/Comic_relief) scene.",
+    "title": "Aria (manga)",
+    "url": "https://en.wikipedia.org/wiki/Aria_(manga)"
+  },
+  {
+    "bbox": [
+      0.053,
+      0.86,
+      0.965,
+      0.905
+    ],
+    "chunk_id": "adf9637a449938d75d8d4a0c69edd4bd:p8:b19:s0",
+    "document_id": "adf9637a449938d75d8d4a0c69edd4bd",
+    "document_ids": [
+      "adf9637a449938d75d8d4a0c69edd4bd"
+    ],
+    "figure_ids": [],
+    "id": "adf9637a449938d75d8d4a0c69edd4bd:p8:b19:s0",
+    "kind": "text",
+    "next_chunk_id": "adf9637a449938d75d8d4a0c69edd4bd:p8:b20:s0",
+    "oversized_unit": false,
+    "page_index": 8,
+    "previous_chunk_id": "adf9637a449938d75d8d4a0c69edd4bd:p8:b18:s0",
+    "source_block_index": 19,
+    "text": "Aria (manga)\nA gondola designed to ferry several people across the [Grand Canal](https://en.wikipedia.org/wiki/Grand_Canal_%28Venice%29). Because of its size and the number of passengers, the gondola is rowed by two Singles.",
+    "title": "Aria (manga)",
+    "url": "https://en.wikipedia.org/wiki/Aria_(manga)"
+  }
+]
