@@ -1,5 +1,6 @@
 """Persist real MinerU 4.x results, including officially materialized assets."""
 import argparse
+import hashlib
 import json
 from pathlib import Path
 import time
@@ -18,6 +19,7 @@ def main():
     p.add_argument("--pages", default="all")
     p.add_argument("--limit", type=int, default=0)
     p.add_argument("--tier", choices=["standard", "advanced"], default="standard")
+    p.add_argument("--resume", action="store_true")
     args = p.parse_args()
     parser = MinerUParser(tier=args.tier, image_analysis=False, vlm_config=VlmConfig(server_url=args.server, model=args.model, max_concurrency=8))
     files = sorted(args.input.glob("*.pdf")) if args.input.is_dir() else [args.input]
@@ -28,11 +30,17 @@ def main():
         dest = args.output / path.stem
         start = time.monotonic()
         record = {"document_id": path.stem, "pages_requested": args.pages, "model": args.model, "tier": args.tier, "image_analysis": False, "status": "failed"}
+        identity = {"pdf_sha256": hashlib.sha256(path.read_bytes()).hexdigest(), "pages": args.pages, "tier": args.tier, "model": args.model, "image_analysis": False}
+        marker = dest / "_SUCCESS.json"
+        if args.resume and marker.exists() and json.loads(marker.read_text()) == identity:
+            print(json.dumps({"document_id": path.stem, "status": "cached"}), flush=True)
+            continue
         try:
             result = parser.parse(path, page_range=args.pages)
             result.save(FileBasedDataWriter(str(dest)))
             middle = json.loads((dest / "middle_json.json").read_text())
             record.update(status="ok", parsed_pages=len(result.pages), saved_files=len(list(dest.rglob("*"))), schema_version=middle.get("schema_version"))
+            marker.write_text(json.dumps(identity, indent=2) + "\n")
         except Exception as error:
             record["error"] = f"{type(error).__name__}: {error}"
         record["seconds"] = time.monotonic() - start
