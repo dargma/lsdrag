@@ -598,414 +598,581 @@
     "note": "Visually checked original against candidate; same visual content present, sometimes inside a larger crop."
   },
   {
+    "gold_image_id": "006ecfc22be0935a669a024f9637db87",
     "accepted_figure_ids": [
       "006ecfc22be0935a669a024f9637db87:p0:f16"
     ],
-    "contact_sheet": "review_000.jpg",
-    "gold_image_id": "006ecfc22be0935a669a024f9637db87",
+    "status": "verified_same_visual_content",
+    "review_note": "Visually compared original with all three proposed crops in recovered 288-document IR; same photograph/artwork/emblem accepted (including infobox surroundings), different variants or absent content excluded.",
     "proposal_index": 0,
-    "proposal_sha256": "1d94cd7579c923d802b75ce016c72d0349f7d046c15679f544a2dd8835aae037",
-    "review_note": "Visually compared original and up to three proposed candidates. Matching photograph/artwork may include surrounding infobox text and resizing. Main emblem matches; lower MARAUDERS lettering is cropped.",
-    "status": "verified_same_visual_content"
-  },
-  {
-    "accepted_figure_ids": [],
     "contact_sheet": "review_000.jpg",
-    "gold_image_id": "06605e43313d0c981f39adae85d112ce",
-    "proposal_index": 1,
-    "proposal_sha256": "1d94cd7579c923d802b75ce016c72d0349f7d046c15679f544a2dd8835aae037",
-    "review_note": "Previous figure IDs absent from recovered IR; excluded from recall denominator until visually reverified.",
-    "status": "unresolved_after_parse_recovery",
-    "previous_accepted_figure_ids": [
-      "06605e43313d0c981f39adae85d112ce:p1:f4"
-    ]
+    "proposal_sha256": "72b2b1ff2b7c42337544647299a732d106237ca82e2bf9fc90711b0ed1e365cf"
   },
   {
+    "gold_image_id": "06605e43313d0c981f39adae85d112ce",
+    "accepted_figure_ids": [
+      "06605e43313d0c981f39adae85d112ce:p1:f5"
+    ],
+    "status": "verified_same_visual_content",
+    "review_note": "Visually compared original with all three proposed crops in recovered 288-document IR; same photograph/artwork/emblem accepted (including infobox surroundings), different variants or absent content excluded.",
+    "proposal_index": 1,
+    "contact_sheet": "review_000.jpg",
+    "proposal_sha256": "72b2b1ff2b7c42337544647299a732d106237ca82e2bf9fc90711b0ed1e365cf"
+  },
+  {
+    "gold_image_id": "083b166c958a6479df5195ec55680460",
     "accepted_figure_ids": [
       "083b166c958a6479df5195ec55680460:p0:f10"
     ],
-    "contact_sheet": "review_000.jpg",
-    "gold_image_id": "083b166c958a6479df5195ec55680460",
+    "status": "verified_same_visual_content",
+    "review_note": "Visually compared original with all three proposed crops in recovered 288-document IR; same photograph/artwork/emblem accepted (including infobox surroundings), different variants or absent content excluded.",
     "proposal_index": 2,
-    "proposal_sha256": "1d94cd7579c923d802b75ce016c72d0349f7d046c15679f544a2dd8835aae037",
-    "review_note": "Visually compared original and up to three proposed candidates. Matching photograph/artwork may include surrounding infobox text and resizing.",
-    "status": "verified_same_visual_content"
-  },
-  {
-    "accepted_figure_ids": [],
     "contact_sheet": "review_000.jpg",
-    "gold_image_id": "0f76453a5f76e22a9fcb5909cead051d",
-    "proposal_index": 3,
-    "proposal_sha256": "1d94cd7579c923d802b75ce016c72d0349f7d046c15679f544a2dd8835aae037",
-    "review_note": "Top proposed candidates do not establish the same original visual. This does not prove absence elsewhere in the document.",
-    "status": "unresolved"
+    "proposal_sha256": "72b2b1ff2b7c42337544647299a732d106237ca82e2bf9fc90711b0ed1e365cf"
   },
   {
+    "gold_image_id": "0f76453a5f76e22a9fcb5909cead051d",
+    "accepted_figure_ids": [],
+    "status": "unresolved_visual_mismatch",
+    "review_note": "Visually compared original with all three proposed crops in recovered 288-document IR; same photograph/artwork/emblem accepted (including infobox surroundings), different variants or absent content excluded.",
+    "proposal_index": 3,
+    "contact_sheet": "review_000.jpg",
+    "proposal_sha256": "72b2b1ff2b7c42337544647299a732d106237ca82e2bf9fc90711b0ed1e365cf"
+  },
+  {
+    "gold_image_id": "0fe5ff2fb32610f4738ff1235b8e87da",
     "accepted_figure_ids": [
       "0fe5ff2fb32610f4738ff1235b8e87da:p0:f12"
     ],
-    "contact_sheet": "review_000.jpg",
-    "gold_image_id": "0fe5ff2fb32610f4738ff1235b8e87da",
+    "status": "verified_same_visual_content",
+    "review_note": "Visually compared original with all three proposed crops in recovered 288-document IR; same photograph/artwork/emblem accepted (including infobox surroundings), different variants or absent content excluded.",
     "proposal_index": 4,
-    "proposal_sha256": "1d94cd7579c923d802b75ce016c72d0349f7d046c15679f544a2dd8835aae037",
-    "review_note": "Visually compared original and up to three proposed candidates. Matching photograph/artwork may include surrounding infobox text and resizing.",
-    "status": "verified_same_visual_content"
-  },
-  {
-    "accepted_figure_ids": [
-      "125f89b37bec989af6a4ff6a60faeb1c:p0:f12"
-    ],
     "contact_sheet": "review_000.jpg",
+    "proposal_sha256": "72b2b1ff2b7c42337544647299a732d106237ca82e2bf9fc90711b0ed1e365cf"
+  },
+  {
     "gold_image_id": "125f89b37bec989af6a4ff6a60faeb1c",
+    "accepted_figure_ids": [
+      "125f89b37bec989af6a4ff6a60faeb1c:p1:f4"
+    ],
+    "status": "verified_same_visual_content",
+    "review_note": "Visually compared original with all three proposed crops in recovered 288-document IR; same photograph/artwork/emblem accepted (including infobox surroundings), different variants or absent content excluded.",
     "proposal_index": 5,
-    "proposal_sha256": "1d94cd7579c923d802b75ce016c72d0349f7d046c15679f544a2dd8835aae037",
-    "review_note": "Visually compared original and up to three proposed candidates. Matching photograph/artwork may include surrounding infobox text and resizing.",
-    "status": "verified_same_visual_content"
+    "contact_sheet": "review_000.jpg",
+    "proposal_sha256": "72b2b1ff2b7c42337544647299a732d106237ca82e2bf9fc90711b0ed1e365cf"
   },
   {
-    "accepted_figure_ids": [],
-    "contact_sheet": "review_001.jpg",
     "gold_image_id": "158bf97ba711a0e96693d52d58360c72",
+    "accepted_figure_ids": [],
+    "status": "unresolved_visual_mismatch",
+    "review_note": "Visually compared original with all three proposed crops in recovered 288-document IR; same photograph/artwork/emblem accepted (including infobox surroundings), different variants or absent content excluded.",
     "proposal_index": 6,
-    "proposal_sha256": "1d94cd7579c923d802b75ce016c72d0349f7d046c15679f544a2dd8835aae037",
-    "review_note": "Top proposed candidates do not establish the same original visual. This does not prove absence elsewhere in the document.",
-    "status": "related_emblem_variant"
+    "contact_sheet": "review_001.jpg",
+    "proposal_sha256": "72b2b1ff2b7c42337544647299a732d106237ca82e2bf9fc90711b0ed1e365cf"
   },
   {
+    "gold_image_id": "15bd6474ee7cc4c11cc027dc3e123f06",
     "accepted_figure_ids": [
       "15bd6474ee7cc4c11cc027dc3e123f06:p0:f14"
     ],
-    "contact_sheet": "review_001.jpg",
-    "gold_image_id": "15bd6474ee7cc4c11cc027dc3e123f06",
+    "status": "verified_same_visual_content",
+    "review_note": "Visually compared original with all three proposed crops in recovered 288-document IR; same photograph/artwork/emblem accepted (including infobox surroundings), different variants or absent content excluded.",
     "proposal_index": 7,
-    "proposal_sha256": "1d94cd7579c923d802b75ce016c72d0349f7d046c15679f544a2dd8835aae037",
-    "review_note": "Visually compared original and up to three proposed candidates. Matching photograph/artwork may include surrounding infobox text and resizing.",
-    "status": "verified_same_visual_content"
+    "contact_sheet": "review_001.jpg",
+    "proposal_sha256": "72b2b1ff2b7c42337544647299a732d106237ca82e2bf9fc90711b0ed1e365cf"
   },
   {
+    "gold_image_id": "1a3e90e09e0e81432c04c5e2cc910f27",
     "accepted_figure_ids": [
       "1a3e90e09e0e81432c04c5e2cc910f27:p0:f13"
     ],
-    "contact_sheet": "review_001.jpg",
-    "gold_image_id": "1a3e90e09e0e81432c04c5e2cc910f27",
+    "status": "verified_same_visual_content",
+    "review_note": "Visually compared original with all three proposed crops in recovered 288-document IR; same photograph/artwork/emblem accepted (including infobox surroundings), different variants or absent content excluded.",
     "proposal_index": 8,
-    "proposal_sha256": "1d94cd7579c923d802b75ce016c72d0349f7d046c15679f544a2dd8835aae037",
-    "review_note": "Visually compared original and up to three proposed candidates. Matching photograph/artwork may include surrounding infobox text and resizing.",
-    "status": "verified_same_visual_content"
+    "contact_sheet": "review_001.jpg",
+    "proposal_sha256": "72b2b1ff2b7c42337544647299a732d106237ca82e2bf9fc90711b0ed1e365cf"
   },
   {
+    "gold_image_id": "1ea5c7f201b46c462a3e0ff5853c7ed9",
     "accepted_figure_ids": [
       "1ea5c7f201b46c462a3e0ff5853c7ed9:p1:f12",
       "1ea5c7f201b46c462a3e0ff5853c7ed9:p1:f11"
     ],
-    "contact_sheet": "review_001.jpg",
-    "gold_image_id": "1ea5c7f201b46c462a3e0ff5853c7ed9",
+    "status": "verified_same_visual_content",
+    "review_note": "Visually compared original with all three proposed crops in recovered 288-document IR; same photograph/artwork/emblem accepted (including infobox surroundings), different variants or absent content excluded.",
     "proposal_index": 9,
-    "proposal_sha256": "1d94cd7579c923d802b75ce016c72d0349f7d046c15679f544a2dd8835aae037",
-    "review_note": "Visually compared original and up to three proposed candidates. Matching photograph/artwork may include surrounding infobox text and resizing.",
-    "status": "verified_same_visual_content"
+    "contact_sheet": "review_001.jpg",
+    "proposal_sha256": "72b2b1ff2b7c42337544647299a732d106237ca82e2bf9fc90711b0ed1e365cf"
   },
   {
-    "accepted_figure_ids": [],
-    "contact_sheet": "review_001.jpg",
     "gold_image_id": "2f789ee49c6cfa05a91428e9af21cfcc",
+    "accepted_figure_ids": [
+      "2f789ee49c6cfa05a91428e9af21cfcc:p0:f16"
+    ],
+    "status": "verified_same_visual_content",
+    "review_note": "Visually compared original with all three proposed crops in recovered 288-document IR; same photograph/artwork/emblem accepted (including infobox surroundings), different variants or absent content excluded.",
     "proposal_index": 10,
-    "proposal_sha256": "1d94cd7579c923d802b75ce016c72d0349f7d046c15679f544a2dd8835aae037",
-    "review_note": "Previous figure IDs absent from recovered IR; excluded from recall denominator until visually reverified.",
-    "status": "unresolved_after_parse_recovery",
-    "previous_accepted_figure_ids": [
-      "2f789ee49c6cfa05a91428e9af21cfcc:p0:f14"
-    ]
-  },
-  {
-    "accepted_figure_ids": [],
     "contact_sheet": "review_001.jpg",
+    "proposal_sha256": "72b2b1ff2b7c42337544647299a732d106237ca82e2bf9fc90711b0ed1e365cf"
+  },
+  {
     "gold_image_id": "3ff0574ce7020df4a809ade7543d2f01",
+    "accepted_figure_ids": [
+      "3ff0574ce7020df4a809ade7543d2f01:p0:f15"
+    ],
+    "status": "verified_same_visual_content",
+    "review_note": "Visually compared original with all three proposed crops in recovered 288-document IR; same photograph/artwork/emblem accepted (including infobox surroundings), different variants or absent content excluded.",
     "proposal_index": 11,
-    "proposal_sha256": "1d94cd7579c923d802b75ce016c72d0349f7d046c15679f544a2dd8835aae037",
-    "review_note": "Previous figure IDs absent from recovered IR; excluded from recall denominator until visually reverified.",
-    "status": "unresolved_after_parse_recovery",
-    "previous_accepted_figure_ids": [
-      "3ff0574ce7020df4a809ade7543d2f01:p1:f9"
-    ]
+    "contact_sheet": "review_001.jpg",
+    "proposal_sha256": "72b2b1ff2b7c42337544647299a732d106237ca82e2bf9fc90711b0ed1e365cf"
   },
   {
-    "accepted_figure_ids": [],
-    "contact_sheet": "review_002.jpg",
     "gold_image_id": "4452f4df7f89b26d20e40b7ab2224db0",
+    "accepted_figure_ids": [],
+    "status": "unresolved_visual_mismatch",
+    "review_note": "Visually compared original with all three proposed crops in recovered 288-document IR; same photograph/artwork/emblem accepted (including infobox surroundings), different variants or absent content excluded.",
     "proposal_index": 12,
-    "proposal_sha256": "1d94cd7579c923d802b75ce016c72d0349f7d046c15679f544a2dd8835aae037",
-    "review_note": "Top proposed candidates do not establish the same original visual. This does not prove absence elsewhere in the document.",
-    "status": "unresolved"
+    "contact_sheet": "review_002.jpg",
+    "proposal_sha256": "72b2b1ff2b7c42337544647299a732d106237ca82e2bf9fc90711b0ed1e365cf"
   },
   {
-    "accepted_figure_ids": [],
-    "contact_sheet": "review_002.jpg",
     "gold_image_id": "4dfbfe281bfcbe6196b3696c370e28ed",
+    "accepted_figure_ids": [],
+    "status": "unresolved_visual_mismatch",
+    "review_note": "Visually compared original with all three proposed crops in recovered 288-document IR; same photograph/artwork/emblem accepted (including infobox surroundings), different variants or absent content excluded.",
     "proposal_index": 13,
-    "proposal_sha256": "1d94cd7579c923d802b75ce016c72d0349f7d046c15679f544a2dd8835aae037",
-    "review_note": "Top proposed candidates do not establish the same original visual. This does not prove absence elsewhere in the document.",
-    "status": "unresolved"
+    "contact_sheet": "review_002.jpg",
+    "proposal_sha256": "72b2b1ff2b7c42337544647299a732d106237ca82e2bf9fc90711b0ed1e365cf"
   },
   {
-    "accepted_figure_ids": [],
-    "contact_sheet": "review_002.jpg",
     "gold_image_id": "553ee9b5495b588c6e33b8f761b1675f",
+    "accepted_figure_ids": [
+      "553ee9b5495b588c6e33b8f761b1675f:p0:f12"
+    ],
+    "status": "verified_same_visual_content",
+    "review_note": "Visually compared original with all three proposed crops in recovered 288-document IR; same photograph/artwork/emblem accepted (including infobox surroundings), different variants or absent content excluded.",
     "proposal_index": 14,
-    "proposal_sha256": "1d94cd7579c923d802b75ce016c72d0349f7d046c15679f544a2dd8835aae037",
-    "review_note": "Previous figure IDs absent from recovered IR; excluded from recall denominator until visually reverified.",
-    "status": "unresolved_after_parse_recovery",
-    "previous_accepted_figure_ids": [
-      "553ee9b5495b588c6e33b8f761b1675f:p0:f17"
-    ]
-  },
-  {
-    "accepted_figure_ids": [],
     "contact_sheet": "review_002.jpg",
-    "gold_image_id": "59a9643c1b17499b364f311b238c6a3c",
-    "proposal_index": 15,
-    "proposal_sha256": "1d94cd7579c923d802b75ce016c72d0349f7d046c15679f544a2dd8835aae037",
-    "review_note": "Top proposed candidates do not establish the same original visual. This does not prove absence elsewhere in the document.",
-    "status": "unresolved"
+    "proposal_sha256": "72b2b1ff2b7c42337544647299a732d106237ca82e2bf9fc90711b0ed1e365cf"
   },
   {
+    "gold_image_id": "5d3ea44ace1882306f7eafd76c25d53c",
     "accepted_figure_ids": [
       "5d3ea44ace1882306f7eafd76c25d53c:p0:f12"
     ],
+    "status": "verified_same_visual_content",
+    "review_note": "Visually compared original with all three proposed crops in recovered 288-document IR; same photograph/artwork/emblem accepted (including infobox surroundings), different variants or absent content excluded.",
+    "proposal_index": 15,
     "contact_sheet": "review_002.jpg",
-    "gold_image_id": "5d3ea44ace1882306f7eafd76c25d53c",
-    "proposal_index": 16,
-    "proposal_sha256": "1d94cd7579c923d802b75ce016c72d0349f7d046c15679f544a2dd8835aae037",
-    "review_note": "Visually compared original and up to three proposed candidates. Matching photograph/artwork may include surrounding infobox text and resizing.",
-    "status": "verified_same_visual_content"
+    "proposal_sha256": "72b2b1ff2b7c42337544647299a732d106237ca82e2bf9fc90711b0ed1e365cf"
   },
   {
-    "accepted_figure_ids": [],
-    "contact_sheet": "review_002.jpg",
     "gold_image_id": "5e87b9b2bea1bc276227c35948388915",
-    "proposal_index": 17,
-    "proposal_sha256": "1d94cd7579c923d802b75ce016c72d0349f7d046c15679f544a2dd8835aae037",
-    "review_note": "Previous figure IDs absent from recovered IR; excluded from recall denominator until visually reverified.",
-    "status": "unresolved_after_parse_recovery",
-    "previous_accepted_figure_ids": [
-      "5e87b9b2bea1bc276227c35948388915:p1:f6"
-    ]
+    "accepted_figure_ids": [
+      "5e87b9b2bea1bc276227c35948388915:p0:f15"
+    ],
+    "status": "verified_same_visual_content",
+    "review_note": "Visually compared original with all three proposed crops in recovered 288-document IR; same photograph/artwork/emblem accepted (including infobox surroundings), different variants or absent content excluded.",
+    "proposal_index": 16,
+    "contact_sheet": "review_002.jpg",
+    "proposal_sha256": "72b2b1ff2b7c42337544647299a732d106237ca82e2bf9fc90711b0ed1e365cf"
   },
   {
+    "gold_image_id": "67f530545c98903843783b4fe25edf58",
     "accepted_figure_ids": [
       "67f530545c98903843783b4fe25edf58:p0:f15"
     ],
-    "contact_sheet": "review_003.jpg",
-    "gold_image_id": "67f530545c98903843783b4fe25edf58",
-    "proposal_index": 18,
-    "proposal_sha256": "1d94cd7579c923d802b75ce016c72d0349f7d046c15679f544a2dd8835aae037",
-    "review_note": "Visually compared original and up to three proposed candidates. Matching photograph/artwork may include surrounding infobox text and resizing.",
-    "status": "verified_same_visual_content"
+    "status": "verified_same_visual_content",
+    "review_note": "Visually compared original with all three proposed crops in recovered 288-document IR; same photograph/artwork/emblem accepted (including infobox surroundings), different variants or absent content excluded.",
+    "proposal_index": 17,
+    "contact_sheet": "review_002.jpg",
+    "proposal_sha256": "72b2b1ff2b7c42337544647299a732d106237ca82e2bf9fc90711b0ed1e365cf"
   },
   {
+    "gold_image_id": "6bcfa0b07c9d7e6a7e9d3f1eee20cfaa",
     "accepted_figure_ids": [
       "6bcfa0b07c9d7e6a7e9d3f1eee20cfaa:p0:f24"
     ],
+    "status": "verified_same_visual_content",
+    "review_note": "Visually compared original with all three proposed crops in recovered 288-document IR; same photograph/artwork/emblem accepted (including infobox surroundings), different variants or absent content excluded.",
+    "proposal_index": 18,
     "contact_sheet": "review_003.jpg",
-    "gold_image_id": "6bcfa0b07c9d7e6a7e9d3f1eee20cfaa",
-    "proposal_index": 19,
-    "proposal_sha256": "1d94cd7579c923d802b75ce016c72d0349f7d046c15679f544a2dd8835aae037",
-    "review_note": "Visually compared original and up to three proposed candidates. Matching photograph/artwork may include surrounding infobox text and resizing.",
-    "status": "verified_same_visual_content"
+    "proposal_sha256": "72b2b1ff2b7c42337544647299a732d106237ca82e2bf9fc90711b0ed1e365cf"
   },
   {
-    "accepted_figure_ids": [],
-    "contact_sheet": "review_003.jpg",
     "gold_image_id": "6c0cba76b5727895052de4aa69133377",
-    "proposal_index": 20,
-    "proposal_sha256": "1d94cd7579c923d802b75ce016c72d0349f7d046c15679f544a2dd8835aae037",
-    "review_note": "Top proposed candidates do not establish the same original visual. This does not prove absence elsewhere in the document.",
-    "status": "logo_variant"
+    "accepted_figure_ids": [],
+    "status": "unresolved_visual_mismatch",
+    "review_note": "Visually compared original with all three proposed crops in recovered 288-document IR; same photograph/artwork/emblem accepted (including infobox surroundings), different variants or absent content excluded.",
+    "proposal_index": 19,
+    "contact_sheet": "review_003.jpg",
+    "proposal_sha256": "72b2b1ff2b7c42337544647299a732d106237ca82e2bf9fc90711b0ed1e365cf"
   },
   {
-    "accepted_figure_ids": [],
-    "contact_sheet": "review_003.jpg",
     "gold_image_id": "6dec1abbdfe7d58678688e897eb6d1fb",
-    "proposal_index": 21,
-    "proposal_sha256": "1d94cd7579c923d802b75ce016c72d0349f7d046c15679f544a2dd8835aae037",
-    "review_note": "Top proposed candidates do not establish the same original visual. This does not prove absence elsewhere in the document.",
-    "status": "unresolved"
-  },
-  {
     "accepted_figure_ids": [],
+    "status": "unresolved_visual_mismatch",
+    "review_note": "Visually compared original with all three proposed crops in recovered 288-document IR; same photograph/artwork/emblem accepted (including infobox surroundings), different variants or absent content excluded.",
+    "proposal_index": 20,
     "contact_sheet": "review_003.jpg",
-    "gold_image_id": "6e25a59c4187a0e595ea83ee5a95763f",
-    "proposal_index": 22,
-    "proposal_sha256": "1d94cd7579c923d802b75ce016c72d0349f7d046c15679f544a2dd8835aae037",
-    "review_note": "Top proposed candidates do not establish the same original visual. This does not prove absence elsewhere in the document.",
-    "status": "logo_variant"
+    "proposal_sha256": "72b2b1ff2b7c42337544647299a732d106237ca82e2bf9fc90711b0ed1e365cf"
   },
   {
+    "gold_image_id": "6e25a59c4187a0e595ea83ee5a95763f",
+    "accepted_figure_ids": [
+      "6e25a59c4187a0e595ea83ee5a95763f:p0:f10"
+    ],
+    "status": "verified_same_visual_content",
+    "review_note": "Visually compared original with all three proposed crops in recovered 288-document IR; same photograph/artwork/emblem accepted (including infobox surroundings), different variants or absent content excluded.",
+    "proposal_index": 21,
+    "contact_sheet": "review_003.jpg",
+    "proposal_sha256": "72b2b1ff2b7c42337544647299a732d106237ca82e2bf9fc90711b0ed1e365cf"
+  },
+  {
+    "gold_image_id": "6efe2127b7308ab4035b7ff70ff75c2a",
     "accepted_figure_ids": [
       "6efe2127b7308ab4035b7ff70ff75c2a:p0:f11"
     ],
+    "status": "verified_same_visual_content",
+    "review_note": "Visually compared original with all three proposed crops in recovered 288-document IR; same photograph/artwork/emblem accepted (including infobox surroundings), different variants or absent content excluded.",
+    "proposal_index": 22,
     "contact_sheet": "review_003.jpg",
-    "gold_image_id": "6efe2127b7308ab4035b7ff70ff75c2a",
-    "proposal_index": 23,
-    "proposal_sha256": "1d94cd7579c923d802b75ce016c72d0349f7d046c15679f544a2dd8835aae037",
-    "review_note": "Visually compared original and up to three proposed candidates. Matching photograph/artwork may include surrounding infobox text and resizing.",
-    "status": "verified_same_visual_content"
+    "proposal_sha256": "72b2b1ff2b7c42337544647299a732d106237ca82e2bf9fc90711b0ed1e365cf"
   },
   {
+    "gold_image_id": "7070e97120dc77d96364d39d0001a03e",
     "accepted_figure_ids": [
       "7070e97120dc77d96364d39d0001a03e:p17:f40"
     ],
-    "contact_sheet": "review_004.jpg",
-    "gold_image_id": "7070e97120dc77d96364d39d0001a03e",
-    "proposal_index": 24,
-    "proposal_sha256": "1d94cd7579c923d802b75ce016c72d0349f7d046c15679f544a2dd8835aae037",
-    "review_note": "Visually compared original and up to three proposed candidates. Matching photograph/artwork may include surrounding infobox text and resizing.",
-    "status": "verified_same_visual_content"
+    "status": "verified_same_visual_content",
+    "review_note": "Visually compared original with all three proposed crops in recovered 288-document IR; same photograph/artwork/emblem accepted (including infobox surroundings), different variants or absent content excluded.",
+    "proposal_index": 23,
+    "contact_sheet": "review_003.jpg",
+    "proposal_sha256": "72b2b1ff2b7c42337544647299a732d106237ca82e2bf9fc90711b0ed1e365cf"
   },
   {
+    "gold_image_id": "71e7fb6d4a9f6f53d9d7ac3bd338c3f7",
     "accepted_figure_ids": [
       "71e7fb6d4a9f6f53d9d7ac3bd338c3f7:p0:f24"
     ],
+    "status": "verified_same_visual_content",
+    "review_note": "Visually compared original with all three proposed crops in recovered 288-document IR; same photograph/artwork/emblem accepted (including infobox surroundings), different variants or absent content excluded.",
+    "proposal_index": 24,
     "contact_sheet": "review_004.jpg",
-    "gold_image_id": "71e7fb6d4a9f6f53d9d7ac3bd338c3f7",
-    "proposal_index": 25,
-    "proposal_sha256": "1d94cd7579c923d802b75ce016c72d0349f7d046c15679f544a2dd8835aae037",
-    "review_note": "Visually compared original and up to three proposed candidates. Matching photograph/artwork may include surrounding infobox text and resizing.",
-    "status": "verified_same_visual_content"
+    "proposal_sha256": "72b2b1ff2b7c42337544647299a732d106237ca82e2bf9fc90711b0ed1e365cf"
   },
   {
-    "accepted_figure_ids": [],
-    "contact_sheet": "review_004.jpg",
     "gold_image_id": "7a536e03eb3a437d53e9504f8b8121dd",
-    "proposal_index": 26,
-    "proposal_sha256": "1d94cd7579c923d802b75ce016c72d0349f7d046c15679f544a2dd8835aae037",
-    "review_note": "Top proposed candidates do not establish the same original visual. This does not prove absence elsewhere in the document.",
-    "status": "logo_variant"
+    "accepted_figure_ids": [
+      "7a536e03eb3a437d53e9504f8b8121dd:p0:f13"
+    ],
+    "status": "verified_same_visual_content",
+    "review_note": "Visually compared original with all three proposed crops in recovered 288-document IR; same photograph/artwork/emblem accepted (including infobox surroundings), different variants or absent content excluded.",
+    "proposal_index": 25,
+    "contact_sheet": "review_004.jpg",
+    "proposal_sha256": "72b2b1ff2b7c42337544647299a732d106237ca82e2bf9fc90711b0ed1e365cf"
   },
   {
+    "gold_image_id": "7b194ac3e8ff9fce87caee3b21aaf995",
     "accepted_figure_ids": [
       "7b194ac3e8ff9fce87caee3b21aaf995:p0:f17"
     ],
+    "status": "verified_same_visual_content",
+    "review_note": "Visually compared original with all three proposed crops in recovered 288-document IR; same photograph/artwork/emblem accepted (including infobox surroundings), different variants or absent content excluded.",
+    "proposal_index": 26,
     "contact_sheet": "review_004.jpg",
-    "gold_image_id": "7b194ac3e8ff9fce87caee3b21aaf995",
-    "proposal_index": 27,
-    "proposal_sha256": "1d94cd7579c923d802b75ce016c72d0349f7d046c15679f544a2dd8835aae037",
-    "review_note": "Visually compared original and up to three proposed candidates. Matching photograph/artwork may include surrounding infobox text and resizing.",
-    "status": "verified_same_visual_content"
+    "proposal_sha256": "72b2b1ff2b7c42337544647299a732d106237ca82e2bf9fc90711b0ed1e365cf"
   },
   {
-    "accepted_figure_ids": [],
-    "contact_sheet": "review_004.jpg",
     "gold_image_id": "7d7e4f56a0a4c949be6efc927ca2759c",
-    "proposal_index": 28,
-    "proposal_sha256": "1d94cd7579c923d802b75ce016c72d0349f7d046c15679f544a2dd8835aae037",
-    "review_note": "Previous figure IDs absent from recovered IR; excluded from recall denominator until visually reverified.",
-    "status": "unresolved_after_parse_recovery",
-    "previous_accepted_figure_ids": [
-      "7d7e4f56a0a4c949be6efc927ca2759c:p0:f33"
-    ]
-  },
-  {
-    "accepted_figure_ids": [],
+    "accepted_figure_ids": [
+      "7d7e4f56a0a4c949be6efc927ca2759c:p0:f13"
+    ],
+    "status": "verified_same_visual_content",
+    "review_note": "Visually compared original with all three proposed crops in recovered 288-document IR; same photograph/artwork/emblem accepted (including infobox surroundings), different variants or absent content excluded.",
+    "proposal_index": 27,
     "contact_sheet": "review_004.jpg",
+    "proposal_sha256": "72b2b1ff2b7c42337544647299a732d106237ca82e2bf9fc90711b0ed1e365cf"
+  },
+  {
     "gold_image_id": "83063e704fc7c2d757c5561a3562fc70",
-    "proposal_index": 29,
-    "proposal_sha256": "1d94cd7579c923d802b75ce016c72d0349f7d046c15679f544a2dd8835aae037",
-    "review_note": "Top proposed candidates do not establish the same original visual. This does not prove absence elsewhere in the document.",
-    "status": "unresolved"
-  },
-  {
     "accepted_figure_ids": [],
-    "contact_sheet": "review_005.jpg",
-    "gold_image_id": "84471b0e29e7b5622512f1a907ffc57e",
-    "proposal_index": 30,
-    "proposal_sha256": "1d94cd7579c923d802b75ce016c72d0349f7d046c15679f544a2dd8835aae037",
-    "review_note": "Top proposed candidates do not establish the same original visual. This does not prove absence elsewhere in the document.",
-    "status": "collage_variant"
+    "status": "unresolved_visual_mismatch",
+    "review_note": "Visually compared original with all three proposed crops in recovered 288-document IR; same photograph/artwork/emblem accepted (including infobox surroundings), different variants or absent content excluded.",
+    "proposal_index": 28,
+    "contact_sheet": "review_004.jpg",
+    "proposal_sha256": "72b2b1ff2b7c42337544647299a732d106237ca82e2bf9fc90711b0ed1e365cf"
   },
   {
+    "gold_image_id": "84471b0e29e7b5622512f1a907ffc57e",
+    "accepted_figure_ids": [],
+    "status": "unresolved_visual_mismatch",
+    "review_note": "Visually compared original with all three proposed crops in recovered 288-document IR; same photograph/artwork/emblem accepted (including infobox surroundings), different variants or absent content excluded.",
+    "proposal_index": 29,
+    "contact_sheet": "review_004.jpg",
+    "proposal_sha256": "72b2b1ff2b7c42337544647299a732d106237ca82e2bf9fc90711b0ed1e365cf"
+  },
+  {
+    "gold_image_id": "8dabb03fab48411b7686c3082aeff469",
     "accepted_figure_ids": [
       "8dabb03fab48411b7686c3082aeff469:p0:f20"
     ],
+    "status": "verified_same_visual_content",
+    "review_note": "Visually compared original with all three proposed crops in recovered 288-document IR; same photograph/artwork/emblem accepted (including infobox surroundings), different variants or absent content excluded.",
+    "proposal_index": 30,
     "contact_sheet": "review_005.jpg",
-    "gold_image_id": "8dabb03fab48411b7686c3082aeff469",
-    "proposal_index": 31,
-    "proposal_sha256": "1d94cd7579c923d802b75ce016c72d0349f7d046c15679f544a2dd8835aae037",
-    "review_note": "Visually compared original and up to three proposed candidates. Matching photograph/artwork may include surrounding infobox text and resizing.",
-    "status": "verified_same_visual_content"
+    "proposal_sha256": "72b2b1ff2b7c42337544647299a732d106237ca82e2bf9fc90711b0ed1e365cf"
   },
   {
-    "accepted_figure_ids": [],
-    "contact_sheet": "review_005.jpg",
     "gold_image_id": "90f272b8e9b07a5a9ed260a135bad142",
-    "proposal_index": 32,
-    "proposal_sha256": "1d94cd7579c923d802b75ce016c72d0349f7d046c15679f544a2dd8835aae037",
-    "review_note": "Previous figure IDs absent from recovered IR; excluded from recall denominator until visually reverified.",
-    "status": "unresolved_after_parse_recovery",
-    "previous_accepted_figure_ids": [
-      "90f272b8e9b07a5a9ed260a135bad142:p0:f14"
-    ]
+    "accepted_figure_ids": [
+      "90f272b8e9b07a5a9ed260a135bad142:p0:f11"
+    ],
+    "status": "verified_same_visual_content",
+    "review_note": "Visually compared original with all three proposed crops in recovered 288-document IR; same photograph/artwork/emblem accepted (including infobox surroundings), different variants or absent content excluded.",
+    "proposal_index": 31,
+    "contact_sheet": "review_005.jpg",
+    "proposal_sha256": "72b2b1ff2b7c42337544647299a732d106237ca82e2bf9fc90711b0ed1e365cf"
   },
   {
-    "accepted_figure_ids": [],
-    "contact_sheet": "review_005.jpg",
     "gold_image_id": "947e0a6276f9f0e12a7b2f85d9cf8b7e",
-    "proposal_index": 33,
-    "proposal_sha256": "1d94cd7579c923d802b75ce016c72d0349f7d046c15679f544a2dd8835aae037",
-    "review_note": "Top proposed candidates do not establish the same original visual. This does not prove absence elsewhere in the document.",
-    "status": "poster_layout_variant"
+    "accepted_figure_ids": [
+      "947e0a6276f9f0e12a7b2f85d9cf8b7e:p0:f18"
+    ],
+    "status": "verified_same_visual_content",
+    "review_note": "Visually compared original with all three proposed crops in recovered 288-document IR; same photograph/artwork/emblem accepted (including infobox surroundings), different variants or absent content excluded.",
+    "proposal_index": 32,
+    "contact_sheet": "review_005.jpg",
+    "proposal_sha256": "72b2b1ff2b7c42337544647299a732d106237ca82e2bf9fc90711b0ed1e365cf"
   },
   {
-    "accepted_figure_ids": [],
-    "contact_sheet": "review_005.jpg",
     "gold_image_id": "95f47d84f76507f47eddcc7fd48e5209",
-    "proposal_index": 34,
-    "proposal_sha256": "1d94cd7579c923d802b75ce016c72d0349f7d046c15679f544a2dd8835aae037",
-    "review_note": "Previous figure IDs absent from recovered IR; excluded from recall denominator until visually reverified.",
-    "status": "unresolved_after_parse_recovery",
-    "previous_accepted_figure_ids": [
-      "95f47d84f76507f47eddcc7fd48e5209:p0:f18"
-    ]
-  },
-  {
-    "accepted_figure_ids": [],
+    "accepted_figure_ids": [
+      "95f47d84f76507f47eddcc7fd48e5209:p0:f12"
+    ],
+    "status": "verified_same_visual_content",
+    "review_note": "Visually compared original with all three proposed crops in recovered 288-document IR; same photograph/artwork/emblem accepted (including infobox surroundings), different variants or absent content excluded.",
+    "proposal_index": 33,
     "contact_sheet": "review_005.jpg",
+    "proposal_sha256": "72b2b1ff2b7c42337544647299a732d106237ca82e2bf9fc90711b0ed1e365cf"
+  },
+  {
     "gold_image_id": "9dad596f0afdbf0924ac158068d14519",
-    "proposal_index": 35,
-    "proposal_sha256": "1d94cd7579c923d802b75ce016c72d0349f7d046c15679f544a2dd8835aae037",
-    "review_note": "Top proposed candidates do not establish the same original visual. This does not prove absence elsewhere in the document.",
-    "status": "cover_edition_variant"
+    "accepted_figure_ids": [],
+    "status": "unresolved_visual_mismatch",
+    "review_note": "Visually compared original with all three proposed crops in recovered 288-document IR; same photograph/artwork/emblem accepted (including infobox surroundings), different variants or absent content excluded.",
+    "proposal_index": 34,
+    "contact_sheet": "review_005.jpg",
+    "proposal_sha256": "72b2b1ff2b7c42337544647299a732d106237ca82e2bf9fc90711b0ed1e365cf"
   },
   {
-    "accepted_figure_ids": [],
-    "contact_sheet": "review_006.jpg",
     "gold_image_id": "9e7e8f3fe472734018e09b8bc18e10bc",
-    "proposal_index": 36,
-    "proposal_sha256": "1d94cd7579c923d802b75ce016c72d0349f7d046c15679f544a2dd8835aae037",
-    "review_note": "Top proposed candidates do not establish the same original visual. This does not prove absence elsewhere in the document.",
-    "status": "logo_embedded_in_different_poster"
-  },
-  {
     "accepted_figure_ids": [],
-    "contact_sheet": "review_006.jpg",
-    "gold_image_id": "b71b9ebe601f94e29fa85803fef6c8c4",
-    "proposal_index": 37,
-    "proposal_sha256": "1d94cd7579c923d802b75ce016c72d0349f7d046c15679f544a2dd8835aae037",
-    "review_note": "Previous figure IDs absent from recovered IR; excluded from recall denominator until visually reverified.",
-    "status": "unresolved_after_parse_recovery",
-    "previous_accepted_figure_ids": [
-      "2e52fd9d62d7ee43954370da0dac3461:p1:f5"
-    ]
+    "status": "unresolved_visual_mismatch",
+    "review_note": "Visually compared original with all three proposed crops in recovered 288-document IR; same photograph/artwork/emblem accepted (including infobox surroundings), different variants or absent content excluded.",
+    "proposal_index": 35,
+    "contact_sheet": "review_005.jpg",
+    "proposal_sha256": "72b2b1ff2b7c42337544647299a732d106237ca82e2bf9fc90711b0ed1e365cf"
   },
   {
+    "gold_image_id": "9f08321d6045202732a164c63ff1489c",
+    "accepted_figure_ids": [
+      "9f08321d6045202732a164c63ff1489c:p0:f20"
+    ],
+    "status": "verified_same_visual_content",
+    "review_note": "Visually compared original with all three proposed crops in recovered 288-document IR; same photograph/artwork/emblem accepted (including infobox surroundings), different variants or absent content excluded.",
+    "proposal_index": 36,
+    "contact_sheet": "review_006.jpg",
+    "proposal_sha256": "72b2b1ff2b7c42337544647299a732d106237ca82e2bf9fc90711b0ed1e365cf"
+  },
+  {
+    "gold_image_id": "9fadbf39d686a41f43d11dae1235938d",
+    "accepted_figure_ids": [
+      "9fadbf39d686a41f43d11dae1235938d:p0:f13"
+    ],
+    "status": "verified_same_visual_content",
+    "review_note": "Visually compared original with all three proposed crops in recovered 288-document IR; same photograph/artwork/emblem accepted (including infobox surroundings), different variants or absent content excluded.",
+    "proposal_index": 37,
+    "contact_sheet": "review_006.jpg",
+    "proposal_sha256": "72b2b1ff2b7c42337544647299a732d106237ca82e2bf9fc90711b0ed1e365cf"
+  },
+  {
+    "gold_image_id": "a005f73b5f519575322098ed6bf7b9f8",
+    "accepted_figure_ids": [],
+    "status": "unresolved_visual_mismatch",
+    "review_note": "Visually compared original with all three proposed crops in recovered 288-document IR; same photograph/artwork/emblem accepted (including infobox surroundings), different variants or absent content excluded.",
+    "proposal_index": 38,
+    "contact_sheet": "review_006.jpg",
+    "proposal_sha256": "72b2b1ff2b7c42337544647299a732d106237ca82e2bf9fc90711b0ed1e365cf"
+  },
+  {
+    "gold_image_id": "a7ffdde34c24833473a382cf9cbee874",
+    "accepted_figure_ids": [
+      "a7ffdde34c24833473a382cf9cbee874:p0:f17"
+    ],
+    "status": "verified_same_visual_content",
+    "review_note": "Visually compared original with all three proposed crops in recovered 288-document IR; same photograph/artwork/emblem accepted (including infobox surroundings), different variants or absent content excluded.",
+    "proposal_index": 39,
+    "contact_sheet": "review_006.jpg",
+    "proposal_sha256": "72b2b1ff2b7c42337544647299a732d106237ca82e2bf9fc90711b0ed1e365cf"
+  },
+  {
+    "gold_image_id": "b1ca078d020c3ed9d6360b50da490dd5",
+    "accepted_figure_ids": [],
+    "status": "unresolved_visual_mismatch",
+    "review_note": "Visually compared original with all three proposed crops in recovered 288-document IR; same photograph/artwork/emblem accepted (including infobox surroundings), different variants or absent content excluded.",
+    "proposal_index": 40,
+    "contact_sheet": "review_006.jpg",
+    "proposal_sha256": "72b2b1ff2b7c42337544647299a732d106237ca82e2bf9fc90711b0ed1e365cf"
+  },
+  {
+    "gold_image_id": "b275623ac6c692f19d4dad4956f9d662",
+    "accepted_figure_ids": [
+      "b275623ac6c692f19d4dad4956f9d662:p0:f17"
+    ],
+    "status": "verified_same_visual_content",
+    "review_note": "Visually compared original with all three proposed crops in recovered 288-document IR; same photograph/artwork/emblem accepted (including infobox surroundings), different variants or absent content excluded.",
+    "proposal_index": 41,
+    "contact_sheet": "review_006.jpg",
+    "proposal_sha256": "72b2b1ff2b7c42337544647299a732d106237ca82e2bf9fc90711b0ed1e365cf"
+  },
+  {
+    "gold_image_id": "b71b9ebe601f94e29fa85803fef6c8c4",
+    "accepted_figure_ids": [
+      "2e52fd9d62d7ee43954370da0dac3461:p0:f14"
+    ],
+    "status": "verified_same_visual_content",
+    "review_note": "Visually compared original with all three proposed crops in recovered 288-document IR; same photograph/artwork/emblem accepted (including infobox surroundings), different variants or absent content excluded.",
+    "proposal_index": 42,
+    "contact_sheet": "review_007.jpg",
+    "proposal_sha256": "72b2b1ff2b7c42337544647299a732d106237ca82e2bf9fc90711b0ed1e365cf"
+  },
+  {
+    "gold_image_id": "ba81d746ac220a7b2b54c4c8afdceba9",
+    "accepted_figure_ids": [
+      "ba81d746ac220a7b2b54c4c8afdceba9:p3:f7"
+    ],
+    "status": "verified_same_visual_content",
+    "review_note": "Visually compared original with all three proposed crops in recovered 288-document IR; same photograph/artwork/emblem accepted (including infobox surroundings), different variants or absent content excluded.",
+    "proposal_index": 43,
+    "contact_sheet": "review_007.jpg",
+    "proposal_sha256": "72b2b1ff2b7c42337544647299a732d106237ca82e2bf9fc90711b0ed1e365cf"
+  },
+  {
+    "gold_image_id": "baba8beb16ac3f9b281fef20ee7f0430",
+    "accepted_figure_ids": [
+      "baba8beb16ac3f9b281fef20ee7f0430:p0:f21"
+    ],
+    "status": "verified_same_visual_content",
+    "review_note": "Visually compared original with all three proposed crops in recovered 288-document IR; same photograph/artwork/emblem accepted (including infobox surroundings), different variants or absent content excluded.",
+    "proposal_index": 44,
+    "contact_sheet": "review_007.jpg",
+    "proposal_sha256": "72b2b1ff2b7c42337544647299a732d106237ca82e2bf9fc90711b0ed1e365cf"
+  },
+  {
+    "gold_image_id": "bea253af5c65cce9e682cde1771431a2",
+    "accepted_figure_ids": [
+      "bea253af5c65cce9e682cde1771431a2:p2:f5"
+    ],
+    "status": "verified_same_visual_content",
+    "review_note": "Visually compared original with all three proposed crops in recovered 288-document IR; same photograph/artwork/emblem accepted (including infobox surroundings), different variants or absent content excluded.",
+    "proposal_index": 45,
+    "contact_sheet": "review_007.jpg",
+    "proposal_sha256": "72b2b1ff2b7c42337544647299a732d106237ca82e2bf9fc90711b0ed1e365cf"
+  },
+  {
+    "gold_image_id": "c247f60f679dbb03959540a28126c506",
+    "accepted_figure_ids": [
+      "c247f60f679dbb03959540a28126c506:p0:f15"
+    ],
+    "status": "verified_same_visual_content",
+    "review_note": "Visually compared original with all three proposed crops in recovered 288-document IR; same photograph/artwork/emblem accepted (including infobox surroundings), different variants or absent content excluded.",
+    "proposal_index": 46,
+    "contact_sheet": "review_007.jpg",
+    "proposal_sha256": "72b2b1ff2b7c42337544647299a732d106237ca82e2bf9fc90711b0ed1e365cf"
+  },
+  {
+    "gold_image_id": "c52409657f715b781c8ba0d60bc93d8f",
+    "accepted_figure_ids": [
+      "c52409657f715b781c8ba0d60bc93d8f:p1:f4"
+    ],
+    "status": "verified_same_visual_content",
+    "review_note": "Visually compared original with all three proposed crops in recovered 288-document IR; same photograph/artwork/emblem accepted (including infobox surroundings), different variants or absent content excluded.",
+    "proposal_index": 47,
+    "contact_sheet": "review_007.jpg",
+    "proposal_sha256": "72b2b1ff2b7c42337544647299a732d106237ca82e2bf9fc90711b0ed1e365cf"
+  },
+  {
+    "gold_image_id": "c78bb59a36661c3dc66a721e2e657e25",
+    "accepted_figure_ids": [],
+    "status": "unresolved_visual_mismatch",
+    "review_note": "Visually compared original with all three proposed crops in recovered 288-document IR; same photograph/artwork/emblem accepted (including infobox surroundings), different variants or absent content excluded.",
+    "proposal_index": 48,
+    "contact_sheet": "review_008.jpg",
+    "proposal_sha256": "72b2b1ff2b7c42337544647299a732d106237ca82e2bf9fc90711b0ed1e365cf"
+  },
+  {
+    "gold_image_id": "c9c97cbc77353164913fcf9082ec76d9",
+    "accepted_figure_ids": [
+      "c9c97cbc77353164913fcf9082ec76d9:p21:f2"
+    ],
+    "status": "verified_same_visual_content",
+    "review_note": "Visually compared original with all three proposed crops in recovered 288-document IR; same photograph/artwork/emblem accepted (including infobox surroundings), different variants or absent content excluded.",
+    "proposal_index": 49,
+    "contact_sheet": "review_008.jpg",
+    "proposal_sha256": "72b2b1ff2b7c42337544647299a732d106237ca82e2bf9fc90711b0ed1e365cf"
+  },
+  {
+    "gold_image_id": "d0cedd153c0bfd15aa7fd98e347e4450",
     "accepted_figure_ids": [
       "129523641a4adb5d777fb0271cca6cf5:p0:f13"
     ],
-    "contact_sheet": "review_006.jpg",
-    "gold_image_id": "d0cedd153c0bfd15aa7fd98e347e4450",
-    "proposal_index": 38,
-    "proposal_sha256": "1d94cd7579c923d802b75ce016c72d0349f7d046c15679f544a2dd8835aae037",
-    "review_note": "Visually compared original and up to three proposed candidates. Matching photograph/artwork may include surrounding infobox text and resizing.",
-    "status": "verified_same_visual_content"
+    "status": "verified_same_visual_content",
+    "review_note": "Visually compared original with all three proposed crops in recovered 288-document IR; same photograph/artwork/emblem accepted (including infobox surroundings), different variants or absent content excluded.",
+    "proposal_index": 50,
+    "contact_sheet": "review_008.jpg",
+    "proposal_sha256": "72b2b1ff2b7c42337544647299a732d106237ca82e2bf9fc90711b0ed1e365cf"
+  },
+  {
+    "gold_image_id": "e82056d716b0bbbe12c62dd0c27501af",
+    "accepted_figure_ids": [],
+    "status": "unresolved_visual_mismatch",
+    "review_note": "Visually compared original with all three proposed crops in recovered 288-document IR; same photograph/artwork/emblem accepted (including infobox surroundings), different variants or absent content excluded.",
+    "proposal_index": 51,
+    "contact_sheet": "review_008.jpg",
+    "proposal_sha256": "72b2b1ff2b7c42337544647299a732d106237ca82e2bf9fc90711b0ed1e365cf"
+  },
+  {
+    "gold_image_id": "e8fa5ddc27d46da7b31154d494bfe3c6",
+    "accepted_figure_ids": [
+      "e8fa5ddc27d46da7b31154d494bfe3c6:p1:f3"
+    ],
+    "status": "verified_same_visual_content",
+    "review_note": "Visually compared original with all three proposed crops in recovered 288-document IR; same photograph/artwork/emblem accepted (including infobox surroundings), different variants or absent content excluded.",
+    "proposal_index": 52,
+    "contact_sheet": "review_008.jpg",
+    "proposal_sha256": "72b2b1ff2b7c42337544647299a732d106237ca82e2bf9fc90711b0ed1e365cf"
+  },
+  {
+    "gold_image_id": "eaebb69e051c5d32ede3ed5e32ff5488",
+    "accepted_figure_ids": [
+      "eaebb69e051c5d32ede3ed5e32ff5488:p0:f10"
+    ],
+    "status": "verified_same_visual_content",
+    "review_note": "Visually compared original with all three proposed crops in recovered 288-document IR; same photograph/artwork/emblem accepted (including infobox surroundings), different variants or absent content excluded.",
+    "proposal_index": 53,
+    "contact_sheet": "review_008.jpg",
+    "proposal_sha256": "72b2b1ff2b7c42337544647299a732d106237ca82e2bf9fc90711b0ed1e365cf"
+  },
+  {
+    "gold_image_id": "fd4309c7e0ee8cdef87fd482ce1a1608",
+    "accepted_figure_ids": [
+      "fd4309c7e0ee8cdef87fd482ce1a1608:p0:f18"
+    ],
+    "status": "verified_same_visual_content",
+    "review_note": "Visually compared original with all three proposed crops in recovered 288-document IR; same photograph/artwork/emblem accepted (including infobox surroundings), different variants or absent content excluded.",
+    "proposal_index": 54,
+    "contact_sheet": "review_009.jpg",
+    "proposal_sha256": "72b2b1ff2b7c42337544647299a732d106237ca82e2bf9fc90711b0ed1e365cf"
   }
 ]
