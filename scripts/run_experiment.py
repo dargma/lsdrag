@@ -47,7 +47,18 @@ def main():
             raise ValueError("Existing run has different identity or resume not requested")
     else:
         dump_json(manifest, identity)
-    pending = [q for q in questions if not (a.resume and (a.output / (q["qid"] + ".json")).exists())]
+    pending = []
+    for q in questions:
+        result_path = a.output / (q["qid"] + ".json")
+        if a.resume and result_path.exists():
+            previous = json.loads(result_path.read_text())
+            if previous["status"] != "failed":
+                continue
+            # Preserve infrastructure failures before retrying the same question.
+            archive = a.output / "failed_attempts"
+            archive.mkdir(exist_ok=True)
+            result_path.rename(archive / (q["qid"] + f".{time.time_ns()}.json"))
+        pending.append(q)
     if not pending:
         print("All requested questions already recorded")
         return

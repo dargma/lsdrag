@@ -92,7 +92,9 @@ class Retrieval:
     def semantic_search(self, query, top_k=5):
         top_k = max(1, min(20, top_k))
         channel = "gemma" if self.arm == "C1" else "qwen"
-        count = self.candidate_count if self.arm in {"V1", "V2"} else top_k
+        # Keep text candidate generation identical across arms. Only V1/V2
+        # add the image ranking; no hidden text-retrieval change accompanies it.
+        count = self.candidate_count
         text = self.indexes[channel + "_text"].search(self.query_vector(channel, query), count, row_limit=count * 3)
         identities = [key for key, _ in text]
         if self.arm in {"V1", "V2"}:

@@ -1,0 +1,12 @@
+{
+  "purpose": "synthetic visual transport smoke at experiment image budget",
+  "max_soft_tokens": 1120,
+  "response": "Red circle.",
+  "usage": {
+    "prompt_tokens": 1120,
+    "total_tokens": 1124,
+    "completion_tokens": 4,
+    "prompt_tokens_details": null
+  },
+  "passed": true
+}
