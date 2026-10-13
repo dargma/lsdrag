@@ -98,3 +98,9 @@ Mem-Gallery development oracle (10, clue-only version): EM .60, F1 .72045, offic
 - Fast-forwarded Drive checkout by three commits to 7aaa4f0 and cloned a local working checkout. All four active model snapshots downloaded at pinned revisions.
 - Restoring preflight and development parsing/IR backups with SHA256 verification. Unbacked indexes, raw prediction traces, Mem-Gallery data, and final additional PDFs/parses must be regenerated; historical aggregate reports remain preserved.
 - Runtime tests: 24 passed. Recreating isolated Reader, embedding, and parser environments; actual model checks and experiment restart remain in progress.
+
+### Recovery runtime verified and experiments resumed
+- Verified 4,969 restored backup files (1,646,754,910 bytes). All four model snapshots and upstream repositories are restored at pinned revisions. Reader tool/image smoke and real one-page standard parser smoke pass.
+- Mem-Gallery: 990 images; both splits and corpus hashes exactly match original. Both indexes rebuilt, V2 development inference is running in a separate recovery namespace.
+- Final 288-URL selection hashes match original. All 108 lost additional PDFs were recollected; their live-source bytes are new artifacts, not claimed to reproduce lost PDF hashes. Standard parsing resumed.
+- M3 Qwen index rebuild remains active. Continuation waits for it, builds Gemma indexes, backs up indexes/data, then runs and scores development V2. Separate completion workers score and back up Mem-Gallery V2 and final document parses. Concurrent development timing is diagnostic only.

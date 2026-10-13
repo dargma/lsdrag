@@ -146,13 +146,26 @@
       "port": 8102,
       "pid": 15109
     },
-    "restore_backup": {
-      "pid": 13728,
-      "log": "/content/local_fast/lsdrag-work/recovery/data.log"
-    },
     "development_qwen_index": {
       "session_id": 51546,
       "log": "/content/local_fast/lsdrag-work/recovery/index-dev-qwen.log"
+    },
+    "parser_server": {
+      "port": 8101,
+      "log": "/content/local_fast/lsdrag-work/recovery/parser-retry.log"
+    },
+    "MemGallery_V2_recovery": {
+      "session_id": 47896,
+      "log": "/content/local_fast/lsdrag-work/recovery/memgallery-V2.log"
+    },
+    "final_additions_parsing": {
+      "session_id": 83206,
+      "log": "/content/local_fast/lsdrag-work/recovery/parse-final.log",
+      "expected_documents": 108
+    },
+    "recovery_continuation": {
+      "session_id": 35957,
+      "log": "/content/local_fast/lsdrag-work/recovery/continuation.log"
     }
   },
   "recovery": {
@@ -172,6 +185,13 @@
     "mem_gallery": "990 images; development and evaluation input/gold hashes exactly match original; corpus hashes exactly match original",
     "reader": "native tool call and red-circle image recognition passed; user-role image transport retained",
     "final_corpus": "288 URLs and 108 new-document manifest reconstructed; all four selection hashes match original",
-    "embedding_environment": "Transformers 5.19.0, sentence-transformers 6.1.0, base torch 2.11.0+cu130; removed incompatible local torch 2.14.1 pulled by resolver"
+    "embedding_environment": "Transformers 5.19.0, sentence-transformers 6.1.0, base torch 2.11.0+cu130; removed incompatible local torch 2.14.1 pulled by resolver",
+    "report": "lab/reports/session_recovery.json",
+    "backup_restore": "complete: 4969 files, SHA256 verified",
+    "continuation_scripts": [
+      "scripts/recovery/continue_recovery.py",
+      "scripts/recovery/restore_final_parses.py",
+      "scripts/recovery/score_resumed_memgallery.py"
+    ]
   }
 }

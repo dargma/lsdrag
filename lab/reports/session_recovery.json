@@ -1,0 +1,45 @@
+{
+  "restored_code_revision": "7aaa4f0",
+  "backup_files_verified": 4969,
+  "backup_bytes_verified": 1646754910,
+  "models": [
+    {
+      "model": "google/embeddinggemma-2",
+      "sha": "914f7f89142e33e77833254d9c9b90c3cef7303b"
+    },
+    {
+      "model": "google/gemma-4-E4B-it",
+      "sha": "ee0ef6023621cff504d758262d4e04895a5af4a2"
+    },
+    {
+      "model": "opendatalab/MinerU2.5-Pro-2604-1.2B",
+      "sha": "d3f5e08d073c21466bbabe21c71bb1e9c2e595da"
+    },
+    {
+      "model": "Qwen/Qwen3-Embedding-4B",
+      "sha": "5cf2132abc99cad020ac570b19d031efec650f2b"
+    }
+  ],
+  "reader_smoke": "passed: native tool calling and user-role image recognition",
+  "parser_smoke": "passed: one real PDF page, standard tier",
+  "tests_passed": 24,
+  "mem_gallery": {
+    "images": 990,
+    "development_questions": 10,
+    "final_questions": 50,
+    "input_and_gold_hashes_match": true,
+    "corpus_hashes_match": true
+  },
+  "final_corpus": {
+    "urls": 288,
+    "new_pdfs": 108,
+    "selection_hashes_match": true,
+    "pdf_bytes": "regenerated from live sources; original unbacked PDF hashes are not recoverable"
+  },
+  "remaining": [
+    "final additional PDF parsing",
+    "M3 development vector indexes",
+    "interrupted development evaluation and scoring"
+  ],
+  "lost_results_policy": "Original aggregate reports preserved. Raw lost traces are not reconstructed from metrics; new inference runs use results/recovery_20261013."
+}
