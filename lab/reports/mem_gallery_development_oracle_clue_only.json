@@ -1,0 +1,245 @@
+{
+  "arm": "Oracle",
+  "by_task_and_question_image": {
+    "VR+question_image": {
+      "all_clues_read": {
+        "mean": 1.0,
+        "scored_n": 4
+      },
+      "bleu1": {
+        "mean": 0.5,
+        "scored_n": 4
+      },
+      "bleu2": {
+        "mean": 0.3290569415042095,
+        "scored_n": 4
+      },
+      "bleu4": {
+        "mean": 0.18504231654856035,
+        "scored_n": 4
+      },
+      "clue_read_recall": {
+        "mean": 1.0,
+        "scored_n": 4
+      },
+      "em": {
+        "mean": 0.5,
+        "scored_n": 4
+      },
+      "f1": {
+        "mean": 0.5,
+        "scored_n": 4
+      },
+      "image_delivery_recall": {
+        "mean": 1.0,
+        "scored_n": 4
+      },
+      "llm_judge_official": {
+        "mean": 0.5,
+        "scored_n": 4
+      },
+      "llm_judge_rubric_raw": {
+        "mean": 0.5,
+        "scored_n": 4
+      },
+      "loops": {
+        "mean": 1.0,
+        "scored_n": 4
+      },
+      "n": 4,
+      "search_tokens": {
+        "mean": 0.0,
+        "scored_n": 4
+      },
+      "seconds": {
+        "mean": 6.31944673900216,
+        "scored_n": 4
+      },
+      "unique_delivered_images": {
+        "mean": 2.0,
+        "scored_n": 4
+      }
+    },
+    "VR+text_question": {
+      "all_clues_read": {
+        "mean": 1.0,
+        "scored_n": 1
+      },
+      "bleu1": {
+        "mean": 0.09071795328941251,
+        "scored_n": 1
+      },
+      "bleu2": {
+        "mean": 0.09071795328941251,
+        "scored_n": 1
+      },
+      "bleu4": {
+        "mean": 0.09071795328941251,
+        "scored_n": 1
+      },
+      "clue_read_recall": {
+        "mean": 1.0,
+        "scored_n": 1
+      },
+      "em": {
+        "mean": 0.0,
+        "scored_n": 1
+      },
+      "f1": {
+        "mean": 0.45454545454545453,
+        "scored_n": 1
+      },
+      "image_delivery_recall": {
+        "mean": 1.0,
+        "scored_n": 1
+      },
+      "llm_judge_official": {
+        "mean": 1.0,
+        "scored_n": 1
+      },
+      "llm_judge_rubric_raw": {
+        "mean": 0.75,
+        "scored_n": 1
+      },
+      "loops": {
+        "mean": 1.0,
+        "scored_n": 1
+      },
+      "n": 1,
+      "search_tokens": {
+        "mean": 0.0,
+        "scored_n": 1
+      },
+      "seconds": {
+        "mean": 4.026309834996937,
+        "scored_n": 1
+      },
+      "unique_delivered_images": {
+        "mean": 1.0,
+        "scored_n": 1
+      }
+    },
+    "VS+text_question": {
+      "all_clues_read": {
+        "mean": 1.0,
+        "scored_n": 5
+      },
+      "bleu1": {
+        "mean": 0.95,
+        "scored_n": 5
+      },
+      "bleu2": {
+        "mean": 0.9414213562373096,
+        "scored_n": 5
+      },
+      "bleu4": {
+        "mean": 0.33250928569017546,
+        "scored_n": 5
+      },
+      "clue_read_recall": {
+        "mean": 1.0,
+        "scored_n": 5
+      },
+      "em": {
+        "mean": 0.8,
+        "scored_n": 5
+      },
+      "f1": {
+        "mean": 0.95,
+        "scored_n": 5
+      },
+      "image_delivery_recall": {
+        "mean": 0.9,
+        "scored_n": 5
+      },
+      "llm_judge_official": {
+        "mean": 0.9,
+        "scored_n": 5
+      },
+      "llm_judge_rubric_raw": {
+        "mean": 0.85,
+        "scored_n": 5
+      },
+      "loops": {
+        "mean": 1.0,
+        "scored_n": 5
+      },
+      "n": 5,
+      "search_tokens": {
+        "mean": 0.0,
+        "scored_n": 5
+      },
+      "seconds": {
+        "mean": 5.082828098203754,
+        "scored_n": 5
+      },
+      "unique_delivered_images": {
+        "mean": 1.2,
+        "scored_n": 5
+      }
+    }
+  },
+  "gold_sha256": "5e94c85009c5f2719fc030221eef87c595baac91c4cb70de733306b58ad7cf28",
+  "metric_scale": "0–1 except counts/time/tokens",
+  "official_judge": "official parser collapses five-level rubric to 0/.5/1; raw rubric scores also retained",
+  "overall": {
+    "all_clues_read": {
+      "mean": 1.0,
+      "scored_n": 10
+    },
+    "bleu1": {
+      "mean": 0.6840717953289412,
+      "scored_n": 10
+    },
+    "bleu2": {
+      "mean": 0.6114052500492798,
+      "scored_n": 10
+    },
+    "bleu4": {
+      "mean": 0.24934336479345315,
+      "scored_n": 10
+    },
+    "clue_read_recall": {
+      "mean": 1.0,
+      "scored_n": 10
+    },
+    "em": {
+      "mean": 0.6,
+      "scored_n": 10
+    },
+    "f1": {
+      "mean": 0.7204545454545455,
+      "scored_n": 10
+    },
+    "image_delivery_recall": {
+      "mean": 0.95,
+      "scored_n": 10
+    },
+    "llm_judge_official": {
+      "mean": 0.75,
+      "scored_n": 10
+    },
+    "llm_judge_rubric_raw": {
+      "mean": 0.7,
+      "scored_n": 10
+    },
+    "loops": {
+      "mean": 1.0,
+      "scored_n": 10
+    },
+    "n": 10,
+    "search_tokens": {
+      "mean": 0.0,
+      "scored_n": 10
+    },
+    "seconds": {
+      "mean": 5.471823728202435,
+      "scored_n": 10
+    },
+    "unique_delivered_images": {
+      "mean": 1.5,
+      "scored_n": 10
+    }
+  },
+  "run_manifest_sha256": "8b6c029b167fb5608b74911bf82ea2a6982f8867164ded7679877d3435e00c7f"
+}

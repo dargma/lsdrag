@@ -1,4 +1,8 @@
-"""Separate Reader diagnostic using annotated clue turns, never gold answers."""
+"""Separate Reader diagnostic using annotated evidence, without answer text in prompts.
+
+Explicit VS target image IDs may locate omitted evidence turns; this is an oracle
+condition and must never be used by the retrieval agents.
+"""
 import argparse
 from dataclasses import asdict
 import hashlib
@@ -32,11 +36,18 @@ def main():
     reader = Reader(config)
     tokenizer = tiktoken.encoding_for_model("gpt-4o")
     prompt = "Answer the question using the supplied conversation evidence and images. Do not guess unsupported visual details. Return JSON with answers (a list of short strings), citations (a list of chunk IDs), and reasoning (a short explanation). Leave answers empty if the evidence is insufficient. For a visual search question, return source Image IDs as separate answers in ascending order."
-    identity = {"arm": "Oracle", "benchmark": "memgallery", "questions_sha256": sha256(a.questions), "gold_sha256": sha256(a.gold), "question_ids": [q["qid"] for q in questions], "corpus_sha256": sha256(a.corpus / "manifest.json"), "config": asdict(config), "code_revision": subprocess.check_output(["git", "rev-parse", "HEAD"], text=True).strip(), "uses_gold_clues": True, "uses_gold_answers_in_reader_input": False, "diagnostic_only": True}
+    identity = {"arm": "Oracle", "benchmark": "memgallery", "questions_sha256": sha256(a.questions), "gold_sha256": sha256(a.gold), "question_ids": [q["qid"] for q in questions], "corpus_sha256": sha256(a.corpus / "manifest.json"), "config": asdict(config), "code_revision": subprocess.check_output(["git", "rev-parse", "HEAD"], text=True).strip(), "uses_gold_clues": True, "uses_explicit_VS_target_image_ids_to_select_evidence": True, "uses_gold_answer_text_in_reader_prompt": False, "diagnostic_only": True}
     dump_json(a.output / "run_manifest.json", identity)
     for q in questions:
         start = time.monotonic()
         clue_ids = [q["scenario"] + ":" + turn for turn in gold[q["qid"]]["clue"]]
+        if q["task_type"] == "VS":
+            targets = {s.strip() for s in gold[q["qid"]]["answer"].split(",")}
+            target_turns = {f["chunk_id"] for f in figures.values() if f["scenario"] == q["scenario"] and f["source_image_id"] in targets}
+            # Some official clue lists omit a turn containing a required image.
+            # Complete oracle evidence using explicit target-image annotations.
+            required_turns = set(clue_ids) | target_turns
+            clue_ids = [key for key in chunks if key in required_turns]
         evidence = [chunks[key] for key in clue_ids]
         if any(c["scenario"] != q["scenario"] for c in evidence):
             raise ValueError("Cross-scenario oracle clue")
