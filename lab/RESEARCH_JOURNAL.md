@@ -107,3 +107,8 @@ Mem-Gallery development oracle (10, clue-only version): EM .60, F1 .72045, offic
 
 ### Interim report focused on the embedder replacement question
 User clarified the primary question: what changes when replacing Qwen with Google multimodal embeddings? Wrote a concise interim report separating C1 text replacement from V1 image-channel addition, and explicitly marked Google-text-plus-image full replacement as unmeasured. No new experimental arm was launched. Added the completed recovery Mem-Gallery V2 summary; M3 V2 remains in progress.
+
+### V2 development complete and illustrated report revised
+- M3 V2 recovery: all 50 scored; EM .10, F1 .1366, LLM accuracy .14. On 33 fully mapped questions, figure candidate recall .9091 and delivery recall .6364. This includes tool/prompt changes, not an isolated embedding replacement.
+- All 108 additional PDFs parsed; recovery-final backup verifies 2,715 files. Development indexes and resumed results backed up.
+- Reorganized INTERIM_REPORT.md into the seven requested sections with a red bold numeric SVG and four illustrated cases, two per benchmark. Included helpful visual-search examples, a fine-detail counting failure, and a date-constraint failure; exported actual trace excerpts and image provenance.

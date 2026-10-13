@@ -1,0 +1,88 @@
+[
+  {
+    "case": "m3_success",
+    "role": "delivered",
+    "figure_id": "6eaff02e7a4e8da95cd67e4021d98c6d:p0:f15",
+    "file": "m3_success_read1.jpg",
+    "sha256": "29562727f2ae039aa05583277e086e550b90f9c4763e6b693de0907f4b558bf3",
+    "source_url": "https://en.wikipedia.org/wiki/Slumdog_Millionaire",
+    "caption": "",
+    "date": null
+  },
+  {
+    "case": "m3_success",
+    "role": "delivered",
+    "figure_id": "6eaff02e7a4e8da95cd67e4021d98c6d:p6:f6",
+    "file": "m3_success_read2.jpg",
+    "sha256": "d2d9a69ecd23f2dd7d5592e72021d5f17bf13125de1dde5c933150f1b532b71c",
+    "source_url": "https://en.wikipedia.org/wiki/Slumdog_Millionaire",
+    "caption": "",
+    "date": null
+  },
+  {
+    "case": "m3_limit",
+    "role": "delivered",
+    "figure_id": "0af43d695e0fa436b1c1dfc150d48182:p0:f15",
+    "file": "m3_limit_read1.jpg",
+    "sha256": "374c990b6b15efdd24a8ea3f660171d4573d78fbb5bc1f8ad46454c0ace8e8fd",
+    "source_url": "https://en.wikipedia.org/wiki/Bank_of_America_Stadium",
+    "caption": "",
+    "date": null
+  },
+  {
+    "case": "mem_success",
+    "role": "delivered",
+    "figure_id": "Architecture_Art_Culture_Exhibition_Technology:D7:IMG_001",
+    "file": "mem_success_read1.jpg",
+    "sha256": "0f222187c8bce0d14728c26fda96aa06e86cba7d4038e667eb9e4bcde42b5778",
+    "source_url": null,
+    "caption": "Colorful traditional embroidered dress displayed on a headless mannequin, featuring long sleeves and intricate geometric and floral patterns in red, orange, yellow, green, and blue. A matching embroidered cap with hanging tassels is positioned above the collar. The garment stands in front of a red woven textile backdrop, with a white information placard on a metal stand in the foreground, indicating a museum or exhibition setting.",
+    "date": "2024-09-15",
+    "dataset_source": "https://huggingface.co/datasets/Ethan-Bei/Mem-Gallery/tree/af912daba984e896e253016b7c7e334ef92c2a6f"
+  },
+  {
+    "case": "mem_limit",
+    "role": "delivered",
+    "figure_id": "Dog_Behavior_Research_Academic_Life:D2:IMG_002",
+    "file": "mem_limit_read1.jpg",
+    "sha256": "3e73ed0f49ac60f9f3802ae82fba31a3d75b29f7a50d39a334dc06ae1aa3ee33",
+    "source_url": null,
+    "caption": "Brown-and-white spaniel-type dog running on green grass with mouth open and ears flapping, wearing a blue collar with a tag, with a patch of bare soil and sparse vegetation in the background.",
+    "date": "2025-03-14",
+    "dataset_source": "https://huggingface.co/datasets/Ethan-Bei/Mem-Gallery/tree/af912daba984e896e253016b7c7e334ef92c2a6f"
+  },
+  {
+    "case": "mem_limit",
+    "role": "delivered",
+    "figure_id": "Dog_Behavior_Research_Academic_Life:D2:IMG_004",
+    "file": "mem_limit_read2.jpg",
+    "sha256": "cb282c74f52e666577d7f684fafdf083c39c5aae9b1c84f3d30182cc65eaca37",
+    "source_url": null,
+    "caption": "Long-haired brown dog with wavy fur and floppy ears sitting on green grass in an outdoor yard, looking toward the camera, with stepping stones and part of a wooden structure in the blurred background.",
+    "date": "2025-03-14",
+    "dataset_source": "https://huggingface.co/datasets/Ethan-Bei/Mem-Gallery/tree/af912daba984e896e253016b7c7e334ef92c2a6f"
+  },
+  {
+    "case": "m3_success",
+    "role": "gold_original",
+    "file": "m3_success_gold.png",
+    "sha256": "0f94b6d95235109df93176a3c85ac49cba9a7f887fcb5a38a48b5bf41f194143",
+    "dataset_source": "MultimodalQA original image; restored gold_image_sources.jsonl"
+  },
+  {
+    "case": "m3_limit",
+    "role": "gold_original",
+    "file": "m3_limit_gold.png",
+    "sha256": "4c7cf2ca7d65e17c7a299094179118603f5d5db29fc2eecb3ff256ac98ae7847",
+    "dataset_source": "MultimodalQA original image; restored gold_image_sources.jsonl"
+  },
+  {
+    "case": "mem_limit",
+    "role": "gold",
+    "file": "mem_limit_gold.jpg",
+    "date": "2025-04-17",
+    "figure_id": "Dog_Behavior_Research_Academic_Life:D7:IMG_001",
+    "sha256": "dfe4d532d632093a07aa27c41da4f1ca3f06585ef85f093d70f55729b8a24cf5",
+    "dataset_source": "https://huggingface.co/datasets/Ethan-Bei/Mem-Gallery/tree/af912daba984e896e253016b7c7e334ef92c2a6f"
+  }
+]

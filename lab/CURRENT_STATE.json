@@ -1,5 +1,5 @@
 {
-  "stage": "session_recovery",
+  "stage": "development_evaluation",
   "status": "in_progress",
   "goal": "Complete B0/V1/V2/C1 on 50 image-related M3DocVQA questions, supplementary Mem-Gallery 50-question B0/V1/V2 and oracle-evidence Reader evaluation, and final report",
   "plan": "docs/EXPERIMENT_PLAN.md",
@@ -102,6 +102,12 @@
       "questions": 50,
       "score_status": "complete; development only",
       "summary": "lab/reports/development_V1_metrics.json"
+    },
+    "V2": {
+      "questions": 50,
+      "directory": "/content/local_fast/lsdrag-work/results/recovery_20261013/development_V2",
+      "summary": "lab/reports/development_V2_recovery_metrics.json",
+      "score_status": "complete; development only; EM .10 F1 .1366 LLM accuracy .14"
     }
   },
   "development_visual_mapping": {
@@ -144,28 +150,11 @@
   "running_tasks": {
     "reader_server": {
       "port": 8102,
-      "pid": 15109
-    },
-    "development_qwen_index": {
-      "session_id": 51546,
-      "log": "/content/local_fast/lsdrag-work/recovery/index-dev-qwen.log"
+      "log": "/content/local_fast/lsdrag-work/recovery/reader-restarted.log"
     },
     "parser_server": {
       "port": 8101,
-      "log": "/content/local_fast/lsdrag-work/recovery/parser-retry.log"
-    },
-    "MemGallery_V2_recovery": {
-      "session_id": 47896,
-      "log": "/content/local_fast/lsdrag-work/recovery/memgallery-V2.log"
-    },
-    "final_additions_parsing": {
-      "session_id": 83206,
-      "log": "/content/local_fast/lsdrag-work/recovery/parse-final.log",
-      "expected_documents": 108
-    },
-    "recovery_continuation": {
-      "session_id": 35957,
-      "log": "/content/local_fast/lsdrag-work/recovery/continuation.log"
+      "log": "/content/local_fast/lsdrag-work/recovery/parser-memory-recovery.log"
     }
   },
   "recovery": {
@@ -192,6 +181,7 @@
       "scripts/recovery/continue_recovery.py",
       "scripts/recovery/restore_final_parses.py",
       "scripts/recovery/score_resumed_memgallery.py"
-    ]
+    ],
+    "status": "restored indexes and final parses; resumed V2 runs scored and backed up"
   }
 }

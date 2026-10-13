@@ -1,0 +1,148 @@
+{
+  "qid": "Dog_Behavior_Research_Academic_Life:qa0033",
+  "question": "In the dalogue of mid-April, which image represents Luna observed in this session?",
+  "answers": [
+    "D2:IMG_002"
+  ],
+  "delivered_figure_ids": [
+    "Dog_Behavior_Research_Academic_Life:D2:IMG_002",
+    "Dog_Behavior_Research_Academic_Life:D2:IMG_004"
+  ],
+  "trajectory": [
+    {
+      "arguments": {
+        "keywords": [
+          "mid-April",
+          "Luna"
+        ]
+      },
+      "loop": 1,
+      "result": [
+        {
+          "chunk_id": "Dog_Behavior_Research_Academic_Life:D2:11",
+          "document_id": "Dog_Behavior_Research_Academic_Life:D2",
+          "kind": "text",
+          "page_index": 1,
+          "snippet": " Luna, on the other hand, barked once and then ran to grab the toy she’d been guarding"
+        },
+        {
+          "chunk_id": "Dog_Behavior_Research_Academic_Life:D2:3",
+          "document_id": "Dog_Behavior_Research_Academic_Life:D2",
+          "kind": "image_caption",
+          "page_index": 1,
+          "snippet": "user (Evelyn): Then today we have seen Luna, an English Springer Spaniel — she was bursting with energy, constantly wagging her tail and scanning everything around her"
+        },
+        {
+          "chunk_id": "Dog_Behavior_Research_Academic_Life:D2:4",
+          "document_id": "Dog_Behavior_Research_Academic_Life:D2",
+          "kind": "text",
+          "page_index": 1,
+          "snippet": "user (Evelyn): The contrast was striking — Rocky moved like he had all the time in the world, while Luna couldn’t stay still for a second"
+        },
+        {
+          "chunk_id": "Dog_Behavior_Research_Academic_Life:D2:6",
+          "document_id": "Dog_Behavior_Research_Academic_Life:D2",
+          "kind": "image_caption",
+          "page_index": 1,
+          "snippet": " But I also admire Luna’s curiosity — she reminds me of my younger self, always chasing every moving thing"
+        },
+        {
+          "chunk_id": "Dog_Behavior_Research_Academic_Life:D2:7",
+          "document_id": "Dog_Behavior_Research_Academic_Life:D2",
+          "kind": "image_caption",
+          "page_index": 1,
+          "snippet": " I can’t tell which one was Luna anymore"
+        }
+      ],
+      "retrieved_tokens": 413,
+      "seconds": 0.0011085189998993883,
+      "tool_name": "keyword_search"
+    },
+    {
+      "arguments": {
+        "chunk_ids": [
+          "Dog_Behavior_Research_Academic_Life:D2:3",
+          "Dog_Behavior_Research_Academic_Life:D2:6"
+        ]
+      },
+      "loop": 2,
+      "result": [
+        {
+          "chunk_id": "Dog_Behavior_Research_Academic_Life:D2:3",
+          "document_id": "Dog_Behavior_Research_Academic_Life:D2",
+          "figures": [
+            {
+              "figure_id": "Dog_Behavior_Research_Academic_Life:D2:IMG_002",
+              "status": "queued_for_reader"
+            }
+          ],
+          "kind": "image_caption",
+          "next_chunk_id": "Dog_Behavior_Research_Academic_Life:D2:4",
+          "page_index": 1,
+          "previous_chunk_id": "Dog_Behavior_Research_Academic_Life:D2:2",
+          "text": "Evelyn — 2025-03-14 — D2\nDialogue ID: D2:3\nuser (Evelyn): Then today we have seen Luna, an English Springer Spaniel — she was bursting with energy, constantly wagging her tail and scanning everything around her.\nassistant: That’s classic Springer behavior! They’re intelligent and alert, always ready for action. Hunters used them to ‘spring’ game birds from hiding.\nImage ID: D2:IMG_002\nProvided image caption: Brown-and-white spaniel-type dog running on green grass with mouth open and ears flapping, wearing a blue collar with a tag, with a patch of bare soil and sparse vegetation in the background."
+        },
+        {
+          "chunk_id": "Dog_Behavior_Research_Academic_Life:D2:6",
+          "document_id": "Dog_Behavior_Research_Academic_Life:D2",
+          "figures": [
+            {
+              "figure_id": "Dog_Behavior_Research_Academic_Life:D2:IMG_004",
+              "status": "queued_for_reader"
+            }
+          ],
+          "kind": "image_caption",
+          "next_chunk_id": "Dog_Behavior_Research_Academic_Life:D2:7",
+          "page_index": 1,
+          "previous_chunk_id": "Dog_Behavior_Research_Academic_Life:D2:5",
+          "text": "Evelyn — 2025-03-14 — D2\nDialogue ID: D2:6\nuser (Evelyn): I’d love that. But I also admire Luna’s curiosity — she reminds me of my younger self, always chasing every moving thing. Like the picture!\nassistant: Yes, maybe you see a bit of both sides in yourself — the reflective Sussex and the adventurous Springer.\nImage ID: D2:IMG_004\nProvided image caption: Long-haired brown dog with wavy fur and floppy ears sitting on green grass in an outdoor yard, looking toward the camera, with stepping stones and part of a wooden structure in the blurred background."
+        }
+      ],
+      "retrieved_tokens": 562,
+      "seconds": 0.0002927700002146594,
+      "tool_name": "read_chunk"
+    }
+  ],
+  "source_prediction_sha256": "d7b3a763f9f1f25fee0c20823d1ea30593213b023d84b49f1e5fd2fb12144bd3",
+  "run_manifest": {
+    "arm": "V2",
+    "benchmark": "memgallery",
+    "code_revision": "5c308aab5aca76e84e4d1c57d6db9115130b0403",
+    "config": {
+      "base_url": "http://127.0.0.1:8102/v1",
+      "context_limit": 32768,
+      "image_soft_tokens": 1120,
+      "max_images": 8,
+      "max_loops": 15,
+      "max_output_tokens": 1024,
+      "model": "gemma-reader",
+      "seed": 20261013,
+      "timeout_seconds": 240
+    },
+    "corpus_sha256": "39e7f7432d4bcde3783fc971337abf4a44868bc936b42aa0c09ec10995d9c409",
+    "index_manifests": {
+      "gemma_image": "c36a148e1df77af6c1668e5554e64337c3e81acf2b4adb8f336b7ff53228e19f",
+      "qwen_text": "029a7a4d8cc59c174b33884a51e5c0c0e09cd436f218cf9487dfe39124800c30"
+    },
+    "prompt_sha256": "e388d29a9770f2abbe66a2fd0bb96fb8afea1723646b90442522642155f1a8c9",
+    "question_ids": [
+      "Architecture_Art_Culture_Exhibition_Technology:qa0006",
+      "Architecture_Art_Culture_Exhibition_Technology:qa0018",
+      "Architecture_Art_Culture_Exhibition_Technology:qa0035",
+      "Architecture_Art_Culture_Exhibition_Technology:qa0068",
+      "Dog_Behavior_Research_Academic_Life:qa0000",
+      "Dog_Behavior_Research_Academic_Life:qa0002",
+      "Dog_Behavior_Research_Academic_Life:qa0012",
+      "Dog_Behavior_Research_Academic_Life:qa0017",
+      "Dog_Behavior_Research_Academic_Life:qa0029",
+      "Dog_Behavior_Research_Academic_Life:qa0033"
+    ],
+    "question_image_hashes": {
+      "/content/local_fast/lsdrag-work/data/mem_gallery/data/image/Architecture_Art_Culture_Exhibition_Technology/QA_IMG_006.jpg": "7a2bbccd59f051aecbd6408c28f8030adc8b6753f96175cdbe9e5a566f06e571",
+      "/content/local_fast/lsdrag-work/data/mem_gallery/data/image/Dog_Behavior_Research_Academic_Life/QA_IMG_001.jpg": "4284f56e50606fe7922157b5e94be58770f8c6174e81f942c7af4e9025d43aad",
+      "/content/local_fast/lsdrag-work/data/mem_gallery/data/image/Dog_Behavior_Research_Academic_Life/QA_IMG_003.jpg": "5347726deb3f5ba6c3d46a07b9c07a669e4bb9e8cc171499d27a9051b153660a",
+      "/content/local_fast/lsdrag-work/data/mem_gallery/data/image/Dog_Behavior_Research_Academic_Life/QA_IMG_007.jpg": "af4d1d7440bdbffb42782f95fcdeee0f4e987f2e20288304f410c16f74f5e187"
+    },
+    "questions_sha256": "59010622a78d5123ed33a4d7f78b4c9be58daa6edd5f6357cb0cbfa410f4eec1"
+  }
+}
