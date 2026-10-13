@@ -10,7 +10,9 @@ ROOT = Path('/content/local_fast/lsdrag-work')
 REPO = Path(__file__).resolve().parents[1]
 OPTIONS = argparse.ArgumentParser()
 OPTIONS.add_argument('--evaluation-set', choices=['development', 'additional50'], default='development')
-SET = OPTIONS.parse_args().evaluation_set
+OPTIONS.add_argument('--benchmark', choices=['all', 'm3docvqa', 'memgallery'], default='all')
+ARGS = OPTIONS.parse_args()
+SET = ARGS.evaluation_set
 OUT = ROOT / ('results/three_arm_arag8_textquery' if SET == 'development' else 'results/three_arm_additional50')
 LOGS = OUT / 'logs'
 EMBED = ROOT / 'embedding-env/bin/python'
@@ -55,13 +57,16 @@ def one(benchmark, arm):
 
 def main():
     LOGS.mkdir(parents=True, exist_ok=True)
-    for benchmark in ('m3docvqa', 'memgallery'):
+    for benchmark in (('m3docvqa', 'memgallery') if ARGS.benchmark == 'all' else (ARGS.benchmark,)):
         with ThreadPoolExecutor(max_workers=3) as pool:
             list(pool.map(lambda arm: one(benchmark, arm), ARMS))
         command(benchmark + '-paired', RUNTIME, 'compare_runs.py', [
             '--baseline', OUT / benchmark / 'B0_scores', '--variant', OUT / benchmark / 'C1_scores',
             '--variant', OUT / benchmark / 'G1_scores', '--benchmark', benchmark,
             '--output', OUT / benchmark / 'paired_comparison.json'])
+    if not all((OUT / b / 'paired_comparison.json').exists() for b in ('m3docvqa', 'memgallery')):
+        print('REQUESTED BENCHMARK COMPLETE; OTHER BENCHMARK PENDING', flush=True)
+        return
     (OUT / 'COMPLETE.json').write_text(json.dumps({'status': 'complete', 'arms': ARMS,
         'benchmarks': ['m3docvqa', 'memgallery'], 'max_agent_iterations': 8, 'question_image_policy': 'text-only'}, indent=2))
     print('ALL SIX RUNS SCORED AND BACKED UP', flush=True)

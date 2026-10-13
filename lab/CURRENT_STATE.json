@@ -1,6 +1,6 @@
 {
   "stage": "development_evaluation",
-  "status": "development_comparison_complete",
+  "status": "additional50_preparation",
   "goal": "Compare Qwen text, Google text-only, and Google-only multimodal retrieval with identical VLM, tools and 8 A-RAG agent iterations, no independent Reader-call limit; Mem-Gallery text queries only; no oracle condition",
   "plan": "docs/EXPERIMENT_PLAN.md",
   "work_root": "/content/local_fast/lsdrag-work",
@@ -118,7 +118,11 @@
       "log": "/content/local_fast/lsdrag-work/memgallery-development-B0.log"
     }
   },
-  "running_tasks": {},
+  "running_tasks": {
+    "additional50_coordinator": {
+      "log": "/content/local_fast/lsdrag-work/recovery/additional50-coordinator.log"
+    }
+  },
   "recovery": {
     "date": "2026-10-13",
     "restored_code_revision": "7aaa4f0",
@@ -205,5 +209,16 @@
       "C1": "lab/reports/three_arm_arag8/memgallery/C1_summary.json",
       "G1": "lab/reports/three_arm_arag8/memgallery/G1_summary.json"
     }
+  },
+  "additional_comparison": {
+    "status": "new_document_indexes_building",
+    "questions_per_arm": {
+      "m3docvqa": 50,
+      "memgallery": 50
+    },
+    "question_overlap_with_development": 0,
+    "output_root": "/content/local_fast/lsdrag-work/results/three_arm_additional50",
+    "new_document_count": 108,
+    "reused_document_count": 180
   }
 }
