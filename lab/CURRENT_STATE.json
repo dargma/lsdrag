@@ -29,21 +29,20 @@
   "running_tasks": {
     "reader_server": {
       "port": 8102,
-      "session_id": 86509,
-      "log": "/content/local_fast/lsdrag-work/reader-development-server.log"
+      "session_id": 86509
     },
-    "B0_development": {
-      "session_id": 9612,
-      "log": "/content/local_fast/lsdrag-work/development-B0.log"
+    "parser_server": {
+      "port": 8101,
+      "session_id": 81443
     },
-    "MemGallery_development_oracle_scoring": {
-      "session_id": 79157,
-      "log": "/content/local_fast/lsdrag-work/memgallery-development-oracle-score.log"
+    "V2_development": {
+      "session_id": 28317,
+      "log": "/content/local_fast/lsdrag-work/development-V2.log"
     }
   },
   "standard_parser_smoke_passed": true,
   "preflight_backup": "lab/reports/preflight_backup.json",
-  "implementation_status": "20 tests pass; multimodal agent and scenario isolation implemented; final benchmark runs not started",
+  "implementation_status": "24 tests including composite index integrity; final benchmark runs not started",
   "approved_evaluation_scope": {
     "m3docvqa_questions": 50,
     "mem_gallery_questions": 50,
@@ -107,6 +106,16 @@
       "directory": "/content/local_fast/lsdrag-work/results/development_C1",
       "score_status": "complete; EM=.02 F1=.044; developmental diagnostic only",
       "summary": "lab/reports/development_C1_metrics.json"
+    },
+    "B0": {
+      "questions": 50,
+      "score_status": "complete; development only",
+      "summary": "lab/reports/development_B0_metrics.json"
+    },
+    "V1": {
+      "questions": 50,
+      "score_status": "complete; development only",
+      "summary": "lab/reports/development_V1_metrics.json"
     }
   },
   "development_visual_mapping": {
@@ -114,5 +123,6 @@
     "verified_originals": 34,
     "review_file": "lab/reports/development_alignment_review.json"
   },
-  "development_backup": "lab/reports/development_parsing_backup.json"
+  "development_backup": "lab/reports/development_parsing_backup.json",
+  "final_corpus_selection": "lab/registry/corpus_final288.json"
 }

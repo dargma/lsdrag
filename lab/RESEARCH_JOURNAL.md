@@ -70,3 +70,9 @@ Mem-Gallery development oracle (10, clue-only version): EM .60, F1 .72045, offic
 - M3 B0 development: 50/50 completed, EM 0.02, F1 0.0458, A-RAG judge 0.02; complete verified figure mappings for 33 questions, delivered-gold-figure recall 2/33. These are development results only.
 - Mem-Gallery complete-evidence oracle development: 10/10 completed, EM 0.60, F1 0.72545, official parsed judge 0.80 (raw rubric 0.75), evidence-image delivery 1.0. Clue-only diagnostic preserved separately.
 - Froze 288-URL final M3 retrieval corpus (83 support + 205 distractor URLs), started 108 new PDF downloads. Full-corpus index estimate exceeds local free disk. Composite index preserves original float32 vectors and global ranking without duplicate disk storage; five targeted integrity/retrieval tests pass.
+
+### V1 development evaluation complete
+- 50/50 questions: EM 0.04, F1 0.0948, A-RAG judge 0.08. In 33 questions with complete reviewed visual mapping, candidate recall 25/33 and delivered recall 11/33 (B0: 3/33 and 2/33). This supports testing downstream agent/Reader bottlenecks; it is not a held-out conclusion.
+- V2 development started with the documented image-search prompt and one verification turn within the same 15-loop budget.
+- Final PDF expansion attempted 108 URLs; initial HTTP 429 and missing image loads were retried serially before parsing. Collecting current source evidence does not imply that original gold figures survived.
+- Added paired bootstrap, exact McNemar, scenario-cluster bootstrap and per-question gain/loss exports. Failure buckets are evidence-delivery observations; metric disagreement requires manual review before calling a judge error.
