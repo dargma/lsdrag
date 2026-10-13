@@ -126,10 +126,16 @@ class Agent:
         # Conservative multilingual/tokenizer margin; API usage records actual counts.
         return int(text_tokens * 1.5) + images * (self.config.image_soft_tokens + 20) + 2000
 
-    def run(self, qid, question):
+    def run(self, qid, question, question_images=None):
         start = time.monotonic()
-        context = EvidenceContext(self.retrieval, self.config.max_images)
+        question_images = question_images or []
+        if len(question_images) >= self.config.max_images:
+            raise ValueError("Question images leave no evidence image budget")
+        context = EvidenceContext(self.retrieval, self.config.max_images - len(question_images))
         messages = [{"role": "system", "content": self.prompt}, {"role": "user", "content": question}]
+        if question_images:
+            messages[-1] = image_message(question_images)
+            messages[-1]["content"][0]["text"] = question + "\nThe following image is part of the question. Search the conversation history for supporting evidence."
         schemas = tool_schemas(self.retrieval.arm)
         handlers = {"keyword_search": self.retrieval.keyword_search, "semantic_search": self.retrieval.semantic_search, "read_chunk": context.read}
         if self.retrieval.arm == "V2":
@@ -192,4 +198,4 @@ class Agent:
                 trajectory.append({"loop": loop + 1, "tool_name": name, "arguments": arguments, "result": result, "retrieved_tokens": tokens, "seconds": time.monotonic() - tool_start})
                 messages.append({"role": "tool", "tool_call_id": tc["id"], "content": content})
         parsed = parse_answer(answer)
-        return {"qid": qid, "question": question, "arm": self.retrieval.arm, "status": status, "stop_reason": stop_reason, "answer_raw": answer, **parsed, "loops": len(calls), "verification_requested": verification_requested, "search_tokens": search_tokens, "evidence_tokens": evidence_tokens, "seconds": time.monotonic() - start, "prompt_tokens": sum(c["usage"].get("prompt_tokens", 0) for c in calls), "completion_tokens": sum(c["usage"].get("completion_tokens", 0) for c in calls), **context.summary(), "trajectory": trajectory, "reader_calls": calls, "errors": errors, "config": asdict(self.config), "prompt_sha256": hashlib.sha256(self.prompt.encode()).hexdigest()}
+        return {"qid": qid, "question": question, "question_image_count": len(question_images), "arm": self.retrieval.arm, "status": status, "stop_reason": stop_reason, "answer_raw": answer, **parsed, "loops": len(calls), "verification_requested": verification_requested, "search_tokens": search_tokens, "evidence_tokens": evidence_tokens, "seconds": time.monotonic() - start, "prompt_tokens": sum(c["usage"].get("prompt_tokens", 0) for c in calls), "completion_tokens": sum(c["usage"].get("completion_tokens", 0) for c in calls), **context.summary(), "trajectory": trajectory, "reader_calls": calls, "errors": errors, "config": asdict(self.config), "prompt_sha256": hashlib.sha256(self.prompt.encode()).hexdigest()}

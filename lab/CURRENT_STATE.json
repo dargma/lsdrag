@@ -29,16 +29,12 @@
   "running_tasks": {
     "reader_server": {
       "port": 8102,
-      "session_id": 67524,
-      "log": "/content/local_fast/lsdrag-work/reader-agent-server.log"
+      "session_id": 86509,
+      "log": "/content/local_fast/lsdrag-work/reader-development-server.log"
     },
     "qwen_development_index": {
       "session_id": 64692,
       "log": "/content/local_fast/lsdrag-work/index-development-qwen.log"
-    },
-    "gemma_development_image_index": {
-      "session_id": 19835,
-      "log": "/content/local_fast/lsdrag-work/index-development-gemma-image.log"
     },
     "development_alignment": {
       "session_id": 10897,
@@ -47,7 +43,7 @@
   },
   "standard_parser_smoke_passed": true,
   "preflight_backup": "lab/reports/preflight_backup.json",
-  "implementation_status": "Agent, retrieval, index builders, official answer/document metrics and paired statistics implemented; 15 tests pass. B0 and V2 pilot tool/image paths executed. Final benchmark evaluations pending.",
+  "implementation_status": "20 tests pass; multimodal agent and scenario isolation implemented; final benchmark runs not started",
   "approved_evaluation_scope": {
     "m3docvqa_questions": 50,
     "mem_gallery_questions": 50,
@@ -61,7 +57,7 @@
       "V2"
     ],
     "oracle_evidence_reader_diagnostic": true,
-    "execution_inputs_updated": false,
+    "execution_inputs_updated": true,
     "m3docvqa_input_manifest_updated": true
   },
   "m3docvqa_final_questions": "/content/local_fast/lsdrag-work/data/manifests/evaluation_50/questions.jsonl",
@@ -75,7 +71,7 @@
     "local_root": "/content/local_fast/lsdrag-work/data/mem_gallery",
     "revision": "af912daba984e896e253016b7c7e334ef92c2a6f",
     "dialog_files": 20,
-    "status": "metadata downloaded; official schema and evaluation inspection pending"
+    "status": "50 final + 10 development questions selected with disjoint scenarios; 990 images downloaded and IR built"
   },
   "development_ir": {
     "chunk_types": {
@@ -98,5 +94,10 @@
     "page_index_base": 0,
     "pages": 2693,
     "table_policy": "keep rows and repeat Markdown headers; flag oversized rows"
-  }
+  },
+  "development_indexes_complete": [
+    "gemma_text",
+    "gemma_image"
+  ],
+  "mem_gallery_selection": "lab/registry/mem_gallery_selection.json"
 }

@@ -59,3 +59,17 @@ def test_v2_verification_stays_within_common_loop_budget():
     assert result["verification_requested"]
     assert result["stop_reason"] == "max_loops"
     assert result["loops"] == 2
+
+
+def test_question_image_is_not_counted_as_retrieved_evidence(tmp_path):
+    path = tmp_path / "query.png"
+    Image.new("RGB", (8, 8)).save(path)
+    question_image = {"image_path": str(path), "image_sha256": hashlib.sha256(path.read_bytes()).hexdigest(), "figure_ids": ["question:q"]}
+    retrieval = SimpleNamespace(arm="B0", chunks={}, figures={}, keyword_search=lambda **_: [], semantic_search=lambda **_: [])
+    class FakeReader:
+        def chat(self, messages, tools):
+            assert messages[1]["content"][-1]["type"] == "image_url"
+            return {"message": {"content": '{"answers":[],"citations":[]}'}, "finish_reason": "stop"}, {}
+    result = Agent(retrieval, "test", reader=FakeReader()).run("q", "test?", [question_image])
+    assert result["question_image_count"] == 1
+    assert result["unique_delivered_images"] == 0

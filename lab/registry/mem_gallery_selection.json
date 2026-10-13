@@ -1,0 +1,116 @@
+{
+  "corpus": {
+    "benchmark": "Mem-Gallery",
+    "captions": "dataset-provided, no new generated captions",
+    "chunks": 3759,
+    "chunks_sha256": "91f12f2e766210127ef25eb1957f172fe7311f98f3953d69221bc135fd3f55bf",
+    "documents": 229,
+    "figures": 973,
+    "figures_sha256": "f186e290c331db0418823dbbb3cb1272600bec2332d9f3f7d14711910a878f66",
+    "page_index_semantics": "session ordinal, not a PDF page",
+    "revision": "af912daba984e896e253016b7c7e334ef92c2a6f",
+    "scenarios": 19,
+    "temporal_policy": "all sessions in the question's scenario, matching official store-all-before-QA execution; QA session_id is evidence metadata, not a query-time cutoff"
+  },
+  "development_scenarios": [
+    "Architecture_Art_Culture_Exhibition_Technology",
+    "Dog_Behavior_Research_Academic_Life"
+  ],
+  "eligible_counts": {
+    "VR": 174,
+    "VS": 306
+  },
+  "image_bytes": 465115655,
+  "images": 990,
+  "scenario_overlap": 0,
+  "seed": 20261013,
+  "selection_policy": "two seeded scenario holdouts for development; category quotas then proportional scenario/question-image strata; no model outcomes",
+  "source_revision": "af912daba984e896e253016b7c7e334ef92c2a6f",
+  "splits": {
+    "development": {
+      "by_task": {
+        "VR": 5,
+        "VS": 5
+      },
+      "gold_sha256": "5e94c85009c5f2719fc030221eef87c595baac91c4cb70de733306b58ad7cf28",
+      "n": 10,
+      "question_ids": [
+        "Architecture_Art_Culture_Exhibition_Technology:qa0006",
+        "Architecture_Art_Culture_Exhibition_Technology:qa0018",
+        "Architecture_Art_Culture_Exhibition_Technology:qa0035",
+        "Architecture_Art_Culture_Exhibition_Technology:qa0068",
+        "Dog_Behavior_Research_Academic_Life:qa0000",
+        "Dog_Behavior_Research_Academic_Life:qa0002",
+        "Dog_Behavior_Research_Academic_Life:qa0012",
+        "Dog_Behavior_Research_Academic_Life:qa0017",
+        "Dog_Behavior_Research_Academic_Life:qa0029",
+        "Dog_Behavior_Research_Academic_Life:qa0033"
+      ],
+      "questions_sha256": "59010622a78d5123ed33a4d7f78b4c9be58daa6edd5f6357cb0cbfa410f4eec1",
+      "with_question_image": 4
+    },
+    "evaluation": {
+      "by_task": {
+        "VR": 25,
+        "VS": 25
+      },
+      "gold_sha256": "c11d1280edfadfc762eb7f58e823ee2c42891389621ebcf2639e3af3a378fb2b",
+      "n": 50,
+      "question_ids": [
+        "AI_Robotics_Automation_Future_Tech:qa0032",
+        "AI_Robotics_Automation_Future_Tech:qa0051",
+        "Academic_Animal_Pet_Research_Life:qa0017",
+        "Academic_Animal_Pet_Research_Life:qa0066",
+        "Baking_Dessert_Daily_Life_Skill:qa0014",
+        "Baking_Dessert_Daily_Life_Skill:qa0042",
+        "Baking_Dessert_Daily_Life_Skill:qa0055",
+        "Baking_Dessert_Daily_Life_Skill:qa0077",
+        "Education_Career_Research_Lifestyle:qa0017",
+        "Education_Career_Research_Lifestyle:qa0096",
+        "Entrepreneurship_Blockchain_Economics_Logistics_Nature:qa0030",
+        "Entrepreneurship_Blockchain_Economics_Logistics_Nature:qa0046",
+        "Fashion_Personal_Care_Lifestyle_Shopping:qa0018",
+        "Global_Travel_Cultural_Sightseeing:qa0017",
+        "Global_Travel_Cultural_Sightseeing:qa0039",
+        "Global_Travel_Cultural_Sightseeing:qa0040",
+        "Global_Travel_Sustainable_Fashion_Design:qa0042",
+        "Global_Travel_Sustainable_Fashion_Design:qa0045",
+        "Global_Travel_Sustainable_Fashion_Design:qa0060",
+        "Home_Health_Lifestyle_Product:qa0033",
+        "Home_Health_Lifestyle_Product:qa0047",
+        "Home_Repair_Maintenance_Cleaning:qa0022",
+        "Landscape_Travel_Architecture_Nature:qa0014",
+        "Landscape_Travel_Architecture_Nature:qa0020",
+        "Landscape_Travel_Architecture_Nature:qa0071",
+        "Landscape_Travel_Architecture_Nature:qa0075",
+        "Music_Dance_Theater_Performance_Learning:qa0047",
+        "Nature_Economics_Programming_Student_Life:qa0004",
+        "Nature_Economics_Programming_Student_Life:qa0019",
+        "Nature_Economics_Programming_Student_Life:qa0031",
+        "Nature_Economics_Programming_Student_Life:qa0038",
+        "Nature_Economics_Programming_Student_Life:qa0093",
+        "Parenting_Commuting_Hobbies_Travel_Gear:qa0009",
+        "Parenting_Commuting_Hobbies_Travel_Gear:qa0010",
+        "Parenting_Commuting_Hobbies_Travel_Gear:qa0062",
+        "Python_Botany_AI_Student_Life:qa0001",
+        "Python_Botany_AI_Student_Life:qa0008",
+        "Python_Botany_AI_Student_Life:qa0017",
+        "Python_Botany_AI_Student_Life:qa0034",
+        "Python_Botany_AI_Student_Life:qa0066",
+        "Python_Botany_AI_Student_Life:qa0102",
+        "Python_Botany_AI_Student_Life:qa0103",
+        "Python_Botany_AI_Student_Life:qa0130",
+        "Python_Botany_AI_Student_Life:qa0143",
+        "Python_Botany_AI_Student_Life:qa0174",
+        "Real_Estate_Home_Decor_DIY_Lifestyle:qa0028",
+        "Real_Estate_Home_Decor_DIY_Lifestyle:qa0037",
+        "Real_Estate_Home_Decor_DIY_Lifestyle:qa0070",
+        "Technology_Ethics_Future_Society:qa0010",
+        "Technology_Ethics_Future_Society:qa0063"
+      ],
+      "questions_sha256": "03d0e5b51a239316ed3d7dfd2ce25dee38b080c78cc9e11c3487afd30202011c",
+      "with_question_image": 13
+    }
+  },
+  "status": "selected_and_collected_before_model_evaluation"
+}

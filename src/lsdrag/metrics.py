@@ -1,5 +1,6 @@
 """Question-level scoring; official MMQA scorer remains upstream code."""
 import importlib
+import importlib.util
 from pathlib import Path
 import re
 import string
@@ -10,6 +11,7 @@ import numpy as np
 from scipy.stats import binomtest
 
 M3DOC_REVISION = "29e6ac2294d6b87075a1d45b8a8df175b214248a"
+MEMGALLERY_REVISION = "a93959e1e978a6a7d77798ae92c2ffe41c538c62"
 
 
 def official_scorer(checkout):
@@ -30,6 +32,20 @@ def official_scorer(checkout):
 def arag_normalize(text):
     text = "".join(c for c in str(text).lower() if c not in string.punctuation)
     return " ".join(re.sub(r"\b(a|an|the)\b", " ", text).split())
+
+
+def memgallery_scorer(checkout):
+    checkout = Path(checkout).resolve()
+    path = checkout / "benchmark/memengine/evaluate/evaluation.py"
+    revision = subprocess.check_output(["git", "rev-parse", "HEAD"], cwd=checkout, text=True).strip()
+    if revision != MEMGALLERY_REVISION:
+        raise ValueError("Unexpected Mem-Gallery evaluator revision")
+    if subprocess.check_output(["git", "status", "--porcelain", "--untracked-files=no", "--", str(path)], cwd=checkout, text=True).strip():
+        raise ValueError("Official Mem-Gallery evaluation source has modifications")
+    spec = importlib.util.spec_from_file_location("lsdrag_official_memgallery_evaluation", path)
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    return module
 
 
 def contain_all(prediction, gold_answers):

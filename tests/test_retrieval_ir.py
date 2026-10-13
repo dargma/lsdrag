@@ -17,6 +17,7 @@ def test_sentence_scores_aggregate_and_filter_figures():
     index.vectors = np.array([[1., 0.], [.9, .1], [.8, .2]])
     assert [key for key, _ in index.search([1., 0.], 2)] == ["a", "b"]
     assert index.search([1., 0.], 2, "figure_id", {"z"}) == [("z", .8)]
+    assert index.search([1., 0.], 2, "figure_id", {"z"}, row_limit=1) == [("z", .8)]
 
 
 def test_saved_asset_reference_and_visual_footnote(tmp_path):

@@ -40,6 +40,8 @@ class VectorIndex:
         scores = self.vectors @ query
         # Stable order makes tied retrieval deterministic across experimental arms.
         order = np.argsort(-scores, kind="stable")
+        if allowed is not None:
+            order = [index for index in order if self.rows[int(index)][identity] in allowed]
         if row_limit is not None:
             order = order[:row_limit]
         output, seen = [], set()
@@ -58,12 +60,19 @@ class VectorIndex:
 
 
 class Retrieval:
-    def __init__(self, corpus, indexes, embedders, arm, candidate_count=60):
+    def __init__(self, corpus, indexes, embedders, arm, candidate_count=60, document_scope=None):
         if arm not in {"B0", "V1", "V2", "C1"}:
             raise ValueError(arm)
         self.arm = arm
         self.chunks = {r["chunk_id"]: r for r in read_jsonl(Path(corpus) / "chunks.jsonl")}
         self.figures = {r["figure_id"]: r for r in read_jsonl(Path(corpus) / "figures.jsonl")}
+        self.scoped = document_scope is not None
+        if self.scoped:
+            scope = set(document_scope)
+            self.chunks = {k: c for k, c in self.chunks.items() if scope.intersection(c["document_ids"])}
+            self.figures = {k: f for k, f in self.figures.items() if f["chunk_id"] in self.chunks}
+            if not self.chunks:
+                raise ValueError("Empty question-specific corpus scope")
         self.indexes, self.embedders = indexes, embedders
         self.candidate_count = candidate_count
         self.query_cache = {}
@@ -95,10 +104,11 @@ class Retrieval:
         # Keep text candidate generation identical across arms. Only V1/V2
         # add the image ranking; no hidden text-retrieval change accompanies it.
         count = self.candidate_count
-        text = self.indexes[channel + "_text"].search(self.query_vector(channel, query), count, row_limit=count * 3)
+        allowed_chunks = set(self.chunks) if self.scoped else None
+        text = self.indexes[channel + "_text"].search(self.query_vector(channel, query), count, allowed=allowed_chunks, row_limit=count * 3)
         identities = [key for key, _ in text]
         if self.arm in {"V1", "V2"}:
-            images = self.indexes["gemma_image"].search(self.query_vector("gemma", query), count)
+            images = self.indexes["gemma_image"].search(self.query_vector("gemma", query), count, allowed=allowed_chunks)
             identities = reciprocal_rank_fusion([identities, [key for key, _ in images]])
         matches = self.indexes[channel + "_text"].last_matches
         return [self.snippet(key, matches.get(key)) for key in identities[:top_k]]
@@ -106,7 +116,7 @@ class Retrieval:
     def image_search(self, query, document_ids=None, top_k=5):
         if self.arm != "V2":
             raise ValueError("image_search is only exposed in V2")
-        allowed = None
+        allowed = set(self.figures) if self.scoped else None
         if document_ids:
             wanted = set(document_ids)
             allowed = {key for key, f in self.figures.items() if wanted.intersection(f["document_ids"])}

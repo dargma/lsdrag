@@ -43,3 +43,9 @@ Image alignment proposals use within-document pHash and SIFT/RANSAC; proposals a
 ## 2026-10-13 — Development parsing complete
 
 All 181 collected PDFs parsed successfully (2,718 physical pages); initial collection still has two HTTP404 failures and seven PDFs flagged for incomplete article-image loading. URL deduplication yields 180 physical retrieval documents / 194 MMQA aliases, 2,693 indexed pages, 37,232 chunks and 1,510 visual regions. Of the regions, 1,380 lack a MinerU caption field but only 671 lack both caption and original footnote description. Started full development Qwen text indexing (160,271 sentences), Gemma image indexing and image-alignment proposals. Stopped the completed-stage parser server to release GPU memory. Reader server remains on port 8102. Gemma text index and full development evaluations are pending.
+
+## 2026-10-13 — Mem-Gallery inputs and shared GPU recovery
+
+Selected 50 final VS/VR questions (25 each; 13 with question images) and 10 development questions from two disjoint scenarios. Downloaded 990 actual referenced images; built 3,759 conversation chunks and 973 figures across 19 scenarios. Added strict scenario scope before ranking cutoff, cross-scenario read rejection, question-image transport and distinct evidence counts. Imported pinned official Mem-Gallery evaluator and verified EM/F1 behavior. Twenty tests pass.
+
+Gemma text indexing initially failed at model transfer with CUDA out-of-memory while unrelated GPU workloads grew. Preserved failure log, stopped idle Reader, and retried with batch 16 successfully: 160,271 × 768 text vectors. Gemma image index completed (1,510 figures). Qwen indexing remains live. Restarting Reader to run C1 development while Qwen finishes; development timing under GPU contention is diagnostic and will not be used as final cost comparison.
