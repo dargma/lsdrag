@@ -26,6 +26,28 @@ class VectorIndex:
         self.manifest = json.loads((directory / "manifest.json").read_text())
         if self.manifest["source_sha256"] != sha256(source):
             raise ValueError("Index does not match corpus")
+        if self.manifest.get("format") == "composite-v1":
+            sources, parts = [], []
+            for spec in self.manifest["parts"]:
+                part_dir, part_source = Path(spec["directory"]), Path(spec["source"])
+                if sha256(part_dir / "manifest.json") != spec["manifest_sha256"]:
+                    raise ValueError("Composite part manifest changed")
+                part = VectorIndex(part_dir, part_source)
+                for key in ("channel", "modality", "model", "revision", "dimension", "dtype", "normalization", "query_instruction"):
+                    if part.manifest[key] != self.manifest[key]:
+                        raise ValueError(f"Incompatible composite part: {key}")
+                sources.extend(read_jsonl(part_source))
+                parts.append(part)
+            if sources != read_jsonl(source):
+                raise ValueError("Composite sources must partition the corpus exactly in order")
+            identity = "figure_id" if self.manifest["modality"] == "image" else "chunk_id"
+            if len({r[identity] for r in sources}) != len(sources):
+                raise ValueError("Duplicate composite source identities")
+            self.rows = [r for part in parts for r in part.rows]
+            self.vectors = np.concatenate([part.vectors for part in parts], axis=0)
+            if len(self.rows) != self.manifest["rows"]:
+                raise ValueError("Composite row count mismatch")
+            return
         for name in ("rows.jsonl", "vectors.npy"):
             key = "rows_sha256" if name == "rows.jsonl" else "vectors_sha256"
             if sha256(directory / name) != self.manifest[key]:

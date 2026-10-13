@@ -65,3 +65,8 @@ Verified Mem-Gallery judge implementation mismatch: five-level prompt outputs ar
 ## 2026-10-13 — Reader diagnostic and evidence annotation audit
 
 Mem-Gallery development oracle (10, clue-only version): EM .60, F1 .72045, official judge .75, raw five-level judge .70. This establishes useful Reader ability with supplied evidence, not a cross-benchmark comparison against M3DocVQA. One development VS question has a gold answer image outside its annotated clue turns, producing .95 image-delivery recall despite all clues being supplied. Audited all selected VS questions: one such inconsistency in development, zero in final 50. Preserve the question; update the separate oracle path to include the original turn of every explicit target image ID, without putting an answer string into the prompt. Retain the prior diagnostic unchanged and rerun under the completed evidence policy.
+
+### Development results and resource-limited final corpus
+- M3 B0 development: 50/50 completed, EM 0.02, F1 0.0458, A-RAG judge 0.02; complete verified figure mappings for 33 questions, delivered-gold-figure recall 2/33. These are development results only.
+- Mem-Gallery complete-evidence oracle development: 10/10 completed, EM 0.60, F1 0.72545, official parsed judge 0.80 (raw rubric 0.75), evidence-image delivery 1.0. Clue-only diagnostic preserved separately.
+- Froze 288-URL final M3 retrieval corpus (83 support + 205 distractor URLs), started 108 new PDF downloads. Full-corpus index estimate exceeds local free disk. Composite index preserves original float32 vectors and global ranking without duplicate disk storage; five targeted integrity/retrieval tests pass.
