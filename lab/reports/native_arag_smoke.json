@@ -1,0 +1,81 @@
+{
+  "embedding": "Qwen3-Embedding-4B pinned local weights, CPU",
+  "index_builder": "unchanged upstream build_index.py",
+  "index_chunks": 2,
+  "index_dimension": 2560,
+  "index_sentences": 4,
+  "limitation": "Functional smoke with configured 4B embedder and local Reader; not a reproduction of paper benchmark results or the 0.6B example model.",
+  "reader": "local Gemma4 E4B server",
+  "result": {
+    "chunks_read_count": 1,
+    "chunks_read_ids": [
+      "native-smoke-1"
+    ],
+    "gold_answer": "17",
+    "loops": 3,
+    "pred_answer": "The Aurora archive contains 17 blue cylinders.",
+    "qid": "native-smoke",
+    "question": "According to the archive documents, how many blue cylinders does the Aurora archive contain?",
+    "retrieval_logs": [
+      {
+        "metadata": {
+          "chunk_ids": [
+            "native-smoke-1"
+          ],
+          "chunks_found": 1,
+          "keywords": [
+            "Aurora archive",
+            "blue cylinders"
+          ]
+        },
+        "tokens": 9,
+        "tool_name": "keyword_search"
+      },
+      {
+        "metadata": {
+          "already_read": [],
+          "chunk_ids_requested": [
+            "native-smoke-1"
+          ],
+          "new_chunks_read": [
+            "native-smoke-1"
+          ]
+        },
+        "tokens": 16,
+        "tool_name": "read_chunk"
+      }
+    ],
+    "total_cost": 0.0033669999999999993,
+    "total_retrieved_tokens": 25,
+    "trajectory": [
+      {
+        "arguments": {
+          "keywords": [
+            "Aurora archive",
+            "blue cylinders"
+          ]
+        },
+        "chunks_found": 1,
+        "loop": 1,
+        "retrieved_tokens": 9,
+        "tool_name": "keyword_search",
+        "tool_result": "Chunk ID: native-smoke-1, Matched keywords in chunk: ... The fictional Aurora archive contains 17 blue cylinders ..."
+      },
+      {
+        "already_read_count": 0,
+        "arguments": {
+          "chunk_ids": [
+            "native-smoke-1"
+          ]
+        },
+        "loop": 2,
+        "new_chunks_count": 1,
+        "retrieved_tokens": 16,
+        "tool_name": "read_chunk",
+        "tool_result": "\n================================================================================\n[Chunk native-smoke-1]\n--------------------------------------------------------------------------------\nThe fictional Aurora archive contains 17 blue cylinders. Its curator is Neri.\n================================================================================"
+      }
+    ]
+  },
+  "runner": "unchanged upstream batch_runner.py",
+  "upstream_revision": "a44de6b2216bf6791979c4b6ac4ae106212fa1a6"
+}

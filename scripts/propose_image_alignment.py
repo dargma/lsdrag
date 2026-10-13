@@ -16,9 +16,19 @@ from scipy.fft import dctn
 from lsdrag.io import dump_json, read_jsonl, write_jsonl
 
 
+def visible_rgb(image):
+    # Original logos can have black lettering on transparency. Dropping alpha
+    # silently makes that lettering black-on-black in both matching and QC.
+    if image.mode in {"RGBA", "LA"} or "transparency" in image.info:
+        rgba = image.convert("RGBA")
+        background = Image.new("RGBA", rgba.size, "white")
+        return Image.alpha_composite(background, rgba).convert("RGB")
+    return image.convert("RGB")
+
+
 def features(path):
     with Image.open(path) as image:
-        rgb = ImageOps.contain(image.convert("RGB"), (1600, 1600))
+        rgb = ImageOps.contain(visible_rgb(image), (1600, 1600))
         gray = cv2.cvtColor(np.asarray(rgb), cv2.COLOR_RGB2GRAY)
         small = np.asarray(rgb.convert("L").resize((32, 32)), dtype=float)
     dct = dctn(small, norm="ortho")[:8, :8].reshape(-1)[1:]
@@ -89,7 +99,7 @@ def main():
             cells += [(c["image_path"], c["figure_id"].split(":", 1)[-1] + f" | ph={c['phash_distance']} inliers={c['sift_inliers']}") for c in proposal["candidates"]]
             for column, (path, label) in enumerate(cells):
                 with Image.open(path) as image:
-                    thumbnail = ImageOps.contain(image.convert("RGB"), (350, 215))
+                    thumbnail = ImageOps.contain(visible_rgb(image), (350, 215))
                 sheet.paste(thumbnail, (column * 360, row * 250))
                 draw.text((column * 360, row * 250 + 218), label[:55], fill="black")
         sheet.save(a.output / f"review_{offset // 6:03d}.jpg", quality=90)
