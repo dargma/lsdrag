@@ -1,0 +1,600 @@
+[
+  {
+    "gold_image_id": "01af2a62787bbc3530b0b02d3b007a01",
+    "title": "Mini",
+    "status": "verified_same_visual_content",
+    "accepted_figure_ids": [
+      "01af2a62787bbc3530b0b02d3b007a01:p0:f13"
+    ],
+    "reviewer": "assistant visual inspection",
+    "sheet": "review_000.jpg",
+    "row_in_sheet": 0,
+    "note": "Visually checked original against candidate; same visual content present, sometimes inside a larger crop."
+  },
+  {
+    "gold_image_id": "043779063ae1f250b07f1890643c82cf",
+    "title": "Make It Rain (Foy Vance song)",
+    "status": "verified_same_visual_content",
+    "accepted_figure_ids": [
+      "043779063ae1f250b07f1890643c82cf:p0:f9"
+    ],
+    "reviewer": "assistant visual inspection",
+    "sheet": "review_000.jpg",
+    "row_in_sheet": 1,
+    "note": "Visually checked original against candidate; same visual content present, sometimes inside a larger crop."
+  },
+  {
+    "gold_image_id": "0483a438e5f39b9e59de3f9e15870bce",
+    "title": "KK Krka",
+    "status": "unresolved_no_matching_top_candidate",
+    "accepted_figure_ids": [],
+    "reviewer": "assistant visual inspection",
+    "sheet": "review_000.jpg",
+    "row_in_sheet": 2,
+    "note": "Top proposals do not match the original; absence from the entire document has not been established."
+  },
+  {
+    "gold_image_id": "04efc3408a15848ab446ddc2d4d2bd13",
+    "title": "Tampa, Florida",
+    "status": "unresolved_no_matching_top_candidate",
+    "accepted_figure_ids": [],
+    "reviewer": "assistant visual inspection",
+    "sheet": "review_000.jpg",
+    "row_in_sheet": 3,
+    "note": "Top proposals do not match the original; absence from the entire document has not been established."
+  },
+  {
+    "gold_image_id": "0af43d695e0fa436b1c1dfc150d48182",
+    "title": "Bank of America Stadium",
+    "status": "verified_same_visual_content",
+    "accepted_figure_ids": [
+      "0af43d695e0fa436b1c1dfc150d48182:p0:f15"
+    ],
+    "reviewer": "assistant visual inspection",
+    "sheet": "review_000.jpg",
+    "row_in_sheet": 4,
+    "note": "Visually checked original against candidate; same visual content present, sometimes inside a larger crop."
+  },
+  {
+    "gold_image_id": "0cb86d818dbda3a4a65dd300513fa653",
+    "title": "Visions of Eight",
+    "status": "partial_image_split",
+    "accepted_figure_ids": [],
+    "reviewer": "assistant visual inspection",
+    "sheet": "review_000.jpg",
+    "row_in_sheet": 5,
+    "note": "Poster is split into photo and title crops; no single complete original image verified."
+  },
+  {
+    "gold_image_id": "12251400ee5967d1e67d8e6517c2ebb0",
+    "title": "XBMC",
+    "status": "unresolved_no_matching_top_candidate",
+    "accepted_figure_ids": [],
+    "reviewer": "assistant visual inspection",
+    "sheet": "review_001.jpg",
+    "row_in_sheet": 0,
+    "note": "Top proposals do not match the original; absence from the entire document has not been established."
+  },
+  {
+    "gold_image_id": "15b4e23f0e8f93e5517f7e209d0070e3",
+    "title": "A Mother's Story",
+    "status": "verified_same_visual_content",
+    "accepted_figure_ids": [
+      "15b4e23f0e8f93e5517f7e209d0070e3:p0:f14"
+    ],
+    "reviewer": "assistant visual inspection",
+    "sheet": "review_001.jpg",
+    "row_in_sheet": 1,
+    "note": "Visually checked original against candidate; same visual content present, sometimes inside a larger crop."
+  },
+  {
+    "gold_image_id": "15cc00cd0948a05254e1ce56342a1e81",
+    "title": "Michele Didoni",
+    "status": "unresolved_no_matching_top_candidate",
+    "accepted_figure_ids": [],
+    "reviewer": "assistant visual inspection",
+    "sheet": "review_001.jpg",
+    "row_in_sheet": 2,
+    "note": "Top proposals do not match the original; absence from the entire document has not been established."
+  },
+  {
+    "gold_image_id": "2009222be2d2a677d5dad852353ccdf0",
+    "title": "Parks and Recreation",
+    "status": "unresolved_no_matching_top_candidate",
+    "accepted_figure_ids": [],
+    "reviewer": "assistant visual inspection",
+    "sheet": "review_001.jpg",
+    "row_in_sheet": 3,
+    "note": "Top proposals do not match the original; absence from the entire document has not been established."
+  },
+  {
+    "gold_image_id": "210d412403ef9a51a226da46f6828978",
+    "title": "Funny About Love",
+    "status": "verified_same_visual_content",
+    "accepted_figure_ids": [
+      "210d412403ef9a51a226da46f6828978:p0:f16"
+    ],
+    "reviewer": "assistant visual inspection",
+    "sheet": "review_001.jpg",
+    "row_in_sheet": 4,
+    "note": "Visually checked original against candidate; same visual content present, sometimes inside a larger crop."
+  },
+  {
+    "gold_image_id": "234225d797402bf88f7099b75590d3e7",
+    "title": "Grimstad",
+    "status": "unresolved_no_matching_top_candidate",
+    "accepted_figure_ids": [],
+    "reviewer": "assistant visual inspection",
+    "sheet": "review_001.jpg",
+    "row_in_sheet": 5,
+    "note": "Top proposals do not match the original; absence from the entire document has not been established."
+  },
+  {
+    "gold_image_id": "2586ac327c53d3e002bc04e4e36deb2a",
+    "title": "The Sugarland Express",
+    "status": "verified_same_visual_content",
+    "accepted_figure_ids": [
+      "2586ac327c53d3e002bc04e4e36deb2a:p0:f14"
+    ],
+    "reviewer": "assistant visual inspection",
+    "sheet": "review_002.jpg",
+    "row_in_sheet": 0,
+    "note": "Visually checked original against candidate; same visual content present, sometimes inside a larger crop."
+  },
+  {
+    "gold_image_id": "26b572bdc5c36490baab3b178dae5d7d",
+    "title": "It's Not Right But It's Okay",
+    "status": "verified_same_visual_content",
+    "accepted_figure_ids": [
+      "26b572bdc5c36490baab3b178dae5d7d:p0:f16"
+    ],
+    "reviewer": "assistant visual inspection",
+    "sheet": "review_002.jpg",
+    "row_in_sheet": 1,
+    "note": "Visually checked original against candidate; same visual content present, sometimes inside a larger crop."
+  },
+  {
+    "gold_image_id": "2a9670077e3ad8d5dd25a782f877d5a9",
+    "title": "Bowser (character)",
+    "status": "unresolved_no_matching_top_candidate",
+    "accepted_figure_ids": [],
+    "reviewer": "assistant visual inspection",
+    "sheet": "review_002.jpg",
+    "row_in_sheet": 2,
+    "note": "Top proposals do not match the original; absence from the entire document has not been established."
+  },
+  {
+    "gold_image_id": "2d00ad00e553ab4e47c34b7540741278",
+    "title": "Stormzy",
+    "status": "unresolved_no_matching_top_candidate",
+    "accepted_figure_ids": [],
+    "reviewer": "assistant visual inspection",
+    "sheet": "review_002.jpg",
+    "row_in_sheet": 3,
+    "note": "Top proposals do not match the original; absence from the entire document has not been established."
+  },
+  {
+    "gold_image_id": "31067ced8866f3886ef08813f9a14414",
+    "title": "Jacksonville, Florida",
+    "status": "unresolved_no_matching_top_candidate",
+    "accepted_figure_ids": [],
+    "reviewer": "assistant visual inspection",
+    "sheet": "review_002.jpg",
+    "row_in_sheet": 4,
+    "note": "Top proposals do not match the original; absence from the entire document has not been established."
+  },
+  {
+    "gold_image_id": "34e780ce63f474e1cd557c58593cd38c",
+    "title": "The Magic Flute",
+    "status": "verified_same_visual_content",
+    "accepted_figure_ids": [
+      "34e780ce63f474e1cd557c58593cd38c:p0:f17"
+    ],
+    "reviewer": "assistant visual inspection",
+    "sheet": "review_002.jpg",
+    "row_in_sheet": 5,
+    "note": "Visually checked original against candidate; same visual content present, sometimes inside a larger crop."
+  },
+  {
+    "gold_image_id": "36e7568ddf005f620bc915f32fd796ed",
+    "title": "High Desert Yardbirds",
+    "status": "verified_same_visual_content",
+    "accepted_figure_ids": [
+      "36e7568ddf005f620bc915f32fd796ed:p0:f14"
+    ],
+    "reviewer": "assistant visual inspection",
+    "sheet": "review_003.jpg",
+    "row_in_sheet": 0,
+    "note": "Visually checked original against candidate; same visual content present, sometimes inside a larger crop."
+  },
+  {
+    "gold_image_id": "3e7945352b1a63f1c317ea55f7ebb335",
+    "title": "Josh Groban",
+    "status": "verified_same_visual_content",
+    "accepted_figure_ids": [
+      "3e7945352b1a63f1c317ea55f7ebb335:p0:f16"
+    ],
+    "reviewer": "assistant visual inspection",
+    "sheet": "review_003.jpg",
+    "row_in_sheet": 1,
+    "note": "Visually checked original against candidate; same visual content present, sometimes inside a larger crop."
+  },
+  {
+    "gold_image_id": "4a9e5b1925e7ca26018fa73ab7496f7e",
+    "title": "Elizaveta Tuktamysheva",
+    "status": "unresolved_no_matching_top_candidate",
+    "accepted_figure_ids": [],
+    "reviewer": "assistant visual inspection",
+    "sheet": "review_003.jpg",
+    "row_in_sheet": 2,
+    "note": "Top proposals do not match the original; absence from the entire document has not been established."
+  },
+  {
+    "gold_image_id": "4c844c3471073fa8895306cd677cde01",
+    "title": "PlayStation Theater",
+    "status": "verified_same_visual_content",
+    "accepted_figure_ids": [
+      "4c844c3471073fa8895306cd677cde01:p0:f18"
+    ],
+    "reviewer": "assistant visual inspection",
+    "sheet": "review_003.jpg",
+    "row_in_sheet": 3,
+    "note": "Visually checked original against candidate; same visual content present, sometimes inside a larger crop."
+  },
+  {
+    "gold_image_id": "4d5d6419f533b23fc0ccf7868c748948",
+    "title": "Main Tera Hero",
+    "status": "verified_same_visual_content",
+    "accepted_figure_ids": [
+      "347191ab7a5e12fa2181e90b78d1b89a:p0:f19"
+    ],
+    "reviewer": "assistant visual inspection",
+    "sheet": "review_003.jpg",
+    "row_in_sheet": 4,
+    "note": "Visually checked original against candidate; same visual content present, sometimes inside a larger crop."
+  },
+  {
+    "gold_image_id": "550ac14ee1ccf29bc1503576c75d45d4",
+    "title": "Excalibur (film)",
+    "status": "verified_same_visual_content",
+    "accepted_figure_ids": [
+      "550ac14ee1ccf29bc1503576c75d45d4:p0:f11"
+    ],
+    "reviewer": "assistant visual inspection",
+    "sheet": "review_003.jpg",
+    "row_in_sheet": 5,
+    "note": "Visually checked original against candidate; same visual content present, sometimes inside a larger crop."
+  },
+  {
+    "gold_image_id": "5c751696e76db5161604e2d5c2d3f278",
+    "title": "Bugs Bunny: Lost in Time",
+    "status": "verified_same_visual_content",
+    "accepted_figure_ids": [
+      "5c751696e76db5161604e2d5c2d3f278:p0:f14"
+    ],
+    "reviewer": "assistant visual inspection",
+    "sheet": "review_004.jpg",
+    "row_in_sheet": 0,
+    "note": "Visually checked original against candidate; same visual content present, sometimes inside a larger crop."
+  },
+  {
+    "gold_image_id": "5fa63bb917091cdd8f4607a98038fbb8",
+    "title": "ABBA",
+    "status": "verified_same_visual_content",
+    "accepted_figure_ids": [
+      "5fa63bb917091cdd8f4607a98038fbb8:p0:f13"
+    ],
+    "reviewer": "assistant visual inspection",
+    "sheet": "review_004.jpg",
+    "row_in_sheet": 1,
+    "note": "Visually checked original against candidate; same visual content present, sometimes inside a larger crop."
+  },
+  {
+    "gold_image_id": "5fd68fee26a2057f077f3903adb86c67",
+    "title": "Vijayakanth",
+    "status": "verified_same_visual_content",
+    "accepted_figure_ids": [
+      "5fd68fee26a2057f077f3903adb86c67:p0:f17"
+    ],
+    "reviewer": "assistant visual inspection",
+    "sheet": "review_004.jpg",
+    "row_in_sheet": 2,
+    "note": "Visually checked original against candidate; same visual content present, sometimes inside a larger crop."
+  },
+  {
+    "gold_image_id": "625c2f7302e427f1ac3b149c554dc5d6",
+    "title": "Amanat Baghdad",
+    "status": "verified_same_visual_content",
+    "accepted_figure_ids": [
+      "625c2f7302e427f1ac3b149c554dc5d6:p0:f17"
+    ],
+    "reviewer": "assistant visual inspection",
+    "sheet": "review_004.jpg",
+    "row_in_sheet": 3,
+    "note": "Visually checked original against candidate; same visual content present, sometimes inside a larger crop."
+  },
+  {
+    "gold_image_id": "6571be2288d0cf1d9ea061ee680e6962",
+    "title": "Midnite Spares",
+    "status": "verified_same_visual_content",
+    "accepted_figure_ids": [
+      "6571be2288d0cf1d9ea061ee680e6962:p0:f13"
+    ],
+    "reviewer": "assistant visual inspection",
+    "sheet": "review_004.jpg",
+    "row_in_sheet": 4,
+    "note": "Visually checked original against candidate; same visual content present, sometimes inside a larger crop."
+  },
+  {
+    "gold_image_id": "66e43b987863c88295c6a3464b525681",
+    "title": "Filmfare Award for Best Supporting Actor",
+    "status": "unresolved_no_matching_top_candidate",
+    "accepted_figure_ids": [],
+    "reviewer": "assistant visual inspection",
+    "sheet": "review_004.jpg",
+    "row_in_sheet": 5,
+    "note": "Top proposals do not match the original; absence from the entire document has not been established."
+  },
+  {
+    "gold_image_id": "69dc00bea926d95088d3829d8ba558b3",
+    "title": "John Surtees",
+    "status": "verified_same_visual_content",
+    "accepted_figure_ids": [
+      "69dc00bea926d95088d3829d8ba558b3:p0:f22"
+    ],
+    "reviewer": "assistant visual inspection",
+    "sheet": "review_005.jpg",
+    "row_in_sheet": 0,
+    "note": "Visually checked original against candidate; same visual content present, sometimes inside a larger crop."
+  },
+  {
+    "gold_image_id": "6eaff02e7a4e8da95cd67e4021d98c6d",
+    "title": "Slumdog Millionaire",
+    "status": "verified_same_visual_content",
+    "accepted_figure_ids": [
+      "6eaff02e7a4e8da95cd67e4021d98c6d:p0:f15"
+    ],
+    "reviewer": "assistant visual inspection",
+    "sheet": "review_005.jpg",
+    "row_in_sheet": 1,
+    "note": "Visually checked original against candidate; same visual content present, sometimes inside a larger crop."
+  },
+  {
+    "gold_image_id": "6ff589c4593955eb0668d04835d5cb66",
+    "title": "Alena Leonova",
+    "status": "unresolved_no_matching_top_candidate",
+    "accepted_figure_ids": [],
+    "reviewer": "assistant visual inspection",
+    "sheet": "review_005.jpg",
+    "row_in_sheet": 2,
+    "note": "Top proposals do not match the original; absence from the entire document has not been established."
+  },
+  {
+    "gold_image_id": "7d6b5bc7aa4ef5fee8e26be564c09900",
+    "title": "Islam",
+    "status": "unresolved_no_matching_top_candidate",
+    "accepted_figure_ids": [],
+    "reviewer": "assistant visual inspection",
+    "sheet": "review_005.jpg",
+    "row_in_sheet": 3,
+    "note": "Top proposals do not match the original; absence from the entire document has not been established."
+  },
+  {
+    "gold_image_id": "7ec7afd2bed7b7941e5b5a3280e87ae7",
+    "title": "Whitney Houston",
+    "status": "verified_same_visual_content",
+    "accepted_figure_ids": [
+      "7ec7afd2bed7b7941e5b5a3280e87ae7:p0:f15"
+    ],
+    "reviewer": "assistant visual inspection",
+    "sheet": "review_005.jpg",
+    "row_in_sheet": 4,
+    "note": "Visually checked original against candidate; same visual content present, sometimes inside a larger crop."
+  },
+  {
+    "gold_image_id": "8ad93f2bdaef21f61d39c6cbb9e58aa9",
+    "title": "Wakaba Higuchi",
+    "status": "verified_same_visual_content",
+    "accepted_figure_ids": [
+      "8ad93f2bdaef21f61d39c6cbb9e58aa9:p16:f4"
+    ],
+    "reviewer": "assistant visual inspection",
+    "sheet": "review_005.jpg",
+    "row_in_sheet": 5,
+    "note": "Visually checked original against candidate; same visual content present, sometimes inside a larger crop."
+  },
+  {
+    "gold_image_id": "8d65d56091cc13f16fe1043745198994",
+    "title": "Twelfth Night",
+    "status": "color_variant",
+    "accepted_figure_ids": [],
+    "reviewer": "assistant visual inspection",
+    "sheet": "review_006.jpg",
+    "row_in_sheet": 0,
+    "note": "Same composition or symbol but original and current colors differ; not accepted for color-sensitive ground truth."
+  },
+  {
+    "gold_image_id": "9b948fdce04ee2225933641e1c3b30d9",
+    "title": "Jainism",
+    "status": "color_variant",
+    "accepted_figure_ids": [],
+    "reviewer": "assistant visual inspection",
+    "sheet": "review_006.jpg",
+    "row_in_sheet": 1,
+    "note": "Same composition or symbol but original and current colors differ; not accepted for color-sensitive ground truth."
+  },
+  {
+    "gold_image_id": "adf9637a449938d75d8d4a0c69edd4bd",
+    "title": "Aria (manga)",
+    "status": "verified_same_visual_content",
+    "accepted_figure_ids": [
+      "adf9637a449938d75d8d4a0c69edd4bd:p0:f13"
+    ],
+    "reviewer": "assistant visual inspection",
+    "sheet": "review_006.jpg",
+    "row_in_sheet": 2,
+    "note": "Visually checked original against candidate; same visual content present, sometimes inside a larger crop."
+  },
+  {
+    "gold_image_id": "b0784474162aad41228f473d56d1974c",
+    "title": "Rika Hongo",
+    "status": "verified_same_visual_content",
+    "accepted_figure_ids": [
+      "b0784474162aad41228f473d56d1974c:p0:f20"
+    ],
+    "reviewer": "assistant visual inspection",
+    "sheet": "review_006.jpg",
+    "row_in_sheet": 3,
+    "note": "Visually checked original against candidate; same visual content present, sometimes inside a larger crop."
+  },
+  {
+    "gold_image_id": "b24748141f2c2af5dacc44d82f3cc514",
+    "title": "Happy Feet",
+    "status": "verified_same_visual_content",
+    "accepted_figure_ids": [
+      "b24748141f2c2af5dacc44d82f3cc514:p0:f16"
+    ],
+    "reviewer": "assistant visual inspection",
+    "sheet": "review_006.jpg",
+    "row_in_sheet": 4,
+    "note": "Visually checked original against candidate; same visual content present, sometimes inside a larger crop."
+  },
+  {
+    "gold_image_id": "bcba09645caab6dce5f05a81466b8e7e",
+    "title": "You Can't Stop Me (album)",
+    "status": "verified_same_visual_content",
+    "accepted_figure_ids": [
+      "bcba09645caab6dce5f05a81466b8e7e:p0:f15"
+    ],
+    "reviewer": "assistant visual inspection",
+    "sheet": "review_006.jpg",
+    "row_in_sheet": 5,
+    "note": "Visually checked original against candidate; same visual content present, sometimes inside a larger crop."
+  },
+  {
+    "gold_image_id": "bdea78b9b32a047bc766c23bc277a484",
+    "title": "Tjaskers in Friesland",
+    "status": "verified_same_visual_content",
+    "accepted_figure_ids": [
+      "bdea78b9b32a047bc766c23bc277a484:p0:f15"
+    ],
+    "reviewer": "assistant visual inspection",
+    "sheet": "review_007.jpg",
+    "row_in_sheet": 0,
+    "note": "Visually checked original against candidate; same visual content present, sometimes inside a larger crop."
+  },
+  {
+    "gold_image_id": "c0ebbc27b60e4132860d6938d045bd20",
+    "title": "Galaxy Express 999 (film)",
+    "status": "verified_same_visual_content",
+    "accepted_figure_ids": [
+      "c0ebbc27b60e4132860d6938d045bd20:p0:f18"
+    ],
+    "reviewer": "assistant visual inspection",
+    "sheet": "review_007.jpg",
+    "row_in_sheet": 1,
+    "note": "Visually checked original against candidate; same visual content present, sometimes inside a larger crop."
+  },
+  {
+    "gold_image_id": "c35ce90da32bdb6b07225d9f3d50ae32",
+    "title": "Lons-le-Saunier",
+    "status": "unresolved_no_matching_top_candidate",
+    "accepted_figure_ids": [],
+    "reviewer": "assistant visual inspection",
+    "sheet": "review_007.jpg",
+    "row_in_sheet": 2,
+    "note": "Top proposals do not match the original; absence from the entire document has not been established."
+  },
+  {
+    "gold_image_id": "c8d8e51c58e15c31cd0c91e1ca6e6cd5",
+    "title": "Mied\u017a Legnica",
+    "status": "verified_same_visual_content",
+    "accepted_figure_ids": [
+      "c8d8e51c58e15c31cd0c91e1ca6e6cd5:p0:f19"
+    ],
+    "reviewer": "assistant visual inspection",
+    "sheet": "review_007.jpg",
+    "row_in_sheet": 3,
+    "note": "Visually checked original against candidate; same visual content present, sometimes inside a larger crop."
+  },
+  {
+    "gold_image_id": "c8e4add9bc9b823e4650d08d1b24a2a5",
+    "title": "University of Wollongong",
+    "status": "verified_same_visual_content",
+    "accepted_figure_ids": [
+      "c8e4add9bc9b823e4650d08d1b24a2a5:p0:f16"
+    ],
+    "reviewer": "assistant visual inspection",
+    "sheet": "review_007.jpg",
+    "row_in_sheet": 4,
+    "note": "Visually checked original against candidate; same visual content present, sometimes inside a larger crop."
+  },
+  {
+    "gold_image_id": "d179a14875639d9cfb680f784223b271",
+    "title": "Felicia Day",
+    "status": "unresolved_no_matching_top_candidate",
+    "accepted_figure_ids": [],
+    "reviewer": "assistant visual inspection",
+    "sheet": "review_007.jpg",
+    "row_in_sheet": 5,
+    "note": "Top proposals do not match the original; absence from the entire document has not been established."
+  },
+  {
+    "gold_image_id": "e48042ab3eddd2df717a7f6480284e64",
+    "title": "Minnesota Fighting Saints",
+    "status": "verified_same_visual_content",
+    "accepted_figure_ids": [
+      "e48042ab3eddd2df717a7f6480284e64:p0:f17"
+    ],
+    "reviewer": "assistant visual inspection",
+    "sheet": "review_008.jpg",
+    "row_in_sheet": 0,
+    "note": "Candidate rank 1 has red uniform and is rejected; rank 2 preserves the original blue uniform. Perceptual hash/geometry alone cannot verify color-sensitive evidence."
+  },
+  {
+    "gold_image_id": "e5015e2a5270e374d5a447bc0416dfcf",
+    "title": "Gary Roberts (ice hockey)",
+    "status": "verified_same_visual_content",
+    "accepted_figure_ids": [
+      "e5015e2a5270e374d5a447bc0416dfcf:p0:f18"
+    ],
+    "reviewer": "assistant visual inspection",
+    "sheet": "review_008.jpg",
+    "row_in_sheet": 1,
+    "note": "Visually checked original against candidate; same visual content present, sometimes inside a larger crop."
+  },
+  {
+    "gold_image_id": "e9e7af0a85bfe062956f1b070e486bce",
+    "title": "Kicking and Screaming (1995 film)",
+    "status": "unresolved_no_matching_top_candidate",
+    "accepted_figure_ids": [],
+    "reviewer": "assistant visual inspection",
+    "sheet": "review_008.jpg",
+    "row_in_sheet": 2,
+    "note": "Top proposals do not match the original; absence from the entire document has not been established."
+  },
+  {
+    "gold_image_id": "f7c8b67792c106cbf37a22f100af1056",
+    "title": "Arabella",
+    "status": "verified_same_visual_content",
+    "accepted_figure_ids": [
+      "f7c8b67792c106cbf37a22f100af1056:p0:f12"
+    ],
+    "reviewer": "assistant visual inspection",
+    "sheet": "review_008.jpg",
+    "row_in_sheet": 3,
+    "note": "Visually checked original against candidate; same visual content present, sometimes inside a larger crop."
+  },
+  {
+    "gold_image_id": "f99b09067da03a078424774e1260540b",
+    "title": "Satoko Miyahara",
+    "status": "verified_same_visual_content",
+    "accepted_figure_ids": [
+      "f99b09067da03a078424774e1260540b:p1:f7"
+    ],
+    "reviewer": "assistant visual inspection",
+    "sheet": "review_008.jpg",
+    "row_in_sheet": 4,
+    "note": "Visually checked original against candidate; same visual content present, sometimes inside a larger crop."
+  }
+]

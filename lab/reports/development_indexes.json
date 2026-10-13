@@ -1,0 +1,44 @@
+{
+  "qwen_text": {
+    "channel": "qwen",
+    "dimension": 2560,
+    "dtype": "float32",
+    "modality": "text",
+    "model": "Qwen/Qwen3-Embedding-4B",
+    "normalization": "L2 after float32 conversion",
+    "query_instruction": "Given a question, retrieve passages that contain evidence needed to answer it.",
+    "revision": "5cf2132abc99cad020ac570b19d031efec650f2b",
+    "rows": 160271,
+    "rows_sha256": "b7eac5a2e11239cb81cbad8ec4a4505be03e2780be4b8effb54ecd60de1dedd2",
+    "source_sha256": "bf3f2375d3dffed8e7fbda9a50e602d36cefacfb33400b6b4651c2b22db87506",
+    "vectors_sha256": "0b1a63ef10da7a3e07ca5d46c262a78dad9a3717f7669ed88a8b7c92a87518b3"
+  },
+  "gemma_text": {
+    "channel": "gemma",
+    "dimension": 768,
+    "dtype": "float32",
+    "modality": "text",
+    "model": "google/embeddinggemma-2",
+    "normalization": "L2 after float32 conversion",
+    "query_instruction": "task: search result | query: ",
+    "revision": "914f7f89142e33e77833254d9c9b90c3cef7303b",
+    "rows": 160271,
+    "rows_sha256": "b7eac5a2e11239cb81cbad8ec4a4505be03e2780be4b8effb54ecd60de1dedd2",
+    "source_sha256": "bf3f2375d3dffed8e7fbda9a50e602d36cefacfb33400b6b4651c2b22db87506",
+    "vectors_sha256": "bd898b81ced77e2da064ec8295e20e0b4817d7a9b55c6803a6dd4d8b870e215f"
+  },
+  "gemma_image": {
+    "channel": "gemma",
+    "dimension": 768,
+    "dtype": "float32",
+    "modality": "image",
+    "model": "google/embeddinggemma-2",
+    "normalization": "L2 after float32 conversion",
+    "query_instruction": "task: search result | query: ",
+    "revision": "914f7f89142e33e77833254d9c9b90c3cef7303b",
+    "rows": 1510,
+    "rows_sha256": "128c06d6f2078c1acec8424345dc16736d003d1a0b83eee2990f555140afbce8",
+    "source_sha256": "128c06d6f2078c1acec8424345dc16736d003d1a0b83eee2990f555140afbce8",
+    "vectors_sha256": "b2ec111b2f1d12ca74f5e094ab2115b9cd1b6fd53103ee12304074fa2409212a"
+  }
+}

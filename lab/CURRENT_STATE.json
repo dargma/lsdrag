@@ -1,5 +1,5 @@
 {
-  "stage": "development_indexing",
+  "stage": "development_evaluation",
   "status": "in_progress",
   "goal": "Complete B0/V1/V2/C1 on 50 image-related M3DocVQA questions, supplementary Mem-Gallery 50-question B0/V1/V2 and oracle-evidence Reader evaluation, and final report",
   "plan": "docs/EXPERIMENT_PLAN.md",
@@ -31,14 +31,6 @@
       "port": 8102,
       "session_id": 86509,
       "log": "/content/local_fast/lsdrag-work/reader-development-server.log"
-    },
-    "qwen_development_index": {
-      "session_id": 64692,
-      "log": "/content/local_fast/lsdrag-work/index-development-qwen.log"
-    },
-    "development_alignment": {
-      "session_id": 10897,
-      "log": "/content/local_fast/lsdrag-work/alignment-development.log"
     }
   },
   "standard_parser_smoke_passed": true,
@@ -96,8 +88,22 @@
     "table_policy": "keep rows and repeat Markdown headers; flag oversized rows"
   },
   "development_indexes_complete": [
+    "qwen_text",
     "gemma_text",
     "gemma_image"
   ],
-  "mem_gallery_selection": "lab/registry/mem_gallery_selection.json"
+  "mem_gallery_selection": "lab/registry/mem_gallery_selection.json",
+  "completed_development_runs": {
+    "C1": {
+      "questions": 50,
+      "directory": "/content/local_fast/lsdrag-work/results/development_C1",
+      "score_status": "pending"
+    }
+  },
+  "development_visual_mapping": {
+    "reviewed_originals": 53,
+    "verified_originals": 34,
+    "review_file": "lab/reports/development_alignment_review.json"
+  },
+  "development_backup": "lab/reports/development_parsing_backup.json"
 }

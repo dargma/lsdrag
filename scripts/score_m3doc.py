@@ -10,6 +10,7 @@ import numpy as np
 from lsdrag.agent import AgentConfig, Reader, parse_answer
 from lsdrag.io import dump_json, read_jsonl, sha256, write_jsonl
 from lsdrag.metrics import answer_scores, document_read_scores, official_scorer
+from lsdrag.evidence_metrics import visual_evidence_scores
 
 
 def judge_prompt(prediction, gold):
@@ -35,10 +36,13 @@ def main():
     p.add_argument("--upstream", required=True)
     p.add_argument("--output", type=Path, required=True)
     p.add_argument("--judge", action="store_true")
+    p.add_argument("--visual-mapping", type=Path)
     a = p.parse_args()
     manifest = json.loads((a.run / "run_manifest.json").read_text())
     gold = {q["qid"]: q for q in read_jsonl(a.gold)}
     chunks = {c["chunk_id"]: c for c in read_jsonl(a.corpus / "chunks.jsonl")}
+    figures = {f["figure_id"]: f for f in read_jsonl(a.corpus / "figures.jsonl")}
+    reviews = {r["gold_image_id"]: r for r in json.loads(a.visual_mapping.read_text())} if a.visual_mapping else {}
     if sha256(a.corpus / "manifest.json") != manifest["corpus_sha256"]:
         raise ValueError("Evaluation corpus differs from run corpus")
     scorer = official_scorer(a.upstream)
@@ -52,6 +56,7 @@ def main():
         parsed = parse_answer(prediction["answer_raw"])
         prediction = {**prediction, **parsed}
         row = {"qid": qid, "arm": manifest["arm"], **answer_scores(prediction, gold[qid], scorer), **document_read_scores(prediction, gold[qid], chunks), **{k: prediction[k] for k in ("loops", "seconds", "search_tokens", "evidence_tokens", "unique_delivered_images", "prompt_tokens", "completion_tokens", "answer_format_valid")}, "answer_json_recovered": parsed.get("answer_json_recovered", False), "prediction_sha256": sha256(a.run / (qid + ".json"))}
+        row.update(visual_evidence_scores(prediction, gold[qid], chunks, figures, reviews))
         if reader:
             targets = [str(item["answer"]) for item in gold[qid]["answers"]]
             cache = a.output / "judge" / (qid + ".json")
@@ -74,12 +79,13 @@ def main():
     metrics = ["em", "f1", "contain", "document_recall", "all_documents_read", "loops", "seconds", "search_tokens", "evidence_tokens", "unique_delivered_images", "prompt_tokens", "completion_tokens"]
     if reader:
         metrics.append("llm_accuracy")
+    metrics.extend(["figure_candidate_recall", "figure_open_recall", "figure_delivery_recall", "all_gold_images_delivered", "image_evidence_page_recall"])
     def aggregate(group):
         return {"n": len(group), **{key: {"mean": float(np.mean([r[key] for r in group if r.get(key) is not None])) if any(r.get(key) is not None for r in group) else None, "scored_n": sum(r.get(key) is not None for r in group)} for key in metrics}}
     groups = defaultdict(list)
     for row in rows:
         groups["+".join(row["support_modalities"])].append(row)
-    summary = {"arm": manifest["arm"], "overall": aggregate(rows), "by_evidence_combination": {k: aggregate(v) for k, v in groups.items()}, "gold_sha256": sha256(a.gold), "run_manifest_sha256": sha256(a.run / "run_manifest.json"), "page_and_figure_metrics": "pending verified mapping; document labels are not page/figure labels", "metric_scale": "0–1, except count/token/time metrics"}
+    summary = {"arm": manifest["arm"], "overall": aggregate(rows), "by_evidence_combination": {k: aggregate(v) for k, v in groups.items()}, "gold_sha256": sha256(a.gold), "run_manifest_sha256": sha256(a.run / "run_manifest.json"), "visual_mapping_sha256": sha256(a.visual_mapping) if a.visual_mapping else None, "visual_mapping_complete_questions": sum(r["visual_mapping_complete"] for r in rows), "page_and_figure_metrics": "primary means require complete reviewed image mappings; page metric concerns image-evidence pages only, not unannotated text/table pages", "metric_scale": "0–1, except count/token/time metrics"}
     dump_json(a.output / "summary.json", summary)
     print(json.dumps(summary))
 
