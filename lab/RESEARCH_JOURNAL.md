@@ -115,3 +115,6 @@ User clarified the primary question: what changes when replacing Qwen with Googl
 
 ### User revision: three isolated embedder conditions, eight iterations
 Replace mixed Qwen/Google V1/V2 comparisons with B0 Qwen-text, C1 Google-text, G1 Google-text+image. Same VLM/prompt/tools and caption-linked image delivery in every arm. Eight total Reader calls including finalization. Mem-Gallery input is text-only for all arms, source questions/gold unchanged; no oracle runs. Remeasure existing development 50+10 questions. Examples must be paired Qwen failures and G1 successes, conditional on overall evidence of improvement. Previous report archived.
+
+### Correct max-iteration semantics to match upstream A-RAG
+User clarified that only A-RAG max iteration is eight, with no independent Reader VLM call cap. Verified pinned upstream agent/base.py: eight tool-enabled iterations, then separate forced final answer if needed. Stopped and invalidated partial three_arm_iter8_textquery runs. New three_arm_arag8_textquery runs use the corrected semantics and log agent loops separately from reader_call_count.

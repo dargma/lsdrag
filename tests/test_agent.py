@@ -57,10 +57,11 @@ def test_v2_verification_stays_within_common_loop_budget():
                 assert tools is None  # Common max-loop finalization, not extra budget.
             return {"message": {"content": '{"answers":[],"citations":[]}'}, "finish_reason": "stop"}, {}
     reader = FakeReader()
-    result = Agent(retrieval, "test", AgentConfig(max_loops=2), reader).run("q", "test?")
+    result = Agent(retrieval, "test", AgentConfig(max_loops=1), reader).run("q", "test?")
     assert result["verification_requested"]
     assert result["stop_reason"] == "max_loops"
-    assert result["loops"] == 2
+    assert result["loops"] == 1
+    assert result["reader_call_count"] == 2
 
 
 def test_question_image_is_not_counted_as_retrieved_evidence(tmp_path):
@@ -77,19 +78,20 @@ def test_question_image_is_not_counted_as_retrieved_evidence(tmp_path):
     assert result["unique_delivered_images"] == 0
 
 
-def test_eight_iterations_include_forced_final_call():
+def test_eight_agent_iterations_allow_separate_final_reader_call():
     retrieval = SimpleNamespace(arm="G1", chunks={}, figures={}, keyword_search=lambda **_: [], semantic_search=lambda **_: [])
     class RepeatingReader:
         count = 0
         def chat(self, messages, tools):
             self.count += 1
-            if self.count == 8:
+            if self.count == 9:
                 assert tools is None
                 return {"message": {"content": '{"answers":[],"citations":[]}'}, "finish_reason": "stop"}, {}
             assert tools is not None
             return {"message": {"content": None, "tool_calls": [{"id": str(self.count), "type": "function", "function": {"name": "semantic_search", "arguments": '{"query":"test"}'}}]}, "finish_reason": "tool_calls"}, {}
     reader = RepeatingReader()
     result = Agent(retrieval, "test", AgentConfig(max_loops=8), reader).run("q", "test?")
-    assert reader.count == result["loops"] == 8
+    assert reader.count == result["reader_call_count"] == 9
+    assert result["loops"] == 8
     assert result["stop_reason"] == "max_loops"
-    assert len(result["trajectory"]) == 7
+    assert len(result["trajectory"]) == 8

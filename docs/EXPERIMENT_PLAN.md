@@ -17,7 +17,7 @@
 ## 공통 설정
 
 - Reader: 고정 revision의 Gemma 4 E4B-it. temperature 0, seed 20261013, 출력 최대 1024 tokens, context 32768, 이미지 최대 8개.
-- max iteration = 8. 최종 답변 호출을 포함한 전체 Reader 호출이 8회를 넘지 않는다. 마지막 호출은 도구 없이 최종 답변하며, 조기 종료를 허용한다.
+- A-RAG max iteration = 8. 도구 선택·실행의 에이전트 루프를 최대 8회 수행하며 조기 종료를 허용한다. 한도 도달 후 최종 답변 호출은 원본 A-RAG와 같이 별도로 수행한다. Reader VLM 자체에 독립적인 호출 수 제한을 두지 않는다.
 - 동일 baseline prompt와 keyword_search / semantic_search / read_chunk. 검색 결과에는 텍스트만, 실제 이미지는 읽기 후 전달한다.
 - 동일 질문·코퍼스·파싱·후보 예산. 텍스트 문장 상위 180개에서 60개 청크, 이미지 후보 60개, 기본 반환 5개. reranker 없음.
 - Mem-Gallery는 모든 조건에서 질문 텍스트만 입력한다. 원래 첨부된 질문 이미지는 전부 제외하고 질문 원문·정답은 수정하지 않는다. 검색된 기억 이미지는 정상 전달한다. 원래 질문 이미지 유무별 결과를 별도 집계한다. 이는 공식 원형이 아니라 사용자 요청의 text-query 비교이다.
@@ -26,7 +26,7 @@
 
 직전 개발 결과를 대체하기 위해 같은 M3DocVQA 개발 50문항 및 Mem-Gallery 개발 10문항을 세 조건 모두 새로 실행·채점한다. 별도 최종 50+50문항은 개발 집합과 분리하여 유지하며 이번 재측정에 섞지 않는다.
 
-실행 경로: /content/local_fast/lsdrag-work/results/three_arm_iter8_textquery/.
+실행 경로: /content/local_fast/lsdrag-work/results/three_arm_arag8_textquery/.
 각 결과는 불변 run manifest, 입력·인덱스·프롬프트 해시, Reader 설정, 텍스트 전용 질문 정책과 코드 revision을 기록한다. Mem-Gallery gold의 question_image 표시는 원 데이터 속성이며 실제 공급 여부와 구분한다.
 
 ## 평가와 보고

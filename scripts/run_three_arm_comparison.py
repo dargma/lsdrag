@@ -7,7 +7,7 @@ import subprocess
 
 ROOT = Path('/content/local_fast/lsdrag-work')
 REPO = Path(__file__).resolve().parents[1]
-OUT = ROOT / 'results/three_arm_iter8_textquery'
+OUT = ROOT / 'results/three_arm_arag8_textquery'
 LOGS = OUT / 'logs'
 EMBED = ROOT / 'embedding-env/bin/python'
 RUNTIME = ROOT / 'runtime/bin/python'
@@ -44,7 +44,7 @@ def one(benchmark, arm):
         args += ['--visual-mapping', REPO / 'lab/reports/development_alignment_review.json']
     command(f'{benchmark}-{arm}-score', RUNTIME, 'score_memgallery.py' if mem else 'score_m3doc.py', args)
     command(f'{benchmark}-{arm}-backup', RUNTIME, 'backup_local.py', [
-        '--source-root', ROOT, '--destination', f'/content/drive/MyDrive/lsdrag-backups/20261013/three-arm-iter8/{benchmark}/{arm}',
+        '--source-root', ROOT, '--destination', f'/content/drive/MyDrive/lsdrag-backups/20261013/three-arm-arag8/{benchmark}/{arm}',
         '--include', str(run.relative_to(ROOT)), '--include', str((OUT / benchmark / (arm + '_scores')).relative_to(ROOT)),
         '--report', OUT / benchmark / (arm + '_backup.json')])
 
@@ -59,7 +59,7 @@ def main():
             '--variant', OUT / benchmark / 'G1_scores', '--benchmark', benchmark,
             '--output', OUT / benchmark / 'paired_comparison.json'])
     (OUT / 'COMPLETE.json').write_text(json.dumps({'status': 'complete', 'arms': ARMS,
-        'benchmarks': ['m3docvqa', 'memgallery'], 'max_reader_calls': 8, 'question_image_policy': 'text-only'}, indent=2))
+        'benchmarks': ['m3docvqa', 'memgallery'], 'max_agent_iterations': 8, 'question_image_policy': 'text-only'}, indent=2))
     print('ALL SIX RUNS SCORED AND BACKED UP', flush=True)
 
 

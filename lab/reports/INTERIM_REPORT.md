@@ -14,7 +14,7 @@
 | Google text-only | Google | 없음 | 연결 이미지 → 동일 VLM |
 | Google multimodal | Google | Google | 연결 이미지 → 동일 VLM |
 
-Reader는 Gemma 4 E4B, 파서는 MinerU2.5-Pro-2604-1.2B. 세 조건의 도구·프롬프트·이미지 예산이 같으며 최종 답변을 포함해 최대 8회 반복한다. Qwen+Google 조합과 정답 근거 직접 제공 조건은 제외한다.
+Reader는 Gemma 4 E4B, 파서는 MinerU2.5-Pro-2604-1.2B. 세 조건의 도구·프롬프트·이미지 예산이 같으며 A-RAG 에이전트 루프를 최대 8회 반복한다. 한도 도달 후 최종 답변 호출은 별도이며 Reader VLM 호출 수 자체를 제한하지 않는다. Qwen+Google 조합과 정답 근거 직접 제공 조건은 제외한다.
 
 ## 3. 벤치마크
 

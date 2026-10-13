@@ -147,13 +147,13 @@ class Agent:
         verification_requested = False
         if self.config.max_loops < 1:
             raise ValueError("max_loops must be positive")
-        for loop in range(self.config.max_loops):
+        for loop in range(self.config.max_loops + 1):
             images = list(context.pending_images.values())
             if images:
                 messages.append(image_message(images, question))
-            forced = loop == self.config.max_loops - 1 or self._estimate_context(messages) + self.config.max_output_tokens > self.config.context_limit - 2048
+            forced = loop == self.config.max_loops or self._estimate_context(messages) + self.config.max_output_tokens > self.config.context_limit - 2048
             if forced:
-                stop_reason = "max_loops" if loop == self.config.max_loops - 1 else "context_budget"
+                stop_reason = "max_loops" if loop == self.config.max_loops else "context_budget"
                 messages.append({"role": "user", "content": "You have reached the limit. Do not call more tools. Return your final JSON answer using the evidence already available; leave answers empty if insufficient."})
             call_start = time.monotonic()
             try:
@@ -200,4 +200,4 @@ class Agent:
                 trajectory.append({"loop": loop + 1, "tool_name": name, "arguments": arguments, "result": result, "retrieved_tokens": tokens, "seconds": time.monotonic() - tool_start})
                 messages.append({"role": "tool", "tool_call_id": tc["id"], "content": content})
         parsed = parse_answer(answer)
-        return {"qid": qid, "question": question, "question_image_count": len(question_images), "arm": self.retrieval.arm, "status": status, "stop_reason": stop_reason, "answer_raw": answer, **parsed, "loops": len(calls), "verification_requested": verification_requested, "search_tokens": search_tokens, "evidence_tokens": evidence_tokens, "seconds": time.monotonic() - start, "prompt_tokens": sum(c["usage"].get("prompt_tokens", 0) for c in calls), "completion_tokens": sum(c["usage"].get("completion_tokens", 0) for c in calls), **context.summary(), "trajectory": trajectory, "reader_calls": calls, "errors": errors, "config": asdict(self.config), "prompt_sha256": hashlib.sha256(self.prompt.encode()).hexdigest()}
+        return {"qid": qid, "question": question, "question_image_count": len(question_images), "arm": self.retrieval.arm, "status": status, "stop_reason": stop_reason, "answer_raw": answer, **parsed, "loops": min(len(calls), self.config.max_loops), "reader_call_count": len(calls), "verification_requested": verification_requested, "search_tokens": search_tokens, "evidence_tokens": evidence_tokens, "seconds": time.monotonic() - start, "prompt_tokens": sum(c["usage"].get("prompt_tokens", 0) for c in calls), "completion_tokens": sum(c["usage"].get("completion_tokens", 0) for c in calls), **context.summary(), "trajectory": trajectory, "reader_calls": calls, "errors": errors, "config": asdict(self.config), "prompt_sha256": hashlib.sha256(self.prompt.encode()).hexdigest()}
