@@ -29,3 +29,17 @@ def test_invalid_batch_does_not_partially_mutate_evidence():
         c.read(["a", "missing"])
     assert not c.read_chunks
     assert not c.pending_images
+
+
+def test_auto_read_keeps_ranks_and_reports_dedup_and_budget():
+    c = context()
+    results = [{"chunk_id": "a"}, {"chunk_id": "b"}, {"chunk_id": "c"}]
+    result = c.read_search_images(results, "semantic_search")
+    assert [r["chunk_id"] for r in result] == ["a", "b", "c"]
+    assert results == [{"chunk_id": "a"}, {"chunk_id": "b"}, {"chunk_id": "c"}]
+    assert len(c.pending_images) == 1
+    assert result[2]["auto_read"]["figures"][0]["status"] == "image_budget_exhausted"
+    assert not c.delivered_figures
+    c.mark_images_accepted(list(c.pending_images.values()))
+    assert c.delivered_figures == {"a", "b"}
+    assert c.events[0]["action"] == "auto_read_search_images"

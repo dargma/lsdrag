@@ -26,6 +26,7 @@ def main():
     p.add_argument("--resume", action="store_true")
     p.add_argument("--max-loops", type=int, default=8)
     p.add_argument("--question-image-policy", choices=["text-only", "original"], default="text-only")
+    p.add_argument("--image-delivery-policy", choices=["agent-read", "search-linked"], default="search-linked")
     a = p.parse_args()
     questions = read_jsonl(a.questions)
     allowed = {"qid", "question"} if a.benchmark == "m3docvqa" else {"qid", "question", "scenario", "task_type", "question_image_paths"}
@@ -40,8 +41,9 @@ def main():
     channels = ["gemma_text"] if a.arm in {"C1", "G1"} else ["qwen_text"]
     if a.arm in {"V1", "V2", "G1"}:
         channels.append("gemma_image")
-    config = AgentConfig(base_url=a.base_url, max_loops=a.max_loops)
-    prompt_path = Path(__file__).resolve().parents[1] / "prompts" / ("visual.txt" if a.arm == "V2" else "baseline.txt")
+    config = AgentConfig(base_url=a.base_url, max_loops=a.max_loops, image_delivery_policy=a.image_delivery_policy)
+    prompt_name = "visual.txt" if a.arm == "V2" else ("search_linked.txt" if a.image_delivery_policy == "search-linked" else "baseline.txt")
+    prompt_path = Path(__file__).resolve().parents[1] / "prompts" / prompt_name
     question_image_hashes = {path: sha256(path) for q in questions for path in q.get("question_image_paths", [])}
     identity = {"arm": a.arm, "question_image_policy": a.question_image_policy, "iteration_budget_semantics": "A-RAG agent iterations; forced final answer outside iteration budget; no independent Reader-call limit", "benchmark": a.benchmark, "questions_sha256": sha256(a.questions), "question_ids": [q["qid"] for q in questions], "question_image_hashes": question_image_hashes, "corpus_sha256": sha256(a.corpus / "manifest.json"), "index_manifests": {c: sha256(a.indexes / c / "manifest.json") for c in channels}, "prompt_sha256": sha256(prompt_path), "config": asdict(config), "code_revision": subprocess.check_output(["git", "rev-parse", "HEAD"], text=True).strip()}
     if subprocess.check_output(["git", "status", "--porcelain"], text=True).strip():

@@ -37,7 +37,8 @@ def one(benchmark, arm):
     command(f'{benchmark}-{arm}', EMBED, 'run_experiment.py', [
         '--arm', arm, '--benchmark', benchmark, '--corpus', corpus, '--indexes', indexes,
         '--questions', inputs / 'questions.jsonl', '--output', run, '--cache-dir', ROOT / 'hf',
-        '--max-loops', '8', '--question-image-policy', 'text-only', '--resume'])
+        '--max-loops', '8', '--question-image-policy', 'text-only',
+        '--image-delivery-policy', 'agent-read', '--resume'])
     manifest = json.loads((run / 'run_manifest.json').read_text())
     for qid in manifest['question_ids']:
         row = json.loads((run / (qid + '.json')).read_text())

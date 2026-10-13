@@ -7,9 +7,10 @@ from PIL import Image
 from lsdrag.agent import Agent, AgentConfig, parse_answer, tool_schemas
 
 
-def test_baseline_arms_have_identical_tool_schemas():
-    assert tool_schemas("B0") == tool_schemas("V1") == tool_schemas("C1") == tool_schemas("G1")
-    assert len(tool_schemas("V2")) == 5
+@pytest.mark.parametrize("policy", ["agent-read", "search-linked"])
+def test_baseline_arms_have_identical_tool_schemas(policy):
+    assert tool_schemas("B0", policy) == tool_schemas("V1", policy) == tool_schemas("C1", policy) == tool_schemas("G1", policy)
+    assert len(tool_schemas("V2", policy)) == 5
 
 
 @pytest.mark.parametrize("arm", ["B0", "C1", "G1"])
@@ -95,3 +96,38 @@ def test_eight_agent_iterations_allow_separate_final_reader_call():
     assert result["loops"] == 8
     assert result["stop_reason"] == "max_loops"
     assert len(result["trajectory"]) == 8
+
+
+@pytest.mark.parametrize("arm", ["B0", "C1", "G1"])
+@pytest.mark.parametrize("search_tool", ["keyword_search", "semantic_search"])
+@pytest.mark.parametrize("policy", ["agent-read", "search-linked"])
+def test_search_image_reaches_final_reader_without_a_read_tool(tmp_path, arm, search_tool, policy):
+    path = tmp_path / "synthetic.png"
+    Image.new("RGB", (8, 8), "red").save(path)
+    chunk = {"document_id": "d", "page_index": 0, "kind": "image_caption",
+             "text": "No appearance caption", "figure_ids": ["f"]}
+    figure = {"image_path": str(path), "image_sha256": hashlib.sha256(path.read_bytes()).hexdigest()}
+    results = [{"chunk_id": "c", "kind": "image_caption", "snippet": "No appearance caption"}]
+    retrieval = SimpleNamespace(arm=arm, chunks={"c": chunk}, figures={"f": figure},
+                                keyword_search=lambda **_: results, semantic_search=lambda **_: results)
+
+    class FakeReader:
+        count = 0
+        def chat(self, messages, tools):
+            self.count += 1
+            if self.count == 1:
+                args = '{"query":"object"}' if search_tool == "semantic_search" else '{"keywords":["object"]}'
+                return {"message": {"content": None, "tool_calls": [{"id": "search", "type": "function",
+                        "function": {"name": search_tool, "arguments": args}}]}, "finish_reason": "tool_calls"}, {}
+            assert tools is None  # One agent iteration, separate forced final response.
+            has_image = any(isinstance(m.get("content"), list) and any(
+                b.get("type") == "image_url" for b in m["content"]) for m in messages)
+            assert has_image == (policy == "search-linked")
+            return {"message": {"content": '{"answers":[],"citations":[]}'}, "finish_reason": "stop"}, {}
+
+    result = Agent(retrieval, "test", AgentConfig(max_loops=1, image_delivery_policy=policy), FakeReader()).run("synthetic", "object?")
+    assert result["loops"] == 1 and result["reader_call_count"] == 2
+    assert [x["tool_name"] for x in result["trajectory"]] == [search_tool]
+    assert result["delivered_figure_ids"] == (["f"] if policy == "search-linked" else [])
+    assert result["read_chunk_ids"] == (["c"] if policy == "search-linked" else [])
+    assert result["trajectory"][0]["result"][0]["chunk_id"] == "c"

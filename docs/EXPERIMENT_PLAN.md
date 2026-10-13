@@ -37,3 +37,6 @@ EM, F1, LLM 판정 및 근거 후보/전달 recall을 같은 평가 코드로 �
 
 ## 추가 50문항 측정 (2026-10-13)
 사용자가 GPU 유휴를 알리고 즉시 실행을 요청했다. 기존에 고정한 M3DocVQA 50문항과 Mem-Gallery 50문항(VS 25 + VR 25)을 사용한다. 기존 개발 문항과 ID 중복은 0이다. 조건별 한 번씩만 풀고 같은 Reader·프롬프트·max iteration 8·텍스트 질문 정책을 유지한다. M3는 사전 고정된 288문서 코퍼스, Mem-Gallery는 같은 코퍼스에서 해당 시나리오만 검색한다. 기존 개발 180문서 결과와 새 288문서 결과는 분리해 보고하며 단순 합산하지 않는다. 회복된 파싱 결과에서 이전 이미지 ID가 없으면 해당 대응은 검증 전까지 recall에서 제외한다. 실행: `python scripts/run_three_arm_comparison.py --evaluation-set additional50`.
+
+## 검색 연결 이미지 자동 전달 수정
+기존 결과는 `agent-read` 정책(에이전트가 read_chunk를 선택해야 이미지 전달)으로 측정했다. 사용자 지시에 따라 현재 코드의 새 실행 기본값은 `search-linked`다. keyword_search/semantic_search가 반환한 이미지 연결 청크를 자동 읽기하고 다음 Reader 호출 전 실제 이미지를 넣는다. 세 조건에 같은 정책·search_linked 프롬프트·8 iteration·이미지 8개 예산을 적용한다. 질문 첨부 이미지·그 캡션은 이번 text-query 조건에서 제외하고 검색 자료 캡션과 이미지는 사용한다. 수정 후 벤치마크 성능은 아직 측정하지 않았다. 기존 문항을 다시 풀지 않으며 새 문항 manifest·새 output·새 실행 identity로만 다음 평가를 한다. [상세 구현 명세](IMPLEMENTING_GOOGLE_MULTIMODAL_EMBEDDING.md).

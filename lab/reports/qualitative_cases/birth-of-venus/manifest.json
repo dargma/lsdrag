@@ -10,8 +10,8 @@
   "files": [
     {
       "path": "README.md",
-      "bytes": 2065,
-      "sha256": "44ce20a8a478754cd12bbd4556b73431d565163ee33c2326d3d6e1d9b3d284e7"
+      "bytes": 2541,
+      "sha256": "24db44b3e3ca0e49cd63ec85d5eba8124195f04cf0a2a45692e99663907781ea"
     },
     {
       "path": "caption_inventory.json",
@@ -163,5 +163,9 @@
       "bytes": 3202,
       "sha256": "bd0f5f218ba4b05eab63682930558121166e258b068603345b1d7781c591f306"
     }
-  ]
+  ],
+  "question_caption_originally_present": true,
+  "question_caption_provided": false,
+  "question_input_policy": "Original question text only; question image and its caption omitted; corpus image captions retained.",
+  "image_delivery_policy": "agent-read"
 }

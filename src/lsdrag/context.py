@@ -59,6 +59,28 @@ class EvidenceContext:
                 raise ValueError(f"Unknown figure ID: {key}")
         return self.read([self.retrieval.figures[f]["chunk_id"] for f in figure_ids])
 
+    def read_search_images(self, results, source_tool):
+        """Read returned image-linked chunks without another agent tool decision."""
+        if not isinstance(results, list):
+            return results
+        identities = list(dict.fromkeys(
+            item["chunk_id"] for item in results
+            if isinstance(item, dict)
+            and item.get("chunk_id") in self.retrieval.chunks
+            and self.retrieval.chunks[item["chunk_id"]]["figure_ids"]
+        ))
+        if not identities:
+            return results
+        self.events.append({"action": "auto_read_search_images", "source_tool": source_tool,
+                            "chunk_ids": identities})
+        records = {}
+        for start in range(0, len(identities), 8):
+            records.update({row["chunk_id"]: row for row in self.read(identities[start:start + 8])})
+        # Preserve the search-result list and its original order for candidate metrics.
+        return [{**item, "auto_read": records[item["chunk_id"]]}
+                if isinstance(item, dict) and item.get("chunk_id") in records else item
+                for item in results]
+
     def mark_images_accepted(self, images):
         """Call only after a successful Reader response to an image-bearing request."""
         for item in images:

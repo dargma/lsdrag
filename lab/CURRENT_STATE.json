@@ -1,6 +1,6 @@
 {
   "stage": "comparison_report",
-  "status": "additional50_complete_report_updated",
+  "status": "automatic_image_delivery_implemented_unmeasured",
   "goal": "Compare Qwen text, Google text-only, and Google-only multimodal retrieval with identical VLM, tools and 8 A-RAG agent iterations, no independent Reader-call limit; Mem-Gallery text queries only; no oracle condition",
   "plan": "docs/EXPERIMENT_PLAN.md",
   "work_root": "/content/local_fast/lsdrag-work",
@@ -8,7 +8,7 @@
   "reader_model_finalized": true,
   "evaluation_manifest_frozen": true,
   "pending_checks": [
-    "Automatic reading of retrieved image chunks remains an unmeasured improvement proposal."
+    "Benchmark automatic image delivery on new questions only; keep previous measured-policy results separate."
   ],
   "reader_candidate": "google/gemma-4-E4B-it",
   "model_weights_downloaded": true,
@@ -239,5 +239,18 @@
     "m3docvqa": 100,
     "memgallery": 60
   },
-  "additional_prepared_backup": "/content/local_fast/lsdrag-work/recovery/additional50-prepared-backup.json"
+  "additional_prepared_backup": "/content/local_fast/lsdrag-work/recovery/additional50-prepared-backup.json",
+  "image_delivery_revision": {
+    "previous_measured_policy": "agent-read",
+    "current_default_policy": "search-linked",
+    "common_arms": [
+      "B0",
+      "C1",
+      "G1"
+    ],
+    "question_attached_image_and_caption": "omitted; retrieved evidence captions and images supplied",
+    "tests": "42 passed; synthetic mocked-reader only",
+    "benchmark_measurement": "not started; no completed question solved again",
+    "implementation_doc": "docs/IMPLEMENTING_GOOGLE_MULTIMODAL_EMBEDDING.md"
+  }
 }

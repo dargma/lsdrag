@@ -3,12 +3,13 @@
 M3DocVQA 이미지 관련 50문항과 Mem-Gallery 50문항(VS 25·VR 25)으로 멀티모달 A-RAG와 EmbeddingGemma 2의 효과를 비교합니다. 개발 질문은 최종 평가와 분리합니다.
 
 - [실험 실행 지시서](docs/EXPERIMENT_PLAN.md)
+- [Google 멀티모달 임베더 구현 지시서](docs/IMPLEMENTING_GOOGLE_MULTIMODAL_EMBEDDING.md)
 - [결정 기록](docs/DECISIONS.md)
 - [진행 기록](lab/RESEARCH_JOURNAL.md)
 - [현재 상태](lab/CURRENT_STATE.json)
 - [Mem-Gallery 사전 확인](lab/reports/MEM_GALLERY_PREFLIGHT.md)
 
-현재 비교는 **B0 Qwen 텍스트, C1 Google 텍스트, G1 Google 텍스트+이미지**의 세 조건입니다. 동일 Reader VLM과 A-RAG 최대 8회 반복을 적용하며, 모든 조건에서 검색된 캡션의 연결 이미지를 읽을 수 있습니다. Mem-Gallery 질문은 텍스트만 입력합니다.
+현재 비교는 **B0 Qwen 텍스트, C1 Google 텍스트, G1 Google 텍스트+이미지**의 세 조건입니다. 동일 Reader VLM과 A-RAG 최대 8회 반복을 적용하며, 모든 조건에서 검색된 캡션의 연결 이미지를 읽을 수 있습니다. 원 질문 첨부 이미지·그 캡션은 제외하고, 검색 근거의 캡션과 실제 이미지는 Reader에 제공합니다. 현재 코드는 검색 연결 이미지를 자동 읽도록 수정했으며, 아래 결과는 수정 전 에이전트 선택 읽기 정책의 측정입니다. 자동 전달 수정 후 성능은 아직 측정하지 않았습니다.
 
 [최신 결과 보고서](lab/reports/INTERIM_REPORT.md): 개발 결과에 M3DocVQA 50문항·Mem-Gallery 50문항을 추가했습니다. 추가 집합에서 Qwen 대비 Google multimodal의 EM은 M3DocVQA 2→8%, Mem-Gallery 28→32%입니다. 문서 이미지 전달 recall은 개선됐고, 추가 Mem-Gallery의 전달 recall은 거의 같습니다. 정답률 우위는 아직 확정되지 않았습니다.
 

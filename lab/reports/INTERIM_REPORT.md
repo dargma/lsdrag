@@ -4,6 +4,8 @@
 
 2026-10-13 업데이트. 기존 결과에 새 M3DocVQA 50문항과 Mem-Gallery 50문항을 추가했다. 누적 고유 문항은 각각 100개·60개이며, 세 조건에서 문항당 한 번씩만 풀었다. 총 480회 풀이에 실행 오류는 없었다.
 
+**측정 당시 전달 정책:** 검색 결과의 이미지 청크를 에이전트가 `read_chunk`로 선택해야 실제 이미지가 Reader에 들어갔다(`agent-read`). **현재 수정한 정책:** 반환된 이미지 연결 청크를 자동 읽기해 Reader에 전달한다(`search-linked`, 세 조건 공통). 아래 수치는 수정 전 측정이며, 자동 전달 수정 후 성능은 아직 측정하지 않았다.
+
 ![추가 50문항씩의 결과: M3DocVQA EM 2에서 8%, 전달 recall 8.1에서 32.4%; Mem-Gallery EM 28에서 32%, 전달 recall 52.1에서 52.2%](assets/three_arm/highlights.svg)
 
 ## 1. 배경과 목적
@@ -12,13 +14,22 @@ A-RAG에서 Qwen 임베더를 Google 임베더로 바꿀 때 얻는 효과를 �
 
 ## 2. 방법
 
-A-RAG의 **검색 → 근거 읽기 → 필요하면 재검색 → 답변** 구조를 사용한다. 검색된 캡션·이미지 연결 청크를 `read_chunk`로 읽으면 실제 이미지가 Reader VLM에 전달된다. 세 조건 모두 이 구조로 이미지를 볼 수 있다.
+A-RAG는 검색과 근거 읽기를 반복해 답한다. **Reader VLM은 세 조건 모두 실제 근거 이미지를 입력받을 수 있다.** 측정 당시에는 에이전트가 이미지 연결 청크를 읽기로 선택한 경우에만 전달했다. 검색에 걸리고도 읽지 않은 사례가 있어, 현재 코드는 그 선택을 기다리지 않고 반환된 이미지 연결 청크를 공통 이미지 예산 안에서 자동 읽도록 수정했다.
 
-| 조건 | 텍스트·캡션 임베딩 | 이미지 벡터 검색 |
+| 자료 종류 | 검색에서 사용 | Reader VLM에서 사용 |
 |---|---|---|
-| Qwen (B0) | Qwen3-Embedding-4B | 캡션 검색 후 연결 이미지 열람 |
-| Google text-only (C1) | EmbeddingGemma 2 | 캡션 검색 후 연결 이미지 열람 |
-| Google multimodal (G1) | EmbeddingGemma 2 | 같은 Google 임베더의 이미지 벡터 검색 추가 |
+| 질문 원문 텍스트 | 검색어 생성·임베딩에 사용 | 사용 |
+| 원래 질문 첨부 이미지·그 이미지의 캡션 | 이번 비교에서는 제외 | 제외 |
+| 검색 대상 자료의 텍스트·이미지 캡션·주석 | 세 조건 모두 검색 텍스트로 사용 | 읽은 청크의 원문으로 사용 |
+| 검색 대상 자료의 실제 이미지 | G1만 이미지 벡터 검색 추가 | **세 조건 모두 사용**. 측정 당시에는 에이전트 선택 후, 수정 코드에서는 검색 연결 이미지 자동 읽기 후 입력 |
+
+따라서 **질문 이미지·그 캡션을 제외한 것**과 **검색한 근거 이미지·그 캡션을 사용하는 것**은 서로 다른 조건이다.
+
+| 조건 | 검색용 텍스트·캡션 임베더 | 검색용 실제 이미지 임베더 | Reader의 근거 이미지 입력 |
+|---|---|---|---|
+| Qwen (B0) | Qwen3-Embedding-4B | 사용하지 않음 | 지원, 공통 전달 정책 |
+| Google text-only (C1) | EmbeddingGemma 2 | 사용하지 않음 | 지원, 공통 전달 정책 |
+| Google multimodal (G1) | EmbeddingGemma 2 | 같은 EmbeddingGemma 2 | 지원, 공통 전달 정책 |
 
 | 구성 | 공통 설정 |
 |---|---|
@@ -29,7 +40,7 @@ A-RAG의 **검색 → 근거 읽기 → 필요하면 재검색 → 답변** 구�
 | 생성·입력 | temperature 0, seed 20261013, 출력 1,024 tokens, context 32,768, 풀이당 고유 이미지 최대 8개 |
 | 검색 | 텍스트 후보 60개, 이미지 채널 사용 시 후보 60개, 기본 반환 5개. G1은 Google 텍스트·이미지 순위를 RRF(k=60)로 결합. reranker 없음 |
 
-질문·코퍼스·프롬프트·Reader 설정은 각 평가 집합의 세 조건에서 일치한다. Mem-Gallery는 모두 질문 텍스트만 입력하고, 검색된 대화 이미지는 정상 전달한다. 원래 질문 이미지는 정성 사례에서 별도 표시한다. 오답 재시도나 best-of 선택은 하지 않았다.
+질문·코퍼스·프롬프트·Reader 설정과 전달 정책은 각 평가 집합의 세 조건에서 같다. Mem-Gallery의 첫 질문 입력은 원문 텍스트이고, 이후 Reader는 읽은 근거의 텍스트·캡션·실제 이미지를 받는다. 오답 재시도나 best-of 선택은 하지 않았다. [현재 자동 전달 코드의 상세 구현 문서](../../docs/IMPLEMENTING_GOOGLE_MULTIMODAL_EMBEDDING.md)를 별도로 제공한다.
 
 ## 3. 벤치마크 설명
 
@@ -76,52 +87,52 @@ Google multimodal의 Qwen 대비 EM 차이는 M3DocVQA +6%p(새 정답 3개·잃
 
 ## 5. 정성 평가
 
-동일 문항의 **왼쪽 Qwen 실패 / 오른쪽 Google multimodal 성공**을 실제 답변·입력 이미지로 비교했다. 네 사례 모두 EM 기준으로 Qwen은 틀리고 Google multimodal은 맞았다. 개별 사례가 전체 성능 우위를 증명하지는 않는다.
+측정 당시 `agent-read` 정책의 동일 문항을 **왼쪽 Qwen 실패 / 오른쪽 Google multimodal 성공**으로 비교했다. 아래 이미지는 **검색 후 실제 Reader에 전달한 근거 이미지**다. 네 사례 모두 EM 기준으로 Qwen은 틀리고 Google multimodal은 맞았다. 개별 사례가 전체 성능 우위를 증명하지는 않는다.
 
 [사례별 원본 데이터 묶음](qualitative_cases/README.md)에 원본 질문·정답, 세 조건의 전체 실행 JSON, 관련 원문·이미지·캡션·해시를 포함했다. 다른 머신에서도 별도 데이터 준비 없이 확인할 수 있다. 아래 캡션 설명은 정답 근거 이미지 기준이며, 다른 검색 이미지의 캡션도 각 묶음에 보존했다.
 
 ### 1. M3DocVQA — 펭귄이 등장하는 영화 포스터
 
-**질문:** 카마니 그리핀의 출연작 중 표지에 펭귄이 있는 영화는?<br>**정답:** `["Happy Feet"]`<br>**질문 이미지:** 원래 없음 · 실제 Reader 입력 없음<br>**검색 대상 이미지 캡션:** 원문 캡션 없음 · 주석 “Theatrical release poster”만 있음. 검색에는 제목과 주석 사용.<br>**평가 집합:** 기존 개발
+**질문:** 카마니 그리핀의 출연작 중 표지에 펭귄이 있는 영화는?<br>**정답:** `["Happy Feet"]`<br>**원 질문 첨부 이미지:** 없음 · 입력하지 않음<br>**원 질문 이미지의 캡션:** 없음 · 입력하지 않음<br>**검색 근거 이미지의 캡션:** 원문 캡션 없음 · 주석 “Theatrical release poster”만 있음. 검색에는 제목과 주석 사용.<br>**평가 집합:** 기존 개발
 
 <table>
 <thead><tr><th width="50%">Qwen (오답)</th><th width="50%">Google multimodal (정답)</th></tr></thead>
-<tbody><tr><td width="50%"><strong>실제 답변:</strong> <code>[]</code><br><strong>전달 이미지:</strong> 없음</td><td width="50%"><strong>실제 답변:</strong> <code>[&quot;Happy Feet&quot;]</code><br><strong>전달 이미지:</strong> <img src="qualitative_cases/happy-feet/images/15bab1f21e8541c8d709c786.jpg" width="120" alt="G1 실제 Reader 입력 이미지 1"> <img src="qualitative_cases/happy-feet/images/bb3e1fece0855987917d1218.jpg" width="120" alt="G1 실제 Reader 입력 이미지 2"> <img src="qualitative_cases/happy-feet/images/1ec28ce42dabefe3333de6cf.jpg" width="120" alt="G1 실제 Reader 입력 이미지 3"></td></tr></tbody>
+<tbody><tr><td width="50%"><strong>실제 답변:</strong> <code>[]</code><br><strong>Reader에 실제 입력한 검색 근거 이미지:</strong> 없음</td><td width="50%"><strong>실제 답변:</strong> <code>[&quot;Happy Feet&quot;]</code><br><strong>Reader에 실제 입력한 검색 근거 이미지:</strong> <img src="qualitative_cases/happy-feet/images/15bab1f21e8541c8d709c786.jpg" width="120" alt="G1 실제 Reader 입력 이미지 1"> <img src="qualitative_cases/happy-feet/images/bb3e1fece0855987917d1218.jpg" width="120" alt="G1 실제 Reader 입력 이미지 2"> <img src="qualitative_cases/happy-feet/images/1ec28ce42dabefe3333de6cf.jpg" width="120" alt="G1 실제 Reader 입력 이미지 3"></td></tr></tbody>
 </table>
 
 정답 포스터의 원문 캡션은 없고 “Theatrical release poster”라는 주석만 있다. 펭귄이라는 시각 속성은 이 주석에 없다. Google multimodal은 포스터를 실제로 읽고 Happy Feet를 답했다. [원본 데이터·전체 검색 기록](qualitative_cases/happy-feet/README.md)
 
 ### 2. M3DocVQA — 매우 짧은 금발의 선수 찾기
 
-**질문:** 2009 Ladies European Tour 상금 순위에 포함된 선수 중 매우 짧은 금발의 선수는?<br>**정답:** `["Laura Davies"]`<br>**질문 이미지:** 원래 없음 · 실제 Reader 입력 없음<br>**검색 대상 이미지 캡션:** 원문 캡션·주석 모두 없음. 검색에는 제목과 주변 문서 텍스트 사용.<br>**평가 집합:** 추가 50문항
+**질문:** 2009 Ladies European Tour 상금 순위에 포함된 선수 중 매우 짧은 금발의 선수는?<br>**정답:** `["Laura Davies"]`<br>**원 질문 첨부 이미지:** 없음 · 입력하지 않음<br>**원 질문 이미지의 캡션:** 없음 · 입력하지 않음<br>**검색 근거 이미지의 캡션:** 원문 캡션·주석 모두 없음. 검색에는 제목과 주변 문서 텍스트 사용.<br>**평가 집합:** 추가 50문항
 
 <table>
 <thead><tr><th width="50%">Qwen (오답)</th><th width="50%">Google multimodal (정답)</th></tr></thead>
-<tbody><tr><td width="50%"><strong>실제 답변:</strong> <code>[]</code><br><strong>전달 이미지:</strong> 없음</td><td width="50%"><strong>실제 답변:</strong> <code>[&quot;Laura Davies&quot;]</code><br><strong>전달 이미지:</strong> <img src="qualitative_cases/laura-davies/images/432091348c329779a97b4f45.jpg" width="120" alt="G1 실제 Reader 입력 이미지 1"></td></tr></tbody>
+<tbody><tr><td width="50%"><strong>실제 답변:</strong> <code>[]</code><br><strong>Reader에 실제 입력한 검색 근거 이미지:</strong> 없음</td><td width="50%"><strong>실제 답변:</strong> <code>[&quot;Laura Davies&quot;]</code><br><strong>Reader에 실제 입력한 검색 근거 이미지:</strong> <img src="qualitative_cases/laura-davies/images/432091348c329779a97b4f45.jpg" width="120" alt="G1 실제 Reader 입력 이미지 1"></td></tr></tbody>
 </table>
 
-Qwen은 답변과 이미지 읽기를 완료하지 못했다. Google multimodal은 Laura Davies의 사진을 읽고 정답을 답했다. 전체 성능 차이와 별도로 확인한 개별 성공 사례다. [원본 데이터·전체 검색 기록](qualitative_cases/laura-davies/README.md)
+Qwen은 근거 이미지를 읽지 않았고 빈 답변을 반환했다. Google multimodal은 Laura Davies의 사진을 읽고 정답을 답했다. 전체 성능 차이와 별도로 확인한 개별 성공 사례다. [원본 데이터·전체 검색 기록](qualitative_cases/laura-davies/README.md)
 
 ### 3. Mem-Gallery — 대화에 나온 작품 이름
 
-**질문:** 첨부 현대 미술 이미지와 비교하면 흥미로울 것으로 대화에서 언급된 작품은?<br>**정답:** `"The Birth of Venus."`<br>**질문 이미지:** 원래 있음 · 실제 Reader 입력 없음<br>**검색 대상 이미지 캡션:** 있음 · 데이터셋 제공 캡션에 “The Birth of Venus”가 명시됨. 새 캡션 생성 없음.<br>**평가 집합:** 기존 개발
+**질문:** 첨부 현대 미술 이미지와 비교하면 흥미로울 것으로 대화에서 언급된 작품은?<br>**정답:** `"The Birth of Venus."`<br>**원 질문 첨부 이미지:** 있음 · 비교 조건에 따라 입력하지 않음<br>**원 질문 이미지의 캡션:** 있음 · 입력하지 않음<br>**검색 근거 이미지의 캡션:** 있음 · 데이터셋 제공 캡션에 “The Birth of Venus”가 명시됨. 새 캡션 생성 없음.<br>**평가 집합:** 기존 개발
 
 <details><summary>원래 질문 첨부 이미지 — 실제 입력에서는 제외</summary><img src="qualitative_cases/birth-of-venus/images/7a2bbccd59f051aecbd6408c.jpg" width="180" alt="원래 질문 이미지, Reader에 제공하지 않음"></details>
 
 <table>
 <thead><tr><th width="50%">Qwen (오답)</th><th width="50%">Google multimodal (정답)</th></tr></thead>
-<tbody><tr><td width="50%"><strong>실제 답변:</strong> <code>[&quot;Ancient paintings&quot;]</code><br><strong>전달 이미지:</strong> 없음</td><td width="50%"><strong>실제 답변:</strong> <code>[&quot;The Birth of Venus&quot;]</code><br><strong>전달 이미지:</strong> <img src="qualitative_cases/birth-of-venus/images/2bae1cc22715c7872e95d4d3.jpg" width="120" alt="G1 실제 Reader 입력 이미지 1"> <img src="qualitative_cases/birth-of-venus/images/0c596eb8423ec7ab79692958.jpg" width="120" alt="G1 실제 Reader 입력 이미지 2"> <img src="qualitative_cases/birth-of-venus/images/bdadb0a7d643a769cbe04658.jpg" width="120" alt="G1 실제 Reader 입력 이미지 3"> <img src="qualitative_cases/birth-of-venus/images/1eb770d42d7a830222a83096.jpg" width="120" alt="G1 실제 Reader 입력 이미지 4"> <img src="qualitative_cases/birth-of-venus/images/205b1a4478a172bb1186b02f.jpg" width="120" alt="G1 실제 Reader 입력 이미지 5"></td></tr></tbody>
+<tbody><tr><td width="50%"><strong>실제 답변:</strong> <code>[&quot;Ancient paintings&quot;]</code><br><strong>Reader에 실제 입력한 검색 근거 이미지:</strong> 없음</td><td width="50%"><strong>실제 답변:</strong> <code>[&quot;The Birth of Venus&quot;]</code><br><strong>Reader에 실제 입력한 검색 근거 이미지:</strong> <img src="qualitative_cases/birth-of-venus/images/2bae1cc22715c7872e95d4d3.jpg" width="120" alt="G1 실제 Reader 입력 이미지 1"> <img src="qualitative_cases/birth-of-venus/images/0c596eb8423ec7ab79692958.jpg" width="120" alt="G1 실제 Reader 입력 이미지 2"> <img src="qualitative_cases/birth-of-venus/images/bdadb0a7d643a769cbe04658.jpg" width="120" alt="G1 실제 Reader 입력 이미지 3"> <img src="qualitative_cases/birth-of-venus/images/1eb770d42d7a830222a83096.jpg" width="120" alt="G1 실제 Reader 입력 이미지 4"> <img src="qualitative_cases/birth-of-venus/images/205b1a4478a172bb1186b02f.jpg" width="120" alt="G1 실제 Reader 입력 이미지 5"></td></tr></tbody>
 </table>
 
 질문 첨부 이미지는 두 조건 모두 입력하지 않았다. 정답 작품명이 데이터셋의 검색 대상 이미지 캡션에도 명시돼 있다. 따라서 이미지 인식 자체의 필요성을 증명하는 사례가 아니라, 더 적절한 대화·캡션 근거를 찾은 사례다. [원본 데이터·전체 검색 기록](qualitative_cases/birth-of-venus/README.md)
 
 ### 4. Mem-Gallery — 관련 사진을 빠짐없이 찾아 개수 세기
 
-**질문:** 가을 나들이에서 Maya가 공유한 폭스글러브 꽃 사진은 모두 몇 장인가?<br>**정답:** `"5"`<br>**질문 이미지:** 원래 없음 · 실제 Reader 입력 없음<br>**검색 대상 이미지 캡션:** 있음 · 다섯 사진 모두 데이터셋 제공 캡션에 foxglove가 명시됨. 새 캡션 생성 없음.<br>**평가 집합:** 추가 50문항
+**질문:** 가을 나들이에서 Maya가 공유한 폭스글러브 꽃 사진은 모두 몇 장인가?<br>**정답:** `"5"`<br>**원 질문 첨부 이미지:** 없음 · 입력하지 않음<br>**원 질문 이미지의 캡션:** 없음 · 입력하지 않음<br>**검색 근거 이미지의 캡션:** 있음 · 다섯 사진 모두 데이터셋 제공 캡션에 foxglove가 명시됨. 새 캡션 생성 없음.<br>**평가 집합:** 추가 50문항
 
 <table>
 <thead><tr><th width="50%">Qwen (오답)</th><th width="50%">Google multimodal (정답)</th></tr></thead>
-<tbody><tr><td width="50%"><strong>실제 답변:</strong> <code>[&quot;4&quot;]</code><br><strong>전달 이미지:</strong> <img src="qualitative_cases/foxglove-count/images/0c4131f4a377154fcb72db3e.jpg" width="120" alt="B0 실제 Reader 입력 이미지 1"> <img src="qualitative_cases/foxglove-count/images/b7836a8e59aa2985e801e636.jpg" width="120" alt="B0 실제 Reader 입력 이미지 2"> <img src="qualitative_cases/foxglove-count/images/ad38fbbc80201b3a7cc50464.jpg" width="120" alt="B0 실제 Reader 입력 이미지 3"> <img src="qualitative_cases/foxglove-count/images/013efb5e6dd26448231d5df7.jpg" width="120" alt="B0 실제 Reader 입력 이미지 4"></td><td width="50%"><strong>실제 답변:</strong> <code>[&quot;5&quot;]</code><br><strong>전달 이미지:</strong> <img src="qualitative_cases/foxglove-count/images/0c4131f4a377154fcb72db3e.jpg" width="120" alt="G1 실제 Reader 입력 이미지 1"> <img src="qualitative_cases/foxglove-count/images/b7836a8e59aa2985e801e636.jpg" width="120" alt="G1 실제 Reader 입력 이미지 2"> <img src="qualitative_cases/foxglove-count/images/52e6dff530845ebe0d3134f3.jpg" width="120" alt="G1 실제 Reader 입력 이미지 3"> <img src="qualitative_cases/foxglove-count/images/ad38fbbc80201b3a7cc50464.jpg" width="120" alt="G1 실제 Reader 입력 이미지 4"> <img src="qualitative_cases/foxglove-count/images/013efb5e6dd26448231d5df7.jpg" width="120" alt="G1 실제 Reader 입력 이미지 5"></td></tr></tbody>
+<tbody><tr><td width="50%"><strong>실제 답변:</strong> <code>[&quot;4&quot;]</code><br><strong>Reader에 실제 입력한 검색 근거 이미지:</strong> <img src="qualitative_cases/foxglove-count/images/0c4131f4a377154fcb72db3e.jpg" width="120" alt="B0 실제 Reader 입력 이미지 1"> <img src="qualitative_cases/foxglove-count/images/b7836a8e59aa2985e801e636.jpg" width="120" alt="B0 실제 Reader 입력 이미지 2"> <img src="qualitative_cases/foxglove-count/images/ad38fbbc80201b3a7cc50464.jpg" width="120" alt="B0 실제 Reader 입력 이미지 3"> <img src="qualitative_cases/foxglove-count/images/013efb5e6dd26448231d5df7.jpg" width="120" alt="B0 실제 Reader 입력 이미지 4"></td><td width="50%"><strong>실제 답변:</strong> <code>[&quot;5&quot;]</code><br><strong>Reader에 실제 입력한 검색 근거 이미지:</strong> <img src="qualitative_cases/foxglove-count/images/0c4131f4a377154fcb72db3e.jpg" width="120" alt="G1 실제 Reader 입력 이미지 1"> <img src="qualitative_cases/foxglove-count/images/b7836a8e59aa2985e801e636.jpg" width="120" alt="G1 실제 Reader 입력 이미지 2"> <img src="qualitative_cases/foxglove-count/images/52e6dff530845ebe0d3134f3.jpg" width="120" alt="G1 실제 Reader 입력 이미지 3"> <img src="qualitative_cases/foxglove-count/images/ad38fbbc80201b3a7cc50464.jpg" width="120" alt="G1 실제 Reader 입력 이미지 4"> <img src="qualitative_cases/foxglove-count/images/013efb5e6dd26448231d5df7.jpg" width="120" alt="G1 실제 Reader 입력 이미지 5"></td></tr></tbody>
 </table>
 
 Qwen은 정답 사진 5장 중 4장을 읽어 4라고 답했다. Google multimodal은 누락됐던 세 번째 사진까지 찾아 5라고 답했다. 두 조건이 실제로 읽은 사진들을 아래에 모두 표시했다. [원본 데이터·전체 검색 기록](qualitative_cases/foxglove-count/README.md)
@@ -130,11 +141,12 @@ Qwen은 정답 사진 5장 중 4장을 읽어 4라고 답했다. Google multimod
 
 - **문서 이미지 RAG에서는 Google 멀티모달을 도입 후보로 추천한다.** M3DocVQA 두 평가 집합에서 이미지 전달 recall과 EM이 모두 높아졌다. 텍스트만 Google로 교체하는 효과보다 이미지 채널을 추가한 효과가 컸다.
 - **Mem-Gallery는 일괄 교체를 권할 근거가 약하다.** 추가 50문항의 전달 recall은 Qwen 52.1%, Google multimodal 52.2%로 거의 같다. 일부 사진 누락·개수 문제에는 도움이 됐지만, 정답률 개선은 불확실하다. 이미지 캡션이 이미 제공되는 데이터라는 점도 고려해야 한다.
-- **A-RAG의 다음 개선 후보는 검색된 이미지를 실제로 읽게 하는 것이다.** 기존 M3DocVQA에서 정답 이미지가 후보에 나온 27문항 중 실제 전달은 9문항뿐이었다. 나머지 18문항은 정답 이미지 청크를 읽지 않았으며, 읽은 정답 이미지의 전달 누락은 없었다. 추가 집합에서도 Google multimodal의 후보 recall 62.2%에 비해 전달 recall은 32.4%다. 검색 결과에 이미지 연결·캡션 유무를 명시하고, 상위 이미지 청크 3~5개를 자동으로 읽는 방식을 제안한다. 세 조건 모두 같은 정책으로 적용해야 하며, 이 개선의 효과는 아직 측정하지 않았다.
+- **찾고도 읽지 않는 전달 경로는 수정했다.** 기존 M3DocVQA에서 정답 이미지 후보가 나온 27문항 중 실제 전달은 9문항뿐이었다. 나머지 18문항은 이미지 청크를 읽지 않았다. 현재 코드는 반환된 이미지 연결 청크를 자동 읽기해 다음 Reader 호출 전에 실제 이미지를 입력하며, 세 조건에 같은 정책을 적용한다. 합성 테스트를 포함한 42개 소프트웨어 테스트가 통과했다. **수정 후 벤치마크 성능은 미측정이며 위 수치에 반영하지 않았다.**
+- **Mem-Gallery의 평균 개선이 작은 이유는 개선·악화가 상쇄됐기 때문이다.** 추가 50문항 중 44개는 전달 recall이 같고, 4개는 개선됐지만 2개는 낮아졌다. VS 25문항은 두 조건 모두 평균 64%이며 이미지 예산에 걸린 실행은 없었다. 검색 이미지 973개 모두에 캡션이 있어 Qwen도 텍스트 검색으로 많은 근거를 찾았다. 이는 측정 당시 정책의 분석이다.
 
 ## 7. 참조 링크
 
 - 원자료: [추가 M3DocVQA](additional50/m3docvqa/) · [추가 Mem-Gallery](additional50/memgallery/) · [기존 개발 결과](three_arm_arag8/) · [정성 사례 원본 데이터](qualitative_cases/README.md)
-- 구현·설정: [실험 계획](../../docs/EXPERIMENT_PLAN.md) · [실행 코드](../../scripts/run_three_arm_comparison.py) · [A-RAG](https://github.com/Ayanami0730/arag)
+- 구현·설정: [Google 멀티모달 적용 상세 문서](../../docs/IMPLEMENTING_GOOGLE_MULTIMODAL_EMBEDDING.md) · [실험 계획](../../docs/EXPERIMENT_PLAN.md) · [실행 코드](../../scripts/run_three_arm_comparison.py) · [A-RAG](https://github.com/Ayanami0730/arag)
 - 벤치마크: [M3DocVQA](https://github.com/bloomberg/m3docrag) · [Mem-Gallery](https://github.com/YuanchenBei/Mem-Gallery)
 - 모델: [Qwen 임베더](https://huggingface.co/Qwen/Qwen3-Embedding-4B) · [Google 임베더](https://huggingface.co/google/embeddinggemma-2) · [Reader VLM](https://huggingface.co/google/gemma-4-E4B-it) · [MinerU 파서](https://huggingface.co/opendatalab/MinerU2.5-Pro-2604-1.2B)
