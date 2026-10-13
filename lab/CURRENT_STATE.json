@@ -28,9 +28,15 @@
       "port": 8101,
       "session_id": 56265,
       "log": "/content/local_fast/lsdrag-work/parser-standard-v3-server.log"
+    },
+    "development_parse": {
+      "session_id": 13836,
+      "log": "/content/local_fast/lsdrag-work/parse-development-full.log",
+      "output": "/content/local_fast/lsdrag-work/data/parsed_development",
+      "resume": true
     }
   },
   "standard_parser_smoke_passed": true,
   "preflight_backup": "lab/reports/preflight_backup.json",
-  "implementation_status": "IR, full-dimensional index builder and retrieval implemented; six unit tests pass; agent loop and evaluations pending"
+  "implementation_status": "IR, index builder, retrieval and evidence delivery tracking implemented; eight unit tests pass; agent loop and evaluations pending"
 }
