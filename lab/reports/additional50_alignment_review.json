@@ -1,0 +1,1011 @@
+[
+  {
+    "gold_image_id": "01af2a62787bbc3530b0b02d3b007a01",
+    "title": "Mini",
+    "status": "verified_same_visual_content",
+    "accepted_figure_ids": [
+      "01af2a62787bbc3530b0b02d3b007a01:p0:f13"
+    ],
+    "reviewer": "assistant visual inspection",
+    "sheet": "review_000.jpg",
+    "row_in_sheet": 0,
+    "note": "Visually checked original against candidate; same visual content present, sometimes inside a larger crop."
+  },
+  {
+    "gold_image_id": "043779063ae1f250b07f1890643c82cf",
+    "title": "Make It Rain (Foy Vance song)",
+    "status": "verified_same_visual_content",
+    "accepted_figure_ids": [
+      "043779063ae1f250b07f1890643c82cf:p0:f9"
+    ],
+    "reviewer": "assistant visual inspection",
+    "sheet": "review_000.jpg",
+    "row_in_sheet": 1,
+    "note": "Visually checked original against candidate; same visual content present, sometimes inside a larger crop."
+  },
+  {
+    "gold_image_id": "0483a438e5f39b9e59de3f9e15870bce",
+    "title": "KK Krka",
+    "status": "unresolved_no_matching_top_candidate",
+    "accepted_figure_ids": [],
+    "reviewer": "assistant visual inspection",
+    "sheet": "review_000.jpg",
+    "row_in_sheet": 2,
+    "note": "Top proposals do not match the original; absence from the entire document has not been established."
+  },
+  {
+    "gold_image_id": "04efc3408a15848ab446ddc2d4d2bd13",
+    "title": "Tampa, Florida",
+    "status": "unresolved_no_matching_top_candidate",
+    "accepted_figure_ids": [],
+    "reviewer": "assistant visual inspection",
+    "sheet": "review_000.jpg",
+    "row_in_sheet": 3,
+    "note": "Top proposals do not match the original; absence from the entire document has not been established."
+  },
+  {
+    "gold_image_id": "0af43d695e0fa436b1c1dfc150d48182",
+    "title": "Bank of America Stadium",
+    "status": "verified_same_visual_content",
+    "accepted_figure_ids": [
+      "0af43d695e0fa436b1c1dfc150d48182:p0:f15"
+    ],
+    "reviewer": "assistant visual inspection",
+    "sheet": "review_000.jpg",
+    "row_in_sheet": 4,
+    "note": "Visually checked original against candidate; same visual content present, sometimes inside a larger crop."
+  },
+  {
+    "gold_image_id": "0cb86d818dbda3a4a65dd300513fa653",
+    "title": "Visions of Eight",
+    "status": "partial_image_split",
+    "accepted_figure_ids": [],
+    "reviewer": "assistant visual inspection",
+    "sheet": "review_000.jpg",
+    "row_in_sheet": 5,
+    "note": "Poster is split into photo and title crops; no single complete original image verified."
+  },
+  {
+    "gold_image_id": "12251400ee5967d1e67d8e6517c2ebb0",
+    "title": "XBMC",
+    "status": "unresolved_no_matching_top_candidate",
+    "accepted_figure_ids": [],
+    "reviewer": "assistant visual inspection",
+    "sheet": "review_001.jpg",
+    "row_in_sheet": 0,
+    "note": "Top proposals do not match the original; absence from the entire document has not been established."
+  },
+  {
+    "gold_image_id": "15b4e23f0e8f93e5517f7e209d0070e3",
+    "title": "A Mother's Story",
+    "status": "verified_same_visual_content",
+    "accepted_figure_ids": [
+      "15b4e23f0e8f93e5517f7e209d0070e3:p0:f14"
+    ],
+    "reviewer": "assistant visual inspection",
+    "sheet": "review_001.jpg",
+    "row_in_sheet": 1,
+    "note": "Visually checked original against candidate; same visual content present, sometimes inside a larger crop."
+  },
+  {
+    "gold_image_id": "15cc00cd0948a05254e1ce56342a1e81",
+    "title": "Michele Didoni",
+    "status": "unresolved_no_matching_top_candidate",
+    "accepted_figure_ids": [],
+    "reviewer": "assistant visual inspection",
+    "sheet": "review_001.jpg",
+    "row_in_sheet": 2,
+    "note": "Top proposals do not match the original; absence from the entire document has not been established."
+  },
+  {
+    "gold_image_id": "2009222be2d2a677d5dad852353ccdf0",
+    "title": "Parks and Recreation",
+    "status": "unresolved_no_matching_top_candidate",
+    "accepted_figure_ids": [],
+    "reviewer": "assistant visual inspection",
+    "sheet": "review_001.jpg",
+    "row_in_sheet": 3,
+    "note": "Top proposals do not match the original; absence from the entire document has not been established."
+  },
+  {
+    "gold_image_id": "210d412403ef9a51a226da46f6828978",
+    "title": "Funny About Love",
+    "status": "verified_same_visual_content",
+    "accepted_figure_ids": [
+      "210d412403ef9a51a226da46f6828978:p0:f16"
+    ],
+    "reviewer": "assistant visual inspection",
+    "sheet": "review_001.jpg",
+    "row_in_sheet": 4,
+    "note": "Visually checked original against candidate; same visual content present, sometimes inside a larger crop."
+  },
+  {
+    "gold_image_id": "234225d797402bf88f7099b75590d3e7",
+    "title": "Grimstad",
+    "status": "unresolved_no_matching_top_candidate",
+    "accepted_figure_ids": [],
+    "reviewer": "assistant visual inspection",
+    "sheet": "review_001.jpg",
+    "row_in_sheet": 5,
+    "note": "Top proposals do not match the original; absence from the entire document has not been established."
+  },
+  {
+    "gold_image_id": "2586ac327c53d3e002bc04e4e36deb2a",
+    "title": "The Sugarland Express",
+    "status": "verified_same_visual_content",
+    "accepted_figure_ids": [
+      "2586ac327c53d3e002bc04e4e36deb2a:p0:f14"
+    ],
+    "reviewer": "assistant visual inspection",
+    "sheet": "review_002.jpg",
+    "row_in_sheet": 0,
+    "note": "Visually checked original against candidate; same visual content present, sometimes inside a larger crop."
+  },
+  {
+    "gold_image_id": "26b572bdc5c36490baab3b178dae5d7d",
+    "title": "It's Not Right But It's Okay",
+    "status": "verified_same_visual_content",
+    "accepted_figure_ids": [
+      "26b572bdc5c36490baab3b178dae5d7d:p0:f16"
+    ],
+    "reviewer": "assistant visual inspection",
+    "sheet": "review_002.jpg",
+    "row_in_sheet": 1,
+    "note": "Visually checked original against candidate; same visual content present, sometimes inside a larger crop."
+  },
+  {
+    "gold_image_id": "2a9670077e3ad8d5dd25a782f877d5a9",
+    "title": "Bowser (character)",
+    "status": "unresolved_no_matching_top_candidate",
+    "accepted_figure_ids": [],
+    "reviewer": "assistant visual inspection",
+    "sheet": "review_002.jpg",
+    "row_in_sheet": 2,
+    "note": "Top proposals do not match the original; absence from the entire document has not been established."
+  },
+  {
+    "gold_image_id": "2d00ad00e553ab4e47c34b7540741278",
+    "title": "Stormzy",
+    "status": "unresolved_no_matching_top_candidate",
+    "accepted_figure_ids": [],
+    "reviewer": "assistant visual inspection",
+    "sheet": "review_002.jpg",
+    "row_in_sheet": 3,
+    "note": "Top proposals do not match the original; absence from the entire document has not been established."
+  },
+  {
+    "gold_image_id": "31067ced8866f3886ef08813f9a14414",
+    "title": "Jacksonville, Florida",
+    "status": "unresolved_no_matching_top_candidate",
+    "accepted_figure_ids": [],
+    "reviewer": "assistant visual inspection",
+    "sheet": "review_002.jpg",
+    "row_in_sheet": 4,
+    "note": "Top proposals do not match the original; absence from the entire document has not been established."
+  },
+  {
+    "gold_image_id": "34e780ce63f474e1cd557c58593cd38c",
+    "title": "The Magic Flute",
+    "status": "verified_same_visual_content",
+    "accepted_figure_ids": [
+      "34e780ce63f474e1cd557c58593cd38c:p0:f17"
+    ],
+    "reviewer": "assistant visual inspection",
+    "sheet": "review_002.jpg",
+    "row_in_sheet": 5,
+    "note": "Visually checked original against candidate; same visual content present, sometimes inside a larger crop."
+  },
+  {
+    "gold_image_id": "36e7568ddf005f620bc915f32fd796ed",
+    "title": "High Desert Yardbirds",
+    "status": "verified_same_visual_content",
+    "accepted_figure_ids": [
+      "36e7568ddf005f620bc915f32fd796ed:p0:f14"
+    ],
+    "reviewer": "assistant visual inspection",
+    "sheet": "review_003.jpg",
+    "row_in_sheet": 0,
+    "note": "Visually checked original against candidate; same visual content present, sometimes inside a larger crop."
+  },
+  {
+    "gold_image_id": "3e7945352b1a63f1c317ea55f7ebb335",
+    "title": "Josh Groban",
+    "status": "verified_same_visual_content",
+    "accepted_figure_ids": [
+      "3e7945352b1a63f1c317ea55f7ebb335:p0:f16"
+    ],
+    "reviewer": "assistant visual inspection",
+    "sheet": "review_003.jpg",
+    "row_in_sheet": 1,
+    "note": "Visually checked original against candidate; same visual content present, sometimes inside a larger crop."
+  },
+  {
+    "gold_image_id": "4a9e5b1925e7ca26018fa73ab7496f7e",
+    "title": "Elizaveta Tuktamysheva",
+    "status": "unresolved_no_matching_top_candidate",
+    "accepted_figure_ids": [],
+    "reviewer": "assistant visual inspection",
+    "sheet": "review_003.jpg",
+    "row_in_sheet": 2,
+    "note": "Top proposals do not match the original; absence from the entire document has not been established."
+  },
+  {
+    "gold_image_id": "4c844c3471073fa8895306cd677cde01",
+    "title": "PlayStation Theater",
+    "status": "verified_same_visual_content",
+    "accepted_figure_ids": [
+      "4c844c3471073fa8895306cd677cde01:p0:f18"
+    ],
+    "reviewer": "assistant visual inspection",
+    "sheet": "review_003.jpg",
+    "row_in_sheet": 3,
+    "note": "Visually checked original against candidate; same visual content present, sometimes inside a larger crop."
+  },
+  {
+    "gold_image_id": "4d5d6419f533b23fc0ccf7868c748948",
+    "title": "Main Tera Hero",
+    "status": "verified_same_visual_content",
+    "accepted_figure_ids": [
+      "347191ab7a5e12fa2181e90b78d1b89a:p0:f19"
+    ],
+    "reviewer": "assistant visual inspection",
+    "sheet": "review_003.jpg",
+    "row_in_sheet": 4,
+    "note": "Visually checked original against candidate; same visual content present, sometimes inside a larger crop."
+  },
+  {
+    "gold_image_id": "550ac14ee1ccf29bc1503576c75d45d4",
+    "title": "Excalibur (film)",
+    "status": "verified_same_visual_content",
+    "accepted_figure_ids": [
+      "550ac14ee1ccf29bc1503576c75d45d4:p0:f11"
+    ],
+    "reviewer": "assistant visual inspection",
+    "sheet": "review_003.jpg",
+    "row_in_sheet": 5,
+    "note": "Visually checked original against candidate; same visual content present, sometimes inside a larger crop."
+  },
+  {
+    "gold_image_id": "5c751696e76db5161604e2d5c2d3f278",
+    "title": "Bugs Bunny: Lost in Time",
+    "status": "verified_same_visual_content",
+    "accepted_figure_ids": [
+      "5c751696e76db5161604e2d5c2d3f278:p0:f14"
+    ],
+    "reviewer": "assistant visual inspection",
+    "sheet": "review_004.jpg",
+    "row_in_sheet": 0,
+    "note": "Visually checked original against candidate; same visual content present, sometimes inside a larger crop."
+  },
+  {
+    "gold_image_id": "5fa63bb917091cdd8f4607a98038fbb8",
+    "title": "ABBA",
+    "status": "verified_same_visual_content",
+    "accepted_figure_ids": [
+      "5fa63bb917091cdd8f4607a98038fbb8:p0:f13"
+    ],
+    "reviewer": "assistant visual inspection",
+    "sheet": "review_004.jpg",
+    "row_in_sheet": 1,
+    "note": "Visually checked original against candidate; same visual content present, sometimes inside a larger crop."
+  },
+  {
+    "gold_image_id": "5fd68fee26a2057f077f3903adb86c67",
+    "title": "Vijayakanth",
+    "status": "verified_same_visual_content",
+    "accepted_figure_ids": [
+      "5fd68fee26a2057f077f3903adb86c67:p0:f17"
+    ],
+    "reviewer": "assistant visual inspection",
+    "sheet": "review_004.jpg",
+    "row_in_sheet": 2,
+    "note": "Visually checked original against candidate; same visual content present, sometimes inside a larger crop."
+  },
+  {
+    "gold_image_id": "625c2f7302e427f1ac3b149c554dc5d6",
+    "title": "Amanat Baghdad",
+    "status": "verified_same_visual_content",
+    "accepted_figure_ids": [
+      "625c2f7302e427f1ac3b149c554dc5d6:p0:f17"
+    ],
+    "reviewer": "assistant visual inspection",
+    "sheet": "review_004.jpg",
+    "row_in_sheet": 3,
+    "note": "Visually checked original against candidate; same visual content present, sometimes inside a larger crop."
+  },
+  {
+    "gold_image_id": "6571be2288d0cf1d9ea061ee680e6962",
+    "title": "Midnite Spares",
+    "status": "verified_same_visual_content",
+    "accepted_figure_ids": [
+      "6571be2288d0cf1d9ea061ee680e6962:p0:f13"
+    ],
+    "reviewer": "assistant visual inspection",
+    "sheet": "review_004.jpg",
+    "row_in_sheet": 4,
+    "note": "Visually checked original against candidate; same visual content present, sometimes inside a larger crop."
+  },
+  {
+    "gold_image_id": "66e43b987863c88295c6a3464b525681",
+    "title": "Filmfare Award for Best Supporting Actor",
+    "status": "unresolved_no_matching_top_candidate",
+    "accepted_figure_ids": [],
+    "reviewer": "assistant visual inspection",
+    "sheet": "review_004.jpg",
+    "row_in_sheet": 5,
+    "note": "Top proposals do not match the original; absence from the entire document has not been established."
+  },
+  {
+    "gold_image_id": "69dc00bea926d95088d3829d8ba558b3",
+    "title": "John Surtees",
+    "status": "verified_same_visual_content",
+    "accepted_figure_ids": [
+      "69dc00bea926d95088d3829d8ba558b3:p0:f22"
+    ],
+    "reviewer": "assistant visual inspection",
+    "sheet": "review_005.jpg",
+    "row_in_sheet": 0,
+    "note": "Visually checked original against candidate; same visual content present, sometimes inside a larger crop."
+  },
+  {
+    "gold_image_id": "6eaff02e7a4e8da95cd67e4021d98c6d",
+    "title": "Slumdog Millionaire",
+    "status": "verified_same_visual_content",
+    "accepted_figure_ids": [
+      "6eaff02e7a4e8da95cd67e4021d98c6d:p0:f15"
+    ],
+    "reviewer": "assistant visual inspection",
+    "sheet": "review_005.jpg",
+    "row_in_sheet": 1,
+    "note": "Visually checked original against candidate; same visual content present, sometimes inside a larger crop."
+  },
+  {
+    "gold_image_id": "6ff589c4593955eb0668d04835d5cb66",
+    "title": "Alena Leonova",
+    "status": "unresolved_no_matching_top_candidate",
+    "accepted_figure_ids": [],
+    "reviewer": "assistant visual inspection",
+    "sheet": "review_005.jpg",
+    "row_in_sheet": 2,
+    "note": "Top proposals do not match the original; absence from the entire document has not been established."
+  },
+  {
+    "gold_image_id": "7d6b5bc7aa4ef5fee8e26be564c09900",
+    "title": "Islam",
+    "status": "unresolved_no_matching_top_candidate",
+    "accepted_figure_ids": [],
+    "reviewer": "assistant visual inspection",
+    "sheet": "review_005.jpg",
+    "row_in_sheet": 3,
+    "note": "Top proposals do not match the original; absence from the entire document has not been established."
+  },
+  {
+    "gold_image_id": "7ec7afd2bed7b7941e5b5a3280e87ae7",
+    "title": "Whitney Houston",
+    "status": "verified_same_visual_content",
+    "accepted_figure_ids": [
+      "7ec7afd2bed7b7941e5b5a3280e87ae7:p0:f15"
+    ],
+    "reviewer": "assistant visual inspection",
+    "sheet": "review_005.jpg",
+    "row_in_sheet": 4,
+    "note": "Visually checked original against candidate; same visual content present, sometimes inside a larger crop."
+  },
+  {
+    "gold_image_id": "8ad93f2bdaef21f61d39c6cbb9e58aa9",
+    "title": "Wakaba Higuchi",
+    "status": "verified_same_visual_content",
+    "accepted_figure_ids": [
+      "8ad93f2bdaef21f61d39c6cbb9e58aa9:p16:f4"
+    ],
+    "reviewer": "assistant visual inspection",
+    "sheet": "review_005.jpg",
+    "row_in_sheet": 5,
+    "note": "Visually checked original against candidate; same visual content present, sometimes inside a larger crop."
+  },
+  {
+    "gold_image_id": "8d65d56091cc13f16fe1043745198994",
+    "title": "Twelfth Night",
+    "status": "color_variant",
+    "accepted_figure_ids": [],
+    "reviewer": "assistant visual inspection",
+    "sheet": "review_006.jpg",
+    "row_in_sheet": 0,
+    "note": "Same composition or symbol but original and current colors differ; not accepted for color-sensitive ground truth."
+  },
+  {
+    "gold_image_id": "9b948fdce04ee2225933641e1c3b30d9",
+    "title": "Jainism",
+    "status": "color_variant",
+    "accepted_figure_ids": [],
+    "reviewer": "assistant visual inspection",
+    "sheet": "review_006.jpg",
+    "row_in_sheet": 1,
+    "note": "Same composition or symbol but original and current colors differ; not accepted for color-sensitive ground truth."
+  },
+  {
+    "gold_image_id": "adf9637a449938d75d8d4a0c69edd4bd",
+    "title": "Aria (manga)",
+    "status": "verified_same_visual_content",
+    "accepted_figure_ids": [
+      "adf9637a449938d75d8d4a0c69edd4bd:p0:f13"
+    ],
+    "reviewer": "assistant visual inspection",
+    "sheet": "review_006.jpg",
+    "row_in_sheet": 2,
+    "note": "Visually checked original against candidate; same visual content present, sometimes inside a larger crop."
+  },
+  {
+    "gold_image_id": "b0784474162aad41228f473d56d1974c",
+    "title": "Rika Hongo",
+    "status": "verified_same_visual_content",
+    "accepted_figure_ids": [
+      "b0784474162aad41228f473d56d1974c:p0:f20"
+    ],
+    "reviewer": "assistant visual inspection",
+    "sheet": "review_006.jpg",
+    "row_in_sheet": 3,
+    "note": "Visually checked original against candidate; same visual content present, sometimes inside a larger crop."
+  },
+  {
+    "gold_image_id": "b24748141f2c2af5dacc44d82f3cc514",
+    "title": "Happy Feet",
+    "status": "verified_same_visual_content",
+    "accepted_figure_ids": [
+      "b24748141f2c2af5dacc44d82f3cc514:p0:f16"
+    ],
+    "reviewer": "assistant visual inspection",
+    "sheet": "review_006.jpg",
+    "row_in_sheet": 4,
+    "note": "Visually checked original against candidate; same visual content present, sometimes inside a larger crop."
+  },
+  {
+    "gold_image_id": "bcba09645caab6dce5f05a81466b8e7e",
+    "title": "You Can't Stop Me (album)",
+    "status": "verified_same_visual_content",
+    "accepted_figure_ids": [
+      "bcba09645caab6dce5f05a81466b8e7e:p0:f15"
+    ],
+    "reviewer": "assistant visual inspection",
+    "sheet": "review_006.jpg",
+    "row_in_sheet": 5,
+    "note": "Visually checked original against candidate; same visual content present, sometimes inside a larger crop."
+  },
+  {
+    "gold_image_id": "bdea78b9b32a047bc766c23bc277a484",
+    "title": "Tjaskers in Friesland",
+    "status": "verified_same_visual_content",
+    "accepted_figure_ids": [
+      "bdea78b9b32a047bc766c23bc277a484:p0:f15"
+    ],
+    "reviewer": "assistant visual inspection",
+    "sheet": "review_007.jpg",
+    "row_in_sheet": 0,
+    "note": "Visually checked original against candidate; same visual content present, sometimes inside a larger crop."
+  },
+  {
+    "gold_image_id": "c0ebbc27b60e4132860d6938d045bd20",
+    "title": "Galaxy Express 999 (film)",
+    "status": "verified_same_visual_content",
+    "accepted_figure_ids": [
+      "c0ebbc27b60e4132860d6938d045bd20:p0:f18"
+    ],
+    "reviewer": "assistant visual inspection",
+    "sheet": "review_007.jpg",
+    "row_in_sheet": 1,
+    "note": "Visually checked original against candidate; same visual content present, sometimes inside a larger crop."
+  },
+  {
+    "gold_image_id": "c35ce90da32bdb6b07225d9f3d50ae32",
+    "title": "Lons-le-Saunier",
+    "status": "unresolved_no_matching_top_candidate",
+    "accepted_figure_ids": [],
+    "reviewer": "assistant visual inspection",
+    "sheet": "review_007.jpg",
+    "row_in_sheet": 2,
+    "note": "Top proposals do not match the original; absence from the entire document has not been established."
+  },
+  {
+    "gold_image_id": "c8d8e51c58e15c31cd0c91e1ca6e6cd5",
+    "title": "Miedź Legnica",
+    "status": "verified_same_visual_content",
+    "accepted_figure_ids": [
+      "c8d8e51c58e15c31cd0c91e1ca6e6cd5:p0:f19"
+    ],
+    "reviewer": "assistant visual inspection",
+    "sheet": "review_007.jpg",
+    "row_in_sheet": 3,
+    "note": "Visually checked original against candidate; same visual content present, sometimes inside a larger crop."
+  },
+  {
+    "gold_image_id": "c8e4add9bc9b823e4650d08d1b24a2a5",
+    "title": "University of Wollongong",
+    "status": "verified_same_visual_content",
+    "accepted_figure_ids": [
+      "c8e4add9bc9b823e4650d08d1b24a2a5:p0:f16"
+    ],
+    "reviewer": "assistant visual inspection",
+    "sheet": "review_007.jpg",
+    "row_in_sheet": 4,
+    "note": "Visually checked original against candidate; same visual content present, sometimes inside a larger crop."
+  },
+  {
+    "gold_image_id": "d179a14875639d9cfb680f784223b271",
+    "title": "Felicia Day",
+    "status": "unresolved_no_matching_top_candidate",
+    "accepted_figure_ids": [],
+    "reviewer": "assistant visual inspection",
+    "sheet": "review_007.jpg",
+    "row_in_sheet": 5,
+    "note": "Top proposals do not match the original; absence from the entire document has not been established."
+  },
+  {
+    "gold_image_id": "e48042ab3eddd2df717a7f6480284e64",
+    "title": "Minnesota Fighting Saints",
+    "status": "verified_same_visual_content",
+    "accepted_figure_ids": [
+      "e48042ab3eddd2df717a7f6480284e64:p0:f17"
+    ],
+    "reviewer": "assistant visual inspection",
+    "sheet": "review_008.jpg",
+    "row_in_sheet": 0,
+    "note": "Candidate rank 1 has red uniform and is rejected; rank 2 preserves the original blue uniform. Perceptual hash/geometry alone cannot verify color-sensitive evidence."
+  },
+  {
+    "gold_image_id": "e5015e2a5270e374d5a447bc0416dfcf",
+    "title": "Gary Roberts (ice hockey)",
+    "status": "verified_same_visual_content",
+    "accepted_figure_ids": [
+      "e5015e2a5270e374d5a447bc0416dfcf:p0:f18"
+    ],
+    "reviewer": "assistant visual inspection",
+    "sheet": "review_008.jpg",
+    "row_in_sheet": 1,
+    "note": "Visually checked original against candidate; same visual content present, sometimes inside a larger crop."
+  },
+  {
+    "gold_image_id": "e9e7af0a85bfe062956f1b070e486bce",
+    "title": "Kicking and Screaming (1995 film)",
+    "status": "unresolved_no_matching_top_candidate",
+    "accepted_figure_ids": [],
+    "reviewer": "assistant visual inspection",
+    "sheet": "review_008.jpg",
+    "row_in_sheet": 2,
+    "note": "Top proposals do not match the original; absence from the entire document has not been established."
+  },
+  {
+    "gold_image_id": "f7c8b67792c106cbf37a22f100af1056",
+    "title": "Arabella",
+    "status": "verified_same_visual_content",
+    "accepted_figure_ids": [
+      "f7c8b67792c106cbf37a22f100af1056:p0:f12"
+    ],
+    "reviewer": "assistant visual inspection",
+    "sheet": "review_008.jpg",
+    "row_in_sheet": 3,
+    "note": "Visually checked original against candidate; same visual content present, sometimes inside a larger crop."
+  },
+  {
+    "gold_image_id": "f99b09067da03a078424774e1260540b",
+    "title": "Satoko Miyahara",
+    "status": "verified_same_visual_content",
+    "accepted_figure_ids": [
+      "f99b09067da03a078424774e1260540b:p1:f7"
+    ],
+    "reviewer": "assistant visual inspection",
+    "sheet": "review_008.jpg",
+    "row_in_sheet": 4,
+    "note": "Visually checked original against candidate; same visual content present, sometimes inside a larger crop."
+  },
+  {
+    "accepted_figure_ids": [
+      "006ecfc22be0935a669a024f9637db87:p0:f16"
+    ],
+    "contact_sheet": "review_000.jpg",
+    "gold_image_id": "006ecfc22be0935a669a024f9637db87",
+    "proposal_index": 0,
+    "proposal_sha256": "1d94cd7579c923d802b75ce016c72d0349f7d046c15679f544a2dd8835aae037",
+    "review_note": "Visually compared original and up to three proposed candidates. Matching photograph/artwork may include surrounding infobox text and resizing. Main emblem matches; lower MARAUDERS lettering is cropped.",
+    "status": "verified_same_visual_content"
+  },
+  {
+    "accepted_figure_ids": [],
+    "contact_sheet": "review_000.jpg",
+    "gold_image_id": "06605e43313d0c981f39adae85d112ce",
+    "proposal_index": 1,
+    "proposal_sha256": "1d94cd7579c923d802b75ce016c72d0349f7d046c15679f544a2dd8835aae037",
+    "review_note": "Previous figure IDs absent from recovered IR; excluded from recall denominator until visually reverified.",
+    "status": "unresolved_after_parse_recovery",
+    "previous_accepted_figure_ids": [
+      "06605e43313d0c981f39adae85d112ce:p1:f4"
+    ]
+  },
+  {
+    "accepted_figure_ids": [
+      "083b166c958a6479df5195ec55680460:p0:f10"
+    ],
+    "contact_sheet": "review_000.jpg",
+    "gold_image_id": "083b166c958a6479df5195ec55680460",
+    "proposal_index": 2,
+    "proposal_sha256": "1d94cd7579c923d802b75ce016c72d0349f7d046c15679f544a2dd8835aae037",
+    "review_note": "Visually compared original and up to three proposed candidates. Matching photograph/artwork may include surrounding infobox text and resizing.",
+    "status": "verified_same_visual_content"
+  },
+  {
+    "accepted_figure_ids": [],
+    "contact_sheet": "review_000.jpg",
+    "gold_image_id": "0f76453a5f76e22a9fcb5909cead051d",
+    "proposal_index": 3,
+    "proposal_sha256": "1d94cd7579c923d802b75ce016c72d0349f7d046c15679f544a2dd8835aae037",
+    "review_note": "Top proposed candidates do not establish the same original visual. This does not prove absence elsewhere in the document.",
+    "status": "unresolved"
+  },
+  {
+    "accepted_figure_ids": [
+      "0fe5ff2fb32610f4738ff1235b8e87da:p0:f12"
+    ],
+    "contact_sheet": "review_000.jpg",
+    "gold_image_id": "0fe5ff2fb32610f4738ff1235b8e87da",
+    "proposal_index": 4,
+    "proposal_sha256": "1d94cd7579c923d802b75ce016c72d0349f7d046c15679f544a2dd8835aae037",
+    "review_note": "Visually compared original and up to three proposed candidates. Matching photograph/artwork may include surrounding infobox text and resizing.",
+    "status": "verified_same_visual_content"
+  },
+  {
+    "accepted_figure_ids": [
+      "125f89b37bec989af6a4ff6a60faeb1c:p0:f12"
+    ],
+    "contact_sheet": "review_000.jpg",
+    "gold_image_id": "125f89b37bec989af6a4ff6a60faeb1c",
+    "proposal_index": 5,
+    "proposal_sha256": "1d94cd7579c923d802b75ce016c72d0349f7d046c15679f544a2dd8835aae037",
+    "review_note": "Visually compared original and up to three proposed candidates. Matching photograph/artwork may include surrounding infobox text and resizing.",
+    "status": "verified_same_visual_content"
+  },
+  {
+    "accepted_figure_ids": [],
+    "contact_sheet": "review_001.jpg",
+    "gold_image_id": "158bf97ba711a0e96693d52d58360c72",
+    "proposal_index": 6,
+    "proposal_sha256": "1d94cd7579c923d802b75ce016c72d0349f7d046c15679f544a2dd8835aae037",
+    "review_note": "Top proposed candidates do not establish the same original visual. This does not prove absence elsewhere in the document.",
+    "status": "related_emblem_variant"
+  },
+  {
+    "accepted_figure_ids": [
+      "15bd6474ee7cc4c11cc027dc3e123f06:p0:f14"
+    ],
+    "contact_sheet": "review_001.jpg",
+    "gold_image_id": "15bd6474ee7cc4c11cc027dc3e123f06",
+    "proposal_index": 7,
+    "proposal_sha256": "1d94cd7579c923d802b75ce016c72d0349f7d046c15679f544a2dd8835aae037",
+    "review_note": "Visually compared original and up to three proposed candidates. Matching photograph/artwork may include surrounding infobox text and resizing.",
+    "status": "verified_same_visual_content"
+  },
+  {
+    "accepted_figure_ids": [
+      "1a3e90e09e0e81432c04c5e2cc910f27:p0:f13"
+    ],
+    "contact_sheet": "review_001.jpg",
+    "gold_image_id": "1a3e90e09e0e81432c04c5e2cc910f27",
+    "proposal_index": 8,
+    "proposal_sha256": "1d94cd7579c923d802b75ce016c72d0349f7d046c15679f544a2dd8835aae037",
+    "review_note": "Visually compared original and up to three proposed candidates. Matching photograph/artwork may include surrounding infobox text and resizing.",
+    "status": "verified_same_visual_content"
+  },
+  {
+    "accepted_figure_ids": [
+      "1ea5c7f201b46c462a3e0ff5853c7ed9:p1:f12",
+      "1ea5c7f201b46c462a3e0ff5853c7ed9:p1:f11"
+    ],
+    "contact_sheet": "review_001.jpg",
+    "gold_image_id": "1ea5c7f201b46c462a3e0ff5853c7ed9",
+    "proposal_index": 9,
+    "proposal_sha256": "1d94cd7579c923d802b75ce016c72d0349f7d046c15679f544a2dd8835aae037",
+    "review_note": "Visually compared original and up to three proposed candidates. Matching photograph/artwork may include surrounding infobox text and resizing.",
+    "status": "verified_same_visual_content"
+  },
+  {
+    "accepted_figure_ids": [],
+    "contact_sheet": "review_001.jpg",
+    "gold_image_id": "2f789ee49c6cfa05a91428e9af21cfcc",
+    "proposal_index": 10,
+    "proposal_sha256": "1d94cd7579c923d802b75ce016c72d0349f7d046c15679f544a2dd8835aae037",
+    "review_note": "Previous figure IDs absent from recovered IR; excluded from recall denominator until visually reverified.",
+    "status": "unresolved_after_parse_recovery",
+    "previous_accepted_figure_ids": [
+      "2f789ee49c6cfa05a91428e9af21cfcc:p0:f14"
+    ]
+  },
+  {
+    "accepted_figure_ids": [],
+    "contact_sheet": "review_001.jpg",
+    "gold_image_id": "3ff0574ce7020df4a809ade7543d2f01",
+    "proposal_index": 11,
+    "proposal_sha256": "1d94cd7579c923d802b75ce016c72d0349f7d046c15679f544a2dd8835aae037",
+    "review_note": "Previous figure IDs absent from recovered IR; excluded from recall denominator until visually reverified.",
+    "status": "unresolved_after_parse_recovery",
+    "previous_accepted_figure_ids": [
+      "3ff0574ce7020df4a809ade7543d2f01:p1:f9"
+    ]
+  },
+  {
+    "accepted_figure_ids": [],
+    "contact_sheet": "review_002.jpg",
+    "gold_image_id": "4452f4df7f89b26d20e40b7ab2224db0",
+    "proposal_index": 12,
+    "proposal_sha256": "1d94cd7579c923d802b75ce016c72d0349f7d046c15679f544a2dd8835aae037",
+    "review_note": "Top proposed candidates do not establish the same original visual. This does not prove absence elsewhere in the document.",
+    "status": "unresolved"
+  },
+  {
+    "accepted_figure_ids": [],
+    "contact_sheet": "review_002.jpg",
+    "gold_image_id": "4dfbfe281bfcbe6196b3696c370e28ed",
+    "proposal_index": 13,
+    "proposal_sha256": "1d94cd7579c923d802b75ce016c72d0349f7d046c15679f544a2dd8835aae037",
+    "review_note": "Top proposed candidates do not establish the same original visual. This does not prove absence elsewhere in the document.",
+    "status": "unresolved"
+  },
+  {
+    "accepted_figure_ids": [],
+    "contact_sheet": "review_002.jpg",
+    "gold_image_id": "553ee9b5495b588c6e33b8f761b1675f",
+    "proposal_index": 14,
+    "proposal_sha256": "1d94cd7579c923d802b75ce016c72d0349f7d046c15679f544a2dd8835aae037",
+    "review_note": "Previous figure IDs absent from recovered IR; excluded from recall denominator until visually reverified.",
+    "status": "unresolved_after_parse_recovery",
+    "previous_accepted_figure_ids": [
+      "553ee9b5495b588c6e33b8f761b1675f:p0:f17"
+    ]
+  },
+  {
+    "accepted_figure_ids": [],
+    "contact_sheet": "review_002.jpg",
+    "gold_image_id": "59a9643c1b17499b364f311b238c6a3c",
+    "proposal_index": 15,
+    "proposal_sha256": "1d94cd7579c923d802b75ce016c72d0349f7d046c15679f544a2dd8835aae037",
+    "review_note": "Top proposed candidates do not establish the same original visual. This does not prove absence elsewhere in the document.",
+    "status": "unresolved"
+  },
+  {
+    "accepted_figure_ids": [
+      "5d3ea44ace1882306f7eafd76c25d53c:p0:f12"
+    ],
+    "contact_sheet": "review_002.jpg",
+    "gold_image_id": "5d3ea44ace1882306f7eafd76c25d53c",
+    "proposal_index": 16,
+    "proposal_sha256": "1d94cd7579c923d802b75ce016c72d0349f7d046c15679f544a2dd8835aae037",
+    "review_note": "Visually compared original and up to three proposed candidates. Matching photograph/artwork may include surrounding infobox text and resizing.",
+    "status": "verified_same_visual_content"
+  },
+  {
+    "accepted_figure_ids": [],
+    "contact_sheet": "review_002.jpg",
+    "gold_image_id": "5e87b9b2bea1bc276227c35948388915",
+    "proposal_index": 17,
+    "proposal_sha256": "1d94cd7579c923d802b75ce016c72d0349f7d046c15679f544a2dd8835aae037",
+    "review_note": "Previous figure IDs absent from recovered IR; excluded from recall denominator until visually reverified.",
+    "status": "unresolved_after_parse_recovery",
+    "previous_accepted_figure_ids": [
+      "5e87b9b2bea1bc276227c35948388915:p1:f6"
+    ]
+  },
+  {
+    "accepted_figure_ids": [
+      "67f530545c98903843783b4fe25edf58:p0:f15"
+    ],
+    "contact_sheet": "review_003.jpg",
+    "gold_image_id": "67f530545c98903843783b4fe25edf58",
+    "proposal_index": 18,
+    "proposal_sha256": "1d94cd7579c923d802b75ce016c72d0349f7d046c15679f544a2dd8835aae037",
+    "review_note": "Visually compared original and up to three proposed candidates. Matching photograph/artwork may include surrounding infobox text and resizing.",
+    "status": "verified_same_visual_content"
+  },
+  {
+    "accepted_figure_ids": [
+      "6bcfa0b07c9d7e6a7e9d3f1eee20cfaa:p0:f24"
+    ],
+    "contact_sheet": "review_003.jpg",
+    "gold_image_id": "6bcfa0b07c9d7e6a7e9d3f1eee20cfaa",
+    "proposal_index": 19,
+    "proposal_sha256": "1d94cd7579c923d802b75ce016c72d0349f7d046c15679f544a2dd8835aae037",
+    "review_note": "Visually compared original and up to three proposed candidates. Matching photograph/artwork may include surrounding infobox text and resizing.",
+    "status": "verified_same_visual_content"
+  },
+  {
+    "accepted_figure_ids": [],
+    "contact_sheet": "review_003.jpg",
+    "gold_image_id": "6c0cba76b5727895052de4aa69133377",
+    "proposal_index": 20,
+    "proposal_sha256": "1d94cd7579c923d802b75ce016c72d0349f7d046c15679f544a2dd8835aae037",
+    "review_note": "Top proposed candidates do not establish the same original visual. This does not prove absence elsewhere in the document.",
+    "status": "logo_variant"
+  },
+  {
+    "accepted_figure_ids": [],
+    "contact_sheet": "review_003.jpg",
+    "gold_image_id": "6dec1abbdfe7d58678688e897eb6d1fb",
+    "proposal_index": 21,
+    "proposal_sha256": "1d94cd7579c923d802b75ce016c72d0349f7d046c15679f544a2dd8835aae037",
+    "review_note": "Top proposed candidates do not establish the same original visual. This does not prove absence elsewhere in the document.",
+    "status": "unresolved"
+  },
+  {
+    "accepted_figure_ids": [],
+    "contact_sheet": "review_003.jpg",
+    "gold_image_id": "6e25a59c4187a0e595ea83ee5a95763f",
+    "proposal_index": 22,
+    "proposal_sha256": "1d94cd7579c923d802b75ce016c72d0349f7d046c15679f544a2dd8835aae037",
+    "review_note": "Top proposed candidates do not establish the same original visual. This does not prove absence elsewhere in the document.",
+    "status": "logo_variant"
+  },
+  {
+    "accepted_figure_ids": [
+      "6efe2127b7308ab4035b7ff70ff75c2a:p0:f11"
+    ],
+    "contact_sheet": "review_003.jpg",
+    "gold_image_id": "6efe2127b7308ab4035b7ff70ff75c2a",
+    "proposal_index": 23,
+    "proposal_sha256": "1d94cd7579c923d802b75ce016c72d0349f7d046c15679f544a2dd8835aae037",
+    "review_note": "Visually compared original and up to three proposed candidates. Matching photograph/artwork may include surrounding infobox text and resizing.",
+    "status": "verified_same_visual_content"
+  },
+  {
+    "accepted_figure_ids": [
+      "7070e97120dc77d96364d39d0001a03e:p17:f40"
+    ],
+    "contact_sheet": "review_004.jpg",
+    "gold_image_id": "7070e97120dc77d96364d39d0001a03e",
+    "proposal_index": 24,
+    "proposal_sha256": "1d94cd7579c923d802b75ce016c72d0349f7d046c15679f544a2dd8835aae037",
+    "review_note": "Visually compared original and up to three proposed candidates. Matching photograph/artwork may include surrounding infobox text and resizing.",
+    "status": "verified_same_visual_content"
+  },
+  {
+    "accepted_figure_ids": [
+      "71e7fb6d4a9f6f53d9d7ac3bd338c3f7:p0:f24"
+    ],
+    "contact_sheet": "review_004.jpg",
+    "gold_image_id": "71e7fb6d4a9f6f53d9d7ac3bd338c3f7",
+    "proposal_index": 25,
+    "proposal_sha256": "1d94cd7579c923d802b75ce016c72d0349f7d046c15679f544a2dd8835aae037",
+    "review_note": "Visually compared original and up to three proposed candidates. Matching photograph/artwork may include surrounding infobox text and resizing.",
+    "status": "verified_same_visual_content"
+  },
+  {
+    "accepted_figure_ids": [],
+    "contact_sheet": "review_004.jpg",
+    "gold_image_id": "7a536e03eb3a437d53e9504f8b8121dd",
+    "proposal_index": 26,
+    "proposal_sha256": "1d94cd7579c923d802b75ce016c72d0349f7d046c15679f544a2dd8835aae037",
+    "review_note": "Top proposed candidates do not establish the same original visual. This does not prove absence elsewhere in the document.",
+    "status": "logo_variant"
+  },
+  {
+    "accepted_figure_ids": [
+      "7b194ac3e8ff9fce87caee3b21aaf995:p0:f17"
+    ],
+    "contact_sheet": "review_004.jpg",
+    "gold_image_id": "7b194ac3e8ff9fce87caee3b21aaf995",
+    "proposal_index": 27,
+    "proposal_sha256": "1d94cd7579c923d802b75ce016c72d0349f7d046c15679f544a2dd8835aae037",
+    "review_note": "Visually compared original and up to three proposed candidates. Matching photograph/artwork may include surrounding infobox text and resizing.",
+    "status": "verified_same_visual_content"
+  },
+  {
+    "accepted_figure_ids": [],
+    "contact_sheet": "review_004.jpg",
+    "gold_image_id": "7d7e4f56a0a4c949be6efc927ca2759c",
+    "proposal_index": 28,
+    "proposal_sha256": "1d94cd7579c923d802b75ce016c72d0349f7d046c15679f544a2dd8835aae037",
+    "review_note": "Previous figure IDs absent from recovered IR; excluded from recall denominator until visually reverified.",
+    "status": "unresolved_after_parse_recovery",
+    "previous_accepted_figure_ids": [
+      "7d7e4f56a0a4c949be6efc927ca2759c:p0:f33"
+    ]
+  },
+  {
+    "accepted_figure_ids": [],
+    "contact_sheet": "review_004.jpg",
+    "gold_image_id": "83063e704fc7c2d757c5561a3562fc70",
+    "proposal_index": 29,
+    "proposal_sha256": "1d94cd7579c923d802b75ce016c72d0349f7d046c15679f544a2dd8835aae037",
+    "review_note": "Top proposed candidates do not establish the same original visual. This does not prove absence elsewhere in the document.",
+    "status": "unresolved"
+  },
+  {
+    "accepted_figure_ids": [],
+    "contact_sheet": "review_005.jpg",
+    "gold_image_id": "84471b0e29e7b5622512f1a907ffc57e",
+    "proposal_index": 30,
+    "proposal_sha256": "1d94cd7579c923d802b75ce016c72d0349f7d046c15679f544a2dd8835aae037",
+    "review_note": "Top proposed candidates do not establish the same original visual. This does not prove absence elsewhere in the document.",
+    "status": "collage_variant"
+  },
+  {
+    "accepted_figure_ids": [
+      "8dabb03fab48411b7686c3082aeff469:p0:f20"
+    ],
+    "contact_sheet": "review_005.jpg",
+    "gold_image_id": "8dabb03fab48411b7686c3082aeff469",
+    "proposal_index": 31,
+    "proposal_sha256": "1d94cd7579c923d802b75ce016c72d0349f7d046c15679f544a2dd8835aae037",
+    "review_note": "Visually compared original and up to three proposed candidates. Matching photograph/artwork may include surrounding infobox text and resizing.",
+    "status": "verified_same_visual_content"
+  },
+  {
+    "accepted_figure_ids": [],
+    "contact_sheet": "review_005.jpg",
+    "gold_image_id": "90f272b8e9b07a5a9ed260a135bad142",
+    "proposal_index": 32,
+    "proposal_sha256": "1d94cd7579c923d802b75ce016c72d0349f7d046c15679f544a2dd8835aae037",
+    "review_note": "Previous figure IDs absent from recovered IR; excluded from recall denominator until visually reverified.",
+    "status": "unresolved_after_parse_recovery",
+    "previous_accepted_figure_ids": [
+      "90f272b8e9b07a5a9ed260a135bad142:p0:f14"
+    ]
+  },
+  {
+    "accepted_figure_ids": [],
+    "contact_sheet": "review_005.jpg",
+    "gold_image_id": "947e0a6276f9f0e12a7b2f85d9cf8b7e",
+    "proposal_index": 33,
+    "proposal_sha256": "1d94cd7579c923d802b75ce016c72d0349f7d046c15679f544a2dd8835aae037",
+    "review_note": "Top proposed candidates do not establish the same original visual. This does not prove absence elsewhere in the document.",
+    "status": "poster_layout_variant"
+  },
+  {
+    "accepted_figure_ids": [],
+    "contact_sheet": "review_005.jpg",
+    "gold_image_id": "95f47d84f76507f47eddcc7fd48e5209",
+    "proposal_index": 34,
+    "proposal_sha256": "1d94cd7579c923d802b75ce016c72d0349f7d046c15679f544a2dd8835aae037",
+    "review_note": "Previous figure IDs absent from recovered IR; excluded from recall denominator until visually reverified.",
+    "status": "unresolved_after_parse_recovery",
+    "previous_accepted_figure_ids": [
+      "95f47d84f76507f47eddcc7fd48e5209:p0:f18"
+    ]
+  },
+  {
+    "accepted_figure_ids": [],
+    "contact_sheet": "review_005.jpg",
+    "gold_image_id": "9dad596f0afdbf0924ac158068d14519",
+    "proposal_index": 35,
+    "proposal_sha256": "1d94cd7579c923d802b75ce016c72d0349f7d046c15679f544a2dd8835aae037",
+    "review_note": "Top proposed candidates do not establish the same original visual. This does not prove absence elsewhere in the document.",
+    "status": "cover_edition_variant"
+  },
+  {
+    "accepted_figure_ids": [],
+    "contact_sheet": "review_006.jpg",
+    "gold_image_id": "9e7e8f3fe472734018e09b8bc18e10bc",
+    "proposal_index": 36,
+    "proposal_sha256": "1d94cd7579c923d802b75ce016c72d0349f7d046c15679f544a2dd8835aae037",
+    "review_note": "Top proposed candidates do not establish the same original visual. This does not prove absence elsewhere in the document.",
+    "status": "logo_embedded_in_different_poster"
+  },
+  {
+    "accepted_figure_ids": [],
+    "contact_sheet": "review_006.jpg",
+    "gold_image_id": "b71b9ebe601f94e29fa85803fef6c8c4",
+    "proposal_index": 37,
+    "proposal_sha256": "1d94cd7579c923d802b75ce016c72d0349f7d046c15679f544a2dd8835aae037",
+    "review_note": "Previous figure IDs absent from recovered IR; excluded from recall denominator until visually reverified.",
+    "status": "unresolved_after_parse_recovery",
+    "previous_accepted_figure_ids": [
+      "2e52fd9d62d7ee43954370da0dac3461:p1:f5"
+    ]
+  },
+  {
+    "accepted_figure_ids": [
+      "129523641a4adb5d777fb0271cca6cf5:p0:f13"
+    ],
+    "contact_sheet": "review_006.jpg",
+    "gold_image_id": "d0cedd153c0bfd15aa7fd98e347e4450",
+    "proposal_index": 38,
+    "proposal_sha256": "1d94cd7579c923d802b75ce016c72d0349f7d046c15679f544a2dd8835aae037",
+    "review_note": "Visually compared original and up to three proposed candidates. Matching photograph/artwork may include surrounding infobox text and resizing.",
+    "status": "verified_same_visual_content"
+  }
+]

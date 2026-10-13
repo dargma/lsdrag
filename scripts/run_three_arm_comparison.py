@@ -1,4 +1,5 @@
 """Remeasure the three isolated embedder conditions on frozen development inputs."""
+import argparse
 from concurrent.futures import ThreadPoolExecutor
 import json
 import os
@@ -7,7 +8,10 @@ import subprocess
 
 ROOT = Path('/content/local_fast/lsdrag-work')
 REPO = Path(__file__).resolve().parents[1]
-OUT = ROOT / 'results/three_arm_arag8_textquery'
+OPTIONS = argparse.ArgumentParser()
+OPTIONS.add_argument('--evaluation-set', choices=['development', 'additional50'], default='development')
+SET = OPTIONS.parse_args().evaluation_set
+OUT = ROOT / ('results/three_arm_arag8_textquery' if SET == 'development' else 'results/three_arm_additional50')
 LOGS = OUT / 'logs'
 EMBED = ROOT / 'embedding-env/bin/python'
 RUNTIME = ROOT / 'runtime/bin/python'
@@ -24,9 +28,9 @@ def command(name, python, script, args):
 
 def one(benchmark, arm):
     mem = benchmark == 'memgallery'
-    corpus = ROOT / ('data/mem_gallery_prepared/corpus' if mem else 'data/ir_development')
-    inputs = ROOT / ('data/mem_gallery_prepared/development' if mem else 'data/manifests/development')
-    indexes = ROOT / ('indexes_memgallery' if mem else 'indexes_development')
+    corpus = ROOT / ('data/mem_gallery_prepared/corpus' if mem else ('data/ir_development' if SET == 'development' else 'data/ir_final288'))
+    inputs = ROOT / (('data/mem_gallery_prepared/development' if SET == 'development' else 'data/mem_gallery_prepared/evaluation') if mem else ('data/manifests/development' if SET == 'development' else 'data/manifests/evaluation_50'))
+    indexes = ROOT / ('indexes_memgallery' if mem else ('indexes_development' if SET == 'development' else 'indexes_final288'))
     run = OUT / benchmark / arm
     command(f'{benchmark}-{arm}', EMBED, 'run_experiment.py', [
         '--arm', arm, '--benchmark', benchmark, '--corpus', corpus, '--indexes', indexes,
@@ -41,10 +45,10 @@ def one(benchmark, arm):
             '--upstream', ROOT / ('upstream/mem_gallery' if mem else 'upstream/m3docrag'),
             '--output', OUT / benchmark / (arm + '_scores'), '--judge']
     if not mem:
-        args += ['--visual-mapping', REPO / 'lab/reports/development_alignment_review.json']
+        args += ['--visual-mapping', REPO / ('lab/reports/development_alignment_review.json' if SET == 'development' else 'lab/reports/additional50_alignment_review.json')]
     command(f'{benchmark}-{arm}-score', RUNTIME, 'score_memgallery.py' if mem else 'score_m3doc.py', args)
     command(f'{benchmark}-{arm}-backup', RUNTIME, 'backup_local.py', [
-        '--source-root', ROOT, '--destination', f'/content/drive/MyDrive/lsdrag-backups/20261013/three-arm-arag8/{benchmark}/{arm}',
+        '--source-root', ROOT, '--destination', f'/content/drive/MyDrive/lsdrag-backups/20261013/{OUT.name}/{benchmark}/{arm}',
         '--include', str(run.relative_to(ROOT)), '--include', str((OUT / benchmark / (arm + '_scores')).relative_to(ROOT)),
         '--report', OUT / benchmark / (arm + '_backup.json')])
 
