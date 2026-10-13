@@ -1,0 +1,37 @@
+[
+  {
+    "model": "google/embeddinggemma-2",
+    "sha": "914f7f89142e33e77833254d9c9b90c3cef7303b",
+    "gated": false,
+    "safetensors_gib": 1.387,
+    "config_downloaded": true
+  },
+  {
+    "model": "google/gemma-4-26B-A4B-it",
+    "sha": "4d7ae4984b7db7de8f8457170b3f1a419ee76d52",
+    "gated": false,
+    "safetensors_gib": 48.067,
+    "config_downloaded": true
+  },
+  {
+    "model": "google/gemma-4-E4B-it",
+    "sha": "ee0ef6023621cff504d758262d4e04895a5af4a2",
+    "gated": false,
+    "safetensors_gib": 14.894,
+    "config_downloaded": true
+  },
+  {
+    "model": "opendatalab/MinerU2.5-Pro-2604-1.2B",
+    "sha": "d3f5e08d073c21466bbabe21c71bb1e9c2e595da",
+    "gated": false,
+    "safetensors_gib": 2.153,
+    "config_downloaded": true
+  },
+  {
+    "model": "Qwen/Qwen3-Embedding-4B",
+    "sha": "5cf2132abc99cad020ac570b19d031efec650f2b",
+    "gated": false,
+    "safetensors_gib": 7.491,
+    "config_downloaded": true
+  }
+]
