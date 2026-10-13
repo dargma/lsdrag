@@ -9,11 +9,12 @@ import subprocess
 ROOT = Path('/content/local_fast/lsdrag-work')
 REPO = Path(__file__).resolve().parents[1]
 OPTIONS = argparse.ArgumentParser()
-OPTIONS.add_argument('--evaluation-set', choices=['development', 'additional50'], default='development')
+OPTIONS.add_argument('--evaluation-set', choices=['development', 'additional50', 'search-linked100'], default='development')
 OPTIONS.add_argument('--benchmark', choices=['all', 'm3docvqa', 'memgallery'], default='all')
 ARGS = OPTIONS.parse_args()
 SET = ARGS.evaluation_set
-OUT = ROOT / ('results/three_arm_arag8_textquery' if SET == 'development' else 'results/three_arm_additional50')
+OUT = ROOT / {'development': 'results/three_arm_arag8_textquery', 'additional50': 'results/three_arm_additional50', 'search-linked100': 'results/three_arm_search_linked100'}[SET]
+DELIVERY = 'search-linked' if SET == 'search-linked100' else 'agent-read'
 LOGS = OUT / 'logs'
 EMBED = ROOT / 'embedding-env/bin/python'
 RUNTIME = ROOT / 'runtime/bin/python'
@@ -31,19 +32,22 @@ def command(name, python, script, args):
 def one(benchmark, arm):
     mem = benchmark == 'memgallery'
     corpus = ROOT / ('data/mem_gallery_prepared/corpus' if mem else ('data/ir_development' if SET == 'development' else 'data/ir_final288'))
-    inputs = ROOT / (('data/mem_gallery_prepared/development' if SET == 'development' else 'data/mem_gallery_prepared/evaluation') if mem else ('data/manifests/development' if SET == 'development' else 'data/manifests/evaluation_50'))
+    inputs = ROOT / ('data/manifests/search_linked100/' + benchmark) if SET == 'search-linked100' else ROOT / (('data/mem_gallery_prepared/development' if SET == 'development' else 'data/mem_gallery_prepared/evaluation') if mem else ('data/manifests/development' if SET == 'development' else 'data/manifests/evaluation_50'))
     indexes = ROOT / ('indexes_memgallery' if mem else ('indexes_development' if SET == 'development' else 'indexes_final288'))
     run = OUT / benchmark / arm
     command(f'{benchmark}-{arm}', EMBED, 'run_experiment.py', [
         '--arm', arm, '--benchmark', benchmark, '--corpus', corpus, '--indexes', indexes,
         '--questions', inputs / 'questions.jsonl', '--output', run, '--cache-dir', ROOT / 'hf',
         '--max-loops', '8', '--question-image-policy', 'text-only',
-        '--image-delivery-policy', 'agent-read', '--resume'])
+        '--image-delivery-policy', DELIVERY, '--resume'])
     manifest = json.loads((run / 'run_manifest.json').read_text())
     for qid in manifest['question_ids']:
         row = json.loads((run / (qid + '.json')).read_text())
         assert row['status'] != 'failed' and row['loops'] <= 8
         assert row['question_image_count'] == 0
+        assert manifest['config']['image_delivery_policy'] == DELIVERY
+    if SET == 'search-linked100':
+        assert len(manifest['question_ids']) == 100
     args = ['--run', run, '--gold', inputs / 'gold.jsonl', '--corpus', corpus,
             '--upstream', ROOT / ('upstream/mem_gallery' if mem else 'upstream/m3docrag'),
             '--output', OUT / benchmark / (arm + '_scores'), '--judge']
@@ -69,7 +73,7 @@ def main():
         print('REQUESTED BENCHMARK COMPLETE; OTHER BENCHMARK PENDING', flush=True)
         return
     (OUT / 'COMPLETE.json').write_text(json.dumps({'status': 'complete', 'arms': ARMS,
-        'benchmarks': ['m3docvqa', 'memgallery'], 'max_agent_iterations': 8, 'question_image_policy': 'text-only'}, indent=2))
+        'benchmarks': ['m3docvqa', 'memgallery'], 'max_agent_iterations': 8, 'question_image_policy': 'text-only', 'image_delivery_policy': DELIVERY}, indent=2))
     print('ALL SIX RUNS SCORED AND BACKED UP', flush=True)
 
 

@@ -1,6 +1,6 @@
 {
   "stage": "comparison_report",
-  "status": "automatic_image_delivery_implemented_unmeasured",
+  "status": "search_linked100_ready",
   "goal": "Compare Qwen text, Google text-only, and Google-only multimodal retrieval with identical VLM, tools and 8 A-RAG agent iterations, no independent Reader-call limit; Mem-Gallery text queries only; no oracle condition",
   "plan": "docs/EXPERIMENT_PLAN.md",
   "work_root": "/content/local_fast/lsdrag-work",
@@ -252,5 +252,17 @@
     "tests": "42 passed; synthetic mocked-reader only",
     "benchmark_measurement": "not started; no completed question solved again",
     "implementation_doc": "docs/IMPLEMENTING_GOOGLE_MULTIMODAL_EMBEDDING.md"
+  },
+  "search_linked100": {
+    "status": "prepared_before_outcomes",
+    "questions_per_arm": {
+      "m3docvqa": 100,
+      "memgallery": 100
+    },
+    "image_delivery_policy": "search-linked",
+    "question_image_and_caption": "omitted; retrieved evidence captions and images supplied",
+    "selection": "lab/registry/search_linked100_selection.json",
+    "output_root": "/content/local_fast/lsdrag-work/results/three_arm_search_linked100",
+    "user_authorized_remeasurement": true
   }
 }

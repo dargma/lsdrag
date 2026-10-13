@@ -141,3 +141,8 @@ User clarified that only A-RAG max iteration is eight, with no independent Reade
 - Added detailed implementation document covering roles, pinned models/environment, IR schemas, role prefixes, pixel indexes, chunk-ID RRF, actual image transport, common budgets, CLI, no-gold input contracts, tests and AI handoff instructions. Report explicitly distinguishes question-attached images/captions (omitted) from retrieved evidence captions/images (used).
 - Mem-Gallery recall diagnosis: 44/50 equal, 4 better, 2 worse; VS means both .64; no image-budget exhaustion. All 973 corpus images have provided captions.
 - Validation: 42 software tests pass, including automatic delivery before forced final answer without a model read_chunk call, across all three arms and both search tools; legacy policy contrast; budget/dedup/rank integrity. No GPU model inference used for this correction.
+
+### User authorized 100-question remeasurement after automatic transport correction
+- 1000 was corrected by user to 100 per benchmark. Original M3 frozen 50+50 retained in the common 288-document corpus; Mem frozen 60 retained plus 20 VS/20 VR chosen via seeded proportional scenario/question-image sampling before new outcomes. Same prepared indexes reused, no new parsing or index builds.
+- Explicit user authorization supersedes prior no-repeat rule for this policy remeasurement; still once per question per arm, no best-of. New results/three_arm_search_linked100 namespace. Qualitative cases and raw bundles will be regenerated from this policy, not reused as new evidence.
+- GPU was observed idle while CPU-only selection and documentation were prepared. Related plan and implementation instructions updated.

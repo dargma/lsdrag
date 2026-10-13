@@ -4,7 +4,7 @@
 
 대상 모델은 `google/embeddinggemma-2`, 코드의 조건 이름은 `G1`이다. Reader VLM은 별도 모델 `google/gemma-4-E4B-it`이다. 임베더는 검색 벡터를 만들고, Reader는 찾은 근거의 텍스트와 이미지를 읽어 답한다.
 
-2026-10-13 기준. 본 저장소에는 Google-only 검색과 **검색 연결 이미지 자동 전달** 구현이 있다. [결과 보고서](../lab/reports/INTERIM_REPORT.md)의 기존 수치는 자동 전달 수정 **이전**의 `agent-read` 정책으로 측정했다. 수정된 `search-linked` 정책은 소프트웨어 테스트를 통과했지만 벤치마크 성능은 아직 측정하지 않았다. 기존 문제를 다시 풀거나 기존 수치를 수정된 구조의 성능으로 표시하면 안 된다.
+2026-10-13 기준. 본 저장소에는 Google-only 검색과 **검색 연결 이미지 자동 전달** 구현이 있다. [결과 보고서](../lab/reports/INTERIM_REPORT.md)의 기존 수치는 자동 전달 수정 **이전**의 `agent-read` 정책으로 측정했다. 수정된 `search-linked` 정책은 소프트웨어 테스트를 통과했지만 벤치마크 성능은 아직 측정하지 않았다. 사용자가 이후 각 벤치마크 100문항의 재측정을 명시적으로 승인했다. 이번 승인 범위에서는 수정 방식으로 조건별 문항당 한 번씩 다시 측정하며, 이전 수치를 수정된 구조의 성능으로 표시하지 않는다.
 
 ## 1. 구현할 최종 동작
 
@@ -431,12 +431,12 @@ Reader 요청이 실패했는데 이미 전달됐다고 기록하지 않는다. 
 
 - `AgentConfig.image_delivery_policy`와 `run_experiment.py` 기본값: `search-linked`.
 - `agent-read`를 명시하면 수정 전 정책을 선택한다.
-- `run_three_arm_comparison.py`는 이미 측정한 고정 개발·추가 50문항의 역사적 실행 지시서이므로 `agent-read`를 명시한다. 수정한 정책으로 새 평가를 할 때는 새 문항 manifest와 새 output을 사용해 `run_experiment.py`를 실행한다.
+- `run_three_arm_comparison.py`의 development/additional50은 역사적 `agent-read` 설정이다. 새 `--evaluation-set search-linked100`은 사용자 승인된 100문항 재측정으로, 세 조건 모두 `search-linked`를 사용하며 새 output에 기록한다.
 - 기존 run manifest에 정책·코드 revision이 다르면 resume를 거부한다. 기존 결과 파일을 새 설정의 결과로 덮어쓰지 않는다.
 
 ## 11. 실행 명령: 새 문항만, 새 output만
 
-다음은 사용할 데이터·환경을 준비한 후의 실행 예시다. `<work_root>/data/new_questions/questions.jsonl`은 **이전에 풀지 않은 고유 문항**으로 만든다. 기존 보고서의 100+60 문항을 다시 실행하지 않는다.
+다음은 사용할 데이터·환경을 준비한 후의 실행 예시다. `<work_root>/data/new_questions/questions.jsonl`은 **이전에 풀지 않은 고유 문항**으로 만든다. 일반적인 새 평가에서는 기존 문항을 반복하지 않는다. 아래 별도 승인된 search-linked100 재측정은 예외다.
 
 ### 질문 입력 schema
 
@@ -486,7 +486,18 @@ Gemma 4 Reader를 쓸 때 고정 revision을 별도 runtime 환경으로 다운�
 
 공정 비교는 같은 인자에서 `--arm B0`와 `--arm C1`, 각각 다른 output 디렉터리로 실행한다. B0용 `qwen_text`도 준비한다. Mem-Gallery이면 `--benchmark memgallery`, 해당 코퍼스·질문 manifest를 사용한다.
 
-이 문서의 명령은 실제 벤치마크를 자동으로 실행하는 설치 스크립트가 아니다. 이미 완료된 문항을 입력으로 넣고 실행하지 않는다.
+이 문서의 명령은 자동 설치 스크립트가 아니다. 사용자 승인 없이 완료 문항을 반복하지 않는다. 이번 승인된 재측정은 아래 명령으로 실행한다.
+
+### 이번 승인된 100문항 재측정
+
+- M3DocVQA: 고정된 기존 100문항, 288문서 코퍼스, 새 전달 정책으로 각 조건 한 번씩.
+- Mem-Gallery: 기존 60 + 층화 선정 40, 총 100문항(VS 50 + VR 50).
+- 출력: `results/three_arm_search_linked100`.
+- 선택 manifest: [search_linked100_selection.json](../lab/registry/search_linked100_selection.json).
+
+```bash
+python scripts/run_three_arm_comparison.py --evaluation-set search-linked100
+```
 
 ## 12. 검증 기준: 코드만 돌아가는 것과 실제 전송을 구분
 
@@ -577,7 +588,7 @@ python -m pytest -q
 
 ## 16. 다른 AI에게 넘길 구현 지시문
 
-> `google/embeddinggemma-2`의 고정 revision을 사용해 Qwen 기반 A-RAG에 Google-only 텍스트·이미지 검색을 구현하라. 텍스트와 실제 PIL 이미지의 full 768d float32 L2 벡터를 별도 인덱스에 저장하라. 검색 질문은 원문 텍스트만 사용하고 질문 첨부 이미지·그 캡션은 공급하지 말라. 문서·대화의 원래 캡션은 검색 텍스트로 보존하라. Google text/image top 후보를 공통 chunk ID로 RRF(k=60) 결합하고 기본 top-5를 반환하라. 반환된 이미지 연결 청크는 별도 agent read 선택을 기다리지 않고 자동 읽기하여 다음 Reader VLM 호출 전에 실제 이미지 block으로 전달하라. 같은 자동 전달 정책을 B0·C1·G1 모두에 적용하라. 고유 이미지 예산 8개·A-RAG max iteration 8·별도 최종 답변 호출을 유지하라. 골드 정답·clue·정답 이미지 ID를 검색이나 자동 전달에 사용하지 말라. 실제 전송 성공 뒤에만 delivered ID를 기록하라. 정책·입력·인덱스·프롬프트·코드 해시를 실행 manifest에 남겨라. 합성 테스트로 전달 경로를 먼저 확인하라. 이미 측정한 문항은 다시 풀지 말고, 수정 전 수치를 수정 후 성능으로 표시하지 말라. 기준 코드는 본 문서의 파일 목록을 따르라.
+> `google/embeddinggemma-2`의 고정 revision을 사용해 Qwen 기반 A-RAG에 Google-only 텍스트·이미지 검색을 구현하라. 텍스트와 실제 PIL 이미지의 full 768d float32 L2 벡터를 별도 인덱스에 저장하라. 검색 질문은 원문 텍스트만 사용하고 질문 첨부 이미지·그 캡션은 공급하지 말라. 문서·대화의 원래 캡션은 검색 텍스트로 보존하라. Google text/image top 후보를 공통 chunk ID로 RRF(k=60) 결합하고 기본 top-5를 반환하라. 반환된 이미지 연결 청크는 별도 agent read 선택을 기다리지 않고 자동 읽기하여 다음 Reader VLM 호출 전에 실제 이미지 block으로 전달하라. 같은 자동 전달 정책을 B0·C1·G1 모두에 적용하라. 고유 이미지 예산 8개·A-RAG max iteration 8·별도 최종 답변 호출을 유지하라. 골드 정답·clue·정답 이미지 ID를 검색이나 자동 전달에 사용하지 말라. 실제 전송 성공 뒤에만 delivered ID를 기록하라. 정책·입력·인덱스·프롬프트·코드 해시를 실행 manifest에 남겨라. 합성 테스트로 전달 경로를 먼저 확인하라. 명시적으로 승인된 재측정 범위 밖에서 이미 푼 문항을 반복하지 말고, 수정 전 수치를 수정 후 성능으로 표시하지 말라. 기준 코드는 본 문서의 파일 목록을 따르라.
 
 ## 17. 근거·참조
 

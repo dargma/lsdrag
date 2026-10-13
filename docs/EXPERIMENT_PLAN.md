@@ -40,3 +40,11 @@ EM, F1, LLM 판정 및 근거 후보/전달 recall을 같은 평가 코드로 �
 
 ## 검색 연결 이미지 자동 전달 수정
 기존 결과는 `agent-read` 정책(에이전트가 read_chunk를 선택해야 이미지 전달)으로 측정했다. 사용자 지시에 따라 현재 코드의 새 실행 기본값은 `search-linked`다. keyword_search/semantic_search가 반환한 이미지 연결 청크를 자동 읽기하고 다음 Reader 호출 전 실제 이미지를 넣는다. 세 조건에 같은 정책·search_linked 프롬프트·8 iteration·이미지 8개 예산을 적용한다. 질문 첨부 이미지·그 캡션은 이번 text-query 조건에서 제외하고 검색 자료 캡션과 이미지는 사용한다. 수정 후 벤치마크 성능은 아직 측정하지 않았다. 기존 문항을 다시 풀지 않으며 새 문항 manifest·새 output·새 실행 identity로만 다음 평가를 한다. [상세 구현 명세](IMPLEMENTING_GOOGLE_MULTIMODAL_EMBEDDING.md).
+
+## 사용자 승인: 자동 전달 방식으로 100문항씩 재측정
+사용자가 수정 후 다시 측정하고 보고서까지 갱신하도록 명시적으로 승인했다. 1000은 오기이며 각 벤치마크 100문항으로 정정했다. 따라서 이번 측정은 이전 측정 문항 재실행 금지의 명시적 예외다. 수정 방식에서 조건별 문항당 한 번씩만 실행하고 오답 재시도나 best-of는 하지 않는다.
+- M3DocVQA: 기존 고정 개발 50 + 추가 50의 합집합 100. 모든 조건에 같은 288문서 코퍼스 사용.
+- Mem-Gallery: 기존 60 유지 + 원본의 공개 시나리오·질문 이미지 층화로 40 추가, 총 VS 50 + VR 50. 새 결과를 보기 전에 표본 고정.
+- B0/C1/G1 모두 search-linked 자동 연결 이미지 읽기, 같은 search_linked 프롬프트·Reader·A-RAG max iteration 8·이미지 8개 예산. 질문 첨부 이미지·그 캡션 제외, 검색 근거 캡션·실제 이미지 사용.
+- 새 output: results/three_arm_search_linked100. 기존 agent-read 결과 불변. 최신 정성 사례도 새 실행에서 Qwen 오답/G1 정답으로 다시 선정, 질문·검색 캡션 구분과 원본 데이터 묶음 유지.
+- 선택·해시: lab/registry/search_linked100_selection.json. 실행: python scripts/run_three_arm_comparison.py --evaluation-set search-linked100.
