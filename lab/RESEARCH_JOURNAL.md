@@ -31,3 +31,11 @@ User explicitly requested recording and continuing with M3DocVQA 100 image-relat
 ## Latest user scope revision — 50 questions per benchmark
 
 User reduced both final evaluations to 50 questions: M3DocVQA image-related 50 and Mem-Gallery VS 25 + VR 25. Updated plan, decisions and approved scope; earlier 100/60 figures are historical. Development remains separate. Final input manifests must be frozen to the new scope before evaluation. Active processes, code, data and results were not modified.
+
+## 2026-10-13 — Scope synchronization, scoring and visual QC
+
+Detected and preserved the user-approved side-conversation plan updates: final M3DocVQA 50 and Mem-Gallery 50 (25 VS + 25 VR), with oracle-evidence Reader diagnostic. Selected the M3DocVQA 50 from the original 200 candidates by seeded proportional strata; development inputs and original candidate provenance remain unchanged. No final-question model outcomes informed selection. Mem-Gallery official repo cloned and 20 dialog JSONs downloaded at HF revision af912daba984e896e253016b7c7e334ef92c2a6f; image downloads and schema-specific pipeline remain pending.
+
+Official MMQA scorer verified numeric equivalence and multi-answer alignment. B0 pilot scored zero EM/F1/contain/LLM accuracy and 0.5 document-read recall, consistent with inspecting only the team logo. V2 pilot exercised image_search and figure_read but still stopped on the wrong entity. Added one explicit final verification turn within the shared loop budget, and repeated the original question in image-delivery messages for all arms. This development adjustment is unvalidated on the full development set and is not evidence of an accuracy gain. Mechanical JSON recovery now handles prose before a JSON object while recording the format violation. Fifteen tests pass.
+
+Image alignment proposals use within-document pHash and SIFT/RANSAC; proposals are not gold labels. Visual inspection of five pilot originals/candidate sheets confirmed three matches (Mini, Make It Rain, Bank of America Stadium), two unresolved (KK Krka logo changed; Tampa montage not matched among top candidates). The stadium logo is present inside a larger parsed infobox image. Store these findings separately from agent inputs.

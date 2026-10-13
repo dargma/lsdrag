@@ -42,3 +42,20 @@ def test_invalid_answer_is_preserved():
     recovered = parse_answer('I cannot find it.\n```json\n{"answers":[],"citations":[]}\n```')
     assert recovered["answers"] == []
     assert recovered["answer_json_recovered"]
+    assert not parse_answer('{"answers":"invalid"}')["answer_format_valid"]
+
+
+def test_v2_verification_stays_within_common_loop_budget():
+    retrieval = SimpleNamespace(arm="V2", chunks={}, figures={}, keyword_search=lambda **_: [], semantic_search=lambda **_: [], image_search=lambda **_: [])
+    class FakeReader:
+        count = 0
+        def chat(self, messages, tools):
+            self.count += 1
+            if self.count == 2:
+                assert tools is None  # Common max-loop finalization, not extra budget.
+            return {"message": {"content": '{"answers":[],"citations":[]}'}, "finish_reason": "stop"}, {}
+    reader = FakeReader()
+    result = Agent(retrieval, "test", AgentConfig(max_loops=1), reader).run("q", "test?")
+    assert result["verification_requested"]
+    assert result["stop_reason"] == "max_loops"
+    assert result["loops"] == 2

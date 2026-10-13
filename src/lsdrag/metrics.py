@@ -18,7 +18,7 @@ def official_scorer(checkout):
     if revision != M3DOC_REVISION:
         raise ValueError("Unexpected M3DocRAG evaluator revision")
     relative = "src/m3docrag/datasets/m3_docvqa"
-    if subprocess.check_output(["git", "status", "--porcelain", "--", relative], cwd=checkout, text=True).strip():
+    if subprocess.check_output(["git", "status", "--porcelain", "--untracked-files=no", "--", relative], cwd=checkout, text=True).strip():
         raise ValueError("Official evaluation source has local modifications")
     sys.path.insert(0, str(checkout / "src"))
     module = importlib.import_module("m3docrag.datasets.m3_docvqa.evaluate")

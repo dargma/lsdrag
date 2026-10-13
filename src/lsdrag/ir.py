@@ -154,5 +154,7 @@ def build_ir(parsed_root, corpus_manifest, output_dir, max_words=300):
     # Original A-RAG input format, for explicit original/text-only mode.
     dump_json(output_dir / "arag_chunks.json", [{"id": c["chunk_id"], "text": c["text"]} for c in chunks])
     summary = {"documents": len(docs), "document_aliases": sum(len(d["document_ids"]) for d in docs), "pages": sum(d["pages"] for d in docs), "chunks": len(chunks), "chunk_types": dict(Counter(c["kind"] for c in chunks)), "figures": len(figures), "figures_without_caption": sum(not f["has_caption"] for f in figures), "max_words": max_words, "page_index_base": 0, "table_policy": "keep rows and repeat Markdown headers; flag oversized rows", "page_boundary_policy": "no cross-page text merge; explicit adjacent chunk IDs", "chunks_sha256": sha256(output_dir / "chunks.jsonl"), "figures_sha256": sha256(output_dir / "figures.jsonl"), "corpus_manifest_sha256": sha256(corpus_manifest)}
+    summary["figures_without_any_description"] = sum(not f["has_description"] for f in figures)
+    summary["figure_description_policy"] = "retain original captions and footnotes; nearby text fallback only when both are absent"
     dump_json(output_dir / "manifest.json", summary)
     return summary

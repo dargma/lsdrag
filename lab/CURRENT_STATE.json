@@ -23,7 +23,7 @@
     "google/embeddinggemma-2",
     "Qwen/Qwen3-Embedding-4B"
   ],
-  "selection_manifest": "lab/registry/selection.json",
+  "selection_manifest": "lab/registry/selection_final50.json",
   "reader_smoke_passed": true,
   "image_transport": "tool result then user image",
   "running_tasks": {
@@ -37,11 +37,16 @@
       "log": "/content/local_fast/lsdrag-work/parse-development-full.log",
       "output": "/content/local_fast/lsdrag-work/data/parsed_development",
       "resume": true
+    },
+    "reader_server": {
+      "port": 8102,
+      "session_id": 67524,
+      "log": "/content/local_fast/lsdrag-work/reader-agent-server.log"
     }
   },
   "standard_parser_smoke_passed": true,
   "preflight_backup": "lab/reports/preflight_backup.json",
-  "implementation_status": "IR, index builder, retrieval and evidence delivery tracking implemented; eight unit tests pass; agent loop and evaluations pending",
+  "implementation_status": "Agent, retrieval, index builders, official answer/document metrics and paired statistics implemented; 15 tests pass. B0 and V2 pilot tool/image paths executed. Final benchmark evaluations pending.",
   "approved_evaluation_scope": {
     "m3docvqa_questions": 50,
     "mem_gallery_questions": 50,
@@ -55,6 +60,20 @@
       "V2"
     ],
     "oracle_evidence_reader_diagnostic": true,
-    "execution_inputs_updated": false
+    "execution_inputs_updated": false,
+    "m3docvqa_input_manifest_updated": true
+  },
+  "m3docvqa_final_questions": "/content/local_fast/lsdrag-work/data/manifests/evaluation_50/questions.jsonl",
+  "development_parse_progress": {
+    "documents": 181,
+    "successful_documents": 181,
+    "pages": 2718,
+    "failed": []
+  },
+  "mem_gallery_metadata": {
+    "local_root": "/content/local_fast/lsdrag-work/data/mem_gallery",
+    "revision": "af912daba984e896e253016b7c7e334ef92c2a6f",
+    "dialog_files": 20,
+    "status": "metadata downloaded; official schema and evaluation inspection pending"
   }
 }

@@ -1,0 +1,53 @@
+[
+  {
+    "gold_image_id": "01af2a62787bbc3530b0b02d3b007a01",
+    "title": "Mini",
+    "status": "visually_verified_match",
+    "accepted_figure_ids": [
+      "01af2a62787bbc3530b0b02d3b007a01:p0:f13"
+    ],
+    "review_method": "assistant visual inspection of original and candidate contact sheet",
+    "sheet": "review_000.jpg",
+    "note": "Original is contained within a larger parser crop"
+  },
+  {
+    "gold_image_id": "043779063ae1f250b07f1890643c82cf",
+    "title": "Make It Rain (Foy Vance song)",
+    "status": "visually_verified_match",
+    "accepted_figure_ids": [
+      "043779063ae1f250b07f1890643c82cf:p0:f9"
+    ],
+    "review_method": "assistant visual inspection of original and candidate contact sheet",
+    "sheet": "review_000.jpg",
+    "note": "Exact album-art match"
+  },
+  {
+    "gold_image_id": "0483a438e5f39b9e59de3f9e15870bce",
+    "title": "KK Krka",
+    "status": "unresolved_source_changed_or_match_missing",
+    "accepted_figure_ids": [],
+    "review_method": "assistant visual inspection of original and candidate contact sheet",
+    "sheet": "review_000.jpg",
+    "note": "Top candidates do not reproduce the original; do not treat as verified ground truth"
+  },
+  {
+    "gold_image_id": "04efc3408a15848ab446ddc2d4d2bd13",
+    "title": "Tampa, Florida",
+    "status": "unresolved_source_changed_or_match_missing",
+    "accepted_figure_ids": [],
+    "review_method": "assistant visual inspection of original and candidate contact sheet",
+    "sheet": "review_000.jpg",
+    "note": "Top candidates do not reproduce the original; do not treat as verified ground truth"
+  },
+  {
+    "gold_image_id": "0af43d695e0fa436b1c1dfc150d48182",
+    "title": "Bank of America Stadium",
+    "status": "visually_verified_match",
+    "accepted_figure_ids": [
+      "0af43d695e0fa436b1c1dfc150d48182:p0:f15"
+    ],
+    "review_method": "assistant visual inspection of original and candidate contact sheet",
+    "sheet": "review_000.jpg",
+    "note": "Original is contained within a larger parser crop"
+  }
+]
