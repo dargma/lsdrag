@@ -62,7 +62,6 @@ def build_splits(data_dir, output_dir, summary_path, seed=20261013):
     candidates = [q for q in questions if any(c["doc_part"] == "image" for c in q["supporting_context"])]
     development = sample_stratified(candidates, 50, seed)
     dev_ids = {q["qid"] for q in development}
-    evaluation = sample_stratified([q for q in candidates if q["qid"] not in dev_ids], 200, seed + 1)
     source_docs = {}
     for name in FILES[1:]:
         for row in read_jsonl(data_dir / f"{name}.jsonl"):
@@ -76,6 +75,9 @@ def build_splits(data_dir, output_dir, summary_path, seed=20261013):
     def docs_for(qs):
         return {c["doc_id"] for q in qs for c in q["supporting_context"]}
     development_docs = docs_for(development)
+    development_urls = {source_docs[i]["url"] for i in development_docs}
+    final_candidates = [q for q in candidates if q["qid"] not in dev_ids and not ({source_docs[i]["url"] for i in docs_for([q])} & development_urls)]
+    evaluation = sample_stratified(final_candidates, 200, seed + 1)
     evaluation_docs = docs_for(evaluation)
     distractors = sorted(set(all_doc_ids) - development_docs - evaluation_docs)
     random.Random(seed + 2).shuffle(distractors)
@@ -93,11 +95,13 @@ def build_splits(data_dir, output_dir, summary_path, seed=20261013):
         "criterion": "supporting_context contains doc_part=image",
         "allocation": "proportional largest remainder by evidence modality combination and metadata.type",
         "development_count": len(development), "evaluation_count": len(evaluation),
+        "evaluation_candidates_after_document_disjoint_filter": len(final_candidates),
         "full_corpus_document_ids": len(all_doc_ids),
         "full_corpus_unique_urls": len({source_docs[i]["url"] for i in all_doc_ids}),
         "development_corpus_document_ids": len(dev_corpus_ids),
         "question_id_overlap": len(dev_ids & {q["qid"] for q in evaluation}),
         "support_document_overlap": len(development_docs & evaluation_docs),
+        "support_url_overlap": len(development_urls & {source_docs[i]["url"] for i in evaluation_docs}),
         "evaluation_questions_sharing_development_documents": sum(bool(docs_for([q]) & development_docs) for q in evaluation),
         "candidate_strata": dict(Counter(strata_key(q) for q in candidates)),
         "development_strata": dict(Counter(strata_key(q) for q in development)),

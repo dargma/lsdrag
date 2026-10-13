@@ -7,5 +7,16 @@
   "arag_revision": "a44de6b2216bf6791979c4b6ac4ae106212fa1a6",
   "reader_model_finalized": false,
   "evaluation_manifest_frozen": false,
-  "pending_checks": ["model access and disk requirements", "official evaluation and evidence schema", "runtime installation and multimodal tool smoke tests"]
+  "pending_checks": [
+    "MinerU saved-image parse smoke",
+    "Gemma reader tool calls and image delivery",
+    "PDF image quality and evidence mapping"
+  ],
+  "reader_candidate": "google/gemma-4-E4B-it",
+  "model_weights_downloaded": true,
+  "embedding_smoke_passed": [
+    "google/embeddinggemma-2",
+    "Qwen/Qwen3-Embedding-4B"
+  ],
+  "selection_manifest": "lab/registry/selection.json"
 }

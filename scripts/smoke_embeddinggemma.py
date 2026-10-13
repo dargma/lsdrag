@@ -26,11 +26,20 @@ def main():
     text = model.encode(["a red circle on a white background", "a blue square on a white background"], prompt_name="SearchQuery", normalize_embeddings=True)
     vision = model.encode(images, normalize_embeddings=True)
     docs = model.encode(["A red circle.", "A blue square."], prompt_name="Document", normalize_embeddings=True)
+    raw_norms = []
+    normalized = []
     for vectors in [text, vision, docs]:
         assert vectors.shape == (2, 768), vectors.shape
         assert np.isfinite(vectors).all()
-        assert np.allclose(np.linalg.norm(vectors, axis=1), 1, atol=1e-3)
-    report = {"purpose": "runtime smoke only; not M3DocVQA", "dtype": "bfloat16", "shape": list(text.shape), "text_image_similarity": (text @ vision.T).tolist(), "text_document_similarity": (text @ docs.T).tolist(), "elapsed_seconds": time.monotonic() - start}
+        vectors = vectors.astype(np.float32)
+        norms = np.linalg.norm(vectors, axis=1, keepdims=True)
+        raw_norms.append(norms[:, 0].tolist())
+        assert (norms > 0).all()
+        vectors = vectors / norms
+        assert np.allclose(np.linalg.norm(vectors, axis=1), 1, atol=1e-6)
+        normalized.append(vectors)
+    text, vision, docs = normalized
+    report = {"purpose": "runtime smoke only; not M3DocVQA", "dtype": "bfloat16; final normalization float32", "raw_norms": raw_norms, "shape": list(text.shape), "text_image_similarity": (text @ vision.T).tolist(), "text_document_similarity": (text @ docs.T).tolist(), "elapsed_seconds": time.monotonic() - start}
     args.output.parent.mkdir(parents=True, exist_ok=True)
     args.output.write_text(json.dumps(report, indent=2) + "\n")
     print(json.dumps(report))
