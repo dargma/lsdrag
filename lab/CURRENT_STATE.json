@@ -1,5 +1,5 @@
 {
-  "stage": "development_evaluation",
+  "stage": "session_recovery",
   "status": "in_progress",
   "goal": "Complete B0/V1/V2/C1 on 50 image-related M3DocVQA questions, supplementary Mem-Gallery 50-question B0/V1/V2 and oracle-evidence Reader evaluation, and final report",
   "plan": "docs/EXPERIMENT_PLAN.md",
@@ -26,30 +26,6 @@
   "selection_manifest": "lab/registry/selection_final50.json",
   "reader_smoke_passed": true,
   "image_transport": "tool result then user image",
-  "running_tasks": {
-    "reader_server": {
-      "port": 8102,
-      "session_id": 86509
-    },
-    "parser_server": {
-      "port": 8101,
-      "session_id": 81443
-    },
-    "V2_development": {
-      "session_id": 28317,
-      "log": "/content/local_fast/lsdrag-work/development-V2.log"
-    },
-    "final_additions_parsing": {
-      "session_id": 34477,
-      "log": "/content/local_fast/lsdrag-work/parse-final-additions.log",
-      "expected_documents": 108,
-      "expected_pages": 1400
-    },
-    "MemGallery_B0_development": {
-      "session_id": 2318,
-      "log": "/content/local_fast/lsdrag-work/memgallery-development-B0.log"
-    }
-  },
   "standard_parser_smoke_passed": true,
   "preflight_backup": "lab/reports/preflight_backup.json",
   "implementation_status": "24 tests including composite index integrity; final benchmark runs not started",
@@ -140,5 +116,62 @@
     "qwen_text",
     "gemma_image"
   ],
-  "mem_gallery_oracle_development_complete": "lab/reports/mem_gallery_development_oracle_complete.json"
+  "mem_gallery_oracle_development_complete": "lab/reports/mem_gallery_development_oracle_complete.json",
+  "pre_interruption_running_tasks": {
+    "reader_server": {
+      "port": 8102,
+      "session_id": 86509
+    },
+    "parser_server": {
+      "port": 8101,
+      "session_id": 81443
+    },
+    "V2_development": {
+      "session_id": 28317,
+      "log": "/content/local_fast/lsdrag-work/development-V2.log"
+    },
+    "final_additions_parsing": {
+      "session_id": 34477,
+      "log": "/content/local_fast/lsdrag-work/parse-final-additions.log",
+      "expected_documents": 108,
+      "expected_pages": 1400
+    },
+    "MemGallery_B0_development": {
+      "session_id": 2318,
+      "log": "/content/local_fast/lsdrag-work/memgallery-development-B0.log"
+    }
+  },
+  "running_tasks": {
+    "reader_server": {
+      "port": 8102,
+      "pid": 15109
+    },
+    "restore_backup": {
+      "pid": 13728,
+      "log": "/content/local_fast/lsdrag-work/recovery/data.log"
+    },
+    "development_qwen_index": {
+      "session_id": 51546,
+      "log": "/content/local_fast/lsdrag-work/recovery/index-dev-qwen.log"
+    }
+  },
+  "recovery": {
+    "date": "2026-10-13",
+    "restored_code_revision": "7aaa4f0",
+    "work_root": "/content/local_fast/lsdrag-work",
+    "logs": "/content/local_fast/lsdrag-work/recovery",
+    "models": "four active model snapshots downloaded at original pinned revisions; runtime checks in progress",
+    "backups": "preflight + development-parsing; copy and hash verification in progress",
+    "lost_artifacts": [
+      "vector indexes",
+      "raw development prediction traces",
+      "Mem-Gallery local data",
+      "final additional PDFs and parses"
+    ],
+    "policy": "Keep committed reports; regenerate lost artifacts, record new hashes, rerun interrupted development experiments with new run identities. Historical session IDs are invalid.",
+    "mem_gallery": "990 images; development and evaluation input/gold hashes exactly match original; corpus hashes exactly match original",
+    "reader": "native tool call and red-circle image recognition passed; user-role image transport retained",
+    "final_corpus": "288 URLs and 108 new-document manifest reconstructed; all four selection hashes match original",
+    "embedding_environment": "Transformers 5.19.0, sentence-transformers 6.1.0, base torch 2.11.0+cu130; removed incompatible local torch 2.14.1 pulled by resolver"
+  }
 }

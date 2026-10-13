@@ -93,3 +93,8 @@ Mem-Gallery development oracle (10, clue-only version): EM .60, F1 .72045, offic
 - Reviewed 39 final original-image alignment proposals against completed new document parses: 25 matched originals, 14 unresolved or visibly changed variants. Original photographs inside larger infobox crops remain valid matches; differing posters, collage content and logo variants are not silently treated as exact originals. Full final mapping is pending remaining parses.
 - Corrected only the alignment/QC script's transparent-image visualization to composite onto white; discarding alpha hid black lettering. Retrieval images and agent behavior are unchanged. Previous partial sheets and their checksums remain preserved.
 - Mem-Gallery V1 development: EM 0.40, F1 0.5171, official judge 0.55, delivery recall 0.5333. V2 development inference finished 10/10 and is being scored.
+
+### 2026-10-13 — Forced-session recovery started
+- Fast-forwarded Drive checkout by three commits to 7aaa4f0 and cloned a local working checkout. All four active model snapshots downloaded at pinned revisions.
+- Restoring preflight and development parsing/IR backups with SHA256 verification. Unbacked indexes, raw prediction traces, Mem-Gallery data, and final additional PDFs/parses must be regenerated; historical aggregate reports remain preserved.
+- Runtime tests: 24 passed. Recreating isolated Reader, embedding, and parser environments; actual model checks and experiment restart remain in progress.

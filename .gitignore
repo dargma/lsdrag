@@ -14,3 +14,4 @@ logs/
 *.safetensors
 *.pt
 *.bin
+*.egg-info/
