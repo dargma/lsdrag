@@ -1,0 +1,10 @@
+{
+  "documents": 10,
+  "successful_documents": 10,
+  "pages": 212,
+  "elapsed_document_seconds": 109.58958420999988,
+  "tier": "standard",
+  "image_analysis": false,
+  "caption_schema_finding": "Some figure descriptions occur in footnotes rather than captions; both are retained without generated captions.",
+  "quality_status": "Further visual QC and original-image matching required; speed is not proof of accuracy."
+}

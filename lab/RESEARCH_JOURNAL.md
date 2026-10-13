@@ -11,3 +11,7 @@
 MMQA dev 2,441개 중 이미지 근거 후보 940개를 확인하고 개발 50개와 본 평가 후보 200개를 근거 URL까지 분리했다. 개발 코퍼스 183개 렌더링 결과 정상 174개, 이미지 검토 필요 7개, HTTP 404 실패 2개다. 정답 매핑용 원본 이미지 192개도 확보했다. 전체 메타데이터 기준 코퍼스는 3,366개 ID이며 논문 수치와 차이를 기록했다. 상세 근거는 `lab/reports/PREFLIGHT.md`에 저장했다. 현재 표준 tier의 3페이지 파싱을 점검 중이며, 검색 인덱스·에이전트 구현·본 평가는 다음 단계다.
 
 표준 tier로 3페이지 재검증을 통과했다(분석 8.8초, 모델 준비 포함 18.0초). 개발 코퍼스의 첫 10개 문서 파싱을 시작했다. 사전 확인 데이터 835개 파일·360,673,466바이트를 Drive에 백그라운드 복사하고 해시 일치를 확인했으며 실패는 없었다. 가중치는 고정 revision으로 다시 받을 수 있으므로 이번 데이터 백업에서 제외했다.
+
+## 2026-10-13 — IR and retrieval implementation
+
+Standard parser pilot: 10/10 documents, 212 pages, 109.59 document-processing seconds. Initial IR has 2,958 chunks and 196 figures; these counts precede the footnote-description correction. MinerU stores some real figure descriptions as footnotes, now retained alongside captions. Implemented verified saved-asset resolution, document URL aliases, page-preserving chunks, table header repetition, pinned full-dimensional index construction, rank-only fusion, and V2 image search. Six tests pass. Agent loop, actual indexes, visual mapping and benchmark results are still pending. Development parsing will resume over the collected PDFs; no final evaluation is starting.
