@@ -104,3 +104,6 @@ Mem-Gallery development oracle (10, clue-only version): EM .60, F1 .72045, offic
 - Mem-Gallery: 990 images; both splits and corpus hashes exactly match original. Both indexes rebuilt, V2 development inference is running in a separate recovery namespace.
 - Final 288-URL selection hashes match original. All 108 lost additional PDFs were recollected; their live-source bytes are new artifacts, not claimed to reproduce lost PDF hashes. Standard parsing resumed.
 - M3 Qwen index rebuild remains active. Continuation waits for it, builds Gemma indexes, backs up indexes/data, then runs and scores development V2. Separate completion workers score and back up Mem-Gallery V2 and final document parses. Concurrent development timing is diagnostic only.
+
+### Interim report focused on the embedder replacement question
+User clarified the primary question: what changes when replacing Qwen with Google multimodal embeddings? Wrote a concise interim report separating C1 text replacement from V1 image-channel addition, and explicitly marked Google-text-plus-image full replacement as unmeasured. No new experimental arm was launched. Added the completed recovery Mem-Gallery V2 summary; M3 V2 remains in progress.
