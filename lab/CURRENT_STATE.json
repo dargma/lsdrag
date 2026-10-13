@@ -38,6 +38,16 @@
     "V2_development": {
       "session_id": 28317,
       "log": "/content/local_fast/lsdrag-work/development-V2.log"
+    },
+    "final_additions_parsing": {
+      "session_id": 34477,
+      "log": "/content/local_fast/lsdrag-work/parse-final-additions.log",
+      "expected_documents": 108,
+      "expected_pages": 1400
+    },
+    "MemGallery_B0_development": {
+      "session_id": 2318,
+      "log": "/content/local_fast/lsdrag-work/memgallery-development-B0.log"
     }
   },
   "standard_parser_smoke_passed": true,
@@ -124,5 +134,11 @@
     "review_file": "lab/reports/development_alignment_review.json"
   },
   "development_backup": "lab/reports/development_parsing_backup.json",
-  "final_corpus_selection": "lab/registry/corpus_final288.json"
+  "final_corpus_selection": "lab/registry/corpus_final288.json",
+  "final_collection_audit": "lab/reports/final_collection_audit.json",
+  "mem_gallery_indexes_complete": [
+    "qwen_text",
+    "gemma_image"
+  ],
+  "mem_gallery_oracle_development_complete": "lab/reports/mem_gallery_development_oracle_complete.json"
 }

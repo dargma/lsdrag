@@ -1,0 +1,394 @@
+{
+  "collected_verified_urls": 288,
+  "corpus_manifest_sha256": "5c361b193b7054ac92179d6bc6b659a6b8f98ea6f7514865ab2e3dd4b8fe7d1f",
+  "gold_sha256": "1f48a1ea0cc40cd00baa0d119ed4f6dd80b98ab0d7df9b122591ae8c9faa15ca",
+  "interpretation": "Image-load failures do not establish loss of a required gold figure. Absence of answer text is not a valid visual-grounding test. Use reviewed original-image mappings separately.",
+  "no_audit_urls": [],
+  "pdf_pages": 4093,
+  "problems": [
+    {
+      "article_image_load_failures": 2,
+      "document_id": "4fe987d30eff1647e86e30f858267ffc",
+      "error": null,
+      "status": "image_load_incomplete",
+      "title": "FC Botoșani",
+      "url": "https://en.wikipedia.org/wiki/FC_Botoșani",
+      "verified_local_pdf": true
+    },
+    {
+      "article_image_load_failures": 1,
+      "document_id": "9fe4f35f98812a3f583a984ec1ca4cf5",
+      "error": null,
+      "status": "image_load_incomplete",
+      "title": "Agnieszka Dygant",
+      "url": "https://en.wikipedia.org/wiki/Agnieszka_Dygant",
+      "verified_local_pdf": true
+    },
+    {
+      "article_image_load_failures": 1,
+      "document_id": "a4038a94fe353c762851bc69f1901370",
+      "error": null,
+      "status": "image_load_incomplete",
+      "title": "Angela Park",
+      "url": "https://en.wikipedia.org/wiki/Angela_Park",
+      "verified_local_pdf": true
+    },
+    {
+      "article_image_load_failures": 1,
+      "document_id": "be3e1743f8001a8a0ed41dc682c864e6",
+      "error": null,
+      "status": "image_load_incomplete",
+      "title": "Sadasiva Brahmendra",
+      "url": "https://en.wikipedia.org/wiki/Sadasiva_Brahmendra",
+      "verified_local_pdf": true
+    },
+    {
+      "article_image_load_failures": 5,
+      "document_id": "c8d8e51c58e15c31cd0c91e1ca6e6cd5",
+      "error": null,
+      "status": "image_load_incomplete",
+      "title": "Miedź Legnica",
+      "url": "https://en.wikipedia.org/wiki/Miedź_Legnica",
+      "verified_local_pdf": true
+    },
+    {
+      "article_image_load_failures": 1,
+      "document_id": "c8e4add9bc9b823e4650d08d1b24a2a5",
+      "error": null,
+      "status": "image_load_incomplete",
+      "title": "University of Wollongong",
+      "url": "https://en.wikipedia.org/wiki/University_of_Wollongong",
+      "verified_local_pdf": true
+    },
+    {
+      "article_image_load_failures": 2,
+      "document_id": "e48042ab3eddd2df717a7f6480284e64",
+      "error": null,
+      "status": "image_load_incomplete",
+      "title": "Minnesota Fighting Saints",
+      "url": "https://en.wikipedia.org/wiki/Minnesota_Fighting_Saints",
+      "verified_local_pdf": true
+    },
+    {
+      "article_image_load_failures": 1,
+      "document_id": "baba8beb16ac3f9b281fef20ee7f0430",
+      "error": null,
+      "status": "image_load_incomplete",
+      "title": "N'Djamena",
+      "url": "https://en.wikipedia.org/wiki/N'Djamena",
+      "verified_local_pdf": true
+    }
+  ],
+  "question_audit": [
+    {
+      "incomplete_image_urls": [],
+      "missing_pdf_urls": [],
+      "qid": "02b9d549ce55f93ac5e3abeb94b3553a",
+      "required_urls": 2
+    },
+    {
+      "incomplete_image_urls": [],
+      "missing_pdf_urls": [],
+      "qid": "03def0a2b0c43fc1777f03321b151b74",
+      "required_urls": 2
+    },
+    {
+      "incomplete_image_urls": [],
+      "missing_pdf_urls": [],
+      "qid": "06bc1d245498f3a0642b118b599cf1dd",
+      "required_urls": 2
+    },
+    {
+      "incomplete_image_urls": [],
+      "missing_pdf_urls": [],
+      "qid": "13c2a1185b4afbdb3ff93e673e6aa82a",
+      "required_urls": 2
+    },
+    {
+      "incomplete_image_urls": [],
+      "missing_pdf_urls": [],
+      "qid": "172ac97087bb92ca50b403a424a509c6",
+      "required_urls": 2
+    },
+    {
+      "incomplete_image_urls": [],
+      "missing_pdf_urls": [],
+      "qid": "1fb8350bf0c31954296712889c72635a",
+      "required_urls": 1
+    },
+    {
+      "incomplete_image_urls": [],
+      "missing_pdf_urls": [],
+      "qid": "20eeccd19adb6f739680f234c37314ed",
+      "required_urls": 2
+    },
+    {
+      "incomplete_image_urls": [],
+      "missing_pdf_urls": [],
+      "qid": "21a3594075157dbaaf7da17818192545",
+      "required_urls": 2
+    },
+    {
+      "incomplete_image_urls": [],
+      "missing_pdf_urls": [],
+      "qid": "299e684293fffb0f9dca76a1092c83f9",
+      "required_urls": 1
+    },
+    {
+      "incomplete_image_urls": [],
+      "missing_pdf_urls": [],
+      "qid": "29a94164b22263351cc79f515a5b8e8b",
+      "required_urls": 1
+    },
+    {
+      "incomplete_image_urls": [],
+      "missing_pdf_urls": [],
+      "qid": "2ace94d753add7415811a581c0d926ab",
+      "required_urls": 2
+    },
+    {
+      "incomplete_image_urls": [],
+      "missing_pdf_urls": [],
+      "qid": "2cd38c28acd439d9ae2e692bcd193b19",
+      "required_urls": 1
+    },
+    {
+      "incomplete_image_urls": [],
+      "missing_pdf_urls": [],
+      "qid": "365b34e9cb7444118c99eaef4da43fca",
+      "required_urls": 2
+    },
+    {
+      "incomplete_image_urls": [],
+      "missing_pdf_urls": [],
+      "qid": "3d1604090633d52b80305ba9462fd678",
+      "required_urls": 2
+    },
+    {
+      "incomplete_image_urls": [],
+      "missing_pdf_urls": [],
+      "qid": "424e731dec99fd3b36fb5ba2c59d1f16",
+      "required_urls": 2
+    },
+    {
+      "incomplete_image_urls": [],
+      "missing_pdf_urls": [],
+      "qid": "454a726486b3c8f44571833938ca7cf1",
+      "required_urls": 1
+    },
+    {
+      "incomplete_image_urls": [],
+      "missing_pdf_urls": [],
+      "qid": "4778c9f3b15c46c0f7cb8779c3ca4b1c",
+      "required_urls": 2
+    },
+    {
+      "incomplete_image_urls": [],
+      "missing_pdf_urls": [],
+      "qid": "4e54f543dbf46d64d45805209b73932b",
+      "required_urls": 1
+    },
+    {
+      "incomplete_image_urls": [],
+      "missing_pdf_urls": [],
+      "qid": "55a8521c8d80b20fab7ee5b766503643",
+      "required_urls": 2
+    },
+    {
+      "incomplete_image_urls": [],
+      "missing_pdf_urls": [],
+      "qid": "58665e1fc2c65c0aeb34292d5d2d4be7",
+      "required_urls": 1
+    },
+    {
+      "incomplete_image_urls": [],
+      "missing_pdf_urls": [],
+      "qid": "58c230238b7da1509064f8924522d0d0",
+      "required_urls": 2
+    },
+    {
+      "incomplete_image_urls": [],
+      "missing_pdf_urls": [],
+      "qid": "5ce3a2f7d444bacd9ff948a7097283fe",
+      "required_urls": 1
+    },
+    {
+      "incomplete_image_urls": [],
+      "missing_pdf_urls": [],
+      "qid": "63c77b00f520740f47db2debd3eb11e9",
+      "required_urls": 2
+    },
+    {
+      "incomplete_image_urls": [],
+      "missing_pdf_urls": [],
+      "qid": "6fa7d97e320c00a54b369558ad136224",
+      "required_urls": 4
+    },
+    {
+      "incomplete_image_urls": [],
+      "missing_pdf_urls": [],
+      "qid": "79c46102455f37942fcd1004316f547b",
+      "required_urls": 2
+    },
+    {
+      "incomplete_image_urls": [],
+      "missing_pdf_urls": [],
+      "qid": "7ba6264dfd4b7930f33c9ab5011d8619",
+      "required_urls": 2
+    },
+    {
+      "incomplete_image_urls": [],
+      "missing_pdf_urls": [],
+      "qid": "81088e10057564782ada42345f1b51bc",
+      "required_urls": 2
+    },
+    {
+      "incomplete_image_urls": [],
+      "missing_pdf_urls": [],
+      "qid": "9aa0dd5dd754fdc4a68eabc639a34f35",
+      "required_urls": 1
+    },
+    {
+      "incomplete_image_urls": [],
+      "missing_pdf_urls": [],
+      "qid": "a6cb73d18b79117f01e6d814c07a60f7",
+      "required_urls": 1
+    },
+    {
+      "incomplete_image_urls": [],
+      "missing_pdf_urls": [],
+      "qid": "a9b13ea4d008783e39b3cecc4faa2bfb",
+      "required_urls": 1
+    },
+    {
+      "incomplete_image_urls": [],
+      "missing_pdf_urls": [],
+      "qid": "a9b20789f331817da38816c812192916",
+      "required_urls": 2
+    },
+    {
+      "incomplete_image_urls": [],
+      "missing_pdf_urls": [],
+      "qid": "a9b78e851b400ad359d918e3b8111b9e",
+      "required_urls": 1
+    },
+    {
+      "incomplete_image_urls": [],
+      "missing_pdf_urls": [],
+      "qid": "ab10cadf36dffc54555f88b60e3bb872",
+      "required_urls": 1
+    },
+    {
+      "incomplete_image_urls": [],
+      "missing_pdf_urls": [],
+      "qid": "bb8047fd4f786699571458e9c823e3d6",
+      "required_urls": 1
+    },
+    {
+      "incomplete_image_urls": [],
+      "missing_pdf_urls": [],
+      "qid": "be0baecf90a40b1ba8230d9c771f75ca",
+      "required_urls": 1
+    },
+    {
+      "incomplete_image_urls": [],
+      "missing_pdf_urls": [],
+      "qid": "c465aacdd3cc5206159faf47beda45a6",
+      "required_urls": 1
+    },
+    {
+      "incomplete_image_urls": [],
+      "missing_pdf_urls": [],
+      "qid": "c7b77e93ded0bb2893ba2ea2ebd70a19",
+      "required_urls": 2
+    },
+    {
+      "incomplete_image_urls": [],
+      "missing_pdf_urls": [],
+      "qid": "c7f4813597ef22351158fb5d10871914",
+      "required_urls": 1
+    },
+    {
+      "incomplete_image_urls": [],
+      "missing_pdf_urls": [],
+      "qid": "cbc0c25821c0cbc971e85bf72c392650",
+      "required_urls": 1
+    },
+    {
+      "incomplete_image_urls": [],
+      "missing_pdf_urls": [],
+      "qid": "d088c84d89e29777cfa9dc280a2b4049",
+      "required_urls": 1
+    },
+    {
+      "incomplete_image_urls": [],
+      "missing_pdf_urls": [],
+      "qid": "d0b649f00bbaf8bfa76942d2b6cef64d",
+      "required_urls": 1
+    },
+    {
+      "incomplete_image_urls": [],
+      "missing_pdf_urls": [],
+      "qid": "d50ba0f57869f462efde83fc1d22a634",
+      "required_urls": 2
+    },
+    {
+      "incomplete_image_urls": [],
+      "missing_pdf_urls": [],
+      "qid": "d7abf11e4f64b4d59904422b17940dfc",
+      "required_urls": 1
+    },
+    {
+      "incomplete_image_urls": [],
+      "missing_pdf_urls": [],
+      "qid": "dab3aab85244cda2cdf7f19e932cc220",
+      "required_urls": 1
+    },
+    {
+      "incomplete_image_urls": [],
+      "missing_pdf_urls": [],
+      "qid": "dd920fa1a56fece13a4585ff36c7e016",
+      "required_urls": 2
+    },
+    {
+      "incomplete_image_urls": [],
+      "missing_pdf_urls": [],
+      "qid": "eb436f004ebafb0427bfab8c6466572c",
+      "required_urls": 2
+    },
+    {
+      "incomplete_image_urls": [],
+      "missing_pdf_urls": [],
+      "qid": "ee9320e184758afe302643832e4b0759",
+      "required_urls": 2
+    },
+    {
+      "incomplete_image_urls": [
+        "https://en.wikipedia.org/wiki/N'Djamena"
+      ],
+      "missing_pdf_urls": [],
+      "qid": "f32cf8a73a497551baac289e96ad0db8",
+      "required_urls": 2
+    },
+    {
+      "incomplete_image_urls": [],
+      "missing_pdf_urls": [],
+      "qid": "f7703b97595e6c85b989ce719c6bb279",
+      "required_urls": 2
+    },
+    {
+      "incomplete_image_urls": [],
+      "missing_pdf_urls": [],
+      "qid": "f96c4164e11a453e21346329ccad501b",
+      "required_urls": 7
+    }
+  ],
+  "questions": 50,
+  "questions_missing_pdf": 0,
+  "questions_with_incomplete_image_document": 1,
+  "requested_unique_urls": 288,
+  "status_counts": {
+    "image_load_incomplete": 8,
+    "ok": 280
+  }
+}

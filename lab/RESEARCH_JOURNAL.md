@@ -76,3 +76,8 @@ Mem-Gallery development oracle (10, clue-only version): EM .60, F1 .72045, offic
 - V2 development started with the documented image-search prompt and one verification turn within the same 15-loop budget.
 - Final PDF expansion attempted 108 URLs; initial HTTP 429 and missing image loads were retried serially before parsing. Collecting current source evidence does not imply that original gold figures survived.
 - Added paired bootstrap, exact McNemar, scenario-cluster bootstrap and per-question gain/loss exports. Failure buckets are evidence-delivery observations; metric disagreement requires manual review before calling a judge error.
+
+### Final document collection audit
+- Collected and hash-verified all 288 frozen URLs (4,093 pages): 280 image-load-clean, 8 flagged (7 reused development distractors and 1 new support document). None of the final 50 questions has a missing PDF; one has an image-load-incomplete support document.
+- The remaining new missing asset is the cathedral image on N'Djamena, which returned HTTP 403 both with and without its tracking query. This is recorded, not silently substituted. Gold-image visual matching remains pending.
+- All 108 new PDFs (1,400 pages) entered standard-tier parsing. Mem-Gallery B0 development is running alongside M3 V2 development; development timings are affected by concurrent work and must not be presented as isolated serving benchmarks.
