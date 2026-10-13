@@ -1,0 +1,147 @@
+{
+  "overall": {
+    "mean": 0.8166666666666667,
+    "scored_n": 10
+  },
+  "questions": [
+    {
+      "qid": "Architecture_Art_Culture_Exhibition_Technology:qa0006",
+      "image_candidate_recall": 0.5,
+      "gold_figure_ids": [
+        "Architecture_Art_Culture_Exhibition_Technology:D2:IMG_001",
+        "Architecture_Art_Culture_Exhibition_Technology:D2:IMG_002"
+      ],
+      "candidate_figure_ids": [
+        "Architecture_Art_Culture_Exhibition_Technology:D1:IMG_001",
+        "Architecture_Art_Culture_Exhibition_Technology:D1:IMG_002",
+        "Architecture_Art_Culture_Exhibition_Technology:D2:IMG_001",
+        "Architecture_Art_Culture_Exhibition_Technology:D2:IMG_003",
+        "Architecture_Art_Culture_Exhibition_Technology:D2:IMG_004"
+      ]
+    },
+    {
+      "qid": "Architecture_Art_Culture_Exhibition_Technology:qa0018",
+      "image_candidate_recall": 1.0,
+      "gold_figure_ids": [
+        "Architecture_Art_Culture_Exhibition_Technology:D3:IMG_001"
+      ],
+      "candidate_figure_ids": [
+        "Architecture_Art_Culture_Exhibition_Technology:D10:IMG_001",
+        "Architecture_Art_Culture_Exhibition_Technology:D11:IMG_002",
+        "Architecture_Art_Culture_Exhibition_Technology:D13:IMG_001",
+        "Architecture_Art_Culture_Exhibition_Technology:D3:IMG_001",
+        "Architecture_Art_Culture_Exhibition_Technology:D9:IMG_001"
+      ]
+    },
+    {
+      "qid": "Architecture_Art_Culture_Exhibition_Technology:qa0035",
+      "image_candidate_recall": 1.0,
+      "gold_figure_ids": [
+        "Architecture_Art_Culture_Exhibition_Technology:D7:IMG_001"
+      ],
+      "candidate_figure_ids": [
+        "Architecture_Art_Culture_Exhibition_Technology:D6:IMG_002",
+        "Architecture_Art_Culture_Exhibition_Technology:D6:IMG_004",
+        "Architecture_Art_Culture_Exhibition_Technology:D6:IMG_006",
+        "Architecture_Art_Culture_Exhibition_Technology:D7:IMG_001",
+        "Architecture_Art_Culture_Exhibition_Technology:D8:IMG_004"
+      ]
+    },
+    {
+      "qid": "Architecture_Art_Culture_Exhibition_Technology:qa0068",
+      "image_candidate_recall": 1.0,
+      "gold_figure_ids": [
+        "Architecture_Art_Culture_Exhibition_Technology:D13:IMG_001"
+      ],
+      "candidate_figure_ids": [
+        "Architecture_Art_Culture_Exhibition_Technology:D12:IMG_002",
+        "Architecture_Art_Culture_Exhibition_Technology:D13:IMG_001",
+        "Architecture_Art_Culture_Exhibition_Technology:D3:IMG_001",
+        "Architecture_Art_Culture_Exhibition_Technology:D3:IMG_002",
+        "Architecture_Art_Culture_Exhibition_Technology:D9:IMG_002"
+      ]
+    },
+    {
+      "qid": "Dog_Behavior_Research_Academic_Life:qa0000",
+      "image_candidate_recall": 1.0,
+      "gold_figure_ids": [
+        "Dog_Behavior_Research_Academic_Life:D1:IMG_001",
+        "Dog_Behavior_Research_Academic_Life:D1:IMG_002"
+      ],
+      "candidate_figure_ids": [
+        "Dog_Behavior_Research_Academic_Life:D1:IMG_001",
+        "Dog_Behavior_Research_Academic_Life:D1:IMG_002",
+        "Dog_Behavior_Research_Academic_Life:D2:IMG_004",
+        "Dog_Behavior_Research_Academic_Life:D3:IMG_002",
+        "Dog_Behavior_Research_Academic_Life:D5:IMG_003"
+      ]
+    },
+    {
+      "qid": "Dog_Behavior_Research_Academic_Life:qa0002",
+      "image_candidate_recall": 1.0,
+      "gold_figure_ids": [
+        "Dog_Behavior_Research_Academic_Life:D1:IMG_001",
+        "Dog_Behavior_Research_Academic_Life:D1:IMG_002"
+      ],
+      "candidate_figure_ids": [
+        "Dog_Behavior_Research_Academic_Life:D1:IMG_001",
+        "Dog_Behavior_Research_Academic_Life:D1:IMG_002",
+        "Dog_Behavior_Research_Academic_Life:D2:IMG_004",
+        "Dog_Behavior_Research_Academic_Life:D3:IMG_002",
+        "Dog_Behavior_Research_Academic_Life:D5:IMG_003"
+      ]
+    },
+    {
+      "qid": "Dog_Behavior_Research_Academic_Life:qa0012",
+      "image_candidate_recall": 0.6666666666666666,
+      "gold_figure_ids": [
+        "Dog_Behavior_Research_Academic_Life:D2:IMG_001",
+        "Dog_Behavior_Research_Academic_Life:D2:IMG_002",
+        "Dog_Behavior_Research_Academic_Life:D2:IMG_005"
+      ],
+      "candidate_figure_ids": [
+        "Dog_Behavior_Research_Academic_Life:D2:IMG_002",
+        "Dog_Behavior_Research_Academic_Life:D2:IMG_004",
+        "Dog_Behavior_Research_Academic_Life:D2:IMG_005",
+        "Dog_Behavior_Research_Academic_Life:D3:IMG_002",
+        "Dog_Behavior_Research_Academic_Life:D5:IMG_003"
+      ]
+    },
+    {
+      "qid": "Dog_Behavior_Research_Academic_Life:qa0017",
+      "image_candidate_recall": 1.0,
+      "gold_figure_ids": [
+        "Dog_Behavior_Research_Academic_Life:D3:IMG_001"
+      ],
+      "candidate_figure_ids": [
+        "Dog_Behavior_Research_Academic_Life:D2:IMG_001",
+        "Dog_Behavior_Research_Academic_Life:D2:IMG_005",
+        "Dog_Behavior_Research_Academic_Life:D3:IMG_001",
+        "Dog_Behavior_Research_Academic_Life:D3:IMG_002",
+        "Dog_Behavior_Research_Academic_Life:D5:IMG_001"
+      ]
+    },
+    {
+      "qid": "Dog_Behavior_Research_Academic_Life:qa0029",
+      "image_candidate_recall": 1.0,
+      "gold_figure_ids": [
+        "Dog_Behavior_Research_Academic_Life:D6:IMG_001"
+      ],
+      "candidate_figure_ids": [
+        "Dog_Behavior_Research_Academic_Life:D6:IMG_001"
+      ]
+    },
+    {
+      "qid": "Dog_Behavior_Research_Academic_Life:qa0033",
+      "image_candidate_recall": 0.0,
+      "gold_figure_ids": [
+        "Dog_Behavior_Research_Academic_Life:D7:IMG_001"
+      ],
+      "candidate_figure_ids": [
+        "Dog_Behavior_Research_Academic_Life:D2:IMG_002",
+        "Dog_Behavior_Research_Academic_Life:D2:IMG_004",
+        "Dog_Behavior_Research_Academic_Life:D2:IMG_005"
+      ]
+    }
+  ]
+}

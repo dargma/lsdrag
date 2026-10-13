@@ -1,0 +1,38 @@
+{
+  "arm": "G1",
+  "benchmark": "memgallery",
+  "code_revision": "87c257061b533010686f9072a242c3c5f61fd9e6",
+  "config": {
+    "base_url": "http://127.0.0.1:8102/v1",
+    "context_limit": 32768,
+    "image_soft_tokens": 1120,
+    "max_images": 8,
+    "max_loops": 8,
+    "max_output_tokens": 1024,
+    "model": "gemma-reader",
+    "seed": 20261013,
+    "timeout_seconds": 240
+  },
+  "corpus_sha256": "39e7f7432d4bcde3783fc971337abf4a44868bc936b42aa0c09ec10995d9c409",
+  "index_manifests": {
+    "gemma_image": "c36a148e1df77af6c1668e5554e64337c3e81acf2b4adb8f336b7ff53228e19f",
+    "gemma_text": "0d39e2614c92dcd22e9b051967f91755765fca6a4e0a3d74658b3d0ae58b72c9"
+  },
+  "iteration_budget_semantics": "A-RAG agent iterations; forced final answer outside iteration budget; no independent Reader-call limit",
+  "prompt_sha256": "60260706cba5a39697a4ed1fb085fc8a6370e422d0f2eaab873f333c2d08b3cc",
+  "question_ids": [
+    "Architecture_Art_Culture_Exhibition_Technology:qa0006",
+    "Architecture_Art_Culture_Exhibition_Technology:qa0018",
+    "Architecture_Art_Culture_Exhibition_Technology:qa0035",
+    "Architecture_Art_Culture_Exhibition_Technology:qa0068",
+    "Dog_Behavior_Research_Academic_Life:qa0000",
+    "Dog_Behavior_Research_Academic_Life:qa0002",
+    "Dog_Behavior_Research_Academic_Life:qa0012",
+    "Dog_Behavior_Research_Academic_Life:qa0017",
+    "Dog_Behavior_Research_Academic_Life:qa0029",
+    "Dog_Behavior_Research_Academic_Life:qa0033"
+  ],
+  "question_image_hashes": {},
+  "question_image_policy": "text-only",
+  "questions_sha256": "59010622a78d5123ed33a4d7f78b4c9be58daa6edd5f6357cb0cbfa410f4eec1"
+}

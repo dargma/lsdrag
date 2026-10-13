@@ -118,3 +118,9 @@ Replace mixed Qwen/Google V1/V2 comparisons with B0 Qwen-text, C1 Google-text, G
 
 ### Correct max-iteration semantics to match upstream A-RAG
 User clarified that only A-RAG max iteration is eight, with no independent Reader VLM call cap. Verified pinned upstream agent/base.py: eight tool-enabled iterations, then separate forced final answer if needed. Stopped and invalidated partial three_arm_iter8_textquery runs. New three_arm_arag8_textquery runs use the corrected semantics and log agent loops separately from reader_call_count.
+
+### Corrected three-arm comparison complete (2026-10-13)
+- Completed and scored M3 50 + Mem-Gallery 10 questions per arm, once each, with eight A-RAG iterations and no independent Reader-call cap. All six runs backed up. Identical per-benchmark question/corpus/prompt/config manifests verified.
+- Qwen / Google text / Google multimodal EM: M3 0/2/4%; Mem-Gallery 20/20/30%. Image candidate recall: M3 9.1/9.1/81.8%; Mem-Gallery 53.3/48.3/81.7%. Delivery recall: M3 6.1/6.1/27.3%; Mem-Gallery 43.3/48.3/78.3%.
+- Updated seven-section report with recall denominators and paired uncertainty. Overall answer improvement remains uncertain; no success-only illustrated showcase or repeated question solves.
+- Stopped our Reader GPU server at user request. Subsequent expansion to at least 200 questions is authorized only after 20 continuous GPU-idle minutes; no expansion launched by this report update.

@@ -1,0 +1,296 @@
+{
+  "arm": "C1",
+  "by_task_and_question_image": {
+    "VR+question_image": {
+      "all_clues_read": {
+        "mean": 0.0,
+        "scored_n": 4
+      },
+      "bleu1": {
+        "mean": 0.04166666666666667,
+        "scored_n": 4
+      },
+      "bleu2": {
+        "mean": 0.014433756729740645,
+        "scored_n": 4
+      },
+      "bleu4": {
+        "mean": 0.010206207261596576,
+        "scored_n": 4
+      },
+      "clue_read_recall": {
+        "mean": 0.1875,
+        "scored_n": 4
+      },
+      "completion_tokens": {
+        "mean": 403.75,
+        "scored_n": 4
+      },
+      "em": {
+        "mean": 0.0,
+        "scored_n": 4
+      },
+      "evidence_tokens": {
+        "mean": 848.0,
+        "scored_n": 4
+      },
+      "f1": {
+        "mean": 0.05555555555555555,
+        "scored_n": 4
+      },
+      "image_delivery_recall": {
+        "mean": 0.3333333333333333,
+        "scored_n": 4
+      },
+      "llm_judge_official": {
+        "mean": 0.25,
+        "scored_n": 4
+      },
+      "llm_judge_rubric_raw": {
+        "mean": 0.125,
+        "scored_n": 4
+      },
+      "loops": {
+        "mean": 4.0,
+        "scored_n": 4
+      },
+      "n": 4,
+      "prompt_tokens": {
+        "mean": 9307.5,
+        "scored_n": 4
+      },
+      "search_tokens": {
+        "mean": 839.0,
+        "scored_n": 4
+      },
+      "seconds": {
+        "mean": 9.284405482500006,
+        "scored_n": 4
+      },
+      "unique_delivered_images": {
+        "mean": 2.75,
+        "scored_n": 4
+      }
+    },
+    "VR+text_question": {
+      "all_clues_read": {
+        "mean": 0.0,
+        "scored_n": 1
+      },
+      "bleu1": {
+        "mean": 0.34590760585945257,
+        "scored_n": 1
+      },
+      "bleu2": {
+        "mean": 0.2930939295559647,
+        "scored_n": 1
+      },
+      "bleu4": {
+        "mean": 0.2245774725976927,
+        "scored_n": 1
+      },
+      "clue_read_recall": {
+        "mean": 0.5,
+        "scored_n": 1
+      },
+      "completion_tokens": {
+        "mean": 157.0,
+        "scored_n": 1
+      },
+      "em": {
+        "mean": 0.0,
+        "scored_n": 1
+      },
+      "evidence_tokens": {
+        "mean": 205.0,
+        "scored_n": 1
+      },
+      "f1": {
+        "mean": 0.3870967741935484,
+        "scored_n": 1
+      },
+      "image_delivery_recall": {
+        "mean": 0.0,
+        "scored_n": 1
+      },
+      "llm_judge_official": {
+        "mean": 1.0,
+        "scored_n": 1
+      },
+      "llm_judge_rubric_raw": {
+        "mean": 1.0,
+        "scored_n": 1
+      },
+      "loops": {
+        "mean": 3.0,
+        "scored_n": 1
+      },
+      "n": 1,
+      "prompt_tokens": {
+        "mean": 3175.0,
+        "scored_n": 1
+      },
+      "search_tokens": {
+        "mean": 389.0,
+        "scored_n": 1
+      },
+      "seconds": {
+        "mean": 3.1914223510002557,
+        "scored_n": 1
+      },
+      "unique_delivered_images": {
+        "mean": 0.0,
+        "scored_n": 1
+      }
+    },
+    "VS+text_question": {
+      "all_clues_read": {
+        "mean": 0.8,
+        "scored_n": 5
+      },
+      "bleu1": {
+        "mean": 0.6333333333333333,
+        "scored_n": 5
+      },
+      "bleu2": {
+        "mean": 0.6049127729379167,
+        "scored_n": 5
+      },
+      "bleu4": {
+        "mean": 0.21495764478296273,
+        "scored_n": 5
+      },
+      "clue_read_recall": {
+        "mean": 0.8,
+        "scored_n": 5
+      },
+      "completion_tokens": {
+        "mean": 219.8,
+        "scored_n": 5
+      },
+      "em": {
+        "mean": 0.4,
+        "scored_n": 5
+      },
+      "evidence_tokens": {
+        "mean": 544.2,
+        "scored_n": 5
+      },
+      "f1": {
+        "mean": 0.68,
+        "scored_n": 5
+      },
+      "image_delivery_recall": {
+        "mean": 0.7,
+        "scored_n": 5
+      },
+      "llm_judge_official": {
+        "mean": 0.7,
+        "scored_n": 5
+      },
+      "llm_judge_rubric_raw": {
+        "mean": 0.65,
+        "scored_n": 5
+      },
+      "loops": {
+        "mean": 3.2,
+        "scored_n": 5
+      },
+      "n": 5,
+      "prompt_tokens": {
+        "mean": 6187.4,
+        "scored_n": 5
+      },
+      "search_tokens": {
+        "mean": 476.6,
+        "scored_n": 5
+      },
+      "seconds": {
+        "mean": 4.952305570799945,
+        "scored_n": 5
+      },
+      "unique_delivered_images": {
+        "mean": 1.8,
+        "scored_n": 5
+      }
+    }
+  },
+  "gold_sha256": "5e94c85009c5f2719fc030221eef87c595baac91c4cb70de733306b58ad7cf28",
+  "metric_scale": "0–1 except counts/time/tokens",
+  "official_judge": "official parser collapses five-level rubric to 0/.5/1; raw rubric scores also retained",
+  "overall": {
+    "all_clues_read": {
+      "mean": 0.4,
+      "scored_n": 10
+    },
+    "bleu1": {
+      "mean": 0.3679240939192786,
+      "scored_n": 10
+    },
+    "bleu2": {
+      "mean": 0.3375392821164511,
+      "scored_n": 10
+    },
+    "bleu4": {
+      "mean": 0.13401905255588928,
+      "scored_n": 10
+    },
+    "clue_read_recall": {
+      "mean": 0.525,
+      "scored_n": 10
+    },
+    "completion_tokens": {
+      "mean": 287.1,
+      "scored_n": 10
+    },
+    "em": {
+      "mean": 0.2,
+      "scored_n": 10
+    },
+    "evidence_tokens": {
+      "mean": 631.8,
+      "scored_n": 10
+    },
+    "f1": {
+      "mean": 0.40093189964157705,
+      "scored_n": 10
+    },
+    "image_delivery_recall": {
+      "mean": 0.4833333333333333,
+      "scored_n": 10
+    },
+    "llm_judge_official": {
+      "mean": 0.55,
+      "scored_n": 10
+    },
+    "llm_judge_rubric_raw": {
+      "mean": 0.475,
+      "scored_n": 10
+    },
+    "loops": {
+      "mean": 3.5,
+      "scored_n": 10
+    },
+    "n": 10,
+    "prompt_tokens": {
+      "mean": 7134.2,
+      "scored_n": 10
+    },
+    "search_tokens": {
+      "mean": 612.8,
+      "scored_n": 10
+    },
+    "seconds": {
+      "mean": 6.5090572135,
+      "scored_n": 10
+    },
+    "unique_delivered_images": {
+      "mean": 2.0,
+      "scored_n": 10
+    }
+  },
+  "question_image_policy": "text-only",
+  "run_manifest_sha256": "b2a14c508b8f733f4ee9e4d938613eb353990a1d9e4bef11bb8c30fcd902336b",
+  "subgroup_note": "question_has_image describes the original dataset annotation, not whether it was supplied; see question_image_provided",
+  "token_accounting": "search/evidence tokens use common tiktoken gpt-4o encoding; prompt/completion tokens are actual Reader API usage"
+}

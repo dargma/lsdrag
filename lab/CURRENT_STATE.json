@@ -1,21 +1,15 @@
 {
   "stage": "development_evaluation",
-  "status": "in_progress",
+  "status": "development_comparison_complete",
   "goal": "Compare Qwen text, Google text-only, and Google-only multimodal retrieval with identical VLM, tools and 8 A-RAG agent iterations, no independent Reader-call limit; Mem-Gallery text queries only; no oracle condition",
   "plan": "docs/EXPERIMENT_PLAN.md",
   "work_root": "/content/local_fast/lsdrag-work",
   "arag_revision": "a44de6b2216bf6791979c4b6ac4ae106212fa1a6",
-  "reader_model_finalized": false,
+  "reader_model_finalized": true,
   "evaluation_manifest_frozen": false,
   "pending_checks": [
-    "Finish development indexes and run all 50 development questions; V2 final verification controller is not yet validated",
-    "parser visual QC and gold-image matching",
-    "missing PDF/images remediation",
-    "gold page and figure mapping",
-    "IR and retrieval indexes",
-    "B0/V1/V2/C1 implementation and evaluation",
-    "Inspect official Mem-Gallery schema and evaluation code; select 25 VS + 25 VR without outcome-based selection",
-    "Run supplementary Mem-Gallery comparison and oracle-evidence Reader diagnostic separately from M3DocVQA"
+    "Expand to at least 200 questions only after 20 continuous GPU-idle minutes; reuse completed predictions, no repeated solves",
+    "Final corpus visual alignment review and final evaluation remain separate"
   ],
   "reader_candidate": "google/gemma-4-E4B-it",
   "model_weights_downloaded": true,
@@ -28,7 +22,7 @@
   "image_transport": "tool result then user image",
   "standard_parser_smoke_passed": true,
   "preflight_backup": "lab/reports/preflight_backup.json",
-  "implementation_status": "24 tests including composite index integrity; final benchmark runs not started",
+  "implementation_status": "28 tests passed; corrected three-arm development evaluation complete",
   "approved_evaluation_scope": {
     "m3docvqa_questions": 50,
     "mem_gallery_questions": 50,
@@ -86,30 +80,6 @@
     "gemma_image"
   ],
   "mem_gallery_selection": "lab/registry/mem_gallery_selection.json",
-  "completed_development_runs": {
-    "C1": {
-      "questions": 50,
-      "directory": "/content/local_fast/lsdrag-work/results/development_C1",
-      "score_status": "complete; EM=.02 F1=.044; developmental diagnostic only",
-      "summary": "lab/reports/development_C1_metrics.json"
-    },
-    "B0": {
-      "questions": 50,
-      "score_status": "complete; development only",
-      "summary": "lab/reports/development_B0_metrics.json"
-    },
-    "V1": {
-      "questions": 50,
-      "score_status": "complete; development only",
-      "summary": "lab/reports/development_V1_metrics.json"
-    },
-    "V2": {
-      "questions": 50,
-      "directory": "/content/local_fast/lsdrag-work/results/recovery_20261013/development_V2",
-      "summary": "lab/reports/development_V2_recovery_metrics.json",
-      "score_status": "complete; development only; EM .10 F1 .1366 LLM accuracy .14"
-    }
-  },
   "development_visual_mapping": {
     "reviewed_originals": 53,
     "verified_originals": 34,
@@ -120,6 +90,7 @@
   "final_collection_audit": "lab/reports/final_collection_audit.json",
   "mem_gallery_indexes_complete": [
     "qwen_text",
+    "gemma_text",
     "gemma_image"
   ],
   "mem_gallery_oracle_development_complete": "lab/reports/mem_gallery_development_oracle_complete.json",
@@ -147,16 +118,7 @@
       "log": "/content/local_fast/lsdrag-work/memgallery-development-B0.log"
     }
   },
-  "running_tasks": {
-    "reader_server": {
-      "port": 8102,
-      "log": "/content/local_fast/lsdrag-work/recovery/reader-restarted.log"
-    },
-    "parser_server": {
-      "port": 8101,
-      "log": "/content/local_fast/lsdrag-work/recovery/parser-memory-recovery.log"
-    }
-  },
+  "running_tasks": {},
   "recovery": {
     "date": "2026-10-13",
     "restored_code_revision": "7aaa4f0",
@@ -199,7 +161,49 @@
       "memgallery": 10
     },
     "output_root": "/content/local_fast/lsdrag-work/results/three_arm_arag8_textquery",
-    "status": "running",
-    "reader_call_limit": null
+    "status": "complete",
+    "reader_call_limit": null,
+    "summary": "lab/reports/INTERIM_REPORT.md",
+    "questions_per_arm": {
+      "m3docvqa": 50,
+      "memgallery": 10
+    },
+    "gpu_reader_stopped": true
+  },
+  "completed_legacy_development_runs": {
+    "C1": {
+      "questions": 50,
+      "directory": "/content/local_fast/lsdrag-work/results/development_C1",
+      "score_status": "complete; EM=.02 F1=.044; developmental diagnostic only",
+      "summary": "lab/reports/development_C1_metrics.json"
+    },
+    "B0": {
+      "questions": 50,
+      "score_status": "complete; development only",
+      "summary": "lab/reports/development_B0_metrics.json"
+    },
+    "V1": {
+      "questions": 50,
+      "score_status": "complete; development only",
+      "summary": "lab/reports/development_V1_metrics.json"
+    },
+    "V2": {
+      "questions": 50,
+      "directory": "/content/local_fast/lsdrag-work/results/recovery_20261013/development_V2",
+      "summary": "lab/reports/development_V2_recovery_metrics.json",
+      "score_status": "complete; development only; EM .10 F1 .1366 LLM accuracy .14"
+    }
+  },
+  "completed_development_runs": {
+    "m3docvqa": {
+      "B0": "lab/reports/three_arm_arag8/m3docvqa/B0_summary.json",
+      "C1": "lab/reports/three_arm_arag8/m3docvqa/C1_summary.json",
+      "G1": "lab/reports/three_arm_arag8/m3docvqa/G1_summary.json"
+    },
+    "memgallery": {
+      "B0": "lab/reports/three_arm_arag8/memgallery/B0_summary.json",
+      "C1": "lab/reports/three_arm_arag8/memgallery/C1_summary.json",
+      "G1": "lab/reports/three_arm_arag8/memgallery/G1_summary.json"
+    }
   }
 }
