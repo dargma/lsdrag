@@ -164,3 +164,7 @@ User clarified that only A-RAG max iteration is eight, with no independent Reade
 ## 2026-10-14 — Gemini Embedding 2 논문 리뷰
 
 사용자 지정 arXiv:2605.27295v1 원문 PDF·표를 확인하고 docs/GEMINI_EMBEDDING_2_PAPER_REVIEW.md에 구조·NCE/MRL·PFT/FT/soup·검색 결과·ablation·한계·A-RAG 적용 제안을 정리했다. 현재 측정한 EmbeddingGemma 2와 다른 모델임을 명시했다. API 계약은 2026-10-14 공식 문서로 별도 확인했다. Table 1/6 영상 기본값 차이, 이전 모델 평균 본문/표 차이, 합성 데이터 효과의 비교 기준도 기록했다. 모델 추론·API 요청·벤치마크 재실행 없이 문서만 추가했다.
+
+## 2026-10-14 — Gemini Embedding 2 수식 설명·LaTeX
+
+리뷰 §3–4를 보완했다. 토큰 표현·mean pooling·projection, 원문 식1의 입력/벡터 구분, cosine, NCE 분모·확률·손실, 온도, hard/in-batch negative, mask, MRL을 기호 표와 설명용 숫자 예시로 풀었다. 추가 미분·MRL 합은 유도/설명식임을 명시하고 예시 값을 실제 논문·Aria 결과와 구분했다. GitHub 지원 LaTeX inline/display 구문을 사용했다. MathJax로 display 수식16개·inline50개를 렌더링해 오류0, 숫자 계산과 1120/768px 폭 검증·스크린샷 확인 완료. 모델 추론 없음.
