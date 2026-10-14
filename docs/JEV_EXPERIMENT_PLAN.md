@@ -2,7 +2,7 @@
 
 2026-10-14 · **Astra 재검토 반영본** · 브랜치 `jev_v1.0`.
 
-**이번에는 두 조건만 비교한다: 원래 Gemma A-RAG vs 같은 Gemma에 행동 head를 붙인 A-RAG.** 데이터 수집도 하나의 경로와 하나의 보완책으로 제한한다. 현재 실행 현황은 [진행 보고](../lab/reports/jev_v1.0/PROGRESS.md)에 기록한다. 새 teacher 수집을 시작했고 HF text/image 동작 검증을 완료했다. 학습된 head의 비교 결과는 아직 없다.
+**이번에는 두 조건만 비교한다: 원래 Gemma A-RAG vs 같은 Gemma에 행동 head를 붙인 A-RAG.** 데이터 수집도 하나의 경로와 하나의 보완책으로 제한한다. 현재 실행 현황은 [진행 보고](../lab/reports/jev_v1.0/PROGRESS.md)에 기록한다. teacher 수집·head 학습·20문항×2 비교를 완료했다. 최종 수치는 진행 보고에 있으며 20문항 PoC의 한계를 함께 기록했다.
 
 ## 1. 목표와 고정 조건
 
@@ -113,6 +113,6 @@ $$
 
 Astra의 두 번째 검토는 **두 비교군 + 새 M3 20 holdout + 한 가지 데이터 fallback**으로 압축하는 안에 동의했다. 필요 검증은 데이터/이미지 QC, 최소 text/image 실행, 인자까지 포함한 실제 시간과 답변 품질이다.
 
-현재: teacher 수집 진행 중, HF text/image 동작 검증 완료. [진행 보고](../lab/reports/jev_v1.0/PROGRESS.md). 브랜치·자료 조사·기존 감사·새 분할·수집 순서·문서 검증 완료. [train82 기본 입력 QC](../lab/reports/jev_v1.0/train82_input_qc.json)에서 82개 질문의 입력 필드·support 문서와 이미지 필요 39개 문항의 추출 이미지 파일 존재를 확인했다. 정답 그림 crop의 의미 일치 검증과는 별개다. head 구현과 최소 GPU 실행을 마쳤으며 head 학습·40회 비교는 미실행이다. 라벨 충분성 확인 후 진행한다.
+현재: teacher 수집·HF text/image 검증·head 학습·20문항×2 비교 완료. [진행 보고](../lab/reports/jev_v1.0/PROGRESS.md). 브랜치·자료 조사·기존 감사·새 분할·수집 순서·문서 검증 완료. [train82 기본 입력 QC](../lab/reports/jev_v1.0/train82_input_qc.json)에서 82개 질문의 입력 필드·support 문서와 이미지 필요 39개 문항의 추출 이미지 파일 존재를 확인했다. 정답 그림 crop의 의미 일치 검증과는 별개다. 새 M3 82·MMQA 37·MultiHop-RAG 300문항 수집 후 성공 문항 45개로 라벨 기준을 충족했다. 197턴에서 head를 한 번 학습하고 평가 40회를 완료했다. GPU 사용을 종료했다.
 
 참조: [label 계획](../lab/registry/jev_v1.0/label_collection_plan.json) · [학습법](JEV_DECISION_MODEL_TRAINING_REVIEW.md) · [Astra RAG·memory 조사](JEV_MEMORY_RESEARCH_ASTRA.md) · [기존 Agent](../src/lsdrag/agent.py).

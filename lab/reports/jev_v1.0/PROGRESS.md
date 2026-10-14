@@ -2,17 +2,20 @@
 
 브랜치: `jev_v1.0` · 2026-10-14 UTC
 
-**두 번째 마일스톤: 새 M3 학습용 82문항 수집 완료. 성공 라벨이 부족해 예정한 MMQA 37문항을 보강한다. 학습된 head의 정확도·속도 비교 결과는 아직 없다.**
+**실험 완료: 같은 Gemma Reader의 행동 선택을 head로 바꾼 20문항 PoC에서 평균 전체 풀이 시간이 30.6% 줄었다(1.44배). EM은 1/20 → 2/20이었다. 작은 표본과 낮은 절대 정답률 때문에 정확도 향상을 확정하지 않는다. GPU 사용은 종료했다.**
 
-| 단계 | 현재 상태 | 근거 |
-|---|---|---|
-| 평가 분리 | 새 M3 20문항 잠금, 기존 test/dev 학습 제외 | [고정 계획](../../registry/jev_v1.0/label_collection_plan.json) |
-| M3 teacher | 새 train 82/82문항 완료; 각 문항 한 번 | 원래 Gemma A-RAG, EmbeddingGemma 2 텍스트+이미지 검색 |
-| 보강 후보 QC | MMQA train 37/37 통과·수집 완료 | [QC](mmqa_train_qc.json): URL·이미지 파일/hash 존재 확인. 정답 crop 의미 정렬 검증과는 별개 |
-| HF 동작 검증 | text/image 상태 각각 baseline + 임시 head 확인 | [실행 기록](hf_smoke.json) |
-| 코드 검증 | 관련 테스트 26개 통과 | 라벨·미래 출력 누출 방지·typed tool parser·원래 Agent |
-| head 학습 | 대기 | 성공 문항 ≥30, 각 행동 관측 성공 문항 ≥10 필요 |
-| 최종 비교 | 대기 | 새 M3 20문항 × B-HF/D-head, 각 조건 한 번 |
+| 조건 | 문항 | EM | F1 | 평균 전체 시간 | 중앙값 |
+|---|---:|---:|---:|---:|---:|
+| 기존 Gemma A-RAG (B-HF) | 20 | 5.0% (1개) | 9.9% | 7.273초 | 5.938초 |
+| 같은 Gemma + decision head (D-head) | 20 | 10.0% (2개) | 16.3% | 5.048초 | 4.555초 |
+
+동일 HF backend·동일 Gemma·동일 검색 인덱스·A-RAG iteration 8 조건이다. 각 문항/조건을 한 번씩 풀었다. 인자·prefix·검색·최종 답변·fallback 비용을 포함하며 관측 fallback은 0이었다. 한 문항이 오답→정답으로 바뀌었고 정답→오답 변화는 없었다. 이 20문항만으로 정확도 유지/개선의 통계적 결론이나 일반적인 속도 이득을 주장하지 않는다.
+
+새 M3 82 + MMQA 37 + MultiHop-RAG 300문항을 수집했고, 기존 train 성공 궤적도 재사용했다. 서로 다른 성공 문항 45개·46궤적에서 197턴으로 backbone을 동결하고 linear head만 한 번 학습했다. **텍스트 보완 자료를 섞어 학습한 head의 M3 전이 PoC**다. 속도 감소에는 행동 선택과 함께 툴/답변 prefix, 출력 길이·실제 탐색 경로 변화가 반영되므로 head 연산 자체의 효과로만 해석하지 않는다.
+
+[문항별 최종 결과·시간 분해](paired_summary.json) · [평가 고정 조건](paired_manifest.json) · [학습 출처/설정](head_training.json) · [성공 라벨 감사](pooled_label_audit.json). 원본 궤적과 head checkpoint는 Drive `outputs/jev_v1.0/`에 백업했다.
+
+아래는 각 단계의 중간 기록이다.
 
 ## 확인한 동작
 
