@@ -1,0 +1,70 @@
+{
+  "answers": [
+    {
+      "answer": "No",
+      "image_instances": [],
+      "modality": "text",
+      "table_indices": [],
+      "text_instances": [],
+      "type": "yesno"
+    }
+  ],
+  "metadata": {
+    "image_doc_ids": [
+      "3532c34a8bd1c4785f39fbba327d440d",
+      "bba8f355d1aac6f8f47a3fb69e0dcdd2",
+      "fe2aa2344c27430778126b7652af753e",
+      "a6f3d19a086d40a83234a3509a608155",
+      "6326930bdc1a00e86c6fb3c37a8dcd06",
+      "5560edb3e053c3bbed1d5420de853898",
+      "f54928edef3139784f28b912b43dbc21",
+      "baf483999ca4fba7e1d151c859cb378e",
+      "4561331394739605640edfe16e0abc35",
+      "7a0ffe72f46529efefcc7b0eba2e3ddc",
+      "fbb1b9f13e8f3c7fb2b46cf2f63861c0",
+      "7188181c81a5506b14dbe12b060edb4e",
+      "02efa5d8259fe1a0b0120c970586cf8d",
+      "25cca403f11e4f81499c4712873cf90f"
+    ],
+    "intermediate_answers": [],
+    "modalities": [
+      "table"
+    ],
+    "pseudo_language_question": "In [Filmography  |  Film] of [Kerry Condon], was [Bad Samaritan (film)]  the [Title](s) when the [Role] was [Olivia Evans]?",
+    "rephrasing_meta": {
+      "accuracy": 1.0,
+      "confidence": 0.9977521834440827,
+      "edit_distance": 0.8516746411483254
+    },
+    "table_id": "55296a438f6104414645d72f45a08b2e",
+    "text_doc_ids": [
+      "bcd3f1e76d8a08012ad8e3572bd66a2c",
+      "3d43f1e43155d1c20fd8a70861640977",
+      "9d093cb1a27cf64b67d2193e2ae1feb8",
+      "425c7f49dc7700c37cd49583422b9cfb",
+      "f097a127e68eea0b12a296b746867b3a",
+      "14066914e5e58054e1f872b53b811dea",
+      "87985bb1c61ca5adbe035bc54dabc69d",
+      "6f2eba030426679f3d637e8d77350619",
+      "e72f277164a37ad8be708e87db186345",
+      "d44d3fd2f034c32c6b2a0b4b00b9681d"
+    ],
+    "type": "TableQ",
+    "wiki_entities_in_answers": [],
+    "wiki_entities_in_question": [
+      {
+        "text": "Bad Samaritan",
+        "url": "https://en.wikipedia.org/wiki/Bad_Samaritan_(film)",
+        "wiki_title": "Bad Samaritan (film)"
+      }
+    ]
+  },
+  "qid": "6068540027afe0ca92d9386391bf0889",
+  "question": "Is Bad Samaritan the title of the film in which the role of Olivia Evans is played by Kerry Condon?",
+  "supporting_context": [
+    {
+      "doc_id": "55296a438f6104414645d72f45a08b2e",
+      "doc_part": "table"
+    }
+  ]
+}

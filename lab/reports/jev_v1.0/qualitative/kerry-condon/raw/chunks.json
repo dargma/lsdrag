@@ -1,0 +1,124 @@
+[
+  {
+    "bbox": [
+      0.075,
+      0.092,
+      0.284,
+      0.121
+    ],
+    "chunk_id": "55296a438f6104414645d72f45a08b2e:p0:b3:s0",
+    "document_id": "55296a438f6104414645d72f45a08b2e",
+    "document_ids": [
+      "55296a438f6104414645d72f45a08b2e"
+    ],
+    "figure_ids": [],
+    "id": "55296a438f6104414645d72f45a08b2e:p0:b3:s0",
+    "kind": "text",
+    "next_chunk_id": "55296a438f6104414645d72f45a08b2e:p0:b4:s0",
+    "oversized_unit": false,
+    "page_index": 0,
+    "previous_chunk_id": null,
+    "source_block_index": 3,
+    "text": "Kerry Condon\nKerry Condon",
+    "title": "Kerry Condon",
+    "url": "https://en.wikipedia.org/wiki/Kerry_Condon"
+  },
+  {
+    "bbox": [
+      0.024,
+      0.204,
+      0.564,
+      0.374
+    ],
+    "chunk_id": "55296a438f6104414645d72f45a08b2e:p0:b7:s0",
+    "document_id": "55296a438f6104414645d72f45a08b2e",
+    "document_ids": [
+      "55296a438f6104414645d72f45a08b2e"
+    ],
+    "figure_ids": [],
+    "id": "55296a438f6104414645d72f45a08b2e:p0:b7:s0",
+    "kind": "text",
+    "next_chunk_id": "55296a438f6104414645d72f45a08b2e:p0:b8:s0",
+    "oversized_unit": false,
+    "page_index": 0,
+    "previous_chunk_id": "55296a438f6104414645d72f45a08b2e:p0:b6:s0",
+    "source_block_index": 7,
+    "text": "Kerry Condon\n**Kerry Condon** (born 9 January 1983) is an Irish actress. She was the youngest actress to play [Ophelia](https://en.wikipedia.org/wiki/Ophelia) in a [Royal Shakespeare Company](https://en.wikipedia.org/wiki/Royal_Shakespeare_Company) production of [Hamlet](https://en.wikipedia.org/wiki/Hamlet) (2001–2002).<sup>[1]</sup> She played [Octavia of the Julii](https://en.wikipedia.org/wiki/Octavia_of_the_Julii) in [Rome](https://en.wikipedia.org/wiki/Rome_%28TV_series%29) (2005–2007),<sup>[2][3]</sup> [Stacey Ehrmantraut](https://en.wikipedia.org/wiki/Stacey_Ehrmantraut) in [Better Call Saul](https://en.wikipedia.org/wiki/Better_Call_Saul) (2015–2022), and is the voice of the [artificial intelligence](https://en.wikipedia.org/wiki/Artificial_intelligence) entity [F.R.I.D.A.Y.](https://en.wikipedia.org/wiki/F.R.I.D.A.Y.) in various films in the [Marvel Cinematic Universe](https://en.wikipedia.org/wiki/Marvel_Cinematic_Universe).",
+    "title": "Kerry Condon",
+    "url": "https://en.wikipedia.org/wiki/Kerry_Condon"
+  },
+  {
+    "bbox": [
+      0.625,
+      0.24,
+      0.934,
+      0.563
+    ],
+    "chunk_id": "55296a438f6104414645d72f45a08b2e:p0:b10:s0",
+    "document_id": "55296a438f6104414645d72f45a08b2e",
+    "document_ids": [
+      "55296a438f6104414645d72f45a08b2e"
+    ],
+    "figure_ids": [
+      "55296a438f6104414645d72f45a08b2e:p0:f10"
+    ],
+    "id": "55296a438f6104414645d72f45a08b2e:p0:b10:s0",
+    "kind": "image_caption",
+    "next_chunk_id": "55296a438f6104414645d72f45a08b2e:p0:b11:s0",
+    "oversized_unit": false,
+    "page_index": 0,
+    "previous_chunk_id": "55296a438f6104414645d72f45a08b2e:p0:b9:s0",
+    "source_block_index": 10,
+    "text": "Kerry Condon\nKerry Condon\nCondon in 2022",
+    "title": "Kerry Condon",
+    "url": "https://en.wikipedia.org/wiki/Kerry_Condon"
+  },
+  {
+    "bbox": [
+      0.026,
+      0.0,
+      0.791,
+      0.6
+    ],
+    "chunk_id": "55296a438f6104414645d72f45a08b2e:p2:b0:s0",
+    "document_id": "55296a438f6104414645d72f45a08b2e",
+    "document_ids": [
+      "55296a438f6104414645d72f45a08b2e"
+    ],
+    "figure_ids": [],
+    "id": "55296a438f6104414645d72f45a08b2e:p2:b0:s0",
+    "kind": "table",
+    "next_chunk_id": "55296a438f6104414645d72f45a08b2e:p2:b1:s0",
+    "oversized_unit": false,
+    "page_index": 2,
+    "previous_chunk_id": "55296a438f6104414645d72f45a08b2e:p1:b8:s0",
+    "source_block_index": 0,
+    "text": "Kerry Condon\n<table><tbody><tr><td>2009</td><td>The Last Station</td><td>Masha</td><td></td></tr><tr><td rowspan=\"2\">2011</td><td>This Must Be the Place</td><td>Rachel</td><td></td></tr><tr><td>The Shore</td><td>Pat</td><td>Short film</td></tr><tr><td>2013</td><td>Dom Hemingway</td><td>Melody</td><td></td></tr><tr><td>2014</td><td>Gold</td><td>Alice</td><td></td></tr><tr><td>2015</td><td>Avengers: Age of Ultron</td><td rowspan=\"3\">F.R.I.D.A.Y. (voice)</td><td></td></tr><tr><td>2016</td><td>Captain America: Civil War</td><td></td></tr><tr><td rowspan=\"2\">2017</td><td>Spider-Man: Homecoming</td><td></td></tr><tr><td>Three Billboards Outside Ebbing, Missouri</td><td>Pamela</td><td></td></tr><tr><td rowspan=\"2\">2018</td><td>Bad Samaritan</td><td>Katie Hopgood</td><td></td></tr><tr><td>Avengers: Infinity War</td><td rowspan=\"2\">F.R.I.D.A.Y. (voice)</td><td></td></tr><tr><td rowspan=\"2\">2019</td><td>Avengers: Endgame</td><td></td></tr><tr><td>Dreamland</td><td>Olivia Evans</td><td></td></tr><tr><td>2022</td><td>The Banshees of Inisherin</td><td>Siobhán Súilleabháin</td><td></td></tr><tr><td>2023</td><td>In the Land of Saints and Sinners</td><td>Doireann McCann</td><td></td></tr><tr><td>2024</td><td>Night Swim</td><td>Eve Waller</td><td></td></tr><tr><td rowspan=\"2\">2025</td><td>Train Dreams</td><td>Claire Thompson</td><td></td></tr><tr><td>F1</td><td>Kate McKenna</td><td></td></tr><tr><td>2026</td><td>Pressure</td><td>Kay Summersby</td><td></td></tr></tbody></table>",
+    "title": "Kerry Condon",
+    "url": "https://en.wikipedia.org/wiki/Kerry_Condon"
+  },
+  {
+    "bbox": [
+      0.061,
+      0.912,
+      0.974,
+      0.952
+    ],
+    "chunk_id": "55296a438f6104414645d72f45a08b2e:p5:b6:s0",
+    "document_id": "55296a438f6104414645d72f45a08b2e",
+    "document_ids": [
+      "55296a438f6104414645d72f45a08b2e"
+    ],
+    "figure_ids": [],
+    "id": "55296a438f6104414645d72f45a08b2e:p5:b6:s0",
+    "kind": "text",
+    "next_chunk_id": "55296a438f6104414645d72f45a08b2e:p5:b7:s0",
+    "oversized_unit": false,
+    "page_index": 5,
+    "previous_chunk_id": "55296a438f6104414645d72f45a08b2e:p5:b5:s0",
+    "source_block_index": 6,
+    "text": "Kerry Condon\n1. ^ Canfield, David (13 September 2022). [\"Kerry Condon Arrives, Brilliantly, in The Banshees of Inisherin\"](https://www.vanityfair.com/hollywood/2022/09/kerry-condon-banshees-of-inisherin-profile-awards-insider) . [Vanity Fair](https://en.wikipedia.org/wiki/Vanity_Fair_%28magazine%29). [Archived](https://web.archive.org/web/20220927085641/https://www.vanityfair.com/hollywood/2022/09/kerry-condon-banshees-of-inisherin-profile-awards-insider) from the original on 27 September 2022. Retrieved 17 December 2022.",
+    "title": "Kerry Condon",
+    "url": "https://en.wikipedia.org/wiki/Kerry_Condon"
+  }
+]

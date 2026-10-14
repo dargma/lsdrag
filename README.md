@@ -23,8 +23,11 @@ M3DocVQA 100문항과 Mem-Gallery 100문항(VS 50·VR 50)으로 멀티모달 A-R
 
 ## jev_v1.0 연구 브랜치
 
-기존 로컬 Gemma 4 E4B-it에 decision head를 붙이는 연구다. 외부 decision API는 사용하지 않는다. 현재는 계획·기존 로그 감사 단계이며 새 학습·속도 개선 결과는 없다.
+기존 로컬 Gemma 4 E4B-it에 decision head를 붙이는 연구다. 외부 decision API는 사용하지 않는다. 20문항 PoC의 학습·평가를 완료했다. 평균 시간은30.6% 감소했지만, 유일한 EM 개선 사례는 기존 답도 의미상 맞았던 출력 형식 차이였다. 추론 정확도 개선이나 head 일반화는 확정하지 않는다.
 
+- [완료된 PoC 결과](lab/reports/jev_v1.0/PROGRESS.md)
+- [한 문항 상세 비교: 모델·행동·근거·시간·원본 이미지](lab/reports/jev_v1.0/qualitative/kerry-condon/README.md)
+- [head 학습·가중치·과적합 가능성 점검](lab/reports/jev_v1.0/HEAD_TRAINING_AUDIT.md)
 - [실험 계획과 Astra 재검토: 두 조건만 비교](docs/JEV_EXPERIMENT_PLAN.md)
 - [라벨 자료 검토: M3 우선·MultiHop-RAG 단일 보완](docs/JEV_LABEL_DATASET_REVIEW.md)
 - [기여 가설: 속도·근거 탐색·기억 제어](docs/JEV_CONTRIBUTIONS.md)

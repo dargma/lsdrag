@@ -9,11 +9,13 @@
 | 기존 Gemma A-RAG (B-HF) | 20 | 5.0% (1개) | 9.9% | 7.273초 | 5.938초 |
 | 같은 Gemma + decision head (D-head) | 20 | 10.0% (2개) | 16.3% | 5.048초 | 4.555초 |
 
-동일 HF backend·동일 Gemma·동일 검색 인덱스·A-RAG iteration 8 조건이다. 각 문항/조건을 한 번씩 풀었다. 인자·prefix·검색·최종 답변·fallback 비용을 포함하며 관측 fallback은 0이었다. 한 문항이 오답→정답으로 바뀌었고 정답→오답 변화는 없었다. 이 20문항만으로 정확도 유지/개선의 통계적 결론이나 일반적인 속도 이득을 주장하지 않는다.
+동일 HF backend·동일 Gemma·동일 검색 인덱스·A-RAG iteration 8 조건이다. 각 문항/조건을 한 번씩 풀었다. 인자·prefix·검색·최종 답변·fallback 비용을 포함하며 관측 fallback은 0이었다. 한 문항의 EM 판정이0→1로 바뀌었고1→0 변화는 없었다. **상세 확인 결과 그 한 문항의 기존 답도 의미상 맞았으며, 긴 답변을 `No`로 정리한 형식 차이가 EM 개선 원인이었다.** 이 20문항만으로 정확도 유지/개선의 통계적 결론이나 일반적인 속도 이득을 주장하지 않는다.
 
 새 M3 82 + MMQA 37 + MultiHop-RAG 300문항을 수집했고, 기존 train 성공 궤적도 재사용했다. 서로 다른 성공 문항 45개·46궤적에서 197턴으로 backbone을 동결하고 linear head만 한 번 학습했다. **텍스트 보완 자료를 섞어 학습한 head의 M3 전이 PoC**다. 속도 감소에는 행동 선택과 함께 툴/답변 prefix, 출력 길이·실제 탐색 경로 변화가 반영되므로 head 연산 자체의 효과로만 해석하지 않는다.
 
 [문항별 최종 결과·시간 분해](paired_summary.json) · [평가 고정 조건](paired_manifest.json) · [학습 출처/설정](head_training.json) · [성공 라벨 감사](pooled_label_audit.json). 원본 궤적과 head checkpoint는 Drive `outputs/jev_v1.0/`에 백업했다.
+
+추가 기록: [한 문항 상세 정성평가·원본 데이터](qualitative/kerry-condon/README.md) · [head 학습·가중치 검증](HEAD_TRAINING_AUDIT.md). 같은 사례에서 시간은8.045→3.209초로 줄었지만 전체20문항의 호출 수는52→54회로 늘었다. 전체 평균 속도 변화를 호출 수 감소만으로 설명하지 않는다. 저장된 head의 학습 행동 일치율은197/197이나, 일반화·과적합 배제 근거는 부족하다.
 
 아래는 각 단계의 중간 기록이다.
 

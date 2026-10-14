@@ -1,0 +1,18 @@
+{
+  "document_id": "55296a438f6104414645d72f45a08b2e",
+  "document_ids": [
+    "55296a438f6104414645d72f45a08b2e"
+  ],
+  "pages": 10,
+  "parse_identity": {
+    "image_analysis": false,
+    "model": "mineru-2604",
+    "pages": "all",
+    "pdf_sha256": "d87e96f441a971e51ae6a3d69e281e61ab7302dc84c1d1b4f3faebb417a96e53",
+    "tier": "standard"
+  },
+  "parsed_sha256": "0171dc38d2b5a45230acdbac43a491fc0bcf512ad7f517d62bd447bc31c6bfff",
+  "parsed_source_id": "55296a438f6104414645d72f45a08b2e",
+  "title": "Kerry Condon",
+  "url": "https://en.wikipedia.org/wiki/Kerry_Condon"
+}

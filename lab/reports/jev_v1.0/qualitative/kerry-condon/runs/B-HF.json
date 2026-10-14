@@ -1,0 +1,268 @@
+{
+  "answer_format_valid": false,
+  "answer_json_recovered": true,
+  "answer_raw": "The table of filmography for Kerry Condon shows that she played the role of **Katie Hopgood** in the film **Bad Samaritan** (2018), not Olivia Evans.\n\nThe role of **Olivia Evans** was played by Kerry Condon in the film **Dreamland** (2019).\n\nTherefore, **Bad Samaritan** is not the title of the film in which Kerry Condon played the role of Olivia Evans.\n\n```json\n{\n  \"answers\": [\n    \"No, Bad Samaritan is not the title of the film in which Kerry Condon played the role of Olivia Evans.\"\n  ],\n  \"citations\": [\n    \"55296a438f6104414645d72f45a08b2e:p2:b0:s0\"\n  ],\n  \"reasoning\": \"The filmography table shows that Kerry Condon played Katie Hopgood in 'Bad Samaritan' (2018), while she played Olivia Evans in 'Dreamland' (2019).\"\n}\n```",
+  "answers": [
+    "No, Bad Samaritan is not the title of the film in which Kerry Condon played the role of Olivia Evans."
+  ],
+  "arm": "G1",
+  "citations": [
+    "55296a438f6104414645d72f45a08b2e:p2:b0:s0"
+  ],
+  "completion_tokens": 316,
+  "config": {
+    "base_url": "http://127.0.0.1:8102/v1",
+    "context_limit": 32768,
+    "image_delivery_policy": "search-linked",
+    "image_soft_tokens": 1120,
+    "max_images": 8,
+    "max_loops": 8,
+    "max_output_tokens": 1024,
+    "model": "gemma-reader",
+    "seed": 20261013,
+    "timeout_seconds": 240
+  },
+  "decision_arm": "B-HF",
+  "delivered_figure_ids": [
+    "55296a438f6104414645d72f45a08b2e:p0:f10"
+  ],
+  "errors": [],
+  "evidence_events": [
+    {
+      "action": "auto_read_search_images",
+      "chunk_ids": [
+        "55296a438f6104414645d72f45a08b2e:p0:b10:s0"
+      ],
+      "source_tool": "keyword_search"
+    },
+    {
+      "action": "read_chunk",
+      "chunk_ids": [
+        "55296a438f6104414645d72f45a08b2e:p0:b10:s0"
+      ]
+    },
+    {
+      "action": "reader_accepted_images",
+      "figure_ids": [
+        "55296a438f6104414645d72f45a08b2e:p0:f10"
+      ]
+    },
+    {
+      "action": "read_chunk",
+      "chunk_ids": [
+        "55296a438f6104414645d72f45a08b2e:p2:b0:s0"
+      ]
+    }
+  ],
+  "evidence_tokens": 730,
+  "loops": 3,
+  "opened_figure_ids": [
+    "55296a438f6104414645d72f45a08b2e:p0:f10"
+  ],
+  "pending_figure_ids": [],
+  "prompt_sha256": "7dd6eb09464d20c204599c17bb4683c142e069dfe9d274ad296a2d85eae24ff7",
+  "prompt_tokens": 7592,
+  "qid": "6068540027afe0ca92d9386391bf0889",
+  "question": "Is Bad Samaritan the title of the film in which the role of Olivia Evans is played by Kerry Condon?",
+  "question_image_count": 0,
+  "read_chunk_ids": [
+    "55296a438f6104414645d72f45a08b2e:p0:b10:s0",
+    "55296a438f6104414645d72f45a08b2e:p2:b0:s0"
+  ],
+  "reader_call_count": 3,
+  "reader_calls": [
+    {
+      "finish_reason": "stop",
+      "loop": 1,
+      "message": {
+        "content": null,
+        "role": "assistant",
+        "tool_calls": [
+          {
+            "function": {
+              "arguments": "{\"keywords\": [\"Olivia Evans\", \"Kerry Condon\"]}",
+              "name": "keyword_search"
+            },
+            "id": "call_0",
+            "type": "function"
+          }
+        ]
+      },
+      "new_figure_ids": [],
+      "seconds": 0.5316038730088621,
+      "usage": {
+        "action_probabilities": null,
+        "completion_tokens": 22,
+        "decode_seconds": 0.4799696060072165,
+        "forced_prefix_tokens": 0,
+        "generated_tokens": 22,
+        "head_seconds": 0.0,
+        "kv_reused": true,
+        "prefill_seconds": 0.04644761999952607,
+        "prefix_seconds": 0.0,
+        "prompt_tokens": 750,
+        "raw_native": "<|tool_call>call:keyword_search{keywords:[<|\"|>Olivia Evans<|\"|>,<|\"|>Kerry Condon<|\"|>]}<tool_call|><|tool_response>",
+        "reader_wall_seconds": 0.5315072730008978,
+        "selected_action": null
+      }
+    },
+    {
+      "finish_reason": "stop",
+      "loop": 2,
+      "message": {
+        "content": null,
+        "role": "assistant",
+        "tool_calls": [
+          {
+            "function": {
+              "arguments": "{\"chunk_ids\": [\"55296a438f6104414645d72f45a08b2e:p2:b0:s0\"]}",
+              "name": "read_chunk"
+            },
+            "id": "call_0",
+            "type": "function"
+          }
+        ]
+      },
+      "new_figure_ids": [
+        "55296a438f6104414645d72f45a08b2e:p0:f10"
+      ],
+      "seconds": 1.5577067349950084,
+      "usage": {
+        "action_probabilities": null,
+        "completion_tokens": 57,
+        "decode_seconds": 1.2824844480055617,
+        "forced_prefix_tokens": 0,
+        "generated_tokens": 57,
+        "head_seconds": 0.0,
+        "kv_reused": true,
+        "prefill_seconds": 0.2522361369919963,
+        "prefix_seconds": 0.0,
+        "prompt_tokens": 2969,
+        "raw_native": "<|tool_call>call:read_chunk{chunk_ids:[<|\"|>55296a438f6104414645d72f45a08b2e:p2:b0:s0<|\"|>]}<tool_call|><|tool_response>",
+        "reader_wall_seconds": 1.5575856350042159,
+        "selected_action": null
+      }
+    },
+    {
+      "finish_reason": "stop",
+      "loop": 3,
+      "message": {
+        "content": "The table of filmography for Kerry Condon shows that she played the role of **Katie Hopgood** in the film **Bad Samaritan** (2018), not Olivia Evans.\n\nThe role of **Olivia Evans** was played by Kerry Condon in the film **Dreamland** (2019).\n\nTherefore, **Bad Samaritan** is not the title of the film in which Kerry Condon played the role of Olivia Evans.\n\n```json\n{\n  \"answers\": [\n    \"No, Bad Samaritan is not the title of the film in which Kerry Condon played the role of Olivia Evans.\"\n  ],\n  \"citations\": [\n    \"55296a438f6104414645d72f45a08b2e:p2:b0:s0\"\n  ],\n  \"reasoning\": \"The filmography table shows that Kerry Condon played Katie Hopgood in 'Bad Samaritan' (2018), while she played Olivia Evans in 'Dreamland' (2019).\"\n}\n```",
+        "role": "assistant"
+      },
+      "new_figure_ids": [],
+      "seconds": 5.830646770002204,
+      "usage": {
+        "action_probabilities": null,
+        "completion_tokens": 237,
+        "decode_seconds": 5.482433025012142,
+        "forced_prefix_tokens": 0,
+        "generated_tokens": 237,
+        "head_seconds": 0.0,
+        "kv_reused": true,
+        "prefill_seconds": 0.3265267350070644,
+        "prefix_seconds": 0.0,
+        "prompt_tokens": 3873,
+        "raw_native": "The table of filmography for Kerry Condon shows that she played the role of **Katie Hopgood** in the film **Bad Samaritan** (2018), not Olivia Evans.\n\nThe role of **Olivia Evans** was played by Kerry Condon in the film **Dreamland** (2019).\n\nTherefore, **Bad Samaritan** is not the title of the film in which Kerry Condon played the role of Olivia Evans.\n\n```json\n{\n  \"answers\": [\n    \"No, Bad Samaritan is not the title of the film in which Kerry Condon played the role of Olivia Evans.\"\n  ],\n  \"citations\": [\n    \"55296a438f6104414645d72f45a08b2e:p2:b0:s0\"\n  ],\n  \"reasoning\": \"The filmography table shows that Kerry Condon played Katie Hopgood in 'Bad Samaritan' (2018), while she played Olivia Evans in 'Dreamland' (2019).\"\n}\n```<turn|>",
+        "reader_wall_seconds": 5.830564939999022,
+        "selected_action": null
+      }
+    }
+  ],
+  "reasoning": "The filmography table shows that Kerry Condon played Katie Hopgood in 'Bad Samaritan' (2018), while she played Olivia Evans in 'Dreamland' (2019).",
+  "search_tokens": 757,
+  "seconds": 8.04455913300626,
+  "status": "ok",
+  "stop_reason": null,
+  "trajectory": [
+    {
+      "arguments": {
+        "keywords": [
+          "Olivia Evans",
+          "Kerry Condon"
+        ]
+      },
+      "loop": 1,
+      "result": [
+        {
+          "auto_read": {
+            "chunk_id": "55296a438f6104414645d72f45a08b2e:p0:b10:s0",
+            "document_id": "55296a438f6104414645d72f45a08b2e",
+            "figures": [
+              {
+                "figure_id": "55296a438f6104414645d72f45a08b2e:p0:f10",
+                "status": "queued_for_reader"
+              }
+            ],
+            "kind": "image_caption",
+            "next_chunk_id": "55296a438f6104414645d72f45a08b2e:p0:b11:s0",
+            "page_index": 0,
+            "previous_chunk_id": "55296a438f6104414645d72f45a08b2e:p0:b9:s0",
+            "text": "Kerry Condon\nKerry Condon\nCondon in 2022"
+          },
+          "chunk_id": "55296a438f6104414645d72f45a08b2e:p0:b10:s0",
+          "document_id": "55296a438f6104414645d72f45a08b2e",
+          "kind": "image_caption",
+          "page_index": 0,
+          "snippet": "Kerry Condon ... Kerry Condon"
+        },
+        {
+          "chunk_id": "55296a438f6104414645d72f45a08b2e:p0:b3:s0",
+          "document_id": "55296a438f6104414645d72f45a08b2e",
+          "kind": "text",
+          "page_index": 0,
+          "snippet": "Kerry Condon ... Kerry Condon"
+        },
+        {
+          "chunk_id": "55296a438f6104414645d72f45a08b2e:p0:b7:s0",
+          "document_id": "55296a438f6104414645d72f45a08b2e",
+          "kind": "text",
+          "page_index": 0,
+          "snippet": "Kerry Condon ... **Kerry Condon** (born 9 January 1983) is an Irish actress"
+        },
+        {
+          "chunk_id": "55296a438f6104414645d72f45a08b2e:p2:b0:s0",
+          "document_id": "55296a438f6104414645d72f45a08b2e",
+          "kind": "table",
+          "page_index": 2,
+          "snippet": "Kerry Condon ...  (voice)</td><td></td></tr><tr><td rowspan=\"2\">2019</td><td>Avengers: Endgame</td><td></td></tr><tr><td>Dreamland</td><td>Olivia Evans</td><td></td></tr><tr><td>2022</td><td>The Banshees of Inisherin</td><td>Siobhán Súilleabháin</td><td></td></tr><tr><td>2023</td><td>In the Land of "
+        },
+        {
+          "chunk_id": "55296a438f6104414645d72f45a08b2e:p5:b6:s0",
+          "document_id": "55296a438f6104414645d72f45a08b2e",
+          "kind": "text",
+          "page_index": 5,
+          "snippet": "Kerry Condon ...  [\"Kerry Condon Arrives, Brilliantly, in The Banshees of Inisherin\"](https://www"
+        }
+      ],
+      "retrieved_tokens": 757,
+      "seconds": 0.12275780500203837,
+      "tool_name": "keyword_search"
+    },
+    {
+      "arguments": {
+        "chunk_ids": [
+          "55296a438f6104414645d72f45a08b2e:p2:b0:s0"
+        ]
+      },
+      "loop": 2,
+      "result": [
+        {
+          "chunk_id": "55296a438f6104414645d72f45a08b2e:p2:b0:s0",
+          "document_id": "55296a438f6104414645d72f45a08b2e",
+          "figures": [],
+          "kind": "table",
+          "next_chunk_id": "55296a438f6104414645d72f45a08b2e:p2:b1:s0",
+          "page_index": 2,
+          "previous_chunk_id": "55296a438f6104414645d72f45a08b2e:p1:b8:s0",
+          "text": "Kerry Condon\n<table><tbody><tr><td>2009</td><td>The Last Station</td><td>Masha</td><td></td></tr><tr><td rowspan=\"2\">2011</td><td>This Must Be the Place</td><td>Rachel</td><td></td></tr><tr><td>The Shore</td><td>Pat</td><td>Short film</td></tr><tr><td>2013</td><td>Dom Hemingway</td><td>Melody</td><td></td></tr><tr><td>2014</td><td>Gold</td><td>Alice</td><td></td></tr><tr><td>2015</td><td>Avengers: Age of Ultron</td><td rowspan=\"3\">F.R.I.D.A.Y. (voice)</td><td></td></tr><tr><td>2016</td><td>Captain America: Civil War</td><td></td></tr><tr><td rowspan=\"2\">2017</td><td>Spider-Man: Homecoming</td><td></td></tr><tr><td>Three Billboards Outside Ebbing, Missouri</td><td>Pamela</td><td></td></tr><tr><td rowspan=\"2\">2018</td><td>Bad Samaritan</td><td>Katie Hopgood</td><td></td></tr><tr><td>Avengers: Infinity War</td><td rowspan=\"2\">F.R.I.D.A.Y. (voice)</td><td></td></tr><tr><td rowspan=\"2\">2019</td><td>Avengers: Endgame</td><td></td></tr><tr><td>Dreamland</td><td>Olivia Evans</td><td></td></tr><tr><td>2022</td><td>The Banshees of Inisherin</td><td>Siobhán Súilleabháin</td><td></td></tr><tr><td>2023</td><td>In the Land of Saints and Sinners</td><td>Doireann McCann</td><td></td></tr><tr><td>2024</td><td>Night Swim</td><td>Eve Waller</td><td></td></tr><tr><td rowspan=\"2\">2025</td><td>Train Dreams</td><td>Claire Thompson</td><td></td></tr><tr><td>F1</td><td>Kate McKenna</td><td></td></tr><tr><td>2026</td><td>Pressure</td><td>Kay Summersby</td><td></td></tr></tbody></table>"
+        }
+      ],
+      "retrieved_tokens": 730,
+      "seconds": 0.0003073800035053864,
+      "tool_name": "read_chunk"
+    }
+  ],
+  "unique_delivered_images": 1,
+  "verification_requested": false
+}

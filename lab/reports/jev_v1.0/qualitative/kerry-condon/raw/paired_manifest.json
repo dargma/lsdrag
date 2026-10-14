@@ -1,0 +1,183 @@
+{
+  "code_revision": "cc748799463f6c6ac941bd23685588f1465c53ff",
+  "config": {
+    "base_url": "http://127.0.0.1:8102/v1",
+    "context_limit": 32768,
+    "image_delivery_policy": "search-linked",
+    "image_soft_tokens": 1120,
+    "max_images": 8,
+    "max_loops": 8,
+    "max_output_tokens": 1024,
+    "model": "gemma-reader",
+    "seed": 20261013,
+    "timeout_seconds": 240
+  },
+  "head_sha256": "6ffe1ba2540e57490bd92c7c82d710d22c36ea9c6f9c04e3be510895a35237b3",
+  "prompt_sha256": "7dd6eb09464d20c204599c17bb4683c142e069dfe9d274ad296a2d85eae24ff7",
+  "questions_sha256": "5379c78a3a8c59d01768c1d09bf010086b704767d84ff81f3fa22da79a2bedf4",
+  "schedule": [
+    {
+      "arm": "D-head",
+      "qid": "e61b7721374339505b5600327ede6e51"
+    },
+    {
+      "arm": "B-HF",
+      "qid": "e61b7721374339505b5600327ede6e51"
+    },
+    {
+      "arm": "B-HF",
+      "qid": "0a37c7065d9176b672e60d7179bd87c0"
+    },
+    {
+      "arm": "D-head",
+      "qid": "0a37c7065d9176b672e60d7179bd87c0"
+    },
+    {
+      "arm": "D-head",
+      "qid": "6f4f906e0afb1c0f056388a2ba2dd980"
+    },
+    {
+      "arm": "B-HF",
+      "qid": "6f4f906e0afb1c0f056388a2ba2dd980"
+    },
+    {
+      "arm": "B-HF",
+      "qid": "6068540027afe0ca92d9386391bf0889"
+    },
+    {
+      "arm": "D-head",
+      "qid": "6068540027afe0ca92d9386391bf0889"
+    },
+    {
+      "arm": "D-head",
+      "qid": "0853b099f8c93b933b0d23bf87ff97da"
+    },
+    {
+      "arm": "B-HF",
+      "qid": "0853b099f8c93b933b0d23bf87ff97da"
+    },
+    {
+      "arm": "B-HF",
+      "qid": "3b29528f6d900ff20bfebd2b938b851f"
+    },
+    {
+      "arm": "D-head",
+      "qid": "3b29528f6d900ff20bfebd2b938b851f"
+    },
+    {
+      "arm": "B-HF",
+      "qid": "0e9d96fb7b5f17969db33f2e613b20ee"
+    },
+    {
+      "arm": "D-head",
+      "qid": "0e9d96fb7b5f17969db33f2e613b20ee"
+    },
+    {
+      "arm": "D-head",
+      "qid": "0044375cde53a5cbf1aafc9b4cff3987"
+    },
+    {
+      "arm": "B-HF",
+      "qid": "0044375cde53a5cbf1aafc9b4cff3987"
+    },
+    {
+      "arm": "D-head",
+      "qid": "12058be5985c3b0d7493ad5232ad18d9"
+    },
+    {
+      "arm": "B-HF",
+      "qid": "12058be5985c3b0d7493ad5232ad18d9"
+    },
+    {
+      "arm": "B-HF",
+      "qid": "52d8d419290b16a96633cd9920f1ea8c"
+    },
+    {
+      "arm": "D-head",
+      "qid": "52d8d419290b16a96633cd9920f1ea8c"
+    },
+    {
+      "arm": "B-HF",
+      "qid": "fdc69d496c8497878af79060ed61d3ab"
+    },
+    {
+      "arm": "D-head",
+      "qid": "fdc69d496c8497878af79060ed61d3ab"
+    },
+    {
+      "arm": "B-HF",
+      "qid": "d31bb6e3704b9022a0ed4accdf8ec5d2"
+    },
+    {
+      "arm": "D-head",
+      "qid": "d31bb6e3704b9022a0ed4accdf8ec5d2"
+    },
+    {
+      "arm": "B-HF",
+      "qid": "4f2dca9947ab4ad01ad76c7baa8cbdad"
+    },
+    {
+      "arm": "D-head",
+      "qid": "4f2dca9947ab4ad01ad76c7baa8cbdad"
+    },
+    {
+      "arm": "D-head",
+      "qid": "8238d72cff251700417aad30776b9dd6"
+    },
+    {
+      "arm": "B-HF",
+      "qid": "8238d72cff251700417aad30776b9dd6"
+    },
+    {
+      "arm": "B-HF",
+      "qid": "76ccfb6189d91a4a238617d5180b6406"
+    },
+    {
+      "arm": "D-head",
+      "qid": "76ccfb6189d91a4a238617d5180b6406"
+    },
+    {
+      "arm": "D-head",
+      "qid": "022a4190652d4999aa326d64a6bf87a4"
+    },
+    {
+      "arm": "B-HF",
+      "qid": "022a4190652d4999aa326d64a6bf87a4"
+    },
+    {
+      "arm": "D-head",
+      "qid": "3fda3203bc60ec6179fe03e55f3d0698"
+    },
+    {
+      "arm": "B-HF",
+      "qid": "3fda3203bc60ec6179fe03e55f3d0698"
+    },
+    {
+      "arm": "D-head",
+      "qid": "41e18a34c6a8cff87fb42b0b341308d4"
+    },
+    {
+      "arm": "B-HF",
+      "qid": "41e18a34c6a8cff87fb42b0b341308d4"
+    },
+    {
+      "arm": "D-head",
+      "qid": "84ad98106b1f30ae08208a5403ec1206"
+    },
+    {
+      "arm": "B-HF",
+      "qid": "84ad98106b1f30ae08208a5403ec1206"
+    },
+    {
+      "arm": "B-HF",
+      "qid": "394605f7d9fd8c2bd078361bc26ada7c"
+    },
+    {
+      "arm": "D-head",
+      "qid": "394605f7d9fd8c2bd078361bc26ada7c"
+    }
+  ],
+  "timing": "sequential same HF model; load/warmup excluded, per-question preparation/decision/args/tools/fallback/final included",
+  "torch": "2.11.0+cu130",
+  "transformers": "5.6.2"
+}
