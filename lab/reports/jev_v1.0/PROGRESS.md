@@ -51,3 +51,12 @@ Gemma 전체 멀티모달 forward와 PLE를 유지한다. 마지막 정규화 �
 ## Frozen Gemma decision head trained
 
 backbone 동결·linear head만 CE로 한 번 학습했다. 성공 궤적의 **197턴**을 사용했다. [학습 설정·출처](head_training.json). 학습 loss는 정답률이나 폐루프 성능을 의미하지 않는다. 최종 비교용 새 M3 20문항은 아직 학습/설정 선택에 사용하지 않았다.
+
+## Paired Gemma decision comparison completed
+
+| 조건 | 문항 | EM | F1 | 평균 전체 시간 | 중앙값 | 평균 fallback |
+|---|---:|---:|---:|---:|---:|---:|
+| B-HF | 20 | 5.0% | 9.9% | 7.273s | 5.938s | 0.00 |
+| D-head | 20 | 10.0% | 16.3% | 5.048s | 4.555s | 0.00 |
+
+평균 전체 시간 비율 B-HF/D-head: **1.441배**. 인자·prefix·검색·fallback·최종 답변 시간을 포함한다. [문항별 결과·시간 분해](paired_summary.json). 20문항의 작은 PoC이므로 정확도 비열등성·일반적 속도 개선·보정된 정답 확률을 주장하지 않는다. 보완 자료 사용 여부와 행동별 학습 수는 수집 감사에 명시했다.
