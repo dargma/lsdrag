@@ -1,0 +1,191 @@
+{
+  "accepted": 37,
+  "meaning": "URL coverage and image file/hash availability only; not verified gold-crop alignment. No original corpus aliases or indexes changed.",
+  "rows": [
+    {
+      "missing": [],
+      "passed": true,
+      "qid": "0779011f7057337fc83647cc0b63035d"
+    },
+    {
+      "missing": [],
+      "passed": true,
+      "qid": "f03c54afa562ea7316d913f888400a4e"
+    },
+    {
+      "missing": [],
+      "passed": true,
+      "qid": "c217abc314dfb28a2bae22db1faae368"
+    },
+    {
+      "missing": [],
+      "passed": true,
+      "qid": "0695c05e43adb84b0c7586f1b5692dc8"
+    },
+    {
+      "missing": [],
+      "passed": true,
+      "qid": "ac9f0220e2a5e147985269d3ae523d9a"
+    },
+    {
+      "missing": [],
+      "passed": true,
+      "qid": "8a9e0b36eda180cef1a3347dc238b81b"
+    },
+    {
+      "missing": [],
+      "passed": true,
+      "qid": "ae00267e8d8f5dd96f6083a011f3322c"
+    },
+    {
+      "missing": [],
+      "passed": true,
+      "qid": "b333515674013837c5b3016625d6ac4e"
+    },
+    {
+      "missing": [],
+      "passed": true,
+      "qid": "f788feb28ac83e1270da0a67532d2d3a"
+    },
+    {
+      "missing": [],
+      "passed": true,
+      "qid": "155080caa8cb4a2d62d9c37a996d8f93"
+    },
+    {
+      "missing": [],
+      "passed": true,
+      "qid": "6486a4258ba42489af2673b82a50d451"
+    },
+    {
+      "missing": [],
+      "passed": true,
+      "qid": "82ed0266cc222e9a7fccc3c137f1b288"
+    },
+    {
+      "missing": [],
+      "passed": true,
+      "qid": "c199886f106def7d4f7d0106113a44e3"
+    },
+    {
+      "missing": [],
+      "passed": true,
+      "qid": "fc7fad7d6dd6c519e684c8576dacce4c"
+    },
+    {
+      "missing": [],
+      "passed": true,
+      "qid": "bffc9626621b7d1c191eb50d18392050"
+    },
+    {
+      "missing": [],
+      "passed": true,
+      "qid": "bb2e36f3a54040479519736197bba0c8"
+    },
+    {
+      "missing": [],
+      "passed": true,
+      "qid": "9292161a2af40f55021b7720625e4221"
+    },
+    {
+      "missing": [],
+      "passed": true,
+      "qid": "e73b0b4bedb39b36c9d2fb335b2f8be4"
+    },
+    {
+      "missing": [],
+      "passed": true,
+      "qid": "2e595f7880d5431c7ff9ff0e40c44f4a"
+    },
+    {
+      "missing": [],
+      "passed": true,
+      "qid": "155204a3af5d088ba06ee7e2f901a180"
+    },
+    {
+      "missing": [],
+      "passed": true,
+      "qid": "66f6539416d56df19de8458c3316f12b"
+    },
+    {
+      "missing": [],
+      "passed": true,
+      "qid": "720897bbe4f3632544ceff574f9be083"
+    },
+    {
+      "missing": [],
+      "passed": true,
+      "qid": "e3f4b4e05572d6b254fc5f4621cc29b1"
+    },
+    {
+      "missing": [],
+      "passed": true,
+      "qid": "0c2638fd20e9435d37f5bac9f8ca2c39"
+    },
+    {
+      "missing": [],
+      "passed": true,
+      "qid": "09ce730bab9a624b771622a26c08a1c6"
+    },
+    {
+      "missing": [],
+      "passed": true,
+      "qid": "7e71ef65cbf5942627ec4c3ab4d8b8c3"
+    },
+    {
+      "missing": [],
+      "passed": true,
+      "qid": "d297c305eb800149fc58caa38d5d2213"
+    },
+    {
+      "missing": [],
+      "passed": true,
+      "qid": "a3406ff212564c3588da5d8255ccea48"
+    },
+    {
+      "missing": [],
+      "passed": true,
+      "qid": "0cc30eb74df7857e71f2178b0336fc79"
+    },
+    {
+      "missing": [],
+      "passed": true,
+      "qid": "cae1fb432c15a26a1dff0b24bd65a4d7"
+    },
+    {
+      "missing": [],
+      "passed": true,
+      "qid": "882092df8f49a1b52bd81bbb82879cf7"
+    },
+    {
+      "missing": [],
+      "passed": true,
+      "qid": "e6858b2453b60986a88d6df966b20ef5"
+    },
+    {
+      "missing": [],
+      "passed": true,
+      "qid": "9135d9639829690efd139bdbc36eb4d4"
+    },
+    {
+      "missing": [],
+      "passed": true,
+      "qid": "0f3d8f6303cbd524781fcf664602faca"
+    },
+    {
+      "missing": [],
+      "passed": true,
+      "qid": "564c5b4e3d1456a4b53c4eca73f909fc"
+    },
+    {
+      "missing": [],
+      "passed": true,
+      "qid": "bf094353c8a397229c22387d5772227d"
+    },
+    {
+      "missing": [],
+      "passed": true,
+      "qid": "128a91c0e240bff845add2a8969a737f"
+    }
+  ]
+}

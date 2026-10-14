@@ -2,7 +2,7 @@
 
 2026-10-14 · **Astra 재검토 반영본** · 브랜치 `jev_v1.0`.
 
-**이번에는 두 조건만 비교한다: 원래 Gemma A-RAG vs 같은 Gemma에 행동 head를 붙인 A-RAG.** 데이터 수집도 하나의 경로와 하나의 보완책으로 제한한다. 현재 완료한 것은 계획·자료 조사·CPU 감사·문항 분할이며, 새 teacher 실행·head 학습·속도 측정은 아직 시작하지 않았다.
+**이번에는 두 조건만 비교한다: 원래 Gemma A-RAG vs 같은 Gemma에 행동 head를 붙인 A-RAG.** 데이터 수집도 하나의 경로와 하나의 보완책으로 제한한다. 현재 실행 현황은 [진행 보고](../lab/reports/jev_v1.0/PROGRESS.md)에 기록한다. 새 teacher 수집을 시작했고 HF text/image 동작 검증을 완료했다. 학습된 head의 비교 결과는 아직 없다.
 
 ## 1. 목표와 고정 조건
 
@@ -66,7 +66,7 @@ $$
 \mathcal{L}_{\mathrm{CE}}=-\log p(a_{\mathrm{teacher}}\mid s)
 $$
 
-head만 CE로 학습한다. seed와 작은 학습 설정을 고정하고 development로만 선택한다. 현재 자료량으로 calibrated confidence·학습된 fallback threshold를 주장하지 않는다. 범위 밖 행동·잘못된 인자 등 구조적 오류는 기존 생성 경로로 돌아가며 그 비용을 센다. original Agent의 복수 툴 호출 기능은 없애지 않지만 head가 복수 행동을 학습했다고 주장하지 않는다.
+head만 CE로 학습한다. seed와 학습 설정을 고정한다. 이번 최소 실행은 full-batch AdamW 100 epochs, lr 0.001, weight decay 0.01, plain CE 한 번이며 development/test sweep은 하지 않는다. 현재 자료량으로 calibrated confidence·학습된 fallback threshold를 주장하지 않는다. 범위 밖 행동·잘못된 인자 등 구조적 오류는 기존 생성 경로로 돌아가며 그 비용을 센다. original Agent의 복수 툴 호출 기능은 없애지 않지만 head가 복수 행동을 학습했다고 주장하지 않는다.
 
 ### 인자 생성과 이미지 입력 보존
 
@@ -113,6 +113,6 @@ $$
 
 Astra의 두 번째 검토는 **두 비교군 + 새 M3 20 holdout + 한 가지 데이터 fallback**으로 압축하는 안에 동의했다. 필요 검증은 데이터/이미지 QC, 최소 text/image 실행, 인자까지 포함한 실제 시간과 답변 품질이다.
 
-현재: 브랜치·자료 조사·기존 감사·새 분할·수집 순서·문서 검증 완료. [train82 기본 입력 QC](../lab/reports/jev_v1.0/train82_input_qc.json)에서 82개 질문의 입력 필드·support 문서와 이미지 필요 39개 문항의 추출 이미지 파일 존재를 확인했다. 정답 그림 crop의 의미 일치 검증과는 별개다. **새 teacher 실행·head 구현/학습·40회 비교는 미실행**이다. 코드를 고정하고 준비/QC를 마친 뒤 위 범위에서 진행한다.
+현재: teacher 수집 진행 중, HF text/image 동작 검증 완료. [진행 보고](../lab/reports/jev_v1.0/PROGRESS.md). 브랜치·자료 조사·기존 감사·새 분할·수집 순서·문서 검증 완료. [train82 기본 입력 QC](../lab/reports/jev_v1.0/train82_input_qc.json)에서 82개 질문의 입력 필드·support 문서와 이미지 필요 39개 문항의 추출 이미지 파일 존재를 확인했다. 정답 그림 crop의 의미 일치 검증과는 별개다. head 구현과 최소 GPU 실행을 마쳤으며 head 학습·40회 비교는 미실행이다. 라벨 충분성 확인 후 진행한다.
 
 참조: [label 계획](../lab/registry/jev_v1.0/label_collection_plan.json) · [학습법](JEV_DECISION_MODEL_TRAINING_REVIEW.md) · [Astra RAG·memory 조사](JEV_MEMORY_RESEARCH_ASTRA.md) · [기존 Agent](../src/lsdrag/agent.py).
