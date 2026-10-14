@@ -8,7 +8,7 @@
 |---|---|---|
 | 평가 분리 | 새 M3 20문항 잠금, 기존 test/dev 학습 제외 | [고정 계획](../../registry/jev_v1.0/label_collection_plan.json) |
 | M3 teacher | 새 train 82/82문항 완료; 각 문항 한 번 | 원래 Gemma A-RAG, EmbeddingGemma 2 텍스트+이미지 검색 |
-| 보강 후보 QC | MMQA train 37/37 통과 | [QC](mmqa_train_qc.json): URL·이미지 파일/hash 존재 확인. 정답 crop 의미 정렬 검증과는 별개 |
+| 보강 후보 QC | MMQA train 37/37 통과·수집 완료 | [QC](mmqa_train_qc.json): URL·이미지 파일/hash 존재 확인. 정답 crop 의미 정렬 검증과는 별개 |
 | HF 동작 검증 | text/image 상태 각각 baseline + 임시 head 확인 | [실행 기록](hf_smoke.json) |
 | 코드 검증 | 관련 테스트 26개 통과 | 라벨·미래 출력 누출 방지·typed tool parser·원래 Agent |
 | head 학습 | 대기 | 성공 문항 ≥30, 각 행동 관측 성공 문항 ≥10 필요 |
@@ -35,3 +35,11 @@ Gemma 전체 멀티모달 forward와 PLE를 유지한다. 마지막 정규화 �
 [문항별 채점·라벨 감사](train82_label_audit.json). **EM 6/82 = 7.32%, F1 16.84%.** 이는 teacher 수집 결과이며 최종 비교용 20문항의 성능이 아니다. 성공 6궤적에서 행동이 관측된 서로 다른 문항 수는 keyword_search 6, semantic_search 5, read_chunk 1, FINAL 6이다. 최소 성공 30문항·행동별 10문항 기준에 미달하므로 이 상태에서 head를 학습하거나 속도 이득을 주장하지 않는다.
 
 기존 train의 성공 궤적은 새 문항과 합쳐 사용할 수 있지만 같은 문항의 여러 조건은 서로 다른 문항으로 중복 계산하지 않는다. QC 통과 MMQA 37문항을 이어서 각각 한 번 수집한다.
+
+## 마일스톤 3 — MMQA 보강 37문항 완료
+
+[MMQA 37문항 채점](mmqa37_label_audit.json): EM **1/37 = 2.70%**, F1 **7.86%**. 기존 train 성공 궤적 + 새 M3 82 + MMQA 37을 합친 [라벨 감사](pooled_label_audit.json)에서 서로 다른 answerable 성공 문항은 **11개**, 행동별 성공 문항은 keyword_search 11·semantic_search 10·read_chunk 2·FINAL 11이다. 아직 학습 기준에 부족하다.
+
+유일한 보완책인 MultiHop-RAG 전체 609개 기사·4,235개 텍스트 청크를 준비하고 77,850개 문장 벡터 인덱스를 만든다. 기존 M3 인덱스는 변경하지 않았다. 고정된 1,000개 질문 순서에서 100개씩 한 번 풀고 라벨 기준을 충족하면 즉시 수집을 중단한다.
+
+원본 풀이 궤적은 Drive의 `outputs/jev_v1.0/`에도 백업한다. 수집 종료 후 기준을 통과하면 head 고정 학습 → 같은 HF backend 20문항×2 비교 → 결과 문서/git push를 이어서 실행하도록 후속 runner를 준비했다. 라벨 기준 미달이면 학습·최종 비교를 실행하지 않고 그 이유를 보고한다.

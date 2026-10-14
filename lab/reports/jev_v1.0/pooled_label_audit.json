@@ -1,0 +1,165 @@
+{
+  "completed_trajectories": 299,
+  "gate": {
+    "answerable_successful_questions": 11,
+    "distinct_questions_per_action": {
+      "FINAL": 11,
+      "keyword_search": 11,
+      "read_chunk": 2,
+      "semantic_search": 10
+    },
+    "passed": false
+  },
+  "null_scoring": "Exact original answer Insufficient information. under official normalization; empty list is incorrect; null successes excluded from answerable/action gate",
+  "sources": [
+    {
+      "allowed_old_train_only": true,
+      "gold_sha256": "7b28fc665c5728b0c64e63b7be0d7ad0b91657939d389de77e3c978a38d9d2d7",
+      "run": "/content/local_fast/lsdrag-work/results/three_arm_search_linked100/m3docvqa/B0"
+    },
+    {
+      "allowed_old_train_only": true,
+      "gold_sha256": "7b28fc665c5728b0c64e63b7be0d7ad0b91657939d389de77e3c978a38d9d2d7",
+      "run": "/content/local_fast/lsdrag-work/results/three_arm_search_linked100/m3docvqa/C1"
+    },
+    {
+      "allowed_old_train_only": true,
+      "gold_sha256": "7b28fc665c5728b0c64e63b7be0d7ad0b91657939d389de77e3c978a38d9d2d7",
+      "run": "/content/local_fast/lsdrag-work/results/three_arm_search_linked100/m3docvqa/G1"
+    },
+    {
+      "allowed_old_train_only": false,
+      "gold_sha256": "83d663a9312115779e2bcbe7c19cd578554ab99df13766c05812b59ee23b4edd",
+      "run": "/content/local_fast/lsdrag-work/results/jev_v1.0/teacher_m3_train82"
+    },
+    {
+      "allowed_old_train_only": false,
+      "gold_sha256": "9cf2ad18828d83d2341b8ee53302506ca051fd11655b1830958380245c198bbf",
+      "run": "/content/local_fast/lsdrag-work/results/jev_v1.0/teacher_mmqa_train37"
+    }
+  ],
+  "successes": [
+    {
+      "actions": [
+        "keyword_search",
+        "semantic_search",
+        "FINAL"
+      ],
+      "answerable": true,
+      "qid": "29a94164b22263351cc79f515a5b8e8b",
+      "source": "/content/local_fast/lsdrag-work/results/three_arm_search_linked100/m3docvqa/B0/29a94164b22263351cc79f515a5b8e8b.json"
+    },
+    {
+      "actions": [
+        "keyword_search",
+        "semantic_search",
+        "FINAL"
+      ],
+      "answerable": true,
+      "qid": "d4f7ddfba90360ad1e0fb4c100b7ab41",
+      "source": "/content/local_fast/lsdrag-work/results/three_arm_search_linked100/m3docvqa/B0/d4f7ddfba90360ad1e0fb4c100b7ab41.json"
+    },
+    {
+      "actions": [
+        "keyword_search",
+        "semantic_search",
+        "FINAL"
+      ],
+      "answerable": true,
+      "qid": "299e684293fffb0f9dca76a1092c83f9",
+      "source": "/content/local_fast/lsdrag-work/results/three_arm_search_linked100/m3docvqa/G1/299e684293fffb0f9dca76a1092c83f9.json"
+    },
+    {
+      "actions": [
+        "keyword_search",
+        "semantic_search",
+        "FINAL"
+      ],
+      "answerable": true,
+      "qid": "29a94164b22263351cc79f515a5b8e8b",
+      "source": "/content/local_fast/lsdrag-work/results/three_arm_search_linked100/m3docvqa/G1/29a94164b22263351cc79f515a5b8e8b.json"
+    },
+    {
+      "actions": [
+        "keyword_search",
+        "semantic_search",
+        "FINAL"
+      ],
+      "answerable": true,
+      "qid": "8e19d85f06a05dc7f25dd5c8c3f838c3",
+      "source": "/content/local_fast/lsdrag-work/results/three_arm_search_linked100/m3docvqa/G1/8e19d85f06a05dc7f25dd5c8c3f838c3.json"
+    },
+    {
+      "actions": [
+        "keyword_search",
+        "semantic_search",
+        "FINAL"
+      ],
+      "answerable": true,
+      "qid": "312db49d0f5614be27fa1791abe0a4d8",
+      "source": "/content/local_fast/lsdrag-work/results/jev_v1.0/teacher_m3_train82/312db49d0f5614be27fa1791abe0a4d8.json"
+    },
+    {
+      "actions": [
+        "keyword_search",
+        "semantic_search",
+        "FINAL"
+      ],
+      "answerable": true,
+      "qid": "32e30585f1cbfa6086a00ec2cea7b85c",
+      "source": "/content/local_fast/lsdrag-work/results/jev_v1.0/teacher_m3_train82/32e30585f1cbfa6086a00ec2cea7b85c.json"
+    },
+    {
+      "actions": [
+        "keyword_search",
+        "semantic_search",
+        "FINAL"
+      ],
+      "answerable": true,
+      "qid": "3c0143a60a930c43ca2511beaa21d083",
+      "source": "/content/local_fast/lsdrag-work/results/jev_v1.0/teacher_m3_train82/3c0143a60a930c43ca2511beaa21d083.json"
+    },
+    {
+      "actions": [
+        "keyword_search",
+        "semantic_search",
+        "FINAL"
+      ],
+      "answerable": true,
+      "qid": "42503d3b27c422b46cfafc9dec1606cd",
+      "source": "/content/local_fast/lsdrag-work/results/jev_v1.0/teacher_m3_train82/42503d3b27c422b46cfafc9dec1606cd.json"
+    },
+    {
+      "actions": [
+        "keyword_search",
+        "read_chunk",
+        "FINAL"
+      ],
+      "answerable": true,
+      "qid": "6bcb669863a815a657e31077a2d0b008",
+      "source": "/content/local_fast/lsdrag-work/results/jev_v1.0/teacher_m3_train82/6bcb669863a815a657e31077a2d0b008.json"
+    },
+    {
+      "actions": [
+        "keyword_search",
+        "semantic_search",
+        "FINAL"
+      ],
+      "answerable": true,
+      "qid": "89c7fb495a4bab8e89549621d63725ae",
+      "source": "/content/local_fast/lsdrag-work/results/jev_v1.0/teacher_m3_train82/89c7fb495a4bab8e89549621d63725ae.json"
+    },
+    {
+      "actions": [
+        "keyword_search",
+        "semantic_search",
+        "read_chunk",
+        "FINAL"
+      ],
+      "answerable": true,
+      "qid": "ae00267e8d8f5dd96f6083a011f3322c",
+      "source": "/content/local_fast/lsdrag-work/results/jev_v1.0/teacher_mmqa_train37/ae00267e8d8f5dd96f6083a011f3322c.json"
+    }
+  ],
+  "successful_trajectories": 12
+}
