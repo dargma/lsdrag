@@ -43,3 +43,7 @@ Gemma 전체 멀티모달 forward와 PLE를 유지한다. 마지막 정규화 �
 유일한 보완책인 MultiHop-RAG 전체 609개 기사·4,235개 텍스트 청크를 준비하고 77,850개 문장 벡터 인덱스를 만든다. 기존 M3 인덱스는 변경하지 않았다. 고정된 1,000개 질문 순서에서 100개씩 한 번 풀고 라벨 기준을 충족하면 즉시 수집을 중단한다.
 
 원본 풀이 궤적은 Drive의 `outputs/jev_v1.0/`에도 백업한다. 수집 종료 후 기준을 통과하면 head 고정 학습 → 같은 HF backend 20문항×2 비교 → 결과 문서/git push를 이어서 실행하도록 후속 runner를 준비했다. 라벨 기준 미달이면 학습·최종 비교를 실행하지 않고 그 이유를 보고한다.
+
+## Teacher label collection completed
+
+성공한 answerable 학습 문항 **45개**. 행동별 서로 다른 성공 문항: `{"FINAL": 45, "keyword_search": 34, "read_chunk": 36, "semantic_search": 43}`. 라벨 진입 기준 통과: **True**. [수집 감사](pooled_label_audit.json).

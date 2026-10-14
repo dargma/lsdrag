@@ -1,0 +1,14 @@
+{
+  "gate": {
+    "answerable_successful_questions": 45,
+    "distinct_questions_per_action": {
+      "FINAL": 45,
+      "keyword_search": 34,
+      "read_chunk": 36,
+      "semantic_search": 43
+    },
+    "passed": true
+  },
+  "next": "train fixed head once",
+  "pooled_audit_sha256": "0bf9b3e3817617d0c74c2e2b7c24701db3c6f0e6f609aba023a53b05f081b676"
+}
