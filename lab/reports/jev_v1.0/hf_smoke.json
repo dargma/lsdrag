@@ -27,16 +27,16 @@
       "usage": {
         "action_probabilities": null,
         "completion_tokens": 32,
-        "decode_seconds": 1.3834898189961677,
+        "decode_seconds": 1.397568752989173,
         "forced_prefix_tokens": 0,
         "generated_tokens": 32,
         "head_seconds": 0.0,
         "kv_reused": true,
-        "prefill_seconds": 0.41654799100069795,
+        "prefill_seconds": 0.41758418000245,
         "prefix_seconds": 0.0,
         "prompt_tokens": 750,
         "raw_native": "<|tool_call>call:semantic_search{query:<|\"|>TV series White Fox worked on with a poster of two people<|\"|>,top_k:5}<tool_call|><|tool_response>",
-        "reader_wall_seconds": 2.8898771940002916,
+        "reader_wall_seconds": 1.8885528390092077,
         "selected_action": null
       }
     },
@@ -44,7 +44,7 @@
       "choice": {
         "finish_reason": "stop",
         "message": {
-          "content": "<|channel>thought\nI need to find a TV series that White Fox worked on, which has a title poster with exactly two people on it, and then find the director of that series.\n\nI will start by searching for \"White Fox\" to see what projects they are associated with.<channel|>```json\n{\n  \"tool_name\": \"keyword_search\",\n  \"params\": {\n    \"keywords\": [\n      \"White Fox\"\n    ],\n    \"top_k\": 5\n  }\n}\n```",
+          "content": "{\"answers\": [], \"citations\": [], \"reasoning\": \"I need to find information about a TV series that White Fox worked on, which has a title poster with exactly two people on it, and then identify the director of that series. I will start by searching for 'White Fox' to find relevant projects.\"}",
           "role": "assistant"
         }
       },
@@ -59,17 +59,17 @@
           4.5393746404442936e-05,
           0.9998637437820435
         ],
-        "completion_tokens": 112,
-        "decode_seconds": 4.835008617999847,
-        "forced_prefix_tokens": 0,
-        "generated_tokens": 112,
-        "head_seconds": 0.0023193090019049123,
+        "completion_tokens": 66,
+        "decode_seconds": 2.722014881001087,
+        "forced_prefix_tokens": 3,
+        "generated_tokens": 63,
+        "head_seconds": 0.00238247899687849,
         "kv_reused": true,
-        "prefill_seconds": 0.12060545499844011,
-        "prefix_seconds": 0.0,
+        "prefill_seconds": 0.11770668700046372,
+        "prefix_seconds": 0.04539089900208637,
         "prompt_tokens": 750,
-        "raw_native": "<|channel>thought\nI need to find a TV series that White Fox worked on, which has a title poster with exactly two people on it, and then find the director of that series.\n\nI will start by searching for \"White Fox\" to see what projects they are associated with.<channel|>```json\n{\n  \"tool_name\": \"keyword_search\",\n  \"params\": {\n    \"keywords\": [\n      \"White Fox\"\n    ],\n    \"top_k\": 5\n  }\n}\n```<turn|>",
-        "reader_wall_seconds": 4.968331986994599,
+        "raw_native": "{\"answers\": [], \"citations\": [], \"reasoning\": \"I need to find information about a TV series that White Fox worked on, which has a title poster with exactly two people on it, and then identify the director of that series. I will start by searching for 'White Fox' to find relevant projects.\"}<turn|>",
+        "reader_wall_seconds": 2.9021083090046886,
         "selected_action": "FINAL"
       }
     },
@@ -98,16 +98,16 @@
       "usage": {
         "action_probabilities": null,
         "completion_tokens": 53,
-        "decode_seconds": 2.6061692020011833,
+        "decode_seconds": 2.5250822300004074,
         "forced_prefix_tokens": 0,
         "generated_tokens": 53,
         "head_seconds": 0.0,
         "kv_reused": true,
-        "prefill_seconds": 1.6618868340010522,
+        "prefill_seconds": 1.4482936999993399,
         "prefix_seconds": 0.0,
         "prompt_tokens": 6204,
         "raw_native": "<|tool_call>call:read_chunk{chunk_ids:[<|\"|>387c8bb02d704b36e2da363815914bea:p2:b9:s0<|\"|>]}<tool_call|><|tool_response>",
-        "reader_wall_seconds": 4.325891959000728,
+        "reader_wall_seconds": 4.030006084998604,
         "selected_action": null
       }
     },
@@ -141,16 +141,16 @@
           4.5393746404442936e-05
         ],
         "completion_tokens": 25,
-        "decode_seconds": 0.7280211390025215,
+        "decode_seconds": 0.8295874720060965,
         "forced_prefix_tokens": 7,
         "generated_tokens": 18,
-        "head_seconds": 0.0022735889942850918,
+        "head_seconds": 0.002348979003727436,
         "kv_reused": true,
-        "prefill_seconds": 1.635097095000674,
-        "prefix_seconds": 0.054952714999672025,
+        "prefill_seconds": 1.600790971002425,
+        "prefix_seconds": 0.05465200501203071,
         "prompt_tokens": 6204,
         "raw_native": "<|tool_call>call:semantic_search{query:<|\"|>White Fox TV series director<|\"|>,top_k:3}<tool_call|><|tool_response>",
-        "reader_wall_seconds": 2.4806449500028975,
+        "reader_wall_seconds": 2.541789091992541,
         "selected_action": "semantic_search"
       }
     }

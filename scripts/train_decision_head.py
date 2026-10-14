@@ -23,7 +23,7 @@ def main():
     repo=Path(__file__).resolve().parents[1];prompt=(repo/'prompts/search_linked.txt').read_text()
     plan=json.loads((repo/'lab/registry/jev_v1.0/label_collection_plan.json').read_text())
     splits=json.loads((repo/'lab/registry/jev_v1.0/split.json').read_text())['splits']
-    forbidden=set(plan['fresh_m3_test_qids']) | set(splits['test']) | set(splits['dev'])
+    forbidden=set(plan['fresh_m3_test_qids']) | set(splits['test']) | set(splits['development'])
     if any(s['qid'] in forbidden for s in audit['successes']):
         raise ValueError('Held-out/development question in training audit')
     figures={f['figure_id']:f for f in read_jsonl(r/'data/ir_final288/figures.jsonl')}

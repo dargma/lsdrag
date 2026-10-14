@@ -20,7 +20,7 @@
 
 Gemma 전체 멀티모달 forward와 PLE를 유지한다. 마지막 정규화 표현을 한 번 읽고, 같은 prefill KV 뒤에 선택한 툴의 native prefix를 넣어 인자를 생성한다. 실제 이미지 입력도 통과했다. HF 프로세스의 peak allocated memory는 약 **22.5GB**였다. 수집 작업과 동시에 실행한 smoke 시간은 비교 성능에 사용하지 않는다.
 
-중간 설명 생성은 생략하지만 검색어·청크 ID 생성은 필요하다. FINAL 확률은 학습 teacher의 행동 선택에 대한 상대 확률이며 정답 확신도가 아니다. 툴 인자 형식 오류는 원래 생성 경로로 fallback하고, 버린 작업·추가 prefill 비용도 기록하도록 구현했다.
+중간 설명 생성은 생략하지만 검색어·청크 ID 생성은 필요하다. FINAL 확률은 학습 teacher의 행동 선택에 대한 상대 확률이며 정답 확신도가 아니다. FINAL에서는 기존 요구 형식인 `{"answers":` prefix 뒤 답변을 생성하고, tools에서는 native tool prefix 뒤 인자를 생성한다. 두 prefix 처리 비용을 모두 센다. 단순히 tool 토큰을 막는 초기 방식은 일반 텍스트로 툴 호출을 흉내 내는 출력이 있어, JSON prefix와 형식 검증으로 보완한 뒤 text/image smoke를 다시 통과했다. 툴 인자 형식 오류는 원래 생성 경로로 fallback하고, 버린 작업·추가 prefill 비용도 기록하도록 구현했다.
 
 ## 남은 실행
 

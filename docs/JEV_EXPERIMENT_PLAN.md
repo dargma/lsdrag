@@ -70,7 +70,7 @@ head만 CE로 학습한다. seed와 학습 설정을 고정한다. 이번 최소
 
 ### 인자 생성과 이미지 입력 보존
 
-head가 semantic을 골라도 검색어는 필요하다. 같은 KV에서 선택된 툴의 native prefix 뒤 인자를 생성하고, FINAL은 원래 방식으로 답한다. 이 prefix 처리·인자 생성·fallback 시간까지 포함한다. KV 재사용이 안전하게 확인되지 않으면 이중 prefill을 허용하되 실제 두 번의 비용을 기록한다.
+head가 semantic을 골라도 검색어는 필요하다. 같은 KV에서 선택된 툴의 native prefix 뒤 인자를 생성한다. FINAL은 기존 답변 JSON 형식의 `{"answers":` prefix 뒤 답을 생성한다. 단순히 tool 토큰만 막으면 툴을 일반 텍스트로 흉내 낼 수 있어 JSON prefix·형식 검증을 사용한다. prefix 비용도 측정한다. 이 prefix 처리·인자 생성·fallback 시간까지 포함한다. KV 재사용이 안전하게 확인되지 않으면 이중 prefill을 허용하되 실제 두 번의 비용을 기록한다.
 
 vision·PLE 처리를 우회하지 않는다. `output_hidden_states=True`로 42층 전체 표현을 저장하지 않고 마지막 표현만 읽는다. Gemma tool template을 수작업으로 가정하지 않으며 first turn·tool response·이미지 추가·강제 최종 호출의 경계를 확인한다.
 

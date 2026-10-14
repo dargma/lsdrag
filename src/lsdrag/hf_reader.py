@@ -104,16 +104,15 @@ class HFReader:
                 probabilities = probs.cpu().tolist()
                 self._sync()
                 head_seconds = time.perf_counter() - tick
-                if action != "FINAL":
-                    prefix = f"<|tool_call>call:{action}{{"
-                    forced_tokens = self.processor.tokenizer.encode(prefix, add_special_tokens=False)
-                    ids = torch.tensor([forced_tokens], device=self.model.device)
-                    mask = torch.cat([mask, torch.ones_like(ids)], -1)
-                    self._sync()
-                    tick = time.perf_counter()
-                    output = self.model(input_ids=ids, attention_mask=mask, past_key_values=output.past_key_values, use_cache=True, logits_to_keep=1)
-                    self._sync()
-                    prefix_seconds = time.perf_counter() - tick
+                prefix = '{"answers":' if action == "FINAL" else f"<|tool_call>call:{action}{{"
+                forced_tokens = self.processor.tokenizer.encode(prefix, add_special_tokens=False)
+                ids = torch.tensor([forced_tokens], device=self.model.device)
+                mask = torch.cat([mask, torch.ones_like(ids)], -1)
+                self._sync()
+                tick = time.perf_counter()
+                output = self.model(input_ids=ids, attention_mask=mask, past_key_values=output.past_key_values, use_cache=True, logits_to_keep=1)
+                self._sync()
+                prefix_seconds = time.perf_counter() - tick
             generated = []
             self._sync()
             decode_start = time.perf_counter()
@@ -134,6 +133,10 @@ class HFReader:
         usage = {"prompt_tokens": int(inputs["input_ids"].shape[1]), "completion_tokens": len(generated) + len(forced_tokens), "generated_tokens": len(generated), "forced_prefix_tokens": len(forced_tokens), "prefill_seconds": prefill_seconds, "head_seconds": head_seconds, "prefix_seconds": prefix_seconds, "decode_seconds": decode_seconds, "reader_wall_seconds": time.perf_counter() - start, "selected_action": action, "action_probabilities": probabilities, "kv_reused": True, "raw_native": raw}
         try:
             message = parse_native(raw)
+            if action == "FINAL":
+                from .agent import parse_answer
+                if message.get("tool_calls") or not parse_answer(message.get("content") or "")["answer_format_valid"]:
+                    raise ValueError("FINAL did not generate the required answer JSON")
             if action and action != "FINAL":
                 names = [c["function"]["name"] for c in message.get("tool_calls", [])]
                 if names != [action]:
