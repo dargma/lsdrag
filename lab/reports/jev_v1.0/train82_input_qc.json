@@ -1,0 +1,667 @@
+{
+  "stage": "CPU prerequisite checks only; no model calls",
+  "questions": 82,
+  "minimal_question_fields_only": true,
+  "support_documents_present": true,
+  "image_questions": 39,
+  "questions_without_figures_for_image_support": 0,
+  "questions_with_missing_image_files": 0,
+  "items": [
+    {
+      "qid": "02106b1a3e70be170c53249687d82c09",
+      "support_documents_present": true,
+      "image_evidence_required": false,
+      "support_image_docs_without_extracted_figures": [],
+      "missing_figure_files": [],
+      "gold_figure_alignment": "not yet verified; metadata document coverage is not proof of the correct crop"
+    },
+    {
+      "qid": "046e2c9b76fb9827ff06b34f04322c86",
+      "support_documents_present": true,
+      "image_evidence_required": true,
+      "support_image_docs_without_extracted_figures": [],
+      "missing_figure_files": [],
+      "gold_figure_alignment": "not yet verified; metadata document coverage is not proof of the correct crop"
+    },
+    {
+      "qid": "068c78a4cb8acb381d148213bfe9ca20",
+      "support_documents_present": true,
+      "image_evidence_required": false,
+      "support_image_docs_without_extracted_figures": [],
+      "missing_figure_files": [],
+      "gold_figure_alignment": "not yet verified; metadata document coverage is not proof of the correct crop"
+    },
+    {
+      "qid": "08fac605c314afb1b2121b278dbfc41b",
+      "support_documents_present": true,
+      "image_evidence_required": true,
+      "support_image_docs_without_extracted_figures": [],
+      "missing_figure_files": [],
+      "gold_figure_alignment": "not yet verified; metadata document coverage is not proof of the correct crop"
+    },
+    {
+      "qid": "0b75c3c5d631a103cfc5cce38f27d3c3",
+      "support_documents_present": true,
+      "image_evidence_required": false,
+      "support_image_docs_without_extracted_figures": [],
+      "missing_figure_files": [],
+      "gold_figure_alignment": "not yet verified; metadata document coverage is not proof of the correct crop"
+    },
+    {
+      "qid": "0d5bdc6216839facec399043d27e7bb1",
+      "support_documents_present": true,
+      "image_evidence_required": true,
+      "support_image_docs_without_extracted_figures": [],
+      "missing_figure_files": [],
+      "gold_figure_alignment": "not yet verified; metadata document coverage is not proof of the correct crop"
+    },
+    {
+      "qid": "16479dbd711fd7dbe5d9ec7356c15556",
+      "support_documents_present": true,
+      "image_evidence_required": false,
+      "support_image_docs_without_extracted_figures": [],
+      "missing_figure_files": [],
+      "gold_figure_alignment": "not yet verified; metadata document coverage is not proof of the correct crop"
+    },
+    {
+      "qid": "186146ea1f5a9f7ada7f7fd31c5c75a4",
+      "support_documents_present": true,
+      "image_evidence_required": true,
+      "support_image_docs_without_extracted_figures": [],
+      "missing_figure_files": [],
+      "gold_figure_alignment": "not yet verified; metadata document coverage is not proof of the correct crop"
+    },
+    {
+      "qid": "1946869d518678a95a5d2d51961818aa",
+      "support_documents_present": true,
+      "image_evidence_required": true,
+      "support_image_docs_without_extracted_figures": [],
+      "missing_figure_files": [],
+      "gold_figure_alignment": "not yet verified; metadata document coverage is not proof of the correct crop"
+    },
+    {
+      "qid": "1b5e2bd0c3128eae8ad6f0ce6cd4aa16",
+      "support_documents_present": true,
+      "image_evidence_required": false,
+      "support_image_docs_without_extracted_figures": [],
+      "missing_figure_files": [],
+      "gold_figure_alignment": "not yet verified; metadata document coverage is not proof of the correct crop"
+    },
+    {
+      "qid": "1d106f2272d2afe59a4ba84342e897db",
+      "support_documents_present": true,
+      "image_evidence_required": true,
+      "support_image_docs_without_extracted_figures": [],
+      "missing_figure_files": [],
+      "gold_figure_alignment": "not yet verified; metadata document coverage is not proof of the correct crop"
+    },
+    {
+      "qid": "212b4c5655c288556edd76b14d055349",
+      "support_documents_present": true,
+      "image_evidence_required": true,
+      "support_image_docs_without_extracted_figures": [],
+      "missing_figure_files": [],
+      "gold_figure_alignment": "not yet verified; metadata document coverage is not proof of the correct crop"
+    },
+    {
+      "qid": "2494ebf69cf93104339896d73448af5d",
+      "support_documents_present": true,
+      "image_evidence_required": true,
+      "support_image_docs_without_extracted_figures": [],
+      "missing_figure_files": [],
+      "gold_figure_alignment": "not yet verified; metadata document coverage is not proof of the correct crop"
+    },
+    {
+      "qid": "274c7c120f33892579db069bd2670c2f",
+      "support_documents_present": true,
+      "image_evidence_required": true,
+      "support_image_docs_without_extracted_figures": [],
+      "missing_figure_files": [],
+      "gold_figure_alignment": "not yet verified; metadata document coverage is not proof of the correct crop"
+    },
+    {
+      "qid": "2cfd27d95e2a48bd8b16ba519c4da5e3",
+      "support_documents_present": true,
+      "image_evidence_required": false,
+      "support_image_docs_without_extracted_figures": [],
+      "missing_figure_files": [],
+      "gold_figure_alignment": "not yet verified; metadata document coverage is not proof of the correct crop"
+    },
+    {
+      "qid": "312db49d0f5614be27fa1791abe0a4d8",
+      "support_documents_present": true,
+      "image_evidence_required": false,
+      "support_image_docs_without_extracted_figures": [],
+      "missing_figure_files": [],
+      "gold_figure_alignment": "not yet verified; metadata document coverage is not proof of the correct crop"
+    },
+    {
+      "qid": "32e30585f1cbfa6086a00ec2cea7b85c",
+      "support_documents_present": true,
+      "image_evidence_required": false,
+      "support_image_docs_without_extracted_figures": [],
+      "missing_figure_files": [],
+      "gold_figure_alignment": "not yet verified; metadata document coverage is not proof of the correct crop"
+    },
+    {
+      "qid": "3439f1db325d7d971d0a6111723d066c",
+      "support_documents_present": true,
+      "image_evidence_required": true,
+      "support_image_docs_without_extracted_figures": [],
+      "missing_figure_files": [],
+      "gold_figure_alignment": "not yet verified; metadata document coverage is not proof of the correct crop"
+    },
+    {
+      "qid": "391b8d0fe91ac7d8e95f1fdbdfc12fca",
+      "support_documents_present": true,
+      "image_evidence_required": true,
+      "support_image_docs_without_extracted_figures": [],
+      "missing_figure_files": [],
+      "gold_figure_alignment": "not yet verified; metadata document coverage is not proof of the correct crop"
+    },
+    {
+      "qid": "3a9b9f0151fcb257ba37a8bdb79eb837",
+      "support_documents_present": true,
+      "image_evidence_required": false,
+      "support_image_docs_without_extracted_figures": [],
+      "missing_figure_files": [],
+      "gold_figure_alignment": "not yet verified; metadata document coverage is not proof of the correct crop"
+    },
+    {
+      "qid": "3c0143a60a930c43ca2511beaa21d083",
+      "support_documents_present": true,
+      "image_evidence_required": true,
+      "support_image_docs_without_extracted_figures": [],
+      "missing_figure_files": [],
+      "gold_figure_alignment": "not yet verified; metadata document coverage is not proof of the correct crop"
+    },
+    {
+      "qid": "42503d3b27c422b46cfafc9dec1606cd",
+      "support_documents_present": true,
+      "image_evidence_required": true,
+      "support_image_docs_without_extracted_figures": [],
+      "missing_figure_files": [],
+      "gold_figure_alignment": "not yet verified; metadata document coverage is not proof of the correct crop"
+    },
+    {
+      "qid": "47619d281f6559272f489387027d1aa5",
+      "support_documents_present": true,
+      "image_evidence_required": true,
+      "support_image_docs_without_extracted_figures": [],
+      "missing_figure_files": [],
+      "gold_figure_alignment": "not yet verified; metadata document coverage is not proof of the correct crop"
+    },
+    {
+      "qid": "4ceee421568a249dd1dde6d096ddd8c1",
+      "support_documents_present": true,
+      "image_evidence_required": false,
+      "support_image_docs_without_extracted_figures": [],
+      "missing_figure_files": [],
+      "gold_figure_alignment": "not yet verified; metadata document coverage is not proof of the correct crop"
+    },
+    {
+      "qid": "4de2bdcbeda40b4ad03c1f07455c5a6c",
+      "support_documents_present": true,
+      "image_evidence_required": true,
+      "support_image_docs_without_extracted_figures": [],
+      "missing_figure_files": [],
+      "gold_figure_alignment": "not yet verified; metadata document coverage is not proof of the correct crop"
+    },
+    {
+      "qid": "4e7ddac89ca597570aa25a630ff2652d",
+      "support_documents_present": true,
+      "image_evidence_required": true,
+      "support_image_docs_without_extracted_figures": [],
+      "missing_figure_files": [],
+      "gold_figure_alignment": "not yet verified; metadata document coverage is not proof of the correct crop"
+    },
+    {
+      "qid": "4f183e594eda0238cc1d8f06a8ac4cae",
+      "support_documents_present": true,
+      "image_evidence_required": true,
+      "support_image_docs_without_extracted_figures": [],
+      "missing_figure_files": [],
+      "gold_figure_alignment": "not yet verified; metadata document coverage is not proof of the correct crop"
+    },
+    {
+      "qid": "5217a8617917f1ca031e915f17f9f326",
+      "support_documents_present": true,
+      "image_evidence_required": false,
+      "support_image_docs_without_extracted_figures": [],
+      "missing_figure_files": [],
+      "gold_figure_alignment": "not yet verified; metadata document coverage is not proof of the correct crop"
+    },
+    {
+      "qid": "5219198c4be50e67c67c373f1afdf797",
+      "support_documents_present": true,
+      "image_evidence_required": true,
+      "support_image_docs_without_extracted_figures": [],
+      "missing_figure_files": [],
+      "gold_figure_alignment": "not yet verified; metadata document coverage is not proof of the correct crop"
+    },
+    {
+      "qid": "551f86506fc510a656d9d81dd69072d6",
+      "support_documents_present": true,
+      "image_evidence_required": false,
+      "support_image_docs_without_extracted_figures": [],
+      "missing_figure_files": [],
+      "gold_figure_alignment": "not yet verified; metadata document coverage is not proof of the correct crop"
+    },
+    {
+      "qid": "5973f1fea1b151a7321a65f8da3c5243",
+      "support_documents_present": true,
+      "image_evidence_required": false,
+      "support_image_docs_without_extracted_figures": [],
+      "missing_figure_files": [],
+      "gold_figure_alignment": "not yet verified; metadata document coverage is not proof of the correct crop"
+    },
+    {
+      "qid": "5bd72bfba4f8e712f3dec278cdec9ccf",
+      "support_documents_present": true,
+      "image_evidence_required": false,
+      "support_image_docs_without_extracted_figures": [],
+      "missing_figure_files": [],
+      "gold_figure_alignment": "not yet verified; metadata document coverage is not proof of the correct crop"
+    },
+    {
+      "qid": "5fa187a053d883f7d8f70660ecb8dcdb",
+      "support_documents_present": true,
+      "image_evidence_required": false,
+      "support_image_docs_without_extracted_figures": [],
+      "missing_figure_files": [],
+      "gold_figure_alignment": "not yet verified; metadata document coverage is not proof of the correct crop"
+    },
+    {
+      "qid": "645a861de74604e8025caf759f425748",
+      "support_documents_present": true,
+      "image_evidence_required": false,
+      "support_image_docs_without_extracted_figures": [],
+      "missing_figure_files": [],
+      "gold_figure_alignment": "not yet verified; metadata document coverage is not proof of the correct crop"
+    },
+    {
+      "qid": "646273e0cf62290f04b3a23ce2e007a3",
+      "support_documents_present": true,
+      "image_evidence_required": false,
+      "support_image_docs_without_extracted_figures": [],
+      "missing_figure_files": [],
+      "gold_figure_alignment": "not yet verified; metadata document coverage is not proof of the correct crop"
+    },
+    {
+      "qid": "68d47fe9fe0a49a7aba704fac7149d0c",
+      "support_documents_present": true,
+      "image_evidence_required": false,
+      "support_image_docs_without_extracted_figures": [],
+      "missing_figure_files": [],
+      "gold_figure_alignment": "not yet verified; metadata document coverage is not proof of the correct crop"
+    },
+    {
+      "qid": "6a7b0913e4baacc474ce463f5a4a0194",
+      "support_documents_present": true,
+      "image_evidence_required": false,
+      "support_image_docs_without_extracted_figures": [],
+      "missing_figure_files": [],
+      "gold_figure_alignment": "not yet verified; metadata document coverage is not proof of the correct crop"
+    },
+    {
+      "qid": "6bcb669863a815a657e31077a2d0b008",
+      "support_documents_present": true,
+      "image_evidence_required": false,
+      "support_image_docs_without_extracted_figures": [],
+      "missing_figure_files": [],
+      "gold_figure_alignment": "not yet verified; metadata document coverage is not proof of the correct crop"
+    },
+    {
+      "qid": "7173374c77f1c27e397663c455501bba",
+      "support_documents_present": true,
+      "image_evidence_required": true,
+      "support_image_docs_without_extracted_figures": [],
+      "missing_figure_files": [],
+      "gold_figure_alignment": "not yet verified; metadata document coverage is not proof of the correct crop"
+    },
+    {
+      "qid": "718186c47f39b7fee2653cf964b543c0",
+      "support_documents_present": true,
+      "image_evidence_required": false,
+      "support_image_docs_without_extracted_figures": [],
+      "missing_figure_files": [],
+      "gold_figure_alignment": "not yet verified; metadata document coverage is not proof of the correct crop"
+    },
+    {
+      "qid": "72e81cfae7f7cea4d33bf9b94725fcc3",
+      "support_documents_present": true,
+      "image_evidence_required": false,
+      "support_image_docs_without_extracted_figures": [],
+      "missing_figure_files": [],
+      "gold_figure_alignment": "not yet verified; metadata document coverage is not proof of the correct crop"
+    },
+    {
+      "qid": "731b4f179b2fc60b243a817835305705",
+      "support_documents_present": true,
+      "image_evidence_required": false,
+      "support_image_docs_without_extracted_figures": [],
+      "missing_figure_files": [],
+      "gold_figure_alignment": "not yet verified; metadata document coverage is not proof of the correct crop"
+    },
+    {
+      "qid": "736a653aabf445677b747ac892dfe7b9",
+      "support_documents_present": true,
+      "image_evidence_required": true,
+      "support_image_docs_without_extracted_figures": [],
+      "missing_figure_files": [],
+      "gold_figure_alignment": "not yet verified; metadata document coverage is not proof of the correct crop"
+    },
+    {
+      "qid": "73b6da191574a2d617ad55993ef8c6f2",
+      "support_documents_present": true,
+      "image_evidence_required": true,
+      "support_image_docs_without_extracted_figures": [],
+      "missing_figure_files": [],
+      "gold_figure_alignment": "not yet verified; metadata document coverage is not proof of the correct crop"
+    },
+    {
+      "qid": "74f9019633803db0ac332ee70ff326b0",
+      "support_documents_present": true,
+      "image_evidence_required": true,
+      "support_image_docs_without_extracted_figures": [],
+      "missing_figure_files": [],
+      "gold_figure_alignment": "not yet verified; metadata document coverage is not proof of the correct crop"
+    },
+    {
+      "qid": "7e99b54a4c85de0509ca2c57a94b4fa2",
+      "support_documents_present": true,
+      "image_evidence_required": false,
+      "support_image_docs_without_extracted_figures": [],
+      "missing_figure_files": [],
+      "gold_figure_alignment": "not yet verified; metadata document coverage is not proof of the correct crop"
+    },
+    {
+      "qid": "830197a234920e4ab599a35b47974ea0",
+      "support_documents_present": true,
+      "image_evidence_required": true,
+      "support_image_docs_without_extracted_figures": [],
+      "missing_figure_files": [],
+      "gold_figure_alignment": "not yet verified; metadata document coverage is not proof of the correct crop"
+    },
+    {
+      "qid": "89c7fb495a4bab8e89549621d63725ae",
+      "support_documents_present": true,
+      "image_evidence_required": false,
+      "support_image_docs_without_extracted_figures": [],
+      "missing_figure_files": [],
+      "gold_figure_alignment": "not yet verified; metadata document coverage is not proof of the correct crop"
+    },
+    {
+      "qid": "8b535487aee207fccf01292ee9d86dcd",
+      "support_documents_present": true,
+      "image_evidence_required": true,
+      "support_image_docs_without_extracted_figures": [],
+      "missing_figure_files": [],
+      "gold_figure_alignment": "not yet verified; metadata document coverage is not proof of the correct crop"
+    },
+    {
+      "qid": "8b97eae2bb949152ee88a536e83967b6",
+      "support_documents_present": true,
+      "image_evidence_required": false,
+      "support_image_docs_without_extracted_figures": [],
+      "missing_figure_files": [],
+      "gold_figure_alignment": "not yet verified; metadata document coverage is not proof of the correct crop"
+    },
+    {
+      "qid": "9062f0a10733ef0abf180e6788feca29",
+      "support_documents_present": true,
+      "image_evidence_required": false,
+      "support_image_docs_without_extracted_figures": [],
+      "missing_figure_files": [],
+      "gold_figure_alignment": "not yet verified; metadata document coverage is not proof of the correct crop"
+    },
+    {
+      "qid": "912b3b76cdfa2051cf66dca641f51483",
+      "support_documents_present": true,
+      "image_evidence_required": false,
+      "support_image_docs_without_extracted_figures": [],
+      "missing_figure_files": [],
+      "gold_figure_alignment": "not yet verified; metadata document coverage is not proof of the correct crop"
+    },
+    {
+      "qid": "9996d8e066552766fbbe7186946f1672",
+      "support_documents_present": true,
+      "image_evidence_required": false,
+      "support_image_docs_without_extracted_figures": [],
+      "missing_figure_files": [],
+      "gold_figure_alignment": "not yet verified; metadata document coverage is not proof of the correct crop"
+    },
+    {
+      "qid": "a3225b83bd582feb2d241a0cc510782f",
+      "support_documents_present": true,
+      "image_evidence_required": true,
+      "support_image_docs_without_extracted_figures": [],
+      "missing_figure_files": [],
+      "gold_figure_alignment": "not yet verified; metadata document coverage is not proof of the correct crop"
+    },
+    {
+      "qid": "a3edb4d2c16739dcbdc23e6ab46e7d9d",
+      "support_documents_present": true,
+      "image_evidence_required": false,
+      "support_image_docs_without_extracted_figures": [],
+      "missing_figure_files": [],
+      "gold_figure_alignment": "not yet verified; metadata document coverage is not proof of the correct crop"
+    },
+    {
+      "qid": "a801785a88c4a22ba9f8e83b82619157",
+      "support_documents_present": true,
+      "image_evidence_required": true,
+      "support_image_docs_without_extracted_figures": [],
+      "missing_figure_files": [],
+      "gold_figure_alignment": "not yet verified; metadata document coverage is not proof of the correct crop"
+    },
+    {
+      "qid": "a872fd63bd98761b4a1c30201ef0bc6e",
+      "support_documents_present": true,
+      "image_evidence_required": false,
+      "support_image_docs_without_extracted_figures": [],
+      "missing_figure_files": [],
+      "gold_figure_alignment": "not yet verified; metadata document coverage is not proof of the correct crop"
+    },
+    {
+      "qid": "a92b8c7327385a535427099de3a37c70",
+      "support_documents_present": true,
+      "image_evidence_required": false,
+      "support_image_docs_without_extracted_figures": [],
+      "missing_figure_files": [],
+      "gold_figure_alignment": "not yet verified; metadata document coverage is not proof of the correct crop"
+    },
+    {
+      "qid": "a941b9f9b15054c32083bb68e32e084e",
+      "support_documents_present": true,
+      "image_evidence_required": false,
+      "support_image_docs_without_extracted_figures": [],
+      "missing_figure_files": [],
+      "gold_figure_alignment": "not yet verified; metadata document coverage is not proof of the correct crop"
+    },
+    {
+      "qid": "ac104fb00b1d0b1870538358e9b5c850",
+      "support_documents_present": true,
+      "image_evidence_required": false,
+      "support_image_docs_without_extracted_figures": [],
+      "missing_figure_files": [],
+      "gold_figure_alignment": "not yet verified; metadata document coverage is not proof of the correct crop"
+    },
+    {
+      "qid": "ace600e675d33da7f1cc8effa048634a",
+      "support_documents_present": true,
+      "image_evidence_required": false,
+      "support_image_docs_without_extracted_figures": [],
+      "missing_figure_files": [],
+      "gold_figure_alignment": "not yet verified; metadata document coverage is not proof of the correct crop"
+    },
+    {
+      "qid": "b3e551715b6954b17993143628ed833d",
+      "support_documents_present": true,
+      "image_evidence_required": true,
+      "support_image_docs_without_extracted_figures": [],
+      "missing_figure_files": [],
+      "gold_figure_alignment": "not yet verified; metadata document coverage is not proof of the correct crop"
+    },
+    {
+      "qid": "b6a62e8b1c1cb1587d75b0af4e1ae981",
+      "support_documents_present": true,
+      "image_evidence_required": true,
+      "support_image_docs_without_extracted_figures": [],
+      "missing_figure_files": [],
+      "gold_figure_alignment": "not yet verified; metadata document coverage is not proof of the correct crop"
+    },
+    {
+      "qid": "bc16213fc3ba20631092dc66c700b1ea",
+      "support_documents_present": true,
+      "image_evidence_required": true,
+      "support_image_docs_without_extracted_figures": [],
+      "missing_figure_files": [],
+      "gold_figure_alignment": "not yet verified; metadata document coverage is not proof of the correct crop"
+    },
+    {
+      "qid": "bf8dde8bbba30881c3ca1882822032cd",
+      "support_documents_present": true,
+      "image_evidence_required": false,
+      "support_image_docs_without_extracted_figures": [],
+      "missing_figure_files": [],
+      "gold_figure_alignment": "not yet verified; metadata document coverage is not proof of the correct crop"
+    },
+    {
+      "qid": "c537f042e2a407b031f1f0e8d94da1ef",
+      "support_documents_present": true,
+      "image_evidence_required": true,
+      "support_image_docs_without_extracted_figures": [],
+      "missing_figure_files": [],
+      "gold_figure_alignment": "not yet verified; metadata document coverage is not proof of the correct crop"
+    },
+    {
+      "qid": "c6717dda202e3be6a20b4b06532fa618",
+      "support_documents_present": true,
+      "image_evidence_required": true,
+      "support_image_docs_without_extracted_figures": [],
+      "missing_figure_files": [],
+      "gold_figure_alignment": "not yet verified; metadata document coverage is not proof of the correct crop"
+    },
+    {
+      "qid": "c900515e6697b67c56c6b8b106070ce9",
+      "support_documents_present": true,
+      "image_evidence_required": true,
+      "support_image_docs_without_extracted_figures": [],
+      "missing_figure_files": [],
+      "gold_figure_alignment": "not yet verified; metadata document coverage is not proof of the correct crop"
+    },
+    {
+      "qid": "ca18ab808c154aefe66848b8e1a8753b",
+      "support_documents_present": true,
+      "image_evidence_required": false,
+      "support_image_docs_without_extracted_figures": [],
+      "missing_figure_files": [],
+      "gold_figure_alignment": "not yet verified; metadata document coverage is not proof of the correct crop"
+    },
+    {
+      "qid": "cf64e3885ba25d9d13865c8fdd741c89",
+      "support_documents_present": true,
+      "image_evidence_required": false,
+      "support_image_docs_without_extracted_figures": [],
+      "missing_figure_files": [],
+      "gold_figure_alignment": "not yet verified; metadata document coverage is not proof of the correct crop"
+    },
+    {
+      "qid": "d85e16020cec2e8cdcb347f88e1763c9",
+      "support_documents_present": true,
+      "image_evidence_required": false,
+      "support_image_docs_without_extracted_figures": [],
+      "missing_figure_files": [],
+      "gold_figure_alignment": "not yet verified; metadata document coverage is not proof of the correct crop"
+    },
+    {
+      "qid": "dc114a23d8280ff1a9ee32f34e51d8f5",
+      "support_documents_present": true,
+      "image_evidence_required": true,
+      "support_image_docs_without_extracted_figures": [],
+      "missing_figure_files": [],
+      "gold_figure_alignment": "not yet verified; metadata document coverage is not proof of the correct crop"
+    },
+    {
+      "qid": "e309ebae67a9b9d4f17ab3e46e493fb4",
+      "support_documents_present": true,
+      "image_evidence_required": true,
+      "support_image_docs_without_extracted_figures": [],
+      "missing_figure_files": [],
+      "gold_figure_alignment": "not yet verified; metadata document coverage is not proof of the correct crop"
+    },
+    {
+      "qid": "e769bb29899fd43ef384f83caff524b3",
+      "support_documents_present": true,
+      "image_evidence_required": false,
+      "support_image_docs_without_extracted_figures": [],
+      "missing_figure_files": [],
+      "gold_figure_alignment": "not yet verified; metadata document coverage is not proof of the correct crop"
+    },
+    {
+      "qid": "e844b72274e56a3222e4a27b24cd623b",
+      "support_documents_present": true,
+      "image_evidence_required": true,
+      "support_image_docs_without_extracted_figures": [],
+      "missing_figure_files": [],
+      "gold_figure_alignment": "not yet verified; metadata document coverage is not proof of the correct crop"
+    },
+    {
+      "qid": "eb1dfc1b3fa858bea54fd0778ad47a7f",
+      "support_documents_present": true,
+      "image_evidence_required": false,
+      "support_image_docs_without_extracted_figures": [],
+      "missing_figure_files": [],
+      "gold_figure_alignment": "not yet verified; metadata document coverage is not proof of the correct crop"
+    },
+    {
+      "qid": "eb3f72aeb947cff88705cce8f12a5a9a",
+      "support_documents_present": true,
+      "image_evidence_required": false,
+      "support_image_docs_without_extracted_figures": [],
+      "missing_figure_files": [],
+      "gold_figure_alignment": "not yet verified; metadata document coverage is not proof of the correct crop"
+    },
+    {
+      "qid": "f2def8c149eac4debb187a7057243177",
+      "support_documents_present": true,
+      "image_evidence_required": true,
+      "support_image_docs_without_extracted_figures": [],
+      "missing_figure_files": [],
+      "gold_figure_alignment": "not yet verified; metadata document coverage is not proof of the correct crop"
+    },
+    {
+      "qid": "f356667690a995336f76344d097bb595",
+      "support_documents_present": true,
+      "image_evidence_required": true,
+      "support_image_docs_without_extracted_figures": [],
+      "missing_figure_files": [],
+      "gold_figure_alignment": "not yet verified; metadata document coverage is not proof of the correct crop"
+    },
+    {
+      "qid": "f478685d0f6ad2e2ab3d1e99b5fd309b",
+      "support_documents_present": true,
+      "image_evidence_required": true,
+      "support_image_docs_without_extracted_figures": [],
+      "missing_figure_files": [],
+      "gold_figure_alignment": "not yet verified; metadata document coverage is not proof of the correct crop"
+    },
+    {
+      "qid": "f5baf74fcfa9a78853ad9a449f2bb560",
+      "support_documents_present": true,
+      "image_evidence_required": true,
+      "support_image_docs_without_extracted_figures": [],
+      "missing_figure_files": [],
+      "gold_figure_alignment": "not yet verified; metadata document coverage is not proof of the correct crop"
+    },
+    {
+      "qid": "f99f9d0460af357bc361871ef6f4fc33",
+      "support_documents_present": true,
+      "image_evidence_required": false,
+      "support_image_docs_without_extracted_figures": [],
+      "missing_figure_files": [],
+      "gold_figure_alignment": "not yet verified; metadata document coverage is not proof of the correct crop"
+    }
+  ]
+}

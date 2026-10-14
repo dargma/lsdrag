@@ -182,3 +182,5 @@ User clarified that only A-RAG max iteration is eight, with no independent Reade
 사용자의 중복·과다 실험 축소 요청에 따라 Astra가 재검토했다. 비교군은 같은 HF Gemma의 원래 생성 vs frozen head 2개뿐이다. 새 M3 102개에서 결과와 무관하게 시각10·비시각10을 holdout하고82개를학습수집에사용한다. MMQA공식train23,817metadata확인중기존URLcovered37은QC후보로만둔다. 부족할때만MultiHop-RAG의실제609기사·2,556질문에서사전고정1,000질문을100개씩teacher수집하며라벨gate충족시중단한다. 매block학습·test반복은없다. 다른dataset·D-logit·vLLM재평가·LoRA·RL·memory가설실험은이번실행에서제외한다.
 
 M3잔여에서1,000개층화선정준비비용을계산하니새supportURL1,364개가필요해이번범위에넣지않았다. 이전100개중RudyRobbins한문항의표supportID가기존IR문서목록에없음을dataset_feasibility.json에기록하고이전예측·점수는변경하지않았다. 새teacher·head학습·GPU평가는아직시작하지않았다.
+
+Train82 기본 CPU QC: 질문 필드가 qid/question뿐임과 원문 일치, 모든 support 문서 존재, 이미지 필요 39문항의 추출 figure 존재·파일 누락 0을 확인했다. gold 이미지 crop 의미 정렬을 검증했다는 뜻은 아니다. GPU는 타 세션 두 개·약 92% 연산 사용 중이어서 새 GPU 작업을 시작하지 않았다.

@@ -113,6 +113,6 @@ $$
 
 Astra의 두 번째 검토는 **두 비교군 + 새 M3 20 holdout + 한 가지 데이터 fallback**으로 압축하는 안에 동의했다. 필요 검증은 데이터/이미지 QC, 최소 text/image 실행, 인자까지 포함한 실제 시간과 답변 품질이다.
 
-현재: 브랜치·자료 조사·기존 감사·새 분할·수집 순서·문서 검증 완료. **새 teacher 실행·head 구현/학습·40회 비교는 미실행**이다. 코드를 고정하고 준비/QC를 마친 뒤 위 범위에서 진행한다.
+현재: 브랜치·자료 조사·기존 감사·새 분할·수집 순서·문서 검증 완료. [train82 기본 입력 QC](../lab/reports/jev_v1.0/train82_input_qc.json)에서 82개 질문의 입력 필드·support 문서와 이미지 필요 39개 문항의 추출 이미지 파일 존재를 확인했다. 정답 그림 crop의 의미 일치 검증과는 별개다. **새 teacher 실행·head 구현/학습·40회 비교는 미실행**이다. 코드를 고정하고 준비/QC를 마친 뒤 위 범위에서 진행한다.
 
 참조: [label 계획](../lab/registry/jev_v1.0/label_collection_plan.json) · [학습법](JEV_DECISION_MODEL_TRAINING_REVIEW.md) · [Astra RAG·memory 조사](JEV_MEMORY_RESEARCH_ASTRA.md) · [기존 Agent](../src/lsdrag/agent.py).
