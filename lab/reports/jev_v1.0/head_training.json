@@ -1,0 +1,1598 @@
+{
+  "audit_sha256": "0bf9b3e3817617d0c74c2e2b7c24701db3c6f0e6f609aba023a53b05f081b676",
+  "backbone_frozen": true,
+  "checkpoint_sha256": "6ffe1ba2540e57490bd92c7c82d710d22c36ea9c6f9c04e3be510895a35237b3",
+  "features": [
+    {
+      "action": "keyword_search",
+      "loop": 1,
+      "prefill_seconds": 0.3232130260003032,
+      "qid": "29a94164b22263351cc79f515a5b8e8b",
+      "source": "/content/local_fast/lsdrag-work/results/three_arm_search_linked100/m3docvqa/B0/29a94164b22263351cc79f515a5b8e8b.json",
+      "source_sha256": "b9192f924d0c35d75fb74e92d34578b0543904e5e938fe4e28157145fa3c936f"
+    },
+    {
+      "action": "semantic_search",
+      "loop": 2,
+      "prefill_seconds": 0.048242629010928795,
+      "qid": "29a94164b22263351cc79f515a5b8e8b",
+      "source": "/content/local_fast/lsdrag-work/results/three_arm_search_linked100/m3docvqa/B0/29a94164b22263351cc79f515a5b8e8b.json",
+      "source_sha256": "b9192f924d0c35d75fb74e92d34578b0543904e5e938fe4e28157145fa3c936f"
+    },
+    {
+      "action": "FINAL",
+      "loop": 3,
+      "prefill_seconds": 0.2812888149928767,
+      "qid": "29a94164b22263351cc79f515a5b8e8b",
+      "source": "/content/local_fast/lsdrag-work/results/three_arm_search_linked100/m3docvqa/B0/29a94164b22263351cc79f515a5b8e8b.json",
+      "source_sha256": "b9192f924d0c35d75fb74e92d34578b0543904e5e938fe4e28157145fa3c936f"
+    },
+    {
+      "action": "keyword_search",
+      "loop": 1,
+      "prefill_seconds": 0.04580303000693675,
+      "qid": "d4f7ddfba90360ad1e0fb4c100b7ab41",
+      "source": "/content/local_fast/lsdrag-work/results/three_arm_search_linked100/m3docvqa/B0/d4f7ddfba90360ad1e0fb4c100b7ab41.json",
+      "source_sha256": "d12f8e86cb46ffe183480df1c0b5c1dc8bc659af6f957d2d092895d3e831eb20"
+    },
+    {
+      "action": "semantic_search",
+      "loop": 2,
+      "prefill_seconds": 0.04733127899817191,
+      "qid": "d4f7ddfba90360ad1e0fb4c100b7ab41",
+      "source": "/content/local_fast/lsdrag-work/results/three_arm_search_linked100/m3docvqa/B0/d4f7ddfba90360ad1e0fb4c100b7ab41.json",
+      "source_sha256": "d12f8e86cb46ffe183480df1c0b5c1dc8bc659af6f957d2d092895d3e831eb20"
+    },
+    {
+      "action": "FINAL",
+      "loop": 3,
+      "prefill_seconds": 0.2746853779972298,
+      "qid": "d4f7ddfba90360ad1e0fb4c100b7ab41",
+      "source": "/content/local_fast/lsdrag-work/results/three_arm_search_linked100/m3docvqa/B0/d4f7ddfba90360ad1e0fb4c100b7ab41.json",
+      "source_sha256": "d12f8e86cb46ffe183480df1c0b5c1dc8bc659af6f957d2d092895d3e831eb20"
+    },
+    {
+      "action": "keyword_search",
+      "loop": 1,
+      "prefill_seconds": 0.0457831389940111,
+      "qid": "299e684293fffb0f9dca76a1092c83f9",
+      "source": "/content/local_fast/lsdrag-work/results/three_arm_search_linked100/m3docvqa/G1/299e684293fffb0f9dca76a1092c83f9.json",
+      "source_sha256": "91bcc179186fe2eb4f5f6e5be39e7313933afa53124deea856c096924a9b783f"
+    },
+    {
+      "action": "semantic_search",
+      "loop": 2,
+      "prefill_seconds": 0.047275728997192346,
+      "qid": "299e684293fffb0f9dca76a1092c83f9",
+      "source": "/content/local_fast/lsdrag-work/results/three_arm_search_linked100/m3docvqa/G1/299e684293fffb0f9dca76a1092c83f9.json",
+      "source_sha256": "91bcc179186fe2eb4f5f6e5be39e7313933afa53124deea856c096924a9b783f"
+    },
+    {
+      "action": "FINAL",
+      "loop": 3,
+      "prefill_seconds": 0.7462336070020683,
+      "qid": "299e684293fffb0f9dca76a1092c83f9",
+      "source": "/content/local_fast/lsdrag-work/results/three_arm_search_linked100/m3docvqa/G1/299e684293fffb0f9dca76a1092c83f9.json",
+      "source_sha256": "91bcc179186fe2eb4f5f6e5be39e7313933afa53124deea856c096924a9b783f"
+    },
+    {
+      "action": "keyword_search",
+      "loop": 1,
+      "prefill_seconds": 0.04585723999480251,
+      "qid": "29a94164b22263351cc79f515a5b8e8b",
+      "source": "/content/local_fast/lsdrag-work/results/three_arm_search_linked100/m3docvqa/G1/29a94164b22263351cc79f515a5b8e8b.json",
+      "source_sha256": "d94fadc747fb23808c8446945127a76018b54aa7f32365fa01989ae8f5c5727a"
+    },
+    {
+      "action": "semantic_search",
+      "loop": 2,
+      "prefill_seconds": 0.04735019800136797,
+      "qid": "29a94164b22263351cc79f515a5b8e8b",
+      "source": "/content/local_fast/lsdrag-work/results/three_arm_search_linked100/m3docvqa/G1/29a94164b22263351cc79f515a5b8e8b.json",
+      "source_sha256": "d94fadc747fb23808c8446945127a76018b54aa7f32365fa01989ae8f5c5727a"
+    },
+    {
+      "action": "FINAL",
+      "loop": 3,
+      "prefill_seconds": 0.7578769120009383,
+      "qid": "29a94164b22263351cc79f515a5b8e8b",
+      "source": "/content/local_fast/lsdrag-work/results/three_arm_search_linked100/m3docvqa/G1/29a94164b22263351cc79f515a5b8e8b.json",
+      "source_sha256": "d94fadc747fb23808c8446945127a76018b54aa7f32365fa01989ae8f5c5727a"
+    },
+    {
+      "action": "keyword_search",
+      "loop": 1,
+      "prefill_seconds": 0.04570169000362512,
+      "qid": "8e19d85f06a05dc7f25dd5c8c3f838c3",
+      "source": "/content/local_fast/lsdrag-work/results/three_arm_search_linked100/m3docvqa/G1/8e19d85f06a05dc7f25dd5c8c3f838c3.json",
+      "source_sha256": "6d47cdb6ef4bfe359e794f8047b87a01510a3d6dc4bec37937c0524d5a12777b"
+    },
+    {
+      "action": "semantic_search",
+      "loop": 2,
+      "prefill_seconds": 0.0832954920042539,
+      "qid": "8e19d85f06a05dc7f25dd5c8c3f838c3",
+      "source": "/content/local_fast/lsdrag-work/results/three_arm_search_linked100/m3docvqa/G1/8e19d85f06a05dc7f25dd5c8c3f838c3.json",
+      "source_sha256": "6d47cdb6ef4bfe359e794f8047b87a01510a3d6dc4bec37937c0524d5a12777b"
+    },
+    {
+      "action": "FINAL",
+      "loop": 3,
+      "prefill_seconds": 0.5271232649974991,
+      "qid": "8e19d85f06a05dc7f25dd5c8c3f838c3",
+      "source": "/content/local_fast/lsdrag-work/results/three_arm_search_linked100/m3docvqa/G1/8e19d85f06a05dc7f25dd5c8c3f838c3.json",
+      "source_sha256": "6d47cdb6ef4bfe359e794f8047b87a01510a3d6dc4bec37937c0524d5a12777b"
+    },
+    {
+      "action": "keyword_search",
+      "loop": 1,
+      "prefill_seconds": 0.045688949001487345,
+      "qid": "312db49d0f5614be27fa1791abe0a4d8",
+      "source": "/content/local_fast/lsdrag-work/results/jev_v1.0/teacher_m3_train82/312db49d0f5614be27fa1791abe0a4d8.json",
+      "source_sha256": "6bb048f73eec1ebc9d8900585df77ba41d25be9ebec0b7c3d1bfa14d9a5c063c"
+    },
+    {
+      "action": "semantic_search",
+      "loop": 2,
+      "prefill_seconds": 0.047173188999295235,
+      "qid": "312db49d0f5614be27fa1791abe0a4d8",
+      "source": "/content/local_fast/lsdrag-work/results/jev_v1.0/teacher_m3_train82/312db49d0f5614be27fa1791abe0a4d8.json",
+      "source_sha256": "6bb048f73eec1ebc9d8900585df77ba41d25be9ebec0b7c3d1bfa14d9a5c063c"
+    },
+    {
+      "action": "FINAL",
+      "loop": 3,
+      "prefill_seconds": 0.7452909270068631,
+      "qid": "312db49d0f5614be27fa1791abe0a4d8",
+      "source": "/content/local_fast/lsdrag-work/results/jev_v1.0/teacher_m3_train82/312db49d0f5614be27fa1791abe0a4d8.json",
+      "source_sha256": "6bb048f73eec1ebc9d8900585df77ba41d25be9ebec0b7c3d1bfa14d9a5c063c"
+    },
+    {
+      "action": "keyword_search",
+      "loop": 1,
+      "prefill_seconds": 0.045732340004178695,
+      "qid": "32e30585f1cbfa6086a00ec2cea7b85c",
+      "source": "/content/local_fast/lsdrag-work/results/jev_v1.0/teacher_m3_train82/32e30585f1cbfa6086a00ec2cea7b85c.json",
+      "source_sha256": "921b7906c6c43f0be3249f11d983370518552b45867e6623bfc7c5f219800d4d"
+    },
+    {
+      "action": "semantic_search",
+      "loop": 2,
+      "prefill_seconds": 0.047330079003586434,
+      "qid": "32e30585f1cbfa6086a00ec2cea7b85c",
+      "source": "/content/local_fast/lsdrag-work/results/jev_v1.0/teacher_m3_train82/32e30585f1cbfa6086a00ec2cea7b85c.json",
+      "source_sha256": "921b7906c6c43f0be3249f11d983370518552b45867e6623bfc7c5f219800d4d"
+    },
+    {
+      "action": "FINAL",
+      "loop": 3,
+      "prefill_seconds": 0.9682294379890664,
+      "qid": "32e30585f1cbfa6086a00ec2cea7b85c",
+      "source": "/content/local_fast/lsdrag-work/results/jev_v1.0/teacher_m3_train82/32e30585f1cbfa6086a00ec2cea7b85c.json",
+      "source_sha256": "921b7906c6c43f0be3249f11d983370518552b45867e6623bfc7c5f219800d4d"
+    },
+    {
+      "action": "keyword_search",
+      "loop": 1,
+      "prefill_seconds": 0.045788479008479044,
+      "qid": "3c0143a60a930c43ca2511beaa21d083",
+      "source": "/content/local_fast/lsdrag-work/results/jev_v1.0/teacher_m3_train82/3c0143a60a930c43ca2511beaa21d083.json",
+      "source_sha256": "635e3b2cf9030aceae0483b0c3680f7ad5bd6b41c50cdfacc85d44cf31e88a7b"
+    },
+    {
+      "action": "semantic_search",
+      "loop": 2,
+      "prefill_seconds": 0.047272188996430486,
+      "qid": "3c0143a60a930c43ca2511beaa21d083",
+      "source": "/content/local_fast/lsdrag-work/results/jev_v1.0/teacher_m3_train82/3c0143a60a930c43ca2511beaa21d083.json",
+      "source_sha256": "635e3b2cf9030aceae0483b0c3680f7ad5bd6b41c50cdfacc85d44cf31e88a7b"
+    },
+    {
+      "action": "FINAL",
+      "loop": 3,
+      "prefill_seconds": 0.6956971900071949,
+      "qid": "3c0143a60a930c43ca2511beaa21d083",
+      "source": "/content/local_fast/lsdrag-work/results/jev_v1.0/teacher_m3_train82/3c0143a60a930c43ca2511beaa21d083.json",
+      "source_sha256": "635e3b2cf9030aceae0483b0c3680f7ad5bd6b41c50cdfacc85d44cf31e88a7b"
+    },
+    {
+      "action": "keyword_search",
+      "loop": 1,
+      "prefill_seconds": 0.0458508290030295,
+      "qid": "42503d3b27c422b46cfafc9dec1606cd",
+      "source": "/content/local_fast/lsdrag-work/results/jev_v1.0/teacher_m3_train82/42503d3b27c422b46cfafc9dec1606cd.json",
+      "source_sha256": "67067045bc05c9e852af179750278351b457a70922b6e0e8a84e2ad4b1d96249"
+    },
+    {
+      "action": "semantic_search",
+      "loop": 2,
+      "prefill_seconds": 0.0470361990010133,
+      "qid": "42503d3b27c422b46cfafc9dec1606cd",
+      "source": "/content/local_fast/lsdrag-work/results/jev_v1.0/teacher_m3_train82/42503d3b27c422b46cfafc9dec1606cd.json",
+      "source_sha256": "67067045bc05c9e852af179750278351b457a70922b6e0e8a84e2ad4b1d96249"
+    },
+    {
+      "action": "FINAL",
+      "loop": 3,
+      "prefill_seconds": 1.3402647719922243,
+      "qid": "42503d3b27c422b46cfafc9dec1606cd",
+      "source": "/content/local_fast/lsdrag-work/results/jev_v1.0/teacher_m3_train82/42503d3b27c422b46cfafc9dec1606cd.json",
+      "source_sha256": "67067045bc05c9e852af179750278351b457a70922b6e0e8a84e2ad4b1d96249"
+    },
+    {
+      "action": "keyword_search",
+      "loop": 1,
+      "prefill_seconds": 0.045914150003227405,
+      "qid": "6bcb669863a815a657e31077a2d0b008",
+      "source": "/content/local_fast/lsdrag-work/results/jev_v1.0/teacher_m3_train82/6bcb669863a815a657e31077a2d0b008.json",
+      "source_sha256": "a916a187952de62ab6e2b4d497fb78885dcca64e89afc943dd05c1b4ddf737e9"
+    },
+    {
+      "action": "read_chunk",
+      "loop": 2,
+      "prefill_seconds": 0.08877585000300314,
+      "qid": "6bcb669863a815a657e31077a2d0b008",
+      "source": "/content/local_fast/lsdrag-work/results/jev_v1.0/teacher_m3_train82/6bcb669863a815a657e31077a2d0b008.json",
+      "source_sha256": "a916a187952de62ab6e2b4d497fb78885dcca64e89afc943dd05c1b4ddf737e9"
+    },
+    {
+      "action": "FINAL",
+      "loop": 3,
+      "prefill_seconds": 0.13823908800259233,
+      "qid": "6bcb669863a815a657e31077a2d0b008",
+      "source": "/content/local_fast/lsdrag-work/results/jev_v1.0/teacher_m3_train82/6bcb669863a815a657e31077a2d0b008.json",
+      "source_sha256": "a916a187952de62ab6e2b4d497fb78885dcca64e89afc943dd05c1b4ddf737e9"
+    },
+    {
+      "action": "keyword_search",
+      "loop": 1,
+      "prefill_seconds": 0.04576632000680547,
+      "qid": "89c7fb495a4bab8e89549621d63725ae",
+      "source": "/content/local_fast/lsdrag-work/results/jev_v1.0/teacher_m3_train82/89c7fb495a4bab8e89549621d63725ae.json",
+      "source_sha256": "ca17942af9529caf1348f7148714850fc57c0cff06c7b22b081cf35483529bff"
+    },
+    {
+      "action": "semantic_search",
+      "loop": 2,
+      "prefill_seconds": 0.04731274901132565,
+      "qid": "89c7fb495a4bab8e89549621d63725ae",
+      "source": "/content/local_fast/lsdrag-work/results/jev_v1.0/teacher_m3_train82/89c7fb495a4bab8e89549621d63725ae.json",
+      "source_sha256": "ca17942af9529caf1348f7148714850fc57c0cff06c7b22b081cf35483529bff"
+    },
+    {
+      "action": "FINAL",
+      "loop": 3,
+      "prefill_seconds": 0.4468137910007499,
+      "qid": "89c7fb495a4bab8e89549621d63725ae",
+      "source": "/content/local_fast/lsdrag-work/results/jev_v1.0/teacher_m3_train82/89c7fb495a4bab8e89549621d63725ae.json",
+      "source_sha256": "ca17942af9529caf1348f7148714850fc57c0cff06c7b22b081cf35483529bff"
+    },
+    {
+      "action": "keyword_search",
+      "loop": 1,
+      "prefill_seconds": 0.04561657999875024,
+      "qid": "ae00267e8d8f5dd96f6083a011f3322c",
+      "source": "/content/local_fast/lsdrag-work/results/jev_v1.0/teacher_mmqa_train37/ae00267e8d8f5dd96f6083a011f3322c.json",
+      "source_sha256": "110b12e518253e68301c81686e4f1238384af85e8011b3df13bcbe2c01400c8a"
+    },
+    {
+      "action": "semantic_search",
+      "loop": 2,
+      "prefill_seconds": 0.04721115900611039,
+      "qid": "ae00267e8d8f5dd96f6083a011f3322c",
+      "source": "/content/local_fast/lsdrag-work/results/jev_v1.0/teacher_mmqa_train37/ae00267e8d8f5dd96f6083a011f3322c.json",
+      "source_sha256": "110b12e518253e68301c81686e4f1238384af85e8011b3df13bcbe2c01400c8a"
+    },
+    {
+      "action": "read_chunk",
+      "loop": 3,
+      "prefill_seconds": 0.4459426809917204,
+      "qid": "ae00267e8d8f5dd96f6083a011f3322c",
+      "source": "/content/local_fast/lsdrag-work/results/jev_v1.0/teacher_mmqa_train37/ae00267e8d8f5dd96f6083a011f3322c.json",
+      "source_sha256": "110b12e518253e68301c81686e4f1238384af85e8011b3df13bcbe2c01400c8a"
+    },
+    {
+      "action": "FINAL",
+      "loop": 4,
+      "prefill_seconds": 0.512204031998408,
+      "qid": "ae00267e8d8f5dd96f6083a011f3322c",
+      "source": "/content/local_fast/lsdrag-work/results/jev_v1.0/teacher_mmqa_train37/ae00267e8d8f5dd96f6083a011f3322c.json",
+      "source_sha256": "110b12e518253e68301c81686e4f1238384af85e8011b3df13bcbe2c01400c8a"
+    },
+    {
+      "action": "semantic_search",
+      "loop": 1,
+      "prefill_seconds": 0.047319108998635784,
+      "qid": "multihop_1035",
+      "source": "/content/local_fast/lsdrag-work/results/jev_v1.0/teacher_multihop_01/multihop_1035.json",
+      "source_sha256": "3c25bde873c8bf3f63583e29264530b967448b933c5ded205abc1cba053c08cf"
+    },
+    {
+      "action": "keyword_search",
+      "loop": 2,
+      "prefill_seconds": 0.06718754000030458,
+      "qid": "multihop_1035",
+      "source": "/content/local_fast/lsdrag-work/results/jev_v1.0/teacher_multihop_01/multihop_1035.json",
+      "source_sha256": "3c25bde873c8bf3f63583e29264530b967448b933c5ded205abc1cba053c08cf"
+    },
+    {
+      "action": "semantic_search",
+      "loop": 3,
+      "prefill_seconds": 0.09926270600408316,
+      "qid": "multihop_1035",
+      "source": "/content/local_fast/lsdrag-work/results/jev_v1.0/teacher_multihop_01/multihop_1035.json",
+      "source_sha256": "3c25bde873c8bf3f63583e29264530b967448b933c5ded205abc1cba053c08cf"
+    },
+    {
+      "action": "read_chunk",
+      "loop": 4,
+      "prefill_seconds": 0.11279400000057649,
+      "qid": "multihop_1035",
+      "source": "/content/local_fast/lsdrag-work/results/jev_v1.0/teacher_multihop_01/multihop_1035.json",
+      "source_sha256": "3c25bde873c8bf3f63583e29264530b967448b933c5ded205abc1cba053c08cf"
+    },
+    {
+      "action": "FINAL",
+      "loop": 5,
+      "prefill_seconds": 0.14758567399985623,
+      "qid": "multihop_1035",
+      "source": "/content/local_fast/lsdrag-work/results/jev_v1.0/teacher_multihop_01/multihop_1035.json",
+      "source_sha256": "3c25bde873c8bf3f63583e29264530b967448b933c5ded205abc1cba053c08cf"
+    },
+    {
+      "action": "keyword_search",
+      "loop": 1,
+      "prefill_seconds": 0.04675568900711369,
+      "qid": "multihop_1903",
+      "source": "/content/local_fast/lsdrag-work/results/jev_v1.0/teacher_multihop_01/multihop_1903.json",
+      "source_sha256": "bb901d70b38de95cf64d5e080c251946f50f03d877deda9e17f3945812811b1a"
+    },
+    {
+      "action": "semantic_search",
+      "loop": 2,
+      "prefill_seconds": 0.07038860800093971,
+      "qid": "multihop_1903",
+      "source": "/content/local_fast/lsdrag-work/results/jev_v1.0/teacher_multihop_01/multihop_1903.json",
+      "source_sha256": "bb901d70b38de95cf64d5e080c251946f50f03d877deda9e17f3945812811b1a"
+    },
+    {
+      "action": "read_chunk",
+      "loop": 3,
+      "prefill_seconds": 0.08765486099582631,
+      "qid": "multihop_1903",
+      "source": "/content/local_fast/lsdrag-work/results/jev_v1.0/teacher_multihop_01/multihop_1903.json",
+      "source_sha256": "bb901d70b38de95cf64d5e080c251946f50f03d877deda9e17f3945812811b1a"
+    },
+    {
+      "action": "FINAL",
+      "loop": 4,
+      "prefill_seconds": 0.19536341300408822,
+      "qid": "multihop_1903",
+      "source": "/content/local_fast/lsdrag-work/results/jev_v1.0/teacher_multihop_01/multihop_1903.json",
+      "source_sha256": "bb901d70b38de95cf64d5e080c251946f50f03d877deda9e17f3945812811b1a"
+    },
+    {
+      "action": "semantic_search",
+      "loop": 1,
+      "prefill_seconds": 0.04721909899672028,
+      "qid": "multihop_0936",
+      "source": "/content/local_fast/lsdrag-work/results/jev_v1.0/teacher_multihop_01/multihop_0936.json",
+      "source_sha256": "80d000709b0ee3c652e014af3c8d3092db0a437c359997321e653f6920ef0179"
+    },
+    {
+      "action": "read_chunk",
+      "loop": 2,
+      "prefill_seconds": 0.06947271799435839,
+      "qid": "multihop_0936",
+      "source": "/content/local_fast/lsdrag-work/results/jev_v1.0/teacher_multihop_01/multihop_0936.json",
+      "source_sha256": "80d000709b0ee3c652e014af3c8d3092db0a437c359997321e653f6920ef0179"
+    },
+    {
+      "action": "semantic_search",
+      "loop": 3,
+      "prefill_seconds": 0.09933118599292357,
+      "qid": "multihop_0936",
+      "source": "/content/local_fast/lsdrag-work/results/jev_v1.0/teacher_multihop_01/multihop_0936.json",
+      "source_sha256": "80d000709b0ee3c652e014af3c8d3092db0a437c359997321e653f6920ef0179"
+    },
+    {
+      "action": "read_chunk",
+      "loop": 4,
+      "prefill_seconds": 0.1346460089989705,
+      "qid": "multihop_0936",
+      "source": "/content/local_fast/lsdrag-work/results/jev_v1.0/teacher_multihop_01/multihop_0936.json",
+      "source_sha256": "80d000709b0ee3c652e014af3c8d3092db0a437c359997321e653f6920ef0179"
+    },
+    {
+      "action": "keyword_search",
+      "loop": 5,
+      "prefill_seconds": 0.20664315699832514,
+      "qid": "multihop_0936",
+      "source": "/content/local_fast/lsdrag-work/results/jev_v1.0/teacher_multihop_01/multihop_0936.json",
+      "source_sha256": "80d000709b0ee3c652e014af3c8d3092db0a437c359997321e653f6920ef0179"
+    },
+    {
+      "action": "semantic_search",
+      "loop": 6,
+      "prefill_seconds": 0.20684682700084522,
+      "qid": "multihop_0936",
+      "source": "/content/local_fast/lsdrag-work/results/jev_v1.0/teacher_multihop_01/multihop_0936.json",
+      "source_sha256": "80d000709b0ee3c652e014af3c8d3092db0a437c359997321e653f6920ef0179"
+    },
+    {
+      "action": "read_chunk",
+      "loop": 7,
+      "prefill_seconds": 0.22809408800094388,
+      "qid": "multihop_0936",
+      "source": "/content/local_fast/lsdrag-work/results/jev_v1.0/teacher_multihop_01/multihop_0936.json",
+      "source_sha256": "80d000709b0ee3c652e014af3c8d3092db0a437c359997321e653f6920ef0179"
+    },
+    {
+      "action": "FINAL",
+      "loop": 8,
+      "prefill_seconds": 0.2754912969976431,
+      "qid": "multihop_0936",
+      "source": "/content/local_fast/lsdrag-work/results/jev_v1.0/teacher_multihop_01/multihop_0936.json",
+      "source_sha256": "80d000709b0ee3c652e014af3c8d3092db0a437c359997321e653f6920ef0179"
+    },
+    {
+      "action": "semantic_search",
+      "loop": 1,
+      "prefill_seconds": 0.04724658900522627,
+      "qid": "multihop_1685",
+      "source": "/content/local_fast/lsdrag-work/results/jev_v1.0/teacher_multihop_02/multihop_1685.json",
+      "source_sha256": "d15e53026cab53a725dfa0171a813a94e61c20df31fe3f3e94fe732ad8e89a9e"
+    },
+    {
+      "action": "read_chunk",
+      "loop": 2,
+      "prefill_seconds": 0.06726544999401085,
+      "qid": "multihop_1685",
+      "source": "/content/local_fast/lsdrag-work/results/jev_v1.0/teacher_multihop_02/multihop_1685.json",
+      "source_sha256": "d15e53026cab53a725dfa0171a813a94e61c20df31fe3f3e94fe732ad8e89a9e"
+    },
+    {
+      "action": "keyword_search",
+      "loop": 3,
+      "prefill_seconds": 0.1348728500015568,
+      "qid": "multihop_1685",
+      "source": "/content/local_fast/lsdrag-work/results/jev_v1.0/teacher_multihop_02/multihop_1685.json",
+      "source_sha256": "d15e53026cab53a725dfa0171a813a94e61c20df31fe3f3e94fe732ad8e89a9e"
+    },
+    {
+      "action": "semantic_search",
+      "loop": 4,
+      "prefill_seconds": 0.15752103000704665,
+      "qid": "multihop_1685",
+      "source": "/content/local_fast/lsdrag-work/results/jev_v1.0/teacher_multihop_02/multihop_1685.json",
+      "source_sha256": "d15e53026cab53a725dfa0171a813a94e61c20df31fe3f3e94fe732ad8e89a9e"
+    },
+    {
+      "action": "read_chunk",
+      "loop": 5,
+      "prefill_seconds": 0.16022704800707288,
+      "qid": "multihop_1685",
+      "source": "/content/local_fast/lsdrag-work/results/jev_v1.0/teacher_multihop_02/multihop_1685.json",
+      "source_sha256": "d15e53026cab53a725dfa0171a813a94e61c20df31fe3f3e94fe732ad8e89a9e"
+    },
+    {
+      "action": "FINAL",
+      "loop": 6,
+      "prefill_seconds": 0.2086492870002985,
+      "qid": "multihop_1685",
+      "source": "/content/local_fast/lsdrag-work/results/jev_v1.0/teacher_multihop_02/multihop_1685.json",
+      "source_sha256": "d15e53026cab53a725dfa0171a813a94e61c20df31fe3f3e94fe732ad8e89a9e"
+    },
+    {
+      "action": "semantic_search",
+      "loop": 1,
+      "prefill_seconds": 0.04730574799759779,
+      "qid": "multihop_1427",
+      "source": "/content/local_fast/lsdrag-work/results/jev_v1.0/teacher_multihop_02/multihop_1427.json",
+      "source_sha256": "498afe8a9ca6ebd0593f7501300d0cc0a5b617680e3c55836f32b105f268aed6"
+    },
+    {
+      "action": "read_chunk",
+      "loop": 2,
+      "prefill_seconds": 0.06669378999504261,
+      "qid": "multihop_1427",
+      "source": "/content/local_fast/lsdrag-work/results/jev_v1.0/teacher_multihop_02/multihop_1427.json",
+      "source_sha256": "498afe8a9ca6ebd0593f7501300d0cc0a5b617680e3c55836f32b105f268aed6"
+    },
+    {
+      "action": "semantic_search",
+      "loop": 3,
+      "prefill_seconds": 0.15282882199971937,
+      "qid": "multihop_1427",
+      "source": "/content/local_fast/lsdrag-work/results/jev_v1.0/teacher_multihop_02/multihop_1427.json",
+      "source_sha256": "498afe8a9ca6ebd0593f7501300d0cc0a5b617680e3c55836f32b105f268aed6"
+    },
+    {
+      "action": "read_chunk",
+      "loop": 4,
+      "prefill_seconds": 0.1948065629985649,
+      "qid": "multihop_1427",
+      "source": "/content/local_fast/lsdrag-work/results/jev_v1.0/teacher_multihop_02/multihop_1427.json",
+      "source_sha256": "498afe8a9ca6ebd0593f7501300d0cc0a5b617680e3c55836f32b105f268aed6"
+    },
+    {
+      "action": "FINAL",
+      "loop": 5,
+      "prefill_seconds": 0.36681371700251475,
+      "qid": "multihop_1427",
+      "source": "/content/local_fast/lsdrag-work/results/jev_v1.0/teacher_multihop_02/multihop_1427.json",
+      "source_sha256": "498afe8a9ca6ebd0593f7501300d0cc0a5b617680e3c55836f32b105f268aed6"
+    },
+    {
+      "action": "semantic_search",
+      "loop": 1,
+      "prefill_seconds": 0.047109238992561586,
+      "qid": "multihop_1236",
+      "source": "/content/local_fast/lsdrag-work/results/jev_v1.0/teacher_multihop_02/multihop_1236.json",
+      "source_sha256": "b120c84d5cd1b7e432713c76508207b93b09bbfcf1bf77515dfa5435f4392f63"
+    },
+    {
+      "action": "read_chunk",
+      "loop": 2,
+      "prefill_seconds": 0.06989483899087645,
+      "qid": "multihop_1236",
+      "source": "/content/local_fast/lsdrag-work/results/jev_v1.0/teacher_multihop_02/multihop_1236.json",
+      "source_sha256": "b120c84d5cd1b7e432713c76508207b93b09bbfcf1bf77515dfa5435f4392f63"
+    },
+    {
+      "action": "FINAL",
+      "loop": 3,
+      "prefill_seconds": 0.20849718700628728,
+      "qid": "multihop_1236",
+      "source": "/content/local_fast/lsdrag-work/results/jev_v1.0/teacher_multihop_02/multihop_1236.json",
+      "source_sha256": "b120c84d5cd1b7e432713c76508207b93b09bbfcf1bf77515dfa5435f4392f63"
+    },
+    {
+      "action": "semantic_search",
+      "loop": 1,
+      "prefill_seconds": 0.04734298901166767,
+      "qid": "multihop_1961",
+      "source": "/content/local_fast/lsdrag-work/results/jev_v1.0/teacher_multihop_02/multihop_1961.json",
+      "source_sha256": "e2fa52d4c6823d7b53350138bf515081c8d4bbbd33e36076e3be69acf1b06d51"
+    },
+    {
+      "action": "read_chunk",
+      "loop": 2,
+      "prefill_seconds": 0.0698490189970471,
+      "qid": "multihop_1961",
+      "source": "/content/local_fast/lsdrag-work/results/jev_v1.0/teacher_multihop_02/multihop_1961.json",
+      "source_sha256": "e2fa52d4c6823d7b53350138bf515081c8d4bbbd33e36076e3be69acf1b06d51"
+    },
+    {
+      "action": "keyword_search",
+      "loop": 3,
+      "prefill_seconds": 0.13858169900777284,
+      "qid": "multihop_1961",
+      "source": "/content/local_fast/lsdrag-work/results/jev_v1.0/teacher_multihop_02/multihop_1961.json",
+      "source_sha256": "e2fa52d4c6823d7b53350138bf515081c8d4bbbd33e36076e3be69acf1b06d51"
+    },
+    {
+      "action": "read_chunk",
+      "loop": 4,
+      "prefill_seconds": 0.1743549120001262,
+      "qid": "multihop_1961",
+      "source": "/content/local_fast/lsdrag-work/results/jev_v1.0/teacher_multihop_02/multihop_1961.json",
+      "source_sha256": "e2fa52d4c6823d7b53350138bf515081c8d4bbbd33e36076e3be69acf1b06d51"
+    },
+    {
+      "action": "FINAL",
+      "loop": 5,
+      "prefill_seconds": 0.25621137500274926,
+      "qid": "multihop_1961",
+      "source": "/content/local_fast/lsdrag-work/results/jev_v1.0/teacher_multihop_02/multihop_1961.json",
+      "source_sha256": "e2fa52d4c6823d7b53350138bf515081c8d4bbbd33e36076e3be69acf1b06d51"
+    },
+    {
+      "action": "keyword_search",
+      "loop": 1,
+      "prefill_seconds": 0.047174428997095674,
+      "qid": "multihop_0187",
+      "source": "/content/local_fast/lsdrag-work/results/jev_v1.0/teacher_multihop_02/multihop_0187.json",
+      "source_sha256": "d90d44432f5aa29550d5236841437f4906413b619c6cc14afef63c939284494c"
+    },
+    {
+      "action": "semantic_search",
+      "loop": 2,
+      "prefill_seconds": 0.049659687996609136,
+      "qid": "multihop_0187",
+      "source": "/content/local_fast/lsdrag-work/results/jev_v1.0/teacher_multihop_02/multihop_0187.json",
+      "source_sha256": "d90d44432f5aa29550d5236841437f4906413b619c6cc14afef63c939284494c"
+    },
+    {
+      "action": "read_chunk",
+      "loop": 3,
+      "prefill_seconds": 0.06546308100223541,
+      "qid": "multihop_0187",
+      "source": "/content/local_fast/lsdrag-work/results/jev_v1.0/teacher_multihop_02/multihop_0187.json",
+      "source_sha256": "d90d44432f5aa29550d5236841437f4906413b619c6cc14afef63c939284494c"
+    },
+    {
+      "action": "FINAL",
+      "loop": 4,
+      "prefill_seconds": 0.1146349890041165,
+      "qid": "multihop_0187",
+      "source": "/content/local_fast/lsdrag-work/results/jev_v1.0/teacher_multihop_02/multihop_0187.json",
+      "source_sha256": "d90d44432f5aa29550d5236841437f4906413b619c6cc14afef63c939284494c"
+    },
+    {
+      "action": "semantic_search",
+      "loop": 1,
+      "prefill_seconds": 0.0470551189937396,
+      "qid": "multihop_1923",
+      "source": "/content/local_fast/lsdrag-work/results/jev_v1.0/teacher_multihop_02/multihop_1923.json",
+      "source_sha256": "5df5323227126bcc6fbe9774ffe0a35515ca677999bae19588ca6ee319193c47"
+    },
+    {
+      "action": "read_chunk",
+      "loop": 2,
+      "prefill_seconds": 0.066787331001251,
+      "qid": "multihop_1923",
+      "source": "/content/local_fast/lsdrag-work/results/jev_v1.0/teacher_multihop_02/multihop_1923.json",
+      "source_sha256": "5df5323227126bcc6fbe9774ffe0a35515ca677999bae19588ca6ee319193c47"
+    },
+    {
+      "action": "keyword_search",
+      "loop": 3,
+      "prefill_seconds": 0.12144888599868864,
+      "qid": "multihop_1923",
+      "source": "/content/local_fast/lsdrag-work/results/jev_v1.0/teacher_multihop_02/multihop_1923.json",
+      "source_sha256": "5df5323227126bcc6fbe9774ffe0a35515ca677999bae19588ca6ee319193c47"
+    },
+    {
+      "action": "semantic_search",
+      "loop": 4,
+      "prefill_seconds": 0.1347069789917441,
+      "qid": "multihop_1923",
+      "source": "/content/local_fast/lsdrag-work/results/jev_v1.0/teacher_multihop_02/multihop_1923.json",
+      "source_sha256": "5df5323227126bcc6fbe9774ffe0a35515ca677999bae19588ca6ee319193c47"
+    },
+    {
+      "action": "read_chunk",
+      "loop": 5,
+      "prefill_seconds": 0.1462055540032452,
+      "qid": "multihop_1923",
+      "source": "/content/local_fast/lsdrag-work/results/jev_v1.0/teacher_multihop_02/multihop_1923.json",
+      "source_sha256": "5df5323227126bcc6fbe9774ffe0a35515ca677999bae19588ca6ee319193c47"
+    },
+    {
+      "action": "FINAL",
+      "loop": 6,
+      "prefill_seconds": 0.22605310899962205,
+      "qid": "multihop_1923",
+      "source": "/content/local_fast/lsdrag-work/results/jev_v1.0/teacher_multihop_02/multihop_1923.json",
+      "source_sha256": "5df5323227126bcc6fbe9774ffe0a35515ca677999bae19588ca6ee319193c47"
+    },
+    {
+      "action": "keyword_search",
+      "loop": 1,
+      "prefill_seconds": 0.047093039989704266,
+      "qid": "multihop_2304",
+      "source": "/content/local_fast/lsdrag-work/results/jev_v1.0/teacher_multihop_02/multihop_2304.json",
+      "source_sha256": "4123242f5f3e446e411eef793508fdd7b52e7b9e6bd3a838b217a702d541a835"
+    },
+    {
+      "action": "semantic_search",
+      "loop": 2,
+      "prefill_seconds": 0.04743442899780348,
+      "qid": "multihop_2304",
+      "source": "/content/local_fast/lsdrag-work/results/jev_v1.0/teacher_multihop_02/multihop_2304.json",
+      "source_sha256": "4123242f5f3e446e411eef793508fdd7b52e7b9e6bd3a838b217a702d541a835"
+    },
+    {
+      "action": "read_chunk",
+      "loop": 3,
+      "prefill_seconds": 0.05728098399413284,
+      "qid": "multihop_2304",
+      "source": "/content/local_fast/lsdrag-work/results/jev_v1.0/teacher_multihop_02/multihop_2304.json",
+      "source_sha256": "4123242f5f3e446e411eef793508fdd7b52e7b9e6bd3a838b217a702d541a835"
+    },
+    {
+      "action": "FINAL",
+      "loop": 4,
+      "prefill_seconds": 0.2395986229967093,
+      "qid": "multihop_2304",
+      "source": "/content/local_fast/lsdrag-work/results/jev_v1.0/teacher_multihop_02/multihop_2304.json",
+      "source_sha256": "4123242f5f3e446e411eef793508fdd7b52e7b9e6bd3a838b217a702d541a835"
+    },
+    {
+      "action": "semantic_search",
+      "loop": 1,
+      "prefill_seconds": 0.0473373989952961,
+      "qid": "multihop_1108",
+      "source": "/content/local_fast/lsdrag-work/results/jev_v1.0/teacher_multihop_02/multihop_1108.json",
+      "source_sha256": "1eca32ccbaf052f4412e5e8d777c0a05346d93dd2b0fa715a2df2f5a64e8d76d"
+    },
+    {
+      "action": "read_chunk",
+      "loop": 2,
+      "prefill_seconds": 0.0697866489936132,
+      "qid": "multihop_1108",
+      "source": "/content/local_fast/lsdrag-work/results/jev_v1.0/teacher_multihop_02/multihop_1108.json",
+      "source_sha256": "1eca32ccbaf052f4412e5e8d777c0a05346d93dd2b0fa715a2df2f5a64e8d76d"
+    },
+    {
+      "action": "FINAL",
+      "loop": 3,
+      "prefill_seconds": 0.16025984899897594,
+      "qid": "multihop_1108",
+      "source": "/content/local_fast/lsdrag-work/results/jev_v1.0/teacher_multihop_02/multihop_1108.json",
+      "source_sha256": "1eca32ccbaf052f4412e5e8d777c0a05346d93dd2b0fa715a2df2f5a64e8d76d"
+    },
+    {
+      "action": "semantic_search",
+      "loop": 1,
+      "prefill_seconds": 0.04720937900128774,
+      "qid": "multihop_0506",
+      "source": "/content/local_fast/lsdrag-work/results/jev_v1.0/teacher_multihop_02/multihop_0506.json",
+      "source_sha256": "3d7821e64265c8b673253f3063430e4cbed2550e6244100e07084cb989875ad8"
+    },
+    {
+      "action": "read_chunk",
+      "loop": 2,
+      "prefill_seconds": 0.06508191100147087,
+      "qid": "multihop_0506",
+      "source": "/content/local_fast/lsdrag-work/results/jev_v1.0/teacher_multihop_02/multihop_0506.json",
+      "source_sha256": "3d7821e64265c8b673253f3063430e4cbed2550e6244100e07084cb989875ad8"
+    },
+    {
+      "action": "semantic_search",
+      "loop": 3,
+      "prefill_seconds": 0.12104275599995162,
+      "qid": "multihop_0506",
+      "source": "/content/local_fast/lsdrag-work/results/jev_v1.0/teacher_multihop_02/multihop_0506.json",
+      "source_sha256": "3d7821e64265c8b673253f3063430e4cbed2550e6244100e07084cb989875ad8"
+    },
+    {
+      "action": "read_chunk",
+      "loop": 4,
+      "prefill_seconds": 0.14600626500032376,
+      "qid": "multihop_0506",
+      "source": "/content/local_fast/lsdrag-work/results/jev_v1.0/teacher_multihop_02/multihop_0506.json",
+      "source_sha256": "3d7821e64265c8b673253f3063430e4cbed2550e6244100e07084cb989875ad8"
+    },
+    {
+      "action": "FINAL",
+      "loop": 5,
+      "prefill_seconds": 0.18725771599565633,
+      "qid": "multihop_0506",
+      "source": "/content/local_fast/lsdrag-work/results/jev_v1.0/teacher_multihop_02/multihop_0506.json",
+      "source_sha256": "3d7821e64265c8b673253f3063430e4cbed2550e6244100e07084cb989875ad8"
+    },
+    {
+      "action": "semantic_search",
+      "loop": 1,
+      "prefill_seconds": 0.047137539004324935,
+      "qid": "multihop_0426",
+      "source": "/content/local_fast/lsdrag-work/results/jev_v1.0/teacher_multihop_02/multihop_0426.json",
+      "source_sha256": "5f3e9e7621ecc20cd7dca9aa63a648c586a77ce4897f19745d11aacf78876068"
+    },
+    {
+      "action": "keyword_search",
+      "loop": 2,
+      "prefill_seconds": 0.06625683000311255,
+      "qid": "multihop_0426",
+      "source": "/content/local_fast/lsdrag-work/results/jev_v1.0/teacher_multihop_02/multihop_0426.json",
+      "source_sha256": "5f3e9e7621ecc20cd7dca9aa63a648c586a77ce4897f19745d11aacf78876068"
+    },
+    {
+      "action": "semantic_search",
+      "loop": 3,
+      "prefill_seconds": 0.09943549499439541,
+      "qid": "multihop_0426",
+      "source": "/content/local_fast/lsdrag-work/results/jev_v1.0/teacher_multihop_02/multihop_0426.json",
+      "source_sha256": "5f3e9e7621ecc20cd7dca9aa63a648c586a77ce4897f19745d11aacf78876068"
+    },
+    {
+      "action": "read_chunk",
+      "loop": 4,
+      "prefill_seconds": 0.11075863099540584,
+      "qid": "multihop_0426",
+      "source": "/content/local_fast/lsdrag-work/results/jev_v1.0/teacher_multihop_02/multihop_0426.json",
+      "source_sha256": "5f3e9e7621ecc20cd7dca9aa63a648c586a77ce4897f19745d11aacf78876068"
+    },
+    {
+      "action": "FINAL",
+      "loop": 5,
+      "prefill_seconds": 0.2247596199886175,
+      "qid": "multihop_0426",
+      "source": "/content/local_fast/lsdrag-work/results/jev_v1.0/teacher_multihop_02/multihop_0426.json",
+      "source_sha256": "5f3e9e7621ecc20cd7dca9aa63a648c586a77ce4897f19745d11aacf78876068"
+    },
+    {
+      "action": "semantic_search",
+      "loop": 1,
+      "prefill_seconds": 0.047221929009538144,
+      "qid": "multihop_0739",
+      "source": "/content/local_fast/lsdrag-work/results/jev_v1.0/teacher_multihop_02/multihop_0739.json",
+      "source_sha256": "0cb3cb6aa5859a6904804e9a73f4a2a2519d34578b6e864343dfd78c0f16c21e"
+    },
+    {
+      "action": "read_chunk",
+      "loop": 2,
+      "prefill_seconds": 0.06975017899821978,
+      "qid": "multihop_0739",
+      "source": "/content/local_fast/lsdrag-work/results/jev_v1.0/teacher_multihop_02/multihop_0739.json",
+      "source_sha256": "0cb3cb6aa5859a6904804e9a73f4a2a2519d34578b6e864343dfd78c0f16c21e"
+    },
+    {
+      "action": "keyword_search",
+      "loop": 3,
+      "prefill_seconds": 0.15876132000994403,
+      "qid": "multihop_0739",
+      "source": "/content/local_fast/lsdrag-work/results/jev_v1.0/teacher_multihop_02/multihop_0739.json",
+      "source_sha256": "0cb3cb6aa5859a6904804e9a73f4a2a2519d34578b6e864343dfd78c0f16c21e"
+    },
+    {
+      "action": "read_chunk",
+      "loop": 4,
+      "prefill_seconds": 0.20870652700250503,
+      "qid": "multihop_0739",
+      "source": "/content/local_fast/lsdrag-work/results/jev_v1.0/teacher_multihop_02/multihop_0739.json",
+      "source_sha256": "0cb3cb6aa5859a6904804e9a73f4a2a2519d34578b6e864343dfd78c0f16c21e"
+    },
+    {
+      "action": "FINAL",
+      "loop": 5,
+      "prefill_seconds": 0.3096557719982229,
+      "qid": "multihop_0739",
+      "source": "/content/local_fast/lsdrag-work/results/jev_v1.0/teacher_multihop_02/multihop_0739.json",
+      "source_sha256": "0cb3cb6aa5859a6904804e9a73f4a2a2519d34578b6e864343dfd78c0f16c21e"
+    },
+    {
+      "action": "semantic_search",
+      "loop": 1,
+      "prefill_seconds": 0.04712275900237728,
+      "qid": "multihop_2302",
+      "source": "/content/local_fast/lsdrag-work/results/jev_v1.0/teacher_multihop_02/multihop_2302.json",
+      "source_sha256": "2f1ec35efd77d8a5446dbe7ca8cff9f53b09cb5ba4632eb0e284dcd1ba3ac696"
+    },
+    {
+      "action": "read_chunk",
+      "loop": 2,
+      "prefill_seconds": 0.05701340499217622,
+      "qid": "multihop_2302",
+      "source": "/content/local_fast/lsdrag-work/results/jev_v1.0/teacher_multihop_02/multihop_2302.json",
+      "source_sha256": "2f1ec35efd77d8a5446dbe7ca8cff9f53b09cb5ba4632eb0e284dcd1ba3ac696"
+    },
+    {
+      "action": "FINAL",
+      "loop": 3,
+      "prefill_seconds": 0.21311121599865146,
+      "qid": "multihop_2302",
+      "source": "/content/local_fast/lsdrag-work/results/jev_v1.0/teacher_multihop_02/multihop_2302.json",
+      "source_sha256": "2f1ec35efd77d8a5446dbe7ca8cff9f53b09cb5ba4632eb0e284dcd1ba3ac696"
+    },
+    {
+      "action": "keyword_search",
+      "loop": 1,
+      "prefill_seconds": 0.04732272900582757,
+      "qid": "multihop_0575",
+      "source": "/content/local_fast/lsdrag-work/results/jev_v1.0/teacher_multihop_02/multihop_0575.json",
+      "source_sha256": "eef25c92cae402111cea0e772655d4b6ebcda4486b688978c6e1137434cbb98d"
+    },
+    {
+      "action": "read_chunk",
+      "loop": 2,
+      "prefill_seconds": 0.07070230800309218,
+      "qid": "multihop_0575",
+      "source": "/content/local_fast/lsdrag-work/results/jev_v1.0/teacher_multihop_02/multihop_0575.json",
+      "source_sha256": "eef25c92cae402111cea0e772655d4b6ebcda4486b688978c6e1137434cbb98d"
+    },
+    {
+      "action": "semantic_search",
+      "loop": 3,
+      "prefill_seconds": 0.10339162399759516,
+      "qid": "multihop_0575",
+      "source": "/content/local_fast/lsdrag-work/results/jev_v1.0/teacher_multihop_02/multihop_0575.json",
+      "source_sha256": "eef25c92cae402111cea0e772655d4b6ebcda4486b688978c6e1137434cbb98d"
+    },
+    {
+      "action": "read_chunk",
+      "loop": 4,
+      "prefill_seconds": 0.13774992899561767,
+      "qid": "multihop_0575",
+      "source": "/content/local_fast/lsdrag-work/results/jev_v1.0/teacher_multihop_02/multihop_0575.json",
+      "source_sha256": "eef25c92cae402111cea0e772655d4b6ebcda4486b688978c6e1137434cbb98d"
+    },
+    {
+      "action": "FINAL",
+      "loop": 5,
+      "prefill_seconds": 0.1872383159934543,
+      "qid": "multihop_0575",
+      "source": "/content/local_fast/lsdrag-work/results/jev_v1.0/teacher_multihop_02/multihop_0575.json",
+      "source_sha256": "eef25c92cae402111cea0e772655d4b6ebcda4486b688978c6e1137434cbb98d"
+    },
+    {
+      "action": "keyword_search",
+      "loop": 1,
+      "prefill_seconds": 0.04709084899513982,
+      "qid": "multihop_0002",
+      "source": "/content/local_fast/lsdrag-work/results/jev_v1.0/teacher_multihop_02/multihop_0002.json",
+      "source_sha256": "cc82e11b00273725378f16dd448974042da467b94afdcc8519ae7fcaf47dc614"
+    },
+    {
+      "action": "semantic_search",
+      "loop": 2,
+      "prefill_seconds": 0.04707664900342934,
+      "qid": "multihop_0002",
+      "source": "/content/local_fast/lsdrag-work/results/jev_v1.0/teacher_multihop_02/multihop_0002.json",
+      "source_sha256": "cc82e11b00273725378f16dd448974042da467b94afdcc8519ae7fcaf47dc614"
+    },
+    {
+      "action": "read_chunk",
+      "loop": 3,
+      "prefill_seconds": 0.05712696400587447,
+      "qid": "multihop_0002",
+      "source": "/content/local_fast/lsdrag-work/results/jev_v1.0/teacher_multihop_02/multihop_0002.json",
+      "source_sha256": "cc82e11b00273725378f16dd448974042da467b94afdcc8519ae7fcaf47dc614"
+    },
+    {
+      "action": "FINAL",
+      "loop": 4,
+      "prefill_seconds": 0.22636272900854237,
+      "qid": "multihop_0002",
+      "source": "/content/local_fast/lsdrag-work/results/jev_v1.0/teacher_multihop_02/multihop_0002.json",
+      "source_sha256": "cc82e11b00273725378f16dd448974042da467b94afdcc8519ae7fcaf47dc614"
+    },
+    {
+      "action": "semantic_search",
+      "loop": 1,
+      "prefill_seconds": 0.047166119009489194,
+      "qid": "multihop_1699",
+      "source": "/content/local_fast/lsdrag-work/results/jev_v1.0/teacher_multihop_02/multihop_1699.json",
+      "source_sha256": "bf6d726ae0405cf24b7cb11bcf5083b673e532a83dbeaa0f47e0e9c0f63d751e"
+    },
+    {
+      "action": "read_chunk",
+      "loop": 2,
+      "prefill_seconds": 0.056793984011164866,
+      "qid": "multihop_1699",
+      "source": "/content/local_fast/lsdrag-work/results/jev_v1.0/teacher_multihop_02/multihop_1699.json",
+      "source_sha256": "bf6d726ae0405cf24b7cb11bcf5083b673e532a83dbeaa0f47e0e9c0f63d751e"
+    },
+    {
+      "action": "keyword_search",
+      "loop": 3,
+      "prefill_seconds": 0.11519383899576496,
+      "qid": "multihop_1699",
+      "source": "/content/local_fast/lsdrag-work/results/jev_v1.0/teacher_multihop_02/multihop_1699.json",
+      "source_sha256": "bf6d726ae0405cf24b7cb11bcf5083b673e532a83dbeaa0f47e0e9c0f63d751e"
+    },
+    {
+      "action": "semantic_search",
+      "loop": 4,
+      "prefill_seconds": 0.12051491599413566,
+      "qid": "multihop_1699",
+      "source": "/content/local_fast/lsdrag-work/results/jev_v1.0/teacher_multihop_02/multihop_1699.json",
+      "source_sha256": "bf6d726ae0405cf24b7cb11bcf5083b673e532a83dbeaa0f47e0e9c0f63d751e"
+    },
+    {
+      "action": "read_chunk",
+      "loop": 5,
+      "prefill_seconds": 0.140609386988217,
+      "qid": "multihop_1699",
+      "source": "/content/local_fast/lsdrag-work/results/jev_v1.0/teacher_multihop_02/multihop_1699.json",
+      "source_sha256": "bf6d726ae0405cf24b7cb11bcf5083b673e532a83dbeaa0f47e0e9c0f63d751e"
+    },
+    {
+      "action": "FINAL",
+      "loop": 6,
+      "prefill_seconds": 0.2134788350085728,
+      "qid": "multihop_1699",
+      "source": "/content/local_fast/lsdrag-work/results/jev_v1.0/teacher_multihop_02/multihop_1699.json",
+      "source_sha256": "bf6d726ae0405cf24b7cb11bcf5083b673e532a83dbeaa0f47e0e9c0f63d751e"
+    },
+    {
+      "action": "semantic_search",
+      "loop": 1,
+      "prefill_seconds": 0.047156808999716304,
+      "qid": "multihop_1577",
+      "source": "/content/local_fast/lsdrag-work/results/jev_v1.0/teacher_multihop_03/multihop_1577.json",
+      "source_sha256": "77e23efb978c576c4f28ba9a47a1be048662280a219f177e819b24baa722d06b"
+    },
+    {
+      "action": "read_chunk",
+      "loop": 2,
+      "prefill_seconds": 0.06726522999815643,
+      "qid": "multihop_1577",
+      "source": "/content/local_fast/lsdrag-work/results/jev_v1.0/teacher_multihop_03/multihop_1577.json",
+      "source_sha256": "77e23efb978c576c4f28ba9a47a1be048662280a219f177e819b24baa722d06b"
+    },
+    {
+      "action": "FINAL",
+      "loop": 3,
+      "prefill_seconds": 0.24822426900209393,
+      "qid": "multihop_1577",
+      "source": "/content/local_fast/lsdrag-work/results/jev_v1.0/teacher_multihop_03/multihop_1577.json",
+      "source_sha256": "77e23efb978c576c4f28ba9a47a1be048662280a219f177e819b24baa722d06b"
+    },
+    {
+      "action": "semantic_search",
+      "loop": 1,
+      "prefill_seconds": 0.04727410900522955,
+      "qid": "multihop_0843",
+      "source": "/content/local_fast/lsdrag-work/results/jev_v1.0/teacher_multihop_03/multihop_0843.json",
+      "source_sha256": "7a6953eb79a0bfd294df8a3801727d950582a4cd1ae478ff1a3bb984e7ca26f9"
+    },
+    {
+      "action": "read_chunk",
+      "loop": 2,
+      "prefill_seconds": 0.06640687999606598,
+      "qid": "multihop_0843",
+      "source": "/content/local_fast/lsdrag-work/results/jev_v1.0/teacher_multihop_03/multihop_0843.json",
+      "source_sha256": "7a6953eb79a0bfd294df8a3801727d950582a4cd1ae478ff1a3bb984e7ca26f9"
+    },
+    {
+      "action": "FINAL",
+      "loop": 3,
+      "prefill_seconds": 0.1954819530074019,
+      "qid": "multihop_0843",
+      "source": "/content/local_fast/lsdrag-work/results/jev_v1.0/teacher_multihop_03/multihop_0843.json",
+      "source_sha256": "7a6953eb79a0bfd294df8a3801727d950582a4cd1ae478ff1a3bb984e7ca26f9"
+    },
+    {
+      "action": "semantic_search",
+      "loop": 1,
+      "prefill_seconds": 0.047331349007436074,
+      "qid": "multihop_2334",
+      "source": "/content/local_fast/lsdrag-work/results/jev_v1.0/teacher_multihop_03/multihop_2334.json",
+      "source_sha256": "4433f4f9e552b8c282e197d1c027ca38c2a430ce7aa9b88cd086f9792f89543a"
+    },
+    {
+      "action": "read_chunk",
+      "loop": 2,
+      "prefill_seconds": 0.0667864209972322,
+      "qid": "multihop_2334",
+      "source": "/content/local_fast/lsdrag-work/results/jev_v1.0/teacher_multihop_03/multihop_2334.json",
+      "source_sha256": "4433f4f9e552b8c282e197d1c027ca38c2a430ce7aa9b88cd086f9792f89543a"
+    },
+    {
+      "action": "FINAL",
+      "loop": 3,
+      "prefill_seconds": 0.22630191000644118,
+      "qid": "multihop_2334",
+      "source": "/content/local_fast/lsdrag-work/results/jev_v1.0/teacher_multihop_03/multihop_2334.json",
+      "source_sha256": "4433f4f9e552b8c282e197d1c027ca38c2a430ce7aa9b88cd086f9792f89543a"
+    },
+    {
+      "action": "semantic_search",
+      "loop": 1,
+      "prefill_seconds": 0.047174848994472995,
+      "qid": "multihop_0517",
+      "source": "/content/local_fast/lsdrag-work/results/jev_v1.0/teacher_multihop_03/multihop_0517.json",
+      "source_sha256": "fdb8c9ec537cb8cb9ddd4e8f243af8c6fea281db460416f6ca6cde2442b5e9f2"
+    },
+    {
+      "action": "read_chunk",
+      "loop": 2,
+      "prefill_seconds": 0.0668148299882887,
+      "qid": "multihop_0517",
+      "source": "/content/local_fast/lsdrag-work/results/jev_v1.0/teacher_multihop_03/multihop_0517.json",
+      "source_sha256": "fdb8c9ec537cb8cb9ddd4e8f243af8c6fea281db460416f6ca6cde2442b5e9f2"
+    },
+    {
+      "action": "keyword_search",
+      "loop": 3,
+      "prefill_seconds": 0.09039468900300562,
+      "qid": "multihop_0517",
+      "source": "/content/local_fast/lsdrag-work/results/jev_v1.0/teacher_multihop_03/multihop_0517.json",
+      "source_sha256": "fdb8c9ec537cb8cb9ddd4e8f243af8c6fea281db460416f6ca6cde2442b5e9f2"
+    },
+    {
+      "action": "read_chunk",
+      "loop": 4,
+      "prefill_seconds": 0.13704662899544928,
+      "qid": "multihop_0517",
+      "source": "/content/local_fast/lsdrag-work/results/jev_v1.0/teacher_multihop_03/multihop_0517.json",
+      "source_sha256": "fdb8c9ec537cb8cb9ddd4e8f243af8c6fea281db460416f6ca6cde2442b5e9f2"
+    },
+    {
+      "action": "semantic_search",
+      "loop": 5,
+      "prefill_seconds": 0.21138949500164017,
+      "qid": "multihop_0517",
+      "source": "/content/local_fast/lsdrag-work/results/jev_v1.0/teacher_multihop_03/multihop_0517.json",
+      "source_sha256": "fdb8c9ec537cb8cb9ddd4e8f243af8c6fea281db460416f6ca6cde2442b5e9f2"
+    },
+    {
+      "action": "read_chunk",
+      "loop": 6,
+      "prefill_seconds": 0.22431514000345487,
+      "qid": "multihop_0517",
+      "source": "/content/local_fast/lsdrag-work/results/jev_v1.0/teacher_multihop_03/multihop_0517.json",
+      "source_sha256": "fdb8c9ec537cb8cb9ddd4e8f243af8c6fea281db460416f6ca6cde2442b5e9f2"
+    },
+    {
+      "action": "FINAL",
+      "loop": 7,
+      "prefill_seconds": 0.2718090279959142,
+      "qid": "multihop_0517",
+      "source": "/content/local_fast/lsdrag-work/results/jev_v1.0/teacher_multihop_03/multihop_0517.json",
+      "source_sha256": "fdb8c9ec537cb8cb9ddd4e8f243af8c6fea281db460416f6ca6cde2442b5e9f2"
+    },
+    {
+      "action": "semantic_search",
+      "loop": 1,
+      "prefill_seconds": 0.04726497900264803,
+      "qid": "multihop_0142",
+      "source": "/content/local_fast/lsdrag-work/results/jev_v1.0/teacher_multihop_03/multihop_0142.json",
+      "source_sha256": "69e22850095691b239dc1b8b206eec60a01439f905539557c84c4101cff4cfb8"
+    },
+    {
+      "action": "read_chunk",
+      "loop": 2,
+      "prefill_seconds": 0.06701174999761861,
+      "qid": "multihop_0142",
+      "source": "/content/local_fast/lsdrag-work/results/jev_v1.0/teacher_multihop_03/multihop_0142.json",
+      "source_sha256": "69e22850095691b239dc1b8b206eec60a01439f905539557c84c4101cff4cfb8"
+    },
+    {
+      "action": "keyword_search",
+      "loop": 3,
+      "prefill_seconds": 0.16004730900749564,
+      "qid": "multihop_0142",
+      "source": "/content/local_fast/lsdrag-work/results/jev_v1.0/teacher_multihop_03/multihop_0142.json",
+      "source_sha256": "69e22850095691b239dc1b8b206eec60a01439f905539557c84c4101cff4cfb8"
+    },
+    {
+      "action": "read_chunk",
+      "loop": 4,
+      "prefill_seconds": 0.1729928629938513,
+      "qid": "multihop_0142",
+      "source": "/content/local_fast/lsdrag-work/results/jev_v1.0/teacher_multihop_03/multihop_0142.json",
+      "source_sha256": "69e22850095691b239dc1b8b206eec60a01439f905539557c84c4101cff4cfb8"
+    },
+    {
+      "action": "FINAL",
+      "loop": 5,
+      "prefill_seconds": 0.18754484599048737,
+      "qid": "multihop_0142",
+      "source": "/content/local_fast/lsdrag-work/results/jev_v1.0/teacher_multihop_03/multihop_0142.json",
+      "source_sha256": "69e22850095691b239dc1b8b206eec60a01439f905539557c84c4101cff4cfb8"
+    },
+    {
+      "action": "semantic_search",
+      "loop": 1,
+      "prefill_seconds": 0.04715509900415782,
+      "qid": "multihop_0650",
+      "source": "/content/local_fast/lsdrag-work/results/jev_v1.0/teacher_multihop_03/multihop_0650.json",
+      "source_sha256": "cd66e633386cfe618500afc51d30189bddcf72d01fdc73f4506094ed0af84523"
+    },
+    {
+      "action": "read_chunk",
+      "loop": 2,
+      "prefill_seconds": 0.0651549409958534,
+      "qid": "multihop_0650",
+      "source": "/content/local_fast/lsdrag-work/results/jev_v1.0/teacher_multihop_03/multihop_0650.json",
+      "source_sha256": "cd66e633386cfe618500afc51d30189bddcf72d01fdc73f4506094ed0af84523"
+    },
+    {
+      "action": "keyword_search",
+      "loop": 3,
+      "prefill_seconds": 0.08982326000113972,
+      "qid": "multihop_0650",
+      "source": "/content/local_fast/lsdrag-work/results/jev_v1.0/teacher_multihop_03/multihop_0650.json",
+      "source_sha256": "cd66e633386cfe618500afc51d30189bddcf72d01fdc73f4506094ed0af84523"
+    },
+    {
+      "action": "read_chunk",
+      "loop": 4,
+      "prefill_seconds": 0.1104898210032843,
+      "qid": "multihop_0650",
+      "source": "/content/local_fast/lsdrag-work/results/jev_v1.0/teacher_multihop_03/multihop_0650.json",
+      "source_sha256": "cd66e633386cfe618500afc51d30189bddcf72d01fdc73f4506094ed0af84523"
+    },
+    {
+      "action": "FINAL",
+      "loop": 5,
+      "prefill_seconds": 0.2769120570010273,
+      "qid": "multihop_0650",
+      "source": "/content/local_fast/lsdrag-work/results/jev_v1.0/teacher_multihop_03/multihop_0650.json",
+      "source_sha256": "cd66e633386cfe618500afc51d30189bddcf72d01fdc73f4506094ed0af84523"
+    },
+    {
+      "action": "semantic_search",
+      "loop": 1,
+      "prefill_seconds": 0.047349819011287764,
+      "qid": "multihop_1499",
+      "source": "/content/local_fast/lsdrag-work/results/jev_v1.0/teacher_multihop_03/multihop_1499.json",
+      "source_sha256": "dbecd03875a69748810fb614cc5a51d0964467879593f862807ee9553a324f72"
+    },
+    {
+      "action": "read_chunk",
+      "loop": 2,
+      "prefill_seconds": 0.07017123900004663,
+      "qid": "multihop_1499",
+      "source": "/content/local_fast/lsdrag-work/results/jev_v1.0/teacher_multihop_03/multihop_1499.json",
+      "source_sha256": "dbecd03875a69748810fb614cc5a51d0964467879593f862807ee9553a324f72"
+    },
+    {
+      "action": "FINAL",
+      "loop": 3,
+      "prefill_seconds": 0.13880623799923342,
+      "qid": "multihop_1499",
+      "source": "/content/local_fast/lsdrag-work/results/jev_v1.0/teacher_multihop_03/multihop_1499.json",
+      "source_sha256": "dbecd03875a69748810fb614cc5a51d0964467879593f862807ee9553a324f72"
+    },
+    {
+      "action": "semantic_search",
+      "loop": 1,
+      "prefill_seconds": 0.047078468996915035,
+      "qid": "multihop_0972",
+      "source": "/content/local_fast/lsdrag-work/results/jev_v1.0/teacher_multihop_03/multihop_0972.json",
+      "source_sha256": "871305fed906b3639324cbfcd24b4bbe2fb75c9f70f9cab3d80b8e0968278ffa"
+    },
+    {
+      "action": "read_chunk",
+      "loop": 2,
+      "prefill_seconds": 0.06712631099799182,
+      "qid": "multihop_0972",
+      "source": "/content/local_fast/lsdrag-work/results/jev_v1.0/teacher_multihop_03/multihop_0972.json",
+      "source_sha256": "871305fed906b3639324cbfcd24b4bbe2fb75c9f70f9cab3d80b8e0968278ffa"
+    },
+    {
+      "action": "FINAL",
+      "loop": 3,
+      "prefill_seconds": 0.2023797100118827,
+      "qid": "multihop_0972",
+      "source": "/content/local_fast/lsdrag-work/results/jev_v1.0/teacher_multihop_03/multihop_0972.json",
+      "source_sha256": "871305fed906b3639324cbfcd24b4bbe2fb75c9f70f9cab3d80b8e0968278ffa"
+    },
+    {
+      "action": "semantic_search",
+      "loop": 1,
+      "prefill_seconds": 0.04724272899329662,
+      "qid": "multihop_2374",
+      "source": "/content/local_fast/lsdrag-work/results/jev_v1.0/teacher_multihop_03/multihop_2374.json",
+      "source_sha256": "023019609a087b17f61ac2de3718ac9bca087e397f4c46f85493f99605af20c2"
+    },
+    {
+      "action": "read_chunk",
+      "loop": 2,
+      "prefill_seconds": 0.05676362400117796,
+      "qid": "multihop_2374",
+      "source": "/content/local_fast/lsdrag-work/results/jev_v1.0/teacher_multihop_03/multihop_2374.json",
+      "source_sha256": "023019609a087b17f61ac2de3718ac9bca087e397f4c46f85493f99605af20c2"
+    },
+    {
+      "action": "keyword_search",
+      "loop": 3,
+      "prefill_seconds": 0.23878730399883352,
+      "qid": "multihop_2374",
+      "source": "/content/local_fast/lsdrag-work/results/jev_v1.0/teacher_multihop_03/multihop_2374.json",
+      "source_sha256": "023019609a087b17f61ac2de3718ac9bca087e397f4c46f85493f99605af20c2"
+    },
+    {
+      "action": "semantic_search",
+      "loop": 4,
+      "prefill_seconds": 0.24140938300115522,
+      "qid": "multihop_2374",
+      "source": "/content/local_fast/lsdrag-work/results/jev_v1.0/teacher_multihop_03/multihop_2374.json",
+      "source_sha256": "023019609a087b17f61ac2de3718ac9bca087e397f4c46f85493f99605af20c2"
+    },
+    {
+      "action": "read_chunk",
+      "loop": 5,
+      "prefill_seconds": 0.2552212159935152,
+      "qid": "multihop_2374",
+      "source": "/content/local_fast/lsdrag-work/results/jev_v1.0/teacher_multihop_03/multihop_2374.json",
+      "source_sha256": "023019609a087b17f61ac2de3718ac9bca087e397f4c46f85493f99605af20c2"
+    },
+    {
+      "action": "FINAL",
+      "loop": 6,
+      "prefill_seconds": 0.42295850200753193,
+      "qid": "multihop_2374",
+      "source": "/content/local_fast/lsdrag-work/results/jev_v1.0/teacher_multihop_03/multihop_2374.json",
+      "source_sha256": "023019609a087b17f61ac2de3718ac9bca087e397f4c46f85493f99605af20c2"
+    },
+    {
+      "action": "semantic_search",
+      "loop": 1,
+      "prefill_seconds": 0.0472351689968491,
+      "qid": "multihop_1338",
+      "source": "/content/local_fast/lsdrag-work/results/jev_v1.0/teacher_multihop_03/multihop_1338.json",
+      "source_sha256": "f37b379f7e5d2bb8854c8fe9772dadeb55c8d95ccd18b944a9d8c7132bf6f033"
+    },
+    {
+      "action": "read_chunk",
+      "loop": 2,
+      "prefill_seconds": 0.06679292999615427,
+      "qid": "multihop_1338",
+      "source": "/content/local_fast/lsdrag-work/results/jev_v1.0/teacher_multihop_03/multihop_1338.json",
+      "source_sha256": "f37b379f7e5d2bb8854c8fe9772dadeb55c8d95ccd18b944a9d8c7132bf6f033"
+    },
+    {
+      "action": "keyword_search",
+      "loop": 3,
+      "prefill_seconds": 0.13502777999383397,
+      "qid": "multihop_1338",
+      "source": "/content/local_fast/lsdrag-work/results/jev_v1.0/teacher_multihop_03/multihop_1338.json",
+      "source_sha256": "f37b379f7e5d2bb8854c8fe9772dadeb55c8d95ccd18b944a9d8c7132bf6f033"
+    },
+    {
+      "action": "read_chunk",
+      "loop": 4,
+      "prefill_seconds": 0.17301780299749225,
+      "qid": "multihop_1338",
+      "source": "/content/local_fast/lsdrag-work/results/jev_v1.0/teacher_multihop_03/multihop_1338.json",
+      "source_sha256": "f37b379f7e5d2bb8854c8fe9772dadeb55c8d95ccd18b944a9d8c7132bf6f033"
+    },
+    {
+      "action": "FINAL",
+      "loop": 5,
+      "prefill_seconds": 0.351769143002457,
+      "qid": "multihop_1338",
+      "source": "/content/local_fast/lsdrag-work/results/jev_v1.0/teacher_multihop_03/multihop_1338.json",
+      "source_sha256": "f37b379f7e5d2bb8854c8fe9772dadeb55c8d95ccd18b944a9d8c7132bf6f033"
+    },
+    {
+      "action": "keyword_search",
+      "loop": 1,
+      "prefill_seconds": 0.047443438990740106,
+      "qid": "multihop_0256",
+      "source": "/content/local_fast/lsdrag-work/results/jev_v1.0/teacher_multihop_03/multihop_0256.json",
+      "source_sha256": "6603eedf598fd797367c74c761b77f31b2fe3669b6c36765f9a09242ee0fb3b3"
+    },
+    {
+      "action": "read_chunk",
+      "loop": 2,
+      "prefill_seconds": 0.07072818899177946,
+      "qid": "multihop_0256",
+      "source": "/content/local_fast/lsdrag-work/results/jev_v1.0/teacher_multihop_03/multihop_0256.json",
+      "source_sha256": "6603eedf598fd797367c74c761b77f31b2fe3669b6c36765f9a09242ee0fb3b3"
+    },
+    {
+      "action": "semantic_search",
+      "loop": 3,
+      "prefill_seconds": 0.10076994499831926,
+      "qid": "multihop_0256",
+      "source": "/content/local_fast/lsdrag-work/results/jev_v1.0/teacher_multihop_03/multihop_0256.json",
+      "source_sha256": "6603eedf598fd797367c74c761b77f31b2fe3669b6c36765f9a09242ee0fb3b3"
+    },
+    {
+      "action": "read_chunk",
+      "loop": 4,
+      "prefill_seconds": 0.12107478598773014,
+      "qid": "multihop_0256",
+      "source": "/content/local_fast/lsdrag-work/results/jev_v1.0/teacher_multihop_03/multihop_0256.json",
+      "source_sha256": "6603eedf598fd797367c74c761b77f31b2fe3669b6c36765f9a09242ee0fb3b3"
+    },
+    {
+      "action": "FINAL",
+      "loop": 5,
+      "prefill_seconds": 0.2038433289999375,
+      "qid": "multihop_0256",
+      "source": "/content/local_fast/lsdrag-work/results/jev_v1.0/teacher_multihop_03/multihop_0256.json",
+      "source_sha256": "6603eedf598fd797367c74c761b77f31b2fe3669b6c36765f9a09242ee0fb3b3"
+    },
+    {
+      "action": "semantic_search",
+      "loop": 1,
+      "prefill_seconds": 0.04720530900522135,
+      "qid": "multihop_1980",
+      "source": "/content/local_fast/lsdrag-work/results/jev_v1.0/teacher_multihop_03/multihop_1980.json",
+      "source_sha256": "ec28321fac335a74abc04a04c62bed94dd987bfb8ac3131ec845d0aca66674a0"
+    },
+    {
+      "action": "read_chunk",
+      "loop": 2,
+      "prefill_seconds": 0.06703207999817096,
+      "qid": "multihop_1980",
+      "source": "/content/local_fast/lsdrag-work/results/jev_v1.0/teacher_multihop_03/multihop_1980.json",
+      "source_sha256": "ec28321fac335a74abc04a04c62bed94dd987bfb8ac3131ec845d0aca66674a0"
+    },
+    {
+      "action": "FINAL",
+      "loop": 3,
+      "prefill_seconds": 0.1600186779978685,
+      "qid": "multihop_1980",
+      "source": "/content/local_fast/lsdrag-work/results/jev_v1.0/teacher_multihop_03/multihop_1980.json",
+      "source_sha256": "ec28321fac335a74abc04a04c62bed94dd987bfb8ac3131ec845d0aca66674a0"
+    },
+    {
+      "action": "semantic_search",
+      "loop": 1,
+      "prefill_seconds": 0.04727830798947252,
+      "qid": "multihop_1743",
+      "source": "/content/local_fast/lsdrag-work/results/jev_v1.0/teacher_multihop_03/multihop_1743.json",
+      "source_sha256": "bf86bc22172fb829c1997dbd045723bcf353f09785d619d3fdfd60d1aff22000"
+    },
+    {
+      "action": "read_chunk",
+      "loop": 2,
+      "prefill_seconds": 0.06637805100763217,
+      "qid": "multihop_1743",
+      "source": "/content/local_fast/lsdrag-work/results/jev_v1.0/teacher_multihop_03/multihop_1743.json",
+      "source_sha256": "bf86bc22172fb829c1997dbd045723bcf353f09785d619d3fdfd60d1aff22000"
+    },
+    {
+      "action": "keyword_search",
+      "loop": 3,
+      "prefill_seconds": 0.1209488960012095,
+      "qid": "multihop_1743",
+      "source": "/content/local_fast/lsdrag-work/results/jev_v1.0/teacher_multihop_03/multihop_1743.json",
+      "source_sha256": "bf86bc22172fb829c1997dbd045723bcf353f09785d619d3fdfd60d1aff22000"
+    },
+    {
+      "action": "read_chunk",
+      "loop": 4,
+      "prefill_seconds": 0.1585878890036838,
+      "qid": "multihop_1743",
+      "source": "/content/local_fast/lsdrag-work/results/jev_v1.0/teacher_multihop_03/multihop_1743.json",
+      "source_sha256": "bf86bc22172fb829c1997dbd045723bcf353f09785d619d3fdfd60d1aff22000"
+    },
+    {
+      "action": "FINAL",
+      "loop": 5,
+      "prefill_seconds": 0.2863449219876202,
+      "qid": "multihop_1743",
+      "source": "/content/local_fast/lsdrag-work/results/jev_v1.0/teacher_multihop_03/multihop_1743.json",
+      "source_sha256": "bf86bc22172fb829c1997dbd045723bcf353f09785d619d3fdfd60d1aff22000"
+    },
+    {
+      "action": "semantic_search",
+      "loop": 1,
+      "prefill_seconds": 0.04707156900258269,
+      "qid": "multihop_1901",
+      "source": "/content/local_fast/lsdrag-work/results/jev_v1.0/teacher_multihop_03/multihop_1901.json",
+      "source_sha256": "ece5319c704b9d11397ef063881d405b0fe29a2b8cc73dc26b4357e8a028798b"
+    },
+    {
+      "action": "read_chunk",
+      "loop": 2,
+      "prefill_seconds": 0.06587114100693725,
+      "qid": "multihop_1901",
+      "source": "/content/local_fast/lsdrag-work/results/jev_v1.0/teacher_multihop_03/multihop_1901.json",
+      "source_sha256": "ece5319c704b9d11397ef063881d405b0fe29a2b8cc73dc26b4357e8a028798b"
+    },
+    {
+      "action": "semantic_search",
+      "loop": 3,
+      "prefill_seconds": 0.09019606999936514,
+      "qid": "multihop_1901",
+      "source": "/content/local_fast/lsdrag-work/results/jev_v1.0/teacher_multihop_03/multihop_1901.json",
+      "source_sha256": "ece5319c704b9d11397ef063881d405b0fe29a2b8cc73dc26b4357e8a028798b"
+    },
+    {
+      "action": "keyword_search",
+      "loop": 4,
+      "prefill_seconds": 0.10984457099402789,
+      "qid": "multihop_1901",
+      "source": "/content/local_fast/lsdrag-work/results/jev_v1.0/teacher_multihop_03/multihop_1901.json",
+      "source_sha256": "ece5319c704b9d11397ef063881d405b0fe29a2b8cc73dc26b4357e8a028798b"
+    },
+    {
+      "action": "semantic_search",
+      "loop": 5,
+      "prefill_seconds": 0.10981915101001505,
+      "qid": "multihop_1901",
+      "source": "/content/local_fast/lsdrag-work/results/jev_v1.0/teacher_multihop_03/multihop_1901.json",
+      "source_sha256": "ece5319c704b9d11397ef063881d405b0fe29a2b8cc73dc26b4357e8a028798b"
+    },
+    {
+      "action": "read_chunk",
+      "loop": 6,
+      "prefill_seconds": 0.12175901599403005,
+      "qid": "multihop_1901",
+      "source": "/content/local_fast/lsdrag-work/results/jev_v1.0/teacher_multihop_03/multihop_1901.json",
+      "source_sha256": "ece5319c704b9d11397ef063881d405b0fe29a2b8cc73dc26b4357e8a028798b"
+    },
+    {
+      "action": "FINAL",
+      "loop": 7,
+      "prefill_seconds": 0.2476988690032158,
+      "qid": "multihop_1901",
+      "source": "/content/local_fast/lsdrag-work/results/jev_v1.0/teacher_multihop_03/multihop_1901.json",
+      "source_sha256": "ece5319c704b9d11397ef063881d405b0fe29a2b8cc73dc26b4357e8a028798b"
+    },
+    {
+      "action": "semantic_search",
+      "loop": 1,
+      "prefill_seconds": 0.04734310900676064,
+      "qid": "multihop_1876",
+      "source": "/content/local_fast/lsdrag-work/results/jev_v1.0/teacher_multihop_03/multihop_1876.json",
+      "source_sha256": "061169f2fe2695f5bd10f613767cc9ed0ba9472fdb2ed3cbd88c4e8635b0f63b"
+    },
+    {
+      "action": "read_chunk",
+      "loop": 2,
+      "prefill_seconds": 0.06977265900059137,
+      "qid": "multihop_1876",
+      "source": "/content/local_fast/lsdrag-work/results/jev_v1.0/teacher_multihop_03/multihop_1876.json",
+      "source_sha256": "061169f2fe2695f5bd10f613767cc9ed0ba9472fdb2ed3cbd88c4e8635b0f63b"
+    },
+    {
+      "action": "keyword_search",
+      "loop": 3,
+      "prefill_seconds": 0.09794421600236092,
+      "qid": "multihop_1876",
+      "source": "/content/local_fast/lsdrag-work/results/jev_v1.0/teacher_multihop_03/multihop_1876.json",
+      "source_sha256": "061169f2fe2695f5bd10f613767cc9ed0ba9472fdb2ed3cbd88c4e8635b0f63b"
+    },
+    {
+      "action": "semantic_search",
+      "loop": 4,
+      "prefill_seconds": 0.09962324499792885,
+      "qid": "multihop_1876",
+      "source": "/content/local_fast/lsdrag-work/results/jev_v1.0/teacher_multihop_03/multihop_1876.json",
+      "source_sha256": "061169f2fe2695f5bd10f613767cc9ed0ba9472fdb2ed3cbd88c4e8635b0f63b"
+    },
+    {
+      "action": "read_chunk",
+      "loop": 5,
+      "prefill_seconds": 0.11219536000862718,
+      "qid": "multihop_1876",
+      "source": "/content/local_fast/lsdrag-work/results/jev_v1.0/teacher_multihop_03/multihop_1876.json",
+      "source_sha256": "061169f2fe2695f5bd10f613767cc9ed0ba9472fdb2ed3cbd88c4e8635b0f63b"
+    },
+    {
+      "action": "FINAL",
+      "loop": 6,
+      "prefill_seconds": 0.19839364099607337,
+      "qid": "multihop_1876",
+      "source": "/content/local_fast/lsdrag-work/results/jev_v1.0/teacher_multihop_03/multihop_1876.json",
+      "source_sha256": "061169f2fe2695f5bd10f613767cc9ed0ba9472fdb2ed3cbd88c4e8635b0f63b"
+    },
+    {
+      "action": "keyword_search",
+      "loop": 1,
+      "prefill_seconds": 0.049638198004686274,
+      "qid": "multihop_1605",
+      "source": "/content/local_fast/lsdrag-work/results/jev_v1.0/teacher_multihop_03/multihop_1605.json",
+      "source_sha256": "517bdf5d393073fb6193f778ee810c320c96427086718ec3dea0c400d1b30c72"
+    },
+    {
+      "action": "keyword_search",
+      "loop": 2,
+      "prefill_seconds": 0.07105207900167443,
+      "qid": "multihop_1605",
+      "source": "/content/local_fast/lsdrag-work/results/jev_v1.0/teacher_multihop_03/multihop_1605.json",
+      "source_sha256": "517bdf5d393073fb6193f778ee810c320c96427086718ec3dea0c400d1b30c72"
+    },
+    {
+      "action": "read_chunk",
+      "loop": 3,
+      "prefill_seconds": 0.10996894098934717,
+      "qid": "multihop_1605",
+      "source": "/content/local_fast/lsdrag-work/results/jev_v1.0/teacher_multihop_03/multihop_1605.json",
+      "source_sha256": "517bdf5d393073fb6193f778ee810c320c96427086718ec3dea0c400d1b30c72"
+    },
+    {
+      "action": "read_chunk",
+      "loop": 4,
+      "prefill_seconds": 0.13848374799999874,
+      "qid": "multihop_1605",
+      "source": "/content/local_fast/lsdrag-work/results/jev_v1.0/teacher_multihop_03/multihop_1605.json",
+      "source_sha256": "517bdf5d393073fb6193f778ee810c320c96427086718ec3dea0c400d1b30c72"
+    },
+    {
+      "action": "FINAL",
+      "loop": 5,
+      "prefill_seconds": 0.1746884319873061,
+      "qid": "multihop_1605",
+      "source": "/content/local_fast/lsdrag-work/results/jev_v1.0/teacher_multihop_03/multihop_1605.json",
+      "source_sha256": "517bdf5d393073fb6193f778ee810c320c96427086718ec3dea0c400d1b30c72"
+    }
+  ],
+  "fit": "one full-batch AdamW run, 100 epochs, lr .001, weight decay .01, plain CE; no test tuning",
+  "gate": {
+    "answerable_successful_questions": 45,
+    "distinct_questions_per_action": {
+      "FINAL": 45,
+      "keyword_search": 34,
+      "read_chunk": 36,
+      "semantic_search": 43
+    },
+    "passed": true
+  },
+  "probability_meaning": "uncalibrated teacher-action relative probability, not answer correctness",
+  "seed": 20261014,
+  "training_loss": 0.0338895320892334,
+  "turns": 197
+}

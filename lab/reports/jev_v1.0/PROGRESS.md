@@ -47,3 +47,7 @@ Gemma 전체 멀티모달 forward와 PLE를 유지한다. 마지막 정규화 �
 ## Teacher label collection completed
 
 성공한 answerable 학습 문항 **45개**. 행동별 서로 다른 성공 문항: `{"FINAL": 45, "keyword_search": 34, "read_chunk": 36, "semantic_search": 43}`. 라벨 진입 기준 통과: **True**. [수집 감사](pooled_label_audit.json).
+
+## Frozen Gemma decision head trained
+
+backbone 동결·linear head만 CE로 한 번 학습했다. 성공 궤적의 **197턴**을 사용했다. [학습 설정·출처](head_training.json). 학습 loss는 정답률이나 폐루프 성능을 의미하지 않는다. 최종 비교용 새 M3 20문항은 아직 학습/설정 선택에 사용하지 않았다.
