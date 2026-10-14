@@ -1,0 +1,572 @@
+{
+  "completed": 82,
+  "em": 0.07317073170731707,
+  "f1": 0.16841463414634147,
+  "gate": {
+    "answerable_successful_questions": 6,
+    "distinct_questions_per_action": {
+      "FINAL": 6,
+      "keyword_search": 6,
+      "read_chunk": 1,
+      "semantic_search": 5
+    },
+    "passed": false
+  },
+  "question_metrics": [
+    {
+      "contain": 0.0,
+      "em": 0.0,
+      "f1": 0.0,
+      "qid": "02106b1a3e70be170c53249687d82c09"
+    },
+    {
+      "contain": 0.0,
+      "em": 0.0,
+      "f1": 0.0,
+      "qid": "046e2c9b76fb9827ff06b34f04322c86"
+    },
+    {
+      "contain": 1.0,
+      "em": 0.0,
+      "f1": 0.29,
+      "qid": "068c78a4cb8acb381d148213bfe9ca20"
+    },
+    {
+      "contain": 1.0,
+      "em": 0.0,
+      "f1": 0.15,
+      "qid": "08fac605c314afb1b2121b278dbfc41b"
+    },
+    {
+      "contain": 0.0,
+      "em": 0.0,
+      "f1": 0.5,
+      "qid": "0b75c3c5d631a103cfc5cce38f27d3c3"
+    },
+    {
+      "contain": 1.0,
+      "em": 0.0,
+      "f1": 0.17,
+      "qid": "0d5bdc6216839facec399043d27e7bb1"
+    },
+    {
+      "contain": 0.0,
+      "em": 0.0,
+      "f1": 0.0,
+      "qid": "16479dbd711fd7dbe5d9ec7356c15556"
+    },
+    {
+      "contain": 0.0,
+      "em": 0.0,
+      "f1": 0.0,
+      "qid": "186146ea1f5a9f7ada7f7fd31c5c75a4"
+    },
+    {
+      "contain": 0.0,
+      "em": 0.0,
+      "f1": 0.0,
+      "qid": "1946869d518678a95a5d2d51961818aa"
+    },
+    {
+      "contain": 0.0,
+      "em": 0.0,
+      "f1": 0.0,
+      "qid": "1b5e2bd0c3128eae8ad6f0ce6cd4aa16"
+    },
+    {
+      "contain": 0.0,
+      "em": 0.0,
+      "f1": 0.0,
+      "qid": "1d106f2272d2afe59a4ba84342e897db"
+    },
+    {
+      "contain": 1.0,
+      "em": 0.0,
+      "f1": 0.4,
+      "qid": "212b4c5655c288556edd76b14d055349"
+    },
+    {
+      "contain": 0.0,
+      "em": 0.0,
+      "f1": 0.0,
+      "qid": "2494ebf69cf93104339896d73448af5d"
+    },
+    {
+      "contain": 1.0,
+      "em": 0.0,
+      "f1": 0.12,
+      "qid": "274c7c120f33892579db069bd2670c2f"
+    },
+    {
+      "contain": 0.0,
+      "em": 0.0,
+      "f1": 0.0,
+      "qid": "2cfd27d95e2a48bd8b16ba519c4da5e3"
+    },
+    {
+      "contain": 1.0,
+      "em": 1.0,
+      "f1": 1.0,
+      "qid": "312db49d0f5614be27fa1791abe0a4d8"
+    },
+    {
+      "contain": 1.0,
+      "em": 1.0,
+      "f1": 1.0,
+      "qid": "32e30585f1cbfa6086a00ec2cea7b85c"
+    },
+    {
+      "contain": 0.0,
+      "em": 0.0,
+      "f1": 0.0,
+      "qid": "3439f1db325d7d971d0a6111723d066c"
+    },
+    {
+      "contain": 0.0,
+      "em": 0.0,
+      "f1": 0.0,
+      "qid": "391b8d0fe91ac7d8e95f1fdbdfc12fca"
+    },
+    {
+      "contain": 0.0,
+      "em": 0.0,
+      "f1": 0.0,
+      "qid": "3a9b9f0151fcb257ba37a8bdb79eb837"
+    },
+    {
+      "contain": 1.0,
+      "em": 1.0,
+      "f1": 1.0,
+      "qid": "3c0143a60a930c43ca2511beaa21d083"
+    },
+    {
+      "contain": 1.0,
+      "em": 1.0,
+      "f1": 1.0,
+      "qid": "42503d3b27c422b46cfafc9dec1606cd"
+    },
+    {
+      "contain": 0.0,
+      "em": 0.0,
+      "f1": 0.0,
+      "qid": "47619d281f6559272f489387027d1aa5"
+    },
+    {
+      "contain": 0.0,
+      "em": 0.0,
+      "f1": 0.0,
+      "qid": "4ceee421568a249dd1dde6d096ddd8c1"
+    },
+    {
+      "contain": 0.0,
+      "em": 0.0,
+      "f1": 0.0,
+      "qid": "4de2bdcbeda40b4ad03c1f07455c5a6c"
+    },
+    {
+      "contain": 1.0,
+      "em": 0.0,
+      "f1": 0.0,
+      "qid": "4e7ddac89ca597570aa25a630ff2652d"
+    },
+    {
+      "contain": 0.0,
+      "em": 0.0,
+      "f1": 0.0,
+      "qid": "4f183e594eda0238cc1d8f06a8ac4cae"
+    },
+    {
+      "contain": 1.0,
+      "em": 0.0,
+      "f1": 0.3,
+      "qid": "5217a8617917f1ca031e915f17f9f326"
+    },
+    {
+      "contain": 0.0,
+      "em": 0.0,
+      "f1": 0.0,
+      "qid": "5219198c4be50e67c67c373f1afdf797"
+    },
+    {
+      "contain": 1.0,
+      "em": 0.0,
+      "f1": 0.18,
+      "qid": "551f86506fc510a656d9d81dd69072d6"
+    },
+    {
+      "contain": 0.0,
+      "em": 0.0,
+      "f1": 0.0,
+      "qid": "5973f1fea1b151a7321a65f8da3c5243"
+    },
+    {
+      "contain": 1.0,
+      "em": 0.0,
+      "f1": 0.22,
+      "qid": "5bd72bfba4f8e712f3dec278cdec9ccf"
+    },
+    {
+      "contain": 0.0,
+      "em": 0.0,
+      "f1": 0.0,
+      "qid": "5fa187a053d883f7d8f70660ecb8dcdb"
+    },
+    {
+      "contain": 0.0,
+      "em": 0.0,
+      "f1": 0.13,
+      "qid": "645a861de74604e8025caf759f425748"
+    },
+    {
+      "contain": 0.0,
+      "em": 0.0,
+      "f1": 0.1,
+      "qid": "646273e0cf62290f04b3a23ce2e007a3"
+    },
+    {
+      "contain": 1.0,
+      "em": 0.0,
+      "f1": 0.07,
+      "qid": "68d47fe9fe0a49a7aba704fac7149d0c"
+    },
+    {
+      "contain": 0.0,
+      "em": 0.0,
+      "f1": 0.0,
+      "qid": "6a7b0913e4baacc474ce463f5a4a0194"
+    },
+    {
+      "contain": 1.0,
+      "em": 1.0,
+      "f1": 1.0,
+      "qid": "6bcb669863a815a657e31077a2d0b008"
+    },
+    {
+      "contain": 0.0,
+      "em": 0.0,
+      "f1": 0.0,
+      "qid": "7173374c77f1c27e397663c455501bba"
+    },
+    {
+      "contain": 0.0,
+      "em": 0.0,
+      "f1": 0.0,
+      "qid": "718186c47f39b7fee2653cf964b543c0"
+    },
+    {
+      "contain": 0.0,
+      "em": 0.0,
+      "f1": 0.0,
+      "qid": "72e81cfae7f7cea4d33bf9b94725fcc3"
+    },
+    {
+      "contain": 0.0,
+      "em": 0.0,
+      "f1": 0.0,
+      "qid": "731b4f179b2fc60b243a817835305705"
+    },
+    {
+      "contain": 1.0,
+      "em": 0.0,
+      "f1": 0.25,
+      "qid": "736a653aabf445677b747ac892dfe7b9"
+    },
+    {
+      "contain": 0.0,
+      "em": 0.0,
+      "f1": 0.0,
+      "qid": "73b6da191574a2d617ad55993ef8c6f2"
+    },
+    {
+      "contain": 0.0,
+      "em": 0.0,
+      "f1": 0.0,
+      "qid": "74f9019633803db0ac332ee70ff326b0"
+    },
+    {
+      "contain": 1.0,
+      "em": 0.0,
+      "f1": 0.05,
+      "qid": "7e99b54a4c85de0509ca2c57a94b4fa2"
+    },
+    {
+      "contain": 1.0,
+      "em": 0.0,
+      "f1": 0.25,
+      "qid": "830197a234920e4ab599a35b47974ea0"
+    },
+    {
+      "contain": 1.0,
+      "em": 1.0,
+      "f1": 1.0,
+      "qid": "89c7fb495a4bab8e89549621d63725ae"
+    },
+    {
+      "contain": 0.0,
+      "em": 0.0,
+      "f1": 0.0,
+      "qid": "8b535487aee207fccf01292ee9d86dcd"
+    },
+    {
+      "contain": 1.0,
+      "em": 0.0,
+      "f1": 0.5,
+      "qid": "8b97eae2bb949152ee88a536e83967b6"
+    },
+    {
+      "contain": 1.0,
+      "em": 0.0,
+      "f1": 0.18,
+      "qid": "9062f0a10733ef0abf180e6788feca29"
+    },
+    {
+      "contain": 1.0,
+      "em": 0.0,
+      "f1": 0.0,
+      "qid": "912b3b76cdfa2051cf66dca641f51483"
+    },
+    {
+      "contain": 0.0,
+      "em": 0.0,
+      "f1": 0.0,
+      "qid": "9996d8e066552766fbbe7186946f1672"
+    },
+    {
+      "contain": 1.0,
+      "em": 0.0,
+      "f1": 0.14,
+      "qid": "a3225b83bd582feb2d241a0cc510782f"
+    },
+    {
+      "contain": 1.0,
+      "em": 0.0,
+      "f1": 0.2,
+      "qid": "a3edb4d2c16739dcbdc23e6ab46e7d9d"
+    },
+    {
+      "contain": 0.0,
+      "em": 0.0,
+      "f1": 0.0,
+      "qid": "a801785a88c4a22ba9f8e83b82619157"
+    },
+    {
+      "contain": 0.0,
+      "em": 0.0,
+      "f1": 0.0,
+      "qid": "a872fd63bd98761b4a1c30201ef0bc6e"
+    },
+    {
+      "contain": 0.0,
+      "em": 0.0,
+      "f1": 0.0,
+      "qid": "a92b8c7327385a535427099de3a37c70"
+    },
+    {
+      "contain": 0.0,
+      "em": 0.0,
+      "f1": 0.0,
+      "qid": "a941b9f9b15054c32083bb68e32e084e"
+    },
+    {
+      "contain": 1.0,
+      "em": 0.0,
+      "f1": 0.25,
+      "qid": "ac104fb00b1d0b1870538358e9b5c850"
+    },
+    {
+      "contain": 0.0,
+      "em": 0.0,
+      "f1": 0.0,
+      "qid": "ace600e675d33da7f1cc8effa048634a"
+    },
+    {
+      "contain": 1.0,
+      "em": 0.0,
+      "f1": 0.5,
+      "qid": "b3e551715b6954b17993143628ed833d"
+    },
+    {
+      "contain": 0.0,
+      "em": 0.0,
+      "f1": 0.0,
+      "qid": "b6a62e8b1c1cb1587d75b0af4e1ae981"
+    },
+    {
+      "contain": 0.0,
+      "em": 0.0,
+      "f1": 0.0,
+      "qid": "bc16213fc3ba20631092dc66c700b1ea"
+    },
+    {
+      "contain": 1.0,
+      "em": 0.0,
+      "f1": 0.18,
+      "qid": "bf8dde8bbba30881c3ca1882822032cd"
+    },
+    {
+      "contain": 1.0,
+      "em": 0.0,
+      "f1": 0.22,
+      "qid": "c537f042e2a407b031f1f0e8d94da1ef"
+    },
+    {
+      "contain": 0.0,
+      "em": 0.0,
+      "f1": 0.0,
+      "qid": "c6717dda202e3be6a20b4b06532fa618"
+    },
+    {
+      "contain": 0.0,
+      "em": 0.0,
+      "f1": 0.86,
+      "qid": "c900515e6697b67c56c6b8b106070ce9"
+    },
+    {
+      "contain": 0.0,
+      "em": 0.0,
+      "f1": 0.0,
+      "qid": "ca18ab808c154aefe66848b8e1a8753b"
+    },
+    {
+      "contain": 1.0,
+      "em": 0.0,
+      "f1": 0.14,
+      "qid": "cf64e3885ba25d9d13865c8fdd741c89"
+    },
+    {
+      "contain": 0.0,
+      "em": 0.0,
+      "f1": 0.0,
+      "qid": "d85e16020cec2e8cdcb347f88e1763c9"
+    },
+    {
+      "contain": 0.0,
+      "em": 0.0,
+      "f1": 0.0,
+      "qid": "dc114a23d8280ff1a9ee32f34e51d8f5"
+    },
+    {
+      "contain": 0.0,
+      "em": 0.0,
+      "f1": 0.0,
+      "qid": "e309ebae67a9b9d4f17ab3e46e493fb4"
+    },
+    {
+      "contain": 1.0,
+      "em": 0.0,
+      "f1": 0.13,
+      "qid": "e769bb29899fd43ef384f83caff524b3"
+    },
+    {
+      "contain": 0.0,
+      "em": 0.0,
+      "f1": 0.67,
+      "qid": "e844b72274e56a3222e4a27b24cd623b"
+    },
+    {
+      "contain": 0.0,
+      "em": 0.0,
+      "f1": 0.0,
+      "qid": "eb1dfc1b3fa858bea54fd0778ad47a7f"
+    },
+    {
+      "contain": 0.0,
+      "em": 0.0,
+      "f1": 0.06,
+      "qid": "eb3f72aeb947cff88705cce8f12a5a9a"
+    },
+    {
+      "contain": 0.0,
+      "em": 0.0,
+      "f1": 0.0,
+      "qid": "f2def8c149eac4debb187a7057243177"
+    },
+    {
+      "contain": 1.0,
+      "em": 0.0,
+      "f1": 0.36,
+      "qid": "f356667690a995336f76344d097bb595"
+    },
+    {
+      "contain": 0.0,
+      "em": 0.0,
+      "f1": 0.0,
+      "qid": "f478685d0f6ad2e2ab3d1e99b5fd309b"
+    },
+    {
+      "contain": 0.0,
+      "em": 0.0,
+      "f1": 0.24,
+      "qid": "f5baf74fcfa9a78853ad9a449f2bb560"
+    },
+    {
+      "contain": 0.0,
+      "em": 0.0,
+      "f1": 0.0,
+      "qid": "f99f9d0460af357bc361871ef6f4fc33"
+    }
+  ],
+  "successes": [
+    {
+      "actions": [
+        "keyword_search",
+        "semantic_search",
+        "FINAL"
+      ],
+      "answerable": true,
+      "qid": "312db49d0f5614be27fa1791abe0a4d8",
+      "source": "/content/local_fast/lsdrag-work/results/jev_v1.0/teacher_m3_train82/312db49d0f5614be27fa1791abe0a4d8.json"
+    },
+    {
+      "actions": [
+        "keyword_search",
+        "semantic_search",
+        "FINAL"
+      ],
+      "answerable": true,
+      "qid": "32e30585f1cbfa6086a00ec2cea7b85c",
+      "source": "/content/local_fast/lsdrag-work/results/jev_v1.0/teacher_m3_train82/32e30585f1cbfa6086a00ec2cea7b85c.json"
+    },
+    {
+      "actions": [
+        "keyword_search",
+        "semantic_search",
+        "FINAL"
+      ],
+      "answerable": true,
+      "qid": "3c0143a60a930c43ca2511beaa21d083",
+      "source": "/content/local_fast/lsdrag-work/results/jev_v1.0/teacher_m3_train82/3c0143a60a930c43ca2511beaa21d083.json"
+    },
+    {
+      "actions": [
+        "keyword_search",
+        "semantic_search",
+        "FINAL"
+      ],
+      "answerable": true,
+      "qid": "42503d3b27c422b46cfafc9dec1606cd",
+      "source": "/content/local_fast/lsdrag-work/results/jev_v1.0/teacher_m3_train82/42503d3b27c422b46cfafc9dec1606cd.json"
+    },
+    {
+      "actions": [
+        "keyword_search",
+        "read_chunk",
+        "FINAL"
+      ],
+      "answerable": true,
+      "qid": "6bcb669863a815a657e31077a2d0b008",
+      "source": "/content/local_fast/lsdrag-work/results/jev_v1.0/teacher_m3_train82/6bcb669863a815a657e31077a2d0b008.json"
+    },
+    {
+      "actions": [
+        "keyword_search",
+        "semantic_search",
+        "FINAL"
+      ],
+      "answerable": true,
+      "qid": "89c7fb495a4bab8e89549621d63725ae",
+      "source": "/content/local_fast/lsdrag-work/results/jev_v1.0/teacher_m3_train82/89c7fb495a4bab8e89549621d63725ae.json"
+    }
+  ],
+  "successful_trajectories": 6
+}

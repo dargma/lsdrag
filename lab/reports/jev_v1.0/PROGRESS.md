@@ -2,12 +2,12 @@
 
 브랜치: `jev_v1.0` · 2026-10-14 UTC
 
-**첫 마일스톤: 로컬 Gemma의 text/image prefill → 행동 선택 → 인자/최종 답변 생성 경로를 실제 GPU에서 확인했다. 학습된 head의 정확도·속도 비교 결과는 아직 없다.**
+**두 번째 마일스톤: 새 M3 학습용 82문항 수집 완료. 성공 라벨이 부족해 예정한 MMQA 37문항을 보강한다. 학습된 head의 정확도·속도 비교 결과는 아직 없다.**
 
 | 단계 | 현재 상태 | 근거 |
 |---|---|---|
 | 평가 분리 | 새 M3 20문항 잠금, 기존 test/dev 학습 제외 | [고정 계획](../../registry/jev_v1.0/label_collection_plan.json) |
-| M3 teacher | 새 train 82문항 수집 중; 각 문항 한 번 | 원래 Gemma A-RAG, EmbeddingGemma 2 텍스트+이미지 검색 |
+| M3 teacher | 새 train 82/82문항 완료; 각 문항 한 번 | 원래 Gemma A-RAG, EmbeddingGemma 2 텍스트+이미지 검색 |
 | 보강 후보 QC | MMQA train 37/37 통과 | [QC](mmqa_train_qc.json): URL·이미지 파일/hash 존재 확인. 정답 crop 의미 정렬 검증과는 별개 |
 | HF 동작 검증 | text/image 상태 각각 baseline + 임시 head 확인 | [실행 기록](hf_smoke.json) |
 | 코드 검증 | 관련 테스트 26개 통과 | 라벨·미래 출력 누출 방지·typed tool parser·원래 Agent |
@@ -29,3 +29,9 @@ Gemma 전체 멀티모달 forward와 PLE를 유지한다. 마지막 정규화 �
 최소 라벨 조건을 통과한 뒤 한 번의 고정 head 학습을 수행한다. head 학습은 full-batch AdamW, CE, 100 epochs, lr 0.001, weight decay 0.01, seed 20261014로 고정하며 test를 보며 설정을 바꾸지 않는다. GPU 비교는 다른 작업과 경합 없이 동일 HF backend에서 수행한다.
 
 구현: [HF Reader](../../../src/lsdrag/hf_reader.py) · [상태/라벨 복원](../../../src/lsdrag/decision.py) · [학습](../../../scripts/train_decision_head.py) · [계획](../../../docs/JEV_EXPERIMENT_PLAN.md).
+
+## 마일스톤 2 — M3 학습용 82문항 완료
+
+[문항별 채점·라벨 감사](train82_label_audit.json). **EM 6/82 = 7.32%, F1 16.84%.** 이는 teacher 수집 결과이며 최종 비교용 20문항의 성능이 아니다. 성공 6궤적에서 행동이 관측된 서로 다른 문항 수는 keyword_search 6, semantic_search 5, read_chunk 1, FINAL 6이다. 최소 성공 30문항·행동별 10문항 기준에 미달하므로 이 상태에서 head를 학습하거나 속도 이득을 주장하지 않는다.
+
+기존 train의 성공 궤적은 새 문항과 합쳐 사용할 수 있지만 같은 문항의 여러 조건은 서로 다른 문항으로 중복 계산하지 않는다. QC 통과 MMQA 37문항을 이어서 각각 한 번 수집한다.
