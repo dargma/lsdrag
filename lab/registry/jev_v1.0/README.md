@@ -12,3 +12,7 @@
 [split.json](split.json)에 입력 해시와 전체 ID를 저장했다. [teacher_audit.json](../../reports/jev_v1.0/teacher_audit.json)은 원래 300개 궤적의 class·성공 수를 집계한 자료이며, 새로운 decision 모델의 성능 결과가 아니다.
 
 현재 train 성공 라벨은 4개 문항·5개 궤적의 15턴이고, keyword 5 / semantic 5 / FINAL 5 / read 0이다. 이 자료만으로 일반 4-class decision을 학습·검증했다고 주장하지 않는다.
+
+## Astra 재검토 후 실제 실행 분할
+
+위 split은 이력을 보존한다. 실제 최소 PoC는 [label_collection_plan.json](label_collection_plan.json)의 새 M3 train82/test20을 사용하며, 기존 train60의 성공 궤적은 추가 풀이 없이 활용할 수 있다. 새 test20은 image10/nonimage10이고 새train82·기존100과 qid 중복이 없다. 기존test20은재실행·학습전용하지않는다. MultiHop목록은부족할때만사용할최대1,000문항의고정fallback이며모델실행완료기록이아니다.

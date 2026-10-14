@@ -176,3 +176,9 @@ User clarified that only A-RAG max iteration is eight, with no independent Reade
 결과와 무관한 seed 20261014로 train 60 / dev 20 / test 20을 고정한 뒤 성공 label을 수확했다. Train은 4개 독립 qid·5개 궤적·15턴(keyword 5 / semantic 5 / FINAL 5 / read 0)으로 일반 4-class 평가에는 부족하며 자료 보강 gate를 계획서에 명시했다. Jev·Laya·Kev·SemIf의 공식 학습 설명·소스를 확인해 CE 기준선, 별도 보정, 필요시 Gemma LoRA를 단계화했다.
 
 속도 외 기여는 근거 충족·상충 검사, 동일 시간 예산의 대안 탐색, 출처·시간을 보존하는 기억 저장·수정, context 관리의 가설로 정리했다. 새 학습·GPU 속도 측정은 실행하지 않았다.
+
+## 2026-10-14 — Astra 재검토와 최소 계획 확정
+
+사용자의 중복·과다 실험 축소 요청에 따라 Astra가 재검토했다. 비교군은 같은 HF Gemma의 원래 생성 vs frozen head 2개뿐이다. 새 M3 102개에서 결과와 무관하게 시각10·비시각10을 holdout하고82개를학습수집에사용한다. MMQA공식train23,817metadata확인중기존URLcovered37은QC후보로만둔다. 부족할때만MultiHop-RAG의실제609기사·2,556질문에서사전고정1,000질문을100개씩teacher수집하며라벨gate충족시중단한다. 매block학습·test반복은없다. 다른dataset·D-logit·vLLM재평가·LoRA·RL·memory가설실험은이번실행에서제외한다.
+
+M3잔여에서1,000개층화선정준비비용을계산하니새supportURL1,364개가필요해이번범위에넣지않았다. 이전100개중RudyRobbins한문항의표supportID가기존IR문서목록에없음을dataset_feasibility.json에기록하고이전예측·점수는변경하지않았다. 새teacher·head학습·GPU평가는아직시작하지않았다.

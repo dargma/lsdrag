@@ -74,6 +74,8 @@ Laya의 공개 `laya/train.py`는 `soft-ce`와 `rlcd`를 구분한다. 확인한
 
 ## 7. 우리 Gemma 학습에 반영한 결정
 
+이번 실행은 아래 1–2의 head CE와 필요한 라벨 수집만 수행한다. 3–6은 후속 가설이며 LoRA·RL·calibration 실험을 이번에 추가한다는 뜻이 아니다.
+
 | 순서 | 학습·구현 | 이유·전제 |
 |---|---|---|
 | 1 | 기존 생성 경계의 frozen hidden → linear head, CE | 가장 작은 모델 변경으로 action 분리 가능성 확인 |

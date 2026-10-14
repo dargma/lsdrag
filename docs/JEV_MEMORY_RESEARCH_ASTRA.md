@@ -6,6 +6,8 @@
 
 실험 모델은 기존 **`google/gemma-4-E4B-it` Reader의 직접 head 학습, 필요시 같은 Gemma의 추가 fine-tuning**으로 제한한다. Jev, Laya, Kev, SemIf는 구조·학습법의 참고 자료다. 외부 decision API 호출, 다른 decision 모델로의 교체, 외부 teacher API를 사용하는 실험은 이 설계에 포함하지 않는다.
 
+**실행 범위 정정:** 아래 H1–H5와 무학습 readout·LoRA 등의 항목은 후속 연구 후보로 보존한다. Astra 두 번째 검토 후 **이번에는 B-HF vs D-head 두 조건만, 새 M3 20문항 × 2조건**을 실행하는 최소 계획으로 좁혔다. 실제 실행 범위는 [최신 실험 계획](JEV_EXPERIMENT_PLAN.md)을 따른다.
+
 ## 1. 현재 결과가 말하는 것과 아직 말하지 않는 것
 
 로컬 근거는 [G1 집계](../lab/reports/search_linked100/m3docvqa/G1_summary.json), [Agent](../src/lsdrag/agent.py), [EvidenceContext](../src/lsdrag/context.py), 완료된 `three_arm_search_linked100/m3docvqa` 궤적이다.

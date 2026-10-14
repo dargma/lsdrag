@@ -25,7 +25,8 @@ M3DocVQA 100문항과 Mem-Gallery 100문항(VS 50·VR 50)으로 멀티모달 A-R
 
 기존 로컬 Gemma 4 E4B-it에 decision head를 붙이는 연구다. 외부 decision API는 사용하지 않는다. 현재는 계획·기존 로그 감사 단계이며 새 학습·속도 개선 결과는 없다.
 
-- [실험 계획과 Astra 검토 반영](docs/JEV_EXPERIMENT_PLAN.md)
+- [실험 계획과 Astra 재검토: 두 조건만 비교](docs/JEV_EXPERIMENT_PLAN.md)
+- [라벨 자료 검토: M3 우선·MultiHop-RAG 단일 보완](docs/JEV_LABEL_DATASET_REVIEW.md)
 - [기여 가설: 속도·근거 탐색·기억 제어](docs/JEV_CONTRIBUTIONS.md)
 - [Jev·Laya·Kev·SemIf의 최신 학습법 확인](docs/JEV_DECISION_MODEL_TRAINING_REVIEW.md)
 - [Astra 최신 RAG·장기 기억 연구 메모](docs/JEV_MEMORY_RESEARCH_ASTRA.md)
