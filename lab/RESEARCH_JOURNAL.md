@@ -160,3 +160,7 @@ User clarified that only A-RAG max iteration is eight, with no independent Reade
 사용자 요청으로 INTERIM_REPORT는 M3DocVQA만 다루도록 구성하고, 검색용 EmbeddingGemma 2와 답변용 Gemma 4 E4B-it을 구분했다. 텍스트 질문 벡터→텍스트/실제 이미지 인덱스 검색→RRF→실제 이미지 Reader 전달 경로, Aria의 본문 오검색과 표지 검색 차이, C1/G1 비교 의미를 명시했다. A-RAG 수정·EmbeddingGemma 2 구조 부록과 고정 설정 사본·해시를 추가했다. 고정 config sliding_window=512와 모델 카드 요약 1024의 차이를 기록했다. 정성 이미지 표는 이미지별 별도 문단으로 재구성해 임의 가로 줄바꿈을 없앴다. 문서 편집만 수행했고 추론을 재실행하지 않았다. 기존 다른 벤치마크 결과·원자료는 보존했다.
 
 추가 사용자 요청: TrustMem(Samsung AI Center–Mountain View / Notre Dame, arXiv:2606.25161v1)을 원문 PDF와 대조해 docs/TRUSTMEM_PAPER_REVIEW.md로 정리했다. 방법·보상·TR-GRPO·학습 설정·수치·ablation·재현 한계·A-RAG 적용 제안을 구분했다. 평가 judge와 학습 Verifier의 모델명을 혼동하지 않았고, 동일 이전 상태 선호 쌍의 재현 조건과 희소 오류율 해석도 명시했다. 보고서 두 이미지 표는 1120/768px 브라우저 검증과 실제 화면 확인을 완료했다.
+
+## 2026-10-14 — Gemini Embedding 2 논문 리뷰
+
+사용자 지정 arXiv:2605.27295v1 원문 PDF·표를 확인하고 docs/GEMINI_EMBEDDING_2_PAPER_REVIEW.md에 구조·NCE/MRL·PFT/FT/soup·검색 결과·ablation·한계·A-RAG 적용 제안을 정리했다. 현재 측정한 EmbeddingGemma 2와 다른 모델임을 명시했다. API 계약은 2026-10-14 공식 문서로 별도 확인했다. Table 1/6 영상 기본값 차이, 이전 모델 평균 본문/표 차이, 합성 데이터 효과의 비교 기준도 기록했다. 모델 추론·API 요청·벤치마크 재실행 없이 문서만 추가했다.

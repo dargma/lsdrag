@@ -4,6 +4,7 @@ M3DocVQA 100문항과 Mem-Gallery 100문항(VS 50·VR 50)으로 멀티모달 A-R
 
 - [실험 실행 지시서](docs/EXPERIMENT_PLAN.md)
 - [Google 멀티모달 임베더 구현 지시서](docs/IMPLEMENTING_GOOGLE_MULTIMODAL_EMBEDDING.md)
+- [Gemini Embedding 2 논문 리뷰](docs/GEMINI_EMBEDDING_2_PAPER_REVIEW.md)
 - [TrustMem 논문 상세 정리](docs/TRUSTMEM_PAPER_REVIEW.md)
 - [결정 기록](docs/DECISIONS.md)
 - [진행 기록](lab/RESEARCH_JOURNAL.md)
