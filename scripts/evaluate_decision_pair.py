@@ -2,6 +2,7 @@
 import argparse
 from dataclasses import asdict
 import json
+import os
 import random
 import subprocess
 import time
@@ -16,6 +17,11 @@ from lsdrag.retrieval import Retrieval,VectorIndex
 from lsdrag.metrics import official_scorer,answer_scores
 
 
+def gpu_pids():
+    raw=subprocess.check_output(['nvidia-smi','--query-compute-apps=pid','--format=csv,noheader,nounits'],text=True)
+    return {int(line.strip()) for line in raw.splitlines() if line.strip().isdigit()}
+
+
 def main():
     p=argparse.ArgumentParser()
     p.add_argument('--work-root',type=Path,required=True)
@@ -24,6 +30,7 @@ def main():
     a=p.parse_args();r=a.work_root;repo=Path(__file__).resolve().parents[1]
     if a.output.exists(): raise ValueError('Refuse repeated evaluation; inspect existing results')
     if subprocess.check_output(['git','status','--porcelain'],cwd=repo,text=True).strip(): raise ValueError('Commit code before final evaluation')
+    if gpu_pids(): raise RuntimeError('GPU has active processes; defer timing comparison')
     questions_path=r/'data/manifests/jev_v1.0/fresh_m3_test20/questions.jsonl'
     questions=read_jsonl(questions_path)
     plan=json.loads((repo/'lab/registry/jev_v1.0/label_collection_plan.json').read_text())
@@ -49,12 +56,18 @@ def main():
     results=[]
     try:
         for q,arm in schedule:
+            allowed_pids={os.getpid(),embedder.process.pid}
+            if gpu_pids()-allowed_pids:
+                raise RuntimeError('GPU contention appeared; stop before next question')
             reader.head=trained_head if arm=='D-head' else None
             # Fresh caches for both arms; warmup never leaks retrieved test results.
             retrieval=Retrieval(r/'data/ir_final288',indexes,{'gemma':embedder},'G1')
             result=Agent(retrieval,prompt,config,reader).run(q['qid'],q['question'])
             result['decision_arm']=arm
             dump_json(a.output/arm/(q['qid']+'.json'),result)
+            if gpu_pids()-allowed_pids:
+                dump_json(a.output/'timing_invalid.json',{'qid':q['qid'],'arm':arm,'reason':'GPU contention during question; do not use its timing'})
+                raise RuntimeError('GPU contention during question; preserve result, no automatic retry')
             if result['status']=='failed': raise RuntimeError(f'Infrastructure failure {q["qid"]}/{arm}: {result["errors"]}')
             results.append(result)
             print(json.dumps({'completed':len(results),'arm':arm,'qid':q['qid'],'seconds':result['seconds'],'answers':result['answers']}),flush=True)
@@ -64,12 +77,12 @@ def main():
     gold={q['qid']:q for q in read_jsonl(r/'data/manifests/jev_v1.0/fresh_m3_test20/gold.jsonl')}
     scorer=official_scorer(r/'upstream/m3docrag');rows=[]
     for result in results:
-        rows.append({'qid':result['qid'],'arm':result['decision_arm'],**answer_scores(result,gold[result['qid']],scorer),'seconds':result['seconds'],'reader_calls':result['reader_call_count'],'completion_tokens':result['completion_tokens'],'fallback_count':sum(c['usage'].get('fallback_count',0) for c in result['reader_calls']),'delivered_figures':result['delivered_figure_ids']})
+        rows.append({'qid':result['qid'],'arm':result['decision_arm'],**answer_scores(result,gold[result['qid']],scorer),'seconds':result['seconds'],'reader_calls':result['reader_call_count'],'completion_tokens':result['completion_tokens'],'fallback_count':sum(c['usage'].get('fallback_count',0) for c in result['reader_calls']),'delivered_figures':result['delivered_figure_ids'],'tool_seconds':sum(t['seconds'] for t in result['trajectory']),**{key:sum(c['usage'].get(key,0) for c in result['reader_calls']) for key in ['prefill_seconds','head_seconds','prefix_seconds','decode_seconds']}})
     summary={}
     import statistics
     for arm in ['B-HF','D-head']:
         subset=[x for x in rows if x['arm']==arm]
-        summary[arm]={'n':len(subset),**{k:statistics.mean(x[k] for x in subset) for k in ['em','f1','seconds','reader_calls','completion_tokens','fallback_count']},'median_seconds':statistics.median(x['seconds'] for x in subset)}
+        summary[arm]={'n':len(subset),**{k:statistics.mean(x[k] for x in subset) for k in ['em','f1','seconds','reader_calls','completion_tokens','fallback_count','tool_seconds','prefill_seconds','head_seconds','prefix_seconds','decode_seconds']},'median_seconds':statistics.median(x['seconds'] for x in subset)}
     dump_json(a.output/'summary.json',{'arms':summary,'rows':rows,'peak_allocated_bytes':torch.cuda.max_memory_allocated(),'limitation':'20 paired questions; no strong noninferiority/p95/calibration claim'})
 
 if __name__=='__main__': main()
