@@ -15,7 +15,7 @@ from lsdrag.retrieval import Retrieval, VectorIndex
 def main():
     p = argparse.ArgumentParser()
     p.add_argument("--arm", choices=["B0", "V1", "V2", "C1", "G1"], required=True)
-    p.add_argument("--benchmark", choices=["m3docvqa", "memgallery"], default="m3docvqa")
+    p.add_argument("--benchmark", choices=["m3docvqa", "memgallery", "multihoprag"], default="m3docvqa")
     p.add_argument("--corpus", type=Path, required=True)
     p.add_argument("--indexes", type=Path, required=True)
     p.add_argument("--questions", type=Path, required=True)
@@ -29,7 +29,7 @@ def main():
     p.add_argument("--image-delivery-policy", choices=["agent-read", "search-linked"], default="search-linked")
     a = p.parse_args()
     questions = read_jsonl(a.questions)
-    allowed = {"qid", "question"} if a.benchmark == "m3docvqa" else {"qid", "question", "scenario", "task_type", "question_image_paths"}
+    allowed = {"qid", "question"} if a.benchmark != "memgallery" else {"qid", "question", "scenario", "task_type", "question_image_paths"}
     if any(set(q) != allowed for q in questions):
         raise ValueError("Question manifest must contain only the approved public input fields")
     if len({q["qid"] for q in questions}) != len(questions):
