@@ -283,5 +283,15 @@
     "oracle_evidence_reader_diagnostic": false,
     "execution_inputs_updated": true,
     "m3docvqa_input_manifest_updated": true
+  },
+  "report_revision": {
+    "date": "2026-10-14",
+    "scope": "M3DocVQA only; existing other benchmark artifacts retained",
+    "appendices": [
+      "A-RAG integration changes",
+      "EmbeddingGemma 2 architecture and cross-modal retrieval"
+    ],
+    "trustmem_review": "docs/TRUSTMEM_PAPER_REVIEW.md",
+    "additional_inference": false
   }
 }

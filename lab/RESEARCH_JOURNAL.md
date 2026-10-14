@@ -154,3 +154,9 @@ User clarified that only A-RAG max iteration is eight, with no independent Reade
 정성 사례는 새 실행의 Aria 풍차, 고릴라 앨범, 폭스글러브 개수, 콜로세움 조명으로 교체하고 원본·전체 실행·실제 이미지·캡션·해시를 포함했다. 모두 Qwen 오답/G1 정답이지만 Mem 평균 개선을 뜻하지 않는다. Foxglove에서 Qwen 답은 3(이미지 4개), G1은 5(이미지 5개); Colosseum은 양쪽 모두 정답 이미지를 받았으며 두 후보 모두 야간이다. 캡션 없는 표지에도 픽셀 안 인쇄 문자는 있다. 기존 보고서·사례는 agent-read 역사적 기록으로 보존했다.
 
 우리 Reader(8102, gemma-reader) 프로세스 신원을 확인하고 모든 채점·백업 완료 뒤 SIGTERM으로 중단했다. 다른 세션 GPU 프로세스는 중단하지 않았다. 최신 보고서, README, 실험 계획, 구현 명세, 현재 상태를 완료 결과에 맞게 갱신했다.
+
+## 2026-10-14 — M3DocVQA 보고서 편집
+
+사용자 요청으로 INTERIM_REPORT는 M3DocVQA만 다루도록 구성하고, 검색용 EmbeddingGemma 2와 답변용 Gemma 4 E4B-it을 구분했다. 텍스트 질문 벡터→텍스트/실제 이미지 인덱스 검색→RRF→실제 이미지 Reader 전달 경로, Aria의 본문 오검색과 표지 검색 차이, C1/G1 비교 의미를 명시했다. A-RAG 수정·EmbeddingGemma 2 구조 부록과 고정 설정 사본·해시를 추가했다. 고정 config sliding_window=512와 모델 카드 요약 1024의 차이를 기록했다. 정성 이미지 표는 이미지별 별도 문단으로 재구성해 임의 가로 줄바꿈을 없앴다. 문서 편집만 수행했고 추론을 재실행하지 않았다. 기존 다른 벤치마크 결과·원자료는 보존했다.
+
+추가 사용자 요청: TrustMem(Samsung AI Center–Mountain View / Notre Dame, arXiv:2606.25161v1)을 원문 PDF와 대조해 docs/TRUSTMEM_PAPER_REVIEW.md로 정리했다. 방법·보상·TR-GRPO·학습 설정·수치·ablation·재현 한계·A-RAG 적용 제안을 구분했다. 평가 judge와 학습 Verifier의 모델명을 혼동하지 않았고, 동일 이전 상태 선호 쌍의 재현 조건과 희소 오류율 해석도 명시했다. 보고서 두 이미지 표는 1120/768px 브라우저 검증과 실제 화면 확인을 완료했다.
