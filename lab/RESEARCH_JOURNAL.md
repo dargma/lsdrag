@@ -168,3 +168,11 @@ User clarified that only A-RAG max iteration is eight, with no independent Reade
 ## 2026-10-14 — Gemini Embedding 2 수식 설명·LaTeX
 
 리뷰 §3–4를 보완했다. 토큰 표현·mean pooling·projection, 원문 식1의 입력/벡터 구분, cosine, NCE 분모·확률·손실, 온도, hard/in-batch negative, mask, MRL을 기호 표와 설명용 숫자 예시로 풀었다. 추가 미분·MRL 합은 유도/설명식임을 명시하고 예시 값을 실제 논문·Aria 결과와 구분했다. GitHub 지원 LaTeX inline/display 구문을 사용했다. MathJax로 display 수식16개·inline50개를 렌더링해 오류0, 숫자 계산과 1120/768px 폭 검증·스크린샷 확인 완료. 모델 추론 없음.
+
+## 2026-10-14 — jev_v1.0 계획·contribution·학습법 조사
+
+사용자 승인으로 jev_v1.0 브랜치를 만들었다. Astra(gpt-6-astra)가 계획과 로컬 코드를 검토했다. 외부 decision API는 실험에 사용하지 않고 현재 Gemma 4 E4B Reader의 frozen head부터 검증한다. 기존 M3 300개 궤적·955 Reader turns에서 복수 tool call은 0이며, 정답 궤적은 B0 2 / C1 0 / G1 7이었다.
+
+결과와 무관한 seed 20261014로 train 60 / dev 20 / test 20을 고정한 뒤 성공 label을 수확했다. Train은 4개 독립 qid·5개 궤적·15턴(keyword 5 / semantic 5 / FINAL 5 / read 0)으로 일반 4-class 평가에는 부족하며 자료 보강 gate를 계획서에 명시했다. Jev·Laya·Kev·SemIf의 공식 학습 설명·소스를 확인해 CE 기준선, 별도 보정, 필요시 Gemma LoRA를 단계화했다.
+
+속도 외 기여는 근거 충족·상충 검사, 동일 시간 예산의 대안 탐색, 출처·시간을 보존하는 기억 저장·수정, context 관리의 가설로 정리했다. 새 학습·GPU 속도 측정은 실행하지 않았다.

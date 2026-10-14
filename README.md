@@ -20,3 +20,12 @@ M3DocVQA 100문항과 Mem-Gallery 100문항(VS 50·VR 50)으로 멀티모달 A-R
 주요 진입점은 `scripts/build_ir.py`, `scripts/build_index.py`, `scripts/run_experiment.py`, `scripts/score_m3doc.py`, `scripts/prepare_memgallery.py`, `scripts/score_memgallery.py`입니다. `--help`로 입력 경로와 실행 옵션을 확인할 수 있습니다. 데이터·모델·인덱스는 저장소 밖 로컬 디스크에 둡니다.
 
 원본 텍스트 전용 동작은 `scripts/original_arag.py`로 고정된 upstream 스크립트에 직접 위임합니다. 예를 들어 `--upstream /path/to/arag --operation batch_runner -- --config configs/original_arag.yaml --questions /path/to/questions.json --output /path/to/results`를 사용합니다. 이 경로는 lsdrag의 멀티모달 도구와 프롬프트를 사용하지 않습니다. 원본 설정의 데이터·인덱스 경로와 OpenAI 호환 API 환경 변수를 실행 환경에 맞게 설정해야 합니다.
+
+## jev_v1.0 연구 브랜치
+
+기존 로컬 Gemma 4 E4B-it에 decision head를 붙이는 연구다. 외부 decision API는 사용하지 않는다. 현재는 계획·기존 로그 감사 단계이며 새 학습·속도 개선 결과는 없다.
+
+- [실험 계획과 Astra 검토 반영](docs/JEV_EXPERIMENT_PLAN.md)
+- [기여 가설: 속도·근거 탐색·기억 제어](docs/JEV_CONTRIBUTIONS.md)
+- [Jev·Laya·Kev·SemIf의 최신 학습법 확인](docs/JEV_DECISION_MODEL_TRAINING_REVIEW.md)
+- [Astra 최신 RAG·장기 기억 연구 메모](docs/JEV_MEMORY_RESEARCH_ASTRA.md)
