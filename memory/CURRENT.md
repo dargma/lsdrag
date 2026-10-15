@@ -12,7 +12,9 @@ Verified:
 
 Current execution: first teacher attempt started after Astra approval and commit b99a264. It was stopped after observing native tool-call output where the controlled selector required A-F. This attempt is INVALID_PROTOCOL_ATTEMPT.json, not head quality evidence and not reusable training labels. The owned teacher PID777960 was stopped; tool session31865 is historical, not a live-job assertion.
 
-Next: start v2 first20 teacher questions at `/content/local_fast/lsdrag-head-v12/results/full_head_20261015_v2`. Actual two-train-question prefix probe passed2/2, all controller prefixes share the correction and the feature contract binds its code/version. Astra approved the v2 correction. The user reviewed the staged plan table and explicitly approved proceeding. Then complete60/80/100 as required and train/evaluate only if all-six-action coverage passes. No threshold or question-order changes.
+Current live phase: v2 first20 teacher collection is RUNNING (last verified process PID784028, tool session95665). Log: `/content/local_fast/lsdrag-head-v12/logs/teacher_v2_000_020.log`. Output: `/content/local_fast/lsdrag-head-v12/results/full_head_20261015_v2`. These process IDs are historical after a reset; verify commandline/liveness before acting. Model and embedding worker loaded, first actual iterative episode underway at the latest check.
+
+Next: inspect completed20-question diagnostic, archive phase artifacts, then continue unchanged train order to60. Extend80/100 only as the fixed coverage gate requires. Fit/evaluate only when six-action coverage passes. Source/data identities are frozen; do not edit active runner/core files mid-run. World-model work remains deferred.
 
 
 Do not resume `/content/local_fast/lsdrag-v11/results/stage12_20261015_v2`: it has DISCARDED.json. Old runners also reject discarded outputs.
