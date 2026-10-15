@@ -1,3 +1,9 @@
+# 현재 실행 — 기존 인터페이스 진단부터 순차 진행
+
+사용자가 검토안 순차 실행과 단계별 저장을 승인했다. 현 계약: `docs/JEV_DECISION_RAG_EXECUTION_20261015.md`.1단계 train20 native/generated/first-token paired 진단,2단계 fresh60/80/100 coverage-gated3-seed learned head+dev20 평가. 인자 최소화는 독립 후속 ablation. 이전 argument-candidate 결합안은 실행하지 않는다.
+
+Run `/content/local_fast/lsdrag-head-v13/results/decision_rag_20261015`, common args `lab/registry/decision_rag_20261015/common_args.json`. Native parser dependency를 vLLM0.20.0의 unchanged typed helpers로 분리하여19 CPU tests 통과. 현재 첫 실모델 smoke/first2 준비 중. 새 실험 아직 완료 아님.
+
 # 최신 검토 — 품질/전체 효율을 기준으로 설계 재평가
 
 사용자는 직전 제안에 쏠리지 말고 RAG+decision 결합의 성능 향상/효율화를 독립적으로 검토하도록 요청했다. `docs/JEV_DECISION_RAG_REASSESSMENT_20261015.md`에 문헌·코드·과거20문항 report를 대조한 검토를 저장했다. 권고는 A-RAG 전면 재설계/추가 인자제어기를 바로 붙이지 않고, 기존 interface에서 decision의 추가 가치를 검증한 뒤 인자 최소화를 별도 ablation으로 보는 것. 이는 새 실행 계획 동결이 아니라 연구 검토다. 기존 전체 목표(teacher/학습/dev 포함)는 유지하며 새 코드/실험은 아직 시작하지 않았다. 과거 보고서 수치를 새 결과로 주장하거나 라벨로 재사용하지 않는다.

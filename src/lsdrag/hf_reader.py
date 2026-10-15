@@ -31,9 +31,9 @@ def processor_messages(messages):
 
 
 def parse_native(text):
-    # Match the existing vLLM parser and use its typed argument parser, preserving
-    # arrays/integers and multiple tool calls. Dependency is pinned in runtime.
-    from vllm.tool_parsers.gemma4_tool_parser import _parse_gemma4_args
+    # Use the pinned vLLM typed helpers without importing the inference engine;
+    # preserve arrays/integers and multiple tool calls.
+    from .gemma4_arguments import _parse_gemma4_args
     pattern = re.compile(r"<\|tool_call>call:([\w\-.]+)\{(.*?)\}<tool_call\|>", re.S)
     matches = list(pattern.finditer(text))
     calls = [{"id": f"call_{i}", "type": "function", "function": {"name": m[1], "arguments": json.dumps(_parse_gemma4_args(m[2]), ensure_ascii=False)}} for i, m in enumerate(matches)]

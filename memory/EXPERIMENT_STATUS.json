@@ -1,13 +1,13 @@
 {
-  "phase": "decision_rag_quality_efficiency_review_complete",
-  "reason": "User requested independent balanced reassessment; reviewed literature and actual implementation before further architecture changes.",
+  "phase": "decision_rag_stage1_preflight",
+  "reason": "User approved sequential diagnosis, readout training/evaluation and later independent argument ablation, with milestone persistence.",
   "stopped_pids": [
     792503,
     796306,
     796517
   ],
   "completed_teacher_questions": 33,
-  "updated_utc_epoch": 1792062802.8767915,
+  "updated_utc_epoch": 1792063070.7217321,
   "updated_utc": "2026-10-15T10:56:15.168798+00:00",
   "prior_git_head": "c080bb9",
   "historical_completed_teacher_questions": 33,
@@ -23,9 +23,9 @@
     "verified_report": "lab/reports/recovery_20261015/input_recovery.json",
     "active_sessions": []
   },
-  "proposed_plan": "docs/JEV_ARGUMENT_CONTROL_PLAN_20261015.md",
+  "proposed_plan": "docs/JEV_DECISION_RAG_EXECUTION_20261015.md",
   "design_approval": "approved_all_included",
   "pending_question": null,
-  "active_run": "/content/local_fast/lsdrag-head-v13/results/argument_control_20261015",
+  "active_run": "/content/local_fast/lsdrag-head-v13/results/decision_rag_20261015",
   "review": "docs/JEV_DECISION_RAG_REASSESSMENT_20261015.md"
 }
