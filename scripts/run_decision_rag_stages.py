@@ -88,7 +88,20 @@ def main():
         os.replace(temporary, path)
 
     def mirror(relative):
-        pass  # Bundle at phase boundaries; diagnostic bundles every question.
+        pass
+
+    def checkpoint_bundle():
+        if a.backup:
+            bundle = a.output.parent/(a.output.name+'_latest.tar.gz')
+            temporary = bundle.with_suffix('.tmp')
+            with tarfile.open(temporary, 'w:gz') as archive:
+                archive.add(a.output, arcname=a.output.name)
+            os.replace(temporary, bundle)
+            a.backup.mkdir(parents=True, exist_ok=True)
+            backup_temp = a.backup/(bundle.name+'.tmp')
+            shutil.copy2(bundle, backup_temp)
+            os.replace(backup_temp, a.backup/bundle.name)
+
     manifest_path = a.output/'manifest.json'
     if manifest_path.exists() and json.loads(manifest_path.read_text()) != manifest:
         raise ValueError('Experiment source/data/feature contract changed; use a new output directory')
@@ -122,6 +135,7 @@ def main():
         if a.backup:
             for path in (a.output/'heads').glob('*'):
                 mirror(path.relative_to(a.output))
+        checkpoint_bundle()
         print(json.dumps({'phase': 'train', 'gate': result['gate'], 'runs': len(result['runs'])}), flush=True)
         return
     free = subprocess.check_output(['nvidia-smi', '--query-gpu=memory.free', '--format=csv,noheader,nounits'], text=True)
@@ -146,12 +160,12 @@ def main():
                 raise RuntimeError('Infrastructure/context/model failure; preserved trajectory and halted without complete teacher artifact')
             result.update(score(result['answers'], gold[question['qid']]['answers'], source_dir=a.scorer))
             return result
+        from lsdrag.hf_reader import HFReader
+        native = HFReader.__new__(HFReader)
+        native.__dict__ = reader.__dict__.copy()
+        native.head = None
+        native.agent_prompt = a.prompt.read_text()
         if a.phase == 'diagnose':
-            from lsdrag.hf_reader import HFReader
-            native = HFReader.__new__(HFReader)
-            native.__dict__ = reader.__dict__.copy()
-            native.head = None
-            native.agent_prompt = a.prompt.read_text()
             policies = [('native', native), ('generated', reader),
                         ('first_token', GeneratedChoiceReader.from_reader(reader, 'first_token'))]
             for number, q in enumerate(train[a.start:a.start+a.limit], a.start):
@@ -185,17 +199,7 @@ def main():
                          'last_policy':name, 'last_qid':q['qid'], 'updated_epoch':time.time()})
                     print(json.dumps({'phase':'diagnose','index':number,'policy':name,
                           'qid':q['qid'],'f1':result['f1'],'status':result['status']}), flush=True)
-                # Bundle every completed question, no per-file Drive writes.
-                if a.backup:
-                    bundle = a.output.parent/(a.output.name+'_latest.tar.gz')
-                    temporary = bundle.with_suffix('.tmp')
-                    with tarfile.open(temporary, 'w:gz') as archive:
-                        archive.add(a.output, arcname=a.output.name)
-                    os.replace(temporary, bundle)
-                    a.backup.mkdir(parents=True, exist_ok=True)
-                    backup_temp = a.backup/(bundle.name+'.tmp')
-                    shutil.copy2(bundle, backup_temp)
-                    os.replace(backup_temp, a.backup/bundle.name)
+                checkpoint_bundle()
             return
         if a.phase == 'teacher':
             for n, q in enumerate(train[a.start:a.start+a.limit], 1):
@@ -214,14 +218,17 @@ def main():
                 path.parent.mkdir(parents=True, exist_ok=True)
                 save(Path('teacher')/f'{q["qid"]}.json', result)
                 torch.save({'records': states, 'features': torch.from_numpy(features), 'feature_contract': contract,
-                            'trajectory_status': result['status']}, path)
+                            'trajectory_status': result['status']}, path.with_suffix('.pt.tmp'))
+                os.replace(path.with_suffix('.pt.tmp'), path)
                 mirror(relative)
+                save('progress.json', {'phase':'teacher','completed_index':a.start+n,'last_qid':q['qid'],'updated_epoch':time.time()})
+                if n % 5 == 0 or n == a.limit: checkpoint_bundle()
                 print(json.dumps({'phase': 'teacher', 'done': n, 'qid': q['qid'], 'states': len(states), 'status': result['status']}), flush=True)
         else:
             trained = json.loads((a.output/'training.json').read_text())
             if not trained['gate']['passed']:
                 raise ValueError('Six-action coverage gate failed; evaluation not authorized by protocol')
-            policies = [('generated', reader), ('first_token', GeneratedChoiceReader.from_reader(reader, 'first_token'))]
+            policies = [('native', native), ('generated', reader), ('first_token', GeneratedChoiceReader.from_reader(reader, 'first_token'))]
             policies += [(f'head_s{spec["seed"]}', GeneratedChoiceReader.from_reader(reader, 'head', spec['checkpoint'])) for spec in trained['runs']]
             results = []
             for number, q in enumerate(dev[:20]):
@@ -246,6 +253,7 @@ def main():
                             mirror(feature_relative)
                         save(relative, result)
                     results.append(result)
+                checkpoint_bundle()
                 print(json.dumps({'phase': 'evaluate', 'done': number+1}), flush=True)
             summary = {name: {'n': sum(r['policy'] == name for r in results),
                        'em': float(np.mean([r['em'] for r in results if r['policy'] == name])),

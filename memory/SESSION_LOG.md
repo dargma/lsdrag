@@ -69,3 +69,7 @@ User asked not to overfollow their latest architectural suggestion and to assess
 ## 2026-10-15 — sequential execution and milestone persistence authorized
 
 User approved proposed order and requested saving every stage. Frozen initial plan: original-interface native/generated/first-token train20 diagnosis, then fresh coverage-gated teacher/head/dev. Deferred argument candidates. Restored native typed parser using unchanged official vLLM0.20.0 pure helpers;19 targeted CPU tests passed. New runner and separate v13 root preserve old results.
+
+## 2026-10-15 — stage1 preflight passed
+
+19 targeted CPU tests passed including native typed parsing. Actual frozen Gemma synthetic smoke passed all five handlers, FINAL and f1/f2 actual image delivery; not learned quality evidence. New runner compiles and CLI loads. Added atomic teacher PT publication, diagnostic per-question bundles, teacher5-question bundles and native dev reference before freezing source. Proceeding first2 fresh paired diagnostic.
