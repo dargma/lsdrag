@@ -8,19 +8,20 @@
   ],
   "completed_teacher_questions": 33,
   "updated_utc_epoch": 1792060931.5416527,
-  "updated_utc": "2026-10-15T10:49:15.593301+00:00",
+  "updated_utc": "2026-10-15T10:55:16.532203+00:00",
   "prior_git_head": "c080bb9",
   "historical_completed_teacher_questions": 33,
   "verified_drive_checkpoint_teacher_questions": 20,
   "teacher_33_artifacts_recovered": false,
   "restoration": {
-    "state": "inputs_models_hash_verified_environment_setup_in_progress",
+    "state": "complete_verified",
     "data_tool_session": null,
     "models_tool_session": null,
     "corpus": "/content/local_fast/lsdrag-work/data/ir_final288",
     "model_cache": "/content/local_fast/lsdrag-v11/hf",
     "report_expected": "/content/local_fast/lsdrag-head-v12/recovery/restore_full_head_manifest.json",
-    "verified_report": "lab/reports/recovery_20261015/input_recovery.json"
+    "verified_report": "lab/reports/recovery_20261015/input_recovery.json",
+    "active_sessions": []
   },
   "proposed_plan": "docs/JEV_ARGUMENT_CONTROL_PLAN_20261015.md",
   "design_approval": "pending_user_scope_choice"

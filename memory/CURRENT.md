@@ -1,3 +1,9 @@
+# Restoration complete — design scope response pending
+
+Models/data and runtime are restored on local fast. Gemma GPU text prefill passed (finite2560-width feature); A–P each encode to1 token. EmbeddingGemma query and real-image GPU encoding passed (normalized768-width). Evidence: `lab/reports/recovery_20261015/{input_recovery,embedding_smoke,reader_load_smoke}.json`. No recovery job remains active.
+
+Waiting for user scope choice on the concrete argument-control plan. Do not launch proposed stage1/2 before that decision. The active goal remains new plan plus stage2 completion; neither new experimental stage has yet been completed.
+
 # Recovery update — inputs verified; design decision pending
 
 Models downloaded and all downloaded LFS files verified against official pinned SHA256. Restored2463 derived input files and verified hashes, all2438 image PIL decodes,288 documents/56822 chunks, original Gemma index manifests/parts. Reproduced train100/dev20 and all10 JSONL hashes exactly. Pinned official scorer restored and3 basic list/numeric/empty cases passed. Evidence: `lab/reports/recovery_20261015/`. Model GPU load not yet checked; separate pinned embedding environment installation underway.

@@ -1,0 +1,18 @@
+{
+  "purpose": "restoration functional check only",
+  "query_shape": [
+    1,
+    768
+  ],
+  "image_shape": [
+    1,
+    768
+  ],
+  "query_norm": 1.0,
+  "image_norm": 0.9999999403953552,
+  "figure_id": "2dcf3a167b1a5a62e2a05bdeae6a68f1:p0:f2",
+  "figure_sha256": "bf4506dfb5a072cbeff028af9c5798e3d1897d336a9bf97869cdcdbdd80aba33",
+  "transformers": "5.19.0",
+  "sentence_transformers": "6.1.0",
+  "torch": "2.11.0+cu130"
+}

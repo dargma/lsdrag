@@ -21,7 +21,8 @@
   "scorer_source_hashes_verified": true,
   "scorer_smoke_cases": 3,
   "model_weights_lfs_sha_verified": true,
-  "embedding_environment": "installation_in_progress",
-  "gpu_model_load_test": "not_run",
-  "old_experiment_resumed": false
+  "embedding_environment": "verified transformers5.19.0 sentence-transformers6.1.0 torch2.11.0+cu130",
+  "gpu_model_load_test": "Gemma text prefill passed; embedding query and image encode passed",
+  "old_experiment_resumed": false,
+  "restoration_complete": true
 }
