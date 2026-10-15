@@ -1,3 +1,7 @@
+# 최신 승인 — 2026-10-15
+
+사용자가 “모두 포함”으로 새 설계와2단계의 teacher 수집·head 학습·dev 평가 포함 범위를 확정했다. 이전 승인 대기 문구는 해제한다. `docs/JEV_ARGUMENT_CONTROL_PLAN_20261015.md`의 확정 범위를 따른다. 현재 단계:1단계 구현 착수; 새 run root `/content/local_fast/lsdrag-head-v13/results/argument_control_20261015`. 기존 v2 실행은 재개하지 않고 fresh labels를 수집한다. 모델/데이터 복원 완료.
+
 # Restoration complete — design scope response pending
 
 Models/data and runtime are restored on local fast. Gemma GPU text prefill passed (finite2560-width feature); A–P each encode to1 token. EmbeddingGemma query and real-image GPU encoding passed (normalized768-width). Evidence: `lab/reports/recovery_20261015/{input_recovery,embedding_smoke,reader_load_smoke}.json`. No recovery job remains active.

@@ -1,6 +1,19 @@
+# 확정 범위 — 사용자 “모두 포함” (2026-10-15)
+
+이 절이 아래 초안의 보류/선택 문구를 대체한다. 구현 및 새 실험 진행이 승인되었다.
+
+1단계: 관측 기반 후보 인자 선택 + GENERATE_ARGS 구현, CPU 검사, 실제 모델의 모든 도구/FINAL/이미지 전달 smoke.
+2단계: 고정 train first20 paired 진단; 새 hybrid generated-letter teacher를 고정 순서로60까지 수집, 여섯 행동 모두 각각5개 이상 distinct qid 및30개 이상 teacher qid coverage를 충족하지 못하면80/100까지 확장. 실패한 teacher episode도 포함, 강제FINAL 제외. Coverage 통과 후 seed20261015/16/17 각각 linear6 plain CE100epochs 학습. Dev20에서 generated/hybrid, first-token/hybrid,3 learned-head/hybrid 및 first-token/original-arguments를 paired 평가. Train20 진단에서는 동일 first-token action controller로 original/hybrid 인자 경로만 비교한다.
+
+공통 후보 선택기는 frozen VLM first-token logits이다. 학습 대상은 여섯 행동 head이며 candidate pointer를 학습했다고 주장하지 않는다. Dev는 훈련/모델 선택에 사용하지 않는다. 모든 정책의 실제 답변과 실패를 포함한다. Coverage가100에서도 부족하면 학습을 강행하지 않고 NoGo로 보고한다; 이를 학습·평가 완료라고 표현하지 않는다. 진단 지표가 부정적이어도 사전 고정된 head feasibility 평가를 수행하되 인자절감 성공 주장은 하지 않는다. 인프라 실패는 해결 전 다음 단계로 진행하지 않는다.
+
+새 run root: `/content/local_fast/lsdrag-head-v13/results/argument_control_20261015`. 기존 v2 teacher labels/checkpoints를 재사용하지 않는다. 새 계약에 후보 구성/선택 prompt/코드 해시와 인자 정책을 포함해 동결한다. Shared GPU 품질/기능 실행만 진행하며 비교 latency 주장은 하지 않는다.
+
+---
+
 # 도구 인자 생성 최소화: 재검토안
 
-2026-10-15. 상태: 사용자 확정 전 제안. 기존 실험은 중단 유지. 과거 Q3 결과와 중단된 v2 라벨을 새 학습에 사용하지 않는다.
+2026-10-15. 상태: 사용자 “모두 포함”으로 설계 및 학습·평가 포함 범위 확정. 기존 실험은 중단 유지. 과거 Q3 결과와 중단된 v2 라벨을 새 학습에 사용하지 않는다.
 
 ## 결정할 설계
 

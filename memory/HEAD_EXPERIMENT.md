@@ -1,3 +1,7 @@
+# 최신 승인 — 2026-10-15
+
+사용자가 “모두 포함”으로 새 설계와2단계의 teacher 수집·head 학습·dev 평가 포함 범위를 확정했다. 이전 승인 대기 문구는 해제한다. `docs/JEV_ARGUMENT_CONTROL_PLAN_20261015.md`의 확정 범위를 따른다. 현재 단계:1단계 구현 착수; 새 run root `/content/local_fast/lsdrag-head-v13/results/argument_control_20261015`. 기존 v2 실행은 재개하지 않고 fresh labels를 수집한다. 모델/데이터 복원 완료.
+
 # Proposed replacement protocol — awaiting scope confirmation
 
 Read `docs/JEV_ARGUMENT_CONTROL_PLAN_20261015.md` for the new argument-minimization proposal. Stage1 is contract/implementation/functional smoke; proposed stage2 is a fresh paired20-train-question diagnostic, with optional extension to head learning only if confirmed. No new implementation or experiment has started. Inputs and runtime are restored and verified, including Gemma text prefill and embedding text/image GPU checks. Earlier commands remain on hold.

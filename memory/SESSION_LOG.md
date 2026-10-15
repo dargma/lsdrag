@@ -53,3 +53,7 @@ Isolated venv initially missed host /usr/local dist-packages and attempted redun
 ## 2026-10-15 — pre-execution static design audit
 
 Revalidated clean local Git at13f865f and persisted pending user stage2 scope decision. Added explicit candidate-prefill/generation cost inequality, warning that early termination can confound token reductions, and concrete observed-field-only candidate isolation and multi-ID/image-budget edge cases to the proposed plan. Corrected stale status prose that still said restoration was in progress. No implementation or experiment launched; agreement is still pending.
+
+## 2026-10-15 — user approved full revised scope
+
+User replied “모두 포함”: approval now includes implementation,20-question paired diagnostic,fresh60/80/100 coverage-gated teacher collection,3-seed action-head training and paired dev20 evaluation. Prior design/scope blocker cleared. New v13 result root; no historical labels/checkpoints reused. Candidate arg choice remains frozen first-token selection; trained six-action head is the learning target.
