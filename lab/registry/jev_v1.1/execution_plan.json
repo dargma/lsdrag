@@ -1,0 +1,77 @@
+{
+  "seed": 20261015,
+  "status": "frozen_before_stage1_answers",
+  "data_manifest_sha256": "9a3e64a426ececccb5b68726a19242c14d740acde57c6a2830688a1e591015ab",
+  "dataset": "MMQA text+image controlled shared reduced corpus;300train80dev",
+  "reader": {
+    "model": "google/gemma-4-E4B-it",
+    "revision": "ee0ef6023621cff504d758262d4e04895a5af4a2",
+    "image_soft_tokens": 1120,
+    "context_limit": 16384,
+    "answer_tokens": 128,
+    "query_tokens": 48,
+    "decode": "greedy"
+  },
+  "embedder": {
+    "model": "google/embeddinggemma-2",
+    "revision": "914f7f89142e33e77833254d9c9b90c3cef7303b",
+    "text_image_separate": true,
+    "top_k": 1
+  },
+  "protocol": {
+    "first_modality": "qid SHA256 parity, outcome blind",
+    "boundaries": 1,
+    "continuation_acquisitions": 1,
+    "image_package": "actual pixels + title; not pixel-only effect",
+    "no_query_or_assistant_history_in_reader": true,
+    "scope": "evidence-conditioned continuation pilot; not long-horizon agent test"
+  },
+  "gates": {
+    "oracle_n": 40,
+    "oracle_min_correct": 10,
+    "oracle_f1_gain_min": 0.05,
+    "contrast_epsilon": 0.05,
+    "small40_min_contrast_questions": 5,
+    "expanded300_min_contrast_questions": 30,
+    "expanded_min_source_groups": 10,
+    "failure": "record gate reason; do not force stage2 training"
+  },
+  "training": {
+    "architecture": "frozen2560hidden+3budgetmetadata->MLP128 Q3+access4",
+    "epochs": 200,
+    "lr": 0.001,
+    "weight_decay": 0.01,
+    "seeds": [
+      20261015,
+      20261016,
+      20261017
+    ],
+    "lambdas": [
+      0,
+      0.01
+    ],
+    "betas": [
+      0,
+      1
+    ],
+    "alpha": 0,
+    "target": "official listF1 minuslambda future_seconds",
+    "normalization": "train only"
+  },
+  "evaluation": {
+    "development_questions": 80,
+    "final_test": false,
+    "policies": [
+      "first_token",
+      "generated",
+      "always_stop",
+      "always_text",
+      "always_image",
+      "heads:all lambda beta seeds"
+    ],
+    "timing": "fresh answers, query vector cache reset each policy; shared common first acquisition cost included",
+    "claim_limit": "no noninferiority or new-method superiority proof"
+  },
+  "gpu": "RTX PRO6000 Blackwell Server 97887MiB; exclusive timing checks required",
+  "review": "docs/JEV_V11_EXECUTION_REVIEW.md"
+}
