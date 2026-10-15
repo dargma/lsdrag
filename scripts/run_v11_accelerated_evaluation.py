@@ -48,6 +48,10 @@ def frozen_amendment(args, runs):
         raise ValueError('Probe used another dataset')
     if probe.get('model_config_sha256') != sha256(args.model/'config.json'):
         raise ValueError('Probe used another reader configuration')
+    if (probe.get('atol'), probe.get('rtol'), probe.get('image_soft_tokens'), probe.get('max_context')) != (0, 0, 1120, 16384):
+        raise ValueError('Probe differs from the fixed exact-hidden and multimodal configuration')
+    if any(probe.get('head_checkpoint_hashes', {}).get(r['checkpoint']) != sha256(Path(r['checkpoint'])) for r in runs):
+        raise ValueError('Checkpoint weights changed after equivalence probe')
     sources = ['scripts/run_v11_pilot.py', 'scripts/run_v11_accelerated_evaluation.py'] + [
         'src/lsdrag/'+name for name in ['v11_fast_readout.py', 'v11_backend.py',
         'v11_protocol.py', 'v11_scoring.py', 'v11_training.py',
