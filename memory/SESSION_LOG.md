@@ -61,3 +61,7 @@ User replied “모두 포함”: approval now includes implementation,20-questi
 ## 2026-10-15 — user challenges complexity and objective alignment
 
 After all-inclusive approval, user questioned whether a simple head can make the proposed decisions, whether minimizing A-RAG calls is the right objective, and whether the interface itself needs redesign. No new runtime code or experiment had started. Reassessing architecture and supervision before implementation; overall full-stage objective remains.
+
+## 2026-10-15 — balanced decision+RAG review
+
+User asked not to overfollow their latest architectural suggestion and to assess quality and efficiency broadly. Reviewed Adaptive-RAG,Self-RAG,DRAGIN,SetR,Search-R1,Sufficient Context,A-RAG and2026 stopping preprints using primary sources. Static code confirms full-backbone state, separate argument prefill and BC-only action CE. Historical v2 report20 F10.1105/EM0.05 is a baseline-diagnosis signal, not native A-RAG or learned-head evidence. Recommendation: isolate decision benefit in original interface before joint redesign; keep argument minimization as separate ablation. Recorded candidate-selection/multi-hop outcome confounds and matched first-token/native baselines. No new model experiment or architecture implementation started.
