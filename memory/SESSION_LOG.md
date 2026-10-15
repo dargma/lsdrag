@@ -49,3 +49,7 @@ Embedding venv ensurepip was unavailable in the reset image; using the host pip 
 ## 2026-10-15 — restoration complete, real GPU checks passed
 
 Isolated venv initially missed host /usr/local dist-packages and attempted redundant Torch installation; stopped owned pip PIDs7552/7554 and added host-packages.pth, then installed only the pinned transformer adapters. Verified5.19.0/6.1.0 with existing Torch2.11.0+cu130. Embedding GPU query+actual-image vectors normalized768-dimensional; Gemma text prefill finite2560-dimensional, all A–P candidate labels one token. All recovery sessions finished; no training/collection restarted. Concrete new plan is awaiting user stage2 scope choice; experimental goal remains active and incomplete.
+
+## 2026-10-15 — pre-execution static design audit
+
+Revalidated clean local Git at13f865f and persisted pending user stage2 scope decision. Added explicit candidate-prefill/generation cost inequality, warning that early termination can confound token reductions, and concrete observed-field-only candidate isolation and multi-ID/image-budget edge cases to the proposed plan. Corrected stale status prose that still said restoration was in progress. No implementation or experiment launched; agreement is still pending.

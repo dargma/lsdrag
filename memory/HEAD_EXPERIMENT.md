@@ -1,6 +1,6 @@
 # Proposed replacement protocol — awaiting scope confirmation
 
-Read `docs/JEV_ARGUMENT_CONTROL_PLAN_20261015.md` for the new argument-minimization proposal. Stage1 is contract/implementation/functional smoke; proposed stage2 is a fresh paired20-train-question diagnostic, with optional extension to head learning only if confirmed. No new implementation or experiment has started. Inputs are restored and hash verified; runtime environment setup continues. Earlier commands remain on hold.
+Read `docs/JEV_ARGUMENT_CONTROL_PLAN_20261015.md` for the new argument-minimization proposal. Stage1 is contract/implementation/functional smoke; proposed stage2 is a fresh paired20-train-question diagnostic, with optional extension to head learning only if confirmed. No new implementation or experiment has started. Inputs and runtime are restored and verified, including Gemma text prefill and embedding text/image GPU checks. Earlier commands remain on hold.
 
 # Execution hold — 2026-10-15 recovery
 

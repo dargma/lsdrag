@@ -1,14 +1,14 @@
 {
   "phase": "stopped_pending_argument_control_design",
-  "reason": "User requires argument-generation minimization review and agreement before protocol/code changes and experiment execution. Input restoration only is in progress.",
+  "reason": "Restoration verified complete. Awaiting user decision on proposed argument-control design and stage2 scope before implementation or experiment execution.",
   "stopped_pids": [
     792503,
     796306,
     796517
   ],
   "completed_teacher_questions": 33,
-  "updated_utc_epoch": 1792060931.5416527,
-  "updated_utc": "2026-10-15T10:55:16.532203+00:00",
+  "updated_utc_epoch": 1792061775.1687975,
+  "updated_utc": "2026-10-15T10:56:15.168798+00:00",
   "prior_git_head": "c080bb9",
   "historical_completed_teacher_questions": 33,
   "verified_drive_checkpoint_teacher_questions": 20,
@@ -24,5 +24,6 @@
     "active_sessions": []
   },
   "proposed_plan": "docs/JEV_ARGUMENT_CONTROL_PLAN_20261015.md",
-  "design_approval": "pending_user_scope_choice"
+  "design_approval": "pending_user_scope_choice",
+  "pending_question": "Stage2 paired20 train diagnostic only, or include fresh teacher collection/head training/dev evaluation?"
 }
