@@ -1,5 +1,7 @@
 # lsdrag
 
+세션 복원은 [memory/README.md](memory/README.md)와 [현재 상태](memory/CURRENT.md)부터 읽습니다. 현재 실행은 [head-only 고정 계획](lab/registry/full_head_20261015/execution_plan.json)과 [Astra 실행 검토](docs/JEV_FULL_HEAD_PILOT_ASTRA_REVIEW.md)를 따릅니다. 코드는 `/content/local_fast/lsdrag-code`에서 실행·Git 관리하며 Drive는 백업용입니다.
+
 현재 decision 연구: [전체 도구·직접 실행 구현](docs/JEV_DIRECT_ARAG_IMPLEMENTATION.md) · [Astra 검증](docs/JEV_DIRECT_ARAG_ASTRA_REVIEW.md) · [최신 연구 종합·벤치마크](docs/JEV_RESEARCH_SYNTHESIS_20261015.md) · [Surprise/world model](docs/JEV_SURPRISE_WORLD_MODEL_REVIEW_20261015.md). 새 6-action head의 학습 성능은 아직 미검증이며, 이전 축소 3-action 측정은 사용자 지시로 폐기했습니다. 아래 기존 멀티모달 검색 비교는 별도 역사적 실험입니다.
 
 M3DocVQA 100문항과 Mem-Gallery 100문항(VS 50·VR 50)으로 멀티모달 A-RAG와 EmbeddingGemma 2의 효과를 비교합니다.

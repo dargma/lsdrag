@@ -1,0 +1,78 @@
+{
+  "ready": true,
+  "corpus": "/content/local_fast/lsdrag-work/data/ir_final288",
+  "indexes": "/content/local_fast/lsdrag-work/indexes_final288",
+  "corpus_files": {
+    "manifest.json": "675d6b1a56c2cd1e9b4fe624a1b7b7c9beb78a6001053d25541d367c7f46f7bc",
+    "chunks.jsonl": "d6f2ee6613aef29c898cf02cf8a4bb2a87e41675498ac9fc0d4b334a4ded7b73",
+    "documents.jsonl": "c7b0ae8e4d7c8c5cfe88ef3b5107e8cd02f24ba4f817e0ec86947d778ed47a81",
+    "figures.jsonl": "8a2c41b22d50ce4ca2bfda849d4765d00d56a8a051fdf24cd9f3fbf96c5c118d"
+  },
+  "documents": 288,
+  "chunks": 56822,
+  "figures": 2438,
+  "figure_bytes": 138922095,
+  "all_image_sha_and_pil_verified": true,
+  "index_info": {
+    "gemma_text": {
+      "manifest_sha256": "a03c1cd7441cc3c816b58cba19a406e2eb2858a0729a829a64681211ef5c04f9",
+      "rows": 244367,
+      "parts": [
+        {
+          "directory": "/content/local_fast/lsdrag-work/indexes_development/gemma_text",
+          "rows": 160271,
+          "shape": [
+            160271,
+            768
+          ],
+          "manifest_sha256": "43a5de686b6bf60add4c336d9bc2b5253c274a152ba97bc34dee123e54fdaf4e",
+          "rows_sha256": "b7eac5a2e11239cb81cbad8ec4a4505be03e2780be4b8effb54ecd60de1dedd2",
+          "vectors_sha256": "bd898b81ced77e2da064ec8295e20e0b4817d7a9b55c6803a6dd4d8b870e215f"
+        },
+        {
+          "directory": "/content/local_fast/lsdrag-work/indexes_final_additions/gemma_text",
+          "rows": 84096,
+          "shape": [
+            84096,
+            768
+          ],
+          "manifest_sha256": "e6ee7f9fbfcb83b3bdefa9cd5ac4ac84c3918b19210ba371886e7649c407dc59",
+          "rows_sha256": "49df7bd53a821fa6306899edd3d9414506ebae0511eafae6a9a849f1a280eb4d",
+          "vectors_sha256": "72537ff729ae2a6db2bf5c79b1adae797c4af27a94d4c03a0c6234a64077f331"
+        }
+      ]
+    },
+    "gemma_image": {
+      "manifest_sha256": "b4991db5a7802b59a6ed43d2222e21d61c18bca39f9a092fa64c97e87d70bfb7",
+      "rows": 2438,
+      "parts": [
+        {
+          "directory": "/content/local_fast/lsdrag-work/indexes_development/gemma_image",
+          "rows": 1510,
+          "shape": [
+            1510,
+            768
+          ],
+          "manifest_sha256": "ad5fa8488e4edfb7cad1febd7a70b56b75b69ccd24581f686091b2f9173b1e01",
+          "rows_sha256": "128c06d6f2078c1acec8424345dc16736d003d1a0b83eee2990f555140afbce8",
+          "vectors_sha256": "b2ec111b2f1d12ca74f5e094ab2115b9cd1b6fd53103ee12304074fa2409212a"
+        },
+        {
+          "directory": "/content/local_fast/lsdrag-work/indexes_final_additions/gemma_image",
+          "rows": 928,
+          "shape": [
+            928,
+            768
+          ],
+          "manifest_sha256": "71efcf5135d7e8ece8bfabc556021e647dc9009b94929542f9f51c253707372d",
+          "rows_sha256": "c6b9e9d778ed8cd92800b05f5049f2d110e11366ffc45d0c9399a5dd2ac4c5b6",
+          "vectors_sha256": "248e44a63d75ab9edde614c19c275aed70b062950f7534c109e0170b3097fca4"
+        }
+      ]
+    }
+  },
+  "old_absolute_paths_preserved": true,
+  "derived_pixel_restore_exception": "Mineru-extracted JPEGs; no originalpublicexactbyte URL; Drive backup is only known samefingerprint source",
+  "unused_qwen_already_restored": true,
+  "unreferenced_restore_stopped": true
+}
