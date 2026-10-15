@@ -1,3 +1,7 @@
+# User requested end-to-end experiment goal
+
+Persistent Goal registration failed in this ephemeral side thread (`Goal tools require a persistent thread.`). Request and full completion criteria are saved in `memory/EXPERIMENT_COMPLETION_GOAL_REQUEST.json`. Existing12B pilot remains active; its built-in automation reaches at most the20-question audit, not full training/evaluation. The main persistent thread must register the goal and continue after verifying actual artifacts/processes.
+
 # Evaluation target: F1 +5%, speed +5% relative
 
 Target, not achieved result. See `lab/registry/native_distillation_20261015/performance_target.json`. Current collection remains frozen; controlled timing is separate from shared-GPU quality work.
