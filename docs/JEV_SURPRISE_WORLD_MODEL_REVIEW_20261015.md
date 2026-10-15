@@ -4,6 +4,8 @@
 
 ## 판단부터
 
+최종 범위는 [종합 문서](JEV_RESEARCH_SYNTHESIS_20261015.md)를 따른다. 후속 비RAG 환경은 BFCL 로컬 stateful task를 우선 검토하며, 아래 WebShop은 대안이다. 둘을 동시에 추가 실행하는 계획이 아니다.
+
 사용자의 '예상한 관측과 실제 관측의 차이를 이용해 다음 판단을 개선한다'는 방향은 world-model/curiosity 연구와 정확히 연결된다. 다만 **surprise를 보상하거나 task-relevant prediction error를 쓰는 발상 자체는 이미 강한 선행연구가 있다.** 특히 2026-09-26의 DRPE는 제목부터 decision-relevant error와 planning quality를 연결한다. 따라서 기존 access auxiliary 위에 world model·surprise·memory를 모두 추가하는 방향은 추천하지 않는다.
 
 추천은 **별도의 작은 반증 pilot로 기존 access-auxiliary 가설을 대체할 가치가 있는지 비교**하는 것이다. 새 중심 가설은 '예측이 어긋난 관측 중 다음 행동의 순위를 바꾸어야 하는 정보만 구분해 state update에 반영하면, 같은 정보와 용량을 받는 generic Q보다 실패 후 회복과 최종 성공이 좋아지는가'다. 가장 큰 장점은 RAG 밖 agent에도 적용 가능한 문제 정의다. 신규성은 아직 확인되지 않았으며 positive result만으로 ICML 기여가 보장되지 않는다.

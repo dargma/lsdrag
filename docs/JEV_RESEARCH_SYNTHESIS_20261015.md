@@ -59,6 +59,8 @@ The first study should compare a common full-tool environment with identical fro
 - Predictive model with depth 1 and depth 2; depth 0 is the direct-value reference.
 - Shuffled transitions, raw-surprise/uncertainty controls, and an actual-next-state diagnostic oracle.
 
+The actual-next-state oracle is a diagnostic reference within fixed candidates and realized branches, not a global optimal policy or an expected-return upper bound under stochastic execution.
+
 Compare task success/QA, observed branch regret, premature stopping, bad continuations and budget–quality curves. A predicted state is useful only if it improves real action rankings or recovery. Report prediction error on relevant and irrelevant dimensions, calibration and how imagined depth affects errors. Lower prediction loss with unchanged/worse closed-loop choices falsifies the intended benefit.
 
 For depth 0/1/2 comparisons, match the return-label horizon, terminal value target, continuation policy and cost definition; vary planning depth rather than secretly supplying a longer teacher return only to the world model. Distinguish the generated controller under a common argument pool from original A-RAG with free argument generation: the former isolates selection, while the latter is a separate end-to-end system reference.
