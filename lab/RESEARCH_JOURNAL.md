@@ -184,3 +184,13 @@ User clarified that only A-RAG max iteration is eight, with no independent Reade
 M3잔여에서1,000개층화선정준비비용을계산하니새supportURL1,364개가필요해이번범위에넣지않았다. 이전100개중RudyRobbins한문항의표supportID가기존IR문서목록에없음을dataset_feasibility.json에기록하고이전예측·점수는변경하지않았다. 새teacher·head학습·GPU평가는아직시작하지않았다.
 
 Train82 기본 CPU QC: 질문 필드가 qid/question뿐임과 원문 일치, 모든 support 문서 존재, 이미지 필요 39문항의 추출 figure 존재·파일 누락 0을 확인했다. gold 이미지 crop 의미 정렬을 검증했다는 뜻은 아니다. GPU는 타 세션 두 개·약 92% 연산 사용 중이어서 새 GPU 작업을 시작하지 않았다.
+
+## 2026-10-15 — jev_v1.1 연구 방향 조사와 Astra 정교화
+
+사용자가 명시한 목표는 Agentic RAG의 매 iteration 행동 선택을 생성에서 분리해 빠르게 수행하는 것이다. 멀티모달 확장에 관심이 있지만 memory·CoT·RAG를 모두 붙인 framework는 원하지 않는다. ICML 2027의 1월 제출 준비와 단일 Blackwell GPU를 제약으로 기록했다. 정확한 2027 마감, GPU 모델·VRAM·가용 시간은 미확인이다.
+
+사용자 요청으로 decision/control·멀티모달·memory 세 에이전트가 병렬 문헌 조사를 수행하고, 별도 gpt-6-astra 모델이 PoC 기록·코드·제안과 주요 원문을 비판적으로 재검토했다. `jev_v1.0`의 로컬/원격 HEAD b2fe627을 확인한 뒤 사용자 지시에 따라 `jev_v1.1` 브랜치를 만들었다.
+
+`docs/JEV_ICML2027_RESEARCH_PROPOSAL.md`에 현재 PoC의 범위, 선행연구 충돌, baseline, 데이터 후보, 2주 반증 계획, GPU/일정 제약을 정리했다. 기존 30.6% 시간 감소와 EM 형식 차이 결과는 새로운 실험으로 포장하지 않았다. Astra는 generic two-step Q/value head를 독창적 방법으로 채택하지 않았고, query generator와 final reader의 evidence access를 교차 개입해 제어 학습 신호를 만드는 조건부 방향으로 정교화했다. 이 방향 역시 novelty나 성능을 확정하지 않으며 표준 future-value learner와 같은 데이터/예산 비교가 필요하다.
+
+별도 검토 문서는 `docs/JEV_ICML2027_ASTRA_REVIEW.md`. README에 v1.1 진입점을 연결한다. 문서와 링크를 검증하며, 이번 변경에서는 새 GPU inference·학습·benchmark를 실행하지 않는다.

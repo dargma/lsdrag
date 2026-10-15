@@ -1,4 +1,17 @@
 {
+  "decision_research": {
+    "branch": "jev_v1.1",
+    "updated_utc": "2026-10-15",
+    "status": "literature_review_and_astra_refinement_only",
+    "proposal": "docs/JEV_ICML2027_RESEARCH_PROPOSAL.md",
+    "astra_review": "docs/JEV_ICML2027_ASTRA_REVIEW.md",
+    "previous_poc": "lab/reports/jev_v1.0/PROGRESS.md",
+    "candidate": "crossed evidence-access supervision for non-generative retrieval control",
+    "decision": "generic two-step value head rejected as a standalone novel method; refined candidate requires falsification pilot",
+    "new_gpu_experiments_started": false,
+    "gpu_model_vram_and_availability_confirmed": false,
+    "icml_2027_deadline_confirmed": false
+  },
   "stage": "comparison_report",
   "status": "search_linked100_complete",
   "goal": "Compare Qwen text, Google text-only, and Google-only multimodal retrieval with identical VLM, tools and 8 A-RAG agent iterations, no independent Reader-call limit; Mem-Gallery text queries only; no oracle condition",

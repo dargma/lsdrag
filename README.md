@@ -33,3 +33,10 @@ M3DocVQA 100문항과 Mem-Gallery 100문항(VS 50·VR 50)으로 멀티모달 A-R
 - [기여 가설: 속도·근거 탐색·기억 제어](docs/JEV_CONTRIBUTIONS.md)
 - [Jev·Laya·Kev·SemIf의 최신 학습법 확인](docs/JEV_DECISION_MODEL_TRAINING_REVIEW.md)
 - [Astra 최신 RAG·장기 기억 연구 메모](docs/JEV_MEMORY_RESEARCH_ASTRA.md)
+
+## jev_v1.1 연구 주제 검토
+
+ICML 2027 제출 준비를 위해 decision/control·멀티모달 RAG·agent memory 관련 문헌을 병렬 조사하고 Astra가 재검토했다. 단순 두 단계 value head는 새 방법으로 채택하지 않았다. 현재 조건부 후보는 **증거가 다음 검색과 최종 답변에 주는 영향을 교차 개입으로 구분해 비생성 제어를 학습하는 것**이다. 독창성·성능은 아직 실험으로 검증하지 않았다.
+
+- [연구 방향·선행연구·baseline·2주 반증 계획](docs/JEV_ICML2027_RESEARCH_PROPOSAL.md)
+- [Astra 검토·방법 정교화](docs/JEV_ICML2027_ASTRA_REVIEW.md)
