@@ -30,6 +30,16 @@ def main():
         with log.open('w') as stream:
             process=subprocess.Popen(cmd,cwd=repo,stdout=stream,stderr=subprocess.STDOUT,env={**os.environ,'PYTHONPATH':'src'})
             status('running_'+phase,child_pid=process.pid,log=str(log),command=cmd)
+            record=json.loads(state.read_text());record['run']=str(run)
+            (repo/'memory/EXPERIMENT_STATUS.json').write_text(json.dumps(record,indent=2)+'\n')
+            note='# Active stage2 phase: '+phase+'\n\n'+json.dumps(record)+'\n\n'
+            for name in ['CURRENT.md','HEAD_EXPERIMENT.md']:
+                path=repo/'memory'/name;path.write_text(note+path.read_text())
+            with (repo/'memory/SESSION_LOG.md').open('a') as history:
+                history.write('\n## Stage2 launch '+phase+'\n\n'+json.dumps(record)+'\n')
+            subprocess.run(['git','add','memory'],cwd=repo,check=True)
+            subprocess.run(['git','commit','-m','Record active decision RAG '+phase+' phase'],cwd=repo,check=True)
+            subprocess.run(['git','push','origin','jev_v1.1'],cwd=repo,check=True)
             code=process.wait()
         if code:raise RuntimeError(f'{phase} failed exit{code}; inspect {log}')
     import torch
