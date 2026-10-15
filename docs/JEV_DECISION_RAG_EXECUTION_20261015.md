@@ -29,3 +29,9 @@ Coverage 통과 시 linear6 plain CE, train-only normalization folded weights, s
 - Backup `/content/drive/MyDrive/lsdrag-backups/20261015/decision_rag_20261015`
 
 각 JSON은 temp→atomic replace, teacher JSON/PT pair 검증 후 resume. Diagnostic은 문항별 archive로 Drive backup. 단계 완료 시 report+CURRENT+HEAD_EXPERIMENT+status+SESSION_LOG를 Git commit/push하고 archive SHA256 기록. 긴 teacher 단계도 최소5문항마다 archive한다. 프로세스 PID/launch/로그를 local 및memory에 기록하고 실제 command line을 검증한 뒤 resume한다. GPU phase는 하나씩. Shared GPU latency 우월성 주장 금지. 학습/평가 전 완료 prefix 및 contract/data/source identity를 확인한다.
+
+## 출력 예산 진단 추가 — 현재256 run은 그대로 완료
+
+첫10문항에서 native4/10, controlled 각각1/10의 최종 답변이256-token 제한에 걸렸다. 점수 차이에 truncation/JSON 불완전성이 섞여 있어 이 조건의 teacher로 곧바로 head를 훈련하지 않는다. 현재20문항은 변경 없이 마쳐 budget256 진단으로 보존한다. 이어 기존 AgentConfig 기본값인1024를 모든 조건에 공통 적용한 별도 새 run으로 동일20문항을 다시 진단한다. 검색/선택 prompt·도구·데이터·순서·모델은 그대로 유지한다. 어떤 질문도 제외하지 않는다. 이는 점수 최적화 sweep가 아니라 관측된 출력 잘림을 분리하는 단일 공통 예산 검사다.
+
+새 root `/content/local_fast/lsdrag-head-v13/results/decision_rag_20261015_1024`; args `lab/registry/decision_rag_20261015/common_args_1024.json`. Config/feature identity가 달라지므로256 teacher labels/checkpoints는1024 학습에 재사용하지 않는다. 비교 품질 판정은 유효 JSON 비율과 raw scores를 함께 보고한다.1024에서도 truncation이 발생하면 숨기지 않고 해당 한계를 보고하며 무제한 증가시키지 않는다.2단계의 teacher/heads/dev에도 동일1024를 유지한다.

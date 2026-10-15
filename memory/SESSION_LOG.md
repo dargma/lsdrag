@@ -81,3 +81,7 @@ Detached PID16960, launch and log under /content/local_fast/lsdrag-head-v13. Fro
 ## 2026-10-15 — first2 verified, first20 started
 
 All6 fresh diagnostic episodes complete; no infra/handler/parser errors. Native F10.335 vs controlled0 on only2 train questions, insufficient for conclusions; generated and first-token actions/answers match. Native can combine action/args in one generation, controlled incurs separate prefill; costs reported separately. Unchanged contract extended to20, PID18157, log/content/local_fast/lsdrag-head-v13/logs/diagnostic_000_020.log. Report and bundles preserved.
+
+## 2026-10-15 — output-budget confound found during stage1
+
+First10 fresh episodes per policy show native4/10 vs controlled1/10 final truncation at256. Current fixed20 continues unchanged. Added one common1024-token diagnostic using existing AgentConfig default, new root/config identity, before learned-head collection. No old256 labels reused in1024 run. This resolves a serialization-budget confound rather than tuning per-question QA.
