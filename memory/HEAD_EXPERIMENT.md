@@ -1,3 +1,7 @@
+# Immediate12B start authorized — idle gate superseded
+
+User explicitly requested start now. Shared GPU work authorized with48GiB free; unrelated jobs are untouched. Idle watcher stopped to avoid duplicate launch. {"phase": "immediate_12b_start_authorized", "updated_epoch": 1792078726.418505, "idle_gate_superseded": true, "stopped_watcher_pid": 188251, "gpu_at_preflight": {"uuid": "GPU-7a7c7dc2-ceb8-0784-a007-6d0c7b82244e", "utilization": 0.0, "memory_utilization": 0.0, "free_mib": 97251.0}, "run": "/content/local_fast/lsdrag-head-v14/results/native_distillation_12b_20261015", "launch_record": "/content/local_fast/lsdrag-head-v14/immediate_launch_12b.json", "next": "Launch native12B first2; verify before fixed20 expansion", "all_generator_roles": "google/gemma-4-12B-it @707f0a3b8a3c7ad586ed01e27eafbad8a27dd0f7"}
+
 # All upcoming generator roles use12B — GPU idle watch armed
 
 User explicitly requested local12B download and ALL next experiments on12B. This overrides prior E4B automatic audit and reader-only interpretation. Teacher, student backbone, argument generator and final reader share pinned12B; retrieval embeddings/indexes stay fixed. E4B watcher178546 is stopped.
