@@ -1,0 +1,191 @@
+{
+  "as_of_utc": "2026-10-15T10:09:53.414994+00:00",
+  "phase": "teacher_in_progress",
+  "run": "/content/local_fast/lsdrag-head-v12/results/full_head_20261015",
+  "data": "/content/local_fast/lsdrag-head-v12/data",
+  "manifest_sha256": "9537877e324665ff3170568b239975b1a60cf700e6bb6f7e26fa69f5adb3eac3",
+  "dataset_manifest_sha256": "f485ebf6901a669938dc761ce1050b0a82f8050a21cd242cd8cecd011fab47f7",
+  "source_hashes": {
+    "scripts/run_full_head_pilot.py": "cb05aec383f5c8a8b3e4852f6a9307d6ef22b2b23f9c39d7fee5ed3b77a3c250",
+    "src/lsdrag/agent.py": "221c761997d8f539a13e763b50db3d244a48e0ea7467f61f591f7527e7db23c3",
+    "src/lsdrag/context.py": "8dc5fa0767b15da8f5b6df2161ebae75c9930cef278f0a7354472255773ea61e",
+    "src/lsdrag/direct_contract.py": "d313affa1a6e521ef32694968455a4b349ed27f81bde27c1d34b2356d1941aed",
+    "src/lsdrag/direct_reader.py": "596b394ade5946217d2ed3f1d367bab09f5de8fd81a1c22872ab58d995bc7da6",
+    "src/lsdrag/head_experiment.py": "e841435e42d6e529c530c2cf564bb9ba0a15b203e8f088f843112b19ed4e55cd",
+    "src/lsdrag/hf_reader.py": "4542c714d7962fe1b050bd1a93cbad3708ff5f74ff99adf3e0562dd9454c9370",
+    "src/lsdrag/retrieval.py": "e785e56aa929772200807b8b779ae9f8d1c7b7de4284df3c767a78bae4a1762f",
+    "src/lsdrag/tool_registry.py": "dad2c3655111fd174e6ee6e31f3dfb48eecc0269a0665b394c7a55cfbc6cae8f"
+  },
+  "data_hashes": {
+    "/content/local_fast/lsdrag-head-v12/data/dev_questions.jsonl": "62a6895c897a9a4c2950c9f557a8474c935ae178f07ab22f7d413de15040c76d",
+    "/content/local_fast/lsdrag-head-v12/data/gold.jsonl": "ceb20b6d7d7ebca04945e47e7cba7454c05832623d3b26aa9cacd3e79f581de7",
+    "/content/local_fast/lsdrag-head-v12/data/manifest.json": "f485ebf6901a669938dc761ce1050b0a82f8050a21cd242cd8cecd011fab47f7",
+    "/content/local_fast/lsdrag-head-v12/data/train_questions.jsonl": "1c91e0797e0699b3de6d9ed240a9c984aa26408cb6ee7ba802c094671e1ed79e",
+    "/content/local_fast/lsdrag-work/data/ir_final288/chunks.jsonl": "d6f2ee6613aef29c898cf02cf8a4bb2a87e41675498ac9fc0d4b334a4ded7b73",
+    "/content/local_fast/lsdrag-work/data/ir_final288/figures.jsonl": "8a2c41b22d50ce4ca2bfda849d4765d00d56a8a051fdf24cd9f3fbf96c5c118d",
+    "/content/local_fast/lsdrag-work/indexes_final288/gemma_image/manifest.json": "b4991db5a7802b59a6ed43d2222e21d61c18bca39f9a092fa64c97e87d70bfb7",
+    "/content/local_fast/lsdrag-work/indexes_final288/gemma_text/manifest.json": "a03c1cd7441cc3c816b58cba19a406e2eb2858a0729a829a64681211ef5c04f9",
+    "prompts/search_linked.txt": "7dd6eb09464d20c204599c17bb4683c142e069dfe9d274ad296a2d85eae24ff7"
+  },
+  "data_identity_mismatches": [],
+  "feature_contract": {
+    "actions": [
+      "keyword_search",
+      "semantic_search",
+      "read_chunk",
+      "image_search",
+      "figure_read",
+      "FINAL"
+    ],
+    "allowed_system_prompt_sha256s": [
+      "66b7ca109392bae4bb35e685907145254b2339904919e4b1cb695dedaa091891"
+    ],
+    "assets_sha256": {
+      "chat_template.jinja": "0a2c8073c878ab1da004bee933a998606537bbb62016310352c7285c3f01c5b5",
+      "config.json": "33b10c02df3c2e8536cf323d29d53262aaa2f4d11dbe19bc729373fbe90295d4",
+      "processor_config.json": "32bdf45d2ad4cc29a0822ddd157a182de76644f0419a6228d151495256e9813c",
+      "tokenizer.json": "cc8d3a0ce36466ccc1278bf987df5f71db1719b9ca6b4118264f45cb627bfe0f",
+      "tokenizer_config.json": "9f4fec4b1dc6ecddf8f4a92e9caea5971c0e67d81309f3f9066a2bee8c362633"
+    },
+    "backbone_dtype": "bfloat16",
+    "context_limit": 32768,
+    "format": "jev-direct-features-v1",
+    "image_soft_tokens": 1120,
+    "model_revision": "ee0ef6023621cff504d758262d4e04895a5af4a2",
+    "prepare_hf_reader_sha256": "4542c714d7962fe1b050bd1a93cbad3708ff5f74ff99adf3e0562dd9454c9370",
+    "readout": "full-multimodal-backbone-final-norm-last-token-v1",
+    "tool_contract_sha256": "483afced4a906565aca5220ff8ea666b7244804d1dd4172e324e817b9d3f7695"
+  },
+  "teacher": {
+    "completed_questions": 12,
+    "status_histogram": {
+      "failed": 12
+    },
+    "valid_answer_count": 0,
+    "invalid_answer_count": 12,
+    "em": 0.0,
+    "f1": 0.0,
+    "questions_with_errors": 12,
+    "error_count": 12,
+    "direct_format_error_count": 12,
+    "unique_delivered_images_sum": 0,
+    "image_delivered_question_count": 0,
+    "stop_reason_histogram": {
+      "None": 12
+    }
+  },
+  "teacher_artifact_questions": 12,
+  "completed_train_prefix": 12,
+  "pending_or_unpaired_teacher_qids": [],
+  "natural_state_count": 1,
+  "action_state_counts": {
+    "keyword_search": 1,
+    "semantic_search": 0,
+    "read_chunk": 0,
+    "image_search": 0,
+    "figure_read": 0,
+    "FINAL": 0
+  },
+  "action_distinct_question_coverage": {
+    "keyword_search": 1,
+    "semantic_search": 0,
+    "read_chunk": 0,
+    "image_search": 0,
+    "figure_read": 0,
+    "FINAL": 0
+  },
+  "forced_final_records_excluded": 0,
+  "forced_final_policy": "Forced FINAL is never a BC label; natural FINAL remains a genuine class.",
+  "diagnostic_readiness_only": {
+    "minimum_completed60": false,
+    "all_actions_minimum5_distinct_questions": false
+  },
+  "training_gate": null,
+  "training_result_gate": null,
+  "seeds": {
+    "20261015": {
+      "training_available": false,
+      "checkpoint": null,
+      "final_training_loss": null,
+      "development": null,
+      "heldout_teacher_agreement": null
+    },
+    "20261016": {
+      "training_available": false,
+      "checkpoint": null,
+      "final_training_loss": null,
+      "development": null,
+      "heldout_teacher_agreement": null
+    },
+    "20261017": {
+      "training_available": false,
+      "checkpoint": null,
+      "final_training_loss": null,
+      "development": null,
+      "heldout_teacher_agreement": null
+    }
+  },
+  "development_policies": {},
+  "evaluation": null,
+  "infrastructure_failures": [],
+  "artifact_issues": [],
+  "warnings": [
+    "Fewer than60 completed teacher questions; initial20 is diagnostic, not a head-training success.",
+    "One or more natural actions have fewer than5 distinct teacher questions; no six-action coverage success may be claimed.",
+    "Held-out evaluation is incomplete or not yet run; no held-out success claim."
+  ],
+  "data_scope": {
+    "source": "official MMQA dev annotations, same question lineage as M3DocVQA",
+    "question_selection": "outcome-blind eligibility: all support and public table aliases covered by fixed final288 corpus; no corpus alteration",
+    "train": 100,
+    "development": 20,
+    "source_support_plus_table_overlap": 0,
+    "prior100_overlap": {
+      "train": 51,
+      "development": 0
+    },
+    "not_a_final_test": true,
+    "no_unseen_source_claim": "source supports between new splits disjoint; corpus shared and previously used; retrieval exposure audit still required"
+  },
+  "claims": {
+    "objective": "Fresh generated-teacher behavior cloning; not utility learning or proof of improved decisions.",
+    "world_model": false,
+    "discarded_three_action_results_used": false,
+    "latency_comparison": false,
+    "lineage": "Public M3DocVQA/MMQA question lineage with fixed previously used288-document shared corpus.",
+    "prior_exposure": "51 of full100 training questions overlap prior100; development0 prior100 qid overlap. Not strict unseen-source or final-test evaluation."
+  },
+  "artifact_hashes": {
+    "teacher/3439f1db325d7d971d0a6111723d066c.pt": "3b94442cbc02490e052fd5897c1022c1758f65c5344f3a5095c7ca51cfa6a2d8",
+    "teacher/3439f1db325d7d971d0a6111723d066c.json": "9ef8d8ada90c30f004151196e04f919d8f24dbabeee937cf263bf1ace04dbdf4",
+    "teacher/3a9b9f0151fcb257ba37a8bdb79eb837.pt": "ced4806d13498ec9ca78733193265d2a41f05e81a97bb7655dfc995c89d60151",
+    "teacher/3a9b9f0151fcb257ba37a8bdb79eb837.json": "63d37b041f19d9d6cf9aa90f8b654de86afe101ed784551ef96dcf7f92c806b2",
+    "teacher/445bc5e02f240a4d151b30e9ec6dea80.pt": "18cca7c01bd03b492d4a63d1dd104fbe2431bf8873df5c4d32a27d2de8290974",
+    "teacher/445bc5e02f240a4d151b30e9ec6dea80.json": "668b20f9bde117b690b35911e40b05ac0901a46564cfd19325627261b6ed9817",
+    "teacher/5a1af970c006690d7a02a21ca81af9c3.pt": "6aee2005911cdd34366d4c26459dd6e77ea48456a5944fbd249dbc01e8f30516",
+    "teacher/5a1af970c006690d7a02a21ca81af9c3.json": "ccf72db22e3f617a07fa4d2a9ca55d12cee61368505f3c50c8395d90aff229eb",
+    "teacher/6bcb669863a815a657e31077a2d0b008.pt": "eed5f3247bc710238eab0092d231cdea8b4a0a58f7aaa266cb0e3f86ffeae1fc",
+    "teacher/6bcb669863a815a657e31077a2d0b008.json": "43023c154b7bd503f7612424ff5faeda09a95d51bbb3e1c2a61f1277a9c65c50",
+    "teacher/7173374c77f1c27e397663c455501bba.pt": "cfc1110bff45015bf9d23bac78491308df820adaff2c8340ec6959b6fb779dd6",
+    "teacher/7173374c77f1c27e397663c455501bba.json": "8f2626838c437aa9b6c70f179261684d6290080e5fb3e111c59fbb13d40de9ca",
+    "teacher/731b4f179b2fc60b243a817835305705.pt": "75a647468845e7b33d7358a0e910e802a996352a8a6083d75dec290769301d20",
+    "teacher/731b4f179b2fc60b243a817835305705.json": "535e9882b0dcf6c41fd8022352f9620f16b9ff672177f8c761167a0c7422381e",
+    "teacher/8a71c3dc7cfeeeb4229f5d0f029b745a.pt": "04aca83bdb1b8ac8c073f2f11fe20f3b77d6fe6385c129d04484d27ba6b3c79e",
+    "teacher/8a71c3dc7cfeeeb4229f5d0f029b745a.json": "65c7c960113453967b142efbb57851d51645a765a358f2753f0a9431527d52a0",
+    "teacher/bc16213fc3ba20631092dc66c700b1ea.pt": "44e0639064dff5df9fbdf3766f08192e1ef75d6daa1f14f164e737a8834913bf",
+    "teacher/bc16213fc3ba20631092dc66c700b1ea.json": "43156978e0b38c8cebd20a358cc6d589b7982181070905debba6a430f36f0211",
+    "teacher/dc114a23d8280ff1a9ee32f34e51d8f5.pt": "2fcaaf911418ee1596c210c4de81a6654d766ebc8deb09aa307cb301c9ab1b9a",
+    "teacher/dc114a23d8280ff1a9ee32f34e51d8f5.json": "cca0f793d869428c4ed02e624670a1d774a214a4f3d4a111d290895667c2ed50",
+    "teacher/e844b72274e56a3222e4a27b24cd623b.pt": "cc53303b6c9dfe5f4171db7cefcbdd654733911abaae40d2546408b3c4298e23",
+    "teacher/e844b72274e56a3222e4a27b24cd623b.json": "cd3c6529327d9f0077e639e178356bb2cda98031feb63232bb718dc2c738e470",
+    "teacher/ee9320e184758afe302643832e4b0759.pt": "00956645d87ae00abfd366c868fde48ed4f862293a43457a9348cc407113c94a",
+    "teacher/ee9320e184758afe302643832e4b0759.json": "d0b1d237b0a583881da384a628c876921147890d617ada5b74620ee61888223c"
+  },
+  "report_source_sha256": "00d087527eb5b0ae09ea70db49d55ede1512c588456e7294fa192458df4fe7fc",
+  "plan_paths": [
+    "/content/local_fast/lsdrag-code/lab/registry/full_head_20261015/execution_plan.json",
+    "/content/local_fast/lsdrag-code/docs/JEV_FULL_HEAD_PILOT_ASTRA_REVIEW.md",
+    "/content/local_fast/lsdrag-head-v12/data/manifest.json",
+    "/content/local_fast/lsdrag-head-v12/results/full_head_20261015/manifest.json"
+  ]
+}

@@ -13,3 +13,7 @@ Astra conditionally approved a controlled generated-letter / first-token / BC-he
 Public annotations were obtained from the web on local fast. Exact historical derived MinerU JPEGs were restored from Drive because no byte-identical public image URL exists. Only2438 referenced figures were prioritized and verified; unreferenced restoration stopped. User clarified local-fast execution/Git and Drive backup policy. A fresh fast Git clone was created at /content/local_fast/lsdrag-code; pending code files were copied there. No old predictions or policy labels were read.
 
 User explicitly requested cumulative Git memory. Added AGENTS.md and memory/ for preferences, active state, exact commands and append-only handoff history. This is a persistent working requirement.
+
+## 2026-10-15 10:08 UTC — first real selector-format diagnostic
+
+Head-only collection launched after source/data freeze and Astra approval (session31865, owned PID777960). The real model frequently generated native call:toolname instead of the A-F control format. Stopped the owned process; 12 question artifacts are preserved under full_head_20261015 with INVALID_PROTOCOL_ATTEMPT.json. These are interface-failure diagnostics, not head quality or valid training labels. Agent v11_backend is probing a common latest-user selection instruction with full schemas; any correction must apply to all controllers and receive a fresh feature/run identity. World-model work remains deferred.
