@@ -17,3 +17,13 @@ Interpretation and continuation conditions:
 - Shared-GPU execution permits functional and quality observations, not comparative latency claims. The earlier functional smoke used a scripted synthetic head; this pilot still needs real teacher collection, fitting, and held-out rollout evidence before any learned-quality claim.
 
 The initial diagnostic should also confirm valid A–F decoding at the actual generation boundary and preserve selector/argument token accounting. This is a diagnostic check, not a change to the frozen selection or training protocol.
+
+## Format correction: v2 restart
+
+The original teacher attempt exposed a structural format failure: the model emitted native `call:keyword_search...` syntax instead of the required letter. That attempt was stopped; its failed records are archived and excluded from training. This failure supersedes any assumption that the original decision prompt was operationally validated.
+
+**Approved correction:** `selection_messages` appends an explicit latest-user A–F selection request to a deep copy of the existing messages. `_select` applies that identical transformation before the generated, first-token, and learned-head branches, retaining tool schemas and visual/history content. Argument and answer generation retain their separate common path. The feature contract now binds the suffix hash, preprocessing version, and `head_experiment.py` source hash; saved teacher artifacts and head checkpoints must match it. The runner also identifies the experiment as v2 and binds source hashes, preventing silent reuse of the old feature definition.
+
+The inspected [selector probe artifact](/content/local_fast/lsdrag-head-v12/reports/selector_prefix_probe/result.json) contains the same first two training questions under both prompts: the original prompt failed twice, while the latest-user correction produced strict single-letter responses with termination twice. This supports the specific format repair, not general format reliability or action/answer quality. No additional GPU run or full CPU rerun was performed for this appendix.
+
+Proceed with a fresh `full_head_20261015_v2` output and repeat the fixed first-20 diagnostic. Preserve the same question order, splits, coverage gates, hyperparameters, and comparisons. The two-question probe is training-only format evidence; it does not justify outcome-based question selection, head-quality claims, or timing claims. No remaining blocker was identified in the reviewed correction.

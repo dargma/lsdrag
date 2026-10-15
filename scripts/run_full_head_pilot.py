@@ -14,8 +14,7 @@ import subprocess
 import numpy as np
 
 from lsdrag.agent import Agent, AgentConfig
-from lsdrag.direct_contract import build_feature_contract
-from lsdrag.head_experiment import GeneratedChoiceReader, experiment_prompt, train_behavior_heads, validate_teacher_artifact, infrastructure_tool_errors, validate_completed_prefix
+from lsdrag.head_experiment import GeneratedChoiceReader, build_head_feature_contract, experiment_prompt, train_behavior_heads, validate_teacher_artifact, infrastructure_tool_errors, validate_completed_prefix
 from lsdrag.io import dump_json, read_jsonl, sha256
 from lsdrag.retrieval import Retrieval, VectorIndex
 from lsdrag.tool_registry import synchronize_prompt, tool_contract_sha256, tool_schemas
@@ -39,7 +38,7 @@ def main():
     a = p.parse_args()
     if a.limit < 1 or a.start < 0 or a.start+a.limit > 100:
         p.error('Fixed teacher blocks must stay within the first 100 questions')
-    if (a.output/'DISCARDED').exists() or any(a.output.glob('DISCARDED*')):
+    if (a.output/'DISCARDED').exists() or any(a.output.glob('DISCARDED*')) or (a.output/'INVALID_PROTOCOL_ATTEMPT.json').exists():
         raise ValueError('Discarded experiment directory cannot be reused')
     a.output.mkdir(parents=True, exist_ok=True)
     train, dev = read_jsonl(a.train_questions), read_jsonl(a.dev_questions)
@@ -59,11 +58,11 @@ def main():
     tools = tool_schemas('G1', config.image_delivery_policy, config.tool_profile)
     prompt = experiment_prompt(a.prompt.read_text())
     effective = synchronize_prompt(prompt, tools, config.image_delivery_policy)
-    contract = build_feature_contract(a.model_path, config, tools, [hashlib.sha256(effective.encode()).hexdigest()])
+    contract = build_head_feature_contract(a.model_path, config, tools, [hashlib.sha256(effective.encode()).hexdigest()])
     root = Path(__file__).resolve().parents[1]
     source_names = ['scripts/run_full_head_pilot.py']+['src/lsdrag/'+s+'.py' for s in
         ('head_experiment', 'direct_reader', 'direct_contract', 'agent', 'tool_registry', 'hf_reader', 'retrieval', 'context')]
-    manifest = {'experiment': 'full-six-action-bc-v1', 'controller_baseline': 'generated letter plus common argument generation; not native A-RAG serialization',
+    manifest = {'experiment': 'full-six-action-bc-v2-latest-user-selector', 'controller_baseline': 'generated letter plus common argument generation; not native A-RAG serialization',
         'feature_contract': contract, 'config': asdict(config), 'tool_contract_sha256': tool_contract_sha256(tools),
         'data_hashes': {str(path): sha256(path) for path in (a.train_questions, a.dev_questions, a.gold, a.prompt,
                               a.corpus/'chunks.jsonl', a.corpus/'figures.jsonl',

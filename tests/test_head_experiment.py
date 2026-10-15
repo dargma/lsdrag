@@ -111,3 +111,27 @@ def test_tool_infrastructure_vs_policy_errors_and_fixed_prefix():
         validate_completed_prefix(train[20:80], train)
     with pytest.raises(ValueError, match='fixed first'):
         validate_completed_prefix(train[:61], train)
+
+
+def test_selection_suffix_keeps_history_and_binds_all_controller_prefixes(tmp_path):
+    import hashlib
+    from lsdrag.agent import AgentConfig
+    from lsdrag.head_experiment import selection_messages, SELECTION_REQUEST, build_head_feature_contract
+    history = [{'role': 'system', 'content': 'system'}, {'role': 'user', 'content': [{'type': 'text', 'text': 'question'}]}]
+    prepared = selection_messages(history)
+    assert len(history) == 2
+    assert prepared[:-1] == history
+    assert prepared[-1] == {'role': 'user', 'content': SELECTION_REQUEST}
+    prepared[1]['content'][0]['text'] = 'mutated'
+    assert history[1]['content'][0]['text'] == 'question'
+    path = tmp_path/('a'*40)
+    path.mkdir()
+    (path/'config.json').write_text('{}')
+    (path/'tokenizer_config.json').write_text('{}')
+    tools = tool_schemas('G1', 'search-linked', 'multimodal_full')
+    contract = build_head_feature_contract(path, AgentConfig(), tools, [hashlib.sha256(b'system').hexdigest()])
+    selector = contract['selector_preprocessing']
+    assert selector['tools_preserved']
+    assert selector['applies_to'] == ['generated', 'first_token', 'head']
+    assert selector['instruction_sha256'] == hashlib.sha256(SELECTION_REQUEST.encode()).hexdigest()
+    assert len(contract['actions']) == 6

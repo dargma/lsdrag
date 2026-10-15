@@ -17,3 +17,7 @@ User explicitly requested cumulative Git memory. Added AGENTS.md and memory/ for
 ## 2026-10-15 10:08 UTC — first real selector-format diagnostic
 
 Head-only collection launched after source/data freeze and Astra approval (session31865, owned PID777960). The real model frequently generated native call:toolname instead of the A-F control format. Stopped the owned process; 12 question artifacts are preserved under full_head_20261015 with INVALID_PROTOCOL_ATTEMPT.json. These are interface-failure diagnostics, not head quality or valid training labels. Agent v11_backend is probing a common latest-user selection instruction with full schemas; any correction must apply to all controllers and receive a fresh feature/run identity. World-model work remains deferred.
+
+## 2026-10-15 — v2 selector correction approved
+
+Real-model prefix probe on two fixed TRAIN questions: old selector0/2 valid, latest-user selector2/2 valid strictletter+EOS. The same selection suffix now applies before all generated/first-token/head readouts, with selector/version/helper hash in the feature contract. Astra approved the correction. User reviewed the execution-plan table and said ok. Fresh output full_head_20261015_v2 uses unchanged questions/gates; original attempt labels remain invalid.

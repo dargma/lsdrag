@@ -2,7 +2,7 @@
   "decision_research": {
     "branch": "jev_v1.1",
     "updated_utc": "2026-10-15",
-    "status": "full_head_only_pilot_ready_to_collect",
+    "status": "v2_head_teacher_collection_launching",
     "proposal": "docs/JEV_ICML2027_RESEARCH_PROPOSAL.md",
     "astra_review": "docs/JEV_ICML2027_ASTRA_REVIEW.md",
     "previous_poc": "lab/reports/jev_v1.0/PROGRESS.md",
@@ -57,9 +57,9 @@
       "report": "lab/reports/jev_v1.1/direct_arag_functional_smoke.json"
     },
     "research_candidate": "short action-conditioned latent imagination and correction using actual observations; hypothesis not implemented or validated",
-    "active_plan": "lab/registry/full_head_20261015/execution_plan.json",
+    "active_plan": "lab/registry/full_head_20261015/execution_plan_v2.json",
     "active_code_root": "/content/local_fast/lsdrag-code",
-    "active_run_root": "/content/local_fast/lsdrag-head-v12/results/full_head_20261015",
+    "active_run_root": "/content/local_fast/lsdrag-head-v12/results/full_head_20261015_v2",
     "memory": "memory/CURRENT.md",
     "world_model": "deferred_by_user"
   },

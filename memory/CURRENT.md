@@ -2,7 +2,7 @@
 
 Active objective: execute the full six-action head-only pilot step by step after a brief Astra protocol check. No world model or surprise component in this run.
 
-Code/Git: `/content/local_fast/lsdrag-code` on `jev_v1.1`. New files awaiting the next milestone commit are the full-head collector/trainer/evaluator, its tests, the application brainstorm, protocol and this memory. Model, data and execution stay on local fast; Drive only receives backups.
+Code/Git: `/content/local_fast/lsdrag-code` on `jev_v1.1`. Code, protocol, application brainstorm and memory were committed/pushed at b99a264 and ad47382. Model, data and execution stay on local fast; Drive only receives backups.
 
 Verified:
 - Full-tool direct A-RAG implementation and prior Astra audit are committed; actual-backbone synthetic functional smoke passed all five tools, both images and FINAL. This was not a trained policy benchmark.
@@ -12,6 +12,7 @@ Verified:
 
 Current execution: first teacher attempt started after Astra approval and commit b99a264. It was stopped after observing native tool-call output where the controlled selector required A-F. This attempt is INVALID_PROTOCOL_ATTEMPT.json, not head quality evidence and not reusable training labels. The owned teacher PID777960 was stopped; tool session31865 is historical, not a live-job assertion.
 
-Next: v11_backend agent is testing a latest-user A-F readout instruction with the full tool schema on two fixed train questions using the real GPU model. All three policies must use identical selection preprocessing; the new feature contract must bind that preprocessing. After this format-only correction passes and Astra checks it, start a new output identity on the same fixed question order. No outcome-based question selection or gate changes. Do not resume the invalid first attempt. Then complete60/80/100 and coverage-gated training/evaluation as planned.
+Next: start v2 first20 teacher questions at `/content/local_fast/lsdrag-head-v12/results/full_head_20261015_v2`. Actual two-train-question prefix probe passed2/2, all controller prefixes share the correction and the feature contract binds its code/version. Astra approved the v2 correction. The user reviewed the staged plan table and explicitly approved proceeding. Then complete60/80/100 as required and train/evaluate only if all-six-action coverage passes. No threshold or question-order changes.
+
 
 Do not resume `/content/local_fast/lsdrag-v11/results/stage12_20261015_v2`: it has DISCARDED.json. Old runners also reject discarded outputs.

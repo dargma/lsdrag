@@ -2,7 +2,7 @@
 
 Date2026-10-15. World-model work is deferred. This pilot only tests head feasibility under the restored full tool interface.
 
-Exact plan: `lab/registry/full_head_20261015/execution_plan.json`; data and asset identities are alongside it. Astra review: `docs/JEV_FULL_HEAD_PILOT_ASTRA_REVIEW.md`.
+Exact plan: `lab/registry/full_head_20261015/execution_plan_v2.json`; data and asset identities are alongside it. Astra review: `docs/JEV_FULL_HEAD_PILOT_ASTRA_REVIEW.md`.
 
 ## Paths
 
@@ -10,7 +10,7 @@ Exact plan: `lab/registry/full_head_20261015/execution_plan.json`; data and asse
 - Inputs: `/content/local_fast/lsdrag-head-v12/data`
 - Corpus: `/content/local_fast/lsdrag-work/data/ir_final288`
 - Indexes: `/content/local_fast/lsdrag-work/indexes_final288`
-- Run: `/content/local_fast/lsdrag-head-v12/results/full_head_20261015`
+- Run: `/content/local_fast/lsdrag-head-v12/results/full_head_20261015_v2`
 - Logs: `/content/local_fast/lsdrag-head-v12/logs`
 - Drive backup target: `/content/drive/MyDrive/lsdrag-backups/20261015/full_head_20261015`
 
@@ -27,15 +27,19 @@ Exact plan: `lab/registry/full_head_20261015/execution_plan.json`; data and asse
 Run from the fast Git root with `PYTHONPATH=src`. SharedGPU is authorized when free VRAM>=32GiB; timing is uncontrolled. The common arguments below deliberately omit per-record Drive mirroring; archive locally and copy to Drive after phases.
 
 ```bash
-PYTHONPATH=src python -u scripts/run_full_head_pilot.py --phase teacher --start 0 --limit 20 --model-path /content/local_fast/lsdrag-v11/hf/models--google--gemma-4-E4B-it/snapshots/ee0ef6023621cff504d758262d4e04895a5af4a2 --corpus /content/local_fast/lsdrag-work/data/ir_final288 --indexes /content/local_fast/lsdrag-work/indexes_final288 --cache-dir /content/local_fast/lsdrag-v11/hf --train-questions /content/local_fast/lsdrag-head-v12/data/train_questions.jsonl --dev-questions /content/local_fast/lsdrag-head-v12/data/dev_questions.jsonl --gold /content/local_fast/lsdrag-head-v12/data/gold.jsonl --prompt prompts/search_linked.txt --output /content/local_fast/lsdrag-head-v12/results/full_head_20261015 --scorer /content/local_fast/lsdrag-v11/scorer --dataset-manifest /content/local_fast/lsdrag-head-v12/data/manifest.json
+PYTHONPATH=src python -u scripts/run_full_head_pilot.py --phase teacher --start 0 --limit 20 --model-path /content/local_fast/lsdrag-v11/hf/models--google--gemma-4-E4B-it/snapshots/ee0ef6023621cff504d758262d4e04895a5af4a2 --corpus /content/local_fast/lsdrag-work/data/ir_final288 --indexes /content/local_fast/lsdrag-work/indexes_final288 --cache-dir /content/local_fast/lsdrag-v11/hf --train-questions /content/local_fast/lsdrag-head-v12/data/train_questions.jsonl --dev-questions /content/local_fast/lsdrag-head-v12/data/dev_questions.jsonl --gold /content/local_fast/lsdrag-head-v12/data/gold.jsonl --prompt prompts/search_linked.txt --output /content/local_fast/lsdrag-head-v12/results/full_head_20261015_v2 --scorer /content/local_fast/lsdrag-v11/scorer --dataset-manifest /content/local_fast/lsdrag-head-v12/data/manifest.json
 ```
 
 Then teacher `--start20 --limit40` to reach60; optional `--start60 --limit20` and `--start80 --limit20`. Train/evaluate use the same common arguments. Verify current artifacts before resuming; completion is `.pt` plus matching `.json`, and protocol/data/source hashes must agree.
 
 ```text
---model-path /content/local_fast/lsdrag-v11/hf/models--google--gemma-4-E4B-it/snapshots/ee0ef6023621cff504d758262d4e04895a5af4a2 --corpus /content/local_fast/lsdrag-work/data/ir_final288 --indexes /content/local_fast/lsdrag-work/indexes_final288 --cache-dir /content/local_fast/lsdrag-v11/hf --train-questions /content/local_fast/lsdrag-head-v12/data/train_questions.jsonl --dev-questions /content/local_fast/lsdrag-head-v12/data/dev_questions.jsonl --gold /content/local_fast/lsdrag-head-v12/data/gold.jsonl --prompt prompts/search_linked.txt --output /content/local_fast/lsdrag-head-v12/results/full_head_20261015 --scorer /content/local_fast/lsdrag-v11/scorer --dataset-manifest /content/local_fast/lsdrag-head-v12/data/manifest.json
+--model-path /content/local_fast/lsdrag-v11/hf/models--google--gemma-4-E4B-it/snapshots/ee0ef6023621cff504d758262d4e04895a5af4a2 --corpus /content/local_fast/lsdrag-work/data/ir_final288 --indexes /content/local_fast/lsdrag-work/indexes_final288 --cache-dir /content/local_fast/lsdrag-v11/hf --train-questions /content/local_fast/lsdrag-head-v12/data/train_questions.jsonl --dev-questions /content/local_fast/lsdrag-head-v12/data/dev_questions.jsonl --gold /content/local_fast/lsdrag-head-v12/data/gold.jsonl --prompt prompts/search_linked.txt --output /content/local_fast/lsdrag-head-v12/results/full_head_20261015_v2 --scorer /content/local_fast/lsdrag-v11/scorer --dataset-manifest /content/local_fast/lsdrag-head-v12/data/manifest.json
 ```
 
 ## Interpretation
 
 Generated letters are a controlled A-RAG adaptation and not the original native serialization baseline. BC includes failed teacher decisions and does not optimize downstream correctness.20 development questions cannot establish noninferiority or paper novelty. Prior question exposure is audited; no old predictions/labels are reused and there is no strict unseen-source claim. Infrastructure errors halt; expected controller format/argument failures are preserved.
+
+## Protocol correction
+
+The original full_head_20261015 attempt is invalid (selector emitted native tool-call text). v2 applies a common latest-user instruction and feature-contract identity; actual model prefix probe2/2 passed. No original-attempt labels are reusable. User approved v2 staged execution after seeing the plan table.

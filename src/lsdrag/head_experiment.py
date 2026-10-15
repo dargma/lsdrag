@@ -25,6 +25,23 @@ SELECTOR_INSTRUCTION = ('At each natural decision choose the next operation usin
     'When that subsequent request appears, follow it and return JSON instead of a letter.')
 
 
+SELECTION_REQUEST = ('ACTION SELECTION ONLY. Classify the best next operation; do NOT execute a function or emit a native tool call. Output exactly ONE letter and nothing else: A keyword_search; B semantic_search; C read_chunk; D image_search; E figure_read; F FINAL (answer now and stop). The runtime will request argument JSON separately. Your entire response must be A, B, C, D, E, or F.')
+
+
+def selection_messages(messages):
+    return copy.deepcopy(messages)+[{'role': 'user', 'content': SELECTION_REQUEST}]
+
+
+def build_head_feature_contract(model_path, config, tools, prompt_sha256s):
+    contract = build_feature_contract(model_path, config, tools, prompt_sha256s)
+    contract['selector_preprocessing'] = {
+        'version': 'full-tools-latest-user-six-label-v2',
+        'instruction_sha256': hashlib.sha256(SELECTION_REQUEST.encode()).hexdigest(),
+        'helper_source_sha256': hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),
+        'tools_preserved': True, 'applies_to': ['generated', 'first_token', 'head']}
+    return contract
+
+
 def experiment_prompt(base_prompt):
     return base_prompt.rstrip()+'\n\n'+SELECTOR_INSTRUCTION+'\n'
 
@@ -32,7 +49,7 @@ def experiment_prompt(base_prompt):
 class GeneratedChoiceReader(DirectHFReader):
     """Shared frozen model; generated/first-token/learned selection, common JSON path."""
     def __init__(self, model_path, config, tools, feature_contract, mode='generated', state_sink=None):
-        expected = build_feature_contract(model_path, config, tools, feature_contract.get('allowed_system_prompt_sha256s', []))
+        expected = build_head_feature_contract(model_path, config, tools, feature_contract.get('allowed_system_prompt_sha256s', []))
         if feature_contract != expected:
             raise ValueError('Generated controller feature contract mismatch')
         HFReader.__init__(self, model_path, config, head_path=None)
@@ -76,7 +93,8 @@ class GeneratedChoiceReader(DirectHFReader):
             raise ValueError(self.mode)
         torch = self.torch
         start = time.perf_counter()
-        inputs = self.prepare(messages, tools)
+        selected_messages = selection_messages(messages)
+        inputs = self.prepare(selected_messages, tools)
         self._sync()
         preprocessing = time.perf_counter()-start
         budget = 8 if self.mode == 'generated' else 1
@@ -132,7 +150,7 @@ class GeneratedChoiceReader(DirectHFReader):
             self.state_sink({'qid': self.current_qid, 'loop': self.natural_loop,
                              'action': self.actions[index], 'index': index,
                              'forced_final': False, 'selector': self.mode,
-                             'messages_sha256': hashlib.sha256(json.dumps(messages, sort_keys=True, ensure_ascii=False).encode()).hexdigest(),
+                             'messages_sha256': hashlib.sha256(json.dumps(selected_messages, sort_keys=True, ensure_ascii=False).encode()).hexdigest(),
                              'usage': usage}, feature_array)
         return self.actions[index], probabilities, usage
 
