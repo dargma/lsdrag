@@ -1,0 +1,8 @@
+{
+  "bytes": 708497,
+  "phase": "checkpoint_archived",
+  "run": "/content/local_fast/lsdrag-head-v12/results/full_head_20261015_v2",
+  "tag": "v2_teacher_020",
+  "updated_utc_epoch": 1792060715.0887325,
+  "world_model": "deferred"
+}

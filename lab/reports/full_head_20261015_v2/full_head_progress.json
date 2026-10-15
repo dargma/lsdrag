@@ -1,5 +1,5 @@
 {
-  "as_of_utc": "2026-10-15T10:23:41.762643+00:00",
+  "as_of_utc": "2026-10-15T10:38:34.201349+00:00",
   "phase": "teacher_in_progress",
   "run": "/content/local_fast/lsdrag-head-v12/results/full_head_20261015_v2",
   "data": "/content/local_fast/lsdrag-head-v12/data",
@@ -68,49 +68,50 @@
     "tool_contract_sha256": "483afced4a906565aca5220ff8ea666b7244804d1dd4172e324e817b9d3f7695"
   },
   "teacher": {
-    "completed_questions": 12,
+    "completed_questions": 20,
     "status_histogram": {
-      "ok": 11,
+      "ok": 19,
       "failed": 1
     },
-    "valid_answer_count": 11,
+    "valid_answer_count": 19,
     "invalid_answer_count": 1,
-    "em": 0.08333333333333333,
-    "f1": 0.155,
+    "em": 0.05,
+    "f1": 0.1105,
     "questions_with_errors": 1,
     "error_count": 1,
     "direct_format_error_count": 1,
-    "unique_delivered_images_sum": 36,
-    "image_delivered_question_count": 11,
+    "unique_delivered_images_sum": 55,
+    "image_delivered_question_count": 17,
     "stop_reason_histogram": {
-      "None": 12
+      "None": 18,
+      "max_loops": 2
     }
   },
-  "teacher_artifact_questions": 12,
-  "completed_train_prefix": 12,
+  "teacher_artifact_questions": 20,
+  "completed_train_prefix": 20,
   "pending_or_unpaired_teacher_qids": [],
-  "natural_state_count": 44,
+  "natural_state_count": 90,
   "action_state_counts": {
-    "keyword_search": 7,
-    "semantic_search": 13,
-    "read_chunk": 9,
-    "image_search": 1,
-    "figure_read": 2,
-    "FINAL": 12
+    "keyword_search": 9,
+    "semantic_search": 25,
+    "read_chunk": 13,
+    "image_search": 20,
+    "figure_read": 5,
+    "FINAL": 18
   },
   "action_distinct_question_coverage": {
-    "keyword_search": 7,
-    "semantic_search": 10,
-    "read_chunk": 8,
-    "image_search": 1,
-    "figure_read": 2,
-    "FINAL": 12
+    "keyword_search": 9,
+    "semantic_search": 14,
+    "read_chunk": 11,
+    "image_search": 6,
+    "figure_read": 5,
+    "FINAL": 18
   },
   "forced_final_records_excluded": 0,
   "forced_final_policy": "Forced FINAL is never a BC label; natural FINAL remains a genuine class.",
   "diagnostic_readiness_only": {
     "minimum_completed60": false,
-    "all_actions_minimum5_distinct_questions": false
+    "all_actions_minimum5_distinct_questions": true
   },
   "training_gate": null,
   "training_result_gate": null,
@@ -143,7 +144,6 @@
   "artifact_issues": [],
   "warnings": [
     "Fewer than60 completed teacher questions; initial20 is diagnostic, not a head-training success.",
-    "One or more natural actions have fewer than5 distinct teacher questions; no six-action coverage success may be claimed.",
     "Held-out evaluation is incomplete or not yet run; no held-out success claim."
   ],
   "data_scope": {
@@ -168,12 +168,20 @@
     "prior_exposure": "51 of full100 training questions overlap prior100; development0 prior100 qid overlap. Not strict unseen-source or final-test evaluation."
   },
   "artifact_hashes": {
+    "teacher/0494ecbb270911ec2d3240709480f2e4.pt": "9976c40330bb7c7291d38d26ae2b7b8ba4d2f8c90b7444a896972b321398669c",
+    "teacher/0494ecbb270911ec2d3240709480f2e4.json": "a2349dc499f15a9923a24f7e72afaca3eb66e6e27a7c5e0eb8e63b2dd6e6bfd7",
+    "teacher/1fb8350bf0c31954296712889c72635a.pt": "18e4a3fe8c101f7c5a0dd1f30fa4dc34457d25342b9868c1ccc65f0189f4ca35",
+    "teacher/1fb8350bf0c31954296712889c72635a.json": "318dd4909b0f3f3083f5531cc21e01e5ac6a107d76c7dc3f79aee7effecd5e5b",
+    "teacher/216a2a29a0f50d34054cd318a25a2f5f.pt": "606c5de484a67873d0c384746bb9f8906865361ee3eb202caa10e0dbd10cf799",
+    "teacher/216a2a29a0f50d34054cd318a25a2f5f.json": "6877f57fc19c491567003f29e2d2ecaae3b112b33c1580c323043e4983aab80a",
     "teacher/3439f1db325d7d971d0a6111723d066c.pt": "edeed0faa5b6712006103516189a994ea4da29f5c2346e457209a54f54ab0d6f",
     "teacher/3439f1db325d7d971d0a6111723d066c.json": "761b8f5f3c5cf59e8bc49a59c31a27d0e379d91497a3b29eb764ce407e0a0857",
     "teacher/3a9b9f0151fcb257ba37a8bdb79eb837.pt": "4f8d98160dfb3d8b2938727a69640c28a69e40d403aa39b360d02491256de698",
     "teacher/3a9b9f0151fcb257ba37a8bdb79eb837.json": "0fdaa2c0b38cac6d7cea1be8316993584b0fefba416b36144865735bc1857677",
     "teacher/445bc5e02f240a4d151b30e9ec6dea80.pt": "e8e5a9da55f34cd80e6dc06a7e46bd7c8522ff384841fa7146d9a50da5b754a1",
     "teacher/445bc5e02f240a4d151b30e9ec6dea80.json": "bc7d55066cd09072a955aff50beaa6fcb4e87faaa775dd557c55c4cfcec734f1",
+    "teacher/58c230238b7da1509064f8924522d0d0.pt": "2bf6c1700613ae72ddd8aca2ecf2e128ab53a102b72dd505a5e0a6a7eae76238",
+    "teacher/58c230238b7da1509064f8924522d0d0.json": "a7fe11735bd89103a8bc1496aa9e2a4fc10b8f22574b20962306ea0e2e6e19ca",
     "teacher/5a1af970c006690d7a02a21ca81af9c3.pt": "1a95117b343194f1beab9d1dbfdc48c07a804d856f38f697b48d01b931ac22bb",
     "teacher/5a1af970c006690d7a02a21ca81af9c3.json": "4a2187d70b19ee81a85372cef02a9cb7ef56a4b1616d438b99c30b2db1d8553b",
     "teacher/6bcb669863a815a657e31077a2d0b008.pt": "06c210b13d3b2deddaa8b5f461332b90c18596a6ab6077413abcd0d4e266cd8c",
@@ -184,12 +192,20 @@
     "teacher/731b4f179b2fc60b243a817835305705.json": "d3fb6a6a6229757383958d516851d2fb87d96b5c8cab456f37c60a8cde888aa2",
     "teacher/8a71c3dc7cfeeeb4229f5d0f029b745a.pt": "a82797f643e8573642e9f57cbb2425ca3375f97ed77d6adcb7268d6716a9bc12",
     "teacher/8a71c3dc7cfeeeb4229f5d0f029b745a.json": "0604184f446b2d6855e7dc75affa3d33ac961913aef6cbbc33d095070c4762ec",
+    "teacher/a801785a88c4a22ba9f8e83b82619157.pt": "e71078fa2f2da205c63e2896f3679d2fe8a7dd9d146690b5c3c3901c9e04df58",
+    "teacher/a801785a88c4a22ba9f8e83b82619157.json": "74a90c25cabfe8ad3666cae49e7c2fa48d229fcec8649f7e614d29fa615ec986",
+    "teacher/b6a62e8b1c1cb1587d75b0af4e1ae981.pt": "1e13fe07d37e670a0cbe442f37e3a20738d7887682058d9ef88cdb6e3a34299a",
+    "teacher/b6a62e8b1c1cb1587d75b0af4e1ae981.json": "466f6f6e856e5e3760ab5d7a73a74a311722b3fb24130ea2f4250fe733a56cca",
     "teacher/bc16213fc3ba20631092dc66c700b1ea.pt": "f00b5a981c043f7658809cbd7538088ceca28320551c813fb785798988c5aef8",
     "teacher/bc16213fc3ba20631092dc66c700b1ea.json": "1b25d9f2d6f7085fc61d41b57be6987fe0d136fe2eb03a3def4dfd8c57fa2985",
+    "teacher/d50ba0f57869f462efde83fc1d22a634.pt": "63c662da0f46cad1fe13396721ba00a6c6d5138f5929a1b20139fbb04787e56d",
+    "teacher/d50ba0f57869f462efde83fc1d22a634.json": "8edc2246828162428d781d603ddd7ea576334dbc8182f6da5cfcb25b6232f2b5",
     "teacher/dc114a23d8280ff1a9ee32f34e51d8f5.pt": "9067803acdbf3004e1d357a3b4e492ad90d3856b7b23ec22ddc6a87f037fc0bb",
     "teacher/dc114a23d8280ff1a9ee32f34e51d8f5.json": "3053cfed9f75b3f3888a23f3d1750f7b971b42d29c073bad58fc848c04ade951",
     "teacher/e844b72274e56a3222e4a27b24cd623b.pt": "fa8d6dc8133470d518b6f0794699586d17f5ff357cd4a202ff2d676b4d5ff77b",
     "teacher/e844b72274e56a3222e4a27b24cd623b.json": "9111d5f3de2e13da8a48ab165c81463360fb01ce438df1af95ba583adc8e3c0b",
+    "teacher/eb3f72aeb947cff88705cce8f12a5a9a.pt": "cda6de87c2bfec604e56a2df0407eed4f57927e579304b57f4a43125e6fb34fb",
+    "teacher/eb3f72aeb947cff88705cce8f12a5a9a.json": "eff77e652dae649076429d23be44d286b0bf6a2e1f4792c1773100c74ba59a70",
     "teacher/ee9320e184758afe302643832e4b0759.pt": "e13b114907d8f01a266d3a26832663664cae2b15c17c9faa6993b7e13b6ddebe",
     "teacher/ee9320e184758afe302643832e4b0759.json": "b225f68ab16d3671432976cc597c6619a448547f7ea02b20a58918668f8c3c3d"
   },

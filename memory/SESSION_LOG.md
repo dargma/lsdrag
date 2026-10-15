@@ -25,3 +25,7 @@ Real-model prefix probe on two fixed TRAIN questions: old selector0/2 valid, lat
 ## 2026-10-15 — runtime termination and detached continuation
 
 Initial v2 collector/tool session95665 ended exit143(SIGTERM) after12 saved teacher questions; no Python exception or infrastructure failure marker. The coordinator session also disappeared. Cause unconfirmed; records preserved, source/data unchanged, no policy-label filtering. Resumed as detached collectorPID789249 and coordinatorPID789250; IDs/logs in run/launch.json. Incomplete question is recomputed; completed12 skipped. This runtime event is not a model-quality failure.
+
+## 2026-10-15 10:38 UTC — automated head checkpoint
+
+{"bytes": 708497, "phase": "checkpoint_archived", "tag": "v2_teacher_020", "updated_utc_epoch": 1792060715.0887325}
