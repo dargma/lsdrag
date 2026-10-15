@@ -73,6 +73,8 @@ InnerJev §5.3은 빠른 typical episode와 성공률 감소·tail 악화를 함
 
 고정된 behavior mixture가 실제 검색한 evidence를 받은 직후, 아직 그 evidence를 사용해 새 assistant 발화를 만들기 전을 분기점으로 삼는다. 공통 과거 상태를 `B`, 새로 받은 관측을 `e`라 하자. `S₁=B+e`, `S₀=B`다. `e`는 정답이나 gold chain으로 골라서는 안 된다. 예를 들어 각 문항의 사전 고정된 첫 두 acquisition boundary, 반환 순서 첫 번째 unique item처럼 **결과를 보기 전에 정한 관측 규칙**을 사용한다. 실패·무효·무이득 상태도 남긴다.
 
+두 상태의 이미 소비한 acquisition 횟수·남은 실행 budget·legal action mask는 같게 둔다. `S₀`는 검색을 실행하지 않은 과거 상태가 아니라 **같은 boundary에서 e의 접근만 제거한 상태**다. 별도의 intervention 정답표시나 성공 여부 flag를 controller 입력에 넣지 않는다.
+
 검색 행동 `a`는 modality 이름만이 아니다. `g_a(S)`라는 고정 query generator, corpus, retriever, top-k, 실제 evidence 전달 규칙까지 포함한 **acquisition kernel**로 고정한다. 모든 controller가 이 kernel을 공유한다.
 
 각 `S_j`로부터 query를 생성하고 실제 검색해 `D_j=R_a(g_a(S_j))`를 얻는다. final Reader에는 질문·공통 배경 `B`·선택된 `e`·실제 반환 `D_j`만 전달하고 utility `U_ij`를 측정한다. `i`는 Reader의 `e` 접근, `j`는 query generator의 `e` 접근이다.
