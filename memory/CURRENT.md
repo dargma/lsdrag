@@ -1,3 +1,9 @@
+# Active serial pipeline
+
+Pipeline PID21697 waits for current budget256 diagnostic PID18157, verifies/archives stage1 budget run, executes common1024 paired20, then only after all60 episodes and no infrastructure markers runs coverage-gated teacher60/80/100,3 heads,6-policy dev20. Launch `/content/local_fast/lsdrag-head-v13/pipeline_launch.json`; status `/content/local_fast/lsdrag-head-v13/pipeline_status.json`; log `/content/local_fast/lsdrag-head-v13/logs/pipeline.log`. No simultaneous GPU collectors. Phase checkpoints archive to Drive and commit/push memory/reports automatically. Pipeline completion is not yet established.
+
+Next run root `/content/local_fast/lsdrag-head-v13/results/decision_rag_20261015_1024`. Do not reuse256 labels with1024 contract. Stop coordinator/pipeline first if explicitly stopping, then its owned child. Verify /proc command identity before acting.
+
 # Active phase — first20 diagnostic
 
 First2 completed6 episodes with no infrastructure or parser/handler errors. Report `lab/reports/decision_rag_20261015/first2/`. Generated/first-token trajectories were identical on these2; native differed. These2 do not establish comparative quality. Extending unchanged source/data/contract to20; PID18157, log `/content/local_fast/lsdrag-head-v13/logs/diagnostic_000_020.log`, launch `/content/local_fast/lsdrag-head-v13/launch.json`. Skip only verified saved episodes; no parallel GPU collector. Next: verify60 episodes and report/audit failures before teacher extension.

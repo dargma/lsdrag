@@ -85,3 +85,13 @@ All6 fresh diagnostic episodes complete; no infra/handler/parser errors. Native 
 ## 2026-10-15 — output-budget confound found during stage1
 
 First10 fresh episodes per policy show native4/10 vs controlled1/10 final truncation at256. Current fixed20 continues unchanged. Added one common1024-token diagnostic using existing AgentConfig default, new root/config identity, before learned-head collection. No old256 labels reused in1024 run. This resolves a serialization-budget confound rather than tuning per-question QA.
+
+## 2026-10-15 — serial pipeline recovery checkpoint
+
+# Active serial pipeline
+
+Pipeline PID21697 waits for current budget256 diagnostic PID18157, verifies/archives stage1 budget run, executes common1024 paired20, then only after all60 episodes and no infrastructure markers runs coverage-gated teacher60/80/100,3 heads,6-policy dev20. Launch `/content/local_fast/lsdrag-head-v13/pipeline_launch.json`; status `/content/local_fast/lsdrag-head-v13/pipeline_status.json`; log `/content/local_fast/lsdrag-head-v13/logs/pipeline.log`. No simultaneous GPU collectors. Phase checkpoints archive to Drive and commit/push memory/reports automatically. Pipeline completion is not yet established.
+
+Next run root `/content/local_fast/lsdrag-head-v13/results/decision_rag_20261015_1024`. Do not reuse256 labels with1024 contract. Stop coordinator/pipeline first if explicitly stopping, then its owned child. Verify /proc command identity before acting.
+
+

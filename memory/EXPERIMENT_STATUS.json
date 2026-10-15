@@ -7,7 +7,7 @@
     796517
   ],
   "completed_teacher_questions": 33,
-  "updated_utc_epoch": 1792063273.5829268,
+  "updated_utc_epoch": 1792063693.798664,
   "updated_utc": "2026-10-15T10:56:15.168798+00:00",
   "prior_git_head": "c080bb9",
   "historical_completed_teacher_questions": 33,
@@ -70,5 +70,19 @@
     "started_epoch": 1792063273.5827425,
     "phase": "stage1_first20",
     "resumed_complete_questions": 2
-  }
+  },
+  "pipeline": {
+    "pid": 21697,
+    "command": [
+      "python",
+      "-u",
+      "scripts/run_decision_rag_pipeline.py",
+      "--wait-pid",
+      "18157"
+    ],
+    "cwd": "/content/local_fast/lsdrag-code",
+    "log": "/content/local_fast/lsdrag-head-v13/logs/pipeline.log",
+    "started_epoch": 1792063656.1679797
+  },
+  "next_run": "/content/local_fast/lsdrag-head-v13/results/decision_rag_20261015_1024"
 }
