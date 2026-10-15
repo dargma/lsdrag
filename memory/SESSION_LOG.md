@@ -77,3 +77,7 @@ User approved proposed order and requested saving every stage. Frozen initial pl
 ## 2026-10-15 — stage1 first2 active
 
 Detached PID16960, launch and log under /content/local_fast/lsdrag-head-v13. Frozen runner604731a. Expected6 diagnostic episodes (2 questions×3 policies). Source must not change during run. Verify process and actual JSON/PT artifacts before continuation.
+
+## 2026-10-15 — first2 verified, first20 started
+
+All6 fresh diagnostic episodes complete; no infra/handler/parser errors. Native F10.335 vs controlled0 on only2 train questions, insufficient for conclusions; generated and first-token actions/answers match. Native can combine action/args in one generation, controlled incurs separate prefill; costs reported separately. Unchanged contract extended to20, PID18157, log/content/local_fast/lsdrag-head-v13/logs/diagnostic_000_020.log. Report and bundles preserved.

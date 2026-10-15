@@ -1,3 +1,7 @@
+# Active phase — first20 diagnostic
+
+First2 completed6 episodes with no infrastructure or parser/handler errors. Report `lab/reports/decision_rag_20261015/first2/`. Generated/first-token trajectories were identical on these2; native differed. These2 do not establish comparative quality. Extending unchanged source/data/contract to20; PID18157, log `/content/local_fast/lsdrag-head-v13/logs/diagnostic_000_020.log`, launch `/content/local_fast/lsdrag-head-v13/launch.json`. Skip only verified saved episodes; no parallel GPU collector. Next: verify60 episodes and report/audit failures before teacher extension.
+
 # Active phase — first2 diagnostic launched
 
 PID16960 launched fresh native/generated/first-token paired diagnostic, first2 fixed train questions. Launch record `/content/local_fast/lsdrag-head-v13/launch.json`; log `/content/local_fast/lsdrag-head-v13/logs/diagnostic_000_002.log`. Verify live process/command before assuming it remains active. Preflight all-five-tools/FINAL/images passed; no quality claim. Source frozen at604731a. Next inspect6 expected episode artifacts and infra/format behavior, then extend unchanged first20. Diagnostic backup bundles every completed question.
