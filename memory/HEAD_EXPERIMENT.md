@@ -1,3 +1,7 @@
+# Proposed replacement protocol — awaiting scope confirmation
+
+Read `docs/JEV_ARGUMENT_CONTROL_PLAN_20261015.md` for the new argument-minimization proposal. Stage1 is contract/implementation/functional smoke; proposed stage2 is a fresh paired20-train-question diagnostic, with optional extension to head learning only if confirmed. No new implementation or experiment has started. Inputs are restored and hash verified; runtime environment setup continues. Earlier commands remain on hold.
+
 # Execution hold — 2026-10-15 recovery
 
 User stopped the pilot and now requests argument-generation minimization design review and agreement before revising the plan and proceeding. All commands below are historical and **must not be launched automatically**. Input/model restoration alone is currently underway. No replacement tool/argument contract has been frozen. See CURRENT.md and EXPERIMENT_STATUS.json for verified recovery state.

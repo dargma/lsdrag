@@ -1,3 +1,9 @@
+# Recovery update — inputs verified; design decision pending
+
+Models downloaded and all downloaded LFS files verified against official pinned SHA256. Restored2463 derived input files and verified hashes, all2438 image PIL decodes,288 documents/56822 chunks, original Gemma index manifests/parts. Reproduced train100/dev20 and all10 JSONL hashes exactly. Pinned official scorer restored and3 basic list/numeric/empty cases passed. Evidence: `lab/reports/recovery_20261015/`. Model GPU load not yet checked; separate pinned embedding environment installation underway.
+
+New proposed plan: `docs/JEV_ARGUMENT_CONTROL_PLAN_20261015.md`. Pending user choice: stage1 implementation+real-model functional smoke; stage2 paired20 train diagnostic, or extend stage2 through learned-head training/dev evaluation. Candidate argument reuse plus explicit original argument generation is proposed; not yet approved. No experiment restarted or runtime behavior changed.
+
 # Latest recovery override — 2026-10-15 UTC
 
 Canonical Git clone restored from remote branch `jev_v1.1`, previous HEAD `c080bb9`, to `/content/local_fast/lsdrag-code`. The Drive code mirror was older.

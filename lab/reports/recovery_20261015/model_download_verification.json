@@ -1,0 +1,160 @@
+[
+  {
+    "model": "google/gemma-4-E4B-it",
+    "revision": "ee0ef6023621cff504d758262d4e04895a5af4a2",
+    "path": "/content/local_fast/lsdrag-v11/hf/models--google--gemma-4-E4B-it/snapshots/ee0ef6023621cff504d758262d4e04895a5af4a2",
+    "files": [
+      {
+        "name": ".gitattributes",
+        "bytes": 1570,
+        "sha256": "34448b82c17d60fec9b65b1f093c115ddbaadc04beb1b0140b6bfed2e012a930",
+        "lfs_sha_verified": false
+      },
+      {
+        "name": "README.md",
+        "bytes": 27956,
+        "sha256": "b21e4f69614ccd77baa2f3797d05311040dee07b989cb9f0d25111aa4b605b2c",
+        "lfs_sha_verified": false
+      },
+      {
+        "name": "chat_template.jinja",
+        "bytes": 18569,
+        "sha256": "0a2c8073c878ab1da004bee933a998606537bbb62016310352c7285c3f01c5b5",
+        "lfs_sha_verified": false
+      },
+      {
+        "name": "config.json",
+        "bytes": 5145,
+        "sha256": "33b10c02df3c2e8536cf323d29d53262aaa2f4d11dbe19bc729373fbe90295d4",
+        "lfs_sha_verified": false
+      },
+      {
+        "name": "generation_config.json",
+        "bytes": 208,
+        "sha256": "d4226bbe3117d2d253ba4609720ba82c6c4ce4627a9a6ae05387c78983ac03de",
+        "lfs_sha_verified": false
+      },
+      {
+        "name": "model.safetensors",
+        "bytes": 15992595884,
+        "sha256": "cfbd3d2f1cd71bd471c37fe2bf8546d5028d41e5736f64e1ca6c6b8893125503",
+        "lfs_sha_verified": true
+      },
+      {
+        "name": "processor_config.json",
+        "bytes": 1689,
+        "sha256": "32bdf45d2ad4cc29a0822ddd157a182de76644f0419a6228d151495256e9813c",
+        "lfs_sha_verified": false
+      },
+      {
+        "name": "tokenizer.json",
+        "bytes": 32169626,
+        "sha256": "cc8d3a0ce36466ccc1278bf987df5f71db1719b9ca6b4118264f45cb627bfe0f",
+        "lfs_sha_verified": true
+      },
+      {
+        "name": "tokenizer_config.json",
+        "bytes": 3082,
+        "sha256": "9f4fec4b1dc6ecddf8f4a92e9caea5971c0e67d81309f3f9066a2bee8c362633",
+        "lfs_sha_verified": false
+      }
+    ]
+  },
+  {
+    "model": "google/embeddinggemma-2",
+    "revision": "914f7f89142e33e77833254d9c9b90c3cef7303b",
+    "path": "/content/local_fast/lsdrag-v11/hf/models--google--embeddinggemma-2/snapshots/914f7f89142e33e77833254d9c9b90c3cef7303b",
+    "files": [
+      {
+        "name": ".gitattributes",
+        "bytes": 1301,
+        "sha256": "bcdccfaa66bc1240c7192dbd374cfb39b695bb1d8ff6b7ce0113aa5e9ac21a44",
+        "lfs_sha_verified": false
+      },
+      {
+        "name": "1_Pooling/config.json",
+        "bytes": 90,
+        "sha256": "8759bdf7c77efc7df7723f64856a593c8943b71ee38baf2a88771fbaf78438f9",
+        "lfs_sha_verified": false
+      },
+      {
+        "name": "2_Normalize/config.json",
+        "bytes": 97,
+        "sha256": "cdb09dfca347a56aa2d691744e38d5ad3c7cbc2834e7181272b9a15328b82524",
+        "lfs_sha_verified": false
+      },
+      {
+        "name": "README.md",
+        "bytes": 21730,
+        "sha256": "b677a0ee2818c36f091b65fd3d9b4baea9f04d53b02b49cae916c74bf9682037",
+        "lfs_sha_verified": false
+      },
+      {
+        "name": "chat_template.jinja",
+        "bytes": 1016,
+        "sha256": "4b852efc0b9960283e735363331e6f325b33bc74bdbaa076f595bc4e9b94d85e",
+        "lfs_sha_verified": false
+      },
+      {
+        "name": "config.json",
+        "bytes": 4455,
+        "sha256": "b8f1e9931b57fbc054acdb445c41765d55b0074c58d145fa82839941ad1b5bb3",
+        "lfs_sha_verified": false
+      },
+      {
+        "name": "config_sentence_transformers.json",
+        "bytes": 1565,
+        "sha256": "031e56a498d33c349ab489a21885bcfe25b4fcba841149dc99e1e90d4a7c28f5",
+        "lfs_sha_verified": false
+      },
+      {
+        "name": "model.safetensors",
+        "bytes": 1488915288,
+        "sha256": "197a32965d4b1105faf060417baa899e193fb73cd401f42ec9295234d5553d79",
+        "lfs_sha_verified": true
+      },
+      {
+        "name": "modules.json",
+        "bytes": 413,
+        "sha256": "3d02572a0455b832de67fb8e63a54981bc7e8b46e337c95e917bd8122a533bfd",
+        "lfs_sha_verified": false
+      },
+      {
+        "name": "preprocessor_config.json",
+        "bytes": 511,
+        "sha256": "ea2ae257e901064abdd98dceb19f2b0da06af600bed15e0f99f5c85c37ee9d78",
+        "lfs_sha_verified": false
+      },
+      {
+        "name": "processor_config.json",
+        "bytes": 1788,
+        "sha256": "168f6a08522f3ce5dea596d94d003af2fd691742d4f41fe1f9d8cce76bfbf69c",
+        "lfs_sha_verified": false
+      },
+      {
+        "name": "sentence_bert_config.json",
+        "bytes": 747,
+        "sha256": "b1bcd9f2dce3ae863b359e87d0710b5dbc3314a59ecb4e2f97c7778fc8e4b228",
+        "lfs_sha_verified": false
+      },
+      {
+        "name": "tokenizer.json",
+        "bytes": 32170510,
+        "sha256": "4d777ef5bdc1aa36227abdfb77c3e49e7b9c892d16e1b6bda41c393504828be4",
+        "lfs_sha_verified": true
+      },
+      {
+        "name": "tokenizer.model",
+        "bytes": 4689013,
+        "sha256": "e594c8a90eb08d8bda498ff4747977dc827ae0c3c56b5c0d41a605a22d02ef03",
+        "lfs_sha_verified": true
+      },
+      {
+        "name": "tokenizer_config.json",
+        "bytes": 1599,
+        "sha256": "17bd5d6e9364ca49a534e1502076593317c298d4a663623091ed45388f004874",
+        "lfs_sha_verified": false
+      }
+    ]
+  }
+]

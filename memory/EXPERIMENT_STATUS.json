@@ -14,11 +14,14 @@
   "verified_drive_checkpoint_teacher_questions": 20,
   "teacher_33_artifacts_recovered": false,
   "restoration": {
-    "state": "in_progress_not_verified_complete",
-    "data_tool_session": 64295,
-    "models_tool_session": 31833,
+    "state": "inputs_models_hash_verified_environment_setup_in_progress",
+    "data_tool_session": null,
+    "models_tool_session": null,
     "corpus": "/content/local_fast/lsdrag-work/data/ir_final288",
     "model_cache": "/content/local_fast/lsdrag-v11/hf",
-    "report_expected": "/content/local_fast/lsdrag-head-v12/recovery/restore_full_head_manifest.json"
-  }
+    "report_expected": "/content/local_fast/lsdrag-head-v12/recovery/restore_full_head_manifest.json",
+    "verified_report": "lab/reports/recovery_20261015/input_recovery.json"
+  },
+  "proposed_plan": "docs/JEV_ARGUMENT_CONTROL_PLAN_20261015.md",
+  "design_approval": "pending_user_scope_choice"
 }
