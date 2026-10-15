@@ -29,3 +29,7 @@ Initial v2 collector/tool session95665 ended exit143(SIGTERM) after12 saved teac
 ## 2026-10-15 10:38 UTC — automated head checkpoint
 
 {"bytes": 708497, "phase": "checkpoint_archived", "tag": "v2_teacher_020", "updated_utc_epoch": 1792060715.0887325}
+
+## 2026-10-15 — user stopped pilot for argument-control redesign
+
+User explicitly instructed stopping the running experiment. Sent SIGTERM to coordinator792503, collector796306 and their descendants only. Preserved completed teacher artifacts; STOPPED_BY_USER.json records count and PIDs. No automatic resume is authorized. Astra is reviewing fresh argument generation reduction and preparing a separate revised experiment plan; world models remain deferred.

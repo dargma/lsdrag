@@ -1,3 +1,7 @@
+# Latest override — 2026-10-15
+
+User explicitly stopped the running pilot for Astra review and action/argument-control replanning. Coordinator792503, collector796306 and descendant796517 are confirmed exited. 33 completed teacher records preserved in full_head_20261015_v2; see STOPPED_BY_USER.json. Do not auto-resume. Earlier running-process descriptions below are historical.
+
 # Current state — 2026-10-15 UTC
 
 Read `memory/EXPERIMENT_STATUS.json` if present: the coordinator updates and publishes it at each newer phase boundary. The narrative below is a dated handoff snapshot, not a claim the listed phase is still live.
