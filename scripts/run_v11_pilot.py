@@ -163,6 +163,31 @@ class Experiment:
             self.retriever = V11Retriever(list(self.items.values()), self.args.output/'indexes', self.args.hf)
             self.retriever.search('initialization', 'text', k=1)
 
+    def audit_training(self, rows):
+        lineage = read_jsonl(self.args.data/'corpus_texts.jsonl')+read_jsonl(self.args.data/'corpus_images.jsonl')
+        urls = {r['id']: r['url'] for r in lineage}
+        dev_support = {k for q in self.dev for k in self.gold[q['qid']]['support_ids']}
+        feature_ids = {k for r in rows for k in r['initial']['result_ids']}
+        branch_ids = feature_ids | {k for r in rows for a in r['actions'].values()
+                                   for query in a['queries'] for k in query['result_ids']}
+        groups_train = {r['source_group'] for r in rows}
+        groups_dev = {self.gold[q['qid']]['source_group'] for q in self.dev}
+        distribution = {a: 0 for a in ACTIONS}
+        ties = 0
+        for row in rows:
+            values = [row['stops'][1]['f1']]+[row['actions'][a]['cells']['11']['f1'] for a in ACTIONS[1:]]
+            best = [i for i,v in enumerate(values) if v >= max(values)-1e-8]
+            ties += len(best)>1
+            for i in best: distribution[ACTIONS[i]] += 1
+        result = {'feature_evidence_dev_support_overlap_ids': sorted(feature_ids & dev_support),
+                  'all_branch_dev_support_overlap_ids': sorted(branch_ids & dev_support),
+                  'feature_dev_support_overlap_urls': sorted({urls[k] for k in feature_ids}&{urls[k] for k in dev_support}),
+                  'shared_full_dependency_groups_train_dev': sorted(groups_train & groups_dev),
+                  'dependency_unit': 'support plus public table source URL',
+                  'factual_best_action_including_ties': distribution, 'tied_questions': ties,
+                  'unseen_source_claim': False}
+        self.save('training_exposure_and_target_audit.json', result)
+
     def collect(self, questions):
         rows = []
         for q in questions:
@@ -322,6 +347,7 @@ def main():
             exp.save('status.json', {'stage1': 'access_gate_failed_small', 'stage2': 'not_run', 'summary': summary})
             return
         rows = exp.collect(exp.train)
+        exp.audit_training(rows)
         summary = contrast_summary(rows)
         exp.save('contrast_train.json', summary)
         if summary['contrast_questions'] < 30 or summary['contrast_source_groups'] < 10:
