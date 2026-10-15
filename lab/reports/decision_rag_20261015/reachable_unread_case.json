@@ -18,5 +18,12 @@
   "actual_answers": [],
   "reasoning": "The search results confirm that Christopher Bolduc is an American operatic baritone, but none of the retrieved chunks mention his specific role in an opera composed by Maurice Ravel.",
   "interpretation": "Reachable-but-unread evidence; potential read/stop decision error. No counterfactual rollout yet, so changing the action is not proven to improve the final answer.",
-  "leakage_control": "Post-hoc audit only; gold/corpus answer row was not provided to the policy or candidate construction."
+  "leakage_control": "Post-hoc audit only; gold/corpus answer row was not provided to the policy or candidate construction.",
+  "native_visual_audit": {
+    "figure_id": "d88b45aef64839345235365037172e3a:p0:f11",
+    "path": "/content/local_fast/lsdrag-work/data/parsed_development/d88b45aef64839345235365037172e3a/images/page_0_image_11.jpg",
+    "observed_pixels": "orange circular warning icon with a white exclamation mark",
+    "verified_by": "direct view_image inspection",
+    "scope": "one delivered figure, not a corpus-wide image quality conclusion"
+  }
 }
