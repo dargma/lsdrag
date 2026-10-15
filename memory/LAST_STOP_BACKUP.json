@@ -1,0 +1,15 @@
+{
+  "archive": "/content/drive/MyDrive/lsdrag-backups/20261015/decision_rag_20261015/user_stop_20261015_114104.tar.gz",
+  "sha256": "446ad9b0da8125cfb7052804910bb88d0a929abc08f33cd6a3b1986bd6b2c65f",
+  "bytes": 31899717,
+  "members": 240,
+  "code_commit": "b8d2c9db3a421989a3e70a49e7230958ec92ebb0",
+  "phase": "paused_by_user",
+  "contains": [
+    "tracked code, memory, experiment plans and reports",
+    "all v13 runtime results/logs/status",
+    "question/gold data and scorer"
+  ],
+  "large_public_models": "Remain in local-fast; excluded from duplicate backup. Pinned recovery/provenance in code snapshot.",
+  "automatic_resume": false
+}
