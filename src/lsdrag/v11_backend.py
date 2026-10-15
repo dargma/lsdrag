@@ -171,7 +171,9 @@ class V11Retriever:
                 try:
                     for row in rows:
                         with Image.open(row['image_path']) as img:
-                            images.append(img.convert('RGB'))
+                            converted = img.convert('RGB')
+                            converted.filename = str(Path(row['image_path']).resolve())
+                            images.append(converted)
                     vectors = self.embedder.encode(images, 'image')
                 finally:
                     for img in images:

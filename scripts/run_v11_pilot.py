@@ -37,6 +37,7 @@ class Experiment:
         self.scorer = lambda p, g: score(p, g, source_dir=args.scorer)
         self.reader = V11Backend(str(args.model), image_soft_tokens=1120, max_context=16384)
         self.retriever = None
+        self.embedding_worker = None
         self.answer_cache = {}
         self.query_cache = {}
         self.counter = 0
@@ -55,7 +56,10 @@ class Experiment:
         import os
         raw = subprocess.check_output(['nvidia-smi', '--query-compute-apps=pid',
                                        '--format=csv,noheader,nounits'], text=True)
-        foreign = {int(p.strip()) for p in raw.splitlines() if p.strip().isdigit()}-{os.getpid()}
+        allowed = {os.getpid()}
+        if self.embedding_worker is not None:
+            allowed.add(self.embedding_worker.process.pid)
+        foreign = {int(p.strip()) for p in raw.splitlines() if p.strip().isdigit()}-allowed
         if foreign:
             self.save('timing_invalid.json', {'foreign_gpu_pids': sorted(foreign),
                                               'reason': 'GPU contention; timing run stopped'})
@@ -160,7 +164,10 @@ class Experiment:
 
     def setup_retriever(self):
         if self.retriever is None:
-            self.retriever = V11Retriever(list(self.items.values()), self.args.output/'indexes', self.args.hf)
+            from lsdrag.v11_embedding_worker import V11ProcessEmbedder
+            self.embedding_worker = V11ProcessEmbedder(self.args.hf.parent/'embedding-env/bin/python', self.args.hf)
+            self.retriever = V11Retriever(list(self.items.values()), self.args.output/'indexes',
+                                           embedder=self.embedding_worker)
             self.retriever.search('initialization', 'text', k=1)
 
     def audit_training(self, rows):
@@ -320,14 +327,18 @@ def main():
     dump_json(manifest_path, manifest)
     repo = Path(__file__).resolve().parents[1]
     sources = ['scripts/run_v11_pilot.py'] + ['src/lsdrag/'+f for f in
-        ['v11_backend.py','v11_protocol.py','v11_scoring.py','v11_training.py','embeddings.py','hf_reader.py']]
+        ['v11_backend.py','v11_protocol.py','v11_scoring.py','v11_training.py','v11_embedding_worker.py',
+         'embeddings.py','hf_reader.py']]
     phase_manifest = {**manifest, 'phase': a.phase,
         'code_revision': subprocess.check_output(['git','rev-parse','HEAD'],text=True).strip(),
         'source_hashes': {f: sha256(repo/f) for f in sources}}
     phase_path = a.output/f'phase_{a.phase}_manifest.json'
-    if phase_path.exists() and json.loads(phase_path.read_text()) != phase_manifest:
-        raise ValueError('This phase already has another code identity; preserve it and use a new run')
-    dump_json(phase_path, phase_manifest)
+    if phase_path.exists():
+        previous = json.loads(phase_path.read_text())
+        if any(previous[k] != v for k,v in phase_manifest.items() if k != 'code_revision'):
+            raise ValueError('This phase already has another source identity; preserve it and use a new run')
+    else:
+        dump_json(phase_path, phase_manifest)
     exp = Experiment(a)
     exp.warmup()
     if a.phase in ('all','diagnose'):
