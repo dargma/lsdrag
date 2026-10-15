@@ -2,7 +2,7 @@
   "decision_research": {
     "branch": "jev_v1.1",
     "updated_utc": "2026-10-15",
-    "status": "stage1_reader_passed_access_collection_running",
+    "status": "stage1_collection_waiting_exclusive_gpu",
     "proposal": "docs/JEV_ICML2027_RESEARCH_PROPOSAL.md",
     "astra_review": "docs/JEV_ICML2027_ASTRA_REVIEW.md",
     "previous_poc": "lab/reports/jev_v1.0/PROGRESS.md",
@@ -23,7 +23,20 @@
       "background_f1": 0.025,
       "gate": "passed"
     },
-    "stage2": "gated_pending"
+    "stage2": "gated_pending",
+    "valid_training_records": 244,
+    "head_acceleration": {
+      "status": "implemented_cpu_tested_astra_reviewed_gpu_probe_pending",
+      "plan": "docs/JEV_HEAD_ACCELERATION_PLAN.md",
+      "review": "docs/JEV_HEAD_ACCELERATION_ASTRA_REVIEW.md",
+      "amendment": "lab/registry/jev_v1.1/head_acceleration_amendment.json"
+    },
+    "gpu_contention": {
+      "foreign_environment": "/content/local_fast/pm_native_env/bin/python",
+      "stops": 2,
+      "last_records_archived": true,
+      "other_processes_untouched": true
+    }
   },
   "stage": "comparison_report",
   "status": "search_linked100_complete",

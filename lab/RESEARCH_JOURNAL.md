@@ -204,3 +204,9 @@ Train82 기본 CPU QC: 질문 필드가 qid/question뿐임과 원문 일치, 모
 Reader 환경(transformers5.18)에서 embedding_gemma2를 지원하지 않아 별도 system-site venv의 transformers5.19/sentence-transformers6.1을 사용했다. base torch2.11과 Reader 환경은 유지했다. 두 modality의 실제 인덱스를 분리하고 query cache를 acquisition마다 초기화한다. CPU 신규4 tests 통과. 전체 suite는50통과·기존 native-vLLM parser1개는 vLLM 부재로 실패했으며 새 실행은 해당 parser를 사용하지 않는다.
 
 원자료·corpus·공개 표·공식 scorer 885파일 43,126,954bytes를 Drive에 SHA256 검증해 백업했다. 자연 관측의 2×2 수집과 다음 head 학습은 고정 gate에 따라 이어서 진행한다. 관련 기록: `lab/reports/jev_v1.1/STAGE12_PROGRESS.md`.
+
+## 2026-10-15: Astra-reviewed head readout acceleration amendment
+
+Implemented same-prefix multimodal backbone-only readout and selected A/B/C LM rows for a fair first-token baseline. CPU checks: five v1.1 tests passed. GPU equivalence (exact hidden, zero action disagreements, all12 learned checkpoints) remains required before applying additional development arms. UPR confirmed from IRM references; pointer/cached-state variants require new candidate supervision and were excluded. Plans and review are in `docs/JEV_HEAD_ACCELERATION_PLAN.md` and `docs/JEV_HEAD_ACCELERATION_ASTRA_REVIEW.md`.
+
+Collection interrupted twice by foreign `pm_native_env` GPU jobs. Automatic guards stopped each run; the last potentially contaminated saved record from each interruption was archived under the local/Drive run `infrastructure_attempts/gpu_contention_*` and excluded for recomputation. 244 valid training records remain. Other jobs were not terminated. No development outcomes or head GPU equivalence results yet; training and stage2 await completion of the fixed300 collection and exclusive GPU availability.
