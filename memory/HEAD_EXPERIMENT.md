@@ -1,3 +1,7 @@
+# Native distillation checkpoint: native2_starting
+
+{"phase": "native2_starting", "run": "/content/local_fast/lsdrag-head-v14/results/native_distillation_12b_20261015", "archive": "/content/drive/MyDrive/lsdrag-backups/20261015/native_distillation_12b_20261015/native2_starting.tar.gz", "sha256": "f5cf98122c2a8b19a3e82195f454df25476b0f5062dd6a33c1462bf25393ce6b", "updated_epoch": 1792078729.9012587, "pid": 190865, "next": "Monitor running collection", "training_completed": false, "evaluation_completed": false}
+
 # Immediate12B start authorized — idle gate superseded
 
 User explicitly requested start now. Shared GPU work authorized with48GiB free; unrelated jobs are untouched. Idle watcher stopped to avoid duplicate launch. {"phase": "immediate_12b_start_authorized", "updated_epoch": 1792078726.418505, "idle_gate_superseded": true, "stopped_watcher_pid": 188251, "gpu_at_preflight": {"uuid": "GPU-7a7c7dc2-ceb8-0784-a007-6d0c7b82244e", "utilization": 0.0, "memory_utilization": 0.0, "free_mib": 97251.0}, "run": "/content/local_fast/lsdrag-head-v14/results/native_distillation_12b_20261015", "launch_record": "/content/local_fast/lsdrag-head-v14/immediate_launch_12b.json", "next": "Launch native12B first2; verify before fixed20 expansion", "all_generator_roles": "google/gemma-4-12B-it @707f0a3b8a3c7ad586ed01e27eafbad8a27dd0f7"}
