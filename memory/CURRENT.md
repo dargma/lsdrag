@@ -1,3 +1,7 @@
+# Evaluation target: F1 +5%, speed +5% relative
+
+Target, not achieved result. See `lab/registry/native_distillation_20261015/performance_target.json`. Current collection remains frozen; controlled timing is separate from shared-GPU quality work.
+
 # Native distillation checkpoint: native2_starting
 
 {"phase": "native2_starting", "run": "/content/local_fast/lsdrag-head-v14/results/native_distillation_12b_20261015", "archive": "/content/drive/MyDrive/lsdrag-backups/20261015/native_distillation_12b_20261015/native2_starting.tar.gz", "sha256": "f5cf98122c2a8b19a3e82195f454df25476b0f5062dd6a33c1462bf25393ce6b", "updated_epoch": 1792078729.9012587, "pid": 190865, "next": "Monitor running collection", "training_completed": false, "evaluation_completed": false}

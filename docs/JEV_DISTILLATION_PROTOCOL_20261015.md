@@ -50,3 +50,15 @@ Model reference: https://huggingface.co/google/gemma-4-12B-it (Google model card
 ## Download and recovery
 
 12B local cache: `/content/local_fast/lsdrag-v11/hf/models--google--gemma-4-12B-it/snapshots/707f0a3b8a3c7ad586ed01e27eafbad8a27dd0f7`. Public weights stay in local-fast; Git/Drive retain the pinned revision, sizes and hashes in `lab/registry/native_distillation_20261015/model_12b_provenance.json`. Restore via `huggingface_hub.snapshot_download` with that exact revision and cache root. Do not reuse E4B features, checkpoints or the paused v13 output directories.
+
+## User performance target: quality +5%, speed +5%
+
+User requested an RAG selection model beating vanilla A-RAG by5% quality and5% speed. Interpret as relative improvement unless clarified: macro answer F1 >=1.05×native baseline; throughput >=1.05×baseline, equivalently mean latency <=baseline/1.05 (about4.76% less time). F1 gain is not5 percentage points. If baseline F1 is zero, relative gain is undefined and no relative success claim is made.
+
+Baseline must use the same pinned12B, corpus/index, G1 actual-image delivery, available tools, decoding/output/context limits and scoring. It is a native A-RAG-style controller with the preserved multimodal extension, not an exact original-paper reproduction. Native multi-call turns and student single-call turns differ; report actual handler counts and round limits, and use a matched total-call budget for a dedicated causal comparison before attributing gains to selection. Do not silently change the currently running audit.
+
+Quality gate: report EM/F1 plus modality-specific retrieval/delivery recall and answer-format failures; retain all questions and all3 fixed seeds. Treat behavior-cloning agreement as a diagnostic, not improvement. If labels faithfully imitate a weak teacher, improve/validate teacher decisions in a separate frozen protocol rather than claiming imitation guarantees5% gains. Same-state format audit first, coverage-gated learning next, closed-loop paired dev next.
+
+Speed gate: measure end-to-end question time including retrieval/vision/decision/arguments/answer, after equal warm-up and with identical cache treatment. Randomize paired policy order, repeat runs, report mean and p50/p95 plus paired uncertainty; bootstrap by question and preserve seed grouping. Head microseconds or removed action tokens alone do not establish speedup. Shared-GPU observed timings do not pass this gate; conduct a separate interference-controlled timing session without terminating others' jobs. The immediate12B audit is authorized to run on shared GPU with sufficient free VRAM.
+
+Both5% thresholds are research acceptance targets, not guaranteed or achieved results. Report point estimates and paired confidence intervals; small20-question results alone cannot establish robust success. Preserve a final untouched evaluation split before claiming generalization. Registry: `lab/registry/native_distillation_20261015/performance_target.json`.

@@ -1,0 +1,16 @@
+{
+  "requested_target": {
+    "answer_f1_relative_gain": 0.05,
+    "throughput_relative_gain": 0.05,
+    "latency_ratio_max": 0.9523809523809523
+  },
+  "interpretation": "relative percent, not percentage points; provisional unless user specifies otherwise",
+  "baseline": "native A-RAG-style controller on same pinned12B and frozen G1 multimodal tools/retrieval; not a claim of exact original-paper reproduction",
+  "quality_primary": "macro per-question official list F1; EM secondary",
+  "quality_guardrails": "report text/table/image recall separately with mapping denominators; source proxies do not prove sufficient evidence",
+  "speed_primary": "end-to-end per-question wall time after equal model/index warm-up; includes retrieval, vision, selection, arguments and answer; excludes one-time model loading for both",
+  "speed_control": "same hardware/model/context/budgets, interleaved paired order and matched cache policy; other GPU workload must be absent/controlled; current shared run not speed evidence",
+  "decision_rule": "Report all fixed seeds, paired question bootstrap intervals and raw baseline values; F1 baseline zero makes relative gain undefined. No success from20-question diagnostic alone. Point estimates meeting both thresholds are provisional until uncertainty is assessed.",
+  "scope": "Research acceptance target, not guarantee or achieved result. Native-target BC alone does not guarantee higher quality.",
+  "updated_epoch": 1792078825.7076337
+}
