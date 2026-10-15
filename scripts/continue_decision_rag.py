@@ -56,17 +56,22 @@ def main():
     def report_full():
         subprocess.run([sys.executable,'scripts/report_full_head_pilot.py','--run',str(run),'--data',str(value('train-questions').parent),'--report',str(report/'head')],check=True,cwd=repo)
     try:
-        coverage(20)
+        current=sum((run/'teacher'/(qid+'.pt')).exists() for qid in order)
+        if current<20 or current>100:raise ValueError('Unexpected existing teacher count')
+        coverage(current)
         for end in [60,80,100]:
+            if current>end:continue
             start=20 if end==60 else end-20
-            execute('teacher',start,end-start);gate=coverage(end);report_full()
+            if current<end:execute('teacher',start,end-start)
+            gate=coverage(end);current=end;report_full()
             checkpoint(run,'teacher_'+str(end),{'coverage':gate,'next':'train' if gate['passed'] else ('teacher_'+str(end+20) if end<100 else 'coverage_no_go')})
             if gate['passed']:break
         if not gate['passed']:
             status('coverage_no_go',coverage=gate)
             checkpoint(run,'coverage_no_go',{'coverage':gate,'training_completed':False,'evaluation_completed':False})
             return
-        execute('train');training=json.loads((run/'training.json').read_text())
+        if not (run/'training.json').exists():execute('train')
+        training=json.loads((run/'training.json').read_text())
         if not training['gate']['passed'] or len(training['runs'])!=3:raise ValueError('Training did not produce all3 heads')
         report_full();checkpoint(run,'trained_3seeds',{'coverage':gate,'seeds':[r['seed'] for r in training['runs']],'next':'paired_dev20'})
         execute('evaluate');evaluation=json.loads((run/'evaluation.json').read_text())

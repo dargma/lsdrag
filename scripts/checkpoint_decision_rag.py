@@ -13,6 +13,14 @@ def checkpoint(run, tag, details):
     repo=Path(__file__).resolve().parents[1]
     if not tag.replace('_','').replace('-','').isalnum():raise ValueError('Invalid tag')
     target=Path('/content/drive/MyDrive/lsdrag-backups/20261015/decision_rag_20261015')
+    prior=repo/'lab/reports/decision_rag_20261015'/('checkpoint_'+tag+'.json')
+    if prior.exists():
+        record=json.loads(prior.read_text())
+        if record['run']!=str(run) or record['details']!=details:
+            raise ValueError('Existing checkpoint identity/details differ')
+        if hashlib.sha256(Path(record['archive']).read_bytes()).hexdigest()!=record['archive_sha256']:
+            raise ValueError('Existing Drive checkpoint changed')
+        return record
     staging=run.parent.parent/'backups';staging.mkdir(parents=True,exist_ok=True)
     archive=staging/(tag+'.tar.gz')
     if archive.exists():raise FileExistsError('Immutable phase archive already exists')
