@@ -33,3 +33,9 @@ Initial v2 collector/tool session95665 ended exit143(SIGTERM) after12 saved teac
 ## 2026-10-15 — user stopped pilot for argument-control redesign
 
 User explicitly instructed stopping the running experiment. Sent SIGTERM to coordinator792503, collector796306 and their descendants only. Preserved completed teacher artifacts; STOPPED_BY_USER.json records count and PIDs. No automatic resume is authorized. Astra is reviewing fresh argument generation reduction and preparing a separate revised experiment plan; world models remain deferred.
+
+## 2026-10-15T10:49:15.593301+00:00 — runtime recovery and design hold
+
+Restored canonical local-fast Git checkout from remote c080bb9; Drive mirror was stale. User confirmed last topic was minimizing generated tool arguments and requested reconsideration/agreement before plan changes and execution, then explicitly requested immediate Git state publication. Input restore launched (session64295), pinned official model downloads launched (session31833); completion not yet verified. Drive v2_teacher_020 archive lists20 JSON/PT pairs; Git records33 at stop, remaining13 not recovered. Older direct-dispatch research document found, but no completed post-stop Astra review found. Experiment remains stopped; no collection/training/evaluation restarted. Current proposed ID-slot/query-reuse/selective-generation direction is provisional, not an approved protocol.
+
+User activated goal: establish a new experiment plan and complete through stage2. Define the revised stages explicitly; preserve the design-agreement prerequisite. Initial commit failed because reset removed local Git author configuration; restored the same Codex noreply identity used by previous repository commits.

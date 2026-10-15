@@ -1,3 +1,21 @@
+# Latest recovery override — 2026-10-15 UTC
+
+Canonical Git clone restored from remote branch `jev_v1.1`, previous HEAD `c080bb9`, to `/content/local_fast/lsdrag-code`. The Drive code mirror was older.
+
+User confirms the last discussion concerned minimizing generated tool arguments. User now requires reconsidering and agreeing the design, then updating the plan/code before proceeding. **Do not resume collection, training, evaluation, or the old coordinator.** Model/data restoration is authorized and ongoing. Preserve all five tools plus FINAL, G1 pixel/text fusion and actual image delivery; world models remain deferred.
+
+Active user goal: establish the revised experiment plan and complete through stage2. Stage definitions must be explicit in the revised plan; do not assume the old first60 stage is authorized by this new goal.
+
+Design status: no revised design is agreed or implemented. Candidate for review: select observed IDs via typed candidate slots; reuse existing queries when sufficient; generate a new query only when needed. Check candidate restrictions, quality loss and added control cost before acceptance. `docs/JEV_DIRECT_DISPATCH_HEAD_DESIGN.md` is an older research proposal referring partly to discarded Q3 work, not the recovered final answer or an approved execution plan. The post-stop Astra review outcome has not been recovered.
+
+Verified backup: `/content/drive/MyDrive/lsdrag-backups/20261015/full_head_20261015/v2_teacher_020.tar.gz` contains 20 teacher JSON/PT pairs. Git records 33 completed at the user stop; the extra 13 records have not been located or recovered. Never report 33 recovered. No experiment GPU process was present at initial recovery inspection.
+
+Input recovery active: tool session64295 runs `scripts/restore_full_head_inputs.py --report /content/local_fast/lsdrag-head-v12/recovery --workers 12`; plan2463 files/1060223873 bytes, including2438 referenced figures. Tool session31833 downloads official pinned Gemma E4B and EmbeddingGemma2 snapshots to `/content/local_fast/lsdrag-v11/hf`. Neither operation has been verified complete at this checkpoint. These session IDs are ephemeral: inspect actual processes/files after any reset.
+
+Next: finish/verify input and model restoration; regenerate fixed question inputs via `scripts/prepare_full_head_inputs.py`; restore pinned scorer; record integrity results. Separately finish argument-control design review and obtain agreement before modifying the execution protocol or running experiments.
+
+Historical snapshots below are retained for audit and overridden by this entry.
+
 # Latest override — 2026-10-15
 
 User explicitly stopped the running pilot for Astra review and action/argument-control replanning. Coordinator792503, collector796306 and descendant796517 are confirmed exited. 33 completed teacher records preserved in full_head_20261015_v2; see STOPPED_BY_USER.json. Do not auto-resume. Earlier running-process descriptions below are historical.

@@ -1,3 +1,7 @@
+# Execution hold — 2026-10-15 recovery
+
+User stopped the pilot and now requests argument-generation minimization design review and agreement before revising the plan and proceeding. All commands below are historical and **must not be launched automatically**. Input/model restoration alone is currently underway. No replacement tool/argument contract has been frozen. See CURRENT.md and EXPERIMENT_STATUS.json for verified recovery state.
+
 # Active full-head experiment
 
 Date2026-10-15. World-model work is deferred. This pilot only tests head feasibility under the restored full tool interface.

@@ -1,11 +1,24 @@
 {
-  "phase": "stopped_by_user",
-  "reason": "Replan action and argument control after Astra review; do not auto-resume",
+  "phase": "stopped_pending_argument_control_design",
+  "reason": "User requires argument-generation minimization review and agreement before protocol/code changes and experiment execution. Input restoration only is in progress.",
   "stopped_pids": [
     792503,
     796306,
     796517
   ],
   "completed_teacher_questions": 33,
-  "updated_utc_epoch": 1792060931.5416527
+  "updated_utc_epoch": 1792060931.5416527,
+  "updated_utc": "2026-10-15T10:49:15.593301+00:00",
+  "prior_git_head": "c080bb9",
+  "historical_completed_teacher_questions": 33,
+  "verified_drive_checkpoint_teacher_questions": 20,
+  "teacher_33_artifacts_recovered": false,
+  "restoration": {
+    "state": "in_progress_not_verified_complete",
+    "data_tool_session": 64295,
+    "models_tool_session": 31833,
+    "corpus": "/content/local_fast/lsdrag-work/data/ir_final288",
+    "model_cache": "/content/local_fast/lsdrag-v11/hf",
+    "report_expected": "/content/local_fast/lsdrag-head-v12/recovery/restore_full_head_manifest.json"
+  }
 }
