@@ -1,5 +1,7 @@
 # Current state — 2026-10-15 UTC
 
+Read `memory/EXPERIMENT_STATUS.json` if present: the coordinator updates and publishes it at each newer phase boundary. The narrative below is a dated handoff snapshot, not a claim the listed phase is still live.
+
 Active objective: execute the full six-action head-only pilot step by step after a brief Astra protocol check. No world model or surprise component in this run.
 
 Code/Git: `/content/local_fast/lsdrag-code` on `jev_v1.1`. Code, protocol, application brainstorm and memory were committed/pushed at b99a264 and ad47382. Model, data and execution stay on local fast; Drive only receives backups.

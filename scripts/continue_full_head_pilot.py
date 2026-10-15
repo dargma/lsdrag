@@ -29,10 +29,34 @@ def main():
     questions = read_jsonl(value('train-questions'))
     actions = json.loads((run/'manifest.json').read_text())['feature_contract']['actions']
 
+    def publish(tag):
+        # User explicitly requested cumulative Git memory at every phase.
+        memory = repo/'memory'
+        memory.mkdir(exist_ok=True)
+        record = json.loads((run/'coordinator_status.json').read_text())
+        dump_json(memory/'EXPERIMENT_STATUS.json', {**record, 'run': str(run), 'world_model': 'deferred'})
+        with (memory/'SESSION_LOG.md').open('a') as stream:
+            stream.write('\n## '+time.strftime('%Y-%m-%d %H:%M UTC', time.gmtime())+' — automated head checkpoint\n\n'+json.dumps(record, ensure_ascii=False)+'\n')
+        report = repo/'lab/reports/full_head_20261015_v2'
+        selected = ['memory/EXPERIMENT_STATUS.json', 'memory/SESSION_LOG.md']
+        selected += [str(path.relative_to(repo)) for path in report.glob('*') if path.suffix in {'.json', '.md'}]
+        for command in (['git', 'add']+selected,
+                        ['git', '-c', 'user.name=Codex', '-c', 'user.email=codex@users.noreply.github.com',
+                         'commit', '-m', 'Record automated full-head phase '+tag],
+                        ['git', 'push', 'origin', 'jev_v1.1']):
+            outcome = subprocess.run(command, cwd=repo, capture_output=True, text=True)
+            if outcome.returncode:
+                with (run/'memory_publish_errors.log').open('a') as stream:
+                    stream.write(time.strftime('%Y-%m-%d %H:%M UTC', time.gmtime())+' '+str(command[:2])+' '+outcome.stderr+'\n')
+                print('Memory saved locally; Git publication encountered an error. See memory_publish_errors.log', flush=True)
+                break
+
     def status(phase, **kwargs):
         record = {'phase': phase, 'updated_utc_epoch': time.time(), **kwargs}
         dump_json(run/'coordinator_status.json', record)
         print(json.dumps(record), flush=True)
+        if phase in {'completed', 'coverage_no_go', 'execution_failed'}:
+            publish(phase)
 
     def report_and_backup(tag):
         subprocess.run([sys.executable, 'scripts/report_full_head_pilot.py', '--run', str(run),
@@ -46,6 +70,7 @@ def main():
         args.backup.mkdir(parents=True, exist_ok=True)
         shutil.copy2(archive, args.backup/archive.name)
         status('checkpoint_archived', tag=tag, bytes=archive.stat().st_size)
+        publish(tag)
 
     def completed():
         ids = {q['qid'] for q in questions if (run/'teacher'/f'{q["qid"]}.pt').exists()

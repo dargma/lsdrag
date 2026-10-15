@@ -3,10 +3,11 @@
 This folder is the recovery entry point for future sessions. Git is authoritative; filesystem/runtime state must be checked.
 
 Read order:
-1. CURRENT.md — active objective, last verified state, next action.
-2. USER_PREFERENCES.md — durable user instructions and working preferences.
-3. HEAD_EXPERIMENT.md — exact active experiment protocol and commands.
-4. SESSION_LOG.md — cumulative decisions, invalidated work and milestones.
+1. EXPERIMENT_STATUS.json if present — newest automated phase checkpoint; verify actual artifacts.
+2. CURRENT.md — active objective, last verified state, next action.
+3. USER_PREFERENCES.md — durable user instructions and working preferences.
+4. HEAD_EXPERIMENT.md — exact active experiment protocol and commands.
+5. SESSION_LOG.md — cumulative decisions, invalidated work and milestones.
 
 Canonical code/Git: `/content/local_fast/lsdrag-code`, remote `https://github.com/dargma/lsdrag.git`, branch `jev_v1.1`. The user-visible Drive workspace is a backup/mirror, not the compute or Git execution location.
 
