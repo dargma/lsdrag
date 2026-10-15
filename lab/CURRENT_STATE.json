@@ -2,7 +2,7 @@
   "decision_research": {
     "branch": "jev_v1.1",
     "updated_utc": "2026-10-15",
-    "status": "v2_head_teacher_first20_running",
+    "status": "v2_teacher_resumed_after_sigterm",
     "proposal": "docs/JEV_ICML2027_RESEARCH_PROPOSAL.md",
     "astra_review": "docs/JEV_ICML2027_ASTRA_REVIEW.md",
     "previous_poc": "lab/reports/jev_v1.0/PROGRESS.md",
@@ -62,9 +62,11 @@
     "active_run_root": "/content/local_fast/lsdrag-head-v12/results/full_head_20261015_v2",
     "memory": "memory/CURRENT.md",
     "world_model": "deferred_by_user",
-    "running_session": 95665,
-    "running_pid_last_verified": 784028,
-    "running_log": "/content/local_fast/lsdrag-head-v12/logs/teacher_v2_000_020.log"
+    "running_session": null,
+    "running_pid_last_verified": 789249,
+    "running_log": "/content/local_fast/lsdrag-head-v12/logs/teacher_v2_000_020_resume.log",
+    "coordinator_pid_last_verified": 789250,
+    "valid_teacher_questions_last_verified": 12
   },
   "stage": "comparison_report",
   "status": "search_linked100_complete",

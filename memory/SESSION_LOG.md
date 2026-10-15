@@ -21,3 +21,7 @@ Head-only collection launched after source/data freeze and Astra approval (sessi
 ## 2026-10-15 — v2 selector correction approved
 
 Real-model prefix probe on two fixed TRAIN questions: old selector0/2 valid, latest-user selector2/2 valid strictletter+EOS. The same selection suffix now applies before all generated/first-token/head readouts, with selector/version/helper hash in the feature contract. Astra approved the correction. User reviewed the execution-plan table and said ok. Fresh output full_head_20261015_v2 uses unchanged questions/gates; original attempt labels remain invalid.
+
+## 2026-10-15 — runtime termination and detached continuation
+
+Initial v2 collector/tool session95665 ended exit143(SIGTERM) after12 saved teacher questions; no Python exception or infrastructure failure marker. The coordinator session also disappeared. Cause unconfirmed; records preserved, source/data unchanged, no policy-label filtering. Resumed as detached collectorPID789249 and coordinatorPID789250; IDs/logs in run/launch.json. Incomplete question is recomputed; completed12 skipped. This runtime event is not a model-quality failure.

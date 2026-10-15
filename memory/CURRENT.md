@@ -12,11 +12,13 @@ Verified:
 
 Current execution: first teacher attempt started after Astra approval and commit b99a264. It was stopped after observing native tool-call output where the controlled selector required A-F. This attempt is INVALID_PROTOCOL_ATTEMPT.json, not head quality evidence and not reusable training labels. The owned teacher PID777960 was stopped; tool session31865 is historical, not a live-job assertion.
 
-Current live phase: v2 first20 teacher collection is RUNNING (last verified process PID784028, tool session95665). Log: `/content/local_fast/lsdrag-head-v12/logs/teacher_v2_000_020.log`. Output: `/content/local_fast/lsdrag-head-v12/results/full_head_20261015_v2`. These process IDs are historical after a reset; verify commandline/liveness before acting. Model and embedding worker loaded, 12 question artifacts and44 natural states were verified at10:23 UTC; six action types are present, coverage still below the training gate.
+Current live phase: v2 first20 collection resumed from12 valid saved question artifacts after an unknown SIGTERM terminated the initial collector and coordinator. No Python exception/infrastructure failure marker was recorded. Valid12 artifacts remain; incomplete question13 is recomputed under unchanged source/data identity.
+
+Detached collector PID789249, coordinator PID789250 (no live tool-session ID). Read run/launch.json and verify actual commandlines before acting. Logs: `/content/local_fast/lsdrag-head-v12/logs/teacher_v2_000_020_resume.log` and `/content/local_fast/lsdrag-head-v12/logs/coordinator_v2_resume.log`. The initial tool sessions95665/77816 are dead and must not be polled as live jobs.
 
 Next: inspect completed20-question diagnostic, archive phase artifacts, then continue unchanged train order to60. Extend80/100 only as the fixed coverage gate requires. Fit/evaluate only when six-action coverage passes. Source/data identities are frozen; do not edit active runner/core files mid-run. World-model work remains deferred.
 
 
 Do not resume `/content/local_fast/lsdrag-v11/results/stage12_20261015_v2`: it has DISCARDED.json. Old runners also reject discarded outputs.
 
-A sequential coordinator is active in tool session77816, waiting for PID784028 before advancing fixed stages. See HEAD_EXPERIMENT.md and run/coordinator_status.json. Do not launch parallel GPU collectors for this run.
+The detached coordinator in launch.json waits for the resumed collector before advancing fixed stages. See HEAD_EXPERIMENT.md and run/coordinator_status.json. Do not launch parallel GPU collectors for this run.
