@@ -38,7 +38,13 @@ def main():
     p.add_argument('--min-free-gb', type=float, default=32.)
     p.add_argument('--max-loops', type=int, default=8)
     p.add_argument('--max-output-tokens', type=int, default=256)
+    p.add_argument('--teacher-format', choices=('generated', 'native_single'), default='generated')
+    p.add_argument('--teacher-model-path', type=Path)
     a = p.parse_args()
+    if a.teacher_format == 'native_single' and a.phase == 'diagnose':
+        p.error('Native distillation uses a separate teacher smoke; do not relabel the generated diagnostic')
+    if a.teacher_model_path and a.teacher_format != 'native_single':
+        p.error('Separate teacher backbone requires native_single')
     if a.limit < 1 or a.start < 0 or a.start+a.limit > 100:
         p.error('Fixed teacher blocks must stay within the first 100 questions')
     if (a.output/'DISCARDED').exists() or any(a.output.glob('DISCARDED*')) or (a.output/'INVALID_PROTOCOL_ATTEMPT.json').exists():
@@ -74,6 +80,17 @@ def main():
         'shared_gpu': True, 'controlled_latency_claims': False, 'train_question_order': [q['qid'] for q in train[:100]],
         'development_question_order': [q['qid'] for q in dev[:20]], 'coverage_minimum_distinct_questions': 5,
         'seeds': [20261015, 20261016, 20261017], 'epochs': 100, 'objective': 'plain unweighted behavior cloning CE'}
+    teacher_contract = None
+    if a.teacher_format == 'native_single':
+        from lsdrag.native_distillation import SINGLE_ACTION_INSTRUCTION
+        from lsdrag.direct_contract import build_feature_contract
+        teacher_prompt = synchronize_prompt(a.prompt.read_text().rstrip()+'\n\n'+SINGLE_ACTION_INSTRUCTION, tools, config.image_delivery_policy)
+        teacher_contract = build_feature_contract(a.teacher_model_path or a.model_path, config, tools,
+            [hashlib.sha256(teacher_prompt.encode()).hexdigest()])
+        manifest.update(experiment='decision-rag-native-student-distillation-v1',
+            teacher_format='native_single', teacher_contract=teacher_contract,
+            controller_baseline='native single-call teacher; first-token student probe at identical observed state')
+        manifest['source_hashes']['src/lsdrag/native_distillation.py'] = sha256(root/'src/lsdrag/native_distillation.py')
     if a.dataset_manifest:
         manifest['data_hashes'][str(a.dataset_manifest)] = sha256(a.dataset_manifest)
     else:
@@ -124,7 +141,8 @@ def main():
             save('training_gate.json', {'passed': False, 'completed_teacher_questions': len(teacher_results), 'minimum_completed_teacher_questions': 60})
             raise ValueError('At least 60 completed teacher questions required; 20-question block is diagnostic only')
         validate_completed_prefix([r['qid'] for r in teacher_results], [q['qid'] for q in train])
-        result = train_behavior_heads(records, features, a.output/'heads', contract, tools)
+        result = train_behavior_heads(records, features, a.output/'heads', contract, tools,
+                                      teacher_selector=a.teacher_format, teacher_contract=teacher_contract)
         result['teacher_statistics'] = {'completed_questions': len(teacher_results),
             'mean_em': float(np.mean([r['em'] for r in teacher_results])),
             'mean_f1': float(np.mean([r['f1'] for r in teacher_results])),
@@ -165,6 +183,11 @@ def main():
         native.__dict__ = reader.__dict__.copy()
         native.head = None
         native.agent_prompt = a.prompt.read_text()
+        teacher_controller = reader
+        if a.teacher_format == 'native_single' and a.phase == 'teacher':
+            from lsdrag.native_distillation import NativeTeacherStudentReader
+            teacher_model = native if not a.teacher_model_path or a.teacher_model_path.resolve() == a.model_path.resolve() else HFReader(str(a.teacher_model_path), config)
+            teacher_controller = NativeTeacherStudentReader(reader, teacher_model, teacher_prompt, teacher_contract)
         if a.phase == 'diagnose':
             policies = [('native', native), ('generated', reader),
                         ('first_token', GeneratedChoiceReader.from_reader(reader, 'first_token'))]
@@ -208,8 +231,8 @@ def main():
                     validate_teacher_artifact(torch.load(a.output/relative, map_location='cpu', weights_only=True), q['qid'], contract)
                     continue
                 states, vectors = [], []
-                reader.state_sink = lambda record, feature: (states.append(record), vectors.append(feature))
-                result = run(q, reader)
+                teacher_controller.state_sink = lambda record, feature: (states.append(record), vectors.append(feature))
+                result = run(q, teacher_controller)
                 for state in states:
                     state['episode_status'] = result['status']
                 width = reader.model.config.get_text_config().hidden_size
@@ -269,7 +292,7 @@ def main():
                     logits = artifact['features'] @ saved['weight'].T + saved['bias']
                     labels = torch.tensor([record['index'] for record in artifact['records']])
                     correct += int((logits.argmax(-1) == labels).sum()); total += len(labels)
-                agreement[str(spec['seed'])] = {'correct': correct, 'states': total, 'accuracy': correct/total if total else None, 'scope': 'same generated-teacher heldout states; forced FINAL excluded'}
+                agreement[str(spec['seed'])] = {'correct': correct, 'states': total, 'accuracy': correct/total if total else None, 'scope': 'agreement with generated-letter reference on its heldout states; NOT native-teacher imitation accuracy; forced FINAL excluded'}
             save('evaluation.json', {'policies': summary, 'heldout_teacher_agreement': agreement, 'scope': 'paired development behavior-cloning pilot; no test/novelty/latency claim'})
     finally:
         worker.close()

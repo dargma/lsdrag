@@ -1,3 +1,7 @@
+# Current override — native-target audit and GPU idle gate
+
+See `JEV_DISTILLATION_PROTOCOL_20261015.md` for the newly authorized experiment. The original v13 protocol below remains historical; do not automatically continue its stage2 with changed source or native labels.
+
 # 순차 실행 계약 —2026-10-15
 
 사용자 “너의 제안대로 차례로 진행하자”, “단계별로 잘 저장하고”에 따른 현재 실행 계획. 이전 argument candidate+GENERATION_ARGS 결합안보다 이 문서가 우선한다. 모델·data·five tools+FINAL·G1 검색 및 실제 이미지 전달을 유지하며, 인자 생성 경로는 변경하지 않는다.

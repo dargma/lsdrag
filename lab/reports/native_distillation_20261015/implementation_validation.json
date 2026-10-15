@@ -1,0 +1,19 @@
+{
+  "phase": "implementation_validation",
+  "updated_epoch": 1792078121.3635628,
+  "tests_passed": 24,
+  "test_command": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src pytest -q -p no:cacheprovider tests/test_native_distillation.py tests/test_gpu_idle_watch.py tests/test_head_experiment.py tests/test_direct_reader.py tests/test_direct_agent_integration.py",
+  "checks": [
+    "native malformed/multiple/truncated/unknown/schema-invalid targets rejected",
+    "student state captured before teacher output; forced FINAL excluded",
+    "mixed target formats/provenance rejected",
+    "20-minute observation window reset on busy/unknown/gap",
+    "one-shot child launch and duplicate prevention",
+    "modality-specific denominators and source-vs-delivery separation",
+    "CLI imports and syntax"
+  ],
+  "real_backbone_readout_equivalence": "pending automatic first2 pilot",
+  "teacher_collection_completed": false,
+  "learned_policy_quality_established": false,
+  "larger_reader_run": false
+}

@@ -155,7 +155,7 @@ class GeneratedChoiceReader(DirectHFReader):
         return self.actions[index], probabilities, usage
 
 
-def train_behavior_heads(records, features, outputdir, feature_contract, tools, *, seeds=SEEDS, epochs=100):
+def train_behavior_heads(records, features, outputdir, feature_contract, tools, *, seeds=SEEDS, epochs=100, teacher_selector='generated', teacher_contract=None):
     import torch
     torch.set_num_threads(2)
     actions = action_names(tools)
@@ -169,8 +169,16 @@ def train_behavior_heads(records, features, outputdir, feature_contract, tools, 
         raise ValueError('Missing training question identity')
     if any('index' in r and r['index'] != actions.index(r['action']) for r in records):
         raise ValueError('Action label/index mismatch')
-    if any(r.get('forced_final') or r.get('selector') != 'generated' for r in records):
-        raise ValueError('BC labels require natural generated teacher decisions')
+    if teacher_selector not in {'generated', 'native_single'}:
+        raise ValueError('Unknown teacher target format')
+    if any(r.get('forced_final') or r.get('selector') != teacher_selector for r in records):
+        raise ValueError('BC labels require natural decisions from the selected teacher format')
+    if teacher_selector == 'native_single':
+        if not teacher_contract or any(
+            r.get('teacher_contract') != teacher_contract or
+            r.get('feature_origin') != 'student_pre_teacher_output' or
+            r.get('format_valid') is not True for r in records):
+            raise ValueError('Native target provenance or student feature origin mismatch')
     y = np.asarray([actions.index(r['action']) for r in records], dtype=np.int64)
     coverage = {a: len({r['qid'] for r in records if r['action'] == a}) for a in actions}
     question_count = len({r['qid'] for r in records})
@@ -180,6 +188,7 @@ def train_behavior_heads(records, features, outputdir, feature_contract, tools, 
     directory = Path(outputdir)
     directory.mkdir(parents=True, exist_ok=True)
     result = {'gate': gate, 'runs': [], 'examples': len(records), 'teacher_objective': 'behavior cloning, not outcome improvement',
+              'teacher_selector': teacher_selector, 'teacher_contract': teacher_contract,
               'actions': list(actions), 'epochs': int(epochs), 'seeds': list(seeds),
               'action_histogram': {action: sum(r['action'] == action for r in records) for action in actions},
               'question_coverage': coverage, 'teacher_episode_status_by_question': {r['qid']: r.get('episode_status', 'unknown') for r in records}}
@@ -214,7 +223,8 @@ def train_behavior_heads(records, features, outputdir, feature_contract, tools, 
                       'purpose': 'six_action_behavior_cloning', 'train_qids': sorted({r['qid'] for r in records}),
                       'normalization': {'mean': torch.from_numpy(mean), 'scale': torch.from_numpy(scale), 'folded_into_linear': True},
                       'optimizer': {'name': 'AdamW', 'lr': .001, 'weight_decay': .01},
-                      'labels': 'all natural generated decisions, including unsuccessful trajectories'}
+                      'teacher_selector': teacher_selector, 'teacher_contract': teacher_contract,
+                      'labels': 'natural validated '+teacher_selector+' decisions, including unsuccessful trajectories'}
         path = directory/f'head_seed_{seed}.pt'
         torch.save(checkpoint, path)
         result['runs'].append({'checkpoint': str(path), 'seed': int(seed), 'loss_curve': curve})
