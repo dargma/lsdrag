@@ -1,3 +1,11 @@
+# GPU idle-gated native-target audit authorized — 2026-10-15
+
+Latest user instruction permits automatic experiment start after20 observed idle minutes, superseding the prior global pause for this NEW v14 audit only. The v13 results remain frozen.
+
+{"phase": "waiting_for_gpu_idle", "watcher_pid": 178546, "watcher_status": "/content/local_fast/lsdrag-head-v14/idle_watch/status.json", "watcher_log": "/content/local_fast/lsdrag-head-v14/idle_watch/watcher.log", "stop_file": "/content/local_fast/lsdrag-head-v14/idle_watch/STOP", "launch_spec": "/content/local_fast/lsdrag-code/lab/registry/native_distillation_20261015/idle_launch.json", "updated_epoch": 1792078162.0428007, "automatic_resume": true, "condition": "30s samples: compute and memory utilization <=5%, free VRAM>=32GiB, continuously observed1200s; errors or >65s gaps reset", "next": "native first2; if structural/readout checks pass extend fixed20; then review checkpoint, no automatic training", "run": "/content/local_fast/lsdrag-head-v14/results/native_distillation_20261015", "current_observation": {"phase": "watching", "pid": 178546, "updated_epoch": 1792078161.14416, "gpu": {"uuid": "GPU-7a7c7dc2-ceb8-0784-a007-6d0c7b82244e", "utilization": 92.0, "memory_utilization": 23.0, "free_mib": 25902.0}, "idle_seconds": 0, "eligible": false}, "larger_reader": "separate pending experiment; current automatic first stage isolates format using E4B", "previous_v13": "preserved paused common1024 native14/generated14/first_token13; do not mix labels", "code_commit": "af1b3816512ff511bab0058703ceda7ce54917e2"}
+
+Protocol: `docs/JEV_DISTILLATION_PROTOCOL_20261015.md`. Verify live watcher command and runtime status; do not launch a second collector. The monitor survives chat end only while the host remains alive. Real-backbone readout verification and new teacher collection remain pending;24 CPU tests passed. Pending larger-reader request remains separate; no larger model has been downloaded or evaluated.
+
 # USER PAUSE — 2026-10-15 11:39 UTC
 
 사용자 요청으로 저장 후 중지. 아래 과거의 active/automatic continuation 지시보다 이 중지 상태가 우선한다. 명시적 재개 요청 전 실험을 다시 실행하지 않는다.
