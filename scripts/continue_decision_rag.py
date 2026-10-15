@@ -59,10 +59,10 @@ def main():
                 if r.get('forced_final') or r['selector']!='generated':raise ValueError('Invalid teacher label')
                 seen[r['action']].add(qid);allq.add(qid)
         if len(qids)!=expected or qids!=order[:expected]:raise ValueError('Incorrect teacher prefix')
-        if expected>=60:validate_completed_prefix(qids,order)
+        if expected in (60,80,100):validate_completed_prefix(qids,order)
         return {'completed_teacher_questions':expected,'distinct_teacher_qids':len(allq),
                 'distinct_qids_per_action':{k:len(v) for k,v in seen.items()},
-                'passed':len(allq)>=30 and all(len(v)>=5 for v in seen.values())}
+                'passed':expected in (60,80,100) and len(allq)>=30 and all(len(v)>=5 for v in seen.values())}
     def report_full():
         subprocess.run([sys.executable,'scripts/report_full_head_pilot.py','--run',str(run),'--data',str(value('train-questions').parent),'--report',str(report/'head')],check=True,cwd=repo)
     try:
