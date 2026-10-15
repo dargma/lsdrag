@@ -40,3 +40,5 @@ ICML 2027 제출 준비를 위해 decision/control·멀티모달 RAG·agent memo
 
 - [연구 방향·선행연구·baseline·2주 반증 계획](docs/JEV_ICML2027_RESEARCH_PROPOSAL.md)
 - [Astra 검토·방법 정교화](docs/JEV_ICML2027_ASTRA_REVIEW.md)
+- [1·2단계 실제 실행 기록](lab/reports/jev_v1.1/STAGE12_PROGRESS.md)
+- [실행 직전 Astra 재검토](docs/JEV_V11_EXECUTION_REVIEW.md)

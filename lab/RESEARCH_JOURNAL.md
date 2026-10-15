@@ -194,3 +194,13 @@ Train82 기본 CPU QC: 질문 필드가 qid/question뿐임과 원문 일치, 모
 `docs/JEV_ICML2027_RESEARCH_PROPOSAL.md`에 현재 PoC의 범위, 선행연구 충돌, baseline, 데이터 후보, 2주 반증 계획, GPU/일정 제약을 정리했다. 기존 30.6% 시간 감소와 EM 형식 차이 결과는 새로운 실험으로 포장하지 않았다. Astra는 generic two-step Q/value head를 독창적 방법으로 채택하지 않았고, query generator와 final reader의 evidence access를 교차 개입해 제어 학습 신호를 만드는 조건부 방향으로 정교화했다. 이 방향 역시 novelty나 성능을 확정하지 않으며 표준 future-value learner와 같은 데이터/예산 비교가 필요하다.
 
 별도 검토 문서는 `docs/JEV_ICML2027_ASTRA_REVIEW.md`. README에 v1.1 진입점을 연결한다. 문서와 링크를 검증하며, 이번 변경에서는 새 GPU inference·학습·benchmark를 실행하지 않는다.
+
+## 2026-10-15 — 승인된 1·2단계 실행 시작
+
+사용자가 제안을 채택하고 계획 재검증 후 2단계까지 순차 실행하도록 요청했다. Astra가 실행 계획을 다시 감사했다. GPU는 RTX PRO 6000 Blackwell Server Edition 97887MiB이며 최초 확인 시 유휴였다. Reader는 기존 pinned Gemma E4B, 임베더는 pinned EmbeddingGemma 2를 복원했다. CrossModalQA의 공개 자산을 확인하지 못해 공식 MMQA에서 outcome-blind 300 train/80 development, 최초 진단 40문항과 공유 축소 corpus(텍스트503/이미지427)를 고정했다.
+
+최초 oracle은 metadata.table_id의 benchmark-public table을 누락해 EM6/40·F1.23325였다. 공식 baseline이 전체 표를 공개 입력으로 제공함을 확인하고, 원 실행을 보존한 채 같은 질문·gate로 한 번 수정 진단했다. 공개 표 전체를 모든 module에 동일 제공하고 oracle support ID는 중복 제거했다. 정답 행·좌표·중간 답은 제공하지 않았다. 수정 oracle EM10/40·F1.3495 vs 공개 표 baseline EM1/40·F1.025로 gate를 통과했다. 표를 포함한 source dependency를 161개 component로 재산정했으며 train/dev source URL3개 공유를 명시했다.
+
+Reader 환경(transformers5.18)에서 embedding_gemma2를 지원하지 않아 별도 system-site venv의 transformers5.19/sentence-transformers6.1을 사용했다. base torch2.11과 Reader 환경은 유지했다. 두 modality의 실제 인덱스를 분리하고 query cache를 acquisition마다 초기화한다. CPU 신규4 tests 통과. 전체 suite는50통과·기존 native-vLLM parser1개는 vLLM 부재로 실패했으며 새 실행은 해당 parser를 사용하지 않는다.
+
+원자료·corpus·공개 표·공식 scorer 885파일 43,126,954bytes를 Drive에 SHA256 검증해 백업했다. 자연 관측의 2×2 수집과 다음 head 학습은 고정 gate에 따라 이어서 진행한다. 관련 기록: `lab/reports/jev_v1.1/STAGE12_PROGRESS.md`.
