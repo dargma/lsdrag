@@ -1,11 +1,11 @@
 {
-  "phase": "native2_starting",
+  "phase": "native2_review_required",
   "run": "/content/local_fast/lsdrag-head-v14/results/native_distillation_12b_20261015",
-  "archive": "/content/drive/MyDrive/lsdrag-backups/20261015/native_distillation_12b_20261015/native2_starting.tar.gz",
-  "sha256": "f5cf98122c2a8b19a3e82195f454df25476b0f5062dd6a33c1462bf25393ce6b",
-  "updated_epoch": 1792078729.9012587,
+  "archive": "/content/drive/MyDrive/lsdrag-backups/20261015/native_distillation_12b_20261015/native2_review_required.tar.gz",
+  "sha256": "3b9e11057d7179eb94b0ea8cd8f588b963f7be0f818aedb4f2dce70d37552b92",
+  "updated_epoch": 1792078918.89331,
   "pid": 190865,
-  "next": "Monitor running collection",
+  "next": "Review targets and reader-size separation before teacher60/head training",
   "training_completed": false,
   "evaluation_completed": false
 }

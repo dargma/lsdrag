@@ -1,0 +1,164 @@
+{
+  "questions": 2,
+  "accepted_states": 10,
+  "target_rejections": [
+    "Expecting value: line 1 column 1 (char 0)"
+  ],
+  "target_acceptance_rate": 0.9090909090909091,
+  "action_counts": {
+    "keyword_search": 2,
+    "semantic_search": 3,
+    "read_chunk": 5
+  },
+  "native_vs_first_token_agreement_on_accepted_states": 0.6,
+  "em": 0.0,
+  "f1": 0.0,
+  "answer_format_valid_count": 1,
+  "reader_errors": [
+    {
+      "error": "DirectOutputError: Rejected native teacher target: Expecting value: line 1 column 1 (char 0)",
+      "loop": 3
+    }
+  ],
+  "per_question_modality_recall": [
+    {
+      "qid": "bc16213fc3ba20631092dc66c700b1ea",
+      "source_recall_proxies": {
+        "text": {
+          "required_source_count": 0,
+          "first_search_source_recall_at_k": {
+            "1": null,
+            "3": null,
+            "5": null,
+            "10": null
+          },
+          "trajectory_retrieved_source_recall": null,
+          "explicit_read_source_recall": null,
+          "image_delivered_source_recall": null
+        },
+        "table": {
+          "required_source_count": 1,
+          "first_search_source_recall_at_k": {
+            "1": 0.0,
+            "3": 0.0,
+            "5": 0.0,
+            "10": 0.0
+          },
+          "trajectory_retrieved_source_recall": 1.0,
+          "explicit_read_source_recall": 1.0,
+          "image_delivered_source_recall": null
+        },
+        "image": {
+          "required_source_count": 1,
+          "first_search_source_recall_at_k": {
+            "1": 0.0,
+            "3": 0.0,
+            "5": 0.0,
+            "10": 0.0
+          },
+          "trajectory_retrieved_source_recall": 0.0,
+          "explicit_read_source_recall": 0.0,
+          "image_delivered_source_recall": 0.0
+        }
+      },
+      "reviewed_visual_evidence": {
+        "gold_image_count": 1,
+        "mapped_gold_image_count": 0,
+        "visual_mapping_complete": false,
+        "figure_candidate_recall": null,
+        "figure_open_recall": null,
+        "figure_delivery_recall": null,
+        "all_gold_images_delivered": null,
+        "image_evidence_page_recall": null,
+        "available_mapped_figure_delivery_recall": null,
+        "unmapped_gold_image_ids": [
+          "6dec1abbdfe7d58678688e897eb6d1fb"
+        ]
+      }
+    },
+    {
+      "qid": "e844b72274e56a3222e4a27b24cd623b",
+      "source_recall_proxies": {
+        "text": {
+          "required_source_count": 0,
+          "first_search_source_recall_at_k": {
+            "1": null,
+            "3": null,
+            "5": null,
+            "10": null
+          },
+          "trajectory_retrieved_source_recall": null,
+          "explicit_read_source_recall": null,
+          "image_delivered_source_recall": null
+        },
+        "table": {
+          "required_source_count": 0,
+          "first_search_source_recall_at_k": {
+            "1": null,
+            "3": null,
+            "5": null,
+            "10": null
+          },
+          "trajectory_retrieved_source_recall": null,
+          "explicit_read_source_recall": null,
+          "image_delivered_source_recall": null
+        },
+        "image": {
+          "required_source_count": 1,
+          "first_search_source_recall_at_k": {
+            "1": 0.0,
+            "3": 0.0,
+            "5": 0.0,
+            "10": 0.0
+          },
+          "trajectory_retrieved_source_recall": 0.0,
+          "explicit_read_source_recall": 0.0,
+          "image_delivered_source_recall": 0.0
+        }
+      },
+      "reviewed_visual_evidence": {
+        "gold_image_count": 1,
+        "mapped_gold_image_count": 1,
+        "visual_mapping_complete": true,
+        "figure_candidate_recall": 0.0,
+        "figure_open_recall": 0.0,
+        "figure_delivery_recall": 0.0,
+        "all_gold_images_delivered": 0.0,
+        "image_evidence_page_recall": 0.0,
+        "available_mapped_figure_delivery_recall": 0.0,
+        "unmapped_gold_image_ids": []
+      }
+    }
+  ],
+  "unresolved_visual_mapping_ids": [
+    "06605e43313d0c981f39adae85d112ce",
+    "125f89b37bec989af6a4ff6a60faeb1c",
+    "2f789ee49c6cfa05a91428e9af21cfcc",
+    "3ff0574ce7020df4a809ade7543d2f01",
+    "553ee9b5495b588c6e33b8f761b1675f",
+    "5e87b9b2bea1bc276227c35948388915",
+    "7d7e4f56a0a4c949be6efc927ca2759c",
+    "90f272b8e9b07a5a9ed260a135bad142",
+    "95f47d84f76507f47eddcc7fd48e5209",
+    "b71b9ebe601f94e29fa85803fef6c8c4"
+  ],
+  "visual_mapping_complete_questions": 1,
+  "modality_summary": {
+    "text": {
+      "eligible_questions": 0,
+      "trajectory_retrieved_source_macro_recall": null
+    },
+    "table": {
+      "eligible_questions": 1,
+      "trajectory_retrieved_source_macro_recall": 1.0
+    },
+    "image": {
+      "eligible_questions": 2,
+      "trajectory_retrieved_source_macro_recall": 0.0
+    }
+  },
+  "recall_scope": "Source-document proxies, first search ranked results and whole trajectory separately. NOT exact text spans, tables or images. Search snippets may contain evidence without read calls.",
+  "quality_claim": "Shared-backbone native single-action teacher audit; not an isolated model-size comparison or learned-head quality claim.",
+  "training_completed": false,
+  "evaluation_completed": false
+}

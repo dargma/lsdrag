@@ -151,3 +151,8 @@ Current12B first2 pilot PID190865 / collector190962 is running; idle20-minute ga
 
 Persistent Goal registration failed in this ephemeral side thread (`Goal tools require a persistent thread.`). Request and full completion criteria are saved in `memory/EXPERIMENT_COMPLETION_GOAL_REQUEST.json`. Existing12B pilot remains active; its built-in automation reaches at most the20-question audit, not full training/evaluation. The main persistent thread must register the goal and continue after verifying actual artifacts/processes.
 
+
+# Native distillation checkpoint: native2_review_required
+
+{"phase": "native2_review_required", "run": "/content/local_fast/lsdrag-head-v14/results/native_distillation_12b_20261015", "archive": "/content/drive/MyDrive/lsdrag-backups/20261015/native_distillation_12b_20261015/native2_review_required.tar.gz", "sha256": "3b9e11057d7179eb94b0ea8cd8f588b963f7be0f818aedb4f2dce70d37552b92", "updated_epoch": 1792078918.89331, "pid": 190865, "next": "Review targets and reader-size separation before teacher60/head training", "training_completed": false, "evaluation_completed": false}
+
