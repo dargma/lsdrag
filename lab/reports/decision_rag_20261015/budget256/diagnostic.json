@@ -1,0 +1,3089 @@
+{
+  "scope": "train diagnostic; no learned-head/test/latency superiority claim",
+  "expected_questions": 20,
+  "complete_requested_block": true,
+  "stage1_all20_complete": true,
+  "missing": [],
+  "policies": {
+    "native": {
+      "n": 20,
+      "em": 0.05,
+      "f1": 0.1115,
+      "tool_calls": 1.95,
+      "prompt_tokens": 11271.3,
+      "completion_tokens": 261.3,
+      "delivered_images": 2.75,
+      "observed_wall_seconds": 7.880670952699984,
+      "answer_format_valid": 11,
+      "observation_counts": {
+        "nonperfect_answer": 19,
+        "partial_support_document_access_or_unknown": 15,
+        "answer_format_invalid": 9,
+        "all_support_documents_read_but_nonperfect_answer_NOT_proof_of_sufficient_evidence": 3,
+        "no_annotated_support_document_encountered": 1
+      },
+      "cost_component_totals": {
+        "native_combined_prompt_tokens": 225426,
+        "native_combined_generated_tokens": 5226,
+        "native_combined_prefill_seconds": 19.82437405599967,
+        "native_combined_decode_seconds": 132.83622507100154
+      }
+    },
+    "generated": {
+      "n": 20,
+      "em": 0.05,
+      "f1": 0.1105,
+      "tool_calls": 3.6,
+      "prompt_tokens": 53233.75,
+      "completion_tokens": 254.1,
+      "delivered_images": 2.75,
+      "observed_wall_seconds": 12.05267257745004,
+      "answer_format_valid": 19,
+      "observation_counts": {
+        "nonperfect_answer": 19,
+        "partial_support_document_access_or_unknown": 15,
+        "all_support_documents_read_but_nonperfect_answer_NOT_proof_of_sufficient_evidence": 3,
+        "answer_format_invalid": 1,
+        "iteration_budget_reached": 2,
+        "no_annotated_support_document_encountered": 1
+      },
+      "cost_component_totals": {
+        "decision_prompt_tokens": 545143,
+        "decision_generated_tokens": 180,
+        "decision_prefill_seconds": 53.37267909499951,
+        "decision_decode_seconds": 2.3870995909996964,
+        "decision_head_seconds": 0.025192783998136292,
+        "arguments_prompt_tokens": 351872,
+        "arguments_generated_tokens": 2785,
+        "arguments_prefill_seconds": 32.63763943799904,
+        "arguments_decode_seconds": 68.07339487900026,
+        "final_prompt_tokens": 167660,
+        "final_generated_tokens": 2117,
+        "final_prefill_seconds": 18.02201733400034,
+        "final_decode_seconds": 56.79776252600004
+      }
+    },
+    "first_token": {
+      "n": 20,
+      "em": 0.05,
+      "f1": 0.1105,
+      "tool_calls": 3.6,
+      "prompt_tokens": 53233.75,
+      "completion_tokens": 245.1,
+      "delivered_images": 2.75,
+      "observed_wall_seconds": 11.937293346399974,
+      "answer_format_valid": 19,
+      "observation_counts": {
+        "nonperfect_answer": 19,
+        "partial_support_document_access_or_unknown": 15,
+        "all_support_documents_read_but_nonperfect_answer_NOT_proof_of_sufficient_evidence": 3,
+        "answer_format_invalid": 1,
+        "iteration_budget_reached": 2,
+        "no_annotated_support_document_encountered": 1
+      },
+      "cost_component_totals": {
+        "decision_prompt_tokens": 545143,
+        "decision_prefill_seconds": 53.39363748700089,
+        "decision_decode_seconds": 0.0004022600001007959,
+        "decision_head_seconds": 0.025127275998329424,
+        "arguments_prompt_tokens": 351872,
+        "arguments_generated_tokens": 2785,
+        "arguments_prefill_seconds": 32.65307371599965,
+        "arguments_decode_seconds": 68.09732073199984,
+        "final_prompt_tokens": 167660,
+        "final_generated_tokens": 2117,
+        "final_prefill_seconds": 18.023284091999813,
+        "final_decode_seconds": 56.817899825000495
+      }
+    }
+  },
+  "paired": {
+    "first_token_minus_generated": {
+      "n": 20,
+      "mean_f1_difference": 0.0,
+      "f1_wins": 0,
+      "f1_losses": 0
+    },
+    "first_token_minus_native": {
+      "n": 20,
+      "mean_f1_difference": -0.001000000000000006,
+      "f1_wins": 2,
+      "f1_losses": 4
+    }
+  },
+  "episodes": [
+    {
+      "qid": "bc16213fc3ba20631092dc66c700b1ea",
+      "policy": "native",
+      "em": 0.0,
+      "f1": 0.0,
+      "answer_format_valid": true,
+      "status": "ok",
+      "stop_reason": null,
+      "tool_calls": 1,
+      "tool_distribution": {
+        "keyword_search": 1
+      },
+      "repeated_exact_requests": 0,
+      "read_chunks": 1,
+      "delivered_images": 1,
+      "prompt_tokens": 5144,
+      "completion_tokens": 182,
+      "observed_wall_seconds": 4.834622280999611,
+      "cost_components": {
+        "native_combined_prompt_tokens": 5144,
+        "native_combined_generated_tokens": 182,
+        "native_combined_prefill_seconds": 0.3370388859993909,
+        "native_combined_decode_seconds": 4.32146717400019
+      },
+      "reader_errors": [],
+      "tool_errors": [],
+      "observations": [
+        "nonperfect_answer",
+        "partial_support_document_access_or_unknown"
+      ],
+      "support_document_count": 2,
+      "support_documents_read": 1,
+      "support_documents_retrieved": 1,
+      "support_documents_with_delivered_images": 1,
+      "question": "When did Kings Park Stadium host a tour advertised with a poster showing a woman with her hands in the air?",
+      "predicted_answers": [],
+      "reference_answers": [
+        "20 March 1997"
+      ]
+    },
+    {
+      "qid": "bc16213fc3ba20631092dc66c700b1ea",
+      "policy": "generated",
+      "em": 0.0,
+      "f1": 0.0,
+      "answer_format_valid": true,
+      "status": "ok",
+      "stop_reason": null,
+      "tool_calls": 4,
+      "tool_distribution": {
+        "semantic_search": 1,
+        "read_chunk": 1,
+        "image_search": 1,
+        "figure_read": 1
+      },
+      "repeated_exact_requests": 0,
+      "read_chunks": 3,
+      "delivered_images": 3,
+      "prompt_tokens": 61462,
+      "completion_tokens": 240,
+      "observed_wall_seconds": 13.22624339999993,
+      "cost_components": {
+        "decision_prompt_tokens": 31975,
+        "decision_generated_tokens": 10,
+        "decision_prefill_seconds": 3.357310014000177,
+        "decision_decode_seconds": 0.17783191100033946,
+        "decision_head_seconds": 0.013114140000197949,
+        "arguments_prompt_tokens": 21687,
+        "arguments_generated_tokens": 168,
+        "arguments_prefill_seconds": 2.1046941220001827,
+        "arguments_decode_seconds": 4.266884974000277,
+        "final_prompt_tokens": 7800,
+        "final_generated_tokens": 62,
+        "final_prefill_seconds": 0.7701761719999922,
+        "final_decode_seconds": 1.6495423419996769
+      },
+      "reader_errors": [],
+      "tool_errors": [],
+      "observations": [
+        "nonperfect_answer",
+        "partial_support_document_access_or_unknown"
+      ],
+      "support_document_count": 2,
+      "support_documents_read": 1,
+      "support_documents_retrieved": 1,
+      "support_documents_with_delivered_images": 1,
+      "question": "When did Kings Park Stadium host a tour advertised with a poster showing a woman with her hands in the air?",
+      "predicted_answers": [],
+      "reference_answers": [
+        "20 March 1997"
+      ]
+    },
+    {
+      "qid": "bc16213fc3ba20631092dc66c700b1ea",
+      "policy": "first_token",
+      "em": 0.0,
+      "f1": 0.0,
+      "answer_format_valid": true,
+      "status": "ok",
+      "stop_reason": null,
+      "tool_calls": 4,
+      "tool_distribution": {
+        "semantic_search": 1,
+        "read_chunk": 1,
+        "image_search": 1,
+        "figure_read": 1
+      },
+      "repeated_exact_requests": 0,
+      "read_chunks": 3,
+      "delivered_images": 3,
+      "prompt_tokens": 61462,
+      "completion_tokens": 230,
+      "observed_wall_seconds": 12.403639327000292,
+      "cost_components": {
+        "decision_prompt_tokens": 31975,
+        "decision_generated_tokens": 0,
+        "decision_prefill_seconds": 3.1066530229995806,
+        "decision_decode_seconds": 2.2260000605456298e-05,
+        "decision_head_seconds": 0.0006919200004631421,
+        "arguments_prompt_tokens": 21687,
+        "arguments_generated_tokens": 168,
+        "arguments_prefill_seconds": 2.09000417299967,
+        "arguments_decode_seconds": 4.219445677999829,
+        "final_prompt_tokens": 7800,
+        "final_generated_tokens": 62,
+        "final_prefill_seconds": 0.7692395809999653,
+        "final_decode_seconds": 1.6087828829995487
+      },
+      "reader_errors": [],
+      "tool_errors": [],
+      "observations": [
+        "nonperfect_answer",
+        "partial_support_document_access_or_unknown"
+      ],
+      "support_document_count": 2,
+      "support_documents_read": 1,
+      "support_documents_retrieved": 1,
+      "support_documents_with_delivered_images": 1,
+      "question": "When did Kings Park Stadium host a tour advertised with a poster showing a woman with her hands in the air?",
+      "predicted_answers": [],
+      "reference_answers": [
+        "20 March 1997"
+      ]
+    },
+    {
+      "qid": "e844b72274e56a3222e4a27b24cd623b",
+      "policy": "native",
+      "em": 0.0,
+      "f1": 0.67,
+      "answer_format_valid": true,
+      "status": "ok",
+      "stop_reason": null,
+      "tool_calls": 2,
+      "tool_distribution": {
+        "keyword_search": 1,
+        "semantic_search": 1
+      },
+      "repeated_exact_requests": 0,
+      "read_chunks": 3,
+      "delivered_images": 3,
+      "prompt_tokens": 11186,
+      "completion_tokens": 276,
+      "observed_wall_seconds": 8.308883918999982,
+      "cost_components": {
+        "native_combined_prompt_tokens": 11186,
+        "native_combined_generated_tokens": 276,
+        "native_combined_prefill_seconds": 0.9346096410004066,
+        "native_combined_decode_seconds": 7.020221026000399
+      },
+      "reader_errors": [],
+      "tool_errors": [],
+      "observations": [
+        "nonperfect_answer",
+        "partial_support_document_access_or_unknown"
+      ],
+      "support_document_count": 2,
+      "support_documents_read": 1,
+      "support_documents_retrieved": 2,
+      "support_documents_with_delivered_images": 1,
+      "question": "Which College(s), in Round one of 2005 CFL Draft, feature an eagle on their logo?",
+      "predicted_answers": [
+        "McMaster"
+      ],
+      "reference_answers": [
+        "McMaster Marauders"
+      ]
+    },
+    {
+      "qid": "e844b72274e56a3222e4a27b24cd623b",
+      "policy": "generated",
+      "em": 0.0,
+      "f1": 0.0,
+      "answer_format_valid": true,
+      "status": "ok",
+      "stop_reason": null,
+      "tool_calls": 2,
+      "tool_distribution": {
+        "keyword_search": 1,
+        "semantic_search": 1
+      },
+      "repeated_exact_requests": 0,
+      "read_chunks": 3,
+      "delivered_images": 3,
+      "prompt_tokens": 22071,
+      "completion_tokens": 202,
+      "observed_wall_seconds": 7.151729529000022,
+      "cost_components": {
+        "decision_prompt_tokens": 11770,
+        "decision_generated_tokens": 6,
+        "decision_prefill_seconds": 0.979434859000321,
+        "decision_decode_seconds": 0.07480750500008071,
+        "decision_head_seconds": 0.00042905999998765765,
+        "arguments_prompt_tokens": 3074,
+        "arguments_generated_tokens": 52,
+        "arguments_prefill_seconds": 0.15208317899987378,
+        "arguments_decode_seconds": 1.1624798369998643,
+        "final_prompt_tokens": 7227,
+        "final_generated_tokens": 144,
+        "final_prefill_seconds": 0.7175281790000554,
+        "final_decode_seconds": 3.717422832000011
+      },
+      "reader_errors": [],
+      "tool_errors": [],
+      "observations": [
+        "nonperfect_answer",
+        "partial_support_document_access_or_unknown"
+      ],
+      "support_document_count": 2,
+      "support_documents_read": 1,
+      "support_documents_retrieved": 2,
+      "support_documents_with_delivered_images": 1,
+      "question": "Which College(s), in Round one of 2005 CFL Draft, feature an eagle on their logo?",
+      "predicted_answers": [],
+      "reference_answers": [
+        "McMaster Marauders"
+      ]
+    },
+    {
+      "qid": "e844b72274e56a3222e4a27b24cd623b",
+      "policy": "first_token",
+      "em": 0.0,
+      "f1": 0.0,
+      "answer_format_valid": true,
+      "status": "ok",
+      "stop_reason": null,
+      "tool_calls": 2,
+      "tool_distribution": {
+        "keyword_search": 1,
+        "semantic_search": 1
+      },
+      "repeated_exact_requests": 0,
+      "read_chunks": 3,
+      "delivered_images": 3,
+      "prompt_tokens": 22071,
+      "completion_tokens": 196,
+      "observed_wall_seconds": 7.093674670999917,
+      "cost_components": {
+        "decision_prompt_tokens": 11770,
+        "decision_generated_tokens": 0,
+        "decision_prefill_seconds": 0.9791203290001249,
+        "decision_decode_seconds": 1.300000076298602e-05,
+        "decision_head_seconds": 0.00041953000027206144,
+        "arguments_prompt_tokens": 3074,
+        "arguments_generated_tokens": 52,
+        "arguments_prefill_seconds": 0.15210126900001342,
+        "arguments_decode_seconds": 1.175734096999804,
+        "final_prompt_tokens": 7227,
+        "final_generated_tokens": 144,
+        "final_prefill_seconds": 0.7175854890001574,
+        "final_decode_seconds": 3.7052913100001206
+      },
+      "reader_errors": [],
+      "tool_errors": [],
+      "observations": [
+        "nonperfect_answer",
+        "partial_support_document_access_or_unknown"
+      ],
+      "support_document_count": 2,
+      "support_documents_read": 1,
+      "support_documents_retrieved": 2,
+      "support_documents_with_delivered_images": 1,
+      "question": "Which College(s), in Round one of 2005 CFL Draft, feature an eagle on their logo?",
+      "predicted_answers": [],
+      "reference_answers": [
+        "McMaster Marauders"
+      ]
+    },
+    {
+      "qid": "731b4f179b2fc60b243a817835305705",
+      "policy": "native",
+      "em": 0.0,
+      "f1": 0.0,
+      "answer_format_valid": false,
+      "status": "ok",
+      "stop_reason": null,
+      "tool_calls": 1,
+      "tool_distribution": {
+        "keyword_search": 1
+      },
+      "repeated_exact_requests": 0,
+      "read_chunks": 2,
+      "delivered_images": 2,
+      "prompt_tokens": 7319,
+      "completion_tokens": 182,
+      "observed_wall_seconds": 5.247437997999896,
+      "cost_components": {
+        "native_combined_prompt_tokens": 7319,
+        "native_combined_generated_tokens": 182,
+        "native_combined_prefill_seconds": 0.5617445669995504,
+        "native_combined_decode_seconds": 4.541283133999968
+      },
+      "reader_errors": [],
+      "tool_errors": [],
+      "observations": [
+        "answer_format_invalid",
+        "nonperfect_answer",
+        "all_support_documents_read_but_nonperfect_answer_NOT_proof_of_sufficient_evidence"
+      ],
+      "support_document_count": 1,
+      "support_documents_read": 1,
+      "support_documents_retrieved": 1,
+      "support_documents_with_delivered_images": 1,
+      "question": "What was Christopher Bolduc's role in the Opera composed by Maurice Ravel?",
+      "predicted_answers": [],
+      "reference_answers": [
+        "Ramiro"
+      ]
+    },
+    {
+      "qid": "731b4f179b2fc60b243a817835305705",
+      "policy": "generated",
+      "em": 0.0,
+      "f1": 0.0,
+      "answer_format_valid": true,
+      "status": "ok",
+      "stop_reason": null,
+      "tool_calls": 3,
+      "tool_distribution": {
+        "keyword_search": 1,
+        "read_chunk": 1,
+        "semantic_search": 1
+      },
+      "repeated_exact_requests": 0,
+      "read_chunks": 5,
+      "delivered_images": 5,
+      "prompt_tokens": 48942,
+      "completion_tokens": 152,
+      "observed_wall_seconds": 9.235806709000371,
+      "cost_components": {
+        "decision_prompt_tokens": 25455,
+        "decision_generated_tokens": 8,
+        "decision_prefill_seconds": 2.5882726359996013,
+        "decision_decode_seconds": 0.10620124600018244,
+        "decision_head_seconds": 0.000714269999662065,
+        "arguments_prompt_tokens": 12615,
+        "arguments_generated_tokens": 94,
+        "arguments_prefill_seconds": 1.0147742489994016,
+        "arguments_decode_seconds": 2.257067879000715,
+        "final_prompt_tokens": 10872,
+        "final_generated_tokens": 50,
+        "final_prefill_seconds": 1.347333155999877,
+        "final_decode_seconds": 1.4046572610000112
+      },
+      "reader_errors": [],
+      "tool_errors": [],
+      "observations": [
+        "nonperfect_answer",
+        "all_support_documents_read_but_nonperfect_answer_NOT_proof_of_sufficient_evidence"
+      ],
+      "support_document_count": 1,
+      "support_documents_read": 1,
+      "support_documents_retrieved": 1,
+      "support_documents_with_delivered_images": 1,
+      "question": "What was Christopher Bolduc's role in the Opera composed by Maurice Ravel?",
+      "predicted_answers": [],
+      "reference_answers": [
+        "Ramiro"
+      ]
+    },
+    {
+      "qid": "731b4f179b2fc60b243a817835305705",
+      "policy": "first_token",
+      "em": 0.0,
+      "f1": 0.0,
+      "answer_format_valid": true,
+      "status": "ok",
+      "stop_reason": null,
+      "tool_calls": 3,
+      "tool_distribution": {
+        "keyword_search": 1,
+        "read_chunk": 1,
+        "semantic_search": 1
+      },
+      "repeated_exact_requests": 0,
+      "read_chunks": 5,
+      "delivered_images": 5,
+      "prompt_tokens": 48942,
+      "completion_tokens": 144,
+      "observed_wall_seconds": 9.74075300000004,
+      "cost_components": {
+        "decision_prompt_tokens": 25455,
+        "decision_generated_tokens": 0,
+        "decision_prefill_seconds": 2.8331584030006525,
+        "decision_decode_seconds": 2.1549999928538455e-05,
+        "decision_head_seconds": 0.01295798100045431,
+        "arguments_prompt_tokens": 12615,
+        "arguments_generated_tokens": 94,
+        "arguments_prefill_seconds": 1.0218650019996858,
+        "arguments_decode_seconds": 2.305803610000112,
+        "final_prompt_tokens": 10872,
+        "final_generated_tokens": 50,
+        "final_prefill_seconds": 1.3479533950003315,
+        "final_decode_seconds": 1.4434304110000085
+      },
+      "reader_errors": [],
+      "tool_errors": [],
+      "observations": [
+        "nonperfect_answer",
+        "all_support_documents_read_but_nonperfect_answer_NOT_proof_of_sufficient_evidence"
+      ],
+      "support_document_count": 1,
+      "support_documents_read": 1,
+      "support_documents_retrieved": 1,
+      "support_documents_with_delivered_images": 1,
+      "question": "What was Christopher Bolduc's role in the Opera composed by Maurice Ravel?",
+      "predicted_answers": [],
+      "reference_answers": [
+        "Ramiro"
+      ]
+    },
+    {
+      "qid": "7173374c77f1c27e397663c455501bba",
+      "policy": "native",
+      "em": 0.0,
+      "f1": 0.04,
+      "answer_format_valid": false,
+      "status": "truncated",
+      "stop_reason": null,
+      "tool_calls": 2,
+      "tool_distribution": {
+        "keyword_search": 1,
+        "semantic_search": 1
+      },
+      "repeated_exact_requests": 0,
+      "read_chunks": 4,
+      "delivered_images": 4,
+      "prompt_tokens": 11542,
+      "completion_tokens": 307,
+      "observed_wall_seconds": 9.392141990000255,
+      "cost_components": {
+        "native_combined_prompt_tokens": 11542,
+        "native_combined_generated_tokens": 307,
+        "native_combined_prefill_seconds": 1.1169002279998494,
+        "native_combined_decode_seconds": 8.052223927000341
+      },
+      "reader_errors": [],
+      "tool_errors": [],
+      "observations": [
+        "answer_format_invalid",
+        "nonperfect_answer",
+        "partial_support_document_access_or_unknown"
+      ],
+      "support_document_count": 4,
+      "support_documents_read": 3,
+      "support_documents_retrieved": 3,
+      "support_documents_with_delivered_images": 3,
+      "question": "There is a propeller on which of the aircrafts used by the Air Force of the Kampuchean Revolutionary Army?",
+      "predicted_answers": [
+        "```json\n{\n  \"answers\": [\n    \"The Mi-24 helicopter, which is shown in the provided figures, is an aircraft type that would have been used by the Air Force of the Kampuchean Revolutionary Army, as the Mi-24 is associated with the Vietnam People's Air Force, and the KRA had an Air Force.\"\n  ],\n  \"citations\": [\n    \"90f272b8e9b07a5a9ed260a135bad142:p17:b34:s0\",\n    \"90f272b8e9b07a5a9ed260a135bad142:p20:b33:s0\",\n    \"90f272b8e9b07a5a9ed260a135bad142:p20:f33\"\n  ],\n  \"reasoning\": \"The initial search for specific aircraft was unsuccessful. However, the retrieved image captions and figures show a Mil Mi-24 helicopter, which is identified as being used by"
+      ],
+      "reference_answers": [
+        "Bell UH-1 Iroquois",
+        "Mil Mi-24",
+        "Mil Mi-8"
+      ]
+    },
+    {
+      "qid": "7173374c77f1c27e397663c455501bba",
+      "policy": "generated",
+      "em": 0.0,
+      "f1": 0.0,
+      "answer_format_valid": false,
+      "status": "failed",
+      "stop_reason": null,
+      "tool_calls": 1,
+      "tool_distribution": {
+        "semantic_search": 1
+      },
+      "repeated_exact_requests": 0,
+      "read_chunks": 4,
+      "delivered_images": 4,
+      "prompt_tokens": 20158,
+      "completion_tokens": 291,
+      "observed_wall_seconds": 9.954633682000349,
+      "cost_components": {
+        "decision_prompt_tokens": 10593,
+        "decision_generated_tokens": 4,
+        "decision_prefill_seconds": 1.085662322000644,
+        "decision_decode_seconds": 0.05163051199997426,
+        "decision_head_seconds": 0.0003486390000944084,
+        "arguments_prompt_tokens": 1196,
+        "arguments_generated_tokens": 31,
+        "arguments_prefill_seconds": 0.062191273999815166,
+        "arguments_decode_seconds": 0.6954759619998185,
+        "final_prompt_tokens": 8369,
+        "final_generated_tokens": 256,
+        "final_prefill_seconds": 0.9514028720000169,
+        "final_decode_seconds": 6.879848540000239
+      },
+      "reader_errors": [
+        {
+          "error": "DirectOutputError: Invalid FINAL JSON; refusing tool dispatch: Unterminated string starting at: line 1 column 481 (char 480)",
+          "loop": 2
+        }
+      ],
+      "tool_errors": [],
+      "observations": [
+        "answer_format_invalid",
+        "nonperfect_answer",
+        "partial_support_document_access_or_unknown"
+      ],
+      "support_document_count": 4,
+      "support_documents_read": 3,
+      "support_documents_retrieved": 3,
+      "support_documents_with_delivered_images": 3,
+      "question": "There is a propeller on which of the aircrafts used by the Air Force of the Kampuchean Revolutionary Army?",
+      "predicted_answers": [],
+      "reference_answers": [
+        "Bell UH-1 Iroquois",
+        "Mil Mi-24",
+        "Mil Mi-8"
+      ]
+    },
+    {
+      "qid": "7173374c77f1c27e397663c455501bba",
+      "policy": "first_token",
+      "em": 0.0,
+      "f1": 0.0,
+      "answer_format_valid": false,
+      "status": "failed",
+      "stop_reason": null,
+      "tool_calls": 1,
+      "tool_distribution": {
+        "semantic_search": 1
+      },
+      "repeated_exact_requests": 0,
+      "read_chunks": 4,
+      "delivered_images": 4,
+      "prompt_tokens": 20158,
+      "completion_tokens": 287,
+      "observed_wall_seconds": 9.96814537299997,
+      "cost_components": {
+        "decision_prompt_tokens": 10593,
+        "decision_generated_tokens": 0,
+        "decision_prefill_seconds": 1.0870974469999055,
+        "decision_decode_seconds": 8.479999905830482e-06,
+        "decision_head_seconds": 0.00031739999940327834,
+        "arguments_prompt_tokens": 1196,
+        "arguments_generated_tokens": 31,
+        "arguments_prefill_seconds": 0.06246739100015475,
+        "arguments_decode_seconds": 0.6940610120000201,
+        "final_prompt_tokens": 8369,
+        "final_generated_tokens": 256,
+        "final_prefill_seconds": 0.9504859329999817,
+        "final_decode_seconds": 6.926635864999753
+      },
+      "reader_errors": [
+        {
+          "error": "DirectOutputError: Invalid FINAL JSON; refusing tool dispatch: Unterminated string starting at: line 1 column 481 (char 480)",
+          "loop": 2
+        }
+      ],
+      "tool_errors": [],
+      "observations": [
+        "answer_format_invalid",
+        "nonperfect_answer",
+        "partial_support_document_access_or_unknown"
+      ],
+      "support_document_count": 4,
+      "support_documents_read": 3,
+      "support_documents_retrieved": 3,
+      "support_documents_with_delivered_images": 3,
+      "question": "There is a propeller on which of the aircrafts used by the Air Force of the Kampuchean Revolutionary Army?",
+      "predicted_answers": [],
+      "reference_answers": [
+        "Bell UH-1 Iroquois",
+        "Mil Mi-24",
+        "Mil Mi-8"
+      ]
+    },
+    {
+      "qid": "6bcb669863a815a657e31077a2d0b008",
+      "policy": "native",
+      "em": 1.0,
+      "f1": 1.0,
+      "answer_format_valid": true,
+      "status": "ok",
+      "stop_reason": null,
+      "tool_calls": 4,
+      "tool_distribution": {
+        "keyword_search": 2,
+        "read_chunk": 1,
+        "semantic_search": 1
+      },
+      "repeated_exact_requests": 0,
+      "read_chunks": 3,
+      "delivered_images": 2,
+      "prompt_tokens": 17070,
+      "completion_tokens": 305,
+      "observed_wall_seconds": 8.906964761999916,
+      "cost_components": {
+        "native_combined_prompt_tokens": 17070,
+        "native_combined_generated_tokens": 305,
+        "native_combined_prefill_seconds": 1.11080208400017,
+        "native_combined_decode_seconds": 7.389810440999554
+      },
+      "reader_errors": [],
+      "tool_errors": [],
+      "observations": [],
+      "support_document_count": 1,
+      "support_documents_read": 1,
+      "support_documents_retrieved": 1,
+      "support_documents_with_delivered_images": 0,
+      "question": "During the 1974-75 WHA Season what leading goaltender with a save percentage of 89.1 was also on the Phoenix Roadrunners?",
+      "predicted_answers": [
+        "Jack Norris"
+      ],
+      "reference_answers": [
+        "Jack Norris"
+      ]
+    },
+    {
+      "qid": "6bcb669863a815a657e31077a2d0b008",
+      "policy": "generated",
+      "em": 1.0,
+      "f1": 1.0,
+      "answer_format_valid": true,
+      "status": "ok",
+      "stop_reason": null,
+      "tool_calls": 2,
+      "tool_distribution": {
+        "keyword_search": 1,
+        "read_chunk": 1
+      },
+      "repeated_exact_requests": 0,
+      "read_chunks": 1,
+      "delivered_images": 0,
+      "prompt_tokens": 13638,
+      "completion_tokens": 177,
+      "observed_wall_seconds": 4.830740965000132,
+      "cost_components": {
+        "decision_prompt_tokens": 7578,
+        "decision_generated_tokens": 6,
+        "decision_prefill_seconds": 0.37171365300036996,
+        "decision_decode_seconds": 0.07144499600053678,
+        "decision_head_seconds": 0.00036316000023361994,
+        "arguments_prompt_tokens": 3330,
+        "arguments_generated_tokens": 78,
+        "arguments_prefill_seconds": 0.16076564099967072,
+        "arguments_decode_seconds": 1.7545131340002627,
+        "final_prompt_tokens": 2730,
+        "final_generated_tokens": 93,
+        "final_prefill_seconds": 0.13059222299989415,
+        "final_decode_seconds": 2.1569896149999295
+      },
+      "reader_errors": [],
+      "tool_errors": [],
+      "observations": [],
+      "support_document_count": 1,
+      "support_documents_read": 1,
+      "support_documents_retrieved": 1,
+      "support_documents_with_delivered_images": 0,
+      "question": "During the 1974-75 WHA Season what leading goaltender with a save percentage of 89.1 was also on the Phoenix Roadrunners?",
+      "predicted_answers": [
+        "Jack Norris"
+      ],
+      "reference_answers": [
+        "Jack Norris"
+      ]
+    },
+    {
+      "qid": "6bcb669863a815a657e31077a2d0b008",
+      "policy": "first_token",
+      "em": 1.0,
+      "f1": 1.0,
+      "answer_format_valid": true,
+      "status": "ok",
+      "stop_reason": null,
+      "tool_calls": 2,
+      "tool_distribution": {
+        "keyword_search": 1,
+        "read_chunk": 1
+      },
+      "repeated_exact_requests": 0,
+      "read_chunks": 1,
+      "delivered_images": 0,
+      "prompt_tokens": 13638,
+      "completion_tokens": 171,
+      "observed_wall_seconds": 4.789914214999953,
+      "cost_components": {
+        "decision_prompt_tokens": 7578,
+        "decision_generated_tokens": 0,
+        "decision_prefill_seconds": 0.37181064299920763,
+        "decision_decode_seconds": 1.2860000424552709e-05,
+        "decision_head_seconds": 0.0003807200000665034,
+        "arguments_prompt_tokens": 3330,
+        "arguments_generated_tokens": 78,
+        "arguments_prefill_seconds": 0.1608932700000878,
+        "arguments_decode_seconds": 1.7730368300003647,
+        "final_prompt_tokens": 2730,
+        "final_generated_tokens": 93,
+        "final_prefill_seconds": 0.13064665299998524,
+        "final_decode_seconds": 2.166547307000201
+      },
+      "reader_errors": [],
+      "tool_errors": [],
+      "observations": [],
+      "support_document_count": 1,
+      "support_documents_read": 1,
+      "support_documents_retrieved": 1,
+      "support_documents_with_delivered_images": 0,
+      "question": "During the 1974-75 WHA Season what leading goaltender with a save percentage of 89.1 was also on the Phoenix Roadrunners?",
+      "predicted_answers": [
+        "Jack Norris"
+      ],
+      "reference_answers": [
+        "Jack Norris"
+      ]
+    },
+    {
+      "qid": "dc114a23d8280ff1a9ee32f34e51d8f5",
+      "policy": "native",
+      "em": 0.0,
+      "f1": 0.0,
+      "answer_format_valid": true,
+      "status": "ok",
+      "stop_reason": null,
+      "tool_calls": 1,
+      "tool_distribution": {
+        "keyword_search": 1
+      },
+      "repeated_exact_requests": 0,
+      "read_chunks": 1,
+      "delivered_images": 1,
+      "prompt_tokens": 5487,
+      "completion_tokens": 251,
+      "observed_wall_seconds": 6.481323596000038,
+      "cost_components": {
+        "native_combined_prompt_tokens": 5487,
+        "native_combined_generated_tokens": 251,
+        "native_combined_prefill_seconds": 0.35622188500019547,
+        "native_combined_decode_seconds": 5.987327653999728
+      },
+      "reader_errors": [],
+      "tool_errors": [],
+      "observations": [
+        "nonperfect_answer",
+        "partial_support_document_access_or_unknown"
+      ],
+      "support_document_count": 2,
+      "support_documents_read": 1,
+      "support_documents_retrieved": 1,
+      "support_documents_with_delivered_images": 1,
+      "question": "The writer of Carnival Music's number one song Angry All the Time has what object near their mouth?",
+      "predicted_answers": [
+        "The provided documents do not contain information about the writer of Carnival Music's number one song \"Angry All the Time\" or what object they have near their mouth."
+      ],
+      "reference_answers": [
+        "microphone"
+      ]
+    },
+    {
+      "qid": "dc114a23d8280ff1a9ee32f34e51d8f5",
+      "policy": "generated",
+      "em": 0.0,
+      "f1": 0.0,
+      "answer_format_valid": true,
+      "status": "ok",
+      "stop_reason": null,
+      "tool_calls": 4,
+      "tool_distribution": {
+        "keyword_search": 1,
+        "read_chunk": 1,
+        "semantic_search": 1,
+        "figure_read": 1
+      },
+      "repeated_exact_requests": 0,
+      "read_chunks": 4,
+      "delivered_images": 4,
+      "prompt_tokens": 59302,
+      "completion_tokens": 349,
+      "observed_wall_seconds": 15.58055029399975,
+      "cost_components": {
+        "decision_prompt_tokens": 30890,
+        "decision_generated_tokens": 10,
+        "decision_prefill_seconds": 3.0796695480007656,
+        "decision_decode_seconds": 0.12989630199990643,
+        "decision_head_seconds": 0.000675260000207345,
+        "arguments_prompt_tokens": 18289,
+        "arguments_generated_tokens": 253,
+        "arguments_prefill_seconds": 1.6791772500000661,
+        "arguments_decode_seconds": 6.501089252000384,
+        "final_prompt_tokens": 10123,
+        "final_generated_tokens": 86,
+        "final_prefill_seconds": 1.1760672850000446,
+        "final_decode_seconds": 2.423652336000032
+      },
+      "reader_errors": [],
+      "tool_errors": [],
+      "observations": [
+        "nonperfect_answer",
+        "partial_support_document_access_or_unknown"
+      ],
+      "support_document_count": 2,
+      "support_documents_read": 1,
+      "support_documents_retrieved": 2,
+      "support_documents_with_delivered_images": 1,
+      "question": "The writer of Carnival Music's number one song Angry All the Time has what object near their mouth?",
+      "predicted_answers": [],
+      "reference_answers": [
+        "microphone"
+      ]
+    },
+    {
+      "qid": "dc114a23d8280ff1a9ee32f34e51d8f5",
+      "policy": "first_token",
+      "em": 0.0,
+      "f1": 0.0,
+      "answer_format_valid": true,
+      "status": "ok",
+      "stop_reason": null,
+      "tool_calls": 4,
+      "tool_distribution": {
+        "keyword_search": 1,
+        "read_chunk": 1,
+        "semantic_search": 1,
+        "figure_read": 1
+      },
+      "repeated_exact_requests": 0,
+      "read_chunks": 4,
+      "delivered_images": 4,
+      "prompt_tokens": 59302,
+      "completion_tokens": 339,
+      "observed_wall_seconds": 15.36887034199981,
+      "cost_components": {
+        "decision_prompt_tokens": 30890,
+        "decision_generated_tokens": 0,
+        "decision_prefill_seconds": 3.078711337000186,
+        "decision_decode_seconds": 2.1600000309263123e-05,
+        "decision_head_seconds": 0.0006812699998590688,
+        "arguments_prompt_tokens": 18289,
+        "arguments_generated_tokens": 253,
+        "arguments_prefill_seconds": 1.6787069209999572,
+        "arguments_decode_seconds": 6.499050504000479,
+        "final_prompt_tokens": 10123,
+        "final_generated_tokens": 86,
+        "final_prefill_seconds": 1.1757405049997942,
+        "final_decode_seconds": 2.389834462000181
+      },
+      "reader_errors": [],
+      "tool_errors": [],
+      "observations": [
+        "nonperfect_answer",
+        "partial_support_document_access_or_unknown"
+      ],
+      "support_document_count": 2,
+      "support_documents_read": 1,
+      "support_documents_retrieved": 2,
+      "support_documents_with_delivered_images": 1,
+      "question": "The writer of Carnival Music's number one song Angry All the Time has what object near their mouth?",
+      "predicted_answers": [],
+      "reference_answers": [
+        "microphone"
+      ]
+    },
+    {
+      "qid": "5a1af970c006690d7a02a21ca81af9c3",
+      "policy": "native",
+      "em": 0.0,
+      "f1": 0.25,
+      "answer_format_valid": true,
+      "status": "ok",
+      "stop_reason": null,
+      "tool_calls": 2,
+      "tool_distribution": {
+        "keyword_search": 1,
+        "semantic_search": 1
+      },
+      "repeated_exact_requests": 0,
+      "read_chunks": 5,
+      "delivered_images": 5,
+      "prompt_tokens": 14149,
+      "completion_tokens": 312,
+      "observed_wall_seconds": 10.450012502999925,
+      "cost_components": {
+        "native_combined_prompt_tokens": 14149,
+        "native_combined_generated_tokens": 312,
+        "native_combined_prefill_seconds": 1.5393958350000503,
+        "native_combined_decode_seconds": 8.552544685000157
+      },
+      "reader_errors": [],
+      "tool_errors": [],
+      "observations": [
+        "nonperfect_answer",
+        "partial_support_document_access_or_unknown"
+      ],
+      "support_document_count": 3,
+      "support_documents_read": 2,
+      "support_documents_retrieved": 2,
+      "support_documents_with_delivered_images": 2,
+      "question": "Which religion/caste that features an upraised palm and has a SCs of 0.0% is part of the Jains of Caste system in India?",
+      "predicted_answers": [
+        "The image associated with Jainism features an upraised palm."
+      ],
+      "reference_answers": [
+        "Jainism"
+      ]
+    },
+    {
+      "qid": "5a1af970c006690d7a02a21ca81af9c3",
+      "policy": "generated",
+      "em": 0.0,
+      "f1": 0.0,
+      "answer_format_valid": true,
+      "status": "ok",
+      "stop_reason": null,
+      "tool_calls": 2,
+      "tool_distribution": {
+        "semantic_search": 1,
+        "read_chunk": 1
+      },
+      "repeated_exact_requests": 0,
+      "read_chunks": 5,
+      "delivered_images": 5,
+      "prompt_tokens": 46703,
+      "completion_tokens": 209,
+      "observed_wall_seconds": 11.760647146999872,
+      "cost_components": {
+        "decision_prompt_tokens": 24115,
+        "decision_generated_tokens": 6,
+        "decision_prefill_seconds": 2.906806806000077,
+        "decision_decode_seconds": 0.08290586799967059,
+        "decision_head_seconds": 0.0004282599998077785,
+        "arguments_prompt_tokens": 11819,
+        "arguments_generated_tokens": 75,
+        "arguments_prefill_seconds": 1.4027454860001853,
+        "arguments_decode_seconds": 1.9304475030003232,
+        "final_prompt_tokens": 10769,
+        "final_generated_tokens": 128,
+        "final_prefill_seconds": 1.3602890379997916,
+        "final_decode_seconds": 3.6352200050000647
+      },
+      "reader_errors": [],
+      "tool_errors": [],
+      "observations": [
+        "nonperfect_answer",
+        "partial_support_document_access_or_unknown"
+      ],
+      "support_document_count": 3,
+      "support_documents_read": 2,
+      "support_documents_retrieved": 2,
+      "support_documents_with_delivered_images": 2,
+      "question": "Which religion/caste that features an upraised palm and has a SCs of 0.0% is part of the Jains of Caste system in India?",
+      "predicted_answers": [],
+      "reference_answers": [
+        "Jainism"
+      ]
+    },
+    {
+      "qid": "5a1af970c006690d7a02a21ca81af9c3",
+      "policy": "first_token",
+      "em": 0.0,
+      "f1": 0.0,
+      "answer_format_valid": true,
+      "status": "ok",
+      "stop_reason": null,
+      "tool_calls": 2,
+      "tool_distribution": {
+        "semantic_search": 1,
+        "read_chunk": 1
+      },
+      "repeated_exact_requests": 0,
+      "read_chunks": 5,
+      "delivered_images": 5,
+      "prompt_tokens": 46703,
+      "completion_tokens": 203,
+      "observed_wall_seconds": 11.682513506000305,
+      "cost_components": {
+        "decision_prompt_tokens": 24115,
+        "decision_generated_tokens": 0,
+        "decision_prefill_seconds": 2.9079790050000156,
+        "decision_decode_seconds": 1.4589999864256242e-05,
+        "decision_head_seconds": 0.0006565399999090005,
+        "arguments_prompt_tokens": 11819,
+        "arguments_generated_tokens": 75,
+        "arguments_prefill_seconds": 1.4030166960001225,
+        "arguments_decode_seconds": 1.9288688850001563,
+        "final_prompt_tokens": 10769,
+        "final_generated_tokens": 128,
+        "final_prefill_seconds": 1.3611109670000587,
+        "final_decode_seconds": 3.6291553989999557
+      },
+      "reader_errors": [],
+      "tool_errors": [],
+      "observations": [
+        "nonperfect_answer",
+        "partial_support_document_access_or_unknown"
+      ],
+      "support_document_count": 3,
+      "support_documents_read": 2,
+      "support_documents_retrieved": 2,
+      "support_documents_with_delivered_images": 2,
+      "question": "Which religion/caste that features an upraised palm and has a SCs of 0.0% is part of the Jains of Caste system in India?",
+      "predicted_answers": [],
+      "reference_answers": [
+        "Jainism"
+      ]
+    },
+    {
+      "qid": "445bc5e02f240a4d151b30e9ec6dea80",
+      "policy": "native",
+      "em": 0.0,
+      "f1": 0.0,
+      "answer_format_valid": false,
+      "status": "truncated",
+      "stop_reason": null,
+      "tool_calls": 2,
+      "tool_distribution": {
+        "keyword_search": 1,
+        "semantic_search": 1
+      },
+      "repeated_exact_requests": 0,
+      "read_chunks": 3,
+      "delivered_images": 3,
+      "prompt_tokens": 11247,
+      "completion_tokens": 308,
+      "observed_wall_seconds": 9.123764879999726,
+      "cost_components": {
+        "native_combined_prompt_tokens": 11247,
+        "native_combined_generated_tokens": 308,
+        "native_combined_prefill_seconds": 0.9230446830001711,
+        "native_combined_decode_seconds": 7.857934251000188
+      },
+      "reader_errors": [],
+      "tool_errors": [],
+      "observations": [
+        "answer_format_invalid",
+        "nonperfect_answer",
+        "partial_support_document_access_or_unknown"
+      ],
+      "support_document_count": 2,
+      "support_documents_read": 0,
+      "support_documents_retrieved": 1,
+      "support_documents_with_delivered_images": 0,
+      "question": "For the Toppserien team in the location where there is a long pier in a horseshoe-shaped inlet, who was the manager in 2015?",
+      "predicted_answers": [
+        "```json\n{\n  \"answers\": [\n    \"The documents do not contain information linking the Toppserien team to a specific location described as having a long pier in a horseshoe-shaped inlet, nor do they provide the manager's name for that team in 2015.\"\n  ],\n  \"citations\": [\n    \"27cd80ebc57a3f505512b3f8c5ca74d8:p0:b5:s0\"\n  ],\n  \"reasoning\": \"The initial keyword search confirmed the existence of '2015 Toppserien' (Chunk 27cd80ebc57a3f505512b3f8c5ca74d8:p0:b5:s0). The semantic search for a location matching 'long pier in a horseshoe-shaped inlet' returned results related to Puget Sound and Olympia (Chunk 9472bc156b23e28f32fddd2522c4bf74:p2:b8:s0), and other unrelated locations/images."
+      ],
+      "reference_answers": [
+        "Margunn Haugenes"
+      ]
+    },
+    {
+      "qid": "445bc5e02f240a4d151b30e9ec6dea80",
+      "policy": "generated",
+      "em": 0.0,
+      "f1": 0.0,
+      "answer_format_valid": true,
+      "status": "ok",
+      "stop_reason": null,
+      "tool_calls": 4,
+      "tool_distribution": {
+        "semantic_search": 4
+      },
+      "repeated_exact_requests": 2,
+      "read_chunks": 3,
+      "delivered_images": 3,
+      "prompt_tokens": 63662,
+      "completion_tokens": 235,
+      "observed_wall_seconds": 12.827500243000031,
+      "cost_components": {
+        "decision_prompt_tokens": 33020,
+        "decision_generated_tokens": 10,
+        "decision_prefill_seconds": 3.1939185419996647,
+        "decision_decode_seconds": 0.13176943000007668,
+        "decision_head_seconds": 0.0010440800001561001,
+        "arguments_prompt_tokens": 21578,
+        "arguments_generated_tokens": 133,
+        "arguments_prefill_seconds": 2.028190251000524,
+        "arguments_decode_seconds": 3.2288953369998126,
+        "final_prompt_tokens": 9064,
+        "final_generated_tokens": 92,
+        "final_prefill_seconds": 0.9276664490002986,
+        "final_decode_seconds": 2.4897537870001543
+      },
+      "reader_errors": [],
+      "tool_errors": [],
+      "observations": [
+        "nonperfect_answer",
+        "partial_support_document_access_or_unknown"
+      ],
+      "support_document_count": 2,
+      "support_documents_read": 0,
+      "support_documents_retrieved": 1,
+      "support_documents_with_delivered_images": 0,
+      "question": "For the Toppserien team in the location where there is a long pier in a horseshoe-shaped inlet, who was the manager in 2015?",
+      "predicted_answers": [],
+      "reference_answers": [
+        "Margunn Haugenes"
+      ]
+    },
+    {
+      "qid": "445bc5e02f240a4d151b30e9ec6dea80",
+      "policy": "first_token",
+      "em": 0.0,
+      "f1": 0.0,
+      "answer_format_valid": true,
+      "status": "ok",
+      "stop_reason": null,
+      "tool_calls": 4,
+      "tool_distribution": {
+        "semantic_search": 4
+      },
+      "repeated_exact_requests": 2,
+      "read_chunks": 3,
+      "delivered_images": 3,
+      "prompt_tokens": 63662,
+      "completion_tokens": 225,
+      "observed_wall_seconds": 12.687943658000222,
+      "cost_components": {
+        "decision_prompt_tokens": 33020,
+        "decision_generated_tokens": 0,
+        "decision_prefill_seconds": 3.195766800999536,
+        "decision_decode_seconds": 2.4680000024090987e-05,
+        "decision_head_seconds": 0.0007158599996728299,
+        "arguments_prompt_tokens": 21578,
+        "arguments_generated_tokens": 133,
+        "arguments_prefill_seconds": 2.0299501879999298,
+        "arguments_decode_seconds": 3.231484745000671,
+        "final_prompt_tokens": 9064,
+        "final_generated_tokens": 92,
+        "final_prefill_seconds": 0.928108980000161,
+        "final_decode_seconds": 2.485890500000096
+      },
+      "reader_errors": [],
+      "tool_errors": [],
+      "observations": [
+        "nonperfect_answer",
+        "partial_support_document_access_or_unknown"
+      ],
+      "support_document_count": 2,
+      "support_documents_read": 0,
+      "support_documents_retrieved": 1,
+      "support_documents_with_delivered_images": 0,
+      "question": "For the Toppserien team in the location where there is a long pier in a horseshoe-shaped inlet, who was the manager in 2015?",
+      "predicted_answers": [],
+      "reference_answers": [
+        "Margunn Haugenes"
+      ]
+    },
+    {
+      "qid": "8a71c3dc7cfeeeb4229f5d0f029b745a",
+      "policy": "native",
+      "em": 0.0,
+      "f1": 0.18,
+      "answer_format_valid": false,
+      "status": "truncated",
+      "stop_reason": null,
+      "tool_calls": 6,
+      "tool_distribution": {
+        "keyword_search": 2,
+        "semantic_search": 1,
+        "read_chunk": 1,
+        "image_search": 1,
+        "figure_read": 1
+      },
+      "repeated_exact_requests": 0,
+      "read_chunks": 6,
+      "delivered_images": 5,
+      "prompt_tokens": 43552,
+      "completion_tokens": 472,
+      "observed_wall_seconds": 18.006297078999978,
+      "cost_components": {
+        "native_combined_prompt_tokens": 43552,
+        "native_combined_generated_tokens": 472,
+        "native_combined_prefill_seconds": 4.490370177999921,
+        "native_combined_decode_seconds": 12.851579575000414
+      },
+      "reader_errors": [],
+      "tool_errors": [],
+      "observations": [
+        "answer_format_invalid",
+        "nonperfect_answer",
+        "all_support_documents_read_but_nonperfect_answer_NOT_proof_of_sufficient_evidence"
+      ],
+      "support_document_count": 2,
+      "support_documents_read": 2,
+      "support_documents_retrieved": 2,
+      "support_documents_with_delivered_images": 2,
+      "question": "Which film in John Boorman's partial filmography has an earlier year:  Hell in the Pacific or the film with a poster featuring a sword?",
+      "predicted_answers": [
+        "{\n\"answers\": [\n\"Hell in the Pacific (1968) has an earlier year than Excalibur (1981).\"\n],\n\"citations\": [\n\"1fdeca15bd9f8dbcb5758c78eef90d0d:p5:b12:s0\",\n\"550ac14ee1ccf29bc1503576c75d45d4:p0:b11:s0\"\n],\n\"reasoning\": \"The film 'Hell in the Pacific' is listed in John Boorman's filmography with a year of 1968 (Chunk 1fdeca15bd9f8dbcb5758c78eef90d0d:p5:b12:s0). The film with a poster featuring a sword is identified as 'Excalibur' (Chunk 550ac14ee1ccf29bc1503576c75d45d4:p0:b11:s0), and its year is listed as"
+      ],
+      "reference_answers": [
+        "Hell in the Pacific"
+      ]
+    },
+    {
+      "qid": "8a71c3dc7cfeeeb4229f5d0f029b745a",
+      "policy": "generated",
+      "em": 0.0,
+      "f1": 0.86,
+      "answer_format_valid": true,
+      "status": "ok",
+      "stop_reason": null,
+      "tool_calls": 3,
+      "tool_distribution": {
+        "keyword_search": 1,
+        "read_chunk": 1,
+        "semantic_search": 1
+      },
+      "repeated_exact_requests": 0,
+      "read_chunks": 3,
+      "delivered_images": 2,
+      "prompt_tokens": 27118,
+      "completion_tokens": 285,
+      "observed_wall_seconds": 9.005427928000245,
+      "cost_components": {
+        "decision_prompt_tokens": 14543,
+        "decision_generated_tokens": 8,
+        "decision_prefill_seconds": 0.9782931030003965,
+        "decision_decode_seconds": 0.09867431499969825,
+        "decision_head_seconds": 0.0005886590001864533,
+        "arguments_prompt_tokens": 6136,
+        "arguments_generated_tokens": 91,
+        "arguments_prefill_seconds": 0.2948981399999866,
+        "arguments_decode_seconds": 2.0512126030002946,
+        "final_prompt_tokens": 6439,
+        "final_generated_tokens": 186,
+        "final_prefill_seconds": 0.5501276710001548,
+        "final_decode_seconds": 4.683650373999626
+      },
+      "reader_errors": [],
+      "tool_errors": [],
+      "observations": [
+        "nonperfect_answer",
+        "all_support_documents_read_but_nonperfect_answer_NOT_proof_of_sufficient_evidence"
+      ],
+      "support_document_count": 2,
+      "support_documents_read": 2,
+      "support_documents_retrieved": 2,
+      "support_documents_with_delivered_images": 1,
+      "question": "Which film in John Boorman's partial filmography has an earlier year:  Hell in the Pacific or the film with a poster featuring a sword?",
+      "predicted_answers": [
+        "Hell in the Pacific (1968)"
+      ],
+      "reference_answers": [
+        "Hell in the Pacific"
+      ]
+    },
+    {
+      "qid": "8a71c3dc7cfeeeb4229f5d0f029b745a",
+      "policy": "first_token",
+      "em": 0.0,
+      "f1": 0.86,
+      "answer_format_valid": true,
+      "status": "ok",
+      "stop_reason": null,
+      "tool_calls": 3,
+      "tool_distribution": {
+        "keyword_search": 1,
+        "read_chunk": 1,
+        "semantic_search": 1
+      },
+      "repeated_exact_requests": 0,
+      "read_chunks": 3,
+      "delivered_images": 2,
+      "prompt_tokens": 27118,
+      "completion_tokens": 277,
+      "observed_wall_seconds": 8.896676548999949,
+      "cost_components": {
+        "decision_prompt_tokens": 14543,
+        "decision_generated_tokens": 0,
+        "decision_prefill_seconds": 0.9781832519997806,
+        "decision_decode_seconds": 1.7189999653055565e-05,
+        "decision_head_seconds": 0.0004923100000269187,
+        "arguments_prompt_tokens": 6136,
+        "arguments_generated_tokens": 91,
+        "arguments_prefill_seconds": 0.29471532899970043,
+        "arguments_decode_seconds": 2.03934786399941,
+        "final_prompt_tokens": 6439,
+        "final_generated_tokens": 186,
+        "final_prefill_seconds": 0.5499615609996908,
+        "final_decode_seconds": 4.703824079000242
+      },
+      "reader_errors": [],
+      "tool_errors": [],
+      "observations": [
+        "nonperfect_answer",
+        "all_support_documents_read_but_nonperfect_answer_NOT_proof_of_sufficient_evidence"
+      ],
+      "support_document_count": 2,
+      "support_documents_read": 2,
+      "support_documents_retrieved": 2,
+      "support_documents_with_delivered_images": 1,
+      "question": "Which film in John Boorman's partial filmography has an earlier year:  Hell in the Pacific or the film with a poster featuring a sword?",
+      "predicted_answers": [
+        "Hell in the Pacific (1968)"
+      ],
+      "reference_answers": [
+        "Hell in the Pacific"
+      ]
+    },
+    {
+      "qid": "3a9b9f0151fcb257ba37a8bdb79eb837",
+      "policy": "native",
+      "em": 0.0,
+      "f1": 0.0,
+      "answer_format_valid": false,
+      "status": "truncated",
+      "stop_reason": null,
+      "tool_calls": 2,
+      "tool_distribution": {
+        "keyword_search": 1,
+        "semantic_search": 1
+      },
+      "repeated_exact_requests": 0,
+      "read_chunks": 4,
+      "delivered_images": 4,
+      "prompt_tokens": 11133,
+      "completion_tokens": 303,
+      "observed_wall_seconds": 9.20463294000001,
+      "cost_components": {
+        "native_combined_prompt_tokens": 11133,
+        "native_combined_generated_tokens": 303,
+        "native_combined_prefill_seconds": 1.062183770000047,
+        "native_combined_decode_seconds": 7.872934090000399
+      },
+      "reader_errors": [],
+      "tool_errors": [],
+      "observations": [
+        "answer_format_invalid",
+        "nonperfect_answer",
+        "partial_support_document_access_or_unknown"
+      ],
+      "support_document_count": 2,
+      "support_documents_read": 1,
+      "support_documents_retrieved": 1,
+      "support_documents_with_delivered_images": 1,
+      "question": "Is the national park in the Barpeta district of northeast India named after the river",
+      "predicted_answers": [
+        "```json\n{\n  \"answers\": [\n    \"Manas National Park is located in the Chirang and Baksa Districts, Assam, which is in Northeastern India, and it is associated with the Manas River.\"\n  ],\n  \"citations\": [\n    \"1018506863e4cc3eaec5022795977c32:p1:b7:s0\",\n    \"1018506863e4cc3eaec5022795977c32:p0:b17:s0\"\n  ],\n  \"reasoning\": \"The search results indicate that Manas National Park is located in the Chirang and Baksa Districts of Assam, Northeastern India, and that the Manas River passes through the heart of the national park. While the text does not explicitly state that the park is *named* after the river, it is strongly associated with it, and the map (Figure 1018506863e4cc3eaec5022795977c32:p1:f7"
+      ],
+      "reference_answers": [
+        "yes"
+      ]
+    },
+    {
+      "qid": "3a9b9f0151fcb257ba37a8bdb79eb837",
+      "policy": "generated",
+      "em": 0.0,
+      "f1": 0.0,
+      "answer_format_valid": true,
+      "status": "ok",
+      "stop_reason": null,
+      "tool_calls": 2,
+      "tool_distribution": {
+        "keyword_search": 1,
+        "read_chunk": 1
+      },
+      "repeated_exact_requests": 0,
+      "read_chunks": 3,
+      "delivered_images": 1,
+      "prompt_tokens": 21012,
+      "completion_tokens": 174,
+      "observed_wall_seconds": 5.662811565000084,
+      "cost_components": {
+        "decision_prompt_tokens": 11265,
+        "decision_generated_tokens": 6,
+        "decision_prefill_seconds": 0.7684203689996139,
+        "decision_decode_seconds": 0.07365485599939348,
+        "decision_head_seconds": 0.0003962989994761301,
+        "arguments_prompt_tokens": 4896,
+        "arguments_generated_tokens": 108,
+        "arguments_prefill_seconds": 0.32632963700007167,
+        "arguments_decode_seconds": 2.512816470999951,
+        "final_prompt_tokens": 4851,
+        "final_generated_tokens": 60,
+        "final_prefill_seconds": 0.3486201609998716,
+        "final_decode_seconds": 1.43562066100003
+      },
+      "reader_errors": [],
+      "tool_errors": [],
+      "observations": [
+        "nonperfect_answer",
+        "all_support_documents_read_but_nonperfect_answer_NOT_proof_of_sufficient_evidence"
+      ],
+      "support_document_count": 2,
+      "support_documents_read": 2,
+      "support_documents_retrieved": 2,
+      "support_documents_with_delivered_images": 1,
+      "question": "Is the national park in the Barpeta district of northeast India named after the river",
+      "predicted_answers": [],
+      "reference_answers": [
+        "yes"
+      ]
+    },
+    {
+      "qid": "3a9b9f0151fcb257ba37a8bdb79eb837",
+      "policy": "first_token",
+      "em": 0.0,
+      "f1": 0.0,
+      "answer_format_valid": true,
+      "status": "ok",
+      "stop_reason": null,
+      "tool_calls": 2,
+      "tool_distribution": {
+        "keyword_search": 1,
+        "read_chunk": 1
+      },
+      "repeated_exact_requests": 0,
+      "read_chunks": 3,
+      "delivered_images": 1,
+      "prompt_tokens": 21012,
+      "completion_tokens": 168,
+      "observed_wall_seconds": 5.600251431999823,
+      "cost_components": {
+        "decision_prompt_tokens": 11265,
+        "decision_generated_tokens": 0,
+        "decision_prefill_seconds": 0.767984620000334,
+        "decision_decode_seconds": 1.2819999938074034e-05,
+        "decision_head_seconds": 0.00036543899977914407,
+        "arguments_prompt_tokens": 4896,
+        "arguments_generated_tokens": 108,
+        "arguments_prefill_seconds": 0.3262909669997498,
+        "arguments_decode_seconds": 2.5180477649996647,
+        "final_prompt_tokens": 4851,
+        "final_generated_tokens": 60,
+        "final_prefill_seconds": 0.3483874010003092,
+        "final_decode_seconds": 1.4391969289999906
+      },
+      "reader_errors": [],
+      "tool_errors": [],
+      "observations": [
+        "nonperfect_answer",
+        "all_support_documents_read_but_nonperfect_answer_NOT_proof_of_sufficient_evidence"
+      ],
+      "support_document_count": 2,
+      "support_documents_read": 2,
+      "support_documents_retrieved": 2,
+      "support_documents_with_delivered_images": 1,
+      "question": "Is the national park in the Barpeta district of northeast India named after the river",
+      "predicted_answers": [],
+      "reference_answers": [
+        "yes"
+      ]
+    },
+    {
+      "qid": "3439f1db325d7d971d0a6111723d066c",
+      "policy": "native",
+      "em": 0.0,
+      "f1": 0.0,
+      "answer_format_valid": true,
+      "status": "ok",
+      "stop_reason": null,
+      "tool_calls": 2,
+      "tool_distribution": {
+        "keyword_search": 1,
+        "semantic_search": 1
+      },
+      "repeated_exact_requests": 0,
+      "read_chunks": 2,
+      "delivered_images": 2,
+      "prompt_tokens": 9508,
+      "completion_tokens": 308,
+      "observed_wall_seconds": 8.455886727000234,
+      "cost_components": {
+        "native_combined_prompt_tokens": 9508,
+        "native_combined_generated_tokens": 308,
+        "native_combined_prefill_seconds": 0.658606919000249,
+        "native_combined_decode_seconds": 7.52503378999927
+      },
+      "reader_errors": [],
+      "tool_errors": [],
+      "observations": [
+        "nonperfect_answer",
+        "partial_support_document_access_or_unknown"
+      ],
+      "support_document_count": 2,
+      "support_documents_read": 1,
+      "support_documents_retrieved": 2,
+      "support_documents_with_delivered_images": 1,
+      "question": "During the first round of 2005's CFL Draft, which player was chosen from a college whose logo features an eagle?",
+      "predicted_answers": [
+        "The provided documents do not specify which player was chosen in the first round of the 2005 CFL Draft from a college whose logo features an eagle."
+      ],
+      "reference_answers": [
+        "Jesse Lumsden",
+        "Matt O'Meara"
+      ]
+    },
+    {
+      "qid": "3439f1db325d7d971d0a6111723d066c",
+      "policy": "generated",
+      "em": 0.0,
+      "f1": 0.0,
+      "answer_format_valid": true,
+      "status": "ok",
+      "stop_reason": null,
+      "tool_calls": 4,
+      "tool_distribution": {
+        "keyword_search": 1,
+        "semantic_search": 1,
+        "read_chunk": 2
+      },
+      "repeated_exact_requests": 1,
+      "read_chunks": 2,
+      "delivered_images": 2,
+      "prompt_tokens": 43797,
+      "completion_tokens": 235,
+      "observed_wall_seconds": 9.428448673000275,
+      "cost_components": {
+        "decision_prompt_tokens": 23132,
+        "decision_generated_tokens": 10,
+        "decision_prefill_seconds": 1.8354833739999776,
+        "decision_decode_seconds": 0.12387577700019392,
+        "decision_head_seconds": 0.0006341699995573435,
+        "arguments_prompt_tokens": 14628,
+        "arguments_generated_tokens": 150,
+        "arguments_prefill_seconds": 1.1257351330000347,
+        "arguments_decode_seconds": 3.5228900480001357,
+        "final_prompt_tokens": 6037,
+        "final_generated_tokens": 75,
+        "final_prefill_seconds": 0.5241333590001886,
+        "final_decode_seconds": 1.84441373799973
+      },
+      "reader_errors": [],
+      "tool_errors": [],
+      "observations": [
+        "nonperfect_answer",
+        "partial_support_document_access_or_unknown"
+      ],
+      "support_document_count": 2,
+      "support_documents_read": 1,
+      "support_documents_retrieved": 2,
+      "support_documents_with_delivered_images": 1,
+      "question": "During the first round of 2005's CFL Draft, which player was chosen from a college whose logo features an eagle?",
+      "predicted_answers": [],
+      "reference_answers": [
+        "Jesse Lumsden",
+        "Matt O'Meara"
+      ]
+    },
+    {
+      "qid": "3439f1db325d7d971d0a6111723d066c",
+      "policy": "first_token",
+      "em": 0.0,
+      "f1": 0.0,
+      "answer_format_valid": true,
+      "status": "ok",
+      "stop_reason": null,
+      "tool_calls": 4,
+      "tool_distribution": {
+        "keyword_search": 1,
+        "semantic_search": 1,
+        "read_chunk": 2
+      },
+      "repeated_exact_requests": 1,
+      "read_chunks": 2,
+      "delivered_images": 2,
+      "prompt_tokens": 43797,
+      "completion_tokens": 225,
+      "observed_wall_seconds": 9.308541911999782,
+      "cost_components": {
+        "decision_prompt_tokens": 23132,
+        "decision_generated_tokens": 0,
+        "decision_prefill_seconds": 1.8350561229999585,
+        "decision_decode_seconds": 2.1769999875687063e-05,
+        "decision_head_seconds": 0.0006476799999290961,
+        "arguments_prompt_tokens": 14628,
+        "arguments_generated_tokens": 150,
+        "arguments_prefill_seconds": 1.125673402999837,
+        "arguments_decode_seconds": 3.5285378439998567,
+        "final_prompt_tokens": 6037,
+        "final_generated_tokens": 75,
+        "final_prefill_seconds": 0.5238685310000619,
+        "final_decode_seconds": 1.8464018149998083
+      },
+      "reader_errors": [],
+      "tool_errors": [],
+      "observations": [
+        "nonperfect_answer",
+        "partial_support_document_access_or_unknown"
+      ],
+      "support_document_count": 2,
+      "support_documents_read": 1,
+      "support_documents_retrieved": 2,
+      "support_documents_with_delivered_images": 1,
+      "question": "During the first round of 2005's CFL Draft, which player was chosen from a college whose logo features an eagle?",
+      "predicted_answers": [],
+      "reference_answers": [
+        "Jesse Lumsden",
+        "Matt O'Meara"
+      ]
+    },
+    {
+      "qid": "ee9320e184758afe302643832e4b0759",
+      "policy": "native",
+      "em": 0.0,
+      "f1": 0.0,
+      "answer_format_valid": true,
+      "status": "ok",
+      "stop_reason": null,
+      "tool_calls": 2,
+      "tool_distribution": {
+        "keyword_search": 1,
+        "semantic_search": 1
+      },
+      "repeated_exact_requests": 0,
+      "read_chunks": 4,
+      "delivered_images": 4,
+      "prompt_tokens": 11911,
+      "completion_tokens": 271,
+      "observed_wall_seconds": 8.480981577999955,
+      "cost_components": {
+        "native_combined_prompt_tokens": 11911,
+        "native_combined_generated_tokens": 271,
+        "native_combined_prefill_seconds": 1.144399147999593,
+        "native_combined_decode_seconds": 7.081118998999955
+      },
+      "reader_errors": [],
+      "tool_errors": [],
+      "observations": [
+        "nonperfect_answer",
+        "partial_support_document_access_or_unknown"
+      ],
+      "support_document_count": 2,
+      "support_documents_read": 1,
+      "support_documents_retrieved": 1,
+      "support_documents_with_delivered_images": 1,
+      "question": "Does Alan Alda's 1980 Golden Globe nominated work have signs pointing in multiple directions?",
+      "predicted_answers": [
+        "The provided documents mention that Alan Alda has won six Golden Globe Awards, but they do not specify a 1980 Golden Globe nominated work that has signs pointing in multiple directions."
+      ],
+      "reference_answers": [
+        "yes"
+      ]
+    },
+    {
+      "qid": "ee9320e184758afe302643832e4b0759",
+      "policy": "generated",
+      "em": 0.0,
+      "f1": 0.0,
+      "answer_format_valid": true,
+      "status": "ok",
+      "stop_reason": null,
+      "tool_calls": 1,
+      "tool_distribution": {
+        "semantic_search": 1
+      },
+      "repeated_exact_requests": 0,
+      "read_chunks": 4,
+      "delivered_images": 4,
+      "prompt_tokens": 20490,
+      "completion_tokens": 101,
+      "observed_wall_seconds": 4.878460149000148,
+      "cost_components": {
+        "decision_prompt_tokens": 10759,
+        "decision_generated_tokens": 4,
+        "decision_prefill_seconds": 1.1231721240001207,
+        "decision_decode_seconds": 0.05085441099936361,
+        "decision_head_seconds": 0.0002582900001470989,
+        "arguments_prompt_tokens": 1195,
+        "arguments_generated_tokens": 31,
+        "arguments_prefill_seconds": 0.06207697299987558,
+        "arguments_decode_seconds": 0.6876332090000687,
+        "final_prompt_tokens": 8536,
+        "final_generated_tokens": 66,
+        "final_prefill_seconds": 0.9586683970001104,
+        "final_decode_seconds": 1.7459375100002035
+      },
+      "reader_errors": [],
+      "tool_errors": [],
+      "observations": [
+        "nonperfect_answer",
+        "partial_support_document_access_or_unknown"
+      ],
+      "support_document_count": 2,
+      "support_documents_read": 1,
+      "support_documents_retrieved": 1,
+      "support_documents_with_delivered_images": 1,
+      "question": "Does Alan Alda's 1980 Golden Globe nominated work have signs pointing in multiple directions?",
+      "predicted_answers": [],
+      "reference_answers": [
+        "yes"
+      ]
+    },
+    {
+      "qid": "ee9320e184758afe302643832e4b0759",
+      "policy": "first_token",
+      "em": 0.0,
+      "f1": 0.0,
+      "answer_format_valid": true,
+      "status": "ok",
+      "stop_reason": null,
+      "tool_calls": 1,
+      "tool_distribution": {
+        "semantic_search": 1
+      },
+      "repeated_exact_requests": 0,
+      "read_chunks": 4,
+      "delivered_images": 4,
+      "prompt_tokens": 20490,
+      "completion_tokens": 97,
+      "observed_wall_seconds": 4.843624064999858,
+      "cost_components": {
+        "decision_prompt_tokens": 10759,
+        "decision_generated_tokens": 0,
+        "decision_prefill_seconds": 1.123732273999849,
+        "decision_decode_seconds": 8.099999831756577e-06,
+        "decision_head_seconds": 0.00023839999994379468,
+        "arguments_prompt_tokens": 1195,
+        "arguments_generated_tokens": 31,
+        "arguments_prefill_seconds": 0.06211011400000643,
+        "arguments_decode_seconds": 0.6858528900002057,
+        "final_prompt_tokens": 8536,
+        "final_generated_tokens": 66,
+        "final_prefill_seconds": 0.958837026999845,
+        "final_decode_seconds": 1.7458415300002343
+      },
+      "reader_errors": [],
+      "tool_errors": [],
+      "observations": [
+        "nonperfect_answer",
+        "partial_support_document_access_or_unknown"
+      ],
+      "support_document_count": 2,
+      "support_documents_read": 1,
+      "support_documents_retrieved": 1,
+      "support_documents_with_delivered_images": 1,
+      "question": "Does Alan Alda's 1980 Golden Globe nominated work have signs pointing in multiple directions?",
+      "predicted_answers": [],
+      "reference_answers": [
+        "yes"
+      ]
+    },
+    {
+      "qid": "216a2a29a0f50d34054cd318a25a2f5f",
+      "policy": "native",
+      "em": 0.0,
+      "f1": 0.0,
+      "answer_format_valid": true,
+      "status": "ok",
+      "stop_reason": null,
+      "tool_calls": 1,
+      "tool_distribution": {
+        "keyword_search": 1
+      },
+      "repeated_exact_requests": 0,
+      "read_chunks": 2,
+      "delivered_images": 2,
+      "prompt_tokens": 6701,
+      "completion_tokens": 145,
+      "observed_wall_seconds": 4.123869265999929,
+      "cost_components": {
+        "native_combined_prompt_tokens": 6701,
+        "native_combined_generated_tokens": 145,
+        "native_combined_prefill_seconds": 0.5090948200004277,
+        "native_combined_decode_seconds": 3.461854515000141
+      },
+      "reader_errors": [],
+      "tool_errors": [],
+      "observations": [
+        "nonperfect_answer",
+        "partial_support_document_access_or_unknown"
+      ],
+      "support_document_count": 2,
+      "support_documents_read": 1,
+      "support_documents_retrieved": 1,
+      "support_documents_with_delivered_images": 1,
+      "question": "The film Christian Manon worked on that has a title poster that features a pickup truck was released when?",
+      "predicted_answers": [],
+      "reference_answers": [
+        "1983"
+      ]
+    },
+    {
+      "qid": "216a2a29a0f50d34054cd318a25a2f5f",
+      "policy": "generated",
+      "em": 0.0,
+      "f1": 0.0,
+      "answer_format_valid": true,
+      "status": "ok",
+      "stop_reason": null,
+      "tool_calls": 3,
+      "tool_distribution": {
+        "semantic_search": 1,
+        "read_chunk": 2
+      },
+      "repeated_exact_requests": 1,
+      "read_chunks": 3,
+      "delivered_images": 3,
+      "prompt_tokens": 43864,
+      "completion_tokens": 198,
+      "observed_wall_seconds": 9.452683385,
+      "cost_components": {
+        "decision_prompt_tokens": 22945,
+        "decision_generated_tokens": 8,
+        "decision_prefill_seconds": 2.193879976999142,
+        "decision_decode_seconds": 0.10151931400059766,
+        "decision_head_seconds": 0.0005103600001348241,
+        "arguments_prompt_tokens": 14165,
+        "arguments_generated_tokens": 115,
+        "arguments_prefill_seconds": 1.3374708549999923,
+        "arguments_decode_seconds": 2.774806864999391,
+        "final_prompt_tokens": 6754,
+        "final_generated_tokens": 75,
+        "final_prefill_seconds": 0.6738273780001691,
+        "final_decode_seconds": 1.8888663239999914
+      },
+      "reader_errors": [],
+      "tool_errors": [],
+      "observations": [
+        "nonperfect_answer",
+        "partial_support_document_access_or_unknown"
+      ],
+      "support_document_count": 2,
+      "support_documents_read": 1,
+      "support_documents_retrieved": 2,
+      "support_documents_with_delivered_images": 1,
+      "question": "The film Christian Manon worked on that has a title poster that features a pickup truck was released when?",
+      "predicted_answers": [],
+      "reference_answers": [
+        "1983"
+      ]
+    },
+    {
+      "qid": "216a2a29a0f50d34054cd318a25a2f5f",
+      "policy": "first_token",
+      "em": 0.0,
+      "f1": 0.0,
+      "answer_format_valid": true,
+      "status": "ok",
+      "stop_reason": null,
+      "tool_calls": 3,
+      "tool_distribution": {
+        "semantic_search": 1,
+        "read_chunk": 2
+      },
+      "repeated_exact_requests": 1,
+      "read_chunks": 3,
+      "delivered_images": 3,
+      "prompt_tokens": 43864,
+      "completion_tokens": 190,
+      "observed_wall_seconds": 9.299582081999688,
+      "cost_components": {
+        "decision_prompt_tokens": 22945,
+        "decision_generated_tokens": 0,
+        "decision_prefill_seconds": 2.1943727080006283,
+        "decision_decode_seconds": 1.736999956847285e-05,
+        "decision_head_seconds": 0.000490060000174708,
+        "arguments_prompt_tokens": 14165,
+        "arguments_generated_tokens": 115,
+        "arguments_prefill_seconds": 1.3381597940006031,
+        "arguments_decode_seconds": 2.777724520999982,
+        "final_prompt_tokens": 6754,
+        "final_generated_tokens": 75,
+        "final_prefill_seconds": 0.6738621919998877,
+        "final_decode_seconds": 1.888379538999743
+      },
+      "reader_errors": [],
+      "tool_errors": [],
+      "observations": [
+        "nonperfect_answer",
+        "partial_support_document_access_or_unknown"
+      ],
+      "support_document_count": 2,
+      "support_documents_read": 1,
+      "support_documents_retrieved": 2,
+      "support_documents_with_delivered_images": 1,
+      "question": "The film Christian Manon worked on that has a title poster that features a pickup truck was released when?",
+      "predicted_answers": [],
+      "reference_answers": [
+        "1983"
+      ]
+    },
+    {
+      "qid": "0494ecbb270911ec2d3240709480f2e4",
+      "policy": "native",
+      "em": 0.0,
+      "f1": 0.03,
+      "answer_format_valid": false,
+      "status": "truncated",
+      "stop_reason": null,
+      "tool_calls": 2,
+      "tool_distribution": {
+        "keyword_search": 1,
+        "semantic_search": 1
+      },
+      "repeated_exact_requests": 0,
+      "read_chunks": 5,
+      "delivered_images": 5,
+      "prompt_tokens": 12636,
+      "completion_tokens": 299,
+      "observed_wall_seconds": 9.690369380999982,
+      "cost_components": {
+        "native_combined_prompt_tokens": 12636,
+        "native_combined_generated_tokens": 299,
+        "native_combined_prefill_seconds": 1.347224363999885,
+        "native_combined_decode_seconds": 8.06487802599986
+      },
+      "reader_errors": [],
+      "tool_errors": [],
+      "observations": [
+        "answer_format_invalid",
+        "nonperfect_answer",
+        "partial_support_document_access_or_unknown"
+      ],
+      "support_document_count": 2,
+      "support_documents_read": 1,
+      "support_documents_retrieved": 1,
+      "support_documents_with_delivered_images": 1,
+      "question": "Which city in the list of principal cities of Franche-Comte has a lower urban area:  Pontarlier or the city with multiple fountains at the base of a statue?",
+      "predicted_answers": [
+        "The user is asking to compare the urban area of two cities in Franche-Comté: Pontarlier and \"the city with multiple fountains at the base of a statue.\"\n\n1.  **Identify Principal Cities:** The initial search identified the principal cities as Besançon, Belfort, and Montbéliard (Chunk `0a6ee9b684c7f4c9d2fdc6193066aff0:p0:b16:s0`). Pontarlier is not explicitly listed among the principal cities in the retrieved text.\n2.  **Identify the Second City:** I need to find a city in Franche-Comté that matches the description \"the city with multiple fountains at the base of a statue.\" None of the provided image captions or text snippets explicitly describe a city with \"multiple fountains at the base of a statue.\"\n3.  **Compare Urban Areas:** Since I cannot definitively identify the second city based on the description, and the document does not contain urban area data for the listed cities, I cannot perform the comparison.\n\nTherefore, the evidence is insufficient to answer the question.\n\n```json\n{\n  \"answers\": [],\n  \"citations\": [],\n  \"reasoning"
+      ],
+      "reference_answers": [
+        "Pontarlier"
+      ]
+    },
+    {
+      "qid": "0494ecbb270911ec2d3240709480f2e4",
+      "policy": "generated",
+      "em": 0.0,
+      "f1": 0.0,
+      "answer_format_valid": true,
+      "status": "ok",
+      "stop_reason": null,
+      "tool_calls": 7,
+      "tool_distribution": {
+        "semantic_search": 7
+      },
+      "repeated_exact_requests": 4,
+      "read_chunks": 6,
+      "delivered_images": 6,
+      "prompt_tokens": 220688,
+      "completion_tokens": 351,
+      "observed_wall_seconds": 43.83921978999979,
+      "cost_components": {
+        "decision_prompt_tokens": 112208,
+        "decision_generated_tokens": 16,
+        "decision_prefill_seconds": 15.817490324999653,
+        "decision_decode_seconds": 0.25383186200042474,
+        "decision_head_seconds": 0.0012295589990571898,
+        "arguments_prompt_tokens": 88418,
+        "arguments_generated_tokens": 230,
+        "arguments_prefill_seconds": 12.22156900500022,
+        "arguments_decode_seconds": 6.817315914999654,
+        "final_prompt_tokens": 20062,
+        "final_generated_tokens": 105,
+        "final_prefill_seconds": 3.0308213029998115,
+        "final_decode_seconds": 3.7189100929999768
+      },
+      "reader_errors": [],
+      "tool_errors": [],
+      "observations": [
+        "nonperfect_answer",
+        "partial_support_document_access_or_unknown"
+      ],
+      "support_document_count": 2,
+      "support_documents_read": 1,
+      "support_documents_retrieved": 1,
+      "support_documents_with_delivered_images": 1,
+      "question": "Which city in the list of principal cities of Franche-Comte has a lower urban area:  Pontarlier or the city with multiple fountains at the base of a statue?",
+      "predicted_answers": [],
+      "reference_answers": [
+        "Pontarlier"
+      ]
+    },
+    {
+      "qid": "0494ecbb270911ec2d3240709480f2e4",
+      "policy": "first_token",
+      "em": 0.0,
+      "f1": 0.0,
+      "answer_format_valid": true,
+      "status": "ok",
+      "stop_reason": null,
+      "tool_calls": 7,
+      "tool_distribution": {
+        "semantic_search": 7
+      },
+      "repeated_exact_requests": 4,
+      "read_chunks": 6,
+      "delivered_images": 6,
+      "prompt_tokens": 220688,
+      "completion_tokens": 335,
+      "observed_wall_seconds": 43.605980762999934,
+      "cost_components": {
+        "decision_prompt_tokens": 112208,
+        "decision_generated_tokens": 0,
+        "decision_prefill_seconds": 15.846386283000811,
+        "decision_decode_seconds": 3.9569998989463784e-05,
+        "decision_head_seconds": 0.0014945799989618536,
+        "arguments_prompt_tokens": 88418,
+        "arguments_generated_tokens": 230,
+        "arguments_prefill_seconds": 12.242636940000466,
+        "arguments_decode_seconds": 6.82590647600091,
+        "final_prompt_tokens": 20062,
+        "final_generated_tokens": 105,
+        "final_prefill_seconds": 3.0336722709998867,
+        "final_decode_seconds": 3.723880798999744
+      },
+      "reader_errors": [],
+      "tool_errors": [],
+      "observations": [
+        "nonperfect_answer",
+        "partial_support_document_access_or_unknown"
+      ],
+      "support_document_count": 2,
+      "support_documents_read": 1,
+      "support_documents_retrieved": 1,
+      "support_documents_with_delivered_images": 1,
+      "question": "Which city in the list of principal cities of Franche-Comte has a lower urban area:  Pontarlier or the city with multiple fountains at the base of a statue?",
+      "predicted_answers": [],
+      "reference_answers": [
+        "Pontarlier"
+      ]
+    },
+    {
+      "qid": "b6a62e8b1c1cb1587d75b0af4e1ae981",
+      "policy": "native",
+      "em": 0.0,
+      "f1": 0.0,
+      "answer_format_valid": true,
+      "status": "ok",
+      "stop_reason": null,
+      "tool_calls": 2,
+      "tool_distribution": {
+        "image_search": 1,
+        "figure_read": 1
+      },
+      "repeated_exact_requests": 0,
+      "read_chunks": 1,
+      "delivered_images": 1,
+      "prompt_tokens": 8247,
+      "completion_tokens": 179,
+      "observed_wall_seconds": 4.735729676000119,
+      "cost_components": {
+        "native_combined_prompt_tokens": 8247,
+        "native_combined_generated_tokens": 179,
+        "native_combined_prefill_seconds": 0.4970517399997334,
+        "native_combined_decode_seconds": 4.18353463800031
+      },
+      "reader_errors": [],
+      "tool_errors": [],
+      "observations": [
+        "nonperfect_answer",
+        "partial_support_document_access_or_unknown"
+      ],
+      "support_document_count": 2,
+      "support_documents_read": 1,
+      "support_documents_retrieved": 1,
+      "support_documents_with_delivered_images": 1,
+      "question": "What facial expression is Reba McEntire making?",
+      "predicted_answers": [
+        "Reba McEntire is making a smiling facial expression."
+      ],
+      "reference_answers": [
+        "smile"
+      ]
+    },
+    {
+      "qid": "b6a62e8b1c1cb1587d75b0af4e1ae981",
+      "policy": "generated",
+      "em": 0.0,
+      "f1": 0.0,
+      "answer_format_valid": true,
+      "status": "ok",
+      "stop_reason": null,
+      "tool_calls": 2,
+      "tool_distribution": {
+        "image_search": 1,
+        "figure_read": 1
+      },
+      "repeated_exact_requests": 0,
+      "read_chunks": 1,
+      "delivered_images": 1,
+      "prompt_tokens": 16131,
+      "completion_tokens": 155,
+      "observed_wall_seconds": 4.576442220999979,
+      "cost_components": {
+        "decision_prompt_tokens": 8835,
+        "decision_generated_tokens": 6,
+        "decision_prefill_seconds": 0.521322840999801,
+        "decision_decode_seconds": 0.07172634400012612,
+        "decision_head_seconds": 0.00034668999978748616,
+        "arguments_prompt_tokens": 3487,
+        "arguments_generated_tokens": 70,
+        "arguments_prefill_seconds": 0.1808542479998323,
+        "arguments_decode_seconds": 1.5797184800003379,
+        "final_prompt_tokens": 3809,
+        "final_generated_tokens": 79,
+        "final_prefill_seconds": 0.27615129300011176,
+        "final_decode_seconds": 1.8635796490002576
+      },
+      "reader_errors": [],
+      "tool_errors": [],
+      "observations": [
+        "nonperfect_answer",
+        "partial_support_document_access_or_unknown"
+      ],
+      "support_document_count": 2,
+      "support_documents_read": 1,
+      "support_documents_retrieved": 1,
+      "support_documents_with_delivered_images": 1,
+      "question": "What facial expression is Reba McEntire making?",
+      "predicted_answers": [
+        "Reba McEntire is making a smiling facial expression."
+      ],
+      "reference_answers": [
+        "smile"
+      ]
+    },
+    {
+      "qid": "b6a62e8b1c1cb1587d75b0af4e1ae981",
+      "policy": "first_token",
+      "em": 0.0,
+      "f1": 0.0,
+      "answer_format_valid": true,
+      "status": "ok",
+      "stop_reason": null,
+      "tool_calls": 2,
+      "tool_distribution": {
+        "image_search": 1,
+        "figure_read": 1
+      },
+      "repeated_exact_requests": 0,
+      "read_chunks": 1,
+      "delivered_images": 1,
+      "prompt_tokens": 16131,
+      "completion_tokens": 149,
+      "observed_wall_seconds": 4.503024338999694,
+      "cost_components": {
+        "decision_prompt_tokens": 8835,
+        "decision_generated_tokens": 0,
+        "decision_prefill_seconds": 0.5212883409999449,
+        "decision_decode_seconds": 1.2659999811148737e-05,
+        "decision_head_seconds": 0.0003726900004039635,
+        "arguments_prompt_tokens": 3487,
+        "arguments_generated_tokens": 70,
+        "arguments_prefill_seconds": 0.18075857799976802,
+        "arguments_decode_seconds": 1.575900434000232,
+        "final_prompt_tokens": 3809,
+        "final_generated_tokens": 79,
+        "final_prefill_seconds": 0.2761133939998217,
+        "final_decode_seconds": 1.866259416000048
+      },
+      "reader_errors": [],
+      "tool_errors": [],
+      "observations": [
+        "nonperfect_answer",
+        "partial_support_document_access_or_unknown"
+      ],
+      "support_document_count": 2,
+      "support_documents_read": 1,
+      "support_documents_retrieved": 1,
+      "support_documents_with_delivered_images": 1,
+      "question": "What facial expression is Reba McEntire making?",
+      "predicted_answers": [
+        "Reba McEntire is making a smiling facial expression."
+      ],
+      "reference_answers": [
+        "smile"
+      ]
+    },
+    {
+      "qid": "58c230238b7da1509064f8924522d0d0",
+      "policy": "native",
+      "em": 0.0,
+      "f1": 0.0,
+      "answer_format_valid": false,
+      "status": "truncated",
+      "stop_reason": null,
+      "tool_calls": 2,
+      "tool_distribution": {
+        "keyword_search": 1,
+        "semantic_search": 1
+      },
+      "repeated_exact_requests": 0,
+      "read_chunks": 3,
+      "delivered_images": 3,
+      "prompt_tokens": 10084,
+      "completion_tokens": 307,
+      "observed_wall_seconds": 8.879708905999905,
+      "cost_components": {
+        "native_combined_prompt_tokens": 10084,
+        "native_combined_generated_tokens": 307,
+        "native_combined_prefill_seconds": 0.8442417669998576,
+        "native_combined_decode_seconds": 7.762587793000421
+      },
+      "reader_errors": [],
+      "tool_errors": [],
+      "observations": [
+        "answer_format_invalid",
+        "nonperfect_answer",
+        "partial_support_document_access_or_unknown"
+      ],
+      "support_document_count": 2,
+      "support_documents_read": 1,
+      "support_documents_retrieved": 1,
+      "support_documents_with_delivered_images": 1,
+      "question": "The writer of the number one song in 2002 published by Carnival music has what object near his mouth?",
+      "predicted_answers": [
+        "```json\n{\n  \"answers\": [\n    \"The provided documents do not contain information linking a specific writer of a number one song in 2002 published by Carnival Music to an object near their mouth.\"\n  ],\n  \"citations\": [\n    \"96c05fabd826640e4f98277f8a7df782:p0:b26:s0\",\n    \"96c05fabd826640e4f98277f8a7df782:p1:b0:s0\",\n    \"c9c97cbc77353164913fcf9082ec76d9:p5:b1:s0\"\n  ],\n  \"reasoning\": \"The initial search for 'Carnival music 2002' yielded no results. Subsequent semantic search provided information about Carnival Music and some song/artist data, but none specifically identifies the writer of a number one song in 2002. The retrieved figures show a logo for Carnival Music, a musician with a"
+      ],
+      "reference_answers": [
+        "microphone"
+      ]
+    },
+    {
+      "qid": "58c230238b7da1509064f8924522d0d0",
+      "policy": "generated",
+      "em": 0.0,
+      "f1": 0.0,
+      "answer_format_valid": true,
+      "status": "ok",
+      "stop_reason": null,
+      "tool_calls": 5,
+      "tool_distribution": {
+        "keyword_search": 1,
+        "read_chunk": 1,
+        "image_search": 1,
+        "figure_read": 1,
+        "semantic_search": 1
+      },
+      "repeated_exact_requests": 0,
+      "read_chunks": 5,
+      "delivered_images": 5,
+      "prompt_tokens": 69903,
+      "completion_tokens": 330,
+      "observed_wall_seconds": 15.42493442299974,
+      "cost_components": {
+        "decision_prompt_tokens": 36416,
+        "decision_generated_tokens": 12,
+        "decision_prefill_seconds": 3.4103281949996926,
+        "decision_decode_seconds": 0.15452327999992121,
+        "decision_head_seconds": 0.0007858400003897259,
+        "arguments_prompt_tokens": 21107,
+        "arguments_generated_tokens": 219,
+        "arguments_prefill_seconds": 1.5816920399997798,
+        "arguments_decode_seconds": 5.182694563999576,
+        "final_prompt_tokens": 12380,
+        "final_generated_tokens": 99,
+        "final_prefill_seconds": 1.585743327000273,
+        "final_decode_seconds": 2.92419537700016
+      },
+      "reader_errors": [],
+      "tool_errors": [],
+      "observations": [
+        "nonperfect_answer",
+        "partial_support_document_access_or_unknown"
+      ],
+      "support_document_count": 2,
+      "support_documents_read": 1,
+      "support_documents_retrieved": 1,
+      "support_documents_with_delivered_images": 1,
+      "question": "The writer of the number one song in 2002 published by Carnival music has what object near his mouth?",
+      "predicted_answers": [],
+      "reference_answers": [
+        "microphone"
+      ]
+    },
+    {
+      "qid": "58c230238b7da1509064f8924522d0d0",
+      "policy": "first_token",
+      "em": 0.0,
+      "f1": 0.0,
+      "answer_format_valid": true,
+      "status": "ok",
+      "stop_reason": null,
+      "tool_calls": 5,
+      "tool_distribution": {
+        "keyword_search": 1,
+        "read_chunk": 1,
+        "image_search": 1,
+        "figure_read": 1,
+        "semantic_search": 1
+      },
+      "repeated_exact_requests": 0,
+      "read_chunks": 5,
+      "delivered_images": 5,
+      "prompt_tokens": 69903,
+      "completion_tokens": 318,
+      "observed_wall_seconds": 15.334564343999773,
+      "cost_components": {
+        "decision_prompt_tokens": 36416,
+        "decision_generated_tokens": 0,
+        "decision_prefill_seconds": 3.407695048000278,
+        "decision_decode_seconds": 2.6189999971393263e-05,
+        "decision_head_seconds": 0.000853969999752735,
+        "arguments_prompt_tokens": 21107,
+        "arguments_generated_tokens": 219,
+        "arguments_prefill_seconds": 1.581100829999741,
+        "arguments_decode_seconds": 5.170831835999252,
+        "final_prompt_tokens": 12380,
+        "final_generated_tokens": 99,
+        "final_prefill_seconds": 1.5849786369999492,
+        "final_decode_seconds": 2.9239357370001926
+      },
+      "reader_errors": [],
+      "tool_errors": [],
+      "observations": [
+        "nonperfect_answer",
+        "partial_support_document_access_or_unknown"
+      ],
+      "support_document_count": 2,
+      "support_documents_read": 1,
+      "support_documents_retrieved": 1,
+      "support_documents_with_delivered_images": 1,
+      "question": "The writer of the number one song in 2002 published by Carnival music has what object near his mouth?",
+      "predicted_answers": [],
+      "reference_answers": [
+        "microphone"
+      ]
+    },
+    {
+      "qid": "1fb8350bf0c31954296712889c72635a",
+      "policy": "native",
+      "em": 0.0,
+      "f1": 0.0,
+      "answer_format_valid": true,
+      "status": "ok",
+      "stop_reason": null,
+      "tool_calls": 2,
+      "tool_distribution": {
+        "keyword_search": 1,
+        "semantic_search": 1
+      },
+      "repeated_exact_requests": 0,
+      "read_chunks": 4,
+      "delivered_images": 4,
+      "prompt_tokens": 11809,
+      "completion_tokens": 210,
+      "observed_wall_seconds": 6.893678063000152,
+      "cost_components": {
+        "native_combined_prompt_tokens": 11809,
+        "native_combined_generated_tokens": 210,
+        "native_combined_prefill_seconds": 1.1461120220001249,
+        "native_combined_decode_seconds": 5.487453796000409
+      },
+      "reader_errors": [],
+      "tool_errors": [],
+      "observations": [
+        "nonperfect_answer",
+        "partial_support_document_access_or_unknown"
+      ],
+      "support_document_count": 2,
+      "support_documents_read": 1,
+      "support_documents_retrieved": 1,
+      "support_documents_with_delivered_images": 1,
+      "question": "What kind of shoes is Alessandro Pezzatini wearing?",
+      "predicted_answers": [
+        "The provided images do not clearly show the type of shoes Alessandro Pezzatini is wearing."
+      ],
+      "reference_answers": [
+        "sneakers"
+      ]
+    },
+    {
+      "qid": "1fb8350bf0c31954296712889c72635a",
+      "policy": "generated",
+      "em": 0.0,
+      "f1": 0.0,
+      "answer_format_valid": true,
+      "status": "ok",
+      "stop_reason": "max_loops",
+      "tool_calls": 8,
+      "tool_distribution": {
+        "image_search": 8
+      },
+      "repeated_exact_requests": 5,
+      "read_chunks": 0,
+      "delivered_images": 0,
+      "prompt_tokens": 85534,
+      "completion_tokens": 249,
+      "observed_wall_seconds": 11.336361160000251,
+      "cost_components": {
+        "decision_prompt_tokens": 40203,
+        "decision_generated_tokens": 16,
+        "decision_prefill_seconds": 2.4747246079991783,
+        "decision_decode_seconds": 0.20137791299976016,
+        "decision_head_seconds": 0.0010692589989957924,
+        "arguments_prompt_tokens": 36595,
+        "arguments_generated_tokens": 164,
+        "arguments_prefill_seconds": 2.1840271389996815,
+        "arguments_decode_seconds": 3.7888698779997867,
+        "final_prompt_tokens": 8736,
+        "final_generated_tokens": 69,
+        "final_prefill_seconds": 0.633992102999855,
+        "final_decode_seconds": 1.8421859850000146
+      },
+      "reader_errors": [],
+      "tool_errors": [],
+      "observations": [
+        "iteration_budget_reached",
+        "nonperfect_answer",
+        "no_annotated_support_document_encountered"
+      ],
+      "support_document_count": 2,
+      "support_documents_read": 0,
+      "support_documents_retrieved": 0,
+      "support_documents_with_delivered_images": 0,
+      "question": "What kind of shoes is Alessandro Pezzatini wearing?",
+      "predicted_answers": [],
+      "reference_answers": [
+        "sneakers"
+      ]
+    },
+    {
+      "qid": "1fb8350bf0c31954296712889c72635a",
+      "policy": "first_token",
+      "em": 0.0,
+      "f1": 0.0,
+      "answer_format_valid": true,
+      "status": "ok",
+      "stop_reason": "max_loops",
+      "tool_calls": 8,
+      "tool_distribution": {
+        "image_search": 8
+      },
+      "repeated_exact_requests": 5,
+      "read_chunks": 0,
+      "delivered_images": 0,
+      "prompt_tokens": 85534,
+      "completion_tokens": 233,
+      "observed_wall_seconds": 11.159811748000266,
+      "cost_components": {
+        "decision_prompt_tokens": 40203,
+        "decision_generated_tokens": 0,
+        "decision_prefill_seconds": 2.4752256690007925,
+        "decision_decode_seconds": 3.409999999348656e-05,
+        "decision_head_seconds": 0.0011193179998372216,
+        "arguments_prompt_tokens": 36595,
+        "arguments_generated_tokens": 164,
+        "arguments_prefill_seconds": 2.1846240079999006,
+        "arguments_decode_seconds": 3.7949426439986382,
+        "final_prompt_tokens": 8736,
+        "final_generated_tokens": 69,
+        "final_prefill_seconds": 0.6342417119999482,
+        "final_decode_seconds": 1.8412300060003872
+      },
+      "reader_errors": [],
+      "tool_errors": [],
+      "observations": [
+        "iteration_budget_reached",
+        "nonperfect_answer",
+        "no_annotated_support_document_encountered"
+      ],
+      "support_document_count": 2,
+      "support_documents_read": 0,
+      "support_documents_retrieved": 0,
+      "support_documents_with_delivered_images": 0,
+      "question": "What kind of shoes is Alessandro Pezzatini wearing?",
+      "predicted_answers": [],
+      "reference_answers": [
+        "sneakers"
+      ]
+    },
+    {
+      "qid": "d50ba0f57869f462efde83fc1d22a634",
+      "policy": "native",
+      "em": 0.0,
+      "f1": 0.0,
+      "answer_format_valid": false,
+      "status": "truncated",
+      "stop_reason": null,
+      "tool_calls": 2,
+      "tool_distribution": {
+        "keyword_search": 1,
+        "semantic_search": 1
+      },
+      "repeated_exact_requests": 0,
+      "read_chunks": 3,
+      "delivered_images": 3,
+      "prompt_tokens": 9745,
+      "completion_tokens": 325,
+      "observed_wall_seconds": 9.10998627500021,
+      "cost_components": {
+        "native_combined_prompt_tokens": 9745,
+        "native_combined_generated_tokens": 325,
+        "native_combined_prefill_seconds": 0.8175788480002666,
+        "native_combined_decode_seconds": 8.112446878000355
+      },
+      "reader_errors": [],
+      "tool_errors": [],
+      "observations": [
+        "answer_format_invalid",
+        "nonperfect_answer",
+        "all_support_documents_read_but_nonperfect_answer_NOT_proof_of_sufficient_evidence"
+      ],
+      "support_document_count": 2,
+      "support_documents_read": 2,
+      "support_documents_retrieved": 2,
+      "support_documents_with_delivered_images": 2,
+      "question": "The 1:30.438 2007 Lexmark Indy 300 qualifier has what on top of head?",
+      "predicted_answers": [
+        "```json\n{\n  \"answers\": [\n    \"The provided documents and images do not contain information about what is on top of the head of the driver in the 1:30.438 2007 Lexmark Indy 300 qualifier.\"\n  ],\n  \"citations\": [\n    \"d8dd7790f9f952dec9e4fe4a3b7b8140:p0:b18:s0\",\n    \"d8dd7790f9f952dec9e4fe4a3b7b8140:p1:b1:s0\",\n    \"d8dd7790f9f952dec9e4fe4a3b7b8140:p3:b6:s0\"\n  ],\n  \"reasoning\": \"The initial keyword and semantic searches for '1:30.438 2007 Lexmark Indy 300 qualifier' returned context about the 2007 Lexmark Indy 300 and race results, but no specific image or"
+      ],
+      "reference_answers": [
+        "cap"
+      ]
+    },
+    {
+      "qid": "d50ba0f57869f462efde83fc1d22a634",
+      "policy": "generated",
+      "em": 0.0,
+      "f1": 0.0,
+      "answer_format_valid": true,
+      "status": "ok",
+      "stop_reason": "max_loops",
+      "tool_calls": 8,
+      "tool_distribution": {
+        "image_search": 8
+      },
+      "repeated_exact_requests": 5,
+      "read_chunks": 0,
+      "delivered_images": 0,
+      "prompt_tokens": 89651,
+      "completion_tokens": 624,
+      "observed_wall_seconds": 21.23723105499994,
+      "cost_components": {
+        "decision_prompt_tokens": 41963,
+        "decision_generated_tokens": 16,
+        "decision_prefill_seconds": 2.6343847229995845,
+        "decision_decode_seconds": 0.20235241099999257,
+        "decision_head_seconds": 0.0011463000000730972,
+        "arguments_prompt_tokens": 38355,
+        "arguments_generated_tokens": 521,
+        "arguments_prefill_seconds": 2.34928730799993,
+        "arguments_decode_seconds": 12.646845982000286,
+        "final_prompt_tokens": 9333,
+        "final_generated_tokens": 87,
+        "final_prefill_seconds": 0.7218759140000657,
+        "final_decode_seconds": 2.365450575000068
+      },
+      "reader_errors": [],
+      "tool_errors": [],
+      "observations": [
+        "iteration_budget_reached",
+        "nonperfect_answer",
+        "partial_support_document_access_or_unknown"
+      ],
+      "support_document_count": 2,
+      "support_documents_read": 0,
+      "support_documents_retrieved": 1,
+      "support_documents_with_delivered_images": 0,
+      "question": "The 1:30.438 2007 Lexmark Indy 300 qualifier has what on top of head?",
+      "predicted_answers": [],
+      "reference_answers": [
+        "cap"
+      ]
+    },
+    {
+      "qid": "d50ba0f57869f462efde83fc1d22a634",
+      "policy": "first_token",
+      "em": 0.0,
+      "f1": 0.0,
+      "answer_format_valid": true,
+      "status": "ok",
+      "stop_reason": "max_loops",
+      "tool_calls": 8,
+      "tool_distribution": {
+        "image_search": 8
+      },
+      "repeated_exact_requests": 5,
+      "read_chunks": 0,
+      "delivered_images": 0,
+      "prompt_tokens": 89651,
+      "completion_tokens": 608,
+      "observed_wall_seconds": 20.934921992,
+      "cost_components": {
+        "decision_prompt_tokens": 41963,
+        "decision_generated_tokens": 0,
+        "decision_prefill_seconds": 2.631674344998828,
+        "decision_decode_seconds": 3.4050000067509245e-05,
+        "decision_head_seconds": 0.0010422789991935133,
+        "arguments_prompt_tokens": 38355,
+        "arguments_generated_tokens": 521,
+        "arguments_prefill_seconds": 2.3488495770002373,
+        "arguments_decode_seconds": 12.618638484000257,
+        "final_prompt_tokens": 9333,
+        "final_generated_tokens": 87,
+        "final_prefill_seconds": 0.7215750240002308,
+        "final_decode_seconds": 2.3671127739999065
+      },
+      "reader_errors": [],
+      "tool_errors": [],
+      "observations": [
+        "iteration_budget_reached",
+        "nonperfect_answer",
+        "partial_support_document_access_or_unknown"
+      ],
+      "support_document_count": 2,
+      "support_documents_read": 0,
+      "support_documents_retrieved": 1,
+      "support_documents_with_delivered_images": 0,
+      "question": "The 1:30.438 2007 Lexmark Indy 300 qualifier has what on top of head?",
+      "predicted_answers": [],
+      "reference_answers": [
+        "cap"
+      ]
+    },
+    {
+      "qid": "a801785a88c4a22ba9f8e83b82619157",
+      "policy": "native",
+      "em": 0.0,
+      "f1": 0.0,
+      "answer_format_valid": false,
+      "status": "ok",
+      "stop_reason": null,
+      "tool_calls": 0,
+      "tool_distribution": {},
+      "repeated_exact_requests": 0,
+      "read_chunks": 0,
+      "delivered_images": 0,
+      "prompt_tokens": 1451,
+      "completion_tokens": 45,
+      "observed_wall_seconds": 1.0940170919998309,
+      "cost_components": {
+        "native_combined_prompt_tokens": 1451,
+        "native_combined_generated_tokens": 45,
+        "native_combined_prefill_seconds": 0.06995559500001036,
+        "native_combined_decode_seconds": 1.0197208609997688
+      },
+      "reader_errors": [],
+      "tool_errors": [],
+      "observations": [
+        "answer_format_invalid",
+        "nonperfect_answer",
+        "no_annotated_support_document_encountered"
+      ],
+      "support_document_count": 2,
+      "support_documents_read": 0,
+      "support_documents_retrieved": 0,
+      "support_documents_with_delivered_images": 0,
+      "question": "How many people are displayed on this poster for 28 Days Later?",
+      "predicted_answers": [
+        "I need an image or a document containing a poster for \"28 Days Later\" to answer this question. Since no image or document was provided, I cannot perform a search. Please provide the poster or relevant document."
+      ],
+      "reference_answers": [
+        "one"
+      ]
+    },
+    {
+      "qid": "a801785a88c4a22ba9f8e83b82619157",
+      "policy": "generated",
+      "em": 0.0,
+      "f1": 0.29,
+      "answer_format_valid": true,
+      "status": "ok",
+      "stop_reason": null,
+      "tool_calls": 2,
+      "tool_distribution": {
+        "image_search": 1,
+        "figure_read": 1
+      },
+      "repeated_exact_requests": 0,
+      "read_chunks": 1,
+      "delivered_images": 1,
+      "prompt_tokens": 15083,
+      "completion_tokens": 178,
+      "observed_wall_seconds": 5.049443387999872,
+      "cost_components": {
+        "decision_prompt_tokens": 8311,
+        "decision_generated_tokens": 6,
+        "decision_prefill_seconds": 0.5011944360003326,
+        "decision_decode_seconds": 0.07166280500041466,
+        "decision_head_seconds": 0.00034256000026289257,
+        "arguments_prompt_tokens": 3246,
+        "arguments_generated_tokens": 73,
+        "arguments_prefill_seconds": 0.15921311500005686,
+        "arguments_decode_seconds": 1.6441696699994282,
+        "final_prompt_tokens": 3526,
+        "final_generated_tokens": 99,
+        "final_prefill_seconds": 0.25026979399990523,
+        "final_decode_seconds": 2.341143491999901
+      },
+      "reader_errors": [],
+      "tool_errors": [],
+      "observations": [
+        "nonperfect_answer",
+        "partial_support_document_access_or_unknown"
+      ],
+      "support_document_count": 2,
+      "support_documents_read": 1,
+      "support_documents_retrieved": 1,
+      "support_documents_with_delivered_images": 1,
+      "question": "How many people are displayed on this poster for 28 Days Later?",
+      "predicted_answers": [
+        "One person is displayed on the poster."
+      ],
+      "reference_answers": [
+        "one"
+      ]
+    },
+    {
+      "qid": "a801785a88c4a22ba9f8e83b82619157",
+      "policy": "first_token",
+      "em": 0.0,
+      "f1": 0.29,
+      "answer_format_valid": true,
+      "status": "ok",
+      "stop_reason": null,
+      "tool_calls": 2,
+      "tool_distribution": {
+        "image_search": 1,
+        "figure_read": 1
+      },
+      "repeated_exact_requests": 0,
+      "read_chunks": 1,
+      "delivered_images": 1,
+      "prompt_tokens": 15083,
+      "completion_tokens": 172,
+      "observed_wall_seconds": 4.979600433000087,
+      "cost_components": {
+        "decision_prompt_tokens": 8311,
+        "decision_generated_tokens": 0,
+        "decision_prefill_seconds": 0.5009963160000552,
+        "decision_decode_seconds": 1.2759999663103372e-05,
+        "decision_head_seconds": 0.00035389900040172506,
+        "arguments_prompt_tokens": 3246,
+        "arguments_generated_tokens": 73,
+        "arguments_prefill_seconds": 0.15923829299981662,
+        "arguments_decode_seconds": 1.6579622520002886,
+        "final_prompt_tokens": 3526,
+        "final_generated_tokens": 99,
+        "final_prefill_seconds": 0.2502670079998097,
+        "final_decode_seconds": 2.33045548400014
+      },
+      "reader_errors": [],
+      "tool_errors": [],
+      "observations": [
+        "nonperfect_answer",
+        "partial_support_document_access_or_unknown"
+      ],
+      "support_document_count": 2,
+      "support_documents_read": 1,
+      "support_documents_retrieved": 1,
+      "support_documents_with_delivered_images": 1,
+      "question": "How many people are displayed on this poster for 28 Days Later?",
+      "predicted_answers": [
+        "One person is displayed on the poster."
+      ],
+      "reference_answers": [
+        "one"
+      ]
+    },
+    {
+      "qid": "eb3f72aeb947cff88705cce8f12a5a9a",
+      "policy": "native",
+      "em": 0.0,
+      "f1": 0.06,
+      "answer_format_valid": true,
+      "status": "ok",
+      "stop_reason": null,
+      "tool_calls": 1,
+      "tool_distribution": {
+        "keyword_search": 1
+      },
+      "repeated_exact_requests": 0,
+      "read_chunks": 1,
+      "delivered_images": 1,
+      "prompt_tokens": 5505,
+      "completion_tokens": 239,
+      "observed_wall_seconds": 6.193110142000023,
+      "cost_components": {
+        "native_combined_prompt_tokens": 5505,
+        "native_combined_generated_tokens": 239,
+        "native_combined_prefill_seconds": 0.35779707599976973,
+        "native_combined_decode_seconds": 5.690269817999706
+      },
+      "reader_errors": [],
+      "tool_errors": [],
+      "observations": [
+        "nonperfect_answer",
+        "partial_support_document_access_or_unknown"
+      ],
+      "support_document_count": 2,
+      "support_documents_read": 0,
+      "support_documents_retrieved": 2,
+      "support_documents_with_delivered_images": 0,
+      "question": "Where was the setting for the film Frieta Pinto was in that Danny Boyle directed",
+      "predicted_answers": [
+        "The provided documents mention that Frieta Pinto auditioned for a female lead role in a film directed by Danny Boyle, and that she starred in Danny Boyle's '28 Days Later' in 2002, but they do not specify the setting of that film."
+      ],
+      "reference_answers": [
+        "the Juhu slums of Mumbai"
+      ]
+    },
+    {
+      "qid": "eb3f72aeb947cff88705cce8f12a5a9a",
+      "policy": "generated",
+      "em": 0.0,
+      "f1": 0.06,
+      "answer_format_valid": true,
+      "status": "ok",
+      "stop_reason": null,
+      "tool_calls": 5,
+      "tool_distribution": {
+        "semantic_search": 3,
+        "read_chunk": 1,
+        "keyword_search": 1
+      },
+      "repeated_exact_requests": 1,
+      "read_chunks": 3,
+      "delivered_images": 3,
+      "prompt_tokens": 75466,
+      "completion_tokens": 347,
+      "observed_wall_seconds": 16.594135843000004,
+      "cost_components": {
+        "decision_prompt_tokens": 39167,
+        "decision_generated_tokens": 12,
+        "decision_prefill_seconds": 3.5511966400003985,
+        "decision_decode_seconds": 0.15655853299904265,
+        "decision_head_seconds": 0.0007679289997213345,
+        "arguments_prompt_tokens": 26056,
+        "arguments_generated_tokens": 129,
+        "arguments_prefill_seconds": 2.2098643929998616,
+        "arguments_decode_seconds": 3.067567315999895,
+        "final_prompt_tokens": 10243,
+        "final_generated_tokens": 206,
+        "final_prefill_seconds": 1.0867312599998513,
+        "final_decode_seconds": 5.786722029999964
+      },
+      "reader_errors": [],
+      "tool_errors": [],
+      "observations": [
+        "nonperfect_answer",
+        "partial_support_document_access_or_unknown"
+      ],
+      "support_document_count": 2,
+      "support_documents_read": 1,
+      "support_documents_retrieved": 2,
+      "support_documents_with_delivered_images": 1,
+      "question": "Where was the setting for the film Frieta Pinto was in that Danny Boyle directed",
+      "predicted_answers": [
+        "The documents indicate that Freida Pinto auditioned for a role in a Danny Boyle film, and that she was in the film *Slumdog Millionaire* (2008) as Latika, which was directed by Danny Boyle. However, the documents do not specify the setting of that film."
+      ],
+      "reference_answers": [
+        "the Juhu slums of Mumbai"
+      ]
+    },
+    {
+      "qid": "eb3f72aeb947cff88705cce8f12a5a9a",
+      "policy": "first_token",
+      "em": 0.0,
+      "f1": 0.06,
+      "answer_format_valid": true,
+      "status": "ok",
+      "stop_reason": null,
+      "tool_calls": 5,
+      "tool_distribution": {
+        "semantic_search": 3,
+        "read_chunk": 1,
+        "keyword_search": 1
+      },
+      "repeated_exact_requests": 1,
+      "read_chunks": 3,
+      "delivered_images": 3,
+      "prompt_tokens": 75466,
+      "completion_tokens": 335,
+      "observed_wall_seconds": 16.543833177000124,
+      "cost_components": {
+        "decision_prompt_tokens": 39167,
+        "decision_generated_tokens": 0,
+        "decision_prefill_seconds": 3.5507455200004188,
+        "decision_decode_seconds": 2.6660000912670512e-05,
+        "decision_head_seconds": 0.0008354299998245551,
+        "arguments_prompt_tokens": 26056,
+        "arguments_generated_tokens": 129,
+        "arguments_prefill_seconds": 2.2099109730002056,
+        "arguments_decode_seconds": 3.076142360999711,
+        "final_prompt_tokens": 10243,
+        "final_generated_tokens": 206,
+        "final_prefill_seconds": 1.0866478309999366,
+        "final_decode_seconds": 5.785813580000195
+      },
+      "reader_errors": [],
+      "tool_errors": [],
+      "observations": [
+        "nonperfect_answer",
+        "partial_support_document_access_or_unknown"
+      ],
+      "support_document_count": 2,
+      "support_documents_read": 1,
+      "support_documents_retrieved": 2,
+      "support_documents_with_delivered_images": 1,
+      "question": "Where was the setting for the film Frieta Pinto was in that Danny Boyle directed",
+      "predicted_answers": [
+        "The documents indicate that Freida Pinto auditioned for a role in a Danny Boyle film, and that she was in the film *Slumdog Millionaire* (2008) as Latika, which was directed by Danny Boyle. However, the documents do not specify the setting of that film."
+      ],
+      "reference_answers": [
+        "the Juhu slums of Mumbai"
+      ]
+    }
+  ],
+  "artifact_sha256": {
+    "diagnostic/native/bc16213fc3ba20631092dc66c700b1ea.json": "4b54a8706e05e1911e12b070e37dee153b802d09330229ccd53745d2733a4367",
+    "diagnostic/generated/bc16213fc3ba20631092dc66c700b1ea.json": "2506ca4a0510e3cd0341c38e936fee2c9120bdc423d03c0ec1d2967b385ed95a",
+    "diagnostic/first_token/bc16213fc3ba20631092dc66c700b1ea.json": "6f0088f85e0996c8ff82c19ece076f08d61a6eb0d7ad1b731b0dede7d75417db",
+    "diagnostic/native/e844b72274e56a3222e4a27b24cd623b.json": "2c381e6fe7ba0e5223129f4164c7f3a68a0fdf0f593698a084059dabca675dd5",
+    "diagnostic/generated/e844b72274e56a3222e4a27b24cd623b.json": "e54b29e6f8c8724e5601af7cf9b7f8fc1bb97b7cfab9eb0d45680b366e04a41b",
+    "diagnostic/first_token/e844b72274e56a3222e4a27b24cd623b.json": "984a7b66766f64a70302e31d6780500f7a2267a71d80eb7ac7a9dca9e936c253",
+    "diagnostic/native/731b4f179b2fc60b243a817835305705.json": "285671b7f0460d5af50674e42066639f24d9362375ddeb7473c93a2e625f62d0",
+    "diagnostic/generated/731b4f179b2fc60b243a817835305705.json": "63c2fae4cd34995b143ad659000167a755786ca609871675563d6abc30348bf2",
+    "diagnostic/first_token/731b4f179b2fc60b243a817835305705.json": "79c6c86bbcf2cbb4fcf8112d8c369077536bd3fbebd74d0f28d8150e88662184",
+    "diagnostic/native/7173374c77f1c27e397663c455501bba.json": "36df100f27cdb19f2a3f8a1645e0f7431083e7b5789158236133a1bb3481e4dc",
+    "diagnostic/generated/7173374c77f1c27e397663c455501bba.json": "0e053af2a5e82b08fe5d2d8975484ae0d2391d8f01dbb7a61346aedb8db50994",
+    "diagnostic/first_token/7173374c77f1c27e397663c455501bba.json": "88c997822506008f5ea774bbebbaa3bf7220aee8d065a6fd30b1e0666e94d2f4",
+    "diagnostic/native/6bcb669863a815a657e31077a2d0b008.json": "257b9195562bd414c491334beb238758d27587e901671488c3b7357097cf5c42",
+    "diagnostic/generated/6bcb669863a815a657e31077a2d0b008.json": "93576c8214754cee80dd4121f255180ea959073cff091795a2d68f774c238700",
+    "diagnostic/first_token/6bcb669863a815a657e31077a2d0b008.json": "d6aa4d137c096fb8fbab8fb4af0810176a3d5e63ca05657acd07f3b0c2f93cab",
+    "diagnostic/native/dc114a23d8280ff1a9ee32f34e51d8f5.json": "d71b81d8d3f3b419b646f64debc916aaff86487afd64caf9aac7bf23bacb170a",
+    "diagnostic/generated/dc114a23d8280ff1a9ee32f34e51d8f5.json": "e01af5744204da08e024f0f5002dc4599d3e53cf9abb2413e870a85cae8d4408",
+    "diagnostic/first_token/dc114a23d8280ff1a9ee32f34e51d8f5.json": "04bc9053095919d2694182ccda79a32f122b4a7d1d91be297258a2bea5b264f3",
+    "diagnostic/native/5a1af970c006690d7a02a21ca81af9c3.json": "75596a831cec159d6ea0a8fd659d1703e5eb57a38807e98bf7acf49b569ffb2d",
+    "diagnostic/generated/5a1af970c006690d7a02a21ca81af9c3.json": "87c9f33ecd67880330e7675d33a1745abe5de6cf80b6d483ecbc92acc9c2e539",
+    "diagnostic/first_token/5a1af970c006690d7a02a21ca81af9c3.json": "dda7f455441c03a22806a6d54e9415b70997a5d9c7d687e107d50fc56d9ee6cb",
+    "diagnostic/native/445bc5e02f240a4d151b30e9ec6dea80.json": "cb9c32b12013e4359de5062ea91ea821c45bfcbfdc59822570ad56e43c82ab7e",
+    "diagnostic/generated/445bc5e02f240a4d151b30e9ec6dea80.json": "ea4e59b49af5161e3254a21a6a4d681a3b4e3985cb3e1d517691715484b8c97e",
+    "diagnostic/first_token/445bc5e02f240a4d151b30e9ec6dea80.json": "a649d7fad1bd26d7ae0a49780e18c2306f698bbb7caaec55dc83f5a0e10e0ac0",
+    "diagnostic/native/8a71c3dc7cfeeeb4229f5d0f029b745a.json": "894672678ae8588cf006dc5d38bd6bf48e7dcfb80613900a9f3f8918a24e6eef",
+    "diagnostic/generated/8a71c3dc7cfeeeb4229f5d0f029b745a.json": "56f5063de93a4d93477d8d75a1cb9d044f1b51fabe49b097f964ef3956c29ede",
+    "diagnostic/first_token/8a71c3dc7cfeeeb4229f5d0f029b745a.json": "f7dca2b6463e9add7d1e684d6e4d3f0732bef18bb12577c7f7aaa650fbbbd91c",
+    "diagnostic/native/3a9b9f0151fcb257ba37a8bdb79eb837.json": "4c645f7dd8685d910052a9d21d6dc7acabf3a3f9dc332c877ab7c8e94b640d2e",
+    "diagnostic/generated/3a9b9f0151fcb257ba37a8bdb79eb837.json": "9ea344c9e5c48de6e08e0a8853212165a38927264fcaad43e7988c633c481559",
+    "diagnostic/first_token/3a9b9f0151fcb257ba37a8bdb79eb837.json": "3eb0b16b9129abecc44b3d4d5fc3b31f0395dc581b860ebc09d0fcdccf95aa2d",
+    "diagnostic/native/3439f1db325d7d971d0a6111723d066c.json": "8637111aaafc0358391435e637f253bcce4752db47d564f4ba1ed7ff1940daf7",
+    "diagnostic/generated/3439f1db325d7d971d0a6111723d066c.json": "4baaa2cadaec5cfd5591b0bf7ce62ce26d2830e8d051ed0f1715a4339afd4e07",
+    "diagnostic/first_token/3439f1db325d7d971d0a6111723d066c.json": "c58620edf006028453516ef4153fac6079adf487bc0e67e80f18831592dbb7f2",
+    "diagnostic/native/ee9320e184758afe302643832e4b0759.json": "5189a51673b09187ade6c52fe03d7d5874789a448a6cd3fb9f0562df5b32ed2a",
+    "diagnostic/generated/ee9320e184758afe302643832e4b0759.json": "138833786333a826d9f9bb92aa9c116a1da061168fd8595853fcf7b3edec7758",
+    "diagnostic/first_token/ee9320e184758afe302643832e4b0759.json": "91606f16b5d9990fb734e0a59d9bc97edd51db38e1b25ef275419d916a258f90",
+    "diagnostic/native/216a2a29a0f50d34054cd318a25a2f5f.json": "61803cf60c983c0603342d51c99ddf731fcf39b5a5eb4cb1fbbf8f0f39200fe3",
+    "diagnostic/generated/216a2a29a0f50d34054cd318a25a2f5f.json": "d421e37732fa44f5d7628c9d0b888285f1be65bbf4be166c67e1659fa72720a2",
+    "diagnostic/first_token/216a2a29a0f50d34054cd318a25a2f5f.json": "9b2df67363f28a1dbb25b60869fe204f8a337e546b6c23564217d0f41f29a415",
+    "diagnostic/native/0494ecbb270911ec2d3240709480f2e4.json": "c7df41ab520304531e6651ca1524c2d4409f050ca7a3d6f1dfb4490cfd618bbe",
+    "diagnostic/generated/0494ecbb270911ec2d3240709480f2e4.json": "c5a7e6edd9d2adceb8876f58a3249c077b9da8756568c9d48f030785aabb4b87",
+    "diagnostic/first_token/0494ecbb270911ec2d3240709480f2e4.json": "3775de9ac42e4e202655c61a94dc4622df7586f7eb49551fbd53fbef384db28f",
+    "diagnostic/native/b6a62e8b1c1cb1587d75b0af4e1ae981.json": "51166ac66a8a6502d9fded048206ee2afc19537cd4053e75dc8c98c3128fc154",
+    "diagnostic/generated/b6a62e8b1c1cb1587d75b0af4e1ae981.json": "34784c02a67904acc0dc9d8b1bccb04f895689c6b73c5d36b7f4a9419083f3ff",
+    "diagnostic/first_token/b6a62e8b1c1cb1587d75b0af4e1ae981.json": "c378f6b482aa7e389e1830da7acb67329347f442c4c45677eb1ba548f9eada3c",
+    "diagnostic/native/58c230238b7da1509064f8924522d0d0.json": "9620095ac7e3aaedca522fab7251e9431466806c9dd9ab04a456e649a4de248d",
+    "diagnostic/generated/58c230238b7da1509064f8924522d0d0.json": "3e3cf8a46050d927a4e12666e598b961f2cb6e4c28be63dc8d615d28407d07ff",
+    "diagnostic/first_token/58c230238b7da1509064f8924522d0d0.json": "72059410e8a0f6a978e3888e2b4f362b7d6607bd571beb568decb8e24b7f4a16",
+    "diagnostic/native/1fb8350bf0c31954296712889c72635a.json": "be24b89cf3dc6a1e7709380bd2f6546a426eb0daceb392fe3596c0767b56fcfe",
+    "diagnostic/generated/1fb8350bf0c31954296712889c72635a.json": "85cf1246af0eff5dea60243685905fefc3ce724da068d9223ae1ab6536d8d1ff",
+    "diagnostic/first_token/1fb8350bf0c31954296712889c72635a.json": "4cf86525c30e19ab563fcd0cd3da9c56e8b7c949f1e8137c8a56dbf4659b1631",
+    "diagnostic/native/d50ba0f57869f462efde83fc1d22a634.json": "39f2db4f09ad10bf5f1fb27ce1baa7f1a15becc9614ef9230cee411c9a9c9637",
+    "diagnostic/generated/d50ba0f57869f462efde83fc1d22a634.json": "0cffb294b4d1f270a8b13a17ba6ef767359785de5d3306872ace6aa73330658b",
+    "diagnostic/first_token/d50ba0f57869f462efde83fc1d22a634.json": "268a9b5f2ebd43996fe2c5dc1bb423ce01ef11ae919cf62253b2eaf3ec65b777",
+    "diagnostic/native/a801785a88c4a22ba9f8e83b82619157.json": "5e2d1c707befd2eb4701f081581ec871038b1218697f19b43ad5bfaa955c4eee",
+    "diagnostic/generated/a801785a88c4a22ba9f8e83b82619157.json": "f50ddbd675e17aebc92958aca1da6e8019d71f1550c0227b4f1c545ec9b54ba2",
+    "diagnostic/first_token/a801785a88c4a22ba9f8e83b82619157.json": "ecc66729b5bbeabbfda329d3b896d0ec82eb9455de3329fe3647351fb51ed154",
+    "diagnostic/native/eb3f72aeb947cff88705cce8f12a5a9a.json": "c78b2a88ebf352ede02ef9c616f0ce2688832d67f320e0b4657ffe14574078a4",
+    "diagnostic/generated/eb3f72aeb947cff88705cce8f12a5a9a.json": "2987be507fb60d9c06efe8d1d574fc57dc57fca28542227fdb957b4461c86351",
+    "diagnostic/first_token/eb3f72aeb947cff88705cce8f12a5a9a.json": "d4262a043520817c0d3e6e7fbe3394ab89cd21388326072135dfb39aea50f942"
+  },
+  "limitations": [
+    "Support-document hits do not prove evidence sufficiency or correct image use.",
+    "Native jointly generates tool names/arguments; its generation cost cannot be split.",
+    "Observed wall time is uncontrolled; same-call output budget is not equal total compute.",
+    "Observations are diagnostics, not established causal failure labels."
+  ]
+}
