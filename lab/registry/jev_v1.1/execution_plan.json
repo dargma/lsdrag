@@ -1,7 +1,7 @@
 {
   "seed": 20261015,
   "status": "frozen_before_stage1_answers",
-  "data_manifest_sha256": "9a3e64a426ececccb5b68726a19242c14d740acde57c6a2830688a1e591015ab",
+  "data_manifest_sha256": "2aa40f53daf8d3783f9377920773dead8f025eae8360e1432b1bc0c6a920dd6d",
   "dataset": "MMQA text+image controlled shared reduced corpus;300train80dev",
   "reader": {
     "model": "google/gemma-4-E4B-it",
@@ -24,7 +24,11 @@
     "continuation_acquisitions": 1,
     "image_package": "actual pixels + title; not pixel-only effect",
     "no_query_or_assistant_history_in_reader": true,
-    "scope": "evidence-conditioned continuation pilot; not long-horizon agent test"
+    "scope": "evidence-conditioned continuation pilot; not long-horizon agent test",
+    "revision": 2,
+    "public_background": "full table from official metadata.table_id in every condition",
+    "oracle_baseline": "question + public table",
+    "deduplicate_oracle_supports": true
   },
   "gates": {
     "oracle_n": 40,
@@ -70,8 +74,9 @@
       "heads:all lambda beta seeds"
     ],
     "timing": "fresh answers, query vector cache reset each policy; shared common first acquisition cost included",
-    "claim_limit": "no noninferiority or new-method superiority proof"
+    "claim_limit": "pilot; supports-only source split; fullpublicsources overlap3URLs; no unseen-source or noninferiority claim"
   },
   "gpu": "RTX PRO6000 Blackwell Server 97887MiB; exclusive timing checks required",
-  "review": "docs/JEV_V11_EXECUTION_REVIEW.md"
+  "review": "docs/JEV_V11_EXECUTION_REVIEW.md",
+  "correction_provenance": "v1 oracle omitted benchmark-public table:6/40EM; same40 samegates one rerun; oldrun preserved"
 }

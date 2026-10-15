@@ -28,7 +28,8 @@ def observation_messages(question, evidence, instruction, *, package='pixels_and
     for number, item in enumerate(evidence, 1):
         if item['modality'] == 'text':
             blocks.append({'type': 'text', 'text': f'Evidence {number} [TEXT]\nTitle: '
-                           + item.get('title', '') + '\n' + item['text'][:6000]})
+                           + item.get('title', '') + '\n' + (item['text'] if item.get('public_table')
+                           else item['text'][:6000])})
         elif item['modality'] == 'image':
             title = '' if package == 'pixels_only' else '\nTitle: ' + item.get('title', '')
             blocks.append({'type': 'text', 'text': f'Evidence {number} [IMAGE]' + title})

@@ -21,9 +21,16 @@ class Experiment:
         self.args = args
         self.items = {r['item_id']: r for r in read_jsonl(args.data/'corpus.jsonl')}
         self.gold = {r['qid']: r for r in read_jsonl(args.data/'gold.jsonl')}
+        dependencies = args.data/'dependency_groups.jsonl'
+        if dependencies.exists():
+            for r in read_jsonl(dependencies):
+                self.gold[r['qid']]['source_group'] = r['source_group']
         self.train = read_jsonl(args.data/'train_questions.jsonl')
         self.dev = read_jsonl(args.data/'development_questions.jsonl')
         self.stage1 = read_jsonl(args.data/'stage1_questions.jsonl')
+        background_path = args.data/'public_backgrounds.jsonl'
+        self.backgrounds = {r['qid']: r for r in read_jsonl(background_path)} if background_path.exists() else {}
+        self.qid_by_question = {q['question']: q['qid'] for q in self.train+self.dev}
         if any(set(q) != {'qid', 'question'} for q in self.train+self.dev):
             raise ValueError('Private fields in question input')
         from lsdrag.v11_scoring import score
@@ -33,6 +40,16 @@ class Experiment:
         self.answer_cache = {}
         self.query_cache = {}
         self.counter = 0
+
+    def messages(self, question, evidence, instruction):
+        qid = self.qid_by_question.get(question)
+        background = self.backgrounds.get(qid)
+        items = []
+        if background:
+            items = [{'item_id': 'public_table:'+background['table_id'], 'modality': 'text',
+                      'title': background.get('title', 'Public question table'),
+                      'text': background['text'], 'public_table': True}]
+        return observation_messages(question, items+evidence, instruction)
 
     def check_gpu(self):
         import os
@@ -58,7 +75,7 @@ class Experiment:
         return result
 
     def answer(self, question, evidence):
-        messages = observation_messages(question, evidence, ANSWER)
+        messages = self.messages(question, evidence, ANSWER)
         digest = input_hash(messages)
         if digest in self.answer_cache:
             return {**self.answer_cache[digest], 'reused_identical_input': True}
@@ -75,7 +92,10 @@ class Experiment:
                        ' evidence item needed to answer the original question. '
                        'Use the evidence to identify specific entities or missing facts. '
                        'Return only the search query, without quotation marks or explanation.')
-        messages = observation_messages(question, evidence, instruction)
+        messages = self.messages(question, evidence, instruction)
+        # Each counterfactual/real acquisition uses the same cold query-vector policy.
+        # Otherwise the second access condition gets a free embedding on equal queries.
+        self.retriever.query_cache.clear()
         start = time.perf_counter()
         result = self.generate(messages, 48)
         query = result['text'].strip().strip('"')
@@ -118,8 +138,8 @@ class Experiment:
             path = self.args.output/'oracle'/f'{q["qid"]}.json'
             if path.exists():
                 rows.append(json.loads(path.read_text())); continue
-            evidence = [self.items[k] for k in self.gold[q['qid']]['support_ids']]
-            modes = [('question_only', []), ('gold_evidence', evidence)]
+            evidence = [self.items[k] for k in dict.fromkeys(self.gold[q['qid']]['support_ids'])]
+            modes = [('public_background', []), ('gold_evidence', evidence)]
             record = {'qid': q['qid'], 'source_group': self.gold[q['qid']]['source_group']}
             for name, observed in modes:
                 prediction = self.answer(q['question'], observed)
@@ -130,9 +150,9 @@ class Experiment:
                              'gold_em': record['gold_evidence']['em'],
                              'gold_f1': record['gold_evidence']['f1']}), flush=True)
         summary = {name: {key: statistics.mean(r[name][key] for r in rows)
-                   for key in ('em', 'f1', 'cost_seconds')} for name in ('question_only', 'gold_evidence')}
+                   for key in ('em', 'f1', 'cost_seconds')} for name in ('public_background', 'gold_evidence')}
         correct = sum(r['gold_evidence']['em'] == 1 for r in rows)
-        delta = summary['gold_evidence']['f1']-summary['question_only']['f1']
+        delta = summary['gold_evidence']['f1']-summary['public_background']['f1']
         gate = {'passed': correct >= 10 and delta >= .05, 'gold_correct_questions': correct,
                 'gold_f1_gain': delta, 'rule': 'gold EM>=10/40 and mean F1 gain>=.05'}
         self.save('oracle_summary.json', {'n': len(rows), 'arms': summary, 'gate': gate})
@@ -160,7 +180,7 @@ class Experiment:
                 current = e if i else []
                 stop = self.answer(q['question'], current)
                 record['stops'].append({**stop, **self.score(stop['answers'], q['qid'])})
-                encoded = self.reader.encode_state(observation_messages(q['question'], current, DECISION))
+                encoded = self.reader.encode_state(self.messages(q['question'], current, DECISION))
                 record['features'].append(state_features(encoded['feature'], modality))
                 record.setdefault('state_usage', []).append(encoded['usage'])
             # Alternate execution order deterministically; no gold-dependent schedule.
@@ -207,13 +227,13 @@ class Experiment:
                 start = time.perf_counter()
                 feature_cost = 0.
                 if head is not None:
-                    encoded = self.reader.encode_state(observation_messages(q['question'], e, DECISION))
+                    encoded = self.reader.encode_state(self.messages(q['question'], e, DECISION))
                     feature_cost = encoded['usage']['wall_seconds']
                     qvalues = infer_head(head, state_features(encoded['feature'], modality))
                     index = int(np.argmax(qvalues))
                     control = {'qvalues': qvalues.tolist(), 'state_usage': encoded['usage']}
                 elif name in ('first_token', 'generated'):
-                    control = self.reader.decide(observation_messages(q['question'], e, DECISION), mode=name,
+                    control = self.reader.decide(self.messages(q['question'], e, DECISION), mode=name,
                                                  max_new_tokens=32)
                     index = control['index']; feature_cost = control['usage']['wall_seconds']
                     control = {k: v for k, v in control.items() if k != 'feature'}
@@ -226,7 +246,7 @@ class Experiment:
                     query = self.acquire(q['question'], e, 'text' if index == 1 else 'image',
                                          exclude=initial['result_ids'])
                 # Evaluation never reuses counterfactual answer cache: fresh policy execution.
-                messages = observation_messages(q['question'], e+(query['evidence'] if query else []), ANSWER)
+                messages = self.messages(q['question'], e+(query['evidence'] if query else []), ANSWER)
                 result = self.generate(messages, 128, '{"answers":')
                 parsed = parsed_answers(result['text'])
                 row = {'qid': q['qid'], 'source_group': self.gold[q['qid']]['source_group'],
@@ -260,13 +280,29 @@ def main():
     plan = json.loads(plan_path.read_text())
     if sha256(a.data/'manifest.json') != plan['data_manifest_sha256']:
         raise ValueError('Prepared data changed after plan freeze')
+    data_identity = json.loads((a.data/'manifest.json').read_text())
+    for filename, digest in data_identity['files'].items():
+        if sha256(a.data/filename) != digest:
+            raise ValueError('Prepared data file changed: '+filename)
     a.output.mkdir(parents=True, exist_ok=True)
-    manifest = {'plan_sha256': sha256(plan_path), 'data_manifest_sha256': sha256(a.data/'manifest.json'),
-                'code_revision': subprocess.check_output(['git','rev-parse','HEAD'],text=True).strip()}
+    manifest = {'plan_sha256': sha256(plan_path), 'data_manifest_sha256': sha256(a.data/'manifest.json')}
     manifest_path = a.output/'run_manifest.json'
     if manifest_path.exists() and json.loads(manifest_path.read_text()) != manifest:
-        raise ValueError('Existing experiment has another plan/code identity')
+        previous = json.loads(manifest_path.read_text())
+        if {k: previous[k] for k in manifest} != manifest:
+            raise ValueError('Existing experiment has another frozen plan/data identity')
+        dump_json(a.output/'initial_code_manifest.json', previous)
     dump_json(manifest_path, manifest)
+    repo = Path(__file__).resolve().parents[1]
+    sources = ['scripts/run_v11_pilot.py'] + ['src/lsdrag/'+f for f in
+        ['v11_backend.py','v11_protocol.py','v11_scoring.py','v11_training.py','embeddings.py','hf_reader.py']]
+    phase_manifest = {**manifest, 'phase': a.phase,
+        'code_revision': subprocess.check_output(['git','rev-parse','HEAD'],text=True).strip(),
+        'source_hashes': {f: sha256(repo/f) for f in sources}}
+    phase_path = a.output/f'phase_{a.phase}_manifest.json'
+    if phase_path.exists() and json.loads(phase_path.read_text()) != phase_manifest:
+        raise ValueError('This phase already has another code identity; preserve it and use a new run')
+    dump_json(phase_path, phase_manifest)
     exp = Experiment(a)
     exp.warmup()
     if a.phase in ('all','diagnose'):
@@ -296,12 +332,17 @@ def main():
     if a.phase in ('all','train'):
         from lsdrag.v11_training import train_heads
         rows = [json.loads((a.output/'train'/f'{q["qid"]}.json').read_text()) for q in exp.train]
-        if contrast_summary(rows)['contrast_questions'] < 30:
+        train_gate = contrast_summary(rows)
+        if train_gate['contrast_questions'] < 30 or train_gate['contrast_source_groups'] < 10:
             raise ValueError('Access gate failed')
         trained = train_heads(rows, a.output/'heads')
         exp.save('head_training.json', trained)
         if a.phase == 'train': return
     trained = json.loads((a.output/'head_training.json').read_text())
+    gate_rows = [json.loads((a.output/'train'/f'{q["qid"]}.json').read_text()) for q in exp.train]
+    final_gate = contrast_summary(gate_rows)
+    if final_gate['contrast_questions'] < 30 or final_gate['contrast_source_groups'] < 10:
+        raise ValueError('Access gate failed before evaluation')
     exp.evaluate(trained['runs'])
     exp.save('status.json', {'stage1': 'completed', 'stage2': 'trained_and_development_evaluated',
              'note': 'controlled one-boundary continuation pilot, not a final test or ICML contribution proof'})
