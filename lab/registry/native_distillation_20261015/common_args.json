@@ -1,6 +1,6 @@
 [
   "--model-path",
-  "/content/local_fast/lsdrag-v11/hf/models--google--gemma-4-E4B-it/snapshots/ee0ef6023621cff504d758262d4e04895a5af4a2",
+  "/content/local_fast/lsdrag-v11/hf/models--google--gemma-4-12B-it/snapshots/707f0a3b8a3c7ad586ed01e27eafbad8a27dd0f7",
   "--corpus",
   "/content/local_fast/lsdrag-work/data/ir_final288",
   "--indexes",
@@ -16,15 +16,17 @@
   "--prompt",
   "prompts/search_linked.txt",
   "--output",
-  "/content/local_fast/lsdrag-head-v14/results/native_distillation_20261015",
+  "/content/local_fast/lsdrag-head-v14/results/native_distillation_12b_20261015",
   "--scorer",
   "/content/local_fast/lsdrag-v11/scorer",
   "--dataset-manifest",
   "lab/registry/full_head_20261015/data_manifest.json",
   "--backup",
-  "/content/drive/MyDrive/lsdrag-backups/20261015/native_distillation_20261015",
+  "/content/drive/MyDrive/lsdrag-backups/20261015/native_distillation_12b_20261015",
   "--max-output-tokens",
   "1024",
   "--teacher-format",
-  "native_single"
+  "native_single",
+  "--min-free-gb",
+  "48"
 ]

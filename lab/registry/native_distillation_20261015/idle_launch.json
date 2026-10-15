@@ -8,7 +8,7 @@
     "lab/registry/native_distillation_20261015/common_args.json"
   ],
   "gpu_uuid": "GPU-7a7c7dc2-ceb8-0784-a007-6d0c7b82244e",
-  "min_free_gib": 32,
+  "min_free_gib": 48,
   "idle_seconds": 1200,
   "poll_seconds": 30,
   "source_sha256": {
@@ -59,7 +59,7 @@
     "scripts/run_decision_rag_stages.py": "dbb03679ab0a6d2ead3a578f7f558af2f15347b5bc4a61e584d1dc6c35b85080",
     "scripts/run_experiment.py": "9350a382d83d7759dcfaf417c746d248a345b36770741deb082a4be7390dd4b3",
     "scripts/run_full_head_pilot.py": "d551d0e906210d418670855718fc7db81870bc62cadfec3e78903460bc05e01d",
-    "scripts/run_native_distillation_pilot.py": "500cb418c93e4c2b3ee2ca51806a63fc24746c573e8fbec8e0a000af3b34d894",
+    "scripts/run_native_distillation_pilot.py": "532068d72f0909da0015d0e5b8e2a0084e68ae466774e44b6456cba005477812",
     "scripts/run_oracle_memgallery.py": "d2ce3600ceb1209865b5b60c5cd3e0558b8c0c0fbd5b9842a55ae9d70c4cbee1",
     "scripts/run_three_arm_comparison.py": "829b8aaed5d279514276a40e494d3dd432e9cb1cce811a3af6e23d3000e462e8",
     "scripts/run_v11_accelerated_evaluation.py": "d6d3820cb45094791ea01fb22fe5440ab7546d15c9e87cb67ef5eabb524d9e1e",
@@ -102,11 +102,12 @@
     "src/lsdrag/v11_protocol.py": "638965a68f9d6e031d3924ebda3e3a8a349a9907c44b872f331159da19a98728",
     "src/lsdrag/v11_scoring.py": "ba0319c7d9d0df75d198e46957e27c2f1a4afeb537bc82d6d3c78db6c0574296",
     "src/lsdrag/v11_training.py": "8b136322578b37a420f820bb57870c7beebb11b91ff5f2a573370bcf554bbf3d",
-    "lab/registry/native_distillation_20261015/common_args.json": "b12fbd9c2fd0481d6ae40b19372dacc29b0c0f84c89a73dc549dcefbd4ee3c98",
+    "lab/registry/native_distillation_20261015/common_args.json": "d845b4611ddcdd76a08a7a5f439167ec5f6b11691a12b940afa8fd0ce922c8b8",
     "prompts/search_linked.txt": "7dd6eb09464d20c204599c17bb4683c142e069dfe9d274ad296a2d85eae24ff7",
     "lab/reports/development_alignment_review.json": "84d6621b4cee679d97302539af7cd7a38588eda638df781bf5956972a7ff26aa",
     "lab/reports/additional50_alignment_review.json": "ff7ae985d1fe04e8be6cabacd0a5f88fdd055bd56d258a8f504bb8d5663c8923",
-    "lab/reports/final_alignment_partial_review.json": "290ae348f14b7127a41ddb1e47882cab2d5bd020abc8c7d5fd2dd724eecda9c0"
+    "lab/reports/final_alignment_partial_review.json": "290ae348f14b7127a41ddb1e47882cab2d5bd020abc8c7d5fd2dd724eecda9c0",
+    "lab/registry/native_distillation_20261015/model_12b_provenance.json": "55e166e3cea3b862147fd3e7fc2adca750d5b980984961d3dac7592b26f3edfa"
   },
   "packages": {
     "torch": "2.11.0+cu130",
@@ -114,6 +115,12 @@
     "numpy": "2.1.3",
     "jsonschema": "4.26.0"
   },
-  "code_commit": "af1b3816512ff511bab0058703ceda7ce54917e2",
-  "authorization": "User explicitly requested experiment start after GPU idle >=20 minutes; first stage is native teacher/student format audit with unchanged backbone."
+  "authorization": "User requested all upcoming experiments use12B and automatic start after20 minutes GPU idle.",
+  "model_revision": "707f0a3b8a3c7ad586ed01e27eafbad8a27dd0f7",
+  "model_roles": {
+    "teacher": "google/gemma-4-12B-it",
+    "student_backbone": "google/gemma-4-12B-it",
+    "arguments": "google/gemma-4-12B-it",
+    "final_reader": "google/gemma-4-12B-it"
+  }
 }

@@ -82,7 +82,7 @@ def main():
                     if any(row['source_recall_proxies'][kind]['required_source_count'] for row in modality) else None)
             } for kind in ('text', 'table', 'image')},
             'recall_scope': 'Source-document proxies, first search ranked results and whole trajectory separately. NOT exact text spans, tables or images. Search snippets may contain evidence without read calls.',
-            'quality_claim': 'Same-backbone native single-action teacher audit, not larger-reader evaluation or learned-head quality.',
+            'quality_claim': 'Shared-backbone native single-action teacher audit; not an isolated model-size comparison or learned-head quality claim.',
             'training_completed': False, 'evaluation_completed': False}
     def checkpoint(tag, report):
         (root/(tag+'.json')).write_text(json.dumps(report, indent=2)+'\n')

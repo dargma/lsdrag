@@ -1,29 +1,42 @@
 {
-  "phase": "waiting_for_gpu_idle",
-  "watcher_pid": 178546,
-  "watcher_status": "/content/local_fast/lsdrag-head-v14/idle_watch/status.json",
-  "watcher_log": "/content/local_fast/lsdrag-head-v14/idle_watch/watcher.log",
-  "stop_file": "/content/local_fast/lsdrag-head-v14/idle_watch/STOP",
+  "phase": "waiting_for_gpu_idle_12b",
+  "watcher_pid": 188251,
+  "watcher_status": "/content/local_fast/lsdrag-head-v14/idle_watch_12b/status.json",
+  "watcher_log": "/content/local_fast/lsdrag-head-v14/idle_watch_12b/watcher.log",
+  "stop_file": "/content/local_fast/lsdrag-head-v14/idle_watch_12b/STOP",
   "launch_spec": "/content/local_fast/lsdrag-code/lab/registry/native_distillation_20261015/idle_launch.json",
-  "updated_epoch": 1792078162.0428007,
+  "updated_epoch": 1792078602.7057543,
   "automatic_resume": true,
-  "condition": "30s samples: compute and memory utilization <=5%, free VRAM>=32GiB, continuously observed1200s; errors or >65s gaps reset",
-  "next": "native first2; if structural/readout checks pass extend fixed20; then review checkpoint, no automatic training",
-  "run": "/content/local_fast/lsdrag-head-v14/results/native_distillation_20261015",
+  "condition": "GPU compute/memory utilization<=5%, free>=48GiB,1200 seconds observed every30s; telemetry errors/gaps reset",
+  "model_roles": {
+    "teacher": "google/gemma-4-12B-it",
+    "student_backbone": "google/gemma-4-12B-it",
+    "arguments": "google/gemma-4-12B-it",
+    "final_reader": "google/gemma-4-12B-it"
+  },
+  "model_revision": "707f0a3b8a3c7ad586ed01e27eafbad8a27dd0f7",
+  "model_path": "/content/local_fast/lsdrag-v11/hf/models--google--gemma-4-12B-it/snapshots/707f0a3b8a3c7ad586ed01e27eafbad8a27dd0f7",
+  "model_verified": true,
+  "gpu_forward_verified": false,
+  "next": "12B native first2 with feature-equivalence check; if valid extend fixed20; review before head training",
+  "run": "/content/local_fast/lsdrag-head-v14/results/native_distillation_12b_20261015",
   "current_observation": {
     "phase": "watching",
-    "pid": 178546,
-    "updated_epoch": 1792078161.14416,
+    "pid": 188251,
+    "updated_epoch": 1792078601.7694738,
     "gpu": {
       "uuid": "GPU-7a7c7dc2-ceb8-0784-a007-6d0c7b82244e",
-      "utilization": 92.0,
-      "memory_utilization": 23.0,
-      "free_mib": 25902.0
+      "utilization": 87.0,
+      "memory_utilization": 9.0,
+      "free_mib": 74875.0
     },
     "idle_seconds": 0,
     "eligible": false
   },
-  "larger_reader": "separate pending experiment; current automatic first stage isolates format using E4B",
-  "previous_v13": "preserved paused common1024 native14/generated14/first_token13; do not mix labels",
-  "code_commit": "af1b3816512ff511bab0058703ceda7ce54917e2"
+  "superseded_e4b_watcher": {
+    "pid": 178546,
+    "status": "stopped",
+    "record": "/content/local_fast/lsdrag-head-v14/idle_watch/status.json"
+  },
+  "retrieval": "existing frozen embedding/index unchanged"
 }
