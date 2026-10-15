@@ -1,3 +1,7 @@
+# Active phase — first2 diagnostic launched
+
+PID16960 launched fresh native/generated/first-token paired diagnostic, first2 fixed train questions. Launch record `/content/local_fast/lsdrag-head-v13/launch.json`; log `/content/local_fast/lsdrag-head-v13/logs/diagnostic_000_002.log`. Verify live process/command before assuming it remains active. Preflight all-five-tools/FINAL/images passed; no quality claim. Source frozen at604731a. Next inspect6 expected episode artifacts and infra/format behavior, then extend unchanged first20. Diagnostic backup bundles every completed question.
+
 # 현재 실행 — 기존 인터페이스 진단부터 순차 진행
 
 사용자가 검토안 순차 실행과 단계별 저장을 승인했다. 현 계약: `docs/JEV_DECISION_RAG_EXECUTION_20261015.md`.1단계 train20 native/generated/first-token paired 진단,2단계 fresh60/80/100 coverage-gated3-seed learned head+dev20 평가. 인자 최소화는 독립 후속 ablation. 이전 argument-candidate 결합안은 실행하지 않는다.

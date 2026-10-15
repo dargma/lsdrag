@@ -1,5 +1,5 @@
 {
-  "phase": "decision_rag_stage1_preflight",
+  "phase": "decision_rag_stage1_first2_running",
   "reason": "User approved sequential diagnosis, readout training/evaluation and later independent argument ablation, with milestone persistence.",
   "stopped_pids": [
     792503,
@@ -7,7 +7,7 @@
     796517
   ],
   "completed_teacher_questions": 33,
-  "updated_utc_epoch": 1792063070.7217321,
+  "updated_utc_epoch": 1792063158.6184018,
   "updated_utc": "2026-10-15T10:56:15.168798+00:00",
   "prior_git_head": "c080bb9",
   "historical_completed_teacher_questions": 33,
@@ -27,5 +27,47 @@
   "design_approval": "approved_all_included",
   "pending_question": null,
   "active_run": "/content/local_fast/lsdrag-head-v13/results/decision_rag_20261015",
-  "review": "docs/JEV_DECISION_RAG_REASSESSMENT_20261015.md"
+  "review": "docs/JEV_DECISION_RAG_REASSESSMENT_20261015.md",
+  "launch": {
+    "pid": 16960,
+    "command": [
+      "python",
+      "-u",
+      "scripts/run_decision_rag_stages.py",
+      "--model-path",
+      "/content/local_fast/lsdrag-v11/hf/models--google--gemma-4-E4B-it/snapshots/ee0ef6023621cff504d758262d4e04895a5af4a2",
+      "--corpus",
+      "/content/local_fast/lsdrag-work/data/ir_final288",
+      "--indexes",
+      "/content/local_fast/lsdrag-work/indexes_final288",
+      "--cache-dir",
+      "/content/local_fast/lsdrag-v11/hf",
+      "--train-questions",
+      "/content/local_fast/lsdrag-head-v12/data/train_questions.jsonl",
+      "--dev-questions",
+      "/content/local_fast/lsdrag-head-v12/data/dev_questions.jsonl",
+      "--gold",
+      "/content/local_fast/lsdrag-head-v12/data/gold.jsonl",
+      "--prompt",
+      "prompts/search_linked.txt",
+      "--output",
+      "/content/local_fast/lsdrag-head-v13/results/decision_rag_20261015",
+      "--scorer",
+      "/content/local_fast/lsdrag-v11/scorer",
+      "--dataset-manifest",
+      "lab/registry/full_head_20261015/data_manifest.json",
+      "--backup",
+      "/content/drive/MyDrive/lsdrag-backups/20261015/decision_rag_20261015",
+      "--phase",
+      "diagnose",
+      "--start",
+      "0",
+      "--limit",
+      "2"
+    ],
+    "cwd": "/content/local_fast/lsdrag-code",
+    "log": "/content/local_fast/lsdrag-head-v13/logs/diagnostic_000_002.log",
+    "started_epoch": 1792063136.5049255,
+    "phase": "stage1_first2"
+  }
 }

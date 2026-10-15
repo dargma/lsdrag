@@ -73,3 +73,7 @@ User approved proposed order and requested saving every stage. Frozen initial pl
 ## 2026-10-15 — stage1 preflight passed
 
 19 targeted CPU tests passed including native typed parsing. Actual frozen Gemma synthetic smoke passed all five handlers, FINAL and f1/f2 actual image delivery; not learned quality evidence. New runner compiles and CLI loads. Added atomic teacher PT publication, diagnostic per-question bundles, teacher5-question bundles and native dev reference before freezing source. Proceeding first2 fresh paired diagnostic.
+
+## 2026-10-15 — stage1 first2 active
+
+Detached PID16960, launch and log under /content/local_fast/lsdrag-head-v13. Frozen runner604731a. Expected6 diagnostic episodes (2 questions×3 policies). Source must not change during run. Verify process and actual JSON/PT artifacts before continuation.
