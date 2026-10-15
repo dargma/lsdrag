@@ -103,3 +103,13 @@ Next run root `/content/local_fast/lsdrag-head-v13/results/decision_rag_20261015
 ## 2026-10-15 — budget256 complete, common1024 active
 
 All60 diagnostic episodes verified and immutable Drive archive SHA checked; automatic checkpoint27af6b4 pushed. Child23869 now runs fresh common1024 under pipeline21697. Budget256 summaries are diagnostic only because truncation differs by serialization. No label transfer across budget contracts.
+
+
+# USER PAUSE — 2026-10-15 11:39 UTC
+
+사용자 요청으로 저장 후 중지. 아래 과거의 active/automatic continuation 지시보다 이 중지 상태가 우선한다. 명시적 재개 요청 전 실험을 다시 실행하지 않는다.
+
+Pipeline21697, collector23869, owned embedding worker24088 stopped. Common1024 saved valid JSON episodes: native14, generated14, first_token13 (41/60); paired teacher JSON/PT14. In-flight episode is not claimed complete. Budget25660/60 belongs to the earlier diagnostic only. Learned-policy quality and full pipeline completion are not established.
+
+Runtime `/content/local_fast/lsdrag-head-v13`; stop record `STOPPED_BY_USER.json`. Execution plan `docs/JEV_DECISION_RAG_EXECUTION_20261015.md`; pending reader/modality diagnosis `docs/JEV_READER_DIAGNOSTIC_PENDING_20261015.md`. Preserve all prior results. On explicit resume, inspect artifacts/processes, validate the1024 contract and runner skip behavior, finish paired20 before the coverage-gated teacher/head/dev stages. Do not automatically run the historical launch commands below.
+
