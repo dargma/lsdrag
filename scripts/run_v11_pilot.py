@@ -308,6 +308,8 @@ def main():
         p.add_argument('--'+name, type=Path, required=name != 'backup')
     p.add_argument('--phase', choices=['all', 'diagnose', 'collect', 'train', 'evaluate'], default='all')
     a = p.parse_args()
+    if (a.output/"DISCARDED.json").exists():
+        raise ValueError("This run was discarded by the user; do not resume or reuse its labels")
     plan_path = Path(__file__).resolve().parents[1]/'lab/registry/jev_v1.1/execution_plan.json'
     plan = json.loads(plan_path.read_text())
     if sha256(a.data/'manifest.json') != plan['data_manifest_sha256']:

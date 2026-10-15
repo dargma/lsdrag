@@ -28,7 +28,7 @@ class EvidenceContext:
         self.pending_images[digest] = {"image_path": figure["image_path"], "image_sha256": digest, "figure_ids": [identity]}
         return "queued_for_reader"
 
-    def read(self, chunk_ids):
+    def read(self, chunk_ids, *, _figure_filter=None):
         if not isinstance(chunk_ids, list) or not 1 <= len(chunk_ids) <= 8:
             raise ValueError("Provide 1–8 chunk IDs")
         # Validate whole request before mutating state.
@@ -44,20 +44,21 @@ class EvidenceContext:
             else:
                 self.read_chunks.add(key)
                 record.update(text=c["text"], previous_chunk_id=c.get("previous_chunk_id"), next_chunk_id=c.get("next_chunk_id"))
-            record["figures"] = [{"figure_id": f, "status": self._figure(f)} for f in c["figure_ids"]]
+            record["figures"] = [{"figure_id": f, "status": self._figure(f)} for f in c["figure_ids"] if _figure_filter is None or f in _figure_filter]
             results.append(record)
         self.events.append({"action": "read_chunk", "chunk_ids": list(chunk_ids)})
         return results
 
     def figure_read(self, figure_ids):
-        if self.retrieval.arm != "V2":
-            raise ValueError("figure_read is only exposed in V2")
+        if self.retrieval.arm not in {"G1", "V2"}:
+            raise ValueError("figure_read requires a visual G1 or V2 runtime")
         if not isinstance(figure_ids, list) or not 1 <= len(figure_ids) <= 8:
             raise ValueError("Provide 1–8 figure IDs")
         for key in figure_ids:
             if key not in self.retrieval.figures:
                 raise ValueError(f"Unknown figure ID: {key}")
-        return self.read([self.retrieval.figures[f]["chunk_id"] for f in figure_ids])
+        return self.read(list(dict.fromkeys(self.retrieval.figures[f]["chunk_id"] for f in figure_ids)),
+                         _figure_filter=set(figure_ids))
 
     def read_search_images(self, results, source_tool):
         """Read returned image-linked chunks without another agent tool decision."""

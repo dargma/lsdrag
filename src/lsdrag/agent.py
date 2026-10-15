@@ -11,6 +11,7 @@ import requests
 import tiktoken
 
 from .context import EvidenceContext
+from .tool_registry import (action_names, bind_tools, synchronize_prompt, tool_contract_sha256, tool_schemas)
 
 
 @dataclass(frozen=True)
@@ -25,28 +26,7 @@ class AgentConfig:
     image_soft_tokens: int = 1120
     timeout_seconds: int = 240
     seed: int = 20261013
-
-
-def tool_schemas(arm, image_delivery_policy="agent-read"):
-    def schema(name, description, properties, required):
-        return {"type": "function", "function": {"name": name, "description": description, "parameters": {"type": "object", "properties": properties, "required": required, "additionalProperties": False}}}
-    ids = {"type": "array", "items": {"type": "string"}, "minItems": 1, "maxItems": 8}
-    top = {"type": "integer", "minimum": 1, "maximum": 20, "default": 5}
-    query = {"type": "string", "description": "A natural language description of the evidence to retrieve."}
-    schemas = [
-        schema("keyword_search", "Find chunks by literal case-insensitive keywords. Use short specific terms or entity names, 1–3 words each. Returns IDs and abbreviated snippets; read promising chunks before answering.", {"keywords": {"type": "array", "items": {"type": "string"}, "minItems": 1}, "top_k": top}, ["keywords"]),
-        schema("semantic_search", "Find chunks by semantic similarity when wording is unknown or keyword search is insufficient. Returns IDs and short snippets; use read_chunk for full evidence.", {"query": query, "top_k": top}, ["query"]),
-        schema("read_chunk", "Read full text for chunk IDs from search. Image-caption chunks also load their linked image. Already-read content is not repeated. Follow adjacent IDs when content is incomplete.", {"chunk_ids": ids}, ["chunk_ids"]),
-    ]
-    if image_delivery_policy == "search-linked":
-        for tool in schemas[:2]:
-            tool["function"]["description"] += " Image-linked chunks in returned results are automatically read within the shared image budget; their actual images follow before your next response. Use read_chunk for text-only chunks or further evidence."
-    if arm == "V2":
-        schemas.extend([
-            schema("image_search", "Find figures by actual visual content using a text query. Describe the subject or scene needed, without assuming the answer. Optionally restrict to discovered document IDs. Returns figure IDs and text only; use figure_read to inspect images.", {"query": query, "document_ids": {"type": "array", "items": {"type": "string"}}, "top_k": top}, ["query"]),
-            schema("figure_read", "Inspect selected figures and linked text. The actual images follow the tool results. Use this to verify visual properties before answering.", {"figure_ids": ids}, ["figure_ids"]),
-        ])
-    return schemas
+    tool_profile: str = "legacy"
 
 
 def image_message(images, question=None):
@@ -136,16 +116,16 @@ class Agent:
         if len(question_images) >= self.config.max_images:
             raise ValueError("Question images leave no evidence image budget")
         context = EvidenceContext(self.retrieval, self.config.max_images - len(question_images))
-        messages = [{"role": "system", "content": self.prompt}, {"role": "user", "content": question}]
+        schemas = tool_schemas(self.retrieval.arm, self.config.image_delivery_policy, self.config.tool_profile)
+        handlers = bind_tools(self.retrieval, context, schemas)
+        effective_prompt = (synchronize_prompt(self.prompt, schemas, self.config.image_delivery_policy)
+                            if self.config.tool_profile == "multimodal_full" else self.prompt)
+        messages = [{"role": "system", "content": effective_prompt}, {"role": "user", "content": question}]
         if question_images:
             messages[-1] = image_message(question_images)
             messages[-1]["content"][0]["text"] = question + "\nThe following image is part of the question. Search the conversation history for supporting evidence."
         if self.config.image_delivery_policy not in {"agent-read", "search-linked"}:
             raise ValueError("Unknown image delivery policy")
-        schemas = tool_schemas(self.retrieval.arm, self.config.image_delivery_policy)
-        handlers = {"keyword_search": self.retrieval.keyword_search, "semantic_search": self.retrieval.semantic_search, "read_chunk": context.read}
-        if self.retrieval.arm == "V2":
-            handlers.update(image_search=self.retrieval.image_search, figure_read=context.figure_read)
         trajectory, calls, errors = [], [], []
         answer = ""
         status, stop_reason = "failed", None
@@ -166,6 +146,13 @@ class Agent:
                 choice, usage = self.reader.chat(messages, None if forced else schemas)
             except Exception as error:
                 errors.append({"loop": loop + 1, "error": f"{type(error).__name__}: {error}"})
+                if hasattr(error, "usage"):
+                    calls.append({"loop": loop + 1, "usage": error.usage,
+                                  "seconds": time.monotonic() - call_start,
+                                  "new_figure_ids": [f for image in images for f in image["figure_ids"]],
+                                  "finish_reason": "invalid_arguments", "message": None})
+                    if images:
+                        context.mark_images_accepted(images)
                 break
             if images:
                 context.mark_images_accepted(images)
@@ -177,7 +164,7 @@ class Agent:
                 assistant["tool_calls"] = tool_calls
             messages.append(assistant)
             if not tool_calls:
-                if self.retrieval.arm == "V2" and not forced and not verification_requested:
+                if self.retrieval.arm == "V2" and not forced and not verification_requested and not usage.get("direct_dispatch"):
                     verification_requested = True
                     messages.append({"role": "user", "content": "Verify your proposed answer against the original question: " + question + "\nCheck that the evidence depicts the requested entity rather than a related entity, and supports every required relationship and visual attribute. If evidence is missing or mismatched, use the remaining tools to resolve it. Otherwise return the final JSON answer. Do not guess missing visual attributes."})
                     continue
@@ -191,9 +178,13 @@ class Agent:
                 tool_start = time.monotonic()
                 name, arguments = tc["function"]["name"], {}
                 try:
-                    arguments = json.loads(tc["function"]["arguments"])
+                    raw_arguments = tc["function"]["arguments"]
+                    arguments = raw_arguments if isinstance(raw_arguments, dict) else json.loads(raw_arguments)
                     if name not in handlers:
                         raise ValueError("Unknown tool")
+                    from jsonschema import validate
+                    parameters = next(t["function"]["parameters"] for t in schemas if t["function"]["name"] == name)
+                    validate(arguments, parameters)
                     result = handlers[name](**arguments)
                     if name in {"keyword_search", "semantic_search"} and self.config.image_delivery_policy == "search-linked":
                         result = context.read_search_images(result, name)
@@ -208,4 +199,4 @@ class Agent:
                 trajectory.append({"loop": loop + 1, "tool_name": name, "arguments": arguments, "result": result, "retrieved_tokens": tokens, "seconds": time.monotonic() - tool_start})
                 messages.append({"role": "tool", "tool_call_id": tc["id"], "content": content})
         parsed = parse_answer(answer)
-        return {"qid": qid, "question": question, "question_image_count": len(question_images), "arm": self.retrieval.arm, "status": status, "stop_reason": stop_reason, "answer_raw": answer, **parsed, "loops": min(len(calls), self.config.max_loops), "reader_call_count": len(calls), "verification_requested": verification_requested, "search_tokens": search_tokens, "evidence_tokens": evidence_tokens, "seconds": time.monotonic() - start, "prompt_tokens": sum(c["usage"].get("prompt_tokens", 0) for c in calls), "completion_tokens": sum(c["usage"].get("completion_tokens", 0) for c in calls), **context.summary(), "evidence_events": context.events, "trajectory": trajectory, "reader_calls": calls, "errors": errors, "config": asdict(self.config), "prompt_sha256": hashlib.sha256(self.prompt.encode()).hexdigest()}
+        return {"qid": qid, "question": question, "question_image_count": len(question_images), "arm": self.retrieval.arm, "status": status, "stop_reason": stop_reason, "answer_raw": answer, **parsed, "loops": min(len(calls), self.config.max_loops), "reader_call_count": len(calls), "verification_requested": verification_requested, "search_tokens": search_tokens, "evidence_tokens": evidence_tokens, "seconds": time.monotonic() - start, "prompt_tokens": sum(c["usage"].get("prompt_tokens", 0) for c in calls), "completion_tokens": sum(c["usage"].get("completion_tokens", 0) for c in calls), **context.summary(), "evidence_events": context.events, "trajectory": trajectory, "reader_calls": calls, "errors": errors, "config": asdict(self.config), "prompt_sha256": hashlib.sha256(effective_prompt.encode()).hexdigest(), "source_prompt_sha256": hashlib.sha256(self.prompt.encode()).hexdigest(), "tool_contract_sha256": tool_contract_sha256(schemas), "actions": list(action_names(schemas))}

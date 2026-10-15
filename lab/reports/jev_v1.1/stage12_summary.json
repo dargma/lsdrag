@@ -91,5 +91,8 @@
     },
     "n": 40
   },
-  "scope": "table-conditioned text+image one-boundary continuation pilot; development only"
+  "scope": "table-conditioned text+image one-boundary continuation pilot; development only",
+  "disposition": "discarded_by_user",
+  "reuse_for_training_evaluation_or_conclusions": false,
+  "superseded_by": "docs/JEV_DIRECT_ARAG_IMPLEMENTATION.md"
 }

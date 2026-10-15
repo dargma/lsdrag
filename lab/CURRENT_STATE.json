@@ -2,7 +2,7 @@
   "decision_research": {
     "branch": "jev_v1.1",
     "updated_utc": "2026-10-15",
-    "status": "stage1_collection_waiting_exclusive_gpu",
+    "status": "full_tool_direct_arag_implemented_and_astra_verified",
     "proposal": "docs/JEV_ICML2027_RESEARCH_PROPOSAL.md",
     "astra_review": "docs/JEV_ICML2027_ASTRA_REVIEW.md",
     "previous_poc": "lab/reports/jev_v1.0/PROGRESS.md",
@@ -23,10 +23,10 @@
       "background_f1": 0.025,
       "gate": "passed"
     },
-    "stage2": "gated_pending",
+    "stage2": "new_full_tool_head_not_trained",
     "valid_training_records": 244,
     "head_acceleration": {
-      "status": "implemented_cpu_tested_astra_reviewed_gpu_probe_pending",
+      "status": "backbone-only readout incorporated in full-tool direct reader; old Q3 acceleration experiment discarded",
       "plan": "docs/JEV_HEAD_ACCELERATION_PLAN.md",
       "review": "docs/JEV_HEAD_ACCELERATION_ASTRA_REVIEW.md",
       "amendment": "lab/registry/jev_v1.1/head_acceleration_amendment.json"
@@ -36,7 +36,27 @@
       "stops": 2,
       "last_records_archived": true,
       "other_processes_untouched": true
-    }
+    },
+    "discard_notice": "outputs/jev_v1.1/stage12_20261015_v2/DISCARDED.json",
+    "current_action_space": [
+      "keyword_search",
+      "semantic_search",
+      "read_chunk",
+      "image_search",
+      "figure_read",
+      "FINAL"
+    ],
+    "implementation": "docs/JEV_DIRECT_ARAG_IMPLEMENTATION.md",
+    "current_astra_review": "docs/JEV_DIRECT_ARAG_ASTRA_REVIEW.md",
+    "research_synthesis": "docs/JEV_RESEARCH_SYNTHESIS_20261015.md",
+    "gpu_policy": "shared GPU functional work allowed within free VRAM; comparative latency deferred",
+    "functional_validation": {
+      "cpu_tests": 72,
+      "excluded_legacy_test_file": "tests/test_hf_reader.py requires unavailable vllm native parser",
+      "actual_backbone_smoke": "passed; scripted head and synthetic index; not a learned policy result",
+      "report": "lab/reports/jev_v1.1/direct_arag_functional_smoke.json"
+    },
+    "research_candidate": "short action-conditioned latent imagination and correction using actual observations; hypothesis not implemented or validated"
   },
   "stage": "comparison_report",
   "status": "search_linked100_complete",

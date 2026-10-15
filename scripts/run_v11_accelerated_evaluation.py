@@ -184,6 +184,8 @@ def main():
     parser.add_argument('--phase', choices=['evaluate'], default='evaluate')
     parser.add_argument('--probe', type=Path, required=True)
     args = parser.parse_args()
+    if (args.output/"DISCARDED.json").exists():
+        raise ValueError("This run was discarded by the user; do not resume or reuse its labels")
     trained = json.loads((args.output/'head_training.json').read_text())
     amendment = frozen_amendment(args, trained['runs'])
     if not json.loads((args.output/'oracle_summary.json').read_text())['gate']['passed']:

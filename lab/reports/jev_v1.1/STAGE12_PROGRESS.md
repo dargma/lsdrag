@@ -1,3 +1,5 @@
+> **DISCARDED BY USER (2026-10-15).** Historical three-action measurements only. Do not reuse for training, evaluation or current conclusions. See [full-tool implementation](../../../docs/JEV_DIRECT_ARAG_IMPLEMENTATION.md).
+
 # jev_v1.1 — 1·2단계 실행 기록
 
 공식 MMQA의 공개 표를 공통 배경으로 사용한 텍스트·이미지 continuation pilot이다. 최종 benchmark test나 독창성·비열등성 검증이 아니다.

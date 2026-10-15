@@ -1,5 +1,7 @@
 # lsdrag
 
+현재 decision 연구: [전체 도구·직접 실행 구현](docs/JEV_DIRECT_ARAG_IMPLEMENTATION.md) · [Astra 검증](docs/JEV_DIRECT_ARAG_ASTRA_REVIEW.md) · [최신 연구 종합·벤치마크](docs/JEV_RESEARCH_SYNTHESIS_20261015.md) · [Surprise/world model](docs/JEV_SURPRISE_WORLD_MODEL_REVIEW_20261015.md). 새 6-action head의 학습 성능은 아직 미검증이며, 이전 축소 3-action 측정은 사용자 지시로 폐기했습니다. 아래 기존 멀티모달 검색 비교는 별도 역사적 실험입니다.
+
 M3DocVQA 100문항과 Mem-Gallery 100문항(VS 50·VR 50)으로 멀티모달 A-RAG와 EmbeddingGemma 2의 효과를 비교합니다.
 
 - [실험 실행 지시서](docs/EXPERIMENT_PLAN.md)

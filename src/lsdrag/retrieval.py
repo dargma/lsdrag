@@ -136,8 +136,8 @@ class Retrieval:
         return [self.snippet(key, matches.get(key)) for key in identities[:top_k]]
 
     def image_search(self, query, document_ids=None, top_k=5):
-        if self.arm != "V2":
-            raise ValueError("image_search is only exposed in V2")
+        if self.arm not in {"G1", "V2"}:
+            raise ValueError("image_search requires a visual G1 or V2 runtime")
         allowed = set(self.figures) if self.scoped else None
         if document_ids:
             wanted = set(document_ids)
