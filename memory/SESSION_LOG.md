@@ -57,3 +57,7 @@ Revalidated clean local Git at13f865f and persisted pending user stage2 scope de
 ## 2026-10-15 — user approved full revised scope
 
 User replied “모두 포함”: approval now includes implementation,20-question paired diagnostic,fresh60/80/100 coverage-gated teacher collection,3-seed action-head training and paired dev20 evaluation. Prior design/scope blocker cleared. New v13 result root; no historical labels/checkpoints reused. Candidate arg choice remains frozen first-token selection; trained six-action head is the learning target.
+
+## 2026-10-15 — user challenges complexity and objective alignment
+
+After all-inclusive approval, user questioned whether a simple head can make the proposed decisions, whether minimizing A-RAG calls is the right objective, and whether the interface itself needs redesign. No new runtime code or experiment had started. Reassessing architecture and supervision before implementation; overall full-stage objective remains.

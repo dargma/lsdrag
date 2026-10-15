@@ -1,3 +1,7 @@
+# 최신 steering — 설계 타당성 재검토
+
+사용자는 전체 범위 승인 직후, 인자 최소화가 구성요소를 덕지덕지 붙이는 방향인지, 작은 head가 판단 가능한지, tool call 최소화 목적에 맞는지, A-RAG 인터페이스 재설계가 필요한지 질문했다. 범위 축소나 목표 취소가 아니라 현재 설계에 대한 재검토 요청이다. 확정 범위만851925a로 기록했으며 인자 제어 코드/새 실험은 아직 시작하지 않았다. 먼저 목표(호출 수 vs 인자 생성 vs 전체 계산)와 학습 target(teacher imitation vs 비용 대비 QA 가치)을 분리해 검토한다. 기존 다섯 도구 의미를 보존하면서 가능한 typed execution option을 공동 선택하는 인터페이스는 검토안이며 아직 승인된 대체 구현이 아니다.
+
 # 최신 승인 — 2026-10-15
 
 사용자가 “모두 포함”으로 새 설계와2단계의 teacher 수집·head 학습·dev 평가 포함 범위를 확정했다. 이전 승인 대기 문구는 해제한다. `docs/JEV_ARGUMENT_CONTROL_PLAN_20261015.md`의 확정 범위를 따른다. 현재 단계:1단계 구현 착수; 새 run root `/content/local_fast/lsdrag-head-v13/results/argument_control_20261015`. 기존 v2 실행은 재개하지 않고 fresh labels를 수집한다. 모델/데이터 복원 완료.
