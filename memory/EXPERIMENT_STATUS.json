@@ -1,6 +1,6 @@
 {
-  "phase": "compact_train4_audit",
-  "updated_utc": "2026-10-16T14:33:50.130320+00:00",
+  "phase": "v5_passed_policy_continuation_ready",
+  "updated_utc": "2026-10-16T14:40:17.237921+00:00",
   "protocol": "docs/JEV_TEXT_INTEGRATED_EXECUTION_20261016.md",
   "protocol_sha256": "0adecb3e30136b974fa1ecfffe74282df019f5ccbe0ece7fdbb6547fa486bc18",
   "prompt": "prompts/text_rag_integrated_v5.txt",
@@ -28,14 +28,14 @@
     20261016
   ],
   "worker_wall_budget_minutes": 60,
-  "run_planned": "/content/local_fast/lsdrag-text-v1/results/text_integrated_20261016_implicit_v5",
-  "pid": 64829,
+  "run_planned": "/content/local_fast/lsdrag-text-v1/results/text_integrated_20261016_v5_fast_only",
+  "pid": null,
   "implementation_completed": true,
   "dataset_prepared": true,
-  "teacher_collection_started": true,
+  "teacher_collection_started": false,
   "training_completed": false,
   "evaluation_completed": false,
-  "next": "Fresh v5 train4 and native cost gate; teacher32 only after pass.",
+  "next": "Verified-parent continuation; teacher32/max48 then only passed always-generate learned policy vs native.",
   "previous_multimodal_checkpoint_historical_only": {
     "phase": "native2_review_required",
     "run": "/content/local_fast/lsdrag-head-v14/results/native_distillation_12b_20261015",
@@ -169,9 +169,9 @@
   },
   "thinking_mode": "non-thinking-only model",
   "external_evaluation_completed": true,
-  "updated_epoch": 1792161259.879151,
+  "updated_epoch": 1792161412.00303,
   "d3_additional_analysis": "withdrawn",
-  "session_id": 35136,
+  "session_id": null,
   "functional_smoke": {
     "passed": true,
     "checks": 7,
@@ -180,11 +180,11 @@
   "thinking_enabled": false,
   "thinking_flag_explicit": true,
   "primary_comparator": "native A-RAG",
-  "speed_gate_passed": false,
+  "speed_gate_passed": true,
   "target_speedup_vs_native": 1.5,
   "target_speedup_measured": false,
   "run": "/content/local_fast/lsdrag-text-v1/results/text_integrated_20261016_implicit_v5",
-  "worker_seconds": 21.85089442699973,
+  "worker_seconds": 173.97477255600006,
   "contract": "bbba13da3b082396b581600ff0dec67c511bdc941aefc44dbda4303adc83f718",
   "teacher_target": 4,
   "log": "/content/local_fast/lsdrag-text-v1/logs/integrated_implicit_v5.log",
@@ -193,5 +193,10 @@
   "natural_states": 15,
   "trained_head": false,
   "error": "TypeError: Object of type bool is not JSON serializable",
-  "prior_worker_seconds": 247.693569559
+  "prior_worker_seconds": 421.668342115,
+  "reason": "Slower, uncertain, missing bucket coverage or invalid path; no teacher32 expansion",
+  "integrated_speed_gate_passed": false,
+  "retained_cost_policies": [
+    "always_generate"
+  ]
 }

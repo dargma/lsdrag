@@ -58,6 +58,8 @@ def main():
     parser=argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--output',type=Path,required=True)
     parser.add_argument('--minutes',type=float,default=58)
+    parser.add_argument('--verified-parent',type=Path,
+                        help='Reuse an unchanged runtime contract and only its passing cost-screen policies')
     args=parser.parse_args()
     root=Path('/content/local_fast/lsdrag-text-v1');repo=Path(__file__).resolve().parents[1]
     if not args.output.resolve().is_relative_to(root.resolve()):parser.error('Run output must be local-fast')
@@ -103,7 +105,32 @@ def main():
         'data_sha256':{s:sha256(root/f'source/musique/musique_ans_v1.0_{s}.jsonl') for s in ['train','dev']},
         'versions':{k:importlib.metadata.version(k) for k in ['torch','transformers','lm-format-enforcer']}}
     # JSON-normalized tuples so resume comparisons preserve identity.
-    manifest=json.loads(json.dumps(manifest));contract=hashlib.sha256(canonical(manifest).encode()).hexdigest()
+    manifest=json.loads(json.dumps(manifest));parent_contract=None;parent_screen=None
+    if args.verified_parent:
+        parent=args.verified_parent.resolve()
+        if not parent.is_relative_to(root.resolve()):raise ValueError('Parent must be local-fast')
+        old=json.loads((parent/'manifest.json').read_text())
+        for key,value in manifest.items():
+            if key=='source_sha256':
+                for source,digest in value.items():
+                    if source!='scripts/run_text_integrated_pilot.py' and old[key][source]!=digest:
+                        raise ValueError('Parent runtime source changed: '+source)
+            elif old[key]!=value:raise ValueError('Parent feature/experiment contract changed: '+key)
+        parent_contract=hashlib.sha256(canonical(old).encode()).hexdigest()
+        parent_screen=json.loads((parent/'cost_screen.json').read_text())
+        if not any(v['passed'] for v in parent_screen['policies'].values()):raise ValueError('No parent cost-screen policy passed')
+        manifest['verified_parent']={'run':str(parent),'contract':parent_contract,
+            'cost_screen_sha256':sha256(parent/'cost_screen.json'),
+            'change':'Orchestration only: advance passing policies; no runtime/prompt/candidate/model/data/label changes'}
+        reused={}
+        for folder in ['teacher','index']:
+            for source in sorted((parent/folder).iterdir()):
+                destination=args.output/folder/source.name;destination.parent.mkdir(parents=True,exist_ok=True)
+                if destination.exists() and sha256(destination)!=sha256(source):raise ValueError('Parent artifact conflict')
+                if not destination.exists():shutil.copyfile(source,destination)
+                reused[str(source.relative_to(parent))]=sha256(source)
+        save('verified_parent_artifacts.json',reused)
+    contract=hashlib.sha256(canonical(manifest).encode()).hexdigest()
     if (args.output/'manifest.json').exists() and json.loads((args.output/'manifest.json').read_text())!=manifest:
         raise ValueError('Changed contract; choose a fresh run identity')
     save('manifest.json',manifest);save('launch.json',{'pid':os.getpid(),'argv':sys.argv,'contract':contract})
@@ -142,6 +169,7 @@ def main():
         remaining();q=raw['train'][qid];rows,vectors=corpus(q);path=args.output/'teacher'/f'{qid}.json'
         if path.exists():
             obj=json.loads(path.read_text());ep=obj['episode'];rs=obj['records'];fs=np.load(path.with_suffix('.npz'))['features']
+            if obj['contract'] not in {contract,parent_contract}:raise ValueError('Teacher feature contract mismatch')
         else:
             ep,rs,fs=run_episode(q['question'],rows,vectors,embedder,reader,prompt,'teacher',deadline=deadline)
             for r in rs:r['qid']=qid
@@ -174,7 +202,7 @@ def main():
             'action_bias':torch.zeros(4,device='cuda'),'slot_weight':torch.zeros((3,5,hidden),device='cuda'),
             'slot_bias':torch.zeros((3,5),device='cuda')}
         cost_rows=[]
-        for repeat in range(3):
+        for repeat in range(0 if parent_screen else 3):
             for number,r in enumerate(records):
                 remaining();q=raw['train'][r['qid']];rows,vectors=corpus(q)
                 bucket='FINAL' if r['action']=='FINAL' else ('reuse' if r['slot']>0 else 'generate')
@@ -204,11 +232,13 @@ def main():
                 cost_rows.append(row);save('cost_rows.json',cost_rows)
                 print(json.dumps({'screen_repeat':repeat,'qid':r['qid'],'loop':r['loop'],'bucket':bucket,
                     'seconds':{p:round(v['seconds'],3) for p,v in row['conditions'].items()}}),flush=True)
-        screen=cost_summary(cost_rows);save('cost_screen.json',screen)
-        if not screen['passed']:
+        screen=parent_screen if parent_screen else cost_summary(cost_rows);save('cost_screen.json',screen)
+        retained_policies=[p for p,value in screen['policies'].items() if value['passed']]
+        if not retained_policies:
             phase('compact_cost_nogo',speed_gate_passed=False,teacher_questions=4,training_completed=False,
                   reason='Slower, uncertain, missing bucket coverage or invalid path; no teacher32 expansion');backup();return
-        phase('compact_teacher32',speed_gate_passed=True,teacher_target=32)
+        phase('compact_teacher32',speed_gate_passed=True,integrated_speed_gate_passed=screen['policies']['integrated']['passed'],
+              retained_cost_policies=retained_policies,teacher_target=32)
         backup()
         for qid in split['train'][4:32]:collect(qid)
         info,checkpoint=train_heads(records,features,contract)
@@ -225,8 +255,7 @@ def main():
         reader.checkpoint={k:checkpoint[k].to('cuda') for k in ['action_weight','action_bias','slot_weight','slot_bias']}
         phase('compact_head_evaluation',teacher_questions=len(episodes),training_completed=True)
         backup();results=[]
-        conditions=['native','integrated']
-        if screen['policies']['always_generate']['passed']:conditions.append('always_generate')
+        conditions=['native']+retained_policies
         for number,qid in enumerate(holdout):
             q=raw['dev'][qid];rows,vectors=corpus(q);order=list(conditions);random.Random(20261016+number).shuffle(order)
             for policy in order:
@@ -240,9 +269,9 @@ def main():
         summary={p:{'n':len([r for r in results if r['policy']==p]),**{k:float(np.mean([r[k] for r in results if r['policy']==p]))
             for k in ['f1','em','support_f1','seconds','tool_calls','answer_format_valid','prompt_tokens','completion_tokens','reused_argument_calls']},
             'failures':sum(bool(r['errors']) for r in results if r['policy']==p)} for p in conditions}
-        native=summary['native'];integrated=summary['integrated']
+        native=summary['native']
         save('summary.json',{'policies':summary,'controlled_latency_claim':False,
-            'retained':integrated['failures']==0 and integrated['f1']>=native['f1'] and integrated['seconds']<native['seconds'],
+            'retained':{p:summary[p]['failures']==0 and summary[p]['f1']>=native['f1'] and summary[p]['seconds']<native['seconds'] for p in retained_policies},
             'note':'Small fixed pilot. End-to-end rollouts may have different step counts; matched-state cost screen is separate.'})
         phase('compact_complete',training_completed=True,evaluation_completed=True,teacher_questions=len(episodes));backup()
     except TimeoutError as error:

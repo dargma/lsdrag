@@ -1,0 +1,108 @@
+{
+  "policies": {
+    "integrated": {
+      "failures": 0,
+      "buckets": {
+        "all": {
+          "n": 45,
+          "qids": 4,
+          "speedup": 1.6919731158271532,
+          "ci95": [
+            1.5739932855593202,
+            1.7850127788305432
+          ],
+          "passed": true
+        },
+        "reuse": {
+          "n": 6,
+          "qids": 2,
+          "speedup": 8.800468989776597,
+          "ci95": [
+            6.107203231594432,
+            11.906136446610345
+          ],
+          "passed": true
+        },
+        "generate": {
+          "n": 27,
+          "qids": 4,
+          "speedup": 1.6832406555081523,
+          "ci95": [
+            1.6335985268615503,
+            1.8137500722021542
+          ],
+          "passed": true
+        },
+        "FINAL": {
+          "n": 12,
+          "qids": 4,
+          "speedup": 1.1048850848937253,
+          "ci95": [
+            0.9665475006683677,
+            1.174335547585503
+          ],
+          "passed": false
+        }
+      },
+      "passed": false
+    },
+    "always_generate": {
+      "failures": 0,
+      "buckets": {
+        "all": {
+          "n": 45,
+          "qids": 4,
+          "speedup": 1.713079305395423,
+          "ci95": [
+            1.6335244077675573,
+            1.8303889198260872
+          ],
+          "passed": true
+        },
+        "reuse": {
+          "n": 6,
+          "qids": 2,
+          "speedup": 2.3822877126921473,
+          "ci95": [
+            2.1505268368727966,
+            2.913043843112096
+          ],
+          "passed": true
+        },
+        "generate": {
+          "n": 27,
+          "qids": 4,
+          "speedup": 1.7159966709555294,
+          "ci95": [
+            1.5961634182564666,
+            1.8335830112794487
+          ],
+          "passed": true
+        },
+        "FINAL": {
+          "n": 12,
+          "qids": 4,
+          "speedup": 1.4319684655001044,
+          "ci95": [
+            1.2990518233548798,
+            1.5461516006894391
+          ],
+          "passed": true
+        }
+      },
+      "passed": true
+    }
+  },
+  "passed": false,
+  "scope": "Train4 interleaved matched-state/oracle-action cost feasibility only; not learned quality or controlled latency.",
+  "same_states_and_actions": true,
+  "generated_argument_text_may_differ": true,
+  "shared_gpu": true,
+  "controlled_latency_claim": false,
+  "head_is_trained": false,
+  "source_commit": "467f89b",
+  "run": "/content/local_fast/lsdrag-text-v1/results/text_integrated_20261016_implicit_v5",
+  "worker_seconds": 173.974772556,
+  "disposition": "Integrated not expanded (FINAL uncertain); always_generate passed every bucket and advances unchanged",
+  "learned_quality_tested": false
+}
