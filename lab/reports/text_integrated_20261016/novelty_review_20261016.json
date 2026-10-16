@@ -1,0 +1,155 @@
+{
+  "as_of": "2026-10-16",
+  "status": "Literature/idea record only; no RL experiment launched",
+  "source_policy": "Primary arXiv, ACL Anthology, NeurIPS, OpenReview and author repositories. Search snippets used to locate works; marketing/community summaries are not evidence.",
+  "conclusion": "Close prior art exists for BOTH non-generative internal-state control and step-efficient RAG; LAnR is the strongest combined overlap found. No first-combination or publishability claim is justified.",
+  "papers": [
+    {
+      "name": "LAnR: Latent Abstraction for Retrieval-Augmented Generation",
+      "date": "2026-04 (arXiv; full text checked)",
+      "url": "https://arxiv.org/abs/2604.17866",
+      "mechanism": "[PRED] hidden state supplies a dense retrieval vector and a small STOP/CONT control head; removes intermediate textual query/stopping generation and adapts retrieval count.",
+      "overlap": "Very high: combines non-generative retrieval/control and fewer retrieval calls.",
+      "difference": "Our intended setting preserves heterogeneous existing keyword/semantic/read APIs and selects discrete argument reuse versus cached new argument generation; LAnR integrates latent retrieval and its document representations.",
+      "caution": "Control supervision uses positive/gold supporting documents; do not describe it as annotation-free. No exact reproduction or code audit performed."
+    },
+    {
+      "name": "GRASP: GRanularity-Aware Search Policy for Agentic RAG",
+      "date": "2026-07 arXiv",
+      "url": "https://arxiv.org/abs/2607.10463",
+      "mechanism": "RL over keyword search, semantic search, paragraph reading and answer; reward includes answer correctness, reading evidence, complementary search and quality-gated turn efficiency.",
+      "overlap": "Very high on the exact tool family and step-efficient RL objective.",
+      "difference": "Policy generates reasoning/tool actions; checked method does not replace this with our shared-prefill action/argument readout.",
+      "caution": "Adding these three tools and a step penalty is not a new contribution."
+    },
+    {
+      "name": "Stop-RAG: Value-Based Retrieval Control for Iterative RAG",
+      "date": "2025-10 arXiv",
+      "url": "https://arxiv.org/abs/2510.14337",
+      "mechanism": "Trajectory-trained Q(lambda) controller compares STOP/CONT values; DeBERTa-v3-large with two prediction heads and validation-tuned margin.",
+      "overlap": "High for future-value-based adaptive stopping.",
+      "difference": "Separate text controller and iterative query/answer pipeline, rather than a joint existing-backbone tool/argument decision.",
+      "caution": "A generic continuation-value head or expected future gain claim is already covered."
+    },
+    {
+      "name": "AutoSearch: Adaptive Search Depth for Efficient Agentic RAG via Reinforcement Learning",
+      "date": "2026-04 arXiv; Findings ACL2026",
+      "url": "https://aclanthology.org/2026.findings-acl.1399/",
+      "mechanism": "Intermediate self-answers supervise minimal sufficient search depth, rewarding sufficient search and penalizing excess search.",
+      "overlap": "High for RL-driven reduction in search depth.",
+      "difference": "Does not establish our specific generation-versus-reuse argument decision under existing APIs.",
+      "caution": "RL for fewer steps at maintained quality is not novel on its own."
+    },
+    {
+      "name": "TabAgent: A Framework for Replacing Agentic Generative Components with Tabular-Textual Classifiers",
+      "date": "2026-02 arXiv",
+      "url": "https://arxiv.org/abs/2602.16429",
+      "mechanism": "Execution-trace features and lightweight discriminative candidate scorer replace closed-set generative routing/shortlisting.",
+      "overlap": "High for replacing text-generating decisions with classifiers trained on trajectories.",
+      "difference": "Structured textual-tabular classifier, rather than necessarily reusing the same generator prefill/KV cache for tool arguments.",
+      "caution": "Head-based discrimination instead of generative selection is prior art."
+    },
+    {
+      "name": "TRINITY: An Evolved LLM Coordinator",
+      "date": "2025-12 arXiv; ICLR2026",
+      "url": "https://arxiv.org/abs/2512.04695",
+      "mechanism": "Small LM hidden representations and lightweight heads choose LLM and role across turns; evolutionary optimization.",
+      "overlap": "High on hidden-state readout heads for multi-turn control with a small trainable component.",
+      "difference": "Multi-LLM role delegation, not native retrieval-tool argument generation/reuse.",
+      "caution": "Do not claim hidden-state linear routing itself is new or assume its entire backbone is frozen (SVF is used)."
+    },
+    {
+      "name": "Probing-RAG: Self-Probing to Guide Language Models in Selective Document Retrieval",
+      "date": "2024-10 arXiv; Findings NAACL2025",
+      "url": "https://aclanthology.org/2025.findings-naacl.181/",
+      "mechanism": "Intermediate hidden-state probes determine additional retrieval need and reduce redundant retrieval.",
+      "overlap": "High for internal-state-based retrieval decisions.",
+      "difference": "Sufficiency probing does not by itself implement joint discrete tool and argument reuse selection.",
+      "caution": "Hidden-state confidence stopping is established."
+    },
+    {
+      "name": "MetaRAG: Belief-Action Aligned Policy Optimization for Agentic RAG",
+      "date": "2026-08 arXiv",
+      "url": "https://arxiv.org/abs/2608.24214",
+      "mechanism": "Training aligns answerability beliefs with search/answer actions and gates consistency rewards on correctness; belief probe used during training only.",
+      "overlap": "High for correctness-grounded internal-signal policy training.",
+      "difference": "Training-only probing differs from our proposed inference-time shared head.",
+      "caution": "Internal-belief-assisted RL alone is not novel."
+    },
+    {
+      "name": "Predicting Partial Answer Quality and Utility in Agentic Retrieval-Augmented Generation",
+      "date": "2026-09 arXiv; author repo reports CIKM2026 acceptance",
+      "url": "https://arxiv.org/abs/2609.16453",
+      "code": "https://github.com/DanielTian97/agentic_rag_predictions",
+      "mechanism": "Predicts current partial-answer quality and incremental utility from trajectory signals and controls stopping.",
+      "overlap": "High for learned remaining-benefit/quality signals.",
+      "difference": "Our candidate distinction is generation-mode-specific counterfactual downstream cost, rather than generic partial utility.",
+      "caution": "Do not equate head stability with answer quality; predicting utility is harder than quality."
+    },
+    {
+      "name": "One Policy, Any Budget: Internalizing Budget-Aware Search via Reinforcement Learning",
+      "date": "2026-09 arXiv",
+      "url": "https://arxiv.org/abs/2609.00813",
+      "mechanism": "Budget curriculum and quality/efficiency rewards train a search policy for varying deployment budgets.",
+      "overlap": "High for budget-conditioned step reduction.",
+      "difference": "No verified same-prefill discrete argument reuse-versus-generation mechanism in this review.",
+      "caution": "Budget-aware RL and quality-gated efficiency rewards are established."
+    },
+    {
+      "name": "Light-Search: Reducing Retrieval Cost in RAG via Curriculum-Based Policy Optimization",
+      "date": "OpenReview ICLR2026 submission; acceptance not independently verified",
+      "url": "https://openreview.net/forum?id=DqOTr2ZbDd",
+      "mechanism": "Capability-building stage followed by efficiency cultivation; cost pressure gated on performance.",
+      "overlap": "High for trajectory/capability warmup followed by cost-aware learning.",
+      "difference": "Does not establish our joint argument-generation-specific counterfactual controller.",
+      "verification": "Primary indexed PDF method/appendix passages checked; direct full-page browser access blocked by OpenReview verification."
+    },
+    {
+      "name": "ToolkenGPT: Augmenting Frozen Language Models with Massive Tools via Tool Embeddings",
+      "date": "NeurIPS2023",
+      "url": "https://papers.nips.cc/paper_files/paper/2023/file/8fd1a81c882cd45f64958da6284f4a3f-Paper-Conference.pdf",
+      "mechanism": "Trainable tool embeddings extend a frozen LM vocabulary; tool selection is token prediction, then arguments are generated.",
+      "overlap": "Foundational overlap for compact learned tool selection.",
+      "difference": "A tool token remains in autoregressive control; does not itself provide our full argument reuse/cached continuation contract.",
+      "caution": "Not recent, but an essential conceptual baseline."
+    },
+    {
+      "name": "Better Together: Complementary Query Rewriting Under a Strong RAG Baseline",
+      "date": "2026-09 arXiv",
+      "url": "https://arxiv.org/abs/2609.05637",
+      "mechanism": "Examines complementary query rewriting and simulated confidence-gated cost-aware routing under a strong retrieval baseline.",
+      "overlap": "High for selective query rewriting/generation cost.",
+      "difference": "A multi-step counterfactual cost-to-correct-answer policy over tool and argument modes is a more specific hypothesis, still unproven.",
+      "caution": "Choosing whether to rewrite based on confidence/cost is not sufficient novelty."
+    },
+    {
+      "name": "RE-TRAC: REcursive TRAjectory Compression for Deep Search Agents",
+      "date": "2026-02 arXiv",
+      "url": "https://arxiv.org/abs/2602.02486",
+      "mechanism": "Structured cross-trajectory summaries guide later exploration; reported tool/token use decreases over successive research rounds.",
+      "overlap": "Relevant to broader trajectory efficiency.",
+      "difference": "Cross-trajectory summary/reflection is different from suppressing individual action/argument tokens or proving fewer primitive calls in one rollout.",
+      "caution": "Do not conflate context compression, decision-round reduction and tool-call reduction."
+    }
+  ],
+  "core_prior_art_read_first": [
+    "LAnR",
+    "GRASP",
+    "Stop-RAG",
+    "TabAgent",
+    "Predicting Partial Answer Quality and Utility"
+  ],
+  "keep_idea_record": "lab/registry/text_integrated_20261016/KEEP_generation_value_vs_remaining_steps.json",
+  "candidate_contribution": "Jointly learn the marginal downstream value of NEW argument generation versus exact observed-argument reuse from paired same-prefix continuations; spend more decode only when it reduces remaining interaction/compute at maintained correctness.",
+  "why_more_specific": "Generic head routing, stopping confidence, query rewriting and length penalties are individually established. The proposed target is the coupled decision between present generation cost and future primitive interaction cost under unchanged external tool APIs.",
+  "required_evidence": [
+    "Show matched-quality Pareto improvements, not faster wrong answers.",
+    "Compare head-only, step-only, independent combination and joint controller using the same model/retriever/corpus.",
+    "Measure primitive tool calls, backbone prefills, decoded tokens, actual cost, failure/unsupported stop rate and OOD transfer.",
+    "Counterfactual branching must change only the intended option at an identical observed prefix; do not use future/gold info in runtime head features.",
+    "No extra generation/verifier overhead should be hidden in the proposed controller."
+  ],
+  "contraction_warning": "A decrease in hidden-state distance/entropy can reflect collapse rather than useful progress. A contraction claim needs a grounded value/deficit definition and assumptions connecting it to correctness; empirical stabilization is not a convergence theorem.",
+  "limits": "Targeted review, not an exhaustive proof of absence. Several works are preprints; not reproduced. D3 extra structure analysis remains withdrawn; existing comparison artifacts preserved.",
+  "execution_scope": "Per latest user instruction, keep future ideas only. Current fixed-step learned-head functional check passed; autonomous quality result failed and is separately recorded."
+}

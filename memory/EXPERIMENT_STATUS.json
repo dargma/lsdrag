@@ -1,6 +1,6 @@
 {
-  "phase": "compact_head_evaluation",
-  "updated_utc": "2026-10-16T14:40:17.237921+00:00",
+  "phase": "fixed_step_head_functional_verified_quality_nogo",
+  "updated_utc": "2026-10-16T14:54:03.572869+00:00",
   "protocol": "docs/JEV_TEXT_INTEGRATED_EXECUTION_20261016.md",
   "protocol_sha256": "0adecb3e30136b974fa1ecfffe74282df019f5ccbe0ece7fdbb6547fa486bc18",
   "prompt": "prompts/text_rag_integrated_v5.txt",
@@ -23,19 +23,19 @@
   "teacher_questions_planned": 32,
   "teacher_questions_max": 48,
   "evaluation_questions_planned": 10,
-  "evaluation_conditions": 3,
+  "evaluation_conditions": 2,
   "training_seeds_planned": [
     20261016
   ],
   "worker_wall_budget_minutes": 60,
   "run_planned": "/content/local_fast/lsdrag-text-v1/results/text_integrated_20261016_v5_fast_only",
-  "pid": 68936,
+  "pid": null,
   "implementation_completed": true,
   "dataset_prepared": true,
   "teacher_collection_started": true,
   "training_completed": true,
-  "evaluation_completed": false,
-  "next": "Verified-parent continuation; teacher32/max48 then only passed always-generate learned policy vs native.",
+  "evaluation_completed": true,
+  "next": "Keep future joint generation/remaining-step idea and novelty review; no automatic GPU/RL expansion.",
   "previous_multimodal_checkpoint_historical_only": {
     "phase": "native2_review_required",
     "run": "/content/local_fast/lsdrag-head-v14/results/native_distillation_12b_20261015",
@@ -169,9 +169,9 @@
   },
   "thinking_mode": "non-thinking-only model",
   "external_evaluation_completed": true,
-  "updated_epoch": 1792161821.8193085,
+  "updated_epoch": 1792161920.7440126,
   "d3_additional_analysis": "withdrawn",
-  "session_id": 26837,
+  "session_id": null,
   "functional_smoke": {
     "passed": true,
     "checks": 7,
@@ -184,7 +184,7 @@
   "target_speedup_vs_native": 1.5,
   "target_speedup_measured": false,
   "run": "/content/local_fast/lsdrag-text-v1/results/text_integrated_20261016_v5_fast_only",
-  "worker_seconds": 178.224588004,
+  "worker_seconds": 277.1492917609994,
   "contract": "5b64658a2608f883599dbfb36be3758d4f28cc0de63c532ec11f76117a3cecce",
   "teacher_target": 32,
   "log": "/content/local_fast/lsdrag-text-v1/logs/integrated_v5_fast_only.log",
@@ -198,5 +198,15 @@
   "integrated_speed_gate_passed": false,
   "retained_cost_policies": [
     "always_generate"
-  ]
+  ],
+  "teacher_questions_completed": 32,
+  "teacher_natural_states": 111,
+  "same_step_functional_passed": true,
+  "fixed_state_checks": 15,
+  "learned_policy_quality_passed": false,
+  "integrated_policy_evaluated": false,
+  "rl_started": false,
+  "step_compression_started": false,
+  "heldout_exposed": true,
+  "idea_keep_record": "lab/registry/text_integrated_20261016/KEEP_generation_value_vs_remaining_steps.json"
 }

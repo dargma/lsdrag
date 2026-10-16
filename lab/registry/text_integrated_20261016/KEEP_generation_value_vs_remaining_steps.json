@@ -1,0 +1,59 @@
+{
+  "saved_utc": "2026-10-16T14:54:03.572869+00:00",
+  "status": "KEEP_IDEA_ONLY_NOT_IMPLEMENTED",
+  "user_quote": "지금 인자를 더 생성하는 것이 이후 step을 얼마나 줄이는가를 head가 판단하게 하는 것",
+  "current_scope": "Same-step learned head functional operation only; no RL, step-reduction training, contraction experiment or new policy tuning authorized by this keep request.",
+  "hypothesis": "Jointly decide tool and argument reuse versus new generation by predicting whether immediate generation cost is repaid by fewer downstream interactions at preserved answer quality.",
+  "example": {
+    "reuse": "An old query costs no new argument tokens but may need several more searches/reads.",
+    "generate": "A newly generated query costs tokens now but may obtain the missing evidence in one search."
+  },
+  "decision_space": [
+    "tool choice",
+    "complete observed argument candidate reuse",
+    "GENERATE_ARGS with same KV cache",
+    "FINAL only with adequate evidence"
+  ],
+  "proposed_training_only_counterfactuals": "From the identical observed train prefix, compare actual reuse and fresh-generation continuations. Record answer/support quality, total later primitive tool calls, backbone passes, generated tokens and costs. Gold answers/supports may label training outcomes but never enter runtime inputs.",
+  "objective": "Minimize expected total remaining compute/tool cost subject to a calibrated answer-quality constraint. Do not reward short failed/unsupported trajectories as efficient.",
+  "distinguishing_question": "Can a policy learn to spend MORE tokens now to require FEWER tool interactions later, outperforming separately optimized head routing and step penalties?",
+  "novelty_status": "Hypothesis requiring validation and broader prior-art checking; not a first-of-kind claim. Head routing, selective rewriting, adaptive stopping and cost-aware search RL already exist.",
+  "closest_prior_art": [
+    {
+      "paper": "LAnR",
+      "url": "https://arxiv.org/abs/2604.17866",
+      "overlap": "Hidden-state latent retrieval plus retrieval-control head jointly removes intermediate query/stop text and reduces retrieval calls."
+    },
+    {
+      "paper": "GRASP",
+      "url": "https://arxiv.org/abs/2607.10463",
+      "overlap": "Keyword/semantic/read actions and quality-gated turn-efficiency RL."
+    },
+    {
+      "paper": "Stop-RAG",
+      "url": "https://arxiv.org/abs/2510.14337",
+      "overlap": "Learns forward-looking STOP versus CONT value from trajectories."
+    },
+    {
+      "paper": "Better Together",
+      "url": "https://arxiv.org/abs/2609.05637",
+      "overlap": "Cost-aware selective query rewriting already explored; simple rewrite gating is not enough as novelty."
+    }
+  ],
+  "possible_differentiation_not_established": [
+    "Argument-generation-specific counterfactual downstream value, not just retrieve-versus-stop.",
+    "Joint tool/argument-mode/remaining-cost decisions from shared native prefill with no extra inference judge.",
+    "Preserve existing A-RAG handlers/retriever/index rather than requiring a model-specific latent document index.",
+    "Demonstrate non-additive benefits over head-only, step-only and independently combined baselines at matched quality and total compute."
+  ],
+  "future_minimum_ablation": [
+    "native A-RAG",
+    "head only with fixed steps",
+    "step optimization only",
+    "independent head plus step optimization",
+    "proposed joint argument-generation/remaining-work policy"
+  ],
+  "contraction_note": "Future possibility only: predict grounded remaining work/value and test expected progress. Shrinking hidden-state distances, entropy or logit changes alone do not imply evidence sufficiency, correctness or a mathematical contraction guarantee.",
+  "measurement_note": "Context compression, fewer decision rounds, fewer primitive tool executions and fewer decode tokens are different quantities. Report all and avoid renaming a macro-call as one cheap step.",
+  "resource_note": "Frozen backbone/head-only learning may reduce gradient memory, but rollout inference remains costly. No new dataset expansion, GRPO job, model download or GPU sweep has been launched."
+}

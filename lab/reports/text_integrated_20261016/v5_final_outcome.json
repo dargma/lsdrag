@@ -1,0 +1,262 @@
+{
+  "updated_utc": "2026-10-16T14:54:03.572869+00:00",
+  "run": "/content/local_fast/lsdrag-text-v1/results/text_integrated_20261016_v5_fast_only",
+  "frozen_runtime_commit": "7ff891a",
+  "summary": {
+    "policies": {
+      "native": {
+        "n": 10,
+        "f1": 0.35,
+        "em": 0.3,
+        "support_f1": 0.6085714285714287,
+        "seconds": 5.795440575900102,
+        "tool_calls": 2.6,
+        "answer_format_valid": 1.0,
+        "prompt_tokens": 4621.1,
+        "completion_tokens": 108.3,
+        "reused_argument_calls": 0.0,
+        "failures": 0
+      },
+      "always_generate": {
+        "n": 10,
+        "f1": 0.1285714285714286,
+        "em": 0.1,
+        "support_f1": 0.47523809523809524,
+        "seconds": 3.922034438400169,
+        "tool_calls": 2.7,
+        "answer_format_valid": 1.0,
+        "prompt_tokens": 4493.7,
+        "completion_tokens": 61.9,
+        "reused_argument_calls": 0.0,
+        "failures": 0
+      }
+    },
+    "controlled_latency_claim": false,
+    "retained": {
+      "always_generate": false
+    },
+    "note": "Small fixed pilot. End-to-end rollouts may have different step counts; matched-state cost screen is separate."
+  },
+  "paired_episodes": [
+    {
+      "qid": "2hop__124592_402641",
+      "native_f1": 0.5,
+      "head_f1": 0.28571428571428575,
+      "native_calls": 2,
+      "head_calls": 3,
+      "native_seconds": 6.52001256100084,
+      "head_seconds": 5.367538668000634,
+      "native_actions": [
+        "keyword_search",
+        "semantic_search"
+      ],
+      "head_actions": [
+        "keyword_search",
+        "semantic_search",
+        "read_chunk"
+      ]
+    },
+    {
+      "qid": "2hop__132929_120537",
+      "native_f1": 0,
+      "head_f1": 0,
+      "native_calls": 3,
+      "head_calls": 3,
+      "native_seconds": 4.36390732899963,
+      "head_seconds": 3.509558640999785,
+      "native_actions": [
+        "keyword_search",
+        "semantic_search",
+        "read_chunk"
+      ],
+      "head_actions": [
+        "keyword_search",
+        "semantic_search",
+        "read_chunk"
+      ]
+    },
+    {
+      "qid": "2hop__179149_396277",
+      "native_f1": 0,
+      "head_f1": 0,
+      "native_calls": 3,
+      "head_calls": 3,
+      "native_seconds": 8.828225705000477,
+      "head_seconds": 5.95285207500001,
+      "native_actions": [
+        "keyword_search",
+        "semantic_search",
+        "read_chunk"
+      ],
+      "head_actions": [
+        "keyword_search",
+        "semantic_search",
+        "read_chunk"
+      ]
+    },
+    {
+      "qid": "2hop__1845_38366",
+      "native_f1": 0,
+      "head_f1": 0,
+      "native_calls": 3,
+      "head_calls": 3,
+      "native_seconds": 6.060148470000058,
+      "head_seconds": 3.619557364000684,
+      "native_actions": [
+        "keyword_search",
+        "semantic_search",
+        "read_chunk"
+      ],
+      "head_actions": [
+        "keyword_search",
+        "semantic_search",
+        "read_chunk"
+      ]
+    },
+    {
+      "qid": "2hop__223823_29898",
+      "native_f1": 0,
+      "head_f1": 0,
+      "native_calls": 2,
+      "head_calls": 2,
+      "native_seconds": 2.709898866000003,
+      "head_seconds": 2.014354126999933,
+      "native_actions": [
+        "keyword_search",
+        "read_chunk"
+      ],
+      "head_actions": [
+        "keyword_search",
+        "read_chunk"
+      ]
+    },
+    {
+      "qid": "2hop__245835_762148",
+      "native_f1": 1.0,
+      "head_f1": 1.0,
+      "native_calls": 3,
+      "head_calls": 3,
+      "native_seconds": 7.119984321000629,
+      "head_seconds": 3.5161284480000177,
+      "native_actions": [
+        "keyword_search",
+        "semantic_search",
+        "read_chunk"
+      ],
+      "head_actions": [
+        "keyword_search",
+        "semantic_search",
+        "read_chunk"
+      ]
+    },
+    {
+      "qid": "2hop__24697_578772",
+      "native_f1": 0,
+      "head_f1": 0,
+      "native_calls": 2,
+      "head_calls": 3,
+      "native_seconds": 5.199881645999994,
+      "head_seconds": 4.851798395000515,
+      "native_actions": [
+        "semantic_search",
+        "read_chunk"
+      ],
+      "head_actions": [
+        "keyword_search",
+        "semantic_search",
+        "read_chunk"
+      ]
+    },
+    {
+      "qid": "2hop__631024_18974",
+      "native_f1": 1.0,
+      "head_f1": 0,
+      "native_calls": 3,
+      "head_calls": 2,
+      "native_seconds": 6.818479495999782,
+      "head_seconds": 3.458797608000168,
+      "native_actions": [
+        "keyword_search",
+        "semantic_search",
+        "read_chunk"
+      ],
+      "head_actions": [
+        "keyword_search",
+        "semantic_search"
+      ]
+    },
+    {
+      "qid": "2hop__648648_173389",
+      "native_f1": 1.0,
+      "head_f1": 0,
+      "native_calls": 3,
+      "head_calls": 3,
+      "native_seconds": 5.971325665999757,
+      "head_seconds": 4.300286980999772,
+      "native_actions": [
+        "keyword_search",
+        "keyword_search",
+        "keyword_search"
+      ],
+      "head_actions": [
+        "keyword_search",
+        "keyword_search",
+        "read_chunk"
+      ]
+    },
+    {
+      "qid": "2hop__807257_590611",
+      "native_f1": 0,
+      "head_f1": 0,
+      "native_calls": 2,
+      "head_calls": 2,
+      "native_seconds": 4.3625416989998484,
+      "head_seconds": 2.629472077000173,
+      "native_actions": [
+        "keyword_search",
+        "read_chunk"
+      ],
+      "head_actions": [
+        "keyword_search",
+        "read_chunk"
+      ]
+    }
+  ],
+  "same_tool_call_count_pairs": 7,
+  "observed_time_ratio_native_over_head": 1.4776618275346178,
+  "disposition": "Functional learned-head dispatch verified; autonomous quality NoGo. Do not retain learned policy as a quality-preserving acceleration. No step-reduction claim.",
+  "fixed_state_functional_check": {
+    "kind": "fixed native-state train4 functional replay",
+    "checkpoint_sha256": "f50ec1b4049d9fb0996ea60af63874497bdf5eee3f6a5ca044707095e3157e1c",
+    "passed": true,
+    "natural_native_states": 15,
+    "native_tool_calls": {
+      "2hop__145779_719927": 3,
+      "2hop__82744_23249": 3,
+      "2hop__70082_2578": 3,
+      "2hop__668889_4037": 2
+    },
+    "head_tool_calls": {
+      "2hop__145779_719927": 3,
+      "2hop__82744_23249": 3,
+      "2hop__70082_2578": 3,
+      "2hop__668889_4037": 2
+    },
+    "same_step_counts_so_far": true,
+    "heldout_quality_or_speed_claim": false,
+    "teacher_forced_observations": true,
+    "worker_seconds": 31.456906983000408
+  },
+  "heldout_status": "The reserved10 are now evaluated/exposed. No subsequent tuning or untouched-holdout claim on these10.",
+  "backup": {
+    "path": "/content/drive/MyDrive/lsdrag-backups/20261016/text_integrated_20261016/text_integrated_20261016_v5_fast_only.tar.gz",
+    "sha256": "a5096296a7ef25744dbece486c42d93340606ff1aec623abc0a1051b36fa25a6"
+  },
+  "worker_seconds": {
+    "compact_v4": 247.693569559,
+    "implicit_v5": 173.974772556,
+    "v5_fast_only": 277.149291761,
+    "fixed_head_check": 31.456906983000408
+  },
+  "scope": "Single-seed small MuSiQue2hop text-only candidate-corpus pilot, shared GPU. Not full benchmark or controlled latency."
+}
