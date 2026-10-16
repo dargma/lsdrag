@@ -1,3 +1,7 @@
+## 2026-10-16 — 최우선 사용자 지시: 모든 작업 HOLD / GPU 사용 금지
+
+사용자 명시 지시: "일단 모두 홀딩 GPU 사용 금지". 모든 실험·학습·자동실행을 보류하며 명시적인 새 재개 승인 전 GPU 사용 금지. 이전 실행 승인 및 idle 예약보다 이 지시 우선. watcher PID102063 정상 stopped 확인, state dir STOP 유지, launch_intent 없음: 자동 executor/개선실험은 시작되지 않음. ps 확인상 관련 실험/감시/executor 프로세스 없음. 다른 세션 작업에는 손대지 않음. gpu_watch_schedule.json disabled로 기록. 기존 결과·계획v2·Astra 검토 보존. 다음 행동은 사용자 지시 대기이며, 자동 재시작/idle 체크/GPU로드 금지.
+
 # Durable user preferences
 
 - Discuss the project in Korean; be candid about novelty and experimental evidence.

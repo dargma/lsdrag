@@ -22,5 +22,8 @@
   "survival": "local host runtime only; not hosted scheduler",
   "policy": "At each 30-minute check, if idle observe for >=300 seconds at 30-second intervals; busy/unknown cancels window. Resume existing session once only after confirmation.",
   "idle_seconds": 300,
-  "idle_poll_seconds": 30
+  "idle_poll_seconds": 30,
+  "enabled": false,
+  "cancelled_utc": "2026-10-16T16:06:08.733499+00:00",
+  "cancel_reason": "User: all work on hold, GPU use prohibited until explicit resume"
 }
