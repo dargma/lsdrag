@@ -18,3 +18,5 @@
 - 모든 변경의 우선순위·계획 vs 구현 vs 실제 실행 상태를 명시하고 Git/Drive에 영속 저장한다. 기준 `docs/JEV_TEXT_ONLY_INTEGRATED_PLAN_20261016.md`.
 
 - Latest model choice: Gemma4E4B-IT text-only, replacing12B for new pilot. Explicitly requested external Decision3.0 D3-Flash9B benchmark; retain resource caps and preserve main integrated-head objective.
+
+- Latest override:2–4B suitable LLM or VLM; avoid thinking mode, inspect actual prompt/template settings. Selected non-thinking-only Qwen3-4B-Instruct-2507 over earlier Gemma choices. Persist all model/protocol changes and do not confuse format diagnostics with benchmark success.

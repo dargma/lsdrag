@@ -205,3 +205,11 @@ Next command: `PYTHONPATH=src python -u scripts/benchmark_d3_text_rag.py --outpu
 {"phase": "d3_native_first2_running", "pid": 24654, "process_verified": true, "run": "/content/local_fast/lsdrag-text-v1/results/d3_native_20261016", "log": "/content/local_fast/lsdrag-text-v1/logs/benchmark_first2.log", "session_id": 73155, "frozen_source_commit": "494a7f86f38a97542300df104139618fdbd96795", "target_episodes": 4, "next": "Verify first2 structural/infrastructure completion; extend unchanged to fixed12, total24 external comparison episodes, within cumulative60min.", "learned_head_training_completed": false, "updated_epoch": 1792157500.4843576}
 
 This is the requested external-controller comparison, not fresh teacher collection or learned-head evaluation. Verify live process/artifacts; do not launch another GPU collector. Frozen executable source must not change.
+
+## 2026-10-16 — non-thinking4B choice, prompt audit and comparison correction
+
+Latest user requirements2–4B LLM/VLM + prompt audit + avoid thinking override previous Gemma E4B/12B choices. Active reader/teacher/backbone/generation model: `Qwen/Qwen3-4B-Instruct-2507@cdbee75f17c01a7cc42f958dc650907174af0554` (official4.0B, non-thinking-only text LLM). Plan precedence: latest section of `docs/JEV_TEXT_ONLY_INTEGRATED_PLAN_20261016.md`. Prompt v2 `prompts/text_rag_integrated_v2.txt`.
+
+Gemma prompt audit verified enable_thinking=False/no activation token; spontaneous thought-channel plus conditional final-format instruction/parser caused confounded strict answer scores. Original D3/native Gemma2×2 saved as format diagnostic, NOT D3 superiority evidence. All old jobs finished; no automatic continuation of original first12.
+
+New external D3 comparison: same Qwen argument/final generator, same execution candidates; Qwen first-token choice vs D3 choice. Train2 functional preflight, then remaining fixed dev10 (exclude both originally inspected dev2). No learned-head training yet. New script `scripts/benchmark_d3_qwen_text_rag.py`; outputs `d3_qwen_preflight_20261016` / `d3_qwen_dev10_20261016` under `/content/local_fast/lsdrag-text-v1/results`. Teacher32/48 cap and overall worker60min remain; new verification/preflight/eval pending.

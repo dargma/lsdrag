@@ -1,0 +1,12 @@
+{
+  "model": "/content/local_fast/lsdrag-v11/hf/models--google--gemma-4-E4B-it/snapshots/ee0ef6023621cff504d758262d4e04895a5af4a2",
+  "enable_thinking_argument": false,
+  "thinking_control_token_present": false,
+  "rendered_tail": "d in search results. Use these text paragraphs to check evidence before answering.<|\"|>,parameters:{properties:{chunk_ids:{items:{type:<|\"|>STRING<|\"|>},type:<|\"|>ARRAY<|\"|>}},required:[<|\"|>chunk_ids<|\"|>],type:<|\"|>OBJECT<|\"|>}}<tool|><turn|>\n<|turn>user\nFind a fact from text.<turn|>\n<|turn>model\n",
+  "prompt_sha256": "9ab2b5502974a6f87e9692e3b5763d6bc433be4f98fdb66a6fe31f661908c47b",
+  "prompt_issues": [
+    "Final JSON instruction is conditional on FINAL request; native spontaneous final is not an explicit runtime FINAL request.",
+    "Gemma native parser leaves a spontaneously emitted thought channel in content; JSON parsing then fails."
+  ],
+  "observations": "First2 includes one prose final and one thought-channel plus JSON; not proof that enable_thinking was configured true."
+}

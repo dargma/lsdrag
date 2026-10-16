@@ -1,13 +1,13 @@
 {
-  "phase": "d3_native_first2_running",
+  "phase": "qwen_nonthinking_benchmark_preflight_preparing",
   "updated_utc": "2026-10-16T13:23:40.478892+00:00",
   "protocol": "docs/JEV_TEXT_ONLY_INTEGRATED_PLAN_20261016.md",
-  "protocol_sha256": "a84297db25238b89f9378ba2209e53e32df3af371800ce0e468d6b14503d1b90",
-  "prompt": "prompts/text_rag_integrated_v1.txt",
-  "prompt_sha256": "9ab2b5502974a6f87e9692e3b5763d6bc433be4f98fdb66a6fe31f661908c47b",
+  "protocol_sha256": "a763e428f239bbf3aac91b7f5b686eea7bc4dc503f8797052a943cbe749fd29e",
+  "prompt": "prompts/text_rag_integrated_v2.txt",
+  "prompt_sha256": "eba9c1f28ebabc90cd1723d10b5c305defea387e924db9bc3ac4988ed3dec626",
   "dataset": "MuSiQue-Ans v1.0, 2-hop",
-  "model": "google/gemma-4-E4B-it",
-  "model_revision": "ee0ef6023621cff504d758262d4e04895a5af4a2",
+  "model": "Qwen/Qwen3-4B-Instruct-2507",
+  "model_revision": "cdbee75f17c01a7cc42f958dc650907174af0554",
   "tools": [
     "keyword_search",
     "semantic_search",
@@ -22,20 +22,20 @@
   "image_inputs": false,
   "teacher_questions_planned": 32,
   "teacher_questions_max": 48,
-  "evaluation_questions_planned": 12,
+  "evaluation_questions_planned": 10,
   "evaluation_conditions": 4,
   "training_seeds_planned": [
     20261016
   ],
   "worker_wall_budget_minutes": 60,
   "run_planned": "/content/local_fast/lsdrag-text-v1/results/text_integrated_20261016",
-  "pid": 24654,
+  "pid": null,
   "implementation_completed": false,
   "dataset_prepared": true,
   "teacher_collection_started": false,
   "training_completed": false,
   "evaluation_completed": false,
-  "next": "Run first2 D3/native E4B functional prefix, then unchanged fixed12; learned heads pending.",
+  "next": "Verify Qwen then train2 functional preflight and fixed remaining dev10 external D3 comparison. Main learned heads still pending.",
   "previous_multimodal_checkpoint_historical_only": {
     "phase": "native2_review_required",
     "run": "/content/local_fast/lsdrag-head-v14/results/native_distillation_12b_20261015",
@@ -58,8 +58,8 @@
   },
   "external_benchmark_implementation_completed": true,
   "external_benchmark": {
-    "phase": "d3_native_first2_running",
-    "pid": 24654,
+    "phase": "historical_format_confounded_first2_complete",
+    "pid": null,
     "process_verified": true,
     "run": "/content/local_fast/lsdrag-text-v1/results/d3_native_20261016",
     "log": "/content/local_fast/lsdrag-text-v1/logs/benchmark_first2.log",
@@ -69,5 +69,6 @@
     "next": "Verify first2 structural/infrastructure completion; extend unchanged to fixed12, total24 external comparison episodes, within cumulative60min.",
     "learned_head_training_completed": false,
     "updated_epoch": 1792157500.4843576
-  }
+  },
+  "thinking_mode": "non-thinking-only model"
 }

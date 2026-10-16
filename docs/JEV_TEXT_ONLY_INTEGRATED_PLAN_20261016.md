@@ -1,3 +1,19 @@
+# Latest override — Qwen3-4B non-thinking reader and prompt audit (2026-10-16)
+
+This section overrides all Gemma choices and superseded scale/evaluation details below. User now permits LLM or VLM, asks for2–4B, prompt-setting inspection, and as little thinking mode as possible. Selected `Qwen/Qwen3-4B-Instruct-2507@cdbee75f17c01a7cc42f958dc650907174af0554`: official4.0B text-only causal LLM, non-thinking-only release. Source: https://huggingface.co/Qwen/Qwen3-4B-Instruct-2507 . Newer Qwen3.5-4B defaults to thinking; the explicit non-thinking-only requirement takes priority over release recency. No model sweep.
+
+Prompt audit: Gemma prepare passed enable_thinking=False; actual rendered prompt has no `<|think|>` activation. Observed thought-channel output is not evidence that thinking was enabled. Native parser leaves a spontaneous thought block in content and strict JSON parsing fails. Original task instruction also made JSON conditional on a runtime FINAL request, which is ambiguous for spontaneous native final output. Prompt v2 `prompts/text_rag_integrated_v2.txt` unconditionally requires shortest answer span JSON for every final; no analysis/thinking/extra fields. A non-thinking-only Qwen template prefix is checked before inference; no media and no thought activation/prefix allowed.
+
+Preserve old `d3_native_20261016` first2×2 episodes as format-confounded diagnostic only. Native strict F1=0 and D3 F1≈0.214 do NOT establish decision superiority. Original Gemma conditions shared a backbone but had different final realization/serialization. Do not reuse its labels/features in Qwen experiments.
+
+The external D3 benchmark now isolates selection: Qwen first-token execution-choice scoring vs D3 execution-choice scoring, identical candidate builder/schema and Qwen argument/final generation, text embedding/corpus/budgets. This is a zero-shot baseline, not native A-RAG and not a trained action head. D3 still adds a separate9B decision backbone and its full costs are counted. Runtime/script: `scripts/benchmark_d3_qwen_text_rag.py`; non-thinking causal adapter `src/lsdrag/text_only_reader.py`. Qwen CausalLM uses its own tokenizer/template; Gemma transport/parser is not reused.
+
+Frozen original dev12 first2 were inspected for format debugging. Exclude BOTH of them from new comparison independent of outcome; use fixed remaining dev10. Functional preflight uses train first2, not dev. No additional dev replacements or tuning. Future primary native/head-only/integrated/D3 conditions use the same remaining10 (max40 eval episodes); native Qwen tool parser and learned-head implementation remain pending. Teacher plan train32→48 cap unchanged; fresh Qwen candidate-aware pre-output features/labels only. Seed20261016 and total worker60min ceiling unchanged.
+
+New output namespaces: `/content/local_fast/lsdrag-text-v1/results/d3_qwen_preflight_20261016` (train2) and `/content/local_fast/lsdrag-text-v1/results/d3_qwen_dev10_20261016` (dev10). Plan/model/prompt changes are recorded before new runs. Never resume old outputs under changed source. Next: complete Qwen file verification, train2 functional preflight, then unchanged dev10 comparison.
+
+---
+
 # Text-only RAG: 행동 선택과 인자 생성의 통합 효율화
 
 상태: 사용자 최신 지시에 따른 새 소규모 계획. 계획·instruction 초안만 저장했으며 구현, 데이터 준비, teacher 수집, head 학습 및 평가는 아직 시작하지 않았다. 이전 멀티모달 v13/v14 자동 실행 명령을 사용하지 않는다.

@@ -202,9 +202,9 @@ def run_episode(question, rows, vectors, embedder, reader, prompt, policy, d3=No
         chosen, selection = None, {}
         if forced:
             action = 'FINAL'
-        elif policy == 'd3':
+        elif policy in {'d3', 'first_token'}:
             options = execution_options(question, trajectory)
-            chosen, selection = d3.choose(messages, options)
+            chosen, selection = (d3 if policy == 'd3' else reader).choose(messages, options)
             action = chosen['action']
             selection = dict(selection, options=options, options_sha256=hashlib.sha256(canonical(options).encode()).hexdigest())
         else:
@@ -227,7 +227,7 @@ def run_episode(question, rows, vectors, embedder, reader, prompt, policy, d3=No
                 validate(args, next(t['function']['parameters'] for t in TOOLS if t['function']['name'] == action))
             except Exception as error:
                 errors.append('invalid_native_arguments: '+str(error)); break
-        if policy == 'd3' or forced:
+        if policy in {'d3', 'first_token'} or forced:
             if not forced:
                 calls.append({'kind': 'decision', 'usage': selection['result']['usage'],
                               'seconds': selection['seconds'], 'selection': selection})
