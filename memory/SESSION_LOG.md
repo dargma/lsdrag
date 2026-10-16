@@ -347,3 +347,10 @@ Next command: `PYTHONPATH=src /content/local_fast/lsdrag-text-v1/experiment-env/
 
 
 Verified teacher32 collection active: PID68936/session26837, source7ff891a; runtime sources identical to467f89b except passing-policy orchestration. Parent4 teacher/index bytes validated and SHA256 ledger saved; new teacher qids5 onward collecting locally. Native and always-generate learned-head conditions only; integrated policy remains gated out. Log `/content/local_fast/lsdrag-text-v1/logs/integrated_v5_fast_only.log`. Synthetic CPU normalization-fold functional check passed (not experiment training).
+
+# Compact integrated pilot — compact_head_evaluation
+
+{"phase": "compact_head_evaluation", "pid": 68936, "run": "/content/local_fast/lsdrag-text-v1/results/text_integrated_20261016_v5_fast_only", "updated_epoch": 1792161821.8193085, "worker_seconds": 178.224588004, "teacher_questions": 32, "training_completed": true}
+
+
+Teacher32 completed and coverage passed without48 extension; checkpoint and observed natural coverage recorded in `lab/reports/text_integrated_20261016/v5_head_training_checkpoint.json`. CPU head fit/normalization folding succeeded. Fresh reserved10 native-vs-always-generate evaluation is now active (PID68936/session26837). No policy/prompt edits after dev exposure; no integration/reuse deployment claim.

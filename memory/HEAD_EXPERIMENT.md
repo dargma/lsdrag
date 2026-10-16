@@ -1,3 +1,7 @@
+# Compact integrated pilot — compact_head_evaluation
+
+{"phase": "compact_head_evaluation", "pid": 68936, "run": "/content/local_fast/lsdrag-text-v1/results/text_integrated_20261016_v5_fast_only", "updated_epoch": 1792161821.8193085, "worker_seconds": 178.224588004, "teacher_questions": 32, "training_completed": true}
+
 # Compact integrated pilot — compact_teacher32
 
 {"phase": "compact_teacher32", "pid": 68936, "run": "/content/local_fast/lsdrag-text-v1/results/text_integrated_20261016_v5_fast_only", "updated_epoch": 1792161665.6035497, "worker_seconds": 22.00882870499936, "speed_gate_passed": true, "integrated_speed_gate_passed": false, "retained_cost_policies": ["always_generate"], "teacher_target": 32}
