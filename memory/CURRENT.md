@@ -1,3 +1,11 @@
+# Compact integrated pilot — compact_train4_audit
+
+{"phase": "compact_train4_audit", "pid": 64829, "run": "/content/local_fast/lsdrag-text-v1/results/text_integrated_20261016_implicit_v5", "updated_epoch": 1792161259.879151, "worker_seconds": 21.85089442699973, "teacher_collection_started": true, "teacher_target": 4}
+
+# Compact integrated pilot — compact_loading
+
+{"phase": "compact_loading", "pid": 64829, "run": "/content/local_fast/lsdrag-text-v1/results/text_integrated_20261016_implicit_v5", "updated_epoch": 1792161238.6850095, "worker_seconds": 0.6567529889998696, "contract": "bbba13da3b082396b581600ff0dec67c511bdc941aefc44dbda4303adc83f718", "teacher_collection_started": false}
+
 # Implicit-reference v5 train-only correction — ready for execution
 
 Compactv4 stopped after4 train questions/45 measurements (247.7worker seconds): FINAL slower, so teacher32 did not start. All results preserved. Summary serialization numpy.bool_ issue was recovered from saved rows and fixed with a tested bool cast. New v5 uses the exact native messages for student prefill: no candidate message at all. Candidate arguments remain in question/prior calls/results and fixed slot ordering remains explicit in the checkpoint contract; context membership is validated before selection. Thus no selector-message shift in FINAL generation. A greedy character-level schema check skips vocabulary-wide grammar enumeration only when the proposed token is valid; fallback uses the same schema, with strict validation and no repairs. Grammar alphabet now includes tokenizer Unicode characters; escaping/Unicode unit check added. Identical bare-answer-span prompt strengthened for native/teacher/head.
