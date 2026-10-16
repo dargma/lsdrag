@@ -1,5 +1,5 @@
 {
-  "phase": "qwen_nonthinking_benchmark_preflight_preparing",
+  "phase": "d3_qwen_dev10_running",
   "updated_utc": "2026-10-16T13:23:40.478892+00:00",
   "protocol": "docs/JEV_TEXT_ONLY_INTEGRATED_PLAN_20261016.md",
   "protocol_sha256": "a763e428f239bbf3aac91b7f5b686eea7bc4dc503f8797052a943cbe749fd29e",
@@ -29,13 +29,13 @@
   ],
   "worker_wall_budget_minutes": 60,
   "run_planned": "/content/local_fast/lsdrag-text-v1/results/text_integrated_20261016",
-  "pid": null,
+  "pid": 31212,
   "implementation_completed": false,
   "dataset_prepared": true,
   "teacher_collection_started": false,
   "training_completed": false,
   "evaluation_completed": false,
-  "next": "Verify Qwen then train2 functional preflight and fixed remaining dev10 external D3 comparison. Main learned heads still pending.",
+  "next": "Verify fixed20 episode artifacts and summarize; no learned heads trained.",
   "previous_multimodal_checkpoint_historical_only": {
     "phase": "native2_review_required",
     "run": "/content/local_fast/lsdrag-head-v14/results/native_distillation_12b_20261015",
@@ -58,17 +58,14 @@
   },
   "external_benchmark_implementation_completed": true,
   "external_benchmark": {
-    "phase": "historical_format_confounded_first2_complete",
-    "pid": null,
-    "process_verified": true,
-    "run": "/content/local_fast/lsdrag-text-v1/results/d3_native_20261016",
-    "log": "/content/local_fast/lsdrag-text-v1/logs/benchmark_first2.log",
-    "session_id": 73155,
-    "frozen_source_commit": "494a7f86f38a97542300df104139618fdbd96795",
-    "target_episodes": 4,
-    "next": "Verify first2 structural/infrastructure completion; extend unchanged to fixed12, total24 external comparison episodes, within cumulative60min.",
-    "learned_head_training_completed": false,
-    "updated_epoch": 1792157500.4843576
+    "run": "/content/local_fast/lsdrag-text-v1/results/d3_qwen_dev10_20261016",
+    "log": "/content/local_fast/lsdrag-text-v1/logs/qwen_dev10.log",
+    "session_id": 4168,
+    "target_episodes": 20,
+    "source_commit": "5bad6fd",
+    "preflight_completed_episodes": 4,
+    "preflight_errors": 0,
+    "benchmark_completed": false
   },
   "thinking_mode": "non-thinking-only model"
 }

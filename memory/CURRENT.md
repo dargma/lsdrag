@@ -1,3 +1,9 @@
+# Qwen/D3 fixed dev10 running — 2026-10-16
+
+Qwen3-4B-Instruct-2507 non-thinking-only train2 preflight completed4/4 episodes with no errors and100% valid final JSON. This is functional verification, not learned-policy quality. Fixed remaining dev10 comparison now running: PID31212, session4168; run `/content/local_fast/lsdrag-text-v1/results/d3_qwen_dev10_20261016`; log `/content/local_fast/lsdrag-text-v1/logs/qwen_dev10.log`. Executable source frozen at5bad6fd. Same Qwen reader/arguments/final and candidate construction for first-token vs D3. No native Gemma comparison claim; no learned heads trained. Worker limits: original format audit72.1s + Qwen preflight31.5s + current at most45min, below total60min.
+
+Next: verify20 complete paired episodes and report F1/EM, evidence access, reuse, tokens and all failures; observed shared-GPU time is not comparative speed evidence. Preserve10-question/one-setting limitations. No parallel collector or source edits during this run.
+
 # Latest active model — Qwen3-4B-Instruct-2507, non-thinking only
 
 Latest user requirements2–4B LLM/VLM + prompt audit + avoid thinking override previous Gemma E4B/12B choices. Active reader/teacher/backbone/generation model: `Qwen/Qwen3-4B-Instruct-2507@cdbee75f17c01a7cc42f958dc650907174af0554` (official4.0B, non-thinking-only text LLM). Plan precedence: latest section of `docs/JEV_TEXT_ONLY_INTEGRATED_PLAN_20261016.md`. Prompt v2 `prompts/text_rag_integrated_v2.txt`.

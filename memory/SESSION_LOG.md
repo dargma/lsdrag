@@ -213,3 +213,9 @@ Latest user requirements2–4B LLM/VLM + prompt audit + avoid thinking override 
 Gemma prompt audit verified enable_thinking=False/no activation token; spontaneous thought-channel plus conditional final-format instruction/parser caused confounded strict answer scores. Original D3/native Gemma2×2 saved as format diagnostic, NOT D3 superiority evidence. All old jobs finished; no automatic continuation of original first12.
 
 New external D3 comparison: same Qwen argument/final generator, same execution candidates; Qwen first-token choice vs D3 choice. Train2 functional preflight, then remaining fixed dev10 (exclude both originally inspected dev2). No learned-head training yet. New script `scripts/benchmark_d3_qwen_text_rag.py`; outputs `d3_qwen_preflight_20261016` / `d3_qwen_dev10_20261016` under `/content/local_fast/lsdrag-text-v1/results`. Teacher32/48 cap and overall worker60min remain; new verification/preflight/eval pending.
+
+## 2026-10-16 — Qwen non-thinking preflight verified; D3 paired dev10 launched
+
+Qwen3-4B-Instruct-2507 non-thinking-only train2 preflight completed4/4 episodes with no errors and100% valid final JSON. This is functional verification, not learned-policy quality. Fixed remaining dev10 comparison now running: PID31212, session4168; run `/content/local_fast/lsdrag-text-v1/results/d3_qwen_dev10_20261016`; log `/content/local_fast/lsdrag-text-v1/logs/qwen_dev10.log`. Executable source frozen at5bad6fd. Same Qwen reader/arguments/final and candidate construction for first-token vs D3. No native Gemma comparison claim; no learned heads trained. Worker limits: original format audit72.1s + Qwen preflight31.5s + current at most45min, below total60min.
+
+Next: verify20 complete paired episodes and report F1/EM, evidence access, reuse, tokens and all failures; observed shared-GPU time is not comparative speed evidence. Preserve10-question/one-setting limitations. No parallel collector or source edits during this run.
