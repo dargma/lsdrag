@@ -1,3 +1,13 @@
+# D3 external benchmark implementation checkpoint — 2026-10-16
+
+E4B9 files/D3-Flash29 files downloaded and SHA256 verified, including all Hub LFS weight hashes. D3 official full-package verification and real text-only choice smoke passed (zero generated tokens); the smoke used slow reference kernels, and the benchmark environment now has optional FLA0.5.2/fla-core0.5.2 whose actual kernel binding will be recorded. Main Gemma transformers5.18.0, isolated D3 transformers5.17.0.
+
+Official MuSiQue public Drive download failed with quota exceeded. Public mirror `dgslibisey/MuSiQue@c8f4f8c9465fb69d31a8eae894c3fd509c4ca321` train/dev downloaded; hashes match independent `bdsaglam/musique@22873a405dd809893b22ada0b499299fb612d2df` LFS metadata exactly. Exact equivalence to inaccessible official ZIP remains unverified and is disclosed. Original schema/counts19938train/2417dev. Fixed2-hop train48/dev12 IDs saved; component-question ID intersection is empty.
+
+New bounded text-only D3 vs native E4B benchmark implemented in `scripts/benchmark_d3_text_rag.py` and `src/lsdrag/text_decision_benchmark.py`. Runtime corpus uses explicit allowlisted text fields; private support/answers/decomposition are never supplied to controller/retrieval. 9 targeted tests pass. MuSiQue official scorer source pinned. Learned action/arg head implementation/training remains pending: external D3 controller dispatch is not learned-head completion.
+
+Next command: `PYTHONPATH=src python -u scripts/benchmark_d3_text_rag.py --output /content/local_fast/lsdrag-text-v1/results/d3_native_20261016 --limit 2 --minutes 60 --backup /content/drive/MyDrive/lsdrag-backups/20261016/text_integrated_20261016`. First2 smoke is a prefix of fixed dev12; extend unchanged source to12 if infrastructure/contract works; preserve model policy failures. No data/seed/config tuning on dev results. Cumulative worker budget60min, no controlled latency claim.
+
 # Latest model choice / D3 benchmark — 2026-10-16
 
 사용자는 4B급 최신 VLM으로 축소하도록 변경했다. 현재 reader/teacher/generative backbone은 `google/gemma-4-E4B-it@ee0ef6023621cff504d758262d4e04895a5af4a2` (text-only). 이전12B 선택은 새 실험에서 superseded. E4B는4.5B effective/embedding 포함8B로 literal total4B가 아니다. 모델 크기 변경은 새4문항 teacher audit에서 점검하고12B labels/features를 재사용하지 않는다.

@@ -1,5 +1,5 @@
 {
-  "phase": "text_only_plan_saved_d3_benchmark_preparing",
+  "phase": "d3_external_benchmark_ready",
   "updated_utc": "2026-10-16T13:23:40.478892+00:00",
   "protocol": "docs/JEV_TEXT_ONLY_INTEGRATED_PLAN_20261016.md",
   "protocol_sha256": "a84297db25238b89f9378ba2209e53e32df3af371800ce0e468d6b14503d1b90",
@@ -31,11 +31,11 @@
   "run_planned": "/content/local_fast/lsdrag-text-v1/results/text_integrated_20261016",
   "pid": null,
   "implementation_completed": false,
-  "dataset_prepared": false,
+  "dataset_prepared": true,
   "teacher_collection_started": false,
   "training_completed": false,
   "evaluation_completed": false,
-  "next": "Verify E4B/D3 downloads and isolated runtime; obtain official MuSiQue data; implement bounded text-only comparison.",
+  "next": "Run first2 D3/native E4B functional prefix, then unchanged fixed12; learned heads pending.",
   "previous_multimodal_checkpoint_historical_only": {
     "phase": "native2_review_required",
     "run": "/content/local_fast/lsdrag-head-v14/results/native_distillation_12b_20261015",
@@ -47,12 +47,14 @@
     "training_completed": false,
     "evaluation_completed": false
   },
-  "model_verified": false,
+  "model_verified": true,
   "external_controller": {
     "repo": "vllm-sr/d3-flash",
     "revision": "8b35c853b90e777595ec36bacae820fe08ea077a",
     "download_started": true,
-    "verified": false,
-    "benchmarked": false
-  }
+    "verified": true,
+    "benchmarked": false,
+    "functional_smoke_passed": true
+  },
+  "external_benchmark_implementation_completed": true
 }

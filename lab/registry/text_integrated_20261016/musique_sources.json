@@ -1,0 +1,18 @@
+{
+  "official_download_failure": "Google Drive public download quota exceeded; saved HTML is not a dataset",
+  "mirror_repo": "dgslibisey/MuSiQue",
+  "mirror_revision": "c8f4f8c9465fb69d31a8eae894c3fd509c4ca321",
+  "files": [
+    {
+      "file": "musique_ans_v1.0_train.jsonl",
+      "sha256": "83a75b1e11e4e9bb8f8308e72ac40ca617ae4431b3a0d955b61cab259248490a",
+      "rows": 19938
+    },
+    {
+      "file": "musique_ans_v1.0_dev.jsonl",
+      "sha256": "15fa63794d18a94ce12411aca6e2327e65b6e83b0b1490efab3f1962e48abf3b",
+      "rows": 2417
+    }
+  ],
+  "official_zip_bytes_equivalence_unverified": true
+}
