@@ -10,7 +10,7 @@
 
 ## 선택한 모델과 벤치마크
 
-- Reader/teacher/backbone/새 인자 생성/최종 답변: `google/gemma-4-12B-it`, revision `707f0a3b8a3c7ad586ed01e27eafbad8a27dd0f7`. 2026-10-16 Hub current revision과 일치함을 확인했다. 이미 검증된 local-fast snapshot을 재사용한다. BF16 frozen backbone 하나를 공유하고 텍스트만 전달한다.
+- Reader/teacher/backbone/새 인자 생성/최종 답변: `google/gemma-4-E4B-it`, revision `ee0ef6023621cff504d758262d4e04895a5af4a2`. 2026-10-16 Hub current revision과 일치함을 확인했다. 새 E4B snapshot은 pinned revision으로 다운로드/검증한다. 12B 복원 검증을 E4B 검증으로 간주하지 않는다. E4B는 약4.5B effective, embedding 포함 약8B이며 BF16 weight 파일은15,992,595,884bytes다. BF16 frozen backbone 하나를 공유하고 텍스트만 전달한다.
 - 데이터: **MuSiQue-Ans v1.0의 2-hop 부분집합**. 공식 train에서 teacher, 공식 dev에서 평가를 고정 선택한다. MuSiQue-Full의 unanswerable 대비 실험은 이번 범위에서 제외한다.
 - 이유: 연결된 다단계 추론과 새 검색어/근거 ID 선택이 필요해 인자 재사용의 이득과 한계를 시험하기 적합하다. HotpotQA는 이번에 추가 실행하지 않는다.
 - 문항별 공식 제공 paragraph candidate 집합만 검색하는 bounded-corpus 설정. 전체 문단을 reader prompt에 미리 넣지 않고 검색→snippet→read로 점진 공개한다. Full-Wikipedia/open-domain RAG 결과로 부르지 않는다. 문단 수·길이는 실제 파일을 받은 뒤 기록하며 임의 고정 개수로 가정하지 않는다.
@@ -21,7 +21,7 @@
 
 공식 근거:
 - Google 모델 카드: https://ai.google.dev/gemma/docs/core/model_card_4
-- 모델: https://huggingface.co/google/gemma-4-12B-it
+- 모델: https://huggingface.co/google/gemma-4-E4B-it
 - MuSiQue 논문: https://arxiv.org/abs/2108.00573
 - 데이터/채점기: https://github.com/StonyBrookNLP/musique
 - 확인한 MuSiQue HEAD: `922ac98f19a201998dbdae6d7f2887a5258dbdeb` (코드/공식 다운로드 스크립트 pin; 데이터 bytes hash는 다운로드 후 별도 기록).
@@ -61,15 +61,15 @@
 Coverage: 자연 teacher state가 있는 distinct train qid>=30, 4행동 각각>=5 distinct qid. 인자 supervision은 reuse와 GENERATE_ARGS가 각각>=5 distinct qid에서 있어야 한다. 48에서도 실패하면 full-action 또는 argument branch가 학습 가능한지 확인되지 않았다고 NoGo를 기록하고 학습·평가 완료로 표현하지 않는다. 드문 행동을 강제로 생성하지 않는다. 기존60/80/100과3-seed GPU 평가는 이번 작은 파일럿에 적용하지 않는다.
 
 평가 조건:
-1. **Native reference**: 같은12B·3도구·답변 계약의 native single-call controller. 정확한 원 논문 A-RAG 재현으로 부르지 않는다.
+1. **Native reference**: 같은E4B·3도구·답변 계약의 native single-call controller. 정확한 원 논문 A-RAG 재현으로 부르지 않는다.
 2. **Head + always-generate**: 통합 모델의 동일 action head, 같은 candidate-aware 입력을 쓰되 인자는 매번 생성한다.
 3. **Head + integrated args**: 같은 action head와 arg-slot head로 재사용/필요한 인자 생성.
 
 2↔3이 인자 경로를 분리하는 주 비교다. 같은 초기 모델/입력을 쓰지만 이후 rollout은 분기할 수 있다. 2는 candidate prompt overhead를 공유하는 controlled ablation이며, 최소 prompt로 최적화한 기존 action-only 모델이라고 주장하지 않는다. 전체 시스템 비용은 native reference와도 비교한다. Native reference와 head의 instruction/selection 구조 차이를 명시한다.
 
-GPU 상한: loaded12B 하나, batch1, 조건은 순차 실행. text embedding은 한 번 precompute/cache하며 query encoder는 작은 고정 모델을 사용한다. context16K, 최대8 tool calls, 각 생성512 tokens, greedy, thinking off를 모든 조건에 공통 적용한다. 과거32K/1024와 다른 새 계약이다. 문단이 context를 초과하면 동일 규칙으로 budget FINAL 처리하고 숨겨진 truncation을 하지 않는다.
+GPU 상한: loadedE4B 하나, batch1, 조건은 순차 실행. text embedding은 한 번 precompute/cache하며 query encoder는 작은 고정 모델을 사용한다. context16K, 최대8 tool calls, 각 생성512 tokens, greedy, thinking off를 모든 조건에 공통 적용한다. 과거32K/1024와 다른 새 계약이다. 문단이 context를 초과하면 동일 규칙으로 budget FINAL 처리하고 숨겨진 truncation을 하지 않는다.
 
-실험 worker 누적 wall budget **60분**(모델 로딩·teacher의 student probe·retrieval·evaluation 포함)을 초기 자원 상한으로 둔다. 이는 예상 소요 시간/보장된 완료 시간이 아니다. launch 전 48GiB free VRAM 확인; 부족하면 기다리고 다른 작업을 종료하지 않는다. deadline에서 새 model call을 시작하지 않고 완료된 artifact와 pending 목록을 저장한다. 시간 상한 도달은 결과 NoGo와 구분되는 budget-limited/incomplete다. 반복 retry·모델 sweep·벤치마크 추가·80/100 확장은 자동으로 하지 않는다.
+실험 worker 누적 wall budget **60분**(모델 로딩·teacher의 student probe·retrieval·evaluation 포함)을 초기 자원 상한으로 둔다. 이는 예상 소요 시간/보장된 완료 시간이 아니다. launch 전 32GiB free VRAM 확인; 부족하면 기다리고 다른 작업을 종료하지 않는다. deadline에서 새 model call을 시작하지 않고 완료된 artifact와 pending 목록을 저장한다. 시간 상한 도달은 결과 NoGo와 구분되는 budget-limited/incomplete다. 반복 retry·모델 sweep·벤치마크 추가·80/100 확장은 자동으로 하지 않는다.
 
 ## 판단 지표와 다음 단계
 
@@ -78,3 +78,13 @@ GPU 상한: loaded12B 하나, batch1, 조건은 순차 실행. text embedding은
 dev12에서는 문항별 paired 차이와 bootstrap 불확실성을 탐색적으로 보고한다. 1개 seed와12문항은 안정적인 +5% 품질/+5% 속도 입증 규모가 아니다. 기존 +5%/+5%는 장기 목표로 유지한다. Shared GPU 시간은 관측값만 제시하고 comparative speed gate는 통과했다고 주장하지 않는다. 별도 간섭 통제 timing과 다중 seed/큰 평가셋은 이번 파일럿의 신호를 본 다음 단계다.
 
 새 작업 namespace: `text_integrated_20261016`; 예정 runtime `/content/local_fast/lsdrag-text-v1`, 결과 `/content/local_fast/lsdrag-text-v1/results/text_integrated_20261016`, 백업 `/content/drive/MyDrive/lsdrag-backups/20261016/text_integrated_20261016`. 아직 이 실험의 launch command/PID는 없다. 다음 작업은 text-only profile/parser/통합 head/수집·평가 runner 구현과 공식 데이터 bytes 검증이다.
+
+## 추가 사용자 지시: D3-Flash9B 외부 비교 (2026-10-16)
+
+사용자가 Decision3.0 D3-Flash9B를 찾아 benchmarking하도록 명시적으로 요청했다. 공식 모델은 `vllm-sr/d3-flash@8b35c853b90e777595ec36bacae820fe08ea077a`, Qwen3.5 기반8.39B(vision 포함)이며 arbitrary text를 생성하지 않고 supplied choices의 확률을 읽는다. 모델 카드: https://huggingface.co/vllm-sr/d3-flash .
+
+주 실험 Gemma backbone을 D3로 교체하지 않는다. D3는 외부 pretrained controller baseline으로 추가하고, 새 인자·답변은 동일 Gemma E4B가 생성한다. 통합 도구+인자 실행 후보를 한 choice 질문으로 주어 선택하되 후보 밖은 도구별 GENERATE_ARGS를 제공한다. 여러 질문 API가 하나의 forward를 공유한다고 가정하지 않는다(공식 설명은 질문마다 forward). No image inputs.
+
+먼저 새 fixed dev12에서 native Gemma와 D3+Gemma의 paired 소규모 비교를 준비한다. 향후 learned-head 조건도 같은 목록에 평가한다. 최종 조건 수는 기존3+외부D3=4, 최대48 eval episodes다. 이번60분 worker budget은 조건 추가로 늘리지 않는다. 자원·시간이 부족하면 완료 subset과 pending을 명시한다. 전체 Jev Index140k requests를 실행하는 요청으로 해석하지 않는다.
+
+모델/환경은 isolate한다. D3가 권장하는 transformers5.17.0/custom runtime을 별도 환경에 두고 공식 코드/manifest를 검토·검증한다. AutoModel text smoke와 소규모 decision/RAG benchmark를 구분하며 vendor Jev/MI325X 성능 수치를 우리 GPU 결과로 제시하지 않는다. 서로 다른 backbone과 추가9B controller 비용을 모두 보고하고 전체비용상 불리할 가능성도 평가한다. E4B와 D3를 동시에 load하려면 각각 단독 실행보다 큰 VRAM이 필요하므로 실행 직전 둘의 실제 가용량을 확인한다.

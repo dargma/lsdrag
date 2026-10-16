@@ -1,3 +1,11 @@
+# Latest model choice / D3 benchmark — 2026-10-16
+
+사용자는 4B급 최신 VLM으로 축소하도록 변경했다. 현재 reader/teacher/generative backbone은 `google/gemma-4-E4B-it@ee0ef6023621cff504d758262d4e04895a5af4a2` (text-only). 이전12B 선택은 새 실험에서 superseded. E4B는4.5B effective/embedding 포함8B로 literal total4B가 아니다. 모델 크기 변경은 새4문항 teacher audit에서 점검하고12B labels/features를 재사용하지 않는다.
+
+추가로 사용자가 `Decision3.0 d3-flash9B` 탐색·benchmarking을 요청했다. 공식 `vllm-sr/d3-flash@8b35c853b90e777595ec36bacae820fe08ea077a`를 외부 decision controller baseline으로 준비 중. 새 인자·최종답변은 E4B가 담당한다. 계획은 `docs/JEV_TEXT_ONLY_INTEGRATED_PLAN_20261016.md`; dev12 기준 기존3조건+외부D3=4조건(최대48episodes), worker wall budget60분 유지. 전체 Jev suite 재현은 하지 않는다.
+
+계획/instruction 저장 완료. E4B/D3 pinned downloads를 시작했으나 검증 완료/benchmark 결과는 아직 없다. MuSiQue 공식 공개 Drive URL은HTML confirmation을 반환해 데이터 확보를 해결 중이다. 새text-only RAG/head구현·teacher/학습·평가는 아직 미완료다.
+
 # 最新指示 — 2026-10-16 text-only 통합 효율화 계획
 
 현재 기준 문서: `docs/JEV_TEXT_ONLY_INTEGRATED_PLAN_20261016.md`. 사용자는 head 도구 선택과 인자 생성 최소화를 동시에 평가하고, GPU 제약에 맞춰 필요한 만큼만 실행하며, 이미지 입력·이미지 tool을 제외하고 text-only 벤치마크로 교체하도록 지시했다. 최신 중간 크기 Gemma VLM은 텍스트 입력으로만 사용한다. 아래 과거 full-tool/6-action/이미지 전달/60→80→100/구실험 자동재개 지침은 새 실험에서 적용하지 않는다.

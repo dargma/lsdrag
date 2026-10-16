@@ -180,3 +180,13 @@ Drive source differences were preserved under `/content/local_fast/lsdrag-recove
 다음: 공식 데이터 bytes/hash와 split 고정, text-only schema·prompt·4행동 head·arg slots·handler·최종 parser·MuSiQue scorer를 일치시키는 새 전용 구현 및 smoke. 아래 복원 기록과 과거 실험 기록은 역사이며 자동 실행 지시가 아니다.
 
 Official Google model docs and MuSiQue author repository/scorer inspected. Model current Hub revision matches restored pinned12B; MuSiQue source HEAD922ac98f19a201998dbdae6d7f2887a5258dbdeb. Sources and bounded-corpus/one-seed/small-dev limitations recorded in plan. No implementation or experiment started.
+
+
+## 2026-10-16 — E4B choice and explicit D3 benchmark request
+
+사용자는 4B급 최신 VLM으로 축소하도록 변경했다. 현재 reader/teacher/generative backbone은 `google/gemma-4-E4B-it@ee0ef6023621cff504d758262d4e04895a5af4a2` (text-only). 이전12B 선택은 새 실험에서 superseded. E4B는4.5B effective/embedding 포함8B로 literal total4B가 아니다. 모델 크기 변경은 새4문항 teacher audit에서 점검하고12B labels/features를 재사용하지 않는다.
+
+추가로 사용자가 `Decision3.0 d3-flash9B` 탐색·benchmarking을 요청했다. 공식 `vllm-sr/d3-flash@8b35c853b90e777595ec36bacae820fe08ea077a`를 외부 decision controller baseline으로 준비 중. 새 인자·최종답변은 E4B가 담당한다. 계획은 `docs/JEV_TEXT_ONLY_INTEGRATED_PLAN_20261016.md`; dev12 기준 기존3조건+외부D3=4조건(최대48episodes), worker wall budget60분 유지. 전체 Jev suite 재현은 하지 않는다.
+
+계획/instruction 저장 완료. E4B/D3 pinned downloads를 시작했으나 검증 완료/benchmark 결과는 아직 없다. MuSiQue 공식 공개 Drive URL은HTML confirmation을 반환해 데이터 확보를 해결 중이다. 새text-only RAG/head구현·teacher/학습·평가는 아직 미완료다.
+

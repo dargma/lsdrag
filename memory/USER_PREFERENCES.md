@@ -16,3 +16,5 @@
 - 행동 head와 인자 생성 최소화를 동시에 적용/비교. 관측 인자는 바로 호출하고 새로 필요한 인자만 생성. 추가 VLM candidate-selection 호출은 피하고 같은 prefill에서 학습형 head로 선택하는 계획.
 - GPU 자원 제약 때문에 작은 고정 규모/상한을 우선. 계획: train32→최대48, dev12×3, seed1, worker wall budget60분. 이전60/80/100와3-seed GPU 규모를 자동 적용하지 않는다.
 - 모든 변경의 우선순위·계획 vs 구현 vs 실제 실행 상태를 명시하고 Git/Drive에 영속 저장한다. 기준 `docs/JEV_TEXT_ONLY_INTEGRATED_PLAN_20261016.md`.
+
+- Latest model choice: Gemma4E4B-IT text-only, replacing12B for new pilot. Explicitly requested external Decision3.0 D3-Flash9B benchmark; retain resource caps and preserve main integrated-head objective.
