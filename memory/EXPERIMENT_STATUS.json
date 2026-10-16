@@ -1,6 +1,6 @@
 {
   "phase": "fixed_step_head_functional_verified_quality_nogo",
-  "updated_utc": "2026-10-16T15:23:14.843060+00:00",
+  "updated_utc": "2026-10-16T15:28:34.789400+00:00",
   "protocol": "docs/JEV_TEXT_INTEGRATED_EXECUTION_20261016.md",
   "protocol_sha256": "0adecb3e30136b974fa1ecfffe74282df019f5ccbe0ece7fdbb6547fa486bc18",
   "prompt": "prompts/text_rag_integrated_v5.txt",
@@ -217,7 +217,8 @@
   "interpretation_checkpoint": "lab/registry/text_integrated_20261016/head_learning_followup_checkpoint.json",
   "keyword_argument_clarification_saved": true,
   "improvement_plan": {
-    "path": "lab/registry/text_integrated_20261016/improvement_experiment_plan.json",
-    "status": "saved_not_started"
+    "path": "lab/registry/text_integrated_20261016/improvement_experiment_plan_v2.json",
+    "review": "lab/reports/text_integrated_20261016/astra_improvement_plan_review.json",
+    "status": "astra_reviewed_revised_not_started"
   }
 }

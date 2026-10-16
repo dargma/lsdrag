@@ -1,0 +1,52 @@
+{
+  "reviewer": "gpt-6-astra",
+  "review_agent": "/root/astra_plan_review",
+  "reviewed_utc": "2026-10-16T15:28:34.789400+00:00",
+  "verdict": "수정 후 승인 권고",
+  "scope": "사용자 요청에 따른 read-only 계획/코드/teacher32 검토; GPU 실행·코드 수정·학습 없음",
+  "reviewed_plan": "lab/registry/text_integrated_20261016/improvement_experiment_plan.json",
+  "findings": [
+    {
+      "topic": "분할 선고정",
+      "recommendation": "진단8문항은 train24에 먼저 포함하고 validation8 봉인. 기존32는 이미 개발 노출되어 개발 validation이지 독립 heldout 아님. head/정규화/가중치는 train24에서 새로 학습."
+    },
+    {
+      "topic": "exact token 부재",
+      "recommendation": "기존 raw_json은 skip_special_tokens/strip 후 문자열로 exact token IDs가 아님. native 고정상태 재실행으로 토큰·prefix 경계·parser 상태 기록. 구문과 의미를 함께 포함한 경계 토큰은 oracle 의미 제공으로 명시."
+    },
+    {
+      "topic": "cache 비교 통제",
+      "recommendation": "조건마다 fresh cache 또는 검증된 clone. 동일 prompt+prefix IDs의 full-prefill 대 cached logits/mask/position/length 비교. 수치 오차·near-tie로 greedy divergence 가능하므로 곧바로 cache bug로 단정 금지."
+    },
+    {
+      "topic": "학습 gate 충돌",
+      "recommendation": "src/lsdrag/text_integrated.py:492의 qids>=30으로 train24 계획은 현 코드에서 불가. 새 파일럿 gate/체크포인트 계약을 별도로 구현해야 하며 기존 coverage gate 보존."
+    },
+    {
+      "topic": "검색 재사용 양성0",
+      "recommendation": "실제111상태: keyword32/재사용0, semantic25/재사용0, read22/재사용16, FINAL32. 이번은 검색 항상 GENERATE, read만 기존 최대4후보+GENERATE 선택. 임의 ID subset 구조 아님."
+    },
+    {
+      "topic": "라벨 의미",
+      "recommendation": "exact teacher args 일치 label은 imitation label이며 GENERATE 대비 downstream 품질 우위가 아님. 런타임 GENERATE fallback은 학습 slot으로 결정; gold를 아는 부적합 판정 금지."
+    },
+    {
+      "topic": "validation rollout 예산",
+      "recommendation": "동일 action checkpoint/생성 경로로 always-generate 대 read-selection validation8×2=16episode 명시. head 재학습 대 복구 추가는 최대 한 번; 복구 teacher 호출/토큰/시간도 제한."
+    },
+    {
+      "topic": "heldout 판정",
+      "recommendation": "validation에서 primary 하나 선택해 코드/체크포인트/프롬프트/한도 hash 동결. fresh20 결과로 primary 변경 금지. 모호한 첫10 조기중단 삭제;20완료 또는 운영상 실패로 명시."
+    },
+    {
+      "topic": "작은 표본과 비용",
+      "recommendation": "F1/EM 관측 gate는 탐색 선별이며 비열등성 입증 아님. paired 승패/동률,분모/혼동행렬,불확실 판정 허용. forced prefix/전체 prefill/forward/선택 비용도 기록; 생성 토큰 감소만으로 속도 입증 금지."
+    }
+  ],
+  "minimal_sequence": "분할 선고정 → 최대24상태 토큰/cache 진단 → train24 행동 head 재학습 → 기존 read 후보 선택만 검증 → 설정 동결 후 fresh20",
+  "optional_deferred": [
+    "compact prefix+grammar OFF 완전 factorial",
+    "여러 CPU seed",
+    "검색 재사용 counterfactual label 수집"
+  ]
+}

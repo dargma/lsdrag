@@ -388,3 +388,7 @@ Gong Beibi 사례: native LLM이 [Gong Beibi, born, military expedition]으로 �
 ## 2026-10-16 — 개선 실험 계획 저장 (미실행)
 
 계획: `lab/registry/text_integrated_20261016/improvement_experiment_plan.json`. 우선 기존 train8의 최대24고정 상태에서 native exact prefix/cache/JSON 제약 및 FINAL 경로를 분리. 다음 기존32문항을 질문단위24/8로 나누고 head를 새로 학습하여 validation 누출 방지; 필요시 train 실패복구 최대16상태만 추가. 이후 관측 문서 ID 선택/완전 인자 재사용과 GENERATE를 최소 비교. 설정 고정 후 모든 노출 qid를 제외한 fresh20으로 native/수정head/(통과 시)인자선택 비교, 최대60episode. 품질·생성량을 함께 선별하며 공유GPU latency 배수는 주장하지 않음. native 검색 의미 보존, text-only Qwen non-thinking, local-fast/Drive backup 원칙 유지. 계획만 저장했으며 실행 시작 없음.
+
+## 2026-10-16 — Astra 계획 검토 및 v2 저장 (미실행)
+
+사용자 요청으로 gpt-6-astra 검토. 결론: 방향 적절, 수정 후 진행 권고. 검토 `lab/reports/text_integrated_20261016/astra_improvement_plan_review.json`; 원본 보존, 수정본 `lab/registry/text_integrated_20261016/improvement_experiment_plan_v2.json`. 필수 수정: 진단 전 train24/validation8 고정; raw_json은 exact token IDs가 아니므로 native 재실행 계측; clean cache/warm-cold logits 점검; qids>=30 기존 gate와 train24 충돌은 새 파일럿 계약 구현 필요. 실제 재사용16은 전부read, keyword32/semantic25 양성0이므로 read의 기존최대4후보+GENERATE만 실험. validation16episode 예산, 복구수집 호출/토큰/시간 상한, primary 동결 후 fresh20 평가/모호한10문항중단 삭제. 모든 해석은 탐색 결과이며 same-step기능/QA/계산비용 분리. 구현 및 실험 아직 미시작.
