@@ -1,0 +1,1180 @@
+{
+  "created_utc": "2026-10-16T15:06:09.034739+00:00",
+  "scope": "Read-only qualitative audit of completed dev10; no new GPU run, training or prompt tuning.",
+  "summary": {
+    "pairs": 10,
+    "answers_changed": 4,
+    "f1_worse": 3,
+    "f1_better": 0,
+    "native_mean_f1": 0.35,
+    "head_mean_f1": 0.1285714285714286,
+    "same_action_sequence": 6,
+    "first_divergence_counts": {
+      "arguments": 7,
+      "action": 2,
+      "none": 1
+    }
+  },
+  "causal_limits": [
+    "The evaluated policy used learned action selection plus cached always-generated arguments. Argument reuse/selection heads were NOT deployed.",
+    "Native generates the entire envelope; head forces a compact prefix and applies JSON-constrained suffix generation. Changed argument values cannot be attributed solely to learned action classification.",
+    "Keyword handler matches each full keyword string literally; long nonmatching phrases produce no hits even when valid JSON. Why the decoder emitted those phrases is not isolated.",
+    "Fixed train4 replay15/15 is teacher-forced training-state functionality, not autonomous heldout action agreement.",
+    "No same-history factorial intervention was executed. Small teacher coverage is a generalization hypothesis, not established cause.",
+    "Dev10 is exposed; any future tuning requires fresh heldout evaluation."
+  ],
+  "next_diagnostic_proposal_not_executed": [
+    "On frozen native histories, force the native tool and compare native versus cached argument generation and retrieved evidence.",
+    "Separately score the learned action head on identical native observation histories; distinguish search/read/FINAL errors."
+  ],
+  "cases": [
+    {
+      "qid": "2hop__124592_402641",
+      "question": "Who is the other child of Chian Hsiao-chang's father?",
+      "gold": "Chiang Hsiao-wu",
+      "aliases": [
+        "Alex Chiang"
+      ],
+      "native": {
+        "answer": "Hsiao-wen, Hsiao-wu",
+        "f1": 0.5,
+        "em": 0,
+        "support_ids": [
+          "p12",
+          "p1",
+          "p13"
+        ],
+        "tool_calls": 2,
+        "errors": [],
+        "trajectory": [
+          {
+            "tool": "keyword_search",
+            "arguments": {
+              "keywords": [
+                "Chian Hsiao-chang",
+                "father",
+                "child"
+              ],
+              "top_k": 5
+            },
+            "returned_chunk_ids": [
+              "p3",
+              "p9",
+              "p5",
+              "p0",
+              "p10"
+            ]
+          },
+          {
+            "tool": "semantic_search",
+            "arguments": {
+              "query": "Who is the other child of Chian Hsiao-chang's father?",
+              "top_k": 3
+            },
+            "returned_chunk_ids": [
+              "p12",
+              "p1",
+              "p13"
+            ]
+          }
+        ]
+      },
+      "head": {
+        "answer": "Winston Chang and John Chiang",
+        "f1": 0.28571428571428575,
+        "em": 0,
+        "support_ids": [
+          "p12",
+          "p13",
+          "p1"
+        ],
+        "tool_calls": 3,
+        "errors": [],
+        "trajectory": [
+          {
+            "tool": "keyword_search",
+            "arguments": {
+              "keywords": [
+                "Chian Hsiao-chang father other child"
+              ],
+              "top_k": 5
+            },
+            "returned_chunk_ids": []
+          },
+          {
+            "tool": "semantic_search",
+            "arguments": {
+              "query": "Who is the other child of Chian Hsiao-chang's father besides Chian Hsiao-chang?",
+              "top_k": 5
+            },
+            "returned_chunk_ids": [
+              "p12",
+              "p13",
+              "p1",
+              "p11",
+              "p17"
+            ]
+          },
+          {
+            "tool": "read_chunk",
+            "arguments": {
+              "chunk_ids": [
+                "p12",
+                "p13",
+                "p1"
+              ]
+            },
+            "returned_chunk_ids": [
+              "p12",
+              "p13",
+              "p1"
+            ]
+          }
+        ]
+      },
+      "f1_delta": -0.21428571428571425,
+      "first_tool_divergence": {
+        "zero_based_step": 0,
+        "kind": "arguments"
+      },
+      "category": "relationship_resolution_with_relevant_evidence",
+      "observed": "관련 p12,p13,p1을 검색하고 읽었으나 head는 Winston Chang and John Chiang을 선택. native도 Hsiao-wen, Hsiao-wu로 복수 인물을 답해 부분 점수에 그쳤다.",
+      "interpretation": "정답 문서 부재만으로 설명되지 않는 가족관계·답 후보 선택 실패. 데이터셋 정답은 Chiang Hsiao-wu이나 같은 아버지의 다른 자녀가 여러 명이므로 질문 모호성도 주의. 단순 별칭 표기 차이는 아니다."
+    },
+    {
+      "qid": "2hop__132929_120537",
+      "question": "When was the company that makes Skyflash abolished?",
+      "gold": "30 November 1999",
+      "aliases": [],
+      "native": {
+        "answer": "The company that makes Skyflash was not abolished.",
+        "f1": 0,
+        "em": 0,
+        "support_ids": [
+          "p14"
+        ],
+        "tool_calls": 3,
+        "errors": [],
+        "trajectory": [
+          {
+            "tool": "keyword_search",
+            "arguments": {
+              "keywords": [
+                "Skyflash company",
+                "abolished",
+                "closed"
+              ],
+              "top_k": 5
+            },
+            "returned_chunk_ids": [
+              "p0",
+              "p8",
+              "p15",
+              "p19",
+              "p1"
+            ]
+          },
+          {
+            "tool": "semantic_search",
+            "arguments": {
+              "query": "when was the company that makes Skyflash abolished",
+              "top_k": 3
+            },
+            "returned_chunk_ids": [
+              "p14",
+              "p5",
+              "p10"
+            ]
+          },
+          {
+            "tool": "read_chunk",
+            "arguments": {
+              "chunk_ids": [
+                "p14"
+              ]
+            },
+            "returned_chunk_ids": [
+              "p14"
+            ]
+          }
+        ]
+      },
+      "head": {
+        "answer": "",
+        "f1": 0,
+        "em": 0,
+        "support_ids": [],
+        "tool_calls": 3,
+        "errors": [],
+        "trajectory": [
+          {
+            "tool": "keyword_search",
+            "arguments": {
+              "keywords": [
+                "Skyflash company abolished"
+              ],
+              "top_k": 5
+            },
+            "returned_chunk_ids": []
+          },
+          {
+            "tool": "semantic_search",
+            "arguments": {
+              "query": "when was the company that produces Skyflash discontinued or abolished",
+              "top_k": 5
+            },
+            "returned_chunk_ids": [
+              "p14",
+              "p10",
+              "p5",
+              "p15",
+              "p9"
+            ]
+          },
+          {
+            "tool": "read_chunk",
+            "arguments": {
+              "chunk_ids": [
+                "p14",
+                "p10",
+                "p5",
+                "p15",
+                "p9"
+              ]
+            },
+            "returned_chunk_ids": [
+              "p14",
+              "p10",
+              "p5",
+              "p15",
+              "p9"
+            ]
+          }
+        ]
+      },
+      "f1_delta": 0,
+      "first_tool_divergence": {
+        "zero_based_step": 0,
+        "kind": "arguments"
+      },
+      "category": "shared_second_hop_failure_different_abstention",
+      "observed": "둘 다 제조사 British Aerospace의 p7을 놓침. native는 회사가 폐지되지 않았다고 답하고 head는 빈 답으로 유보했다.",
+      "interpretation": "답 문자열은 달라졌으나 둘 다 F1=0으로 성능 하락 기여는 없다."
+    },
+    {
+      "qid": "2hop__179149_396277",
+      "question": "What other notable work did the creator of Shrek make?",
+      "gold": "Doctor De Soto",
+      "aliases": [],
+      "native": {
+        "answer": "Shrek the Halls, stage musical",
+        "f1": 0,
+        "em": 0,
+        "support_ids": [
+          "p4",
+          "p15",
+          "p11",
+          "p9",
+          "p18"
+        ],
+        "tool_calls": 3,
+        "errors": [],
+        "trajectory": [
+          {
+            "tool": "keyword_search",
+            "arguments": {
+              "keywords": [
+                "Shrek creator",
+                "Shrek maker"
+              ],
+              "top_k": 5
+            },
+            "returned_chunk_ids": []
+          },
+          {
+            "tool": "semantic_search",
+            "arguments": {
+              "query": "who is the creator of Shrek and what other notable works did they create",
+              "top_k": 5
+            },
+            "returned_chunk_ids": [
+              "p4",
+              "p15",
+              "p11",
+              "p9",
+              "p18"
+            ]
+          },
+          {
+            "tool": "read_chunk",
+            "arguments": {
+              "chunk_ids": [
+                "p4",
+                "p15",
+                "p11",
+                "p9",
+                "p18"
+              ]
+            },
+            "returned_chunk_ids": [
+              "p4",
+              "p15",
+              "p11",
+              "p9",
+              "p18"
+            ]
+          }
+        ]
+      },
+      "head": {
+        "answer": "Shrek the Halls, stage musical",
+        "f1": 0,
+        "em": 0,
+        "support_ids": [
+          "p4",
+          "p15",
+          "p11",
+          "p9",
+          "p18"
+        ],
+        "tool_calls": 3,
+        "errors": [],
+        "trajectory": [
+          {
+            "tool": "keyword_search",
+            "arguments": {
+              "keywords": [
+                "Shrek creator",
+                "Shrek maker"
+              ],
+              "top_k": 5
+            },
+            "returned_chunk_ids": []
+          },
+          {
+            "tool": "semantic_search",
+            "arguments": {
+              "query": "who is the creator of Shrek and what other notable works did they create",
+              "top_k": 5
+            },
+            "returned_chunk_ids": [
+              "p4",
+              "p15",
+              "p11",
+              "p9",
+              "p18"
+            ]
+          },
+          {
+            "tool": "read_chunk",
+            "arguments": {
+              "chunk_ids": [
+                "p4",
+                "p15",
+                "p11",
+                "p9",
+                "p18"
+              ]
+            },
+            "returned_chunk_ids": [
+              "p4",
+              "p15",
+              "p11",
+              "p9",
+              "p18"
+            ]
+          }
+        ]
+      },
+      "f1_delta": 0,
+      "first_tool_divergence": null,
+      "category": "identical_trajectory_shared_error",
+      "observed": "모든 툴·인자·결과와 최종 답이 동일하며 둘 다 오답.",
+      "interpretation": "head에 고유한 품질 하락 사례가 아니다."
+    },
+    {
+      "qid": "2hop__1845_38366",
+      "question": "What is the population of the borough that contains the neighborhood of Riverdale?",
+      "gold": "1,438,159",
+      "aliases": [],
+      "native": {
+        "answer": "15,134",
+        "f1": 0,
+        "em": 0,
+        "support_ids": [
+          "p6"
+        ],
+        "tool_calls": 3,
+        "errors": [],
+        "trajectory": [
+          {
+            "tool": "keyword_search",
+            "arguments": {
+              "keywords": [
+                "Riverdale neighborhood"
+              ],
+              "top_k": 5
+            },
+            "returned_chunk_ids": []
+          },
+          {
+            "tool": "semantic_search",
+            "arguments": {
+              "query": "neighborhood named Riverdale and its associated borough",
+              "top_k": 5
+            },
+            "returned_chunk_ids": [
+              "p8",
+              "p6",
+              "p17",
+              "p4",
+              "p9"
+            ]
+          },
+          {
+            "tool": "read_chunk",
+            "arguments": {
+              "chunk_ids": [
+                "p6"
+              ]
+            },
+            "returned_chunk_ids": [
+              "p6"
+            ]
+          }
+        ]
+      },
+      "head": {
+        "answer": "15,134",
+        "f1": 0,
+        "em": 0,
+        "support_ids": [
+          "p6"
+        ],
+        "tool_calls": 3,
+        "errors": [],
+        "trajectory": [
+          {
+            "tool": "keyword_search",
+            "arguments": {
+              "keywords": [
+                "Riverdale neighborhood population"
+              ],
+              "top_k": 5
+            },
+            "returned_chunk_ids": []
+          },
+          {
+            "tool": "semantic_search",
+            "arguments": {
+              "query": "population of the borough that contains Riverdale neighborhood",
+              "top_k": 5
+            },
+            "returned_chunk_ids": [
+              "p6",
+              "p9",
+              "p16",
+              "p17",
+              "p4"
+            ]
+          },
+          {
+            "tool": "read_chunk",
+            "arguments": {
+              "chunk_ids": [
+                "p6"
+              ]
+            },
+            "returned_chunk_ids": [
+              "p6"
+            ]
+          }
+        ]
+      },
+      "f1_delta": 0,
+      "first_tool_divergence": {
+        "zero_based_step": 0,
+        "kind": "arguments"
+      },
+      "category": "shared_error_no_score_change",
+      "observed": "두 조건의 최종 답이 같고 모두 오답이다.",
+      "interpretation": "head 대비 native의 F1 하락에 기여하지 않는 공통 오류이다."
+    },
+    {
+      "qid": "2hop__223823_29898",
+      "question": "Which affiliate left the owner of Canadian Broadcasting Centre due to an agreement with CHBC?",
+      "gold": "CFJC-TV in Kamloops",
+      "aliases": [
+        "Kamloops"
+      ],
+      "native": {
+        "answer": "CHBC-TV",
+        "f1": 0,
+        "em": 0,
+        "support_ids": [
+          "p13"
+        ],
+        "tool_calls": 2,
+        "errors": [],
+        "trajectory": [
+          {
+            "tool": "keyword_search",
+            "arguments": {
+              "keywords": [
+                "affiliate",
+                "Canadian Broadcasting Centre",
+                "CHBC",
+                "agreement"
+              ],
+              "top_k": 5
+            },
+            "returned_chunk_ids": [
+              "p13",
+              "p12",
+              "p5",
+              "p6",
+              "p17"
+            ]
+          },
+          {
+            "tool": "read_chunk",
+            "arguments": {
+              "chunk_ids": [
+                "p13"
+              ]
+            },
+            "returned_chunk_ids": [
+              "p13"
+            ]
+          }
+        ]
+      },
+      "head": {
+        "answer": "CHBC-TV",
+        "f1": 0,
+        "em": 0,
+        "support_ids": [
+          "p13"
+        ],
+        "tool_calls": 2,
+        "errors": [],
+        "trajectory": [
+          {
+            "tool": "keyword_search",
+            "arguments": {
+              "keywords": [
+                "affiliate",
+                "CHBC",
+                "Canadian Broadcasting Centre"
+              ],
+              "top_k": 5
+            },
+            "returned_chunk_ids": [
+              "p13",
+              "p12",
+              "p5",
+              "p6",
+              "p0"
+            ]
+          },
+          {
+            "tool": "read_chunk",
+            "arguments": {
+              "chunk_ids": [
+                "p13"
+              ]
+            },
+            "returned_chunk_ids": [
+              "p13"
+            ]
+          }
+        ]
+      },
+      "f1_delta": 0,
+      "first_tool_divergence": {
+        "zero_based_step": 0,
+        "kind": "arguments"
+      },
+      "category": "shared_error_no_score_change",
+      "observed": "두 조건의 최종 답이 같고 모두 오답이다.",
+      "interpretation": "head 대비 native의 F1 하락에 기여하지 않는 공통 오류이다."
+    },
+    {
+      "qid": "2hop__245835_762148",
+      "question": "Who is part of the group performing Ask the Fish?",
+      "gold": "Vince Herman",
+      "aliases": [],
+      "native": {
+        "answer": "Vince Herman",
+        "f1": 1.0,
+        "em": 1,
+        "support_ids": [
+          "p19",
+          "p10"
+        ],
+        "tool_calls": 3,
+        "errors": [],
+        "trajectory": [
+          {
+            "tool": "keyword_search",
+            "arguments": {
+              "keywords": [
+                "Ask the Fish",
+                "group",
+                "performing"
+              ],
+              "top_k": 5
+            },
+            "returned_chunk_ids": [
+              "p3",
+              "p19",
+              "p16",
+              "p5",
+              "p9"
+            ]
+          },
+          {
+            "tool": "semantic_search",
+            "arguments": {
+              "query": "who is part of the group that performs Ask the Fish",
+              "top_k": 5
+            },
+            "returned_chunk_ids": [
+              "p19",
+              "p4",
+              "p6",
+              "p5",
+              "p10"
+            ]
+          },
+          {
+            "tool": "read_chunk",
+            "arguments": {
+              "chunk_ids": [
+                "p19",
+                "p10"
+              ]
+            },
+            "returned_chunk_ids": [
+              "p19",
+              "p10"
+            ]
+          }
+        ]
+      },
+      "head": {
+        "answer": "Vince Herman",
+        "f1": 1.0,
+        "em": 1,
+        "support_ids": [
+          "p19",
+          "p10"
+        ],
+        "tool_calls": 3,
+        "errors": [],
+        "trajectory": [
+          {
+            "tool": "keyword_search",
+            "arguments": {
+              "keywords": [
+                "Ask the Fish group members"
+              ],
+              "top_k": 5
+            },
+            "returned_chunk_ids": []
+          },
+          {
+            "tool": "semantic_search",
+            "arguments": {
+              "query": "members of the group that performs Ask the Fish",
+              "top_k": 5
+            },
+            "returned_chunk_ids": [
+              "p19",
+              "p4",
+              "p6",
+              "p5",
+              "p10"
+            ]
+          },
+          {
+            "tool": "read_chunk",
+            "arguments": {
+              "chunk_ids": [
+                "p19",
+                "p10"
+              ]
+            },
+            "returned_chunk_ids": [
+              "p19",
+              "p10"
+            ]
+          }
+        ]
+      },
+      "f1_delta": 0.0,
+      "first_tool_divergence": {
+        "zero_based_step": 0,
+        "kind": "arguments"
+      },
+      "category": "recovery_control",
+      "observed": "head의 첫 긴 keyword 문구는 결과가 없었으나 semantic 검색과 읽기로 Vince Herman 정답을 회복.",
+      "interpretation": "첫 인자 차이가 항상 최종 오답으로 이어지는 것은 아니다."
+    },
+    {
+      "qid": "2hop__24697_578772",
+      "question": "The name of the Chinese capitol Kanmu modeled his government after is an instance of what?",
+      "gold": "Chinese surname",
+      "aliases": [
+        "surname"
+      ],
+      "native": {
+        "answer": "Tang capital",
+        "f1": 0,
+        "em": 0,
+        "support_ids": [
+          "p15"
+        ],
+        "tool_calls": 2,
+        "errors": [],
+        "trajectory": [
+          {
+            "tool": "semantic_search",
+            "arguments": {
+              "query": "Chinese capitol that Kanmu modeled his government after and what it is an instance of",
+              "top_k": 3
+            },
+            "returned_chunk_ids": [
+              "p15",
+              "p2",
+              "p4"
+            ]
+          },
+          {
+            "tool": "read_chunk",
+            "arguments": {
+              "chunk_ids": [
+                "p15",
+                "p4"
+              ]
+            },
+            "returned_chunk_ids": [
+              "p15",
+              "p4"
+            ]
+          }
+        ]
+      },
+      "head": {
+        "answer": "Tang capital",
+        "f1": 0,
+        "em": 0,
+        "support_ids": [
+          "p15"
+        ],
+        "tool_calls": 3,
+        "errors": [],
+        "trajectory": [
+          {
+            "tool": "keyword_search",
+            "arguments": {
+              "keywords": [
+                "Kanmu capitol name",
+                "Kanmu government model"
+              ],
+              "top_k": 5
+            },
+            "returned_chunk_ids": []
+          },
+          {
+            "tool": "semantic_search",
+            "arguments": {
+              "query": "What was the Chinese capital that Kanmu modeled his government after, and what type of instance is its name?",
+              "top_k": 5
+            },
+            "returned_chunk_ids": [
+              "p15",
+              "p2",
+              "p4",
+              "p17",
+              "p16"
+            ]
+          },
+          {
+            "tool": "read_chunk",
+            "arguments": {
+              "chunk_ids": [
+                "p15",
+                "p4"
+              ]
+            },
+            "returned_chunk_ids": [
+              "p15",
+              "p4"
+            ]
+          }
+        ]
+      },
+      "f1_delta": 0,
+      "first_tool_divergence": {
+        "zero_based_step": 0,
+        "kind": "action"
+      },
+      "category": "shared_error_no_score_change",
+      "observed": "두 조건의 최종 답이 같고 모두 오답이다.",
+      "interpretation": "head 대비 native의 F1 하락에 기여하지 않는 공통 오류이다."
+    },
+    {
+      "qid": "2hop__631024_18974",
+      "question": "Who led the military expedition in the province where Gong Beibi was born?",
+      "gold": "Chen Zheng",
+      "aliases": [],
+      "native": {
+        "answer": "Chen Zheng",
+        "f1": 1.0,
+        "em": 1,
+        "support_ids": [
+          "p12"
+        ],
+        "tool_calls": 3,
+        "errors": [],
+        "trajectory": [
+          {
+            "tool": "keyword_search",
+            "arguments": {
+              "keywords": [
+                "Gong Beibi",
+                "born",
+                "military expedition"
+              ],
+              "top_k": 5
+            },
+            "returned_chunk_ids": [
+              "p12",
+              "p5",
+              "p6",
+              "p0",
+              "p13"
+            ]
+          },
+          {
+            "tool": "semantic_search",
+            "arguments": {
+              "query": "military expedition leader in Fujian province",
+              "top_k": 3
+            },
+            "returned_chunk_ids": [
+              "p15",
+              "p12",
+              "p3"
+            ]
+          },
+          {
+            "tool": "read_chunk",
+            "arguments": {
+              "chunk_ids": [
+                "p12"
+              ]
+            },
+            "returned_chunk_ids": [
+              "p12"
+            ]
+          }
+        ]
+      },
+      "head": {
+        "answer": "",
+        "f1": 0,
+        "em": 0,
+        "support_ids": [],
+        "tool_calls": 2,
+        "errors": [],
+        "trajectory": [
+          {
+            "tool": "keyword_search",
+            "arguments": {
+              "keywords": [
+                "Gong Beibi birth province military expedition leader"
+              ],
+              "top_k": 5
+            },
+            "returned_chunk_ids": []
+          },
+          {
+            "tool": "semantic_search",
+            "arguments": {
+              "query": "Who was the military leader in the province where Gong Beibi was born?",
+              "top_k": 5
+            },
+            "returned_chunk_ids": [
+              "p5",
+              "p6",
+              "p8",
+              "p14",
+              "p18"
+            ]
+          }
+        ]
+      },
+      "f1_delta": -1.0,
+      "first_tool_divergence": {
+        "zero_based_step": 0,
+        "kind": "arguments"
+      },
+      "category": "argument_retrieval_then_stop",
+      "observed": "같은 keyword_search지만 분리된 검색어 대신 긴 단일 문구를 생성하여 결과가 0개가 됨. 후속 semantic 검색도 Fujian으로 구체화하지 못하고 p12를 놓친 뒤 FINAL로 종료.",
+      "interpretation": "정확한 문자열 검색과 부적합한 인자의 결합이 첫 검색 실패를 설명한다. head의 종료 판단과 인자 생성 경로 변화의 기여도는 분리 실험 전에는 확정할 수 없다."
+    },
+    {
+      "qid": "2hop__648648_173389",
+      "question": "The city which contains Broadhurst Park shares a border with what town?",
+      "gold": "Middleton",
+      "aliases": [],
+      "native": {
+        "answer": "Middleton",
+        "f1": 1.0,
+        "em": 1,
+        "support_ids": [
+          "p6"
+        ],
+        "tool_calls": 3,
+        "errors": [],
+        "trajectory": [
+          {
+            "tool": "keyword_search",
+            "arguments": {
+              "keywords": [
+                "Broadhurst Park"
+              ],
+              "top_k": 5
+            },
+            "returned_chunk_ids": [
+              "p11"
+            ]
+          },
+          {
+            "tool": "keyword_search",
+            "arguments": {
+              "keywords": [
+                "Moston",
+                "border"
+              ],
+              "top_k": 5
+            },
+            "returned_chunk_ids": [
+              "p13",
+              "p3",
+              "p11",
+              "p14",
+              "p15"
+            ]
+          },
+          {
+            "tool": "keyword_search",
+            "arguments": {
+              "keywords": [
+                "Manchester",
+                "border"
+              ],
+              "top_k": 5
+            },
+            "returned_chunk_ids": [
+              "p13",
+              "p3",
+              "p11",
+              "p6",
+              "p14"
+            ]
+          }
+        ]
+      },
+      "head": {
+        "answer": "Manchester",
+        "f1": 0,
+        "em": 0,
+        "support_ids": [
+          "p11"
+        ],
+        "tool_calls": 3,
+        "errors": [],
+        "trajectory": [
+          {
+            "tool": "keyword_search",
+            "arguments": {
+              "keywords": [
+                "Broadhurst Park"
+              ],
+              "top_k": 5
+            },
+            "returned_chunk_ids": [
+              "p11"
+            ]
+          },
+          {
+            "tool": "keyword_search",
+            "arguments": {
+              "keywords": [
+                "Moston",
+                "border"
+              ],
+              "top_k": 5
+            },
+            "returned_chunk_ids": [
+              "p13",
+              "p3",
+              "p11",
+              "p14",
+              "p15"
+            ]
+          },
+          {
+            "tool": "read_chunk",
+            "arguments": {
+              "chunk_ids": [
+                "p13",
+                "p3",
+                "p14",
+                "p15"
+              ]
+            },
+            "returned_chunk_ids": [
+              "p13",
+              "p3",
+              "p14",
+              "p15"
+            ]
+          }
+        ]
+      },
+      "f1_delta": -1.0,
+      "first_tool_divergence": {
+        "zero_based_step": 2,
+        "kind": "action"
+      },
+      "category": "action_divergence_at_identical_history",
+      "observed": "첫 두 호출의 툴·인자·결과가 동일하다. native는 Manchester/border를 추가 검색해 p6를 찾았지만 head는 p13,p3,p14,p15의 무관한 문서를 읽고 Manchester로 답했다.",
+      "interpretation": "동일 관측에서 read_chunk를 택한 행동 차이가 가장 명확한 head 실패 사례. 중간 위치 Manchester를 목표인 접경 마을 Middleton으로 대체했다."
+    },
+    {
+      "qid": "2hop__807257_590611",
+      "question": "Who is a cast member of the show that contains the character Michael Knight?",
+      "gold": "Deanna Russo",
+      "aliases": [
+        "Bruce Davison"
+      ],
+      "native": {
+        "answer": "David Hasselhoff",
+        "f1": 0,
+        "em": 0,
+        "support_ids": [
+          "p11"
+        ],
+        "tool_calls": 2,
+        "errors": [],
+        "trajectory": [
+          {
+            "tool": "keyword_search",
+            "arguments": {
+              "keywords": [
+                "Michael Knight"
+              ],
+              "top_k": 5
+            },
+            "returned_chunk_ids": [
+              "p0",
+              "p11",
+              "p14"
+            ]
+          },
+          {
+            "tool": "read_chunk",
+            "arguments": {
+              "chunk_ids": [
+                "p0",
+                "p11"
+              ]
+            },
+            "returned_chunk_ids": [
+              "p0",
+              "p11"
+            ]
+          }
+        ]
+      },
+      "head": {
+        "answer": "David Hasselhoff",
+        "f1": 0,
+        "em": 0,
+        "support_ids": [
+          "p11"
+        ],
+        "tool_calls": 2,
+        "errors": [],
+        "trajectory": [
+          {
+            "tool": "keyword_search",
+            "arguments": {
+              "keywords": [
+                "Michael Knight"
+              ],
+              "top_k": 5
+            },
+            "returned_chunk_ids": [
+              "p0",
+              "p11",
+              "p14"
+            ]
+          },
+          {
+            "tool": "read_chunk",
+            "arguments": {
+              "chunk_ids": [
+                "p0",
+                "p11",
+                "p14"
+              ]
+            },
+            "returned_chunk_ids": [
+              "p0",
+              "p11",
+              "p14"
+            ]
+          }
+        ]
+      },
+      "f1_delta": 0,
+      "first_tool_divergence": {
+        "zero_based_step": 1,
+        "kind": "arguments"
+      },
+      "category": "shared_error_no_score_change",
+      "observed": "두 조건의 최종 답이 같고 모두 오답이다.",
+      "interpretation": "head 대비 native의 F1 하락에 기여하지 않는 공통 오류이다."
+    }
+  ],
+  "sha256": {
+    "/content/local_fast/lsdrag-text-v1/results/text_integrated_20261016_v5_fast_only/evaluation/native/2hop__124592_402641.json": "9764a096a912fe667848363bf421d0997eda7c3a5e778483fc9cbe627a162203",
+    "/content/local_fast/lsdrag-text-v1/results/text_integrated_20261016_v5_fast_only/evaluation/always_generate/2hop__124592_402641.json": "d84669267361cef0dfc9986ee6cc0c253f799fae8ca52cb83622f9935c9e0689",
+    "/content/local_fast/lsdrag-text-v1/results/text_integrated_20261016_v5_fast_only/evaluation/native/2hop__132929_120537.json": "14bf37631138831079098b023619dd5b4ea4c5e8eb48c1bdc19c4b95c81c3642",
+    "/content/local_fast/lsdrag-text-v1/results/text_integrated_20261016_v5_fast_only/evaluation/always_generate/2hop__132929_120537.json": "28acb7700b3b915889af8d2f18158f67f6337f94c1d65f6755bf3535cff6e756",
+    "/content/local_fast/lsdrag-text-v1/results/text_integrated_20261016_v5_fast_only/evaluation/native/2hop__179149_396277.json": "e7bd28bd090acf4319998436486fe8d20276470e3c25ac43bb7d8814f6e3ff94",
+    "/content/local_fast/lsdrag-text-v1/results/text_integrated_20261016_v5_fast_only/evaluation/always_generate/2hop__179149_396277.json": "0344bec62402ed39b3eac2954686c7f235fc2ff90b9b0337739081e0674f6b91",
+    "/content/local_fast/lsdrag-text-v1/results/text_integrated_20261016_v5_fast_only/evaluation/native/2hop__1845_38366.json": "241043c7669c8f78d2a62f61ba7109442dcf37e995fe69d2d76c916196d88d97",
+    "/content/local_fast/lsdrag-text-v1/results/text_integrated_20261016_v5_fast_only/evaluation/always_generate/2hop__1845_38366.json": "90da4693311d0e7513fbafe8db438119a811b047c5a4eadd478ea2be184c8d45",
+    "/content/local_fast/lsdrag-text-v1/results/text_integrated_20261016_v5_fast_only/evaluation/native/2hop__223823_29898.json": "4eefe3daa8645141bbde831cf1b5bfc03adfbeb9bc0da92a4bd29d1e1ac65821",
+    "/content/local_fast/lsdrag-text-v1/results/text_integrated_20261016_v5_fast_only/evaluation/always_generate/2hop__223823_29898.json": "3a345fa925f790c2d51848c5fd464efb2c28e23d62d7efad6799d5a039f0b4ae",
+    "/content/local_fast/lsdrag-text-v1/results/text_integrated_20261016_v5_fast_only/evaluation/native/2hop__245835_762148.json": "1f3f19f20611cedf2f584d1640a2ae9470137c9b1852021bdaddf4111fd0c8a3",
+    "/content/local_fast/lsdrag-text-v1/results/text_integrated_20261016_v5_fast_only/evaluation/always_generate/2hop__245835_762148.json": "17132e717888c364fee14fe096cd5eaf421d9422060a3e3977067676948cd68b",
+    "/content/local_fast/lsdrag-text-v1/results/text_integrated_20261016_v5_fast_only/evaluation/native/2hop__24697_578772.json": "de315dd0ea804371dbe8baa54e6678613d4c9ba0161e4496c4f255e6ad88eecc",
+    "/content/local_fast/lsdrag-text-v1/results/text_integrated_20261016_v5_fast_only/evaluation/always_generate/2hop__24697_578772.json": "d09c4623afe0d2dbf9363f9365fe0b646c64edda175edbeb10efab0f5eb3916a",
+    "/content/local_fast/lsdrag-text-v1/results/text_integrated_20261016_v5_fast_only/evaluation/native/2hop__631024_18974.json": "5f043060f35dbb8f8b308e387ba284bf666ee608cb953d6083485794e767c0a8",
+    "/content/local_fast/lsdrag-text-v1/results/text_integrated_20261016_v5_fast_only/evaluation/always_generate/2hop__631024_18974.json": "49148d4640d351b2ba3877fc9b674541b402fdab0f7094ed10327233428ff40b",
+    "/content/local_fast/lsdrag-text-v1/results/text_integrated_20261016_v5_fast_only/evaluation/native/2hop__648648_173389.json": "123e54edf826830b92cab8c1cc7e7a71a6649fe6bc3a2b0b492f7ab5f4a44012",
+    "/content/local_fast/lsdrag-text-v1/results/text_integrated_20261016_v5_fast_only/evaluation/always_generate/2hop__648648_173389.json": "b3358fc6fadc9afa37456d35d099a085029445ebf848bcf263765efc3fde34c4",
+    "/content/local_fast/lsdrag-text-v1/results/text_integrated_20261016_v5_fast_only/evaluation/native/2hop__807257_590611.json": "3ccc52240c8ca5e3057bf4e9d98937f0060b75c26898f2f616972da9a0fabdae",
+    "/content/local_fast/lsdrag-text-v1/results/text_integrated_20261016_v5_fast_only/evaluation/always_generate/2hop__807257_590611.json": "2193731b0c30238d152bbc2d966af127def9720d21330f540b755a81fd4b391c",
+    "/content/local_fast/lsdrag-text-v1/source/musique/musique_ans_v1.0_dev.jsonl": "15fa63794d18a94ce12411aca6e2327e65b6e83b0b1490efab3f1962e48abf3b",
+    "/content/local_fast/lsdrag-code/src/lsdrag/text_integrated.py": "a0b7c6d926b1b4fc3ee45aedb39648d57ed76c1cc24ec01d9d343aeec1e2a560",
+    "/content/local_fast/lsdrag-code/src/lsdrag/text_decision_benchmark.py": "ad13a85b3af858ec9ecdee8b2796a376c3b9a121e20c2743bf33ed6348135944"
+  }
+}

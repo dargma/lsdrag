@@ -1,0 +1,11 @@
+{
+  "archive": "/content/drive/MyDrive/lsdrag-backups/20261016/text_integrated_20261016/v5_qualitative_audit_20261016.tar.gz",
+  "sha256": "1944c7c6e2561f80814fb130980d8bae290e2b88d10dc3e2d308a34b5224f541",
+  "contents": [
+    "lab/reports/text_integrated_20261016/v5_answer_qualitative_audit.json",
+    "memory/CURRENT.md",
+    "memory/HEAD_EXPERIMENT.md",
+    "memory/SESSION_LOG.md",
+    "memory/EXPERIMENT_STATUS.json"
+  ]
+}
