@@ -1,3 +1,5 @@
+> Historical protocol for its original experiments. New work follows `JEV_TEXT_ONLY_INTEGRATED_PLAN_20261016.md` (2026-10-16 user override: text-only, 3 tools+FINAL, simultaneous argument minimization, small resource cap). Do not launch the commands below for the new experiment.
+
 # Native teacher → student action head: revised protocol
 
 This protocol supersedes automatic stage2 continuation in JEV_DECISION_RAG_EXECUTION_20261015.md. Existing v13 runs are preserved, not invalidated or relabeled. No old Q3 labels are used. The user authorized code/protocol refinement and automatic experiment start after 20 minutes of GPU idleness. The first automatic experiment is a same-backbone target-format audit, using the newly requested12B backbone for all teacher/student/answer roles; not a head-quality claim.

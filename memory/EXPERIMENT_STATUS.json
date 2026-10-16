@@ -1,11 +1,50 @@
 {
-  "phase": "native2_review_required",
-  "run": "/content/local_fast/lsdrag-head-v14/results/native_distillation_12b_20261015",
-  "archive": "/content/drive/MyDrive/lsdrag-backups/20261015/native_distillation_12b_20261015/native2_review_required.tar.gz",
-  "sha256": "3b9e11057d7179eb94b0ea8cd8f588b963f7be0f818aedb4f2dce70d37552b92",
-  "updated_epoch": 1792078918.89331,
-  "pid": 190865,
-  "next": "Review targets and reader-size separation before teacher60/head training",
+  "phase": "text_only_integrated_plan_saved",
+  "updated_utc": "2026-10-16T13:20:40.707290+00:00",
+  "protocol": "docs/JEV_TEXT_ONLY_INTEGRATED_PLAN_20261016.md",
+  "protocol_sha256": "04b683d44032ecb69d76f44778da1c272bb8b3c59d89ae3dea2ec164cae8acf1",
+  "prompt": "prompts/text_rag_integrated_v1.txt",
+  "prompt_sha256": "9ab2b5502974a6f87e9692e3b5763d6bc433be4f98fdb66a6fe31f661908c47b",
+  "dataset": "MuSiQue-Ans v1.0, 2-hop",
+  "model": "google/gemma-4-12B-it",
+  "model_revision": "707f0a3b8a3c7ad586ed01e27eafbad8a27dd0f7",
+  "tools": [
+    "keyword_search",
+    "semantic_search",
+    "read_chunk"
+  ],
+  "actions": [
+    "keyword_search",
+    "semantic_search",
+    "read_chunk",
+    "FINAL"
+  ],
+  "image_inputs": false,
+  "teacher_questions_planned": 32,
+  "teacher_questions_max": 48,
+  "evaluation_questions_planned": 12,
+  "evaluation_conditions": 3,
+  "training_seeds_planned": [
+    20261016
+  ],
+  "worker_wall_budget_minutes": 60,
+  "run_planned": "/content/local_fast/lsdrag-text-v1/results/text_integrated_20261016",
+  "pid": null,
+  "implementation_completed": false,
+  "dataset_prepared": false,
+  "teacher_collection_started": false,
   "training_completed": false,
-  "evaluation_completed": false
+  "evaluation_completed": false,
+  "next": "Implement new text-only contract and integrated shared-prefill heads; pin official data bytes and small split before CPU/real-model smoke.",
+  "previous_multimodal_checkpoint_historical_only": {
+    "phase": "native2_review_required",
+    "run": "/content/local_fast/lsdrag-head-v14/results/native_distillation_12b_20261015",
+    "archive": "/content/drive/MyDrive/lsdrag-backups/20261015/native_distillation_12b_20261015/native2_review_required.tar.gz",
+    "sha256": "3b9e11057d7179eb94b0ea8cd8f588b963f7be0f818aedb4f2dce70d37552b92",
+    "updated_epoch": 1792078918.89331,
+    "pid": 190865,
+    "next": "Review targets and reader-size separation before teacher60/head training",
+    "training_completed": false,
+    "evaluation_completed": false
+  }
 }

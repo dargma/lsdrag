@@ -1,3 +1,5 @@
+> Historical protocol for its original experiments. New work follows `JEV_TEXT_ONLY_INTEGRATED_PLAN_20261016.md` (2026-10-16 user override: text-only, 3 tools+FINAL, simultaneous argument minimization, small resource cap). Do not launch the commands below for the new experiment.
+
 # 확정 범위 — 사용자 “모두 포함” (2026-10-15)
 
 이 절이 아래 초안의 보류/선택 문구를 대체한다. 구현 및 새 실험 진행이 승인되었다.

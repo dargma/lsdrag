@@ -167,3 +167,16 @@ Latest saved experiment is `native2_review_required`: verified archive SHA256 `3
 Next: review native2 target rejection, image coverage and answer format before further collection. Models/data ready; no quality or comparative latency claim from restoration smoke. Embedding Python: `/content/local_fast/lsdrag-v11/embedding-env/bin/python` (transformers5.19.0, sentence-transformers6.1.0). Main Python retains transformers5.18.0 and Torch2.11.0+cu130.
 
 Drive source differences were preserved under `/content/local_fast/lsdrag-recovery/20261016/drive-workspace`; Git remains authoritative. Two Drive code blobs were not in fetched Git object history, preserved without merging into the frozen protocol. Missing word2number resolved; initial nonexistent test filename corrected, final10 passed. Public model/data downloads used local-fast; no weights or raw datasets committed.
+
+
+## 2026-10-16 — user changes active scope to small text-only integrated RAG
+
+현재 기준 문서: `docs/JEV_TEXT_ONLY_INTEGRATED_PLAN_20261016.md`. 사용자는 head 도구 선택과 인자 생성 최소화를 동시에 평가하고, GPU 제약에 맞춰 필요한 만큼만 실행하며, 이미지 입력·이미지 tool을 제외하고 text-only 벤치마크로 교체하도록 지시했다. 최신 중간 크기 Gemma VLM은 텍스트 입력으로만 사용한다. 아래 과거 full-tool/6-action/이미지 전달/60→80→100/구실험 자동재개 지침은 새 실험에서 적용하지 않는다.
+
+계획: MuSiQue-Ans v1.0의2-hop, 공식 train32(coverage 부족 시 최대48), untouched dev12×3조건(native reference / 같은 action head+매번 인자생성 / 같은 head+통합 인자재사용). keyword_search/semantic_search/read_chunk+FINAL의4행동. 단일 candidate-aware backbone prefill에서 action head와 conditional arg-slot head를 함께 계산하고, 관측 후보 재사용 시 바로 dispatch, 새 입력 필요 시에만 생성한다. 별도 후보선택 VLM prefill 없음. Seed20261016 하나, CPU head 학습, cumulative worker wall budget60분; budget 도달은 incomplete로 기록한다. 세부 gate/실패/자원·평가 한계는 기준 문서 참조.
+
+모델 `google/gemma-4-12B-it@707f0a3b8a3c7ad586ed01e27eafbad8a27dd0f7`은 현재 Hub revision과 일치하며 복원 완료. 새 instruction 초안 `prompts/text_rag_integrated_v1.txt` 저장. **계획/instruction/기억만 변경했다. 새 text-only profile·head·parser·runner는 미구현, MuSiQue 다운로드/분할/인덱싱 미실행, 새 teacher/학습/평가 미실행, active PID/launch command 없음.** 기존 멀티모달 구현·백업·결과는 보존하고 새 namespace `text_integrated_20261016`을 사용한다.
+
+다음: 공식 데이터 bytes/hash와 split 고정, text-only schema·prompt·4행동 head·arg slots·handler·최종 parser·MuSiQue scorer를 일치시키는 새 전용 구현 및 smoke. 아래 복원 기록과 과거 실험 기록은 역사이며 자동 실행 지시가 아니다.
+
+Official Google model docs and MuSiQue author repository/scorer inspected. Model current Hub revision matches restored pinned12B; MuSiQue source HEAD922ac98f19a201998dbdae6d7f2887a5258dbdeb. Sources and bounded-corpus/one-seed/small-dev limitations recorded in plan. No implementation or experiment started.
