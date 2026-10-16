@@ -1,3 +1,7 @@
+## 2026-10-16 — GPU 유휴 감시 예약 활성화
+
+사용자 승인: 30분 후부터30분마다 다른 세션 GPU 사용 확인, 없으면 개선 실험 시작. 첫 확인2026-10-16 16:01:55 UTC, interval1800s. 로컬 watcher PID97694, 상태 `/content/local_fast/lsdrag-text-v1/results/improvement_v2_gpu_watch_20261016/status.json`; spec `lab/registry/text_integrated_20261016/gpu_watch_schedule.json`; script `scripts/watch_gpu_schedule.py`. compute apps 없음+GPU util<=5%+used<=1024MiB+free>=32GiB 확인을 즉시 재검증하고 기존 세션01a144c9-bbb6-7881-af05-4f9b7a60131b을 codex exec resume로1회 재개. 실행자는 GPU로드 직전 재확인 후 계획v2 split선고정/token-cache진단부터 진행, gate/예산 내 후속 단계 수행. 다른 작업 종료 금지. STOP 파일은 watcher 중지; 시작된 executor는 자동 종료하지 않음. 런타임 종료 시 감시 소멸하며 hosted 예약 아님. watcher 대기 상태/PID 확인 완료, GPU실험은 아직 미시작. 기존 품질NoGo 유지.
+
 ## 2026-10-16 — Astra 계획 검토 및 v2 저장 (미실행)
 
 사용자 요청으로 gpt-6-astra 검토. 결론: 방향 적절, 수정 후 진행 권고. 검토 `lab/reports/text_integrated_20261016/astra_improvement_plan_review.json`; 원본 보존, 수정본 `lab/registry/text_integrated_20261016/improvement_experiment_plan_v2.json`. 필수 수정: 진단 전 train24/validation8 고정; raw_json은 exact token IDs가 아니므로 native 재실행 계측; clean cache/warm-cold logits 점검; qids>=30 기존 gate와 train24 충돌은 새 파일럿 계약 구현 필요. 실제 재사용16은 전부read, keyword32/semantic25 양성0이므로 read의 기존최대4후보+GENERATE만 실험. validation16episode 예산, 복구수집 호출/토큰/시간 상한, primary 동결 후 fresh20 평가/모호한10문항중단 삭제. 모든 해석은 탐색 결과이며 same-step기능/QA/계산비용 분리. 구현 및 실험 아직 미시작.
