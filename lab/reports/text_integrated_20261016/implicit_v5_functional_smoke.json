@@ -1,0 +1,247 @@
+{
+  "qid": "2hop__145779_719927",
+  "checks": [
+    {
+      "kind": "fresh_argument",
+      "action": "keyword_search",
+      "value": {
+        "keywords": [
+          "town",
+          "Renzo Zorzi",
+          "died"
+        ],
+        "top_k": 5
+      },
+      "usage": {
+        "prompt_tokens": 172,
+        "completion_tokens": 25,
+        "generated_tokens": 25,
+        "preprocess_seconds": 0.01928122000026633,
+        "prefill_seconds": 0.34844045899990306,
+        "decode_seconds": 2.068660536999232,
+        "seconds": 2.4363852759997826,
+        "grammar_changed_tokens": 0,
+        "raw_json": "{\"keywords\": [\"town\", \"Renzo Zorzi\", \"died\"], \"top_k\": 5}",
+        "mode": "arguments",
+        "request_sha256": "712987698bd6c2515479b75c48ab2a25d478202178897c73ebfc0a0be495af9a",
+        "full_prefill_count": 1,
+        "cache_reused": false,
+        "finish_reason": "stop"
+      },
+      "failure": null
+    },
+    {
+      "kind": "fresh_argument",
+      "action": "semantic_search",
+      "value": {
+        "query": "The town where Renzo Zorzi died is an instance of what type of location or administrative entity",
+        "top_k": 5
+      },
+      "usage": {
+        "prompt_tokens": 170,
+        "completion_tokens": 33,
+        "generated_tokens": 33,
+        "preprocess_seconds": 0.008152225999765506,
+        "prefill_seconds": 0.07307799200043519,
+        "decode_seconds": 2.1504442239993296,
+        "seconds": 2.231675682000059,
+        "grammar_changed_tokens": 3,
+        "raw_json": "{\"query\": \"The town where Renzo Zorzi died is an instance of what type of location or administrative entity\", \"top_k\": 5}",
+        "mode": "arguments",
+        "request_sha256": "a6d97e48aa03a6285f587824cba18e3d437713420d6c81e2a7d42304783b857b",
+        "full_prefill_count": 1,
+        "cache_reused": false,
+        "finish_reason": "stop"
+      },
+      "failure": null
+    },
+    {
+      "kind": "native",
+      "action": "keyword_search",
+      "value": {
+        "action": "keyword_search",
+        "arguments": {
+          "keywords": [
+            "Renzo Zorzi died",
+            "town"
+          ],
+          "top_k": 5
+        }
+      },
+      "usage": {
+        "prompt_tokens": 803,
+        "completion_tokens": 35,
+        "generated_tokens": 35,
+        "prefill_seconds": 0.0957217799996215,
+        "decode_seconds": 1.6455143260000114,
+        "seconds": 1.7530077900000833,
+        "raw_json": "<tool_call>\n{\"name\": \"keyword_search\", \"arguments\": {\"keywords\": [\"Renzo Zorzi died\", \"town\"], \"top_k\": 5}}\n</tool_call>",
+        "mode": "native_unconstrained",
+        "full_prefill_count": 1,
+        "cache_reused": false,
+        "grammar_changed_tokens": 0,
+        "finish_reason": "stop"
+      },
+      "failure": null
+    },
+    {
+      "kind": "cached",
+      "action": "keyword_search",
+      "value": {
+        "keywords": [
+          "Renzo Zorzi",
+          "died",
+          "town"
+        ],
+        "top_k": 5
+      },
+      "usage": {
+        "prompt_tokens": 12,
+        "completion_tokens": 21,
+        "generated_tokens": 21,
+        "forced_prefix_tokens": 12,
+        "prefix_seconds": 0.10662486399996851,
+        "decode_seconds": 1.3478973109995422,
+        "seconds": 1.4662356389999331,
+        "full_prefill_count": 0,
+        "cache_reused": true,
+        "runtime_assembles_wrapper": true,
+        "grammar_fast_tokens": 20,
+        "grammar_changed_tokens": 1,
+        "raw_json": "{\"keywords\":[\"Renzo Zorzi\", \"died\", \"town\"], \"top_k\": 5}",
+        "finish_reason": "schema_complete",
+        "capture": {
+          "prompt_tokens": 1930,
+          "completion_tokens": 0,
+          "prefill_seconds": 0.32778895999945235,
+          "seconds": 0.34059034300025814,
+          "mode": "teacher",
+          "vocab_projection": false,
+          "feature_cpu_copy": true,
+          "readout_extra_check_tokens": 965,
+          "full_prefill_count": 2,
+          "cache_retained": true,
+          "messages_sha256": "0a283a55916ef6e10bd2e22930c7c4d2e2e6b805a5a585b219ae9b7d602f7b88"
+        }
+      },
+      "failure": null
+    },
+    {
+      "kind": "cached",
+      "action": "semantic_search",
+      "value": {
+        "query": "where did Renzo Zorzi die and what is the town an instance of",
+        "top_k": 5
+      },
+      "usage": {
+        "prompt_tokens": 12,
+        "completion_tokens": 23,
+        "generated_tokens": 23,
+        "forced_prefix_tokens": 12,
+        "prefix_seconds": 0.0686841340002502,
+        "decode_seconds": 1.4183356240000649,
+        "seconds": 1.5002594810002847,
+        "full_prefill_count": 0,
+        "cache_reused": true,
+        "runtime_assembles_wrapper": true,
+        "grammar_fast_tokens": 21,
+        "grammar_changed_tokens": 2,
+        "raw_json": "{\"query\":\"where did Renzo Zorzi die and what is the town an instance of\",\"top_k\":5}",
+        "finish_reason": "schema_complete",
+        "capture": {
+          "prompt_tokens": 965,
+          "completion_tokens": 0,
+          "prefill_seconds": 0.1600484870004948,
+          "seconds": 0.17020550199958961,
+          "mode": "teacher",
+          "vocab_projection": false,
+          "feature_cpu_copy": true,
+          "readout_extra_check_tokens": 0,
+          "full_prefill_count": 1,
+          "cache_retained": true,
+          "messages_sha256": "0a283a55916ef6e10bd2e22930c7c4d2e2e6b805a5a585b219ae9b7d602f7b88"
+        }
+      },
+      "failure": null
+    },
+    {
+      "kind": "cached",
+      "action": "read_chunk",
+      "value": {
+        "chunk_ids": [
+          "p0"
+        ]
+      },
+      "usage": {
+        "prompt_tokens": 13,
+        "completion_tokens": 5,
+        "generated_tokens": 5,
+        "forced_prefix_tokens": 13,
+        "prefix_seconds": 0.02424091699958808,
+        "decode_seconds": 0.1478356529996745,
+        "seconds": 0.1729831299999205,
+        "full_prefill_count": 0,
+        "cache_reused": true,
+        "runtime_assembles_wrapper": true,
+        "grammar_fast_tokens": 4,
+        "grammar_changed_tokens": 1,
+        "raw_json": "{\"chunk_ids\":[\"p0\"]}",
+        "finish_reason": "schema_complete",
+        "capture": {
+          "prompt_tokens": 965,
+          "completion_tokens": 0,
+          "prefill_seconds": 0.060689298000397685,
+          "seconds": 0.06670594499973959,
+          "mode": "teacher",
+          "vocab_projection": false,
+          "feature_cpu_copy": true,
+          "readout_extra_check_tokens": 0,
+          "full_prefill_count": 1,
+          "cache_retained": true,
+          "messages_sha256": "0a283a55916ef6e10bd2e22930c7c4d2e2e6b805a5a585b219ae9b7d602f7b88"
+        }
+      },
+      "failure": null
+    },
+    {
+      "kind": "cached",
+      "action": "FINAL",
+      "value": {
+        "answer": "",
+        "support_ids": []
+      },
+      "usage": {
+        "prompt_tokens": 3,
+        "completion_tokens": 7,
+        "generated_tokens": 7,
+        "forced_prefix_tokens": 3,
+        "prefix_seconds": 0.02641949700046098,
+        "decode_seconds": 0.15364257999954134,
+        "seconds": 0.18291894499998307,
+        "full_prefill_count": 0,
+        "cache_reused": true,
+        "runtime_assembles_wrapper": true,
+        "grammar_fast_tokens": 7,
+        "grammar_changed_tokens": 0,
+        "raw_json": "{\"answer\":\"\", \"support_ids\": []}",
+        "finish_reason": "schema_complete",
+        "capture": {
+          "prompt_tokens": 965,
+          "completion_tokens": 0,
+          "prefill_seconds": 0.04668262599989248,
+          "seconds": 0.05012919399996463,
+          "mode": "teacher",
+          "vocab_projection": false,
+          "feature_cpu_copy": true,
+          "readout_extra_check_tokens": 0,
+          "full_prefill_count": 1,
+          "cache_retained": true,
+          "messages_sha256": "0a283a55916ef6e10bd2e22930c7c4d2e2e6b805a5a585b219ae9b7d602f7b88"
+        }
+      },
+      "failure": null
+    }
+  ],
+  "passed": true,
+  "quality_or_speed_evidence": false
+}

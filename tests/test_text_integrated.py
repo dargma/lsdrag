@@ -2,7 +2,7 @@ import json
 import pytest
 from jsonschema import validate, ValidationError
 
-from lsdrag.text_integrated import options_for, target_slot, native_schema, argument_schema, train_heads, candidate_refs, selection_messages
+from lsdrag.text_integrated import options_for, target_slot, native_schema, argument_schema, train_heads, candidate_refs, selection_messages, compact_selection_messages, advance_json_parser
 
 
 def test_read_legality_and_exact_target_mapping():
@@ -57,10 +57,11 @@ def test_compact_refs_preserve_slot_order_without_duplicate_arguments():
     assert refs['keyword_search']==['NEW','C0']
     assert refs['semantic_search']==['NEW','Q']
     assert refs['read_chunk']==['NEW','R0[:8]','R0[0]','R0[1]']
-    text=selection_messages(messages,options)[-1]['content']
+    text=compact_selection_messages(messages,options)[-1]['content']
     assert question not in text and 'RareEntityThatMustNotBeRepeated' not in text
     for action in refs:
         assert len(refs[action])==sum(o['action']==action for o in options)
+    assert selection_messages(messages,options)==messages  # native context, zero appended candidate tokens
 
 
 def test_speed_gate_rejects_slow_fallback_and_format_failures():
@@ -70,10 +71,22 @@ def test_speed_gate_rejects_slow_fallback_and_format_failures():
     summary=runpy.run_path(str(Path(__file__).parents[1]/'scripts/run_text_integrated_pilot.py'))['cost_summary']
     rows=[{'qid':str(i),'bucket':bucket,'conditions':{p:{'seconds':2 if p=='native' else 1,'failure':None}
           for p in ['native','integrated','always_generate']}} for i in range(4) for bucket in ['reuse','generate','FINAL']]
-    assert summary(rows)['passed']
+    assert json.loads(json.dumps(summary(rows)))['passed']
     slow=copy.deepcopy(rows)
     for row in slow:
         if row['bucket']=='generate':row['conditions']['integrated']['seconds']=3
     assert not summary(slow)['passed']
     rows[0]['conditions']['native']['failure']='invalid native output'
     assert not summary(rows)['passed']
+
+
+def test_greedy_schema_fast_path_preserves_escaping_and_rejects_wrapper():
+    from lmformatenforcer import JsonSchemaParser
+    from lsdrag.text_integrated import grammar_config
+    parser=JsonSchemaParser(argument_schema('semantic_search',[]),grammar_config([(0,'é',False)]))
+    text=json.dumps({'query':'Café "quoted" entity'},ensure_ascii=False)
+    for char in text:
+        parser=advance_json_parser(parser,char)
+        assert parser is not None
+    assert parser.can_end()
+    assert advance_json_parser(JsonSchemaParser(argument_schema('keyword_search',[])),'{"name":') is None

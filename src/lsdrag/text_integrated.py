@@ -80,10 +80,35 @@ def candidate_refs(messages, options):
     return refs
 
 
-def selection_messages(messages, options):
+def compact_selection_messages(messages, options):
     refs=candidate_refs(messages,options)
     return copy.deepcopy(messages)+[{'role':'user','content':SELECT+'\n'.join(
         a+': '+','.join(refs[a]) for a in ACTIONS[:-1] if refs[a])}]
+
+
+def selection_messages(messages, options):
+    """Implicit references: all candidate values already occur in native context.
+
+    Deterministic candidate order is the argument head's output contract. No
+    extra user message changes the model's final-answer distribution.
+    """
+    candidate_refs(messages,options)  # reject any candidate absent from context
+    return copy.deepcopy(messages)
+
+
+def advance_json_parser(parser, text):
+    for char in text:
+        if char not in parser.get_allowed_characters():return None
+        parser=parser.add_character(char)
+    return parser
+
+
+def grammar_config(regular_tokens):
+    from lmformatenforcer import CharacterLevelParserConfig
+    config=CharacterLevelParserConfig()
+    extra=set().union(*(set(t[1]) for t in regular_tokens))-set(config.alphabet)
+    config.alphabet+=''.join(sorted(extra))
+    return config
 
 
 def argument_schema(action, trajectory):
@@ -138,6 +163,7 @@ class StrictReader(TextOnlyReader):
         self.grammar_data = TokenEnforcerTokenizerData(regular,
             lambda ids:self.tokenizer.decode(ids).rstrip('�'), self.tokenizer.eos_token_id,
             False, len(self.tokenizer))
+        self.json_config=grammar_config(regular)
         self.checkpoint = None
         self.readout_verified = False
 
@@ -205,9 +231,9 @@ class StrictReader(TextOnlyReader):
             raise ValueError('Generation context exceeds fixed budget')
         if mode=='native':
             from lmformatenforcer import UnionParser,SequenceParser,StringParser
-            parser=UnionParser([SequenceParser([StringParser('<tool_call>\n'),JsonSchemaParser(schema),
-                                                StringParser('\n</tool_call>')]),JsonSchemaParser(FINAL_SCHEMA)])
-        else:parser=JsonSchemaParser(schema)
+            parser=UnionParser([SequenceParser([StringParser('<tool_call>\n'),JsonSchemaParser(schema,self.json_config),
+                                                StringParser('\n</tool_call>')]),JsonSchemaParser(FINAL_SCHEMA,self.json_config)])
+        else:parser=JsonSchemaParser(schema,self.json_config)
         enforcer = TokenEnforcer(self.grammar_data, parser)
         self._sync(); preprocess = time.perf_counter()-start
         tick = time.perf_counter()
@@ -321,9 +347,9 @@ class StrictReader(TextOnlyReader):
         key='answer' if action=='FINAL' else {'keyword_search':'keywords','semantic_search':'query','read_chunk':'chunk_ids'}[action]
         argprefix='{"'+key+'":'
         prefix=argprefix if action=='FINAL' else '<tool_call>\n{"name":'+json.dumps(action)+',"arguments":'+argprefix
-        parser=JsonSchemaParser(schema)
+        parser=JsonSchemaParser(schema,self.json_config)
         for char in argprefix:parser=parser.add_character(char)
-        enforcer=TokenEnforcer(self.grammar_data,parser)
+        initial_parser=parser;decoded='';fast_tokens=0
         ids=self.tokenizer.encode(prefix,add_special_tokens=False)
         token=torch.tensor([ids],device=self.model.device)
         mask=torch.cat([pending['mask'],torch.ones_like(token)],-1)
@@ -337,10 +363,24 @@ class StrictReader(TextOnlyReader):
             self._sync();prefix_seconds=time.perf_counter()-tick;tick=time.perf_counter()
             for _ in range(self.config.max_output_tokens-len(ids)):
                 if time.perf_counter()>=deadline:raise TimeoutError('Budget during cached decode')
-                allowed=enforcer.get_allowed_tokens(sequence).allowed_tokens
-                if not allowed:raise RuntimeError('No cached grammar continuation')
-                logits=output.logits[0,-1].float();tid=allowed[int(logits[allowed].argmax().item())]
-                constrained+=int(tid!=int(logits.argmax().item()))
+                logits=output.logits[0,-1].float();greedy=int(logits.argmax().item())
+                proposed=self.tokenizer.decode(generated+[greedy],skip_special_tokens=True)
+                candidate=advance_json_parser(parser,proposed[len(decoded):]) if proposed.startswith(decoded) else advance_json_parser(initial_parser,proposed)
+                if greedy not in self.stop_ids and len(proposed)>len(decoded) and candidate is not None:
+                    tid=greedy;fast_tokens+=1;parser=candidate
+                else:
+                    # Enumerate the vocabulary only if the greedy proposal
+                    # violates the same schema. No unconstrained repair/retry.
+                    enforcer=TokenEnforcer(self.grammar_data,parser)
+                    allowed=enforcer.get_allowed_tokens(sequence).allowed_tokens
+                    if not allowed:raise RuntimeError('No cached grammar continuation')
+                    tid=allowed[int(logits[allowed].argmax().item())]
+                    constrained+=int(tid!=greedy)
+                    proposed=self.tokenizer.decode(generated+[tid],skip_special_tokens=True)
+                    candidate=advance_json_parser(parser,proposed[len(decoded):]) if proposed.startswith(decoded) else advance_json_parser(initial_parser,proposed)
+                    if candidate is None:raise ValueError('Grammar/tokenizer continuation mismatch')
+                    parser=candidate
+                decoded=proposed
                 generated.append(tid);sequence.append(tid)
                 if tid in self.stop_ids:break
                 try:
@@ -356,6 +396,7 @@ class StrictReader(TextOnlyReader):
             'forced_prefix_tokens':len(ids),'prefix_seconds':prefix_seconds,'decode_seconds':time.perf_counter()-tick,
             'seconds':time.perf_counter()-start,'full_prefill_count':0,'cache_reused':True,
             'runtime_assembles_wrapper':True,
+            'grammar_fast_tokens':fast_tokens,
             'grammar_changed_tokens':constrained,'raw_json':text,
             'finish_reason':'schema_complete' if complete else ('stop' if generated and generated[-1] in self.stop_ids else 'length')}
         try:

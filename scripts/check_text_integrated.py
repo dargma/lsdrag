@@ -12,7 +12,7 @@ from lsdrag.text_decision_benchmark import public_paragraphs
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('--output', type=Path, required=True)
-    parser.add_argument('--prompt', type=Path, default=Path('prompts/text_rag_integrated_v4.txt'))
+    parser.add_argument('--prompt', type=Path, default=Path('prompts/text_rag_integrated_v5.txt'))
     args = parser.parse_args()
     args.output.mkdir(parents=True, exist_ok=True)
     qid = json.loads(Path('lab/registry/text_integrated_20261016/split.json').read_text())['train'][0]

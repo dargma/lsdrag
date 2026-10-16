@@ -279,3 +279,20 @@ Launch verified: PID58845, session85394, frozen sourcee2861c0, contracta5834cde1
 
 {"phase": "compact_native_cost_screen", "pid": 58845, "run": "/content/local_fast/lsdrag-text-v1/results/text_integrated_20261016_compact_v4", "updated_epoch": 1792160793.4836075, "worker_seconds": 57.273190819000774, "teacher_questions": 4, "natural_states": 15, "trained_head": false}
 
+
+# Compact integrated pilot — compact_failed
+
+{"phase": "compact_failed", "pid": 58845, "run": "/content/local_fast/lsdrag-text-v1/results/text_integrated_20261016_compact_v4", "updated_epoch": 1792160983.9039865, "worker_seconds": 247.69356955900003, "error": "TypeError: Object of type bool is not JSON serializable"}
+
+
+## Compactv4 cost screen completed; configuration discarded
+
+All45 state-repeats (15 natural states x3;4 train questions) saved. Integrated/native speed ratios: aggregate1.277x, reuse7.702x, generated args1.366x, FINAL0.695x. Oracle teacher actions only; shared GPU, generated argument text may differ; these are not learned-policy or controlled-latency results. FINAL caused NoGo despite aggregate positive cost. Teacher32 and dev10 not started. Serialization of numpy.bool_ failed only during summary save; recovered unchanged rows after bool cast. Report `lab/reports/text_integrated_20261016/compact_v4_cost_nogo.json`; original failed status/artifacts remain preserved. Worker247.7s charged to cumulative budget.
+
+Next train-only correction: eliminate the extra candidate user message entirely (all argument values already in native question/history, fixed slot ordering remains runtime contract), keeping student/teacher native context identical. Use a greedy schema-validity fast path to avoid full-vocabulary grammar work when greedy text already complies; same schema fallback and strict validation remain. Strengthen final bare-answer-span instruction identically for native/teacher/head. Fresh v5 smoke and fresh train4 under a new contract; no v4 features/labels reused. Remaining main worker cap52min, with previous4.13min and smokes reserved inside60min.
+
+# Implicit-reference v5 train-only correction — ready for execution
+
+Compactv4 stopped after4 train questions/45 measurements (247.7worker seconds): FINAL slower, so teacher32 did not start. All results preserved. Summary serialization numpy.bool_ issue was recovered from saved rows and fixed with a tested bool cast. New v5 uses the exact native messages for student prefill: no candidate message at all. Candidate arguments remain in question/prior calls/results and fixed slot ordering remains explicit in the checkpoint contract; context membership is validated before selection. Thus no selector-message shift in FINAL generation. A greedy character-level schema check skips vocabulary-wide grammar enumeration only when the proposed token is valid; fallback uses the same schema, with strict validation and no repairs. Grammar alphabet now includes tokenizer Unicode characters; escaping/Unicode unit check added. Identical bare-answer-span prompt strengthened for native/teacher/head.
+
+CPU12/12 and fresh actual local model smoke7/7 passed. New namespace `/content/local_fast/lsdrag-text-v1/results/text_integrated_20261016_implicit_v5`; no v4 labels/features reused. Next: `PYTHONPATH=src /content/local_fast/lsdrag-text-v1/experiment-env/bin/python -u scripts/run_text_integrated_pilot.py --output /content/local_fast/lsdrag-text-v1/results/text_integrated_20261016_implicit_v5 --minutes 52`. Previous247.7seconds plus smokes reserved within60min total. Gate remains unchanged: all train4 natural states,3 interleaved repeats, oracle selection only, errors never discounted; each reuse/generate/FINAL bucket must have positive question-cluster95% lower speed ratio bound before teacher32. No heldout inspection yet. No further variant sweep.

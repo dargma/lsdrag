@@ -45,7 +45,7 @@ def cost_summary(rows):
             ratios=samples[:,0]/samples[:,1]
             lo,hi=np.quantile(ratios,[.025,.975])
             buckets[bucket]={'n':len(subset),'qids':len(qids),'speedup':float(matrix[:,0].sum()/matrix[:,1].sum()),
-                'ci95':[float(lo),float(hi)],'passed':len(qids)>=2 and lo>1.0}
+                'ci95':[float(lo),float(hi)],'passed':bool(len(qids)>=2 and lo>1.0)}
         result[policy]={'failures':failures,'buckets':buckets,
             'passed':failures==0 and all(v['passed'] for v in buckets.values())}
     return {'policies':result,'passed':result['integrated']['passed'],
@@ -92,11 +92,11 @@ def main():
         if time.perf_counter()>=deadline:raise TimeoutError('Cumulative worker budget reached')
     source=['scripts/run_text_integrated_pilot.py','src/lsdrag/text_integrated.py',
         'src/lsdrag/text_only_reader.py','src/lsdrag/text_decision_benchmark.py','src/lsdrag/tool_registry.py',
-        'src/lsdrag/v11_embedding_worker.py','src/lsdrag/embeddings.py','prompts/text_rag_integrated_v4.txt']
+        'src/lsdrag/v11_embedding_worker.py','src/lsdrag/embeddings.py','prompts/text_rag_integrated_v5.txt']
     split=json.loads((repo/'lab/registry/text_integrated_20261016/split.json').read_text())
     holdout=json.loads((repo/'lab/registry/text_integrated_20261016/next_holdout_reserved.json').read_text())['qids']
     model=root/'hf/models--Qwen--Qwen3-4B-Instruct-2507/snapshots/cdbee75f17c01a7cc42f958dc650907174af0554'
-    manifest={'experiment':'text-integrated-compact-v4','source_sha256':{p:sha256(repo/p) for p in source},
+    manifest={'experiment':'text-integrated-implicit-v5','source_sha256':{p:sha256(repo/p) for p in source},
         'train_qids':split['train'],'holdout_qids':holdout,'model':str(model),'thinking':False,'actions':ACTIONS,
         'tools':TOOLS,'max_calls':8,'max_output_tokens':512,'context_limit':16384,'seed':20261016,
         'cost_screen_repeats':3,'cost_screen_states':'all natural train4 states including FINAL',
@@ -119,7 +119,7 @@ def main():
     sys.path.insert(0,str(root/'source/musique_scorer'))
     from metrics.answer import compute_exact,compute_f1
     save('scorer_provenance.json',{str(p.relative_to(root/'source/musique_scorer')):sha256(p) for p in (root/'source/musique_scorer').rglob('*.py')})
-    prompt=(repo/'prompts/text_rag_integrated_v4.txt').read_text()
+    prompt=(repo/'prompts/text_rag_integrated_v5.txt').read_text()
     embedder=None;records=[];features=[];episodes=[];corpora={}
     def corpus(q):
         if q['id'] not in corpora:

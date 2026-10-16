@@ -1,3 +1,13 @@
+# Implicit-reference v5 train-only correction — ready for execution
+
+Compactv4 stopped after4 train questions/45 measurements (247.7worker seconds): FINAL slower, so teacher32 did not start. All results preserved. Summary serialization numpy.bool_ issue was recovered from saved rows and fixed with a tested bool cast. New v5 uses the exact native messages for student prefill: no candidate message at all. Candidate arguments remain in question/prior calls/results and fixed slot ordering remains explicit in the checkpoint contract; context membership is validated before selection. Thus no selector-message shift in FINAL generation. A greedy character-level schema check skips vocabulary-wide grammar enumeration only when the proposed token is valid; fallback uses the same schema, with strict validation and no repairs. Grammar alphabet now includes tokenizer Unicode characters; escaping/Unicode unit check added. Identical bare-answer-span prompt strengthened for native/teacher/head.
+
+CPU12/12 and fresh actual local model smoke7/7 passed. New namespace `/content/local_fast/lsdrag-text-v1/results/text_integrated_20261016_implicit_v5`; no v4 labels/features reused. Next: `PYTHONPATH=src /content/local_fast/lsdrag-text-v1/experiment-env/bin/python -u scripts/run_text_integrated_pilot.py --output /content/local_fast/lsdrag-text-v1/results/text_integrated_20261016_implicit_v5 --minutes 52`. Previous247.7seconds plus smokes reserved within60min total. Gate remains unchanged: all train4 natural states,3 interleaved repeats, oracle selection only, errors never discounted; each reuse/generate/FINAL bucket must have positive question-cluster95% lower speed ratio bound before teacher32. No heldout inspection yet. No further variant sweep.
+
+# Compact integrated pilot — compact_failed
+
+{"phase": "compact_failed", "pid": 58845, "run": "/content/local_fast/lsdrag-text-v1/results/text_integrated_20261016_compact_v4", "updated_epoch": 1792160983.9039865, "worker_seconds": 247.69356955900003, "error": "TypeError: Object of type bool is not JSON serializable"}
+
 # Compact integrated pilot — compact_native_cost_screen
 
 {"phase": "compact_native_cost_screen", "pid": 58845, "run": "/content/local_fast/lsdrag-text-v1/results/text_integrated_20261016_compact_v4", "updated_epoch": 1792160793.4836075, "worker_seconds": 57.273190819000774, "teacher_questions": 4, "natural_states": 15, "trained_head": false}
