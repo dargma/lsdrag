@@ -34,7 +34,7 @@ class TextOnlyReader:
         if any(not isinstance(m.get('content'), (str, type(None))) for m in messages):
             raise ValueError('Text-only reader refuses media')
         rendered = self.tokenizer.apply_chat_template(copy.deepcopy(messages), tools=tools or None,
-                     add_generation_prompt=True, tokenize=False)
+                     add_generation_prompt=True, tokenize=False, enable_thinking=False)
         if any(t in rendered for t in ['<think>', '<|think|>', '<|channel>thought']):
             raise ValueError('Thinking control/prefix detected in non-thinking-only reader prompt')
         return self.tokenizer(rendered, return_tensors='pt').to(self.model.device)

@@ -22,3 +22,5 @@
 - Latest override:2–4B suitable LLM or VLM; avoid thinking mode, inspect actual prompt/template settings. Selected non-thinking-only Qwen3-4B-Instruct-2507 over earlier Gemma choices. Persist all model/protocol changes and do not confuse format diagnostics with benchmark success.
 
 - Reaffirmed2026-10-16: model/data/index/code/result I/O must use local-fast; Drive is too slow and is backup only. Resolved weight symlinks were verified local-fast.
+
+- Latest override2026-10-16: primary comparator native A-RAG at equal interaction counts; discard slower paths, uncertain speed is not pass. User would like1.5x speed; this is a target, not observed. Shared-GPU functional work remains allowed; no termination of unrelated jobs. Keep Qwen thinking explicitly disabled. D3 further structural analysis withdrawn, old results preserved.

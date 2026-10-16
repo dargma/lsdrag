@@ -1,3 +1,23 @@
+## 2026-10-16 — 1.5x target and prioritized cost reductions (proposals)
+
+User would like up to1.5x speed versus native A-RAG at equal interaction counts. This requires at least one-third less total elapsed time; not measured or promised. Prioritize (1) compact references to candidate arguments already in history, avoiding repeated candidate JSON in the input; (2) decode only unknown argument content, assemble deterministic tool-call wrappers in runtime; (3) keep decision feature/head calculation on GPU to remove avoidable CPU round trips. Current code already retains same-decision KV cache; that is not a new proposed gain. Cross-turn prefix caching or inference-engine optimizations must also be applied to native when supported; do not attribute shared engineering gains solely to the learned heads. No automatic new model, dataset expansion or sweep.
+
+These additional optimizations are NOT implemented/validated yet. First measure native timing fractions and candidate token overhead on fixed train4, preserving actual valid operations and all costs. Candidate serialization changes require a fresh hashed feature/checkpoint contract before teacher collection. Deterministic syntax assembly must preserve argument values/schema/handler semantics, and native baseline must use its ordinary name+arguments generation, not an artificially slow extra selection/generation stage. A1.5x target is plausible only if removable decoding/prefill exceeds one-third of total time; retrieval/final generation/irreducible work sets the limit. Slower or uncertain paths still do not advance to teacher32.
+
+# Latest verification — non-thinking and train-only JSON smoke
+
+Qwen3-4B-Instruct-2507 local tokenizer audit: template has no thinking branch or thinking prefix. Explicit `enable_thinking=False` renders byte-identically to the default (template SHA256 `64f85b198065d0fba2a81f37e10ed68161ce2c19a754c7100e67e0ca2ee9c326`). Reader now passes the flag explicitly; existing thinking-prefix rejection remains. This model was not running with thinking enabled.
+
+Actual local-fast model smoke completed 7/7: fresh keyword/semantic arguments, native name+arguments, cached keyword/semantic/read/FINAL. Each cached continuation reports zero additional full prefills. Basic CPU tests 4/4 pass. This is functional evidence only: no speed gain, teacher32 collection, head training or QA quality has been established. Artifact `/content/local_fast/lsdrag-text-v1/results/text_integrated_20261016_smoke/checks.json`; audit `thinking_audit.json`; log `/content/local_fast/lsdrag-text-v1/logs/integrated_smoke.log`; completed process51959/session78493. Initial indentation failure corrected before successful smoke; first test invocation lacked PYTHONPATH and was corrected.
+
+Latest user conditions: primary comparator native A-RAG; discard slower paths; no second-full-prefill fallback; cached continuation only. Native-relative matched-state cost screening precedes teacher32. Uncertain shared-GPU timing is not a pass. Next: freeze source and run fixed train4 native/argument-reuse diagnostic with all candidate/grammar/prefill costs counted. D3 additional analysis remains withdrawn.
+
+# Execution authorized — text-only integrated pilot (latest user instruction)
+
+User explicitly requests: check memory/processes; repair argument JSON on train-only small sample, compare always-generate vs reuse/direct dispatch, then fresh teacher32 and head experiment. Use Qwen3-4B-Instruct-2507 non-thinking-only. D3 additional structural analysis is WITHDRAWN; preserve historical comparisons without new D3 work. Active protocol `docs/JEV_TEXT_INTEGRATED_EXECUTION_20261016.md`. Local-fast for all compute/model/data/results; Drive backups only.
+
+Verified no lsdrag experiment process is active. Shared GPU has unrelated jobs; about83GiB free at preflight, functional/quality work may proceed without stopping others. New isolated experiment-env contains lm-format-enforcer0.11.3 for token-level schema output; old runs/environments remain preserved. Current phase implementing strict generation/shared-state action+arg head; no new teacher/head quality claim yet. Next: CPU tests and actual train4 JSON/tool smoke, then paired train4 before teacher32.
+
 # Latest checkpoint — external D3/Qwen benchmark complete; head experiment pending
 
 Active model `Qwen/Qwen3-4B-Instruct-2507@cdbee75f17c01a7cc42f958dc650907174af0554`, text-only, non-thinking-only,3 tools+FINAL. Latest instruction `prompts/text_rag_integrated_v2.txt`. Model/data/code/results and resolved weight targets verified under `/content/local_fast`; Drive is backup/mirror only.

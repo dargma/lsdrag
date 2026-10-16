@@ -1,10 +1,10 @@
 {
-  "phase": "external_benchmark_complete_with_argument_format_failures",
-  "updated_utc": "2026-10-16T13:23:40.478892+00:00",
-  "protocol": "docs/JEV_TEXT_ONLY_INTEGRATED_PLAN_20261016.md",
-  "protocol_sha256": "1b5e469d500308a9530da2d7ec001a8ddf7de24c9e2cf3496d0064dfbf20a5ba",
-  "prompt": "prompts/text_rag_integrated_v2.txt",
-  "prompt_sha256": "eba9c1f28ebabc90cd1723d10b5c305defea387e924db9bc3ac4988ed3dec626",
+  "phase": "integrated_json_smoke_passed",
+  "updated_utc": "2026-10-16T14:18:17.018947+00:00",
+  "protocol": "docs/JEV_TEXT_INTEGRATED_EXECUTION_20261016.md",
+  "protocol_sha256": "44ef2ba4deaea5812322c7589d0f9d948ad4d7a68160537a850840c971008f0d",
+  "prompt": "prompts/text_rag_integrated_v3.txt",
+  "prompt_sha256": "b532d326cbf49b80434848e5815e7a2385c3dfb8fd595603b5c37db2029f94fe",
   "dataset": "MuSiQue-Ans v1.0, 2-hop",
   "model": "Qwen/Qwen3-4B-Instruct-2507",
   "model_revision": "cdbee75f17c01a7cc42f958dc650907174af0554",
@@ -23,7 +23,7 @@
   "teacher_questions_planned": 32,
   "teacher_questions_max": 48,
   "evaluation_questions_planned": 10,
-  "evaluation_conditions": 4,
+  "evaluation_conditions": 3,
   "training_seeds_planned": [
     20261016
   ],
@@ -35,7 +35,7 @@
   "teacher_collection_started": false,
   "training_completed": false,
   "evaluation_completed": false,
-  "next": "Harden argument-only schema generation on train-only cases before learned-head teacher collection. Do not tune or rerun inspected dev10 as untouched evaluation.",
+  "next": "Native-relative matched-state train4 speed prerequisite; teacher32 remains conditional.",
   "previous_multimodal_checkpoint_historical_only": {
     "phase": "native2_review_required",
     "run": "/content/local_fast/lsdrag-head-v14/results/native_distillation_12b_20261015",
@@ -168,5 +168,19 @@
     "next": "Harden argument-only schema generation on train-only cases before learned-head teacher collection. Do not tune or rerun inspected dev10 as untouched evaluation."
   },
   "thinking_mode": "non-thinking-only model",
-  "external_evaluation_completed": true
+  "external_evaluation_completed": true,
+  "updated_epoch": 1792159136.4215965,
+  "d3_additional_analysis": "withdrawn",
+  "session_id": null,
+  "functional_smoke": {
+    "passed": true,
+    "checks": 7,
+    "path": "/content/local_fast/lsdrag-text-v1/results/text_integrated_20261016_smoke/checks.json"
+  },
+  "thinking_enabled": false,
+  "thinking_flag_explicit": true,
+  "primary_comparator": "native A-RAG",
+  "speed_gate_passed": false,
+  "target_speedup_vs_native": 1.5,
+  "target_speedup_measured": false
 }
