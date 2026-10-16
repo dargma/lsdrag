@@ -1,6 +1,6 @@
 {
-  "phase": "user_hold_gpu_prohibited",
-  "updated_utc": "2026-10-16T16:06:08.733499+00:00",
+  "phase": "scheduled_waiting_gpu_idle_5_minutes",
+  "updated_utc": "2026-10-16T16:13:04.401948+00:00",
   "protocol": "docs/JEV_TEXT_INTEGRATED_EXECUTION_20261016.md",
   "protocol_sha256": "0adecb3e30136b974fa1ecfffe74282df019f5ccbe0ece7fdbb6547fa486bc18",
   "prompt": "prompts/text_rag_integrated_v5.txt",
@@ -35,7 +35,7 @@
   "teacher_collection_started": true,
   "training_completed": true,
   "evaluation_completed": true,
-  "next": "Wait for explicit user instruction; no GPU usage, experiment, watcher restart or automatic execution.",
+  "next": "At scheduled 30-minute check, if idle confirm >=5 continuous minutes then execute improvement v2; recheck before GPU load.",
   "previous_multimodal_checkpoint_historical_only": {
     "phase": "native2_review_required",
     "run": "/content/local_fast/lsdrag-head-v14/results/native_distillation_12b_20261015",
@@ -222,24 +222,26 @@
     "status": "astra_reviewed_revised_not_started"
   },
   "gpu_watch": {
-    "phase": "stopped",
-    "pid": 102063,
+    "phase": "waiting_first_check",
+    "pid": 122238,
     "state": "/content/local_fast/lsdrag-text-v1/results/improvement_v2_gpu_watch_20261016",
-    "first_check_utc": "2026-10-16T16:01:55+00:00",
+    "first_check_utc": "2026-10-16T16:31:55+00:00",
     "interval_seconds": 1800,
     "spec": "lab/registry/text_integrated_20261016/gpu_watch_schedule.json",
     "experiment_started": false,
     "idle_seconds_required": 300,
     "idle_poll_seconds": 30,
-    "enabled": false
+    "enabled": true
   },
   "phase_before_user_hold": "fixed_step_head_functional_verified_quality_nogo",
-  "gpu_use_authorized": false,
+  "gpu_use_authorized": "conditional_only_after_5_minutes_observed_idle",
   "user_hold": {
-    "active": true,
-    "all_experiments_on_hold": true,
-    "gpu_prohibited": true,
-    "requires_explicit_user_resume": true,
-    "since_utc": "2026-10-16T16:06:08.733499+00:00"
+    "active": false,
+    "all_experiments_on_hold": false,
+    "gpu_prohibited": false,
+    "requires_explicit_user_resume": false,
+    "since_utc": "2026-10-16T16:06:08.733499+00:00",
+    "resumed_utc": "2026-10-16T16:13:04.401948+00:00",
+    "resume_condition": "30-minute checks followed by >=300 seconds observed idle"
   }
 }

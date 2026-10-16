@@ -404,3 +404,7 @@ Gong Beibi 사례: native LLM이 [Gong Beibi, born, military expedition]으로 �
 ## 2026-10-16 — 최우선 사용자 지시: 모든 작업 HOLD / GPU 사용 금지
 
 사용자 명시 지시: "일단 모두 홀딩 GPU 사용 금지". 모든 실험·학습·자동실행을 보류하며 명시적인 새 재개 승인 전 GPU 사용 금지. 이전 실행 승인 및 idle 예약보다 이 지시 우선. watcher PID102063 정상 stopped 확인, state dir STOP 유지, launch_intent 없음: 자동 executor/개선실험은 시작되지 않음. ps 확인상 관련 실험/감시/executor 프로세스 없음. 다른 세션 작업에는 손대지 않음. gpu_watch_schedule.json disabled로 기록. 기존 결과·계획v2·Astra 검토 보존. 다음 행동은 사용자 지시 대기이며, 자동 재시작/idle 체크/GPU로드 금지.
+
+## 2026-10-16 — 최신 사용자 조건부 재개:30분 확인·5분 유휴 후 실행
+
+사용자 최신 지시 "30분 마다 확인은 하는데, GPU가 5분이상 쉬고있을때 실행"으로 이전 HOLD/GPU금지를 해당 조건에서 해제. watcher PID122238 대기 확인, 다음check2026-10-16 16:31:55 UTC, 이후1800초 간격. idle 발견 후30초 샘플링으로300초 이상 연속 idle 확인 뒤 계획v2 executor를1회 재개. busy/unknown이면 실행하지 않음. 기존 watcher stopped 및 launch_intent 없음 확인 후 STOP 제거하여 재개. GPU로드 직전 재확인, 타 세션 종료 금지, local-fast 실행/Drive백업, 계획v2 gate/예산 준수. 새 HOLD가 오면 즉시 중단. 현재 실험은 아직 미시작, runtime 유지 시만 감시 지속.
