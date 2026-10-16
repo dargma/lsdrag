@@ -1,0 +1,107 @@
+{
+  "updated_utc": "2026-10-16T13:05:03.541771+00:00",
+  "phase": "recovery_ready",
+  "source_git_commit": "12501e1",
+  "code": "/content/local_fast/lsdrag-code",
+  "recovery_root": "/content/local_fast/lsdrag-recovery/20261016",
+  "model": {
+    "repo_id": "google/gemma-4-12B-it",
+    "revision": "707f0a3b8a3c7ad586ed01e27eafbad8a27dd0f7",
+    "files_verified": 9,
+    "tensor_count": 677,
+    "gpu_text_and_image_prefill_verified": true,
+    "feature_width": 3840
+  },
+  "embedding": {
+    "repo": "google/embeddinggemma-2",
+    "revision": "914f7f89142e33e77833254d9c9b90c3cef7303b",
+    "files_verified": 15,
+    "isolated_python": "/content/local_fast/lsdrag-v11/embedding-env/bin/python",
+    "transformers": "5.19.0",
+    "sentence_transformers": "6.1.0",
+    "gpu_text_document_and_image_verified": true,
+    "dimension": 768
+  },
+  "data": {
+    "corpus": "/content/local_fast/lsdrag-work/data/ir_final288",
+    "indexes": "/content/local_fast/lsdrag-work/indexes_final288",
+    "inputs": "/content/local_fast/lsdrag-head-v12/data",
+    "restored_files": 2463,
+    "readable_images": 2438,
+    "train": 100,
+    "development": 20,
+    "all_10_split_jsonl_hashes_match_registered_inputs": true,
+    "index_parts_verified": [
+      {
+        "manifest": "/content/local_fast/lsdrag-work/indexes_final_additions/gemma_image/manifest.json",
+        "shape": [
+          928,
+          768
+        ],
+        "verified": true
+      },
+      {
+        "manifest": "/content/local_fast/lsdrag-work/indexes_final_additions/gemma_text/manifest.json",
+        "shape": [
+          84096,
+          768
+        ],
+        "verified": true
+      },
+      {
+        "manifest": "/content/local_fast/lsdrag-work/indexes_development/gemma_image/manifest.json",
+        "shape": [
+          1510,
+          768
+        ],
+        "verified": true
+      },
+      {
+        "manifest": "/content/local_fast/lsdrag-work/indexes_development/gemma_text/manifest.json",
+        "shape": [
+          160271,
+          768
+        ],
+        "verified": true
+      }
+    ]
+  },
+  "official_scorer_verified": true,
+  "tests": {
+    "passed": 10,
+    "files": [
+      "tests/test_native_distillation.py",
+      "tests/test_head_experiment.py"
+    ]
+  },
+  "restored_experiment": {
+    "phase": "native2_review_required",
+    "archive_sha256": "3b9e11057d7179eb94b0ea8cd8f588b963f7be0f818aedb4f2dce70d37552b92",
+    "questions": 2,
+    "training_completed": false,
+    "evaluation_completed": false
+  },
+  "experiments_launched": false,
+  "old_pids": "Historical only; no previous lsdrag collector/watcher process exists in this reset runtime.",
+  "failures_resolved": [
+    "Missing official scorer dependency word2number installed; scorer smoke then passed.",
+    "Initial pytest invocation referenced a nonexistent filename; corrected selected test files passed."
+  ],
+  "drive_comparison": {
+    "different": [
+      "README.md",
+      "lab/CURRENT_STATE.json",
+      "scripts/run_full_head_pilot.py",
+      "tests/test_head_experiment.py",
+      "src/lsdrag/hf_reader.py",
+      "src/lsdrag/head_experiment.py",
+      "memory/HEAD_EXPERIMENT.md",
+      "memory/EXPERIMENT_STATUS.json",
+      "memory/CURRENT.md",
+      "memory/SESSION_LOG.md"
+    ],
+    "drive_only": [],
+    "scope": "source and memory; outputs remain in Drive backup"
+  },
+  "next": "Review saved native2 audit target rejection, image coverage and answer format before further collection; model/data ready. Do not treat restoration smoke as quality or latency evidence."
+}

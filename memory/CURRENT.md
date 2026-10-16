@@ -1,3 +1,11 @@
+# Recovery verified — 2026-10-16
+
+Git branch `jev_v1.1` restored in `/content/local_fast/lsdrag-code` from `12501e1`. Pinned 12B and EmbeddingGemma weights downloaded publicly and hash-verified. Frozen corpus/indexes and 2,438 image files restored from unique Drive derived artifacts (2,463 files total); exact train100/dev20 split reproduced. 12B GPU text+actual-image prefill, embedding text/document/image and official scorer smoke passed; 10 targeted CPU tests passed. Details: `lab/registry/recovery_20261016/recovery_verified.json`.
+
+Latest saved experiment is `native2_review_required`: verified archive SHA256 `3b9e11057d7179eb94b0ea8cd8f588b963f7be0f818aedb4f2dce70d37552b92` restored to `/content/local_fast/lsdrag-head-v14/results/native_distillation_12b_20261015`. Two teacher JSON/PT pairs exist; saved audit has 10 accepted states, one rejected target, F1/EM0. No head training or evaluation completion. Historical PID/active statements below describe the old host; no old lsdrag jobs exist in this reset runtime. No experiment launched during this restoration.
+
+Next: review native2 target rejection, image coverage and answer format before further collection. Models/data ready; no quality or comparative latency claim from restoration smoke. Embedding Python: `/content/local_fast/lsdrag-v11/embedding-env/bin/python` (transformers5.19.0, sentence-transformers6.1.0). Main Python retains transformers5.18.0 and Torch2.11.0+cu130.
+
 # Native distillation checkpoint: native2_review_required
 
 {"phase": "native2_review_required", "run": "/content/local_fast/lsdrag-head-v14/results/native_distillation_12b_20261015", "archive": "/content/drive/MyDrive/lsdrag-backups/20261015/native_distillation_12b_20261015/native2_review_required.tar.gz", "sha256": "3b9e11057d7179eb94b0ea8cd8f588b963f7be0f818aedb4f2dce70d37552b92", "updated_epoch": 1792078918.89331, "pid": 190865, "next": "Review targets and reader-size separation before teacher60/head training", "training_completed": false, "evaluation_completed": false}
