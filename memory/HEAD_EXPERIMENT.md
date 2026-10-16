@@ -1,3 +1,7 @@
+## 2026-10-16 — 개선 실험 계획 저장 (미실행)
+
+계획: `lab/registry/text_integrated_20261016/improvement_experiment_plan.json`. 우선 기존 train8의 최대24고정 상태에서 native exact prefix/cache/JSON 제약 및 FINAL 경로를 분리. 다음 기존32문항을 질문단위24/8로 나누고 head를 새로 학습하여 validation 누출 방지; 필요시 train 실패복구 최대16상태만 추가. 이후 관측 문서 ID 선택/완전 인자 재사용과 GENERATE를 최소 비교. 설정 고정 후 모든 노출 qid를 제외한 fresh20으로 native/수정head/(통과 시)인자선택 비교, 최대60episode. 품질·생성량을 함께 선별하며 공유GPU latency 배수는 주장하지 않음. native 검색 의미 보존, text-only Qwen non-thinking, local-fast/Drive backup 원칙 유지. 계획만 저장했으며 실행 시작 없음.
+
 ## 2026-10-16 — 검색 인자 차이 설명 보존
 
 Gong Beibi 사례: native LLM이 [Gong Beibi, born, military expedition]으로 나눠 생성했고, head 경로에서도 인자 내용은 LLM이 생성했지만 긴 문자열 하나가 됨. head가 검색어를 합친 것이 아님. keyword handler는 배열 원소별 완전한 문자열 부분일치이며 자동 분할하지 않아 긴 미일치 문구는 0건. 양쪽 greedy이므로 샘플링 랜덤성 설명은 부적절. native의 자체 생성 envelope와 head의 강제 compact prefix/JSON 제약 차이는 후보 원인이며 각각의 인과효과는 미검증. 같은 관측·툴·native prefix를 맞춘 비교가 다음 진단 후보일 뿐 실행하지 않음. 데이터셋 GT는 정답/근거이며 유일한 툴 경로가 아님. 상태와 범위 변경 없이 저장만 수행. 상세: `lab/registry/text_integrated_20261016/head_learning_followup_checkpoint.json`.
