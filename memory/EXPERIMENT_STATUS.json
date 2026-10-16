@@ -1,5 +1,5 @@
 {
-  "phase": "d3_external_benchmark_ready",
+  "phase": "d3_native_first2_running",
   "updated_utc": "2026-10-16T13:23:40.478892+00:00",
   "protocol": "docs/JEV_TEXT_ONLY_INTEGRATED_PLAN_20261016.md",
   "protocol_sha256": "a84297db25238b89f9378ba2209e53e32df3af371800ce0e468d6b14503d1b90",
@@ -29,7 +29,7 @@
   ],
   "worker_wall_budget_minutes": 60,
   "run_planned": "/content/local_fast/lsdrag-text-v1/results/text_integrated_20261016",
-  "pid": null,
+  "pid": 24654,
   "implementation_completed": false,
   "dataset_prepared": true,
   "teacher_collection_started": false,
@@ -56,5 +56,18 @@
     "benchmarked": false,
     "functional_smoke_passed": true
   },
-  "external_benchmark_implementation_completed": true
+  "external_benchmark_implementation_completed": true,
+  "external_benchmark": {
+    "phase": "d3_native_first2_running",
+    "pid": 24654,
+    "process_verified": true,
+    "run": "/content/local_fast/lsdrag-text-v1/results/d3_native_20261016",
+    "log": "/content/local_fast/lsdrag-text-v1/logs/benchmark_first2.log",
+    "session_id": 73155,
+    "frozen_source_commit": "494a7f86f38a97542300df104139618fdbd96795",
+    "target_episodes": 4,
+    "next": "Verify first2 structural/infrastructure completion; extend unchanged to fixed12, total24 external comparison episodes, within cumulative60min.",
+    "learned_head_training_completed": false,
+    "updated_epoch": 1792157500.4843576
+  }
 }

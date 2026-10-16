@@ -199,3 +199,9 @@ Official MuSiQue public Drive download failed with quota exceeded. Public mirror
 New bounded text-only D3 vs native E4B benchmark implemented in `scripts/benchmark_d3_text_rag.py` and `src/lsdrag/text_decision_benchmark.py`. Runtime corpus uses explicit allowlisted text fields; private support/answers/decomposition are never supplied to controller/retrieval. 9 targeted tests pass. MuSiQue official scorer source pinned. Learned action/arg head implementation/training remains pending: external D3 controller dispatch is not learned-head completion.
 
 Next command: `PYTHONPATH=src python -u scripts/benchmark_d3_text_rag.py --output /content/local_fast/lsdrag-text-v1/results/d3_native_20261016 --limit 2 --minutes 60 --backup /content/drive/MyDrive/lsdrag-backups/20261016/text_integrated_20261016`. First2 smoke is a prefix of fixed dev12; extend unchanged source to12 if infrastructure/contract works; preserve model policy failures. No data/seed/config tuning on dev results. Cumulative worker budget60min, no controlled latency claim.
+
+## 2026-10-16 — D3/native first2 started
+
+{"phase": "d3_native_first2_running", "pid": 24654, "process_verified": true, "run": "/content/local_fast/lsdrag-text-v1/results/d3_native_20261016", "log": "/content/local_fast/lsdrag-text-v1/logs/benchmark_first2.log", "session_id": 73155, "frozen_source_commit": "494a7f86f38a97542300df104139618fdbd96795", "target_episodes": 4, "next": "Verify first2 structural/infrastructure completion; extend unchanged to fixed12, total24 external comparison episodes, within cumulative60min.", "learned_head_training_completed": false, "updated_epoch": 1792157500.4843576}
+
+This is the requested external-controller comparison, not fresh teacher collection or learned-head evaluation. Verify live process/artifacts; do not launch another GPU collector. Frozen executable source must not change.

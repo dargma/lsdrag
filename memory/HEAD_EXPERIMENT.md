@@ -1,3 +1,9 @@
+# D3/native first2 benchmark running — 2026-10-16
+
+{"phase": "d3_native_first2_running", "pid": 24654, "process_verified": true, "run": "/content/local_fast/lsdrag-text-v1/results/d3_native_20261016", "log": "/content/local_fast/lsdrag-text-v1/logs/benchmark_first2.log", "session_id": 73155, "frozen_source_commit": "494a7f86f38a97542300df104139618fdbd96795", "target_episodes": 4, "next": "Verify first2 structural/infrastructure completion; extend unchanged to fixed12, total24 external comparison episodes, within cumulative60min.", "learned_head_training_completed": false, "updated_epoch": 1792157500.4843576}
+
+This is the requested external-controller comparison, not fresh teacher collection or learned-head evaluation. Verify live process/artifacts; do not launch another GPU collector. Frozen executable source must not change.
+
 # D3 external benchmark implementation checkpoint — 2026-10-16
 
 E4B9 files/D3-Flash29 files downloaded and SHA256 verified, including all Hub LFS weight hashes. D3 official full-package verification and real text-only choice smoke passed (zero generated tokens); the smoke used slow reference kernels, and the benchmark environment now has optional FLA0.5.2/fla-core0.5.2 whose actual kernel binding will be recorded. Main Gemma transformers5.18.0, isolated D3 transformers5.17.0.
