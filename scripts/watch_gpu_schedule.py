@@ -1,5 +1,6 @@
 """Local 30-minute GPU gate that resumes a pinned existing Codex session once.
 
+At each due time, require five minutes of idle samples before starting.
 No GPU allocation until the due time. Unknown telemetry is busy. Survives chat
 completion, but not host shutdown. Never terminates another process.
 """
@@ -32,6 +33,25 @@ def sample(gpu):
             'idle': not apps and util <= 5 and used <= 1024 and free >= 32768}
 
 
+def confirm_idle(gpu, seconds, poll, cancelled, observe):
+    """Require idle observations over the full window; gaps reset evidence."""
+    since = previous = time.monotonic()
+    while not cancelled():
+        target = time.monotonic()+poll
+        while time.monotonic() < target:
+            if cancelled(): return False
+            time.sleep(min(1, target-time.monotonic()))
+        info = sample(gpu)
+        now = time.monotonic()
+        if now-previous > 65:
+            since = now
+        previous = now
+        observe(info, now-since)
+        if not info['idle']: return False
+        if now-since >= seconds: return True
+    return False
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--spec', type=Path, required=True)
@@ -60,6 +80,18 @@ def main():
                 f.write(json.dumps({'time': time.time(), **info})+'\n')
             # Recheck immediately before handing control to the experiment session.
             if info['idle']:
+                def observe_idle(info, elapsed):
+                    with (root/'checks.jsonl').open('a') as f:
+                        f.write(json.dumps({'time': time.time(), 'idle_seconds': elapsed, **info})+'\n')
+                    save('confirming_five_minutes_idle', idle_seconds=elapsed, gpu=info)
+                confirmed = confirm_idle(spec['gpu_uuid'], spec['idle_seconds'],
+                    spec['idle_poll_seconds'], lambda: stopped or (root/'STOP').exists(), observe_idle)
+                if not confirmed:
+                    if stopped or (root/'STOP').exists(): break
+                    due += spec['interval_seconds']
+                    while due <= time.time(): due += spec['interval_seconds']
+                    save('idle_window_interrupted', next_check_epoch=due)
+                    continue
                 info = sample(spec['gpu_uuid'])
                 if info['idle']:
                     intent = {'time': time.time(), 'command': spec['command'], 'gpu': info}

@@ -1,6 +1,6 @@
 {
   "phase": "fixed_step_head_functional_verified_quality_nogo",
-  "updated_utc": "2026-10-16T15:33:33.765974+00:00",
+  "updated_utc": "2026-10-16T15:41:18.870083+00:00",
   "protocol": "docs/JEV_TEXT_INTEGRATED_EXECUTION_20261016.md",
   "protocol_sha256": "0adecb3e30136b974fa1ecfffe74282df019f5ccbe0ece7fdbb6547fa486bc18",
   "prompt": "prompts/text_rag_integrated_v5.txt",
@@ -223,11 +223,13 @@
   },
   "gpu_watch": {
     "phase": "waiting_first_check",
-    "pid": 97694,
+    "pid": 102063,
     "state": "/content/local_fast/lsdrag-text-v1/results/improvement_v2_gpu_watch_20261016",
     "first_check_utc": "2026-10-16T16:01:55+00:00",
     "interval_seconds": 1800,
     "spec": "lab/registry/text_integrated_20261016/gpu_watch_schedule.json",
-    "experiment_started": false
+    "experiment_started": false,
+    "idle_seconds_required": 300,
+    "idle_poll_seconds": 30
   }
 }

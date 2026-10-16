@@ -396,3 +396,7 @@ Gong Beibi 사례: native LLM이 [Gong Beibi, born, military expedition]으로 �
 ## 2026-10-16 — GPU 유휴 감시 예약 활성화
 
 사용자 승인: 30분 후부터30분마다 다른 세션 GPU 사용 확인, 없으면 개선 실험 시작. 첫 확인2026-10-16 16:01:55 UTC, interval1800s. 로컬 watcher PID97694, 상태 `/content/local_fast/lsdrag-text-v1/results/improvement_v2_gpu_watch_20261016/status.json`; spec `lab/registry/text_integrated_20261016/gpu_watch_schedule.json`; script `scripts/watch_gpu_schedule.py`. compute apps 없음+GPU util<=5%+used<=1024MiB+free>=32GiB 확인을 즉시 재검증하고 기존 세션01a144c9-bbb6-7881-af05-4f9b7a60131b을 codex exec resume로1회 재개. 실행자는 GPU로드 직전 재확인 후 계획v2 split선고정/token-cache진단부터 진행, gate/예산 내 후속 단계 수행. 다른 작업 종료 금지. STOP 파일은 watcher 중지; 시작된 executor는 자동 종료하지 않음. 런타임 종료 시 감시 소멸하며 hosted 예약 아님. watcher 대기 상태/PID 확인 완료, GPU실험은 아직 미시작. 기존 품질NoGo 유지.
+
+## 2026-10-16 — 기동 조건: GPU 5분 연속 유휴
+
+사용자 최신 조건 반영:30분마다 확인하되 idle 발견 시30초 간격으로 최소300초 연속 idle 추가 확인 후 시작. busy/telemetry오류면 시작하지 않고 다음30분 check까지 대기; 샘플 관측 공백>65초면 idle 증거 재설정. 최초check16:01:55 UTC 유지(최초가능실행16:06:55이후). 기존 watcher97694는 STOP으로 정상 중지, 새 watcher PID102063 대기 확인. spec/script 경로 동일; mock clock으로300초 이전 미기동/도중busy차단2조건 검증. GPU실험 아직 시작 안 함.
