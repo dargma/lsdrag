@@ -1,0 +1,8 @@
+{
+  "archive": "/content/drive/MyDrive/lsdrag-backups/20261016/text_integrated_20261016/compact_v4_discarded_final.tar.gz",
+  "sha256": "6d6894dd124bb9bb85faa289c413c7baa99742e298534fc11123bb97f909c778",
+  "source": "e2861c0",
+  "outcome": "Discarded; slow FINAL; summary recovered without GPU rerun",
+  "teacher_questions": 4,
+  "measured_state_repeats": 45
+}

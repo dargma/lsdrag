@@ -24,3 +24,5 @@
 - Reaffirmed2026-10-16: model/data/index/code/result I/O must use local-fast; Drive is too slow and is backup only. Resolved weight symlinks were verified local-fast.
 
 - Latest override2026-10-16: primary comparator native A-RAG at equal interaction counts; discard slower paths, uncertain speed is not pass. User would like1.5x speed; this is a target, not observed. Shared-GPU functional work remains allowed; no termination of unrelated jobs. Keep Qwen thinking explicitly disabled. D3 further structural analysis withdrawn, old results preserved.
+
+- Latest execution2026-10-16: implement optimizations and run immediately, using native A-RAG comparator. Current v5 uses implicit references (no candidate message), same-prefill cached arguments and runtime syntax assembly, GPU-resident heads and schema-valid greedy fast path. Qwen3-4B-Instruct-2507 nonthinking, teacher32/max48, untouched reserved dev10 only after prerequisites, no D3 new analysis. Compactv4 discarded for slow FINAL. Preserve raw results and do not claim oracle cost-screen gains as learned-policy speed.
