@@ -1,0 +1,17 @@
+{
+  "qids": [
+    "2hop__631024_18974",
+    "2hop__1845_38366",
+    "2hop__24697_578772",
+    "2hop__245835_762148",
+    "2hop__648648_173389",
+    "2hop__807257_590611",
+    "2hop__179149_396277",
+    "2hop__124592_402641",
+    "2hop__223823_29898",
+    "2hop__132929_120537"
+  ],
+  "selection": "next10 after original fixeddev12 in outcome-blind seed20261016 hash order; no outcomes inspected",
+  "status": "reserved_not_evaluated",
+  "reason": "originaldev12 now diagnostic/development-exposed"
+}

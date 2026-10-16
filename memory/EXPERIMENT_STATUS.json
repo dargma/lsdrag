@@ -1,8 +1,8 @@
 {
-  "phase": "d3_qwen_dev10_running",
+  "phase": "external_benchmark_complete_with_argument_format_failures",
   "updated_utc": "2026-10-16T13:23:40.478892+00:00",
   "protocol": "docs/JEV_TEXT_ONLY_INTEGRATED_PLAN_20261016.md",
-  "protocol_sha256": "a763e428f239bbf3aac91b7f5b686eea7bc4dc503f8797052a943cbe749fd29e",
+  "protocol_sha256": "1b5e469d500308a9530da2d7ec001a8ddf7de24c9e2cf3496d0064dfbf20a5ba",
   "prompt": "prompts/text_rag_integrated_v2.txt",
   "prompt_sha256": "eba9c1f28ebabc90cd1723d10b5c305defea387e924db9bc3ac4988ed3dec626",
   "dataset": "MuSiQue-Ans v1.0, 2-hop",
@@ -29,13 +29,13 @@
   ],
   "worker_wall_budget_minutes": 60,
   "run_planned": "/content/local_fast/lsdrag-text-v1/results/text_integrated_20261016",
-  "pid": 31212,
+  "pid": null,
   "implementation_completed": false,
   "dataset_prepared": true,
   "teacher_collection_started": false,
   "training_completed": false,
   "evaluation_completed": false,
-  "next": "Verify fixed20 episode artifacts and summarize; no learned heads trained.",
+  "next": "Harden argument-only schema generation on train-only cases before learned-head teacher collection. Do not tune or rerun inspected dev10 as untouched evaluation.",
   "previous_multimodal_checkpoint_historical_only": {
     "phase": "native2_review_required",
     "run": "/content/local_fast/lsdrag-head-v14/results/native_distillation_12b_20261015",
@@ -58,14 +58,115 @@
   },
   "external_benchmark_implementation_completed": true,
   "external_benchmark": {
-    "run": "/content/local_fast/lsdrag-text-v1/results/d3_qwen_dev10_20261016",
-    "log": "/content/local_fast/lsdrag-text-v1/logs/qwen_dev10.log",
-    "session_id": 4168,
-    "target_episodes": 20,
-    "source_commit": "5bad6fd",
-    "preflight_completed_episodes": 4,
-    "preflight_errors": 0,
-    "benchmark_completed": false
+    "phase": "external_benchmark_complete_with_argument_format_failures",
+    "model": "Qwen/Qwen3-4B-Instruct-2507",
+    "model_revision": "cdbee75f17c01a7cc42f958dc650907174af0554",
+    "external_model": "vllm-sr/d3-flash",
+    "external_revision": "8b35c853b90e777595ec36bacae820fe08ea077a",
+    "summary": {
+      "policies": {
+        "first_token": {
+          "n": 10,
+          "f1": 0.4666666666666666,
+          "em": 0.4,
+          "support_f1": 0.4333333333333333,
+          "retrieved_support_recall": 0.8,
+          "read_support_recall": 0.3,
+          "seconds": 0.8897920106001038,
+          "tool_calls": 5.3,
+          "reused_argument_calls": 4.9,
+          "argument_tokens": 14.5,
+          "prompt_tokens": 11820.7,
+          "completion_tokens": 32.8,
+          "answer_format_valid": 1.0,
+          "episodes_with_errors": 0
+        },
+        "d3": {
+          "n": 10,
+          "f1": 0.3,
+          "em": 0.3,
+          "support_f1": 0.2,
+          "retrieved_support_recall": 0.65,
+          "read_support_recall": 0.45,
+          "seconds": 0.6312729161000334,
+          "tool_calls": 1.8,
+          "reused_argument_calls": 1.5,
+          "argument_tokens": 17.0,
+          "prompt_tokens": 4772.2,
+          "completion_tokens": 26.4,
+          "answer_format_valid": 0.5,
+          "episodes_with_errors": 5
+        }
+      },
+      "controlled_latency_claims": false,
+      "trained_head": false,
+      "scope": "Small paired 2hop development subset; external controller baseline; not full Jev/MuSiQue benchmark",
+      "comparison_note": "Same reader, execution candidates and argument/final generator; no trained heads. Different decision backbone/prompt serialization; two-model D3 cost included.",
+      "peak_main_allocated_bytes": 9048996352
+    },
+    "paired_d3_minus_first_token_f1": {
+      "mean": -0.16666666666666666,
+      "bootstrap_95_percent_interval_exploratory": [
+        -0.4,
+        0.0
+      ],
+      "wins": 0,
+      "losses": 2,
+      "ties": 8
+    },
+    "argument_format_failures": [
+      {
+        "qid": "2hop__135993_160249",
+        "errors": [
+          "ValidationError: 'keywords' is a required property\n\nFailed validating 'required' in schema:\n    {'type': 'object',\n     'properties': {'keywords': {'type': 'array',\n                                 'items': {'type': 'string'},\n                                 'minItems': 1},\n                    'top_k': {'type': 'integer',\n                              'minimum': 1,\n                              'maximum': 20,\n                              'default': 5}},\n     'required': ['keywords'],\n     'additionalProperties': False}\n\nOn instance:\n    {'answer': '', 'support_ids': []}"
+        ],
+        "argument_outputs": [
+          "{\"answer\": \"\", \"support_ids\": []}"
+        ]
+      },
+      {
+        "qid": "2hop__256778_131879",
+        "errors": [
+          "ValidationError: 'keywords' is a required property\n\nFailed validating 'required' in schema:\n    {'type': 'object',\n     'properties': {'keywords': {'type': 'array',\n                                 'items': {'type': 'string'},\n                                 'minItems': 1},\n                    'top_k': {'type': 'integer',\n                              'minimum': 1,\n                              'maximum': 20,\n                              'default': 5}},\n     'required': ['keywords'],\n     'additionalProperties': False}\n\nOn instance:\n    {'answer': '', 'support_ids': []}"
+        ],
+        "argument_outputs": [
+          "{\"answer\": \"\", \"support_ids\": []}"
+        ]
+      },
+      {
+        "qid": "2hop__31085_23241",
+        "errors": [
+          "ValidationError: 'keywords' is a required property\n\nFailed validating 'required' in schema:\n    {'type': 'object',\n     'properties': {'keywords': {'type': 'array',\n                                 'items': {'type': 'string'},\n                                 'minItems': 1},\n                    'top_k': {'type': 'integer',\n                              'minimum': 1,\n                              'maximum': 20,\n                              'default': 5}},\n     'required': ['keywords'],\n     'additionalProperties': False}\n\nOn instance:\n    {'name': 'keyword_search',\n     'arguments': {'keywords': ['Ibn Tufail religion',\n                                'Nigeria population 2010',\n                                'Pew religion percentage'],\n                   'top_k': 5}}"
+        ],
+        "argument_outputs": [
+          "{\"name\": \"keyword_search\", \"arguments\": {\"keywords\": [\"Ibn Tufail religion\", \"Nigeria population 2010\", \"Pew religion percentage\"], \"top_k\": 5}}"
+        ]
+      },
+      {
+        "qid": "2hop__711639_110949",
+        "errors": [
+          "ValidationError: 'keywords' is a required property\n\nFailed validating 'required' in schema:\n    {'type': 'object',\n     'properties': {'keywords': {'type': 'array',\n                                 'items': {'type': 'string'},\n                                 'minItems': 1},\n                    'top_k': {'type': 'integer',\n                              'minimum': 1,\n                              'maximum': 20,\n                              'default': 5}},\n     'required': ['keywords'],\n     'additionalProperties': False}\n\nOn instance:\n    {'answer': '', 'support_ids': []}"
+        ],
+        "argument_outputs": [
+          "{\"answer\": \"\", \"support_ids\": []}"
+        ]
+      },
+      {
+        "qid": "2hop__95970_456836",
+        "errors": [
+          "ValidationError: 'keywords' is a required property\n\nFailed validating 'required' in schema:\n    {'type': 'object',\n     'properties': {'keywords': {'type': 'array',\n                                 'items': {'type': 'string'},\n                                 'minItems': 1},\n                    'top_k': {'type': 'integer',\n                              'minimum': 1,\n                              'maximum': 20,\n                              'default': 5}},\n     'required': ['keywords'],\n     'additionalProperties': False}\n\nOn instance:\n    {'name': 'keyword_search',\n     'arguments': {'keywords': ['Claudia Cardinale birthplace'],\n                   'top_k': 5}}"
+        ],
+        "argument_outputs": [
+          "{\"name\": \"keyword_search\", \"arguments\": {\"keywords\": [\"Claudia Cardinale birthplace\"], \"top_k\": 5}}"
+        ]
+      }
+    ],
+    "interpretation": "D3 condition hit common-reader argument JSON failures in5/10 episodes; do not attribute gap solely to controller. Early failures confound lower tokens/time. No trained action/argument heads evaluated.",
+    "storage": "All code, weights, data, indexes and runtime outputs resolved under /content/local_fast; Drive only for checkpoint backups/mirror.",
+    "overall_worker_seconds": 147.16010605799966,
+    "active_pid": null,
+    "next": "Harden argument-only schema generation on train-only cases before learned-head teacher collection. Do not tune or rerun inspected dev10 as untouched evaluation."
   },
-  "thinking_mode": "non-thinking-only model"
+  "thinking_mode": "non-thinking-only model",
+  "external_evaluation_completed": true
 }

@@ -20,3 +20,5 @@
 - Latest model choice: Gemma4E4B-IT text-only, replacing12B for new pilot. Explicitly requested external Decision3.0 D3-Flash9B benchmark; retain resource caps and preserve main integrated-head objective.
 
 - Latest override:2–4B suitable LLM or VLM; avoid thinking mode, inspect actual prompt/template settings. Selected non-thinking-only Qwen3-4B-Instruct-2507 over earlier Gemma choices. Persist all model/protocol changes and do not confuse format diagnostics with benchmark success.
+
+- Reaffirmed2026-10-16: model/data/index/code/result I/O must use local-fast; Drive is too slow and is backup only. Resolved weight symlinks were verified local-fast.

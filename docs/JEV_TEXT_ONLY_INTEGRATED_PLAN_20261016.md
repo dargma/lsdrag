@@ -1,3 +1,5 @@
+> Latest execution checkpoint: external Qwen/D3 dev10 diagnostic completed; see `lab/reports/text_integrated_20261016/d3_qwen_dev10.md`. Learned heads are pending. dev10 is now exposed; future frozen holdout IDs are in `lab/registry/text_integrated_20261016/next_holdout_reserved.json`. Argument generation contract must be hardened on train-only examples first.
+
 # Latest override — Qwen3-4B non-thinking reader and prompt audit (2026-10-16)
 
 This section overrides all Gemma choices and superseded scale/evaluation details below. User now permits LLM or VLM, asks for2–4B, prompt-setting inspection, and as little thinking mode as possible. Selected `Qwen/Qwen3-4B-Instruct-2507@cdbee75f17c01a7cc42f958dc650907174af0554`: official4.0B text-only causal LLM, non-thinking-only release. Source: https://huggingface.co/Qwen/Qwen3-4B-Instruct-2507 . Newer Qwen3.5-4B defaults to thinking; the explicit non-thinking-only requirement takes priority over release recency. No model sweep.

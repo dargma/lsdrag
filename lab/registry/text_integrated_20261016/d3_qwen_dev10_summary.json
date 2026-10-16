@@ -1,0 +1,41 @@
+{
+  "policies": {
+    "first_token": {
+      "n": 10,
+      "f1": 0.4666666666666666,
+      "em": 0.4,
+      "support_f1": 0.4333333333333333,
+      "retrieved_support_recall": 0.8,
+      "read_support_recall": 0.3,
+      "seconds": 0.8897920106001038,
+      "tool_calls": 5.3,
+      "reused_argument_calls": 4.9,
+      "argument_tokens": 14.5,
+      "prompt_tokens": 11820.7,
+      "completion_tokens": 32.8,
+      "answer_format_valid": 1.0,
+      "episodes_with_errors": 0
+    },
+    "d3": {
+      "n": 10,
+      "f1": 0.3,
+      "em": 0.3,
+      "support_f1": 0.2,
+      "retrieved_support_recall": 0.65,
+      "read_support_recall": 0.45,
+      "seconds": 0.6312729161000334,
+      "tool_calls": 1.8,
+      "reused_argument_calls": 1.5,
+      "argument_tokens": 17.0,
+      "prompt_tokens": 4772.2,
+      "completion_tokens": 26.4,
+      "answer_format_valid": 0.5,
+      "episodes_with_errors": 5
+    }
+  },
+  "controlled_latency_claims": false,
+  "trained_head": false,
+  "scope": "Small paired 2hop development subset; external controller baseline; not full Jev/MuSiQue benchmark",
+  "comparison_note": "Same reader, execution candidates and argument/final generator; no trained heads. Different decision backbone/prompt serialization; two-model D3 cost included.",
+  "peak_main_allocated_bytes": 9048996352
+}
