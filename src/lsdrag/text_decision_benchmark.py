@@ -13,6 +13,9 @@ from .direct_reader import DirectHFReader
 from .tool_registry import tool_schemas
 
 TOOLS = tool_schemas('B0', 'agent-read', 'legacy')
+next(t['function'] for t in TOOLS if t['function']['name']=='read_chunk')['description'] = (
+    'Read full text for one to eight chunk IDs observed in search results. '
+    'Use these text paragraphs to check evidence before answering.')
 FINAL_SCHEMA = {'type': 'object', 'properties': {
     'answer': {'type': 'string'},
     'support_ids': {'type': 'array', 'items': {'type': 'string'}}},
@@ -242,9 +245,15 @@ def run_episode(question, rows, vectors, embedder, reader, prompt, policy, d3=No
                 args = value
             tc = {'id': f'call_{turn}', 'type': 'function', 'function': {'name': action, 'arguments': canonical(args)}}
             msg = {'role': 'assistant', 'content': None, 'tool_calls': [tc]}
-        # Handler/schema faults are implementation/infrastructure failures, not silent policy zeros.
         tool_start = time.perf_counter()
-        result = corpus.call(action, args)
+        try:
+            result = corpus.call(action, args)
+        except ValueError as error:
+            if str(error) != 'Unknown chunk ID':
+                raise
+            # Hallucinated IDs are model-policy failures, not index infrastructure failures.
+            result = {'error': str(error)}
+            errors.append('tool_policy_error: '+str(error))
         trajectory.append({'tool_name': action, 'arguments': args, 'result': result,
                            'argument_reused': bool(chosen and chosen['arguments'] is not None),
                            'seconds': time.perf_counter()-tool_start})

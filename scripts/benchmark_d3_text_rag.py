@@ -140,9 +140,9 @@ def main():
                     result.update(qid=q['id'], em=max(compute_exact(x,result['answer']) for x in aliases),
                                   f1=max(compute_f1(x,result['answer']) for x in aliases))
                     gold_ids = {f'p{p["idx"]}' for p in q['paragraphs'] if p['is_supporting']}
-                    retrieved = {r['chunk_id'] for t in result['trajectory'] if t['tool_name'].endswith('search')
+                    retrieved = {r['chunk_id'] for t in result['trajectory'] if t['tool_name'].endswith('search') and isinstance(t['result'],list)
                                  for r in t['result']}
-                    read = {k for t in result['trajectory'] if t['tool_name']=='read_chunk' for k in t['arguments']['chunk_ids']}
+                    read = {r['chunk_id'] for t in result['trajectory'] if t['tool_name']=='read_chunk' and isinstance(t['result'],list) for r in t['result']}
                     id_map = {f'p{p["idx"]}': p['idx'] for p in q['paragraphs']}
                     unknown = sorted(set(result['support_ids'])-id_map.keys())
                     unknown_map = {k: -1-i for i,k in enumerate(unknown)}
