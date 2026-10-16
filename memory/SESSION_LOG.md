@@ -263,3 +263,19 @@ Next frozen command: `PYTHONPATH=src /content/local_fast/lsdrag-text-v1/experime
 
 After this prerequisite passes, teacher32 then48 only for insufficient natural coverage; gate from active protocol unchanged. Fresh student features before current teacher output; CPU head training only after coverage. Reserved dev10 stays untouched until gate+training pass. Main worker58min plus earlier smokes within60min; no D3 load, no other jobs terminated. Local-fast all compute/index/results; one verified Drive archive per phase.
 
+
+# Compact integrated pilot — compact_loading
+
+{"phase": "compact_loading", "pid": 58845, "run": "/content/local_fast/lsdrag-text-v1/results/text_integrated_20261016_compact_v4", "updated_epoch": 1792160736.869875, "worker_seconds": 0.6594588180005303, "contract": "a5834cde12928defe809f4ca42cf7e14e180118b104ed8c309b8a7539f6fb333", "teacher_collection_started": false}
+
+
+# Compact integrated pilot — compact_train4_audit
+
+{"phase": "compact_train4_audit", "pid": 58845, "run": "/content/local_fast/lsdrag-text-v1/results/text_integrated_20261016_compact_v4", "updated_epoch": 1792160757.0599816, "worker_seconds": 20.84956499600048, "teacher_collection_started": true, "teacher_target": 4}
+
+Launch verified: PID58845, session85394, frozen sourcee2861c0, contracta5834cde12928defe809f4ca42cf7e14e180118b104ed8c309b8a7539f6fb333. Log `/content/local_fast/lsdrag-text-v1/logs/integrated_compact_v4.log`. Source pushed tojev_v1.1; CPU11/11 and compact model smoke7/7 passed. Active run is local-fast `text_integrated_20261016_compact_v4`.
+
+# Compact integrated pilot — compact_native_cost_screen
+
+{"phase": "compact_native_cost_screen", "pid": 58845, "run": "/content/local_fast/lsdrag-text-v1/results/text_integrated_20261016_compact_v4", "updated_epoch": 1792160793.4836075, "worker_seconds": 57.273190819000774, "teacher_questions": 4, "natural_states": 15, "trained_head": false}
+

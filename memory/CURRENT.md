@@ -1,3 +1,15 @@
+# Compact integrated pilot — compact_native_cost_screen
+
+{"phase": "compact_native_cost_screen", "pid": 58845, "run": "/content/local_fast/lsdrag-text-v1/results/text_integrated_20261016_compact_v4", "updated_epoch": 1792160793.4836075, "worker_seconds": 57.273190819000774, "teacher_questions": 4, "natural_states": 15, "trained_head": false}
+
+# Compact integrated pilot — compact_train4_audit
+
+{"phase": "compact_train4_audit", "pid": 58845, "run": "/content/local_fast/lsdrag-text-v1/results/text_integrated_20261016_compact_v4", "updated_epoch": 1792160757.0599816, "worker_seconds": 20.84956499600048, "teacher_collection_started": true, "teacher_target": 4}
+
+# Compact integrated pilot — compact_loading
+
+{"phase": "compact_loading", "pid": 58845, "run": "/content/local_fast/lsdrag-text-v1/results/text_integrated_20261016_compact_v4", "updated_epoch": 1792160736.869875, "worker_seconds": 0.6594588180005303, "contract": "a5834cde12928defe809f4ca42cf7e14e180118b104ed8c309b8a7539f6fb333", "teacher_collection_started": false}
+
 # Compact-reference v4 execution — 2026-10-16
 
 User explicitly authorized immediate implementation and experiment with the proposed optimizations. Implemented compact context references (Q/prior call args/prior result ID groups, exact unchanged candidate slot order), same-prefill cached generation ending at a complete argument object without generating outer wrapper/EOS, and deployment head computation on GPU with only selected indices copied to CPU. No teacher labels from old runs are reused. Explicit enable_thinking=False remains set.
