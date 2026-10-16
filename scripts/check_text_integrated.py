@@ -12,6 +12,7 @@ from lsdrag.text_decision_benchmark import public_paragraphs
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('--output', type=Path, required=True)
+    parser.add_argument('--prompt', type=Path, default=Path('prompts/text_rag_integrated_v4.txt'))
     args = parser.parse_args()
     args.output.mkdir(parents=True, exist_ok=True)
     qid = json.loads(Path('lab/registry/text_integrated_20261016/split.json').read_text())['train'][0]
@@ -21,7 +22,7 @@ def main():
     history = [{'tool_name': 'semantic_search', 'arguments': {'query': row['question']},
                 'result': [{'chunk_id': paragraph['chunk_id'], 'title': paragraph['title'],
                             'snippet': paragraph['text'][:600]}]}]
-    messages = [{'role': 'system', 'content': Path('prompts/text_rag_integrated_v3.txt').read_text()},
+    messages = [{'role': 'system', 'content': args.prompt.read_text()},
                 {'role': 'user', 'content': row['question']}]
     state = messages + [
         {'role': 'assistant', 'content': None, 'tool_calls': [{'id': 'check', 'type': 'function',
@@ -42,7 +43,7 @@ def main():
         value, usage, failure = reader.generate_schema(messages, argument_schema(action, []), 'arguments',
             'Generate arguments for '+action, deadline)
         save('fresh_argument', action, value, usage, failure)
-    value, usage, failure = reader.generate_schema(messages, native_schema([]), 'native', '', deadline)
+    value, usage, failure = reader.generate_native(messages, [], deadline)
     save('native', value.get('action') if value else None, value, usage, failure)
     for action in ['keyword_search', 'semantic_search', 'read_chunk', 'FINAL']:
         _, _, capture = reader.capture(state, options_for(row['question'], history), 'teacher', deadline)

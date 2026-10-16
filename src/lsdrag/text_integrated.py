@@ -12,11 +12,9 @@ from .text_only_reader import TextOnlyReader
 from .text_decision_benchmark import TOOLS, FINAL_SCHEMA, TextCorpus, canonical, execution_options
 
 ACTIONS = ('keyword_search', 'semantic_search', 'read_chunk', 'FINAL')
-SELECT = ('The runtime can directly execute these complete argument candidates or request new arguments. '
-          'Candidates are drawn only from the observed history and may be unsuitable. '
-          'Continue the ordinary native tool-call/final-answer protocol; do not output option letters. '
-          'If the runtime supplies an assistant prefix, complete that selected operation. '
-          'Available execution candidates:\n')
+SELECT = ('Next operation: native tool call or FINAL. Runtime argument slots: '
+          'NEW=generate; Q=original question; Cn=arguments of prior call n; '
+          'Rn=typed IDs of prior result n. References may be unsuitable.\n')
 
 
 def options_for(question, trajectory):
@@ -51,9 +49,41 @@ def target_slot(options, action, arguments):
     return 0
 
 
+def candidate_refs(messages, options):
+    """Address existing public context instead of serializing argument values twice."""
+    question=next(m['content'] for m in messages if m['role']=='user')
+    calls=[]; results=[]
+    for message in messages:
+        for call in message.get('tool_calls',[]):
+            fn=call['function'];calls.append((fn['name'],json.loads(fn['arguments'])))
+        if message['role']=='tool':
+            value=json.loads(message['content'])
+            results.append(list(dict.fromkeys(r['chunk_id'] for r in value
+                if isinstance(r,dict) and isinstance(r.get('chunk_id'),str))) if isinstance(value,list) else [])
+    refs={a:[] for a in ACTIONS[:-1]}
+    for option in options:
+        action=option['action'];args=option['arguments']
+        if action=='FINAL':continue
+        ref=None
+        if args is None:ref='NEW'
+        elif action=='semantic_search' and normalize_args(action,args)=={'query':question,'top_k':5}:ref='Q'
+        elif action=='read_chunk':
+            for i,ids in reversed(list(enumerate(results))):
+                if args['chunk_ids']==ids[:8]:ref=f'R{i}[:8]';break
+                if len(args['chunk_ids'])==1 and args['chunk_ids'][0] in ids:
+                    ref=f'R{i}[{ids.index(args["chunk_ids"][0])}]';break
+        else:
+            for i,(name,value) in reversed(list(enumerate(calls))):
+                if name==action and normalize_args(action,value)==normalize_args(action,args):ref=f'C{i}';break
+        if ref is None:raise ValueError('Candidate lacks a public-context reference')
+        refs[action].append(ref)
+    return refs
+
+
 def selection_messages(messages, options):
+    refs=candidate_refs(messages,options)
     return copy.deepcopy(messages)+[{'role':'user','content':SELECT+'\n'.join(
-        f'{chr(65+i)}: {canonical(o)}' for i,o in enumerate(options))}]
+        a+': '+','.join(refs[a]) for a in ACTIONS[:-1] if refs[a])}]
 
 
 def argument_schema(action, trajectory):
@@ -110,6 +140,42 @@ class StrictReader(TextOnlyReader):
             False, len(self.tokenizer))
         self.checkpoint = None
         self.readout_verified = False
+
+    def generate_native(self, messages, trajectory, deadline=float('inf')):
+        """Ordinary greedy name+arguments/final generation; no grammar-mask tax."""
+        start=time.perf_counter();torch=self.torch
+        if start>=deadline:raise TimeoutError('Budget before native call')
+        inputs=self.prepare(messages,TOOLS)
+        if inputs['input_ids'].shape[1]+self.config.max_output_tokens>self.config.context_limit:
+            raise ValueError('Native context exceeds budget')
+        self._sync();tick=time.perf_counter();generated=[];mask=inputs['attention_mask']
+        with torch.inference_mode():
+            output=self.model(**inputs,use_cache=True,logits_to_keep=1)
+            self._sync();prefill=time.perf_counter()-tick;tick=time.perf_counter()
+            for _ in range(self.config.max_output_tokens):
+                if time.perf_counter()>=deadline:raise TimeoutError('Budget during native decode')
+                tid=int(output.logits[0,-1].argmax().item());generated.append(tid)
+                if tid in self.stop_ids:break
+                token=torch.tensor([[tid]],device=self.model.device);mask=torch.cat([mask,torch.ones_like(token)],-1)
+                output=self.model(input_ids=token,attention_mask=mask,past_key_values=output.past_key_values,
+                                  use_cache=True,logits_to_keep=1)
+        self._sync();text=self.tokenizer.decode(generated,skip_special_tokens=True).strip()
+        usage={'prompt_tokens':int(inputs['input_ids'].shape[1]),'completion_tokens':len(generated),
+            'generated_tokens':len(generated),'prefill_seconds':prefill,'decode_seconds':time.perf_counter()-tick,
+            'seconds':time.perf_counter()-start,'raw_json':text,'mode':'native_unconstrained',
+            'full_prefill_count':1,'cache_reused':False,'grammar_changed_tokens':0,
+            'finish_reason':'stop' if generated and generated[-1] in self.stop_ids else 'length'}
+        try:
+            if usage['finish_reason']!='stop':raise ValueError('truncated_native_generation')
+            if any(t in text for t in ['<think>','<|channel>thought','<|think|>']):raise ValueError('Thinking output')
+            if text.startswith('<tool_call>') and text.endswith('</tool_call>'):
+                value=json.loads(text[len('<tool_call>'):-len('</tool_call>')].strip())
+                validate(value,native_schema(trajectory))
+                value={'action':value['name'],'arguments':value['arguments']}
+            else:
+                value=json.loads(text);validate(value,FINAL_SCHEMA);value={'action':'FINAL','final':value}
+            return value,usage,None
+        except Exception as error:return None,usage,type(error).__name__+': '+str(error)
 
     def generate_schema(self, messages, schema, mode, instruction, deadline=float('inf')):
         from lmformatenforcer import JsonSchemaParser, TokenEnforcer
@@ -206,32 +272,25 @@ class StrictReader(TextOnlyReader):
         if inputs['input_ids'].shape[1]+1 > self.config.context_limit:
             raise ValueError('Selection context exceeds fixed budget')
         self._sync(); tick = time.perf_counter()
+        if mode not in {'head','teacher','probe'}:raise ValueError('Unsupported capture mode')
         with torch.inference_mode():
-            if mode == 'first_token':
-                captured=[]
-                hook=self.model.model.norm.register_forward_hook(lambda mod,args,out:captured.append(out[:,-1].detach().clone()))
-                try:
-                    output=self.model(**inputs,use_cache=True,logits_to_keep=1)
-                finally:hook.remove()
-                feature=captured[0][0].float().cpu()
-                logits=output.logits[0,-1,self.label_ids[:len(options)]].float()
-                choice=options[int(logits.argmax().item())]
+            output=self.model.model(**inputs,use_cache=True,return_dict=True)
+            feature_gpu=output.last_hidden_state[0,-1].float()
+            feature=None
+            if mode=='head':
+                ck=self.checkpoint
+                if ck is None:raise ValueError('No trained checkpoint loaded')
+                scores=ck['action_weight']@feature_gpu+ck['action_bias']
+                legal=torch.tensor([any(o['action']==a for o in options) for a in ACTIONS],device=scores.device)
+                ai=scores.masked_fill(~legal,-torch.inf).argmax()
+                logits=(ck['slot_weight']@feature_gpu)+ck['slot_bias']
+                mask=torch.tensor([[j<len(slots_for(options,a)) for j in range(5)] for a in ACTIONS[:-1]],device=scores.device)
+                si=logits.masked_fill(~mask,-torch.inf).argmax(-1)
+                chosen=torch.stack([ai,si[ai.clamp(max=2)]]).cpu().tolist()
+                action=ACTIONS[chosen[0]];slots=slots_for(options,action)
+                choice=slots[0 if action=='FINAL' else chosen[1]]
             else:
-                output=self.model.model(**inputs,use_cache=True,return_dict=True)
-                feature=output.last_hidden_state[0,-1].float().cpu()
-                if mode=='head':
-                    ck=self.checkpoint
-                    if ck is None:raise ValueError('No trained checkpoint loaded')
-                    feature_gpu=feature.to(self.model.device)
-                    scores=ck['action_weight']@feature_gpu+ck['action_bias']
-                    legal=torch.tensor([any(o['action']==a for o in options) for a in ACTIONS],device=scores.device)
-                    action_index=int(scores.masked_fill(~legal,-torch.inf).argmax().item())
-                    action=ACTIONS[action_index]; slots=slots_for(options,action)
-                    if action=='FINAL':choice=slots[0]
-                    else:
-                        logits=ck['slot_weight'][action_index]@feature_gpu+ck['slot_bias'][action_index]
-                        choice=slots[int(logits[:len(slots)].argmax().item())]
-                else:choice=None
+                feature=feature_gpu.cpu();choice=None
             self.pending={'past':output.past_key_values,'mask':inputs['attention_mask'],
                           'ids':inputs['input_ids'][0].tolist()}
             if mode=='teacher' and not self.readout_verified:
@@ -244,16 +303,16 @@ class StrictReader(TextOnlyReader):
                 extra=int(inputs['input_ids'].shape[1])
             else:extra=0
         self._sync()
-        return choice, feature.numpy().copy(), {
+        return choice, feature.numpy().copy() if feature is not None else None, {
             'prompt_tokens':int(inputs['input_ids'].shape[1])+extra,'completion_tokens':0,
             'prefill_seconds':time.perf_counter()-tick,'seconds':time.perf_counter()-start,
-            'mode':mode,'vocab_projection':mode=='first_token','readout_extra_check_tokens':extra,
+            'mode':mode,'vocab_projection':False,'feature_cpu_copy':mode!='head','readout_extra_check_tokens':extra,
             'full_prefill_count':1+int(extra>0),'cache_retained':True,
             'messages_sha256':hashlib.sha256(canonical(request).encode()).hexdigest()}
 
     def continue_cached(self, action, trajectory, deadline=float('inf')):
         """One batched forced prefix + cached decode, never a second full prefill."""
-        from lmformatenforcer import JsonSchemaParser,TokenEnforcer,SequenceParser,StringParser
+        from lmformatenforcer import JsonSchemaParser,TokenEnforcer
         torch=self.torch; start=time.perf_counter()
         pending=getattr(self,'pending',None);self.pending=None
         if pending is None:raise RuntimeError('Missing/consumed decision KV cache')
@@ -264,15 +323,13 @@ class StrictReader(TextOnlyReader):
         prefix=argprefix if action=='FINAL' else '<tool_call>\n{"name":'+json.dumps(action)+',"arguments":'+argprefix
         parser=JsonSchemaParser(schema)
         for char in argprefix:parser=parser.add_character(char)
-        suffix='' if action=='FINAL' else '}\n</tool_call>'
-        if suffix:parser=SequenceParser([parser,StringParser(suffix)])
         enforcer=TokenEnforcer(self.grammar_data,parser)
         ids=self.tokenizer.encode(prefix,add_special_tokens=False)
         token=torch.tensor([ids],device=self.model.device)
         mask=torch.cat([pending['mask'],torch.ones_like(token)],-1)
         if mask.shape[1]+self.config.max_output_tokens>self.config.context_limit:
             raise ValueError('Cached continuation exceeds fixed context')
-        sequence=pending['ids']+ids;generated=[];constrained=0
+        sequence=pending['ids']+ids;generated=[];constrained=0;complete=False
         self._sync();tick=time.perf_counter()
         with torch.inference_mode():
             output=self.model(input_ids=token,attention_mask=mask,past_key_values=pending['past'],
@@ -286,19 +343,24 @@ class StrictReader(TextOnlyReader):
                 constrained+=int(tid!=int(logits.argmax().item()))
                 generated.append(tid);sequence.append(tid)
                 if tid in self.stop_ids:break
+                try:
+                    json.loads(argprefix+self.tokenizer.decode(generated,skip_special_tokens=True))
+                    complete=True;break
+                except json.JSONDecodeError:pass
                 token=torch.tensor([[tid]],device=self.model.device);mask=torch.cat([mask,torch.ones_like(token)],-1)
                 output=self.model(input_ids=token,attention_mask=mask,past_key_values=output.past_key_values,
                                   use_cache=True,logits_to_keep=1)
         self._sync();tail=self.tokenizer.decode(generated,skip_special_tokens=True).strip()
         text=argprefix+tail
-        if suffix and text.endswith(suffix):text=text[:-len(suffix)].rstrip()
         usage={'prompt_tokens':len(ids),'completion_tokens':len(generated),'generated_tokens':len(generated),
             'forced_prefix_tokens':len(ids),'prefix_seconds':prefix_seconds,'decode_seconds':time.perf_counter()-tick,
             'seconds':time.perf_counter()-start,'full_prefill_count':0,'cache_reused':True,
+            'runtime_assembles_wrapper':True,
             'grammar_changed_tokens':constrained,'raw_json':text,
-            'finish_reason':'stop' if generated and generated[-1] in self.stop_ids else 'length'}
+            'finish_reason':'schema_complete' if complete else ('stop' if generated and generated[-1] in self.stop_ids else 'length')}
         try:
-            if usage['finish_reason']!='stop':raise ValueError('truncated_cached_generation')
+            if usage['finish_reason'] not in {'stop','schema_complete'}:raise ValueError('truncated_cached_generation')
+            if any(t in text for t in ['<think>','<|channel>thought','<|think|>']):raise ValueError('Thinking output')
             value=json.loads(text);validate(value,schema)
             return value,usage,None
         except Exception as error:return None,usage,type(error).__name__+': '+str(error)
@@ -325,7 +387,7 @@ def run_episode(question, rows, vectors, embedder, reader, prompt, selector,
                 choice,feature,usage=reader.capture(messages,options,selector,deadline)
                 calls.append({'kind':'student_capture' if selector=='teacher' else 'decision','usage':usage})
             if selector in {'teacher','native'}:
-                decision,usage,failure=reader.generate_schema(messages,native_schema(trajectory),'native','',deadline)
+                decision,usage,failure=reader.generate_native(messages,trajectory,deadline)
                 calls.append({'kind':'teacher_decision' if selector=='teacher' else 'native_combined','usage':usage})
                 if failure:errors.append('teacher_format: '+failure);break
                 action=decision['action'];args=decision.get('arguments')
