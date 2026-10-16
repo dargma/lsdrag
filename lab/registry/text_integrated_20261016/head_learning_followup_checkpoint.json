@@ -23,5 +23,22 @@
     "노출된 dev10에 튜닝 후 새 heldout으로 품질 검증"
   ],
   "scope": "기존 결과 보존. RL·step 압축 아이디어는 KEEP. 추가 GPU 실행/학습/프롬프트 변경 없음.",
-  "qualitative_report": "lab/reports/text_integrated_20261016/v5_answer_qualitative_audit.json"
+  "qualitative_report": "lab/reports/text_integrated_20261016/v5_answer_qualitative_audit.json",
+  "keyword_generation_clarification": {
+    "saved_utc": "2026-10-16T15:22:05.474829+00:00",
+    "observed_native": [
+      "Gong Beibi",
+      "born",
+      "military expedition"
+    ],
+    "observed_head": [
+      "Gong Beibi birth province military expedition leader"
+    ],
+    "generator": "Both conditions use the LLM to generate argument contents; the action head did not concatenate keywords. Native LLM split terms in this case; the search handler does not split them.",
+    "handler": "Each keywords array item is matched as a complete literal substring, case-insensitively. Separate terms can match independently; the unmatched long phrase returned no results.",
+    "decoding": "Both use greedy decoding, so sampling randomness is not the explanation. Native generates the envelope; head forces a compact prefix and constrains JSON suffix generation.",
+    "causal_limit": "Prefix and JSON constraints are candidate mechanisms, not individually verified causes. Exact-prefix controlled comparison has not been executed.",
+    "gt_clarification": "Dataset GT supplies answer/evidence, not a unique gold tool trajectory; native actions are a comparison policy.",
+    "next_diagnostic_only": "Compare native and cached argument generation at identical frozen history, tool and exact native prefix; no experiment launched by this save request."
+  }
 }

@@ -1,3 +1,7 @@
+## 2026-10-16 — 검색 인자 차이 설명 보존
+
+Gong Beibi 사례: native LLM이 [Gong Beibi, born, military expedition]으로 나눠 생성했고, head 경로에서도 인자 내용은 LLM이 생성했지만 긴 문자열 하나가 됨. head가 검색어를 합친 것이 아님. keyword handler는 배열 원소별 완전한 문자열 부분일치이며 자동 분할하지 않아 긴 미일치 문구는 0건. 양쪽 greedy이므로 샘플링 랜덤성 설명은 부적절. native의 자체 생성 envelope와 head의 강제 compact prefix/JSON 제약 차이는 후보 원인이며 각각의 인과효과는 미검증. 같은 관측·툴·native prefix를 맞춘 비교가 다음 진단 후보일 뿐 실행하지 않음. 데이터셋 GT는 정답/근거이며 유일한 툴 경로가 아님. 상태와 범위 변경 없이 저장만 수행. 상세: `lab/registry/text_integrated_20261016/head_learning_followup_checkpoint.json`.
+
 ## 2026-10-16 — 사용자 요청: 해석과 현황 저장
 
 정성평가와 후속 해석을 `lab/registry/text_integrated_20261016/head_learning_followup_checkpoint.json`에 보존. head 학습 개선은 툴 선택/종료 오류의 개선 후보이나, LLM 인자 생성 차이 및 최종 reader 관계 해석 오류까지 해결한다고 가정하지 않는다. 32문항111상태의 일반화 부족은 미검증 가설. 다음 진단 후보는 native 관측/툴을 고정한 인자 생성 경로 비교와 동일 관측에서 행동 head 평가를 분리하는 것. 이후 학습 확대 시 실패 복구 상태 포함을 검토하되 아직 수행하지 않음. 현재 fixed train replay15/15 기능 확인, autonomous dev10 native F1 .350 vs head .1286 품질 NoGo 유지. 이번 요청은 저장만이며 새 실험·학습·RL·step 압축을 시작하지 않음.
