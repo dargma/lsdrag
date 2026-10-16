@@ -1,3 +1,19 @@
+# Compact integrated pilot — compact_teacher32
+
+{"phase": "compact_teacher32", "pid": 68936, "run": "/content/local_fast/lsdrag-text-v1/results/text_integrated_20261016_v5_fast_only", "updated_epoch": 1792161665.6035497, "worker_seconds": 22.00882870499936, "speed_gate_passed": true, "integrated_speed_gate_passed": false, "retained_cost_policies": ["always_generate"], "teacher_target": 32}
+
+# Compact integrated pilot — compact_native_cost_screen
+
+{"phase": "compact_native_cost_screen", "pid": 68936, "run": "/content/local_fast/lsdrag-text-v1/results/text_integrated_20261016_v5_fast_only", "updated_epoch": 1792161665.6026843, "worker_seconds": 22.007963405999362, "teacher_questions": 4, "natural_states": 15, "trained_head": false}
+
+# Compact integrated pilot — compact_train4_audit
+
+{"phase": "compact_train4_audit", "pid": 68936, "run": "/content/local_fast/lsdrag-text-v1/results/text_integrated_20261016_v5_fast_only", "updated_epoch": 1792161665.5982955, "worker_seconds": 22.003574798000045, "teacher_collection_started": true, "teacher_target": 4}
+
+# Compact integrated pilot — compact_loading
+
+{"phase": "compact_loading", "pid": 68936, "run": "/content/local_fast/lsdrag-text-v1/results/text_integrated_20261016_v5_fast_only", "updated_epoch": 1792161644.3290744, "worker_seconds": 0.7343543790002514, "contract": "5b64658a2608f883599dbfb36be3758d4f28cc0de63c532ec11f76117a3cecce", "teacher_collection_started": false}
+
 # Advance only passing v5 policy — teacher32 authorized after cost prerequisite
 
 V5 runtime cost screen completed45 state-repeats on4train qids, no format errors. Integrated aggregate1.692x [1.574,1.785], generated1.683x, reuse8.800x, FINAL1.105x [0.967,1.174]; integrated gate NOT passed because FINAL uncertain. Always-generate aggregate1.713x [1.634,1.830] and all generate/reuse-state/FINAL strata lower95% bound>1: this configuration passed. Both use the exact same FINAL implementation, but independent shared-GPU schedules produced different observations; do not select the fast FINAL samples or call integrated passed. These remain oracle-action cost-feasibility observations, not learned policy, same-answer guarantees or controlled latency.

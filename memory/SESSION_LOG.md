@@ -325,3 +325,25 @@ V5 runtime cost screen completed45 state-repeats on4train qids, no format errors
 Correct orchestration to proceed with whichever policy passed instead of requiring integrated pass to block all policies. Continue ONLY cached always-generate to teacher32/48 and native-vs-learned-action-head evaluation. Argument heads may be fit using the same natural labels, but do not deploy/evaluate reuse policy without passing its gate; no integrated-policy QA success claim. No runtime/prompt/model/data/candidate/label change. A new run identity verifies every parent manifest field and runtime source hash (only orchestrator script may differ), imports exact local teacher4/index bytes with SHA256 ledger, and retains original feature contracts. No old Q3/v4 labels or heldout data are reused. This is a continuation of the unchanged v5 profile, not a new prompt/seed sweep.
 
 Next command: `PYTHONPATH=src /content/local_fast/lsdrag-text-v1/experiment-env/bin/python -u scripts/run_text_integrated_pilot.py --output /content/local_fast/lsdrag-text-v1/results/text_integrated_20261016_v5_fast_only --verified-parent /content/local_fast/lsdrag-text-v1/results/text_integrated_20261016_implicit_v5 --minutes 49`. Prior worker421.7s plus smokes reserved within total60min. Existing v5 end state (policy-gate NoGo) is preserved, while the new run explicitly retains only the passed ablation. Coverage rules unchanged. Dev10 not inspected.
+
+# Compact integrated pilot — compact_loading
+
+{"phase": "compact_loading", "pid": 68936, "run": "/content/local_fast/lsdrag-text-v1/results/text_integrated_20261016_v5_fast_only", "updated_epoch": 1792161644.3290744, "worker_seconds": 0.7343543790002514, "contract": "5b64658a2608f883599dbfb36be3758d4f28cc0de63c532ec11f76117a3cecce", "teacher_collection_started": false}
+
+
+# Compact integrated pilot — compact_train4_audit
+
+{"phase": "compact_train4_audit", "pid": 68936, "run": "/content/local_fast/lsdrag-text-v1/results/text_integrated_20261016_v5_fast_only", "updated_epoch": 1792161665.5982955, "worker_seconds": 22.003574798000045, "teacher_collection_started": true, "teacher_target": 4}
+
+
+# Compact integrated pilot — compact_native_cost_screen
+
+{"phase": "compact_native_cost_screen", "pid": 68936, "run": "/content/local_fast/lsdrag-text-v1/results/text_integrated_20261016_v5_fast_only", "updated_epoch": 1792161665.6026843, "worker_seconds": 22.007963405999362, "teacher_questions": 4, "natural_states": 15, "trained_head": false}
+
+
+# Compact integrated pilot — compact_teacher32
+
+{"phase": "compact_teacher32", "pid": 68936, "run": "/content/local_fast/lsdrag-text-v1/results/text_integrated_20261016_v5_fast_only", "updated_epoch": 1792161665.6035497, "worker_seconds": 22.00882870499936, "speed_gate_passed": true, "integrated_speed_gate_passed": false, "retained_cost_policies": ["always_generate"], "teacher_target": 32}
+
+
+Verified teacher32 collection active: PID68936/session26837, source7ff891a; runtime sources identical to467f89b except passing-policy orchestration. Parent4 teacher/index bytes validated and SHA256 ledger saved; new teacher qids5 onward collecting locally. Native and always-generate learned-head conditions only; integrated policy remains gated out. Log `/content/local_fast/lsdrag-text-v1/logs/integrated_v5_fast_only.log`. Synthetic CPU normalization-fold functional check passed (not experiment training).
