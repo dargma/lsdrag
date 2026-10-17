@@ -1,5 +1,5 @@
 {
-  "phase": "improvement_v2_stage1_complete",
+  "phase": "improvement_v3_plan_saved_not_started",
   "updated_utc": "2026-10-16T16:13:04.401948+00:00",
   "protocol": "docs/JEV_TEXT_INTEGRATED_EXECUTION_20261016.md",
   "protocol_sha256": "0adecb3e30136b974fa1ecfffe74282df019f5ccbe0ece7fdbb6547fa486bc18",
@@ -35,7 +35,7 @@
   "teacher_collection_started": true,
   "training_completed": true,
   "evaluation_completed": true,
-  "next": "Review stage1 evidence before stage2",
+  "next": "Review completed stage1 parity/generation evidence, then implement merged action/read profile; no auto launch.",
   "previous_multimodal_checkpoint_historical_only": {
     "phase": "native2_review_required",
     "run": "/content/local_fast/lsdrag-head-v14/results/native_distillation_12b_20261015",
@@ -217,9 +217,9 @@
   "interpretation_checkpoint": "lab/registry/text_integrated_20261016/head_learning_followup_checkpoint.json",
   "keyword_argument_clarification_saved": true,
   "improvement_plan": {
-    "path": "lab/registry/text_integrated_20261016/improvement_experiment_plan_v2.json",
-    "review": "lab/reports/text_integrated_20261016/astra_improvement_plan_review.json",
-    "status": "astra_reviewed_revised_not_started"
+    "path": "lab/registry/text_integrated_20261016/improvement_experiment_plan_v3.json",
+    "document": "docs/JEV_TEXT_INTEGRATED_IMPROVEMENT_V3_20261017.md",
+    "status": "user_approved_saved_not_started"
   },
   "gpu_watch": {
     "enabled": false,

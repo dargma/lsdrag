@@ -1,3 +1,7 @@
+## 2026-10-17 — 개선계획v3 승인·저장: 행동/read head 통합
+
+사용자 “그래 계획 다시 출력하고 저장 배업 git push”. 최신계획 docs/JEV_TEXT_INTEGRATED_IMPROVEMENT_V3_20261017.md 및 lab/registry/text_integrated_20261016/improvement_experiment_plan_v3.json. 순서:1 생성경로진단검토 →2 단일prefill action+read-slot 통합학습(train24/val8),동일checkpoint always-generate/read-selection 비교 →3 설정동결 fresh20 native/primary. 검색인자는항상생성. decision-only/RL/step압축 제외. 이번에는계획·memory저장만; 새실험시작없음/자동실행해제유지. 기존stage1 24상태완료,parity검토pending; 통합학습·평가미실행.
+
 ## 2026-10-17 — decision-only 제안 제외 및 기존 계획 출력 요청
 
 사용자 “decision model실험은 없는것으로”, 이어 “계획했던실험 출력”. 직전 논의한 생성 없는decision-only 별도 실험은 채택하지 않음. 기존개선v2 계획과 구분하여 제시; 이번 턴 새GPU실험 시작 없음. stage1은이미24상태 완료,2~4미실행,parity 검토gate 미통과. 종료된one-shot launcher외 남은유휴observer289248 중지 및STOP작성. 기존모델/데이터/결과 보존.
