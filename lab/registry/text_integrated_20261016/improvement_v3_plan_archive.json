@@ -1,0 +1,7 @@
+{
+  "plan_commit": "bffed375be2b80e7ae40263d8209cba09b3e2479",
+  "archive": "/content/drive/MyDrive/lsdrag-backups/20261017/improvement_v3_plan_bffed37.tar.gz",
+  "sha256": "c6b7f11a3df2065b8a4d00992293e014675a41d1a78c3da800c01e528d4f768f",
+  "scope": "tracked code, plan and memory only; no model weights or raw dataset",
+  "experiment_started": false
+}
