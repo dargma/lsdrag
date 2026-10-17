@@ -1,3 +1,9 @@
+## 2026-10-17 — 개선v2 stage1 완료
+
+{"completed_states": 24, "planned_states": 24, "worker_seconds": 79.79400012300175, "all_parity_explained": false, "errors": 0, "phase": "stage1_complete", "pid": null, "exact_off_token_equal": 24, "exact_on_match": 24, "compact_match": 17, "next": "Review token divergence and schema failures before stage2; no automatic quality claim."}
+
+다음: token/cache/schema 증거 검토 후stage2. stage2/3/4 미실행.
+
 실프로세스 확인: launcher PID295318, observer PID289248. launcher 대기 상태 확인 완료. STOP 경로 `/content/local_fast/lsdrag-recovery/20261017/STOP`은 기동 전 취소용. 호스트 살아있는 동안만 지속.
 
 현재 실행 준비: `python scripts/launch_restored_improvement.py`. 실제15분 idle 관측 후 `PYTHONPATH=src /content/local_fast/lsdrag-text-v1/experiment-env/bin/python -u scripts/diagnose_text_generation_paths.py --output /content/local_fast/lsdrag-text-v1/results/improvement_v2_stage1_20261017 --minutes 15`를1회 실행. stage1완료 후 자동보고서/Drive해시백업/Git push, stage2는 parity/생성경로 결과 검토 gate후 진행. 현CPU검사18통과.

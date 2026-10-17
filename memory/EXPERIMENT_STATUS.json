@@ -1,5 +1,5 @@
 {
-  "phase": "restored_waiting_gpu_idle_15_minutes",
+  "phase": "improvement_v2_stage1_complete",
   "updated_utc": "2026-10-16T16:13:04.401948+00:00",
   "protocol": "docs/JEV_TEXT_INTEGRATED_EXECUTION_20261016.md",
   "protocol_sha256": "0adecb3e30136b974fa1ecfffe74282df019f5ccbe0ece7fdbb6547fa486bc18",
@@ -35,7 +35,7 @@
   "teacher_collection_started": true,
   "training_completed": true,
   "evaluation_completed": true,
-  "next": "Run improvement v2 stage1 after 900s continuously observed idle and dependency checks.",
+  "next": "Review stage1 evidence before stage2",
   "previous_multimodal_checkpoint_historical_only": {
     "phase": "native2_review_required",
     "run": "/content/local_fast/lsdrag-head-v14/results/native_distillation_12b_20261015",
@@ -241,5 +241,18 @@
     "since_utc": "2026-10-16T16:06:08.733499+00:00",
     "resumed_utc": "2026-10-16T16:13:04.401948+00:00",
     "resume_condition": "30-minute checks followed by >=300 seconds observed idle"
+  },
+  "improvement_stage1": {
+    "completed_states": 24,
+    "planned_states": 24,
+    "worker_seconds": 79.79400012300175,
+    "all_parity_explained": false,
+    "errors": 0,
+    "phase": "stage1_complete",
+    "pid": null,
+    "exact_off_token_equal": 24,
+    "exact_on_match": 24,
+    "compact_match": 17,
+    "next": "Review token divergence and schema failures before stage2; no automatic quality claim."
   }
 }

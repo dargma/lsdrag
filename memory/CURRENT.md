@@ -1,3 +1,9 @@
+## 2026-10-17 — 개선v2 stage1 완료
+
+{"completed_states": 24, "planned_states": 24, "worker_seconds": 79.79400012300175, "all_parity_explained": false, "errors": 0, "phase": "stage1_complete", "pid": null, "exact_off_token_equal": 24, "exact_on_match": 24, "compact_match": 17, "next": "Review token divergence and schema failures before stage2; no automatic quality claim."}
+
+다음: token/cache/schema 증거 검토 후stage2. stage2/3/4 미실행.
+
 ## 2026-10-17 — 최신 Git/local-fast 복원 및15분 유휴 실행 승인
 
 Git021ddbb가 오래된 Drive보다 최신. 개선계획v2가 현재 다음 실험이며 기존teacher32/head/dev10 품질NoGo는 보존. Qwen4B13파일,embedding15파일,MuSiQue train/dev 해시검증,teacher32 NPZ/JSON와head 최종archive 복원. provenance:lab/registry/recovery_20261017/recovery.json. 사용자 최신지시:GPU15분 이상 연속 유휴 확인 즉시 계획v2 진행. 이전5분/30분 예약 및 오래된PID는 적용하지 않음. 현GPU GPU-619f1d71-c0b4-21cf-abcd-4a50a8549f3f;30초 관측,900초/오류·busy시 재설정. status:/content/local_fast/lsdrag-recovery/20261017/idle_status.json. 현재 GPU실험 미시작. train24/validation8 및train8진단 split 선고정. stage1 최대24state token/cache/native-prefix 비교 준비;검증 후 실행. 다른 작업 종료 금지.
