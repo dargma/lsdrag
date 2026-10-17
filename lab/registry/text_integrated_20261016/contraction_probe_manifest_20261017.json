@@ -1,0 +1,338 @@
+{
+  "profile": "text_integrated_20261016/contraction_probe_20261017",
+  "states": [
+    {
+      "group": "train",
+      "qid": "2hop__426842_4037",
+      "loop": 1,
+      "source_sha256": "fe67647676b693bfd03aad5770f08f2b7e65697d8fa5bc8668d6999a4a6f62d1",
+      "source": "/content/local_fast/lsdrag-text-v1/results/text_integrated_20261016_v5_fast_only/teacher/2hop__426842_4037.json",
+      "messages_sha256": "08f89bea7f491127beb573582922aeb2cf170ff9015fe22eaf42e753fdc87426",
+      "history_sha256": "5b3797250aa3465b94dadd8b33b4b5cdcf2b3fc98717c63d9aff27a1d117b64c"
+    },
+    {
+      "group": "train",
+      "qid": "2hop__247148_838537",
+      "loop": 1,
+      "source_sha256": "fc48e8e2588f910c7e35366f04cb002d9424ecdfee2f635d6f3a4ee92bec39e5",
+      "source": "/content/local_fast/lsdrag-text-v1/results/text_integrated_20261016_v5_fast_only/teacher/2hop__247148_838537.json",
+      "messages_sha256": "f642d2522866652dc0ec3bc9246010ee377548632e5762310ceb53a3d6756751",
+      "history_sha256": "abe950662334009d94e93655bde91334903d0208975994299fd90d0b835e6126"
+    },
+    {
+      "group": "train",
+      "qid": "2hop__82744_23249",
+      "loop": 1,
+      "source_sha256": "6124a5b2fd1706cf123cbfb2fa78a3891f02fdb286fc78f6954b2d3d7c1ed2d7",
+      "source": "/content/local_fast/lsdrag-text-v1/results/text_integrated_20261016_v5_fast_only/teacher/2hop__82744_23249.json",
+      "messages_sha256": "12c68262d65a8e0d7e7a9a144d1cc38a335ddc1730120548c395847cfa83c20e",
+      "history_sha256": "24ace128dbf29c154b7a9a666eca99c9e65ae522a29e87a1572bcd11793735bd"
+    },
+    {
+      "group": "train",
+      "qid": "2hop__607351_58450",
+      "loop": 1,
+      "source_sha256": "118504fa705a4c3424d54135dd4db83250ed99965e9d5404e685b4419806dec9",
+      "source": "/content/local_fast/lsdrag-text-v1/results/text_integrated_20261016_v5_fast_only/teacher/2hop__607351_58450.json",
+      "messages_sha256": "14245585efc1ed1906654343e0b4425870df41f18d5aa3f7d6e415c6f5030c67",
+      "history_sha256": "47e098e4100110c47e563b59dcccf7e18c8e8f8c56d747d9ea2d709d2d991c26"
+    },
+    {
+      "group": "train",
+      "qid": "2hop__487591_7672",
+      "loop": 1,
+      "source_sha256": "c12d598ffcf503c8e3da392afba26f20683f7b3ca1af94d3b7bcad3acb4b33ac",
+      "source": "/content/local_fast/lsdrag-text-v1/results/text_integrated_20261016_v5_fast_only/teacher/2hop__487591_7672.json",
+      "messages_sha256": "cb716579f0605631e70f6131da576ba0c35a6f6870c1fdbbcb0a6b6666af1a97",
+      "history_sha256": "b0c1d67aa3987f9a129106e7d6f61fbfc164e2ffe33a80271df4eaa7cdc9c439"
+    },
+    {
+      "group": "train",
+      "qid": "2hop__746150_556534",
+      "loop": 1,
+      "source_sha256": "dd12b1b979775ab3f5af6811a331d170e95e6ada91c98354f591a163a46337cb",
+      "source": "/content/local_fast/lsdrag-text-v1/results/text_integrated_20261016_v5_fast_only/teacher/2hop__746150_556534.json",
+      "messages_sha256": "9f9903b04dcb4cb80c7bb685574dd828bc574926f9c9fb6897c4575df006388f",
+      "history_sha256": "910200bf7fd07f1531dbef6f5c20ebb188fd46374f382efb9427b676b67487d4"
+    },
+    {
+      "group": "train",
+      "qid": "2hop__763486_83697",
+      "loop": 1,
+      "source_sha256": "4f729fd4532656ccbd64049cf1f47eff3b941020f2c7e97267359b12a0258092",
+      "source": "/content/local_fast/lsdrag-text-v1/results/text_integrated_20261016_v5_fast_only/teacher/2hop__763486_83697.json",
+      "messages_sha256": "bd196bda9bdd47cbc0a27ba3dbe6b9922ce3bf633f8aef0ae32b8704ec26fdae",
+      "history_sha256": "271cece04f539b5edfbc4b0bddb1f3a0d14587368e23ca61134425e9707ac129"
+    },
+    {
+      "group": "train",
+      "qid": "2hop__357497_74309",
+      "loop": 1,
+      "source_sha256": "1b8632de77ceb9f0f21b8fc036bc3a5f8690071518777cfc6f410d6555ed1bff",
+      "source": "/content/local_fast/lsdrag-text-v1/results/text_integrated_20261016_v5_fast_only/teacher/2hop__357497_74309.json",
+      "messages_sha256": "be7a9246d796be36a171b46fc51dc2c2380d33e83a532858536cb1df3963ec58",
+      "history_sha256": "27e964eeefd2cee6762513791a3a8141ba4d1fd98b3263f80544e6277b36bf87"
+    },
+    {
+      "group": "train",
+      "qid": "2hop__592717_181429",
+      "loop": 1,
+      "source_sha256": "f964d9b42a45a0391bc9285ffe736b9353b7f533dcd7928e1ab5cdf6d699ed69",
+      "source": "/content/local_fast/lsdrag-text-v1/results/text_integrated_20261016_v5_fast_only/teacher/2hop__592717_181429.json",
+      "messages_sha256": "9d29495827e23e735e73700c371fa24bcf15f92138469ec0de7900c4219727fb",
+      "history_sha256": "045a8be2c1115c9ea2c465e3d5d268b39c718e59ae1c3571c41bcf12bd4959bf"
+    },
+    {
+      "group": "train",
+      "qid": "2hop__22215_22229",
+      "loop": 1,
+      "source_sha256": "06e3e740e19e0ab930b7cc014cfabfecc1395e0384b5d4204e738023d5e9c3e3",
+      "source": "/content/local_fast/lsdrag-text-v1/results/text_integrated_20261016_v5_fast_only/teacher/2hop__22215_22229.json",
+      "messages_sha256": "1d8179129772a35959a0a8dd06f59dde502fcdd9c0917a86eb0cb46d6684a5da",
+      "history_sha256": "bddf381343a0b5c507295f713abd563155abc5a1b60b2b7aa52d258da2e1775e"
+    },
+    {
+      "group": "train",
+      "qid": "2hop__38200_430",
+      "loop": 1,
+      "source_sha256": "0a32898d1ca6b0d1b4faf845df7e0f04408cbd400672693ae8f1c0e18988db77",
+      "source": "/content/local_fast/lsdrag-text-v1/results/text_integrated_20261016_v5_fast_only/teacher/2hop__38200_430.json",
+      "messages_sha256": "28612cfda6d49c4c89cc32cc90d8e8c517358d764ed89b1c733fa01b61cdb5f8",
+      "history_sha256": "17ef3bc26598628f3984a474760cf07ce042f5a8ba6759c9853c35ac38b86480"
+    },
+    {
+      "group": "train",
+      "qid": "2hop__70082_2578",
+      "loop": 1,
+      "source_sha256": "5550ef9d81e2212eaa9471641c6729d46e8c44a799bd03bfb39afcabc78db4d2",
+      "source": "/content/local_fast/lsdrag-text-v1/results/text_integrated_20261016_v5_fast_only/teacher/2hop__70082_2578.json",
+      "messages_sha256": "df0bf2474ccfb7a36948a052ad80d393888f2d37609a73d9e67e636f85068d38",
+      "history_sha256": "795ab1f86942c5acebe85dac0405ddc165325f8233e9766d87279461eacbf1b1"
+    },
+    {
+      "group": "train",
+      "qid": "2hop__408076_99606",
+      "loop": 1,
+      "source_sha256": "39af88ffda28c9072a8335024643f1145e2397e75f6a36bf65d2815334fc6848",
+      "source": "/content/local_fast/lsdrag-text-v1/results/text_integrated_20261016_v5_fast_only/teacher/2hop__408076_99606.json",
+      "messages_sha256": "a9885f893a3dbbd9bfb76032f4964d94f9a226c1024ed58fe513c067e35a874b",
+      "history_sha256": "66d19a9efe18853e84c4db516e56483d5049149da1f6f5b31b135716f5379cb6"
+    },
+    {
+      "group": "train",
+      "qid": "2hop__103724_90561",
+      "loop": 1,
+      "source_sha256": "d98bd619835f21411d0e84b211639adc6a7f1e1ac350fd78e050b85524436540",
+      "source": "/content/local_fast/lsdrag-text-v1/results/text_integrated_20261016_v5_fast_only/teacher/2hop__103724_90561.json",
+      "messages_sha256": "cfe1cbf014330a4a5e04eff926598a17c9f2bc2b5d07dcc61c6078c90a7eff1d",
+      "history_sha256": "558fc035de276e03c5fcef6c36c889722736833eb274611b4bc9012a7f49ea96"
+    },
+    {
+      "group": "train",
+      "qid": "2hop__676157_44637",
+      "loop": 1,
+      "source_sha256": "899682a7fa30071c58f93772626e4c9df46b2a919086bd098b61ed54858e5778",
+      "source": "/content/local_fast/lsdrag-text-v1/results/text_integrated_20261016_v5_fast_only/teacher/2hop__676157_44637.json",
+      "messages_sha256": "c4ffdd10351b24da30f1bd955e68911f72c89770906de5afb83fcc1047034ca7",
+      "history_sha256": "b5f820c384ad991c3f315506f70104949935b45d7278cc9251478e757f48cda4"
+    },
+    {
+      "group": "train",
+      "qid": "2hop__709686_26789",
+      "loop": 1,
+      "source_sha256": "5dc230b5a6745c33f64fc6484bf44561d887a2483e801ba1e6b18a62342aac8c",
+      "source": "/content/local_fast/lsdrag-text-v1/results/text_integrated_20261016_v5_fast_only/teacher/2hop__709686_26789.json",
+      "messages_sha256": "2a85bc1263faf997c6837ed1afe6308de00762d150238e4aea3df53b66af5725",
+      "history_sha256": "b8bc9ac60d6f8da8371ef87ab0e58b3ea165585c4f8b054e74ec841d0df8702e"
+    },
+    {
+      "group": "train",
+      "qid": "2hop__129572_791121",
+      "loop": 1,
+      "source_sha256": "b7f006de8a78c9ff5d4fed45c890c5046fc3e9a1f2eeab27646c794f3cc19097",
+      "source": "/content/local_fast/lsdrag-text-v1/results/text_integrated_20261016_v5_fast_only/teacher/2hop__129572_791121.json",
+      "messages_sha256": "0e0d393d678385f0e2e28207438a1a92a28b018f0397773486cc644bd6a8c9ae",
+      "history_sha256": "846103436969c316335fb54ae65037e21f613d2e6b99a0a9b3839150a7fb523f"
+    },
+    {
+      "group": "train",
+      "qid": "2hop__128642_32463",
+      "loop": 1,
+      "source_sha256": "9f6a87cf4efc86a0da119d939f196a3e4dc8a4d21a6e1d1564221bd8829d3fa4",
+      "source": "/content/local_fast/lsdrag-text-v1/results/text_integrated_20261016_v5_fast_only/teacher/2hop__128642_32463.json",
+      "messages_sha256": "4a1ab72ad61c065e79f59e1b9888b125fd533384685e25899174d28c4c3baf5c",
+      "history_sha256": "aa46fa51ff6a7710b3a9c283c262162d5038358bf8a7891d66f28f34a7abc3eb"
+    },
+    {
+      "group": "train",
+      "qid": "2hop__145016_766780",
+      "loop": 1,
+      "source_sha256": "97a424db7c961099e54be39b947720979f74107930e959078aea6421b6c57fd4",
+      "source": "/content/local_fast/lsdrag-text-v1/results/text_integrated_20261016_v5_fast_only/teacher/2hop__145016_766780.json",
+      "messages_sha256": "f898b7ee5efb456efa18993ceb42dbcfb4f8d80ba27332b2db0f9c61b4b9220d",
+      "history_sha256": "aea38991d6a8f9aadd8862be47cdbdba85d23da10af7dff7399954dc16aa7212"
+    },
+    {
+      "group": "train",
+      "qid": "2hop__153074_79404",
+      "loop": 1,
+      "source_sha256": "48a52b17a103524d71de7672ea5b60d08e7eb443e95e228db430f58d81c34d20",
+      "source": "/content/local_fast/lsdrag-text-v1/results/text_integrated_20261016_v5_fast_only/teacher/2hop__153074_79404.json",
+      "messages_sha256": "3cba575f2c50fd679f31d7d4e0154c607593db16aabae3aea2970391d0878a16",
+      "history_sha256": "a64ab0b0f3981159adaa03bbbc234ba785f8bc152202db65d0ad923ec9ca2310"
+    },
+    {
+      "group": "train",
+      "qid": "2hop__25968_727337",
+      "loop": 1,
+      "source_sha256": "ccad2f5a66c3696f4efab91ee33da1048b64410d8b6f1b819b223cef23095542",
+      "source": "/content/local_fast/lsdrag-text-v1/results/text_integrated_20261016_v5_fast_only/teacher/2hop__25968_727337.json",
+      "messages_sha256": "2ab6ddf591e1618d3060e1b6558e163ea36baf0d7d6f21db70c6b06c5309a71e",
+      "history_sha256": "96dc1d2d6c652f1e945a02192b032c72323211498b0b07f74e5c3b4ebc2e0847"
+    },
+    {
+      "group": "train",
+      "qid": "2hop__438489_14948",
+      "loop": 1,
+      "source_sha256": "0cdfccfb70dc47fe1e5c5da2397c3fedbe4ba3f041e743b27c617f72c8bbbe08",
+      "source": "/content/local_fast/lsdrag-text-v1/results/text_integrated_20261016_v5_fast_only/teacher/2hop__438489_14948.json",
+      "messages_sha256": "21a25aae33f41ffdb5c2bca527f52e38eeefaddc46c856d11fc185a496a3da72",
+      "history_sha256": "cec1a0c9af1cc15006430629808bdaba6ff4498338622b3e2af3c04480ecda0f"
+    },
+    {
+      "group": "train",
+      "qid": "2hop__561810_673383",
+      "loop": 1,
+      "source_sha256": "f35e4f842b8ed511a20f88646a2aca97b82c68dcaf328126eae72eba0b08ef53",
+      "source": "/content/local_fast/lsdrag-text-v1/results/text_integrated_20261016_v5_fast_only/teacher/2hop__561810_673383.json",
+      "messages_sha256": "93f7e9003d1671e2662e664ff0f14e1ac55a613180f837bfcc3b303f530d912e",
+      "history_sha256": "67adff6efc841c33c54c6a1a79c07108e21970d57289bf3ea4ec1b770ed3b47e"
+    },
+    {
+      "group": "train",
+      "qid": "2hop__568006_159937",
+      "loop": 1,
+      "source_sha256": "7eea124c77de02bd5c6ecd5b6570fbbcf7a9b8aa93ad8180caa5e675017c9c86",
+      "source": "/content/local_fast/lsdrag-text-v1/results/text_integrated_20261016_v5_fast_only/teacher/2hop__568006_159937.json",
+      "messages_sha256": "dc839b8062377e1d6691b691de327308e16258c930b0540aa9b008041aaf1191",
+      "history_sha256": "ce76cde033982698bfe861bb85ff0ee23553a77309ae882c90be1a86463de792"
+    },
+    {
+      "group": "validation",
+      "qid": "2hop__102981_2630",
+      "loop": 1,
+      "source_sha256": "87e550890e334a3214fbec09fb552875ff3859ba6e034a503d09904fcf0688d1",
+      "source": "/content/local_fast/lsdrag-text-v1/results/text_integrated_20261016_v5_fast_only/teacher/2hop__102981_2630.json",
+      "messages_sha256": "8923f67bdb3d409dd63cc5aa3045f8c8c67084532f8786b378509e01138a1992",
+      "history_sha256": "79ac7bba56bfe4dced7a766f54f7e72645a99f6812962969ff8508db46736585"
+    },
+    {
+      "group": "validation",
+      "qid": "2hop__131267_62851",
+      "loop": 1,
+      "source_sha256": "b6550c1e7400ecb726b379bcbd743457439e33881fa41a4fb9c8b887e1cf64c0",
+      "source": "/content/local_fast/lsdrag-text-v1/results/text_integrated_20261016_v5_fast_only/teacher/2hop__131267_62851.json",
+      "messages_sha256": "826e96ddb12230a277aa5e03f0c667ff1f5c0b9b138fda705ca40d6747bdd725",
+      "history_sha256": "3a6e3b5cbb7139c9af4ab28b38d83feb008b37ca43a4c760aa14f056a89a768b"
+    },
+    {
+      "group": "validation",
+      "qid": "2hop__668889_4037",
+      "loop": 1,
+      "source_sha256": "d8a5395d70bf0e97d7d954454819f548fe65fb8ee3d48bebe2cd9c60ba49958b",
+      "source": "/content/local_fast/lsdrag-text-v1/results/text_integrated_20261016_v5_fast_only/teacher/2hop__668889_4037.json",
+      "messages_sha256": "1288bff3d6aa1aa7e4ac32b95e7287c0694b162fa0c6f940b7b9e41c296fe66e",
+      "history_sha256": "7eb1381ba82be2262b3294015841aa8443d0a1e037c2f9ba57dc5ae71255aca1"
+    },
+    {
+      "group": "validation",
+      "qid": "2hop__411472_21587",
+      "loop": 1,
+      "source_sha256": "920623217348be8dca5cce44820ee6ca2bdab201888607ffcfff206600bca23b",
+      "source": "/content/local_fast/lsdrag-text-v1/results/text_integrated_20261016_v5_fast_only/teacher/2hop__411472_21587.json",
+      "messages_sha256": "55b03c93d63d1561df4e69f174237c72d84d213e684f3c39721b5f1f9e23b5b9",
+      "history_sha256": "c4100b46d4297d2aa689639227a586844e1a50c0b9d8f2cc578eb2c7474ae9da"
+    },
+    {
+      "group": "validation",
+      "qid": "2hop__145779_719927",
+      "loop": 1,
+      "source_sha256": "d974a324d3750f387dcc6653e7ca513fb56dc7aefbee7b91d965f3ec5cecefb0",
+      "source": "/content/local_fast/lsdrag-text-v1/results/text_integrated_20261016_v5_fast_only/teacher/2hop__145779_719927.json",
+      "messages_sha256": "450f1818774c0d9149687bd57a31b9b367b10398b9f3a1b6d4c7f991aa23e337",
+      "history_sha256": "35448cec56429e160f779fb619f7de0254858febffc753eac65035ec28ec5cab"
+    },
+    {
+      "group": "validation",
+      "qid": "2hop__71102_23202",
+      "loop": 1,
+      "source_sha256": "f6c80f8e2f2c9430d92f74b678f118a9e01b8f2b95dba7c61388d725a45a3e15",
+      "source": "/content/local_fast/lsdrag-text-v1/results/text_integrated_20261016_v5_fast_only/teacher/2hop__71102_23202.json",
+      "messages_sha256": "2f481be022abf3f0928bec74a9130e75cb8f94afd2a552fd9e51c761a07272f9",
+      "history_sha256": "0417bd8b6528c903cfe39b648fdc13409afbf6f2b62699d234ca704bd92b8b3c"
+    },
+    {
+      "group": "validation",
+      "qid": "2hop__451420_728372",
+      "loop": 1,
+      "source_sha256": "eae1cb96d6e4f20414191660329ff231a86c28a0e69ae68b19723cb0717d07e5",
+      "source": "/content/local_fast/lsdrag-text-v1/results/text_integrated_20261016_v5_fast_only/teacher/2hop__451420_728372.json",
+      "messages_sha256": "5d6441c98e4dc5134cf6d5b9f0bcc5f3265079d5cd45869e6203fe5cfaa3d0bc",
+      "history_sha256": "c4f24a7f5065212ab1678e418853a56d91d3b6e84dd05a7e38756475f4849e7f"
+    },
+    {
+      "group": "validation",
+      "qid": "2hop__641468_208796",
+      "loop": 1,
+      "source_sha256": "40d7d808d24e514ff9e6ca763f70fe1e3d7a718b64ec23d9a4052df0d0e73b0e",
+      "source": "/content/local_fast/lsdrag-text-v1/results/text_integrated_20261016_v5_fast_only/teacher/2hop__641468_208796.json",
+      "messages_sha256": "1b39e0320bc9803060ff7db9c363adfb8770e521b76eae6e8bcf53b8d7d7c8a7",
+      "history_sha256": "d25ab9d8b2eda1e594a29696bad1e2a4d994e30e5bff6baeae517305df1bf6bb"
+    }
+  ],
+  "head_sha256": "534da7b64150878869850cf7ccb735ec0fa8fbd643ddd0a74db19afeea4ebaef",
+  "model": "/content/local_fast/lsdrag-text-v1/hf/models--Qwen--Qwen3-4B-Instruct-2507/snapshots/cdbee75f17c01a7cc42f958dc650907174af0554",
+  "prompt_sha256": "9d66c290a97bbabb4289dcf262e2b5bc8ba05653f87aed3b693825dbb02d5a97",
+  "source_sha256": {
+    "src/lsdrag/text_contraction_probe.py": "3d6d98c4b9a9e8d1d76c39a68006526eae1089d1c95ee9971d3fe6e63e9fae65",
+    "scripts/run_text_contraction_probe.py": "681935ef2c523051bf49b8ca62d5265c80a39f4b7434516aed02ffc3aaccb4d3",
+    "src/lsdrag/text_integrated.py": "a0b7c6d926b1b4fc3ee45aedb39648d57ed76c1cc24ec01d9d343aeec1e2a560",
+    "src/lsdrag/text_integrated_aligned.py": "aaa1c1059f485e905dc10a6d1846c5d6b63caaa0dee6ced8d256e56ba1c55062"
+  },
+  "caps": {
+    "worker_seconds_excluding_load": 1800,
+    "generated_tokens": 120000,
+    "qwen_prefill_plus_forced_prefix_tokens": 2000000,
+    "base_continuations": 160,
+    "path_checks": 16,
+    "B1_answers": 64,
+    "total_probes": 240,
+    "suffix_tool_calls": 2,
+    "max_output_tokens": 512,
+    "context_limit": 16384
+  },
+  "selection": "one state after first real tool per existing train24/validation8; no outcome selection",
+  "smoke": "first8 train questions; native vs aligned path checks and first8 continuations",
+  "branches": [
+    "head",
+    "native_name_boundary_common_aligned",
+    "FINAL",
+    "up to2 other legal tools"
+  ],
+  "native_selector": "same original prefill, independent cloned KV for greedy name-prefix decode; all routing tokens/time charged; original cache retained for common aligned args; duplicated routing syntax is diagnostic overhead, not optimized native latency",
+  "alternates": "keyword,semantic,read priority, exclude head first action; observed-ID legality only",
+  "budget_B1": "separate FINAL generation after first actual suffix tool for head/native baseline",
+  "no_future_suffix": true,
+  "training": false,
+  "oldtest_or_newtest_used": false,
+  "gate": {
+    "correct_train_min": 5,
+    "preserved_quality_shorter_questions_min": 3,
+    "nonterminal_shortcuts_min": 3,
+    "calls_or_turns_reduction": 0.2,
+    "preserve_correct_em_and_per_question_f1_and_observed_support_recall": true
+  },
+  "validation": "already exposed confirmation; branch/gate frozen before train; no retuning",
+  "timing": "shared GPU observation only; saved historical prefix cost separate, suffix measured now; corpus prep/load/scoring outside suffix",
+  "original_primary_unchanged": true
+}

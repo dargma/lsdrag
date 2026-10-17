@@ -1,6 +1,6 @@
 {
   "phase": "improvement_v3_complete_read_selection_rejected",
-  "updated_utc": "2026-10-17T16:14:38.136149+00:00",
+  "updated_utc": "2026-10-17T16:19:59.251443+00:00",
   "protocol": "docs/JEV_TEXT_INTEGRATED_EXECUTION_20261016.md",
   "protocol_sha256": "0adecb3e30136b974fa1ecfffe74282df019f5ccbe0ece7fdbb6547fa486bc18",
   "prompt": "prompts/text_rag_integrated_v5.txt",
@@ -349,5 +349,13 @@
     "final_protocol_frozen": false,
     "runner_implemented": false,
     "recommendation": "retain A baseline; C feasibility oracle first; defer freeform argument decoder;100/30 confirmation later"
+  },
+  "contraction_probe": {
+    "phase": "prepared",
+    "protocol": "docs/JEV_CONTRACTION_PROBE_PROTOCOL_20261017.md",
+    "manifest": "lab/registry/text_integrated_20261016/contraction_probe_manifest_20261017.json",
+    "run": "/content/local_fast/lsdrag-text-v1/results/contraction_probe_20261017",
+    "pid": null,
+    "training": false
   }
 }
