@@ -1,0 +1,516 @@
+{
+  "schema_version": 1,
+  "date_utc": "2026-10-17",
+  "profile": "text_integrated_20261016",
+  "author_role": "Astra deep-research reviewer",
+  "status": "literature_review_and_proposals_complete_user_hold_active",
+  "held_state": {
+    "user_hold_active": true,
+    "new_gpu_inference": false,
+    "new_training": false,
+    "new_evaluation": false,
+    "protocol_executed": false,
+    "automatic_launch": false,
+    "proposal_is_execution_authorization": false,
+    "existing_generalization100_training_or_tuning_allowed": false
+  },
+  "document": "docs/JEV_HEAD_RESEARCH_DEEP_DIVE_ASTRA_20261017.md",
+  "paper_notes": [
+    "docs/papers/LANR_2604_17866_20261017.md",
+    "docs/papers/FORGE_2609_34358_20261017.md"
+  ],
+  "primary_deep_read_count": 12,
+  "source_ledger": [
+    {
+      "name": "LAnR",
+      "arxiv_id": "2604.17866",
+      "first_publication_date": "2026-04-20",
+      "read_version": "v2",
+      "version_date": "2026-05-07",
+      "url": "https://arxiv.org/html/2604.17866v2",
+      "accessed_utc_date": "2026-10-17",
+      "reading_depth": "primary_method_sections_and_selected_appendices",
+      "sections_read": "Sections 2-3; Appendix B.1 and D",
+      "method_verified": "Single affine+sigmoid control on PRED hidden; joint retrieval/generation training; gold evidence sufficiency labels",
+      "implication": "same-prefill linear control is prior art",
+      "reproduced": false
+    },
+    {
+      "name": "TabAgent",
+      "arxiv_id": "2602.16429",
+      "first_publication_date": "2026-02-18",
+      "read_version": "v1",
+      "version_date": "2026-02-18",
+      "url": "https://arxiv.org/html/2602.16429v1",
+      "accessed_utc_date": "2026-10-17",
+      "reading_depth": "primary_method_sections_and_selected_appendices",
+      "sections_read": "Section 3; evaluation setup; feature and cost appendices",
+      "method_verified": "Trace tabularization, synthetic coverage, approximately50M textual-tabular shortlist classifier",
+      "implication": "generative finite-choice replacement is prior art",
+      "reproduced": false
+    },
+    {
+      "name": "Stop-RAG",
+      "arxiv_id": "2510.14337",
+      "first_publication_date": "2025-10-16",
+      "read_version": "v1",
+      "version_date": "2025-10-16",
+      "url": "https://arxiv.org/html/2510.14337v1",
+      "accessed_utc_date": "2026-10-17",
+      "reading_depth": "primary_method_sections_and_selected_appendices",
+      "sections_read": "Sections 3-4; offline construction; Algorithm1",
+      "method_verified": "STOP/CONT Q(lambda), full trajectories and repeated partial-answer scoring",
+      "implication": "early stopping and future utility are prior art",
+      "reproduced": false
+    },
+    {
+      "name": "Partial Answer Quality and Utility",
+      "arxiv_id": "2609.16453",
+      "first_publication_date": "2026-09-15",
+      "read_version": "v1",
+      "version_date": "2026-09-15",
+      "url": "https://arxiv.org/html/2609.16453v1",
+      "accessed_utc_date": "2026-10-17",
+      "reading_depth": "primary_method_sections_and_selected_appendices",
+      "sections_read": "Sections 3-4; temporal regressor and stopping heuristic",
+      "method_verified": "Partial-answer quality and adjacent-iteration quality change prediction",
+      "implication": "observed iteration utility is not arbitrary action counterfactual advantage",
+      "reproduced": false
+    },
+    {
+      "name": "GRASP",
+      "arxiv_id": "2607.10463",
+      "first_publication_date": "2026-07-11",
+      "read_version": "v1",
+      "version_date": "2026-07-11",
+      "url": "https://arxiv.org/html/2607.10463v1",
+      "accessed_utc_date": "2026-10-17",
+      "reading_depth": "primary_method_sections_and_selected_appendices",
+      "sections_read": "Section3; Appendices B-C",
+      "method_verified": "Three retrieval tools+final; full-parameter GRPO with quality,grounding,search,turn rewards",
+      "implication": "tool set and efficiency objective overlap",
+      "reproduced": false
+    },
+    {
+      "name": "FORGE",
+      "arxiv_id": "2609.34358",
+      "first_publication_date": "2026-09-28",
+      "read_version": "v1",
+      "version_date": "2026-09-28",
+      "url": "https://arxiv.org/html/2609.34358v1",
+      "accessed_utc_date": "2026-10-17",
+      "reading_depth": "primary_method_sections_and_selected_appendices",
+      "sections_read": "Sections2-4; fresh/cached accounting",
+      "method_verified": "Frozen host+269K router; offline arm enumeration, Boltzmann KL, GRPO; Full4 feature probes, Lite0",
+      "implication": "frozen host+small router+counterfactual outcome/cost combination is prior art",
+      "reproduced": false
+    },
+    {
+      "name": "ProAct",
+      "arxiv_id": "2602.05327",
+      "first_publication_date": "2026-02-05",
+      "read_version": "v1",
+      "version_date": "2026-02-05",
+      "url": "https://arxiv.org/html/2602.05327v1",
+      "accessed_utc_date": "2026-10-17",
+      "reading_depth": "primary_method_sections_and_selected_appendices",
+      "sections_read": "Section3; Section4.2",
+      "method_verified": "Environment MCTS distilled into explicit reasoning; online RL; random-policy MC surrogate critic",
+      "implication": "environment lookahead distillation is prior art; random rollout costs differ",
+      "reproduced": false
+    },
+    {
+      "name": "Probing-RAG",
+      "arxiv_id": "2410.13339",
+      "first_publication_date": "2024-10-17",
+      "read_version": "v2",
+      "version_date": "2025-02-27",
+      "url": "https://arxiv.org/html/2410.13339v2",
+      "accessed_utc_date": "2026-10-17",
+      "reading_depth": "primary_method_sections_and_selected_appendices",
+      "sections_read": "Section3; training-data/size analysis; publication record",
+      "method_verified": "Mean pooled rationale+answer hidden states; correctness-labeled retrieval probes",
+      "implication": "uses generated answer states, not our pre-answer final hidden",
+      "reproduced": false
+    },
+    {
+      "name": "AggreVaTe/NRPI",
+      "arxiv_id": "1406.5979",
+      "first_publication_date": "2014-06-23",
+      "read_version": "v1",
+      "version_date": "2014-06-23",
+      "url": "https://arxiv.org/pdf/1406.5979",
+      "accessed_utc_date": "2026-10-17",
+      "reading_depth": "primary_method_sections_and_selected_appendices",
+      "sections_read": "Sections2-3; Algorithms1-2; limitations",
+      "method_verified": "Exploratory action then expert/current-policy continuation; cost-sensitive classification",
+      "implication": "closest foundational principle; teacher continuation can be optimistic for weak student",
+      "reproduced": false
+    },
+    {
+      "name": "SPIBB",
+      "arxiv_id": null,
+      "first_publication_date": "2019",
+      "read_version": "ICML2019 proceedings",
+      "version_date": "2019",
+      "url": "https://proceedings.mlr.press/v97/laroche19a/laroche19a.pdf",
+      "accessed_utc_date": "2026-10-17",
+      "reading_depth": "primary_method_sections_and_selected_appendices",
+      "sections_read": "Section2; algorithm; Theorem2 assumptions",
+      "method_verified": "Baseline bootstrapping in insufficiently observed state-action pairs",
+      "implication": "finite MDP/count guarantee does not transfer to tiny neural hidden dataset",
+      "reproduced": false
+    },
+    {
+      "name": "Learning to Defer",
+      "arxiv_id": null,
+      "first_publication_date": "2020",
+      "read_version": "ICML2020 proceedings",
+      "version_date": "2020",
+      "url": "https://proceedings.mlr.press/v119/mozannar20b/mozannar20b.pdf",
+      "accessed_utc_date": "2026-10-17",
+      "reading_depth": "primary_method_sections_and_selected_appendices",
+      "sections_read": "Sections3-4; cost-sensitive surrogate and rejector",
+      "method_verified": "Classifier/expert-relative deferral costs",
+      "implication": "confidence alone is not expert-relative regret; sequential extension not guaranteed",
+      "reproduced": false
+    },
+    {
+      "name": "DENSE",
+      "arxiv_id": "2609.21423",
+      "first_publication_date": "2026-09-18",
+      "read_version": "v5",
+      "version_date": "2026-10-08",
+      "url": "https://arxiv.org/html/2609.21423v5",
+      "accessed_utc_date": "2026-10-17",
+      "reading_depth": "primary_method_sections_and_selected_appendices",
+      "sections_read": "Sections2-3; REFIT; shortcut compilation appendix",
+      "method_verified": "Evidence-grounded nested shortcut feedback for reset retries",
+      "implication": "not tiny-head learning or direct nonterminal execution compression",
+      "reproduced": false
+    },
+    {
+      "name": "Skill-RAG",
+      "url": "https://arxiv.org/html/2604.15771v4",
+      "read_version": "v4",
+      "version_date": "2026-08-07",
+      "reading_depth": "method_sections_2_3",
+      "note": "Failure correctness probes plus prompt-based corrective skill routing",
+      "accessed_utc_date": "2026-10-17",
+      "reproduced": false
+    },
+    {
+      "name": "TurnOPD",
+      "url": "https://arxiv.org/html/2607.05804v2",
+      "read_version": "v2",
+      "version_date": "2026-09-28",
+      "reading_depth": "selected_method_and_experiments",
+      "note": "Turn-aware on-policy distillation; training efficiency distinct from inference call compression",
+      "accessed_utc_date": "2026-10-17",
+      "reproduced": false
+    },
+    {
+      "name": "OPID",
+      "url": "https://arxiv.org/abs/2606.26790v1",
+      "read_version": "v1",
+      "version_date": "2026-06-25",
+      "reading_depth": "abstract_metadata_only",
+      "note": "Hindsight skill-conditioned on-policy supervision",
+      "accessed_utc_date": "2026-10-17",
+      "reproduced": false
+    },
+    {
+      "name": "SOD",
+      "url": "https://arxiv.org/abs/2605.07725v3",
+      "read_version": "v3",
+      "version_date": "2026-08-18",
+      "reading_depth": "abstract_metadata_only",
+      "note": "Step-divergence weighting in on-policy distillation",
+      "accessed_utc_date": "2026-10-17",
+      "reproduced": false
+    },
+    {
+      "name": "PANDO",
+      "url": "https://arxiv.org/abs/2605.24785v2",
+      "read_version": "v2",
+      "version_date": "2026-05-26",
+      "reading_depth": "abstract_metadata_only",
+      "note": "Online skill library and cache-aware prompting",
+      "accessed_utc_date": "2026-10-17",
+      "reproduced": false
+    },
+    {
+      "name": "XGrammar",
+      "url": "https://arxiv.org/abs/2411.15100",
+      "read_version": "unversioned_abstract",
+      "version_date": "2024-11-22",
+      "reading_depth": "abstract_metadata_only",
+      "note": "Efficient grammar masking; does not itself establish syntax forward skipping",
+      "accessed_utc_date": "2026-10-17",
+      "reproduced": false
+    },
+    {
+      "name": "vLLM structured outputs",
+      "url": "https://docs.vllm.ai/en/latest/features/structured_outputs/",
+      "read_version": "rolling_docs",
+      "version_date": null,
+      "reading_depth": "official_documentation",
+      "note": "Structured generation baseline",
+      "accessed_utc_date": "2026-10-17",
+      "reproduced": false
+    },
+    {
+      "name": "vLLM speculative decoding",
+      "url": "https://docs.vllm.ai/en/latest/features/speculative_decoding/",
+      "read_version": "rolling_docs",
+      "version_date": null,
+      "reading_depth": "official_documentation",
+      "note": "Workload-dependent serving optimization",
+      "accessed_utc_date": "2026-10-17",
+      "reproduced": false
+    }
+  ],
+  "current_evidence": {
+    "native_f1": 0.3111326685243881,
+    "head_f1": 0.3157050369454408,
+    "native_em": 0.19,
+    "head_em": 0.2,
+    "wins_ties_losses": [
+      5,
+      90,
+      5
+    ],
+    "lost_gained_exact": [
+      3,
+      4
+    ],
+    "native_head_format_errors": [
+      4,
+      0
+    ],
+    "posthoc_error_free_f1_delta": -0.005653782894736842,
+    "native_head_observed_seconds": [
+      1.3366164938703877,
+      0.978334851169202
+    ],
+    "controlled_speed_claim": false,
+    "quality_noninferiority": false,
+    "nonterminal_contraction_gate_passed": false,
+    "read_selection_quality_passed": false
+  },
+  "novelty_assessment": {
+    "current_head_architecture_strong_novelty": false,
+    "frozen_router_counterfactual_cost_objective_already_exists": true,
+    "flagship_may_still_be_incremental": true,
+    "no_first_invention_claim": true,
+    "no_venue_acceptance_probability": true,
+    "required_evidence": [
+      "optimized native baseline",
+      "simple rule and metadata baselines",
+      "same branch data cost-sensitive controls",
+      "learnable cross-family action advantage",
+      "quality-cost Pareto and mechanism",
+      "later task/model replication"
+    ]
+  },
+  "ranked_ideas": [
+    {
+      "rank": 1,
+      "name": "All-head counterfactual quality-cost policy improvement",
+      "recommended_flagship": true,
+      "hypothesis": "A frozen-backbone same-prefill head improves quality-cost Pareto using sparse counterfactual feedback on its own visited states, beyond optimized Native and same-budget imitation/standard cost-sensitive controls",
+      "inputs": "normalized last hidden;5publicscalars;last-toolonehot;legalmask",
+      "outputs": "four original actions only; arguments and FINAL generated by frozen Qwen",
+      "online_native_selector_calls": 0,
+      "online_fallback": "existing BC head only for unsupported state/action; no default Native fallback",
+      "labels": "Q^(pi_k,g,H) from current frozen head rollout states, candidate first actions and same pi_k suffix; F1/EM/support/error and separate cost; not Q*",
+      "loss": "question-weighted linear quality/cost ridge regression (primary beta1) compared with same-data hard best-action/cost-sensitive CE; quality-preserving train-target cost preference; BC coverage anchor",
+      "policy_iteration": "freeze pi_k; collect own-state branches; fit pi_k+1; autonomous whole-episode rollout; only then consider fresh pi_k+1 collection; no mixing conditional Q labels without policy identity",
+      "state_budget": 24,
+      "max_suffix_branches": 96,
+      "rollin_episodes": 24,
+      "out_of_fold_candidate_episodes": 96,
+      "optimized_native_comparator_episodes": 24,
+      "total_episode_or_suffix_work_units": 240,
+      "additional_native_selector_calls_max": 24,
+      "wall_minutes_cap_excluding_load": 30,
+      "generated_tokens_cap": 120000,
+      "prefix_input_tokens_cap": 2000000,
+      "cross_fit": "4atomicfamilyconnected-componentfolds;18train/6audit; BC base already trained on24 so conditional incremental-learning diagnostic, not fresh generalization",
+      "gate": ">=4questions alternative deltaF1>=0.25;>=2nonFINAL; autonomous OOF BC-relative F1sum>0,exactgains-losses>=2,positive>=2folds,lostexact<=1; compare actualPareto toNfast and same-budgetcontrols",
+      "second_cycle": "not automatic; at most one separately considered next cycle; compare uniform branch-state allocation vs observable failure/margin allocation at equal budget with>=50%uniform component",
+      "failure": "no learnable gap, format-only gain, simple/same-data baseline tie, family concentration, or Pareto domination => stop strong paper direction and preserve system optimization",
+      "latency_caveat": "all-head control preserves architecture that can save selector decoding, but changed trajectory/optimized Native may remove measured speed advantage; no promised26.8%/20% saving",
+      "single_intervention_status": "optional causal/target diagnostic only, explicitly rejected as flagship",
+      "closest_sources": [
+        "FORGE",
+        "LAnR",
+        "AggreVaTe/NRPI",
+        "ProAct",
+        "Stop-RAG"
+      ],
+      "out_of_fold_conditions": [
+        "primary",
+        "hard-labelCE",
+        "metadata-only",
+        "BCcoverageaugmentation"
+      ]
+    },
+    {
+      "rank": 2,
+      "name": "Budgeted counterfactual state allocation",
+      "recommended_flagship": false,
+      "relation": "follow-up data-efficiency hypothesis after H1; not another online model",
+      "hypothesis": "Outcome-blind failure/boundary coverage improves all-head policy more than uniform branching or cost-matched Native imitation coverage",
+      "inputs": "pi_k rollout public state,empty/repetition,BC action margin",
+      "outputs": "offline state/action acquisition list",
+      "labels_and_loss": "same downstream outcome/cost targets and policy learner asH1; acquisition benefit measured by question-family whole-episode improvement",
+      "initial_acquisition": "predefined mixed heuristic,>=50%uniform,not another tiny-data neural head",
+      "candidate_questions": 24,
+      "states_per_arm": 24,
+      "max_branches": 192,
+      "per_arm_branch_budget": 96,
+      "duplicate_reuse": "only exact state/action/policy hash;reportactualandnominalbudget",
+      "wall_minutes_cap_excluding_load": 30,
+      "generated_tokens_cap": 160000,
+      "prefix_input_tokens_cap": 3000000,
+      "gate": "vsuniform exactnetgain>=2 or F1>=0.03,no costregression,>=2positivefolds,and beatBCcoverage;pilotinvestment criterion only",
+      "failure": "one-question effect,uniformtie,orBCcoverageequivalence => no allocation novelty",
+      "closest_sources": [
+        "AggreVaTe/NRPI",
+        "FORGE",
+        "TabAgent"
+      ],
+      "automatic_launch": false
+    },
+    {
+      "rank": 3,
+      "name": "Read-candidate generation-value selection",
+      "recommended_flagship": false,
+      "hypothesis": "Candidate-conditioned outcome ranking can selectively skip read argument generation without slot-index imitation failures",
+      "inputs": "same-prefill final hidden+already observed candidate snippet/body span hidden; ID is pointer address, not assumed to encode subsequent text",
+      "outputs": "observed candidate ID or GENERATE",
+      "labels": "candidate-vsGENERATE downstream outcome/cost with common Native suffix",
+      "loss": "outcome-difference weighted pairwise ranking logistic+L2",
+      "question_state_cap": 12,
+      "max_branches": 60,
+      "wall_minutes_cap_excluding_load": 15,
+      "generated_tokens_cap": 50000,
+      "prefix_input_tokens_cap": 1000000,
+      "gate": ">=4 questions with noninferior cheaper candidates; cross-fit0 exact losses, >=4 skips, >=5% total episode cost saving",
+      "failure": "coverage sparse, tiny episode contribution, rule tie or quality loss",
+      "closest_sources": [
+        "FORGE",
+        "Stop-RAG",
+        "TabAgent"
+      ]
+    }
+  ],
+  "first_recommended_action_if_explicitly_resumed": {
+    "name": "Gate0 optimized Native falsification before branch learning",
+    "implemented": false,
+    "train_questions": 8,
+    "saved_states": 24,
+    "state_generation_calls": 72,
+    "episode_rollouts": 24,
+    "wall_minutes_cap_excluding_load": 20,
+    "generated_tokens_cap": 80000,
+    "prefix_input_tokens_cap": 1500000,
+    "conditions": [
+      "N-full",
+      "N-fast native-logit/tool-name trie with common syntax and cache",
+      "H-BC with same executor"
+    ],
+    "functional_gate": "verify serialization boundaries/cache/args/handler/final and retain all errors",
+    "efficiency_kill": "N-fast reproduces>=80% original saving and residual H-BC saving<5% => stop head-is-speed-cause claim",
+    "uncertainty": "shared GPU/no stable measurement => timing inconclusive, not pass",
+    "does_not_kill": "counterfactual quality hypothesis may remain if independent uplift evidence exists"
+  },
+  "gates_separated": {
+    "functional": "Correct cache/schema/branch/reset/handler contracts",
+    "quality": "Independent question-family improvement with errors included; pilot crossfit not proof",
+    "novelty": "All-head improvement beyond optimized Native, rules, same-budget BC coverage and standard cost-sensitive targets; efficient branch allocation hypothesis remains unproved"
+  },
+  "risk_notes": [
+    "Existing contraction uses head continuation; cannot relabel it Q^Native",
+    "TruncatedH2 target requires same deployment/comparator horizon and is not full-horizon Native",
+    "Never infer missing logged-action values or claim IPS support under deterministic policy",
+    "Family-group splits and question-level uncertainty; correlated states are not independent",
+    "24questions cannot calibrate broad safety guarantees",
+    "Long-horizon transition/step distillation deferred; current nonterminal gate failed",
+    "Causal ID token hidden cannot see later snippet; use observed semantic span and exclude unobserved body",
+    "Flagship never invokes Native selector online; Native label/comparison calls are offline and charged",
+    "Existing BC checkpoint saw train24, so OOF incremental counterfactual fit on18/6 is not total unseen-question evaluation",
+    "One-step Q^pi_k improvement does not guarantee autonomous pi_k+1 improvement; actual rollout and own-state recollection required",
+    "One-intervention Native-return scheme is diagnostic only after explicit user rejection as flagship"
+  ],
+  "family_audit_parent_message": {
+    "train_questions": 24,
+    "train_atomic_unique": 48,
+    "train_components": 24,
+    "all_train_components_singletons": true,
+    "validation_questions": 8,
+    "validation_atomic_count": 16,
+    "validation_atomic_shared_with_train": 1,
+    "provenance": "parent read-only CPU audit communicated in collaboration; parent responsible for saving audit record"
+  },
+  "transfer_candidates_only": [
+    "MuSiQue3hop horizon shift",
+    "HotpotQA or2Wiki with same tools",
+    "retrain method on another2-4B nonthinking checkpoint; not direct head-weight transfer"
+  ],
+  "input_sha256": {
+    "lab/reports/text_integrated_20261016/frozen_head_generalization100_20261017.json": "fa4c65fb8c67cc13980fcd9e8bfe761c8689fd3921dcf2f99a8380559e2f8d62",
+    "lab/reports/text_integrated_20261016/contraction_probe_20261017.json": "4f2d8adf4e10c1e50307dd7931a76c1def9a23a04eb9b8cf4f04ea85285e7b60",
+    "scripts/run_improvement_v3.py": "d3eb0ce63dec9c49ed0dfcede9d80338e522501255c0ba323ec8e956bd797aea",
+    "src/lsdrag/text_integrated.py": "a0b7c6d926b1b4fc3ee45aedb39648d57ed76c1cc24ec01d9d343aeec1e2a560",
+    "docs/JEV_HEAD_DIRECTION_ASTRA_REVIEW_20261017.md": "99c19f57d2e009ef4ddb8b6f0fbf771621ef359397a9e8a206b43ad208d938af",
+    "docs/JEV_RELATED_RESEARCH_UPDATE_20261017.md": "f2850291b7fa5a9b1fb528bf084c6f8453cb344482b7603f37fcdacb157e8919"
+  },
+  "limitations": [
+    "Not exhaustive systematic search",
+    "Selected primary method sections, not full reproduction or proof verification",
+    "Screened-only sources explicitly marked",
+    "No new experiment result is created by this report",
+    "Proposed budgets/gates are not a frozen executable manifest"
+  ],
+  "next": "Parent reviews, persists memory/backups/Git; no autonomous experiment launch",
+  "latest_user_steering": {
+    "single_intervention_as_flagship": "rejected: weak speed and research appeal",
+    "replacement": "all online decisions by head; offline counterfactual improvement; Native as comparator/reference, not default online fallback",
+    "hold_changed": false,
+    "three_directions": [
+      "all-head outcome/cost improvement",
+      "counterfactual budget allocation",
+      "read candidate vs generation value"
+    ]
+  },
+  "optional_nonflagship_comparison": {
+    "rank": 2,
+    "name": "Native-relative regret deferral",
+    "recommended_flagship": false,
+    "hypothesis": "Expert-relative outcome risk yields a better coverage-quality-cost curve than head confidence",
+    "inputs": "same hidden+public metadata",
+    "outputs": [
+      "USE_HEAD",
+      "DEFER_NATIVE"
+    ],
+    "labels": "paired BC-vsNative outcome under common Native suffix",
+    "loss": "exact-harm binary CE or F1-regret regression",
+    "standalone_max_branches": 48,
+    "wall_minutes_cap_excluding_load": 15,
+    "generated_tokens_cap": 40000,
+    "prefix_input_tokens_cap": 750000,
+    "gate": "recover >=1 exact loss, introduce0 new exact losses, usehead>=50%, actual Pareto gain overNative",
+    "failure": "mostly defer, no harms to estimate, rule tie or no net cost advantage",
+    "guarantee": "heuristic risk control only; no safe policy improvement guarantee",
+    "closest_sources": [
+      "Learning to Defer",
+      "SPIBB",
+      "Probing-RAG",
+      "Skill-RAG"
+    ],
+    "status": "optional practical comparison only; user rejects this as default flagship",
+    "reuse_warning": "pi_k-suffix H1 branches cannot be relabeled Native-suffix; standalone48 branches charged separately"
+  }
+}

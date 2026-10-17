@@ -22,3 +22,5 @@ Latest2026-10-17: Astra direction review complete; CURRENT/HEAD newest headers a
 Latest2026-10-17: bounded contraction probe completed, no learned compression training; intermediate transition gate failed. Read newest CURRENT/HEAD and contraction_probe_20261017 report. No active worker or automatic next experiment.
 
 Latest2026-10-17: frozen new100 paired evaluation complete; report JEV_FROZEN_HEAD_GENERALIZATION100_REPORT_20261017.md. USER HOLD: save/report/push only, no new experiments until explicit resume. Read newest CURRENT/HEAD.
+
+Latest2026-10-17: Astra deep research complete; all-head online outcome/cost policy improvement recommended, one-intervention flagship rejected. Research proposal only; experiment HOLD remains. See newest CURRENT/HEAD and JEV_HEAD_RESEARCH_DEEP_DIVE_ASTRA_20261017.md.

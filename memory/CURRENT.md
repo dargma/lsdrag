@@ -1,3 +1,7 @@
+## 2026-10-17 — Astra 심층 연구 방향 검토 완료·저장 / 실험 HOLD
+
+사용자 “다시 우리 방법 방향 아이디어 제시 astra가”, “그래 잘 저장”. 최종 보고서: docs/JEV_HEAD_RESEARCH_DEEP_DIVE_ASTRA_20261017.md; source ledger: lab/reports/text_integrated_20261016/astra_head_deep_research_20261017.json. 핵심 12편 원문 및 보조 자료 검토 완료, 논문 재현 아님. 추천 1: online 모든 행동을 head로 선택하고 frozen LLM은 인자/답변 생성. offline 현재 head πk 방문 상태에서 대안 행동을 실제 실행하고 동결 πk suffix의 최종 품질·근거·미래 비용으로 학습; 새 정책은 전체 episode로 재평가. 추천 2: 제한된 반사실 수집 예산의 상태 배분, 추천 3: read 후보 선택 대 GENERATE 가치 학습(후순위). 사용자 거부를 반영해 one-intervention 후 Native 복귀는 주방법에서 제외하고 선택적 진단으로만 보존. Native fallback도 추천 주방법 아님. LAnR/FORGE/AggreVaTe 선행으로 조합 자체 novelty 주장 금지; optimized Native·동일 label CE·단순 규칙보다 나은 quality–cost/sample efficiency를 검증해야 함. 최소 gate0/N-fast 및 train24 분기 수집은 제안만이며 구현·실행·새 worker 없음. 기존100 학습/튜닝 금지. 사용자 HOLD 유지, 자동 재개 없음. 논문별 노트 docs/papers/LANR_2604_17866_20261017.md 및 FORGE_2609_34358_20261017.md 연결. 다음은 사용자 명시 재개 시에만 실행 protocol 동결/구현 검토.
+
 ## 2026-10-17 — 사용자 명시 Astra 딥서치·연구아이디어 검토 진행
 
 사용자 “astra가 딥써치하고, 어떻게 접근해볼지 아이디어 제안해줘”. gpt-6-astra high,agent /root/astra_deep_research에독립primary문헌조사/차별화가설/강한baseline/최소판별실험제안위임. 이번요청은연구검토만;GPU/학습/새평가HOLD유지/새100학습사용금지. 산출예정 docs/JEV_HEAD_RESEARCH_DEEP_DIVE_ASTRA_20261017.md 및 lab/reports/text_integrated_20261016/astra_head_deep_research_20261017.json. primary문헌중LAnR/TabAgent/StopRAG/GRASP/ProAct/DENSE/PANDO/OPID/추가최신연구검토. Native모사시스템이득과counterfactualpolicy개선을분리하고zero-training optimized native syntax/name baseline검토. 새실험실행없음.

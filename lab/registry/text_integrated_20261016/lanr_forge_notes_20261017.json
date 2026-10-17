@@ -1,6 +1,6 @@
 {
   "checked_date": "2026-10-17",
-  "status": "individual_paper_notes_complete; Astra synthesis running",
+  "status": "individual_paper_notes_and_Astra_synthesis_complete",
   "papers": [
     {
       "name": "LAnR",
@@ -20,5 +20,9 @@
     }
   ],
   "gpu_experiments": false,
-  "user_hold": true
+  "user_hold": true,
+  "synthesis": {
+    "docs/JEV_HEAD_RESEARCH_DEEP_DIVE_ASTRA_20261017.md": "d7a972f9237f9908879a5746c6e13fb0d031776cdc4d86db00dc1e3bbacd5aa9",
+    "lab/reports/text_integrated_20261016/astra_head_deep_research_20261017.json": "738d7ac50c8368f6ccfcd3fa16523a581e6a834c3bfbd4bd712d013728b58564"
+  }
 }

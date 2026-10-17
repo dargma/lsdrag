@@ -509,11 +509,16 @@
     "gpu_experiments_authorized_now": false
   },
   "research_review": {
-    "phase": "astra_deep_research_running",
+    "phase": "astra_deep_research_complete",
     "agent": "/root/astra_deep_research",
     "model": "gpt-6-astra",
     "reasoning_effort": "high",
     "gpu_experiments_authorized": false,
-    "new_training": false
+    "new_training": false,
+    "report": "docs/JEV_HEAD_RESEARCH_DEEP_DIVE_ASTRA_20261017.md",
+    "source_ledger": "lab/reports/text_integrated_20261016/astra_head_deep_research_20261017.json",
+    "recommendation": "all_head_online_counterfactual_quality_cost_policy_improvement",
+    "one_intervention_flagship_rejected": true,
+    "execution_started": false
   }
 }
