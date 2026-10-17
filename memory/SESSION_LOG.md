@@ -451,3 +451,8 @@ CPU audit초기hash직렬화가ensure_ascii=False로원본digest와달라실패.
 
 PID693460/session4524,run /content/local_fast/lsdrag-text-v1/results/improvement_v3_merged_20261017,log /content/local_fast/lsdrag-text-v1/logs/improvement_v3_merged_20261017.log,source30a34b8. train24 82상태통합학습gate통과/readreuse11qids+GENERATE5qids. validation고정상태29개 actionmacroF1=.81399,prematureFINAL0. 자율QA품질은아직검증안됨. readslot4양성train0은한계. validation16→설정동결fresh40 순차실행,총45분budget. source수정/중복collector금지.
 
+
+## 2026-10-17 — 개선v3 통합학습·평가 완료
+
+사용자 “실험 시작” 승인으로native형식생성수정검증24/24및2상태FP32진단통과후통합train24학습/validation16/fresh40완료. run /content/local_fast/lsdrag-text-v1/results/improvement_v3_merged_20261017. worker종료/PID없음,source30a34b8. read선택은validation F1.21875→.09375/EM.125→0으로미채택. 같은action checkpoint+always-generate를fresh전에동결. fresh20 nativeF1.29/EM.25,primaryF1.304286/EM.25;1승0패19동률. 생성tokens89.75→60.55이나강제prefix30.55추가,입력tokens3928.5→4266;전체효율·속도·품질향상입증아님. nativeformat오류1/primary0보존. report lab/reports/text_integrated_20261016/improvement_v3_final.json 및.md. Drive최종archive해시검증완료. 통합read분기채택실패와학습/평가완료를구분. 다음작업자동확장없음;read실패/작은표본해석검토.
+

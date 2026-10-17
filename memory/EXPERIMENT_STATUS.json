@@ -1,5 +1,5 @@
 {
-  "phase": "improvement_v3_validation_running",
+  "phase": "improvement_v3_complete_read_selection_rejected",
   "updated_utc": "2026-10-16T16:13:04.401948+00:00",
   "protocol": "docs/JEV_TEXT_INTEGRATED_EXECUTION_20261016.md",
   "protocol_sha256": "0adecb3e30136b974fa1ecfffe74282df019f5ccbe0ece7fdbb6547fa486bc18",
@@ -29,13 +29,13 @@
   ],
   "worker_wall_budget_minutes": 60,
   "run_planned": "/content/local_fast/lsdrag-text-v1/results/text_integrated_20261016_v5_fast_only",
-  "pid": 693460,
+  "pid": null,
   "implementation_completed": true,
   "dataset_prepared": true,
   "teacher_collection_started": true,
   "training_completed": true,
   "evaluation_completed": true,
-  "next": "Complete validation16, freeze primary, then fresh20x2 under unchanged runner",
+  "next": "No automatic expansion. Review fresh20 limitations and failed read-selection case.",
   "previous_multimodal_checkpoint_historical_only": {
     "phase": "native2_review_required",
     "run": "/content/local_fast/lsdrag-head-v14/results/native_distillation_12b_20261015",
@@ -171,7 +171,7 @@
   "external_evaluation_completed": true,
   "updated_epoch": 1792161920.7440126,
   "d3_additional_analysis": "withdrawn",
-  "session_id": 4524,
+  "session_id": null,
   "functional_smoke": {
     "passed": true,
     "checks": 7,
@@ -312,5 +312,17 @@
     "limitations": "Two-state precision diagnostic and24 training-state functional checks, not heldout policy quality. BF16 original absolute cutoff unchanged; FP32 test diagnoses numerical path separately."
   },
   "merged_training_completed": true,
-  "merged_evaluation_completed": false
+  "merged_evaluation_completed": true,
+  "improvement_v3_result": {
+    "report": "lab/reports/text_integrated_20261016/improvement_v3_final.json",
+    "native_f1": 0.29,
+    "primary_f1": 0.30428571428571427,
+    "native_em": 0.25,
+    "primary_em": 0.25,
+    "validation_episodes": 16,
+    "fresh_evaluation_episodes": 40,
+    "read_selection_retained": false,
+    "quality_improvement_established": false,
+    "overall_efficiency_improvement_established": false
+  }
 }
