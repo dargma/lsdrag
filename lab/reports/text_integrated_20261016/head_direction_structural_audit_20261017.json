@@ -1,0 +1,89 @@
+{
+  "purpose": "CPU review diagnostic only; turn majority learned by counting training labels, no new model/LLM call",
+  "train_questions": 24,
+  "train_states": 82,
+  "validation_questions": 8,
+  "validation_states": 29,
+  "train_turn_action_counts": {
+    "0": {
+      "keyword_search": 23,
+      "semantic_search": 1
+    },
+    "1": {
+      "semantic_search": 16,
+      "read_chunk": 7,
+      "keyword_search": 1
+    },
+    "2": {
+      "FINAL": 14,
+      "read_chunk": 9,
+      "semantic_search": 1
+    },
+    "3": {
+      "FINAL": 10
+    }
+  },
+  "turn_majority_validation": {
+    "confusion": [
+      [
+        7,
+        1,
+        0,
+        0
+      ],
+      [
+        1,
+        6,
+        0,
+        0
+      ],
+      [
+        0,
+        1,
+        0,
+        5
+      ],
+      [
+        0,
+        0,
+        0,
+        8
+      ]
+    ],
+    "action_order": [
+      "keyword_search",
+      "semantic_search",
+      "read_chunk",
+      "FINAL"
+    ],
+    "macro_f1": 0.6092261904761904,
+    "accuracy": 0.7241379310344828,
+    "premature_final": 5
+  },
+  "limits": "Same exposed validation8; imitation only. No independent quality or causal evidence.",
+  "teacher32_counts": {
+    "tool_calls": 79,
+    "search_calls": 57,
+    "empty_search_calls": 12,
+    "read_calls": 22,
+    "read_all_text_already_in_snippets": 5
+  },
+  "teacher32_patterns": {
+    "keyword_search > semantic_search": 8,
+    "keyword_search > keyword_search > semantic_search": 1,
+    "semantic_search > read_chunk": 2,
+    "keyword_search > read_chunk": 6,
+    "keyword_search > semantic_search > read_chunk": 14,
+    "keyword_search > keyword_search": 1
+  },
+  "deletion_warning": "Empty search or snippet equality only suggests candidate operations; removing steps changes subsequent policy states and has not been evaluated.",
+  "training_structure": {
+    "source": "scripts/run_improvement_v3.py::train",
+    "backbone": "frozen",
+    "action_head": "independent Linear(feature_dim,4)",
+    "read_head": "independent Linear(feature_dim,5)",
+    "loss": "action CE + read slot CE",
+    "shared_trainable_trunk": false,
+    "implication": "same-batch optimizer does not create read-loss gradients in action-head parameters; no learned multi-task representation transfer claim"
+  }
+}

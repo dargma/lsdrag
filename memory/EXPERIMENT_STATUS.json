@@ -1,6 +1,6 @@
 {
   "phase": "improvement_v3_complete_read_selection_rejected",
-  "updated_utc": "2026-10-17T15:45:41.806062+00:00",
+  "updated_utc": "2026-10-17T16:14:38.136149+00:00",
   "protocol": "docs/JEV_TEXT_INTEGRATED_EXECUTION_20261016.md",
   "protocol_sha256": "0adecb3e30136b974fa1ecfffe74282df019f5ccbe0ece7fdbb6547fa486bc18",
   "prompt": "prompts/text_rag_integrated_v5.txt",
@@ -338,5 +338,16 @@
     "f1_off": 0.30428571428571427,
     "f1_on": 0.2542857142857143,
     "original_primary_unchanged": true
+  },
+  "generalization_followup": {
+    "phase": "astra_review_complete_execution_not_ready",
+    "draft": "docs/JEV_HEAD_GENERALIZATION_DRAFT_20261017.md",
+    "review": "docs/JEV_HEAD_DIRECTION_ASTRA_REVIEW_20261017.md",
+    "gpu_started": false,
+    "pid": null,
+    "common_assets_verified": true,
+    "final_protocol_frozen": false,
+    "runner_implemented": false,
+    "recommendation": "retain A baseline; C feasibility oracle first; defer freeform argument decoder;100/30 confirmation later"
   }
 }

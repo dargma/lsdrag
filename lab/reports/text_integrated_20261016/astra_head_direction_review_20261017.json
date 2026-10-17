@@ -1,0 +1,224 @@
+{
+  "review_date": "2026-10-17",
+  "reviewer": "Astra direction review",
+  "status": "review_complete_proposed_protocol_not_frozen",
+  "document": "docs/JEV_HEAD_DIRECTION_ASTRA_REVIEW_20261017.md",
+  "scope": {
+    "cpu_read_only_analysis": true,
+    "new_gpu_inference": false,
+    "new_training": false,
+    "new_heldout_evaluation": false,
+    "runtime_code_modified": false,
+    "commit_push_by_parent": true
+  },
+  "recommendation": {
+    "primary": "Keep A as the frozen operational baseline; first test C counterfactual compression headroom, then decide whether to learn a value head.",
+    "argument_direction": "Keep frozen LLM argument generation; consider observed-candidate pointer plus GENERATE gate only after value/coverage evidence. Defer free-form argument decoder and latent retriever replacement.",
+    "draft_100_30": "Defer until causal/cost diagnostic and policy freeze; do not discard.",
+    "parallel_training_of_A_B_C": false,
+    "novelty_established": false
+  },
+  "verified_evidence": {
+    "training_questions": 24,
+    "training_states": 82,
+    "validation_questions": 8,
+    "validation_states": 29,
+    "old_evaluation_questions": 20,
+    "native_f1": 0.29,
+    "head_generate_f1": 0.30428571428571427,
+    "native_em": 0.25,
+    "head_generate_em": 0.25,
+    "paired_head_vs_native": {
+      "partial_f1_wins": 1,
+      "ties": 19,
+      "losses": 0
+    },
+    "native_tool_calls": 2.2,
+    "head_tool_calls": 2.35,
+    "read_selection_f1": 0.2542857142857143,
+    "read_selection_em": 0.2,
+    "selected_reads": 8,
+    "total_reads": 15,
+    "argument_tokens_saved_per_question": 3.4,
+    "head_validation_action_macro_f1": 0.8139880952380952,
+    "turn_majority_validation_macro_f1": 0.6092261904761904,
+    "teacher_tool_horizon": [
+      2,
+      3
+    ],
+    "teacher_search_calls": 57,
+    "empty_search_calls": 12,
+    "teacher_read_calls": 22,
+    "read_fulltext_already_in_prior_snippets": 5,
+    "controlled_latency_claim": false,
+    "quality_improvement_established": false,
+    "joint_training_note": "Independent linear action/read heads over frozen features, summed CE; no trainable shared trunk and no demonstrated multitask representation transfer."
+  },
+  "directions": [
+    {
+      "id": "A",
+      "name": "Action head refinement and generalization",
+      "priority": "Retain as baseline; conditional confirmatory expansion",
+      "scientific_value": "Low-data same-state decision approximation, failure/shift behavior and causal cost decomposition. Classification accuracy alone does not establish novel policy benefit.",
+      "main_risks": [
+        "Teacher imitation is not optimal action supervision",
+        "Question-cluster dependence",
+        "Turn/order shortcuts",
+        "Autonomous state shift",
+        "Calibration from eight questions is weak"
+      ]
+    },
+    {
+      "id": "B1",
+      "name": "Observed argument pointer and selection-vs-generation gate",
+      "priority": "Conditional follow-up",
+      "main_risks": [
+        "Insufficient slot/candidate coverage",
+        "Fixed slot order",
+        "Exact-match labels differ from utility",
+        "Selection errors alter future observations"
+      ],
+      "needed_targets": "Paired downstream quality and realized cost from the same state; candidate feasibility and GENERATE availability"
+    },
+    {
+      "id": "B2",
+      "name": "Free-form argument generation head or decoder",
+      "priority": "Defer",
+      "reason": "New string generation is not closed-set classification and available supervision is insufficient."
+    },
+    {
+      "id": "C",
+      "name": "Observation-preserving interaction contraction",
+      "priority": "Next diagnostic, not immediate training",
+      "main_risks": [
+        "Missing future observations cannot be assumed",
+        "Early stopping mistaken for intermediate contraction",
+        "Few correct and long trajectories",
+        "Oracle labels do not prove learnability"
+      ],
+      "distinguish_metrics": [
+        "primitive tool calls",
+        "LLM decision/prefill turns",
+        "autoregressive decode steps"
+      ]
+    }
+  ],
+  "next_minimal_probe": {
+    "state": "proposed_not_implemented_or_launched",
+    "first_step": "Freeze one post-first-tool state per original train question; use prepared first train8 as functional smoke only.",
+    "split": {
+      "train": 24,
+      "validation": 8,
+      "oldtest20_used": false,
+      "new_test_questions": 0,
+      "validation_is_already_exposed": true,
+      "split_changed": false
+    },
+    "branches": [
+      "Frozen action head plus generated arguments continuation",
+      "Native first action selector plus aligned execution, if functional parity permits",
+      "Immediate FINAL",
+      "Up to two alternate legal primitive actions followed by frozen primary"
+    ],
+    "after_initial_action_continuation": "Frozen primary for all branches; no copied teacher future suffix",
+    "alternate_action_priority_if_needed": [
+      "keyword_search",
+      "semantic_search",
+      "read_chunk"
+    ],
+    "read_legal_only_for_observed_ids": true,
+    "state_selection_uses_gold": false,
+    "oracle_scoring_uses_gold": true,
+    "future_teacher_arguments_observations_in_inputs": false,
+    "max_base_continuations": 160,
+    "max_fixed_state_path_checks": 16,
+    "max_budget1_answer_probes": 64,
+    "max_total_continuations_and_probes": 240,
+    "remaining_tool_cap": 2,
+    "final_call_in_addition_to_tool_cap": true,
+    "max_output_tokens_per_call": 512,
+    "context_limit": 16384,
+    "hard_caps": {
+      "worker_minutes_excluding_load": 30,
+      "generated_tokens": 120000,
+      "input_plus_forced_prefix_tokens": 2000000
+    },
+    "cost_matched_baseline": "Native and primary at fixed remaining primitive-call budgets B=0,1,2, with separately generated intermediate answers; compare realized-cost Pareto as well as equal maximum budgets.",
+    "native_first_token_caveat": "Three tools share initial <tool_call>; exact native first token is not a 4-way action score. Decode/score to a distinguishing native action branch and count all costs; A/B/C/D prompt is a changed-prompt baseline.",
+    "implementation_gate": [
+      "Independent caches per branch",
+      "No future-observation leakage",
+      "Parser/handler contract valid",
+      "Fixed-state path parity",
+      "Complete cost instrumentation"
+    ],
+    "exploratory_investment_gates": {
+      "min_baseline_EM_correct_train_questions": 5,
+      "min_independent_questions_with_quality_preserving_compression": 3,
+      "aggregate_tool_calls_or_decision_turns_reduction_on_correct_subset": 0.2,
+      "preserve_baseline_correct_EM": true,
+      "per_question_f1_and_observed_evidence_recall_must_not_drop": true,
+      "nonterminal_shortcut_examples_required_for_intermediate_contraction_claim": 3
+    },
+    "gate_limitations": "Operational pilot criteria, not significance/noninferiority thresholds. Oracle uses privileged outcome labels. All-zero wrong answers do not count as positive compression evidence. Insufficient correct cases is inconclusive, not automatic data expansion.",
+    "stop_or_redirect": [
+      "Insufficient oracle headroom: do not train compression head on same short-horizon data",
+      "FINAL-only benefit: early-stopping direction and Stop-RAG/utility baselines",
+      "No nonterminal shortcut benefit: do not call result trajectory transition distillation",
+      "Only implementation savings: report system optimization separately from learned-policy effect",
+      "Cost direction unclear or budget exhausted: report incomplete/uncertain, do not claim pass"
+    ]
+  },
+  "diffusion_analogy": {
+    "useful": "Fewer sequential computations can imitate a teacher outcome.",
+    "limit": "RAG actions acquire new external observations. Training labels may use the future, but inference features and arguments must not. Macro execution may reduce decisions while preserving primitive calls."
+  },
+  "sources_verified_primary": [
+    {
+      "name": "LAnR",
+      "url": "https://arxiv.org/abs/2604.17866v2",
+      "scope": "Shared hidden latent retrieval and retrieve/stop head; method HTML also inspected"
+    },
+    {
+      "name": "GRASP",
+      "url": "https://arxiv.org/abs/2607.10463v1",
+      "scope": "Same three retrieval/read tools and turn-efficient RL"
+    },
+    {
+      "name": "Stop-RAG",
+      "url": "https://arxiv.org/abs/2510.14337",
+      "scope": "Value-based stopping from trajectory targets"
+    },
+    {
+      "name": "AnySearch",
+      "url": "https://arxiv.org/abs/2609.00813",
+      "scope": "Budget-aware search policy"
+    },
+    {
+      "name": "Partial Answer Quality and Utility",
+      "url": "https://arxiv.org/abs/2609.16453",
+      "scope": "Current answer quality versus marginal future utility"
+    },
+    {
+      "name": "TabAgent",
+      "url": "https://arxiv.org/abs/2602.16429",
+      "scope": "Classifier replacement of generative closed-set decisions"
+    },
+    {
+      "name": "Progressive Distillation",
+      "url": "https://arxiv.org/abs/2202.00512",
+      "scope": "Diffusion analogy; not evidence of directly applicable RAG compression"
+    }
+  ],
+  "head_sha256": "534da7b64150878869850cf7ccb735ec0fa8fbd643ddd0a74db19afeea4ebaef",
+  "input_sha256": {
+    "docs/JEV_HEAD_GENERALIZATION_DRAFT_20261017.md": "2db6f1dd31006f1b4a3e691eb614c94fed4f7c3cdfdbe2c0be52bdd80e740ef5",
+    "docs/JEV_RELATED_RESEARCH_UPDATE_20261017.md": "1884df6a98e0d10236c5822ae63f33a8de2cc460fd1db4005ddc960c9e2bce90",
+    "lab/reports/text_integrated_20261016/improvement_v3_final.json": "4567c7c636fa9f41dbfe31e9bb2429fa5ec41205db0d66dcd70443f7b40903a3",
+    "lab/reports/text_integrated_20261016/improvement_v3_argument_selection.json": "cf6762396b4aff31b9ce80bb0f868f69fa3a598d004d7916b11755d2ae922a9b",
+    "lab/reports/text_integrated_20261016/head_direction_structural_audit_20261017.json": "4401642d050ad416c79f815da57c69eec106e54ec4dd3206f9251ac9e888d944",
+    "scripts/run_improvement_v3.py": "d3eb0ce63dec9c49ed0dfcede9d80338e522501255c0ba323ec8e956bd797aea",
+    "src/lsdrag/text_integrated.py": "a0b7c6d926b1b4fc3ee45aedb39648d57ed76c1cc24ec01d9d343aeec1e2a560",
+    "src/lsdrag/text_integrated_aligned.py": "aaa1c1059f485e905dc10a6d1846c5d6b63caaa0dee6ced8d256e56ba1c55062"
+  }
+}
