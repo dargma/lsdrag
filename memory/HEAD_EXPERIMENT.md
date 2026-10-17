@@ -1,3 +1,7 @@
+## 2026-10-17 — 사용자 즉시 실험 재개 승인
+
+사용자 “실험 시작”으로CPU-only/계획저장 상태를해제하고v3순차실행재개. GPU다른작업있으나free88396MiB확인,공유기능실험이며속도비교안함. 먼저native형식구문prefix와FINAL무강제cache-logits경로를새AlignedReader프로필로검증. 기존v5불변. 고정24train상태+사전선택state0,4의BF16/FP32 full-logits수치probe,worker15분. FP32 maxabs<=0.001+argmax일치,24출력값일치/no extra prefill을새functional진단gate로명시. 기존BF16절대기준을사후수정하지않음. 통과후train24/read통합학습단계;실패는원인검토.
+
 ## 2026-10-17 — 사용자 승인 CPU stage1 검토 완료
 
 사용자 “1은 cpu에서 가능하면 바로 시작”. CUDA_VISIBLE_DEVICES 비움, tokenizer/저장JSON/기존handler만사용, 새backbone inference/GPU사용없음. scripts/review_generation_paths_cpu.py 실행완료. 24상태입력token·원본state hash검증,56 keyword/read handler replay hash일치. exact prefix OFF토큰24/24일치,ON값24/24일치. compact값7/24변경(keyword6/8,FINAL1/8),keyword검색결과3건변경/근거recall3건하락,2건은여러keyword가긴문자열하나로합쳐져nonempty→empty. native도8keyword중5건빈검색이므로native를완전한정답경로로간주하지않음. logits cutoff0.25초과14건이나top1선택24/24일치,모든top1 margin>2*기록된최대오차. BF16계산경로차이가후보원인이지만full logits/position/high-precision참조없어확정불가. 기존gate를사후완화하지않고stage1 미통과유지. native prefix oracle표시16건은실제인자값누출이아닌여는따옴표경계의과보수표시임을CPU확인;배포검증완료아님. 보고서 lab/reports/text_integrated_20261016/improvement_v3_stage1_cpu_review.json. stage2미시작/자동실행해제유지. 다음: native형식구문prefix와FINAL정렬안을고정한뒤동일train상태실모델검증,필요시cache수치차이추가계측. 이번CPU요청은GPU기동승인으로해석하지않음.

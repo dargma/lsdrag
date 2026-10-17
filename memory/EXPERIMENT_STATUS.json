@@ -1,5 +1,5 @@
 {
-  "phase": "improvement_v3_cpu_stage1_review_complete_gate_pending",
+  "phase": "improvement_v3_aligned_check_ready",
   "updated_utc": "2026-10-16T16:13:04.401948+00:00",
   "protocol": "docs/JEV_TEXT_INTEGRATED_EXECUTION_20261016.md",
   "protocol_sha256": "0adecb3e30136b974fa1ecfffe74282df019f5ccbe0ece7fdbb6547fa486bc18",
@@ -35,7 +35,7 @@
   "teacher_collection_started": true,
   "training_completed": true,
   "evaluation_completed": true,
-  "next": "Prepare native-style syntax-only generation path; real-model validation remains pending. No GPU auto-launch.",
+  "next": "Run aligned generation24 and fixed precision probes",
   "previous_multimodal_checkpoint_historical_only": {
     "phase": "native2_review_required",
     "run": "/content/local_fast/lsdrag-head-v14/results/native_distillation_12b_20261015",
@@ -233,7 +233,7 @@
     "observer_stopped": true
   },
   "phase_before_user_hold": "fixed_step_head_functional_verified_quality_nogo",
-  "gpu_use_authorized": "conditional_after_15_minutes_observed_idle",
+  "gpu_use_authorized": "user_explicit_start_shared_functional",
   "user_hold": {
     "active": false,
     "all_experiments_on_hold": false,
