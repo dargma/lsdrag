@@ -441,3 +441,8 @@ CPU audit초기hash직렬화가ensure_ascii=False로원본digest와달라실패.
 
 사용자 “실험 시작”으로CPU-only/계획저장 상태를해제하고v3순차실행재개. GPU다른작업있으나free88396MiB확인,공유기능실험이며속도비교안함. 먼저native형식구문prefix와FINAL무강제cache-logits경로를새AlignedReader프로필로검증. 기존v5불변. 고정24train상태+사전선택state0,4의BF16/FP32 full-logits수치probe,worker15분. FP32 maxabs<=0.001+argmax일치,24출력값일치/no extra prefill을새functional진단gate로명시. 기존BF16절대기준을사후수정하지않음. 통과후train24/read통합학습단계;실패는원인검토.
 
+
+## 2026-10-17 — native형식cached경로24/24 통과,통합학습준비
+
+수정AlignedReader native-spaced syntax prefix+FINAL무강제cache-logits:24/24 native값일치,추가full-prefill0. 사전고정2상태FP32 cache/full오차5.48e-5/3.91e-5,동일argmax/길이. BF16오차.375/.25를precision기인차이로설명하는증거이며전체상태무오류증명아님. 보고서lab/reports/text_integrated_20261016/improvement_v3_aligned_check.json;raw /content/local_fast/lsdrag-text-v1/results/improvement_v3_aligned_20261017,worker68.9초. 다음run scripts/run_improvement_v3.py:train24/action+read loss,단일seed100epochs;24qids/action각5/readreuse와GENERATE각5qids gate고정. 기존82train/29validation naturalstates,readslot4 train양성없음명시. optional복구추가없음. 同checkpoint val8×2후primary동결 fresh20×2,worker45분.
+

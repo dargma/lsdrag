@@ -1,5 +1,5 @@
 {
-  "phase": "improvement_v3_aligned_check_ready",
+  "phase": "improvement_v3_aligned_gate_passed",
   "updated_utc": "2026-10-16T16:13:04.401948+00:00",
   "protocol": "docs/JEV_TEXT_INTEGRATED_EXECUTION_20261016.md",
   "protocol_sha256": "0adecb3e30136b974fa1ecfffe74282df019f5ccbe0ece7fdbb6547fa486bc18",
@@ -35,7 +35,7 @@
   "teacher_collection_started": true,
   "training_completed": true,
   "evaluation_completed": true,
-  "next": "Run aligned generation24 and fixed precision probes",
+  "next": "Run merged train24, validation16 and frozen fresh20x2",
   "previous_multimodal_checkpoint_historical_only": {
     "phase": "native2_review_required",
     "run": "/content/local_fast/lsdrag-head-v14/results/native_distillation_12b_20261015",
@@ -264,5 +264,51 @@
     "gpu_used": false,
     "gate_passed": false,
     "stage2_started": false
+  },
+  "aligned_check": {
+    "phase": "aligned_check_complete",
+    "pid": null,
+    "states": 24,
+    "matches_native": 24,
+    "matches_historical": 24,
+    "functional_passed": true,
+    "precision": [
+      {
+        "state": 0,
+        "dtype": "bfloat16",
+        "max_abs_error": 0.375,
+        "argmax_equal": true,
+        "cache_length": 814,
+        "input_length": 814
+      },
+      {
+        "state": 4,
+        "dtype": "bfloat16",
+        "max_abs_error": 0.25,
+        "argmax_equal": true,
+        "cache_length": 1372,
+        "input_length": 1372
+      },
+      {
+        "state": 0,
+        "dtype": "float32",
+        "max_abs_error": 5.4836273193359375e-05,
+        "argmax_equal": true,
+        "cache_length": 814,
+        "input_length": 814
+      },
+      {
+        "state": 4,
+        "dtype": "float32",
+        "max_abs_error": 3.910064697265625e-05,
+        "argmax_equal": true,
+        "cache_length": 1372,
+        "input_length": 1372
+      }
+    ],
+    "fp32_numeric_passed": true,
+    "gate_passed": true,
+    "worker_seconds": 68.92076244600321,
+    "limitations": "Two-state precision diagnostic and24 training-state functional checks, not heldout policy quality. BF16 original absolute cutoff unchanged; FP32 test diagnoses numerical path separately."
   }
 }

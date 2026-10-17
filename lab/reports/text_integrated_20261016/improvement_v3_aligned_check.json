@@ -1,0 +1,46 @@
+{
+  "phase": "aligned_check_complete",
+  "pid": null,
+  "states": 24,
+  "matches_native": 24,
+  "matches_historical": 24,
+  "functional_passed": true,
+  "precision": [
+    {
+      "state": 0,
+      "dtype": "bfloat16",
+      "max_abs_error": 0.375,
+      "argmax_equal": true,
+      "cache_length": 814,
+      "input_length": 814
+    },
+    {
+      "state": 4,
+      "dtype": "bfloat16",
+      "max_abs_error": 0.25,
+      "argmax_equal": true,
+      "cache_length": 1372,
+      "input_length": 1372
+    },
+    {
+      "state": 0,
+      "dtype": "float32",
+      "max_abs_error": 5.4836273193359375e-05,
+      "argmax_equal": true,
+      "cache_length": 814,
+      "input_length": 814
+    },
+    {
+      "state": 4,
+      "dtype": "float32",
+      "max_abs_error": 3.910064697265625e-05,
+      "argmax_equal": true,
+      "cache_length": 1372,
+      "input_length": 1372
+    }
+  ],
+  "fp32_numeric_passed": true,
+  "gate_passed": true,
+  "worker_seconds": 68.92076244600321,
+  "limitations": "Two-state precision diagnostic and24 training-state functional checks, not heldout policy quality. BF16 original absolute cutoff unchanged; FP32 test diagnoses numerical path separately."
+}
