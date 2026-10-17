@@ -1,6 +1,6 @@
 {
   "phase": "hold_after_frozen_head_generalization100_complete",
-  "updated_utc": "2026-10-17T16:43:12.221020+00:00",
+  "updated_utc": "2026-10-17T16:48:13.887016+00:00",
   "protocol": "docs/JEV_TEXT_INTEGRATED_EXECUTION_20261016.md",
   "protocol_sha256": "0adecb3e30136b974fa1ecfffe74282df019f5ccbe0ece7fdbb6547fa486bc18",
   "prompt": "prompts/text_rag_integrated_v5.txt",
@@ -507,5 +507,13 @@
     "active": true,
     "user_instruction": "일단 여기까지만; 잘 저장하고 보고서도 작성 git 반영",
     "gpu_experiments_authorized_now": false
+  },
+  "research_review": {
+    "phase": "astra_deep_research_running",
+    "agent": "/root/astra_deep_research",
+    "model": "gpt-6-astra",
+    "reasoning_effort": "high",
+    "gpu_experiments_authorized": false,
+    "new_training": false
   }
 }

@@ -66,3 +66,7 @@ GRASP의 본문은 GRPO와 답변·근거 읽기·검색·turn 효율 보상을 
 read 선택은 검증8에서 F1 21.88%→9.38%, EM12.5%→0%로 떨어져 당시 primary에서 제외했다. 사용자 요청으로 같은 기존20문항에서 **선택 ON/OFF를 모두 평가하는 후속 탐색 비교**를 완료했다. ON은 read15회 중8회 생성을 생략했지만 F1 30.43%→25.43%, EM25%→20%로 품질이 떨어졌다. 이 비교는 원 primary를 바꾸거나 새 heldout이라고 부르지 않는다. 결과·선택 횟수·인자 토큰·step·latency는 별도 보고서 `lab/reports/text_integrated_20261016/improvement_v3_argument_selection.md`에 기록했다.
 
 episode latency는 제어·인자·답변 생성·검색(query embedding 포함)·Python 처리를 포함한다. 모델 로딩·corpus 사전 embedding·채점·저장·백업은 제외한다. 공유 GPU 관측값을 통제된 speedup으로 해석하지 않는다. [step·latency 정의 및 집계](../lab/reports/text_integrated_20261016/improvement_v3_steps_latency.md)
+
+## 딥서치 후속 보완 — 2026-10-17
+
+LAnR 부록B.1의 실제 control head는 단일affine+sigmoid이며, 본문의MLP라는표현보다구체적이다. [개별정리](papers/LANR_2604_17866_20261017.md). Frozen host의작은router에후보평가·품질비용학습을적용한FORGE도직접관련작으로추가했다. Full과Lite의추가host probe비용을구별해야한다. [FORGE개별정리](papers/FORGE_2609_34358_20261017.md). 최신종합판단은Astra딥서치문서에서보완하며이전조사의완전성을주장하지않는다.

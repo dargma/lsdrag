@@ -1,0 +1,24 @@
+{
+  "checked_date": "2026-10-17",
+  "status": "individual_paper_notes_complete; Astra synthesis running",
+  "papers": [
+    {
+      "name": "LAnR",
+      "document": "docs/papers/LANR_2604_17866_20261017.md",
+      "sha256": "5b3ca2a2a1838d96b17e2d2659ac59e5ccfd3d8d520d1d7e3f9bb39130e336e8",
+      "primary": "https://arxiv.org/html/2604.17866v2",
+      "depth": "methods,training,appendix and serving-cost details",
+      "reproduced": false
+    },
+    {
+      "name": "FORGE",
+      "document": "docs/papers/FORGE_2609_34358_20261017.md",
+      "sha256": "a140b7a57dc016c7628660d4d12f3f4ee0a1deaefe95a71c2329c3eca976aefb",
+      "primary": "https://arxiv.org/html/2609.34358v1",
+      "depth": "methods,training,appendix and serving-cost details",
+      "reproduced": false
+    }
+  ],
+  "gpu_experiments": false,
+  "user_hold": true
+}
