@@ -1,6 +1,6 @@
 {
   "phase": "improvement_v3_complete_read_selection_rejected",
-  "updated_utc": "2026-10-17T16:25:24.011613+00:00",
+  "updated_utc": "2026-10-17T16:31:06.375445+00:00",
   "protocol": "docs/JEV_TEXT_INTEGRATED_EXECUTION_20261016.md",
   "protocol_sha256": "0adecb3e30136b974fa1ecfffe74282df019f5ccbe0ece7fdbb6547fa486bc18",
   "prompt": "prompts/text_rag_integrated_v5.txt",
@@ -413,5 +413,14 @@
       "statistics": "exploratory investment thresholds only; oracle is privileged and validation is already exposed"
     },
     "next": "No automatic training/RL/expansion. Keep action-head+generated args; prioritize routing errors/generalization and assess early-stopping separately."
+  },
+  "generalization100": {
+    "phase": "prepared",
+    "run": "/content/local_fast/lsdrag-text-v1/results/frozen_head_generalization100_20261017",
+    "manifest": "lab/registry/text_integrated_20261016/generalization100_manifest_20261017.json",
+    "protocol": "docs/JEV_FROZEN_HEAD_GENERALIZATION100_20261017.md",
+    "episodes_planned": 200,
+    "training": false,
+    "pid": null
   }
 }
