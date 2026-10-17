@@ -87,7 +87,7 @@ summary.update(manifest=manifest, input_sha256=hashes, fixed_validation_read_slo
                             'latency': manifest['timing']})
 (OUT / 'improvement_v3_argument_selection.json').write_text(json.dumps(summary, ensure_ascii=False, indent=2)+'\n')
 with (OUT / 'improvement_v3_argument_selection.csv').open('w') as stream:
-    writer = csv.DictWriter(stream, fieldnames=list(rows[0]))
+    writer = csv.DictWriter(stream, fieldnames=list(rows[0]),lineterminator="\n")
     writer.writeheader(); writer.writerows(rows)
 
 off, on = (summary['policies'][p] for p in manifest['policies'])
