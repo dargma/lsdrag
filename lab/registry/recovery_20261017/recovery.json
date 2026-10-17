@@ -1,0 +1,37 @@
+{
+  "restored_utc": "2026-10-17T06:54:36.924515+00:00",
+  "source_commit": "021ddbb",
+  "model": "Qwen/Qwen3-4B-Instruct-2507",
+  "model_revision": "cdbee75f17c01a7cc42f958dc650907174af0554",
+  "qwen_files_verified": 13,
+  "embedding_files_verified": 15,
+  "musique_train_rows": 19938,
+  "musique_dev_rows": 2417,
+  "dataset_sha256_verified": true,
+  "teacher_pairs": 32,
+  "head_sha256": "f50ec1b4049d9fb0996ea60af63874497bdf5eee3f6a5ca044707095e3157e1c",
+  "archive_sha256": "a5096296a7ef25744dbece486c42d93340606ff1aec623abc0a1051b36fa25a6",
+  "run": "/content/local_fast/lsdrag-text-v1/results/text_integrated_20261016_v5_fast_only",
+  "idle_observer_session": 29729,
+  "idle_seconds_required": 900,
+  "new_experiment_started": false,
+  "recovery_failures_resolved": [
+    "Launch-time backup hash was stale; final outcome report hash matches actual final archive.",
+    "Python ensurepip unavailable; used uv with isolated venv."
+  ],
+  "environment_status_tool": "unavailable; network-policy file absent; actual public downloads succeeded",
+  "tests_passed": 18,
+  "main_runtime": {
+    "torch": "2.11.0+cu130",
+    "transformers": "5.18.0",
+    "lm_format_enforcer": "0.11.3"
+  },
+  "embedding_runtime": {
+    "torch": "2.11.0+cu130",
+    "transformers": "5.19.0",
+    "sentence_transformers": "6.1.0"
+  },
+  "idle_observer_pid": 289248,
+  "launcher": "scripts/launch_restored_improvement.py",
+  "stage1": "scripts/diagnose_text_generation_paths.py"
+}

@@ -1,3 +1,9 @@
+현재 실행 준비: `python scripts/launch_restored_improvement.py`. 실제15분 idle 관측 후 `PYTHONPATH=src /content/local_fast/lsdrag-text-v1/experiment-env/bin/python -u scripts/diagnose_text_generation_paths.py --output /content/local_fast/lsdrag-text-v1/results/improvement_v2_stage1_20261017 --minutes 15`를1회 실행. stage1완료 후 자동보고서/Drive해시백업/Git push, stage2는 parity/생성경로 결과 검토 gate후 진행. 현CPU검사18통과.
+
+## 2026-10-17 — 최신 Git/local-fast 복원 및15분 유휴 실행 승인
+
+Git021ddbb가 오래된 Drive보다 최신. 개선계획v2가 현재 다음 실험이며 기존teacher32/head/dev10 품질NoGo는 보존. Qwen4B13파일,embedding15파일,MuSiQue train/dev 해시검증,teacher32 NPZ/JSON와head 최종archive 복원. provenance:lab/registry/recovery_20261017/recovery.json. 사용자 최신지시:GPU15분 이상 연속 유휴 확인 즉시 계획v2 진행. 이전5분/30분 예약 및 오래된PID는 적용하지 않음. 현GPU GPU-619f1d71-c0b4-21cf-abcd-4a50a8549f3f;30초 관측,900초/오류·busy시 재설정. status:/content/local_fast/lsdrag-recovery/20261017/idle_status.json. 현재 GPU실험 미시작. train24/validation8 및train8진단 split 선고정. stage1 최대24state token/cache/native-prefix 비교 준비;검증 후 실행. 다른 작업 종료 금지.
+
 ## 2026-10-16 — 최신 사용자 조건부 재개:30분 확인·5분 유휴 후 실행
 
 사용자 최신 지시 "30분 마다 확인은 하는데, GPU가 5분이상 쉬고있을때 실행"으로 이전 HOLD/GPU금지를 해당 조건에서 해제. watcher PID122238 대기 확인, 다음check2026-10-16 16:31:55 UTC, 이후1800초 간격. idle 발견 후30초 샘플링으로300초 이상 연속 idle 확인 뒤 계획v2 executor를1회 재개. busy/unknown이면 실행하지 않음. 기존 watcher stopped 및 launch_intent 없음 확인 후 STOP 제거하여 재개. GPU로드 직전 재확인, 타 세션 종료 금지, local-fast 실행/Drive백업, 계획v2 gate/예산 준수. 새 HOLD가 오면 즉시 중단. 현재 실험은 아직 미시작, runtime 유지 시만 감시 지속.
