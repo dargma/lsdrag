@@ -430,3 +430,9 @@ Git021ddbb가 오래된 Drive보다 최신. 개선계획v2가 현재 다음 실�
 
 사용자 “그래 계획 다시 출력하고 저장 배업 git push”. 최신계획 docs/JEV_TEXT_INTEGRATED_IMPROVEMENT_V3_20261017.md 및 lab/registry/text_integrated_20261016/improvement_experiment_plan_v3.json. 순서:1 생성경로진단검토 →2 단일prefill action+read-slot 통합학습(train24/val8),동일checkpoint always-generate/read-selection 비교 →3 설정동결 fresh20 native/primary. 검색인자는항상생성. decision-only/RL/step압축 제외. 이번에는계획·memory저장만; 새실험시작없음/자동실행해제유지. 기존stage1 24상태완료,parity검토pending; 통합학습·평가미실행.
 
+
+## 2026-10-17 — 사용자 승인 CPU stage1 검토 완료
+
+사용자 “1은 cpu에서 가능하면 바로 시작”. CUDA_VISIBLE_DEVICES 비움, tokenizer/저장JSON/기존handler만사용, 새backbone inference/GPU사용없음. scripts/review_generation_paths_cpu.py 실행완료. 24상태입력token·원본state hash검증,56 keyword/read handler replay hash일치. exact prefix OFF토큰24/24일치,ON값24/24일치. compact값7/24변경(keyword6/8,FINAL1/8),keyword검색결과3건변경/근거recall3건하락,2건은여러keyword가긴문자열하나로합쳐져nonempty→empty. native도8keyword중5건빈검색이므로native를완전한정답경로로간주하지않음. logits cutoff0.25초과14건이나top1선택24/24일치,모든top1 margin>2*기록된최대오차. BF16계산경로차이가후보원인이지만full logits/position/high-precision참조없어확정불가. 기존gate를사후완화하지않고stage1 미통과유지. native prefix oracle표시16건은실제인자값누출이아닌여는따옴표경계의과보수표시임을CPU확인;배포검증완료아님. 보고서 lab/reports/text_integrated_20261016/improvement_v3_stage1_cpu_review.json. stage2미시작/자동실행해제유지. 다음: native형식구문prefix와FINAL정렬안을고정한뒤동일train상태실모델검증,필요시cache수치차이추가계측. 이번CPU요청은GPU기동승인으로해석하지않음.
+
+CPU audit초기hash직렬화가ensure_ascii=False로원본digest와달라실패. 원본json.dumps(sort_keys=True)직렬화에맞춰수정한뒤전체검사통과. 원본결과수정없음.

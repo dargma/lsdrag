@@ -1,5 +1,5 @@
 {
-  "phase": "improvement_v3_plan_saved_not_started",
+  "phase": "improvement_v3_cpu_stage1_review_complete_gate_pending",
   "updated_utc": "2026-10-16T16:13:04.401948+00:00",
   "protocol": "docs/JEV_TEXT_INTEGRATED_EXECUTION_20261016.md",
   "protocol_sha256": "0adecb3e30136b974fa1ecfffe74282df019f5ccbe0ece7fdbb6547fa486bc18",
@@ -35,7 +35,7 @@
   "teacher_collection_started": true,
   "training_completed": true,
   "evaluation_completed": true,
-  "next": "Review completed stage1 parity/generation evidence, then implement merged action/read profile; no auto launch.",
+  "next": "Prepare native-style syntax-only generation path; real-model validation remains pending. No GPU auto-launch.",
   "previous_multimodal_checkpoint_historical_only": {
     "phase": "native2_review_required",
     "run": "/content/local_fast/lsdrag-head-v14/results/native_distillation_12b_20261015",
@@ -256,5 +256,13 @@
     "compact_match": 17,
     "next": "Review token divergence and schema failures before stage2; no automatic quality claim."
   },
-  "decision_only_proposal": "excluded_by_user"
+  "decision_only_proposal": "excluded_by_user",
+  "cpu_stage1_review": {
+    "report": "lab/reports/text_integrated_20261016/improvement_v3_stage1_cpu_review.json",
+    "input_states_verified": 24,
+    "handler_replays_verified": 56,
+    "gpu_used": false,
+    "gate_passed": false,
+    "stage2_started": false
+  }
 }
