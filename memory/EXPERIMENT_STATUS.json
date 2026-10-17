@@ -226,7 +226,10 @@
     "idle_seconds_required": 900,
     "session": 29729,
     "state": "/content/local_fast/lsdrag-recovery/20261017/idle_status.json",
-    "experiment_started": false
+    "experiment_started": false,
+    "launcher_pid": 295318,
+    "observer_pid": 289248,
+    "launcher_status": "/content/local_fast/lsdrag-recovery/20261017/launch_status.json"
   },
   "phase_before_user_hold": "fixed_step_head_functional_verified_quality_nogo",
   "gpu_use_authorized": "conditional_after_15_minutes_observed_idle",

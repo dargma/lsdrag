@@ -1,3 +1,5 @@
+실프로세스 확인: launcher PID295318, observer PID289248. launcher 대기 상태 확인 완료. STOP 경로 `/content/local_fast/lsdrag-recovery/20261017/STOP`은 기동 전 취소용. 호스트 살아있는 동안만 지속.
+
 현재 실행 준비: `python scripts/launch_restored_improvement.py`. 실제15분 idle 관측 후 `PYTHONPATH=src /content/local_fast/lsdrag-text-v1/experiment-env/bin/python -u scripts/diagnose_text_generation_paths.py --output /content/local_fast/lsdrag-text-v1/results/improvement_v2_stage1_20261017 --minutes 15`를1회 실행. stage1완료 후 자동보고서/Drive해시백업/Git push, stage2는 parity/생성경로 결과 검토 gate후 진행. 현CPU검사18통과.
 
 ## 2026-10-17 — 최신 Git/local-fast 복원 및15분 유휴 실행 승인

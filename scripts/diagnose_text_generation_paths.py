@@ -7,7 +7,9 @@ from pathlib import Path
 from types import SimpleNamespace
 from jsonschema import validate
 from lsdrag.text_integrated import StrictReader, argument_schema, native_schema, options_for, advance_json_parser
-from lsdrag.text_decision_benchmark import TOOLS, FINAL_SCHEMA
+from lsdrag.text_decision_benchmark import TOOLS, FINAL_SCHEMA, TextCorpus, public_paragraphs
+from lsdrag.v11_embedding_worker import V11ProcessEmbedder
+import numpy as np
 
 
 def digest(value):
@@ -119,6 +121,14 @@ def main():
     started=time.perf_counter();deadline=started+a.minutes*60
     model=root/'hf/models--Qwen--Qwen3-4B-Instruct-2507/snapshots/cdbee75f17c01a7cc42f958dc650907174af0554'
     reader=StrictReader(model,SimpleNamespace(max_output_tokens=512,context_limit=16384));torch=reader.torch
+    raw={}
+    with (root/'source/musique/musique_ans_v1.0_train.jsonl').open() as stream:
+        for line in stream:
+            q=json.loads(line)
+            if q['id'] in split['diagnostic']:raw[q['id']]=q
+    embedder=V11ProcessEmbedder()
+    import atexit
+    atexit.register(embedder.close)
     results=[]
     with torch.inference_mode():
         for record in records:
@@ -151,6 +161,17 @@ def main():
                 exact=constrained(reader,inputs,prefix,argprefix,schema,deadline)
                 reader.capture(record['messages'],options_for(record['messages'][1]['content'],record['history']),'probe',deadline)
                 compact,usage,failure=reader.continue_cached(action,record['history'],deadline)
+                corpus=TextCorpus(public_paragraphs(raw[record['qid']]),np.load(parent/'index'/f'{record["qid"]}.npy'),embedder)
+                gold={f'p{p["idx"]}' for p in raw[record['qid']]['paragraphs'] if p['is_supporting']}
+                dispatch={}
+                for name,args in [('native',value),('exact_off',offvalue),('exact_on',exact['value']),('compact_on',compact)]:
+                    if args is None:continue
+                    if action=='FINAL':dispatch[name]={'answer':args.get('answer'),'valid':True};continue
+                    try:
+                        evidence=corpus.call(action,args);found={r['chunk_id'] for r in evidence}
+                        dispatch[name]={'result_ids':sorted(found),'result_sha256':digest(evidence),'result_count':len(evidence),'empty':not evidence,'keyword_elements':len(args['keywords']) if action=='keyword_search' else None,'support_recall':len(found&gold)/len(gold) if gold else None}
+                    except Exception as e:dispatch[name]={'error':str(e)}
+                result['dispatch']=dispatch
                 result.update(action=action,native_value=value,prefix_token_ids=prefix,prefix_oracle=oracle,prefix_text=reader.tokenizer.decode(prefix),parity=parity,
                     exact_off={'token_ids':off,'value':offvalue,'action':offaction,'error':offerror,'tokens_equal_native':prefix+off==native_ids,'first_divergence':divergence_info},exact_on=exact,
                     compact_on={'value':compact,'usage':usage,'error':failure},exact_on_matches_native=exact['value']==value,compact_matches_native=compact==value)
@@ -164,6 +185,7 @@ def main():
                 'exact_on_match':sum(r.get('exact_on_matches_native',False) for r in results),
                 'compact_match':sum(r.get('compact_matches_native',False) for r in results)}
             (a.output/'summary.json').write_text(json.dumps(summary,indent=2));print(json.dumps(summary),flush=True)
+    embedder.close()
     summary['phase']='stage1_complete';summary['pid']=None
     summary['next']='Review token divergence and schema failures before stage2; no automatic quality claim.'
     (a.output/'summary.json').write_text(json.dumps(summary,indent=2))
