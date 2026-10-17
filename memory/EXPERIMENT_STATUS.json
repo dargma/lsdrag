@@ -1,6 +1,6 @@
 {
-  "phase": "improvement_v3_complete_read_selection_rejected",
-  "updated_utc": "2026-10-17T16:33:41.464787+00:00",
+  "phase": "hold_after_frozen_head_generalization100_complete",
+  "updated_utc": "2026-10-17T16:43:12.221020+00:00",
   "protocol": "docs/JEV_TEXT_INTEGRATED_EXECUTION_20261016.md",
   "protocol_sha256": "0adecb3e30136b974fa1ecfffe74282df019f5ccbe0ece7fdbb6547fa486bc18",
   "prompt": "prompts/text_rag_integrated_v5.txt",
@@ -35,7 +35,7 @@
   "teacher_collection_started": true,
   "training_completed": true,
   "evaluation_completed": true,
-  "next": "No automatic expansion. Review fresh20 limitations and failed read-selection case.",
+  "next": "User HOLD. Results/report/backup/Git saved. No new experiments/training/automatic launch until explicit resume.",
   "previous_multimodal_checkpoint_historical_only": {
     "phase": "native2_review_required",
     "run": "/content/local_fast/lsdrag-head-v14/results/native_distillation_12b_20261015",
@@ -340,15 +340,16 @@
     "original_primary_unchanged": true
   },
   "generalization_followup": {
-    "phase": "astra_review_complete_execution_not_ready",
+    "phase": "generalization100_complete_user_hold",
     "draft": "docs/JEV_HEAD_GENERALIZATION_DRAFT_20261017.md",
     "review": "docs/JEV_HEAD_DIRECTION_ASTRA_REVIEW_20261017.md",
-    "gpu_started": false,
+    "gpu_started": true,
     "pid": null,
     "common_assets_verified": true,
-    "final_protocol_frozen": false,
-    "runner_implemented": false,
-    "recommendation": "retain A baseline; C feasibility oracle first; defer freeform argument decoder;100/30 confirmation later"
+    "final_protocol_frozen": true,
+    "runner_implemented": true,
+    "recommendation": "retain A baseline; C feasibility oracle first; defer freeform argument decoder;100/30 confirmation later",
+    "gpu_currently_running": false
   },
   "contraction_probe": {
     "phase": "complete_intermediate_contraction_gate_failed",
@@ -415,15 +416,96 @@
     "next": "No automatic training/RL/expansion. Keep action-head+generated args; prioritize routing errors/generalization and assess early-stopping separately."
   },
   "generalization100": {
-    "phase": "evaluation",
+    "phase": "complete_user_hold",
     "run": "/content/local_fast/lsdrag-text-v1/results/frozen_head_generalization100_20261017",
     "manifest": "lab/registry/text_integrated_20261016/generalization100_manifest_20261017.json",
     "protocol": "docs/JEV_FROZEN_HEAD_GENERALIZATION100_20261017.md",
     "episodes_planned": 200,
     "training": false,
-    "pid": 723617,
-    "completed": 103,
+    "pid": null,
+    "completed": 200,
     "source_commit": "8c9acf1",
-    "tool_session": 18426
+    "tool_session": 18426,
+    "report": "docs/JEV_FROZEN_HEAD_GENERALIZATION100_REPORT_20261017.md",
+    "metrics": "lab/reports/text_integrated_20261016/frozen_head_generalization100_20261017.json",
+    "native": {
+      "n": 100,
+      "f1": 0.3111326685243881,
+      "em": 0.19,
+      "support_f1": 0.39233333333333337,
+      "tool_calls": 2.26,
+      "interaction_turns": 3.26,
+      "prompt_tokens": 3914.01,
+      "completion_tokens": 94.32,
+      "forced_prefix_tokens": 0.0,
+      "prefill_count": 3.26,
+      "decoder_forward_count_derived": 91.06,
+      "seconds": 1.3366164938703877,
+      "latency_total_seconds": 133.66164938703878,
+      "latency_median_seconds": 1.2550640609988477,
+      "latency_p90_seconds": 1.7518322403950153,
+      "error_episodes": 4,
+      "valid_finals": 96,
+      "forced_finals": 0,
+      "timed_components_mean": {
+        "prefill_seconds": 0.14478976637939922,
+        "prefix_seconds": 0.0,
+        "decode_seconds": 1.1438480874692323,
+        "tool_seconds": 0.015021578380838037,
+        "other_seconds_derived": 0.03295706164091827
+      }
+    },
+    "head": {
+      "n": 100,
+      "f1": 0.3157050369454408,
+      "em": 0.2,
+      "support_f1": 0.4006666666666666,
+      "tool_calls": 2.39,
+      "interaction_turns": 3.39,
+      "prompt_tokens": 4106.24,
+      "completion_tokens": 60.81,
+      "forced_prefix_tokens": 31.07,
+      "prefill_count": 3.39,
+      "decoder_forward_count_derived": 59.81,
+      "seconds": 0.978334851169202,
+      "latency_total_seconds": 97.8334851169202,
+      "latency_median_seconds": 0.9609238940029172,
+      "latency_p90_seconds": 1.3110530771038613,
+      "error_episodes": 0,
+      "valid_finals": 100,
+      "forced_finals": 0,
+      "timed_components_mean": {
+        "prefill_seconds": 0.14774134167091688,
+        "prefix_seconds": 0.04177685960952658,
+        "decode_seconds": 0.7437822013105324,
+        "tool_seconds": 0.01436867290918599,
+        "other_seconds_derived": 0.030665775669040163
+      }
+    },
+    "conclusion": {
+      "complete": true,
+      "head_point_f1_and_em_at_least_native": true,
+      "quality_noninferiority_established": false,
+      "causal_speed_improvement_established": false,
+      "training_or_tuning_performed": false,
+      "next_automatic_training": false
+    },
+    "archive": {
+      "run": "/content/local_fast/lsdrag-text-v1/results/frozen_head_generalization100_20261017",
+      "drive_archive": "/content/drive/MyDrive/lsdrag-backups/20261017/frozen_head_generalization100_20261017.tar.gz",
+      "sha256": "90144cc6854269dabb58dbc3195b10c0770b34c1812e8819fe45d2a9ccdab543",
+      "bytes": 4237578,
+      "episodes": 200,
+      "corpus_vector_files": 100,
+      "source_commit": "8c9acf1",
+      "head_sha256": "534da7b64150878869850cf7ccb735ec0fa8fbd643ddd0a74db19afeea4ebaef",
+      "model_weights_included": false,
+      "all200_episode_hashes_verified": true
+    }
+  },
+  "execution_hold": {
+    "active": true,
+    "user_instruction": "일단 여기까지만; 잘 저장하고 보고서도 작성 git 반영",
+    "gpu_experiments_authorized_now": false
   }
 }

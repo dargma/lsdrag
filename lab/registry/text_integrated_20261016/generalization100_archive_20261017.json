@@ -1,0 +1,12 @@
+{
+  "run": "/content/local_fast/lsdrag-text-v1/results/frozen_head_generalization100_20261017",
+  "drive_archive": "/content/drive/MyDrive/lsdrag-backups/20261017/frozen_head_generalization100_20261017.tar.gz",
+  "sha256": "90144cc6854269dabb58dbc3195b10c0770b34c1812e8819fe45d2a9ccdab543",
+  "bytes": 4237578,
+  "episodes": 200,
+  "corpus_vector_files": 100,
+  "source_commit": "8c9acf1",
+  "head_sha256": "534da7b64150878869850cf7ccb735ec0fa8fbd643ddd0a74db19afeea4ebaef",
+  "model_weights_included": false,
+  "all200_episode_hashes_verified": true
+}

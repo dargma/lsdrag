@@ -33,12 +33,16 @@ def stats(es):
     keys = ['f1', 'em', 'support_f1', 'tool_calls', 'interaction_turns', 'prompt_tokens', 'completion_tokens',
             'forced_prefix_tokens', 'prefill_count', 'decoder_forward_count_derived', 'seconds']
     times = np.array([e['seconds'] for e in es])
+    components = {key: sum(c['usage'].get(key, 0) for e in es for c in e['reader_calls'])/len(es)
+                  for key in ['prefill_seconds', 'prefix_seconds', 'decode_seconds']}
+    components['tool_seconds'] = sum(t['seconds'] for e in es for t in e['trajectory'])/len(es)
+    components['other_seconds_derived'] = float(times.mean())-sum(components.values())
     return {'n': len(es), **{k: float(np.mean([e[k] for e in es])) for k in keys},
             'latency_total_seconds': float(times.sum()), 'latency_median_seconds': float(np.median(times)),
             'latency_p90_seconds': float(np.quantile(times, .9)),
             'error_episodes': sum(bool(e['errors']) for e in es),
             'valid_finals': sum(e['answer_format_valid'] for e in es),
-            'forced_finals': sum(e['forced_final'] for e in es)}
+            'forced_finals': sum(e['forced_final'] for e in es), 'timed_components_mean': components}
 
 
 def main():
@@ -95,12 +99,22 @@ def main():
               'input_token_relative_change': h['prompt_tokens']/n['prompt_tokens']-1,
               'generated_plus_forced_prefix_native': n['completion_tokens']+n['forced_prefix_tokens'],
               'generated_plus_forced_prefix_head': h['completion_tokens']+h['forced_prefix_tokens']}
+    clean = [p for p in pairs if not p['native_errors'] and not p['head_errors']]
+    secondary = {'posthoc_error_free_pairs': {
+        'n': len(clean), 'native_f1': float(np.mean([p['native_f1'] for p in clean])),
+        'head_f1': float(np.mean([p['head_f1'] for p in clean])),
+        'f1_delta': float(np.mean([p['f1_delta'] for p in clean])),
+        'em_delta': float(np.mean([p['em_delta'] for p in clean])),
+        'warning': 'Outcome-defined post-hoc subset. Primary remains all100; not a replacement benchmark or isolated routing effect.'},
+        'native_error_pairs': len(pairs)-len(clean),
+        'native_error_pairs_head_exact_gains': sum(bool(p['native_errors']) and bool(p['head_em']) for p in pairs)}
     conclusion = {'complete': status['phase'] == 'complete',
                   'head_point_f1_and_em_at_least_native': h['f1'] >= n['f1'] and h['em'] >= n['em'],
                   'quality_noninferiority_established': False, 'causal_speed_improvement_established': False,
                   'training_or_tuning_performed': False, 'next_automatic_training': False}
     report = {'manifest': manifest, 'status': status, 'groups': groups, 'paired': paired,
-              'cost_observations': ratios, 'conclusion': conclusion, 'pairs': pairs, 'input_sha256': hashes,
+              'cost_observations': ratios, 'secondary_posthoc': secondary,
+              'conclusion': conclusion, 'pairs': pairs, 'input_sha256': hashes,
               'notes': ['All native format-error episodes retained in primary metrics.',
                         'Full native baseline versus head+aligned cached generator: execution path and policy both differ.',
                         'Native argument_tokens=0 is uninstrumented combined generation, not zero actual argument generation.',
@@ -129,6 +143,13 @@ def main():
               f"Native exact 정답 상실{paired['lost_exact']} / 새 exact 획득{paired['gained_exact']}.",
               f"paired F1차이={paired['f1_delta']['mean']:.6f}, descriptive bootstrap95={paired['f1_delta']['bootstrap95_descriptive']}.",
               f"관측 시간 총합 Native/head={ratios['observed_time_native_over_head']:.3f}. 통제된speedup주장없음.", '',
+              '## 시간 성분 관측', '',
+              f"Native prefill={n['timed_components_mean']['prefill_seconds']:.4f}s, "
+              f"decode={n['timed_components_mean']['decode_seconds']:.4f}s; "
+              f"head prefill={h['timed_components_mean']['prefill_seconds']:.4f}s, "
+              f"일괄prefix={h['timed_components_mean']['prefix_seconds']:.4f}s, "
+              f"decode={h['timed_components_mean']['decode_seconds']:.4f}s. "
+              '각경로의usage timer집계이며같은도구/인자/답변을강제한인과분리실험은아니다.', '',
               '## 해석과 한계', '',
               f"head F1·EM 점추정이 Native 이상인가: {conclusion['head_point_f1_and_em_at_least_native']}. "
               '이값은확인평가의점추정비교이며비열등성입증이아니다. 실패문항을보고이100문항에맞춰튜닝하지않는다. '
@@ -139,6 +160,11 @@ def main():
               'Native오류도주분석에포함했다. head조건은도구선택뿐아니라aligned/cache실행경로도바뀌므로 '
               '전체차이를learnedhead선택효과하나로돌리지않는다. Native의인자토큰별도값0은미계측이다. '
               '생성+forcedprefix와입력토큰도함께보며출력감소를전체계산감소와동일시하지않는다.', '',
+              f"사후보조분석: 양쪽오류없는{len(clean)}문항의F1차이는 "
+              f"{secondary['posthoc_error_free_pairs']['f1_delta']*100:.3f}%p, EM차이 "
+              f"{secondary['posthoc_error_free_pairs']['em_delta']*100:.3f}%p. "
+              'Native형식오류4문항중head가정답을낸것은1문항이다. 주분석은여전히100전체다. '
+              '형식안정성의기여와정책의질을구분하기위한기술통계이며오류조건으로선택된subset의한계가있다.', '',
               'latency는실제episode제어·인자/답변생성·검색/queryembedding·계측용tokenization을포함한다. '
               '모델load/문서사전embedding/채점/파일저장제외. corpus준비는별도기록. '
               '순서교대와단일rollout의공유GPU관측값이며통제속도또는동일trajectory비교가아니다.', '',

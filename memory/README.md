@@ -20,3 +20,5 @@ Latest plan override2026-10-17: `docs/JEV_TEXT_INTEGRATED_IMPROVEMENT_V3_2026101
 Latest2026-10-17: Astra direction review complete; CURRENT/HEAD newest headers apply. Proposed small counterfactual probe is not yet implemented/frozen; no new GPU run. Generalization100/30 is deferred by review recommendation, not completed.
 
 Latest2026-10-17: bounded contraction probe completed, no learned compression training; intermediate transition gate failed. Read newest CURRENT/HEAD and contraction_probe_20261017 report. No active worker or automatic next experiment.
+
+Latest2026-10-17: frozen new100 paired evaluation complete; report JEV_FROZEN_HEAD_GENERALIZATION100_REPORT_20261017.md. USER HOLD: save/report/push only, no new experiments until explicit resume. Read newest CURRENT/HEAD.

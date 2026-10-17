@@ -48,3 +48,7 @@ Git021ddbb가 오래된 Drive보다 최신. 개선계획v2가 현재 다음 실�
 - Latest execution2026-10-16: implement optimizations and run immediately, using native A-RAG comparator. Current v5 uses implicit references (no candidate message), same-prefill cached arguments and runtime syntax assembly, GPU-resident heads and schema-valid greedy fast path. Qwen3-4B-Instruct-2507 nonthinking, teacher32/max48, untouched reserved dev10 only after prerequisites, no D3 new analysis. Compactv4 discarded for slow FINAL. Preserve raw results and do not claim oracle cost-screen gains as learned-policy speed.
 
 - Latest user scope: head+step reduction are future research experiments; keep the generation-now versus steps-later value idea, but current execution stops at same-step learned-head functionality. No RL or step-compression launch now. Literature novelty review requested separately.
+
+## Latest user override — 2026-10-17 / HOLD
+
+사용자 “일단 여기까지만”. 완료된 결과·보고서·Git/Drive 저장을 마무리하고 추가 실험·학습·3-hop·자동실행은 보류. 후속 방향 질문은 논의이며 재개 승인으로 간주하지 않는다. 새100문항은 후속 학습/튜닝에 사용하지 않는다.
