@@ -1,0 +1,71 @@
+{
+  "checked_utc_date": "2026-10-17",
+  "scope": "targeted primary-source related research update; not exhaustive",
+  "document": "docs/JEV_RELATED_RESEARCH_UPDATE_20261017.md",
+  "closest_architecture": "2604.17866",
+  "closest_tool_interface": "2607.10463",
+  "sources": [
+    {
+      "arxiv_id": "2510.14337",
+      "url": "https://arxiv.org/abs/2510.14337",
+      "review_depth": "abstract and metadata"
+    },
+    {
+      "arxiv_id": "2602.16429",
+      "url": "https://arxiv.org/abs/2602.16429",
+      "review_depth": "abstract and metadata"
+    },
+    {
+      "arxiv_id": "2604.17866",
+      "url": "https://arxiv.org/abs/2604.17866",
+      "review_depth": "abstract and metadata; methods for LAnR and GRASP also inspected"
+    },
+    {
+      "arxiv_id": "2606.13814",
+      "url": "https://arxiv.org/abs/2606.13814",
+      "review_depth": "abstract and metadata"
+    },
+    {
+      "arxiv_id": "2607.10463",
+      "url": "https://arxiv.org/abs/2607.10463",
+      "review_depth": "abstract and metadata; methods for LAnR and GRASP also inspected"
+    },
+    {
+      "arxiv_id": "2608.24214",
+      "url": "https://arxiv.org/abs/2608.24214",
+      "review_depth": "abstract and metadata"
+    },
+    {
+      "arxiv_id": "2609.00813",
+      "url": "https://arxiv.org/abs/2609.00813",
+      "review_depth": "abstract and metadata"
+    },
+    {
+      "arxiv_id": "2609.05637",
+      "url": "https://arxiv.org/abs/2609.05637",
+      "review_depth": "abstract and metadata"
+    },
+    {
+      "arxiv_id": "2609.16453",
+      "url": "https://arxiv.org/abs/2609.16453",
+      "review_depth": "abstract and metadata"
+    },
+    {
+      "arxiv_id": "2610.05034",
+      "url": "https://arxiv.org/abs/2610.05034",
+      "review_depth": "abstract and metadata"
+    },
+    {
+      "arxiv_id": "2610.05750",
+      "url": "https://arxiv.org/abs/2610.05750",
+      "review_depth": "abstract and metadata"
+    },
+    {
+      "arxiv_id": "2610.14428",
+      "url": "https://arxiv.org/abs/2610.14428",
+      "review_depth": "abstract and metadata"
+    }
+  ],
+  "no_external_result_reproduction": true,
+  "novelty_established": false
+}

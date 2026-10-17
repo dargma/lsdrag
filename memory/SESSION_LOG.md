@@ -456,3 +456,13 @@ PID693460/session4524,run /content/local_fast/lsdrag-text-v1/results/improvement
 
 사용자 “실험 시작” 승인으로native형식생성수정검증24/24및2상태FP32진단통과후통합train24학습/validation16/fresh40완료. run /content/local_fast/lsdrag-text-v1/results/improvement_v3_merged_20261017. worker종료/PID없음,source30a34b8. read선택은validation F1.21875→.09375/EM.125→0으로미채택. 같은action checkpoint+always-generate를fresh전에동결. fresh20 nativeF1.29/EM.25,primaryF1.304286/EM.25;1승0패19동률. 생성tokens89.75→60.55이나강제prefix30.55추가,입력tokens3928.5→4266;전체효율·속도·품질향상입증아님. nativeformat오류1/primary0보존. report lab/reports/text_integrated_20261016/improvement_v3_final.json 및.md. Drive최종archive해시검증완료. 통합read분기채택실패와학습/평가완료를구분. 다음작업자동확장없음;read실패/작은표본해석검토.
 
+
+## 2026-10-17 — 사용자 요청: 인자 선택 ON/OFF 평가 추가
+
+사용자 “인자 를 선택하는 것 평가해야지”. 같은 frozen v3 head/checkpoint와 기존 평가20 qids에서 always_generate/read_selection 40episode를 교대 순서로 재실행. train/튜닝/새 checkpoint 없음. read 관측후보1..4 또는 GENERATE 선택; 검색 인자는 항상 생성. 기존 validation 미채택/원 primary 및 fresh20 결과 보존. 이번20은 이미 관측된 질문이므로 post-hoc 탐색 평가이며 fresh/독립검증 주장 금지. scripts/evaluate_v3_argument_selection.py; output /content/local_fast/lsdrag-text-v1/results/improvement_v3_argument_selection_20261017. worker30분 상한, 공유GPU 관측latency만. 선택/생성 횟수, 품질, 실제steps/turns/토큰/전체episode시간 보고. 관련연구 문서/commit push 요청도 미완료로 보존.
+
+## 2026-10-17 — 인자 선택 ON/OFF20문항 추가 평가 완료
+
+사용자 “인자 를 선택하는 것 평가해야지”에 따라 같은 frozen head로기존20문항×2=40episode완료. run /content/local_fast/lsdrag-text-v1/results/improvement_v3_argument_selection_20261017;worker52.43초,PID699213종료/session52550완료. checkpoint SHA534da7b64150878869850cf7ccb735ec0fa8fbd643ddd0a74db19afeea4ebaef 불변. OFF 답변/trajectory기존20/20일치. ON read15회중8회선택(전체47calls중8),나머지7회생성. F1.304286→.254286/EM.25→.20/supportF1.463333→.43;0승19동률1패. step2.35/turn3.35양쪽동일. 인자tokens43.6→40.2,전체생성60.55→57.00;관측latency1.012735→.950829s,공유환경통제speedup주장없음. p151455:OFFp15Acornsoft1986→ONp16CastleofRiddles1985로정답손실. 선택전관측동일;8선택중3인자동일/5다름. 고정validation read6상태slot모방정확도2/6,예측선택2중teacher slot일치1;미래가치학습아님. report lab/reports/text_integrated_20261016/improvement_v3_argument_selection.{json,md,csv}. 검색인자항상생성/read만선택;원primary·검증실패보존. 이번기존20은post-hoc탐색/fresh아님. 새학습·튜닝없음. 관련연구12편문서 docs/JEV_RELATED_RESEARCH_UPDATE_20261017.md:구조LAnR/도구GRASP/가치Stop-RAG,최신10월연구포함. 생성량감소와품질유지실패를함께보고. 다음자동실험없음.
+
+사용자 후속질문: 도구선택만+인자생성 대 도구+인자선택 비교. 현재20문항에서는 전자가 품질우세이며, 후자는생성량감소/품질손실. 추천은현재기준선유지+인자선택연구조건보존;보편우열이나joint구조원인으로단정안함. 새학습승인으로해석하지않음.

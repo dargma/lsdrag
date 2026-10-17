@@ -1,6 +1,6 @@
 {
   "phase": "improvement_v3_complete_read_selection_rejected",
-  "updated_utc": "2026-10-16T16:13:04.401948+00:00",
+  "updated_utc": "2026-10-17T15:45:41.806062+00:00",
   "protocol": "docs/JEV_TEXT_INTEGRATED_EXECUTION_20261016.md",
   "protocol_sha256": "0adecb3e30136b974fa1ecfffe74282df019f5ccbe0ece7fdbb6547fa486bc18",
   "prompt": "prompts/text_rag_integrated_v5.txt",
@@ -324,5 +324,19 @@
     "read_selection_retained": false,
     "quality_improvement_established": false,
     "overall_efficiency_improvement_established": false
+  },
+  "argument_selection_followup": {
+    "phase": "complete_quality_loss",
+    "run": "/content/local_fast/lsdrag-text-v1/results/improvement_v3_argument_selection_20261017",
+    "report": "lab/reports/text_integrated_20261016/improvement_v3_argument_selection.json",
+    "episodes_completed": 40,
+    "posthoc": true,
+    "training": false,
+    "pid": null,
+    "selected_read_calls": 8,
+    "total_read_calls": 15,
+    "f1_off": 0.30428571428571427,
+    "f1_on": 0.2542857142857143,
+    "original_primary_unchanged": true
   }
 }

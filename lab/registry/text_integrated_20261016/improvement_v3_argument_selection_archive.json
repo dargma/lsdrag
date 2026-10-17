@@ -1,0 +1,8 @@
+{
+  "run": "/content/local_fast/lsdrag-text-v1/results/improvement_v3_argument_selection_20261017",
+  "drive_archive": "/content/drive/MyDrive/lsdrag-backups/20261017/improvement_v3_argument_selection_20261017.tar.gz",
+  "sha256": "cc0d302b0f8c4de86bead8d366fac5319e506f7dc85b86312b931848f5d733b2",
+  "bytes": 75089,
+  "contents": "follow-up manifest, status, summary,40raw episodes; no weights",
+  "checkpoint_sha256": "534da7b64150878869850cf7ccb735ec0fa8fbd643ddd0a74db19afeea4ebaef"
+}

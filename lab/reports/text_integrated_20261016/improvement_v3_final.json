@@ -353,5 +353,85 @@
     "overall_compute_or_latency_improvement_established": false,
     "note": "Fresh20: one partial-F1 win,19ties,EM equal. Read selection lost one exact validation answer and was rejected before fresh evaluation. No seed/prompt sweep or recovery expansion."
   },
-  "next": "Review small-sample result and read-slot failure; no further automatic expansion."
+  "next": "Review small-sample result and read-slot failure; no further automatic expansion.",
+  "interaction_and_latency": {
+    "report": "lab/reports/text_integrated_20261016/improvement_v3_steps_latency.json",
+    "groups": {
+      "validation": {
+        "always_generate": {
+          "n": 8,
+          "tool_steps_total": 19,
+          "tool_steps_mean": 2.375,
+          "interaction_turns_total": 27,
+          "interaction_turns_mean": 3.375,
+          "valid_finals": 8,
+          "error_episodes": 0,
+          "latency_total_seconds": 7.743117655008973,
+          "latency_mean_seconds": 0.9678897068761216,
+          "latency_median_seconds": 0.8154599400004372,
+          "latency_p90_seconds": 1.5026445098992554
+        },
+        "read_selection": {
+          "n": 8,
+          "tool_steps_total": 19,
+          "tool_steps_mean": 2.375,
+          "interaction_turns_total": 27,
+          "interaction_turns_mean": 3.375,
+          "valid_finals": 8,
+          "error_episodes": 0,
+          "latency_total_seconds": 6.867444929994235,
+          "latency_mean_seconds": 0.8584306162492794,
+          "latency_median_seconds": 0.7721074469955056,
+          "latency_p90_seconds": 1.2715547297993908
+        }
+      },
+      "evaluation": {
+        "always_generate": {
+          "n": 20,
+          "tool_steps_total": 47,
+          "tool_steps_mean": 2.35,
+          "interaction_turns_total": 67,
+          "interaction_turns_mean": 3.35,
+          "valid_finals": 20,
+          "error_episodes": 0,
+          "latency_total_seconds": 19.575865441009228,
+          "latency_mean_seconds": 0.9787932720504614,
+          "latency_median_seconds": 0.9597832939980435,
+          "latency_p90_seconds": 1.2545053875990564
+        },
+        "native": {
+          "n": 20,
+          "tool_steps_total": 44,
+          "tool_steps_mean": 2.2,
+          "interaction_turns_total": 64,
+          "interaction_turns_mean": 3.2,
+          "valid_finals": 19,
+          "error_episodes": 1,
+          "latency_total_seconds": 25.46971582601691,
+          "latency_mean_seconds": 1.2734857913008455,
+          "latency_median_seconds": 1.1888565594999818,
+          "latency_p90_seconds": 1.6416815965989373
+        }
+      }
+    },
+    "paired": {
+      "n": 20,
+      "more_tool_steps": 2,
+      "equal_tool_steps": 18,
+      "fewer_tool_steps": 0,
+      "observed_total_time_ratio_native_over_primary": 1.3010773854554971,
+      "mean_paired_latency_delta_seconds": -0.2946925192503841,
+      "secondary_equal_tool_steps_no_errors": {
+        "n": 18,
+        "observed_total_time_ratio": 1.3937748753562922,
+        "warning": "Post-hoc subset; equal counts do not imply same states/actions/results. Not fixed-state causal timing."
+      }
+    },
+    "controlled_speed_claim": false
+  },
+  "argument_selection_followup": {
+    "report": "lab/reports/text_integrated_20261016/improvement_v3_argument_selection.json",
+    "posthoc": true,
+    "original_primary_unchanged": true
+  }
 }
