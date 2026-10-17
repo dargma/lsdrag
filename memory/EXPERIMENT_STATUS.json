@@ -1,5 +1,5 @@
 {
-  "phase": "improvement_v3_aligned_gate_passed",
+  "phase": "improvement_v3_validation_running",
   "updated_utc": "2026-10-16T16:13:04.401948+00:00",
   "protocol": "docs/JEV_TEXT_INTEGRATED_EXECUTION_20261016.md",
   "protocol_sha256": "0adecb3e30136b974fa1ecfffe74282df019f5ccbe0ece7fdbb6547fa486bc18",
@@ -29,13 +29,13 @@
   ],
   "worker_wall_budget_minutes": 60,
   "run_planned": "/content/local_fast/lsdrag-text-v1/results/text_integrated_20261016_v5_fast_only",
-  "pid": null,
+  "pid": 693460,
   "implementation_completed": true,
   "dataset_prepared": true,
   "teacher_collection_started": true,
   "training_completed": true,
   "evaluation_completed": true,
-  "next": "Run merged train24, validation16 and frozen fresh20x2",
+  "next": "Complete validation16, freeze primary, then fresh20x2 under unchanged runner",
   "previous_multimodal_checkpoint_historical_only": {
     "phase": "native2_review_required",
     "run": "/content/local_fast/lsdrag-head-v14/results/native_distillation_12b_20261015",
@@ -171,7 +171,7 @@
   "external_evaluation_completed": true,
   "updated_epoch": 1792161920.7440126,
   "d3_additional_analysis": "withdrawn",
-  "session_id": null,
+  "session_id": 4524,
   "functional_smoke": {
     "passed": true,
     "checks": 7,
@@ -183,11 +183,11 @@
   "speed_gate_passed": true,
   "target_speedup_vs_native": 1.5,
   "target_speedup_measured": false,
-  "run": "/content/local_fast/lsdrag-text-v1/results/text_integrated_20261016_v5_fast_only",
+  "run": "/content/local_fast/lsdrag-text-v1/results/improvement_v3_merged_20261017",
   "worker_seconds": 277.1492917609994,
   "contract": "5b64658a2608f883599dbfb36be3758d4f28cc0de63c532ec11f76117a3cecce",
   "teacher_target": 32,
-  "log": "/content/local_fast/lsdrag-text-v1/logs/integrated_v5_fast_only.log",
+  "log": "/content/local_fast/lsdrag-text-v1/logs/improvement_v3_merged_20261017.log",
   "frozen_source_commit": "7ff891a",
   "teacher_questions": 32,
   "natural_states": 15,
@@ -310,5 +310,7 @@
     "gate_passed": true,
     "worker_seconds": 68.92076244600321,
     "limitations": "Two-state precision diagnostic and24 training-state functional checks, not heldout policy quality. BF16 original absolute cutoff unchanged; FP32 test diagnoses numerical path separately."
-  }
+  },
+  "merged_training_completed": true,
+  "merged_evaluation_completed": false
 }

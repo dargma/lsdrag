@@ -1,3 +1,7 @@
+## 2026-10-17 — 통합head 학습완료·validation 실행중
+
+PID693460/session4524,run /content/local_fast/lsdrag-text-v1/results/improvement_v3_merged_20261017,log /content/local_fast/lsdrag-text-v1/logs/improvement_v3_merged_20261017.log,source30a34b8. train24 82상태통합학습gate통과/readreuse11qids+GENERATE5qids. validation고정상태29개 actionmacroF1=.81399,prematureFINAL0. 자율QA품질은아직검증안됨. readslot4양성train0은한계. validation16→설정동결fresh40 순차실행,총45분budget. source수정/중복collector금지.
+
 ## 2026-10-17 — native형식cached경로24/24 통과,통합학습준비
 
 수정AlignedReader native-spaced syntax prefix+FINAL무강제cache-logits:24/24 native값일치,추가full-prefill0. 사전고정2상태FP32 cache/full오차5.48e-5/3.91e-5,동일argmax/길이. BF16오차.375/.25를precision기인차이로설명하는증거이며전체상태무오류증명아님. 보고서lab/reports/text_integrated_20261016/improvement_v3_aligned_check.json;raw /content/local_fast/lsdrag-text-v1/results/improvement_v3_aligned_20261017,worker68.9초. 다음run scripts/run_improvement_v3.py:train24/action+read loss,단일seed100epochs;24qids/action각5/readreuse와GENERATE각5qids gate고정. 기존82train/29validation naturalstates,readslot4 train양성없음명시. optional복구추가없음. 同checkpoint val8×2후primary동결 fresh20×2,worker45분.
