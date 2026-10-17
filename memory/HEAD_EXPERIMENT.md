@@ -1,3 +1,7 @@
+## 2026-10-17 — Frozen100 평가 실행중
+
+source8c9acf1,PID723617/session18426,run /content/local_fast/lsdrag-text-v1/results/frozen_head_generalization100_20261017,status /content/local_fast/lsdrag-text-v1/results/frozen_head_generalization100_20261017/status.json,log /content/local_fast/lsdrag-text-v1/logs/frozen_head_generalization100_20261017.log. 103/200 episode저장;질문별조건교대. head/model/prompt고정,새학습/튜닝없음. 초반품질로중단/변경하지않음. 사용자질문에기존20시간분해설명:Native순차생성89.75tokens/decode1.092902s,prefill.143227s,head60.55tokens/decode.744957s,prefixbatch.041116s,prefill.152442s. Native전체1.273486/head.978793초는최초20기록이며반복head1.012735시Native/Head1.2575배관측. 호출당약13syntax tokens/문항약30token일괄처리;시간이득전부의인과분리는미실시. 사용자에게1.25배확정아닌가능성/공유GPU한계설명. 다음200완료paired보고/원본백업/push.
+
 ## 2026-10-17 — Frozen head 새2hop100 평가 승인·동결
 
 사용자 “ok”로기존head고정미사용100문항Native/head200episode승인. protocol docs/JEV_FROZEN_HEAD_GENERALIZATION100_20261017.md, manifest generalization100_manifest_20261017.json. 가능한노출qid·하위질문family제외(1252→1099eligible),hash순/새100내family도불중복(200atomic). 재학습/인자선택/fallback/RL/3hop없음. maxoutput512/context16384/기존8tool,worker30분load제외/생성150k/입력prefix3m,질문별조건순서교대. head SHA534da7b64150878869850cf7ccb735ec0fa8fbd643ddd0a74db19afeea4ebaef. source scripts/run_frozen_head_generalization100.py,output /content/local_fast/lsdrag-text-v1/results/frozen_head_generalization100_20261017,log /content/local_fast/lsdrag-text-v1/logs/frozen_head_generalization100_20261017.log. manifest CPU검증/compile통과.100결과로튜닝금지,비열등성/controlledspeedup주장없음. 다음실행/결과보고/백업push.
