@@ -420,3 +420,8 @@ Git021ddbb가 오래된 Drive보다 최신. 개선계획v2가 현재 다음 실�
 
 다음: token/cache/schema 증거 검토 후stage2. stage2/3/4 미실행.
 
+
+## 2026-10-17 — decision-only 제안 제외 및 기존 계획 출력 요청
+
+사용자 “decision model실험은 없는것으로”, 이어 “계획했던실험 출력”. 직전 논의한 생성 없는decision-only 별도 실험은 채택하지 않음. 기존개선v2 계획과 구분하여 제시; 이번 턴 새GPU실험 시작 없음. stage1은이미24상태 완료,2~4미실행,parity 검토gate 미통과. 종료된one-shot launcher외 남은유휴observer289248 중지 및STOP작성. 기존모델/데이터/결과 보존.
+

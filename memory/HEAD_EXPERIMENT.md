@@ -1,3 +1,7 @@
+## 2026-10-17 — decision-only 제안 제외 및 기존 계획 출력 요청
+
+사용자 “decision model실험은 없는것으로”, 이어 “계획했던실험 출력”. 직전 논의한 생성 없는decision-only 별도 실험은 채택하지 않음. 기존개선v2 계획과 구분하여 제시; 이번 턴 새GPU실험 시작 없음. stage1은이미24상태 완료,2~4미실행,parity 검토gate 미통과. 종료된one-shot launcher외 남은유휴observer289248 중지 및STOP작성. 기존모델/데이터/결과 보존.
+
 ## 2026-10-17 — 개선v2 stage1 완료
 
 {"completed_states": 24, "planned_states": 24, "worker_seconds": 79.79400012300175, "all_parity_explained": false, "errors": 0, "phase": "stage1_complete", "pid": null, "exact_off_token_equal": 24, "exact_on_match": 24, "compact_match": 17, "next": "Review token divergence and schema failures before stage2; no automatic quality claim."}

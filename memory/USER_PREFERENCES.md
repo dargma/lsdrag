@@ -1,3 +1,7 @@
+## 2026-10-17 — decision-only 제안 제외 및 기존 계획 출력 요청
+
+사용자 “decision model실험은 없는것으로”, 이어 “계획했던실험 출력”. 직전 논의한 생성 없는decision-only 별도 실험은 채택하지 않음. 기존개선v2 계획과 구분하여 제시; 이번 턴 새GPU실험 시작 없음. stage1은이미24상태 완료,2~4미실행,parity 검토gate 미통과. 종료된one-shot launcher외 남은유휴observer289248 중지 및STOP작성. 기존모델/데이터/결과 보존.
+
 ## 2026-10-17 — 최신 Git/local-fast 복원 및15분 유휴 실행 승인
 
 Git021ddbb가 오래된 Drive보다 최신. 개선계획v2가 현재 다음 실험이며 기존teacher32/head/dev10 품질NoGo는 보존. Qwen4B13파일,embedding15파일,MuSiQue train/dev 해시검증,teacher32 NPZ/JSON와head 최종archive 복원. provenance:lab/registry/recovery_20261017/recovery.json. 사용자 최신지시:GPU15분 이상 연속 유휴 확인 즉시 계획v2 진행. 이전5분/30분 예약 및 오래된PID는 적용하지 않음. 현GPU GPU-619f1d71-c0b4-21cf-abcd-4a50a8549f3f;30초 관측,900초/오류·busy시 재설정. status:/content/local_fast/lsdrag-recovery/20261017/idle_status.json. 현재 GPU실험 미시작. train24/validation8 및train8진단 split 선고정. stage1 최대24state token/cache/native-prefix 비교 준비;검증 후 실행. 다른 작업 종료 금지.
