@@ -18,3 +18,5 @@ Latest active scope (2026-10-16): text-only integrated action+argument control; 
 Latest plan override2026-10-17: `docs/JEV_TEXT_INTEGRATED_IMPROVEMENT_V3_20261017.md` merges action/read heads. Plan saved only; no automatic launch.
 
 Latest2026-10-17: Astra direction review complete; CURRENT/HEAD newest headers apply. Proposed small counterfactual probe is not yet implemented/frozen; no new GPU run. Generalization100/30 is deferred by review recommendation, not completed.
+
+Latest2026-10-17: bounded contraction probe completed, no learned compression training; intermediate transition gate failed. Read newest CURRENT/HEAD and contraction_probe_20261017 report. No active worker or automatic next experiment.

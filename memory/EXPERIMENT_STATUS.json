@@ -1,6 +1,6 @@
 {
   "phase": "improvement_v3_complete_read_selection_rejected",
-  "updated_utc": "2026-10-17T16:19:59.251443+00:00",
+  "updated_utc": "2026-10-17T16:25:24.011613+00:00",
   "protocol": "docs/JEV_TEXT_INTEGRATED_EXECUTION_20261016.md",
   "protocol_sha256": "0adecb3e30136b974fa1ecfffe74282df019f5ccbe0ece7fdbb6547fa486bc18",
   "prompt": "prompts/text_rag_integrated_v5.txt",
@@ -351,11 +351,67 @@
     "recommendation": "retain A baseline; C feasibility oracle first; defer freeform argument decoder;100/30 confirmation later"
   },
   "contraction_probe": {
-    "phase": "prepared",
+    "phase": "complete_intermediate_contraction_gate_failed",
     "protocol": "docs/JEV_CONTRACTION_PROBE_PROTOCOL_20261017.md",
     "manifest": "lab/registry/text_integrated_20261016/contraction_probe_manifest_20261017.json",
     "run": "/content/local_fast/lsdrag-text-v1/results/contraction_probe_20261017",
     "pid": null,
-    "training": false
+    "training": false,
+    "episodes": 212,
+    "path_check_pairs": 8,
+    "report": "lab/reports/text_integrated_20261016/contraction_probe_20261017.json",
+    "raw_archive": {
+      "run": "/content/local_fast/lsdrag-text-v1/results/contraction_probe_20261017",
+      "drive_archive": "/content/drive/MyDrive/lsdrag-backups/20261017/contraction_probe_20261017.tar.gz",
+      "sha256": "8bef3bde34ce8ba9c910fde106f38c6843492b07e1aed8695e603349814b9831",
+      "bytes": 138609,
+      "source_commit": "b9b4aff",
+      "raw_episode_records": 212,
+      "path_check_pairs": 8,
+      "total_probes_counting_native_and_aligned_checks_separately": 228,
+      "model_weights_included": false,
+      "head_sha256": "534da7b64150878869850cf7ccb735ec0fa8fbd643ddd0a74db19afeea4ebaef"
+    },
+    "train_gates": {
+      "baseline_correct_questions": 5,
+      "oracle_quality_preserving_covered": 5,
+      "correct_questions_shorter": 3,
+      "correct_questions_immediate_final_sufficient": 1,
+      "nonterminal_shorter_not_explained_by_immediate_final": 1,
+      "secondary_nonterminal_gain_beyond_immediate_and_B1_early_stop": 0,
+      "full_tool_call_reduction_correct_subset": 0.25,
+      "full_decision_turn_reduction_correct_subset": 0.17647058823529416,
+      "qwen_component_reductions_correct_subset": {
+        "generated_tokens": 0.2264150943396226,
+        "prefill_input_tokens": 0.3179859816088998,
+        "forced_prefix_tokens": 0.4285714285714286,
+        "full_prefill_count": 0.25
+      },
+      "qwen_component_direction_nonincreasing": true,
+      "oracle_quality_and_interaction_headroom_gate": true,
+      "intermediate_contraction_investment_gate": false,
+      "statistics": "exploratory investment thresholds only; oracle is privileged and validation is already exposed"
+    },
+    "validation_gates": {
+      "baseline_correct_questions": 1,
+      "oracle_quality_preserving_covered": 1,
+      "correct_questions_shorter": 1,
+      "correct_questions_immediate_final_sufficient": 1,
+      "nonterminal_shorter_not_explained_by_immediate_final": 0,
+      "secondary_nonterminal_gain_beyond_immediate_and_B1_early_stop": 0,
+      "full_tool_call_reduction_correct_subset": 0.5,
+      "full_decision_turn_reduction_correct_subset": 0.33333333333333337,
+      "qwen_component_reductions_correct_subset": {
+        "generated_tokens": 0.36363636363636365,
+        "prefill_input_tokens": 0.5360869565217392,
+        "forced_prefix_tokens": 1.0,
+        "full_prefill_count": 0.5
+      },
+      "qwen_component_direction_nonincreasing": true,
+      "oracle_quality_and_interaction_headroom_gate": false,
+      "intermediate_contraction_investment_gate": false,
+      "statistics": "exploratory investment thresholds only; oracle is privileged and validation is already exposed"
+    },
+    "next": "No automatic training/RL/expansion. Keep action-head+generated args; prioritize routing errors/generalization and assess early-stopping separately."
   }
 }
