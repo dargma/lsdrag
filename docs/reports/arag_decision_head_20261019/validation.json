@@ -39,13 +39,13 @@
     "No independent agent audit; repository and raw artifact checks only"
   ],
   "artifacts_sha256": {
-    "docs/reports/arag_decision_head_20261019/index.html": "6a462faca82474aba2af5b4ff2547118758d27c0d3a68b51a4bd5a0bcfb87ffe",
+    "docs/reports/arag_decision_head_20261019/index.html": "d6331265d41111a2d0403cde798ec45af6e23b7b6a6895f773ed5bfb36ffd50b",
     "docs/reports/arag_decision_head_20261019/evidence.json": "e5178926c573d3c44e92cbaff6ccee560ce49c4a78ddd01a8b0f709c008c76f2",
     "docs/reports/arag_decision_head_20261019/raw_head_generate_2hop__391857_162018.json": "347f8ed6dc9f8d3710ad4b8a8cdea5f9b5050fa2880f92ca17613a2369818dc1",
     "docs/reports/arag_decision_head_20261019/raw_native_2hop__391857_162018.json": "23c16d3193918709338c630675d25140922b7d04ae075e535a960fb8b77d7353",
-    "scripts/reporting/build_arag_decision_report.py": "006e1a8517176b0a71c07b3df875de968c5bb355d56e2dad7729f1b8369a3f2c"
+    "scripts/reporting/build_arag_decision_report.py": "ddc0d8465a3a049fda706be06e13252642984edf741c4032e3c25cb422402c3d"
   },
-  "report_amendment": "Condensed to background/method/results/implications; one dispatch flow, one limitation block, raw steps retained, detailed evidence and all100 in collapsed appendix",
+  "report_amendment": "Added concise Native vs head generated-text comparison; HTML-escaped wrapper and supplied opening syntax checked; clarified 13×2.39=31.07 prefix tokens",
   "editorial_reduction": {
     "default_visible_characters_before": 39355,
     "after": 4814,

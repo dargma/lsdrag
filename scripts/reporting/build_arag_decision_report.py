@@ -28,6 +28,8 @@ parts.append(section('method','2. 실험 방법',table(['항목','설정'],[
 <h3 id="dispatch-flow">실행 흐름: 번호 선택 → 인자 생성 → 함수 호출</h3>
 <div class="flow" aria-label="번호 선택에서 함수 실행까지"><div>질문 + 관측 → reader prefill<br><small>hidden + KV cache</small></div><b>↓</b><div>action head → 합법 행동 중 argmax<br><small>0 keyword / 1 semantic / 2 read / 3 FINAL</small></div><b>↓</b><div>예: 번호 1 → semantic_search로 매핑</div><b>↓</b><div>고정 호출 구문을 batch 처리<br>같은 KV에서 LLM이 query 인자 생성</div><b>↓</b><div>인자 검증 → Python handler 실행<br>결과를 대화에 추가 → 다음 turn</div></div>
 <p><strong>번호도 도구 이름도 텍스트로 생성하지 않는다.</strong> head가 번호를 고르면 runtime이 도구 이름과 고정 구문을 공급한다. 이 구문은 한 번에 처리하고, 인자만 같은 KV cache에서 이어 생성한다. 줄어드는 것은 도구 선택·고정 구문의 <strong>순차 decoding</strong>이다. 인자와 최종 답변 생성은 남는다.</p>
+<div class="table-wrap"><table id="generation-comparison"><thead><tr><th>구분</th><th>도구 선택·호출 구문</th><th>LLM이 생성하는 부분</th></tr></thead><tbody><tr><td>Native</td><td>LLM이 함께 생성</td><td><code>&lt;tool_call&gt;{"name":"semantic_search","arguments":{"query":"Andrew Lang death year"}}&lt;/tool_call&gt;</code></td></tr><tr><td>Decision head</td><td>head가 <strong>1 선택</strong> → 코드가 semantic_search 구문 공급</td><td><code>query": "Andrew Lang death year"}</code></td></tr></tbody></table></div>
+<p class="small">Head는 <code>{"</code>까지 공급된 상태에서 이어 생성한다. 공백·줄바꿈을 생략한 설명용 예시이며 실제 raw는 아래에 있다.</p>
 <p>KV 재사용은 같은 turn의 decision→인자/답변 사이에 적용된다. 다음 turn은 새 관측을 포함해 다시 prefill한다. <code>FINAL</code>은 답변 생성으로 분기한다.</p>
 <details><summary>학습·데이터 세부 설정</summary>
 <p>추가 read-slot head(2560→5)는 GENERATE 또는 관측 ID 후보 4개 중 하나를 고른다. action/read head는 독립 linear이며 공유 trainable trunk가 없다. 학습 파라미터는 총 23,049개다. action CE + read 상태의 slot CE, AdamW(lr 0.001, weight decay 0.01), 100 epochs, seed 20261016을 사용했다. 정규화 통계는 train에서만 계산했다.</p>
@@ -47,7 +49,7 @@ metrics=[('답변 F1 (%)','f1',100,2),('EM 정답률 (%)','em',100,1),('근거 I
 parts.append(section('results','3. 결과',table(['지표 · 새100문항','Native','Head + 인자 생성'],[[label,f'{n[k]*scale:.{digits}f}',f'{h[k]*scale:.{digits}f}'] for label,k,scale,digits in metrics])+'''
 <p><strong>평균 시간은 26.8% 감소했고, 답변 점수는 비슷했다.</strong> F1 기준 5승·90동률·5패, EM 기준 Head만 정답 4문항·Native만 정답 3문항이었다. F1 차이 +0.46%p의 bootstrap 95% 구간은 −4.94~+5.96%p로, 품질 향상이나 비열등성을 입증하지는 못했다.</p>
 <h3>왜 빨라졌는가?</h3>
-<p>문항당 약 31개의 고정 구문 token을 순차 생성 대신 batch로 처리했다. decoding 시간은 1.144→0.744초로 줄었고 prefix batch에 0.042초가 추가됐다. 전체 차이 0.358초와 정합적이다. 반면 입력 tokens는 3,914→4,106으로 늘었다. <strong>전체 token이나 도구 수보다 순차 생성량 감소가 관측 시간 차이와 맞는다.</strong></p>
+<p>도구 호출 prefix는 호출당 13 tokens, 평균 2.39회 호출로 문항당 31.07 tokens였다. 이를 순차 생성 대신 batch로 처리했다. decoding 시간은 1.144→0.744초로 줄었고 prefix batch에 0.042초가 추가됐다. 전체 차이 0.358초와 정합적이다. 반면 입력 tokens는 3,914→4,106으로 늘었다. <strong>전체 token이나 도구 수보다 순차 생성량 감소가 관측 시간 차이와 맞는다.</strong></p>
 <div class="callout amber"><strong>해석의 범위.</strong> 공유 GPU에서 질문·조건당 한 번 측정했으며 head와 함께 구문 처리·cache 연결·schema 제약도 바뀌었다. 26.8%를 head 단독의 통제된 속도 효과로 볼 수 없다. Native 형식 오류 4문항을 포함한 전체100이 주 분석이다. 오류 없는 96문항만 보는 사후 분석에서는 F1 차이 −0.57%p, EM 차이 0%p였다.</div>
 <h3>인자 선택까지 head에 맡기면?</h3>
 <p>read 인자 선택은 <strong>생성을 줄였지만 품질이 떨어져 채택하지 않았다.</strong> 같은 checkpoint의 validation8에서 F1이 21.88→9.38%로 하락했다. 기존20문항의 후속 ON/OFF 비교에서도 read15회 중 8회의 인자 생성을 생략했지만, 생성 tokens 60.55→57.00과 함께 F1 30.43→25.43%, EM 25→20%로 떨어졌다. 최종100에서는 검색·read 인자를 모두 LLM이 생성했다.</p>
