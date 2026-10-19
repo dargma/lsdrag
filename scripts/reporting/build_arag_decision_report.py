@@ -1,0 +1,197 @@
+"""Build the Korean HTML report from audited, small committed evidence. CPU only."""
+from pathlib import Path
+import json, html
+ROOT=Path(__file__).resolve().parents[2]
+OUT=ROOT/'docs/reports/arag_decision_head_20261019'
+D=json.loads((OUT/'evidence.json').read_text())
+E=lambda x:html.escape(str(x),quote=True)
+BASE='https://github.com/dargma/lsdrag/blob/jev_v1.1/'
+def link(path,label):return f'<a href="{BASE}{path}">{E(label)}</a>'
+def table(head,rows):return '<div class="table-wrap"><table><thead><tr>'+''.join(f'<th>{x}</th>' for x in head)+'</tr></thead><tbody>'+''.join('<tr>'+''.join(f'<td>{x}</td>' for x in row)+'</tr>' for row in rows)+'</tbody></table></div>'
+def raw(x):return '<pre>'+E(json.dumps(x,ensure_ascii=False,indent=2))+'</pre>'
+def section(i,title,body):return f'<section id="{i}"><span class="section-no">{i.upper()}</span><h2>{title}</h2>{body}</section>'
+parts=[]
+parts.append(section('background','1. 배경과 연구 질문', '''
+<p>Jev 같은 decision 모델을 보면서 출발한 생각은 단순했다. “판단할 때마다 문장을 생성하지 않고, 필요한 선택만 바로 내리면 빠르지 않을까?” 이를 검색·읽기·종료를 매 단계 결정하는 Agentic RAG에 적용했다. 질문은 <strong>reader LLM에 작은 decision head를 붙여, Native A-RAG 방식의 정확도를 유지하면서 응답 시간을 줄이고 나아가 더 나은 행동을 고를 수 있는가</strong>이다.</p>
+<p>A-RAG는 keyword search, semantic search, chunk read를 모델에 노출하는 계층적 검색 인터페이스를 제안한다. 이번 연구는 이 세 도구를 사용하는 텍스트 전용 로컬 실험이다. 아래의 “Native”는 <strong>동일 Qwen reader가 도구 이름·인자 또는 최종 답변을 직접 생성하는 이 저장소의 비교 구현</strong>을 뜻한다. 원 논문의 전체 벤치마크 재현이나 공식 A-RAG 점수와의 직접 비교는 아니다. Jev 모델/API를 사용하거나 재현한 실험도 아니다. <a href="https://arxiv.org/abs/2602.03442">A-RAG 원 논문</a> · <a href="https://typesafe.ai/">Jev 제공사 TypeSafe</a></p>
+<div class="callout"><strong>세 가지 가설을 분리한다.</strong><ol><li>행동 선택을 짧은 분류 연산으로 바꿔 순차 생성을 줄일 수 있는가?</li><li>그렇게 바꾼 정책이 실제 QA 정확도를 유지하거나 높이는가?</li><li>read 인자 선택 또는 trajectory 최적화로 생성량·호출 수를 더 줄일 수 있는가?</li></ol>이번 결과는 첫 가설의 구현과 관측 효율 가능성을 지지한다. 두 번째의 통계적 입증은 부족하며, 세 번째 중 read 선택은 품질 채택 기준에 실패했다.</div>'''))
+parts.append(section('method','2. 실험 환경과 방법', '''
+<h3>2.1 환경 및 평가 범위</h3>'''+table(['항목','실제 설정'],[
+['Reader','Qwen/Qwen3-4B-Instruct-2507 · frozen backbone · 텍스트 LLM, 이미지 입력 없음'],
+['모델 revision','<code>cdbee75f17c01a7cc42f958dc650907174af0554</code>'],
+['추론','BF16 · PyTorch SDPA · greedy · non-thinking · enable_thinking=False'],
+['검색 임베딩','google/embeddinggemma-2, 768차원 · 별도 프로세스 · revision <code>914f7f89142e33e77833254d9c9b90c3cef7303b</code>'],
+['GPU / 소프트웨어','기록상 단일 NVIDIA RTX PRO 6000 Blackwell Server Edition 약 96GB, 공유 사용. PyTorch 2.11.0+cu130 / Transformers 5.18.0 / lm-format-enforcer 0.11.3. 임베딩 환경 Transformers 5.19.0.'],
+['데이터','MuSiQue-Ans v1.0의 answerable 2-hop 질문. 각 질문에 주어진 문단 묶음 안에서 검색하는 설정이며 전 Wikipedia 검색은 아님.'],
+['입력 제한','문항의 title·paragraph_text·chunk_id만 도구 corpus로 제공. gold answer·support label·question decomposition은 실행 입력에서 제외.'],
+['실행 예산','최대 8 tool calls + FINAL, context 16,384 tokens, 호출당 출력 예산 512 tokens. 실제 최종 100문항은 양쪽 최대 3 tool calls, 강제 종료 0건.'],
+['학습 반복','seed 20261016 하나, 100 epochs, CPU의 작은 head만 학습. Backbone 미세조정·RL 없음.']])+'''
+<p class="small">공개 데이터는 고정 Hugging Face mirror revision에서 받았다. dev 파일 SHA-256은 이번 작성 때도 기존 기록과 일치했다. 공식 배포 ZIP과 mirror의 byte-level 동등성은 검증하지 않았다는 기존 provenance를 유지한다. 환경 정보는 실험 당시 기록이며 이번 보고서 작성 중 GPU를 사용하거나 실험을 다시 실행하지 않았다.</p>
+<h3>2.2 질문 분리와 teacher 라벨</h3>
+<p>MuSiQue train에서 수집한 teacher 32문항을 기존 고정 split에 따라 <strong>train 24문항 / validation 8문항</strong>으로 나눴다. teacher는 같은 reader의 Native 경로다. 각 상태에서 teacher 출력을 보기 <em>전</em> reader의 마지막 token hidden을 추출하고, teacher가 고른 행동을 정답 라벨로 저장했다. 이후의 최종 답변 gold는 QA 평가에 사용했다. 이 32문항은 개발 과정에 이미 노출된 자료이며 validation8을 완전히 독립적인 최종 test로 부르지 않는다.</p>
+'''+table(['구분','문항','상태','teacher EM 정답 문항','teacher EM 오답 문항에서 나온 상태'],[['학습','24','82','5','65'],['검증','8','29','3','18']])+'''
+<div class="callout amber"><strong>초안과 실제 실행의 차이:</strong> “정답인 trajectory만 학습”한 것이 아니다. 수집된 natural-state 기록을 그대로 학습에 사용했다. train 24문항 중 teacher EM 정답은 5문항이며, 82개 상태 중 65개가 teacher의 최종 EM이 0인 문항에서 나왔다. 부분점수 답변도 EM=0에 포함된다. 이 수치는 복원한 teacher JSON에서 재집계했다. 현재 head는 <strong>정답 행동의 최적화가 아니라 teacher 행동 모방(behavior cloning)</strong>을 학습한다.</div>
+<p>학습 상태의 행동 수는 keyword 24 / semantic 18 / read 16 / FINAL 24다. 서로 다른 질문 수 기준으로는 각각 23 / 18 / 16 / 24이며, 모든 행동에 최소 5개 질문이 있는 coverage gate를 통과했다. read 재사용 라벨은 11개 질문, GENERATE는 5개 질문이다. read slot 라벨 분포는 GENERATE=5, slot1=2, slot2=6, slot3=3, slot4=0으로, 후보 4의 학습 양성은 없었다.</p>
+<p>validation에서 인자 선택을 평가해 always-generate를 주조건으로 동결한 뒤 fresh dev 20문항으로 먼저 비교했다. 그 20문항에 대한 read 선택 ON/OFF 후속 분석은 이미 노출된 문항의 탐색 평가다. 마지막 확인은 <strong>기존 질문 및 하위질문 family를 제외한 새 dev 100문항</strong>으로 수행했다. 원래 answerable 2-hop dev 1,252개 중 1,099개가 기존 노출 제외 조건을 만족했고, 결과를 보지 않는 hash 순서와 새 집합 내부 family 중복 배제로 100개를 고정했다. 이는 dev 전체의 무작위 표본과 같지 않으며 사전학습 데이터 노출까지 배제한 것은 아니다. 새 100문항은 학습·튜닝에 사용하지 않았다.</p>
+<h3>2.3 Head 구조: tool 선택과 stop을 하나의 4-way 분류로</h3>
+<div class="flow" aria-label="행동 head 실행 흐름"><div>질문 + 누적 도구 결과</div><b>↓</b><div>Frozen Qwen prefill<br><small>마지막 hidden h ∈ ℝ²⁵⁶⁰ + KV cache</small></div><b>↓</b><div>Linear action head 2560 → 4<br><small>keyword / semantic / read / FINAL</small></div><b>↓</b><div>도구면 고정 구문 batch 처리 → 같은 KV에서 인자 생성<br>FINAL이면 같은 cache의 logits에서 답변 JSON 생성</div><b>↓</b><div>Python handler 실행 → 결과를 대화에 추가 → 다음 turn</div></div>
+<p>별도의 go/stop head는 없다. <code>FINAL</code>이 stop에 해당하고 나머지 세 class가 계속 진행할 도구다. read 인자 실험을 위해 독립적인 2560→5 linear head도 함께 학습했다. 출력은 <code>GENERATE</code> 또는 이미 관측한 ID 묶음/단일 ID 후보 최대 4개다. 두 head는 frozen feature를 공유하지만 <strong>학습 가능한 공유 trunk는 없다</strong>. 학습 파라미터는 (2560+1)×(4+5)=<strong>23,049개</strong>다. 저장 형식의 검색용 slot padding은 별도 학습 파라미터로 세지 않는다.</p>
+<pre class="formula">L = CE(action_logits, teacher_action)
+  + CE(read_slot_logits, teacher_read_slot)  [read 상태만]
+AdamW(lr=0.001, weight_decay=0.01), 100 epochs, full-batch
+feature 정규화: train 평균/표준편차만 사용 → 추론 weight/bias에 접어 넣음</pre>
+<p>head는 공개 관측으로 가능한 행동만 남기는 legal mask 후 argmax를 고른다. 관측된 ID가 없으면 read를 막는다. read-slot 라벨은 현재 후보와 teacher 인자가 정확히 같을 때 해당 slot, 없으면 GENERATE다. gold support를 보고 가장 좋은 문단을 가르치는 학습은 아니다. 검색 인자는 v3에서 항상 생성한다. 최종 100문항 주조건에서는 read 인자 역시 항상 생성하며 slot 예측은 인자 실행에 사용하지 않는다.</p>
+<p>고정 teacher validation 29상태에서 action macro-F1은 0.81399였고 premature FINAL은 0개였다. 이는 teacher 상태에서의 행동 모방 지표이며 head가 스스로 방문한 상태에서 문제를 잘 푼다는 뜻은 아니다. 실제 validation8 자율 QA의 always-generate F1은 21.875%, EM은 12.5%로 별도 보고한다.</p>
+<h3>2.4 인자 생성과 KV cache: 무엇을 줄였는가</h3>
+<p>도구를 고르는 순간에도 전체 문맥의 prefill은 필요하다. 이후 <code>&lt;tool_call&gt; … "name": "선택한 도구", "arguments": {"</code> 같은 고정 구문은 runtime이 공급하고, 하나의 batch forward로 cache에 반영한다. 그 뒤 필요한 keyword/query/chunk_ids와 FINAL 답변을 같은 frozen LLM이 생성한다. <strong>선택 후 인자 생성 때문에 같은 문맥을 두 번째 full-prefill하지 않는다.</strong> FINAL은 저장된 마지막 hidden의 LM logits에서 시작하며 도구 prefix를 강제하지 않는다.</p>
+<p>이 KV 재사용은 <strong>한 turn 안의 decision→argument/final 연결</strong>이다. 새 도구 결과가 붙은 다음 turn에는 전체 대화를 다시 prefill한다. 문서 자체를 KV에 압축 저장하거나 모든 turn의 prefill을 없앤 실험은 아니다. read 후보 선택은 “기존 ID 인자를 복사할지”의 문제로 KV cache 재사용과 별개다.</p>
+<p>초기 compact 구문 경로는 24상태 중 7개에서 인자 값이 달라져 채택하지 않았다. native-spaced aligned 경로는 고정 train 24상태의 값이 Native와 24/24 일치하고 추가 full-prefill이 없었다. 2개 상태의 FP32 cache/full 차이는 최대 약 5.48×10⁻⁵, argmax도 일치했다. 이는 제한된 기능 진단이지 모든 상태의 수치 동등성이나 QA 성공 증명은 아니다.</p>
+<p>Native는 unconstrained native payload를 생성하고 사후 schema를 검증한다. Head 조건에는 schema를 지키도록 생성 토큰을 제한하는 경로도 있다. 따라서 비교에는 <strong>정책 head + 고정 구문 처리 + cache 연결 + 형식 제약</strong>이 함께 포함된다. learned head 하나만의 순수 인과 효과로 읽으면 안 된다.</p>'''))
+usage=D['tool_usage']
+rows=[]
+for tool in ['keyword_search','semantic_search','read_chunk']:
+ n=usage['native']['calls'][tool];h=usage['head_generate']['calls'][tool]
+ rows.append([f'<code>{tool}</code>',f'{n} ({n/226*100:.1f}%)',f'{h} ({h/239*100:.1f}%)',f"{usage['native']['episodes_using'][tool]} / {usage['head_generate']['episodes_using'][tool]}",f"{usage['native']['empty_results'].get(tool,0)} / {usage['head_generate']['empty_results'].get(tool,0)}"])
+parts.append(section('tools','2.5 A-RAG tool call 현황', '''
+<p>도구 체계는 세 개의 외부 연산과 하나의 종료 행동이다. 아래 설명은 이번 로컬 텍스트 실험의 실제 handler를 기준으로 한다. 원 A-RAG의 인덱스·retriever 전체 구현과 동일하다는 뜻은 아니다.</p>
+'''+table(['행동','입력','실제 동작 / 출력'],[
+['keyword_search','<code>{"keywords":["entity"],"top_k":5}</code>','대소문자 무시 문자열 포함 횟수×검색어 길이를 문단별로 합산. 점수가 양수인 문단만 반환. BM25가 아님.'],
+['semantic_search','<code>{"query":"evidence needed","top_k":5}</code>','query embedding과 사전 계산 문단 벡터의 내적으로 정렬. query embedding 비용은 episode 시간에 포함.'],
+['read_chunk','<code>{"chunk_ids":["p3","p2"]}</code>','1–8개의 ID에 대해 title과 전체 문단 text 반환. 이 handler는 요청한 내용을 다시 반환하며 중복 읽기 자동 생략을 구현하지 않음.'],
+['FINAL','<code>{"answer":"short span","support_ids":["p2"]}</code>','외부 도구가 아닌 종료/답변 생성. 답변과 관측 근거 ID를 반환하고 episode 종료.']])+'''
+<p>검색의 <code>top_k</code>는 1–20, 생략 시 5다. 검색 결과는 chunk_id·title·본문 앞 300자 snippet이며, 이 snippet도 다음 결정의 근거가 된다. 그래서 항상 read를 거쳐야 답할 수 있는 구조는 아니다. head의 read 생성 스키마는 관측 ID로 제한한다. tool 결과는 다음 turn의 대화에 추가되며, 최종 cap/context 강제 종료는 별도 안전장치다.</p>
+<h3>최종 100문항 × 두 조건의 실제 호출 집계</h3>
+'''+table(['도구','Native 호출(전체 도구 중)','Head 호출(전체 도구 중)','사용 문항 수 N / H','빈 결과 호출 N / H'],rows)+'''
+<p><strong>전체 tool calls: Native 226회 → Head 239회(+5.75%).</strong> 문항 평균은 2.26→2.39다. 빈 keyword 결과는 23/84(27.4%)→29/101(28.7%)이며 semantic/read는 빈 결과가 없었다. 빈 검색 자체가 최종 실패를 의미하지는 않는다.</p>
+'''+table(['종료·길이 지표','Native','Head'],[
+['유효 FINAL JSON','96','100'],['형식 오류 episode','4','0'],['cap/context 강제 FINAL','0','0'],['도구 0회인 문항','4 (모두 형식 오류)','0'],['도구 1회 / 2회 / 3회인 문항','2 / 58 / 36','3 / 55 / 42'],['평균 interaction turns','3.26','3.39']])+'''
+<p class="small">interaction turns는 보고 코드의 “tool calls + 종료 시도 1회” 정의다. Native 오류 4문항의 마지막 시도는 유효 FINAL이 아니므로 100번의 성공적 FINAL로 계산하지 않는다. 위 호출 수는 저장 trajectory에서 실제 완료된 handler 호출을 센 것이다.</p>
+<div class="callout"><strong>관찰:</strong> Head는 100문항 모두 keyword_search로 시작했다. Native의 첫 성공 도구는 keyword 80문항 / semantic 16문항이고, 4문항은 형식 오류로 도구 실행 전에 종료했다. 현재 head가 도구 선택을 다양하고 최적으로 배분한다고 보기 어렵다. 학습 표본·모방 편향·표현력의 영향을 분리할 후속 진단이 필요하다.</div>
+<p class="small">출처: 원본 200개 episode를 재집계한 <a href="evidence.json">evidence.json → tool_usage</a>, '''+link('src/lsdrag/text_decision_benchmark.py','TextCorpus handler')+' · '+link('src/lsdrag/tool_registry.py','도구 스키마')+'''.</p>'''))
+g=D['groups'];n=g['native'];h=g['head_generate']
+metric_specs=[('답변 F1 (%)','f1',100,2),('정확 일치 EM (%)','em',100,1),('근거 ID F1 (%)','support_f1',100,2),('평균 tool calls','tool_calls',1,2),('평균 interaction turns','interaction_turns',1,2),('평균 순차 생성 tokens','completion_tokens',1,2),('평균 강제 prefix tokens','forced_prefix_tokens',1,2),('평균 기록 입력 tokens','prompt_tokens',1,2),('평균 full-prefill 수','prefill_count',1,2),('평균 decoder forward 수 (기록에서 산출)','decoder_forward_count_derived',1,2),('평균 episode 시간 (초)','seconds',1,4),('중앙 episode 시간 (초)','latency_median_seconds',1,4),('p90 episode 시간 (초)','latency_p90_seconds',1,4),('100문항 시간 합 (초)','latency_total_seconds',1,3),('형식 오류 episode','error_episodes',1,0)]
+metricrows=[[label,f'{n[key]*scale:.{digits}f}',f'{h[key]*scale:.{digits}f}'] for label,key,scale,digits in metric_specs]
+svg='<svg viewBox="0 0 840 155" role="img" aria-label="문항당 시간 성분: Native 1.337초, Head 0.978초" class="timing">'
+colors=['#2563eb','#8b5cf6','#0f766e','#d97706','#94a3b8'];ks=['prefill_seconds','prefix_seconds','decode_seconds','tool_seconds','other_seconds_derived']
+for j,(name,group) in enumerate([('Native',n),('Head',h)]):
+ y=20+j*52;svg+=f'<text x="0" y="{y+20}" font-size="15">{name}</text>';x=82
+ for k,color in zip(ks,colors):
+  w=group['timed_components_mean'][k]*475
+  svg+=f'<rect x="{x:.2f}" y="{y}" width="{w:.2f}" height="30" fill="{color}"><title>{k}: {group["timed_components_mean"][k]:.6f}s</title></rect>';x+=w
+ svg+=f'<text x="{x+8:.2f}" y="{y+20}" font-size="14">{group["seconds"]:.3f}s</text>'
+for j,(label,color) in enumerate(zip(['Prefill','Prefix batch','Decode','Tool','Other'],colors)):
+ x=82+j*145;svg+=f'<rect x="{x}" y="132" width="10" height="10" fill="{color}"/><text x="{x+15}" y="142" font-size="12">{label}</text>'
+svg+='</svg>'
+parts.append(section('results','3. 정량 결과', '''
+<h3>3.0 이전 실패를 포함한 실험 경과</h3>
+<p>10월 16일 초기 v5의 별도 dev10에서는 Native F1 35.00% / EM 30%, 당시 head F1 12.86% / EM 10%로 품질 NoGo였다. 이후 생성 경로 정렬, train24/validation8 분리 및 v3 head 학습을 진행했다. 초기10·v3 fresh20·최종100은 서로 다른 질문/설정이므로 점수 상승을 같은 test에서의 개선 곡선으로 보거나 합쳐 평균내지 않는다. 초기 v5의 절대 시간도 현재100과 직접 비교하지 않는다. <a href="https://github.com/dargma/lsdrag/blob/jev_v1.1/lab/reports/text_integrated_20261016/v5_final_outcome.json">초기 v5 실패 기록</a></p>
+<h3>3.1 주 평가: 고정 head, 미사용 2-hop 100문항</h3>
+<p>같은 질문에서 두 조건을 모두 실행하고 문항마다 순서를 교대했다. 조건당 100 episode, 총 200개다. 모델·prompt·head를 고정하고 각 문항/조건을 한 번 실행했다. F1/EM은 MuSiQue scorer에서 정답 alias 중 최고 점수를 취하고, 근거 F1은 정답 supporting paragraph ID와 예측 ID의 집합 F1을 계산한다.</p>
+'''+table(['지표','Native','Head + 인자 생성'],metricrows)+'''
+<div class="stat-grid"><div><strong>26.8%</strong><span>관측 평균 소요 시간 감소</span></div><div><strong>35.5%</strong><span>순차 생성 token 감소</span></div><div><strong>+0.46%p</strong><span>답변 F1 점추정 차이</span></div><div><strong>5 / 90 / 5</strong><span>F1 승 / 동률 / 패</span></div></div>
+<p>시간은 1.337→0.978초로 <strong>26.8% 감소</strong>했다. Native/head 비율로는 1.366배다. “26.8% 시간 감소”와 “36.6% 처리율 증가에 해당하는 역수 비율”은 서로 다른 표현이므로 혼용하지 않는다. 단, 공유 GPU·단일 rollout·다른 trajectory에서 얻은 관측값이며 통제된 speedup은 아니다. 초기 fresh20에서는 1.273→0.979초로 약 23.1% 감소를 관측했다.</p>
+<p>답변 F1 차이는 +0.457%p, paired bootstrap 95% 기술적 구간은 <strong>−4.938 ~ +5.957%p</strong>다. EM 차이는 +1%p, 구간은 −4 ~ +6%p다. 미리 정한 비열등성 margin과 검정력이 없으므로 “동등 성능” 또는 “성능 향상 입증”이라고 결론내리지 않는다. 정답 교집합은 16문항, Native만 정답 3문항, Head만 정답 4문항, 둘 다 EM 오답 77문항이다.</p>
+<p>Native 형식 오류 4문항도 주 분석에 포함했다. 그중 head가 정답을 얻은 것은 1문항이다. 양쪽 모두 오류가 없는 96문항만 보는 사후 분석에서는 F1 차이가 −0.565%p, EM 차이가 0%p였다. 이 subset으로 주 결과를 대체하지 않으며, 작은 전체 우위를 순수 tool 선택 개선으로 설명하기 어렵다는 단서로 사용한다.</p>
+<h3>3.2 관측 시간의 구성과 생성 비용</h3>
+'''+svg+table(['시간 성분 / 문항','Native (초)','Head (초)'],[[label,f'{n["timed_components_mean"][k]:.4f}',f'{h["timed_components_mean"][k]:.4f}'] for label,k in [('Prefill','prefill_seconds'),('고정 prefix batch','prefix_seconds'),('순차 decoding','decode_seconds'),('도구 실행(query embedding 포함)','tool_seconds'),('기타(차감 산출)','other_seconds_derived')]])+'''
+<p>Native 시간의 약 85.6%가 decoding이었다. Head 조건에서 decoding은 약 0.400초 줄고 prefix batch 비용은 약 0.042초 추가됐다. 전체 차이 약 0.358초와 맞아떨어진다. 문항당 약 31개의 고정 구문 토큰을 순차 생성 대신 batch로 처리한 것이 관측 차이를 설명하는 주요 요소다. <strong>head의 분류 자체가 공짜이거나 전체 LLM forward를 없앤 것은 아니다.</strong></p>
+<p>생성+강제 prefix는 94.32→91.88 tokens로 큰 차이가 없고, 기록 입력은 3,914.01→4,106.24(+4.91%)로 늘었다. 주로 순차 처리량이 바뀐 것이다. 입력·prefix 중복 합산이나 token 합계를 FLOPs로 해석하는 계산은 하지 않는다. Native의 별도 argument_tokens=0 필드는 미계측을 뜻하며 실제 인자가 생성되지 않았다는 뜻이 아니다.</p>
+<p class="small">계측 포함: episode 제어, 인자·답변 decoding, 검색/query embedding, 계측용 tokenization. 제외: 모델 로딩, 문서 사전 embedding, 채점, 결과 파일 저장. timer 성분은 각 경로의 집계이며 동일 상태·행동·인자·답변을 고정한 인과 분해 실험이 아니다.</p>
+<h3>3.3 read 인자 선택 ON/OFF: 생성은 줄었지만 채택 실패</h3>
+'''+table(['단계 / 조건','답변 F1','EM','순차 생성 tokens / 문항','해석'],[
+['validation8 · 항상 생성','21.875%','12.5%','54.125','동일 checkpoint'],['validation8 · read 선택','9.375%','0%','50.500','품질 채택 기준 실패'],['기존20 재평가 · 항상 생성','30.429%','25%','60.55','post-hoc 기준'],['기존20 재평가 · read 선택','25.429%','20%','57.00','0승 / 19동률 / 1패']])+'''
+<p>기존20 후속 평가에서 read 15회 중 8회는 후보 선택으로 인자 생성을 생략했고, 나머지 7회는 생성했다. 전체 tool 47회 중 생략은 8회다. 인자 생성 tokens는 43.6→40.2, 전체 생성은 60.55→57.00으로 줄었지만 F1은 5%p, EM은 5%p 하락했다. 도구 수 2.35와 turn 수 3.35는 같았다. 관측 시간 1.013→0.951초도 품질 손실과 함께 보아야 한다.</p>
+<p>손실 문항 <code>2hop__151455_120171</code>에서 OFF는 p15를 읽고 1986을 맞혔지만 ON은 p16을 선택해 1985로 틀렸다. validation의 6개 read 상태에서 slot 모방 정확도는 2/6이었다. 이 head는 최종 답변 가치를 학습한 문단 선택기가 아니라 teacher 인자의 정확한 후보 일치를 모방한 것이다. 검색 인자는 항상 생성하며, 최종 새100에서 이 read 선택 기능은 사용하지 않았다.</p>
+<h3>3.4 trajectory 단축 진단의 위치</h3>
+<p>별도의 train24/validation8 제한 반사실 probe는 228개 probe/path 출력을 완료했지만 새 압축 정책을 학습하지 않았다. train의 head 정답 5문항 중 3문항은 oracle 경로 단축이 가능했고, 공통 prefix 포함 tool calls가 12→9로 줄었다. 그러나 중간 nonterminal 대체 단축은 1문항으로 사전 기준 3개에 미달했으며, 그 1건도 조기 종료와 같은 비용이었다. <strong>중간 trajectory 압축 증류 gate는 실패</strong>했다. 이는 노출된 작은 자료·짧은 horizon 진단으로, 일반화된 RL 성과가 아니다.</p>'''))
+# Qualitative exact-discordance table, all 7 rather than cherry-picked wins.
+case_rows=[]
+for p in D['pairs']:
+ if p['em_delta']:
+  case_rows.append([f'<code>{p["qid"]}</code><br>{E(p["question"])}',E(p['gold_answer']),E(p['native_answer'] or '∅'),E(p['head_answer'] or '∅'),'Head만 정답' if p['em_delta']>0 else 'Native만 정답'])
+parts.append(section('qualitative','4. 정성 결과와 실제 단계별 출력', '''
+<h3>4.1 서로 다른 정답을 얻은 모든 7문항</h3>
+<p>F1 승패 5/5와 EM 정답 획득/손실 4/3은 다른 집계다. 아래 표는 exact 정답 여부가 달라진 7개 문항 전체이며, 좋은 사례만 선택한 표가 아니다. ∅는 빈 답변이다.</p>
+'''+table(['문항','정답','Native','Head','EM 결과'],case_rows)+'''
+<h3>4.2 선택 차이가 드러나는 사례</h3>
+<p><strong>성공 — Prince Prigio:</strong> 두 조건 모두 첫 keyword 검색으로 작가가 Andrew Lang이고 책 출판연도가 1889라는 같은 결과를 받았다. Native는 p3를 읽은 뒤 1889를 답했다. Head는 다음 행동으로 semantic_search를 선택했고, LLM이 “when did Andrew Lang … die”라는 질의를 생성했다. p2 snippet에서 1912를 확인하고 정답을 냈다. 다만 citation은 p2만 포함해 두 gold support를 모두 내지는 않았다. 이 비교는 선택 이후 인자·관측도 바뀐 실제 사례이며 head 단독 효과의 통제 실험은 아니다.</p>
+<p><strong>성공 — 탄핵 표차:</strong> <code>2hop__24976_161105</code>에서 Native의 의미 검색은 필요한 p5를 첫 결과에 포함하지 못했고 빈 답을 냈다. Head의 keyword 검색은 p5를 포함했고 p5·p2를 읽어 72를 맞혔다. 도구 수는 양쪽 모두 2회다.</p>
+<p><strong>성공하지만 호출 증가 — 마지막 생존 병사:</strong> <code>2hop__91248_84207</code>에서 Head는 빈 keyword 결과 이후 semantic 검색과 read를 진행해 Albert Henry Woolson을 맞혔다. Native는 Lazare Ponticelli로 틀렸다. Head는 3회, Native는 2회 호출했다. 더 좋은 답이 항상 더 짧은 trajectory에서 나오는 것은 아니다.</p>
+<p><strong>실패 — The Wealth of Nations의 저자 이름을 딴 상:</strong> 첫 keyword 결과는 같았지만 Native는 semantic 검색으로 University of Cambridge를 맞혔고 Head는 p14를 읽어 The Swedish Academy로 틀렸다. 따라서 “read 대신 search” 혹은 그 반대의 단일 규칙으로 성공 사례를 일반화할 수 없다.</p>
+<p><strong>형식 안정성 사례:</strong> <code>2hop__22885_36240</code>는 Native JSON 파싱 오류로 종료했고 Head는 Genesis 3:15를 맞혔다. 이는 의미적 선택 우월성만의 사례로 세면 안 된다.</p>
+<h3>4.3 한 문항의 전체 raw 기록: Prince Prigio</h3>
+<p>아래 인자·답변 문자열은 로그의 <code>usage.raw_json</code>을 그대로 표시한다. 이 필드는 생성 tail에 시작 구문을 붙인 인자 JSON이므로 “모든 문자가 자유 생성된 원문”이라는 뜻은 아니다. <strong>head는 도구 이름을 텍스트로 출력하지 않는다.</strong> 아래 행동 이름은 기록된 실행 tool에서 연결한 값이며 head 확률/logits는 저장되지 않았다. 펼침 항목에는 사용량, 실제 생성 token IDs, prefix token IDs, cache 정보, 전체 tool 응답을 포함했다. 상상한 추론 과정은 추가하지 않았다.</p>'''))
+case=next(c for c in D['cases'] if c['qid']=='2hop__391857_162018');ep=case['policies']['head_generate'];calls=ep['reader_calls']
+trace='<div class="case-head"><strong>'+E(case['question'])+'</strong><br>qid: <code>'+case['qid']+'</code> · gold: '+E(case['gold_answer'])+' · gold support: '+E(', '.join(case['gold_support_ids']))+'</div>'
+for i in range(len(ep['trajectory'])+1):
+ final=i==len(ep['trajectory']);action='FINAL' if final else ep['trajectory'][i]['tool_name'];dec=calls[i*2];gen=calls[i*2+1]
+ trace+=f'<article class="step"><span class="step-label">STEP {i+1}</span><h4>{E(action)}</h4><p>decision 생성 0 tokens · full-prefill {dec["usage"]["full_prefill_count"]}회 · 이어지는 생성 {gen["usage"]["generated_tokens"]} tokens · 강제 prefix {gen["usage"]["forced_prefix_tokens"]} tokens · 인자/답변 추가 full-prefill {gen["usage"]["full_prefill_count"]}회</p><pre>{E(gen["usage"]["raw_json"])}</pre>'
+ if not final:
+  trace+='<details><summary>도구 응답 전체 raw JSON</summary>'+raw(ep['trajectory'][i]['result'])+'</details>'
+ trace+='<details><summary>decision + generation reader_calls 원본 (token IDs·timer 포함)</summary>'+raw([dec,gen])+'</details></article>'
+trace+=f'<p>Head 최종 F1={ep["f1"]:.1f}, EM={ep["em"]}, support F1={ep["support_f1"]:.4f}. Tool calls={ep["tool_calls"]}, 총 생성={ep["completion_tokens"]} tokens, 관측 시간={ep["seconds"]:.4f}초.</p>'
+for policy,title in [('head_generate','Head 전체 episode'),('native','Native 전체 episode')]:
+ trace+=f'<details><summary>{title} 원본 JSON 펼치기</summary>'+raw(case['policies'][policy])+f'</details><p class="small"><a href="raw_{policy}_{case["qid"]}.json">{title} 파일</a> — archive 원본과 byte-equal.</p>'
+parts.append(section('raw','단계별 원본 기록',trace))
+parts.append(section('implications','5. 시사점과 후속 연구 제안', '''
+<h3>5.1 확인한 것과 아직 확인하지 못한 것</h3>
+<p>작은 head는 Native의 선택·구문 생성을 줄이는 실행 구성요소로 동작했다. 100문항에서 품질 점추정이 비슷한 상태로 26.8% 짧은 episode 시간을 관측한 것은 후속 검증의 근거가 된다. 다만 순차 decoding 대부분은 인자와 답변 생성으로 남고, 도구 수·입력 길이는 늘었다. “판단만 빠르게 하면 agent 전체가 같은 비율로 빨라진다”는 처음 가설은 조건부다.</p>
+<p>Native와 head가 서로 다른 정답을 얻는다는 사실은 Native 정확도가 절대 상한이 아님을 보여주는 사례다. 그러나 현재 loss는 Native 행동의 CE 모방이므로 그보다 좋은 trajectory를 체계적으로 학습할 신호가 없다. 마지막 hidden 하나와 작은 linear head가 전체 KV를 참조하며 추가 decode하는 Native와 같은 판단 능력을 갖는다는 가정도 성립하지 않는다.</p>
+<h3>5.2 우선순위 1 — 최적화된 Native를 기준으로 head의 잔여 가치를 측정</h3>
+<p><strong>미실행 제안:</strong> N-full(현재 Native), N-fast(동일 구문 처리·cache·형식 안정화를 제공한 Native 선택), H-BC(현재 head)를 비교한다. 동일 상태에서 같은 행동·인자·답변을 고정한 비용 검사와 전체 episode 품질 평가를 분리한다. warmup·조건 순서 교대·반복 측정과 GPU 부하 기록을 포함한다. 먼저 학습 없이 얻을 수 있는 시간 이득을 분리해야 head 학습 자체의 가치를 알 수 있다.</p>
+<h3>5.3 우선순위 2 — trajectory 라벨의 목표를 모방에서 실제 효용으로</h3>
+<p><strong>미실행 제안:</strong> train 안에서 현재 head 정책 π<sub>k</sub>가 방문하는 상태를 수집한다. 같은 관측 상태에서 합법 대안 행동을 실제로 실행하고, 인자 생성기는 고정한 채 π<sub>k</sub>로 남은 episode를 완료한다. 각 행동의 최종 F1·EM·근거·오류와 남은 tool calls·decoder/input 비용을 라벨로 저장한다. 이는 Q<sup>πk</sup>를 추정하는 것이며 전역 최적 행동을 안다는 뜻은 아니다.</p>
+<p>같은 branch 데이터에서 단순 best-action CE와 작은 quality/cost 예측 head를 비교하고, 기존 imitation CE 및 간단한 turn/empty-result 규칙을 강한 비교군으로 둔다. 비용만 최소화해 즉시 FINAL로 무너지는 일을 막기 위해 품질을 우선하고 조기 오답 종료를 별도 집계한다. 미래 결과·gold는 학습 target에만 사용하며 inference feature에 넣지 않는다. 새 정책 π<sub>k+1</sub>는 처음부터 끝까지 실행해 다시 평가하고, 정책이 바뀌면 방문 상태와 suffix 가치도 다시 수집해야 한다.</p>
+<p>성공 trajectory만 남기는 방식도 학습 후보이지만, 성공한 경로가 최소 비용이거나 모든 중간 행동이 좋았다는 보장은 없다. 실패 이후의 복구 상태를 잃을 수 있으므로 성공-only BC, 모든 상태 BC, outcome-weighted BC, branch-value 학습을 같은 질문·수집 예산에서 비교하는 편이 해석에 유리하다. 기존 새100은 학습 데이터로 재사용하지 않는다.</p>
+<h3>5.4 Head 구조와 Agentic loop 확장</h3>
+'''+table(['아이디어 — 모두 미실행','동기와 필요한 비교'],[
+['상태-aware head','현재 hidden에 남은 budget·직전 도구·빈 결과 여부·관측 ID 수 같은 공개 scalar를 추가. linear/작은 MLP/단순 규칙을 비교해 표현력과 feature 효과 분리.'],
+['read 후보별 scoring','고정 slot 번호 대신 관측 후보별 표현을 점수화하고 GENERATE와 경쟁. 후보 순서 섞기·누락·coverage 검사를 포함. 후보 검색·추가 forward 비용까지 계측.'],
+['stop의 미래 가치','지금 FINAL vs 추가 검색의 최종 품질/비용 차이를 학습. 현재 답의 자신감과 추가 도구의 효용은 다르므로 따로 평가.'],
+['trajectory 단축 / RL','종료 보상·근거·미래 비용으로 head-only RL 또는 cost-sensitive policy iteration을 고려. 먼저 branch oracle에 실질적 개선 여지가 있는지 확인. 현재 압축 gate 실패를 보존.'],
+['수집 예산 배분','오류·불확실성·head 간 불일치 상태에 branch 예산을 배분하되 uniform 수집과 같은 비용으로 비교. 어려운 문항을 제외해 성능을 올리는 선택 편향 방지.'],
+['다른 agent loop로 전이','검색을 넘어 coding·browser 등의 유한 도구 선택으로 확장 가능한 구조 가설. 도구별 입력 생성, 관측 길이, 오류 복구가 달라지므로 새로운 과제·미사용 도구에서 별도 검증.']])+'''
+<p>이 제안들의 온라인 정책은 모든 단계를 head가 선택하고 LLM은 인자·답변을 생성하는 구조를 유지한다. 한 번만 head로 개입한 뒤 Native로 돌아가는 방식은 주방법이 아니라 선택적 원인 분리 진단이다. 현재 결과는 어떤 전이 성능이나 RL 개선도 입증하지 않는다.</p>
+<h3>5.5 관련 연구와 기여 범위</h3>
+<p>작은 head·생성 생략·도구 정책 학습 각각은 이미 선행연구가 있는 방향이다. 다음은 방법의 접점을 설명하기 위한 문헌이며, 각 논문의 점수를 우리의 작은 dev subset과 직접 비교하지 않는다. 본 보고서는 새 재현 실험이나 체계적 문헌 조사 결과를 주장하지 않는다.</p>
+'''+table(['관련 연구','이번 질문과의 접점'],[
+['<a href="https://arxiv.org/abs/2604.17866">LAnR</a>','latent representation 기반 retrieval 제어와 경량 종료 판단. 생성 없이 제어한다는 구조만으로 차별화하기 어렵다.'],
+['<a href="https://arxiv.org/abs/2607.10463">GRASP</a>','semantic/keyword/paragraph reading의 조합 정책을 최종 정확도·근거·효율로 학습하는 직접 관련 방향.'],
+['<a href="https://arxiv.org/abs/2510.14337">Stop-RAG</a>','추가 retrieval의 가치와 종료 제어. 적은 turn 자체보다 품질과 미래 비용의 관계가 중요하다.'],
+['<a href="https://arxiv.org/abs/2609.34358">FORGE</a>','frozen LLM을 위한 evidence routing 및 작은 제어기의 품질–비용 목표. frozen+router 조합 자체의 신규성은 제한된다.'],
+['<a href="https://arxiv.org/abs/1406.5979">AggreVaTe / NRPI</a>','방문 상태에서 행동의 cost-to-go를 이용하는 imitation/policy improvement 원리. branch 결과 증류를 새로운 RL 원리로 주장하지 않는다.']])+'''
+<p>연구 기여 후보는 “decision head를 붙였다”보다 <strong>최적화된 Native보다 나은 품질–비용 곡선을, 작은 학습·분기 수집 예산으로 만들 수 있는가</strong>에 있다. 현재는 기능과 실용 가능성을 확인한 소규모 실험이며, 그 강한 기여를 입증한 단계는 아니다.</p>'''))
+# Browse all100 locally without external dependencies.
+rows=''
+for p in D['pairs']:
+ result='win' if p['f1_delta']>0 else 'loss' if p['f1_delta']<0 else 'tie'
+ rows+=f'<tr data-result="{result}"><td><code>{p["qid"]}</code><br>{E(p["question"])}</td><td>{E(p["gold_answer"])}</td><td>{E(p["native_answer"] or "∅")}<br><small>F1 {p["native_f1"]:.3f} / EM {p["native_em"]}</small></td><td>{E(p["head_answer"] or "∅")}<br><small>F1 {p["head_f1"]:.3f} / EM {p["head_em"]}</small></td><td>{p["f1_delta"]:+.3f}</td></tr>'
+parts.append(section('appendix','부록 A. 100문항 결과 탐색', '''<p>검색과 필터는 표시만 바꾼다. 위 주 분석의 분모는 항상 전체 100문항이다. 정성 사례와 함께 실패·동률도 모두 보존했다.</p><div class="filters"><label>검색 <input id="query" type="search" placeholder="질문, qid, 답변 검색"></label><label>F1 비교 <select id="filter"><option value="all">전체 100</option><option value="win">Head 승 5</option><option value="loss">Head 패 5</option><option value="tie">동률 90</option></select></label><span id="count" aria-live="polite">100문항 표시</span></div><div class="table-wrap allpairs"><table id="pairs"><thead><tr><th>문항</th><th>정답</th><th>Native</th><th>Head</th><th>ΔF1</th></tr></thead><tbody>'''+rows+'''</tbody></table></div>'''))
+parts.append(section('sources','부록 B. 근거·재현·보고 범위', '''
+<p>작성일 2026-10-19. 평가 실행일 2026-10-17. 이번 작업은 기존 기록 재집계·보고서 작성이며 모델 추론, 새 학습, 새 평가를 실행하지 않았다. 연구 실험 HOLD를 유지한다. Git 최신 시작점은 <code>0114fbb</code>, 최종100 실행 source commit은 <code>8c9acf1</code>이다.</p>
+<ul>
+<li><a href="evidence.json">이 보고서의 소규모 근거 JSON</a>: 100문항 집계·tool 현황·teacher 분포·정성 5사례. 공개 데이터 전체나 모델 weight는 포함하지 않음.</li>
+<li>'''+link('docs/JEV_FROZEN_HEAD_GENERALIZATION100_REPORT_20261017.md','기존 frozen100 보고서')+' / '+link('lab/reports/text_integrated_20261016/frozen_head_generalization100_20261017.json','원 집계 JSON')+' / '+link('lab/reports/text_integrated_20261016/frozen_head_generalization100_20261017.csv','200 episode CSV')+'''</li>
+<li>'''+link('lab/reports/text_integrated_20261016/improvement_v3_final.json','v3 학습·validation·fresh20')+' / '+link('lab/reports/text_integrated_20261016/improvement_v3_argument_selection.json','read 인자 선택 분석')+' / '+link('lab/reports/text_integrated_20261016/contraction_probe_20261017.json','trajectory 단축 진단')+'''</li>
+<li>'''+link('scripts/run_improvement_v3.py','head 학습 코드')+' / '+link('src/lsdrag/text_integrated.py','decision·episode 구현')+' / '+link('src/lsdrag/text_integrated_aligned.py','aligned cache 생성')+' / '+link('scripts/run_frozen_head_generalization100.py','최종 평가 실행기')+'''</li>
+<li>'''+link('lab/registry/text_integrated_20261016/generalization100_manifest_20261017.json','평가 사전 manifest')+' / '+link('lab/registry/text_integrated_20261016/musique_sources.json','데이터 출처')+' / '+link('docs/JEV_HEAD_RESEARCH_DEEP_DIVE_ASTRA_20261017.md','이전 Astra 후속 방향 검토')+'''</li>
+</ul>
+<details><summary>해시 및 검증 범위</summary><pre>Frozen100 archive SHA-256
+90144cc6854269dabb58dbc3195b10c0770b34c1812e8819fe45d2a9ccdab543
+
+Teacher32 archive SHA-256
+a5096296a7ef25744dbece486c42d93340606ff1aec623abc0a1051b36fa25a6
+
+Frozen v3 head SHA-256 (기존 manifest)
+534da7b64150878869850cf7ccb735ec0fa8fbd643ddd0a74db19afeea4ebaef
+
+MuSiQue dev SHA-256 (공개 mirror 재다운로드 후 확인)
+15fa63794d18a94ce12411aca6e2327e65b6e83b0b1490efab3f1962e48abf3b</pre>
+<p>이번에 archive 두 개의 해시를 확인했고, 최종100의 원본 episode 200개를 기존 input_sha256과 대조했다. F1/EM/support F1·시간·생성/입력 토큰·tool calls의 평균을 원 episode에서 재계산해 기존 집계와 일치함을 확인했다. 개별 F1 scorer를 전체 200문항에서 새로 실행한 검증이나 모델 추론 재현은 아니다. teacher 분포는 32개 원본 JSON에서 다시 계산했다. 예시 raw 두 파일은 archive 원본과 바이트가 같다.</p></details>
+<p class="small">HTML은 외부 라이브러리 없이 열리며 GitHub 파일 화면은 소스를 표시할 수 있다. 다운로드 후 브라우저에서 열면 모든 표·필터·raw 펼침 기능을 사용할 수 있다. 기존 HTML Preview 방식도 별도 링크로 제공한다. 관련 연구 링크는 2026-10-19에 공식 논문/제공사 페이지의 메타데이터를 확인했다.</p>'''))
+css='''*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#f4f6f9;color:#17243a;font:16px/1.85 -apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans KR",Arial,sans-serif}a{color:#1858b8;text-underline-offset:3px}header{background:#11233b;color:#f8fafc;padding:70px max(24px,calc((100vw - 1120px)/2));border-bottom:6px solid #5eead4}.eyebrow{color:#5eead4;letter-spacing:.12em;font-size:12px;font-weight:700}h1{font-size:clamp(30px,4.5vw,48px);line-height:1.3;letter-spacing:-.04em;margin:16px 0}header p{color:#cbd5e1;max-width:920px}header .pill{display:inline-block;background:#213b58;color:#e2e8f0;padding:4px 12px;border-radius:30px;font-size:12px;margin:4px 6px 4px 0}main{max-width:1120px;margin:0 auto;padding:32px 24px 80px}nav{display:flex;flex-wrap:wrap;gap:6px 20px;margin-bottom:24px;font-size:14px}section{background:white;padding:38px 42px;margin:26px 0;border:1px solid #dfe6ee;border-radius:12px;scroll-margin-top:20px;box-shadow:0 3px 12px #12243b04}h2{font-size:27px;line-height:1.4;margin:6px 0 24px;letter-spacing:-.03em}h3{font-size:20px;margin:34px 0 14px}h4{margin:8px 0;font-size:20px}.section-no{font-size:11px;letter-spacing:.16em;color:#0f766e;font-weight:800}p{margin:14px 0}.small,small{font-size:13px;color:#53647a}.table-wrap{overflow-x:auto;margin:18px 0}table{border-collapse:collapse;width:100%;font-size:14px;line-height:1.65}th{text-align:left;background:#eaf0f6;color:#243e5b;font-weight:650}th,td{padding:12px 14px;border-bottom:1px solid #e1e8f0;vertical-align:top}tbody tr:nth-child(even){background:#f8fafc}td:first-child{font-weight:550}code{font:12px/1.6 ui-monospace,SFMono-Regular,Consolas,monospace;overflow-wrap:anywhere}pre{white-space:pre-wrap;overflow-wrap:anywhere;background:#10243b;color:#e2ecf8;padding:20px;border-radius:8px;font:12px/1.75 ui-monospace,SFMono-Regular,Consolas,monospace;max-height:700px;overflow:auto}details{border:1px solid #dce5ed;border-radius:8px;padding:12px 16px;margin:12px 0}summary{cursor:pointer;font-weight:600;font-size:14px}details[open] summary{margin-bottom:12px}.callout{border-left:4px solid #0f766e;background:#effaf6;padding:20px 24px;margin:24px 0}.amber{border-color:#c48311;background:#fff9e9}.stat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:24px 0}.stat-grid>div{border:1px solid #cbdedb;border-radius:9px;padding:20px 14px;background:#f1faf7}.stat-grid strong{display:block;color:#0f766e;font-size:28px;line-height:1.3}.stat-grid span{font-size:12px}.flow{display:flex;flex-direction:column;align-items:center;text-align:center;margin:26px auto;max-width:760px}.flow>div{background:#eef4fc;border:1px solid #c4d5ec;border-radius:8px;padding:12px 24px;width:100%;font-size:15px}.flow>b{color:#0f766e}.step{border-left:3px solid #2c8a82;padding:18px 20px;background:#f7fafb;margin:20px 0}.step-label{font-size:12px;color:#0f766e;font-weight:800}.step p{font-size:13px}.case-head{background:#eaf1fa;border-radius:8px;padding:20px}.timing{width:100%;height:auto;margin:14px 0}.filters{display:flex;align-items:center;gap:14px;flex-wrap:wrap;font-size:14px}input,select{font:inherit;border:1px solid #b9c7d8;padding:9px;border-radius:5px;max-width:100%}.allpairs{max-height:650px;overflow:auto}.allpairs th{position:sticky;top:0}.allpairs td:first-child{min-width:260px}.allpairs td{min-width:110px}footer{text-align:center;color:#64748b;font-size:12px;padding:0 20px 36px}@media(max-width:650px){main{padding:20px 12px}section{padding:24px 18px}header{padding:40px 24px}.stat-grid{grid-template-columns:1fr 1fr}th,td{padding:10px}h2{font-size:23px}.flow>div{padding:12px}.filters label{width:100%}.callout{padding:16px}pre{padding:13px}}@media print{body{background:white;font-size:11pt}header{padding:24px;color:black;background:white;border-color:#0f766e}header p{color:#334155}main{padding:0;max-width:none}section{box-shadow:none;border:0;padding:12px 0;margin:12px 0;break-inside:auto}nav,.filters{display:none}.allpairs{max-height:none;overflow:visible}details:not([open]){display:none}pre{max-height:none;color:black;background:#f3f5f7}.stat-grid strong{font-size:23px}a{color:#174d94}h2,h3,h4{break-after:avoid}tr{break-inside:avoid}}'''
+js='''const query=document.getElementById('query'),filter=document.getElementById('filter');function applyFilter(){let n=0;document.querySelectorAll('#pairs tbody tr').forEach(row=>{const ok=(filter.value==='all'||row.dataset.result===filter.value)&&row.textContent.toLowerCase().includes(query.value.toLowerCase());row.hidden=!ok;if(ok)n++;});document.getElementById('count').textContent=n+'문항 표시';}query.addEventListener('input',applyFilter);filter.addEventListener('change',applyFilter);'''
+nav=''.join(f'<a href="#{i}">{label}</a>' for i,label in [('background','배경'),('method','방법'),('tools','Tool call 현황'),('results','정량 결과'),('qualitative','정성 사례'),('raw','단계별 raw'),('implications','시사점'),('appendix','100문항 탐색'),('sources','근거')])
+page='<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="A-RAG reader decision head: frozen Qwen3-4B, MuSiQue 100문항 결과와 실제 tool call·raw trajectory 분석"><title>A-RAG Decision Head 실험 보고서 · 2026-10-19</title><style>'+css+'</style></head><body><header><div class="eyebrow">EXPERIMENT REPORT · TEXT INTEGRATED / V3</div><h1>A-RAG의 판단을<br>작은 decision head로 바꿀 수 있을까?</h1><p>Frozen Qwen3-4B × MuSiQue 2-hop<br>도구 선택·인자 생성·종료 제어의 품질과 비용을 확인한 소규모 실험</p><span class="pill">실행 2026.10.17</span><span class="pill">보고 2026.10.19</span><span class="pill">100 paired questions / 200 episodes</span><span class="pill">새 실험 없이 원본 재집계</span></header><main><nav aria-label="목차">'+nav+'</nav><div class="callout"><strong>핵심 결과.</strong> Head + 같은 LLM의 인자 생성 조건은 Native 대비 답변 F1 31.11→31.57%, EM 19→20%, 평균 시간 1.337→0.978초를 기록했다. 시간 26.8% 감소는 공유 GPU 관측값이다. 품질 개선·비열등성·head 단독 속도 효과는 미입증이다. 도구 호출은 226→239회로 늘었고, 별도 read 인자 선택은 품질 손실로 채택하지 않았다.</div>'+''.join(parts)+'</main><footer>lsdrag · jev_v1.1 · 기록된 사실 / 해석 / 미실행 제안을 구분한 연구 보고서</footer><script>'+js+'</script></body></html>'
+(OUT/'index.html').write_text(page)
+print(f'Built {OUT}/index.html ({len(page.encode()):,} bytes)')

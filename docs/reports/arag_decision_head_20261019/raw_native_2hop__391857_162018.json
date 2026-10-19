@@ -1,0 +1,139 @@
+{
+  "answer": "1889",
+  "support_ids": [
+    "p3"
+  ],
+  "answer_format_valid": true,
+  "errors": [],
+  "trajectory": [
+    {
+      "tool_name": "keyword_search",
+      "arguments": {
+        "keywords": [
+          "Prince Prigio",
+          "author",
+          "died"
+        ],
+        "top_k": 5
+      },
+      "result": [
+        {
+          "chunk_id": "p3",
+          "title": "Prince Prigio",
+          "snippet": "Prince Prigio is a literary and comic fairy tale written by Andrew Lang in 1889, and illustrated by Gordon Browne. It draws in Lang's folklorist background for many tropes."
+        },
+        {
+          "chunk_id": "p1",
+          "title": "Isles of Scilly",
+          "snippet": "The population of all the islands at the 2011 census was 2,203. Scilly forms part of the ceremonial county of Cornwall, and some services are combined with those of Cornwall. However, since 1890, the islands have had a separate local authority. Since the passing of the Isles of Scilly Order 1930, th"
+        },
+        {
+          "chunk_id": "p0",
+          "title": "Sisowath Monireth",
+          "snippet": "Prince Sisowath Monireth (; November 25, 1909 – September 1975) was Prime Minister of Cambodia, during the French Protectorate Period, from October 17, 1945 to December 15, 1946. One of the most prominent members of the Sisowath line of the royal family at the time, he had earlier been passed over f"
+        },
+        {
+          "chunk_id": "p10",
+          "title": "Second Bank of the United States",
+          "snippet": "The Second Bank of the United States, located in Philadelphia, Pennsylvania, was the second federally authorized Hamiltonian national bank in the United States during its 20-year charter from February 1816 to January 1836. The bank's formal name, according to section 9 of its charter as passed by Co"
+        },
+        {
+          "chunk_id": "p11",
+          "title": "Norfolk Island",
+          "snippet": "Norfolk Island is the only non-mainland Australian territory to have achieved self-governance. The Norfolk Island Act 1979, passed by the Parliament of Australia in 1979, is the Act under which the island was governed until the passing of the Norfolk Island Legislation Amendment Act 2015. The Austra"
+        }
+      ],
+      "argument_reused": false,
+      "seconds": 0.0008272900013253093
+    },
+    {
+      "tool_name": "read_chunk",
+      "arguments": {
+        "chunk_ids": [
+          "p3"
+        ]
+      },
+      "result": [
+        {
+          "chunk_id": "p3",
+          "title": "Prince Prigio",
+          "text": "Prince Prigio is a literary and comic fairy tale written by Andrew Lang in 1889, and illustrated by Gordon Browne. It draws in Lang's folklorist background for many tropes."
+        }
+      ],
+      "argument_reused": false,
+      "seconds": 0.0005941290000919253
+    }
+  ],
+  "reader_calls": [
+    {
+      "kind": "native_combined",
+      "usage": {
+        "prompt_tokens": 800,
+        "completion_tokens": 37,
+        "generated_tokens": 37,
+        "prefill_seconds": 0.03230611099570524,
+        "decode_seconds": 0.4457248140097363,
+        "seconds": 0.479169763988466,
+        "raw_json": "<tool_call>\n{\"name\": \"keyword_search\", \"arguments\": {\"keywords\": [\"Prince Prigio\", \"author\", \"died\"], \"top_k\": 5}}\n</tool_call>",
+        "mode": "native_unconstrained",
+        "full_prefill_count": 1,
+        "cache_reused": false,
+        "grammar_changed_tokens": 0,
+        "finish_reason": "stop"
+      }
+    },
+    {
+      "kind": "native_combined",
+      "usage": {
+        "prompt_tokens": 1317,
+        "completion_tokens": 23,
+        "generated_tokens": 23,
+        "prefill_seconds": 0.046896636005840264,
+        "decode_seconds": 0.2751672329904977,
+        "seconds": 0.3237694089912111,
+        "raw_json": "<tool_call>\n{\"name\": \"read_chunk\", \"arguments\": {\"chunk_ids\": [\"p3\"]}}\n</tool_call>",
+        "mode": "native_unconstrained",
+        "full_prefill_count": 1,
+        "cache_reused": false,
+        "grammar_changed_tokens": 0,
+        "finish_reason": "stop"
+      }
+    },
+    {
+      "kind": "native_combined",
+      "usage": {
+        "prompt_tokens": 1418,
+        "completion_tokens": 18,
+        "generated_tokens": 18,
+        "prefill_seconds": 0.050600876013049856,
+        "decode_seconds": 0.21336372999940068,
+        "seconds": 0.2657656850060448,
+        "raw_json": "{\"answer\": \"1889\", \"support_ids\": [\"p3\"]}",
+        "mode": "native_unconstrained",
+        "full_prefill_count": 1,
+        "cache_reused": false,
+        "grammar_changed_tokens": 0,
+        "finish_reason": "stop"
+      }
+    }
+  ],
+  "forced_final": false,
+  "tool_calls": 2,
+  "reused_argument_calls": 0,
+  "argument_tokens": 0,
+  "argument_generation_calls": 0,
+  "prompt_tokens": 3535,
+  "completion_tokens": 78,
+  "seconds": 1.0951883410016308,
+  "selector": "native",
+  "argument_mode": "always_generate",
+  "qid": "2hop__391857_162018",
+  "policy": "native",
+  "f1": 0,
+  "em": 0,
+  "support_f1": 0.6666666666666666,
+  "interaction_turns": 3,
+  "forced_prefix_tokens": 0,
+  "prefill_count": 3,
+  "decoder_forward_count_derived": 75
+}

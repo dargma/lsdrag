@@ -520,5 +520,11 @@
     "recommendation": "all_head_online_counterfactual_quality_cost_policy_improvement",
     "one_intervention_flagship_rejected": true,
     "execution_started": false
+  },
+  "latest_report": {
+    "date": "2026-10-19",
+    "path": "docs/reports/arag_decision_head_20261019/index.html",
+    "scope": "artifact reanalysis and HTML report only; no new inference/training/evaluation",
+    "experiment_hold_unchanged": true
   }
 }

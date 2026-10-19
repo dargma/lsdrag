@@ -1,3 +1,11 @@
+## 2026-10-19 — HTML 실험 결과 보고서 작성·원본 재검증 / 실험 HOLD 유지
+
+사용자 요청: 배경·환경·학습/구조·정량/정성·한 문항 매 step raw·후속 연구를 포함한 HTML 보고서를 GitHub 링크로 제공. 추가 요청으로 A-RAG tool call 현황 소섹션 포함. docs/reports/arag_decision_head_20261019/index.html 및 evidence.json, 대표문항 2hop__391857_162018의 Head/Native 원본 JSON 2개, 재생성기 scripts/reporting/build_arag_decision_report.py 작성. 공개 MuSiQue dev를 고정 mirror에서 local-fast로 재다운로드하여 기존 SHA 일치, unique teacher/frozen100 archive만 Drive에서 복원하여 각각 a5096296…/90144cc6… 해시 확인. 원본200 episode input_sha256 모두 일치. 기존 주요 평균 재집계 일치. 모델 추론/학습/새 평가 없음.
+
+초안 교정: 성공 trajectory만 학습한 것이 아님. 원 teacher train24에서 EM정답5/24,82상태 중65는 EM오답문항에서 발생; validation8은3정답/29상태. head feature2560,독립linear4+5,학습파라미터23049. 최종100은 read선택 OFF/인자항상생성. KV재사용은 같은 turn의 decision→인자/FINAL이며 다음turn 전체prefill은 존재. 도구 집계 Native keyword84/semantic68/read74=226,Head101/66/72=239. 첫 성공tool Native keyword80/semantic16/형식오류4,Head keyword100. FINAL유효96/100,강제종료0/0. 품질개선·비열등성·통제speedup·RL성공 주장 없음.
+
+로컬 작업 /content/local_fast/lsdrag-code (원격jev_v1.1 시작0114fbb),외부 복원 /content/local_fast/lsdrag-report-evidence. 기존실험HOLD/새100튜닝금지 유지. 다음은 보고서 전달/사용자 피드백; 자동실험 없음.
+
 ## 2026-10-17 — Astra 심층 연구 방향 검토 완료·저장 / 실험 HOLD
 
 사용자 “다시 우리 방법 방향 아이디어 제시 astra가”, “그래 잘 저장”. 최종 보고서: docs/JEV_HEAD_RESEARCH_DEEP_DIVE_ASTRA_20261017.md; source ledger: lab/reports/text_integrated_20261016/astra_head_deep_research_20261017.json. 핵심 12편 원문 및 보조 자료 검토 완료, 논문 재현 아님. 추천 1: online 모든 행동을 head로 선택하고 frozen LLM은 인자/답변 생성. offline 현재 head πk 방문 상태에서 대안 행동을 실제 실행하고 동결 πk suffix의 최종 품질·근거·미래 비용으로 학습; 새 정책은 전체 episode로 재평가. 추천 2: 제한된 반사실 수집 예산의 상태 배분, 추천 3: read 후보 선택 대 GENERATE 가치 학습(후순위). 사용자 거부를 반영해 one-intervention 후 Native 복귀는 주방법에서 제외하고 선택적 진단으로만 보존. Native fallback도 추천 주방법 아님. LAnR/FORGE/AggreVaTe 선행으로 조합 자체 novelty 주장 금지; optimized Native·동일 label CE·단순 규칙보다 나은 quality–cost/sample efficiency를 검증해야 함. 최소 gate0/N-fast 및 train24 분기 수집은 제안만이며 구현·실행·새 worker 없음. 기존100 학습/튜닝 금지. 사용자 HOLD 유지, 자동 재개 없음. 논문별 노트 docs/papers/LANR_2604_17866_20261017.md 및 FORGE_2609_34358_20261017.md 연결. 다음은 사용자 명시 재개 시에만 실행 protocol 동결/구현 검토.
