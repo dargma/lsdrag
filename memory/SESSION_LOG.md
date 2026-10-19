@@ -514,3 +514,7 @@ source8c9acf1,PID723617/session18426,run /content/local_fast/lsdrag-text-v1/resu
 초안 교정: 성공 trajectory만 학습한 것이 아님. 원 teacher train24에서 EM정답5/24,82상태 중65는 EM오답문항에서 발생; validation8은3정답/29상태. head feature2560,독립linear4+5,학습파라미터23049. 최종100은 read선택 OFF/인자항상생성. KV재사용은 같은 turn의 decision→인자/FINAL이며 다음turn 전체prefill은 존재. 도구 집계 Native keyword84/semantic68/read74=226,Head101/66/72=239. 첫 성공tool Native keyword80/semantic16/형식오류4,Head keyword100. FINAL유효96/100,강제종료0/0. 품질개선·비열등성·통제speedup·RL성공 주장 없음.
 
 로컬 작업 /content/local_fast/lsdrag-code (원격jev_v1.1 시작0114fbb),외부 복원 /content/local_fast/lsdrag-report-evidence. 기존실험HOLD/새100튜닝금지 유지. 다음은 보고서 전달/사용자 피드백; 자동실험 없음.
+
+## 2026-10-19 — 보고서에 번호 기반 dispatch flow 추가
+
+사용자 요청으로 HTML 2.3절 뒤에 0 keyword/1 semantic/2 read/3 FINAL 매핑과 hidden→masked argmax→ACTIONS[index]→동일KV 인자생성→corpus.call→다음turn 흐름 추가. 숫자 자체의 token생성이 아님, 최종100은 인자생성 후 함수호출, prefix도 batch forward로 처리함을 명시. 관측26.8%는head·고정구문·cache·schema 조합이며 도구명생성 단독효과 미측정. 설명용query와실제raw를구분. 새실험없음/HOLD유지.

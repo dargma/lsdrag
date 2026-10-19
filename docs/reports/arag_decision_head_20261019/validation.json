@@ -40,10 +40,11 @@
     "No independent agent audit; repository and raw artifact checks only"
   ],
   "artifacts_sha256": {
-    "docs/reports/arag_decision_head_20261019/index.html": "ea6391f537dad0c4e3717c7892634351bc0ea47dba1a7b34c1033390a0f34e92",
+    "docs/reports/arag_decision_head_20261019/index.html": "05f5ee7ae28c31701b9256d7aeb9a95b7b6944030cf6f42d522b44d2ed1e3f7f",
     "docs/reports/arag_decision_head_20261019/evidence.json": "e5178926c573d3c44e92cbaff6ccee560ce49c4a78ddd01a8b0f709c008c76f2",
     "docs/reports/arag_decision_head_20261019/raw_head_generate_2hop__391857_162018.json": "347f8ed6dc9f8d3710ad4b8a8cdea5f9b5050fa2880f92ca17613a2369818dc1",
     "docs/reports/arag_decision_head_20261019/raw_native_2hop__391857_162018.json": "23c16d3193918709338c630675d25140922b7d04ae075e535a960fb8b77d7353",
-    "scripts/reporting/build_arag_decision_report.py": "ab09ceb0ce74cb7513e13279bb1ec395981d7b07da4f1d7e2ab87057d7d19697"
-  }
+    "scripts/reporting/build_arag_decision_report.py": "a7826429c2c11a96287bcb44f6ad24c852bca4ff55413d3e7a44d29c9e0e5623"
+  },
+  "report_amendment": "Added indexed head→tool→cached arguments→dispatcher flow; illustrative query distinguished from raw evidence"
 }

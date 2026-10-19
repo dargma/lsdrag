@@ -1,3 +1,7 @@
+## 2026-10-19 — 보고서에 번호 기반 dispatch flow 추가
+
+사용자 요청으로 HTML 2.3절 뒤에 0 keyword/1 semantic/2 read/3 FINAL 매핑과 hidden→masked argmax→ACTIONS[index]→동일KV 인자생성→corpus.call→다음turn 흐름 추가. 숫자 자체의 token생성이 아님, 최종100은 인자생성 후 함수호출, prefix도 batch forward로 처리함을 명시. 관측26.8%는head·고정구문·cache·schema 조합이며 도구명생성 단독효과 미측정. 설명용query와실제raw를구분. 새실험없음/HOLD유지.
+
 ## 2026-10-19 — HTML 실험 결과 보고서 작성·원본 재검증 / 실험 HOLD 유지
 
 사용자 요청: 배경·환경·학습/구조·정량/정성·한 문항 매 step raw·후속 연구를 포함한 HTML 보고서를 GitHub 링크로 제공. 추가 요청으로 A-RAG tool call 현황 소섹션 포함. docs/reports/arag_decision_head_20261019/index.html 및 evidence.json, 대표문항 2hop__391857_162018의 Head/Native 원본 JSON 2개, 재생성기 scripts/reporting/build_arag_decision_report.py 작성. 공개 MuSiQue dev를 고정 mirror에서 local-fast로 재다운로드하여 기존 SHA 일치, unique teacher/frozen100 archive만 Drive에서 복원하여 각각 a5096296…/90144cc6… 해시 확인. 원본200 episode input_sha256 모두 일치. 기존 주요 평균 재집계 일치. 모델 추론/학습/새 평가 없음.
