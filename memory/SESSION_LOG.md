@@ -518,3 +518,7 @@ source8c9acf1,PID723617/session18426,run /content/local_fast/lsdrag-text-v1/resu
 ## 2026-10-19 — 보고서에 번호 기반 dispatch flow 추가
 
 사용자 요청으로 HTML 2.3절 뒤에 0 keyword/1 semantic/2 read/3 FINAL 매핑과 hidden→masked argmax→ACTIONS[index]→동일KV 인자생성→corpus.call→다음turn 흐름 추가. 숫자 자체의 token생성이 아님, 최종100은 인자생성 후 함수호출, prefix도 batch forward로 처리함을 명시. 관측26.8%는head·고정구문·cache·schema 조합이며 도구명생성 단독효과 미측정. 설명용query와실제raw를구분. 새실험없음/HOLD유지.
+
+## 2026-10-19 — 보고서 간결화
+
+사용자 요청에 따라 구성 필요성을 재검토하고 배경·방법·결과·시사점 4개 본문으로 압축. 중복 구조도/속도설명/한계 반복 제거, 실행flow1개·tool현황·주결과·성공/실패2사례·대표문항raw3step 유지. 세부학습/추가지표/실패이력/문헌/100문항표는 펼침부록. 원 evidence/raw와수치는불변. 후속제안3개로축소. desktop/mobile·링크·100행·필터·검색·raw펼침검증완료. 새실험없음/HOLD유지.
