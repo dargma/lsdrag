@@ -6,7 +6,7 @@
 
 공통 LLM의 표현을 작은 policy head가 읽어 행동을 선택하고, 같은 LLM의 생성 경로가 인자·답변을 생성하는 통합 decision-generation 모듈. head 자체가 문장을 생성하거나 미래 상태를 예측한다고 주장하지 않는다. 별도 decision LLM 없는 정책 선택과 유연한 생성이 기여 후보이며 신규성·효과는 검증 필요.
 
-주 목표: 새 공통 평가셋에서 고정 GRPO96 checkpoint 대비 F1 +0.03(3 percentage points) 이상, 평균 generated_tokens 20% 이상 감소 동시 달성. 기존80의 GRPO F1 .3343263/generated56.25 기준 설명용 목표는 .3643263/45.0 이하이나, 새 평가의 동시 baseline 수치로 판정한다. point-target 달성과 paired CI상 유의한 개선을 분리. 입력 token/호출/error/utility 및 실제 측정시간도 보조 보고; 통제 latency claim 없음.
+주 목표: 새 공통 평가셋에서 고정 GRPO96 checkpoint 대비 F1 +0.05(5 percentage points) 이상, 평균 generated_tokens 30% 이상 감소 동시 달성. 기존80의 GRPO F1 .3343263/generated56.25 기준 설명용 목표는 .3843263/39.375 이하이나, 새 평가의 동시 baseline 수치로 판정한다. point-target 달성과 paired CI상 유의한 개선을 분리. 입력 token/호출/error/utility 및 실제 측정시간도 보조 보고; 통제 latency claim 없음.
 
 ## 비용을 공유하는 실험 흐름
 
@@ -39,4 +39,8 @@ A-RAG → 짧은 Memory-R1 관리과제 → ACA-RL 기반 단일턴 응답방식
 
 기존노출family를제외한dev2hop이20개뿐이어서미사용MuSiQue train+dev에서family-disjoint validation32/test160을동결했다. 공식dev-only성적이아닌미사용원천holdout으로표기. train96은기존그대로. 같은공개prefix에서legal3~4행동×2suffix를수집,최대192state/1632episode/7200초,생성1.2M/input40M. baseline GRPO checkpoint 고정. initial+last actual controllable state,capFINAL제외. 동일prefix SHA/hidden parity 및강제첫행동검증.
 
-실행 고정 상세: 새 구조는train-only GRPO분포distillation400epochs(lr.001)→동일상태expectedutility100epochs(lr1e-4),KL.02/entropy.01. 기존구조는원GRPO부터action/skip만같은100epochs. 새구조warmstart4개도validation에서측정해구조변경초기화효과분리. 후보선택순위 max min(F1delta/.03,generated_reduction/.20),동률utility. 최초5개후보중1개만lambda .01/.06추가(정확도또는생성비용중하나라도개선될때). 최종2후보까지만선정. 일반GRPO추가학습대조는동일train96×4×3=1152,현재GRPO초기화+validation32×2;분기수집과tokenbudget완전일치가아니므로정확한compute효율우위주장금지.
+실행 고정 상세: 새 구조는train-only GRPO분포distillation400epochs(lr.001)→동일상태expectedutility100epochs(lr1e-4),KL.02/entropy.01. 기존구조는원GRPO부터action/skip만같은100epochs. 새구조warmstart4개도validation에서측정해구조변경초기화효과분리. 후보선택순위 max min(F1delta/.05,generated_reduction/.30),동률utility. 최초5개후보중1개만lambda .01/.06추가(정확도또는생성비용중하나라도개선될때). 최종2후보까지만선정. 일반GRPO추가학습대조는동일train96×4×3=1152,현재GRPO초기화+validation32×2;분기수집과tokenbudget완전일치가아니므로정확한compute효율우위주장금지.
+
+## 최신 목표 상향 및 validation 기반 재선택
+
+사용자가validation1/2결과후F1+5%p/generated−30%로상향. test160미열람. 기존validation순위와선정기록은보존하고새선택순위min(deltaF1/.05,token_reduction/.30)적용. linearλ.06은val F1+.05417/token−.25143로새token목표미달. multi-MLP는val F1여유+.10104/token−.13056이므로해당구조의λ.06과generation직접cost후보를추가로비교할근거가있다. 전조합확대금지,추가최대3후보. validation후주후보고정→독립수집/학습seed2재현→finaltest,순서유지. 목표상향은확인된최종성공이아니며validation32의선택편향을명시.

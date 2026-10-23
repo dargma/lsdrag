@@ -25,14 +25,14 @@ def main():
    a=np.array([val(lookup[name,q]) for q in qids]);b=np.array([val(lookup[base,q]) for q in qids]);delta=a-b
    comp[name][metric]={'delta':float(delta.mean()),'ci95':np.quantile(delta[draws].mean(1),[.025,.975]).tolist()}
    if metric=='generated_tokens':comp[name]['generated_ratio']={'ratio':float(a.mean()/b.mean()),'ci95':np.quantile(a[draws].mean(1)/b[draws].mean(1),[.025,.975]).tolist()}
-  c=comp[name];c['joint_point_target']=bool(c['f1']['delta']>=.03 and c['generated_ratio']['ratio']<=.8);c['joint_directional_ci']=bool(c['f1']['ci95'][0]>0 and c['generated_ratio']['ci95'][1]<1);c['joint_target_ci']=bool(c['f1']['ci95'][0]>=.03 and c['generated_ratio']['ci95'][1]<=.8)
- result=summary|{'comparisons_vs_grpo':comp,'audit':{'episodes':len(eps),'unique_cells':len(lookup),'probability_and_cost_checks':True},'single_seed':True,'target':{'f1_delta':.03,'generated_ratio':.8},'ci_scope':'paired question bootstrap conditional on frozen policies; not training-seed population uncertainty'}
+  c=comp[name];c['joint_point_target']=bool(c['f1']['delta']>=.05 and c['generated_ratio']['ratio']<=.7);c['joint_directional_ci']=bool(c['f1']['ci95'][0]>0 and c['generated_ratio']['ci95'][1]<1);c['joint_target_ci']=bool(c['f1']['ci95'][0]>=.05 and c['generated_ratio']['ci95'][1]<=.7)
+ result=summary|{'comparisons_vs_grpo':comp,'audit':{'episodes':len(eps),'unique_cells':len(lookup),'probability_and_cost_checks':True},'single_seed':True,'target':{'f1_delta':.05,'generated_ratio':.7},'ci_scope':'paired question bootstrap conditional on frozen policies; not training-seed population uncertainty'}
  out=REPO/'lab/reports'/args.run;out.mkdir(parents=True,exist_ok=True);(out/'result.json').write_text(json.dumps(result,ensure_ascii=False,indent=2)+'\n')
  lines=['# Decision head 개선 결과', '',f"Split: {spec['split']}, n={len(qids)}, policies={len(names)}. 동일질문paired비교. 단일학습seed.",'','| 정책 | F1 | 생성token | 입력token | 도구호출 | 오류 |','|---|---:|---:|---:|---:|---:|']
  for name,v in summary['policies'].items():lines.append(f"| {name} | {100*v['f1']:.2f} | {v['generated_tokens']:.2f} | {v['prompt_tokens']:.1f} | {v['tool_calls']:.3f} | {v['errors']} |")
  lines+=['','## 고정 GRPO 대비','']
  for name,c in comp.items():lines += [f"- {name}: F1 delta {100*c['f1']['delta']:+.2f}pp, CI {c['f1']['ci95']}; 생성ratio {c['generated_ratio']}; point목표 {c['joint_point_target']}, 방향CI {c['joint_directional_ci']}, 목표CI {c['joint_target_ci']}."]
- lines+=['','F1+3%p 및생성token−20% 동시목표. 확률은action확률이며정답확률아님. 단일seed/조건부CI/공식dev-only아닌미사용train+dev원천holdout. 최종test결과로후보재선택금지. 전체학습/수집비용별도보고. 통제latency비교없음.']
+ lines+=['','F1+5%p 및생성token−30% 동시목표. 확률은action확률이며정답확률아님. 단일seed/조건부CI/공식dev-only아닌미사용train+dev원천holdout. 최종test결과로후보재선택금지. 전체학습/수집비용별도보고. 통제latency비교없음.']
  if spec['split']=='test':
   import matplotlib
   matplotlib.use('Agg')
@@ -41,7 +41,7 @@ def main():
   for name,c in comp.items():
    x=100*(1-c['generated_ratio']['ratio']);y=100*c['f1']['delta'];xc=c['generated_ratio']['ci95'];yc=c['f1']['ci95']
    ax.errorbar(x,y,xerr=[[max(0,x-100*(1-xc[1]))],[max(0,100*(1-xc[0])-x)]],yerr=[[max(0,y-100*yc[0])],[max(0,100*yc[1]-y)]],fmt='o',capsize=3,label=name)
-  ax.axvline(20,color='green',linestyle='--',label='Joint target: 20% tokens, +3pp F1');ax.axhline(3,color='green',linestyle='--');ax.axvline(0,color='gray',linewidth=.5);ax.axhline(0,color='gray',linewidth=.5)
+  ax.axvline(30,color='green',linestyle='--',label='Joint target: 30% tokens, +5pp F1');ax.axhline(5,color='green',linestyle='--');ax.axvline(0,color='gray',linewidth=.5);ax.axhline(0,color='gray',linewidth=.5)
   ax.set_xlabel('Generated token reduction vs frozen GRPO (%)');ax.set_ylabel('F1 difference vs frozen GRPO (percentage points)');ax.set_title('Fresh paired evaluation; marginal 95% bootstrap intervals');ax.legend(fontsize=7);fig.tight_layout();fig.savefig(out/'tradeoff.svg');plt.close(fig)
   lines+=['','![Paired tradeoff](tradeoff.svg)']
  (out/'report.md').write_text('\n'.join(lines)+'\n');print(json.dumps(comp,indent=2))

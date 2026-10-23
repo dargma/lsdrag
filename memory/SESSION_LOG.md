@@ -750,3 +750,13 @@ collectorPID108998 exit0,990.57초,96문항191state/1428episodes,generated57425/
 
 CPU shared-data10heads(기존baseline,동일구조개선,4구조각warmstart/개선)완료. validationPID114481,run decision_state_validation1_20261023;coordinatorPID111716/session33283 자동후속. 새test미실행. 다음validation선택→해당하나의costsweep→일반GRPO추가학습대조→동적refinement여부판정후test동결.
 
+
+## 2026-10-23 — 사용자 목표 재상향: F1 +5%p / 생성 토큰 −30%
+
+validation32만열람후사용자명시상향. 새160test미열람. 이전.03/.80목표는역사기록이며최신기준.05/.70. 기존baseline80설명값F1 .3843263/token39.375. 새공통testbaseline대비판정. 검증셋선형λ.06의+.05417/−25.14%는새token목표미달. multiMLP의더큰quality여유를활용한제한적cost후보검토→주후보고정→독립seed2→최종평가. 일반GRPOcontrolPID117392진행,추가후보CPU학습은공유cache사용.
+
+
+## 2026-10-23 — 목표 달성 시 predictive auxiliary 후속 승인
+
+사용자아이디어저장및현재목표달성하면바로실험명시. docs/JEV_CONDITIONAL_PREDICTIVE_AUXILIARY_PLAN_20261023.md. fresh paired F1+.05/generated<=.70 동시point목표충족시trigger,validation만으로금지. 동일구조policy-only 대policy+beta prediction,공유작은encoder+action-conditionedpredictor,고정/EMA target·collapse대응,기존train hidden pair재사용우선. t는decisionstep. 현재A-RAG주실험유지,단일GPU/22:48UTC상한유지. 미달이면보류.
+

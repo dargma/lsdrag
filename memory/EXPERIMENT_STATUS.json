@@ -786,10 +786,10 @@
   },
   "eight_hour_improvement": {
     "deadline_utc": "2026-10-23T22:48:00Z",
-    "phase": "validation",
-    "pid": 114481,
-    "target_f1_delta": 0.03,
-    "target_generated_ratio": 0.8,
+    "phase": "validation_refinement_and_grpo_control",
+    "pid": 117392,
+    "target_f1_delta": 0.05,
+    "target_generated_ratio": 0.7,
     "session_id": 99374,
     "run": "/content/local_fast/lsdrag-text-v1/results/decision_state_outcomes_20261023",
     "coordinator_pid": 111716,
@@ -797,5 +797,17 @@
     "coordinator_status": "/content/local_fast/lsdrag-text-v1/results/decision_state_coordinator_20261023.json",
     "collection_complete": true,
     "collection_audit": "lab/reports/decision_state_outcomes_20261023/audit.json"
+  },
+  "conditional_predictive_auxiliary": {
+    "authorized": true,
+    "status": "waiting_for_current_heldout_joint_target",
+    "protocol": "docs/JEV_CONDITIONAL_PREDICTIVE_AUXILIARY_PLAN_20261023.md",
+    "trigger": {
+      "f1_delta": 0.05,
+      "generated_ratio": 0.7,
+      "split": "fresh_test"
+    },
+    "world_model_planning_expansion": false,
+    "pid": null
   }
 }

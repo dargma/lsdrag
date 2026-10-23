@@ -1,0 +1,601 @@
+{
+  "policies": {
+    "grpo_baseline": {
+      "f1": 0.3302083333333333,
+      "cost_units": 3.113971875,
+      "generated_tokens": 54.8125,
+      "prompt_tokens": 3783.46875,
+      "tool_calls": 2.1875,
+      "errors": 0,
+      "utility": 0.23678917708333333
+    },
+    "same_structure_improved": {
+      "f1": 0.3423076923076923,
+      "cost_units": 2.3667687500000003,
+      "generated_tokens": 50.375,
+      "prompt_tokens": 3005.1875,
+      "tool_calls": 1.5625,
+      "errors": 0,
+      "utility": 0.2713046298076923
+    },
+    "last_linear_warmstart": {
+      "f1": 0.3302083333333333,
+      "cost_units": 3.054165625,
+      "generated_tokens": 52.65625,
+      "prompt_tokens": 3713.53125,
+      "tool_calls": 2.15625,
+      "errors": 0,
+      "utility": 0.23858336458333335
+    },
+    "last_linear": {
+      "f1": 0.38050213675213673,
+      "cost_units": 2.101375,
+      "generated_tokens": 45.84375,
+      "prompt_tokens": 2679.375,
+      "tool_calls": 1.375,
+      "errors": 0,
+      "utility": 0.31746088675213674
+    },
+    "last_mlp_warmstart": {
+      "f1": 0.3302083333333333,
+      "cost_units": 2.9756,
+      "generated_tokens": 51.96875,
+      "prompt_tokens": 3621.625,
+      "tool_calls": 2.09375,
+      "errors": 0,
+      "utility": 0.2409403333333333
+    },
+    "last_mlp": {
+      "f1": 0.446875,
+      "cost_units": 3.3853906250000003,
+      "generated_tokens": 62.53125,
+      "prompt_tokens": 4475.78125,
+      "tool_calls": 2.3125,
+      "errors": 0,
+      "utility": 0.34531328125000005
+    },
+    "multi_linear_warmstart": {
+      "f1": 0.33715277777777775,
+      "cost_units": 3.0294125000000003,
+      "generated_tokens": 53.4375,
+      "prompt_tokens": 3700.375,
+      "tool_calls": 2.125,
+      "errors": 0,
+      "utility": 0.24627040277777773
+    },
+    "multi_linear": {
+      "f1": 0.39131944444444444,
+      "cost_units": 2.58481875,
+      "generated_tokens": 53.5,
+      "prompt_tokens": 3623.1875,
+      "tool_calls": 1.6875,
+      "errors": 0,
+      "utility": 0.3137748819444445
+    },
+    "multi_mlp_warmstart": {
+      "f1": 0.3787660256410256,
+      "cost_units": 2.99075625,
+      "generated_tokens": 52.75,
+      "prompt_tokens": 3695.0625,
+      "tool_calls": 2.09375,
+      "errors": 0,
+      "utility": 0.2890433381410256
+    },
+    "multi_mlp": {
+      "f1": 0.43125,
+      "cost_units": 2.3024781250000004,
+      "generated_tokens": 47.65625,
+      "prompt_tokens": 2946.65625,
+      "tool_calls": 1.53125,
+      "errors": 0,
+      "utility": 0.36217565625000003
+    }
+  },
+  "counts": {
+    "episodes": 320,
+    "generated": 16817,
+    "inputs": 1127816
+  },
+  "split": "validation",
+  "n": 32,
+  "controlled_latency": false,
+  "comparisons_vs_grpo": {
+    "same_structure_improved": {
+      "f1": {
+        "delta": 0.012099358974358973,
+        "ci95": [
+          -0.11770833333333333,
+          0.13958333333333334
+        ]
+      },
+      "generated_tokens": {
+        "delta": -4.4375,
+        "ci95": [
+          -10.09453125,
+          1.21875
+        ]
+      },
+      "generated_ratio": {
+        "ratio": 0.9190421892816419,
+        "ci95": [
+          0.820931315245759,
+          1.0227551434326319
+        ]
+      },
+      "prompt_tokens": {
+        "delta": -778.28125,
+        "ci95": [
+          -1281.0796875,
+          -235.4000000000001
+        ]
+      },
+      "tool_calls": {
+        "delta": -0.625,
+        "ci95": [
+          -0.9375,
+          -0.3125
+        ]
+      },
+      "cost_units": {
+        "delta": -0.7472031250000001,
+        "ci95": [
+          -1.143981015625,
+          -0.32993312500000016
+        ]
+      },
+      "utility": {
+        "delta": 0.03451545272435898,
+        "ci95": [
+          -0.09511700953525642,
+          0.16157564609374991
+        ]
+      },
+      "joint_point_target": false,
+      "joint_directional_ci": false,
+      "joint_target_ci": false
+    },
+    "last_linear_warmstart": {
+      "f1": {
+        "delta": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ]
+      },
+      "generated_tokens": {
+        "delta": -2.15625,
+        "ci95": [
+          -4.34375,
+          -0.4968750000000455
+        ]
+      },
+      "generated_ratio": {
+        "ratio": 0.9606613454960091,
+        "ci95": [
+          0.9232052495166001,
+          0.9912898810791078
+        ]
+      },
+      "prompt_tokens": {
+        "delta": -69.9375,
+        "ci95": [
+          -252.13203124999998,
+          89.625
+        ]
+      },
+      "tool_calls": {
+        "delta": -0.03125,
+        "ci95": [
+          -0.15625,
+          0.0625
+        ]
+      },
+      "cost_units": {
+        "delta": -0.05980625000000003,
+        "ci95": [
+          -0.19857898437500016,
+          0.05744999999999997
+        ]
+      },
+      "utility": {
+        "delta": 0.0017941875000000006,
+        "ci95": [
+          -0.0017234999999999993,
+          0.005957369531250001
+        ]
+      },
+      "joint_point_target": false,
+      "joint_directional_ci": false,
+      "joint_target_ci": false
+    },
+    "last_linear": {
+      "f1": {
+        "delta": 0.05029380341880342,
+        "ci95": [
+          -0.0438034188034188,
+          0.1583406784188033
+        ]
+      },
+      "generated_tokens": {
+        "delta": -8.96875,
+        "ci95": [
+          -13.375,
+          -4.8125
+        ]
+      },
+      "generated_ratio": {
+        "ratio": 0.8363740022805017,
+        "ci95": [
+          0.7635971699009717,
+          0.9094106404344022
+        ]
+      },
+      "prompt_tokens": {
+        "delta": -1104.09375,
+        "ci95": [
+          -1484.86484375,
+          -734.1898437500004
+        ]
+      },
+      "tool_calls": {
+        "delta": -0.8125,
+        "ci95": [
+          -1.0625,
+          -0.59375
+        ]
+      },
+      "cost_units": {
+        "delta": -1.012596875,
+        "ci95": [
+          -1.322550234375,
+          -0.7168732031250001
+        ]
+      },
+      "utility": {
+        "delta": 0.08067170966880342,
+        "ci95": [
+          -0.015191753612446571,
+          0.18846870142227562
+        ]
+      },
+      "joint_point_target": false,
+      "joint_directional_ci": false,
+      "joint_target_ci": false
+    },
+    "last_mlp_warmstart": {
+      "f1": {
+        "delta": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ]
+      },
+      "generated_tokens": {
+        "delta": -2.84375,
+        "ci95": [
+          -5.09375,
+          -0.9375
+        ]
+      },
+      "generated_ratio": {
+        "ratio": 0.9481185860889396,
+        "ci95": [
+          0.9089929247524291,
+          0.9825358718758734
+        ]
+      },
+      "prompt_tokens": {
+        "delta": -161.84375,
+        "ci95": [
+          -371.91171875,
+          35.96875
+        ]
+      },
+      "tool_calls": {
+        "delta": -0.09375,
+        "ci95": [
+          -0.21875,
+          0.03125
+        ]
+      },
+      "cost_units": {
+        "delta": -0.13837187500000003,
+        "ci95": [
+          -0.30194078125000007,
+          0.013946874999999977
+        ]
+      },
+      "utility": {
+        "delta": 0.004151156250000001,
+        "ci95": [
+          -0.0004184062499999997,
+          0.009058223437500002
+        ]
+      },
+      "joint_point_target": false,
+      "joint_directional_ci": false,
+      "joint_target_ci": false
+    },
+    "last_mlp": {
+      "f1": {
+        "delta": 0.11666666666666667,
+        "ci95": [
+          -0.01875,
+          0.2604166666666667
+        ]
+      },
+      "generated_tokens": {
+        "delta": 7.71875,
+        "ci95": [
+          -1.28125,
+          18.65625
+        ]
+      },
+      "generated_ratio": {
+        "ratio": 1.1408209806157354,
+        "ci95": [
+          0.9768344870843978,
+          1.346427645376293
+        ]
+      },
+      "prompt_tokens": {
+        "delta": 692.3125,
+        "ci95": [
+          -268.096875,
+          1925.0742187499998
+        ]
+      },
+      "tool_calls": {
+        "delta": 0.125,
+        "ci95": [
+          -0.3125,
+          0.65625
+        ]
+      },
+      "cost_units": {
+        "delta": 0.27141874999999993,
+        "ci95": [
+          -0.33777773437499997,
+          1.0204703906249997
+        ]
+      },
+      "utility": {
+        "delta": 0.10852410416666666,
+        "ci95": [
+          -0.023223410677083334,
+          0.25030117499999993
+        ]
+      },
+      "joint_point_target": false,
+      "joint_directional_ci": false,
+      "joint_target_ci": false
+    },
+    "multi_linear_warmstart": {
+      "f1": {
+        "delta": 0.006944444444444444,
+        "ci95": [
+          -0.07291666666666667,
+          0.09375
+        ]
+      },
+      "generated_tokens": {
+        "delta": -1.375,
+        "ci95": [
+          -4.03125,
+          0.875
+        ]
+      },
+      "generated_ratio": {
+        "ratio": 0.9749144811858609,
+        "ci95": [
+          0.9286926836063599,
+          1.0163301954867487
+        ]
+      },
+      "prompt_tokens": {
+        "delta": -83.09375,
+        "ci95": [
+          -292.79609375,
+          107.53203124999999
+        ]
+      },
+      "tool_calls": {
+        "delta": -0.0625,
+        "ci95": [
+          -0.1875,
+          0.0625
+        ]
+      },
+      "cost_units": {
+        "delta": -0.08455937500000006,
+        "ci95": [
+          -0.24932515625000012,
+          0.06977351562499991
+        ]
+      },
+      "utility": {
+        "delta": 0.009481225694444446,
+        "ci95": [
+          -0.06882751666666666,
+          0.09668463515624999
+        ]
+      },
+      "joint_point_target": false,
+      "joint_directional_ci": false,
+      "joint_target_ci": false
+    },
+    "multi_linear": {
+      "f1": {
+        "delta": 0.061111111111111116,
+        "ci95": [
+          -0.03645833333333333,
+          0.171875
+        ]
+      },
+      "generated_tokens": {
+        "delta": -1.3125,
+        "ci95": [
+          -11.00078125,
+          13.375
+        ]
+      },
+      "generated_ratio": {
+        "ratio": 0.976054732041049,
+        "ci95": [
+          0.8007451643867769,
+          1.2446166474367548
+        ]
+      },
+      "prompt_tokens": {
+        "delta": -160.28125,
+        "ci95": [
+          -1201.16328125,
+          1556.5375
+        ]
+      },
+      "tool_calls": {
+        "delta": -0.5,
+        "ci95": [
+          -0.90625,
+          0.0625
+        ]
+      },
+      "cost_units": {
+        "delta": -0.5291531250000001,
+        "ci95": [
+          -1.1306775,
+          0.34319539062499993
+        ]
+      },
+      "utility": {
+        "delta": 0.07698570486111111,
+        "ci95": [
+          -0.021703295225694433,
+          0.19046538715277778
+        ]
+      },
+      "joint_point_target": false,
+      "joint_directional_ci": false,
+      "joint_target_ci": false
+    },
+    "multi_mlp_warmstart": {
+      "f1": {
+        "delta": 0.0485576923076923,
+        "ci95": [
+          0.0,
+          0.125
+        ]
+      },
+      "generated_tokens": {
+        "delta": -2.0625,
+        "ci95": [
+          -4.4375,
+          -0.03125
+        ]
+      },
+      "generated_ratio": {
+        "ratio": 0.9623717217787914,
+        "ci95": [
+          0.922148086603967,
+          0.9994309943002218
+        ]
+      },
+      "prompt_tokens": {
+        "delta": -88.40625,
+        "ci95": [
+          -328.09609375,
+          126.44140624999994
+        ]
+      },
+      "tool_calls": {
+        "delta": -0.09375,
+        "ci95": [
+          -0.21875,
+          0.03125
+        ]
+      },
+      "cost_units": {
+        "delta": -0.12321562500000002,
+        "ci95": [
+          -0.2983668750000001,
+          0.03934820312499998
+        ]
+      },
+      "utility": {
+        "delta": 0.05225416105769231,
+        "ci95": [
+          0.004140255468750003,
+          0.12860561418269228
+        ]
+      },
+      "joint_point_target": false,
+      "joint_directional_ci": false,
+      "joint_target_ci": false
+    },
+    "multi_mlp": {
+      "f1": {
+        "delta": 0.10104166666666667,
+        "ci95": [
+          0.02291666666666667,
+          0.203125
+        ]
+      },
+      "generated_tokens": {
+        "delta": -7.15625,
+        "ci95": [
+          -11.46875,
+          -2.71875
+        ]
+      },
+      "generated_ratio": {
+        "ratio": 0.8694412770809579,
+        "ci95": [
+          0.7967337719231123,
+          0.9491134289439374
+        ]
+      },
+      "prompt_tokens": {
+        "delta": -836.8125,
+        "ci95": [
+          -1203.10078125,
+          -455.4609375000001
+        ]
+      },
+      "tool_calls": {
+        "delta": -0.65625,
+        "ci95": [
+          -0.875,
+          -0.4375
+        ]
+      },
+      "cost_units": {
+        "delta": -0.8114937500000001,
+        "ci95": [
+          -1.1026141406250003,
+          -0.5117500000000001
+        ]
+      },
+      "utility": {
+        "delta": 0.12538647916666668,
+        "ci95": [
+          0.04869272343750001,
+          0.223792309375
+        ]
+      },
+      "joint_point_target": false,
+      "joint_directional_ci": true,
+      "joint_target_ci": false
+    }
+  },
+  "audit": {
+    "episodes": 320,
+    "unique_cells": 320,
+    "probability_and_cost_checks": true
+  },
+  "single_seed": true,
+  "target": {
+    "f1_delta": 0.03,
+    "generated_ratio": 0.8
+  },
+  "ci_scope": "paired question bootstrap conditional on frozen policies; not training-seed population uncertainty"
+}

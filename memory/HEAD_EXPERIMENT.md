@@ -1,3 +1,11 @@
+## 2026-10-23 — 목표 달성 시 predictive auxiliary 후속 승인
+
+사용자아이디어저장및현재목표달성하면바로실험명시. docs/JEV_CONDITIONAL_PREDICTIVE_AUXILIARY_PLAN_20261023.md. fresh paired F1+.05/generated<=.70 동시point목표충족시trigger,validation만으로금지. 동일구조policy-only 대policy+beta prediction,공유작은encoder+action-conditionedpredictor,고정/EMA target·collapse대응,기존train hidden pair재사용우선. t는decisionstep. 현재A-RAG주실험유지,단일GPU/22:48UTC상한유지. 미달이면보류.
+
+## 2026-10-23 — 사용자 목표 재상향: F1 +5%p / 생성 토큰 −30%
+
+validation32만열람후사용자명시상향. 새160test미열람. 이전.03/.80목표는역사기록이며최신기준.05/.70. 기존baseline80설명값F1 .3843263/token39.375. 새공통testbaseline대비판정. 검증셋선형λ.06의+.05417/−25.14%는새token목표미달. multiMLP의더큰quality여유를활용한제한적cost후보검토→주후보고정→독립seed2→최종평가. 일반GRPOcontrolPID117392진행,추가후보CPU학습은공유cache사용.
+
 ## 2026-10-23 — 分기 수집·검증·백업 완료 / 구조 후보 validation 실행
 
 collectorPID108998 exit0,990.57초,96문항191state/1428episodes,generated57425/input4342053. 3101decisions/prefix SHA/all-action coverage/분할family검증통과. 88states관측F1spread>0,10error episodes그대로F1실패보존. 이수치는train자료특성이지heldout성공증거아님. rawarchive29408347bytes SHA검증 registry/decision_state_outcomes_20261023/archive.json. 새로운val32/test160은선택결과모두공식train원천이므로공식dev결과아님. sourcefamily는train96과완전분리. audit의numpy int JSON직렬화오류를수정후재실행(LLM재실행없음).
