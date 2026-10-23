@@ -748,12 +748,15 @@
     "generation_token_savings": false
   },
   "decision_policy_ablation": {
-    "phase": "loading",
-    "pid": 76965,
-    "session_id": 36498,
+    "phase": "complete",
+    "pid": null,
+    "session_id": null,
     "source": "ef9bd61",
     "run": "/content/local_fast/lsdrag-text-v1/results/decision_policy_ablation_20261023",
     "log": "/content/local_fast/lsdrag-text-v1/logs/decision_policy_ablation_20261023.log",
-    "planned_episodes": 360
+    "planned_episodes": 360,
+    "episodes": 360,
+    "gate_passed": false,
+    "report": "docs/JEV_DECISION_POLICY_ABLATION_REPORT_20261023.md"
   }
 }
