@@ -1,3 +1,9 @@
+## 2026-10-23 — 선형value 평가 완료 + train-only 중요결정 분석
+
+value worker PID41106 종료/status complete. sourcea5ecb91,340episodes/487.01초,gen28673/input1913242. 원본340평균재집계/head1076확률·합법성/checkpointSHA검사통과. Drive archive검증 registry/decision_policy_value_20261023/archive.json. 새60:linearvalue F1.442590/calls5.2/gen157.2/cap27/error5;fullMLPcost .405871/2.1/gen59.017/cap0/error0;BC .326353/2.4;STOPonly .268019/2.1;native .367961/2.3333. value−BC F1+.116238 CI[+.036678,+.198904]이나비용증가로효율정책채택안함. value−full+.036719 CI[-.043945,+.118897]. STOP-only이득의질문군불안정,seed재현아님명시. 보고 docs/JEV_DECISION_POLICY_VALUE_REPORT_20261023.md. 새60후속튜닝금지.
+
+사용자부산물연구방향수용에따라train-only pilot2 branch audit 실행. 24질문139상태:행동별F1차이73,nonFINAL F1range≥.25는45. 추정BC개선여지의88.02%가사후상위35상태에집중;같은대안이두suffix에서모두BC보다utility>.05인상태40. bestactionrepeat일치84.9%,crossrepeat선택평가gain.1188 vs낙관추정.1488. BCentropy상관.186. 사후oracle순위이므로prospective선택/탐색절감/혁신입증아님. 두표본/동일질문·reference의존한계. 보고 docs/JEV_DECISION_BRANCH_VALUE_AUDIT_20261023.md,rawsummaryJSON+SVG+재생성코드. 평가outcome은audit에사용안함. 현재GPUworker없음. 다음:반복수집seed검증은미완료로유지;중요상태사전예측·같은예산uniform대조는후속protocol대상. 새학습자동확대없음.
+
 ## 2026-10-23 — 순차2 선형value 실제 평가 진행
 
 sourcea5ecb91,PID41106;run /content/local_fast/lsdrag-text-v1/results/decision_policy_value_20261023;log /content/local_fast/lsdrag-text-v1/logs/decision_policy_value_20261023.log.139train상태pooled ridge fitting완료,계수10244,actioncoverage139/139/78/139. CPU전체16검사통과. 현재phase=validation_evaluation,episodes=20.새독립60×5조건평가결과미완료. 다음summary완료→원본검증/보고/backup/Git,이후실제수집seed변동재검증단계를별도로동결. STOP-only단계완료결과와PPO/학습수식은이미Git반영.

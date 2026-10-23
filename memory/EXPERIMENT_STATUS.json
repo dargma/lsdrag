@@ -632,7 +632,7 @@
   },
   "decision_policy_value": {
     "authorized": true,
-    "status": "evaluating",
+    "status": "complete",
     "run": "/content/local_fast/lsdrag-text-v1/results/decision_policy_value_20261023",
     "launch": {
       "pid": 41106,
@@ -641,15 +641,36 @@
       "run": "/content/local_fast/lsdrag-text-v1/results/decision_policy_value_20261023"
     },
     "status_snapshot": {
-      "phase": "validation_evaluation",
+      "phase": "complete",
       "pid": 41106,
-      "elapsed_seconds": 39.28781825100032,
-      "episodes": 20,
-      "generated": 1544,
-      "inputs": 119192,
-      "qid": "2hop__411472_21587"
+      "elapsed_seconds": 487.0089882350003,
+      "episodes": 340,
+      "generated": 28673,
+      "inputs": 1913242,
+      "training_complete": true,
+      "evaluation_complete": true
     },
     "training_complete": true,
-    "evaluation_complete": false
-  }
+    "evaluation_complete": true,
+    "archive": {
+      "archive": "/content/drive/MyDrive/lsdrag-backups/20261023/decision_policy_value_results.tar.gz",
+      "sha256": "25522afd37651d3b84330c2e6e8b91d810e26051f94cd2152b6b5a9b04c21f15",
+      "bytes": 739424,
+      "source": "a5ecb91",
+      "episodes": 340,
+      "backbone_weights_included": false
+    },
+    "report": "docs/JEV_DECISION_POLICY_VALUE_REPORT_20261023.md"
+  },
+  "train_branch_value_audit": {
+    "status": "complete",
+    "report": "docs/JEV_DECISION_BRANCH_VALUE_AUDIT_20261023.md",
+    "train_only": true,
+    "new_inference": false,
+    "prospective_selection_validated": false
+  },
+  "pending_research": [
+    "independent collection/training seed replication",
+    "prospective critical-state acquisition vs equal-budget uniform"
+  ]
 }
