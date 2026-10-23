@@ -1,56 +1,199 @@
 {
-  "audit_passed": true,
-  "summary": {
-    "policies": {
-      "semantic_once": {
-        "f1": 0.2631578947368421,
-        "generated_tokens": 56.8125,
-        "prompt_tokens": 2246.1875,
-        "tool_calls": 1.0,
-        "cost_units": 1.79274375,
-        "retrieved_support_recall": 0.5625,
-        "all_support_retrieved": 0.25,
-        "read_support_recall": 0.0,
-        "errors": 0
-      },
-      "grpo_transfer": {
-        "f1": 0.25,
-        "generated_tokens": 101.8125,
-        "prompt_tokens": 4258.125,
-        "tool_calls": 2.125,
-        "cost_units": 3.5689374999999997,
-        "retrieved_support_recall": 0.375,
-        "all_support_retrieved": 0.125,
-        "read_support_recall": 0.15625,
-        "errors": 0
-      },
-      "native_fast": {
-        "f1": 0.3125,
-        "generated_tokens": 104.3125,
-        "prompt_tokens": 4860.5625,
-        "tool_calls": 2.5625,
-        "cost_units": 4.091681250000001,
-        "retrieved_support_recall": 0.5,
-        "all_support_retrieved": 0.25,
-        "read_support_recall": 0.28125,
-        "errors": 0
-      }
+  "policies": {
+    "semantic_once": {
+      "f1": 0.2631578947368421,
+      "generated_tokens": 56.8125,
+      "prompt_tokens": 2246.1875,
+      "tool_calls": 1.0,
+      "cost_units": 1.79274375,
+      "retrieved_support_recall": 0.5625,
+      "all_support_retrieved": 0.25,
+      "read_support_recall": 0.0,
+      "errors": 0
     },
-    "n": 16,
-    "split": "validation",
-    "counts": {
-      "episodes": 48,
-      "generated": 4207,
-      "inputs": 181838
+    "grpo_transfer": {
+      "f1": 0.25,
+      "generated_tokens": 101.8125,
+      "prompt_tokens": 4258.125,
+      "tool_calls": 2.125,
+      "cost_units": 3.5689374999999997,
+      "retrieved_support_recall": 0.375,
+      "all_support_retrieved": 0.125,
+      "read_support_recall": 0.15625,
+      "errors": 0
     },
-    "corpus_documents": 101962,
-    "original_question_retrieval": {
-      "support_recall_at5": 0.5625,
-      "all_support_at5": 0.25
-    },
-    "controlled_latency": false,
-    "note": "Existing heads are transfer controls, not shared-corpus retrained policies. Native-fast generated action has additional accounted generation/prefill costs; dummy policy probabilities removed."
+    "native_fast": {
+      "f1": 0.3125,
+      "generated_tokens": 104.3125,
+      "prompt_tokens": 4860.5625,
+      "tool_calls": 2.5625,
+      "cost_units": 4.091681250000001,
+      "retrieved_support_recall": 0.5,
+      "all_support_retrieved": 0.25,
+      "read_support_recall": 0.28125,
+      "errors": 0
+    }
   },
-  "spec_sha256": "84083531e7161cfaea2a872897dd7109e2492d8a595d8a4675d894cec1554470",
-  "final_test_evaluated": false
+  "n": 16,
+  "split": "validation",
+  "counts": {
+    "episodes": 48,
+    "generated": 4207,
+    "inputs": 181838
+  },
+  "corpus_documents": 101962,
+  "original_question_retrieval": {
+    "support_recall_at5": 0.5625,
+    "all_support_at5": 0.25
+  },
+  "controlled_latency": false,
+  "note": "Existing heads are transfer controls, not shared-corpus retrained policies. Native-fast generated action has additional accounted generation/prefill costs; dummy policy probabilities removed.",
+  "baseline": "grpo_transfer",
+  "comparisons_vs_baseline": {
+    "semantic_once": {
+      "f1": {
+        "delta": 0.013157894736842105,
+        "ci95": [
+          -0.14802631578947367,
+          0.1875
+        ]
+      },
+      "generated_tokens": {
+        "delta": -45.0,
+        "ci95": [
+          -67.8140625,
+          -25.1875
+        ]
+      },
+      "generated_ratio": {
+        "ratio": 0.5580110497237569,
+        "ci95": [
+          0.43348491322193616,
+          0.7114144668872127
+        ]
+      },
+      "prompt_tokens": {
+        "delta": -2011.9375,
+        "ci95": [
+          -2464.1921875,
+          -1625.8000000000002
+        ]
+      },
+      "tool_calls": {
+        "delta": -1.125,
+        "ci95": [
+          -1.3125,
+          -1.0
+        ]
+      },
+      "cost_units": {
+        "delta": -1.77619375,
+        "ci95": [
+          -2.0843879687499998,
+          -1.4976703125000002
+        ]
+      },
+      "utility": {
+        "delta": 0.06644370723684209,
+        "ci95": [
+          -0.0944767048519737,
+          0.24177032343749996
+        ]
+      },
+      "joint_point_target": false,
+      "joint_directional_ci": false,
+      "joint_target_ci": false
+    },
+    "native_fast": {
+      "f1": {
+        "delta": 0.0625,
+        "ci95": [
+          0.0,
+          0.1875
+        ]
+      },
+      "generated_tokens": {
+        "delta": 2.5,
+        "ci95": [
+          -24.6875,
+          26.9375
+        ]
+      },
+      "generated_ratio": {
+        "ratio": 1.0245549416820134,
+        "ci95": [
+          0.7939034661345601,
+          1.3056502676403186
+        ]
+      },
+      "prompt_tokens": {
+        "delta": 602.4375,
+        "ci95": [
+          81.05000000000001,
+          1115.4390625
+        ]
+      },
+      "tool_calls": {
+        "delta": 0.4375,
+        "ci95": [
+          0.1875,
+          0.6875
+        ]
+      },
+      "cost_units": {
+        "delta": 0.5227437500000001,
+        "ci95": [
+          0.04813156249999998,
+          0.9959817187500001
+        ]
+      },
+      "utility": {
+        "delta": 0.04681768749999999,
+        "ci95": [
+          -0.02311003125000001,
+          0.172686703125
+        ]
+      },
+      "joint_point_target": false,
+      "joint_directional_ci": false,
+      "joint_target_ci": false
+    }
+  },
+  "audit": {
+    "episodes": 48,
+    "unique_cells": 48,
+    "probability_and_cost_checks": true
+  },
+  "single_seed": true,
+  "target": {
+    "f1_delta": 0.05,
+    "generated_ratio": 0.7
+  },
+  "ci_scope": "paired question bootstrap conditional on frozen policies; not training-seed population uncertainty",
+  "validation_subgroups": {
+    "previously_exposed": {
+      "n": 16,
+      "policies": {
+        "semantic_once": {
+          "f1": 0.2631578947368421,
+          "generated_tokens": 56.8125,
+          "prompt_tokens": 2246.1875,
+          "tool_calls": 1.0
+        },
+        "grpo_transfer": {
+          "f1": 0.25,
+          "generated_tokens": 101.8125,
+          "prompt_tokens": 4258.125,
+          "tool_calls": 2.125
+        },
+        "native_fast": {
+          "f1": 0.3125,
+          "generated_tokens": 104.3125,
+          "prompt_tokens": 4860.5625,
+          "tool_calls": 2.5625
+        }
+      },
+      "note": "Descriptive subgroup means, no candidate selection on final test."
+    }
+  }
 }

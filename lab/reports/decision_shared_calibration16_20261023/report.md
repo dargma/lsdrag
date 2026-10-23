@@ -1,13 +1,45 @@
-# Shared-corpus calibration16
+# Decision head 개선 결과
 
-101,962 shared public paragraphs; 16 previously exposed validation questions, frozen before execution. Three conditions/48 episodes, no generation errors. Corpus/index and source hashes in the frozen spec. No final test question was evaluated.
+Split: validation, n=16, policies=3. 동일질문paired비교. 단일학습seed.
 
-|Policy|F1|Mean generated tokens|Mean tool calls|Both support paragraphs retrieved|
-|---|---:|---:|---:|---:|
-|semantic_once|0.263158|56.8125|1.0000|0.2500|
-|grpo_transfer|0.250000|101.8125|2.1250|0.1250|
-|native_fast|0.312500|104.3125|2.5625|0.2500|
+| 정책 | F1 | 생성token | 입력token | 도구호출 | 오류 |
+|---|---:|---:|---:|---:|---:|
+| semantic_once | 26.32 | 56.81 | 2246.2 | 1.000 | 0 |
+| grpo_transfer | 25.00 | 101.81 | 4258.1 | 2.125 | 0 |
+| native_fast | 31.25 | 104.31 | 4860.6 | 2.562 | 0 |
 
-Original-question dense retrieval: support Recall@5=.5625; all-support coverage=.25. This establishes nontrivial retrieval difficulty, not that the corpus alone is sufficient for research claims. Native F1 is numerically higher but this small calibration sample does not establish superiority. Original head is a small-pool transfer control, not a shared-corpus GRPO baseline. Old and new absolute costs are not directly comparable; global content IDs also change argument lengths. All new conditions share IDs/tool semantics. Native-fast action decoding includes its additional measured prefix/generation costs.
+## 지정 baseline 대비
 
-Next: freeze a bounded train-only native trajectory collection and common policy initialization in this corpus, then collect new all-action outcomes and on-policy GRPO comparisons. No old-pool hidden/Q reuse. Preserve final160 for frozen final comparison. Main target remains unverified.
+- semantic_once: F1 delta +1.32pp, CI [-0.14802631578947367, 0.1875]; 생성ratio {'ratio': 0.5580110497237569, 'ci95': [0.43348491322193616, 0.7114144668872127]}; point목표 False, 방향CI False, 목표CI False.
+- native_fast: F1 delta +6.25pp, CI [0.0, 0.1875]; 생성ratio {'ratio': 1.0245549416820134, 'ci95': [0.7939034661345601, 1.3056502676403186]}; point목표 False, 방향CI False, 목표CI False.
+
+F1+5%p 및생성token−30% 동시목표. 확률은action확률이며정답확률아님. 단일seed/조건부CI/공식train원천의학습/검증가족분리holdout이며공통101962문단검색환경. validation은후보선택자료이므로최종확증아님. 최종test결과로후보재선택금지. 전체학습/수집비용별도보고. 통제latency비교없음.
+
+## Validation exposure subgroups
+
+{
+  "previously_exposed": {
+    "n": 16,
+    "policies": {
+      "semantic_once": {
+        "f1": 0.2631578947368421,
+        "generated_tokens": 56.8125,
+        "prompt_tokens": 2246.1875,
+        "tool_calls": 1.0
+      },
+      "grpo_transfer": {
+        "f1": 0.25,
+        "generated_tokens": 101.8125,
+        "prompt_tokens": 4258.125,
+        "tool_calls": 2.125
+      },
+      "native_fast": {
+        "f1": 0.3125,
+        "generated_tokens": 104.3125,
+        "prompt_tokens": 4860.5625,
+        "tool_calls": 2.5625
+      }
+    },
+    "note": "Descriptive subgroup means, no candidate selection on final test."
+  }
+}

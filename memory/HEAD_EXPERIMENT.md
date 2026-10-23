@@ -1,3 +1,11 @@
+## 2026-10-23 — shared teacher/초기화 검증·백업 완료 / 새 GRPO 실행
+
+teacher192/667states complete,errors0/cap0,train-onlynorm/nativeaction/cost/sourcehash검증통과. trainF1.282639/107.083gen,BC학습행동정확도.998501은trainfit수치일뿐. 새BCval16 F1.25/generated100.375/errors0,원native.3125/104.3125보다품질개선아님. 초기headSHA0023dd45dee8ffc92825dddd21cd4ffe5b3e2c9b5386ccf1aacbf034c55bf46c. teacher100472288bytes/초기head1275948bytes/val39375bytes Drive SHA검증.
+
+후속manifest동결후실제실행:coordinatorPID248061/session6186,GRPOworkerPID248069,log /content/local_fast/lsdrag-text-v1/logs/shared_learning_run_decision_shared_grpo_1792798896.log. 경로 results/decision_shared_grpo192_20261023. GRPO1536/3600초→공통초기BC all-action<=3264/7200초→2cost후보CPUfit→val64×6조건/1800초,단일GPU직렬. coordinator끝에서test자동실행없음. 다음실행검증/GRPOaudit/데이터backup/새32대구32검증분리/후보동결→final160. 원8h내완료아니며사용자명시재개후bounded후속임.
+
+공통eval summary의전이head설명문구가새BC조건에도남은것확인:raw보존/파생보고서정정,이후evaluator는specprovenance일반문구로수정. 과거evalsourcehash는당시Git버전으로검증해야함. 수치변경없음. calibration16 pairedbootstrap추가,정확도우위확증없음.
+
 ## 2026-10-23 — shared GRPO / all-action 후속 코드 준비
 
 teacherPID244706 실제진행75/192,coordinator245083대기확인. scripts/run_decision_shared_grpo.py는새BC동일시작train192/group4/2round1536episodes/3600초/actor+skip만학습;분기collector scripts/run_decision_shared_outcomes.py는같은BC고정suffix,first+last상태전체legal×2,최대3264episodes/7200초. 공통corpus/hash/질문/초기checkpoint고정;동일tokenbudget아님명시. scripts/fit_decision_shared_outcomes.py는actor+skip동일trainability,lambda.03/.06두후보,100epochs기대효용/KL/entropy. scripts/prepare_decision_shared_learning.py는초기화완료및val16완료후에만manifest생성. 현재후속manifest미생성/새RL실행미기동. GRPO/statelearning/rule8tests통과,4scriptscompile통과. 다음teacher/초기화확인→검증/백업→후속manifest동결및실행.

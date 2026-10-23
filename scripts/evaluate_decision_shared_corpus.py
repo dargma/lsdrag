@@ -118,7 +118,7 @@ def main():
             subset = [e for e in episodes if e['policy']==name]
             policies[name] = {k:float(np.mean([e[k] for e in subset])) for k in ['f1', 'generated_tokens', 'prompt_tokens', 'tool_calls', 'cost_units', 'retrieved_support_recall', 'all_support_retrieved', 'read_support_recall']}
             policies[name]['errors'] = sum(bool(e['errors']) for e in subset)
-        summary = dict(policies=policies, n=len(spec['qids']), split=spec['split'], counts=counts, corpus_documents=len(rows), original_question_retrieval={k:float(np.mean([r[k] for r in diagnostics])) for k in ['support_recall_at5', 'all_support_at5']}, controlled_latency=False, note='Existing heads are transfer controls, not shared-corpus retrained policies. Native-fast generated action has additional accounted generation/prefill costs; dummy policy probabilities removed.')
+        summary = dict(policies=policies, n=len(spec['qids']), split=spec['split'], counts=counts, corpus_documents=len(rows), original_question_retrieval={k:float(np.mean([r[k] for r in diagnostics])) for k in ['support_recall_at5', 'all_support_at5']}, controlled_latency=False, note='Policy provenance is defined by frozen spec checkpoint descriptors; do not infer training environment from evaluator reuse. Native-fast additional generation/prefill costs are counted, and dummy probabilities are removed.')
         save(out/'summary.json', summary)
         status('complete')
         print(json.dumps(summary, indent=2))

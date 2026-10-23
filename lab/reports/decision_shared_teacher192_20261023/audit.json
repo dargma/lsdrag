@@ -1,0 +1,16 @@
+{
+  "audit_passed": true,
+  "questions": 192,
+  "states": 667,
+  "errors": 0,
+  "forced_final": 0,
+  "state_sha256": "a73873f7dd3f5ece0907ef9d9446cb57e0a854951a97183710287fa4aac108d6",
+  "head_sha256": "0023dd45dee8ffc92825dddd21cd4ffe5b3e2c9b5386ccf1aacbf034c55bf46c",
+  "train_only_normalization_verified": true,
+  "native_action_alignment_verified": true,
+  "costs": {
+    "generated": 20560,
+    "inputs": 927195
+  },
+  "note": "Data/implementation audit; does not establish policy quality or target attainment."
+}
