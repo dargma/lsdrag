@@ -3,7 +3,7 @@
 Read `memory/README.md`, `memory/EXPERIMENT_STATUS.json` if present, `memory/CURRENT.md`, `memory/USER_PREFERENCES.md`, and the latest entries in `memory/SESSION_LOG.md` before changing code or starting/resuming experiments. Read `memory/HEAD_EXPERIMENT.md` for the active protocol and commands. These are repository memory, not proof an experiment completed: verify actual artifacts and processes.
 
 - Work and manage Git in `/content/local_fast/lsdrag-code`. Use local-fast models/data directly. Obtain public inputs from the web into local fast; Drive is for backup. Restore unique derived artifacts from Drive only when exact bytes are unavailable publicly.
-- Push code, protocol, memory, reports and small provenance records to branch `jev_v1.1`. Do not commit model weights, credentials, private tokens or bulky raw datasets.
+- Push code, protocol, memory, reports and small provenance records to branch `jev_v1.2`. Do not commit model weights, credentials, private tokens or bulky raw datasets.
 - Latest user override (2026-10-16): execute the small text-only integrated action-head + argument-minimization pilot, train-only JSON repair -> generation/reuse comparison -> teacher32 -> coverage-gated heads. Active protocol: `docs/JEV_TEXT_INTEGRATED_EXECUTION_20261016.md`. D3 additional analysis is withdrawn; preserve prior results. World models/surprise stay deferred. Never resume discarded Q3 or silently resume old v13/v14 runs.
 - For the NEW experiment use keyword_search, semantic_search, read_chunk plus FINAL (4 actions); text-only dataset, no image inputs or image tools. Synchronize instruction, schema, action/argument heads, checkpoint, parser and handlers. Preserve existing multimodal/G1 code and artifacts as historical profiles; do not apply their five-tool/image requirements to the new text-only experiment. New namespace: text_integrated_20261016.
 - Latest model requirement:2–4B LLM/VLM with minimal thinking; active Qwen3-4B-Instruct-2507 is non-thinking-only. Previous Gemma choices are historical. Check active plan/header before loading a model.
@@ -12,3 +12,5 @@ Read `memory/README.md`, `memory/EXPERIMENT_STATUS.json` if present, `memory/CUR
 - No stale success claims: distinguish implementation smoke, teacher collection, coverage, learned-policy quality and research novelty. Ask for clarification only when genuinely necessary; continue already-authorized work.
 
 - Latest user override2026-10-17: improvement v3 merges action-head/read-slot learning with same-checkpoint always-generate/read-selection ablation. Active plan `docs/JEV_TEXT_INTEGRATED_IMPROVEMENT_V3_20261017.md`; existing split remains frozen. Current request saves plan/backups/Git only, automatic launch stays disabled. Decision-only separate experiment is excluded.
+
+- Latest user override 2026-10-23: work and push on `jev_v1.2`; decision policy research plan is `docs/JEV_DECISION_POLICY_RESEARCH_PLAN_20261023.md`. Plan saved only; no automatic training launch.

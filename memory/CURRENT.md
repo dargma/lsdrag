@@ -1,3 +1,7 @@
+## 2026-10-23 — 사용자 지정 작업 브랜치 jev_v1.2
+
+사용자 “jev_v1.2 로”에 따라 5d99ea5(복원 기록 및 decision policy 연구계획 포함)에서 jev_v1.2를 생성. 이후 코드·계획·memory·보고서의 작업/push 대상은 jev_v1.2. 기존 jev_v1.1 이력은 보존. 실험 자동 실행 없음.
+
 ## 2026-10-23 — local-fast 자산 복원 및 decision policy 연구계획 초안
 
 사용자 요청: 데이터/모델 local-fast 복원, 최근 decision 모델 원리·학습데이터 조사, 입력 위치/구조 탐색, trajectory RL로 미래 성공·비용을 고려하는 policy, 선택+확률 출력, 독립 decision backbone 없는 단일 LLM+head contribution, 도구구문 생성과 불필요 탐색 step 절감. 계획 docs/JEV_DECISION_POLICY_RESEARCH_PLAN_20261023.md 저장. 현재 BC head의 한계를 명시하고 표현/구조/학습목표/비용을 분리 검증. D3 공개훈련 recipe는 확인 못함; Decision1 Route 데이터와 혼동금지. PPO actor-critic+반사실 outcome supervision은 제안, 아직 실행/성공 아님.

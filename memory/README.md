@@ -9,7 +9,7 @@ Read order:
 4. HEAD_EXPERIMENT.md — exact active experiment protocol and commands.
 5. SESSION_LOG.md — cumulative decisions, invalidated work and milestones.
 
-Canonical code/Git: `/content/local_fast/lsdrag-code`, remote `https://github.com/dargma/lsdrag.git`, branch `jev_v1.1`. The user-visible Drive workspace is a backup/mirror, not the compute or Git execution location.
+Canonical code/Git: `/content/local_fast/lsdrag-code`, remote `https://github.com/dargma/lsdrag.git`, branch `jev_v1.2`. The user-visible Drive workspace is a backup/mirror, not the compute or Git execution location.
 
 If local fast was reset, clone the remote branch there, then read this folder before restoring model/data inputs. Never infer a job is still running from an old PID alone. Do not resurrect discarded runs. Keep this memory in Git and append rather than overwriting the historical log.
 
@@ -24,3 +24,5 @@ Latest2026-10-17: bounded contraction probe completed, no learned compression tr
 Latest2026-10-17: frozen new100 paired evaluation complete; report JEV_FROZEN_HEAD_GENERALIZATION100_REPORT_20261017.md. USER HOLD: save/report/push only, no new experiments until explicit resume. Read newest CURRENT/HEAD.
 
 Latest2026-10-17: Astra deep research complete; all-head online outcome/cost policy improvement recommended, one-intervention flagship rejected. Research proposal only; experiment HOLD remains. See newest CURRENT/HEAD and JEV_HEAD_RESEARCH_DEEP_DIVE_ASTRA_20261017.md.
+
+Latest 2026-10-23: active work/push branch is `jev_v1.2`, per explicit user override.

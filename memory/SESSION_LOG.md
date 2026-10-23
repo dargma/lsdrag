@@ -533,3 +533,8 @@ source8c9acf1,PID723617/session18426,run /content/local_fast/lsdrag-text-v1/resu
 
 원격 jev_v1.1 a522dbd를 /content/local_fast/lsdrag-code에 clone. Qwen13/embedding15파일 SHA검증, MuSiQue train/dev SHA검증, unique teacher32 JSON/NPZ와v3 checkpoint 복원. head SHA534da7b64150878869850cf7ccb735ec0fa8fbd643ddd0a74db19afeea4ebaef. provenance lab/registry/recovery_20261023/recovery.json; 복원스크립트/로그 /content/local_fast/lsdrag-recovery/20261023. 복원 worker 종료, GPU로드/학습/새평가/runtime smoke없음. 기존100 학습/튜닝금지, 원결과 보존. 이번은 복원·조사·계획 저장, 자동학습/기존 watcher 재개없음. 다음: reward/budget/split 동결 및 runtime검증 후 새pilot구현. 최초 Git조회 실패 원인은 local-fast code 디렉터리 부재였으며 재clone으로 해소. environment_status tool/network-policy 파일은 이번환경에도 없었고 실제 public download는 성공.
 
+
+## 2026-10-23 — 사용자 지정 작업 브랜치 jev_v1.2
+
+사용자 “jev_v1.2 로”에 따라 5d99ea5(복원 기록 및 decision policy 연구계획 포함)에서 jev_v1.2를 생성. 이후 코드·계획·memory·보고서의 작업/push 대상은 jev_v1.2. 기존 jev_v1.1 이력은 보존. 실험 자동 실행 없음.
+
