@@ -777,16 +777,18 @@
     "gate_passed": false
   },
   "decision_grpo96": {
-    "phase": "complete_pending_audit_archive",
+    "phase": "complete_audited_archived",
     "run": "/content/local_fast/lsdrag-text-v1/results/decision_grpo96_20261023",
     "episodes": 1392,
-    "pid": null
+    "pid": null,
+    "report": "docs/JEV_DECISION_GRPO96_REPORT_20261023.md",
+    "archive": "/content/drive/MyDrive/lsdrag-backups/20261023/decision_grpo96_20261023.tar.gz"
   },
   "eight_hour_improvement": {
     "deadline_utc": "2026-10-23T22:48:00Z",
     "phase": "plan_saved",
     "pid": null,
     "target_f1_delta": 0.03,
-    "target_generated_ratio": 0.97
+    "target_generated_ratio": 0.85
   }
 }

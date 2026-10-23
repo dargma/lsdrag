@@ -6,7 +6,7 @@
 
 공통 LLM의 표현을 작은 policy head가 읽어 행동을 선택하고, 같은 LLM의 생성 경로가 인자·답변을 생성하는 통합 decision-generation 모듈. head 자체가 문장을 생성하거나 미래 상태를 예측한다고 주장하지 않는다. 별도 decision LLM 없는 정책 선택과 유연한 생성이 기여 후보이며 신규성·효과는 검증 필요.
 
-주 목표: 새 공통 평가셋에서 고정 GRPO96 checkpoint 대비 F1 +0.03(3 percentage points) 이상, 평균 generated_tokens 3% 이상 감소 동시 달성. 기존80의 GRPO F1 .3343263/generated56.25 기준 설명용 목표는 .3643263/54.5625 이하이나, 새 평가의 동시 baseline 수치로 판정한다. point-target 달성과 paired CI상 유의한 개선을 분리. 입력 token/호출/error/utility 및 실제 측정시간도 보조 보고; 통제 latency claim 없음.
+주 목표: 새 공통 평가셋에서 고정 GRPO96 checkpoint 대비 F1 +0.03(3 percentage points) 이상, 평균 generated_tokens 15% 이상 감소 동시 달성. 기존80의 GRPO F1 .3343263/generated56.25 기준 설명용 목표는 .3643263/47.8125 이하이나, 새 평가의 동시 baseline 수치로 판정한다. point-target 달성과 paired CI상 유의한 개선을 분리. 입력 token/호출/error/utility 및 실제 측정시간도 보조 보고; 통제 latency claim 없음.
 
 ## 비용을 공유하는 실험 흐름
 
@@ -34,3 +34,7 @@
 A-RAG → 짧은 Memory-R1 관리과제 → ACA-RL 기반 단일턴 응답방식 선택. AskBench 다중턴/긴 reasoning/월드모델은 비용과 범위 때문에 보류. Memory-R1/Mem-alpha는 방법 baseline, MemoryAgentBench는 평가 benchmark. 메모리·대화 전이는 아직 검증되지 않은 가설.
 
 참고: https://arxiv.org/abs/2508.19828 ; https://arxiv.org/abs/2509.25911 ; https://arxiv.org/abs/2507.05257 ; https://arxiv.org/abs/2608.16554 ; https://arxiv.org/abs/2602.11199 .
+
+## 실행 전 추가 고정
+
+기존노출family를제외한dev2hop이20개뿐이어서미사용MuSiQue train+dev에서family-disjoint validation32/test160을동결했다. 공식dev-only성적이아닌미사용원천holdout으로표기. train96은기존그대로. 같은공개prefix에서legal3~4행동×2suffix를수집,최대192state/1632episode/7200초,생성1.2M/input40M. baseline GRPO checkpoint 고정. initial+last actual controllable state,capFINAL제외. 동일prefix SHA/hidden parity 및강제첫행동검증.

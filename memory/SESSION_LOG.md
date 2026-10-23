@@ -719,3 +719,13 @@ run /content/local_fast/lsdrag-text-v1/results/decision_ppo96_20261023;source ce
 
 단일GPU,22:48UTC상한. 새protocol docs/JEV_DECISION_EIGHT_HOUR_PLAN_20261023.md. 사용자목표:고정GRPO대비fresh paired F1+3%p/generated−3%동시. 동일상태행동결과학습+cache공유2x2입력/구조+확률기대효용+비용선호축,validation으로동적축소,최대2후보최종평가. worldmodel/Memory실행보류. 공통LLM생성경로와작은policyhead의통합모듈이며head자체생성아님. GRPO96 actual status complete1392/PID없음,summary F1 .3343263/generated56.25;PPO .3426596/66.2875. 아직원본fullaudit/backup pending. 이번신규worker 미기동. 다음GRPO검증저장→runner구체manifestfreeze→실행.
 
+
+## 2026-10-23 — 목표 상향: F1 +3%p / 생성 토큰 −15%
+
+사용자 최신목표상향. 앞서합의한F1 percentage-point해석유지,생성token ratio .85. 새공통평가GRPO대비동시달성. 기존80설명용 .3643263/47.8125,기존test최적화금지.
+
+
+## 2026-10-23 — GRPO 검증·백업 및 새 분기수집 동결
+
+GRPO1392episodes/4608decisions·headSHA검사통과,484updates. Drive archive576213516bytes SHA검증 registry/decision_grpo96_20261023/archive.json. 구조+확률공유학습용train96/val32/test160manifest동결. 기존dev미노출family20개뿐이라미사용train+dev원천holdout으로명시. runner scripts/run_decision_state_outcomes.py,source와inputhash고정,실제기동다음.
+
