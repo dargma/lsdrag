@@ -1,3 +1,7 @@
+## 2026-10-23 — shared GRPO / all-action 후속 코드 준비
+
+teacherPID244706 실제진행75/192,coordinator245083대기확인. scripts/run_decision_shared_grpo.py는새BC동일시작train192/group4/2round1536episodes/3600초/actor+skip만학습;분기collector scripts/run_decision_shared_outcomes.py는같은BC고정suffix,first+last상태전체legal×2,최대3264episodes/7200초. 공통corpus/hash/질문/초기checkpoint고정;동일tokenbudget아님명시. scripts/fit_decision_shared_outcomes.py는actor+skip동일trainability,lambda.03/.06두후보,100epochs기대효용/KL/entropy. scripts/prepare_decision_shared_learning.py는초기화완료및val16완료후에만manifest생성. 현재후속manifest미생성/새RL실행미기동. GRPO/statelearning/rule8tests통과,4scriptscompile통과. 다음teacher/초기화확인→검증/백업→후속manifest동결및실행.
+
 ## 2026-10-23 — shared-corpus teacher192 및 공통 초기화 실행
 
 teacherworkerPID244706/session41928, run /content/local_fast/lsdrag-text-v1/results/decision_shared_teacher192_20261023, log /content/local_fast/lsdrag-text-v1/logs/decision_shared_teacher192_20261023.log. train192전체native1trajectory씩,3600초/900kgen/45Minput상한. status phase evaluation은복제한collector의명칭이며split=train,heldout평가아님. nonforcedpack/legal/action만teacher_states.pt에보존,uniformdummy확률미사용,failedanswer도보존. 공통초기head새randomseed20261051,train-onlynorm,100epochs lr3e-4 legal-onlysmoothing.05,원GRPOweights미사용.
