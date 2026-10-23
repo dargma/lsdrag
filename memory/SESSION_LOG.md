@@ -844,3 +844,5 @@ shared_structure coordinatorPID250404/session59470 실제waiting_main_comparison
 
 최종선정규칙은val64결과전동결:originaloutcome.03/.06과multiMLPoutcome.03중min(F1delta/.05,token감소율/.30)최대primary,다른구조bestsecondary;tie utility→이름. baseline sharedGRPO/공통BC/semantic_once/native/multiBC포함. 최종160×7조건1120episodes,max3600초계획이며spec는모든val완료후selector가생성. 현재test미열람/미기동. selection_plan lab/registry/decision_shared_final_20261023/selection_plan.json,script select_decision_shared_final.py. 같은corpus/model/source/qids조건일치검사,각조건별원runprovenance기록. 최종목표는sharedGRPO대비이나native/단순규칙보다유용한지도별도보고.
 
+
+2026-10-23: docs/JEV_SHARED_POLICY_METHODS_20261023.md에현재공통코퍼스실험의GRPO clipped objective/trajectory균등weights/groupadvantage/KL/entropy,all-action expected-Q목적식,실제cost정의와claim제약을정리. 완료보고서아님. active학습코드수정없음.
