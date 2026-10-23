@@ -562,3 +562,8 @@ fresh20: nativeF1.229524/EM.10/calls2.30; nativefastF1.186667/EM.10/calls2.35; h
 
 보고 docs/JEV_DECISION_POLICY_PILOT1_REPORT_20261023.md, lab/reports/decision_policy_20261023/pilot1.json; 재생성 scripts/reporting/summarize_decision_policy_pilot.py. 원본/체크포인트/feature/로그Drive archive hash검증완료 registry decision_policy_20261023/archive.json. 새20은이제노출된test이므로후속학습/튜닝금지. 1seed소규모/CE대PPO추가데이터예산불일치한계보존. 다음후보:train-only logitmargin/advantage/KL진단,후기state/종료coverage보강,동일데이터예산CE대RL비교. 이번bounded실험완료,자동확대/추가학습없음.
 
+
+## 2026-10-23 — pilot2 authorized / ready to launch
+
+User “그래 시작해” authorizes bounded followup. Protocol docs/JEV_DECISION_POLICY_PILOT2_20261023.md; frozen manifest lab/registry/decision_policy_pilot2_20261023/manifest.json. Train-only saturation audit complete, temperature8; equal-data late-state return-based improvement vs CE, linear/MLP controls. CPU11 tests passed. Actual worker not yet launched at this checkpoint. Main Qwen3-4B-Instruct-2507 remains non-thinking; separate community empero-ai/Qwen3.8-4B-Distill download completed with file hashes, actual thinking-OFF generation still pending. No policy quality gain claimed. Next: launch bounded pilot2, verify process/artifacts, separate candidate OFF smoke.
+
