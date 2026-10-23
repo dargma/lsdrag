@@ -1,0 +1,234 @@
+{
+  "snapshot_utc": "2026-10-23T23:57:14.694862+00:00",
+  "runs": [
+    {
+      "group": "historical_grpo_reference",
+      "run": "decision_grpo96_20261023",
+      "phase": "complete",
+      "counts": {
+        "episodes": 1392,
+        "generated": 83182,
+        "inputs": 5557999
+      },
+      "seconds": 1403.360131636,
+      "complete_raw_totals_verified": true,
+      "status_path": "/content/local_fast/lsdrag-text-v1/results/decision_grpo96_20261023/status.json"
+    },
+    {
+      "group": "restricted_pool_exploration",
+      "run": "decision_state_outcomes_20261023",
+      "phase": "complete",
+      "counts": {
+        "episodes": 1428,
+        "generated": 57425,
+        "inputs": 4342053
+      },
+      "seconds": 990.5686826839992,
+      "complete_raw_totals_verified": true,
+      "status_path": "/content/local_fast/lsdrag-text-v1/results/decision_state_outcomes_20261023/status.json"
+    },
+    {
+      "group": "restricted_pool_exploration",
+      "run": "decision_state_validation1_20261023",
+      "phase": "complete",
+      "counts": {
+        "episodes": 320,
+        "generated": 16817,
+        "inputs": 1127816
+      },
+      "seconds": 292.5355727540009,
+      "complete_raw_totals_verified": true,
+      "status_path": "/content/local_fast/lsdrag-text-v1/results/decision_state_validation1_20261023/status.json"
+    },
+    {
+      "group": "restricted_pool_exploration",
+      "run": "decision_state_validation2_20261023",
+      "phase": "complete",
+      "counts": {
+        "episodes": 64,
+        "generated": 3270,
+        "inputs": 214885
+      },
+      "seconds": 68.21684391599774,
+      "complete_raw_totals_verified": true,
+      "status_path": "/content/local_fast/lsdrag-text-v1/results/decision_state_validation2_20261023/status.json"
+    },
+    {
+      "group": "restricted_pool_exploration",
+      "run": "decision_state_validation3_20261023",
+      "phase": "complete",
+      "counts": {
+        "episodes": 96,
+        "generated": 4251,
+        "inputs": 249215
+      },
+      "seconds": 82.89645142399968,
+      "complete_raw_totals_verified": true,
+      "status_path": "/content/local_fast/lsdrag-text-v1/results/decision_state_validation3_20261023/status.json"
+    },
+    {
+      "group": "restricted_pool_exploration",
+      "run": "decision_grpo_continuation_20261023",
+      "phase": "complete",
+      "counts": {
+        "episodes": 1216,
+        "generated": 67189,
+        "inputs": 4448164
+      },
+      "seconds": 1134.576772114,
+      "complete_raw_totals_verified": true,
+      "status_path": "/content/local_fast/lsdrag-text-v1/results/decision_grpo_continuation_20261023/status.json"
+    },
+    {
+      "group": "restricted_pool_exploration",
+      "run": "decision_state_outcomes_seed2_20261023",
+      "phase": "complete",
+      "counts": {
+        "episodes": 1410,
+        "generated": 60874,
+        "inputs": 4387681
+      },
+      "seconds": 1043.8301773959975,
+      "complete_raw_totals_verified": true,
+      "status_path": "/content/local_fast/lsdrag-text-v1/results/decision_state_outcomes_seed2_20261023/status.json"
+    },
+    {
+      "group": "restricted_pool_exploration",
+      "run": "decision_state_validation_seed2_20261023",
+      "phase": "complete",
+      "counts": {
+        "episodes": 64,
+        "generated": 3663,
+        "inputs": 244206
+      },
+      "seconds": 75.17038587900242,
+      "complete_raw_totals_verified": true,
+      "status_path": "/content/local_fast/lsdrag-text-v1/results/decision_state_validation_seed2_20261023/status.json"
+    },
+    {
+      "group": "restricted_pool_exploration",
+      "run": "decision_state_policy_iteration_20261023",
+      "phase": "complete",
+      "counts": {
+        "episodes": 2876,
+        "generated": 100079,
+        "inputs": 7411609
+      },
+      "seconds": 1712.015319334001,
+      "complete_raw_totals_verified": true,
+      "status_path": "/content/local_fast/lsdrag-text-v1/results/decision_state_policy_iteration_20261023/status.json"
+    },
+    {
+      "group": "shared_corpus_restart",
+      "run": "decision_shared_calibration16_20261023",
+      "phase": "complete",
+      "counts": {
+        "episodes": 48,
+        "generated": 4207,
+        "inputs": 181838
+      },
+      "seconds": 88.41067140899395,
+      "complete_raw_totals_verified": true,
+      "status_path": "/content/local_fast/lsdrag-text-v1/results/decision_shared_calibration16_20261023/status.json"
+    },
+    {
+      "group": "shared_corpus_restart",
+      "run": "decision_shared_teacher192_20261023",
+      "phase": "complete",
+      "counts": {
+        "episodes": 192,
+        "generated": 20560,
+        "inputs": 927195
+      },
+      "seconds": 425.2754245969991,
+      "complete_raw_totals_verified": true,
+      "status_path": "/content/local_fast/lsdrag-text-v1/results/decision_shared_teacher192_20261023/status.json"
+    },
+    {
+      "group": "shared_corpus_restart",
+      "run": "decision_shared_initialization_validation16_20261023",
+      "phase": "complete",
+      "counts": {
+        "episodes": 16,
+        "generated": 1606,
+        "inputs": 76365
+      },
+      "seconds": 42.66308380000555,
+      "complete_raw_totals_verified": true,
+      "status_path": "/content/local_fast/lsdrag-text-v1/results/decision_shared_initialization_validation16_20261023/status.json"
+    },
+    {
+      "group": "shared_corpus_restart",
+      "run": "decision_shared_grpo192_20261023",
+      "phase": "collection",
+      "counts": {
+        "episodes": 480,
+        "generated": 49895,
+        "inputs": 2269430
+      },
+      "seconds": 929.7915376570018,
+      "complete_raw_totals_verified": false,
+      "status_path": "/content/local_fast/lsdrag-text-v1/results/decision_shared_grpo192_20261023/status.json"
+    },
+    {
+      "group": "shared_corpus_restart",
+      "run": "decision_shared_outcomes192_20261023",
+      "phase": "not_started",
+      "counts": null
+    },
+    {
+      "group": "shared_corpus_restart",
+      "run": "decision_shared_validation64_20261023",
+      "phase": "not_started",
+      "counts": null
+    },
+    {
+      "group": "shared_corpus_restart",
+      "run": "decision_shared_structure_validation64_20261023",
+      "phase": "not_started",
+      "counts": null
+    },
+    {
+      "group": "shared_corpus_restart",
+      "run": "decision_shared_test160_20261023",
+      "phase": "not_started",
+      "counts": null
+    }
+  ],
+  "completed_totals": {
+    "historical_grpo_reference": {
+      "episodes": 1392,
+      "generated": 83182,
+      "inputs": 5557999,
+      "completed_runs": 1,
+      "uncompleted_runs": []
+    },
+    "restricted_pool_exploration": {
+      "episodes": 7474,
+      "generated": 313568,
+      "inputs": 22425629,
+      "completed_runs": 8,
+      "uncompleted_runs": []
+    },
+    "shared_corpus_restart": {
+      "episodes": 256,
+      "generated": 26373,
+      "inputs": 1185398,
+      "completed_runs": 3,
+      "uncompleted_runs": [
+        "decision_shared_grpo192_20261023",
+        "decision_shared_outcomes192_20261023",
+        "decision_shared_validation64_20261023",
+        "decision_shared_structure_validation64_20261023",
+        "decision_shared_test160_20261023"
+      ]
+    }
+  },
+  "scope": "Named decision-policy campaign only; historical PPO/preparatory runs outside this list are excluded. Shared-corpus and restricted-pool results are separate experimental settings.",
+  "limitations": [
+    "Running counts are status snapshots, not certified terminal totals. Pending runs contribute no invented cost.",
+    "CPU cache fitting and corpus embedding/indexing are not LLM generated tokens and are not included in these token totals.",
+    "Wall times may include loading/waiting and shared-GPU effects; not controlled comparative latency.",
+    "Historical GRPO reference training is separate from new exploration cost; no claim every listed run occurred inside original eight-hour window."
+  ]
+}
