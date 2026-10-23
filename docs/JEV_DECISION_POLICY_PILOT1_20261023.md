@@ -1,0 +1,16 @@
+# jev_v1.2 decision policy pilot1 실행 protocol
+
+2026-10-23 사용자 “실험시작”으로 새 실행 승인. 이전 HOLD/계획저장 전용 지시는 이 bounded pilot에 대해 해제한다. 계획: JEV_DECISION_POLICY_RESEARCH_PLAN_20261023.md. 새 namespace decision_policy_20261023/pilot1. 기존실험/테스트결과 불변.
+
+- Qwen3-4B-Instruct-2507 pinned/nonthinking/BF16/frozen, 같은 세 text tools+FINAL. 원 v5 prompt와 native-spaced aligned 인자 생성. GPU 사용은 공유 가능, 다른 process 종료 금지.
+- 원 train24/val8 고정. 기존 teacher 111상태 feature 재추출과 원 head 행동 parity gate. 2개 train episode의 원 실행기와 새 실행기 answer/arguments/trajectory parity 확인. 오류면 full training 중단/원인 수정 후 새 시도 namespace로 기록.
+- 표현 비교 7조건: last linear, question-end linear, observation-end linear, last16 mean linear, last residual MLP(128), observation-mean MLP, 32개 순서보존 context bin 평균에 action-query attention(64). Full token attention을 실행했다고 하지 않는다. 각 조건의 train-only feature normalization. 100epochs, lr.001, seed20261023. 마지막 MLP와attention 둘 중 val fixed-state macroF1 최고를 본 학습 구조로 선택, 동률 MLP. Teacher 모방 진단임을 명시.
+- Branch: 선정 BC가 방문한 train24 질문당 첫2상태, 합법행동별2 stochastic suffix, 최대384. suffix 모두 같은 BC policy가 수행, 인자/답변 greedy. 실패포함 저장. 상태별 평균 return을 softmax(T=.1)해 동일구조 outcome CE baseline 학습100epochs/lr1e-4. 별도 critic/EM성공/cost branch는 동일 데이터로 초기화하되 actor를 보존. 미교정 성공확률을 유효한 추론결과로 주장하지 않음.
+- PPO: BC actor 초기화, 3iterations×24questions×2episodes=144 episodes, 실제 head가 모든 step 선택, epsilon .05 legal-uniform mixture 포함 행동확률 저장. old logprob 재계산 parity gate. discount1, return=terminal answer F1 - .005×남은 비용. 비용=tool calls+decode tokens/100+(prefill+prefix tokens)/10000. Value coefficient.5, BC KL.02, entropy.01, clip.2, lr1e-4, 4epochs/iteration,minibatch32,gradclip1. Forced cap FINAL은 actor 학습 제외하되 실제 비용/결과는 보고. branch intervention data를 PPO on-policy batch에 혼합하지 않음.
+- max8tools/512tokens/16384context. 로드후3600초/60만생성/1200만input tokens 상한. Episode 시작전 최악9turn 여유를 예약. 프로세스/실패/소모 status.json 기록. token/input예산은 모델 input/output이며 embedding/load/index 준비는 별도 runtime overhead다.
+- 비교: unconstrained native, native-fast(합법 prefix trie에서 native logits로 도구명 선택, 공통구문 batch forward, 동일cache로 payload 계속; FINAL answer-key prefix를 명시한 constrained baseline), historical BC, selected BC, outcomeCE, PPO final iteration. Native-fast는 본래 native와 완전한 행동/출력 동일성을 주장하지 않으며 syntax·constraint 최적화 baseline이다. 선택/강제prefix/decode 비용 모두 기록.
+- validation8 및 manifest로 선동결한 family-disjoint fresh dev20에서6조건, 순서rotate. 기존 노출100/기존 모든 qid와 subquestion family 제외. validation QA를 보고 PPO checkpoint/λ 변경하지 않음. 1seed pilot, paired question bootstrap exploratory, 통제latency/일반우월/novelty입증 주장 금지.
+- 실행 command: PYTHONPATH=src /content/local_fast/lsdrag-text-v1/runtime/bin/python -u scripts/run_decision_policy_pilot.py --output /content/local_fast/lsdrag-text-v1/results/decision_policy_20261023_pilot1
+- frozen manifest: lab/registry/decision_policy_20261023/manifest.json. 실행 전 source hashes 동결 및 commit/push. 단계 산출은 local-fast, 완료/실패시 작은 보고서+memory Git 및 raw archive Drive 백업.
+
+환경: main torch2.11.0+cu130/transformers5.18.0/LMFE.11.3, embedding torch2.11.0+cu130/transformers5.19.0/sentence-transformers6.1.0. 설치시 embedding torch2.14.1이 torchvision과 충돌해 해당venv torch만 제거하고 시스템 torch2.11을 재사용; 실제 embedding query768차원 검증. MuSiQue scorer6파일을 공개 GitHub에서 다운로드하여 이전 source SHA와 exact match 검증.

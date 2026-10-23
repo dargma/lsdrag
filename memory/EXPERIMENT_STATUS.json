@@ -1,5 +1,5 @@
 {
-  "phase": "hold_after_frozen_head_generalization100_complete",
+  "phase": "decision_policy_pilot1_prepared",
   "updated_utc": "2026-10-17T16:48:13.887016+00:00",
   "protocol": "docs/JEV_TEXT_INTEGRATED_EXECUTION_20261016.md",
   "protocol_sha256": "0adecb3e30136b974fa1ecfffe74282df019f5ccbe0ece7fdbb6547fa486bc18",
@@ -534,5 +534,12 @@
     "proposal": "docs/JEV_DECISION_POLICY_RESEARCH_PLAN_20261023.md",
     "automatic_launch": false
   },
-  "active_branch": "jev_v1.2"
+  "active_branch": "jev_v1.2",
+  "active_protocol": "docs/JEV_DECISION_POLICY_PILOT1_20261023.md",
+  "decision_policy_pilot1": {
+    "authorized": true,
+    "status": "prepared",
+    "run": "/content/local_fast/lsdrag-text-v1/results/decision_policy_20261023_pilot1",
+    "pid": null
+  }
 }
