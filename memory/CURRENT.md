@@ -1,4 +1,9 @@
 
+## 2026-10-23 — target진단 완료 / tempered PPO 동결
+
+36CPU조건완료,last Q100%gain−.03619,BC상대target−.05805;데이터5/10/20증가에따른명확개선없음. last trainMSE작고heldout높음. 상대target으로해결되지않음,대규모데이터효과단정불가. 보고 docs/JEV_DECISION_TARGET_DIAGNOSTIC_REPORT_20261023.md. 다음사용자지속승인으로 docs/JEV_DECISION_PPO_TEMPERED_20261023.md:고정trunk/tempered초기actor,PPO와동일배치RWR,144수집+fresh40×4=304eps. manifest동결,기동전.
+
+
 ## 2026-10-23 — target/데이터량 진단 및 지속 실행 승인
 
 사용자지속실험승인. docs/JEV_DECISION_TARGET_DIAGNOSTIC_20261023.md. 36CPU조건 last/meta×Q/BC상대값×25/50/100%×3subsetseed. 탐색적학습곡선,100%직전probeparity검사. 다음진단완료후boundedPPO설계/진행,반복확인대기하지않음.
