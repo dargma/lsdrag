@@ -830,3 +830,10 @@ teacher192/667states complete,errors0/cap0,train-onlynorm/nativeaction/cost/sour
 
 GRPOworker248069/coordinator248061継続。18completedgroups中12でrewardspread>0、75rawepisodes時点error0。training比較信号の存在のみ、品質改善証拠ではない。scripts/reporting/audit_decision_shared_grpo.py追加:全1536cell/費用/合法確率/介入なし/raw行動label/reward/group/CPUbehaviorlogp再生/非actorパラメータ不変/optimizerstep/checkpointSHA検査。worker内GPUreplay2e-4と別にCPU再生1e-3許容、実行はGRPO完了後。compile通過。現在は初回collectionでcheckpoint更新前、audit未実行。
 
+
+## 2026-10-23 — corpus全体検証 / 新環境構造候補の事前固定
+
+shared corpus audit:101962publicdocs/447039occurrences完全一致、全vectorfinite/unitnorm/ID順検証。過去train8文項160vectorsと独立cache対照mincos.9998696、mapping正常。lab/reports/decision_shared_corpus_20261023/audit.json。品質改善証拠ではない。
+
+ユーザー指定input/body軸を新環境でも保持するため、追加LLM収集なしmulti-position(last/questionend/lastobsmean)+MLP128一候補を事前固定。teacher192hardlabelsでwarmstart100epoch、同じall-actionQcacheでlambda.03期待効用100epoch。自身warmstartとのmatched比較、crossarchitectureでは容量/trainability/KLanchorも異なると明示。script fit_decision_shared_structure.py、registry/decision_shared_structure_20261023/plan.json。main6conditionvalidation後にCPUfit(max300s)とwarmstart/学習後val64(max1200s)、最後のtest前に統合選択。現時点未実行。GRPOworker248069進行中、現在実行中のcoordinator/hash対象を変更していない。
+
