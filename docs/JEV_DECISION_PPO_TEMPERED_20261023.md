@@ -17,3 +17,7 @@ fresh40은기존노출qid와sharedsubquestionfamily를제외해hash순서로동�
 원본run /content/local_fast/lsdrag-text-v1/results/decision_ppo_tempered_20261023
 명령 PYTHONPATH=src /content/local_fast/lsdrag-text-v1/runtime/bin/python scripts/run_decision_ppo_tempered.py
 동결manifest lab/registry/decision_ppo_tempered_20261023/manifest.json
+
+## 평가 결과 열람 전 독립 학습 seed 반복 동결
+
+첫실행평가outcome/summary열람전에seed20261034를추가동결. 동일train24/test40/hyperparameters와초기checkpoint,독립on-policy수집·update RNG. 첫worker종료후순차실행. 별도run decision_ppo_tempered_seed2_20261023,동일runner를import하여REG/OUT만별도namespace로설정. 304episodes상한동일. 각seed를별도보고하고합산은같은40질문의seed평균 paired차이로계산(80독립질문아님). seed2만잘나왔다고채택하지않는다. 실험전체상한608episodes.
