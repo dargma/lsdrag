@@ -36,3 +36,7 @@
 원래test100과 pilot1test20에 더해 **이번40도 노출된 평가 데이터**다. 후속 학습·보상/threshold/구조 튜닝에 쓰지 않는다. 후속 후보는 related-work 보고서의 종료전용/선형value/강한최적화Native 대조군이며, 현재 결과에 새 조건을 사후추가하지 않았다.
 
 원본·체크포인트·로그는 Drive에 묶어 백업하고 SHA256을 검증했다. [archive provenance](../lab/registry/decision_policy_pilot2_20261023/archive.json).
+
+## 학습 수식
+
+[PPO·return/advantage·반사실 Q·outcome CE의 수식과 코드 대응](JEV_DECISION_POLICY_MATH_20261023.md)을 함께 읽는다. Pilot1 PPO와 pilot2 expected-return 학습은 다른 알고리즘이다.

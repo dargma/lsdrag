@@ -591,3 +591,8 @@ fresh40: BC F1.291439/EM.225/calls2.425/gen59.55; 사전주조건 MLP cost-polic
 
 
 원본·head·로그 Drive archive 검증완료: /content/drive/MyDrive/lsdrag-backups/20261023/decision_policy_pilot2_results.tar.gz, SHA256 6819799b6f6fa168cf0bae6439d7e87fe6c7b93e2474be23bfb2f9077f893147, 36762010bytes. backbone weights 제외.
+
+## 2026-10-23 — 순차 후속 1 STOP-only 실행 승인·protocol 동결
+
+사용자 “그래 차례차례진행하자”, “보고서에 ppo 등 수식도 같이”. 첫 단계 docs/JEV_DECISION_POLICY_STOP_CONTROL_20261023.md, manifest lab/registry/decision_policy_stop_20261023/manifest.json. 기존train24/val8,139states/990branches 재사용,고정BC도구선택+학습STOPgate;freshfamily60×4+val8×4=272eval. 단일seed,동일Qreference나초기화차이한계명시. CPU14검사통과. 아직worker기동전. 수식문서 docs/JEV_DECISION_POLICY_MATH_20261023.md에PPO/MCadvantage/mixturegradient/반사실Q/expectedreturn/softCE/STOPgate와코드링크추가,기존결과보고서연결. 다음기동→139parity→2roundgate학습→동결평가→결과/backup/Git. 이후linearvalue·seed반복은별도단계로기록;test60사후튜닝금지.
+

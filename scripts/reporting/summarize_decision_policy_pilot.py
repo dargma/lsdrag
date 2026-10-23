@@ -41,5 +41,5 @@ if summary:
  lines+=['','## 결론과 다음 진단','','이번 pilot에서는 PPO 정책 개선·탐색 단계 절감이 입증되지 않았다. F1과EM은 BC와 같고 평균 호출수도 같다. Actor 파라미터는 실제 변경됐으나 fixed train82에서 greedy 행동변경0, validation29에서1개였다. 학습 미실행과 정책 행동변화 부족을 구분한다.', '', 'Outcome CE는 fresh20에서 F1 점추정이 높지만 paired CI가0을 포함하며, 평균5.9호출/13개cap 강제종료/1개생성truncation으로 종료 제어가 나쁘다. 정확도·효율 공동 개선으로 채택하지 않는다.', '', '다음 후보는 train-only에서 PPO logit margin/advantage/KL 진단, 후기상태·종료행동에 대한 반사실 coverage 보강, 동일 수집데이터 예산의 outcome CE 대 PPO 비교다. 이번 새20은 이제 노출되었으므로 후속튜닝금지. 추가실험은 아직 실행하지 않았다.']
 lines+=['','## 해석 제한','']+['- '+s for s in report['limitations']]
 lines+=['','원자료의 실패와 timeout도 포함한다. 구조 개선, RL 개선, 시간 개선과 신규성은 별개로 판단한다.']
-(repo/'docs/JEV_DECISION_POLICY_PILOT1_REPORT_20261023.md').write_text('\n'.join(lines)+'\n')
+(repo/'docs/JEV_DECISION_POLICY_PILOT1_REPORT_20261023.md').write_text('\n'.join(lines)+'\n\n## 학습 수식\n\n[PPO·반사실 Q·outcome CE 수식과 코드 대응](JEV_DECISION_POLICY_MATH_20261023.md). Pilot1 PPO와 pilot2 expected-return 학습은 다르다.\n')
 print(status['phase'],counts)

@@ -535,7 +535,7 @@
     "automatic_launch": false
   },
   "active_branch": "jev_v1.2",
-  "active_protocol": "docs/JEV_DECISION_POLICY_PILOT2_20261023.md",
+  "active_protocol": "docs/JEV_DECISION_POLICY_STOP_CONTROL_20261023.md",
   "decision_policy_pilot1": {
     "authorized": true,
     "status": "complete",
@@ -597,5 +597,11 @@
       "user_instruction": "일단 여기까지만; 잘 저장하고 보고서도 작성 git 반영",
       "gpu_experiments_authorized_now": false
     }
-  ]
+  ],
+  "decision_policy_stop": {
+    "authorized": true,
+    "status": "prepared",
+    "run": "/content/local_fast/lsdrag-text-v1/results/decision_policy_stop_20261023",
+    "evaluation_complete": false
+  }
 }

@@ -61,3 +61,7 @@ Outcome CE는 fresh20에서 F1 점추정이 높지만 paired CI가0을 포함하
 - Outcome CE uses branch data; PPO additionally collects144 on-policy episodes. Any difference is not an equal-data algorithm-only comparison.
 
 원자료의 실패와 timeout도 포함한다. 구조 개선, RL 개선, 시간 개선과 신규성은 별개로 판단한다.
+
+## 학습 수식
+
+[PPO·return/advantage·반사실 Q·outcome CE의 수식과 코드 대응](JEV_DECISION_POLICY_MATH_20261023.md)을 함께 읽는다. Pilot1 PPO와 pilot2 expected-return 학습은 다른 알고리즘이다.
