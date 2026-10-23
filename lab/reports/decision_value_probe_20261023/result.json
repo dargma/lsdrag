@@ -1,0 +1,3295 @@
+{
+  "summary": {
+    "action_mean": {
+      "gain_over_bc": 0.013133170014371578,
+      "ci95": [
+        -0.06998820097824414,
+        0.10226234347083844
+      ],
+      "regret": 0.15781128533220065,
+      "q_mse": 0.15300743496368543,
+      "extra6_gain": 0.09032418686868686,
+      "extra6_states": 12
+    },
+    "metadata": {
+      "gain_over_bc": 0.006579433903260466,
+      "ci95": [
+        -0.07431507500372803,
+        0.09563673708320436
+      ],
+      "regret": 0.16436502144331175,
+      "q_mse": 0.15082460063262562,
+      "extra6_gain": 0.09032418686868686,
+      "extra6_states": 12
+    },
+    "last": {
+      "gain_over_bc": -0.03618994369714839,
+      "ci95": [
+        -0.08390950698065884,
+        0.005466656188543857
+      ],
+      "regret": 0.20713439904372058,
+      "q_mse": 0.2123180051424796,
+      "extra6_gain": -0.057399796296296324,
+      "extra6_states": 12
+    },
+    "question_end": {
+      "gain_over_bc": -0.01688036091997186,
+      "ci95": [
+        -0.06611905177744806,
+        0.03262841068349374
+      ],
+      "regret": 0.1878248162665441,
+      "q_mse": 0.24325107553087552,
+      "extra6_gain": 0.03958834890572387,
+      "extra6_states": 12
+    },
+    "observation_end": {
+      "gain_over_bc": -0.0292575199056621,
+      "ci95": [
+        -0.09686182156130406,
+        0.03825416283252543
+      ],
+      "regret": 0.20020197525223435,
+      "q_mse": 0.23953056763197367,
+      "extra6_gain": 0.03858601388888889,
+      "extra6_states": 12
+    },
+    "last16_mean": {
+      "gain_over_bc": -0.04728876637950415,
+      "ci95": [
+        -0.10657363209683206,
+        0.008329013866341994
+      ],
+      "regret": 0.21823322172607643,
+      "q_mse": 0.21589273500458128,
+      "extra6_gain": -0.038881865740740755,
+      "extra6_states": 12
+    },
+    "observation_mean": {
+      "gain_over_bc": 0.0030013862629922465,
+      "ci95": [
+        -0.07433549574870078,
+        0.085955005518729
+      ],
+      "regret": 0.16794306908358,
+      "q_mse": 0.23448042363231178,
+      "extra6_gain": 0.01734668686868684,
+      "extra6_states": 12
+    },
+    "context_bin_mean": {
+      "gain_over_bc": 0.016113531329731052,
+      "ci95": [
+        -0.05426141649620886,
+        0.09968430690080476
+      ],
+      "regret": 0.1548309240168412,
+      "q_mse": 0.23039420096199037,
+      "extra6_gain": 0.09065789520202021,
+      "extra6_states": 12
+    }
+  },
+  "last_minus_metadata": {
+    "mean": -0.04276937760040885,
+    "ci95": [
+      -0.12226062324472403,
+      0.03256043464518699
+    ]
+  },
+  "gate_passed": false,
+  "states": 67,
+  "questions": 24,
+  "detail": [
+    {
+      "qid": "2hop__426842_4037",
+      "turn": 0,
+      "bc": 0,
+      "choices": {
+        "action_mean": 1,
+        "metadata": 1,
+        "last": 0,
+        "question_end": 0,
+        "observation_end": 1,
+        "last16_mean": 3,
+        "observation_mean": 1,
+        "context_bin_mean": 1
+      },
+      "gains": {
+        "action_mean": 0.38819883333333327,
+        "metadata": 0.38819883333333327,
+        "last": 0.0,
+        "question_end": 0.0,
+        "observation_end": 0.38819883333333327,
+        "last16_mean": -0.23633283333333335,
+        "observation_mean": 0.38819883333333327,
+        "context_bin_mean": 0.38819883333333327
+      },
+      "regrets": {
+        "action_mean": 0.0,
+        "metadata": 0.0,
+        "last": 0.38819883333333327,
+        "question_end": 0.38819883333333327,
+        "observation_end": 0.0,
+        "last16_mean": 0.6245316666666666,
+        "observation_mean": 0.0,
+        "context_bin_mean": 0.0
+      },
+      "q_mse": {
+        "action_mean": 0.04412864019462611,
+        "metadata": 0.04406352757869256,
+        "last": 0.0956387017560935,
+        "question_end": 0.02954548275317827,
+        "observation_end": 0.029172650004478624,
+        "last16_mean": 0.10218564646778344,
+        "observation_mean": 0.009141935456183602,
+        "context_bin_mean": 0.041458501126733834
+      },
+      "extra_gains": null
+    },
+    {
+      "qid": "2hop__426842_4037",
+      "turn": 1,
+      "bc": 1,
+      "choices": {
+        "action_mean": 1,
+        "metadata": 1,
+        "last": 0,
+        "question_end": 0,
+        "observation_end": 0,
+        "last16_mean": 0,
+        "observation_mean": 0,
+        "context_bin_mean": 0
+      },
+      "gains": {
+        "action_mean": 0.0,
+        "metadata": 0.0,
+        "last": -0.013988999999999994,
+        "question_end": -0.013988999999999994,
+        "observation_end": -0.013988999999999994,
+        "last16_mean": -0.013988999999999994,
+        "observation_mean": -0.013988999999999994,
+        "context_bin_mean": -0.013988999999999994
+      },
+      "regrets": {
+        "action_mean": 0.042645,
+        "metadata": 0.042645,
+        "last": 0.056634,
+        "question_end": 0.056634,
+        "observation_end": 0.056634,
+        "last16_mean": 0.056634,
+        "observation_mean": 0.056634,
+        "context_bin_mean": 0.056634
+      },
+      "q_mse": {
+        "action_mean": 0.07954093385965907,
+        "metadata": 0.03597929150671367,
+        "last": 0.0406295592845587,
+        "question_end": 0.13794877050996374,
+        "observation_end": 0.013496312991110176,
+        "last16_mean": 0.09033687185300641,
+        "observation_mean": 0.055144723968585004,
+        "context_bin_mean": 0.04988207555692884
+      },
+      "extra_gains": null
+    },
+    {
+      "qid": "2hop__426842_4037",
+      "turn": 2,
+      "bc": 1,
+      "choices": {
+        "action_mean": 1,
+        "metadata": 1,
+        "last": 1,
+        "question_end": 0,
+        "observation_end": 0,
+        "last16_mean": 0,
+        "observation_mean": 0,
+        "context_bin_mean": 0
+      },
+      "gains": {
+        "action_mean": 0.0,
+        "metadata": 0.0,
+        "last": 0.0,
+        "question_end": -0.6827526666666667,
+        "observation_end": -0.6827526666666667,
+        "last16_mean": -0.6827526666666667,
+        "observation_mean": -0.6827526666666667,
+        "context_bin_mean": -0.6827526666666667
+      },
+      "regrets": {
+        "action_mean": 0.0,
+        "metadata": 0.0,
+        "last": 0.0,
+        "question_end": 0.6827526666666667,
+        "observation_end": 0.6827526666666667,
+        "last16_mean": 0.6827526666666667,
+        "observation_mean": 0.6827526666666667,
+        "context_bin_mean": 0.6827526666666667
+      },
+      "q_mse": {
+        "action_mean": 0.07896975657671577,
+        "metadata": 0.08505885142735918,
+        "last": 0.12494653002308403,
+        "question_end": 0.09286263935526469,
+        "observation_end": 0.1711142208976341,
+        "last16_mean": 0.1414653615810865,
+        "observation_mean": 0.2892895483288492,
+        "context_bin_mean": 0.1085669216076407
+      },
+      "extra_gains": null
+    },
+    {
+      "qid": "2hop__247148_838537",
+      "turn": 0,
+      "bc": 0,
+      "choices": {
+        "action_mean": 1,
+        "metadata": 1,
+        "last": 0,
+        "question_end": 1,
+        "observation_end": 1,
+        "last16_mean": 1,
+        "observation_mean": 1,
+        "context_bin_mean": 1
+      },
+      "gains": {
+        "action_mean": 0.018172500000000008,
+        "metadata": 0.018172500000000008,
+        "last": 0.0,
+        "question_end": 0.018172500000000008,
+        "observation_end": 0.018172500000000008,
+        "last16_mean": 0.018172500000000008,
+        "observation_mean": 0.018172500000000008,
+        "context_bin_mean": 0.018172500000000008
+      },
+      "regrets": {
+        "action_mean": 0.083268,
+        "metadata": 0.083268,
+        "last": 0.1014405,
+        "question_end": 0.083268,
+        "observation_end": 0.083268,
+        "last16_mean": 0.083268,
+        "observation_mean": 0.083268,
+        "context_bin_mean": 0.083268
+      },
+      "q_mse": {
+        "action_mean": 0.1000978837138961,
+        "metadata": 0.09095712467803126,
+        "last": 0.07151604872954759,
+        "question_end": 0.20422098826982252,
+        "observation_end": 0.36807072375948674,
+        "last16_mean": 0.3243088461227949,
+        "observation_mean": 0.1982676488099471,
+        "context_bin_mean": 0.08667839773749376
+      },
+      "extra_gains": null
+    },
+    {
+      "qid": "2hop__247148_838537",
+      "turn": 1,
+      "bc": 2,
+      "choices": {
+        "action_mean": 1,
+        "metadata": 1,
+        "last": 1,
+        "question_end": 1,
+        "observation_end": 1,
+        "last16_mean": 1,
+        "observation_mean": 1,
+        "context_bin_mean": 1
+      },
+      "gains": {
+        "action_mean": -0.06512099999999998,
+        "metadata": -0.06512099999999998,
+        "last": -0.06512099999999998,
+        "question_end": -0.06512099999999998,
+        "observation_end": -0.06512099999999998,
+        "last16_mean": -0.06512099999999998,
+        "observation_mean": -0.06512099999999998,
+        "context_bin_mean": -0.06512099999999998
+      },
+      "regrets": {
+        "action_mean": 0.10465499999999998,
+        "metadata": 0.10465499999999998,
+        "last": 0.10465499999999998,
+        "question_end": 0.10465499999999998,
+        "observation_end": 0.10465499999999998,
+        "last16_mean": 0.10465499999999998,
+        "observation_mean": 0.10465499999999998,
+        "context_bin_mean": 0.10465499999999998
+      },
+      "q_mse": {
+        "action_mean": 0.10093418242571202,
+        "metadata": 0.1193456995967658,
+        "last": 0.3372647393793273,
+        "question_end": 0.23039750669200218,
+        "observation_end": 0.22718532032529085,
+        "last16_mean": 0.019231914679409556,
+        "observation_mean": 0.21454706197999068,
+        "context_bin_mean": 0.22503251387619444
+      },
+      "extra_gains": null
+    },
+    {
+      "qid": "2hop__247148_838537",
+      "turn": 3,
+      "bc": 3,
+      "choices": {
+        "action_mean": 1,
+        "metadata": 1,
+        "last": 1,
+        "question_end": 1,
+        "observation_end": 1,
+        "last16_mean": 1,
+        "observation_mean": 1,
+        "context_bin_mean": 1
+      },
+      "gains": {
+        "action_mean": -0.044868,
+        "metadata": -0.044868,
+        "last": -0.044868,
+        "question_end": -0.044868,
+        "observation_end": -0.044868,
+        "last16_mean": -0.044868,
+        "observation_mean": -0.044868,
+        "context_bin_mean": -0.044868
+      },
+      "regrets": {
+        "action_mean": 0.044868,
+        "metadata": 0.044868,
+        "last": 0.044868,
+        "question_end": 0.044868,
+        "observation_end": 0.044868,
+        "last16_mean": 0.044868,
+        "observation_mean": 0.044868,
+        "context_bin_mean": 0.044868
+      },
+      "q_mse": {
+        "action_mean": 0.07974977225054687,
+        "metadata": 0.11636212361262313,
+        "last": 0.20467745982604363,
+        "question_end": 0.1956438224402096,
+        "observation_end": 0.18094578866611338,
+        "last16_mean": 0.22905026748756196,
+        "observation_mean": 0.1976284601687342,
+        "context_bin_mean": 0.27321689410228955
+      },
+      "extra_gains": {
+        "action_mean": -0.044868,
+        "metadata": -0.044868,
+        "last": -0.044868,
+        "question_end": -0.044868,
+        "observation_end": -0.044868,
+        "last16_mean": -0.044868,
+        "observation_mean": -0.044868,
+        "context_bin_mean": -0.044868
+      }
+    },
+    {
+      "qid": "2hop__82744_23249",
+      "turn": 0,
+      "bc": 0,
+      "choices": {
+        "action_mean": 1,
+        "metadata": 1,
+        "last": 1,
+        "question_end": 1,
+        "observation_end": 1,
+        "last16_mean": 1,
+        "observation_mean": 1,
+        "context_bin_mean": 1
+      },
+      "gains": {
+        "action_mean": 0.561881,
+        "metadata": 0.561881,
+        "last": 0.561881,
+        "question_end": 0.561881,
+        "observation_end": 0.561881,
+        "last16_mean": 0.561881,
+        "observation_mean": 0.561881,
+        "context_bin_mean": 0.561881
+      },
+      "regrets": {
+        "action_mean": 0.0,
+        "metadata": 0.0,
+        "last": 0.0,
+        "question_end": 0.0,
+        "observation_end": 0.0,
+        "last16_mean": 0.0,
+        "observation_mean": 0.0,
+        "context_bin_mean": 0.0
+      },
+      "q_mse": {
+        "action_mean": 0.14479302555978943,
+        "metadata": 0.14692313782427047,
+        "last": 0.08580857049653949,
+        "question_end": 0.21673712289971658,
+        "observation_end": 0.2554015472752515,
+        "last16_mean": 0.03481199339738713,
+        "observation_mean": 0.17324114017766457,
+        "context_bin_mean": 0.1475424706721689
+      },
+      "extra_gains": {
+        "action_mean": 0.8659528333333333,
+        "metadata": 0.8659528333333333,
+        "last": 0.8659528333333333,
+        "question_end": 0.8659528333333333,
+        "observation_end": 0.8659528333333333,
+        "last16_mean": 0.8659528333333333,
+        "observation_mean": 0.8659528333333333,
+        "context_bin_mean": 0.8659528333333333
+      }
+    },
+    {
+      "qid": "2hop__82744_23249",
+      "turn": 1,
+      "bc": 1,
+      "choices": {
+        "action_mean": 1,
+        "metadata": 2,
+        "last": 3,
+        "question_end": 2,
+        "observation_end": 0,
+        "last16_mean": 1,
+        "observation_mean": 1,
+        "context_bin_mean": 1
+      },
+      "gains": {
+        "action_mean": 0.0,
+        "metadata": -0.471869,
+        "last": -0.41978000000000004,
+        "question_end": -0.471869,
+        "observation_end": -0.495329,
+        "last16_mean": 0.0,
+        "observation_mean": 0.0,
+        "context_bin_mean": 0.0
+      },
+      "regrets": {
+        "action_mean": 0.0,
+        "metadata": 0.471869,
+        "last": 0.41978000000000004,
+        "question_end": 0.471869,
+        "observation_end": 0.495329,
+        "last16_mean": 0.0,
+        "observation_mean": 0.0,
+        "context_bin_mean": 0.0
+      },
+      "q_mse": {
+        "action_mean": 0.0615831476108866,
+        "metadata": 0.056337580211253846,
+        "last": 0.11916207719818811,
+        "question_end": 0.053812804871858654,
+        "observation_end": 0.14811685771736416,
+        "last16_mean": 0.04685194586832838,
+        "observation_mean": 0.08825591579709315,
+        "context_bin_mean": 0.21886620699700846
+      },
+      "extra_gains": null
+    },
+    {
+      "qid": "2hop__82744_23249",
+      "turn": 2,
+      "bc": 3,
+      "choices": {
+        "action_mean": 1,
+        "metadata": 1,
+        "last": 0,
+        "question_end": 2,
+        "observation_end": 2,
+        "last16_mean": 1,
+        "observation_mean": 1,
+        "context_bin_mean": 1
+      },
+      "gains": {
+        "action_mean": -0.046662,
+        "metadata": -0.046662,
+        "last": -0.043503,
+        "question_end": -0.060239999999999995,
+        "observation_end": -0.060239999999999995,
+        "last16_mean": -0.046662,
+        "observation_mean": -0.046662,
+        "context_bin_mean": -0.046662
+      },
+      "regrets": {
+        "action_mean": 0.046662,
+        "metadata": 0.046662,
+        "last": 0.043503,
+        "question_end": 0.060239999999999995,
+        "observation_end": 0.060239999999999995,
+        "last16_mean": 0.046662,
+        "observation_mean": 0.046662,
+        "context_bin_mean": 0.046662
+      },
+      "q_mse": {
+        "action_mean": 0.0826602990226033,
+        "metadata": 0.13264298283795672,
+        "last": 0.3800532289792353,
+        "question_end": 0.06773729112856901,
+        "observation_end": 0.547570426354878,
+        "last16_mean": 0.30828587063978435,
+        "observation_mean": 0.16933585779353882,
+        "context_bin_mean": 0.6375101129098649
+      },
+      "extra_gains": null
+    },
+    {
+      "qid": "2hop__607351_58450",
+      "turn": 0,
+      "bc": 0,
+      "choices": {
+        "action_mean": 1,
+        "metadata": 1,
+        "last": 1,
+        "question_end": 1,
+        "observation_end": 1,
+        "last16_mean": 1,
+        "observation_mean": 1,
+        "context_bin_mean": 1
+      },
+      "gains": {
+        "action_mean": 0.016159499999999993,
+        "metadata": 0.016159499999999993,
+        "last": 0.016159499999999993,
+        "question_end": 0.016159499999999993,
+        "observation_end": 0.016159499999999993,
+        "last16_mean": 0.016159499999999993,
+        "observation_mean": 0.016159499999999993,
+        "context_bin_mean": 0.016159499999999993
+      },
+      "regrets": {
+        "action_mean": 0.044271000000000005,
+        "metadata": 0.044271000000000005,
+        "last": 0.044271000000000005,
+        "question_end": 0.044271000000000005,
+        "observation_end": 0.044271000000000005,
+        "last16_mean": 0.044271000000000005,
+        "observation_mean": 0.044271000000000005,
+        "context_bin_mean": 0.044271000000000005
+      },
+      "q_mse": {
+        "action_mean": 0.08282162245065543,
+        "metadata": 0.07306183991656598,
+        "last": 0.14032896538215187,
+        "question_end": 0.3597743062242788,
+        "observation_end": 0.19745436632122867,
+        "last16_mean": 0.1118584003915931,
+        "observation_mean": 0.2648270605026755,
+        "context_bin_mean": 0.06979944465883156
+      },
+      "extra_gains": null
+    },
+    {
+      "qid": "2hop__607351_58450",
+      "turn": 1,
+      "bc": 2,
+      "choices": {
+        "action_mean": 1,
+        "metadata": 1,
+        "last": 1,
+        "question_end": 1,
+        "observation_end": 0,
+        "last16_mean": 1,
+        "observation_mean": 1,
+        "context_bin_mean": 0
+      },
+      "gains": {
+        "action_mean": -0.006305999999999999,
+        "metadata": -0.006305999999999999,
+        "last": -0.006305999999999999,
+        "question_end": -0.006305999999999999,
+        "observation_end": -0.005052000000000001,
+        "last16_mean": -0.006305999999999999,
+        "observation_mean": -0.006305999999999999,
+        "context_bin_mean": -0.005052000000000001
+      },
+      "regrets": {
+        "action_mean": 0.042872999999999994,
+        "metadata": 0.042872999999999994,
+        "last": 0.042872999999999994,
+        "question_end": 0.042872999999999994,
+        "observation_end": 0.041619,
+        "last16_mean": 0.042872999999999994,
+        "observation_mean": 0.042872999999999994,
+        "context_bin_mean": 0.041619
+      },
+      "q_mse": {
+        "action_mean": 0.0837811019548525,
+        "metadata": 0.12294735674569585,
+        "last": 0.1425023373671723,
+        "question_end": 0.3039243698588919,
+        "observation_end": 0.014685145517286287,
+        "last16_mean": 0.05414470181210686,
+        "observation_mean": 0.12784540253248836,
+        "context_bin_mean": 0.0910213655218296
+      },
+      "extra_gains": null
+    },
+    {
+      "qid": "2hop__607351_58450",
+      "turn": 3,
+      "bc": 3,
+      "choices": {
+        "action_mean": 1,
+        "metadata": 1,
+        "last": 1,
+        "question_end": 1,
+        "observation_end": 2,
+        "last16_mean": 0,
+        "observation_mean": 3,
+        "context_bin_mean": 0
+      },
+      "gains": {
+        "action_mean": -0.1285365,
+        "metadata": -0.1285365,
+        "last": -0.1285365,
+        "question_end": -0.1285365,
+        "observation_end": -0.0623655,
+        "last16_mean": -0.0667245,
+        "observation_mean": 0.0,
+        "context_bin_mean": -0.0667245
+      },
+      "regrets": {
+        "action_mean": 0.1285365,
+        "metadata": 0.1285365,
+        "last": 0.1285365,
+        "question_end": 0.1285365,
+        "observation_end": 0.0623655,
+        "last16_mean": 0.0667245,
+        "observation_mean": 0.0,
+        "context_bin_mean": 0.0667245
+      },
+      "q_mse": {
+        "action_mean": 0.11223011471038961,
+        "metadata": 0.1524893093359766,
+        "last": 0.3107128383231375,
+        "question_end": 0.32897316571191704,
+        "observation_end": 0.2562467178891187,
+        "last16_mean": 0.18382306074741683,
+        "observation_mean": 0.11549109485837471,
+        "context_bin_mean": 0.2352435286492653
+      },
+      "extra_gains": null
+    },
+    {
+      "qid": "2hop__487591_7672",
+      "turn": 0,
+      "bc": 0,
+      "choices": {
+        "action_mean": 1,
+        "metadata": 1,
+        "last": 1,
+        "question_end": 1,
+        "observation_end": 1,
+        "last16_mean": 1,
+        "observation_mean": 3,
+        "context_bin_mean": 1
+      },
+      "gains": {
+        "action_mean": -1.0029940000000002,
+        "metadata": -1.0029940000000002,
+        "last": -1.0029940000000002,
+        "question_end": -1.0029940000000002,
+        "observation_end": -1.0029940000000002,
+        "last16_mean": -1.0029940000000002,
+        "observation_mean": -0.9215260000000001,
+        "context_bin_mean": -1.0029940000000002
+      },
+      "regrets": {
+        "action_mean": 1.0029940000000002,
+        "metadata": 1.0029940000000002,
+        "last": 1.0029940000000002,
+        "question_end": 1.0029940000000002,
+        "observation_end": 1.0029940000000002,
+        "last16_mean": 1.0029940000000002,
+        "observation_mean": 0.9215260000000001,
+        "context_bin_mean": 1.0029940000000002
+      },
+      "q_mse": {
+        "action_mean": 0.20613795342029725,
+        "metadata": 0.21232072089524245,
+        "last": 0.4303213687777261,
+        "question_end": 0.4205323331041022,
+        "observation_end": 0.3020956556444544,
+        "last16_mean": 0.37010161617630444,
+        "observation_mean": 0.3128446173831166,
+        "context_bin_mean": 0.227200794505911
+      },
+      "extra_gains": null
+    },
+    {
+      "qid": "2hop__487591_7672",
+      "turn": 1,
+      "bc": 2,
+      "choices": {
+        "action_mean": 1,
+        "metadata": 1,
+        "last": 1,
+        "question_end": 1,
+        "observation_end": 0,
+        "last16_mean": 1,
+        "observation_mean": 2,
+        "context_bin_mean": 2
+      },
+      "gains": {
+        "action_mean": -0.04679999999999995,
+        "metadata": -0.04679999999999995,
+        "last": -0.04679999999999995,
+        "question_end": -0.04679999999999995,
+        "observation_end": -0.06877199999999994,
+        "last16_mean": -0.04679999999999995,
+        "observation_mean": 0.0,
+        "context_bin_mean": 0.0
+      },
+      "regrets": {
+        "action_mean": 0.08472899999999994,
+        "metadata": 0.08472899999999994,
+        "last": 0.08472899999999994,
+        "question_end": 0.08472899999999994,
+        "observation_end": 0.10670099999999993,
+        "last16_mean": 0.08472899999999994,
+        "observation_mean": 0.03792899999999999,
+        "context_bin_mean": 0.03792899999999999
+      },
+      "q_mse": {
+        "action_mean": 0.516465897782307,
+        "metadata": 0.5041382339595162,
+        "last": 0.3862604442540988,
+        "question_end": 1.2003148535269592,
+        "observation_end": 0.2711576843637764,
+        "last16_mean": 0.5274706524472033,
+        "observation_mean": 0.5328473321238184,
+        "context_bin_mean": 0.5899411898848783
+      },
+      "extra_gains": null
+    },
+    {
+      "qid": "2hop__487591_7672",
+      "turn": 2,
+      "bc": 3,
+      "choices": {
+        "action_mean": 1,
+        "metadata": 1,
+        "last": 1,
+        "question_end": 1,
+        "observation_end": 0,
+        "last16_mean": 3,
+        "observation_mean": 2,
+        "context_bin_mean": 2
+      },
+      "gains": {
+        "action_mean": -0.04263000000000006,
+        "metadata": -0.04263000000000006,
+        "last": -0.04263000000000006,
+        "question_end": -0.04263000000000006,
+        "observation_end": -0.0428670000000001,
+        "last16_mean": 0.0,
+        "observation_mean": -0.040815000000000046,
+        "context_bin_mean": -0.040815000000000046
+      },
+      "regrets": {
+        "action_mean": 0.04263000000000006,
+        "metadata": 0.04263000000000006,
+        "last": 0.04263000000000006,
+        "question_end": 0.04263000000000006,
+        "observation_end": 0.0428670000000001,
+        "last16_mean": 0.0,
+        "observation_mean": 0.040815000000000046,
+        "context_bin_mean": 0.040815000000000046
+      },
+      "q_mse": {
+        "action_mean": 0.5480624808720509,
+        "metadata": 0.4529473738138079,
+        "last": 0.028969254857992698,
+        "question_end": 1.2103769727191438,
+        "observation_end": 0.07061781251932969,
+        "last16_mean": 0.3740379498797036,
+        "observation_mean": 0.5608887175629014,
+        "context_bin_mean": 0.590619155128079
+      },
+      "extra_gains": null
+    },
+    {
+      "qid": "2hop__746150_556534",
+      "turn": 0,
+      "bc": 0,
+      "choices": {
+        "action_mean": 1,
+        "metadata": 1,
+        "last": 1,
+        "question_end": 0,
+        "observation_end": 0,
+        "last16_mean": 1,
+        "observation_mean": 0,
+        "context_bin_mean": 1
+      },
+      "gains": {
+        "action_mean": -0.00160349999999998,
+        "metadata": -0.00160349999999998,
+        "last": -0.00160349999999998,
+        "question_end": 0.0,
+        "observation_end": 0.0,
+        "last16_mean": -0.00160349999999998,
+        "observation_mean": 0.0,
+        "context_bin_mean": -0.00160349999999998
+      },
+      "regrets": {
+        "action_mean": 0.13834499999999997,
+        "metadata": 0.13834499999999997,
+        "last": 0.13834499999999997,
+        "question_end": 0.1367415,
+        "observation_end": 0.1367415,
+        "last16_mean": 0.13834499999999997,
+        "observation_mean": 0.1367415,
+        "context_bin_mean": 0.13834499999999997
+      },
+      "q_mse": {
+        "action_mean": 0.14336959407544322,
+        "metadata": 0.1360783663053515,
+        "last": 0.6575687824903366,
+        "question_end": 0.07251146448935603,
+        "observation_end": 0.14265024294602108,
+        "last16_mean": 0.1094027319196758,
+        "observation_mean": 0.28155435099464426,
+        "context_bin_mean": 0.146397513385595
+      },
+      "extra_gains": null
+    },
+    {
+      "qid": "2hop__746150_556534",
+      "turn": 1,
+      "bc": 1,
+      "choices": {
+        "action_mean": 1,
+        "metadata": 1,
+        "last": 1,
+        "question_end": 0,
+        "observation_end": 0,
+        "last16_mean": 0,
+        "observation_mean": 1,
+        "context_bin_mean": 1
+      },
+      "gains": {
+        "action_mean": 0.0,
+        "metadata": 0.0,
+        "last": 0.0,
+        "question_end": 0.005791499999999991,
+        "observation_end": 0.005791499999999991,
+        "last16_mean": 0.005791499999999991,
+        "observation_mean": 0.0,
+        "context_bin_mean": 0.0
+      },
+      "regrets": {
+        "action_mean": 0.061351499999999996,
+        "metadata": 0.061351499999999996,
+        "last": 0.061351499999999996,
+        "question_end": 0.055560000000000005,
+        "observation_end": 0.055560000000000005,
+        "last16_mean": 0.055560000000000005,
+        "observation_mean": 0.061351499999999996,
+        "context_bin_mean": 0.061351499999999996
+      },
+      "q_mse": {
+        "action_mean": 0.10068928122082958,
+        "metadata": 0.05465578685637456,
+        "last": 0.011284576485718388,
+        "question_end": 0.04645256126839744,
+        "observation_end": 0.02327318416402266,
+        "last16_mean": 0.013966352406278687,
+        "observation_mean": 0.012168179474258268,
+        "context_bin_mean": 0.08614666088958811
+      },
+      "extra_gains": null
+    },
+    {
+      "qid": "2hop__746150_556534",
+      "turn": 3,
+      "bc": 3,
+      "choices": {
+        "action_mean": 1,
+        "metadata": 1,
+        "last": 1,
+        "question_end": 0,
+        "observation_end": 1,
+        "last16_mean": 1,
+        "observation_mean": 1,
+        "context_bin_mean": 0
+      },
+      "gains": {
+        "action_mean": -0.039864,
+        "metadata": -0.039864,
+        "last": -0.039864,
+        "question_end": -0.04053599999999999,
+        "observation_end": -0.039864,
+        "last16_mean": -0.039864,
+        "observation_mean": -0.039864,
+        "context_bin_mean": -0.04053599999999999
+      },
+      "regrets": {
+        "action_mean": 0.039864,
+        "metadata": 0.039864,
+        "last": 0.039864,
+        "question_end": 0.04053599999999999,
+        "observation_end": 0.039864,
+        "last16_mean": 0.039864,
+        "observation_mean": 0.039864,
+        "context_bin_mean": 0.04053599999999999
+      },
+      "q_mse": {
+        "action_mean": 0.09812200933251715,
+        "metadata": 0.13499284882829832,
+        "last": 0.08649339272143224,
+        "question_end": 0.028315450229962593,
+        "observation_end": 0.7001706421072049,
+        "last16_mean": 0.4369842083801843,
+        "observation_mean": 0.402002965933127,
+        "context_bin_mean": 0.554978122117876
+      },
+      "extra_gains": {
+        "action_mean": -0.0461855,
+        "metadata": -0.0461855,
+        "last": -0.0461855,
+        "question_end": -0.04671949999999999,
+        "observation_end": -0.0461855,
+        "last16_mean": -0.0461855,
+        "observation_mean": -0.0461855,
+        "context_bin_mean": -0.04671949999999999
+      }
+    },
+    {
+      "qid": "2hop__763486_83697",
+      "turn": 0,
+      "bc": 0,
+      "choices": {
+        "action_mean": 1,
+        "metadata": 1,
+        "last": 1,
+        "question_end": 1,
+        "observation_end": 1,
+        "last16_mean": 1,
+        "observation_mean": 1,
+        "context_bin_mean": 1
+      },
+      "gains": {
+        "action_mean": 0.03629399999999999,
+        "metadata": 0.03629399999999999,
+        "last": 0.03629399999999999,
+        "question_end": 0.03629399999999999,
+        "observation_end": 0.03629399999999999,
+        "last16_mean": 0.03629399999999999,
+        "observation_mean": 0.03629399999999999,
+        "context_bin_mean": 0.03629399999999999
+      },
+      "regrets": {
+        "action_mean": 0.041921999999999994,
+        "metadata": 0.041921999999999994,
+        "last": 0.041921999999999994,
+        "question_end": 0.041921999999999994,
+        "observation_end": 0.041921999999999994,
+        "last16_mean": 0.041921999999999994,
+        "observation_mean": 0.041921999999999994,
+        "context_bin_mean": 0.041921999999999994
+      },
+      "q_mse": {
+        "action_mean": 0.08390914095783336,
+        "metadata": 0.07184662147297809,
+        "last": 0.04249155537774554,
+        "question_end": 0.181088959240133,
+        "observation_end": 0.0673439419907264,
+        "last16_mean": 0.44248368745869104,
+        "observation_mean": 0.3492699151539491,
+        "context_bin_mean": 0.07631350873835933
+      },
+      "extra_gains": null
+    },
+    {
+      "qid": "2hop__763486_83697",
+      "turn": 1,
+      "bc": 3,
+      "choices": {
+        "action_mean": 1,
+        "metadata": 1,
+        "last": 1,
+        "question_end": 1,
+        "observation_end": 1,
+        "last16_mean": 1,
+        "observation_mean": 2,
+        "context_bin_mean": 1
+      },
+      "gains": {
+        "action_mean": 0.022101090909090914,
+        "metadata": 0.022101090909090914,
+        "last": 0.022101090909090914,
+        "question_end": 0.022101090909090914,
+        "observation_end": 0.022101090909090914,
+        "last16_mean": 0.022101090909090914,
+        "observation_mean": 0.44031200000000004,
+        "context_bin_mean": 0.022101090909090914
+      },
+      "regrets": {
+        "action_mean": 0.41821090909090913,
+        "metadata": 0.41821090909090913,
+        "last": 0.41821090909090913,
+        "question_end": 0.41821090909090913,
+        "observation_end": 0.41821090909090913,
+        "last16_mean": 0.41821090909090913,
+        "observation_mean": 0.0,
+        "context_bin_mean": 0.41821090909090913
+      },
+      "q_mse": {
+        "action_mean": 0.06529111957979468,
+        "metadata": 0.1162214294183652,
+        "last": 0.2704819785898899,
+        "question_end": 0.15492199781886606,
+        "observation_end": 0.15716632580941695,
+        "last16_mean": 0.17427259732675193,
+        "observation_mean": 0.29953627628303536,
+        "context_bin_mean": 0.29056704551468016
+      },
+      "extra_gains": null
+    },
+    {
+      "qid": "2hop__357497_74309",
+      "turn": 0,
+      "bc": 0,
+      "choices": {
+        "action_mean": 1,
+        "metadata": 1,
+        "last": 1,
+        "question_end": 1,
+        "observation_end": 1,
+        "last16_mean": 1,
+        "observation_mean": 1,
+        "context_bin_mean": 1
+      },
+      "gains": {
+        "action_mean": -0.937993,
+        "metadata": -0.937993,
+        "last": -0.937993,
+        "question_end": -0.937993,
+        "observation_end": -0.937993,
+        "last16_mean": -0.937993,
+        "observation_mean": -0.937993,
+        "context_bin_mean": -0.937993
+      },
+      "regrets": {
+        "action_mean": 0.937993,
+        "metadata": 0.937993,
+        "last": 0.937993,
+        "question_end": 0.937993,
+        "observation_end": 0.937993,
+        "last16_mean": 0.937993,
+        "observation_mean": 0.937993,
+        "context_bin_mean": 0.937993
+      },
+      "q_mse": {
+        "action_mean": 0.19963405353222405,
+        "metadata": 0.20839270360666365,
+        "last": 0.39752163188684153,
+        "question_end": 0.17460202477029033,
+        "observation_end": 0.2871566685085751,
+        "last16_mean": 0.35187641752822535,
+        "observation_mean": 0.3126738633914487,
+        "context_bin_mean": 0.22940278349046272
+      },
+      "extra_gains": null
+    },
+    {
+      "qid": "2hop__357497_74309",
+      "turn": 1,
+      "bc": 3,
+      "choices": {
+        "action_mean": 2,
+        "metadata": 2,
+        "last": 1,
+        "question_end": 1,
+        "observation_end": 2,
+        "last16_mean": 1,
+        "observation_mean": 1,
+        "context_bin_mean": 1
+      },
+      "gains": {
+        "action_mean": -0.036444,
+        "metadata": -0.036444,
+        "last": 0.959122,
+        "question_end": 0.959122,
+        "observation_end": -0.036444,
+        "last16_mean": 0.959122,
+        "observation_mean": 0.959122,
+        "context_bin_mean": 0.959122
+      },
+      "regrets": {
+        "action_mean": 0.996394,
+        "metadata": 0.996394,
+        "last": 0.0008279999999999399,
+        "question_end": 0.0008279999999999399,
+        "observation_end": 0.996394,
+        "last16_mean": 0.0008279999999999399,
+        "observation_mean": 0.0008279999999999399,
+        "context_bin_mean": 0.0008279999999999399
+      },
+      "q_mse": {
+        "action_mean": 0.304825684194914,
+        "metadata": 0.2954663070597034,
+        "last": 0.2738435795980802,
+        "question_end": 0.20876251407196264,
+        "observation_end": 0.6287116101277535,
+        "last16_mean": 0.4231635122359695,
+        "observation_mean": 0.2943449994858751,
+        "context_bin_mean": 0.26928262881163867
+      },
+      "extra_gains": null
+    },
+    {
+      "qid": "2hop__592717_181429",
+      "turn": 0,
+      "bc": 0,
+      "choices": {
+        "action_mean": 1,
+        "metadata": 1,
+        "last": 0,
+        "question_end": 1,
+        "observation_end": 0,
+        "last16_mean": 1,
+        "observation_mean": 1,
+        "context_bin_mean": 1
+      },
+      "gains": {
+        "action_mean": 0.002789999999999959,
+        "metadata": 0.002789999999999959,
+        "last": 0.0,
+        "question_end": 0.002789999999999959,
+        "observation_end": 0.0,
+        "last16_mean": 0.002789999999999959,
+        "observation_mean": 0.002789999999999959,
+        "context_bin_mean": 0.002789999999999959
+      },
+      "regrets": {
+        "action_mean": 0.0,
+        "metadata": 0.0,
+        "last": 0.002789999999999959,
+        "question_end": 0.0,
+        "observation_end": 0.002789999999999959,
+        "last16_mean": 0.0,
+        "observation_mean": 0.0,
+        "context_bin_mean": 0.0
+      },
+      "q_mse": {
+        "action_mean": 0.2613614639752062,
+        "metadata": 0.2765062056936665,
+        "last": 0.5504956301724118,
+        "question_end": 0.20982104171412988,
+        "observation_end": 0.5283300645806225,
+        "last16_mean": 0.7446189064182396,
+        "observation_mean": 0.44134186490568356,
+        "context_bin_mean": 0.3630937129287619
+      },
+      "extra_gains": {
+        "action_mean": 0.17377666666666658,
+        "metadata": 0.17377666666666658,
+        "last": 0.0,
+        "question_end": 0.17377666666666658,
+        "observation_end": 0.0,
+        "last16_mean": 0.17377666666666658,
+        "observation_mean": 0.17377666666666658,
+        "context_bin_mean": 0.17377666666666658
+      }
+    },
+    {
+      "qid": "2hop__592717_181429",
+      "turn": 1,
+      "bc": 1,
+      "choices": {
+        "action_mean": 1,
+        "metadata": 1,
+        "last": 0,
+        "question_end": 1,
+        "observation_end": 1,
+        "last16_mean": 3,
+        "observation_mean": 3,
+        "context_bin_mean": 3
+      },
+      "gains": {
+        "action_mean": 0.0,
+        "metadata": 0.0,
+        "last": -0.49725949999999997,
+        "question_end": 0.0,
+        "observation_end": 0.0,
+        "last16_mean": -0.9370419999999999,
+        "observation_mean": -0.9370419999999999,
+        "context_bin_mean": -0.9370419999999999
+      },
+      "regrets": {
+        "action_mean": 0.004873500000000086,
+        "metadata": 0.004873500000000086,
+        "last": 0.502133,
+        "question_end": 0.004873500000000086,
+        "observation_end": 0.004873500000000086,
+        "last16_mean": 0.9419155,
+        "observation_mean": 0.9419155,
+        "context_bin_mean": 0.9419155
+      },
+      "q_mse": {
+        "action_mean": 0.240198871162476,
+        "metadata": 0.3161552358422761,
+        "last": 0.770126921527684,
+        "question_end": 0.2615607818625397,
+        "observation_end": 0.5888885079427297,
+        "last16_mean": 0.428603061606495,
+        "observation_mean": 0.4787662615083509,
+        "context_bin_mean": 0.5798649848315128
+      },
+      "extra_gains": null
+    },
+    {
+      "qid": "2hop__592717_181429",
+      "turn": 2,
+      "bc": 3,
+      "choices": {
+        "action_mean": 1,
+        "metadata": 1,
+        "last": 1,
+        "question_end": 1,
+        "observation_end": 3,
+        "last16_mean": 1,
+        "observation_mean": 3,
+        "context_bin_mean": 3
+      },
+      "gains": {
+        "action_mean": -0.04098299999999999,
+        "metadata": -0.04098299999999999,
+        "last": -0.04098299999999999,
+        "question_end": -0.04098299999999999,
+        "observation_end": 0.0,
+        "last16_mean": -0.04098299999999999,
+        "observation_mean": 0.0,
+        "context_bin_mean": 0.0
+      },
+      "regrets": {
+        "action_mean": 0.04098299999999999,
+        "metadata": 0.04098299999999999,
+        "last": 0.04098299999999999,
+        "question_end": 0.04098299999999999,
+        "observation_end": 0.0,
+        "last16_mean": 0.04098299999999999,
+        "observation_mean": 0.0,
+        "context_bin_mean": 0.0
+      },
+      "q_mse": {
+        "action_mean": 0.5382119060728483,
+        "metadata": 0.45786783944604437,
+        "last": 0.5543362468377463,
+        "question_end": 0.5307579396256474,
+        "observation_end": 0.31667386685202503,
+        "last16_mean": 0.2322765441699911,
+        "observation_mean": 0.7031398249410028,
+        "context_bin_mean": 1.0146840208358037
+      },
+      "extra_gains": null
+    },
+    {
+      "qid": "2hop__22215_22229",
+      "turn": 0,
+      "bc": 1,
+      "choices": {
+        "action_mean": 1,
+        "metadata": 1,
+        "last": 1,
+        "question_end": 1,
+        "observation_end": 1,
+        "last16_mean": 1,
+        "observation_mean": 1,
+        "context_bin_mean": 0
+      },
+      "gains": {
+        "action_mean": 0.0,
+        "metadata": 0.0,
+        "last": 0.0,
+        "question_end": 0.0,
+        "observation_end": 0.0,
+        "last16_mean": 0.0,
+        "observation_mean": 0.0,
+        "context_bin_mean": -0.018920999999999993
+      },
+      "regrets": {
+        "action_mean": 0.08043600000000001,
+        "metadata": 0.08043600000000001,
+        "last": 0.08043600000000001,
+        "question_end": 0.08043600000000001,
+        "observation_end": 0.08043600000000001,
+        "last16_mean": 0.08043600000000001,
+        "observation_mean": 0.08043600000000001,
+        "context_bin_mean": 0.099357
+      },
+      "q_mse": {
+        "action_mean": 0.09893471843872624,
+        "metadata": 0.054482528316300925,
+        "last": 0.07133803762493353,
+        "question_end": 0.20029377438497975,
+        "observation_end": 0.12905671150793996,
+        "last16_mean": 0.08853593089778457,
+        "observation_mean": 0.06915897631423197,
+        "context_bin_mean": 0.08341208875290824
+      },
+      "extra_gains": null
+    },
+    {
+      "qid": "2hop__22215_22229",
+      "turn": 1,
+      "bc": 2,
+      "choices": {
+        "action_mean": 1,
+        "metadata": 1,
+        "last": 0,
+        "question_end": 1,
+        "observation_end": 2,
+        "last16_mean": 0,
+        "observation_mean": 1,
+        "context_bin_mean": 1
+      },
+      "gains": {
+        "action_mean": -0.0027300000000000033,
+        "metadata": -0.0027300000000000033,
+        "last": -0.0418755,
+        "question_end": -0.0027300000000000033,
+        "observation_end": 0.0,
+        "last16_mean": -0.0418755,
+        "observation_mean": -0.0027300000000000033,
+        "context_bin_mean": -0.0027300000000000033
+      },
+      "regrets": {
+        "action_mean": 0.04201200000000001,
+        "metadata": 0.04201200000000001,
+        "last": 0.08115750000000001,
+        "question_end": 0.04201200000000001,
+        "observation_end": 0.039282,
+        "last16_mean": 0.08115750000000001,
+        "observation_mean": 0.04201200000000001,
+        "context_bin_mean": 0.04201200000000001
+      },
+      "q_mse": {
+        "action_mean": 0.08313880254969784,
+        "metadata": 0.11614769676717211,
+        "last": 0.049332986216220856,
+        "question_end": 0.18827961636959178,
+        "observation_end": 0.02260161206662498,
+        "last16_mean": 0.19755107155557802,
+        "observation_mean": 0.1720090298462539,
+        "context_bin_mean": 0.20195261016262192
+      },
+      "extra_gains": {
+        "action_mean": -0.0027300000000000033,
+        "metadata": -0.0027300000000000033,
+        "last": -0.01573999999999999,
+        "question_end": -0.0027300000000000033,
+        "observation_end": 0.0,
+        "last16_mean": -0.01573999999999999,
+        "observation_mean": -0.0027300000000000033,
+        "context_bin_mean": -0.0027300000000000033
+      }
+    },
+    {
+      "qid": "2hop__22215_22229",
+      "turn": 3,
+      "bc": 3,
+      "choices": {
+        "action_mean": 1,
+        "metadata": 1,
+        "last": 1,
+        "question_end": 1,
+        "observation_end": 3,
+        "last16_mean": 1,
+        "observation_mean": 1,
+        "context_bin_mean": 1
+      },
+      "gains": {
+        "action_mean": -0.04053,
+        "metadata": -0.04053,
+        "last": -0.04053,
+        "question_end": -0.04053,
+        "observation_end": 0.0,
+        "last16_mean": -0.04053,
+        "observation_mean": -0.04053,
+        "context_bin_mean": -0.04053
+      },
+      "regrets": {
+        "action_mean": 0.04053,
+        "metadata": 0.04053,
+        "last": 0.04053,
+        "question_end": 0.04053,
+        "observation_end": 0.0,
+        "last16_mean": 0.04053,
+        "observation_mean": 0.04053,
+        "context_bin_mean": 0.04053
+      },
+      "q_mse": {
+        "action_mean": 0.07719190891373276,
+        "metadata": 0.10711402982989013,
+        "last": 0.5224739801934292,
+        "question_end": 0.1643982253021964,
+        "observation_end": 0.0034228907032008205,
+        "last16_mean": 0.13667766187346234,
+        "observation_mean": 0.26675195438364985,
+        "context_bin_mean": 0.2774438010362438
+      },
+      "extra_gains": null
+    },
+    {
+      "qid": "2hop__38200_430",
+      "turn": 0,
+      "bc": 0,
+      "choices": {
+        "action_mean": 1,
+        "metadata": 1,
+        "last": 0,
+        "question_end": 0,
+        "observation_end": 0,
+        "last16_mean": 0,
+        "observation_mean": 1,
+        "context_bin_mean": 1
+      },
+      "gains": {
+        "action_mean": 0.8931443333333333,
+        "metadata": 0.8931443333333333,
+        "last": 0.0,
+        "question_end": 0.0,
+        "observation_end": 0.0,
+        "last16_mean": 0.0,
+        "observation_mean": 0.8931443333333333,
+        "context_bin_mean": 0.8931443333333333
+      },
+      "regrets": {
+        "action_mean": 0.0,
+        "metadata": 0.0,
+        "last": 0.8931443333333333,
+        "question_end": 0.8931443333333333,
+        "observation_end": 0.8931443333333333,
+        "last16_mean": 0.8931443333333333,
+        "observation_mean": 0.0,
+        "context_bin_mean": 0.0
+      },
+      "q_mse": {
+        "action_mean": 0.12402620084123299,
+        "metadata": 0.11977840387104215,
+        "last": 0.16732782999124882,
+        "question_end": 0.23053012921933935,
+        "observation_end": 0.24906364749285825,
+        "last16_mean": 0.16310971048622594,
+        "observation_mean": 0.20195409035297104,
+        "context_bin_mean": 0.12099518509996125
+      },
+      "extra_gains": {
+        "action_mean": 0.5936450555555555,
+        "metadata": 0.5936450555555555,
+        "last": 0.0,
+        "question_end": 0.0,
+        "observation_end": 0.0,
+        "last16_mean": 0.0,
+        "observation_mean": 0.5936450555555555,
+        "context_bin_mean": 0.5936450555555555
+      }
+    },
+    {
+      "qid": "2hop__38200_430",
+      "turn": 1,
+      "bc": 1,
+      "choices": {
+        "action_mean": 1,
+        "metadata": 1,
+        "last": 0,
+        "question_end": 0,
+        "observation_end": 1,
+        "last16_mean": 0,
+        "observation_mean": 3,
+        "context_bin_mean": 1
+      },
+      "gains": {
+        "action_mean": 0.0,
+        "metadata": 0.0,
+        "last": 0.023219999999999977,
+        "question_end": 0.023219999999999977,
+        "observation_end": 0.0,
+        "last16_mean": 0.023219999999999977,
+        "observation_mean": 0.08446499999999998,
+        "context_bin_mean": 0.0
+      },
+      "regrets": {
+        "action_mean": 0.08446499999999998,
+        "metadata": 0.08446499999999998,
+        "last": 0.061245,
+        "question_end": 0.061245,
+        "observation_end": 0.08446499999999998,
+        "last16_mean": 0.061245,
+        "observation_mean": 0.0,
+        "context_bin_mean": 0.08446499999999998
+      },
+      "q_mse": {
+        "action_mean": 0.10840566521842669,
+        "metadata": 0.06084495040665585,
+        "last": 0.006757197990224096,
+        "question_end": 0.19981689556184343,
+        "observation_end": 0.01670021291563271,
+        "last16_mean": 0.013991462802478483,
+        "observation_mean": 6.159391504943075e-05,
+        "context_bin_mean": 0.08445595826109233
+      },
+      "extra_gains": null
+    },
+    {
+      "qid": "2hop__38200_430",
+      "turn": 3,
+      "bc": 3,
+      "choices": {
+        "action_mean": 1,
+        "metadata": 1,
+        "last": 2,
+        "question_end": 0,
+        "observation_end": 2,
+        "last16_mean": 2,
+        "observation_mean": 0,
+        "context_bin_mean": 0
+      },
+      "gains": {
+        "action_mean": 0.936373,
+        "metadata": 0.936373,
+        "last": -0.05875500000000001,
+        "question_end": 0.7700063333333333,
+        "observation_end": -0.05875500000000001,
+        "last16_mean": -0.05875500000000001,
+        "observation_mean": 0.7700063333333333,
+        "context_bin_mean": 0.7700063333333333
+      },
+      "regrets": {
+        "action_mean": 0.0,
+        "metadata": 0.0,
+        "last": 0.995128,
+        "question_end": 0.16636666666666666,
+        "observation_end": 0.995128,
+        "last16_mean": 0.995128,
+        "observation_mean": 0.16636666666666666,
+        "context_bin_mean": 0.16636666666666666
+      },
+      "q_mse": {
+        "action_mean": 0.18445451689224024,
+        "metadata": 0.1966316284053998,
+        "last": 0.2589629749902654,
+        "question_end": 0.13693447846583726,
+        "observation_end": 0.4947124080956771,
+        "last16_mean": 0.17894293023830124,
+        "observation_mean": 0.34306576713511544,
+        "context_bin_mean": 0.2618406204673421
+      },
+      "extra_gains": null
+    },
+    {
+      "qid": "2hop__70082_2578",
+      "turn": 0,
+      "bc": 0,
+      "choices": {
+        "action_mean": 1,
+        "metadata": 1,
+        "last": 1,
+        "question_end": 0,
+        "observation_end": 1,
+        "last16_mean": 1,
+        "observation_mean": 1,
+        "context_bin_mean": 1
+      },
+      "gains": {
+        "action_mean": -0.0038445000000000146,
+        "metadata": -0.0038445000000000146,
+        "last": -0.0038445000000000146,
+        "question_end": 0.0,
+        "observation_end": -0.0038445000000000146,
+        "last16_mean": -0.0038445000000000146,
+        "observation_mean": -0.0038445000000000146,
+        "context_bin_mean": -0.0038445000000000146
+      },
+      "regrets": {
+        "action_mean": 0.0038445000000000146,
+        "metadata": 0.0038445000000000146,
+        "last": 0.0038445000000000146,
+        "question_end": 0.0,
+        "observation_end": 0.0038445000000000146,
+        "last16_mean": 0.0038445000000000146,
+        "observation_mean": 0.0038445000000000146,
+        "context_bin_mean": 0.0038445000000000146
+      },
+      "q_mse": {
+        "action_mean": 0.04552519645266665,
+        "metadata": 0.036953647930254026,
+        "last": 0.060549632233158436,
+        "question_end": 0.08298868086818385,
+        "observation_end": 0.3880477667051725,
+        "last16_mean": 0.4110304356148886,
+        "observation_mean": 0.32334937055812885,
+        "context_bin_mean": 0.051777912460824804
+      },
+      "extra_gains": null
+    },
+    {
+      "qid": "2hop__70082_2578",
+      "turn": 1,
+      "bc": 1,
+      "choices": {
+        "action_mean": 1,
+        "metadata": 1,
+        "last": 0,
+        "question_end": 0,
+        "observation_end": 1,
+        "last16_mean": 3,
+        "observation_mean": 3,
+        "context_bin_mean": 1
+      },
+      "gains": {
+        "action_mean": 0.0,
+        "metadata": 0.0,
+        "last": 0.13501368181818177,
+        "question_end": 0.13501368181818177,
+        "observation_end": 0.0,
+        "last16_mean": -0.0884086818181818,
+        "observation_mean": -0.0884086818181818,
+        "context_bin_mean": 0.0
+      },
+      "regrets": {
+        "action_mean": 0.13501368181818177,
+        "metadata": 0.13501368181818177,
+        "last": 0.0,
+        "question_end": 0.0,
+        "observation_end": 0.13501368181818177,
+        "last16_mean": 0.22342236363636359,
+        "observation_mean": 0.22342236363636359,
+        "context_bin_mean": 0.13501368181818177
+      },
+      "q_mse": {
+        "action_mean": 0.02404331399921439,
+        "metadata": 0.008337977901197655,
+        "last": 0.005689220062708924,
+        "question_end": 0.047990834524430794,
+        "observation_end": 0.024099703237273225,
+        "last16_mean": 0.022966842280400145,
+        "observation_mean": 0.022945667881120308,
+        "context_bin_mean": 0.008735319340115885
+      },
+      "extra_gains": null
+    },
+    {
+      "qid": "2hop__408076_99606",
+      "turn": 0,
+      "bc": 0,
+      "choices": {
+        "action_mean": 1,
+        "metadata": 1,
+        "last": 1,
+        "question_end": 1,
+        "observation_end": 1,
+        "last16_mean": 1,
+        "observation_mean": 1,
+        "context_bin_mean": 1
+      },
+      "gains": {
+        "action_mean": 0.014337000000000044,
+        "metadata": 0.014337000000000044,
+        "last": 0.014337000000000044,
+        "question_end": 0.014337000000000044,
+        "observation_end": 0.014337000000000044,
+        "last16_mean": 0.014337000000000044,
+        "observation_mean": 0.014337000000000044,
+        "context_bin_mean": 0.014337000000000044
+      },
+      "regrets": {
+        "action_mean": 0.10241250000000002,
+        "metadata": 0.10241250000000002,
+        "last": 0.10241250000000002,
+        "question_end": 0.10241250000000002,
+        "observation_end": 0.10241250000000002,
+        "last16_mean": 0.10241250000000002,
+        "observation_mean": 0.10241250000000002,
+        "context_bin_mean": 0.10241250000000002
+      },
+      "q_mse": {
+        "action_mean": 0.5650954532961577,
+        "metadata": 0.6098561843885268,
+        "last": 0.3519785608963317,
+        "question_end": 0.7136052288397826,
+        "observation_end": 0.8102677368685107,
+        "last16_mean": 0.4777528417326306,
+        "observation_mean": 0.46608327601227934,
+        "context_bin_mean": 0.5884106133806303
+      },
+      "extra_gains": {
+        "action_mean": 0.027774999999999994,
+        "metadata": 0.027774999999999994,
+        "last": 0.027774999999999994,
+        "question_end": 0.027774999999999994,
+        "observation_end": 0.027774999999999994,
+        "last16_mean": 0.027774999999999994,
+        "observation_mean": 0.027774999999999994,
+        "context_bin_mean": 0.027774999999999994
+      }
+    },
+    {
+      "qid": "2hop__408076_99606",
+      "turn": 1,
+      "bc": 2,
+      "choices": {
+        "action_mean": 2,
+        "metadata": 2,
+        "last": 3,
+        "question_end": 1,
+        "observation_end": 3,
+        "last16_mean": 1,
+        "observation_mean": 1,
+        "context_bin_mean": 1
+      },
+      "gains": {
+        "action_mean": 0.0,
+        "metadata": 0.0,
+        "last": 0.03579600000000005,
+        "question_end": -0.005522999999999945,
+        "observation_end": 0.03579600000000005,
+        "last16_mean": -0.005522999999999945,
+        "observation_mean": -0.005522999999999945,
+        "context_bin_mean": -0.005522999999999945
+      },
+      "regrets": {
+        "action_mean": 0.03579600000000005,
+        "metadata": 0.03579600000000005,
+        "last": 0.0,
+        "question_end": 0.041318999999999995,
+        "observation_end": 0.0,
+        "last16_mean": 0.041318999999999995,
+        "observation_mean": 0.041318999999999995,
+        "context_bin_mean": 0.041318999999999995
+      },
+      "q_mse": {
+        "action_mean": 0.5817218683130386,
+        "metadata": 0.5844449008503627,
+        "last": 0.5172224817520802,
+        "question_end": 0.6552114804041649,
+        "observation_end": 0.631382788188947,
+        "last16_mean": 0.5587094948747333,
+        "observation_mean": 0.48613281386733065,
+        "context_bin_mean": 0.3046364930100773
+      },
+      "extra_gains": null
+    },
+    {
+      "qid": "2hop__408076_99606",
+      "turn": 2,
+      "bc": 3,
+      "choices": {
+        "action_mean": 2,
+        "metadata": 2,
+        "last": 1,
+        "question_end": 1,
+        "observation_end": 0,
+        "last16_mean": 1,
+        "observation_mean": 0,
+        "context_bin_mean": 1
+      },
+      "gains": {
+        "action_mean": -0.0383190000000001,
+        "metadata": -0.0383190000000001,
+        "last": -0.04141500000000009,
+        "question_end": -0.04141500000000009,
+        "observation_end": -0.057844499999999965,
+        "last16_mean": -0.04141500000000009,
+        "observation_mean": -0.057844499999999965,
+        "context_bin_mean": -0.04141500000000009
+      },
+      "regrets": {
+        "action_mean": 0.0383190000000001,
+        "metadata": 0.0383190000000001,
+        "last": 0.04141500000000009,
+        "question_end": 0.04141500000000009,
+        "observation_end": 0.057844499999999965,
+        "last16_mean": 0.04141500000000009,
+        "observation_mean": 0.057844499999999965,
+        "context_bin_mean": 0.04141500000000009
+      },
+      "q_mse": {
+        "action_mean": 0.5816407823923536,
+        "metadata": 0.48873348313754783,
+        "last": 0.3960261790777364,
+        "question_end": 0.6267254511725313,
+        "observation_end": 0.7501367619219717,
+        "last16_mean": 0.7739868433886703,
+        "observation_mean": 0.44017182404965277,
+        "context_bin_mean": 0.29052710178162006
+      },
+      "extra_gains": null
+    },
+    {
+      "qid": "2hop__103724_90561",
+      "turn": 0,
+      "bc": 0,
+      "choices": {
+        "action_mean": 1,
+        "metadata": 1,
+        "last": 0,
+        "question_end": 3,
+        "observation_end": 1,
+        "last16_mean": 0,
+        "observation_mean": 0,
+        "context_bin_mean": 1
+      },
+      "gains": {
+        "action_mean": 0.9781314999999999,
+        "metadata": 0.9781314999999999,
+        "last": 0.0,
+        "question_end": 0.08085149999999999,
+        "observation_end": 0.9781314999999999,
+        "last16_mean": 0.0,
+        "observation_mean": 0.0,
+        "context_bin_mean": 0.9781314999999999
+      },
+      "regrets": {
+        "action_mean": 0.0,
+        "metadata": 0.0,
+        "last": 0.9781314999999999,
+        "question_end": 0.89728,
+        "observation_end": 0.0,
+        "last16_mean": 0.9781314999999999,
+        "observation_mean": 0.9781314999999999,
+        "context_bin_mean": 0.0
+      },
+      "q_mse": {
+        "action_mean": 0.1583125374392949,
+        "metadata": 0.15908518073970798,
+        "last": 0.23054362283229032,
+        "question_end": 0.37498595659758127,
+        "observation_end": 0.2120856655456458,
+        "last16_mean": 0.24944762609455387,
+        "observation_mean": 0.187663174726223,
+        "context_bin_mean": 0.160476130238609
+      },
+      "extra_gains": null
+    },
+    {
+      "qid": "2hop__103724_90561",
+      "turn": 1,
+      "bc": 2,
+      "choices": {
+        "action_mean": 1,
+        "metadata": 1,
+        "last": 1,
+        "question_end": 3,
+        "observation_end": 1,
+        "last16_mean": 1,
+        "observation_mean": 0,
+        "context_bin_mean": 1
+      },
+      "gains": {
+        "action_mean": -0.006620999999999995,
+        "metadata": -0.006620999999999995,
+        "last": -0.006620999999999995,
+        "question_end": 0.036819,
+        "observation_end": -0.006620999999999995,
+        "last16_mean": -0.006620999999999995,
+        "observation_mean": -0.004301999999999993,
+        "context_bin_mean": -0.006620999999999995
+      },
+      "regrets": {
+        "action_mean": 0.04343999999999999,
+        "metadata": 0.04343999999999999,
+        "last": 0.04343999999999999,
+        "question_end": 0.0,
+        "observation_end": 0.04343999999999999,
+        "last16_mean": 0.04343999999999999,
+        "observation_mean": 0.04112099999999999,
+        "context_bin_mean": 0.04343999999999999
+      },
+      "q_mse": {
+        "action_mean": 0.08522839360041631,
+        "metadata": 0.12461536182280801,
+        "last": 0.30494087069606707,
+        "question_end": 0.06545313477213886,
+        "observation_end": 0.23719060979758141,
+        "last16_mean": 0.14436392955241498,
+        "observation_mean": 0.09847325660572641,
+        "context_bin_mean": 0.0594764715814084
+      },
+      "extra_gains": null
+    },
+    {
+      "qid": "2hop__103724_90561",
+      "turn": 2,
+      "bc": 3,
+      "choices": {
+        "action_mean": 1,
+        "metadata": 1,
+        "last": 1,
+        "question_end": 3,
+        "observation_end": 0,
+        "last16_mean": 1,
+        "observation_mean": 0,
+        "context_bin_mean": 1
+      },
+      "gains": {
+        "action_mean": 0.45800599999999997,
+        "metadata": 0.45800599999999997,
+        "last": 0.45800599999999997,
+        "question_end": 0.0,
+        "observation_end": 0.45752,
+        "last16_mean": 0.45800599999999997,
+        "observation_mean": 0.45752,
+        "context_bin_mean": 0.45800599999999997
+      },
+      "regrets": {
+        "action_mean": 0.0,
+        "metadata": 0.0,
+        "last": 0.0,
+        "question_end": 0.45800599999999997,
+        "observation_end": 0.00048599999999998644,
+        "last16_mean": 0.0,
+        "observation_mean": 0.00048599999999998644,
+        "context_bin_mean": 0.0
+      },
+      "q_mse": {
+        "action_mean": 0.04431860372192453,
+        "metadata": 0.05275172547346676,
+        "last": 0.14489820990560295,
+        "question_end": 0.20503637247518952,
+        "observation_end": 0.35910799451071324,
+        "last16_mean": 0.19685866397875312,
+        "observation_mean": 0.09278968127978011,
+        "context_bin_mean": 0.0334807149488242
+      },
+      "extra_gains": null
+    },
+    {
+      "qid": "2hop__676157_44637",
+      "turn": 0,
+      "bc": 0,
+      "choices": {
+        "action_mean": 1,
+        "metadata": 1,
+        "last": 1,
+        "question_end": 0,
+        "observation_end": 1,
+        "last16_mean": 1,
+        "observation_mean": 1,
+        "context_bin_mean": 1
+      },
+      "gains": {
+        "action_mean": 0.038868000000000014,
+        "metadata": 0.038868000000000014,
+        "last": 0.038868000000000014,
+        "question_end": 0.0,
+        "observation_end": 0.038868000000000014,
+        "last16_mean": 0.038868000000000014,
+        "observation_mean": 0.038868000000000014,
+        "context_bin_mean": 0.038868000000000014
+      },
+      "regrets": {
+        "action_mean": 0.0,
+        "metadata": 0.0,
+        "last": 0.0,
+        "question_end": 0.038868000000000014,
+        "observation_end": 0.0,
+        "last16_mean": 0.0,
+        "observation_mean": 0.0,
+        "context_bin_mean": 0.0
+      },
+      "q_mse": {
+        "action_mean": 0.26432280601854413,
+        "metadata": 0.27147506626692847,
+        "last": 0.38799738684773805,
+        "question_end": 0.2597299603380539,
+        "observation_end": 0.311684518417972,
+        "last16_mean": 0.24393445764301472,
+        "observation_mean": 0.2782636181906222,
+        "context_bin_mean": 0.2988073205289325
+      },
+      "extra_gains": null
+    },
+    {
+      "qid": "2hop__676157_44637",
+      "turn": 1,
+      "bc": 1,
+      "choices": {
+        "action_mean": 1,
+        "metadata": 1,
+        "last": 3,
+        "question_end": 0,
+        "observation_end": 1,
+        "last16_mean": 3,
+        "observation_mean": 3,
+        "context_bin_mean": 1
+      },
+      "gains": {
+        "action_mean": 0.0,
+        "metadata": 0.0,
+        "last": -0.8803960000000001,
+        "question_end": 0.008846999999999938,
+        "observation_end": 0.0,
+        "last16_mean": -0.8803960000000001,
+        "observation_mean": -0.8803960000000001,
+        "context_bin_mean": 0.0
+      },
+      "regrets": {
+        "action_mean": 0.008846999999999938,
+        "metadata": 0.008846999999999938,
+        "last": 0.889243,
+        "question_end": 0.0,
+        "observation_end": 0.008846999999999938,
+        "last16_mean": 0.889243,
+        "observation_mean": 0.889243,
+        "context_bin_mean": 0.008846999999999938
+      },
+      "q_mse": {
+        "action_mean": 0.25115234047452034,
+        "metadata": 0.37944468434626305,
+        "last": 0.45274562080146535,
+        "question_end": 0.2442692679975342,
+        "observation_end": 0.3863303352974421,
+        "last16_mean": 0.6094644075657757,
+        "observation_mean": 0.5566327767871748,
+        "context_bin_mean": 0.4519044654024209
+      },
+      "extra_gains": {
+        "action_mean": 0.0,
+        "metadata": 0.0,
+        "last": -0.9241685000000001,
+        "question_end": -0.01465099999999997,
+        "observation_end": 0.0,
+        "last16_mean": -0.9241685000000001,
+        "observation_mean": -0.9241685000000001,
+        "context_bin_mean": 0.0
+      }
+    },
+    {
+      "qid": "2hop__676157_44637",
+      "turn": 3,
+      "bc": 3,
+      "choices": {
+        "action_mean": 1,
+        "metadata": 1,
+        "last": 3,
+        "question_end": 0,
+        "observation_end": 3,
+        "last16_mean": 3,
+        "observation_mean": 0,
+        "context_bin_mean": 0
+      },
+      "gains": {
+        "action_mean": -0.040667999999999926,
+        "metadata": -0.040667999999999926,
+        "last": 0.0,
+        "question_end": -0.03918299999999997,
+        "observation_end": 0.0,
+        "last16_mean": 0.0,
+        "observation_mean": -0.03918299999999997,
+        "context_bin_mean": -0.03918299999999997
+      },
+      "regrets": {
+        "action_mean": 0.040667999999999926,
+        "metadata": 0.040667999999999926,
+        "last": 0.0,
+        "question_end": 0.03918299999999997,
+        "observation_end": 0.0,
+        "last16_mean": 0.0,
+        "observation_mean": 0.03918299999999997,
+        "context_bin_mean": 0.03918299999999997
+      },
+      "q_mse": {
+        "action_mean": 0.5370905388837949,
+        "metadata": 0.4518334112091562,
+        "last": 0.480635811755993,
+        "question_end": 0.6193707323585387,
+        "observation_end": 0.8406194666512179,
+        "last16_mean": 0.4931275606689293,
+        "observation_mean": 0.38665195961141463,
+        "context_bin_mean": 0.3584738172789454
+      },
+      "extra_gains": null
+    },
+    {
+      "qid": "2hop__709686_26789",
+      "turn": 0,
+      "bc": 0,
+      "choices": {
+        "action_mean": 1,
+        "metadata": 1,
+        "last": 1,
+        "question_end": 0,
+        "observation_end": 0,
+        "last16_mean": 1,
+        "observation_mean": 1,
+        "context_bin_mean": 1
+      },
+      "gains": {
+        "action_mean": 0.043664999999999995,
+        "metadata": 0.043664999999999995,
+        "last": 0.043664999999999995,
+        "question_end": 0.0,
+        "observation_end": 0.0,
+        "last16_mean": 0.043664999999999995,
+        "observation_mean": 0.043664999999999995,
+        "context_bin_mean": 0.043664999999999995
+      },
+      "regrets": {
+        "action_mean": 0.1030215,
+        "metadata": 0.1030215,
+        "last": 0.1030215,
+        "question_end": 0.1466865,
+        "observation_end": 0.1466865,
+        "last16_mean": 0.1030215,
+        "observation_mean": 0.1030215,
+        "context_bin_mean": 0.1030215
+      },
+      "q_mse": {
+        "action_mean": 0.1162094626132603,
+        "metadata": 0.10288649243957626,
+        "last": 0.18897198628430414,
+        "question_end": 0.4185042226331657,
+        "observation_end": 0.12234549238652899,
+        "last16_mean": 0.21023794174578192,
+        "observation_mean": 0.16520413778320028,
+        "context_bin_mean": 0.09986873828102306
+      },
+      "extra_gains": null
+    },
+    {
+      "qid": "2hop__709686_26789",
+      "turn": 1,
+      "bc": 2,
+      "choices": {
+        "action_mean": 1,
+        "metadata": 1,
+        "last": 1,
+        "question_end": 0,
+        "observation_end": 1,
+        "last16_mean": 2,
+        "observation_mean": 1,
+        "context_bin_mean": 1
+      },
+      "gains": {
+        "action_mean": -0.0464295,
+        "metadata": -0.0464295,
+        "last": -0.0464295,
+        "question_end": -0.0678645,
+        "observation_end": -0.0464295,
+        "last16_mean": 0.0,
+        "observation_mean": -0.0464295,
+        "context_bin_mean": -0.0464295
+      },
+      "regrets": {
+        "action_mean": 0.08358449999999999,
+        "metadata": 0.08358449999999999,
+        "last": 0.08358449999999999,
+        "question_end": 0.10501949999999999,
+        "observation_end": 0.08358449999999999,
+        "last16_mean": 0.037154999999999994,
+        "observation_mean": 0.08358449999999999,
+        "context_bin_mean": 0.08358449999999999
+      },
+      "q_mse": {
+        "action_mean": 0.09670027527698617,
+        "metadata": 0.10713557366668935,
+        "last": 0.32809353264194024,
+        "question_end": 0.3868894043823773,
+        "observation_end": 0.21421716126856197,
+        "last16_mean": 0.0909872923076185,
+        "observation_mean": 0.23513180567963315,
+        "context_bin_mean": 0.1677359438730002
+      },
+      "extra_gains": null
+    },
+    {
+      "qid": "2hop__709686_26789",
+      "turn": 3,
+      "bc": 3,
+      "choices": {
+        "action_mean": 1,
+        "metadata": 1,
+        "last": 3,
+        "question_end": 0,
+        "observation_end": 3,
+        "last16_mean": 3,
+        "observation_mean": 1,
+        "context_bin_mean": 1
+      },
+      "gains": {
+        "action_mean": -0.041913,
+        "metadata": -0.041913,
+        "last": 0.0,
+        "question_end": -0.041586,
+        "observation_end": 0.0,
+        "last16_mean": 0.0,
+        "observation_mean": -0.041913,
+        "context_bin_mean": -0.041913
+      },
+      "regrets": {
+        "action_mean": 0.041913,
+        "metadata": 0.041913,
+        "last": 0.0,
+        "question_end": 0.041586,
+        "observation_end": 0.0,
+        "last16_mean": 0.0,
+        "observation_mean": 0.041913,
+        "context_bin_mean": 0.041913
+      },
+      "q_mse": {
+        "action_mean": 0.08063801143854182,
+        "metadata": 0.11686155359054302,
+        "last": 0.07559032759506305,
+        "question_end": 0.39078202028095815,
+        "observation_end": 0.06256020892057368,
+        "last16_mean": 0.12077490019008874,
+        "observation_mean": 0.1901311698973715,
+        "context_bin_mean": 0.1924682267626337
+      },
+      "extra_gains": null
+    },
+    {
+      "qid": "2hop__129572_791121",
+      "turn": 0,
+      "bc": 0,
+      "choices": {
+        "action_mean": 1,
+        "metadata": 1,
+        "last": 1,
+        "question_end": 0,
+        "observation_end": 1,
+        "last16_mean": 0,
+        "observation_mean": 1,
+        "context_bin_mean": 1
+      },
+      "gains": {
+        "action_mean": -0.0024419999999999997,
+        "metadata": -0.0024419999999999997,
+        "last": -0.0024419999999999997,
+        "question_end": 0.0,
+        "observation_end": -0.0024419999999999997,
+        "last16_mean": 0.0,
+        "observation_mean": -0.0024419999999999997,
+        "context_bin_mean": -0.0024419999999999997
+      },
+      "regrets": {
+        "action_mean": 0.0024419999999999997,
+        "metadata": 0.0024419999999999997,
+        "last": 0.0024419999999999997,
+        "question_end": 0.0,
+        "observation_end": 0.0024419999999999997,
+        "last16_mean": 0.0,
+        "observation_mean": 0.0024419999999999997,
+        "context_bin_mean": 0.0024419999999999997
+      },
+      "q_mse": {
+        "action_mean": 0.011215471387105477,
+        "metadata": 0.004358791181979218,
+        "last": 0.09847319950557554,
+        "question_end": 0.04062673406064481,
+        "observation_end": 0.08163605575169813,
+        "last16_mean": 0.0026114233376435415,
+        "observation_mean": 0.0502976095901285,
+        "context_bin_mean": 0.0033492256523681672
+      },
+      "extra_gains": null
+    },
+    {
+      "qid": "2hop__129572_791121",
+      "turn": 1,
+      "bc": 2,
+      "choices": {
+        "action_mean": 1,
+        "metadata": 1,
+        "last": 1,
+        "question_end": 1,
+        "observation_end": 1,
+        "last16_mean": 1,
+        "observation_mean": 1,
+        "context_bin_mean": 1
+      },
+      "gains": {
+        "action_mean": -0.17158666666666667,
+        "metadata": -0.17158666666666667,
+        "last": -0.17158666666666667,
+        "question_end": -0.17158666666666667,
+        "observation_end": -0.17158666666666667,
+        "last16_mean": -0.17158666666666667,
+        "observation_mean": -0.17158666666666667,
+        "context_bin_mean": -0.17158666666666667
+      },
+      "regrets": {
+        "action_mean": 0.17158666666666667,
+        "metadata": 0.17158666666666667,
+        "last": 0.17158666666666667,
+        "question_end": 0.17158666666666667,
+        "observation_end": 0.17158666666666667,
+        "last16_mean": 0.17158666666666667,
+        "observation_mean": 0.17158666666666667,
+        "context_bin_mean": 0.17158666666666667
+      },
+      "q_mse": {
+        "action_mean": 0.0358490503547909,
+        "metadata": 0.05100790969232188,
+        "last": 0.059501550360251836,
+        "question_end": 0.10414199956712099,
+        "observation_end": 0.11419426237156911,
+        "last16_mean": 0.040580207004885446,
+        "observation_mean": 0.20609132146974057,
+        "context_bin_mean": 0.05013910602733787
+      },
+      "extra_gains": null
+    },
+    {
+      "qid": "2hop__129572_791121",
+      "turn": 2,
+      "bc": 3,
+      "choices": {
+        "action_mean": 1,
+        "metadata": 1,
+        "last": 1,
+        "question_end": 1,
+        "observation_end": 0,
+        "last16_mean": 1,
+        "observation_mean": 1,
+        "context_bin_mean": 1
+      },
+      "gains": {
+        "action_mean": -0.37150833333333333,
+        "metadata": -0.37150833333333333,
+        "last": -0.37150833333333333,
+        "question_end": -0.37150833333333333,
+        "observation_end": -0.13244033333333333,
+        "last16_mean": -0.37150833333333333,
+        "observation_mean": -0.37150833333333333,
+        "context_bin_mean": -0.37150833333333333
+      },
+      "regrets": {
+        "action_mean": 0.37150833333333333,
+        "metadata": 0.37150833333333333,
+        "last": 0.37150833333333333,
+        "question_end": 0.37150833333333333,
+        "observation_end": 0.13244033333333333,
+        "last16_mean": 0.37150833333333333,
+        "observation_mean": 0.37150833333333333,
+        "context_bin_mean": 0.37150833333333333
+      },
+      "q_mse": {
+        "action_mean": 0.04620870008597226,
+        "metadata": 0.05132750281408654,
+        "last": 0.1503291918797538,
+        "question_end": 0.12162719492954026,
+        "observation_end": 0.4993426927503647,
+        "last16_mean": 0.09981007261731668,
+        "observation_mean": 0.19456906115688016,
+        "context_bin_mean": 0.06554744101736655
+      },
+      "extra_gains": {
+        "action_mean": -0.32341827777777776,
+        "metadata": -0.32341827777777776,
+        "last": -0.32341827777777776,
+        "question_end": -0.32341827777777776,
+        "observation_end": -0.11603555555555556,
+        "last16_mean": -0.32341827777777776,
+        "observation_mean": -0.32341827777777776,
+        "context_bin_mean": -0.32341827777777776
+      }
+    },
+    {
+      "qid": "2hop__128642_32463",
+      "turn": 0,
+      "bc": 0,
+      "choices": {
+        "action_mean": 1,
+        "metadata": 1,
+        "last": 1,
+        "question_end": 1,
+        "observation_end": 1,
+        "last16_mean": 1,
+        "observation_mean": 3,
+        "context_bin_mean": 1
+      },
+      "gains": {
+        "action_mean": -0.003358500000000042,
+        "metadata": -0.003358500000000042,
+        "last": -0.003358500000000042,
+        "question_end": -0.003358500000000042,
+        "observation_end": -0.003358500000000042,
+        "last16_mean": -0.003358500000000042,
+        "observation_mean": -0.6092421666666665,
+        "context_bin_mean": -0.003358500000000042
+      },
+      "regrets": {
+        "action_mean": 0.003358500000000042,
+        "metadata": 0.003358500000000042,
+        "last": 0.003358500000000042,
+        "question_end": 0.003358500000000042,
+        "observation_end": 0.003358500000000042,
+        "last16_mean": 0.003358500000000042,
+        "observation_mean": 0.6092421666666665,
+        "context_bin_mean": 0.003358500000000042
+      },
+      "q_mse": {
+        "action_mean": 0.07543270486931242,
+        "metadata": 0.07424792852690751,
+        "last": 0.09615416553671097,
+        "question_end": 0.26384995473326867,
+        "observation_end": 0.1851513400505971,
+        "last16_mean": 0.19565185582967728,
+        "observation_mean": 0.3933983123931173,
+        "context_bin_mean": 0.11054058390862387
+      },
+      "extra_gains": null
+    },
+    {
+      "qid": "2hop__128642_32463",
+      "turn": 1,
+      "bc": 2,
+      "choices": {
+        "action_mean": 1,
+        "metadata": 1,
+        "last": 1,
+        "question_end": 1,
+        "observation_end": 1,
+        "last16_mean": 2,
+        "observation_mean": 1,
+        "context_bin_mean": 2
+      },
+      "gains": {
+        "action_mean": -0.00639449999999997,
+        "metadata": -0.00639449999999997,
+        "last": -0.00639449999999997,
+        "question_end": -0.00639449999999997,
+        "observation_end": -0.00639449999999997,
+        "last16_mean": 0.0,
+        "observation_mean": -0.00639449999999997,
+        "context_bin_mean": 0.0
+      },
+      "regrets": {
+        "action_mean": 0.06403199999999998,
+        "metadata": 0.06403199999999998,
+        "last": 0.06403199999999998,
+        "question_end": 0.06403199999999998,
+        "observation_end": 0.06403199999999998,
+        "last16_mean": 0.05763750000000001,
+        "observation_mean": 0.06403199999999998,
+        "context_bin_mean": 0.05763750000000001
+      },
+      "q_mse": {
+        "action_mean": 0.1463605260926325,
+        "metadata": 0.09973888685366145,
+        "last": 0.05146472773432799,
+        "question_end": 0.2900613109678051,
+        "observation_end": 0.2720664888987201,
+        "last16_mean": 0.08439229043942381,
+        "observation_mean": 0.20423803264996493,
+        "context_bin_mean": 0.3973396510682967
+      },
+      "extra_gains": null
+    },
+    {
+      "qid": "2hop__128642_32463",
+      "turn": 2,
+      "bc": 3,
+      "choices": {
+        "action_mean": 1,
+        "metadata": 1,
+        "last": 1,
+        "question_end": 1,
+        "observation_end": 2,
+        "last16_mean": 3,
+        "observation_mean": 3,
+        "context_bin_mean": 2
+      },
+      "gains": {
+        "action_mean": -0.042015000000000025,
+        "metadata": -0.042015000000000025,
+        "last": -0.042015000000000025,
+        "question_end": -0.042015000000000025,
+        "observation_end": -0.03752100000000003,
+        "last16_mean": 0.0,
+        "observation_mean": 0.0,
+        "context_bin_mean": -0.03752100000000003
+      },
+      "regrets": {
+        "action_mean": 0.042015000000000025,
+        "metadata": 0.042015000000000025,
+        "last": 0.042015000000000025,
+        "question_end": 0.042015000000000025,
+        "observation_end": 0.03752100000000003,
+        "last16_mean": 0.0,
+        "observation_mean": 0.0,
+        "context_bin_mean": 0.03752100000000003
+      },
+      "q_mse": {
+        "action_mean": 0.15547166696100517,
+        "metadata": 0.10442108625534682,
+        "last": 0.38202960735353675,
+        "question_end": 0.3214614097377819,
+        "observation_end": 0.023848896491938665,
+        "last16_mean": 0.027860314370092024,
+        "observation_mean": 0.1542540243688064,
+        "context_bin_mean": 0.5335323251643918
+      },
+      "extra_gains": {
+        "action_mean": -0.04843850000000016,
+        "metadata": -0.04843850000000016,
+        "last": -0.04843850000000016,
+        "question_end": -0.04843850000000016,
+        "observation_end": -0.04389999999999994,
+        "last16_mean": 0.0,
+        "observation_mean": 0.0,
+        "context_bin_mean": -0.04389999999999994
+      }
+    },
+    {
+      "qid": "2hop__145016_766780",
+      "turn": 0,
+      "bc": 0,
+      "choices": {
+        "action_mean": 1,
+        "metadata": 1,
+        "last": 0,
+        "question_end": 1,
+        "observation_end": 1,
+        "last16_mean": 1,
+        "observation_mean": 1,
+        "context_bin_mean": 1
+      },
+      "gains": {
+        "action_mean": 0.5175305,
+        "metadata": 0.5175305,
+        "last": 0.0,
+        "question_end": 0.5175305,
+        "observation_end": 0.5175305,
+        "last16_mean": 0.5175305,
+        "observation_mean": 0.5175305,
+        "context_bin_mean": 0.5175305
+      },
+      "regrets": {
+        "action_mean": 0.0,
+        "metadata": 0.0,
+        "last": 0.5175305,
+        "question_end": 0.0,
+        "observation_end": 0.0,
+        "last16_mean": 0.0,
+        "observation_mean": 0.0,
+        "context_bin_mean": 0.0
+      },
+      "q_mse": {
+        "action_mean": 0.056777437813170635,
+        "metadata": 0.047863044310528485,
+        "last": 0.11529489995405258,
+        "question_end": 0.06834642870554962,
+        "observation_end": 0.049588628229869675,
+        "last16_mean": 0.034484821305255216,
+        "observation_mean": 0.07212989199772653,
+        "context_bin_mean": 0.05085206623611166
+      },
+      "extra_gains": null
+    },
+    {
+      "qid": "2hop__145016_766780",
+      "turn": 1,
+      "bc": 1,
+      "choices": {
+        "action_mean": 1,
+        "metadata": 1,
+        "last": 0,
+        "question_end": 1,
+        "observation_end": 0,
+        "last16_mean": 0,
+        "observation_mean": 0,
+        "context_bin_mean": 0
+      },
+      "gains": {
+        "action_mean": 0.0,
+        "metadata": 0.0,
+        "last": -0.022528499999999993,
+        "question_end": 0.0,
+        "observation_end": -0.022528499999999993,
+        "last16_mean": -0.022528499999999993,
+        "observation_mean": -0.022528499999999993,
+        "context_bin_mean": -0.022528499999999993
+      },
+      "regrets": {
+        "action_mean": 0.0592815,
+        "metadata": 0.0592815,
+        "last": 0.08181,
+        "question_end": 0.0592815,
+        "observation_end": 0.08181,
+        "last16_mean": 0.08181,
+        "observation_mean": 0.08181,
+        "context_bin_mean": 0.08181
+      },
+      "q_mse": {
+        "action_mean": 0.08899361391436544,
+        "metadata": 0.042728512860688295,
+        "last": 0.018194009802035827,
+        "question_end": 0.16731273695773016,
+        "observation_end": 0.061464145248927904,
+        "last16_mean": 0.11056723498121325,
+        "observation_mean": 0.026295236530506628,
+        "context_bin_mean": 0.062260867935086915
+      },
+      "extra_gains": null
+    },
+    {
+      "qid": "2hop__153074_79404",
+      "turn": 0,
+      "bc": 0,
+      "choices": {
+        "action_mean": 1,
+        "metadata": 1,
+        "last": 1,
+        "question_end": 1,
+        "observation_end": 1,
+        "last16_mean": 1,
+        "observation_mean": 1,
+        "context_bin_mean": 1
+      },
+      "gains": {
+        "action_mean": 0.3024128260869565,
+        "metadata": 0.3024128260869565,
+        "last": 0.3024128260869565,
+        "question_end": 0.3024128260869565,
+        "observation_end": 0.3024128260869565,
+        "last16_mean": 0.3024128260869565,
+        "observation_mean": 0.3024128260869565,
+        "context_bin_mean": 0.3024128260869565
+      },
+      "regrets": {
+        "action_mean": 0.0,
+        "metadata": 0.0,
+        "last": 0.0,
+        "question_end": 0.0,
+        "observation_end": 0.0,
+        "last16_mean": 0.0,
+        "observation_mean": 0.0,
+        "context_bin_mean": 0.0
+      },
+      "q_mse": {
+        "action_mean": 0.04560255032431989,
+        "metadata": 0.037387025655368195,
+        "last": 0.01103592639242818,
+        "question_end": 0.11089152636180417,
+        "observation_end": 0.23638824313677995,
+        "last16_mean": 0.033211616868485505,
+        "observation_mean": 0.058937410285802655,
+        "context_bin_mean": 0.04451680037002439
+      },
+      "extra_gains": null
+    },
+    {
+      "qid": "2hop__153074_79404",
+      "turn": 1,
+      "bc": 1,
+      "choices": {
+        "action_mean": 1,
+        "metadata": 1,
+        "last": 1,
+        "question_end": 1,
+        "observation_end": 1,
+        "last16_mean": 1,
+        "observation_mean": 1,
+        "context_bin_mean": 1
+      },
+      "gains": {
+        "action_mean": 0.0,
+        "metadata": 0.0,
+        "last": 0.0,
+        "question_end": 0.0,
+        "observation_end": 0.0,
+        "last16_mean": 0.0,
+        "observation_mean": 0.0,
+        "context_bin_mean": 0.0
+      },
+      "regrets": {
+        "action_mean": 0.4235824032258065,
+        "metadata": 0.4235824032258065,
+        "last": 0.4235824032258065,
+        "question_end": 0.4235824032258065,
+        "observation_end": 0.4235824032258065,
+        "last16_mean": 0.4235824032258065,
+        "observation_mean": 0.4235824032258065,
+        "context_bin_mean": 0.4235824032258065
+      },
+      "q_mse": {
+        "action_mean": 0.05037016577199623,
+        "metadata": 0.046255298766830814,
+        "last": 0.03534950555287139,
+        "question_end": 0.14344849727349682,
+        "observation_end": 0.14638591489550762,
+        "last16_mean": 0.06720502844465084,
+        "observation_mean": 0.09943421899987682,
+        "context_bin_mean": 0.24801337364751072
+      },
+      "extra_gains": null
+    },
+    {
+      "qid": "2hop__153074_79404",
+      "turn": 3,
+      "bc": 3,
+      "choices": {
+        "action_mean": 1,
+        "metadata": 1,
+        "last": 0,
+        "question_end": 1,
+        "observation_end": 0,
+        "last16_mean": 0,
+        "observation_mean": 1,
+        "context_bin_mean": 1
+      },
+      "gains": {
+        "action_mean": -0.5094409090909091,
+        "metadata": -0.5094409090909091,
+        "last": -0.5915900000000001,
+        "question_end": -0.5094409090909091,
+        "observation_end": -0.5915900000000001,
+        "last16_mean": -0.5915900000000001,
+        "observation_mean": -0.5094409090909091,
+        "context_bin_mean": -0.5094409090909091
+      },
+      "regrets": {
+        "action_mean": 0.5094409090909091,
+        "metadata": 0.5094409090909091,
+        "last": 0.5915900000000001,
+        "question_end": 0.5094409090909091,
+        "observation_end": 0.5915900000000001,
+        "last16_mean": 0.5915900000000001,
+        "observation_mean": 0.5094409090909091,
+        "context_bin_mean": 0.5094409090909091
+      },
+      "q_mse": {
+        "action_mean": 0.09993906432975452,
+        "metadata": 0.10638599039198181,
+        "last": 0.17381796244584752,
+        "question_end": 0.105218101697093,
+        "observation_end": 0.439174180030177,
+        "last16_mean": 0.07735771014669088,
+        "observation_mean": 0.1638166688044606,
+        "context_bin_mean": 0.6725481587527699
+      },
+      "extra_gains": {
+        "action_mean": -0.5306429242424243,
+        "metadata": -0.5306429242424243,
+        "last": -0.5987305,
+        "question_end": -0.5306429242424243,
+        "observation_end": -0.5987305,
+        "last16_mean": -0.5987305,
+        "observation_mean": -0.5306429242424243,
+        "context_bin_mean": -0.5306429242424243
+      }
+    },
+    {
+      "qid": "2hop__25968_727337",
+      "turn": 0,
+      "bc": 0,
+      "choices": {
+        "action_mean": 1,
+        "metadata": 1,
+        "last": 1,
+        "question_end": 1,
+        "observation_end": 1,
+        "last16_mean": 1,
+        "observation_mean": 1,
+        "context_bin_mean": 1
+      },
+      "gains": {
+        "action_mean": 0.35431533333333326,
+        "metadata": 0.35431533333333326,
+        "last": 0.35431533333333326,
+        "question_end": 0.35431533333333326,
+        "observation_end": 0.35431533333333326,
+        "last16_mean": 0.35431533333333326,
+        "observation_mean": 0.35431533333333326,
+        "context_bin_mean": 0.35431533333333326
+      },
+      "regrets": {
+        "action_mean": 0.0,
+        "metadata": 0.0,
+        "last": 0.0,
+        "question_end": 0.0,
+        "observation_end": 0.0,
+        "last16_mean": 0.0,
+        "observation_mean": 0.0,
+        "context_bin_mean": 0.0
+      },
+      "q_mse": {
+        "action_mean": 0.02476610131754615,
+        "metadata": 0.021500099348446988,
+        "last": 0.026831521027755028,
+        "question_end": 0.04294510556857025,
+        "observation_end": 0.05238321277823552,
+        "last16_mean": 0.03283753829092,
+        "observation_mean": 0.049144269700369385,
+        "context_bin_mean": 0.024542043437388736
+      },
+      "extra_gains": {
+        "action_mean": 0.4190238888888889,
+        "metadata": 0.4190238888888889,
+        "last": 0.4190238888888889,
+        "question_end": 0.4190238888888889,
+        "observation_end": 0.4190238888888889,
+        "last16_mean": 0.4190238888888889,
+        "observation_mean": 0.4190238888888889,
+        "context_bin_mean": 0.4190238888888889
+      }
+    },
+    {
+      "qid": "2hop__25968_727337",
+      "turn": 1,
+      "bc": 1,
+      "choices": {
+        "action_mean": 1,
+        "metadata": 1,
+        "last": 0,
+        "question_end": 2,
+        "observation_end": 2,
+        "last16_mean": 3,
+        "observation_mean": 1,
+        "context_bin_mean": 1
+      },
+      "gains": {
+        "action_mean": 0.0,
+        "metadata": 0.0,
+        "last": -0.33356583333333334,
+        "question_end": -0.2767113333333333,
+        "observation_end": -0.2767113333333333,
+        "last16_mean": -0.23054433333333332,
+        "observation_mean": 0.0,
+        "context_bin_mean": 0.0
+      },
+      "regrets": {
+        "action_mean": 0.0,
+        "metadata": 0.0,
+        "last": 0.33356583333333334,
+        "question_end": 0.2767113333333333,
+        "observation_end": 0.2767113333333333,
+        "last16_mean": 0.23054433333333332,
+        "observation_mean": 0.0,
+        "context_bin_mean": 0.0
+      },
+      "q_mse": {
+        "action_mean": 0.05682548003376248,
+        "metadata": 0.030619247794950188,
+        "last": 0.1296952458215738,
+        "question_end": 0.0475898840271488,
+        "observation_end": 0.0867676801022037,
+        "last16_mean": 0.15774388587916605,
+        "observation_mean": 0.1245555482901613,
+        "context_bin_mean": 0.0956467105040951
+      },
+      "extra_gains": null
+    },
+    {
+      "qid": "2hop__25968_727337",
+      "turn": 3,
+      "bc": 3,
+      "choices": {
+        "action_mean": 1,
+        "metadata": 1,
+        "last": 3,
+        "question_end": 2,
+        "observation_end": 1,
+        "last16_mean": 1,
+        "observation_mean": 1,
+        "context_bin_mean": 1
+      },
+      "gains": {
+        "action_mean": -0.4656408333333333,
+        "metadata": -0.4656408333333333,
+        "last": 0.0,
+        "question_end": -0.038495999999999975,
+        "observation_end": -0.4656408333333333,
+        "last16_mean": -0.4656408333333333,
+        "observation_mean": -0.4656408333333333,
+        "context_bin_mean": -0.4656408333333333
+      },
+      "regrets": {
+        "action_mean": 0.4656408333333333,
+        "metadata": 0.4656408333333333,
+        "last": 0.0,
+        "question_end": 0.038495999999999975,
+        "observation_end": 0.4656408333333333,
+        "last16_mean": 0.4656408333333333,
+        "observation_mean": 0.4656408333333333,
+        "context_bin_mean": 0.4656408333333333
+      },
+      "q_mse": {
+        "action_mean": 0.16520435048283988,
+        "metadata": 0.16675548122699116,
+        "last": 0.0589189549920153,
+        "question_end": 0.1540257111594359,
+        "observation_end": 0.35009694015082055,
+        "last16_mean": 0.29971443342500254,
+        "observation_mean": 0.26960168031152354,
+        "context_bin_mean": 0.22099326289732374
+      },
+      "extra_gains": null
+    },
+    {
+      "qid": "2hop__438489_14948",
+      "turn": 0,
+      "bc": 0,
+      "choices": {
+        "action_mean": 1,
+        "metadata": 1,
+        "last": 1,
+        "question_end": 0,
+        "observation_end": 1,
+        "last16_mean": 1,
+        "observation_mean": 1,
+        "context_bin_mean": 1
+      },
+      "gains": {
+        "action_mean": 0.003874500000000017,
+        "metadata": 0.003874500000000017,
+        "last": 0.003874500000000017,
+        "question_end": 0.0,
+        "observation_end": 0.003874500000000017,
+        "last16_mean": 0.003874500000000017,
+        "observation_mean": 0.003874500000000017,
+        "context_bin_mean": 0.003874500000000017
+      },
+      "regrets": {
+        "action_mean": 0.099804,
+        "metadata": 0.099804,
+        "last": 0.099804,
+        "question_end": 0.10367850000000002,
+        "observation_end": 0.099804,
+        "last16_mean": 0.099804,
+        "observation_mean": 0.099804,
+        "context_bin_mean": 0.099804
+      },
+      "q_mse": {
+        "action_mean": 0.07162395728570048,
+        "metadata": 0.07435252873644466,
+        "last": 0.08902100712493755,
+        "question_end": 0.16990538411383474,
+        "observation_end": 0.08336402343290372,
+        "last16_mean": 0.23777759682547547,
+        "observation_mean": 0.3171089943127755,
+        "context_bin_mean": 0.09261708375002374
+      },
+      "extra_gains": null
+    },
+    {
+      "qid": "2hop__438489_14948",
+      "turn": 1,
+      "bc": 1,
+      "choices": {
+        "action_mean": 2,
+        "metadata": 2,
+        "last": 2,
+        "question_end": 2,
+        "observation_end": 2,
+        "last16_mean": 1,
+        "observation_mean": 1,
+        "context_bin_mean": 1
+      },
+      "gains": {
+        "action_mean": 0.00241673529411765,
+        "metadata": 0.00241673529411765,
+        "last": 0.00241673529411765,
+        "question_end": 0.00241673529411765,
+        "observation_end": 0.00241673529411765,
+        "last16_mean": 0.0,
+        "observation_mean": 0.0,
+        "context_bin_mean": 0.0
+      },
+      "regrets": {
+        "action_mean": 0.037448999999999996,
+        "metadata": 0.037448999999999996,
+        "last": 0.037448999999999996,
+        "question_end": 0.037448999999999996,
+        "observation_end": 0.037448999999999996,
+        "last16_mean": 0.039865735294117646,
+        "observation_mean": 0.039865735294117646,
+        "context_bin_mean": 0.039865735294117646
+      },
+      "q_mse": {
+        "action_mean": 0.06360218363447422,
+        "metadata": 0.050119320068034226,
+        "last": 0.08800928610571866,
+        "question_end": 0.1675505545103902,
+        "observation_end": 0.02070455128231369,
+        "last16_mean": 0.11600802808335389,
+        "observation_mean": 0.16295227031189083,
+        "context_bin_mean": 0.34798199452756395
+      },
+      "extra_gains": null
+    },
+    {
+      "qid": "2hop__438489_14948",
+      "turn": 3,
+      "bc": 3,
+      "choices": {
+        "action_mean": 2,
+        "metadata": 2,
+        "last": 1,
+        "question_end": 2,
+        "observation_end": 2,
+        "last16_mean": 2,
+        "observation_mean": 3,
+        "context_bin_mean": 1
+      },
+      "gains": {
+        "action_mean": -0.038949,
+        "metadata": -0.038949,
+        "last": 0.2898453333333333,
+        "question_end": -0.038949,
+        "observation_end": -0.038949,
+        "last16_mean": -0.038949,
+        "observation_mean": 0.0,
+        "context_bin_mean": 0.2898453333333333
+      },
+      "regrets": {
+        "action_mean": 0.3287943333333333,
+        "metadata": 0.3287943333333333,
+        "last": 0.0,
+        "question_end": 0.3287943333333333,
+        "observation_end": 0.3287943333333333,
+        "last16_mean": 0.3287943333333333,
+        "observation_mean": 0.2898453333333333,
+        "context_bin_mean": 0.0
+      },
+      "q_mse": {
+        "action_mean": 0.039944910482460905,
+        "metadata": 0.06323461024007757,
+        "last": 0.01349563980465448,
+        "question_end": 0.12541544335773927,
+        "observation_end": 0.0340826960851761,
+        "last16_mean": 0.02602405606495585,
+        "observation_mean": 0.09094178523408389,
+        "context_bin_mean": 0.5255362607330178
+      },
+      "extra_gains": null
+    },
+    {
+      "qid": "2hop__561810_673383",
+      "turn": 0,
+      "bc": 0,
+      "choices": {
+        "action_mean": 1,
+        "metadata": 1,
+        "last": 0,
+        "question_end": 0,
+        "observation_end": 0,
+        "last16_mean": 1,
+        "observation_mean": 0,
+        "context_bin_mean": 1
+      },
+      "gains": {
+        "action_mean": -0.0021180000000000088,
+        "metadata": -0.0021180000000000088,
+        "last": 0.0,
+        "question_end": 0.0,
+        "observation_end": 0.0,
+        "last16_mean": -0.0021180000000000088,
+        "observation_mean": 0.0,
+        "context_bin_mean": -0.0021180000000000088
+      },
+      "regrets": {
+        "action_mean": 0.0021180000000000088,
+        "metadata": 0.0021180000000000088,
+        "last": 0.0,
+        "question_end": 0.0,
+        "observation_end": 0.0,
+        "last16_mean": 0.0021180000000000088,
+        "observation_mean": 0.0,
+        "context_bin_mean": 0.0021180000000000088
+      },
+      "q_mse": {
+        "action_mean": 0.03319176326672952,
+        "metadata": 0.02764680970091717,
+        "last": 0.08434790877167984,
+        "question_end": 0.11556123994912863,
+        "observation_end": 0.17701512334442102,
+        "last16_mean": 0.0904974828273507,
+        "observation_mean": 0.15715772245571108,
+        "context_bin_mean": 0.04105441958756125
+      },
+      "extra_gains": null
+    },
+    {
+      "qid": "2hop__561810_673383",
+      "turn": 1,
+      "bc": 2,
+      "choices": {
+        "action_mean": 2,
+        "metadata": 2,
+        "last": 2,
+        "question_end": 2,
+        "observation_end": 2,
+        "last16_mean": 3,
+        "observation_mean": 1,
+        "context_bin_mean": 3
+      },
+      "gains": {
+        "action_mean": 0.0,
+        "metadata": 0.0,
+        "last": 0.0,
+        "question_end": 0.0,
+        "observation_end": 0.0,
+        "last16_mean": 0.054981,
+        "observation_mean": 0.969616,
+        "context_bin_mean": 0.054981
+      },
+      "regrets": {
+        "action_mean": 0.9723204999999999,
+        "metadata": 0.9723204999999999,
+        "last": 0.9723204999999999,
+        "question_end": 0.9723204999999999,
+        "observation_end": 0.9723204999999999,
+        "last16_mean": 0.9173395,
+        "observation_mean": 0.0027044999999999986,
+        "context_bin_mean": 0.9173395
+      },
+      "q_mse": {
+        "action_mean": 0.2761112382602544,
+        "metadata": 0.29188768659448083,
+        "last": 0.3425984292653719,
+        "question_end": 0.47009611269132584,
+        "observation_end": 0.3085404686615945,
+        "last16_mean": 0.2709228721533042,
+        "observation_mean": 0.27664026274705206,
+        "context_bin_mean": 0.4130831861188514
+      },
+      "extra_gains": null
+    },
+    {
+      "qid": "2hop__561810_673383",
+      "turn": 2,
+      "bc": 3,
+      "choices": {
+        "action_mean": 2,
+        "metadata": 2,
+        "last": 3,
+        "question_end": 2,
+        "observation_end": 2,
+        "last16_mean": 3,
+        "observation_mean": 3,
+        "context_bin_mean": 3
+      },
+      "gains": {
+        "action_mean": -0.036995999999999994,
+        "metadata": -0.036995999999999994,
+        "last": 0.0,
+        "question_end": -0.036995999999999994,
+        "observation_end": -0.036995999999999994,
+        "last16_mean": 0.0,
+        "observation_mean": 0.0,
+        "context_bin_mean": 0.0
+      },
+      "regrets": {
+        "action_mean": 0.9949629999999999,
+        "metadata": 0.9949629999999999,
+        "last": 0.957967,
+        "question_end": 0.9949629999999999,
+        "observation_end": 0.9949629999999999,
+        "last16_mean": 0.957967,
+        "observation_mean": 0.957967,
+        "context_bin_mean": 0.957967
+      },
+      "q_mse": {
+        "action_mean": 0.3027745739973958,
+        "metadata": 0.29271329880796726,
+        "last": 0.8163296751525975,
+        "question_end": 0.4659496044583537,
+        "observation_end": 0.27046812485385,
+        "last16_mean": 0.441468244164744,
+        "observation_mean": 0.5975039161572386,
+        "context_bin_mean": 0.5083411247641478
+      },
+      "extra_gains": null
+    },
+    {
+      "qid": "2hop__568006_159937",
+      "turn": 0,
+      "bc": 0,
+      "choices": {
+        "action_mean": 1,
+        "metadata": 1,
+        "last": 0,
+        "question_end": 1,
+        "observation_end": 1,
+        "last16_mean": 0,
+        "observation_mean": 0,
+        "context_bin_mean": 1
+      },
+      "gains": {
+        "action_mean": -0.08639714285714287,
+        "metadata": -0.08639714285714287,
+        "last": 0.0,
+        "question_end": -0.08639714285714287,
+        "observation_end": -0.08639714285714287,
+        "last16_mean": 0.0,
+        "observation_mean": 0.0,
+        "context_bin_mean": -0.08639714285714287
+      },
+      "regrets": {
+        "action_mean": 0.08639714285714287,
+        "metadata": 0.08639714285714287,
+        "last": 0.0,
+        "question_end": 0.08639714285714287,
+        "observation_end": 0.08639714285714287,
+        "last16_mean": 0.0,
+        "observation_mean": 0.0,
+        "context_bin_mean": 0.08639714285714287
+      },
+      "q_mse": {
+        "action_mean": 0.09193884606853882,
+        "metadata": 0.08452550128761294,
+        "last": 0.20408582111391457,
+        "question_end": 0.1154437709012624,
+        "observation_end": 0.07316715042519939,
+        "last16_mean": 0.2828963514347828,
+        "observation_mean": 0.31387842698490886,
+        "context_bin_mean": 0.09330351842477876
+      },
+      "extra_gains": null
+    },
+    {
+      "qid": "2hop__568006_159937",
+      "turn": 1,
+      "bc": 1,
+      "choices": {
+        "action_mean": 1,
+        "metadata": 1,
+        "last": 1,
+        "question_end": 1,
+        "observation_end": 1,
+        "last16_mean": 0,
+        "observation_mean": 1,
+        "context_bin_mean": 1
+      },
+      "gains": {
+        "action_mean": 0.0,
+        "metadata": 0.0,
+        "last": 0.0,
+        "question_end": 0.0,
+        "observation_end": 0.0,
+        "last16_mean": 0.10385264285714288,
+        "observation_mean": 0.0,
+        "context_bin_mean": 0.0
+      },
+      "regrets": {
+        "action_mean": 0.10385264285714288,
+        "metadata": 0.10385264285714288,
+        "last": 0.10385264285714288,
+        "question_end": 0.10385264285714288,
+        "observation_end": 0.10385264285714288,
+        "last16_mean": 0.0,
+        "observation_mean": 0.10385264285714288,
+        "context_bin_mean": 0.10385264285714288
+      },
+      "q_mse": {
+        "action_mean": 0.0880936160740108,
+        "metadata": 0.04730255445316275,
+        "last": 0.021552733026747862,
+        "question_end": 0.1123244843061506,
+        "observation_end": 0.03511140174122348,
+        "last16_mean": 0.019811854172210916,
+        "observation_mean": 0.0169406988320694,
+        "context_bin_mean": 0.08013690142267138
+      },
+      "extra_gains": null
+    }
+  ],
+  "scope": "retrospective train-family-held-out head fit conditional on teacher-trained frozen BC/reference; not pristine unseen end-to-end evaluation"
+}

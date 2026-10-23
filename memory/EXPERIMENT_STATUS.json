@@ -707,5 +707,13 @@
       0.04300209340277779,
       0.3475417636574075
     ]
+  },
+  "decision_value_probe": {
+    "phase": "complete_gate_failed",
+    "source": "e51d7c0",
+    "report": "docs/JEV_DECISION_VALUE_PROBE_REPORT_20261023.md",
+    "gate_passed": false,
+    "new_LLM_inference": false,
+    "head_regression_fitting_completed": true
   }
 }

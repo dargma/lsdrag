@@ -642,3 +642,9 @@ source e72bfd2, PID54225/session86169 exit0. run /content/local_fast/lsdrag-text
 ## 2026-10-23 — 행동 가치 표현 probe 동결
 
 사용자실험계속승인. docs/JEV_DECISION_VALUE_PROBE_20261023.md. 67state/24질문family6fold,action별signedridgeρ1,BC/상수/metadata/last및5개표현비교. 추가6회12state는평가전용. CPU fitting만,새GPU없음. last주조건gate선고정,aux사후선택금지. 다음실행→검증→보고/backup/Git.
+
+## 2026-10-23 — action-value 표현 probe 완료 / gate 실패
+
+source e51d7c0,CPU exit0.67상태/24질문/6family folds. 동일action별signedridgeρ1. Primary last OOF utility gain−.036190,CI[-.083910,.005467];last−metadata−.042769,CI[-.122261,.032560]. 추가6회12상태last gain−.057400. 어떤aux표현도BC대비CI하한>0아님. contextbinmean+.016114이나CI[-.054261,.099684];사후채택금지. 값 차이의존재와hidden의예측가능성을구분:후자는현재데이터/선형모형에서미입증. BC/reference의teacher노출과기존train자료/고정reference/conditionalCI한계. signednegative보존·heldout행추가시기존예측불변검사통과. 보고 docs/JEV_DECISION_VALUE_PROBE_REPORT_20261023.md.
+
+다음은blind구조확대나PPO/GRPO변경보다표본수/target정의/상태의행동후보정보병목분리설계. 새메모리실험/closed-loop성공/독립수집seed재현주장없음.
