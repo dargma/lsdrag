@@ -504,9 +504,9 @@
     }
   },
   "execution_hold": {
-    "active": true,
-    "user_instruction": "일단 여기까지만; 잘 저장하고 보고서도 작성 git 반영",
-    "gpu_experiments_authorized_now": false
+    "active": false,
+    "scope": "User-authorized bounded decision-policy pilot2; does not authorize arbitrary expansion",
+    "superseded_by": "2026-10-23 user 그래 시작해 and explicit experiment continuation"
   },
   "research_review": {
     "phase": "astra_deep_research_complete",
@@ -535,7 +535,7 @@
     "automatic_launch": false
   },
   "active_branch": "jev_v1.2",
-  "active_protocol": "docs/JEV_DECISION_POLICY_PILOT1_20261023.md",
+  "active_protocol": "docs/JEV_DECISION_POLICY_PILOT2_20261023.md",
   "decision_policy_pilot1": {
     "authorized": true,
     "status": "complete",
@@ -553,5 +553,30 @@
     "report": "docs/JEV_DECISION_POLICY_PILOT1_REPORT_20261023.md",
     "archive": "/content/drive/MyDrive/lsdrag-backups/20261023/decision_policy_pilot1_results.tar.gz",
     "archive_sha256": "7527eb5b98f263f500313f7d267f362c0b6974db87386916892d5bd15c243d32"
-  }
+  },
+  "decision_policy_pilot2": {
+    "authorized": true,
+    "observed_at_utc": "2026-10-23T10:38:57.167358+00:00",
+    "run": "/content/local_fast/lsdrag-text-v1/results/decision_policy_20261023_pilot2",
+    "status_snapshot": {
+      "phase": "test_evaluation",
+      "pid": 28242,
+      "elapsed_seconds": 1128.3326402049997,
+      "episodes": 1262,
+      "branches": 990,
+      "generated": 65554,
+      "inputs": 4851431,
+      "qid": "2hop__678516_179720"
+    },
+    "source_commit": "fd756eb",
+    "evaluation_complete": false,
+    "research_review": "docs/JEV_DECISION_POLICY_RELATED_WORK_20261023.md"
+  },
+  "execution_hold_history": [
+    {
+      "active": true,
+      "user_instruction": "일단 여기까지만; 잘 저장하고 보고서도 작성 git 반영",
+      "gpu_experiments_authorized_now": false
+    }
+  ]
 }

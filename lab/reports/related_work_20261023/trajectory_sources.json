@@ -1,0 +1,117 @@
+{
+  "review_date": "2026-10-23",
+  "cutoff": "2026-10-23",
+  "scope": "trajectory/counterfactual cost-to-go; selective primary-source review, not exhaustive",
+  "sources": [
+    {
+      "id": "aggrevate_nrpi",
+      "title": "Reinforcement and Imitation Learning via Interactive No-Regret Learning",
+      "first_date": "2014-06-23",
+      "version": "v1",
+      "version_date": "2014-06-23",
+      "url": "https://arxiv.org/html/1406.5979v1",
+      "metadata_url": "https://arxiv.org/abs/1406.5979",
+      "sections": [
+        "2.2–2.5",
+        "3; Algorithm2"
+      ],
+      "method": "expert/learner continuation cost-to-go",
+      "data": "일반 순차결정; LLM 데이터 아님",
+      "objective": "cost-sensitive policy 학습",
+      "trainable": "policy class",
+      "overlap": "미래비용 기반 정책개선",
+      "difference": "분포·no-regret 가정 미충족",
+      "evidence": "원문 알고리즘·가정 확인; 미재현"
+    },
+    {
+      "id": "aggrevated",
+      "title": "Deeply AggreVaTeD: Differentiable Imitation Learning for Sequential Prediction",
+      "first_date": "2017-03-03",
+      "version": "v1",
+      "version_date": "2017-03-03",
+      "url": "https://arxiv.org/html/1703.01030v1",
+      "metadata_url": "https://arxiv.org/abs/1703.01030",
+      "sections": [
+        "3.1 Eq3",
+        "3.2 Eq6–8",
+        "4",
+        "6"
+      ],
+      "method": "all-action expected-cost 미분",
+      "data": "로봇·수식 dependency parsing",
+      "objective": "일반/자연 gradient",
+      "trainable": "neural policy",
+      "overlap": "expected-Q gradient 선행",
+      "difference": "expert oracle 없음",
+      "evidence": "원문 §3–4 확인; 미재현"
+    },
+    {
+      "id": "forge",
+      "title": "FORGE: Form-Optimal Routing of Grounded Evidence for Frozen LLM Agents",
+      "first_date": "2026-09-28",
+      "version": "v1",
+      "version_date": "2026-09-28",
+      "url": "https://arxiv.org/html/2609.34358v1",
+      "metadata_url": "https://arxiv.org/abs/2609.34358",
+      "sections": [
+        "2.2–3.2",
+        "B.4–B.6",
+        "B.8–B.10",
+        "C.1",
+        "F"
+      ],
+      "method": "후보열거→soft KL→GRPO",
+      "data": "HotpotQA·2Wiki·MuSiQue·PopQA·FEVER",
+      "objective": "품질−비용+regularization",
+      "trainable": "269K router; host frozen",
+      "overlap": "작은 router의 outcome 학습",
+      "difference": "질문별 routing; Lite/Full 구별",
+      "evidence": "방법·부록 확인; 미재현"
+    },
+    {
+      "id": "cipo",
+      "title": "CIPO: Counterfactual Imagination Policy Optimization for Adaptive Tool Granularity Selection",
+      "first_date": "2026-10-04",
+      "version": "v1",
+      "version_date": "2026-10-04",
+      "url": "https://arxiv.org/html/2610.04991v1",
+      "metadata_url": "https://arxiv.org/abs/2610.04991",
+      "sections": [
+        "3.4",
+        "4.1–4.4",
+        "C",
+        "I",
+        "K–O"
+      ],
+      "method": "atomic/skill 반사실 suffix",
+      "data": "성공 augmented trajectories; 훈련개수 미확인",
+      "objective": "paired reward GRPO",
+      "trainable": "LLM LoRA(SFT64/policy32)",
+      "overlap": "반사실 도구정책 학습",
+      "difference": "head-only 아님",
+      "evidence": "원문·부록 확인; judge반복≠training seeds"
+    },
+    {
+      "id": "crr",
+      "title": "Counterfactual Rollout Replay: Forkable Environments as Free Process Rewards for Software Engineering Agents",
+      "first_date": "2026-09-27",
+      "version": "v3",
+      "version_date": "2026-10-03",
+      "url": "https://arxiv.org/html/2609.33875v3",
+      "metadata_url": "https://arxiv.org/abs/2609.33875",
+      "sections": [
+        "4–5",
+        "F",
+        "L–O",
+        "reproducibility checklist item5"
+      ],
+      "method": "상태복원·대안·return contrast",
+      "data": "SWE-Gym2438+SWE-rebench1200",
+      "objective": "step advantage 교체",
+      "trainable": "Qwen3-14B LoRA128",
+      "overlap": "실행한 반사실 credit",
+      "difference": "frozen categorical head 아님",
+      "evidence": "v3 확인; 코드공개예정; 미재현"
+    }
+  ]
+}

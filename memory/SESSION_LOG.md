@@ -577,3 +577,8 @@ PID 28242, source fd756eb; observed phase loading. Run /content/local_fast/lsdra
 
 Community empero-ai/Qwen3.8-4B-Distill revision c83cb7aa2999d2f35c43e9ae0634a30eb8985a1e acquired and hash verified. Three text-only OFF generation probes passed: short answer, JSON, native tool call; no generated thinking tags or visible reasoning, no truncation. Empty closed think prefix is supplied by template. NOT a QA benchmark or current-reader integration pass. Hybrid cache/norm path/native tool syntax differ, adapter and retraining needed; current pilot2 backbone unchanged. Report docs/JEV_QWEN38_DISTILL_CANDIDATE_20261023.md; small provenance lab/registry/qwen38_distill_candidate_20261023. Pilot2 observed actively collecting counterfactuals (PID28242), quality results pending.
 
+
+## 2026-10-23 — 최신 related work 병렬 조사·벤치마킹 설계 완료
+
+사용자 요청으로 3개 연구 갈래를 병렬 조사하고 원문/저자자료 20개 source record를 정리. 종합 docs/JEV_DECISION_POLICY_RELATED_WORK_20261023.md; 세부 docs/research/20261023/ 4개, ledger lab/reports/related_work_20261023/ 4개. FunDM/OLIVIA/CIPO/CRR 추가, LAnR v3(10/19) 최신화. 원문 재현 완료 아님. FORGE soft-target·CRR branch contrast·Stop-RAG 종료전용·OLIVIA-inspired value regression·option-aware readout을 후속 adaptation 후보로 구체화. Outcome CE도 미래결과를 학습하는 policy라는 구분 명시. 현재 실험 사후변경/새 실험 기동 없음. 사용자 후속 “벤치마킹해서 좋은건 배우자” 반영. 실제 pilot2 phase=test_evaluation, episodes=1262, branches=990, PID28242; 아직 최종 집계 없음. 다음: 기존 frozen평가 완료 확인·별도 보고/backup; 다음 비교는 exposed100/20/40 재튜닝 없이 설계.
+

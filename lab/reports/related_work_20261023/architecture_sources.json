@@ -1,0 +1,30 @@
+{
+  "checked_on": "2026-10-23",
+  "sources": [
+    {
+      "id": "sansi",
+      "title": "SanSi: A Looped Typed Decision Model for System 1.5 Thinking",
+      "first_date": "2026-10-06",
+      "version_date": "2026-10-10",
+      "version": "v2",
+      "url": "https://arxiv.org/html/2610.07730v2",
+      "verification": "primary full text sections3-4,B,H; metadata abstract history",
+      "training_data": "12800 typed decisions; public datasets and Kev suites",
+      "trained": "LoRA attention/FFN plus per-loop readout; base weights frozen",
+      "objective": "CE+Brier per loop; RL ablation distinct",
+      "limitation": "Not head-only; iterative compute; not our sequential tool controller"
+    },
+    {
+      "id": "hev",
+      "title": "Hev: A Hydra decision head on frozen DiffusionGemma for calibrated System-One decisions",
+      "first_date": "2026-09-24",
+      "date_basis": "author card; immutable release commit not independently pinned",
+      "url": "https://huggingface.co/EryriLabs/DiffusionGemma-26B-A4B-Hev",
+      "verification": "primary author card Training/Limits; not reproduced",
+      "training_data": "typed-decisions train and 19 jev-bench sources",
+      "trained": "Hydra/pointer head ensemble, frozen DiffusionGemma",
+      "objective": "KL plus0.1Brier",
+      "limitation": "Specialist synthetic teacher agreement; no sequential tool RL evidence"
+    }
+  ]
+}

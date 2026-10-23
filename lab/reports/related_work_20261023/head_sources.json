@@ -1,0 +1,144 @@
+{
+  "checked_at": "2026-10-23",
+  "cutoff": "2026-10-23",
+  "research_only": true,
+  "primary_sources_only": true,
+  "sources": [
+    {
+      "id": "fundm",
+      "title": "FunDM: Cheap & Label-Free Decision Models from Frozen Language Models",
+      "date": "2026-10-12",
+      "version": "arXiv v1",
+      "urls": [
+        "https://arxiv.org/abs/2610.17175",
+        "https://arxiv.org/pdf/2610.17175",
+        "https://github.com/Ujjawal-K-Panchal/FunDM"
+      ],
+      "verification": "PDF sections 3–4 read; no code execution",
+      "method": "Joint option-end and answer-position readouts; query/key scoring, optional one transformer layer",
+      "data": "ARC, SciQ, MedMCQA; 38067 MCQ rows; 36164 train / 1903 validation",
+      "objective": "KL from full frozen backbone option probabilities",
+      "updated": "Scoring head only",
+      "overlap": "Frozen backbone and small probability-producing head; alternative input positions",
+      "difference": "MCQ/completed-run selection, not online trajectory action policy",
+      "unknowns": [
+        "Independent reproduction",
+        "End-to-end generator KV continuation"
+      ]
+    },
+    {
+      "id": "olivia",
+      "title": "OLIVIA: Online Learning via Inference-time Action Adaptation for Decision Making in LLM ReAct Agents",
+      "date": "2026-05-11",
+      "version": "arXiv v1",
+      "urls": [
+        "https://arxiv.org/abs/2605.11169",
+        "https://arxiv.org/html/2605.11169v1"
+      ],
+      "verification": "Sections 4–6 and Algorithm1 read; OpenReview challenge bypassed via arXiv",
+      "method": "Last hidden context, action-specific LinUCB with embedding initialization",
+      "data": "ToolBench, TaskBench, TaskBench-MM, BFCL episode streams and reference tool multisets",
+      "objective": "Immediate binary remaining-gold-tool reward",
+      "updated": "Per-action covariance/reward statistics; frozen backbone and thought generator",
+      "overlap": "Explicit adaptive decision layer using same frozen LLM hidden states",
+      "difference": "Dense reference-tool feedback and oracle multiset-size budget; not terminal QA-cost objective",
+      "unknowns": [
+        "Independent reproduction",
+        "Full argument and answer success beyond tool multiset metrics"
+      ]
+    },
+    {
+      "id": "lanr",
+      "title": "Latent Abstraction for Retrieval-Augmented Generation",
+      "date": "2026-04-20",
+      "latest_version_date": "2026-10-19",
+      "version": "arXiv v3",
+      "urls": [
+        "https://arxiv.org/abs/2604.17866",
+        "https://arxiv.org/html/2604.17866v3"
+      ],
+      "verification": "v3 sections 3, B, B.1 read; replaces v2-only prior note",
+      "method": "PRED hidden drives dense retrieval and affine-sigmoid stopping; same LLM generates",
+      "data": "NQ+HotpotQA training splits,169615 examples",
+      "objective": "Contrastive retrieval + NTP + evidence-sufficiency BCE",
+      "updated": "Full-parameter model and control head",
+      "overlap": "Same model retrieval/control/generation, no extra control forward",
+      "difference": "Gold-evidence supervision and full fine-tuning vs frozen typed-tool outcome-cost policy",
+      "unknowns": [
+        "Independent reproduction"
+      ]
+    },
+    {
+      "id": "d3_flash",
+      "title": "D3-Flash",
+      "date": "2026-10-10",
+      "date_kind": "HF repository createdAt, not asserted publication date",
+      "last_modified": "2026-10-17",
+      "revision": "13dc1cc8ef23caefa765907e1d764751e5629f7d",
+      "urls": [
+        "https://huggingface.co/vllm-sr/d3-flash",
+        "https://recipes.vllm.ai/vllm-sr/d3-flash",
+        "https://huggingface.co/api/models/vllm-sr/d3-flash"
+      ],
+      "verification": "Author card and official runtime recipe read; HF API metadata",
+      "method": "Qwen3.5 answer-code classifier, last-token readout per question; bidirectional full attention",
+      "data": null,
+      "objective": null,
+      "updated": "Training parameter scope not verified",
+      "overlap": "Typed choice/yes-no/score probabilities without generated text",
+      "difference": "Separate model; different attention/cache contract",
+      "unknowns": [
+        "Training dataset mixture",
+        "Full training loss/recipe",
+        "Whether any trajectory RL was used"
+      ]
+    },
+    {
+      "id": "d3_turbo",
+      "title": "D3-Turbo",
+      "date": "2026-10-19",
+      "date_kind": "HF repository createdAt, not asserted publication date",
+      "last_modified": "2026-10-20",
+      "revision": "a0f3e9e59ebd1202fe1d4de1c4c0f9a986758cbb",
+      "urls": [
+        "https://huggingface.co/vllm-sr/d3-turbo",
+        "https://huggingface.co/api/models/vllm-sr/d3-turbo"
+      ],
+      "verification": "Author card and HF API metadata",
+      "method": "27B multimodal typed decisions, one state read per request for multiple questions",
+      "data": null,
+      "objective": null,
+      "updated": "Not verified",
+      "overlap": "Amortized state encoding and choice probabilities",
+      "difference": "Separate decision backbone, no free-form argument/answer generation",
+      "unknowns": [
+        "Training mixture",
+        "Training loss",
+        "Internal state-cache reuse details"
+      ]
+    },
+    {
+      "id": "decision1_route",
+      "title": "Decision-1.0-Route-0.6B",
+      "date": "2026-09-28",
+      "date_kind": "HF repository createdAt, not asserted publication date",
+      "last_modified": "2026-10-10",
+      "revision": "6c59e23091b33f6b2ed564b9a28cd280d8163f01",
+      "urls": [
+        "https://huggingface.co/vllm-sr/Decision-1.0-Route-0.6B",
+        "https://huggingface.co/vllm-sr/Decision-1.0-Route-0.6B/blob/main/TRAINING_DATA.md",
+        "https://huggingface.co/api/models/vllm-sr/Decision-1.0-Route-0.6B"
+      ],
+      "verification": "Model card, training record and HF API metadata",
+      "method": "Kai Choice/Noul signal-specific fine-tuning; dev calibration",
+      "data": "366323 distinct rows,10 tasks; includes Toucan, glaive function calling, RAGBench",
+      "objective": "Supervised signals; checkpoint selected by dev NLL",
+      "updated": "Encoder and head (separate learning rates), independent Choice/Noul paths",
+      "overlap": "Tool-need classification and probability outputs",
+      "difference": "Request-level labelled decisions, not downstream trajectory value; not D3 training provenance",
+      "unknowns": [
+        "Independent reproduction"
+      ]
+    }
+  ]
+}
