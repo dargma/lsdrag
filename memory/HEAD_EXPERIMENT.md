@@ -1,4 +1,11 @@
 
+## 2026-10-23 — tempered PPO seed1 완료 / seed2 진행
+
+seed1source467a8e6,PID60914/session2073 exit0.304episodes/317.77초,생성18350/input1172598. 원본304/head결정980·checkpointSHA검사통과. fresh40 anchorF1.361838/calls2.30, PPO.478333/2.05, RWR.478036/2.075. PPO−anchorF1+.116496 CI[.001496,.244274],utility+.123575 CI[.010887,.250329],사전gate통과. 생성token57.25→61.375증가;PPO−RWRF1+.000298 CI[-.03125,.032143]로PPO우월성미입증. 단일seed한계. 보고 docs/JEV_DECISION_PPO_TEMPERED_REPORT_20261023.md;rawDrivearchive검증완료.
+
+seed1평가outcome열람전동결한secondseed20261034 순차기동. PID62833/session16953, run /content/local_fast/lsdrag-text-v1/results/decision_ppo_tempered_seed2_20261023, log /content/local_fast/lsdrag-text-v1/logs/decision_ppo_tempered_seed2_20261023.log. 같은40test,독립수집/update RNG. 다음완료→seed별/질문별seed평균보고(80독립질문아님).
+
+
 ## 2026-10-23 — tempered PPO 실제 실행 중
 
 source467a8e6,PID60914/session2073. run /content/local_fast/lsdrag-text-v1/results/decision_ppo_tempered_20261023, log /content/local_fast/lsdrag-text-v1/logs/decision_ppo_tempered_20261023.log. 관측phase=collection,episodes=114. 첫behaviorlogprob parity통과,iteration0 PPO argmax변화.0061/RWR.2086(trainbatchvsanchor). 품질증거아님. 다음고정3iteration→fresh40×4→검증/보고/backup.

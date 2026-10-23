@@ -721,12 +721,20 @@
     "report": "docs/JEV_DECISION_TARGET_DIAGNOSTIC_REPORT_20261023.md"
   },
   "decision_ppo_tempered": {
-    "phase": "collection",
-    "pid": 60914,
-    "session_id": 2073,
+    "phase": "complete",
+    "pid": null,
+    "session_id": null,
     "source": "467a8e6",
     "run": "/content/local_fast/lsdrag-text-v1/results/decision_ppo_tempered_20261023",
     "log": "/content/local_fast/lsdrag-text-v1/logs/decision_ppo_tempered_20261023.log",
-    "planned_episodes": 304
+    "planned_episodes": 304,
+    "gate_passed": true,
+    "report": "docs/JEV_DECISION_PPO_TEMPERED_REPORT_20261023.md"
+  },
+  "decision_ppo_tempered_seed2": {
+    "phase": "collection",
+    "pid": 62833,
+    "session_id": 16953,
+    "run": "/content/local_fast/lsdrag-text-v1/results/decision_ppo_tempered_seed2_20261023"
   }
 }

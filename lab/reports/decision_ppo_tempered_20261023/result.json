@@ -1,0 +1,157 @@
+{
+  "policies": {
+    "historical_bc": {
+      "f1": 0.36183760683760685,
+      "tool_calls": 2.3,
+      "cost_units": 3.2680849999999992,
+      "generated_tokens": 56.9,
+      "prompt_tokens": 3990.85,
+      "errors": 0,
+      "forced_final": 0,
+      "utility": 0.26379505683760684
+    },
+    "tempered_anchor": {
+      "f1": 0.36183760683760685,
+      "tool_calls": 2.3,
+      "cost_units": 3.271957499999999,
+      "generated_tokens": 57.25,
+      "prompt_tokens": 3994.575,
+      "errors": 0,
+      "forced_final": 0,
+      "utility": 0.2636788818376069
+    },
+    "ppo": {
+      "f1": 0.47833333333333333,
+      "tool_calls": 2.05,
+      "cost_units": 3.0359949999999998,
+      "generated_tokens": 61.375,
+      "prompt_tokens": 3722.45,
+      "errors": 0,
+      "forced_final": 0,
+      "utility": 0.3872534833333333
+    },
+    "rwr": {
+      "f1": 0.47803571428571434,
+      "tool_calls": 2.075,
+      "cost_units": 3.0736999999999997,
+      "generated_tokens": 62.35,
+      "prompt_tokens": 3752.0,
+      "errors": 0,
+      "forced_final": 0,
+      "utility": 0.38582471428571435
+    }
+  },
+  "ppo_minus": {
+    "historical_bc": {
+      "f1": {
+        "delta": 0.11649572649572651,
+        "ci95": [
+          0.0014957264957264987,
+          0.24427350427350425
+        ]
+      },
+      "utility": {
+        "delta": 0.1234584264957265,
+        "ci95": [
+          0.01076598219551283,
+          0.2502155756944445
+        ]
+      }
+    },
+    "tempered_anchor": {
+      "f1": {
+        "delta": 0.11649572649572651,
+        "ci95": [
+          0.0014957264957264987,
+          0.24427350427350425
+        ]
+      },
+      "utility": {
+        "delta": 0.1235746014957265,
+        "ci95": [
+          0.01088666649572651,
+          0.2503288463194445
+        ]
+      }
+    },
+    "rwr": {
+      "f1": {
+        "delta": 0.0002976190476190493,
+        "ci95": [
+          -0.03124999999999999,
+          0.03214285714285714
+        ]
+      },
+      "utility": {
+        "delta": 0.0014287690476190453,
+        "ci95": [
+          -0.027569566249999993,
+          0.03228399214285714
+        ]
+      }
+    }
+  },
+  "counts": {
+    "episodes": 304,
+    "generated": 18350,
+    "inputs": 1172598
+  },
+  "single_seed": true,
+  "controlled_latency": false,
+  "audit": {
+    "episodes": 304,
+    "decisions": 980,
+    "head_hashes_unchanged": true
+  },
+  "strong_signal_gate_passed": true,
+  "curves": [
+    {
+      "iteration": 0,
+      "states": 163,
+      "diagnostic": {
+        "ppo": {
+          "loss": 0.11643589272474249,
+          "changed_vs_anchor": 0.0061349691823124886,
+          "ratio_clip_fraction": 0.12269937992095947
+        },
+        "rwr": {
+          "loss": 0.6723324403865263,
+          "changed_vs_anchor": 0.20858895778656006,
+          "ratio_clip_fraction": 0.4110429286956787
+        }
+      }
+    },
+    {
+      "iteration": 1,
+      "states": 154,
+      "diagnostic": {
+        "ppo": {
+          "loss": 0.0652912568533793,
+          "changed_vs_anchor": 0.08441558480262756,
+          "ratio_clip_fraction": 0.15584415197372437
+        },
+        "rwr": {
+          "loss": 0.7570564791560173,
+          "changed_vs_anchor": 0.2532467544078827,
+          "ratio_clip_fraction": 0.40909090638160706
+        }
+      }
+    },
+    {
+      "iteration": 2,
+      "states": 154,
+      "diagnostic": {
+        "ppo": {
+          "loss": 0.07727033914998174,
+          "changed_vs_anchor": 0.20129869878292084,
+          "ratio_clip_fraction": 0.4025973975658417
+        },
+        "rwr": {
+          "loss": 0.635782778263092,
+          "changed_vs_anchor": 0.20779220759868622,
+          "ratio_clip_fraction": 0.48701298236846924
+        }
+      }
+    }
+  ]
+}
