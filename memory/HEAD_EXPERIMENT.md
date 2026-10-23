@@ -1,4 +1,15 @@
 
+## Execution resumption after original window
+
+2026-10-23 23:29 UTC clock verification: original22:48UTC deadline had elapsed during the pause/interruption. User subsequently explicitly said “계속 해야지” and goal status returned active. Calibration16 is a newly resumed bounded run (max1800seconds/48episodes), not work completed within the original8-hour window. Further stages require bounded budgets recorded before launch; no unlimited overnight execution inferred. Main learning/evaluation objective remains incomplete.
+
+## 2026-10-23 — 사용자 계속 진행 재확인 / shared corpus calibration 실행
+
+사용자 저장 후 “계속 해야지”로작업재개,goal active. 이전수집완료192문항384states2876episodes,5691decisions audit통과(2errors/6cap보존);Drive152253003bytes/SHA a51ec391b3b9082e62b8c2ea668bc4a7efc7deddbe9ec73022670d24bbe5bf30 검증. 구환경후속fit/val는취소유지. 공통101962문단embedding완료,원본/벡터hash manifest확인. corpus/headbank Drive추가백업session76264.
+
+새calibration16실제실행PID243561/session22186,run /content/local_fast/lsdrag-text-v1/results/decision_shared_calibration16_20261023,log 同名logs. 기존노출val32중SHA순16고정,semantic_once/grpo_transfer/native_fast48episodes,원finaltest160미사용. 원TextCorpus keyword literal scoring 및snippet300/topk기본5최대20 그대로공통풀에적용;SQLite는미사용. native dummy확률은null로제거,추가생성/prefill비용전부집계. 새로운head학습은아직미시작. 다음calibration실제완료/실패검증→train-only공통환경initialization/분기자료수집설계동결. F1+5pp/token−30%미검증,완료주장금지.
+
+
 Shared corpus CPU build complete:101962 unique documents/447039 occurrences, SHA60561e0ef06f0f76cbde036d87e7c5853655fc5b7ded908d5f981b4981c6252d. Index worker PID136153/session64973 started and waits on GPU lock held by verified collector129475; log /content/local_fast/lsdrag-text-v1/logs/index_decision_shared_corpus_20261023.log. No additional LLM run started. Full source hashes in lab/registry/decision_shared_corpus_20261023/corpus_manifest.json. Index max2h after lock, existing embedding model/revision/task formatting.
 
 ## 2026-10-23 — 사용자 승인: 공통 코퍼스 환경으로 실험 재시작

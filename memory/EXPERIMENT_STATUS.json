@@ -1,6 +1,6 @@
 {
-  "phase": "shared_corpus_restart_preparation",
-  "updated_utc": "2026-10-23T16:25:23.405583+00:00",
+  "phase": "shared_corpus_calibration_running",
+  "updated_utc": "2026-10-23T23:29:07.305491+00:00",
   "protocol": "docs/JEV_DECISION_SHARED_CORPUS_RESTART_20261023.md",
   "protocol_sha256": "0adecb3e30136b974fa1ecfffe74282df019f5ccbe0ece7fdbb6547fa486bc18",
   "prompt": "prompts/text_rag_integrated_v5.txt",
@@ -35,7 +35,7 @@
   "teacher_collection_started": true,
   "training_completed": true,
   "evaluation_completed": true,
-  "next": "Build shared public corpus and index; calibrate on exposed validation; recollect/retrain in corrected environment; no old-pool downstream execution.",
+  "next": "Complete calibration16; audit and save; train in shared corpus with frozen protocol, then heldout evaluation.",
   "previous_multimodal_checkpoint_historical_only": {
     "phase": "native2_review_required",
     "run": "/content/local_fast/lsdrag-head-v14/results/native_distillation_12b_20261015",
@@ -837,6 +837,9 @@
     "documents": 101962,
     "index_pid": 136153,
     "index_session": 64973,
-    "index_status": "/content/local_fast/lsdrag-text-v1/corpora/musique_shared_20261023/index_status.json"
+    "index_status": "/content/local_fast/lsdrag-text-v1/corpora/musique_shared_20261023/index_status.json",
+    "index_complete": true,
+    "calibration_pid": 243561,
+    "calibration_session": 22186
   }
 }

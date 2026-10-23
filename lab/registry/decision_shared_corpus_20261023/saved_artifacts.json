@@ -1,0 +1,14 @@
+[
+  {
+    "source": "/content/local_fast/lsdrag-text-v1/corpora/musique_shared_20261023",
+    "path": "/content/drive/MyDrive/lsdrag-backups/20261023/musique_shared_20261023_saved.tar.gz",
+    "sha256": "27253231b6ad71b0651ff6b5de14e85f3a9c4af02244f1e845c4f43c599703b9",
+    "bytes": 275617782
+  },
+  {
+    "source": "/content/local_fast/lsdrag-text-v1/results/decision_state_heads_20261023",
+    "path": "/content/drive/MyDrive/lsdrag-backups/20261023/decision_state_heads_20261023_saved.tar.gz",
+    "sha256": "6a05c4d6b3dd62799c1a8a047c82a78eb41b9d06fd3d3b7243da76cadfc35191",
+    "bytes": 19381507
+  }
+]

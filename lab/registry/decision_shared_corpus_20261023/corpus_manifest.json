@@ -22,5 +22,11 @@
   "path": "/content/local_fast/lsdrag-text-v1/corpora/musique_shared_20261023",
   "selection": "All public paragraphs in official train and dev sources; exact title+text deduplication; no query-specific pools or gold-based inclusion.",
   "evaluation_note": "Public evaluation document text is searchable, as in open-corpus retrieval. Evaluation questions/answers/support labels are not passed to the corpus builder output or training targets. This is a dataset-derived shared corpus, not full Wikipedia.",
-  "embeddings_complete": false
+  "embeddings_complete": true,
+  "embedding_model": [
+    "google/embeddinggemma-2",
+    "914f7f89142e33e77833254d9c9b90c3cef7303b",
+    768
+  ],
+  "vectors_sha256": "e2b7013c600e57c36ca9b26db94906ce20bc8ab231972e30da664566d9505e42"
 }
