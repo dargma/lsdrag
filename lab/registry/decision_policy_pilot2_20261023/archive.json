@@ -1,0 +1,11 @@
+{
+  "local_archive": "/content/local_fast/lsdrag-text-v1/decision_policy_pilot2_results.tar.gz",
+  "drive_archive": "/content/drive/MyDrive/lsdrag-backups/20261023/decision_policy_pilot2_results.tar.gz",
+  "sha256": "6819799b6f6fa168cf0bae6439d7e87fe6c7b93e2474be23bfb2f9077f893147",
+  "bytes": 36762010,
+  "run": "/content/local_fast/lsdrag-text-v1/results/decision_policy_20261023_pilot2",
+  "source_commit": "fd756eb",
+  "episodes": 1422,
+  "backbone_weights_included": false,
+  "head_checkpoints_included": true
+}

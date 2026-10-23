@@ -559,18 +559,37 @@
     "observed_at_utc": "2026-10-23T10:38:57.167358+00:00",
     "run": "/content/local_fast/lsdrag-text-v1/results/decision_policy_20261023_pilot2",
     "status_snapshot": {
-      "phase": "test_evaluation",
+      "phase": "complete",
       "pid": 28242,
-      "elapsed_seconds": 1128.3326402049997,
-      "episodes": 1262,
+      "elapsed_seconds": 1367.3871267249997,
+      "episodes": 1422,
       "branches": 990,
-      "generated": 65554,
-      "inputs": 4851431,
-      "qid": "2hop__678516_179720"
+      "generated": 79290,
+      "inputs": 5976627,
+      "training_complete": true,
+      "evaluation_complete": true
     },
     "source_commit": "fd756eb",
-    "evaluation_complete": false,
-    "research_review": "docs/JEV_DECISION_POLICY_RELATED_WORK_20261023.md"
+    "evaluation_complete": true,
+    "research_review": "docs/JEV_DECISION_POLICY_RELATED_WORK_20261023.md",
+    "training_complete": true,
+    "status": "complete",
+    "pid": null,
+    "report": "docs/JEV_DECISION_POLICY_PILOT2_REPORT_20261023.md",
+    "quality_cost_mean_improvement_observed": true,
+    "statistically_established_quality_improvement": false,
+    "automatic_expansion": false,
+    "archive": {
+      "local_archive": "/content/local_fast/lsdrag-text-v1/decision_policy_pilot2_results.tar.gz",
+      "drive_archive": "/content/drive/MyDrive/lsdrag-backups/20261023/decision_policy_pilot2_results.tar.gz",
+      "sha256": "6819799b6f6fa168cf0bae6439d7e87fe6c7b93e2474be23bfb2f9077f893147",
+      "bytes": 36762010,
+      "run": "/content/local_fast/lsdrag-text-v1/results/decision_policy_20261023_pilot2",
+      "source_commit": "fd756eb",
+      "episodes": 1422,
+      "backbone_weights_included": false,
+      "head_checkpoints_included": true
+    }
   },
   "execution_hold_history": [
     {

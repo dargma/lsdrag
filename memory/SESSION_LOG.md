@@ -582,3 +582,12 @@ Community empero-ai/Qwen3.8-4B-Distill revision c83cb7aa2999d2f35c43e9ae0634a30e
 
 사용자 요청으로 3개 연구 갈래를 병렬 조사하고 원문/저자자료 20개 source record를 정리. 종합 docs/JEV_DECISION_POLICY_RELATED_WORK_20261023.md; 세부 docs/research/20261023/ 4개, ledger lab/reports/related_work_20261023/ 4개. FunDM/OLIVIA/CIPO/CRR 추가, LAnR v3(10/19) 최신화. 원문 재현 완료 아님. FORGE soft-target·CRR branch contrast·Stop-RAG 종료전용·OLIVIA-inspired value regression·option-aware readout을 후속 adaptation 후보로 구체화. Outcome CE도 미래결과를 학습하는 policy라는 구분 명시. 현재 실험 사후변경/새 실험 기동 없음. 사용자 후속 “벤치마킹해서 좋은건 배우자” 반영. 실제 pilot2 phase=test_evaluation, episodes=1262, branches=990, PID28242; 아직 최종 집계 없음. 다음: 기존 frozen평가 완료 확인·별도 보고/backup; 다음 비교는 exposed100/20/40 재튜닝 없이 설계.
 
+
+## 2026-10-23 — pilot2 학습·동결 평가 완료
+
+source fd756eb, PID28242 종료, status complete. 1422episodes=48collectors+990branches+64val+320test;1367.39초(load포함),생성79290/input5976627. 두round67/72states,6learner동일rounddataSHA 검증. 평가원본384개 평균재집계/head1534결정확률·합법성/frozenhead SHA 검사통과. 보고 docs/JEV_DECISION_POLICY_PILOT2_REPORT_20261023.md; 재생성 scripts/reporting/summarize_decision_policy_followup.py.
+
+fresh40: BC F1.291439/EM.225/calls2.425/gen59.55; 사전주조건 MLP cost-policy F1.350/EM.250/calls1.925/gen56.125. F1delta+.058561 CI[-.062345,+.183602],7승5패. 평균 품질·비용 동시개선 신호이나 통계적 확정/비열등성 아님. Linear cost-policy F1.3725/calls1.9 보조조건;test보고최적모델선정금지. MLPqualityPG F1.418333/calls2.725;MLPcostCE F1.448333/calls5.125/cap22;MLPqualityCE F1.4825/calls6.175/cap27. CE도미래outcome학습이며PG정확도우월주장불가. 모든costPG cap/error0. sharedreference 편향,1seed/40질문,2suffix표본,통제latency아님. 새40은이제노출test라후속튜닝금지. 다음:rawarchive해시검증·보고Git반영,후속은새protocol/holdout;자동확대기동없음.
+
+
+원본·head·로그 Drive archive 검증완료: /content/drive/MyDrive/lsdrag-backups/20261023/decision_policy_pilot2_results.tar.gz, SHA256 6819799b6f6fa168cf0bae6439d7e87fe6c7b93e2474be23bfb2f9077f893147, 36762010bytes. backbone weights 제외.
