@@ -37,16 +37,16 @@ def main():
  run('scripts/fit_decision_state_heads.py');h=read(HEADS/'manifest.json');results=evaluate(list(h['candidates']),'decision_state_validation1_20261023');base=results['grpo_baseline']
  names=['same_structure_improved','last_linear','last_mlp','multi_linear','multi_mlp']
  def rank(n):
-  v=results[n];quality=(v['f1']-base['f1'])/.03;tokens=(1-v['generated_tokens']/base['generated_tokens'])/.15
+  v=results[n];quality=(v['f1']-base['f1'])/.03;tokens=(1-v['generated_tokens']/base['generated_tokens'])/.20
   return (min(quality,tokens),v['utility'],n)
  best=max(names,key=rank)
- save(HEADS/'validation_stage1_selection.json',{'selected_for_cost_sweep':best,'criterion':'max min(F1_delta/.03,generated_reduction/.15), then utility; validation only','results':results})
+ save(HEADS/'validation_stage1_selection.json',{'selected_for_cost_sweep':best,'criterion':'max min(F1_delta/.03,generated_reduction/.20), then utility; validation only','results':results})
  # Dynamic choice: sweep only when at least one primary component improves.
  if results[best]['f1']>base['f1'] or results[best]['generated_tokens']<base['generated_tokens']:
   run('scripts/fit_decision_state_heads.py','--cost-sweep',best)
   swept=[best+'_lambda0.01',best+'_lambda0.06'];results.update(evaluate(swept,'decision_state_validation2_20261023'));names+=swept
  selected=sorted(names,key=rank,reverse=True)[:2]
- save(HEADS/'validation_selection.json',{'selected':selected,'all_validation':results,'criterion':'max min(F1_delta/.03,generated_reduction/.15), then utility; freeze before test','test_not_evaluated':True})
+ save(HEADS/'validation_selection.json',{'selected':selected,'all_validation':results,'criterion':'max min(F1_delta/.03,generated_reduction/.20), then utility; freeze before test','test_not_evaluated':True})
  run('scripts/run_decision_grpo_continuation.py')
  phase('complete',selected=selected,next='Inspect validation and ordinary GRPO control; freeze final test or bounded train-only refinement. No test launched by this coordinator.')
 if __name__=='__main__':

@@ -789,7 +789,7 @@
     "phase": "collection",
     "pid": 108998,
     "target_f1_delta": 0.03,
-    "target_generated_ratio": 0.85,
+    "target_generated_ratio": 0.8,
     "session_id": 99374,
     "run": "/content/local_fast/lsdrag-text-v1/results/decision_state_outcomes_20261023"
   }

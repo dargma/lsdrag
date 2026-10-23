@@ -1,3 +1,7 @@
+## 2026-10-23 — 최종 목표 갱신: F1 +3%p / 생성 토큰 −20%
+
+사용자 최신override:generated ratio .80,quality delta .03 동시. 기존80설명값F1 .3643263/token45.0. collection은그대로진행(PID108998);선택결과열람전waiting coordinator만정지해rank분모.20으로갱신후재기동. frozen collection manifest의과거target은보존,이override가기준.
+
 ## 2026-10-23 — 同상태 분기 학습 자료 수집 실행
 
 source86a629a,PID108998/session99374. run /content/local_fast/lsdrag-text-v1/results/decision_state_outcomes_20261023;log同名logs. 20문항39states290episodes확인. 동일prefixSHA/hidden/legal/강제행동검증통과. 다음수집완료→CPU2x2구조+matched기존head학습→validation32→선택된하나만lambda추가→일반GRPO추가학습대조. coordinator scripts/coordinate_decision_state_stages.py 준비,최종test는자동실행안함. strict token matched 대조아님을기록. deadline22:48UTC,보고시간1h보존.

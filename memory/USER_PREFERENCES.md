@@ -75,3 +75,8 @@ Git021ddbb가 오래된 Drive보다 최신. 개선계획v2가 현재 다음 실�
 
 사용자 최신목표상향. 앞서합의한F1 percentage-point해석유지,생성token ratio .85. 새공통평가GRPO대비동시달성. 기존80설명용 .3643263/47.8125,기존test최적화금지.
 
+
+## 2026-10-23 — 최종 목표 갱신: F1 +3%p / 생성 토큰 −20%
+
+사용자 최신override:generated ratio .80,quality delta .03 동시. 기존80설명값F1 .3643263/token45.0. collection은그대로진행(PID108998);선택결과열람전waiting coordinator만정지해rank분모.20으로갱신후재기동. frozen collection manifest의과거target은보존,이override가기준.
+
