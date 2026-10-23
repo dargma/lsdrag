@@ -634,3 +634,7 @@ CPU 실행 scripts/run_decision_acquisition_probe.py로 frozen source/input hash
 ## 2026-10-23 — fixed-reference reliability 승인·동결
 
 사용자 계속 지시. docs/JEV_DECISION_RELIABILITY_20261023.md, registry manifest. outcome-blind12질문×1상태, 합법action당새6suffix=252episodes. 고정round0reference,1800초,새seed20261028. cross-half BC대비gain과순위안정성주검증. 독립collector/학습seed재현과구분. 다음실행→원본/보고/backup.
+
+## 2026-10-23 — fixed-reference reliability 완료
+
+source e72bfd2, PID54225/session86169 exit0. run /content/local_fast/lsdrag-text-v1/results/decision_reliability_20261023, log /content/local_fast/lsdrag-text-v1/logs/decision_reliability_20261023.log. 12상태×합법행동당6회=252episodes,생성9664/input749223. 원본252개 first intervention/확률합 검사,오류0. 42 state-action중24개는후속행동trajectory변동 존재. cross-half utility gain평균+.184244,질문bootstrap95%CI[.043002,.347542],half최고행동12/12일치,기존2회와새6회11/12일치,BC대비6개양수/6개동률. 고정reference/선택된기존train상태에서안정적인행동가치차이의제한적증거. hidden예측력/새질문일반화/독립collector및학습seed재현증거아님. 보고 docs/JEV_DECISION_RELIABILITY_REPORT_20261023.md;rawDrivearchive registry에SHA기록. 다음:동일target/data에서표현별가치예측을질문분리검증하는protocol설계;구조/RL동시변경안함. 새실험자동확대없음.

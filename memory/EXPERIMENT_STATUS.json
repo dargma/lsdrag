@@ -691,5 +691,21 @@
       "uncertainty_limit": "fixed OOF predictions, overlapping training folds; no refit/seed variance"
     },
     "independent_collection_seed_replication_completed": false
+  },
+  "decision_reliability": {
+    "phase": "complete",
+    "pid": null,
+    "session_id": null,
+    "source_commit": "e72bfd2",
+    "run": "/content/local_fast/lsdrag-text-v1/results/decision_reliability_20261023",
+    "log": "/content/local_fast/lsdrag-text-v1/logs/decision_reliability_20261023.log",
+    "planned_episodes": 252,
+    "episodes": 252,
+    "report": "docs/JEV_DECISION_RELIABILITY_REPORT_20261023.md",
+    "cross_half_gain": 0.18424416203703706,
+    "ci95": [
+      0.04300209340277779,
+      0.3475417636574075
+    ]
   }
 }

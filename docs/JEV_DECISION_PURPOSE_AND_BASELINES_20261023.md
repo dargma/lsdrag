@@ -56,3 +56,11 @@
 - [MemoryAgentBench](https://arxiv.org/abs/2507.05257): 정확한 검색, test-time learning, 장거리 이해, 선택적 망각을 평가한다.
 
 따라서 미래 질문의 성과로 메모리 결정을 RL 학습한다는 것 자체는 새로운 기여가 아니다. 위 원문들은 비교 설계 참고이며 재현 완료나 우리 head의 우월성 증거가 아니다. 메모리 확장은 A-RAG 정책 검증 이후의 별도 실험 후보로 둔다.
+
+## Hidden head의 미래 결과 예측 가설
+
+Hidden은 현재 관측의 표현이며 미래를 보장하지 않는다. 행동별 Q(h,a)=E[R | 현재표현h, 행동a, 이후 reference정책]를 실제 suffix 결과로 학습하면 기대 결과를 추정하는 작은 head를 만들 수 있다. Q는 이후 정책·환경·보상 정의에 조건부이며 정책이 바뀌면 target도 달라질 수 있다. pi(a|h)는 행동선택 확률로 성공확률과 다르다. 성공확률 예측이 필요하면 binary outcome target과 held-out calibration/Brier score를 별도로 검증한다. Q예측은 held-out value error, 행동 순위와 선택 후 실제 regret/QA·비용으로 평가한다.
+
+현재 suffix 반복 실험은 target 신뢰성을 확인하는 단계이며 미래 예측 head의 일반화 능력 검증 자체는 아니다. 표현에 정보가 부족한 경우 question/observation/candidate 표현 비교가 필요하고, MC잡음이 큰 경우 더 복잡한 head만으로 해결되지 않는다. 관측되지 않은 외부 정보나 우연한 사건을 결정적으로 예측한다는 주장은 하지 않는다.
+
+고정된4action에서는 h→[Q(h,a1),...,Q(h,a4)]처럼 출력축이 행동을 구분하므로 별도 행동 입력이 필수는 아니다. 가변 문서/도구 인자 후보에서는 Q(h,e(candidate)) 또는 state-candidate attention이 자연스럽다. 마지막 hidden은 causal attention으로 앞 문맥을 반영하지만 충분통계라고 가정할 수 없으므로 last vs 구간 pooling vs candidate 표현을 같은 target/data로 검증한다. 행동 종류의 Q는 이후 인자 생성정책까지 평균한 값이며, 구체적인 query/document 선택의 가치는 별도 후보 조건화가 필요할 수 있다.
