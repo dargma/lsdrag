@@ -1,3 +1,7 @@
+## 2026-10-23 — PPO 행동 변화 사후분석 / 실행 상태 정정
+
+사용자추가결과질문시확인:4bee7e3이후새worker없었음. 자율진행약속후자동후속이실행되지않았음을명시. 이번CPUraw분석완료 docs/JEV_DECISION_PPO_ACTION_CHANGES_20261023.md. seed1 7승2패31동률,seed2 6승0패34동률. 첫action변화2/1,전체sequence변화26/16. anchorsemantic21/read31→PPOseed1semantic37/read5,seed2semantic31/read18(40문항합). F1개선+호출감소가동시에발생한문항0/0:평균이득을개별문항동시개선으로해석금지. globaltoolbias인지state별판단인지는미분리,새학습/추론없음. 다음globalbias/STOP대조설계우선,노출test40튜닝금지.
+
 ## 2026-10-23 — tempered PPO 2 collection seeds 완료 / 보상학습 개선 재현
 
 seed2PID62833/session16953 exit0.304episodes,gen18908/input1236238;원본304개/결정1016·headSHA검사통과. 두seed전체608episodes. 동일fresh40에서anchorF1.361838, PPOseed1.478333/seed2.465870,평균.472101. PPO−anchor평균F1+.110264,질문별seed평균bootstrap95%CI[.020528,.212784];utility+.114023 CI[.025147,.215517]. 두seed개별사전gate통과. calls2.30→2.15,gen57.25→61.0625(증가),input3994.575→3860.4. errors/cap0. RWR평균F1.480536, PPO−RWR−.008434 CI[-.055880,.037864]:PPO우월성미입증. 두seed조건부질문CI이며80독립질문/seed모집단불확실성아님.
