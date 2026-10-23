@@ -1,3 +1,7 @@
+## 2026-10-23 — pilot1 표현진단·분기수집 완료 / PPO 실제 수집중
+
+PID18957/session14055/source2a5e2a5. 기존 feature111/111 exact(maxabs0), action111/111일치, 원실행기와2개train문항전체trajectory일치. validation29상태 모방macroF1 lastlinear=.813988,lastMLP=.813988,question=.274242,observation=.747429,last16=.703431,observationmeanMLP=.657950,attention32=.691766. 사전규칙으로lastMLP선택(339729파라미터,aux출력포함). 이는QA품질증거아님. branch 316개실행,오류0. 같은BC suffix의outcome CE/critic초기화완료,현재PPO첫iteration on-policy수집. 다음oldlogprob parity→update3회→동결val/test. 중요 한계: outcomeCE는branch만 사용,PPO는추가144 on-policy episodes를수집하므로 알고리즘단독동일데이터우월성비교가아님. 최종보고에명시하고추가실험을사후끼워넣지않음.
+
 ## 2026-10-23 — decision policy pilot1 실제 기동
 
 source2a5e2a5, PID18957, exec session14055. run /content/local_fast/lsdrag-text-v1/results/decision_policy_20261023_pilot1, log /content/local_fast/lsdrag-text-v1/logs/decision_policy_20261023_pilot1.log. 실제 worker 기동 확인, 마지막 관측 phase=branch_collection. 실행범위 protocol 준수, 다른 GPU process 종료 없음. 다음 status/로그 확인→원head parity→표현 비교→분기수집→PPO→동결평가; 완료 전 품질/속도 성공 주장 금지.
