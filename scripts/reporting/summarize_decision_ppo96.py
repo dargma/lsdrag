@@ -18,6 +18,9 @@ def main(out_name="decision_ppo96_20261023", doc_name="JEV_DECISION_PPO96_REPORT
  result=s|{'optimizer_steps_per_learner':sum(4*((c['states']+31)//32) for c in curves),'audit':{'episodes':len(episodes),'decisions':checks,'head_hashes_unchanged':True},'strong_signal_gate_passed':gate,'curves':curves};out=REPO/'lab/reports'/out_name;out.mkdir(parents=True,exist_ok=True);(out/'result.json').write_text(json.dumps(result,ensure_ascii=False,indent=2)+'\n')
  lines=['# PPO96×4 trajectories 결과','',f'총1312episodes,학습수집1152+fresh40×4평가160. strong signal gate: {gate}. 단일seed,공유GPU통제latency없음.','', '| 정책 | F1 | utility | 호출 | 생성token | 오류episode | cap FINAL |','|---|---:|---:|---:|---:|---:|---:|']
  for name,v in s['policies'].items():lines.append(f"| {name} | {v['f1']:.4f} | {v['utility']:.4f} | {v['tool_calls']:.3f} | {v['generated_tokens']:.2f} | {v['errors']} | {v['forced_final']} |")
+ 
+ if s.get('recovery'):
+  lines+=['','## 평가 복구 기록','',str(s['recovery']),'학습1152회완료후평가70개시점에grammar mismatch로중단. 기존1222개episode는bytehash보존,누락90개만실행. 첫실패cell은재실행성공여부와무관하게F1=0으로보존. 해당cell비용은재실행proxy이고최초실패시도추가비용은알수없어총실제비용을완전히집계한것은아님. 1312는정규집계episode수이며실패한원시도를포함한총attempt수와다르다.']
  lines+=['','## Paired 비교','']
  for name,c in s['ppo_minus'].items():
   for metric,v in c.items():lines.append(f"- PPO−{name} {metric}: {v['delta']:+.4f}, 95% CI {v['ci95']}.")

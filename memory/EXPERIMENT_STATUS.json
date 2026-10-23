@@ -760,16 +760,18 @@
     "report": "docs/JEV_DECISION_POLICY_ABLATION_REPORT_20261023.md"
   },
   "decision_ppo96": {
-    "phase": "collection",
-    "pid": 84213,
-    "session_id": 15566,
+    "phase": "recovery_evaluation",
+    "pid": 91091,
+    "session_id": 75204,
     "source": "ced20cc",
     "run": "/content/local_fast/lsdrag-text-v1/results/decision_ppo96_20261023",
     "log": "/content/local_fast/lsdrag-text-v1/logs/decision_ppo96_20261023.log",
     "planned_training_trajectories": 1152,
     "planned_total_episodes": 1312,
-    "finalizer_pid": 86087,
+    "finalizer_pid": null,
     "finalizer_log": "/content/local_fast/lsdrag-text-v1/logs/decision_ppo96_finalizer_20261023.log",
-    "finalizer_status": "/content/local_fast/lsdrag-text-v1/results/decision_ppo96_20261023/finalizer_status.json"
+    "finalizer_status": "/content/local_fast/lsdrag-text-v1/results/decision_ppo96_20261023/finalizer_status.json",
+    "finalizer_phase": "failed_original_worker",
+    "recovery": true
   }
 }

@@ -1,3 +1,7 @@
+## 2026-10-23 — PPO96 학습 완료·평가 오류 확인 및 복구 실행
+
+원workerPID84213종료,episodes1222=학습1152+평가70,1283.69초. ValueError Grammar token mismatch가인자생성경로에서전파되어중단. finalizerPID86087도failed로종료,자동report없었음. checkpoint3round완료및frozenhash검증. trainstate1284/1308/1337,optimizer각learner496회. 신규RecoveryPolicyReader는동일decoder mismatch를episodeerror로반환. 남은90평가만재개,기존1222bytehash보존. 최초실패cellF1=0유지(replay성공시도덮지않음),원실패시도추가cost미저장한계기록. runner scripts/resume_decision_ppo96_eval.py,session75204,log /content/local_fast/lsdrag-text-v1/logs/decision_ppo96_recovery_20261023.log. 다음완료→재집계/검증→backup/memory/Git.
+
 ## 2026-10-23 — PPO96 완료 후 자동 저장 watcher 기동
 
 workerPID84213/session15566 계속실행,현재episodes=312. one-shot finalizerPID86087, log /content/local_fast/lsdrag-text-v1/logs/decision_ppo96_finalizer_20261023.log, status /content/local_fast/lsdrag-text-v1/results/decision_ppo96_20261023/finalizer_status.json. worker완료시보고원본검증→DrivearchiveSHA→memory→scopedGitcommit/push를수행. 실패/worker소실시자동재시작없이명시failed기록. 새실험을기동하는스케줄러아님. 재개시실제process와status를검증하고중복worker/finalizer실행금지.

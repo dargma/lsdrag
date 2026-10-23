@@ -17,3 +17,7 @@ PPO clip.2,AdamW1e-4,4epochs,minibatch32,gradnorm1,KL.02,entropy.01,valueMSE.5,M
 manifest lab/registry/decision_ppo96_20261023/manifest.json
 
 기존사례분석은새96확대요청이우선하여pending. 이미본평가사례를새train72선정에사용하지않음(hash/중복family제외만사용).
+
+## 평가 중단·복구 (사후 설정변경이 아닌 오류 기록)
+
+학습1152회완료,평가70개저장후ValueError Grammar token mismatch로worker종료. 자동완료watcher도failed상태로기록. checkpoint는frozenhash검증후재사용,재학습없음. 기존1222개episode의bytehash를보존하고누락90개만실행한다. RecoveryPolicyReader는동일생성경로에서grammar mismatch를episode오류로반환하며토큰재선택/재시도/모델변경은하지않는다. 최초crashcell은replay성공여부와무관하게F1=0/오류로보존하여선택적성공retry를방지한다. originalfailedattempt의token/cost는저장되지않아비용정확복원불가;replay비용proxy및원시도추가비용누락을보고한다. 전체검증된1312canonical episodes는원시실패attempt까지포함한총실행횟수와다름.
