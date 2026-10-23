@@ -572,3 +572,8 @@ User “그래 시작해” authorizes bounded followup. Protocol docs/JEV_DECIS
 
 PID 28242, source fd756eb; observed phase loading. Run /content/local_fast/lsdrag-text-v1/results/decision_policy_20261023_pilot2; log /content/local_fast/lsdrag-text-v1/logs/decision_policy_20261023_pilot2.log. No completed quality result yet. Next: inspect status, complete bounded evaluation, report and archive; separately verify candidate thinking OFF.
 
+
+## 2026-10-23 — candidate thinking OFF smoke passed
+
+Community empero-ai/Qwen3.8-4B-Distill revision c83cb7aa2999d2f35c43e9ae0634a30eb8985a1e acquired and hash verified. Three text-only OFF generation probes passed: short answer, JSON, native tool call; no generated thinking tags or visible reasoning, no truncation. Empty closed think prefix is supplied by template. NOT a QA benchmark or current-reader integration pass. Hybrid cache/norm path/native tool syntax differ, adapter and retraining needed; current pilot2 backbone unchanged. Report docs/JEV_QWEN38_DISTILL_CANDIDATE_20261023.md; small provenance lab/registry/qwen38_distill_candidate_20261023. Pilot2 observed actively collecting counterfactuals (PID28242), quality results pending.
+

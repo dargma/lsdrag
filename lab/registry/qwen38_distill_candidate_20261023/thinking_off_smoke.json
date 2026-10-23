@@ -1,0 +1,42 @@
+{
+  "repo": "empero-ai/Qwen3.8-4B-Distill",
+  "revision": "c83cb7aa2999d2f35c43e9ae0634a30eb8985a1e",
+  "enable_thinking": false,
+  "text_only": true,
+  "tests": [
+    {
+      "name": "answer",
+      "prompt_tail": "user\nWhat is 2 + 3? Reply with only the numeral.<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+      "closed_empty_think_prefix": true,
+      "generated": "5<|im_end|>",
+      "tokens": 2,
+      "seconds_observed_shared_gpu": 0.462806964000265,
+      "generated_think_tags": false,
+      "hit_token_cap": false
+    },
+    {
+      "name": "json",
+      "prompt_tail": " object with the key \"answer\" and value \"Paris\".<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+      "closed_empty_think_prefix": true,
+      "generated": "{\"answer\": \"Paris\"}<|im_end|>",
+      "tokens": 7,
+      "seconds_observed_shared_gpu": 0.20725254800072435,
+      "generated_think_tags": false,
+      "hit_token_cap": false,
+      "json_valid": true
+    },
+    {
+      "name": "tool",
+      "prompt_tail": "\"capital of France\". Do not answer the question.<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+      "closed_empty_think_prefix": true,
+      "generated": "<tool_call>\n<function=keyword_search>\n<parameter=query>\ncapital of France\n</parameter>\n</function>\n</tool_call><|im_end|>",
+      "tokens": 28,
+      "seconds_observed_shared_gpu": 0.8050302839992582,
+      "generated_think_tags": false,
+      "hit_token_cap": false
+    }
+  ],
+  "quality_benchmark": false,
+  "complete": true,
+  "hidden_size": 2560
+}
