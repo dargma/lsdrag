@@ -596,3 +596,6 @@ fresh40: BC F1.291439/EM.225/calls2.425/gen59.55; 사전주조건 MLP cost-polic
 
 사용자 “그래 차례차례진행하자”, “보고서에 ppo 등 수식도 같이”. 첫 단계 docs/JEV_DECISION_POLICY_STOP_CONTROL_20261023.md, manifest lab/registry/decision_policy_stop_20261023/manifest.json. 기존train24/val8,139states/990branches 재사용,고정BC도구선택+학습STOPgate;freshfamily60×4+val8×4=272eval. 단일seed,동일Qreference나초기화차이한계명시. CPU14검사통과. 아직worker기동전. 수식문서 docs/JEV_DECISION_POLICY_MATH_20261023.md에PPO/MCadvantage/mixturegradient/반사실Q/expectedreturn/softCE/STOPgate와코드링크추가,기존결과보고서연결. 다음기동→139parity→2roundgate학습→동결평가→결과/backup/Git. 이후linearvalue·seed반복은별도단계로기록;test60사후튜닝금지.
 
+## 2026-10-23 — STOP-only 실제 기동·학습 완료 / 평가 진행
+
+source437ab3b,PID38695. run /content/local_fast/lsdrag-text-v1/results/decision_policy_stop_20261023; log /content/local_fast/lsdrag-text-v1/logs/decision_policy_stop_20261023.log. 초기139상태BC argmax parity,학습후고정도구불변통과;2round gate학습완료(trainable333188). 관측phase=validation_evaluation,episodes=24. 새60평가결과는아직미집계. PPO등수식문서Git반영완료. 다음동결평가완료확인→raw검증/결과보고/backup,후속linearvalue는별도protocol.

@@ -600,8 +600,24 @@
   ],
   "decision_policy_stop": {
     "authorized": true,
-    "status": "prepared",
+    "status": "evaluating",
     "run": "/content/local_fast/lsdrag-text-v1/results/decision_policy_stop_20261023",
-    "evaluation_complete": false
+    "evaluation_complete": false,
+    "launch": {
+      "pid": 38695,
+      "source": "437ab3b",
+      "log": "/content/local_fast/lsdrag-text-v1/logs/decision_policy_stop_20261023.log",
+      "run": "/content/local_fast/lsdrag-text-v1/results/decision_policy_stop_20261023"
+    },
+    "status_snapshot": {
+      "phase": "validation_evaluation",
+      "pid": 38695,
+      "elapsed_seconds": 38.43713494399981,
+      "episodes": 24,
+      "generated": 1574,
+      "inputs": 97063,
+      "qid": "2hop__71102_23202"
+    },
+    "training_complete": true
   }
 }
