@@ -1,6 +1,6 @@
 {
-  "phase": "shared_corpus_calibration_complete",
-  "updated_utc": "2026-10-23T23:29:07.305491+00:00",
+  "phase": "shared_corpus_teacher_collection",
+  "updated_utc": "2026-10-23T23:33:20.445965+00:00",
   "protocol": "docs/JEV_DECISION_SHARED_CORPUS_RESTART_20261023.md",
   "protocol_sha256": "0adecb3e30136b974fa1ecfffe74282df019f5ccbe0ece7fdbb6547fa486bc18",
   "prompt": "prompts/text_rag_integrated_v5.txt",
@@ -35,7 +35,7 @@
   "teacher_collection_started": true,
   "training_completed": true,
   "evaluation_completed": true,
-  "next": "Freeze bounded train-only shared-corpus initialization and fresh policy learning; final160 remains unused.",
+  "next": "Teacher192 -> common BC initialization -> exposed validation16; then freeze same-init GRPO and all-action learning.",
   "previous_multimodal_checkpoint_historical_only": {
     "phase": "native2_review_required",
     "run": "/content/local_fast/lsdrag-head-v14/results/native_distillation_12b_20261015",
@@ -841,6 +841,10 @@
     "index_complete": true,
     "calibration_pid": 243561,
     "calibration_session": 22186,
-    "calibration_complete": true
+    "calibration_complete": true,
+    "teacher_pid": 244706,
+    "teacher_session": 41928,
+    "initialization_coordinator_pid": 245083,
+    "initialization_coordinator_session": 97346
   }
 }

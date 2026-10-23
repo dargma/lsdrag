@@ -1,3 +1,9 @@
+## 2026-10-23 — shared-corpus teacher192 및 공통 초기화 실행
+
+teacherworkerPID244706/session41928, run /content/local_fast/lsdrag-text-v1/results/decision_shared_teacher192_20261023, log /content/local_fast/lsdrag-text-v1/logs/decision_shared_teacher192_20261023.log. train192전체native1trajectory씩,3600초/900kgen/45Minput상한. status phase evaluation은복제한collector의명칭이며split=train,heldout평가아님. nonforcedpack/legal/action만teacher_states.pt에보존,uniformdummy확률미사용,failedanswer도보존. 공통초기head새randomseed20261051,train-onlynorm,100epochs lr3e-4 legal-onlysmoothing.05,원GRPOweights미사용.
+
+coordinatorPID245083/session97346 실제대기,교사완료→CPUfit최대300초→이미노출calibration16에shared_bc1조건최대900초. 이후자동확대없음,GRPO/분기학습동일초기점계획검토. 다음학습단계는새budget/sourcehash동결후실행. 최종test160미사용,전체목표아직진행중.
+
 ## 2026-10-23 — shared calibration16 완료 / 재학습 필요 확인
 
 PID243561 complete48episodes/88.41초/4207generated/181838input,errors0. Raw48cell/cost/means검증. semantic_once F1.263158/gen56.8125;grpo_transfer .25/101.8125;native_fast .3125/104.3125. originalquery supportRecall@5 .5625/all-support .25. Native우월성작은표본확증아님. 작은pool head전이효과미확인. report lab/reports/decision_shared_calibration16_20261023/report.md. 다음공통pool train-only native 초기화수집+동일시작점GRPO/분기학습계획동결,최종test160미사용. 목표미달/미검증.

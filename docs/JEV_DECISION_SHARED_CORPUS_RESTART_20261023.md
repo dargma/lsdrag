@@ -31,3 +31,7 @@ Within the remaining time, finish corpus/index, calibration and as much bounded 
 ## Execution resumption after original window
 
 2026-10-23 23:29 UTC clock verification: original22:48UTC deadline had elapsed during the pause/interruption. User subsequently explicitly said “계속 해야지” and goal status returned active. Calibration16 is a newly resumed bounded run (max1800seconds/48episodes), not work completed within the original8-hour window. Further stages require bounded budgets recorded before launch; no unlimited overnight execution inferred. Main learning/evaluation objective remains incomplete.
+
+## Frozen shared-corpus initialization
+
+Collect one greedy native-action trajectory for each of frozen train192, max3600seconds/900k generated/45M input. Keep all non-forced states, including failed-answer episodes, and train only from native action IDs (never dummy uniform probabilities). No previous head weights. Common PolicyHead last-token/MLP128+linear skip, train-only feature normalization/std floor.1, question-balanced hard-action CE with .05 legal-only smoothing, seed20261051,100 full-batch epochs AdamW3e-4, gradclip1. Critic disabled; no validation-driven epoch selection. This is initialization, not the proposed outcome policy. Subsequent GRPO and same-state action-outcome heads start from identical saved weights and same actor trainability; costs tracked separately. Training budget changes are recorded before launch, not inferred as unlimited.
