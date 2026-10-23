@@ -648,3 +648,7 @@ source e72bfd2, PID54225/session86169 exit0. run /content/local_fast/lsdrag-text
 source e51d7c0,CPU exit0.67상태/24질문/6family folds. 동일action별signedridgeρ1. Primary last OOF utility gain−.036190,CI[-.083910,.005467];last−metadata−.042769,CI[-.122261,.032560]. 추가6회12상태last gain−.057400. 어떤aux표현도BC대비CI하한>0아님. contextbinmean+.016114이나CI[-.054261,.099684];사후채택금지. 값 차이의존재와hidden의예측가능성을구분:후자는현재데이터/선형모형에서미입증. BC/reference의teacher노출과기존train자료/고정reference/conditionalCI한계. signednegative보존·heldout행추가시기존예측불변검사통과. 보고 docs/JEV_DECISION_VALUE_PROBE_REPORT_20261023.md.
 
 다음은blind구조확대나PPO/GRPO변경보다표본수/target정의/상태의행동후보정보병목분리설계. 새메모리실험/closed-loop성공/독립수집seed재현주장없음.
+
+## 2026-10-23 — target/데이터량 진단 및 지속 실행 승인
+
+사용자지속실험승인. docs/JEV_DECISION_TARGET_DIAGNOSTIC_20261023.md. 36CPU조건 last/meta×Q/BC상대값×25/50/100%×3subsetseed. 탐색적학습곡선,100%직전probeparity검사. 다음진단완료후boundedPPO설계/진행,반복확인대기하지않음.
