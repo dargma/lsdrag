@@ -619,3 +619,7 @@ value worker PID41106 종료/status complete. sourcea5ecb91,340episodes/487.01�
 ## 2026-10-23 — 중요상태 예측 probe 승인·설계 고정
 
 사용자오케이/좁게보지말라지시반영. Primary round0만,round1은전체train outcome으로reference학습되어CV오염가능하므로diagnostic분리. Family 24그룹/6fold,hidden+meta ridgeρ1 vsmeta/entropy/early/uniformexactbudget. Branch수25%primary/50%secondary,두repeatcross평가gain. Gate와codehash동결,CPU3검사통과. Protocol docs/JEV_DECISION_ACQUISITION_PROBE_20261023.md. 아직probe결과미실행,새GPU없음. 다음실행→gate·reference변동·표현필요성판단→보고Git/backup. 이전독립수집seed검증pending보존.
+
+## 2026-10-23 — 목적·baseline·정책 검증 순서 문서 저장
+
+사용자 문서 저장 요청 및 후속 질문 반영. docs/JEV_DECISION_PURPOSE_AND_BASELINES_20261023.md: 목적은 근거 기반 답변 품질/비용, head는 가설. A-RAG 기능/정책 품질/메모리 전이 증거를 구분. 분기 결과 신뢰성→coverage 보강→표현→구조→학습 목표→독립 동결 평가 순서 제안. 메모리 baseline과 공정 예산/누출 방지/선행연구 명시. 이번 작업은 문서 저장만이며 새 실험 기동 없음. 기존 acquisition probe의 미커밋 결과는 이 문서 커밋에서 제외하고 보존.
