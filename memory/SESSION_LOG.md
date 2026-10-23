@@ -676,3 +676,7 @@ seed2PID62833/session16953 exit0.304episodes,gen18908/input1236238;원본304개/
 ## 2026-10-23 — PPO 행동 변화 사후분석 / 실행 상태 정정
 
 사용자추가결과질문시확인:4bee7e3이후새worker없었음. 자율진행약속후자동후속이실행되지않았음을명시. 이번CPUraw분석완료 docs/JEV_DECISION_PPO_ACTION_CHANGES_20261023.md. seed1 7승2패31동률,seed2 6승0패34동률. 첫action변화2/1,전체sequence변화26/16. anchorsemantic21/read31→PPOseed1semantic37/read5,seed2semantic31/read18(40문항합). F1개선+호출감소가동시에발생한문항0/0:평균이득을개별문항동시개선으로해석금지. globaltoolbias인지state별판단인지는미분리,새학습/추론없음. 다음globalbias/STOP대조설계우선,노출test40튜닝금지.
+
+## 2026-10-23 — PPO 분해 실험 실제 기동
+
+source ef9bd61,PID76965/session36498. run /content/local_fast/lsdrag-text-v1/results/decision_policy_ablation_20261023, log /content/local_fast/lsdrag-text-v1/logs/decision_policy_ablation_20261023.log. 사용자반복시작요청후실제기동확인. unit2검사통과,train67 projection gate/tool parity통과,globalbias fit완료,모델loading. 새family40×9=360episodes,두seedfull/globalbias/STOP/tool+anchor. docs/JEV_DECISION_POLICY_ABLATION_20261023.md. 다음완료→원본검증·비교·보고·backup/Git. 아직새평가결과없음.
