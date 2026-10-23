@@ -65,3 +65,42 @@ Outcome CE는 fresh20에서 F1 점추정이 높지만 paired CI가0을 포함하
 ## 학습 수식
 
 [PPO·return/advantage·반사실 Q·outcome CE의 수식과 코드 대응](JEV_DECISION_POLICY_MATH_20261023.md)을 함께 읽는다. Pilot1 PPO와 pilot2 expected-return 학습은 다른 알고리즘이다.
+
+## 3. Pilot1: 실제 실행한 PPO
+
+[PPO 원 논문](https://arxiv.org/abs/1707.06347)의 clipped surrogate를 사용한다. Pilot1의 수집 정책은 합법 행동 uniform exploration을 섞는다.
+
+$$
+\widetilde\pi_\theta=(1-\epsilon)\pi_\theta+\epsilon U_{\mathcal A},\qquad\epsilon=0.05.
+$$
+
+Old behavior probability를 저장하고 새 policy에도 같은 mixture를 사용한다.
+
+$$
+r_t(\theta)=\frac{\widetilde\pi_\theta(a_t|s_t)}{\widetilde\pi_{\mathrm{old}}(a_t|s_t)},\qquad
+A_t=G_t-V_{\mathrm{old}}(s_t).
+$$
+
+Batch 내 $A_t$를 평균0/표준편차1로 표준화한 $\widehat A_t$를 고정하여 업데이트한다. **이 구현은 GAE가 아니라 Monte Carlo return-minus-value**다.
+
+$$
+\mathcal L_{\mathrm{clip}}=-\mathbb E_t\left[\min\left(r_t\widehat A_t,\operatorname{clip}(r_t,1-\delta,1+\delta)\widehat A_t\right)\right],\qquad\delta=0.2.
+$$
+
+코드에서 최소화한 총 loss는
+
+$$
+\mathcal L_{\mathrm{PPO}}=\mathcal L_{\mathrm{clip}}+0.5\mathbb E_t(V_\theta-G_t)^2+0.02\mathbb E_tD_{KL}(\widetilde\pi_\theta\Vert\widetilde\pi_{BC})-0.01\mathbb E_tH(\widetilde\pi_\theta).
+$$
+
+Critic return target과 advantage는 rollout 후 고정된다. Cap 강제 FINAL은 actor 학습 batch에서 제외하지만 앞선 step의 return에는 그 비용·결과가 반영된다. 반사실 개입 branch는 on-policy PPO batch에 넣지 않는다. 3회 수집/업데이트, 각4epoch, minibatch32. Pilot1 비용계수는 $\lambda=0.005$이며 초기화는 pilot1 manifest를 따른다. 구현: [clipped_policy_loss](../src/lsdrag/decision_policy.py), [pilot1 PPO loop](../scripts/run_decision_policy_pilot.py).
+
+### 왜 탐색했는데 행동이 잘 안 바뀔 수 있는가?
+
+Mixture에서 uniform 항은 $\theta$와 독립이므로
+
+$$
+\nabla_\theta\log\widetilde\pi_\theta(a|s)=\frac{(1-\epsilon)\pi_\theta(a|s)}{\widetilde\pi_\theta(a|s)}\nabla_\theta\log\pi_\theta(a|s).
+$$
+
+Actor가 거의0 확률을 준 대안을 uniform이 뽑으면 앞의 계수가 작다. 이는 pilot1 train-only 포화 진단과 연결되는 기전이며, 성능 부진의 유일한 원인이라고 증명한 것은 아니다. [진단 코드](../scripts/reporting/audit_policy_train.py).

@@ -40,3 +40,41 @@
 ## 학습 수식
 
 [PPO·return/advantage·반사실 Q·outcome CE의 수식과 코드 대응](JEV_DECISION_POLICY_MATH_20261023.md)을 함께 읽는다. Pilot1 PPO와 pilot2 expected-return 학습은 다른 알고리즘이다.
+
+## 4. Pilot2: 반사실 action return의 근사 정책 개선
+
+같은 상태에서 각 합법 행동을 실행하고, 이후는 고정 reference $\pi_k$로 끝까지 진행한다. 행동당 $M=2$ suffix 표본으로
+
+$$
+\widehat Q_k(s,a)=\frac1M\sum_{j=1}^{M}\left[F(\tau_{s,a,j}^{\pi_k})-\lambda C(\tau_{s,a,j}^{\pi_k})\right].
+$$
+
+Cost 조건은 $\lambda=0.03$, quality-only 조건은0. Round0 reference는 temperature8 BC, round1은 round0 MLP quality policy다. 여섯 learner는 같은 표본을 받는다. 이 값은 **reference continuation 아래의 Q 추정치**이며 최적 $Q^*$나 모든 learner의 현재 Q가 아니다.
+
+Question $q_i$에서 나온 상태 수를 $n_{q_i}$라 두고 $w_i=(1/n_{q_i})/\sum_j(1/n_{q_j})$로 가중한다. 각 문항의 총 기여를 같게 만든다. $b_i$는 합법 행동 Q의 평균이다.
+
+$$
+\mathcal L_{\mathrm{return}}=-\sum_iw_i\sum_a\pi_\theta(a|s_i)(\widehat Q_k(s_i,a)-b_i)
++\beta\sum_iw_iD_{KL}(\pi_\theta\Vert\pi_0)
+-\alpha\sum_iw_iH(\pi_\theta),
+$$
+
+$$
+\beta=0.02,\qquad\alpha=0.01.
+$$
+
+$Q,b,\pi_0$는 학습 중 고정한다. 상태별 상수 $b_i$는 이 full-action 합의 정확한 gradient를 바꾸지 않는다. 초기 $\pi_0$는 temperature8 BC이며 greedy 초기 선택은 보존된다. 이 loss에는 PPO probability ratio/clipping이 없다. **현재 보고서의 PG는 all-action expected-return surrogate이며 PPO·불편향 on-policy gradient가 아니다.** [구현 improvement_loss/fit_improvement](../src/lsdrag/decision_policy_followup.py). 비용민감 정책 학습과 all-action gradient의 관련 선행은 [AggreVaTeD](https://arxiv.org/html/1703.01030v1)지만, expert oracle 가정을 우리 noisy reference rollout에 대입하지 않는다.
+
+## 5. 동일 outcome 데이터의 soft CE
+
+$$
+y_i(a)=\operatorname{softmax}_{a\in\mathcal A(s_i)}\left(\frac{\widehat Q_k(s_i,a)}{\tau_Q}\right),\qquad\tau_Q=0.1,
+$$
+
+$$
+\mathcal L_{\mathrm{CE}}=-\sum_iw_i\sum_a y_i(a)\log\pi_\theta(a|s_i)
++\beta\sum_iw_iD_{KL}(\pi_\theta\Vert\pi_0)
+-\alpha\sum_iw_iH(\pi_\theta).
+$$
+
+이는 teacher가 고른 행동 한 개를 맞추는 BC와 다르다. **Outcome CE도 미래 결과를 이용해 decision policy를 학습한다.** Return loss와 CE는 같은 정보의 다른 학습법이다. KL/entropy 및 target temperature까지 달라질 수 있으므로 알고리즘명만으로 우열을 정할 수 없다.
