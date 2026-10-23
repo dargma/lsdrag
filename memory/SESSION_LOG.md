@@ -526,3 +526,10 @@ source8c9acf1,PID723617/session18426,run /content/local_fast/lsdrag-text-v1/resu
 ## 2026-10-19 — Native/Head 생성 문자열 비교 표 추가
 
 사용자 승인한 짧은 비교표를 실행flow 뒤에 추가. Native 전체tool call 생성 vs head번호1+runtime구문 공급 후query 인자tail 생성, 공급경계 {" 및 설명용예시 표시. prefix 13tokens/call×2.39calls=31.07tokens/question 명시. 수치/원본불변,새실험없음/HOLD유지.
+
+## 2026-10-23 — local-fast 자산 복원 및 decision policy 연구계획 초안
+
+사용자 요청: 데이터/모델 local-fast 복원, 최근 decision 모델 원리·학습데이터 조사, 입력 위치/구조 탐색, trajectory RL로 미래 성공·비용을 고려하는 policy, 선택+확률 출력, 독립 decision backbone 없는 단일 LLM+head contribution, 도구구문 생성과 불필요 탐색 step 절감. 계획 docs/JEV_DECISION_POLICY_RESEARCH_PLAN_20261023.md 저장. 현재 BC head의 한계를 명시하고 표현/구조/학습목표/비용을 분리 검증. D3 공개훈련 recipe는 확인 못함; Decision1 Route 데이터와 혼동금지. PPO actor-critic+반사실 outcome supervision은 제안, 아직 실행/성공 아님.
+
+원격 jev_v1.1 a522dbd를 /content/local_fast/lsdrag-code에 clone. Qwen13/embedding15파일 SHA검증, MuSiQue train/dev SHA검증, unique teacher32 JSON/NPZ와v3 checkpoint 복원. head SHA534da7b64150878869850cf7ccb735ec0fa8fbd643ddd0a74db19afeea4ebaef. provenance lab/registry/recovery_20261023/recovery.json; 복원스크립트/로그 /content/local_fast/lsdrag-recovery/20261023. 복원 worker 종료, GPU로드/학습/새평가/runtime smoke없음. 기존100 학습/튜닝금지, 원결과 보존. 이번은 복원·조사·계획 저장, 자동학습/기존 watcher 재개없음. 다음: reward/budget/split 동결 및 runtime검증 후 새pilot구현. 최초 Git조회 실패 원인은 local-fast code 디렉터리 부재였으며 재clone으로 해소. environment_status tool/network-policy 파일은 이번환경에도 없었고 실제 public download는 성공.
+

@@ -526,5 +526,12 @@
     "path": "docs/reports/arag_decision_head_20261019/index.html",
     "scope": "artifact reanalysis and HTML report only; no new inference/training/evaluation",
     "experiment_hold_unchanged": true
+  },
+  "recovery_20261023": {
+    "assets_verified": true,
+    "runtime_smoke": false,
+    "new_training_started": false,
+    "proposal": "docs/JEV_DECISION_POLICY_RESEARCH_PLAN_20261023.md",
+    "automatic_launch": false
   }
 }
