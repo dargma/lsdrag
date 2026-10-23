@@ -1,3 +1,7 @@
+## 2026-10-23 — 기존 사례 분석 완료 / PPO96 계속 수집
+
+추가LLM없이기존ablation40×2seed의80쌍최초동일공개prefix분기를분석. docs/JEV_DECISION_PPO_DECISION_CASES_20261023.md. seed1 read→semantic17개(6개선/3악화/8동률),read→keyword3(2개선);seed2 read→keyword5(3개선),read→semantic6(1개선/1악화),FINAL→read1개선. 읽기→종료11seed문항은모두F1동률. bridge/Bengal/악기개선은후속검색에서새정답근거획득과함께발생;Mara/Catalan실패는근거추가획득에도혼동. department접미사F1하락은형식민감성사례. 문항별firstaction하나의인과효과아님. 현재PPO96에이평가자료를학습/튜닝용으로사용하지않음.
+
 ## 2026-10-23 — PPO96 실제 기동
 
 sourceced20cc,PID84213/session15566. run /content/local_fast/lsdrag-text-v1/results/decision_ppo96_20261023;log /content/local_fast/lsdrag-text-v1/logs/decision_ppo96_20261023.log. 관측phase=collection,episodes=44. 기존24+새72/4trajectory/3iterations,최대1312episodes. 아직품질결과없음. 다음firstcollection384완료→logprobparity/update→총3round→fresh40×4→검증보고backupGit.
