@@ -1,4 +1,9 @@
 
+## 2026-10-23 — tempered PPO 실제 실행 중
+
+source467a8e6,PID60914/session2073. run /content/local_fast/lsdrag-text-v1/results/decision_ppo_tempered_20261023, log /content/local_fast/lsdrag-text-v1/logs/decision_ppo_tempered_20261023.log. 관측phase=collection,episodes=114. 첫behaviorlogprob parity통과,iteration0 PPO argmax변화.0061/RWR.2086(trainbatchvsanchor). 품질증거아님. 다음고정3iteration→fresh40×4→검증/보고/backup.
+
+
 ## 2026-10-23 — target진단 완료 / tempered PPO 동결
 
 36CPU조건완료,last Q100%gain−.03619,BC상대target−.05805;데이터5/10/20증가에따른명확개선없음. last trainMSE작고heldout높음. 상대target으로해결되지않음,대규모데이터효과단정불가. 보고 docs/JEV_DECISION_TARGET_DIAGNOSTIC_REPORT_20261023.md. 다음사용자지속승인으로 docs/JEV_DECISION_PPO_TEMPERED_20261023.md:고정trunk/tempered초기actor,PPO와동일배치RWR,144수집+fresh40×4=304eps. manifest동결,기동전.

@@ -715,5 +715,18 @@
     "gate_passed": false,
     "new_LLM_inference": false,
     "head_regression_fitting_completed": true
+  },
+  "decision_target_diagnostic": {
+    "phase": "complete",
+    "report": "docs/JEV_DECISION_TARGET_DIAGNOSTIC_REPORT_20261023.md"
+  },
+  "decision_ppo_tempered": {
+    "phase": "collection",
+    "pid": 60914,
+    "session_id": 2073,
+    "source": "467a8e6",
+    "run": "/content/local_fast/lsdrag-text-v1/results/decision_ppo_tempered_20261023",
+    "log": "/content/local_fast/lsdrag-text-v1/logs/decision_ppo_tempered_20261023.log",
+    "planned_episodes": 304
   }
 }
