@@ -799,3 +799,8 @@ Shared corpus CPU build complete:101962 unique documents/447039 occurrences, SHA
 2026-10-23 23:29 UTC clock verification: original22:48UTC deadline had elapsed during the pause/interruption. User subsequently explicitly said “계속 해야지” and goal status returned active. Calibration16 is a newly resumed bounded run (max1800seconds/48episodes), not work completed within the original8-hour window. Further stages require bounded budgets recorded before launch; no unlimited overnight execution inferred. Main learning/evaluation objective remains incomplete.
 
 Corpus+heads Drive backups complete, hash verified in lab/registry/decision_shared_corpus_20261023/saved_artifacts.json.
+
+## 2026-10-23 — shared calibration16 완료 / 재학습 필요 확인
+
+PID243561 complete48episodes/88.41초/4207generated/181838input,errors0. Raw48cell/cost/means검증. semantic_once F1.263158/gen56.8125;grpo_transfer .25/101.8125;native_fast .3125/104.3125. originalquery supportRecall@5 .5625/all-support .25. Native우월성작은표본확증아님. 작은pool head전이효과미확인. report lab/reports/decision_shared_calibration16_20261023/report.md. 다음공통pool train-only native 초기화수집+동일시작점GRPO/분기학습계획동결,최종test160미사용. 목표미달/미검증.
+

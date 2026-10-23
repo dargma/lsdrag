@@ -1,0 +1,8 @@
+{
+  "path": "/content/drive/MyDrive/lsdrag-backups/20261023/decision_shared_calibration16_20261023.tar.gz",
+  "sha256": "f24a489f4b74e73d04af73e093d9cbec2b42827d01fc853add8d8aaaa4294909",
+  "bytes": 92730,
+  "run": "/content/local_fast/lsdrag-text-v1/results/decision_shared_calibration16_20261023",
+  "phase": "complete",
+  "backbone_weights_included": false
+}

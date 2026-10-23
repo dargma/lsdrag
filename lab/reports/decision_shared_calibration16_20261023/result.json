@@ -1,0 +1,56 @@
+{
+  "audit_passed": true,
+  "summary": {
+    "policies": {
+      "semantic_once": {
+        "f1": 0.2631578947368421,
+        "generated_tokens": 56.8125,
+        "prompt_tokens": 2246.1875,
+        "tool_calls": 1.0,
+        "cost_units": 1.79274375,
+        "retrieved_support_recall": 0.5625,
+        "all_support_retrieved": 0.25,
+        "read_support_recall": 0.0,
+        "errors": 0
+      },
+      "grpo_transfer": {
+        "f1": 0.25,
+        "generated_tokens": 101.8125,
+        "prompt_tokens": 4258.125,
+        "tool_calls": 2.125,
+        "cost_units": 3.5689374999999997,
+        "retrieved_support_recall": 0.375,
+        "all_support_retrieved": 0.125,
+        "read_support_recall": 0.15625,
+        "errors": 0
+      },
+      "native_fast": {
+        "f1": 0.3125,
+        "generated_tokens": 104.3125,
+        "prompt_tokens": 4860.5625,
+        "tool_calls": 2.5625,
+        "cost_units": 4.091681250000001,
+        "retrieved_support_recall": 0.5,
+        "all_support_retrieved": 0.25,
+        "read_support_recall": 0.28125,
+        "errors": 0
+      }
+    },
+    "n": 16,
+    "split": "validation",
+    "counts": {
+      "episodes": 48,
+      "generated": 4207,
+      "inputs": 181838
+    },
+    "corpus_documents": 101962,
+    "original_question_retrieval": {
+      "support_recall_at5": 0.5625,
+      "all_support_at5": 0.25
+    },
+    "controlled_latency": false,
+    "note": "Existing heads are transfer controls, not shared-corpus retrained policies. Native-fast generated action has additional accounted generation/prefill costs; dummy policy probabilities removed."
+  },
+  "spec_sha256": "84083531e7161cfaea2a872897dd7109e2492d8a595d8a4675d894cec1554470",
+  "final_test_evaluated": false
+}
