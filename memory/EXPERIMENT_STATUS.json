@@ -786,8 +786,8 @@
   },
   "eight_hour_improvement": {
     "deadline_utc": "2026-10-23T22:48:00Z",
-    "phase": "validation_refinement_and_grpo_control",
-    "pid": 117392,
+    "phase": "independent_seed2_collection",
+    "pid": 123673,
     "target_f1_delta": 0.05,
     "target_generated_ratio": 0.7,
     "session_id": 99374,
@@ -800,8 +800,8 @@
     "refinement_coordinator_pid": 121401,
     "refinement_coordinator_session_id": 69863,
     "refinement_coordinator_status": "/content/local_fast/lsdrag-text-v1/results/decision_refinement_coordinator_20261023.json",
-    "active_worker_pid": 117392,
-    "active_worker_run": "/content/local_fast/lsdrag-text-v1/results/decision_grpo_continuation_20261023"
+    "active_worker_pid": 123673,
+    "active_worker_run": "/content/local_fast/lsdrag-text-v1/results/decision_state_outcomes_seed2_20261023"
   },
   "conditional_predictive_auxiliary": {
     "authorized": true,
@@ -814,5 +814,10 @@
     },
     "world_model_planning_expansion": false,
     "pid": null
+  },
+  "decision_grpo_continuation": {
+    "phase": "complete_audited_archived",
+    "episodes": 1216,
+    "report": "lab/reports/decision_grpo_continuation_20261023/result.json"
   }
 }

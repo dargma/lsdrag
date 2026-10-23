@@ -48,3 +48,7 @@ A-RAG → 짧은 Memory-R1 관리과제 → ACA-RL 기반 단일턴 응답방식
 ## 추가 refinement 실행 동결
 
 최대3추가후보를CPU cache로학습완료:multi_mlp_cost006(원proxy .06),multi_mlp_generation015(F1−.15*generated/100),last_linear_cost009(proxy .09). 각각원warmstart부터100epochs,원자료공유. validation3후새목표min(deltaF1/.05,gen_reduction/.30)최대primary와다른입력/구조중최대secondary를고른다. 과거목표의rank2선택은역사보존,새최종선택은test전동결. 독립collection seed20261047/fitseed20261048은동일train96/고정GRPOreference로선택주모델만재현;전체구조행렬재실행금지. primaryseed2결과에따라좋은seed만골라보고하지않는다. 새160test와predictiveaux trigger는아직미실행.
+
+## plateau에 따른 조건부 policy iteration
+
+validation3에서linear .09가.06과동일행동/점수,직접generation벌점과multiMLPcost도새.05/.70공동목표미달. seed2평균도미달일때만수집다양성확대로전환한다. 기존96+신규family-disjoint96=train192를현재선택policy로다시rollout해Qtargets를갱신. 옛reference target을단순concat하지않고전체192를refresh. 기존val32+새미사용val32=64,최종test160동일/미열람. sourcepolicy변경+데이터확대가동시이므로순수데이터량효과라고주장하지않음. 각상태모든합법action×2suffix,최대3264episodes/7200초/생성1.8M/input60M. 시작전report시간포함9000초이상남을때만기동. 같은선택구조에서lambda.06/.09 두후보만100epochs로업데이트,전체구조행렬재실행금지. 일반GRPO추가학습/기존primary/secondary와validation64비교. 미래예측보조학습은실행하지않지만이미계산된인접hidden5slots/action/args/prefixSHA를추가LLM없이보존해조건충족시재활용가능하게한다.

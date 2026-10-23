@@ -1,0 +1,90 @@
+{
+  "policies": {
+    "tempered_anchor": {
+      "f1": 0.3302083333333333,
+      "tool_calls": 2.1875,
+      "cost_units": 3.113971875,
+      "generated_tokens": 54.8125,
+      "prompt_tokens": 3783.46875,
+      "errors": 0,
+      "forced_final": 0,
+      "utility": 0.23678917708333333
+    },
+    "grpo": {
+      "f1": 0.4100160256410256,
+      "tool_calls": 1.65625,
+      "cost_units": 2.432875,
+      "generated_tokens": 46.6875,
+      "prompt_tokens": 3097.5,
+      "errors": 0,
+      "forced_final": 0,
+      "utility": 0.33702977564102565
+    }
+  },
+  "grpo_minus": {
+    "tempered_anchor": {
+      "f1": {
+        "delta": 0.0798076923076923,
+        "ci95": [
+          0.004807692307692308,
+          0.1783653846153846
+        ]
+      },
+      "utility": {
+        "delta": 0.10024059855769232,
+        "ci95": [
+          0.02843814152644231,
+          0.19513035793269232
+        ]
+      }
+    }
+  },
+  "counts": {
+    "episodes": 1216,
+    "generated": 67189,
+    "inputs": 4448164
+  },
+  "single_seed": true,
+  "controlled_latency": false,
+  "audit_passed": true,
+  "decisions": 3713,
+  "optimizer_steps": 448,
+  "evaluation_role": "validation32, not final test",
+  "initialization": "frozen GRPO96 final checkpoint",
+  "comparison_limit": "1152 additional online rollouts; not strict token-matched to all-action data collection",
+  "curves": [
+    {
+      "iteration": 0,
+      "states": 1188,
+      "diagnostic": {
+        "grpo": {
+          "loss": -0.03615749720484018,
+          "changed_vs_anchor": 0.10185185074806213,
+          "ratio_clip_fraction": 0.23148147761821747
+        }
+      }
+    },
+    {
+      "iteration": 1,
+      "states": 1168,
+      "diagnostic": {
+        "grpo": {
+          "loss": -0.02492492606964063,
+          "changed_vs_anchor": 0.1609589010477066,
+          "ratio_clip_fraction": 0.17465753853321075
+        }
+      }
+    },
+    {
+      "iteration": 2,
+      "states": 1170,
+      "diagnostic": {
+        "grpo": {
+          "loss": -0.023544383737120173,
+          "changed_vs_anchor": 0.2726495862007141,
+          "ratio_clip_fraction": 0.31196582317352295
+        }
+      }
+    }
+  ]
+}

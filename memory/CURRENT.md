@@ -1,3 +1,7 @@
+## 2026-10-23 — 비용 조정 plateau 후 조건부 데이터/정책 갱신 동결
+
+val3 multiMLP.06 F1.4/gen42.656,직접generation.15 F1.410016/gen49.156,linear.09는.06과동일.384375/41.031. primarylinear.06/secondarymultiMLP.06동결,seed2collectorPID123673진행. 일반GRPOcontrol1216완료/검증3713decisions448updates,Drive534325205bytes검증. valF1.410016/gen46.6875. 새목표미달이면기존96+새96을선택policy로refresh,추가val32포함64에서같은구조2후보만비교하는conditionaliteration준비. 원test160미열람/불변. transition보존은추가추론없는기록이며predictiveaux학습아님.
+
 ## 2026-10-23 — 새 목표용 3개 cache refinement 및 seed2 계획 동결
 
 validation1/2에서linearλ.06 F1 .384375/generated41.03125 vsbaseline .330208/54.8125,이전목표point달성이나새.05/.70목표token미달. multiMLPquality여유에근거해3추가CPU후보동결/학습완료. scripts/coordinate_decision_refinement.py는일반GRPOcontrol완료후val3→새목표primary/다른구조secondary선택→독립seed2자료수집/선택head만학습/validation을순차수행. test자동실행없음. source/선택기준/seed는평가전에기록. 별도predictiveaux는조건부후속문서만저장,현재실행안함.
