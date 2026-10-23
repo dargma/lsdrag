@@ -767,6 +767,9 @@
     "run": "/content/local_fast/lsdrag-text-v1/results/decision_ppo96_20261023",
     "log": "/content/local_fast/lsdrag-text-v1/logs/decision_ppo96_20261023.log",
     "planned_training_trajectories": 1152,
-    "planned_total_episodes": 1312
+    "planned_total_episodes": 1312,
+    "finalizer_pid": 86087,
+    "finalizer_log": "/content/local_fast/lsdrag-text-v1/logs/decision_ppo96_finalizer_20261023.log",
+    "finalizer_status": "/content/local_fast/lsdrag-text-v1/results/decision_ppo96_20261023/finalizer_status.json"
   }
 }
