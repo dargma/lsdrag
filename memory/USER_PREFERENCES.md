@@ -90,3 +90,8 @@ validation32만열람후사용자명시상향. 새160test미열람. 이전.03/.8
 
 사용자아이디어저장및현재목표달성하면바로실험명시. docs/JEV_CONDITIONAL_PREDICTIVE_AUXILIARY_PLAN_20261023.md. fresh paired F1+.05/generated<=.70 동시point목표충족시trigger,validation만으로금지. 동일구조policy-only 대policy+beta prediction,공유작은encoder+action-conditionedpredictor,고정/EMA target·collapse대응,기존train hidden pair재사용우선. t는decisionstep. 현재A-RAG주실험유지,단일GPU/22:48UTC상한유지. 미달이면보류.
 
+
+## 2026-10-23 — 사용자 승인: 공통 코퍼스 환경으로 실험 재시작
+
+사용자가 작은 corpus pool의 shortcut 우려 및 필요시 처음부터 재실험 승인. train+validation256 모두 문항별20문단/근거2개, 검색snippet300자/문단중앙395.5자 확인. gold label leakage 증거는 없지만 restricted pool의 강한 이점. 새protocol docs/JEV_DECISION_SHARED_CORPUS_RESTART_20261023.md. coordinator127863만 SIGTERM하여 기존환경 후속fit/eval중지,collector129475는수집완료/보존만. fixed-rule queue미기동/구spec보류. 전체공개train/dev문단을query-independent content-ID corpus로중복제거하는CPU builder실행session84777. 새공통pool에서retrieval calibration→train-only재수집/학습→동일환경GRPO/고정규칙대조→미사용test160. 기존수치와새환경수치혼합금지. 원8hdeadline22:48UTC유지.
+

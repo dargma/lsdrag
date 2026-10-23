@@ -1,7 +1,7 @@
 {
-  "phase": "decision_policy_iteration_collection",
-  "updated_utc": "2026-10-17T16:48:13.887016+00:00",
-  "protocol": "docs/JEV_TEXT_INTEGRATED_EXECUTION_20261016.md",
+  "phase": "shared_corpus_restart_preparation",
+  "updated_utc": "2026-10-23T16:25:23.405583+00:00",
+  "protocol": "docs/JEV_DECISION_SHARED_CORPUS_RESTART_20261023.md",
   "protocol_sha256": "0adecb3e30136b974fa1ecfffe74282df019f5ccbe0ece7fdbb6547fa486bc18",
   "prompt": "prompts/text_rag_integrated_v5.txt",
   "prompt_sha256": "9d66c290a97bbabb4289dcf262e2b5bc8ba05653f87aed3b693825dbb02d5a97",
@@ -35,7 +35,7 @@
   "teacher_collection_started": true,
   "training_completed": true,
   "evaluation_completed": true,
-  "next": "User HOLD. Results/report/backup/Git saved. No new experiments/training/automatic launch until explicit resume.",
+  "next": "Build shared public corpus and index; calibrate on exposed validation; recollect/retrain in corrected environment; no old-pool downstream execution.",
   "previous_multimodal_checkpoint_historical_only": {
     "phase": "native2_review_required",
     "run": "/content/local_fast/lsdrag-head-v14/results/native_distillation_12b_20261015",
@@ -828,5 +828,15 @@
     "validation_f1": 0.5309895833333333,
     "validation_generated": 59.65625,
     "joint_target_passed": false
+  },
+  "shared_corpus_restart": {
+    "collector_preserved_pid": 129475,
+    "old_coordinator_cancelled_pid": 127863,
+    "corpus_builder_session": 84777,
+    "final_test_evaluated": false,
+    "documents": 101962,
+    "index_pid": 136153,
+    "index_session": 64973,
+    "index_status": "/content/local_fast/lsdrag-text-v1/corpora/musique_shared_20261023/index_status.json"
   }
 }

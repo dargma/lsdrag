@@ -1,3 +1,10 @@
+
+Shared corpus CPU build complete:101962 unique documents/447039 occurrences, SHA60561e0ef06f0f76cbde036d87e7c5853655fc5b7ded908d5f981b4981c6252d. Index worker PID136153/session64973 started and waits on GPU lock held by verified collector129475; log /content/local_fast/lsdrag-text-v1/logs/index_decision_shared_corpus_20261023.log. No additional LLM run started. Full source hashes in lab/registry/decision_shared_corpus_20261023/corpus_manifest.json. Index max2h after lock, existing embedding model/revision/task formatting.
+
+## 2026-10-23 — 사용자 승인: 공통 코퍼스 환경으로 실험 재시작
+
+사용자가 작은 corpus pool의 shortcut 우려 및 필요시 처음부터 재실험 승인. train+validation256 모두 문항별20문단/근거2개, 검색snippet300자/문단중앙395.5자 확인. gold label leakage 증거는 없지만 restricted pool의 강한 이점. 새protocol docs/JEV_DECISION_SHARED_CORPUS_RESTART_20261023.md. coordinator127863만 SIGTERM하여 기존환경 후속fit/eval중지,collector129475는수집완료/보존만. fixed-rule queue미기동/구spec보류. 전체공개train/dev문단을query-independent content-ID corpus로중복제거하는CPU builder실행session84777. 새공통pool에서retrieval calibration→train-only재수집/학습→동일환경GRPO/고정규칙대조→미사용test160. 기존수치와새환경수치혼합금지. 원8hdeadline22:48UTC유지.
+
 ## 2026-10-23 — seed2 품질/비용 상충 확인, 조건부 policy iteration 실제 기동
 
 seed2 collection complete1410episodes/189states/1043.83초,generated60874/input4387681. audit3165decisions/prefix/coverage/split통과,15error/1cap보존,Drive29125699bytes SHA검증. validationseed2 F1 .5309896/generated59.65625 vsbaseline .3302083/54.8125:품질개선이나token증가. seed1.384375/41.03125와차이큼;두seed평균F1+.127474/tokenratio.918472로새공동목표미달. 좋은seed만선택해보고하지않음.

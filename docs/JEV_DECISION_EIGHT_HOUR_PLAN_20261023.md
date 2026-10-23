@@ -52,3 +52,8 @@ A-RAG → 짧은 Memory-R1 관리과제 → ACA-RL 기반 단일턴 응답방식
 ## plateau에 따른 조건부 policy iteration
 
 validation3에서linear .09가.06과동일행동/점수,직접generation벌점과multiMLPcost도새.05/.70공동목표미달. seed2평균도미달일때만수집다양성확대로전환한다. 기존96+신규family-disjoint96=train192를현재선택policy로다시rollout해Qtargets를갱신. 옛reference target을단순concat하지않고전체192를refresh. 기존val32+새미사용val32=64,최종test160동일/미열람. sourcepolicy변경+데이터확대가동시이므로순수데이터량효과라고주장하지않음. 각상태모든합법action×2suffix,최대3264episodes/7200초/생성1.8M/input60M. 시작전report시간포함9000초이상남을때만기동. 같은선택구조에서lambda.06/.09 두후보만100epochs로업데이트,전체구조행렬재실행금지. 일반GRPO추가학습/기존primary/secondary와validation64비교. 미래예측보조학습은실행하지않지만이미계산된인접hidden5slots/action/args/prefixSHA를추가LLM없이보존해조건충족시재활용가능하게한다.
+
+
+## 2026-10-23 — 고정 workflow 대조 추가
+
+기존 validation32의 선택된 seed1 linear head는 모든 문항에서 semantic_search 1회 후 FINAL을 선택했다. 따라서 단순 workflow와 구별되는 정책 이득을 주장하기 전에 동일 생성 경로의 고정 semantic-once 대조를 validation64에서 평가한다. 검색 결과가 비어도 두 번째 결정은 FINAL이며 episode별 counter를 초기화한다. 현재 GPU coordinator 종료 후 직렬 실행; train/test 변경 없음. 이 대조는 learned state adaptation의 증거를 과장하지 않기 위한 한 조건이며 새 ablation 행렬은 만들지 않는다. 최종 test 비교 조건은 validation 결과에 근거해 test 열람 전에 동결한다.
