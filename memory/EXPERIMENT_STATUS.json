@@ -1,5 +1,5 @@
 {
-  "phase": "decision_policy_pilot1_ppo_collection",
+  "phase": "decision_policy_pilot1_complete_no_policy_gain",
   "updated_utc": "2026-10-17T16:48:13.887016+00:00",
   "protocol": "docs/JEV_TEXT_INTEGRATED_EXECUTION_20261016.md",
   "protocol_sha256": "0adecb3e30136b974fa1ecfffe74282df019f5ccbe0ece7fdbb6547fa486bc18",
@@ -183,7 +183,7 @@
   "speed_gate_passed": true,
   "target_speedup_vs_native": 1.5,
   "target_speedup_measured": false,
-  "run": "/content/local_fast/lsdrag-text-v1/results/improvement_v3_merged_20261017",
+  "run": "/content/local_fast/lsdrag-text-v1/results/decision_policy_20261023_pilot1",
   "worker_seconds": 277.1492917609994,
   "contract": "5b64658a2608f883599dbfb36be3758d4f28cc0de63c532ec11f76117a3cecce",
   "teacher_target": 32,
@@ -538,12 +538,20 @@
   "active_protocol": "docs/JEV_DECISION_POLICY_PILOT1_20261023.md",
   "decision_policy_pilot1": {
     "authorized": true,
-    "status": "ppo_collection",
+    "status": "complete",
     "run": "/content/local_fast/lsdrag-text-v1/results/decision_policy_20261023_pilot1",
-    "pid": 18957,
-    "session_id": 14055,
+    "pid": null,
+    "session_id": null,
     "source_commit": "2a5e2a5",
     "representation_completed": true,
-    "branches_completed": 316
+    "branches_completed": 316,
+    "training_complete": true,
+    "evaluation_complete": true,
+    "learned_policy_quality_improvement": false,
+    "step_reduction": false,
+    "episodes": 657,
+    "report": "docs/JEV_DECISION_POLICY_PILOT1_REPORT_20261023.md",
+    "archive": "/content/drive/MyDrive/lsdrag-backups/20261023/decision_policy_pilot1_results.tar.gz",
+    "archive_sha256": "7527eb5b98f263f500313f7d267f362c0b6974db87386916892d5bd15c243d32"
   }
 }

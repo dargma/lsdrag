@@ -26,3 +26,5 @@ Latest2026-10-17: frozen new100 paired evaluation complete; report JEV_FROZEN_HE
 Latest2026-10-17: Astra deep research complete; all-head online outcome/cost policy improvement recommended, one-intervention flagship rejected. Research proposal only; experiment HOLD remains. See newest CURRENT/HEAD and JEV_HEAD_RESEARCH_DEEP_DIVE_ASTRA_20261017.md.
 
 Latest 2026-10-23: active work/push branch is `jev_v1.2`, per explicit user override.
+
+Latest 2026-10-23: authorized decision policy pilot1 completed on jev_v1.2. PPO quality/step improvement not established. Read newest CURRENT/HEAD and JEV_DECISION_POLICY_PILOT1_REPORT_20261023.md. No active worker or automatic expansion.

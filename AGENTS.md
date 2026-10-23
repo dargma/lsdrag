@@ -14,3 +14,5 @@ Read `memory/README.md`, `memory/EXPERIMENT_STATUS.json` if present, `memory/CUR
 - Latest user override2026-10-17: improvement v3 merges action-head/read-slot learning with same-checkpoint always-generate/read-selection ablation. Active plan `docs/JEV_TEXT_INTEGRATED_IMPROVEMENT_V3_20261017.md`; existing split remains frozen. Current request saves plan/backups/Git only, automatic launch stays disabled. Decision-only separate experiment is excluded.
 
 - Latest user override 2026-10-23: work and push on `jev_v1.2`; decision policy research plan is `docs/JEV_DECISION_POLICY_RESEARCH_PLAN_20261023.md`. Plan saved only; no automatic training launch.
+
+- Latest execution 2026-10-23: user authorized decision policy pilot1, now completed on `jev_v1.2`; report `docs/JEV_DECISION_POLICY_PILOT1_REPORT_20261023.md`. PPO quality/step gains not established. Preserve raw results, protect newly exposed test20 from tuning, and read latest memory before subsequent work. No automatic expansion.

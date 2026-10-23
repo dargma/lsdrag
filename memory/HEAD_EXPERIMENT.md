@@ -1,3 +1,11 @@
+## 2026-10-23 — decision policy pilot1 학습·평가 완료 / 개선 미입증
+
+source2a5e2a5, PID18957/session14055 종료(exit0); active worker없음. 총627.94초,657episodes,36064생성/2615466input tokens. 111feature exact parity,2episode 원실행기일치,CPU6검사통과. 분기316/48states, PPO3×48=144episodes/476steps, val8×6=48/test20×6=120완료. 구조진단 lastlinear/lastMLP 모방macroF1=.813988 동률, attention32=.691766. 사전규칙lastMLP선택.
+
+fresh20: nativeF1.229524/EM.10/calls2.30; nativefastF1.186667/EM.10/calls2.35; historicalBC/selectedBCF1.276190/EM.15/calls2.30; PPOF1.276190/EM.15/calls2.30; outcomeCEF1.372381/EM.25/calls5.90. PPO는기존BC대비QA·step개선없음. CE차이+.096190,paired95CI[-.112143,+.300000],5승3패;cap강제FINAL13/20,truncatedgeneration1개. CE품질·효율공동개선채택안함. PPOactorweights L2변경.846369,고정train82 argmax변화0/val29변화1:학습은실행됐으나행동변화부족. selectedBC생성58.35tokens/관측.965초 vsPPO59.70/.985초;통제speedup아님. nativefast prefix조건다름과raw policy_probs uniform placeholder(실제native confidence아님)를보고서명시/확률분석제외;실제head확률476개합/합법성검증통과. 성공확률aux는미교정이며현재PPO성공확률로주장안함.
+
+보고 docs/JEV_DECISION_POLICY_PILOT1_REPORT_20261023.md, lab/reports/decision_policy_20261023/pilot1.json; 재생성 scripts/reporting/summarize_decision_policy_pilot.py. 원본/체크포인트/feature/로그Drive archive hash검증완료 registry decision_policy_20261023/archive.json. 새20은이제노출된test이므로후속학습/튜닝금지. 1seed소규모/CE대PPO추가데이터예산불일치한계보존. 다음후보:train-only logitmargin/advantage/KL진단,후기state/종료coverage보강,동일데이터예산CE대RL비교. 이번bounded실험완료,자동확대/추가학습없음.
+
 ## 2026-10-23 — pilot1 표현진단·분기수집 완료 / PPO 실제 수집중
 
 PID18957/session14055/source2a5e2a5. 기존 feature111/111 exact(maxabs0), action111/111일치, 원실행기와2개train문항전체trajectory일치. validation29상태 모방macroF1 lastlinear=.813988,lastMLP=.813988,question=.274242,observation=.747429,last16=.703431,observationmeanMLP=.657950,attention32=.691766. 사전규칙으로lastMLP선택(339729파라미터,aux출력포함). 이는QA품질증거아님. branch 316개실행,오류0. 같은BC suffix의outcome CE/critic초기화완료,현재PPO첫iteration on-policy수집. 다음oldlogprob parity→update3회→동결val/test. 중요 한계: outcomeCE는branch만 사용,PPO는추가144 on-policy episodes를수집하므로 알고리즘단독동일데이터우월성비교가아님. 최종보고에명시하고추가실험을사후끼워넣지않음.
