@@ -675,8 +675,21 @@
   ],
   "decision_acquisition_probe": {
     "authorized": true,
-    "status": "prepared",
+    "status": "complete_gate_failed",
     "new_LLM_inference": false,
-    "primary_round": 0
+    "primary_round": 0,
+    "report": "docs/JEV_DECISION_ACQUISITION_PROBE_REPORT_20261023.md",
+    "result_sha256": "aca8bd78687df5ea927d1b17bc74e58dc6f2a4fec9e50c0c67bd148d23643c61",
+    "gate": {
+      "passed": false,
+      "wins_over_uniform_folds": 4,
+      "conditional_family_bootstrap_delta_ci95": [
+        -0.3207826465851661,
+        2.3947752751168454
+      ],
+      "point_delta": 0.9069711338392249,
+      "uncertainty_limit": "fixed OOF predictions, overlapping training folds; no refit/seed variance"
+    },
+    "independent_collection_seed_replication_completed": false
   }
 }

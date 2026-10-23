@@ -623,3 +623,10 @@ value worker PID41106 종료/status complete. sourcea5ecb91,340episodes/487.01�
 ## 2026-10-23 — 목적·baseline·정책 검증 순서 문서 저장
 
 사용자 문서 저장 요청 및 후속 질문 반영. docs/JEV_DECISION_PURPOSE_AND_BASELINES_20261023.md: 목적은 근거 기반 답변 품질/비용, head는 가설. A-RAG 기능/정책 품질/메모리 전이 증거를 구분. 분기 결과 신뢰성→coverage 보강→표현→구조→학습 목표→독립 동결 평가 순서 제안. 메모리 baseline과 공정 예산/누출 방지/선행연구 명시. 이번 작업은 문서 저장만이며 새 실험 기동 없음. 기존 acquisition probe의 미커밋 결과는 이 문서 커밋에서 제외하고 보존.
+
+## 2026-10-23 — 기존 학습 신호 점검 / acquisition probe 재현·저장 완료
+
+CPU 실행 scripts/run_decision_acquisition_probe.py로 frozen source/input hash 확인 후 결과 재현. round0 67상태/24질문/6family folds. 25% 분기예산에서 hidden+meta cross-repeat gain합3.2243, uniform2.3173, entropy3.4811. uniform 대비 delta+.9070, 조건부95%CI[-.3208,2.3948], 4/6fold승; 사전gate 실패. 동일prefix41개 중 reference 간 bestaction변화9개는 reference효과/MC잡음 혼합. 새 LLM 실행이나 정책 학습 아님. 이전 prepared 기록은 이 완료 기록으로 대체되며 역사로 보존. 독립 수집·학습 seed 재현은 여전히 미완료.
+
+다음 설계 우선순위: 고정 reference 하에서 결과를 보지 않고 고른 train상태의 suffix 반복을 늘려 action-value 차이와 잡음을 분리. 큰 gap 사례만 선택하지 않으며 종료/비종료 대비와 무작위 상태를 포함. 반복 예산·선택 seed·주평가지표를 먼저 고정. 현재 selector로 선택수집 확대나 같은 fold 재튜닝은 하지 않음. 표현/구조/PPO·GRPO 비교는 신호 신뢰성 점검 뒤. 보고 docs/JEV_DECISION_ACQUISITION_PROBE_REPORT_20261023.md 및 목적 문서 참조.
+
