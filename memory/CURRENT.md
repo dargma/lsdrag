@@ -1,3 +1,9 @@
+## 2026-10-23 — tempered PPO 2 collection seeds 완료 / 보상학습 개선 재현
+
+seed2PID62833/session16953 exit0.304episodes,gen18908/input1236238;원본304개/결정1016·headSHA검사통과. 두seed전체608episodes. 동일fresh40에서anchorF1.361838, PPOseed1.478333/seed2.465870,평균.472101. PPO−anchor평균F1+.110264,질문별seed평균bootstrap95%CI[.020528,.212784];utility+.114023 CI[.025147,.215517]. 두seed개별사전gate통과. calls2.30→2.15,gen57.25→61.0625(증가),input3994.575→3860.4. errors/cap0. RWR평균F1.480536, PPO−RWR−.008434 CI[-.055880,.037864]:PPO우월성미입증. 두seed조건부질문CI이며80독립질문/seed모집단불확실성아님.
+
+보고 docs/JEV_DECISION_PPO_TWO_SEEDS_REPORT_20261023.md 및개별seed보고. raw두archiveSHA검증registry기록. 새로운40test는후속학습/튜닝금지. 회귀probe와는초기화/모형/수집자료가달라RL단독원인주장금지. 보상학습된head의closed-loop개선근거이나미래성공확률calibration·상태별전략기여·native A-RAG/최신방법우월·novelty미입증. 다음우선순위는추가학습이전state-independent bias/종료변화로설명가능한지분해하는ablation설계. 사용자지속실험승인은유지;현재worker는모두완료.
+
 
 ## 2026-10-23 — tempered PPO seed1 완료 / seed2 진행
 

@@ -732,9 +732,19 @@
     "report": "docs/JEV_DECISION_PPO_TEMPERED_REPORT_20261023.md"
   },
   "decision_ppo_tempered_seed2": {
-    "phase": "collection",
-    "pid": 62833,
-    "session_id": 16953,
-    "run": "/content/local_fast/lsdrag-text-v1/results/decision_ppo_tempered_seed2_20261023"
+    "phase": "complete",
+    "pid": null,
+    "session_id": null,
+    "run": "/content/local_fast/lsdrag-text-v1/results/decision_ppo_tempered_seed2_20261023",
+    "gate_passed": true,
+    "report": "docs/JEV_DECISION_PPO_TEMPERED_SEED2_REPORT_20261023.md"
+  },
+  "decision_ppo_two_seeds": {
+    "phase": "complete_reward_learning_gain_replicated",
+    "report": "docs/JEV_DECISION_PPO_TWO_SEEDS_REPORT_20261023.md",
+    "independent_test_questions": 40,
+    "collection_training_seeds": 2,
+    "ppo_superiority_over_rwr_established": false,
+    "generation_token_savings": false
   }
 }
