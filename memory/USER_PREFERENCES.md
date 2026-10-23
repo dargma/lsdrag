@@ -65,3 +65,8 @@ Git021ddbb가 오래된 Drive보다 최신. 개선계획v2가 현재 다음 실�
 ## 2026-10-23 — 내부 신호 우선, 불필요한 ablation 축소
 
 사용자 “불필요하게 ablation 하는 듯한데? 내부 head 신호 자체로 판단 못하나?” 반영. 기존hidden/logit/행동분포의CPU진단을먼저하고,그것으로판별되지않는성과·인과가설에만작은실행대조를쓴다. 도구선호·상태별수정·실제이해를구분하며큰비교행렬을자동확대하지않는다.
+
+## 2026-10-23 — 8시간 학습·구조·확률 통합 개선 승인
+
+단일GPU,22:48UTC상한. 새protocol docs/JEV_DECISION_EIGHT_HOUR_PLAN_20261023.md. 사용자목표:고정GRPO대비fresh paired F1+3%p/generated−3%동시. 동일상태행동결과학습+cache공유2x2입력/구조+확률기대효용+비용선호축,validation으로동적축소,최대2후보최종평가. worldmodel/Memory실행보류. 공통LLM생성경로와작은policyhead의통합모듈이며head자체생성아님. GRPO96 actual status complete1392/PID없음,summary F1 .3343263/generated56.25;PPO .3426596/66.2875. 아직원본fullaudit/backup pending. 이번신규worker 미기동. 다음GRPO검증저장→runner구체manifestfreeze→실행.
+

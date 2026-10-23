@@ -714,3 +714,8 @@ run /content/local_fast/lsdrag-text-v1/results/decision_ppo96_20261023;source ce
 ## 2026-10-23 — 속도 우선 사용자지시 / GRPO96 동결
 
 사용자분석반복축소/GRPO바로실행/실제headweight검사명시. 72state근거진단미실행·후순위로전환. docs/JEV_DECISION_GRPO96_20261023.md:train96/group4/3round1152+fresh80×3=240,total1392. 기존PPO96checkpoint와동일새80평가. critic없음/trajectory균등GRPO,groupadvantages3검사통과,source/inputSHA동결. 다음실제기동과CPUweightaudit→결과검증/backup/Git. 메모리관련3개는MemoryR1/Memalpha방법baseline과MemoryAgentBench평가benchmark이며재현미실행.
+
+## 2026-10-23 — 8시간 학습·구조·확률 통합 개선 승인
+
+단일GPU,22:48UTC상한. 새protocol docs/JEV_DECISION_EIGHT_HOUR_PLAN_20261023.md. 사용자목표:고정GRPO대비fresh paired F1+3%p/generated−3%동시. 동일상태행동결과학습+cache공유2x2입력/구조+확률기대효용+비용선호축,validation으로동적축소,최대2후보최종평가. worldmodel/Memory실행보류. 공통LLM생성경로와작은policyhead의통합모듈이며head자체생성아님. GRPO96 actual status complete1392/PID없음,summary F1 .3343263/generated56.25;PPO .3426596/66.2875. 아직원본fullaudit/backup pending. 이번신규worker 미기동. 다음GRPO검증저장→runner구체manifestfreeze→실행.
+

@@ -1,5 +1,5 @@
 {
-  "phase": "decision_policy_pilot1_complete_no_policy_gain",
+  "phase": "eight_hour_improvement_planning",
   "updated_utc": "2026-10-17T16:48:13.887016+00:00",
   "protocol": "docs/JEV_TEXT_INTEGRATED_EXECUTION_20261016.md",
   "protocol_sha256": "0adecb3e30136b974fa1ecfffe74282df019f5ccbe0ece7fdbb6547fa486bc18",
@@ -535,7 +535,7 @@
     "automatic_launch": false
   },
   "active_branch": "jev_v1.2",
-  "active_protocol": "docs/JEV_DECISION_ACQUISITION_PROBE_20261023.md",
+  "active_protocol": "docs/JEV_DECISION_EIGHT_HOUR_PLAN_20261023.md",
   "decision_policy_pilot1": {
     "authorized": true,
     "status": "complete",
@@ -775,5 +775,18 @@
     "recovery": true,
     "report": "docs/JEV_DECISION_PPO96_REPORT_20261023.md",
     "gate_passed": false
+  },
+  "decision_grpo96": {
+    "phase": "complete_pending_audit_archive",
+    "run": "/content/local_fast/lsdrag-text-v1/results/decision_grpo96_20261023",
+    "episodes": 1392,
+    "pid": null
+  },
+  "eight_hour_improvement": {
+    "deadline_utc": "2026-10-23T22:48:00Z",
+    "phase": "plan_saved",
+    "pid": null,
+    "target_f1_delta": 0.03,
+    "target_generated_ratio": 0.97
   }
 }
