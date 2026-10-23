@@ -1,0 +1,23 @@
+{
+  "eligible": [
+    "policy_iteration_cost003",
+    "policy_iteration_cost006",
+    "multi_mlp_outcome"
+  ],
+  "primary_rule": "Maximize min((F1-shared_GRPO_F1)/.05,(1-generated/shared_GRPO_generated)/.30); tie by F1-.03*cost, then reverse lexicographic name.",
+  "secondary_rule": "Best remaining candidate of a distinct architecture kind from primary.",
+  "maximum_learned_candidates": 2,
+  "baselines": [
+    "shared_grpo",
+    "shared_bc",
+    "semantic_once",
+    "native_fast",
+    "multi_mlp_bc"
+  ],
+  "validation_questions": 64,
+  "test_questions": 160,
+  "test_outcomes_for_selection": false,
+  "final_max_seconds": 3600,
+  "selector_sha256": "df83ed61b65d1874faa5fd8a17aab95799cd4c33486d2083d704e0b547117c22",
+  "note": "Predeclared before either validation64 result. Selection is not target success; retain all validation attempts and raw paired test outcomes. No candidate/threshold tuning on final test."
+}

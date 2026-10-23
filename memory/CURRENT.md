@@ -1,3 +1,9 @@
+## 2026-10-23 — 구조 후보 직렬 큐 / 최종 후보 선정 규칙 동결
+
+shared_structure coordinatorPID250404/session59470 실제waiting_main_comparison. main248061완료후사전고정multiMLP CPUfit300초→warmstart/outcome validation64두조건1200초→within-pairreport,최종test자동기동없음. 실패/프로세스소실시재시작안함. 현재GRPO248069계속실행,추가GPU작업없음.
+
+최종선정규칙은val64결과전동결:originaloutcome.03/.06과multiMLPoutcome.03중min(F1delta/.05,token감소율/.30)최대primary,다른구조bestsecondary;tie utility→이름. baseline sharedGRPO/공통BC/semantic_once/native/multiBC포함. 최종160×7조건1120episodes,max3600초계획이며spec는모든val완료후selector가생성. 현재test미열람/미기동. selection_plan lab/registry/decision_shared_final_20261023/selection_plan.json,script select_decision_shared_final.py. 같은corpus/model/source/qids조건일치검사,각조건별원runprovenance기록. 최종목표는sharedGRPO대비이나native/단순규칙보다유용한지도별도보고.
+
 ## 2026-10-23 — shared teacher/초기화 검증·백업 완료 / 새 GRPO 실행
 
 teacher192/667states complete,errors0/cap0,train-onlynorm/nativeaction/cost/sourcehash검증통과. trainF1.282639/107.083gen,BC학습행동정확도.998501은trainfit수치일뿐. 새BCval16 F1.25/generated100.375/errors0,원native.3125/104.3125보다품질개선아님. 초기headSHA0023dd45dee8ffc92825dddd21cd4ffe5b3e2c9b5386ccf1aacbf034c55bf46c. teacher100472288bytes/초기head1275948bytes/val39375bytes Drive SHA검증.

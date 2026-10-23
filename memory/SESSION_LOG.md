@@ -837,3 +837,10 @@ shared corpus audit:101962publicdocs/447039occurrences完全一致、全vectorfi
 
 ユーザー指定input/body軸を新環境でも保持するため、追加LLM収集なしmulti-position(last/questionend/lastobsmean)+MLP128一候補を事前固定。teacher192hardlabelsでwarmstart100epoch、同じall-actionQcacheでlambda.03期待効用100epoch。自身warmstartとのmatched比較、crossarchitectureでは容量/trainability/KLanchorも異なると明示。script fit_decision_shared_structure.py、registry/decision_shared_structure_20261023/plan.json。main6conditionvalidation後にCPUfit(max300s)とwarmstart/学習後val64(max1200s)、最後のtest前に統合選択。現時点未実行。GRPOworker248069進行中、現在実行中のcoordinator/hash対象を変更していない。
 
+
+## 2026-10-23 — 구조 후보 직렬 큐 / 최종 후보 선정 규칙 동결
+
+shared_structure coordinatorPID250404/session59470 실제waiting_main_comparison. main248061완료후사전고정multiMLP CPUfit300초→warmstart/outcome validation64두조건1200초→within-pairreport,최종test자동기동없음. 실패/프로세스소실시재시작안함. 현재GRPO248069계속실행,추가GPU작업없음.
+
+최종선정규칙은val64결과전동결:originaloutcome.03/.06과multiMLPoutcome.03중min(F1delta/.05,token감소율/.30)최대primary,다른구조bestsecondary;tie utility→이름. baseline sharedGRPO/공통BC/semantic_once/native/multiBC포함. 최종160×7조건1120episodes,max3600초계획이며spec는모든val완료후selector가생성. 현재test미열람/미기동. selection_plan lab/registry/decision_shared_final_20261023/selection_plan.json,script select_decision_shared_final.py. 같은corpus/model/source/qids조건일치검사,각조건별원runprovenance기록. 최종목표는sharedGRPO대비이나native/단순규칙보다유용한지도별도보고.
+
