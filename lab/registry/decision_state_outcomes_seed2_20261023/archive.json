@@ -1,0 +1,8 @@
+{
+  "path": "/content/drive/MyDrive/lsdrag-backups/20261023/decision_state_outcomes_seed2_20261023.tar.gz",
+  "sha256": "4a4e3e5f83c4fcb0de27ecddd80b6fab7e6af2401a653d0b1019e7967a4fa578",
+  "bytes": 29125699,
+  "run": "/content/local_fast/lsdrag-text-v1/results/decision_state_outcomes_seed2_20261023",
+  "phase": "complete",
+  "backbone_weights_included": false
+}

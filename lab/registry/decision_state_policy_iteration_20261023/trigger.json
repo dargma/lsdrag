@@ -1,0 +1,7 @@
+{
+  "f1_delta_mean": 0.12747395833333336,
+  "generated_ratio_mean": 0.9184720638540479,
+  "expand": true,
+  "basis": "validation two-seed mean only; final test unobserved",
+  "remaining_seconds": 20650.696278572083
+}

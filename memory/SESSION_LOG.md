@@ -772,3 +772,10 @@ Refinement coordinator 실제기동 PID121401/session69863,sourcee9f1b17,waiting
 
 val3 multiMLP.06 F1.4/gen42.656,직접generation.15 F1.410016/gen49.156,linear.09는.06과동일.384375/41.031. primarylinear.06/secondarymultiMLP.06동결,seed2collectorPID123673진행. 일반GRPOcontrol1216완료/검증3713decisions448updates,Drive534325205bytes검증. valF1.410016/gen46.6875. 새목표미달이면기존96+새96을선택policy로refresh,추가val32포함64에서같은구조2후보만비교하는conditionaliteration준비. 원test160미열람/불변. transition보존은추가추론없는기록이며predictiveaux학습아님.
 
+
+## 2026-10-23 — seed2 품질/비용 상충 확인, 조건부 policy iteration 실제 기동
+
+seed2 collection complete1410episodes/189states/1043.83초,generated60874/input4387681. audit3165decisions/prefix/coverage/split통과,15error/1cap보존,Drive29125699bytes SHA검증. validationseed2 F1 .5309896/generated59.65625 vsbaseline .3302083/54.8125:품질개선이나token증가. seed1.384375/41.03125와차이큼;두seed평균F1+.127474/tokenratio.918472로새공동목표미달. 좋은seed만선택해보고하지않음.
+
+conditionalgate따라source3bbed8c의expanded refresh실제실행:coordinatorPID127863/session12135,workerPID129475, run /content/local_fast/lsdrag-text-v1/results/decision_state_policy_iteration_20261023,log /content/local_fast/lsdrag-text-v1/logs/policy_iteration_run_decision_state_policy_iteration_1792771429.log. 기존96+새96,reference고정primaryseed1(linear.06);val64/test160보호. data량+수집policy동시변경,순수인과분리주장금지. 검증32전체탐색보고 lab/reports/decision_state_validation_search_20261023. 다음refresh완료→고정2후보fit→val64→test전최종선정. predictiveaux조건미충족으로보류.
+
