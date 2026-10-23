@@ -1,5 +1,5 @@
 {
-  "phase": "eight_hour_improvement_planning",
+  "phase": "decision_state_outcomes_collection",
   "updated_utc": "2026-10-17T16:48:13.887016+00:00",
   "protocol": "docs/JEV_TEXT_INTEGRATED_EXECUTION_20261016.md",
   "protocol_sha256": "0adecb3e30136b974fa1ecfffe74282df019f5ccbe0ece7fdbb6547fa486bc18",
@@ -786,9 +786,11 @@
   },
   "eight_hour_improvement": {
     "deadline_utc": "2026-10-23T22:48:00Z",
-    "phase": "plan_saved",
-    "pid": null,
+    "phase": "collection",
+    "pid": 108998,
     "target_f1_delta": 0.03,
-    "target_generated_ratio": 0.85
+    "target_generated_ratio": 0.85,
+    "session_id": 99374,
+    "run": "/content/local_fast/lsdrag-text-v1/results/decision_state_outcomes_20261023"
   }
 }

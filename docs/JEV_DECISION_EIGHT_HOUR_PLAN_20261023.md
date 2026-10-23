@@ -38,3 +38,5 @@ A-RAG → 짧은 Memory-R1 관리과제 → ACA-RL 기반 단일턴 응답방식
 ## 실행 전 추가 고정
 
 기존노출family를제외한dev2hop이20개뿐이어서미사용MuSiQue train+dev에서family-disjoint validation32/test160을동결했다. 공식dev-only성적이아닌미사용원천holdout으로표기. train96은기존그대로. 같은공개prefix에서legal3~4행동×2suffix를수집,최대192state/1632episode/7200초,생성1.2M/input40M. baseline GRPO checkpoint 고정. initial+last actual controllable state,capFINAL제외. 동일prefix SHA/hidden parity 및강제첫행동검증.
+
+실행 고정 상세: 새 구조는train-only GRPO분포distillation400epochs(lr.001)→동일상태expectedutility100epochs(lr1e-4),KL.02/entropy.01. 기존구조는원GRPO부터action/skip만같은100epochs. 새구조warmstart4개도validation에서측정해구조변경초기화효과분리. 후보선택순위 max min(F1delta/.03,generated_reduction/.15),동률utility. 최초5개후보중1개만lambda .01/.06추가(정확도또는생성비용중하나라도개선될때). 최종2후보까지만선정. 일반GRPO추가학습대조는동일train96×4×3=1152,현재GRPO초기화+validation32×2;분기수집과tokenbudget완전일치가아니므로정확한compute효율우위주장금지.

@@ -729,3 +729,8 @@ run /content/local_fast/lsdrag-text-v1/results/decision_ppo96_20261023;source ce
 
 GRPO1392episodes/4608decisions·headSHA검사통과,484updates. Drive archive576213516bytes SHA검증 registry/decision_grpo96_20261023/archive.json. 구조+확률공유학습용train96/val32/test160manifest동결. 기존dev미노출family20개뿐이라미사용train+dev원천holdout으로명시. runner scripts/run_decision_state_outcomes.py,source와inputhash고정,실제기동다음.
 
+
+## 2026-10-23 — 同상태 분기 학습 자료 수집 실행
+
+source86a629a,PID108998/session99374. run /content/local_fast/lsdrag-text-v1/results/decision_state_outcomes_20261023;log同名logs. 20문항39states290episodes확인. 동일prefixSHA/hidden/legal/강제행동검증통과. 다음수집완료→CPU2x2구조+matched기존head학습→validation32→선택된하나만lambda추가→일반GRPO추가학습대조. coordinator scripts/coordinate_decision_state_stages.py 준비,최종test는자동실행안함. strict token matched 대조아님을기록. deadline22:48UTC,보고시간1h보존.
+
