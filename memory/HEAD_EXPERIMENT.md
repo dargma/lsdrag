@@ -1,3 +1,7 @@
+## 2026-10-23 — PPO96×4 trajectory 사용자 승인·동결
+
+사용자바로96만/trajectory증가/바로진행명시승인. 기존24+새72질문,질문당4×3iterations=1152학습+새40×4평가160=1312. docs/JEV_DECISION_PPO96_20261023.md,registrymanifest. 구조/설정고정,seed20261037. 질문수와update수구분,다양성/수집/update공동확대라순수원인분리주장금지. 기존teacher24anchor유지,GRPO추가안함. 사례분석요청은확대요청우선으로pending. 다음기동→완료/검증/보고/backup.
+
 ## 2026-10-23 — PPO 기전 분해 및 내부신호 진단 완료
 
 sourceef9bd61,PID76965/session36498 exit0. 새40×9=360episodes/380.40초,gen22348/input1401018. 원본360개/결정1198·합법성·입력SHA검사통과,rawDrivearchive검증registry기록. 새40 anchorF1.411389,full평균.48375,globalbias.422917,STOP.417639,toolonly.4775. full−biasF1+.060833 CI[0,.134167],utility+.065258 CI[.005261,.137686],calls−.1375. 주gate는F1하한>0미충족으로실패. full−anchor+.072361 CI[-.0075,.154865]로이번질문군차이확정아님. full−toolF1+.00625 CI[0,.01875],calls−.1625 CI[-.275,-.0625]. 도구선택품질/종료효율가설과부합하나projection/소표본한계. 보고 docs/JEV_DECISION_POLICY_ABLATION_REPORT_20261023.md.
