@@ -739,3 +739,7 @@ source86a629a,PID108998/session99374. run /content/local_fast/lsdrag-text-v1/res
 
 사용자 최신override:generated ratio .80,quality delta .03 동시. 기존80설명값F1 .3643263/token45.0. collection은그대로진행(PID108998);선택결과열람전waiting coordinator만정지해rank분모.20으로갱신후재기동. frozen collection manifest의과거target은보존,이override가기준.
 
+
+## 2026-10-23 — 최종목표 coordinator 실행 및 audit 준비
+
+최종목표.03F1/.80generated 적용 coordinatorPID111716/session33283 실제waiting상태확인. collectorPID108998 진행55/96문항108states807episodes. scripts/reporting/audit_decision_state_outcomes.py는분기/coverage/prefix/가족split검증, summarize_decision_state_evaluation.py는raw재집계와paired10kCI/point목표·방향CI·목표CI분리를수행하도록작성. 최종test미실행.

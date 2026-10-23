@@ -791,6 +791,9 @@
     "target_f1_delta": 0.03,
     "target_generated_ratio": 0.8,
     "session_id": 99374,
-    "run": "/content/local_fast/lsdrag-text-v1/results/decision_state_outcomes_20261023"
+    "run": "/content/local_fast/lsdrag-text-v1/results/decision_state_outcomes_20261023",
+    "coordinator_pid": 111716,
+    "coordinator_session_id": 33283,
+    "coordinator_status": "/content/local_fast/lsdrag-text-v1/results/decision_state_coordinator_20261023.json"
   }
 }
