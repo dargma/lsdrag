@@ -1,3 +1,8 @@
+
+## 2026-10-23 — fixed-reference reliability 승인·동결
+
+사용자 계속 지시. docs/JEV_DECISION_RELIABILITY_20261023.md, registry manifest. outcome-blind12질문×1상태, 합법action당새6suffix=252episodes. 고정round0reference,1800초,새seed20261028. cross-half BC대비gain과순위안정성주검증. 독립collector/학습seed재현과구분. 다음실행→원본/보고/backup.
+
 ## 2026-10-23 — 기존 학습 신호 점검 / acquisition probe 재현·저장 완료
 
 CPU 실행 scripts/run_decision_acquisition_probe.py로 frozen source/input hash 확인 후 결과 재현. round0 67상태/24질문/6family folds. 25% 분기예산에서 hidden+meta cross-repeat gain합3.2243, uniform2.3173, entropy3.4811. uniform 대비 delta+.9070, 조건부95%CI[-.3208,2.3948], 4/6fold승; 사전gate 실패. 동일prefix41개 중 reference 간 bestaction변화9개는 reference효과/MC잡음 혼합. 새 LLM 실행이나 정책 학습 아님. 이전 prepared 기록은 이 완료 기록으로 대체되며 역사로 보존. 독립 수집·학습 seed 재현은 여전히 미완료.

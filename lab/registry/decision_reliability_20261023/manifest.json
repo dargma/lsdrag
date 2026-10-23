@@ -1,0 +1,155 @@
+{
+  "seed": 20261028,
+  "repeats": 6,
+  "states": [
+    {
+      "qid": "2hop__25968_727337",
+      "turn": 0,
+      "legal": [
+        true,
+        true,
+        false,
+        true
+      ]
+    },
+    {
+      "qid": "2hop__592717_181429",
+      "turn": 0,
+      "legal": [
+        true,
+        true,
+        false,
+        true
+      ]
+    },
+    {
+      "qid": "2hop__746150_556534",
+      "turn": 3,
+      "legal": [
+        true,
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "qid": "2hop__153074_79404",
+      "turn": 3,
+      "legal": [
+        true,
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "qid": "2hop__38200_430",
+      "turn": 0,
+      "legal": [
+        true,
+        true,
+        false,
+        true
+      ]
+    },
+    {
+      "qid": "2hop__82744_23249",
+      "turn": 0,
+      "legal": [
+        true,
+        true,
+        false,
+        true
+      ]
+    },
+    {
+      "qid": "2hop__408076_99606",
+      "turn": 0,
+      "legal": [
+        true,
+        true,
+        false,
+        true
+      ]
+    },
+    {
+      "qid": "2hop__128642_32463",
+      "turn": 2,
+      "legal": [
+        true,
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "qid": "2hop__676157_44637",
+      "turn": 1,
+      "legal": [
+        true,
+        true,
+        false,
+        true
+      ]
+    },
+    {
+      "qid": "2hop__129572_791121",
+      "turn": 2,
+      "legal": [
+        true,
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "qid": "2hop__22215_22229",
+      "turn": 1,
+      "legal": [
+        true,
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "qid": "2hop__247148_838537",
+      "turn": 3,
+      "legal": [
+        true,
+        true,
+        true,
+        true
+      ]
+    }
+  ],
+  "source_sha256": {
+    "scripts/run_decision_reliability.py": "3232b31949b57348de2c0552bf8754a244d5a05669fc59c8d4e1403cf16c9720",
+    "src/lsdrag/decision_policy.py": "2a75840f9390d22e21127578532c720c8be48e0f7945ba30ccd5e533abb45556",
+    "src/lsdrag/decision_policy_followup.py": "dc37830eb8cecf507717146a3f90236a2229b1770bc0dbc8bdfd7d68c0a45324",
+    "src/lsdrag/text_integrated.py": "a0b7c6d926b1b4fc3ee45aedb39648d57ed76c1cc24ec01d9d343aeec1e2a560",
+    "prompts/text_rag_integrated_v5.txt": "9d66c290a97bbabb4289dcf262e2b5bc8ba05653f87aed3b693825dbb02d5a97"
+  },
+  "input_sha256": {
+    "/content/local_fast/lsdrag-text-v1/results/decision_policy_20261023_pilot2/reference_round0.pt": "8ab57a32d87d1a80ae39927b7e4d94bef44dc4a6ca5d687eaec27b7c206384f9",
+    "/content/local_fast/lsdrag-text-v1/results/decision_policy_20261023_pilot2/round0/counterfactual_data.pt": "dc440e6fbeca632dc9984d0737d2fadc222c7f12ff8d111cae947c92c103e052",
+    "/content/local_fast/lsdrag-text-v1/results/decision_policy_20261023_pilot2/round0/collectors/reference_2hop__25968_727337.json": "09d88f812f7d5ddc1f7e9fb3a0f83ec3326c74cc0b7ae301cbb1f6e2556fecbd",
+    "/content/local_fast/lsdrag-text-v1/results/decision_policy_20261023_pilot2/round0/collectors/reference_2hop__592717_181429.json": "039fda3e25200fba8ae84a9ee27fe5d895fcb1a177ecbfccbd0a4697f537063d",
+    "/content/local_fast/lsdrag-text-v1/results/decision_policy_20261023_pilot2/round0/collectors/reference_2hop__746150_556534.json": "30d925d59b8d973bbd138c6e36b4d45d1e892ad407c8b8b005971c3a7164c4c8",
+    "/content/local_fast/lsdrag-text-v1/results/decision_policy_20261023_pilot2/round0/collectors/reference_2hop__153074_79404.json": "155dcf4b0e8b4e27005fc02b53f4d2edcf5ec551278a1f1d3171e6e77b431753",
+    "/content/local_fast/lsdrag-text-v1/results/decision_policy_20261023_pilot2/round0/collectors/reference_2hop__38200_430.json": "5360cbe069fc5379c73d33f41b93ae7d1756bd2f169c4ae7413b3c82d13fed17",
+    "/content/local_fast/lsdrag-text-v1/results/decision_policy_20261023_pilot2/round0/collectors/reference_2hop__82744_23249.json": "426d4000ffc2bd29149d9cc0e142486574101b23f4bde36480a8d01762b0b6f0",
+    "/content/local_fast/lsdrag-text-v1/results/decision_policy_20261023_pilot2/round0/collectors/reference_2hop__408076_99606.json": "1d2e732fd1a1a43abe69089f932fc073b1a61601e449d3a5ce41a5554c1bcd6e",
+    "/content/local_fast/lsdrag-text-v1/results/decision_policy_20261023_pilot2/round0/collectors/reference_2hop__128642_32463.json": "e274b08f165a5d0e5ba303ec0b068fcecdc204d8203d0d2d91d859ead0667c46",
+    "/content/local_fast/lsdrag-text-v1/results/decision_policy_20261023_pilot2/round0/collectors/reference_2hop__676157_44637.json": "53ac817e9f48e77c76481585c1e4a7267c8144ae296274fb9521c10fa486f9a0",
+    "/content/local_fast/lsdrag-text-v1/results/decision_policy_20261023_pilot2/round0/collectors/reference_2hop__129572_791121.json": "c831ed69da43c32f0bddd9f8d535584dddd0963409f041ce7f148f67ca41a539",
+    "/content/local_fast/lsdrag-text-v1/results/decision_policy_20261023_pilot2/round0/collectors/reference_2hop__22215_22229.json": "b3a1d986ac659bb48709020bbdbbe33ac27fd80d0927395cf051873283b686fb",
+    "/content/local_fast/lsdrag-text-v1/results/decision_policy_20261023_pilot2/round0/collectors/reference_2hop__247148_838537.json": "c9309125dc21fad30a46ebf5f4101e383cb75ce8b2c040974fd32984c300d823"
+  },
+  "model": "/content/local_fast/lsdrag-text-v1/hf/models--Qwen--Qwen3-4B-Instruct-2507/snapshots/cdbee75f17c01a7cc42f958dc650907174af0554",
+  "max_branches": 252,
+  "seconds": 1800,
+  "generated_cap": 300000,
+  "input_cap": 12000000,
+  "scope": "train-only fixed reference reliability; no new policy training or independent collection-policy replication"
+}

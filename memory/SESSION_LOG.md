@@ -630,3 +630,7 @@ CPU 실행 scripts/run_decision_acquisition_probe.py로 frozen source/input hash
 
 다음 설계 우선순위: 고정 reference 하에서 결과를 보지 않고 고른 train상태의 suffix 반복을 늘려 action-value 차이와 잡음을 분리. 큰 gap 사례만 선택하지 않으며 종료/비종료 대비와 무작위 상태를 포함. 반복 예산·선택 seed·주평가지표를 먼저 고정. 현재 selector로 선택수집 확대나 같은 fold 재튜닝은 하지 않음. 표현/구조/PPO·GRPO 비교는 신호 신뢰성 점검 뒤. 보고 docs/JEV_DECISION_ACQUISITION_PROBE_REPORT_20261023.md 및 목적 문서 참조.
 
+
+## 2026-10-23 — fixed-reference reliability 승인·동결
+
+사용자 계속 지시. docs/JEV_DECISION_RELIABILITY_20261023.md, registry manifest. outcome-blind12질문×1상태, 합법action당새6suffix=252episodes. 고정round0reference,1800초,새seed20261028. cross-half BC대비gain과순위안정성주검증. 독립collector/학습seed재현과구분. 다음실행→원본/보고/backup.
