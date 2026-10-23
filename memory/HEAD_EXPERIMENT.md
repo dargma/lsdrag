@@ -1,3 +1,7 @@
+## 2026-10-23 — PPO96 실제 기동
+
+sourceced20cc,PID84213/session15566. run /content/local_fast/lsdrag-text-v1/results/decision_ppo96_20261023;log /content/local_fast/lsdrag-text-v1/logs/decision_ppo96_20261023.log. 관측phase=collection,episodes=44. 기존24+새72/4trajectory/3iterations,최대1312episodes. 아직품질결과없음. 다음firstcollection384완료→logprobparity/update→총3round→fresh40×4→검증보고backupGit.
+
 ## 2026-10-23 — PPO96×4 trajectory 사용자 승인·동결
 
 사용자바로96만/trajectory증가/바로진행명시승인. 기존24+새72질문,질문당4×3iterations=1152학습+새40×4평가160=1312. docs/JEV_DECISION_PPO96_20261023.md,registrymanifest. 구조/설정고정,seed20261037. 질문수와update수구분,다양성/수집/update공동확대라순수원인분리주장금지. 기존teacher24anchor유지,GRPO추가안함. 사례분석요청은확대요청우선으로pending. 다음기동→완료/검증/보고/backup.

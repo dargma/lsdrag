@@ -758,5 +758,15 @@
     "episodes": 360,
     "gate_passed": false,
     "report": "docs/JEV_DECISION_POLICY_ABLATION_REPORT_20261023.md"
+  },
+  "decision_ppo96": {
+    "phase": "collection",
+    "pid": 84213,
+    "session_id": 15566,
+    "source": "ced20cc",
+    "run": "/content/local_fast/lsdrag-text-v1/results/decision_ppo96_20261023",
+    "log": "/content/local_fast/lsdrag-text-v1/logs/decision_ppo96_20261023.log",
+    "planned_training_trajectories": 1152,
+    "planned_total_episodes": 1312
   }
 }
