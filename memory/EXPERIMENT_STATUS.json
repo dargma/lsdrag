@@ -535,7 +535,7 @@
     "automatic_launch": false
   },
   "active_branch": "jev_v1.2",
-  "active_protocol": "docs/JEV_DECISION_POLICY_VALUE_CONTROL_20261023.md",
+  "active_protocol": "docs/JEV_DECISION_ACQUISITION_PROBE_20261023.md",
   "decision_policy_pilot1": {
     "authorized": true,
     "status": "complete",
@@ -672,5 +672,11 @@
   "pending_research": [
     "independent collection/training seed replication",
     "prospective critical-state acquisition vs equal-budget uniform"
-  ]
+  ],
+  "decision_acquisition_probe": {
+    "authorized": true,
+    "status": "prepared",
+    "new_LLM_inference": false,
+    "primary_round": 0
+  }
 }

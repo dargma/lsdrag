@@ -1,0 +1,273 @@
+{
+  "profile": "decision_acquisition_probe_20261023",
+  "seed": 20261027,
+  "families": {
+    "2hop__709686_26789": [
+      709686,
+      26789
+    ],
+    "2hop__25968_727337": [
+      25968,
+      727337
+    ],
+    "2hop__607351_58450": [
+      607351,
+      58450
+    ],
+    "2hop__763486_83697": [
+      763486,
+      83697
+    ],
+    "2hop__70082_2578": [
+      70082,
+      2578
+    ],
+    "2hop__145016_766780": [
+      145016,
+      766780
+    ],
+    "2hop__22215_22229": [
+      22215,
+      22229
+    ],
+    "2hop__128642_32463": [
+      128642,
+      32463
+    ],
+    "2hop__746150_556534": [
+      746150,
+      556534
+    ],
+    "2hop__561810_673383": [
+      561810,
+      673383
+    ],
+    "2hop__592717_181429": [
+      592717,
+      181429
+    ],
+    "2hop__487591_7672": [
+      487591,
+      7672
+    ],
+    "2hop__247148_838537": [
+      247148,
+      838537
+    ],
+    "2hop__676157_44637": [
+      676157,
+      44637
+    ],
+    "2hop__426842_4037": [
+      426842,
+      4037
+    ],
+    "2hop__568006_159937": [
+      568006,
+      159937
+    ],
+    "2hop__408076_99606": [
+      408076,
+      99606
+    ],
+    "2hop__129572_791121": [
+      129572,
+      791121
+    ],
+    "2hop__357497_74309": [
+      357497,
+      74309
+    ],
+    "2hop__438489_14948": [
+      438489,
+      14948
+    ],
+    "2hop__103724_90561": [
+      103724,
+      90561
+    ],
+    "2hop__38200_430": [
+      38200,
+      430
+    ],
+    "2hop__153074_79404": [
+      153074,
+      79404
+    ],
+    "2hop__82744_23249": [
+      82744,
+      23249
+    ]
+  },
+  "groups": [
+    [
+      "2hop__103724_90561"
+    ],
+    [
+      "2hop__128642_32463"
+    ],
+    [
+      "2hop__129572_791121"
+    ],
+    [
+      "2hop__145016_766780"
+    ],
+    [
+      "2hop__153074_79404"
+    ],
+    [
+      "2hop__22215_22229"
+    ],
+    [
+      "2hop__247148_838537"
+    ],
+    [
+      "2hop__25968_727337"
+    ],
+    [
+      "2hop__357497_74309"
+    ],
+    [
+      "2hop__38200_430"
+    ],
+    [
+      "2hop__408076_99606"
+    ],
+    [
+      "2hop__426842_4037"
+    ],
+    [
+      "2hop__438489_14948"
+    ],
+    [
+      "2hop__487591_7672"
+    ],
+    [
+      "2hop__561810_673383"
+    ],
+    [
+      "2hop__568006_159937"
+    ],
+    [
+      "2hop__592717_181429"
+    ],
+    [
+      "2hop__607351_58450"
+    ],
+    [
+      "2hop__676157_44637"
+    ],
+    [
+      "2hop__70082_2578"
+    ],
+    [
+      "2hop__709686_26789"
+    ],
+    [
+      "2hop__746150_556534"
+    ],
+    [
+      "2hop__763486_83697"
+    ],
+    [
+      "2hop__82744_23249"
+    ]
+  ],
+  "folds": [
+    [
+      "2hop__153074_79404",
+      "2hop__247148_838537",
+      "2hop__25968_727337",
+      "2hop__487591_7672"
+    ],
+    [
+      "2hop__357497_74309",
+      "2hop__408076_99606",
+      "2hop__438489_14948",
+      "2hop__561810_673383"
+    ],
+    [
+      "2hop__129572_791121",
+      "2hop__38200_430",
+      "2hop__568006_159937",
+      "2hop__746150_556534"
+    ],
+    [
+      "2hop__676157_44637",
+      "2hop__709686_26789",
+      "2hop__763486_83697",
+      "2hop__82744_23249"
+    ],
+    [
+      "2hop__103724_90561",
+      "2hop__128642_32463",
+      "2hop__607351_58450",
+      "2hop__70082_2578"
+    ],
+    [
+      "2hop__145016_766780",
+      "2hop__22215_22229",
+      "2hop__426842_4037",
+      "2hop__592717_181429"
+    ]
+  ],
+  "train_questions": [
+    "2hop__426842_4037",
+    "2hop__247148_838537",
+    "2hop__82744_23249",
+    "2hop__607351_58450",
+    "2hop__487591_7672",
+    "2hop__746150_556534",
+    "2hop__763486_83697",
+    "2hop__357497_74309",
+    "2hop__592717_181429",
+    "2hop__22215_22229",
+    "2hop__38200_430",
+    "2hop__70082_2578",
+    "2hop__408076_99606",
+    "2hop__103724_90561",
+    "2hop__676157_44637",
+    "2hop__709686_26789",
+    "2hop__129572_791121",
+    "2hop__128642_32463",
+    "2hop__145016_766780",
+    "2hop__153074_79404",
+    "2hop__25968_727337",
+    "2hop__438489_14948",
+    "2hop__561810_673383",
+    "2hop__568006_159937"
+  ],
+  "primary_round": 0,
+  "primary_learner": "hidden_metadata_ridge",
+  "ridge_penalty": 1.0,
+  "target": "mean action Q gap over BC; Q=F1-.03cost",
+  "primary_score": "signed cross-repeat selection/evaluation BC gain at25% branch budget",
+  "budget_fractions": [
+    0.25,
+    0.5
+  ],
+  "cost": "2 * number of legal actions; exact same attainable branch count per fold",
+  "token_equal_budget": false,
+  "methods": [
+    "uniform_exact_expectation",
+    "BC_entropy",
+    "early_turn",
+    "metadata_ridge",
+    "hidden_metadata_ridge",
+    "posthoc_mean_target"
+  ],
+  "gate": "at25%, hidden_metadata exceeds uniform and entropy total signed gain; >=4/6 folds beat uniform; family bootstrap lower95% bound vs uniform >0",
+  "gate_only_authorizes": "design a prospective bounded collection comparison, not a success claim",
+  "round1": "diagnostic only; reference was trained using all train questions outcomes",
+  "new_LLM_inference": false,
+  "old_policy_evaluation_data_used": false,
+  "input_sha256": {
+    "/content/local_fast/lsdrag-text-v1/results/decision_policy_20261023_pilot2/round0/counterfactual_data.pt": "dc440e6fbeca632dc9984d0737d2fadc222c7f12ff8d111cae947c92c103e052",
+    "/content/local_fast/lsdrag-text-v1/results/decision_policy_20261023_pilot2/round1/counterfactual_data.pt": "92a84446cebcdcfd3cddb681337a95b24c2687176bdc777920af9f1ab30ac47f",
+    "/content/local_fast/lsdrag-text-v1/results/improvement_v3_merged_20261017/head.pt": "534da7b64150878869850cf7ccb735ec0fa8fbd643ddd0a74db19afeea4ebaef"
+  },
+  "source_sha256": {
+    "scripts/run_decision_acquisition_probe.py": "00c12e43e96de97b7337bb04d1304402690150ca98d8529bce4875bd2d0e073a",
+    "src/lsdrag/decision_acquisition.py": "cbeebdad61fb4771f3e580f2019d4c238ec20b33bfb855460f37c1e528263e6e"
+  }
+}

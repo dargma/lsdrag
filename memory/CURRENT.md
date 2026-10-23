@@ -1,3 +1,7 @@
+## 2026-10-23 — 중요상태 예측 probe 승인·설계 고정
+
+사용자오케이/좁게보지말라지시반영. Primary round0만,round1은전체train outcome으로reference학습되어CV오염가능하므로diagnostic분리. Family 24그룹/6fold,hidden+meta ridgeρ1 vsmeta/entropy/early/uniformexactbudget. Branch수25%primary/50%secondary,두repeatcross평가gain. Gate와codehash동결,CPU3검사통과. Protocol docs/JEV_DECISION_ACQUISITION_PROBE_20261023.md. 아직probe결과미실행,새GPU없음. 다음실행→gate·reference변동·표현필요성판단→보고Git/backup. 이전독립수집seed검증pending보존.
+
 ## 2026-10-23 — 선형value 평가 완료 + train-only 중요결정 분석
 
 value worker PID41106 종료/status complete. sourcea5ecb91,340episodes/487.01초,gen28673/input1913242. 원본340평균재집계/head1076확률·합법성/checkpointSHA검사통과. Drive archive검증 registry/decision_policy_value_20261023/archive.json. 새60:linearvalue F1.442590/calls5.2/gen157.2/cap27/error5;fullMLPcost .405871/2.1/gen59.017/cap0/error0;BC .326353/2.4;STOPonly .268019/2.1;native .367961/2.3333. value−BC F1+.116238 CI[+.036678,+.198904]이나비용증가로효율정책채택안함. value−full+.036719 CI[-.043945,+.118897]. STOP-only이득의질문군불안정,seed재현아님명시. 보고 docs/JEV_DECISION_POLICY_VALUE_REPORT_20261023.md. 새60후속튜닝금지.
