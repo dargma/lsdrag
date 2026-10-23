@@ -825,3 +825,8 @@ teacher192/667states complete,errors0/cap0,train-onlynorm/nativeaction/cost/sour
 
 공통eval summary의전이head설명문구가새BC조건에도남은것확인:raw보존/파생보고서정정,이후evaluator는specprovenance일반문구로수정. 과거evalsourcehash는당시Git버전으로검증해야함. 수치변경없음. calibration16 pairedbootstrap추가,정확도우위확증없음.
 
+
+## 2026-10-23 — GRPO検証準備 / 進行中の学習信号確認
+
+GRPOworker248069/coordinator248061継続。18completedgroups中12でrewardspread>0、75rawepisodes時点error0。training比較信号の存在のみ、品質改善証拠ではない。scripts/reporting/audit_decision_shared_grpo.py追加:全1536cell/費用/合法確率/介入なし/raw行動label/reward/group/CPUbehaviorlogp再生/非actorパラメータ不変/optimizerstep/checkpointSHA検査。worker内GPUreplay2e-4と別にCPU再生1e-3許容、実行はGRPO完了後。compile通過。現在は初回collectionでcheckpoint更新前、audit未実行。
+
