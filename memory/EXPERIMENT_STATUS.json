@@ -796,7 +796,12 @@
     "coordinator_session_id": 33283,
     "coordinator_status": "/content/local_fast/lsdrag-text-v1/results/decision_state_coordinator_20261023.json",
     "collection_complete": true,
-    "collection_audit": "lab/reports/decision_state_outcomes_20261023/audit.json"
+    "collection_audit": "lab/reports/decision_state_outcomes_20261023/audit.json",
+    "refinement_coordinator_pid": 121401,
+    "refinement_coordinator_session_id": 69863,
+    "refinement_coordinator_status": "/content/local_fast/lsdrag-text-v1/results/decision_refinement_coordinator_20261023.json",
+    "active_worker_pid": 117392,
+    "active_worker_run": "/content/local_fast/lsdrag-text-v1/results/decision_grpo_continuation_20261023"
   },
   "conditional_predictive_auxiliary": {
     "authorized": true,

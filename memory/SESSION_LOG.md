@@ -765,3 +765,5 @@ validation32만열람후사용자명시상향. 새160test미열람. 이전.03/.8
 
 validation1/2에서linearλ.06 F1 .384375/generated41.03125 vsbaseline .330208/54.8125,이전목표point달성이나새.05/.70목표token미달. multiMLPquality여유에근거해3추가CPU후보동결/학습완료. scripts/coordinate_decision_refinement.py는일반GRPOcontrol완료후val3→새목표primary/다른구조secondary선택→독립seed2자료수집/선택head만학습/validation을순차수행. test자동실행없음. source/선택기준/seed는평가전에기록. 별도predictiveaux는조건부후속문서만저장,현재실행안함.
 
+
+Refinement coordinator 실제기동 PID121401/session69863,sourcee9f1b17,waiting_previous_coordinator확인. 기존coordinatorPID111716의GRPOcontrolworkerPID117392는868/1152train수집,iteration2진행. source/result/progress모두localfast.
