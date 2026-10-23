@@ -1,3 +1,7 @@
+## 2026-10-23 — PPO96 자동 완료 검증·저장
+
+run /content/local_fast/lsdrag-text-v1/results/decision_ppo96_20261023;source ced20cc,train96×4×3=1152+fresh40×4=160,total1312. worker complete. Raw/headhash/probability audit통과. PPO F1=0.390738,anchor=0.330650,RWR=0.390738. PPO−anchor={'f1': {'delta': 0.060087298413967746, 'ci95': [-0.034912701586032255, 0.15850793016126882]}, 'utility': {'delta': 0.05797199841396774, 'ci95': [-0.036511420415333874, 0.15627151124258631]}}. 사전gate=False. 실제optimizersteps각learner=496. 보고 docs/JEV_DECISION_PPO96_REPORT_20261023.md. rawDrivearchiveSHA검증 registry/decision_ppo96_20261023/archive.json. 독립seed1,새40노출보호. 이전24와질문/수집/update/평가셋이달라순수규모효과주장금지. 후속새학습자동기동없음.
+
 ## 2026-10-23 — PPO96 학습 완료·평가 오류 확인 및 복구 실행
 
 원workerPID84213종료,episodes1222=학습1152+평가70,1283.69초. ValueError Grammar token mismatch가인자생성경로에서전파되어중단. finalizerPID86087도failed로종료,자동report없었음. checkpoint3round완료및frozenhash검증. trainstate1284/1308/1337,optimizer각learner496회. 신규RecoveryPolicyReader는동일decoder mismatch를episodeerror로반환. 남은90평가만재개,기존1222bytehash보존. 최초실패cellF1=0유지(replay성공시도덮지않음),원실패시도추가cost미저장한계기록. runner scripts/resume_decision_ppo96_eval.py,session75204,log /content/local_fast/lsdrag-text-v1/logs/decision_ppo96_recovery_20261023.log. 다음완료→재집계/검증→backup/memory/Git.

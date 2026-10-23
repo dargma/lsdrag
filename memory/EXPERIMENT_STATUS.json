@@ -760,9 +760,9 @@
     "report": "docs/JEV_DECISION_POLICY_ABLATION_REPORT_20261023.md"
   },
   "decision_ppo96": {
-    "phase": "recovery_evaluation",
-    "pid": 91091,
-    "session_id": 75204,
+    "phase": "complete",
+    "pid": null,
+    "session_id": null,
     "source": "ced20cc",
     "run": "/content/local_fast/lsdrag-text-v1/results/decision_ppo96_20261023",
     "log": "/content/local_fast/lsdrag-text-v1/logs/decision_ppo96_20261023.log",
@@ -772,6 +772,8 @@
     "finalizer_log": "/content/local_fast/lsdrag-text-v1/logs/decision_ppo96_finalizer_20261023.log",
     "finalizer_status": "/content/local_fast/lsdrag-text-v1/results/decision_ppo96_20261023/finalizer_status.json",
     "finalizer_phase": "failed_original_worker",
-    "recovery": true
+    "recovery": true,
+    "report": "docs/JEV_DECISION_PPO96_REPORT_20261023.md",
+    "gate_passed": false
   }
 }
