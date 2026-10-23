@@ -1,3 +1,7 @@
+## 2026-10-23 — 속도 우선 사용자지시 / GRPO96 동결
+
+사용자분석반복축소/GRPO바로실행/실제headweight검사명시. 72state근거진단미실행·후순위로전환. docs/JEV_DECISION_GRPO96_20261023.md:train96/group4/3round1152+fresh80×3=240,total1392. 기존PPO96checkpoint와동일새80평가. critic없음/trajectory균등GRPO,groupadvantages3검사통과,source/inputSHA동결. 다음실제기동과CPUweightaudit→결과검증/backup/Git. 메모리관련3개는MemoryR1/Memalpha방법baseline과MemoryAgentBench평가benchmark이며재현미실행.
+
 ## 2026-10-23 — PPO96 자동 완료 검증·저장
 
 run /content/local_fast/lsdrag-text-v1/results/decision_ppo96_20261023;source ced20cc,train96×4×3=1152+fresh40×4=160,total1312. worker complete. Raw/headhash/probability audit통과. PPO F1=0.390738,anchor=0.330650,RWR=0.390738. PPO−anchor={'f1': {'delta': 0.060087298413967746, 'ci95': [-0.034912701586032255, 0.15850793016126882]}, 'utility': {'delta': 0.05797199841396774, 'ci95': [-0.036511420415333874, 0.15627151124258631]}}. 사전gate=False. 실제optimizersteps각learner=496. 보고 docs/JEV_DECISION_PPO96_REPORT_20261023.md. rawDrivearchiveSHA검증 registry/decision_ppo96_20261023/archive.json. 독립seed1,새40노출보호. 이전24와질문/수집/update/평가셋이달라순수규모효과주장금지. 후속새학습자동기동없음.
