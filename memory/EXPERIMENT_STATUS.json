@@ -535,7 +535,7 @@
     "automatic_launch": false
   },
   "active_branch": "jev_v1.2",
-  "active_protocol": "docs/JEV_DECISION_POLICY_STOP_CONTROL_20261023.md",
+  "active_protocol": "docs/JEV_DECISION_POLICY_VALUE_CONTROL_20261023.md",
   "decision_policy_pilot1": {
     "authorized": true,
     "status": "complete",
@@ -600,9 +600,9 @@
   ],
   "decision_policy_stop": {
     "authorized": true,
-    "status": "evaluating",
+    "status": "complete",
     "run": "/content/local_fast/lsdrag-text-v1/results/decision_policy_stop_20261023",
-    "evaluation_complete": false,
+    "evaluation_complete": true,
     "launch": {
       "pid": 38695,
       "source": "437ab3b",
@@ -610,14 +610,29 @@
       "run": "/content/local_fast/lsdrag-text-v1/results/decision_policy_stop_20261023"
     },
     "status_snapshot": {
-      "phase": "validation_evaluation",
+      "phase": "complete",
       "pid": 38695,
-      "elapsed_seconds": 38.43713494399981,
-      "episodes": 24,
-      "generated": 1574,
-      "inputs": 97063,
-      "qid": "2hop__71102_23202"
+      "elapsed_seconds": 300.09026713000003,
+      "episodes": 272,
+      "generated": 18063,
+      "inputs": 1057650,
+      "training_complete": true,
+      "evaluation_complete": true
     },
-    "training_complete": true
+    "training_complete": true,
+    "archive": {
+      "archive": "/content/drive/MyDrive/lsdrag-backups/20261023/decision_policy_stop_results.tar.gz",
+      "sha256": "f40c7fba5befbad1bd4e64dea12cbdaf188d095258da54482ab62de6ee8e2489",
+      "bytes": 3053999,
+      "source": "437ab3b",
+      "episodes": 272,
+      "backbone_weights_included": false
+    },
+    "report": "docs/JEV_DECISION_POLICY_STOP_REPORT_20261023.md"
+  },
+  "decision_policy_value": {
+    "authorized": true,
+    "status": "prepared",
+    "run": "/content/local_fast/lsdrag-text-v1/results/decision_policy_value_20261023"
   }
 }

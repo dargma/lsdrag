@@ -599,3 +599,9 @@ fresh40: BC F1.291439/EM.225/calls2.425/gen59.55; 사전주조건 MLP cost-polic
 ## 2026-10-23 — STOP-only 실제 기동·학습 완료 / 평가 진행
 
 source437ab3b,PID38695. run /content/local_fast/lsdrag-text-v1/results/decision_policy_stop_20261023; log /content/local_fast/lsdrag-text-v1/logs/decision_policy_stop_20261023.log. 초기139상태BC argmax parity,학습후고정도구불변통과;2round gate학습완료(trainable333188). 관측phase=validation_evaluation,episodes=24. 새60평가결과는아직미집계. PPO등수식문서Git반영완료. 다음동결평가완료확인→raw검증/결과보고/backup,후속linearvalue는별도protocol.
+
+## 2026-10-23 — STOP-only 평가 완료 / 순차2 선형value 준비
+
+STOP run complete,PID38695종료,source437ab3b,272episodes/300.09초,gen18063/input1057650. Raw272/head648결정검사통과,Drive원본backup검증 provenance registry/decision_policy_stop_20261023/archive.json. 새60:BC F1.378485/calls2.3167;fullMLPcost .432024/2.0;STOPonly .416219/2.25(cap2);native .467543/2.2833. full−STOP F1+.015804 CI[-.066166,+.097262],calls−.25. full−BC+.053539 CI[-.043776,+.155734]. 모두단일seed,차이확정아님;native품질우위주장금지. 보고 docs/JEV_DECISION_POLICY_STOP_REPORT_20261023.md.
+
+사용자순차승인2단계:선형action-value 회귀. Protocol docs/JEV_DECISION_POLICY_VALUE_CONTROL_20261023.md;manifest registry/decision_policy_value_20261023/manifest.json. STOP결과열람전조건/독립fresh60동결. 동일139train상태pooled ridgeρ1.0,품질−.03비용,BCnormalizer,선택argmax. 5조건×(val8+test60)=340eval,CPU16검사통과. Seed만바꾸는deterministic solve반복은독립seed검증아님. 실행기동전이며다음기동→평가→보고/backup. 과거STOP60도후속튜닝금지.
