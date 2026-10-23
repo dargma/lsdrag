@@ -1,3 +1,7 @@
+## 2026-10-23 — pilot2 worker launched
+
+PID 28242, source fd756eb; observed phase loading. Run /content/local_fast/lsdrag-text-v1/results/decision_policy_20261023_pilot2; log /content/local_fast/lsdrag-text-v1/logs/decision_policy_20261023_pilot2.log. No completed quality result yet. Next: inspect status, complete bounded evaluation, report and archive; separately verify candidate thinking OFF.
+
 ## 2026-10-23 — pilot2 authorized / ready to launch
 
 User “그래 시작해” authorizes bounded followup. Protocol docs/JEV_DECISION_POLICY_PILOT2_20261023.md; frozen manifest lab/registry/decision_policy_pilot2_20261023/manifest.json. Train-only saturation audit complete, temperature8; equal-data late-state return-based improvement vs CE, linear/MLP controls. CPU11 tests passed. Actual worker not yet launched at this checkpoint. Main Qwen3-4B-Instruct-2507 remains non-thinking; separate community empero-ai/Qwen3.8-4B-Distill download completed with file hashes, actual thinking-OFF generation still pending. No policy quality gain claimed. Next: launch bounded pilot2, verify process/artifacts, separate candidate OFF smoke.
