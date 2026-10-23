@@ -638,3 +638,7 @@ CPU 실행 scripts/run_decision_acquisition_probe.py로 frozen source/input hash
 ## 2026-10-23 — fixed-reference reliability 완료
 
 source e72bfd2, PID54225/session86169 exit0. run /content/local_fast/lsdrag-text-v1/results/decision_reliability_20261023, log /content/local_fast/lsdrag-text-v1/logs/decision_reliability_20261023.log. 12상태×합법행동당6회=252episodes,생성9664/input749223. 원본252개 first intervention/확률합 검사,오류0. 42 state-action중24개는후속행동trajectory변동 존재. cross-half utility gain평균+.184244,질문bootstrap95%CI[.043002,.347542],half최고행동12/12일치,기존2회와새6회11/12일치,BC대비6개양수/6개동률. 고정reference/선택된기존train상태에서안정적인행동가치차이의제한적증거. hidden예측력/새질문일반화/독립collector및학습seed재현증거아님. 보고 docs/JEV_DECISION_RELIABILITY_REPORT_20261023.md;rawDrivearchive registry에SHA기록. 다음:동일target/data에서표현별가치예측을질문분리검증하는protocol설계;구조/RL동시변경안함. 새실험자동확대없음.
+
+## 2026-10-23 — 행동 가치 표현 probe 동결
+
+사용자실험계속승인. docs/JEV_DECISION_VALUE_PROBE_20261023.md. 67state/24질문family6fold,action별signedridgeρ1,BC/상수/metadata/last및5개표현비교. 추가6회12state는평가전용. CPU fitting만,새GPU없음. last주조건gate선고정,aux사후선택금지. 다음실행→검증→보고/backup/Git.
