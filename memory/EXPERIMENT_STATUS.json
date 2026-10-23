@@ -1,5 +1,5 @@
 {
-  "phase": "decision_state_outcomes_collection",
+  "phase": "decision_state_heads_validation",
   "updated_utc": "2026-10-17T16:48:13.887016+00:00",
   "protocol": "docs/JEV_TEXT_INTEGRATED_EXECUTION_20261016.md",
   "protocol_sha256": "0adecb3e30136b974fa1ecfffe74282df019f5ccbe0ece7fdbb6547fa486bc18",
@@ -786,14 +786,16 @@
   },
   "eight_hour_improvement": {
     "deadline_utc": "2026-10-23T22:48:00Z",
-    "phase": "collection",
-    "pid": 108998,
+    "phase": "validation",
+    "pid": 114481,
     "target_f1_delta": 0.03,
     "target_generated_ratio": 0.8,
     "session_id": 99374,
     "run": "/content/local_fast/lsdrag-text-v1/results/decision_state_outcomes_20261023",
     "coordinator_pid": 111716,
     "coordinator_session_id": 33283,
-    "coordinator_status": "/content/local_fast/lsdrag-text-v1/results/decision_state_coordinator_20261023.json"
+    "coordinator_status": "/content/local_fast/lsdrag-text-v1/results/decision_state_coordinator_20261023.json",
+    "collection_complete": true,
+    "collection_audit": "lab/reports/decision_state_outcomes_20261023/audit.json"
   }
 }

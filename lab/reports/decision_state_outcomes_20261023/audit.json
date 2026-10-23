@@ -1,0 +1,35 @@
+{
+  "audit_passed": true,
+  "episodes": 1428,
+  "decisions": 3101,
+  "states": 191,
+  "questions": 96,
+  "prefixes_unique": 191,
+  "state_sha256": "830f0690154f6bf6f7449504126746729001bb1c8b606a83e967563155ef09a1",
+  "errors": 10,
+  "forced_final": 0,
+  "mean_quality_spread": 0.3482716629579884,
+  "mean_utility_spread": 0.3725452689019367,
+  "states_quality_spread_positive": 88,
+  "states_utility_spread_positive": 191,
+  "counts": {
+    "generated": 57425,
+    "inputs": 4342053
+  },
+  "split_source_counts": {
+    "train": {
+      "train": 96,
+      "dev": 0
+    },
+    "validation": {
+      "train": 32,
+      "dev": 0
+    },
+    "test": {
+      "train": 160,
+      "dev": 0
+    }
+  },
+  "split_family_disjoint": true,
+  "interpretation": "training-state counterfactual target diversity, not heldout policy quality or causal effect under arbitrary suffix policies"
+}

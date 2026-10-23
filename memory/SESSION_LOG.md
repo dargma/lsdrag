@@ -743,3 +743,10 @@ source86a629a,PID108998/session99374. run /content/local_fast/lsdrag-text-v1/res
 ## 2026-10-23 — 최종목표 coordinator 실행 및 audit 준비
 
 최종목표.03F1/.80generated 적용 coordinatorPID111716/session33283 실제waiting상태확인. collectorPID108998 진행55/96문항108states807episodes. scripts/reporting/audit_decision_state_outcomes.py는분기/coverage/prefix/가족split검증, summarize_decision_state_evaluation.py는raw재집계와paired10kCI/point목표·방향CI·목표CI분리를수행하도록작성. 최종test미실행.
+
+## 2026-10-23 — 分기 수집·검증·백업 완료 / 구조 후보 validation 실행
+
+collectorPID108998 exit0,990.57초,96문항191state/1428episodes,generated57425/input4342053. 3101decisions/prefix SHA/all-action coverage/분할family검증통과. 88states관측F1spread>0,10error episodes그대로F1실패보존. 이수치는train자료특성이지heldout성공증거아님. rawarchive29408347bytes SHA검증 registry/decision_state_outcomes_20261023/archive.json. 새로운val32/test160은선택결과모두공식train원천이므로공식dev결과아님. sourcefamily는train96과완전분리. audit의numpy int JSON직렬화오류를수정후재실행(LLM재실행없음).
+
+CPU shared-data10heads(기존baseline,동일구조개선,4구조각warmstart/개선)완료. validationPID114481,run decision_state_validation1_20261023;coordinatorPID111716/session33283 자동후속. 새test미실행. 다음validation선택→해당하나의costsweep→일반GRPO추가학습대조→동적refinement여부판정후test동결.
+
