@@ -44,3 +44,7 @@ A-RAG → 짧은 Memory-R1 관리과제 → ACA-RL 기반 단일턴 응답방식
 ## 최신 목표 상향 및 validation 기반 재선택
 
 사용자가validation1/2결과후F1+5%p/generated−30%로상향. test160미열람. 기존validation순위와선정기록은보존하고새선택순위min(deltaF1/.05,token_reduction/.30)적용. linearλ.06은val F1+.05417/token−.25143로새token목표미달. multi-MLP는val F1여유+.10104/token−.13056이므로해당구조의λ.06과generation직접cost후보를추가로비교할근거가있다. 전조합확대금지,추가최대3후보. validation후주후보고정→독립수집/학습seed2재현→finaltest,순서유지. 목표상향은확인된최종성공이아니며validation32의선택편향을명시.
+
+## 추가 refinement 실행 동결
+
+최대3추가후보를CPU cache로학습완료:multi_mlp_cost006(원proxy .06),multi_mlp_generation015(F1−.15*generated/100),last_linear_cost009(proxy .09). 각각원warmstart부터100epochs,원자료공유. validation3후새목표min(deltaF1/.05,gen_reduction/.30)최대primary와다른입력/구조중최대secondary를고른다. 과거목표의rank2선택은역사보존,새최종선택은test전동결. 독립collection seed20261047/fitseed20261048은동일train96/고정GRPOreference로선택주모델만재현;전체구조행렬재실행금지. primaryseed2결과에따라좋은seed만골라보고하지않는다. 새160test와predictiveaux trigger는아직미실행.
