@@ -1,3 +1,7 @@
+## 2026-10-23 — decision policy pilot1 실제 기동
+
+source2a5e2a5, PID18957, exec session14055. run /content/local_fast/lsdrag-text-v1/results/decision_policy_20261023_pilot1, log /content/local_fast/lsdrag-text-v1/logs/decision_policy_20261023_pilot1.log. 실제 worker 기동 확인, 마지막 관측 phase=branch_collection. 실행범위 protocol 준수, 다른 GPU process 종료 없음. 다음 status/로그 확인→원head parity→표현 비교→분기수집→PPO→동결평가; 완료 전 품질/속도 성공 주장 금지.
+
 ## 2026-10-23 — 사용자 실험 시작 승인 / decision policy pilot1 준비 완료
 
 사용자 “실험시작”, “어케이”로 bounded pilot 실행 승인. protocol docs/JEV_DECISION_POLICY_PILOT1_20261023.md 및 lab/registry/decision_policy_20261023/manifest.json 동결. 이전 HOLD는 본 pilot에 해제. 기존 train24/val8, fresh family-disjoint dev20을 outcomes 전에 고정; exposed100 튜닝금지 유지. 표현7조건→train 반사실≤384→head-only PPO144→6조건 val8/test20. worker60분/생성600k/input12m/seed1 상한. 새 src/lsdrag/decision_policy.py와 scripts/run_decision_policy_pilot.py, 의미있는CPU검사6통과; reader 모델로드/embedding768차원/GPU37×2560표현 추출/native-fast실제인자생성 smoke통과. 이 smoke는 정책품질검증 아님. main/embedding 환경호환 실패 해결 기록은protocol. 실행 output /content/local_fast/lsdrag-text-v1/results/decision_policy_20261023_pilot1, log /content/local_fast/lsdrag-text-v1/logs/decision_policy_20261023_pilot1.log. 다음 기동→원head parity→표현학습→trajectory학습/평가. 별도decision backbone 없음, backbone frozen.
