@@ -1907,3 +1907,13 @@ Candidateefac5d79 unchanged; devspec frozen d6c68ee beforelaunch. Evaluator71203
 
 Useraskedstatusandideas: answered and preserved progress-state input hypothesis, two-action coordination, selectiveH3fallback. No newideaexperiment launched whilethisruns. Prefer one progress-state hypothesis ifcoveragefails, exactprotocol stillunfrozen. Continueuntiluserstop.
 
+
+
+## 2026-10-24 — constrained120 fails development; progress representation prepared
+
+Development71203/session35137 completed128episodes165.951sec/7807generated/393776input/0errors. OfficialF1/EM/token/source/checkpoint/split/H3reference64 verification passed. CandidateF1.23474702/gen55.09375/correct12 versusH3.27315848/66.890625/correct14 andGRPO.22500676/98.40625/correct10. OriginaljointscreenFAILED.0qualitywins4losses,0newcorrect2lostcorrect. Rejectcandidate; H3 retained. No devretune or independenttest. Archive d4f243b20fb4930f200bdd6ead87712e0de7b8628c91cda0610c6f55a22c6ba6.
+
+H3pairedsavings:bothcorrect12 save28;H3onlycorrect2 save209 withlostcorrectness;bothincorrect50 save518;total755. Candidatecorrect12 total859/mean71.583,incorrect52 total2667/mean51.288,partial5 total289/mean57.8. Losses all earlierFINAL including one initialdecision; expandedtrainingcoverage did notrescue thiscandidate's transfer. Notproofdata or frozenhead generally impossible. Previous turn successfultrainplusdevlaunch wasprogress; thisturn provides negative transfer evidence.
+
+Next frozen direction docs/JEV_PROGRESS_STOP120_20261024.md: originalH3anchor plus132FINAL weights on causal128state-delta/previous3toolonehot/turn; firstdecision residualstructurallyzero, noadditionalLLMcall, evaluatoralreadyhasreset_episodehook. Existing120data322states all immediatepredecessors available (missing0), so no newcollection required. src/lsdrag/decision_progress_stop.py and scripts/evaluate_decision_progress_stop.py prepared; causalfeature/reset/initialH3/toolinvariance2tests passed. This is implementation only; no newfit/checkpoint/QA run. Need freeze registryinput/source hashes and implementonefixedconstrainedfit with initialstates locked in targetselection, oldunpairedretentionexcluded, then exactsamequality/cost gates. No nativeinterfacechanges. GoalACTIVE,reserved80protected; allworkersnowterminal.
+

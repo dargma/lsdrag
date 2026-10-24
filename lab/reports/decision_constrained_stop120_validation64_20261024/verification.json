@@ -1,0 +1,458 @@
+{
+  "verified": true,
+  "scope": "Repeatedly exposed development64, not independent confirmation",
+  "policies": {
+    "h3": {
+      "f1": 0.27315848214285715,
+      "all": {
+        "questions": 64,
+        "total_generated": 4281,
+        "mean_generated": 66.890625
+      },
+      "correct": {
+        "questions": 14,
+        "total_generated": 1202,
+        "mean_generated": 85.85714285714286
+      },
+      "incorrect": {
+        "questions": 50,
+        "total_generated": 3079,
+        "mean_generated": 61.58
+      },
+      "partial": {
+        "questions": 7,
+        "total_generated": 875,
+        "mean_generated": 125.0
+      }
+    },
+    "constrained_stop": {
+      "f1": 0.2347470238095238,
+      "all": {
+        "questions": 64,
+        "total_generated": 3526,
+        "mean_generated": 55.09375
+      },
+      "correct": {
+        "questions": 12,
+        "total_generated": 859,
+        "mean_generated": 71.58333333333333
+      },
+      "incorrect": {
+        "questions": 52,
+        "total_generated": 2667,
+        "mean_generated": 51.28846153846154
+      },
+      "partial": {
+        "questions": 5,
+        "total_generated": 289,
+        "mean_generated": 57.8
+      }
+    },
+    "shared_grpo": {
+      "f1": 0.22500676406926406,
+      "all": {
+        "questions": 64,
+        "total_generated": 6298,
+        "mean_generated": 98.40625
+      },
+      "correct": {
+        "questions": 10,
+        "total_generated": 920,
+        "mean_generated": 92.0
+      },
+      "incorrect": {
+        "questions": 54,
+        "total_generated": 5378,
+        "mean_generated": 99.5925925925926
+      },
+      "partial": {
+        "questions": 9,
+        "total_generated": 1311,
+        "mean_generated": 145.66666666666666
+      }
+    }
+  },
+  "paired": {
+    "h3": {
+      "both_correct": {
+        "reference": {
+          "questions": 12,
+          "total_generated": 887,
+          "mean_generated": 73.91666666666667
+        },
+        "candidate": {
+          "questions": 12,
+          "total_generated": 859,
+          "mean_generated": 71.58333333333333
+        },
+        "saved_tokens": 28
+      },
+      "candidate_only_correct": {
+        "reference": {
+          "questions": 0,
+          "total_generated": 0,
+          "mean_generated": null
+        },
+        "candidate": {
+          "questions": 0,
+          "total_generated": 0,
+          "mean_generated": null
+        },
+        "saved_tokens": 0
+      },
+      "reference_only_correct": {
+        "reference": {
+          "questions": 2,
+          "total_generated": 315,
+          "mean_generated": 157.5
+        },
+        "candidate": {
+          "questions": 2,
+          "total_generated": 106,
+          "mean_generated": 53.0
+        },
+        "saved_tokens": 209
+      },
+      "both_incorrect": {
+        "reference": {
+          "questions": 50,
+          "total_generated": 3079,
+          "mean_generated": 61.58
+        },
+        "candidate": {
+          "questions": 50,
+          "total_generated": 2561,
+          "mean_generated": 51.22
+        },
+        "saved_tokens": 518
+      }
+    },
+    "shared_grpo": {
+      "both_correct": {
+        "reference": {
+          "questions": 8,
+          "total_generated": 732,
+          "mean_generated": 91.5
+        },
+        "candidate": {
+          "questions": 8,
+          "total_generated": 516,
+          "mean_generated": 64.5
+        },
+        "saved_tokens": 216
+      },
+      "candidate_only_correct": {
+        "reference": {
+          "questions": 4,
+          "total_generated": 317,
+          "mean_generated": 79.25
+        },
+        "candidate": {
+          "questions": 4,
+          "total_generated": 343,
+          "mean_generated": 85.75
+        },
+        "saved_tokens": -26
+      },
+      "reference_only_correct": {
+        "reference": {
+          "questions": 2,
+          "total_generated": 188,
+          "mean_generated": 94.0
+        },
+        "candidate": {
+          "questions": 2,
+          "total_generated": 87,
+          "mean_generated": 43.5
+        },
+        "saved_tokens": 101
+      },
+      "both_incorrect": {
+        "reference": {
+          "questions": 50,
+          "total_generated": 5061,
+          "mean_generated": 101.22
+        },
+        "candidate": {
+          "questions": 50,
+          "total_generated": 2580,
+          "mean_generated": 51.6
+        },
+        "saved_tokens": 2481
+      }
+    }
+  },
+  "errors": 0,
+  "development_joint_screen": false,
+  "goal_achieved": false,
+  "h3_reference_replay": 64,
+  "quality_changes": [
+    {
+      "qid": "2hop__329687_83854",
+      "h3_f1": 1.0,
+      "candidate_f1": 0,
+      "h3_em": 1,
+      "candidate_em": 0,
+      "h3_actions": [
+        1,
+        1,
+        1,
+        3
+      ],
+      "candidate_actions": [
+        3
+      ]
+    },
+    {
+      "qid": "2hop__715703_80884",
+      "h3_f1": 1.0,
+      "candidate_f1": 0,
+      "h3_em": 1,
+      "candidate_em": 0,
+      "h3_actions": [
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        2,
+        1,
+        3
+      ],
+      "candidate_actions": [
+        0,
+        1,
+        1,
+        1,
+        3
+      ]
+    },
+    {
+      "qid": "2hop__28051_48770",
+      "h3_f1": 0.125,
+      "candidate_f1": 0,
+      "h3_em": 0,
+      "candidate_em": 0,
+      "h3_actions": [
+        0,
+        1,
+        3
+      ],
+      "candidate_actions": [
+        0,
+        3
+      ]
+    },
+    {
+      "qid": "2hop__49676_87091",
+      "h3_f1": 0.3333333333333333,
+      "candidate_f1": 0,
+      "h3_em": 0,
+      "candidate_em": 0,
+      "h3_actions": [
+        1,
+        2,
+        3
+      ],
+      "candidate_actions": [
+        1,
+        3
+      ]
+    }
+  ],
+  "episode_sha256": {
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop120_validation64_20261024/episodes/constrained_stop_2hop__142146_44326.json": "0c938040635b17e220e94a5fc4a2fa0aaa6cd7c422a4d3288ba87b409f1e0277",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop120_validation64_20261024/episodes/constrained_stop_2hop__329687_83854.json": "7b41a79aae1e8e092340f5ff360f3bc76b2650249e00aa781f1637c2e7eb2ea6",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop120_validation64_20261024/episodes/h3_2hop__3254_2999.json": "fd816ac8d6ea202d4360da23773c18da7f4cbaa724fe60a890f4bb54de25b4e2",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop120_validation64_20261024/episodes/h3_2hop__686705_99808.json": "7aa8f8d0d0d5bcfba9e0b2e397a5720da5dd17e4f7be02317dec0013e6c50926",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop120_validation64_20261024/episodes/constrained_stop_2hop__772344_24352.json": "3f4be0c7bddb1fcaaf277eb32f9afab79163510130c261eb681c38cbfb1a9b34",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop120_validation64_20261024/episodes/h3_2hop__659552_61952.json": "7f0c68299fcdd23a17a10cb066bda8ce280bf480fc8f78ada27310c66ee28d17",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop120_validation64_20261024/episodes/h3_2hop__581137_10690.json": "8ea6d7cf809a3e04c6dc3f0b096d81a73b2b08182ee8f5f0eb786ed22216e988",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop120_validation64_20261024/episodes/h3_2hop__440865_378383.json": "a90414a99739afa48f82aa7051b3d3440ebabc90c78f449fd9dd3dd6b6b34d12",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop120_validation64_20261024/episodes/constrained_stop_2hop__180663_501351.json": "3b15a63fb4608d17aa55d651950d02780a87ff9d8ef0923b74727ed98e26af35",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop120_validation64_20261024/episodes/h3_2hop__10692_33145.json": "a745538007a0110e0853be899f0af159873d506f5a5383ad60dd877533f959db",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop120_validation64_20261024/episodes/h3_2hop__79728_863462.json": "f1b54687ae84ea6470e8439c9acd8fd9d8e36802f1677587193dfc4a3dbc95b0",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop120_validation64_20261024/episodes/h3_2hop__404680_47102.json": "b1dee7194cf8ce9a3784814c666f76291cea7b37b263cc09b580fad1ee7e414b",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop120_validation64_20261024/episodes/constrained_stop_2hop__3254_2999.json": "2318faa70eea473411a2615cd7bf4b072daa8ef91f8d128a30e22faca82e373a",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop120_validation64_20261024/episodes/constrained_stop_2hop__135584_34638.json": "4674eeddeeba5b1439906ad35082c00b7725c3bc3837fc4ed4ef7a1b3755b700",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop120_validation64_20261024/episodes/constrained_stop_2hop__146469_516766.json": "8e82fc672d444e05a09fdf9dc5a3554b2aad3d2d8f08fccb8267384ddcb29b62",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop120_validation64_20261024/episodes/constrained_stop_2hop__146227_42292.json": "d00326b0c75bb6320a1c9df8849189c3caaa0f5e66d260de251f76eed47f7bde",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop120_validation64_20261024/episodes/h3_2hop__103832_55281.json": "009231eec1ca9a85c90581445f4e627e008c621bb9e43ccf3a50aef05560e9bc",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop120_validation64_20261024/episodes/constrained_stop_2hop__86984_74218.json": "5b4ef2d0bab4abe2feae0de2991f52f569da161716af0fa4f173e86e29a2cdb9",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop120_validation64_20261024/episodes/h3_2hop__232747_86874.json": "e7f76b2d9ac57a8c4a39ba420f5f92c7eccb6ea8686f848e074fa93759b9d873",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop120_validation64_20261024/episodes/constrained_stop_2hop__23139_135703.json": "dda43fab0bac8d8081a31c7586cdbb84107651c4bd0bfb20e2c3a01046bb2644",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop120_validation64_20261024/episodes/constrained_stop_2hop__732025_333219.json": "0924f29b2b3856a8a8dad2fb8021320013dad6bbb35fdd841631504cb513c03b",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop120_validation64_20261024/episodes/h3_2hop__63539_87370.json": "98520433203fde4e654830a373e8428c3001710592b57fc620fb5f0b62f9899f",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop120_validation64_20261024/episodes/h3_2hop__146227_42292.json": "8f13da607c93c808e66184c3f4ca62c84d2e844bc7a1e94226e0573b202c8f10",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop120_validation64_20261024/episodes/h3_2hop__630207_432198.json": "fec6fc86e05c38b15fede123c0c7cda6280fe04ac71d8aebfa696fe7dc2dbaf1",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop120_validation64_20261024/episodes/constrained_stop_2hop__49676_87091.json": "88f434fedc0e77f0d7677b6bc9a40f25aa4c1f9ecf47bd8d3421cd32422ecac8",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop120_validation64_20261024/episodes/constrained_stop_2hop__605195_70585.json": "c61529b93f47fddedad0f1b5328f48d9ff4f2ebcef0b1e2a4ad2ac11f5d3a860",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop120_validation64_20261024/episodes/constrained_stop_2hop__11785_19219.json": "ffa84635dbced39cd9269dac96d13284b00f075f4b3344c37688f94e3cbe4c2a",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop120_validation64_20261024/episodes/constrained_stop_2hop__686705_99808.json": "021080ba433a5e86e5c75b7ee14b32b2250f1b8bb6609b12b031c3af994c9103",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop120_validation64_20261024/episodes/h3_2hop__651271_705760.json": "f31310137a41f5b0061a8d1d909a035aaf9194819fc59c36ba3cd734ad9d97b2",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop120_validation64_20261024/episodes/h3_2hop__600780_90697.json": "1cb271d921d3e0956e382876661ff0c8a4d2671676d7e7b584d922367d3588d7",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop120_validation64_20261024/episodes/h3_2hop__132927_120674.json": "dbe073033f427e7a47f5dc69362a536e990387dab0f70f7ac2af17c82ccead33",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop120_validation64_20261024/episodes/h3_2hop__856457_495.json": "413e9c3624da942ea715cd42348ee3b207c2642c80b142cfaedaddebff6fbe6e",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop120_validation64_20261024/episodes/h3_2hop__92768_191233.json": "b02edb8ff3449dabdcef5269243d130d070fce4b470f4181cd744358e931608d",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop120_validation64_20261024/episodes/constrained_stop_2hop__659552_61952.json": "cca5f4059064182719b0be54dea1fce69f9959f048ef834e393afe44fc7a9912",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop120_validation64_20261024/episodes/h3_2hop__211553_369731.json": "1aae8b47d2a44dae71d3e74956b66170af3dc63ccab4cab516069290269b8bbd",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop120_validation64_20261024/episodes/h3_2hop__180663_501351.json": "6517f5e8d8d842c705e8e29ced51404640984a9229547f36ad249c3ca3ec3975",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop120_validation64_20261024/episodes/h3_2hop__366267_185321.json": "549c01545328cf9c2890f5b5d734bbfc8ccd7be53c25eda3b8d38a41c9cd3e68",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop120_validation64_20261024/episodes/constrained_stop_2hop__279822_126539.json": "931bb59779a730144b777bc001891fb238b12fe43a26f2ffa9c31a629f837874",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop120_validation64_20261024/episodes/h3_2hop__629786_56101.json": "73c728beeca056b6a50cee81217f9476c8aa89438ae4145e88b305e5c0c271d2",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop120_validation64_20261024/episodes/h3_2hop__49676_87091.json": "fac8590454d384d6905ba3270559c3ba8dd25038d33cfbe9b54fcc5665e4a9cd",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop120_validation64_20261024/episodes/constrained_stop_2hop__440865_378383.json": "03ddb540d848faeebb0e075329da614577211f0a07f234f0b101275ae27a88f6",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop120_validation64_20261024/episodes/constrained_stop_2hop__63539_87370.json": "92ef445e3d0891efba776f7ab7b98d4d4249e54eaccc797688b48d89f8eead5a",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop120_validation64_20261024/episodes/h3_2hop__86984_74218.json": "e2525e61978e5a1e9681bf67d1a4f6b9341ed62f087becb074fc684ea5eaa6b5",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop120_validation64_20261024/episodes/h3_2hop__121829_89953.json": "c3eb0396fa18234b1b86a7aaad7af255e9a9f52054ec1a4313e6ececb1360beb",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop120_validation64_20261024/episodes/constrained_stop_2hop__646278_3430.json": "82f887d9efef69123ecf11e570a12b1a9c8f306e77ce92311ffd45494a2d9cb4",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop120_validation64_20261024/episodes/constrained_stop_2hop__131315_29363.json": "f2a669839a2a0298b7da329b2b913feb60eba4ea24e3e968aa61cfa2f1d3557c",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop120_validation64_20261024/episodes/constrained_stop_2hop__507991_25910.json": "42c2400f03a78dcc27c25a0e6ee2238d47fac62d9750919c4eba951575e46521",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop120_validation64_20261024/episodes/h3_2hop__12247_92216.json": "224e5e6f67b0a56f0b0c6449f240dc9554e5cdfc5889940d0a94ab33dd408cc6",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop120_validation64_20261024/episodes/h3_2hop__122021_252931.json": "36ec363feb18fce8305eff349037eabfbb41d46e89096555de03327680e498d8",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop120_validation64_20261024/episodes/constrained_stop_2hop__662379_36741.json": "3fe0c76c1e0da579ae5c31dde8079495d6b6f1f6fb85874b597b6e6ce0167442",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop120_validation64_20261024/episodes/h3_2hop__660231_406192.json": "b146632dc2f67bb49d7c18c434f1a5a55a1edbdad34740632d6357bdea220c17",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop120_validation64_20261024/episodes/h3_2hop__605195_70585.json": "6c19014f2edd2f7e1916c6d86d7e5c049eaff3236180e3fb9c9e9c5bae684b38",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop120_validation64_20261024/episodes/h3_2hop__135584_34638.json": "d918b808315b1691bc4c75e81a2738451371eca992760da7c3afe7b0535b2125",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop120_validation64_20261024/episodes/h3_2hop__292208_649992.json": "5bd07fb50c42ec14faeaea922b28bcf51d0eb4b9bdae122192f87b7bca15b8f2",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop120_validation64_20261024/episodes/constrained_stop_2hop__132927_120674.json": "30489f1138d62abb4ce139b2b1cd5b04aca5a6e832bbd41dc6cd27b97e2609ff",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop120_validation64_20261024/episodes/constrained_stop_2hop__700641_754472.json": "83369348d6dbead56cfaf5f9e9d3fee9b10f96e0c6c0da5a0a8818b009b28c13",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop120_validation64_20261024/episodes/constrained_stop_2hop__64602_25018.json": "d232ee33125f9b25b6db9e2c11b4dea7e5fee707194d2ead4472952ccfcd602e",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop120_validation64_20261024/episodes/h3_2hop__160546_26427.json": "828cfcbba2c3510bab82c5a4034b0c57aec4e0c46dfb45a5cd9e5992d620b966",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop120_validation64_20261024/episodes/constrained_stop_2hop__103832_55281.json": "7523ee1cb5e6ccaf6032b56ebcade4ff910361789c4afa73a72bfb0b1e0b0eae",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop120_validation64_20261024/episodes/h3_2hop__150582_15815.json": "275363a10d9679ba0c8e8630c5e17b5eea5206f216ba83483bbc01447cfcc658",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop120_validation64_20261024/episodes/h3_2hop__28051_48770.json": "b9cfe72526abe667c21924a7b3d0c8c6d8d47b7346f12d5a838b012a64fc53f2",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop120_validation64_20261024/episodes/constrained_stop_2hop__856457_495.json": "76d7ad0404faefce8aa8e7a7bc8359d5f5be7628bbc1edc2c4f533ac4f0c2501",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop120_validation64_20261024/episodes/h3_2hop__815972_59154.json": "18c6ee726763f984ec595cbbac0f0c659e2a3211f769c2d61e3f1bfe83c161c2",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop120_validation64_20261024/episodes/constrained_stop_2hop__366267_185321.json": "a7cb1e169f08f90ce02d5dcb654feb30cc54043a2a1326b5ac0488e45b41793b",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop120_validation64_20261024/episodes/constrained_stop_2hop__387970_14970.json": "0fc66052dd71471959950bf50323d75e4733049ace946ea9a8a895d57b5590cc",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop120_validation64_20261024/episodes/constrained_stop_2hop__13705_13676.json": "86c490d1ec0093c144cccc479304fb3b6e3ddd1f18b00b4cdf340e76ffb33be4",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop120_validation64_20261024/episodes/constrained_stop_2hop__243_42892.json": "22a68a7fcce168d8f85917acb4d456add220433512e2b1b89ead55838f909f93",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop120_validation64_20261024/episodes/constrained_stop_2hop__79728_863462.json": "704dfc6a0ba918657fc1761c3e996c8449ee5f07464d997c857ea9c33b33d814",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop120_validation64_20261024/episodes/constrained_stop_2hop__612512_10369.json": "a593f2fa7d9d1b1bb6853809421c94da05d46f07fce9e2902244dae76d7eb4de",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop120_validation64_20261024/episodes/h3_2hop__131315_29363.json": "9f9c81f5bcd47d19b3abe5af3b2e76dec303b64a80871be5408aa71395757ea3",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop120_validation64_20261024/episodes/h3_2hop__612512_10369.json": "edf8dc54eb1d749205d085e8ce46bc4a8494b138be79754bb00ef0529f2ff400",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop120_validation64_20261024/episodes/constrained_stop_2hop__121829_89953.json": "d5227068436c6045c7c1407b7af6016ac7a95c25596bb20c1eb5a0bb780659ec",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop120_validation64_20261024/episodes/constrained_stop_2hop__651271_705760.json": "19372c959a995b4021e0764d0d4e66e972743a685d0aebf630ca613ff2c32c5b",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop120_validation64_20261024/episodes/h3_2hop__715703_80884.json": "3edcebaf039d9d7fddbb5f18ef99411fa944189482427b19c629e833623ba17a",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop120_validation64_20261024/episodes/h3_2hop__85865_86706.json": "d4b45d5775078c2975219390c19d8cf5656cdc2ec6a46e6110a7141499956a23",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop120_validation64_20261024/episodes/h3_2hop__18025_34455.json": "782b9890c23b427fe42627453d891428472c55f15923296da53068695fb9563a",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop120_validation64_20261024/episodes/h3_2hop__934_1063.json": "bed2a78b970059bdf608d62ce38716a32d7a77d137bcc68a7149b95d298ba6d7",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop120_validation64_20261024/episodes/h3_2hop__146469_516766.json": "fe554ca5cc4ca97f5e176a4348af316cd3b544b4fe7cebeeb541f614de7dfbe4",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop120_validation64_20261024/episodes/h3_2hop__662379_36741.json": "83b92cf91977fc442c1bad58c79957a0914154af6d3d8d9b77971c536db053fd",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop120_validation64_20261024/episodes/constrained_stop_2hop__404680_47102.json": "c50e263aecb75899fbea2680ccd36e5d47e3469890e167257b12f2606b3699bc",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop120_validation64_20261024/episodes/h3_2hop__64602_25018.json": "864118793b41c9ddc1bc3c8b1f7f905f53f536429d22b47749eae38e2a56a6ac",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop120_validation64_20261024/episodes/constrained_stop_2hop__10692_33145.json": "c194db0a47d03a84cda008d8c16e8d7132e036fc263eef9da831c2e95ae2a0f4",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop120_validation64_20261024/episodes/constrained_stop_2hop__150582_15815.json": "51e03c1ed9112d429b83e7688ecf8e3d8f5269ac9eb8ffb6e401266f4fa11b77",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop120_validation64_20261024/episodes/constrained_stop_2hop__629786_56101.json": "000f645b39b75c05e544ff123f475ba97c8de711989bd4dbda07ec42ef70184d",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop120_validation64_20261024/episodes/constrained_stop_2hop__53735_88700.json": "b8543b8de6f60ad9cd587928a3bb98c92e408bdbe8ed3d1d57103552a0e8b6c9",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop120_validation64_20261024/episodes/constrained_stop_2hop__5371_74242.json": "29081723955b0da54a35ce51637468f1ef01a9f2b3a2f228edf1e8b94df1f4a4",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop120_validation64_20261024/episodes/h3_2hop__614618_70625.json": "7e26e6edb7fcd1532d6294e362cb60aed742209d89bde0a870298ba6a62387a7",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop120_validation64_20261024/episodes/constrained_stop_2hop__712682_217649.json": "feb90581c3a23c36983b9cebe9ad78972dfbd9da883c6bc200c7fd3f3d807dbc",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop120_validation64_20261024/episodes/h3_2hop__53735_88700.json": "7d5f6202cb7a6a4c48ddfdc3eeae06b086ac4e4a61c60d7cad4fc92b81acd519",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop120_validation64_20261024/episodes/constrained_stop_2hop__144404_80761.json": "b597050ccf3c6599dc225164ec7fa14610f73a58f281e7b897e7a9701916f81c",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop120_validation64_20261024/episodes/h3_2hop__387970_14970.json": "a8d561ba0754e8a4ec1d71dee7f44e7a5642b9a42e9003b4112b547948c3254e",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop120_validation64_20261024/episodes/h3_2hop__732025_333219.json": "23bb55069b1a9fa7af47445651bbb3fb10360ef76a301b1e296223ff2a2099cf",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop120_validation64_20261024/episodes/constrained_stop_2hop__18025_34455.json": "90dabe5331cdfc17f54619ed19cdd630fa07f0fc5c33b5a4ab0465850cc5946e",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop120_validation64_20261024/episodes/h3_2hop__27075_5348.json": "d60b1258a041414d9b907872e886f29ef178b160337f9d8738d66a74dea6428a",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop120_validation64_20261024/episodes/constrained_stop_2hop__160546_26427.json": "969c2817ff0d72a734c81a49f8c0d728bc5f47a43b21ec36a1fd1d554218caca",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop120_validation64_20261024/episodes/constrained_stop_2hop__614618_70625.json": "88ff9c9961808bff8a8b1eb8a2991c5f0a630b1e5fc499fe3d9edf04232a4d60",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop120_validation64_20261024/episodes/constrained_stop_2hop__660231_406192.json": "2343627abeab3ad8cd7bc931287099d564da722783a736163e268bc8e7c84184",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop120_validation64_20261024/episodes/h3_2hop__646278_3430.json": "09d8508c361022182f0efd46a16f06a69ca88d978e958e45c5fe6bf89741868e",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop120_validation64_20261024/episodes/h3_2hop__142146_44326.json": "0863eba2cbb8be31b6e98539f1b94cdd7f1b1dde866d7d8f7eba3ff3d8c3014d",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop120_validation64_20261024/episodes/h3_2hop__329687_83854.json": "89d8917c01151819f8ae9268698e9ba1d96f6b24669506bd0020078d3da47b89",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop120_validation64_20261024/episodes/h3_2hop__11785_19219.json": "71383b82345881acf9adc5ed0a38779c338c99925aa13b52390ba8cea9a174e3",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop120_validation64_20261024/episodes/h3_2hop__144404_80761.json": "b5b88892723abd937ec72b08dceb2fe79246e5025b51685aac2d55658297e4df",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop120_validation64_20261024/episodes/h3_2hop__279822_126539.json": "7e46422f347523e5e0e57f73e865cf87adae9eae85f4fb4b7cc990ad0225ff72",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop120_validation64_20261024/episodes/constrained_stop_2hop__92768_191233.json": "76bdc401828af6c031bda101065e35ca0c750b435d887373b88e0a9bc354c8c7",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop120_validation64_20261024/episodes/h3_2hop__700641_754472.json": "444ff52d7fb7bfd241eba0fb6a88f5bcc171eed6c6bff0cbcbd5ce7f6fd01581",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop120_validation64_20261024/episodes/h3_2hop__13705_13676.json": "fbea9efdd2b933aba1645a87ff0b0ea090460df5fd54e3fbc9c0111029b09d75",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop120_validation64_20261024/episodes/constrained_stop_2hop__122021_252931.json": "5b77ecd2b76457a094097762fc5041a194a25996b94c6e4c0fa2d1a903da75b5",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop120_validation64_20261024/episodes/constrained_stop_2hop__28051_48770.json": "36520f25414f45aee8d1f5a8b2403f428fbb90ca6a6d8fd69da223f3669dcda1",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop120_validation64_20261024/episodes/constrained_stop_2hop__934_1063.json": "95c2e5c2556aa490e60892bf594b805c2f9cd61c82cf338fa7e3a01bad579eba",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop120_validation64_20261024/episodes/constrained_stop_2hop__715703_80884.json": "b892dcaf41bd1132084eb005e88e9789f5583695fc8473579459ab85393abae5",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop120_validation64_20261024/episodes/h3_2hop__712682_217649.json": "b6f8cbd6ce75f3088cdbbd65c8fb621ab8fde939f54fd144b6237d5c1417830e",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop120_validation64_20261024/episodes/constrained_stop_2hop__12247_92216.json": "dda125fab3a4903d6d8d1c892a20662b254f2da985b5b87d8151d0255a3a5b7f",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop120_validation64_20261024/episodes/constrained_stop_2hop__41723_7756.json": "baadd20c1d79d3dc41df07806f9656bb355eef41a80a47462b9b882ad8a10090",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop120_validation64_20261024/episodes/constrained_stop_2hop__630207_432198.json": "a2153b967b50a989175765f84e924102c24513e4de268e38af8fb3736b371253",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop120_validation64_20261024/episodes/constrained_stop_2hop__581137_10690.json": "7ec0616d4b13d1fcd65a94ed7420b69c6ef5cc99e6ea85223c3bef8ddafe7e26",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop120_validation64_20261024/episodes/constrained_stop_2hop__27075_5348.json": "67499cd8635bcc059bc7557331ada641795b38cb6aab4c982e5f4a834cf03579",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop120_validation64_20261024/episodes/h3_2hop__23139_135703.json": "2fdbe26472a0df0d87af2f346b656efdba1e62edc56adc274bb1273cc4fc6bde",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop120_validation64_20261024/episodes/h3_2hop__772344_24352.json": "074d129dc94bc91b1626e9e8d999b1fb068d90bd7fe6af72d6bf1c368fe1dd94",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop120_validation64_20261024/episodes/h3_2hop__41723_7756.json": "05b2344b76ff6f44c16c49288d905faf96b3b330093a1b1257f7800aec895050",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop120_validation64_20261024/episodes/constrained_stop_2hop__211553_369731.json": "8020e0f311bbeace774da76d0cbff8d0938a80161ed4c88d5b66b4035c9c6a76",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop120_validation64_20261024/episodes/constrained_stop_2hop__85865_86706.json": "6fd765acd5d533bf05501b30dc37ccddd3676ec165c6f4da23351ffbc02005ef",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop120_validation64_20261024/episodes/constrained_stop_2hop__292208_649992.json": "f422c2bf90c76046064a05299d0c991ae8c8772ffbf843cb48ca55bc3c70548e",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop120_validation64_20261024/episodes/constrained_stop_2hop__815972_59154.json": "3204b6c9984ccdcc5553e52f2228661be6b358d9303ebee63521ac81213b92c6",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop120_validation64_20261024/episodes/constrained_stop_2hop__600780_90697.json": "2bbd21548882eea13d039d9f7ee2f478b4d80e2aaf0b398fa701adc0aec10875",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop120_validation64_20261024/episodes/h3_2hop__507991_25910.json": "203e7cb91e8df1da5fb1696042dc708487d507577330e56fa2b46fe658edf79b",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop120_validation64_20261024/episodes/h3_2hop__243_42892.json": "c44d113902a48aac871e6c247780e3fca008938d653348fc492ca79c8e6484bb",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop120_validation64_20261024/episodes/constrained_stop_2hop__232747_86874.json": "f3e5a09bdba44d87eae7a9abac33d337c8ab1a2e994df1add881d100f4bbde02",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop120_validation64_20261024/episodes/h3_2hop__5371_74242.json": "e82d8e76c5fe39882f0dfbbe490e89e9a409c732086a0d5946378585fbb55976",
+    "/content/local_fast/lsdrag-text-v1/results/decision_shared_validation64_20261023/episodes/shared_grpo_2hop__23139_135703.json": "7d581107f6fbdb636ba9c57a5ef37b0c7f569c31db23f3ee42f8f87a62453c39",
+    "/content/local_fast/lsdrag-text-v1/results/decision_shared_validation64_20261023/episodes/shared_grpo_2hop__85865_86706.json": "a5c3fc2a633c2e5fff4a60bef939dfd2c87bcc6c92aff6aab12c441a2691cfb9",
+    "/content/local_fast/lsdrag-text-v1/results/decision_shared_validation64_20261023/episodes/shared_grpo_2hop__329687_83854.json": "aa6b91b8f74bdcf0c40ee13e2c3f2e887857b0896998ac109a4a84c9c10b5231",
+    "/content/local_fast/lsdrag-text-v1/results/decision_shared_validation64_20261023/episodes/shared_grpo_2hop__103832_55281.json": "a5c2ae29a4c8146df1848db7b6a7d32172a20b2a679ad1465e5e8bd6fccd9313",
+    "/content/local_fast/lsdrag-text-v1/results/decision_shared_validation64_20261023/episodes/shared_grpo_2hop__121829_89953.json": "2ef0793a09d940a40a49d6079302929312448c228e6ad6fe02e1aac4a1f32a8a",
+    "/content/local_fast/lsdrag-text-v1/results/decision_shared_validation64_20261023/episodes/shared_grpo_2hop__92768_191233.json": "8ba5144c923a817b2e7db4d7e06160bf35d6df5a8f3956be8d03d704fe31ed81",
+    "/content/local_fast/lsdrag-text-v1/results/decision_shared_validation64_20261023/episodes/shared_grpo_2hop__142146_44326.json": "2f6b26493443b39e5eaf73668845aa63b304ea82db0b30c57c1981729702303b",
+    "/content/local_fast/lsdrag-text-v1/results/decision_shared_validation64_20261023/episodes/shared_grpo_2hop__387970_14970.json": "bd3dc75007324ae2495a3aabe3c5bbd0d487e9515c67eeb511b736c5ef0894a0",
+    "/content/local_fast/lsdrag-text-v1/results/decision_shared_validation64_20261023/episodes/shared_grpo_2hop__211553_369731.json": "277391dbf646726552d27071fb4bac792f1c3868a9d979dc08a5de834cc05f89",
+    "/content/local_fast/lsdrag-text-v1/results/decision_shared_validation64_20261023/episodes/shared_grpo_2hop__160546_26427.json": "95da0b5450d98a3e7d91f4dcb0468576bd0ded160656df33349864eb977a6481",
+    "/content/local_fast/lsdrag-text-v1/results/decision_shared_validation64_20261023/episodes/shared_grpo_2hop__646278_3430.json": "3c4b134b8cad0585e563c7bcc32bef15520b04d310c5491ba7a1cba482cd2151",
+    "/content/local_fast/lsdrag-text-v1/results/decision_shared_validation64_20261023/episodes/shared_grpo_2hop__135584_34638.json": "abc819d4bfbdabd498123dded27e5651525ab8f1279675cb0d0d72be5e33e3da",
+    "/content/local_fast/lsdrag-text-v1/results/decision_shared_validation64_20261023/episodes/shared_grpo_2hop__122021_252931.json": "5ef8df53a6d11bb3dde95e1c26f83f03c4d39c172960469f94809f85b4310b8b",
+    "/content/local_fast/lsdrag-text-v1/results/decision_shared_validation64_20261023/episodes/shared_grpo_2hop__700641_754472.json": "93cd44a7cd6543ec104e9931c7d3c23309da4f85de65a1ee44a0004126210101",
+    "/content/local_fast/lsdrag-text-v1/results/decision_shared_validation64_20261023/episodes/shared_grpo_2hop__5371_74242.json": "5bea2eb577fdb0e97083db6f67a468be6627cbee11a16a4c887b57cc41292473",
+    "/content/local_fast/lsdrag-text-v1/results/decision_shared_validation64_20261023/episodes/shared_grpo_2hop__772344_24352.json": "dc29568c9becc2697f899b96211615c9d99048853e0f2c8e16c6def451eca38d",
+    "/content/local_fast/lsdrag-text-v1/results/decision_shared_validation64_20261023/episodes/shared_grpo_2hop__404680_47102.json": "cdb4d606b970b98ef8f0fe6c549637bdac79d0337440cc9ece452ded5204d7ec",
+    "/content/local_fast/lsdrag-text-v1/results/decision_shared_validation64_20261023/episodes/shared_grpo_2hop__651271_705760.json": "0ef934ceade81f331797d5d60158f3a6df594e404163470742a986c7fe45e7a1",
+    "/content/local_fast/lsdrag-text-v1/results/decision_shared_validation64_20261023/episodes/shared_grpo_2hop__150582_15815.json": "b23a2136f3e4134093878b483c2f0a9cd211c87a7534d1920ea09fbd64788496",
+    "/content/local_fast/lsdrag-text-v1/results/decision_shared_validation64_20261023/episodes/shared_grpo_2hop__292208_649992.json": "e929a763ce8badad1aec89e831cb4a61e633f2c363666dc0120cc3933c05b20d",
+    "/content/local_fast/lsdrag-text-v1/results/decision_shared_validation64_20261023/episodes/shared_grpo_2hop__581137_10690.json": "80877416d015cfd920c83c1f2d62b211e896f69e6c38ad166df8fdd10eff8764",
+    "/content/local_fast/lsdrag-text-v1/results/decision_shared_validation64_20261023/episodes/shared_grpo_2hop__180663_501351.json": "cc5d84b65c28934c8a129ec66c090aedae1a9f3dea568cd289cf3ce9b69641e3",
+    "/content/local_fast/lsdrag-text-v1/results/decision_shared_validation64_20261023/episodes/shared_grpo_2hop__279822_126539.json": "2488a1bf87905521295b67b1cdcf01b2f8e2c3ee05942ac9f251d2626216cca3",
+    "/content/local_fast/lsdrag-text-v1/results/decision_shared_validation64_20261023/episodes/shared_grpo_2hop__10692_33145.json": "4b7d86f4251f6e350a6383d0fdc7be9246d01e28ef57b2977b6c4c4376535587",
+    "/content/local_fast/lsdrag-text-v1/results/decision_shared_validation64_20261023/episodes/shared_grpo_2hop__131315_29363.json": "295693735e1167b77bd4e1be455fa289100b667793609cf58c198920621baadd",
+    "/content/local_fast/lsdrag-text-v1/results/decision_shared_validation64_20261023/episodes/shared_grpo_2hop__605195_70585.json": "ac60586b514ee54f119a5d454abe1123ba8360f7446ce94438f74b25c38695aa",
+    "/content/local_fast/lsdrag-text-v1/results/decision_shared_validation64_20261023/episodes/shared_grpo_2hop__712682_217649.json": "ef81dbd983d74ec491be4addbc276869475be67df8313b6eeb19a69c9e0c59e1",
+    "/content/local_fast/lsdrag-text-v1/results/decision_shared_validation64_20261023/episodes/shared_grpo_2hop__612512_10369.json": "d72b9968882ff3f070116784f6e5faca153ed5d8f3dc25060bed558e27965c9d",
+    "/content/local_fast/lsdrag-text-v1/results/decision_shared_validation64_20261023/episodes/shared_grpo_2hop__146469_516766.json": "abbfbe09cf5e20e8a0ba34ce73eb7e0a6c53b92930632751d5cf8156305e458a",
+    "/content/local_fast/lsdrag-text-v1/results/decision_shared_validation64_20261023/episodes/shared_grpo_2hop__41723_7756.json": "53177cb2ffe378b7552d55a31c45c70d8cbd46d040abc6bbf0e586bd75ea74c2",
+    "/content/local_fast/lsdrag-text-v1/results/decision_shared_validation64_20261023/episodes/shared_grpo_2hop__856457_495.json": "0ceef5dd263e06bbbfbfb256caec2767d673ef935f778ba5d8b3180fd92771ef",
+    "/content/local_fast/lsdrag-text-v1/results/decision_shared_validation64_20261023/episodes/shared_grpo_2hop__614618_70625.json": "cd0ad2d3d4fe315dd39c089bc08fab24b14a995969db3bd58984bb0e070d72e7",
+    "/content/local_fast/lsdrag-text-v1/results/decision_shared_validation64_20261023/episodes/shared_grpo_2hop__630207_432198.json": "14765dbc15317eb3561994ab35ee1bcfe4ade5f8bae4cdc1a7a9246c5ea17bfd",
+    "/content/local_fast/lsdrag-text-v1/results/decision_shared_validation64_20261023/episodes/shared_grpo_2hop__13705_13676.json": "7ee5fac711afb3ae92d8ae16bbf82b16ce2f3ea45cd765ffbff99aafbb87ba8a",
+    "/content/local_fast/lsdrag-text-v1/results/decision_shared_validation64_20261023/episodes/shared_grpo_2hop__715703_80884.json": "1b9296fe8365d8d9d576fe78e558f5a59b217045a64e2e85aa56f07d3e36d726",
+    "/content/local_fast/lsdrag-text-v1/results/decision_shared_validation64_20261023/episodes/shared_grpo_2hop__64602_25018.json": "1077b877eb661143d807a7080d3bc5663a1c8accffc7430b6ed01455159a547a",
+    "/content/local_fast/lsdrag-text-v1/results/decision_shared_validation64_20261023/episodes/shared_grpo_2hop__28051_48770.json": "1ae514cc53b93ef5b818db1e2c168bdb7eaa8c5de05de56b2f026566ac98315c",
+    "/content/local_fast/lsdrag-text-v1/results/decision_shared_validation64_20261023/episodes/shared_grpo_2hop__79728_863462.json": "73d905dd129ecad0fc4f0c21ca23eaa7fb6c8e7162421b8e94dd4b29e61ffb38",
+    "/content/local_fast/lsdrag-text-v1/results/decision_shared_validation64_20261023/episodes/shared_grpo_2hop__659552_61952.json": "24f15d905ac824efdcbccc67847a5b80c41a873ec37ed1f1afee42601c732710",
+    "/content/local_fast/lsdrag-text-v1/results/decision_shared_validation64_20261023/episodes/shared_grpo_2hop__660231_406192.json": "0d32183c2bd17bf21e3f195745d45a87f152dd3ef3943e1827bc75500ac6cacc",
+    "/content/local_fast/lsdrag-text-v1/results/decision_shared_validation64_20261023/episodes/shared_grpo_2hop__732025_333219.json": "840897059a0d49a8f297454be2c54f0d45936dba964eeba528bd2486c72285aa",
+    "/content/local_fast/lsdrag-text-v1/results/decision_shared_validation64_20261023/episodes/shared_grpo_2hop__662379_36741.json": "1110f820b12f64aa46c0713cc737384c4e5480803c2ae9777a20d3c0021f1f22",
+    "/content/local_fast/lsdrag-text-v1/results/decision_shared_validation64_20261023/episodes/shared_grpo_2hop__12247_92216.json": "d9f805605056d5121d6425a14df43da840f5acf40d5df54c36ce6e8d75b0eda1",
+    "/content/local_fast/lsdrag-text-v1/results/decision_shared_validation64_20261023/episodes/shared_grpo_2hop__146227_42292.json": "6fede078c0a0bfb869ad215a90b624f77990f8c3670a908150adedf1f40dfb98",
+    "/content/local_fast/lsdrag-text-v1/results/decision_shared_validation64_20261023/episodes/shared_grpo_2hop__232747_86874.json": "5cc6688581dbacc7ab8d38435263ea2df2ffea6a2ad1e7456c552965ca05317a",
+    "/content/local_fast/lsdrag-text-v1/results/decision_shared_validation64_20261023/episodes/shared_grpo_2hop__53735_88700.json": "ac513de608cc113c9e78b95d3aec13bd6c59473aaaca5090a3be4398fa526551",
+    "/content/local_fast/lsdrag-text-v1/results/decision_shared_validation64_20261023/episodes/shared_grpo_2hop__18025_34455.json": "8f5aa8ad4808c882483eff4e0b2f3395a359cafc143e16d81fe672e829fe74ed",
+    "/content/local_fast/lsdrag-text-v1/results/decision_shared_validation64_20261023/episodes/shared_grpo_2hop__132927_120674.json": "0f9ce9bbccfd29db9dc19fcf2b4d12ab269040e128386c18b3a814bb079ef250",
+    "/content/local_fast/lsdrag-text-v1/results/decision_shared_validation64_20261023/episodes/shared_grpo_2hop__934_1063.json": "b1d8dedb6b5ed72f3fc9049f3fce7e1eda9e8fa31ee2b873b5e139a06e15c619",
+    "/content/local_fast/lsdrag-text-v1/results/decision_shared_validation64_20261023/episodes/shared_grpo_2hop__629786_56101.json": "1f0931fc8ecc5e4fd22b642b2ea2f5b1bf03b361df0558c65f46adaf5a477b51",
+    "/content/local_fast/lsdrag-text-v1/results/decision_shared_validation64_20261023/episodes/shared_grpo_2hop__3254_2999.json": "52fc21ebcaaf0a3707f09547aab82da96aa2a0f62f898b7af17406cd855b29c2",
+    "/content/local_fast/lsdrag-text-v1/results/decision_shared_validation64_20261023/episodes/shared_grpo_2hop__686705_99808.json": "b47f96f4bdec16c9b1aee107f86a0f3d82526e11ab40bf8c65d3d29b0afbeccb",
+    "/content/local_fast/lsdrag-text-v1/results/decision_shared_validation64_20261023/episodes/shared_grpo_2hop__507991_25910.json": "d7eb55040dd6e9014c04a32baed73ba4578865260eeaa586b9ed3bb5c7c0d526",
+    "/content/local_fast/lsdrag-text-v1/results/decision_shared_validation64_20261023/episodes/shared_grpo_2hop__243_42892.json": "a0d6c1dfa41a2babaa4b4cd8eff1b246af6c87296f762cbaf74be98d0b1cca7a",
+    "/content/local_fast/lsdrag-text-v1/results/decision_shared_validation64_20261023/episodes/shared_grpo_2hop__440865_378383.json": "9f28bb83a012e2753d091929dfb072cab89590bd4ea26ae38be54391bf92b213",
+    "/content/local_fast/lsdrag-text-v1/results/decision_shared_validation64_20261023/episodes/shared_grpo_2hop__27075_5348.json": "85d2c566793f660daa2eb196de7187f5e0066f92b7e19ee071e0c0dc400f90a6",
+    "/content/local_fast/lsdrag-text-v1/results/decision_shared_validation64_20261023/episodes/shared_grpo_2hop__49676_87091.json": "161d7519d9ae587e246cd08acd21cf6ed0471bb7260cfadb7d47f1c64c0bcfc2",
+    "/content/local_fast/lsdrag-text-v1/results/decision_shared_validation64_20261023/episodes/shared_grpo_2hop__144404_80761.json": "ed929737d874aeca29f84c0613e4b9f4f81f92e0088567085059562527250d93",
+    "/content/local_fast/lsdrag-text-v1/results/decision_shared_validation64_20261023/episodes/shared_grpo_2hop__63539_87370.json": "72212466ee2d517ca23c8e4a2533812c237ee6ae6979d8d4c873d2cdcf3828ba",
+    "/content/local_fast/lsdrag-text-v1/results/decision_shared_validation64_20261023/episodes/shared_grpo_2hop__815972_59154.json": "b80acc26083d1b5f8cdcd1d6a182b22c15242ba2f800a5772fdbff4020566c98",
+    "/content/local_fast/lsdrag-text-v1/results/decision_shared_validation64_20261023/episodes/shared_grpo_2hop__366267_185321.json": "c5ed153f7c894294a3350c0150519ea774cea5ee972edc18b6558d432f34b436",
+    "/content/local_fast/lsdrag-text-v1/results/decision_shared_validation64_20261023/episodes/shared_grpo_2hop__600780_90697.json": "8c2d811680b0f3bdcd8ca07430914be7832a6c32a23947c7a1bb59cacfbbd6c1",
+    "/content/local_fast/lsdrag-text-v1/results/decision_shared_validation64_20261023/episodes/shared_grpo_2hop__11785_19219.json": "b32e0c8501edd8bfcb4fe03415a2962203c2e1bd7cbe0f0c4f507300dae218c8",
+    "/content/local_fast/lsdrag-text-v1/results/decision_shared_validation64_20261023/episodes/shared_grpo_2hop__86984_74218.json": "850a9d8b7fb20ef7b37d7cde2d14d2ba7d5554804dc307a18ee1c562174f2630"
+  }
+}

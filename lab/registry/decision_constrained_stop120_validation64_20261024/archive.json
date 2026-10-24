@@ -1,0 +1,8 @@
+{
+  "path": "/content/drive/MyDrive/lsdrag-backups/20261023/decision_constrained_stop120_validation64_20261024.tar.gz",
+  "sha256": "d4f243b20fb4930f200bdd6ead87712e0de7b8628c91cda0610c6f55a22c6ba6",
+  "bytes": 210697,
+  "run": "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop120_validation64_20261024",
+  "phase": "complete",
+  "backbone_weights_included": false
+}
