@@ -1,4 +1,8 @@
 
+## 2026-10-24 — train-only state association diagnostic
+
+Added scripts/reporting/audit_structure_cached_policy.py; report lab/reports/decision_attention_20261024/cached_policy_audit.json/md. All9checkpoint probabilities evaluated on377train states with same objective/question weights. 100permutations seed20261062 shuffle states within identicallegal masks. ExpectedcachedQ above shuffled .15314reference, .20142control, .20291–.20779newstructures. Trainingloss lower forallcontinuations, entropy falls .4978reference to.2423–.2990. These are in-sample associations with noisyold-policyQ, not causal/generalization evidence or calibratedfuturepredictions. No filtering/threshold changes. Validationworker381937 continues; goalACTIVE.
+
 ## 2026-10-24 — extracted hidden cache Drive verification
 
 User requested parallel Drive backup and Git commit/push. scripts/maintenance/verify_hidden_backups.py used two CPU workers alongside liveGPUevaluation381937. All8explicit states/teacher/features caches (398559297bytes) verified byte-for-byte SHA256 against Drive backup archive members or verified standalone fallback. Manifest lab/registry/hidden_backup_20261024/manifest.json contains per-file source/backup/member/size/hash. Nohiddenweights committed. Evaluation remainslive,lastchecked34/576episodes; no restart orqualityclaim. GoalACTIVE.
