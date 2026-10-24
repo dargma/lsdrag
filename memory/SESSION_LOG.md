@@ -848,3 +848,5 @@ shared_structure coordinatorPID250404/session59470 실제waiting_main_comparison
 2026-10-23: docs/JEV_SHARED_POLICY_METHODS_20261023.md에현재공통코퍼스실험의GRPO clipped objective/trajectory균등weights/groupadvantage/KL/entropy,all-action expected-Q목적식,실제cost정의와claim제약을정리. 완료보고서아님. active학습코드수정없음.
 
 2026-10-23: scripts/reporting/decision_campaign_budget.py追加、完了rawepisodeとstatusの総費用を照合。historicalGRPO1392eps/gen83182、restrictedpool探索7474/gen313568、shared再開完了256/gen26373。進行中/未実行を別記、embedding/CPUfitはLLMtoken外、原8h内全実行とは主張しない。最終保存前にledger再生成が必要。GRPO248069は引き続き初回collection。
+
+2026-10-24 UTC: code backup code_shared_f6ae6579.tar.gz(29400501bytes) Drive SHA64afacc176abdea8414360386c9c518da3785b0e475c8ceb3fd93802e08acb3b 검증,주요memory/protocol/runner/selector포함확인. registry/decision_shared_corpus_20261023/code_archive.json. GRPO248069 live636episodes/iteration0,coordinator248061/structurequeue250404유지. 연구campaign namespace20261023유지,실제재개실행은날짜를넘겨계속중. 목표완료아님.
