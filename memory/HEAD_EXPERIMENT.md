@@ -1,3 +1,11 @@
+## 2026-10-24 — H3 role refocus; original episodes independently rescored
+
+User asks whether H3 already performs the intended decision-policy role. Recognize outcome-trained state-conditioned stopping under fixed H1 continuation; no critic/unfreezing requirement. Do not claim general four-action optimization or assign all GRPO improvement to129params. Previous explanation-only turn: no empirical progress. This turn official-rescored192 saved episodes, checked raw generated counts/question/model/corpus/checkpoint hashes (GRPO local checkpoint missing; hash-verified Drive archive member used instead). No new inference. Audit lab/reports/decision_h3_role_audit_20261024/audit.json, script scripts/reporting/audit_h3_policy_role.py.
+
+H3 vs GRPO +4.81517pp/genratio.679740;7qualitywins5losses. Net2017tokens saved:1597bothzero,270qualityloss,194positive-retained,−44qualitygain. Thus150nettokens saved in positive-retained/gain groups; most net savings are not evidence of preserved-correctness efficiency. H3 vs H1 repeats3wins4losses and541saved (305bothzero143loss60positive-retained33gain). All0errors. Repeated development64, independent goal unproven; reserve untouched.
+
+Active direction docs/JEV_H3_ROLE_REFOCUS_20261024.md. Next freeze one training-only existing-outcome diagnostic: actual versus shuffled H3 state corrections while original H1 logits/legal actions stay fixed; assess terminal quality/cost under measured H3 suffix, coverage and limited scope. No architecture sweep or reserved80 launch. Two-action probe deferred. Audit worker58091 terminal; no new experiment launched. Goal ACTIVE with original joint thresholds unchanged.
+
 ## 2026-10-24 — public D3nano local benchmark completed; gate fails
 
 Explicit publicmodelbenchmark request now includes actualinference, not just literature. Downloaded public2.21B D3nano revision462efc366229ea268cf4eed3738b3fc4415e4817 into local_fast/hf, allfilehashes frozen. Same32trainingqids selected byhash from72fit, onehashselectedstate each, exactcausalprefixhashreconstruction; no gold/futureoutcomes/H3choice inD3request. Protocol docs/JEV_D3_NANO_LOCAL32_20261024.md; 32canonical+4reversedrequests complete3.40s includingload, no inferenceerrors. Runtime torch2.11+cu130/transformers5.18, referencePyTorch linearattentionkernels; not exactofficial5.17/runtime or controlledlatency reproduction.

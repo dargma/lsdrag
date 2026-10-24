@@ -1719,3 +1719,13 @@ CachedH3suffix outcome lookup: H3F1.399628/remaininggenerated48.8125 versusD3.36
 
 Run /content/local_fast/lsdrag-text-v1/results/decision_d3_nano_local32_20261024; reports lab/reports/decision_d3_nano_local32_20261024; archive registry. Worker55991complete/absent. H3retained;GoalACTIVE,reserved80protected. Next focus boundedtwo-action coordinated trainintervention hypothesis: test whether H3suffix hides beneficial actioncombinations, rather than newhead/critic/publicmodel sweep. Concrete two-action protocol notyetfrozen. Record requesthash uses sortedJSON so orderhash alone does not distinguishpermutations; order controlledbyfrozenrunner code and ordertag, do not claim independentbyteproof of optionorder.
 
+
+
+## 2026-10-24 — H3 role refocus; original episodes independently rescored
+
+User asks whether H3 already performs the intended decision-policy role. Recognize outcome-trained state-conditioned stopping under fixed H1 continuation; no critic/unfreezing requirement. Do not claim general four-action optimization or assign all GRPO improvement to129params. Previous explanation-only turn: no empirical progress. This turn official-rescored192 saved episodes, checked raw generated counts/question/model/corpus/checkpoint hashes (GRPO local checkpoint missing; hash-verified Drive archive member used instead). No new inference. Audit lab/reports/decision_h3_role_audit_20261024/audit.json, script scripts/reporting/audit_h3_policy_role.py.
+
+H3 vs GRPO +4.81517pp/genratio.679740;7qualitywins5losses. Net2017tokens saved:1597bothzero,270qualityloss,194positive-retained,−44qualitygain. Thus150nettokens saved in positive-retained/gain groups; most net savings are not evidence of preserved-correctness efficiency. H3 vs H1 repeats3wins4losses and541saved (305bothzero143loss60positive-retained33gain). All0errors. Repeated development64, independent goal unproven; reserve untouched.
+
+Active direction docs/JEV_H3_ROLE_REFOCUS_20261024.md. Next freeze one training-only existing-outcome diagnostic: actual versus shuffled H3 state corrections while original H1 logits/legal actions stay fixed; assess terminal quality/cost under measured H3 suffix, coverage and limited scope. No architecture sweep or reserved80 launch. Two-action probe deferred. Audit worker58091 terminal; no new experiment launched. Goal ACTIVE with original joint thresholds unchanged.
+
