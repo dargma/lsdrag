@@ -1371,3 +1371,7 @@ Exactmatched58prefixstatescoverall48q. 2x2plusdirectutilityfitscomplete9.05sec;t
 ## 2026-10-24 — local anchor-correction pilot fitting
 
 UserOK;train-onlyfresh82auditfound19empiricalpairs/16statesrelativecurrentd987,13pairsFINAL→continue,9pairsnewprefix. Newprotocol docs/JEV_ANCHOR_CORRECTION_PROTOCOL_20261024.md frozenbeforefit. Correctedtarget=.5anchor+.5onehot on16states;385nonconflictingretentionstates anchoronly;equalgroupweights/questionbalance. Thischangesobjectiveexplicitly;notoldmixedQoptimization. TwoarmsMLP/frozenquestionattention,100updates1e-4seed20261061. CPUworker396831 live; no newLLMcollection orPPOGRPO. Nextverifyfit then3×64paireddev. GoalACTIVE.
+
+## 2026-10-24 — anchor correction fit complete and paired evaluation live
+
+Fitcomplete22.7056sec,2candidates;checkpointhashes/loadverified. 16correctedstates+385retentionstates. Coordinator397105/worker397113verifiedlive;state /content/local_fast/lsdrag-text-v1/results/decision_anchor_corrections_coordinator_20261024.json;log /content/local_fast/lsdrag-text-v1/logs/value_heads_evaluate_decision_attention_1792830753.log. Run decision_anchor_corrections_validation64_20261024,3×64,max2400sec. Fitarchived; newqualityunknown. GoalACTIVE,reservedtestprotected.

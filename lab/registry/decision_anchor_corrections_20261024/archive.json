@@ -1,0 +1,8 @@
+{
+  "path": "/content/drive/MyDrive/lsdrag-backups/20261023/decision_anchor_corrections_20261024.tar.gz",
+  "sha256": "50a247859fe19bbe1f468137918ebf6a7c84af58991ed0e0eff23c7fb55824d8",
+  "bytes": 8356422,
+  "run": "/content/local_fast/lsdrag-text-v1/results/decision_anchor_corrections_20261024",
+  "phase": "complete",
+  "backbone_weights_included": false
+}

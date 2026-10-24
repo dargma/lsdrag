@@ -1085,5 +1085,13 @@
     "seconds": 944.6796236149967,
     "report": "lab/reports/decision_matched_refresh_validation64_20261024/report.md",
     "goal_achieved": false
+  },
+  "anchor_correction_evaluation": {
+    "phase": "running",
+    "pid": 397105,
+    "seconds": 0.36555316801241133,
+    "script": "scripts/evaluate_decision_attention.py",
+    "child_pid": 397113,
+    "log": "/content/local_fast/lsdrag-text-v1/logs/value_heads_evaluate_decision_attention_1792830753.log"
   }
 }
