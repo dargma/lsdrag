@@ -1154,11 +1154,12 @@
     "goal_achieved": false
   },
   "budget_stop_h3_evaluation": {
-    "phase": "complete",
-    "pid": null,
-    "seconds": 188.80141170600018,
-    "report": "lab/reports/decision_budget_stop_h3_validation64_20261024/report.md",
-    "goal_achieved": false
+    "phase": "running",
+    "pid": 35979,
+    "seconds": 0.21551596600056655,
+    "script": "scripts/evaluate_decision_stop_value_h2.py",
+    "child_pid": 36050,
+    "log": "/content/local_fast/lsdrag-text-v1/logs/value_heads_evaluate_decision_stop_value_h2_1792839107.log"
   },
   "h3_constant_control": {
     "phase": "complete",
@@ -1189,11 +1190,10 @@
     "goal_achieved": false
   },
   "h3_policy_iteration_collection": {
-    "phase": "running",
-    "pid": 33447,
-    "seconds": 0.0004443300003913464,
-    "child_pid": 33506,
-    "script": "scripts/run_decision_h3_policy_iteration_collect24_20261024.py",
-    "log": "/content/local_fast/lsdrag-text-v1/logs/refresh48_run_decision_h3_policy_iteration_collect24_20261024_1792838718.log"
+    "phase": "complete",
+    "pid": null,
+    "seconds": 320.94244488000004,
+    "report": "/content/local_fast/lsdrag-code/lab/reports/decision_h3_policy_iteration_collect24_20261024/audit.json",
+    "goal_achieved": false
   }
 }

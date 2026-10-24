@@ -14,7 +14,7 @@ def main():
  for qid in m['train']:
   parent=read(Path(m['parent_run'])/'episodes'/f'h3_reference_{qid}.json');prefills=[c for c in parent['reader_calls'] if c.get('pack_slots')]
   turns=[i for i,d in enumerate(parent['decisions']) if not d['forced']];assert turns==m['selected_turns'][qid]
-  for i in turns:expected[qid,i]=(parent['decisions'][i],prefills[i]['messages_sha256']);expected_branches+=sum(parent['decisions'][i]['legal'])
+  for i in turns:expected[qid,i]=(parent['decisions'][i],prefills[i]['messages_sha256'],parent);expected_branches+=sum(parent['decisions'][i]['legal'])
  assert len(records)==len(expected)==m['expected_states']==status['states']
  assert {(r['qid'],r['turn']) for r in records}==set(expected)
  assert len(eps)==len(by)==expected_branches==m['expected_episodes']==status['episodes']
@@ -27,7 +27,7 @@ def main():
  assert set(raw)==set(m['train'])
  sys.path.insert(0,str(ROOT/'source/musique_scorer'));from metrics.answer import compute_f1
  for r in records:
-  d,prefix=expected[r['qid'],r['turn']];assert prefix==r['prefix_sha256']
+  d,prefix,parent=expected[r['qid'],r['turn']];assert prefix==r['prefix_sha256']
   assert r['reference_probs']==d['policy_probs'] and r['legal'].tolist()==d['legal']
   assert r['pack'].dtype==torch.float32 and torch.isfinite(r['pack']).all()
   assert {s['action'] for s in r['samples']}==set(torch.where(r['legal'])[0].tolist())
@@ -40,6 +40,8 @@ def main():
    for v in e['decisions'][1:]:assert v['action']==max(range(4),key=v['policy_probs'].__getitem__) and not v['branch_intervention']
    assert e['errors']==s['errors'] and e['generated_tokens']==s['generated'] and e['prompt_tokens']==s['inputs']
    assert e['generated_tokens']==sum(v.get('generated_tokens',0) for v in e['reader_calls'])
+   if s['action']==d['action']:
+    assert e['answer']==parent['answer'] and e['f1']==parent['f1'],'Reference suffix did not replay'
  for key,field in [('generated','generated_tokens'),('inputs','prompt_tokens')]:assert status[key]==sum(e[field] for e in eps)
  archive=read(REPO/'lab/registry'/NAME/'archive.json');assert sha(Path(archive['path']))==archive['sha256']
  with tarfile.open(archive['path']) as tf:

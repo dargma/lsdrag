@@ -1,0 +1,134 @@
+{
+  "labels": {
+    "13": 0,
+    "14": 3,
+    "25": 1,
+    "26": 1,
+    "28": 2,
+    "29": 2,
+    "31": 1,
+    "34": 1,
+    "50": 3,
+    "55": 1,
+    "56": 1,
+    "58": 0,
+    "61": 3
+  },
+  "evidence": {
+    "states": 64,
+    "questions": 24,
+    "changed_states": 13,
+    "changed_questions": 9,
+    "reference_suffix_f1": 0.3029761904761904,
+    "target_suffix_f1": 0.4140873015873015,
+    "reference_suffix_generated": 48.674900793650785,
+    "target_suffix_generated": 48.60684523809524,
+    "moves": [
+      {
+        "qid": "2hop__25478_60641",
+        "turn": 0,
+        "before": 1,
+        "after": 0,
+        "f1_delta": 0.0,
+        "generated_delta": -1
+      },
+      {
+        "qid": "2hop__25478_60641",
+        "turn": 1,
+        "before": 2,
+        "after": 3,
+        "f1_delta": 0.0,
+        "generated_delta": -103
+      },
+      {
+        "qid": "2hop__153813_522872",
+        "turn": 0,
+        "before": 0,
+        "after": 1,
+        "f1_delta": 0.4,
+        "generated_delta": -25
+      },
+      {
+        "qid": "2hop__153813_522872",
+        "turn": 1,
+        "before": 3,
+        "after": 1,
+        "f1_delta": 0.4,
+        "generated_delta": -6
+      },
+      {
+        "qid": "2hop__590911_47465",
+        "turn": 1,
+        "before": 1,
+        "after": 2,
+        "f1_delta": 1.0,
+        "generated_delta": -20
+      },
+      {
+        "qid": "2hop__590911_47465",
+        "turn": 2,
+        "before": 1,
+        "after": 2,
+        "f1_delta": 1.0,
+        "generated_delta": 4
+      },
+      {
+        "qid": "2hop__590911_47465",
+        "turn": 4,
+        "before": 3,
+        "after": 1,
+        "f1_delta": 1.0,
+        "generated_delta": 17
+      },
+      {
+        "qid": "2hop__191818_112624",
+        "turn": 0,
+        "before": 0,
+        "after": 1,
+        "f1_delta": 0.0,
+        "generated_delta": -18
+      },
+      {
+        "qid": "2hop__487591_7672",
+        "turn": 1,
+        "before": 1,
+        "after": 3,
+        "f1_delta": 0.0,
+        "generated_delta": -24
+      },
+      {
+        "qid": "2hop__90877_633514",
+        "turn": 2,
+        "before": 3,
+        "after": 1,
+        "f1_delta": 1.0,
+        "generated_delta": 12
+      },
+      {
+        "qid": "2hop__172461_126711",
+        "turn": 0,
+        "before": 3,
+        "after": 1,
+        "f1_delta": 1.0,
+        "generated_delta": 60
+      },
+      {
+        "qid": "2hop__129299_45142",
+        "turn": 1,
+        "before": 1,
+        "after": 0,
+        "f1_delta": 1.0,
+        "generated_delta": 18
+      },
+      {
+        "qid": "2hop__128974_571141",
+        "turn": 1,
+        "before": 1,
+        "after": 3,
+        "f1_delta": 0.0,
+        "generated_delta": -23
+      }
+    ],
+    "note": "Training hindsight categorical targets: per-state F1 nondecrease, aggregate suffix cost cap; not episode performance or learned-policy guarantee."
+  }
+}

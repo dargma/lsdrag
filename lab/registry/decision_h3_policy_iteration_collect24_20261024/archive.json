@@ -1,0 +1,8 @@
+{
+  "path": "/content/drive/MyDrive/lsdrag-backups/20261023/decision_h3_policy_iteration_collect24_20261024.tar.gz",
+  "sha256": "53ad5849cf38cd972cf847057542ca7784f8c6852ad7b780c493bd5a22f6e81b",
+  "bytes": 20637479,
+  "run": "/content/local_fast/lsdrag-text-v1/results/decision_h3_policy_iteration_collect24_20261024",
+  "phase": "complete",
+  "backbone_weights_included": false
+}

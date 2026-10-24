@@ -1,3 +1,15 @@
+## 2026-10-24 — first current-policy candidate evaluation live
+
+Coordinator35979/evaluator36050 verifiedlive. State /content/local_fast/lsdrag-text-v1/results/decision_h3_policy_iteration1_coordinator_20261024.json; log /content/local_fast/lsdrag-text-v1/logs/value_heads_evaluate_decision_stop_value_h2_1792839107.log.128paireddevelopment episodes againstH3; no interimselection/no independenttest. Fitarchivealreadyverified. Next terminalreports and raw useful-cost/reference replay checks. GoalACTIVE.
+
+## 2026-10-24 — current-policy collection verified and first four-action fit complete
+
+H3current-policy collection complete24q/64states/231episodes/314.46sec/15568generated/1164617input/0errors. Independent rawscoring, allselectedstates/legalbranches, prefix/probability replay, reference terminalanswers, suffixgreedyactions and Drivebytes verified. ArchiveSHA53ad5849cf38cd972cf847057542ca7784f8c6852ad7b780c493bd5a22f6e81b.
+
+One categorical target optimization yields13changedstates/9q; all4actionlabels represented,8qualitygains/5qualityties, no per-state qualityloss. Costly useful continuation funded by positive-quality savings. Weighted overlapping-suffix F1.302976→.414087/generated48.6749→48.6068; training surrogate only. Plan/targets/source/input hashes frozen.
+
+One516parameter128->4layer update complete100steps/.001/seed20261073,519retentionstates; reader,representation,norm,H3stopresidual unchanged; checkpointreloadverified. Candidatece0ced9b1f0b4ab0c8f151d35f0916f8581dad8a0409cd11974b39ff16705361. Run decision_h3_policy_iteration1_20261024; paireddevspec vsH3frozen inregistry. Evaluation coordinator newly launched; verify actualPID/state before next action. GoalACTIVE,reserved80protected.
+
 ## 2026-10-24 — first current-policy update implementation prepared
 
 Previous goal turn made progress: H3control completed/verified and currentH3all-action collection launched. Coordinator33447/worker33506 remain live (131/231episodes last observed), do not restart. Prepared independent collection verifier and one categorical improvement target: maximize terminalF1 under reference aggregate suffix-generation budget, no sampled-state F1loss/zero-quality cheaper targets, error-state retention. Three meaningful synthetic tests passed (delayed useful cost funded by positive-quality savings; no quality tradeoffs/cheap failures/errors; no unavailablebudget/tiechanges).
