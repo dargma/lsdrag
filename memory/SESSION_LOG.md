@@ -1505,3 +1505,12 @@ Evaluation spec lab/registry/decision_stop_value_h2_20261024/validation_spec.jso
 
 Coordinator20114/evaluator20126verifiedlive,64/128episodes saved. State /content/local_fast/lsdrag-text-v1/results/decision_stop_value_h2_coordinator_20261024.json;log /content/local_fast/lsdrag-text-v1/logs/value_heads_evaluate_decision_stop_value_h2_1792836370.log. H1reference32849a28vsstoppingcandidate1b0a8bf8,unchangeddev64. No interimqualityselection;fitarchiveverified. Nextterminalpairedresultandbriefusefulcostcheck;goalACTIVE,reserved80protected. Do notduplicateworker.
 
+
+## 2026-10-24 — H2 complete: quality improves, saving hypothesis fails
+
+H2 stoppingcandidate1b0a8bf8 paired128episodes complete196.93sec/9896generated/491001input/0errors. H1reference64exact,rawcountsandDriveSHAverified. H128.30/75.34→H229.61/79.28;2F1improvements0losses,+1.3021ppCI[0,3.3854],generation+5.23%. Fixedbasic+7.11pp/generated−19.43%;jointgoalunmet. Report docs/JEV_STOP_VALUE_H2_RESULT_20261024.md.
+
+Twoimprovements(.5→1,0→.3333)cost172extratokens;alreadycorrectcases+66,both-zero+14;net+252. Usefulcontinuationexistsbutquality-firststoppingpreferencefailstosave. RetainH1asefficientincumbent,H2ashigherquality/costbranch. Nextlargehypothesis:train-onlybudget-awarecontinuation,qualitygainrelativecost,onecandidateusingverifiedgreedyH1pairsbeforemorecollection; no devpenaltysweep/globalstopbias/architecturegrid. Concreteobjective notyetfrozen/newfitnotlaunched. Both-zero savingsnotpositiveimprovementtargets. GoalACTIVE,reserved80protected.
+
+Coordinator20114/evaluator20126complete/absent. All collection/fit/eval archives verified. Currentphase nextplanning, notrunning. Userhypothesis-firstspeed/detailedablationdeferpreferencecontinues.
+

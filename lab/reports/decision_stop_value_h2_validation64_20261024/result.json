@@ -1,0 +1,147 @@
+{
+  "policies": {
+    "selected_reference": {
+      "f1": 0.28304247835497837,
+      "generated_tokens": 75.34375,
+      "prompt_tokens": 3670.03125,
+      "tool_calls": 1.640625,
+      "cost_units": 2.7610656250000005,
+      "retrieved_support_recall": 0.4140625,
+      "all_support_retrieved": 0.234375,
+      "read_support_recall": 0.140625,
+      "errors": 0
+    },
+    "stop_value": {
+      "f1": 0.2960633116883117,
+      "generated_tokens": 79.28125,
+      "prompt_tokens": 4001.859375,
+      "tool_calls": 1.828125,
+      "cost_units": 3.0211234375,
+      "retrieved_support_recall": 0.453125,
+      "all_support_retrieved": 0.265625,
+      "read_support_recall": 0.1640625,
+      "errors": 0
+    }
+  },
+  "n": 64,
+  "split": "validation",
+  "counts": {
+    "episodes": 128,
+    "generated": 9896,
+    "inputs": 491001
+  },
+  "corpus_documents": 101962,
+  "original_question_retrieval": {
+    "support_recall_at5": 0.6171875,
+    "all_support_at5": 0.296875
+  },
+  "controlled_latency": false,
+  "note": "Policy provenance is defined by frozen spec checkpoint descriptors; do not infer training environment from evaluator reuse. Native-fast additional generation/prefill costs are counted, and dummy probabilities are removed.",
+  "baseline": "selected_reference",
+  "comparisons_vs_baseline": {
+    "stop_value": {
+      "f1": {
+        "delta": 0.013020833333333334,
+        "ci95": [
+          0.0,
+          0.03385416666666667
+        ]
+      },
+      "generated_tokens": {
+        "delta": 3.9375,
+        "ci95": [
+          -2.5625,
+          11.453125
+        ]
+      },
+      "generated_ratio": {
+        "ratio": 1.0522604728328495,
+        "ci95": [
+          0.9677356677227317,
+          1.1663100980373373
+        ]
+      },
+      "prompt_tokens": {
+        "delta": 331.828125,
+        "ci95": [
+          -57.520703125,
+          774.817578125
+        ]
+      },
+      "tool_calls": {
+        "delta": 0.1875,
+        "ci95": [
+          0.0,
+          0.40625
+        ]
+      },
+      "cost_units": {
+        "delta": 0.2600578125,
+        "ci95": [
+          -0.02620246093750004,
+          0.5975919531249999
+        ]
+      },
+      "utility": {
+        "delta": 0.005219098958333337,
+        "ci95": [
+          -0.007699211588541664,
+          0.021892640494791667
+        ]
+      },
+      "joint_point_target": false,
+      "joint_directional_ci": false,
+      "joint_target_ci": false
+    }
+  },
+  "audit": {
+    "episodes": 128,
+    "unique_cells": 128,
+    "probability_and_cost_checks": true
+  },
+  "single_seed": true,
+  "target": {
+    "f1_delta": 0.05,
+    "generated_ratio": 0.7
+  },
+  "ci_scope": "Marginal95% paired question bootstrap conditional on frozen policies; not training-seed population uncertainty. No multiplicity adjustment. Joint CI flags mean both marginal bounds pass, not a simultaneous95% region.",
+  "comparisons_vs_strong_baselines": {},
+  "validation_subgroups": {
+    "previously_exposed": {
+      "n": 32,
+      "policies": {
+        "selected_reference": {
+          "f1": 0.2924107142857143,
+          "generated_tokens": 64.1875,
+          "prompt_tokens": 3243.46875,
+          "tool_calls": 1.46875
+        },
+        "stop_value": {
+          "f1": 0.2924107142857143,
+          "generated_tokens": 63.625,
+          "prompt_tokens": 3383.5625,
+          "tool_calls": 1.5625
+        }
+      },
+      "note": "Descriptive subgroup means, no candidate selection on final test."
+    },
+    "new_validation": {
+      "n": 32,
+      "policies": {
+        "selected_reference": {
+          "f1": 0.27367424242424243,
+          "generated_tokens": 86.5,
+          "prompt_tokens": 4096.59375,
+          "tool_calls": 1.8125
+        },
+        "stop_value": {
+          "f1": 0.29971590909090906,
+          "generated_tokens": 94.9375,
+          "prompt_tokens": 4620.15625,
+          "tool_calls": 2.09375
+        }
+      },
+      "note": "Descriptive subgroup means, no candidate selection on final test."
+    }
+  }
+}

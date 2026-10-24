@@ -1,0 +1,8 @@
+{
+  "path": "/content/drive/MyDrive/lsdrag-backups/20261023/decision_stop_value_h2_validation64_20261024.tar.gz",
+  "sha256": "b72a17ffd0625af4c12279ccd78170d4ee7993b28b9d4eab79927db00de047e5",
+  "bytes": 238680,
+  "run": "/content/local_fast/lsdrag-text-v1/results/decision_stop_value_h2_validation64_20261024",
+  "phase": "complete",
+  "backbone_weights_included": false
+}
