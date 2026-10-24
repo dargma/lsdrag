@@ -1,0 +1,8 @@
+{
+  "path": "/content/drive/MyDrive/lsdrag-backups/20261023/decision_quality_head_grpo_validation64_20261024.tar.gz",
+  "sha256": "0281ffefb982eaa1d06f72a7525f81ec7f6a81d257290cc70d45ee17d6a7a701",
+  "bytes": 376434,
+  "run": "/content/local_fast/lsdrag-text-v1/results/decision_quality_head_grpo_validation64_20261024",
+  "phase": "complete",
+  "backbone_weights_included": false
+}

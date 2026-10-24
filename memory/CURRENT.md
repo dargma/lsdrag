@@ -1,3 +1,26 @@
+
+## 2026-10-24 — quality-leading MLP GRPO paired validation complete; joint goal failed
+
+All128episodes/361.95sec/gen18556/input1086095 complete; coordinator terminalcomplete. Paired64 quality_start F132.4509/gen139.03125/input7671.84375/calls3.40625/zero-tool5/errors2; quality_grpo F134.7454/gen150.90625/input9298.390625/calls3.703125/zero-tool4/errors2. GRPO incrementalF1+2.294pp,95%CI[-3.094,+7.843]pp;gen+8.541%. Versusfixedbasic22.5007/98.40625,qualityimprovespointestimate butgenerationincreases53.35%,jointtargetfalse. Notindependentgeneralization. Actualpolicyupdateverified;qualitygainuncertain,notcausalproof offutureunderstanding.
+
+Next adaptive priority: current-policy refreshed outcome targets with quality-preserving, repeat-consistent cheaper-action preferences and KL retention for ambiguous states; boundedCPUfit beforepairedvalidation. Avoid another blindcostpenaltysweep. Consider combinedreadselectiononlyifpolicycostreductionsinsufficient;readreusealone16.31%trainingceiling cannotbridge150.91to68.88. Freeze exactfollowupprotocolbeforefitting. No fresh-testaccess/worldmodelexpansion. GoalACTIVE.
+
+## 2026-10-24T06:53:11.301130+00:00 — selected-head GRPO continuation: complete
+
+Coordinator state: `/content/local_fast/lsdrag-text-v1/results/decision_quality_head_grpo_coordinator_20261024.json`. Details: `{"phase": "complete", "pid": null, "seconds": 2629.261867977999, "report": "lab/reports/decision_quality_head_grpo_validation64_20261024/report.md", "next": "Review paired validation; no original-final80/reserved80 evaluation or new sweep."}`. Same already-trained selected head continues learning; LLM/normalization fixed. Only train192 and validation64 used; final80/reserved80 protected.
+
+## 2026-10-24T06:53:11.135259+00:00 — selected-head GRPO continuation: running
+
+Coordinator state: `/content/local_fast/lsdrag-text-v1/results/decision_quality_head_grpo_coordinator_20261024.json`. Details: `{"phase": "running", "pid": 354060, "seconds": 2629.095995819007, "script": "scripts/reporting/archive_decision_run.py", "child_pid": 366805, "log": "/content/local_fast/lsdrag-text-v1/logs/selected_grpo_archive_decision_run_1792824791.log"}`. Same already-trained selected head continues learning; LLM/normalization fixed. Only train192 and validation64 used; final80/reserved80 protected.
+
+## 2026-10-24T06:53:10.968964+00:00 — selected-head GRPO continuation: running
+
+Coordinator state: `/content/local_fast/lsdrag-text-v1/results/decision_quality_head_grpo_coordinator_20261024.json`. Details: `{"phase": "running", "pid": 354060, "seconds": 2628.9296834499983, "script": "scripts/reporting/compare_decision_policy_campaign.py", "child_pid": 366803, "log": "/content/local_fast/lsdrag-text-v1/logs/selected_grpo_compare_decision_policy_campaign_1792824790.log"}`. Same already-trained selected head continues learning; LLM/normalization fixed. Only train192 and validation64 used; final80/reserved80 protected.
+
+## 2026-10-24T06:53:10.852598+00:00 — selected-head GRPO continuation: running
+
+Coordinator state: `/content/local_fast/lsdrag-text-v1/results/decision_quality_head_grpo_coordinator_20261024.json`. Details: `{"phase": "running", "pid": 354060, "seconds": 2628.813237684997, "script": "scripts/reporting/summarize_decision_shared_evaluation.py", "child_pid": 366797, "log": "/content/local_fast/lsdrag-text-v1/logs/selected_grpo_summarize_decision_shared_evaluation_1792824790.log"}`. Same already-trained selected head continues learning; LLM/normalization fixed. Only train192 and validation64 used; final80/reserved80 protected.
+
 ## 2026-10-24T06:47:04.657377+00:00 — selected-head GRPO continuation: running
 
 Coordinator state: `/content/local_fast/lsdrag-text-v1/results/decision_quality_head_grpo_coordinator_20261024.json`. Details: `{"phase": "running", "pid": 354060, "seconds": 2262.618084080008, "script": "scripts/evaluate_decision_value_heads.py", "child_pid": 364974, "log": "/content/local_fast/lsdrag-text-v1/logs/selected_grpo_evaluate_decision_value_heads_1792824424.log"}`. Same already-trained selected head continues learning; LLM/normalization fixed. Only train192 and validation64 used; final80/reserved80 protected.
