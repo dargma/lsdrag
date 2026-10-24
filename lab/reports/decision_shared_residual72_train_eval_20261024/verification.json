@@ -1,0 +1,35 @@
+{
+  "verified": true,
+  "policies": {
+    "h3": {
+      "f1": 0.4148258377425044,
+      "generated_tokens": 65.75,
+      "prompt_tokens": 3542.2083333333335,
+      "tool_calls": 1.5694444444444444
+    },
+    "shared_residual": {
+      "f1": 0.419455467372134,
+      "generated_tokens": 62.611111111111114,
+      "prompt_tokens": 3161.7916666666665,
+      "tool_calls": 1.4583333333333333
+    }
+  },
+  "train_gate_passed": true,
+  "quality_wins": 1,
+  "quality_losses": 0,
+  "savings": {
+    "both_zero": 0,
+    "positive_retained": 98,
+    "quality_gain": 128
+  },
+  "useful_questions": [
+    "2hop__103724_90561",
+    "2hop__487591_7672",
+    "2hop__128642_32463",
+    "2hop__15574_66008",
+    "2hop__178280_79070"
+  ],
+  "reference_replay": 72,
+  "errors": 0,
+  "scope": "Training policy quality only; not development or independent confirmation"
+}

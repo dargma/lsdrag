@@ -1,0 +1,8 @@
+{
+  "path": "/content/drive/MyDrive/lsdrag-backups/20261023/decision_shared_residual72_train_eval_20261024.tar.gz",
+  "sha256": "d9e41a198843d962b2c3926c9d7e50962c19c995442bd5a9bb645e45c985b9c3",
+  "bytes": 241197,
+  "run": "/content/local_fast/lsdrag-text-v1/results/decision_shared_residual72_train_eval_20261024",
+  "phase": "complete",
+  "backbone_weights_included": false
+}

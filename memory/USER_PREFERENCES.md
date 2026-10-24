@@ -155,3 +155,7 @@ Remaining priorities and exactbranchlineage saved docs/JEV_REMAINING_ADAPTIVE_PR
 ## 2026-10-24 — additional bounded experiments approved
 
 User asks 그래 몇개 더 해보자. Continue a few hypothesis-driven experiments sequentially after current critic diversity comparison; no broad detailed ablation grid. Preserve reader/native interface/splits and report actual policy quality, not only prediction metrics.
+
+## 2026-10-24 — result tables
+
+User: 결과 나오면 표로. Show completed experiment comparisons as concise tables; clearly label train/development/independent confirmation.

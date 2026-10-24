@@ -1694,3 +1694,10 @@ Candidate3 protocol docs/JEV_SHARED_RESIDUAL_POLICY72_20261024.md frozen beforef
 
 Paired72train H3/candidate144episodes launched evaluator52589, log /content/local_fast/lsdrag-text-v1/logs/shared_residual72_train_eval_20261024.log; status /content/local_fast/lsdrag-text-v1/results/decision_shared_residual72_train_eval_20261024/status.json. Spec lab/registry/decision_shared_residual72_20261024/train_spec.json. No automatic devlaunch; actualtrainquality>=H3/generated<=H3/usefulpositivegain required. H3incumbent unchanged;GoalACTIVE,reserved80protected. Next actualprocess/status check, rawscoring and reference replay, archive, then decide devgate. Previous turn negativecritic evidence; thisturn newcandidatefit+actualrollout progress.
 
+
+## 2026-10-24 — shared representation policy train72 gate passes; dev64 live
+
+Paired training rollout complete144episodes/197.79s/9242generated/482688input/0errors. Raw officialF1 rescoring, generatedcounts, legalactions, immutablecheckpoint source and H3reference72exact verified by scripts/reporting/verify_shared_residual72_train.py. H3F1.41482584/gen65.75 vs candidate.41945547/62.61111: +.46296pp/−4.77398%.1qualitywin0losses;226tokens saved (128qualitygain,98positiveretained,0bothzero/qualityloss). Traininggatepassed, not generalization. Archive d9e41a198843d962b2c3926c9d7e50962c19c995442bd5a9bb645e45c985b9c3. User requests result tables; provided train table explicitly labelled.
+
+Candidate fixed5b714e13, paired development64 H3/candidate128episodes now evaluator53869. Log /content/local_fast/lsdrag-text-v1/logs/shared_residual72_validation64_20261024.log; status /content/local_fast/lsdrag-text-v1/results/decision_shared_residual72_validation64_20261024/status.json. Spec lab/registry/decision_shared_residual72_20261024/validation_spec.json. Repeatedly exposeddevelopment, no unseenclaim/devretuning. Next verify fullrawscores/H3reference64exact/compare fixedbasicGRPO onidenticalqids and archive. Existing campaignreporter expects split validation; new spec explicitly repeatedly_exposed_development64, use verifier allowing that label without mutating frozen spec. GoalACTIVE/reserved80protected.
+
