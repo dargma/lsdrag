@@ -1094,11 +1094,10 @@
     "goal_achieved": false
   },
   "corrected_policy_refresh": {
-    "phase": "running",
-    "pid": 399511,
-    "seconds": 0.0004384200001368299,
-    "child_pid": 399521,
-    "script": "scripts/run_decision_corrected_refresh.py",
-    "log": "/content/local_fast/lsdrag-text-v1/logs/refresh48_run_decision_corrected_refresh_1792831243.log"
+    "phase": "complete",
+    "pid": null,
+    "seconds": 981.9912214200012,
+    "report": "/content/local_fast/lsdrag-code/lab/reports/decision_quality_corrected_refresh48b_20261024/audit.json",
+    "goal_achieved": false
   }
 }
