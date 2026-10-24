@@ -1,0 +1,594 @@
+{
+  "stop_divergences": {
+    "h3": [
+      {
+        "qid": "2hop__211553_369731",
+        "turn": 4,
+        "base": 2,
+        "candidate": 3
+      },
+      {
+        "qid": "2hop__150582_15815",
+        "turn": 6,
+        "base": 0,
+        "candidate": 3
+      },
+      {
+        "qid": "2hop__292208_649992",
+        "turn": 7,
+        "base": 3,
+        "candidate": 0
+      },
+      {
+        "qid": "2hop__146469_516766",
+        "turn": 3,
+        "base": 0,
+        "candidate": 3
+      },
+      {
+        "qid": "2hop__41723_7756",
+        "turn": 3,
+        "base": 3,
+        "candidate": 0
+      },
+      {
+        "qid": "2hop__630207_432198",
+        "turn": 6,
+        "base": 2,
+        "candidate": 3
+      },
+      {
+        "qid": "2hop__13705_13676",
+        "turn": 3,
+        "base": 1,
+        "candidate": 3
+      },
+      {
+        "qid": "2hop__79728_863462",
+        "turn": 4,
+        "base": 2,
+        "candidate": 3
+      },
+      {
+        "qid": "2hop__659552_61952",
+        "turn": 4,
+        "base": 2,
+        "candidate": 3
+      },
+      {
+        "qid": "2hop__53735_88700",
+        "turn": 2,
+        "base": 3,
+        "candidate": 1
+      },
+      {
+        "qid": "2hop__686705_99808",
+        "turn": 5,
+        "base": 3,
+        "candidate": 0
+      },
+      {
+        "qid": "2hop__144404_80761",
+        "turn": 3,
+        "base": 2,
+        "candidate": 3
+      }
+    ],
+    "constant": [
+      {
+        "qid": "2hop__121829_89953",
+        "turn": 4,
+        "base": 0,
+        "candidate": 3
+      },
+      {
+        "qid": "2hop__211553_369731",
+        "turn": 5,
+        "base": 0,
+        "candidate": 3
+      },
+      {
+        "qid": "2hop__856457_495",
+        "turn": 5,
+        "base": 1,
+        "candidate": 3
+      }
+    ]
+  },
+  "verified": true,
+  "scope": "Repeated development64; no independent confirmation or causal scale claim",
+  "errors": 0,
+  "policies": {
+    "base": {
+      "f1": 0.4789675245098039,
+      "all": {
+        "n": 64,
+        "total_generated": 10033,
+        "mean_generated": 156.765625
+      },
+      "correct": {
+        "n": 24,
+        "total_generated": 3485,
+        "mean_generated": 145.20833333333334
+      },
+      "incorrect": {
+        "n": 40,
+        "total_generated": 6548,
+        "mean_generated": 163.7
+      },
+      "partial": {
+        "n": 14,
+        "total_generated": 2836,
+        "mean_generated": 202.57142857142858
+      },
+      "f1_one_nonexact": {
+        "n": 0,
+        "total_generated": 0,
+        "mean_generated": null
+      },
+      "mean_tools": 5.484375,
+      "forced_final": 12,
+      "actions": {
+        "0": 162,
+        "1": 117,
+        "2": 72,
+        "3": 64
+      },
+      "output_utf8_bytes": 25595,
+      "output_characters": 25565
+    },
+    "h3": {
+      "f1": 0.48417585784313727,
+      "all": {
+        "n": 64,
+        "total_generated": 9698,
+        "mean_generated": 151.53125
+      },
+      "correct": {
+        "n": 25,
+        "total_generated": 3716,
+        "mean_generated": 148.64
+      },
+      "incorrect": {
+        "n": 39,
+        "total_generated": 5982,
+        "mean_generated": 153.3846153846154
+      },
+      "partial": {
+        "n": 13,
+        "total_generated": 2422,
+        "mean_generated": 186.30769230769232
+      },
+      "f1_one_nonexact": {
+        "n": 0,
+        "total_generated": 0,
+        "mean_generated": null
+      },
+      "mean_tools": 5.328125,
+      "forced_final": 12,
+      "actions": {
+        "0": 161,
+        "1": 114,
+        "2": 66,
+        "3": 64
+      },
+      "output_utf8_bytes": 24999,
+      "output_characters": 24971
+    },
+    "constant": {
+      "f1": 0.4867800245098039,
+      "all": {
+        "n": 64,
+        "total_generated": 9904,
+        "mean_generated": 154.75
+      },
+      "correct": {
+        "n": 25,
+        "total_generated": 3584,
+        "mean_generated": 143.36
+      },
+      "incorrect": {
+        "n": 39,
+        "total_generated": 6320,
+        "mean_generated": 162.05128205128204
+      },
+      "partial": {
+        "n": 13,
+        "total_generated": 2653,
+        "mean_generated": 204.07692307692307
+      },
+      "f1_one_nonexact": {
+        "n": 0,
+        "total_generated": 0,
+        "mean_generated": null
+      },
+      "mean_tools": 5.390625,
+      "forced_final": 12,
+      "actions": {
+        "0": 160,
+        "1": 114,
+        "2": 71,
+        "3": 64
+      },
+      "output_utf8_bytes": 25198,
+      "output_characters": 25170
+    }
+  },
+  "paired": {
+    "h3_vs_base": {
+      "groups": {
+        "both_correct": {
+          "reference": {
+            "n": 23,
+            "total_generated": 3356,
+            "mean_generated": 145.91304347826087
+          },
+          "candidate": {
+            "n": 23,
+            "total_generated": 3437,
+            "mean_generated": 149.43478260869566
+          },
+          "saved_tokens": -81
+        },
+        "candidate_only_correct": {
+          "reference": {
+            "n": 2,
+            "total_generated": 393,
+            "mean_generated": 196.5
+          },
+          "candidate": {
+            "n": 2,
+            "total_generated": 279,
+            "mean_generated": 139.5
+          },
+          "saved_tokens": 114
+        },
+        "reference_only_correct": {
+          "reference": {
+            "n": 1,
+            "total_generated": 129,
+            "mean_generated": 129.0
+          },
+          "candidate": {
+            "n": 1,
+            "total_generated": 67,
+            "mean_generated": 67.0
+          },
+          "saved_tokens": 62
+        },
+        "both_incorrect": {
+          "reference": {
+            "n": 38,
+            "total_generated": 6155,
+            "mean_generated": 161.97368421052633
+          },
+          "candidate": {
+            "n": 38,
+            "total_generated": 5915,
+            "mean_generated": 155.6578947368421
+          },
+          "saved_tokens": 240
+        }
+      },
+      "f1_delta": 0.00520833333333337,
+      "token_ratio": 0.9666101863849297,
+      "f1_wins": 2,
+      "f1_losses": 1
+    },
+    "h3_vs_constant": {
+      "groups": {
+        "both_correct": {
+          "reference": {
+            "n": 23,
+            "total_generated": 3356,
+            "mean_generated": 145.91304347826087
+          },
+          "candidate": {
+            "n": 23,
+            "total_generated": 3437,
+            "mean_generated": 149.43478260869566
+          },
+          "saved_tokens": -81
+        },
+        "candidate_only_correct": {
+          "reference": {
+            "n": 2,
+            "total_generated": 393,
+            "mean_generated": 196.5
+          },
+          "candidate": {
+            "n": 2,
+            "total_generated": 279,
+            "mean_generated": 139.5
+          },
+          "saved_tokens": 114
+        },
+        "reference_only_correct": {
+          "reference": {
+            "n": 2,
+            "total_generated": 228,
+            "mean_generated": 114.0
+          },
+          "candidate": {
+            "n": 2,
+            "total_generated": 250,
+            "mean_generated": 125.0
+          },
+          "saved_tokens": -22
+        },
+        "both_incorrect": {
+          "reference": {
+            "n": 37,
+            "total_generated": 5927,
+            "mean_generated": 160.1891891891892
+          },
+          "candidate": {
+            "n": 37,
+            "total_generated": 5732,
+            "mean_generated": 154.9189189189189
+          },
+          "saved_tokens": 195
+        }
+      },
+      "f1_delta": -0.0026041666666666297,
+      "token_ratio": 0.9792003231017771,
+      "f1_wins": 2,
+      "f1_losses": 2
+    },
+    "constant_vs_base": {
+      "groups": {
+        "both_correct": {
+          "reference": {
+            "n": 24,
+            "total_generated": 3485,
+            "mean_generated": 145.20833333333334
+          },
+          "candidate": {
+            "n": 24,
+            "total_generated": 3485,
+            "mean_generated": 145.20833333333334
+          },
+          "saved_tokens": 0
+        },
+        "candidate_only_correct": {
+          "reference": {
+            "n": 1,
+            "total_generated": 183,
+            "mean_generated": 183.0
+          },
+          "candidate": {
+            "n": 1,
+            "total_generated": 99,
+            "mean_generated": 99.0
+          },
+          "saved_tokens": 84
+        },
+        "reference_only_correct": {
+          "reference": {
+            "n": 0,
+            "total_generated": 0,
+            "mean_generated": null
+          },
+          "candidate": {
+            "n": 0,
+            "total_generated": 0,
+            "mean_generated": null
+          },
+          "saved_tokens": 0
+        },
+        "both_incorrect": {
+          "reference": {
+            "n": 39,
+            "total_generated": 6365,
+            "mean_generated": 163.2051282051282
+          },
+          "candidate": {
+            "n": 39,
+            "total_generated": 6320,
+            "mean_generated": 162.05128205128204
+          },
+          "saved_tokens": 45
+        }
+      },
+      "f1_delta": 0.0078125,
+      "token_ratio": 0.9871424299810625,
+      "f1_wins": 1,
+      "f1_losses": 0
+    }
+  },
+  "episode_sha256": {
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_9b_h3_validation64_20261024/episodes/base_2hop__103832_55281.json": "72f9f8ada575c6d4843cce42e0b926d214f90a5358a32a6ac33800c069c0d4cd",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_9b_h3_validation64_20261024/episodes/base_2hop__10692_33145.json": "0719c3897b9e0daaa900f46a08188bc5ae325301a20a206a51a46b1f3a9f541b",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_9b_h3_validation64_20261024/episodes/base_2hop__11785_19219.json": "e40fba2f40bc90b83c470a98c561358317d1cbd4460106e70d29c6d2f065ac9f",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_9b_h3_validation64_20261024/episodes/base_2hop__121829_89953.json": "4eabc7d1840a5070866a05e0ad589d2447451b14ac2dee21f908a5b0b7ebd1b5",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_9b_h3_validation64_20261024/episodes/base_2hop__122021_252931.json": "78fc85e15fb7f8a9aa9da370eaa8b8601d6b992dde7b3852fd38aa9bdf0a4dfa",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_9b_h3_validation64_20261024/episodes/base_2hop__12247_92216.json": "d86e7aa56df2738b2960804c601389a38cbc2d101de96481d8ee3998931b4236",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_9b_h3_validation64_20261024/episodes/base_2hop__131315_29363.json": "6bff853f42ef6d366e81b03d7026831314621e8d7c1aa82d38487fcfe82c11cd",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_9b_h3_validation64_20261024/episodes/base_2hop__132927_120674.json": "eb28fdde11252eab23f3733ef890bce7a7989ae4f73e647b119b6d7b42d315b8",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_9b_h3_validation64_20261024/episodes/base_2hop__135584_34638.json": "57fcc890f23ffcd44f5664eaaf29745a642b86f164c559c6b0a34565aa317e31",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_9b_h3_validation64_20261024/episodes/base_2hop__13705_13676.json": "3374bb399c282b3fadfd13e9efa1f8ec80196a47bc6271d3c093a672eccf6ab1",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_9b_h3_validation64_20261024/episodes/base_2hop__142146_44326.json": "b7e50dd117cda83857676ea57951aff73894708bb96d5a90899373b6395deec9",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_9b_h3_validation64_20261024/episodes/base_2hop__144404_80761.json": "3f6c9e377d7ab01b0dabfbf933eab75defb0e6865f1b4179d265c50888a551a7",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_9b_h3_validation64_20261024/episodes/base_2hop__146227_42292.json": "d6fc7277f85465eba602e7c0e4357e9dbf3e48437d6121aa9b719632d7d945fd",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_9b_h3_validation64_20261024/episodes/base_2hop__146469_516766.json": "1daae0411437aeadca7c4595352e3767f65fa850d446ff5ad929eec7aa257392",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_9b_h3_validation64_20261024/episodes/base_2hop__150582_15815.json": "cb478d1c230251e5e25f2be3d6fe96b729ca12d523ae06751b102306f0d2b4d7",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_9b_h3_validation64_20261024/episodes/base_2hop__160546_26427.json": "2d12ebaf194b6912174e643cf3b5c20f583a87a2bda294b80cc9e08e110d9733",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_9b_h3_validation64_20261024/episodes/base_2hop__18025_34455.json": "7ed783600231311b73d054c1c634f25e1c9b4232a0be70d28b395d78af2041a8",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_9b_h3_validation64_20261024/episodes/base_2hop__180663_501351.json": "6be41ce98ce648e9b571fa2755055c29e64621851c9c920a0c80038e5ba88b40",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_9b_h3_validation64_20261024/episodes/base_2hop__211553_369731.json": "8dec3be231389c52e583a59dfdb17b5f771d8c54bbec3d57e552b4fbc2569d05",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_9b_h3_validation64_20261024/episodes/base_2hop__23139_135703.json": "b33e7d2158bea23147e3fd578733f45251f2a6686ef0fca12a4363a2d921dc81",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_9b_h3_validation64_20261024/episodes/base_2hop__232747_86874.json": "9bd3014f277eb79625b41193004bb8f5419a5cf5aa8523533b2d80841cb40f61",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_9b_h3_validation64_20261024/episodes/base_2hop__243_42892.json": "222bc00a005fd6cb1bdfd2eca1ffdce646a866b47e04db06c88f56de9b3c0b29",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_9b_h3_validation64_20261024/episodes/base_2hop__27075_5348.json": "9bc037e168315f9bb13debc2571ea8d1e8152116ed00438a1f2497a4e820471e",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_9b_h3_validation64_20261024/episodes/base_2hop__279822_126539.json": "9cb9e9967d4bc480abb482cdab822331afe1d666b2bdd8513cc2e4cabaab56f3",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_9b_h3_validation64_20261024/episodes/base_2hop__28051_48770.json": "2f49ca58150196249fefb7d6d1d80f7d8158610581884f101f92ba408991ea67",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_9b_h3_validation64_20261024/episodes/base_2hop__292208_649992.json": "34e18358795144e1a436dd292b61b0df9eff90075a624aa47d7d81c8b99682de",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_9b_h3_validation64_20261024/episodes/base_2hop__3254_2999.json": "8084c46563cb83edc95b70ef16c0c3399b7027646e4407fd2f5d067db142d1ab",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_9b_h3_validation64_20261024/episodes/base_2hop__329687_83854.json": "e58c0d327693e1da486e5ff36d26a076e0d17b0a5c1eac53c76e53a2905e0ee5",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_9b_h3_validation64_20261024/episodes/base_2hop__366267_185321.json": "7c5b5931669ca19fa9ea09dedd21984058d7930cf2628e843c72cb7f06b637f7",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_9b_h3_validation64_20261024/episodes/base_2hop__387970_14970.json": "603d08bc6f3da53240d30eeefa7c46904f3de168b78acdf973640597ebd3c030",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_9b_h3_validation64_20261024/episodes/base_2hop__404680_47102.json": "c86953a8f736e67b4d9442c39068730ff612d95c947f2d73e1fa5a7de4f29e18",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_9b_h3_validation64_20261024/episodes/base_2hop__41723_7756.json": "358b1a2e73bd3a68e34a48203276a5320435454be3617017801f404da9c23a79",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_9b_h3_validation64_20261024/episodes/base_2hop__440865_378383.json": "6f540c0f72b8bbf6bd6c006e9fa406cdac185f076d1b73737a13417ba8243ad7",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_9b_h3_validation64_20261024/episodes/base_2hop__49676_87091.json": "4642c4aaa2c0d5179e1577fe5b2e2e270422d58d579ea94dc769c2f0f64157df",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_9b_h3_validation64_20261024/episodes/base_2hop__507991_25910.json": "e2df502437edb934d87ec13353a73c9e5b179053aab50a7bb6cfeec78832d81a",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_9b_h3_validation64_20261024/episodes/base_2hop__5371_74242.json": "66007d21b21d59123f68cc9caf242078f49359fb93bc1014a3987efeab56f90b",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_9b_h3_validation64_20261024/episodes/base_2hop__53735_88700.json": "2a61bef7ec8eb2cf8ac3d1aededfb0528de4c6d8ecb2d7e6be87d003632e4ab2",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_9b_h3_validation64_20261024/episodes/base_2hop__581137_10690.json": "a3bd7217b3f75003e55cb3a19444afab302efd831186aeaf3eca1433da73e459",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_9b_h3_validation64_20261024/episodes/base_2hop__600780_90697.json": "5948a7b17c14385d3c83bf18f971eb7188ed47e6f5abd6ff39b99a795b938aa8",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_9b_h3_validation64_20261024/episodes/base_2hop__605195_70585.json": "1d4d1291b2ea556dbf5534fd69e599d70827c8daa6cbfa6261c5745b6b5d964b",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_9b_h3_validation64_20261024/episodes/base_2hop__612512_10369.json": "16eae344fb3bd17fad3e49f604c4f20624730b8b38512c5f69bb2af3a8bfc94a",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_9b_h3_validation64_20261024/episodes/base_2hop__614618_70625.json": "284796e2d6d8b73fa1e0cd760c94ff69dc4d446f396adc8a36566c6b88012819",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_9b_h3_validation64_20261024/episodes/base_2hop__629786_56101.json": "889c50fc899e12c04dbb6c3a1ea76eae50540fb9432540b9e0fa42be737b5fb8",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_9b_h3_validation64_20261024/episodes/base_2hop__630207_432198.json": "a884c9b9c7e4caf99e833a56e2e031094113e9a053401c62728b2f51ac6cd5d0",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_9b_h3_validation64_20261024/episodes/base_2hop__63539_87370.json": "ee3037dbef67b90219c59ece48b6d73c8046af98b16e76937283374a32fb3406",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_9b_h3_validation64_20261024/episodes/base_2hop__64602_25018.json": "db00d2b5c136bcbc4435e884306458330464b82f5e00b5256a4a49483cdd68d1",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_9b_h3_validation64_20261024/episodes/base_2hop__646278_3430.json": "6a5ea7b05d6481f1e68ac1cbb9530040cfd762bce2ff9e119587acf64c94f89f",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_9b_h3_validation64_20261024/episodes/base_2hop__651271_705760.json": "18e46a3b5be8a58b8297a764fadff196e41426698857797ea57bdef0df18fe67",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_9b_h3_validation64_20261024/episodes/base_2hop__659552_61952.json": "336db81e029d6056de26f90b74d804526ad18e56cc17ed83c8cc574504f73576",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_9b_h3_validation64_20261024/episodes/base_2hop__660231_406192.json": "8ae6154ef0a7f90132def51dfc767d4dd6e44c16d57df588b01db6850599cd1c",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_9b_h3_validation64_20261024/episodes/base_2hop__662379_36741.json": "c2fff544704c8899b8f52e1d430249c7ab32108eca1f00363451d72009b4814b",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_9b_h3_validation64_20261024/episodes/base_2hop__686705_99808.json": "6db435d019b49285d37c3db0aa226b0800b3b2719f282ff780a70f8ed88b8ac8",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_9b_h3_validation64_20261024/episodes/base_2hop__700641_754472.json": "0096706f24145b1b1e3cd7cf3260ac994627a459eb2747d97ade262eed0135ba",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_9b_h3_validation64_20261024/episodes/base_2hop__712682_217649.json": "9a88e6772271af2a36078ed339d9bd00e5120d4a71715c48ed327110f1302217",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_9b_h3_validation64_20261024/episodes/base_2hop__715703_80884.json": "51295d2069dcf45c439ec3ea933fb27e295b0f6a823ac20823c59c413f056a9c",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_9b_h3_validation64_20261024/episodes/base_2hop__732025_333219.json": "6d6bf3ec517844fc0d9f01e788529149b689a1d5569b93a5a3d3634a4b980e91",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_9b_h3_validation64_20261024/episodes/base_2hop__772344_24352.json": "30bbaae738cdeb93bff10c800507f1301409cfa94aecf91a90256d3df9a8765c",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_9b_h3_validation64_20261024/episodes/base_2hop__79728_863462.json": "15bd6007bcaf87dce626880ce8d9d1e9892ae0d740f5bd4f18747b32a693b027",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_9b_h3_validation64_20261024/episodes/base_2hop__815972_59154.json": "742da6854c39ed4ee03c0e389cbefcb8d2b90e53051efa97d7add5d2cc988dae",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_9b_h3_validation64_20261024/episodes/base_2hop__856457_495.json": "eba8f707888f5bee79fe3f53c54e93f89b66188344886c31c45590c766830e8b",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_9b_h3_validation64_20261024/episodes/base_2hop__85865_86706.json": "cb119ae4ca381ff1962dd9a9694ca0c4795d834e9e6ef7355c859b17a20649c3",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_9b_h3_validation64_20261024/episodes/base_2hop__86984_74218.json": "7b597245dc9a258b6a9b08518581fba9892b40cfb2163ae4ce8d523f164df1a1",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_9b_h3_validation64_20261024/episodes/base_2hop__92768_191233.json": "21982a8b534a44f7f5e7241edc51fc27eb50cedaf2f262c82e78f84aa6badc60",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_9b_h3_validation64_20261024/episodes/base_2hop__934_1063.json": "866c9673b31c283f0772d3223df5151b094233079a3d966f324291901553e692",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_9b_h3_validation64_20261024/episodes/constant_2hop__103832_55281.json": "28963919b9a7b4752ffa11f05e3f67a192201a2ca7adf30f8d3d635dbe786bb5",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_9b_h3_validation64_20261024/episodes/constant_2hop__10692_33145.json": "296c254fc09053e69f22b67b0bb81ab389480b5ebf73835e5de22dba396940d4",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_9b_h3_validation64_20261024/episodes/constant_2hop__11785_19219.json": "25272e564fe8a4677ff59b9503d1d4f16f9a178297b673b3be5874e231f3bcd8",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_9b_h3_validation64_20261024/episodes/constant_2hop__121829_89953.json": "772d60fa3fc7ee2860bcbd5c054a7c6e4f09ae987673cd6b963bd30c3afe873f",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_9b_h3_validation64_20261024/episodes/constant_2hop__122021_252931.json": "bd9e51b8eff04d1f603e75af545187008c2b50d1a32056d8f358246d95fec144",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_9b_h3_validation64_20261024/episodes/constant_2hop__12247_92216.json": "7c468474924cbc28614d6532a93e3cc965e828e37527d61aa35abe8510b72f64",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_9b_h3_validation64_20261024/episodes/constant_2hop__131315_29363.json": "9d8b21e89d27dc49832cd6589d2206a97ad4e6ad3df1ad6403aabcb3c4ccf087",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_9b_h3_validation64_20261024/episodes/constant_2hop__132927_120674.json": "2bef21afd7dd65a3f993b9ee49ce4ccdba30e90d9393f99c2fb8a4203d51928f",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_9b_h3_validation64_20261024/episodes/constant_2hop__135584_34638.json": "aaf010d5af653c442f07b6bcb71c2470a50a3a78567fb6fa50d0d23e0e3524d9",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_9b_h3_validation64_20261024/episodes/constant_2hop__13705_13676.json": "952f3279797566c5d64ea0b9bb0e834d5b2946b6f5d4ef9523b814a57e7199cf",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_9b_h3_validation64_20261024/episodes/constant_2hop__142146_44326.json": "d014e0ee91d34917f32eca30b7985fbc5987655cf3ead89c234f7849bcf340ca",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_9b_h3_validation64_20261024/episodes/constant_2hop__144404_80761.json": "10df0d75a25e3ecf666a65a20abda16d65146b7b65c7ed226c8fe547cad96471",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_9b_h3_validation64_20261024/episodes/constant_2hop__146227_42292.json": "c4dad44430e857e368ef1e00bc611a49ce00dd698699b16a9e73be24506014e1",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_9b_h3_validation64_20261024/episodes/constant_2hop__146469_516766.json": "691ba670053b68952aae137ca97b5e255652a7d2c9fb62a11fb563824d71f0c0",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_9b_h3_validation64_20261024/episodes/constant_2hop__150582_15815.json": "27238a5b1dca3bf3e57c5477ae217cc6169e935a9922cb6f345f590e42e7dfe7",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_9b_h3_validation64_20261024/episodes/constant_2hop__160546_26427.json": "f81b9bb3331b1279999c12f9b5f8f6b2c4cb7379ff3ea730ec328df4dee7669b",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_9b_h3_validation64_20261024/episodes/constant_2hop__18025_34455.json": "716b81002fbaf98dbd69f26437a47092c3dcbe4709fc8387a3afb31ea5132a97",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_9b_h3_validation64_20261024/episodes/constant_2hop__180663_501351.json": "e651f0567dee1f737b9d4e547dbedbd0b253799e8c4d0469140c6d7b93203bbd",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_9b_h3_validation64_20261024/episodes/constant_2hop__211553_369731.json": "a2e4d3c4c5f0927efa7730c6dd6663c56ba8dbf14b11778b242722a8e8a39fb4",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_9b_h3_validation64_20261024/episodes/constant_2hop__23139_135703.json": "bcfa5fdc7b7dd2b1ef3aa4658456350351f94490e96fea4e265e0d82b21ca0af",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_9b_h3_validation64_20261024/episodes/constant_2hop__232747_86874.json": "563162a4b16b62a35ed944c2154f8fe9876ad37ba34fafeef5b7a2e87fc2ce5e",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_9b_h3_validation64_20261024/episodes/constant_2hop__243_42892.json": "ee5830f950709a90aa3ce6e85efa1d0f534caab656c61e37e631094bf8d9604d",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_9b_h3_validation64_20261024/episodes/constant_2hop__27075_5348.json": "71edc30cb9180fd07b754bdc7f9886987cf58e37e81c6479015cd5f75ecc5c8a",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_9b_h3_validation64_20261024/episodes/constant_2hop__279822_126539.json": "3d1461beebfe00772c42e3bd6f2b05053aaeaf6db9ddce7ab545d156119c7b40",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_9b_h3_validation64_20261024/episodes/constant_2hop__28051_48770.json": "987928378ddf5cde2a38debbeb71336af25a6c05cefc7d979452485c50beb461",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_9b_h3_validation64_20261024/episodes/constant_2hop__292208_649992.json": "ea031ef9f621bc1fd2aa25494e5f7fa953e4a5067c7c0fe1b5ab8fb8ee38e633",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_9b_h3_validation64_20261024/episodes/constant_2hop__3254_2999.json": "cbac7d23413ea38724cca8b4d12dfed0424c5e28761d70b109d235c10da298fe",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_9b_h3_validation64_20261024/episodes/constant_2hop__329687_83854.json": "06e1fb879da6f2efde56e37c2f59d52e0a8fb8494157f1ffff6f15ae11361294",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_9b_h3_validation64_20261024/episodes/constant_2hop__366267_185321.json": "a2e258723446f917630056d8458b63fe3b21b9803f2b6e3bdd6e52153c1d018c",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_9b_h3_validation64_20261024/episodes/constant_2hop__387970_14970.json": "8e2bf309e0d6fec5c97f98868867f417e2f8a7e45c862cea032dcf4b9515bc2b",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_9b_h3_validation64_20261024/episodes/constant_2hop__404680_47102.json": "f34bc707f9359e01ac4078966b9982d8ca803321aed361f2464a9897b9ef0fb4",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_9b_h3_validation64_20261024/episodes/constant_2hop__41723_7756.json": "1124044b631617750f056d69552c1bacf534c83870a4759c7aad3634722838c2",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_9b_h3_validation64_20261024/episodes/constant_2hop__440865_378383.json": "eb80ef11a67825b34d6863440daac23143c2027f19c66ba3b7db7467621bd193",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_9b_h3_validation64_20261024/episodes/constant_2hop__49676_87091.json": "6cccdf0d20fe170b91d4e5ef0d54ef5df115334afc86241fda9683576db6234e",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_9b_h3_validation64_20261024/episodes/constant_2hop__507991_25910.json": "fc0ea0ca96362c6deb9c18d3f2960ad6458ab862f9c82814cff7a7b368349dc0",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_9b_h3_validation64_20261024/episodes/constant_2hop__5371_74242.json": "49e206333f0ceb8a2de7635b5648812498788a2788fefd3c7216932d6fdc72fc",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_9b_h3_validation64_20261024/episodes/constant_2hop__53735_88700.json": "b83870e8131b8001cd1c557259fac51c8516f6519abb09690633ba31b4f6e495",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_9b_h3_validation64_20261024/episodes/constant_2hop__581137_10690.json": "5975af72367d1cdeebbde7d8968f4df3155576f158c8e657392e0c43def21bb0",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_9b_h3_validation64_20261024/episodes/constant_2hop__600780_90697.json": "8c9dd5a2a7b662cb887ec7d56a0df5518874587a746bcb933f2454725a6f61ec",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_9b_h3_validation64_20261024/episodes/constant_2hop__605195_70585.json": "603e4f3c0c572802dbd364393a210cb2c1862253ecaf52898c3782692ee689c0",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_9b_h3_validation64_20261024/episodes/constant_2hop__612512_10369.json": "9810f453868dae742c672fb66ee0e77864c519b2517ae689a97c499e8387088c",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_9b_h3_validation64_20261024/episodes/constant_2hop__614618_70625.json": "06b11a947e703d51c7b555a61d5449cccf44791b1f3aac0dad58068905d74eee",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_9b_h3_validation64_20261024/episodes/constant_2hop__629786_56101.json": "bd56d534543fbd14e0e310e909ca5c667cb847178614ee6c917ed77c30a22b47",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_9b_h3_validation64_20261024/episodes/constant_2hop__630207_432198.json": "0d31494b923dc9f7824ad3be8b1718f0f857807f3daa0c198c0e253b9e0d6324",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_9b_h3_validation64_20261024/episodes/constant_2hop__63539_87370.json": "61acac4634ad85813755d2e56d1e151c24c5252b4c08326b9034414f323d892f",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_9b_h3_validation64_20261024/episodes/constant_2hop__64602_25018.json": "378abdbedf362a33618872ddb667d9e0908380e8c33582eb9478dfa40f21eb68",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_9b_h3_validation64_20261024/episodes/constant_2hop__646278_3430.json": "fd32bb5607fc669fca8f331d25bad525625dcf7e4c0040a80b0c4f470c69f9b0",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_9b_h3_validation64_20261024/episodes/constant_2hop__651271_705760.json": "28af67348dbf5e7bfddbbf7bcd84bff00ebdc9c5aedadfb05d00a42cbdcc500f",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_9b_h3_validation64_20261024/episodes/constant_2hop__659552_61952.json": "423961054b5faa2add88c1bf925ec7ef44f07caccc66d3aa8041a6c3c82decef",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_9b_h3_validation64_20261024/episodes/constant_2hop__660231_406192.json": "9988aaf44ec75476e315dfec53d9ad8f0c172ada661de574323027c494331336",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_9b_h3_validation64_20261024/episodes/constant_2hop__662379_36741.json": "d41eacc86b7bae723fd1477aa358f900668df11062ba6e9beaddb4769b84755f",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_9b_h3_validation64_20261024/episodes/constant_2hop__686705_99808.json": "200ca6b67f4938e61bc07c8c7b4836fc52a127e980681db567ef47a283c66145",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_9b_h3_validation64_20261024/episodes/constant_2hop__700641_754472.json": "0f25cd36122bcb7cfb6b3d747a8d63eb4fcc91d9bcbcb74ff94d7a2c3d492b5f",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_9b_h3_validation64_20261024/episodes/constant_2hop__712682_217649.json": "39e5bcafa2a5f72675204b964b7bef6e306147a0a68671416cd59eb6f25950bd",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_9b_h3_validation64_20261024/episodes/constant_2hop__715703_80884.json": "d42cd2499eab363251d3d645a969a7c1109a053b2e92e38cd5a118eb5dc5bd70",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_9b_h3_validation64_20261024/episodes/constant_2hop__732025_333219.json": "6a1b8a51b53a2bfaac47825d74317682cf46cd31942e6f6909b3ec404668817b",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_9b_h3_validation64_20261024/episodes/constant_2hop__772344_24352.json": "80d7c1e9ce07dadc3fa3ea3cceed49613ca0646a7180579118fe15307b9d0fae",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_9b_h3_validation64_20261024/episodes/constant_2hop__79728_863462.json": "0a98ec1682d5570d2f111385e4ef71095e8407eb62a1660816fd2b8cd2cd638c",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_9b_h3_validation64_20261024/episodes/constant_2hop__815972_59154.json": "a84e7e278673ee7085dfa788c075c8d7018da1596aa66b4cdc27b2d1672d2cc2",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_9b_h3_validation64_20261024/episodes/constant_2hop__856457_495.json": "33e17c75df055ab6992bfc31f6b0e1fd2554106238f5a25b1f21a9f6610ffea8",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_9b_h3_validation64_20261024/episodes/constant_2hop__85865_86706.json": "2b2676894e42025e2f63652f0de8b87eb8788af0719523aaa20abb5ea56ae5e2",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_9b_h3_validation64_20261024/episodes/constant_2hop__86984_74218.json": "7adcbf89c68078fabcdbac081834d5bacddfafb7d03e0de53f9acd1af0fd854b",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_9b_h3_validation64_20261024/episodes/constant_2hop__92768_191233.json": "fe2565a3a75dbbd55dee351a8cc6cd8bbd3872c8dd0be55d2f2b6762cffdca8b",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_9b_h3_validation64_20261024/episodes/constant_2hop__934_1063.json": "52407b35249d7b9fc891b6f6619848a944cb71814e30b6b86378351acf4528b5",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_9b_h3_validation64_20261024/episodes/h3_2hop__103832_55281.json": "c3a81dde116291d65c8e3ea6b0c6fc47b00e803bc93a3edb89553dc64b0ae2e5",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_9b_h3_validation64_20261024/episodes/h3_2hop__10692_33145.json": "c6e5819430a4ca35756fdd039a53bc4647c2566304006889092fffb506aabba5",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_9b_h3_validation64_20261024/episodes/h3_2hop__11785_19219.json": "08aa1d962fb8415fcd585dda9d32532c6338d353df30f5abfaedd3f7195bf3bb",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_9b_h3_validation64_20261024/episodes/h3_2hop__121829_89953.json": "05908fddf0fe4dc4ab51a63b7d9fc4c917e13e32092c2af9d2aca4179a25deb5",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_9b_h3_validation64_20261024/episodes/h3_2hop__122021_252931.json": "1d201ffc45b52b3d6fda875784c8fb627a5528af524eff37c8928cd842f28cf6",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_9b_h3_validation64_20261024/episodes/h3_2hop__12247_92216.json": "146873358f348bc2b68b47d68925753bd7e17887a4d05d5d03cdfb3345005cb7",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_9b_h3_validation64_20261024/episodes/h3_2hop__131315_29363.json": "c79de7212424a7ef35b1f139205962b05040dad82326e51108e06ad01127e532",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_9b_h3_validation64_20261024/episodes/h3_2hop__132927_120674.json": "df97545a904b9945308401dd06f817f98b682f1105d54769bb035ef59a9baf06",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_9b_h3_validation64_20261024/episodes/h3_2hop__135584_34638.json": "cd5a89a2f9b86435dabe58c8972c062548614966bd806803d4cd89393250a947",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_9b_h3_validation64_20261024/episodes/h3_2hop__13705_13676.json": "b0aa5e1e97fef952d299dd915a6d9c8810e883d73add58aabb3d006a016af355",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_9b_h3_validation64_20261024/episodes/h3_2hop__142146_44326.json": "12d46bedf29cc60ef516317f042d9968d7d8ac2d71c16e925c917a5aa92851dc",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_9b_h3_validation64_20261024/episodes/h3_2hop__144404_80761.json": "5137e1d75b2c34f5f5b620ca2d07b922c2c12e3dd095906a02ab46eb55736b32",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_9b_h3_validation64_20261024/episodes/h3_2hop__146227_42292.json": "ba0f1676079fd3679508e4d24e041ad1eb80b555a8cee96df2f2e23012278dda",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_9b_h3_validation64_20261024/episodes/h3_2hop__146469_516766.json": "cc4882cf464c10060368572e32f21831392d413ead864a553aa7d6e59079e7b6",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_9b_h3_validation64_20261024/episodes/h3_2hop__150582_15815.json": "a895c00e333c79684de70c760716602ce3e41a22213f474b8f654fd3582c9cb4",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_9b_h3_validation64_20261024/episodes/h3_2hop__160546_26427.json": "b2745711716588752f304e991229af542da81fb0db08784a2875d272ed412e50",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_9b_h3_validation64_20261024/episodes/h3_2hop__18025_34455.json": "389f0484d3c542b12bd8328dbbba21cf1141bdbfd59cc57181e047ff923cfe19",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_9b_h3_validation64_20261024/episodes/h3_2hop__180663_501351.json": "1f78a0e064051102eae3a1896d14bf05cbceafb4f4bcf028f685533e900d5804",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_9b_h3_validation64_20261024/episodes/h3_2hop__211553_369731.json": "e05adc92d7a9f2eb3d1afc2c1179e31d1c59cb95a8a53cf696a9e5e4bc4fd327",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_9b_h3_validation64_20261024/episodes/h3_2hop__23139_135703.json": "929fbe9ddd0d1740bf3a383e5e2ef2b0cd9a76a4b748dcff4106c418c9fe800e",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_9b_h3_validation64_20261024/episodes/h3_2hop__232747_86874.json": "ef23d0553daf9ebe2ac26e936267f12fe104ba964c266f075fb786af8ee1becf",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_9b_h3_validation64_20261024/episodes/h3_2hop__243_42892.json": "44f086b9de71550edef5f2e48a052d6101e80c859011fef6c401c6c145adf996",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_9b_h3_validation64_20261024/episodes/h3_2hop__27075_5348.json": "f74baf8b2419b86887569d9b057ca212944bc12a49070f07b94e32c09f17a6a7",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_9b_h3_validation64_20261024/episodes/h3_2hop__279822_126539.json": "a6aeb2810ccdf1d0e543806f9d14dedcfe40fba9f269c5771d7662b4729dcbb2",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_9b_h3_validation64_20261024/episodes/h3_2hop__28051_48770.json": "be702e020e4523abd62bd7bcdd81fd7fcf74da306baf25f15bdab9fcc73214c1",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_9b_h3_validation64_20261024/episodes/h3_2hop__292208_649992.json": "46250ff9d7d94f55ba65171200fc3e6fecad8698a6c69d3328dafc534e553983",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_9b_h3_validation64_20261024/episodes/h3_2hop__3254_2999.json": "972a45faeca4ead72d4168db74f339b913e75f7946092d602fcef80afcbb478c",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_9b_h3_validation64_20261024/episodes/h3_2hop__329687_83854.json": "01973c985de3d0482078588b52b2fd57c7125645dbe755d16d210acda7fc0100",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_9b_h3_validation64_20261024/episodes/h3_2hop__366267_185321.json": "1c13fd19b78a558bab573ecd1bb76b45a32030f8485e29ac66bc7a19cff25623",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_9b_h3_validation64_20261024/episodes/h3_2hop__387970_14970.json": "1a443ccceb6b1c7d4d62b577f9f6bcee5479818eee298553b65046dbca182efb",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_9b_h3_validation64_20261024/episodes/h3_2hop__404680_47102.json": "a9ce151c0fcf09981c139d315f5e92f741e3cb47399446cd25b6027b9bf01fb8",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_9b_h3_validation64_20261024/episodes/h3_2hop__41723_7756.json": "ccd5644dad72109e185882e6416856d0b9510d69227841e4d0029d177fd07808",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_9b_h3_validation64_20261024/episodes/h3_2hop__440865_378383.json": "1d4a253681bbfa649d2be237ccea563bf3c12dcd374ceb60204877f401ffd7ab",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_9b_h3_validation64_20261024/episodes/h3_2hop__49676_87091.json": "df49439355fb9154d878e5ccd035d7d354711c11baac70db1d98b0a588dafb70",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_9b_h3_validation64_20261024/episodes/h3_2hop__507991_25910.json": "3a819b83e5c2d594217a6a28bd44de6c8cc0dc2ceeafd475747bf51bb66480a8",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_9b_h3_validation64_20261024/episodes/h3_2hop__5371_74242.json": "c99b27bf1eeae3fb0010cc1e7a3611eb83e8b7c92a2509f48106fd28e3b82ceb",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_9b_h3_validation64_20261024/episodes/h3_2hop__53735_88700.json": "7abc09d3d5bfe0f42ae2420296b86568782b18e43511ea35f8d0f927c16162d9",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_9b_h3_validation64_20261024/episodes/h3_2hop__581137_10690.json": "8a9f87fe2fa9cabd0cf33e216732b7dfdbccd20768884e697d5f72bd24bcc176",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_9b_h3_validation64_20261024/episodes/h3_2hop__600780_90697.json": "887370ebf85019b8144bd6dee06bcea298845ac8edfad9f0823a7cdaf30cbc3d",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_9b_h3_validation64_20261024/episodes/h3_2hop__605195_70585.json": "ace1d18738258dfc97a0665ea8b90cb731f541d9627d599ace33633a74dc2cbb",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_9b_h3_validation64_20261024/episodes/h3_2hop__612512_10369.json": "ff14111873615f020d4fa6ffc8736221865386bd2dd86236b5c7b855a7b3e9e7",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_9b_h3_validation64_20261024/episodes/h3_2hop__614618_70625.json": "478d24c75dddf1961960df1967430988327d8ea593ad457e580b11ecfa112ea1",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_9b_h3_validation64_20261024/episodes/h3_2hop__629786_56101.json": "13e7f3e8e5c6e00e9398b5fd6c27f6f94fb13cbcffc6a34b0e3e87cf500aa5d9",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_9b_h3_validation64_20261024/episodes/h3_2hop__630207_432198.json": "4a3d73585d9a00ed4d98d3689da3043f7c6b250a5566b7e342212d389d115a2f",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_9b_h3_validation64_20261024/episodes/h3_2hop__63539_87370.json": "b7c124514495d337f4b23650d17ae00f487d07fe062c96b9bd44774b7b4ca57e",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_9b_h3_validation64_20261024/episodes/h3_2hop__64602_25018.json": "6ff8a5cf0adc459a06ebb07a1120e1d9735c13372912161c7fd7c7fa97960cd4",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_9b_h3_validation64_20261024/episodes/h3_2hop__646278_3430.json": "4287b9552a33de5c02b4c0d5c7ddbcfa88e4ddbaf59fbaa23cf6010a8284797c",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_9b_h3_validation64_20261024/episodes/h3_2hop__651271_705760.json": "8a24689c66dfbdf1857e3998ba862809dce8d417088784d32f32fb6c5729ef66",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_9b_h3_validation64_20261024/episodes/h3_2hop__659552_61952.json": "f4db383f20134db67d3030bb3ddabffda894e7b85a77f67d03642fb757c92772",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_9b_h3_validation64_20261024/episodes/h3_2hop__660231_406192.json": "6c6724ff997702d255f98041c04348947a866482dc32839dd42debbad95e5ccf",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_9b_h3_validation64_20261024/episodes/h3_2hop__662379_36741.json": "9fa38c452868ce35792fd4d9f21bb710ee92945d0fb138cb62f304a16b7d769c",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_9b_h3_validation64_20261024/episodes/h3_2hop__686705_99808.json": "123ebf5ce39171c875e71cc22a26cc3ed7be118c674fefb338c7ce493b11d532",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_9b_h3_validation64_20261024/episodes/h3_2hop__700641_754472.json": "bee1359a0a521afa66099d6e0872bca4ba9f16c40a6755361465111eea4ce7ee",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_9b_h3_validation64_20261024/episodes/h3_2hop__712682_217649.json": "d49eee81d9548eeec2363ab9badf4774776a0baf85953700ed1dd4fdf74fc022",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_9b_h3_validation64_20261024/episodes/h3_2hop__715703_80884.json": "a5c0e13484852059712d66df1be00f84f281061c65050ded9aff1e857020d5cb",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_9b_h3_validation64_20261024/episodes/h3_2hop__732025_333219.json": "f9d854ae51b8304500fa5e7227e429799f6c036a79c1c6a578ae1383fcf6ebef",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_9b_h3_validation64_20261024/episodes/h3_2hop__772344_24352.json": "a264c0524fde7488b56545a4f962bd623979149d7de026917e9348298a5899fe",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_9b_h3_validation64_20261024/episodes/h3_2hop__79728_863462.json": "94b7013358813cae82c16783c5673880d2ef2c383e748d10253757b75a38a84b",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_9b_h3_validation64_20261024/episodes/h3_2hop__815972_59154.json": "18dc477eab53e678018cee1e4b462cd7330c6975fffb063f866add226a90526d",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_9b_h3_validation64_20261024/episodes/h3_2hop__856457_495.json": "5db0bb24c4f53d90b2b88c1e1cf356ab7648ae12553c151d9c307a9bd5bc89ba",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_9b_h3_validation64_20261024/episodes/h3_2hop__85865_86706.json": "f9ccee636106d20b73721d72219ff42f2d730af5a5e5ab7ff79181b4490ec716",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_9b_h3_validation64_20261024/episodes/h3_2hop__86984_74218.json": "eda84f797f41ba8f6cc7c738330b9ccdd58794b3a46df51877149e46f6ff5c4b",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_9b_h3_validation64_20261024/episodes/h3_2hop__92768_191233.json": "ee5e9ed8687163c1185f06f7a9a07bbe146d35d4fc27bd27815906df5c577f97",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_9b_h3_validation64_20261024/episodes/h3_2hop__934_1063.json": "3ede337c62fe71b4868bde3a4684de62891ee55627e67238231d207821d9821c"
+  },
+  "interpretation": "Compare H3 against same9B outcome base and constant-bias control. Historical4B base had different exploratory preparation; tokenizers/architecture/generation/size also change. Completion is valid experiment/report, not forced positive improvement."
+}

@@ -1,6 +1,6 @@
 {
-  "phase": "qwen35_h3_control_complete_dev64_evaluation_running",
-  "updated_utc": "2026-10-24T16:11:52.033518+00:00",
+  "phase": "qwen35_h3_larger_model_experiment_complete",
+  "updated_utc": "2026-10-24T16:40:33.655944+00:00",
   "protocol": "docs/JEV_QWEN35_9B_H3_GENERALIZATION_20261024.md",
   "protocol_sha256": "e0cd40c9a1b728408047f7aee95bc9849caa698407c243d20df6a991c9260432",
   "prompt": "prompts/text_rag_integrated_v5.txt",
@@ -32,13 +32,13 @@
   ],
   "worker_wall_budget_minutes": 120,
   "run_planned": "/content/local_fast/lsdrag-text-v1/results/decision_h3_policy_coverage24b_20261024",
-  "pid": 178400,
+  "pid": null,
   "implementation_completed": true,
   "dataset_prepared": true,
   "teacher_collection_started": true,
   "training_completed": true,
-  "evaluation_completed": false,
-  "next": "Verify paired192episodes -> archive -> qualified4B/9B report -> goal audit",
+  "evaluation_completed": true,
+  "next": "Completed bounded9B experiment; no automatic new runs",
   "previous_multimodal_checkpoint_historical_only": {
     "phase": "native2_review_required",
     "run": "/content/local_fast/lsdrag-head-v14/results/native_distillation_12b_20261015",
@@ -1252,7 +1252,7 @@
   "read_pointer_plan": "docs/JEV_H2_READ_POINTER_FEASIBILITY_20261024.md",
   "last_experiment_limit": false,
   "active_objective": "큰 모델로 실험 완료하기",
-  "coordinator_pid": 121348,
+  "coordinator_pid": null,
   "coordinator_status": "/content/local_fast/lsdrag-text-v1/results/qwen35_9b_pipeline_20261024/status.json",
   "bootstrap_completed": true,
   "qwen35_base_fit": {
@@ -1271,5 +1271,7 @@
     "constant_parameters": 1,
     "base_frozen_verified": true,
     "quality_evaluated": false
-  }
+  },
+  "final_report": "docs/JEV_QWEN35_9B_H3_RESULTS_20261024.md",
+  "quality_superiority_established": false
 }

@@ -2087,3 +2087,10 @@ H3andconstantfit complete, same48correctionstates across25trainquestions and1364
 
 Coordinator121348 froze evaluation_spec.json and launched actualevaluationPID178400. Run /content/local_fast/lsdrag-text-v1/results/qwen35_9b_h3_validation64_20261024/status.json; log /content/local_fast/lsdrag-text-v1/logs/qwen35_pipeline_evaluation_20261024.log. First2episodesconfirmedat32.20seconds. Same64questionsxbase/H3/constant,192total planned; noreserved80. Do notduplicate/restart. Nextwaitterminalrawverification/archive ->summarize_qwen35_h3.py ->reviewactualquality/control/4Bdirection ->pushandbackup ->requirementcompletionaudit. Goalnotcomplete; no9Bqualityclaimyet.
 
+
+## 2026-10-24 — larger-model experiment complete, qualified result
+
+Coordinator121348 and evaluation178400 terminated normally, actual processes absent. Dev64 x3 =192episodes,1730.5404sec,29635generated,3109637input,0errors. Raw officialF1/EM/token/source/checkpoint/split verification passed. 9B base F1.4789675245/EM24/gen156.765625; H3 F1.4841758578/EM25/gen151.53125; constant F1.4867800245/EM25/gen154.75. H3vsbase +0.52ppF1/−3.34%tokens; vsconstant −0.26pp/−2.08%, no state-policy superiority established. Bothcorrect23 spends81extra; gained2 saves114; lost1 saves62; bothwrong38 saves240. Report docs/JEV_QWEN35_9B_H3_RESULTS_20261024.md includes4B direction and confounds.
+
+Evaluation archive Drive20261023/qwen35_9b_h3_validation64_20261024.tar.gz SHA76701cc460e274b9771ee9b20795c21944fb13ead3768572a0dc93b3c6a5555b. All7stage archives rehashed; frozen sources unchanged; raw192hashes rechecked. Audit lab/reports/qwen35_9b_h3_validation64_20261024/completion_audit.json. Reserved80/final80 excluded; repeateddev64 only. No active experiment and no automatic extension. Final Git push/code backup remains last preservation step of this milestone.
+
