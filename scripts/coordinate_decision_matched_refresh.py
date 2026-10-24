@@ -1,14 +1,14 @@
 """Evaluate fixed constrained candidates and quality starting head serially."""
 import json,os,subprocess,time
 from pathlib import Path
-from run_decision_policy_pilot import ROOT,REPO,save
+from run_decision_policy_pilot import ROOT,REPO,save,sha
 NAME='decision_matched_refresh_20261024'
 VALIDATION='decision_matched_refresh_validation64_20261024'
 
 def read(p):return json.loads(p.read_text())
 
 def main():
-    state=ROOT/'results/decision_matched_refresh_coordinator_20261024.json'
+    state=ROOT/'results/decision_matched_refresh_coordinator_r1_20261024.json'
     assert not state.exists(),'No implicit restart'
     start=time.monotonic()
     def phase(name,**kw):
@@ -56,10 +56,12 @@ def main():
         template['max_seconds']=3000
         template['max_generated']=1000000
         template['max_inputs']=40000000
+        for source in ['scripts/evaluate_decision_direct_utility.py','src/lsdrag/decision_direct_utility.py']:
+            template['source_sha256'][source]=sha(REPO/source)
         save(REPO/'lab/registry'/NAME/'validation_spec.json',template)
         run('scripts/reporting/archive_decision_run.py',['--run',NAME],300)
         spec=REPO/'lab/registry'/NAME/'validation_spec.json'
-        run('scripts/evaluate_decision_attention.py',['--spec',str(spec)],3300)
+        run('scripts/evaluate_decision_direct_utility.py',['--spec',str(spec)],3300)
         run('scripts/reporting/summarize_decision_shared_evaluation.py',['--run',VALIDATION,'--baseline','selected_reference'],180)
         run('scripts/reporting/compare_decision_policy_campaign.py',['--run',VALIDATION],180)
         run('scripts/reporting/archive_decision_run.py',['--run',VALIDATION],300)

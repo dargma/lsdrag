@@ -293,10 +293,26 @@
   "kl": 0.02,
   "entropy": 0.01,
   "source_sha256": {
-    "scripts/fit_decision_matched_refresh.py": "1951394d862ca978e9a4f0eba435cd156aa091adc43fe439122384693252e75c",
+    "scripts/fit_decision_matched_refresh.py": "eda81b95713e911c29c83389673db8603965ebc6e27f4b17d55c06ccfbf6cedf",
     "src/lsdrag/decision_attention_adapter.py": "4e8c39884e02321dc9fb6c83824d935844060730a354316429905cfaf86f3bef",
     "src/lsdrag/decision_state_learning.py": "e900d36eb59e3d2bcc9310d86b792f5be292af6f145aafd205cda1ec24221d59",
     "src/lsdrag/decision_policy_followup.py": "dc37830eb8cecf507717146a3f90236a2229b1770bc0dbc8bdfd7d68c0a45324",
-    "scripts/evaluate_decision_attention.py": "2bc2c809305a9c3f79564025b679987b23e8ffa527907fc9a4d3fd45b4655559"
+    "scripts/evaluate_decision_attention.py": "2bc2c809305a9c3f79564025b679987b23e8ffa527907fc9a4d3fd45b4655559",
+    "src/lsdrag/decision_direct_utility.py": "e00b9d3feb51f3f9d4845cdc46643fefee012b97bd9e5f2eed84ba98b967562a",
+    "scripts/evaluate_decision_direct_utility.py": "c84e378261d0fd3e610dcd8a81628136780b0c225d86bb79f9c8e9f60bd0bb03"
+  },
+  "added_direct_utility": {
+    "user_authorized": true,
+    "data": "fresh matched prefixes only",
+    "quality": "expected fractional answer F1, not binary correctness probability",
+    "cost": "same mixed remaining cost used by earlier Q targets",
+    "lambda": 0.03,
+    "temperature": 0.1,
+    "epochs": 500,
+    "lr": 0.001,
+    "loss": "masked per-state F1 MSE + normalized cost SmoothL1 + .02 KL to d987; question balanced",
+    "initial_logits_equal_base": false,
+    "backbone_frozen": true,
+    "comparison": "Architecture AND supervised objective differ from actor candidates; no isolated architecture claim."
   }
 }

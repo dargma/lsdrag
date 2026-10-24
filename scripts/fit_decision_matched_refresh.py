@@ -6,6 +6,7 @@ import time
 from pathlib import Path
 import torch
 from lsdrag.decision_attention_adapter import AttentionAdapter
+from lsdrag.decision_direct_utility import DirectUtilityHead
 from lsdrag.decision_state_learning import action_values, expected_utility_loss
 from lsdrag.decision_policy_followup import state_weights
 from evaluate_decision_attention import load_head
@@ -98,6 +99,36 @@ def main():
                 kind = dict(kind='structure', inputs='multi', body='mlp') if body == 'mlp' else dict(kind='attention_adapter', variant=body)
                 candidates[name] = dict(**kind, checkpoint=str(checkpoint), sha256=sha(checkpoint))
                 audits[name] = dict(curve=curve, parameters=sum(p.numel() for p in parameters), initial_exact=True, normalization_fixed=True)
+        phase('training', candidate='fresh_direct_utility')
+        torch.manual_seed(plan['seed'])
+        head = DirectUtilityHead(base)
+        _, quality_target, cost_target = action_values(fresh, .03)
+        head.cost_scale.copy_(cost_target[legal].mean().clamp_min(.1))
+        buffers = {k: v.clone() for k, v in head.named_buffers()}
+        optimizer = torch.optim.AdamW(head.parameters(), lr=1e-3)
+        curve = []
+        for epoch in range(500):
+            optimizer.zero_grad()
+            logits, _, quality, cost = head(x, legal)
+            regression = (quality-quality_target).square() + torch.nn.functional.smooth_l1_loss(
+                cost/head.cost_scale, cost_target/head.cost_scale, reduction='none')
+            per_state = regression.masked_fill(~legal, 0).sum(-1)/legal.sum(-1)
+            prob = logits.softmax(-1)
+            kl = (prob*(prob.clamp_min(1e-9).log()-reference.clamp_min(1e-9).log())).sum(-1)
+            loss = (weights*(per_state+.02*kl)).sum()
+            loss.backward()
+            torch.nn.utils.clip_grad_norm_(head.parameters(), 1)
+            optimizer.step()
+            if epoch % 100 == 0 or epoch == 499:
+                curve.append(dict(epoch=epoch, loss=float(loss.detach())))
+        assert all(torch.equal(value, buffers[k]) for k, value in head.named_buffers())
+        assert all(torch.isfinite(value).all() for value in head.state_dict().values())
+        checkpoint = out/'fresh_direct_utility.pt'
+        torch.save(head.state_dict(), checkpoint)
+        candidates['fresh_direct_utility'] = dict(kind='direct_utility', checkpoint=str(checkpoint), sha256=sha(checkpoint))
+        audits['fresh_direct_utility'] = dict(curve=curve, initial_exact=False, normalization_fixed=True,
+            training='Supervised F1 MSE + scaled cost Huber + .02 reference KL; 500updates lr.001. Architecture AND objective changed.',
+            cost_scale=float(head.cost_scale), parameters=sum(p.numel() for p in head.parameters()))
         save(out / 'manifest.json', dict(plan=plan, candidates=candidates, audits=audits, matched_states=len(fresh), questions=len(plan['train']), new_llm_rollouts=0))
         phase('complete')
     except BaseException as exc:

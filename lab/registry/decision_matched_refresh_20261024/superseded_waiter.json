@@ -1,0 +1,5 @@
+{
+  "pid": 389583,
+  "reason": "User explicitly adds direct utility head before training. Waiting coordinator stopped only; collector388356 continues. No fit/evaluation launched.",
+  "replacement_state": "decision_matched_refresh_coordinator_r1_20261024.json"
+}
