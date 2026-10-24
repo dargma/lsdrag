@@ -1,4 +1,11 @@
 
+## 2026-10-24 — context-residual matched-data candidate trained and evaluation launched
+
+Protocol docs/JEV_CONTEXT_PARETO_PROTOCOL_20261024.md frozenbeforefit. Same105pairs32states, fresh88/old377retention,100epochsLR1e-4KL.1seed20261060. ContextResidualHead width64 reads32orderedprefixbinmeans,base0a1bfullyfrozen;zerooutputinitiallogitsverifiedexactonallfresh+oldstates. Five tests passed. CPUfit18.14sec,checkpointloadedwithnewwrapper,baseeverytensorexactandoutputresidualnonzero. Actuallearnedqualityunknown. Finalrank.08829/KLold.10725/fresh.53410;notguaranteedqualityretention.
+
+Coordinator370075 launched scripts/coordinate_decision_context_evaluation.py;log /content/local_fast/lsdrag-text-v1/logs/context_pareto_coordinator.log;state /content/local_fast/lsdrag-text-v1/results/decision_context_pareto_coordinator_20261024.json. Evaluatequality_start/ordinarypareto/context_pareto3×64,max1800sec,unchangedruntime/reader/corpus. Reports/archivechainconfigured. Capacityandparameterizationnotmatched;no rawtokenattention/noveltyclaim. GoalACTIVE;reservedtestprotected.
+
+
 ## 2026-10-24 — empirical Pareto evaluation complete; quality retention not established
 
 Coordinator367799 terminalcomplete;128pairedvalidationepisodes done. Quality_start32.45/139.03 reproduced;pareto28.17/104.796875,input5498.30,calls2.53125,zero-tool9/errors1. VersusqualitystartF1-4.28pp CI[-10.397,+1.429]pp,genratio.753765 CI[.63015,.87568]. Fixedbasic22.50/98.41:qualitypointtargetpassesbutgenerationtargetfails. Empirical2sampledominance didnotguaranteeactualqualityretention;notindependentgeneralization. Botharchivescomplete;goalACTIVE.
