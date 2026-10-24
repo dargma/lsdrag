@@ -1087,11 +1087,12 @@
     "goal_achieved": false
   },
   "anchor_correction_evaluation": {
-    "phase": "complete",
-    "pid": null,
-    "seconds": 294.9553862210014,
-    "report": "lab/reports/decision_anchor_corrections_validation64_20261024/report.md",
-    "goal_achieved": false
+    "phase": "running",
+    "pid": 404892,
+    "seconds": 0.21540428799926303,
+    "script": "scripts/evaluate_decision_attention.py",
+    "child_pid": 404899,
+    "log": "/content/local_fast/lsdrag-text-v1/logs/value_heads_evaluate_decision_attention_1792832376.log"
   },
   "corrected_policy_refresh": {
     "phase": "complete",

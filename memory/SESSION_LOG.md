@@ -1395,3 +1395,7 @@ Whilecorrected48bcollector399521 remainslive, scripts/reporting/diagnose_trainin
 ## 2026-10-24 — expanded coverage complete, cost-priority correction fit
 
 48bcurrentMLPcollectionaudited48q/87states/648episodes/974.94sec;53259generated/3053575input/4errors. DriveSHA3eb5ffb57cb37367ff5996a57f8f9725dce1e531352b9f73c94e14b5314212a1independentlyverified. Two batches96distincttrainqids,differentpolicies;oldoutcomesnotmixed. New21correctablestates,14nonworsecheaperstatesacross12qids. SingleMLPcost-priorityfitcomplete2.22sec:14costcorrections+7qualitycorrections,411retentionstates,current26.41anchor. Exactinitialnormalization/finitechecks;checkpointsreloaded/hashverified. Protocol docs/JEV_COST_PRIORITY_PROTOCOL_20261024.md. Next2×64evaluate(currentreference26.41,notd987)+cachedbaseline comparisons. GoalACTIVE,notachieved.
+
+## 2026-10-24 — cost-priority paired evaluation live
+
+Coordinator404892/worker404899verifiedlive. State /content/local_fast/lsdrag-text-v1/results/decision_cost_priority_coordinator_20261024.json;log /content/local_fast/lsdrag-text-v1/logs/value_heads_evaluate_decision_attention_1792832376.log. Run decision_cost_priority_validation64_20261024,2×64. Same-runselected_reference denotes26.41MLP here; d987 remainscachedselected_before. Fitarchiveverifiedbycoordinator. GoalACTIVE,quality/costimprovementunknown.
