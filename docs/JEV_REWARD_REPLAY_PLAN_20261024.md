@@ -14,11 +14,11 @@ A. Reproduce original mixed-cost, episode-group advantage update on identicalbat
 
 B. Change only episode reward to F1−0.0003*T_generated. This preserves the original marginal generated-token penalty while removing tool/input penalties. Same groupstandardization, allzeroF1gate and everythingelse. This tests objective alignment, not a tuned optimum or budget guarantee.
 
-C. Use same terminal quality and generated-token coefficient, but remaining-generation credit at step t. Let G_i,t=sum_{u>=t}g_i,u and R_i=F1_i−0.0003*G_i,0. Use a question-level baseline from the OTHER3trajectories, b_i=mean_{j!=i}R_j; fixed per-question scale S estimated once from original total rewards with explicit epsilon. Compare total-return and return-to-go versions using THE SAME leave-one-out baseline and scale. To isolate credit rigorously, B must also use this baseline in the matched B-vsC comparison; if original B uses ordinarygroupcentering, add only a CPUupdate control for the baseline change, not a newdatacollection. Do not silently call multiple simultaneous changes 'step credit only'.
+C. Use same terminal quality and generated-token coefficient, but remaining-generation credit at step t. Let G_i,t=sum_{u>=t}g_i,u and R_i=F1_i−0.0003*G_i,0. Use a question-level baseline from the OTHER3trajectories, b_i=mean_{j!=i}R_j; fixed train-wide scale S estimated once as the standard deviation of all768 generated-cost episode rewards; fail if it is zero/nonfinite. Compare total-return and return-to-go versions using THE SAME leave-one-out baseline and scale. To isolate credit rigorously, B must also use this baseline in the matched B-vsC comparison; if original B uses ordinarygroupcentering, add only a CPUupdate control for the baseline change, not a newdatacollection. Do not silently call multiple simultaneous changes 'step credit only'.
 
 A_i,t=(F1_i−0.0003*G_i,t−b_i)/S.
 
-Allzeroquality groups retain the existing gate for this pilot. Forcing/invalidaction policy staysfixed; alltailtokens count. No new critic, auxiliary shaping or dualparameter in the first comparison. Rawreturn-to-go removes pastcost dependence but does not estimate full actioncounterfactualvalue; it is a limited first step. Questiongroup normalization is a practical GRPO-style surrogate, not an unbiased-gradient guarantee.
+Allzeroquality groups retain the existing gate for this pilot. Forcing/invalidaction policy staysfixed; alltailtokens count. No new critic, auxiliary shaping or dualparameter in the first comparison. Rawreturn-to-go removes pastcost dependence but does not estimate full actioncounterfactualvalue; it is a limited first step. The leave-one-out baseline and frozen train-wide scaling form a practical surrogate, not an unbiased-gradient guarantee.
 
 ## Trajectory weighting caveat
 
@@ -31,3 +31,7 @@ Proposed cap: same original4epochs/minibatch32/LR1e-4, actor/encoder only, allfi
 Required tests before execution: futurecost includesforcedFINAL; changingpastcost cannotchangeunscaledremainingcost; noillegal/forcedactions getactorupdates; zerogate preserved; pairedsamebatcholdlogprobs; actualgenerateddefinition matchesrawrecords; fixedparameterchecks; noeval/testlabels. Saveeveryfailure/candidate, finalcheckpointonly, nointermediatevalidationselection.
 
 Interpretation: improvement must be actualpairedF1andgeneratedtokens, not trainingreward. Existingvalidation exposure and singleseed uncertainty remain. Finalnumericgoal requires independentconfirmation and state-conditioneddecision evidence. No newrun is currently authorized by this document alone; existing user sessionauthorization governs later execution, while latest save-first request is respected for this preparation.
+
+## Prepared implementation check
+
+Reward helpers in src/lsdrag/decision_step_credit.py;5tests pass. Dry-run onall2851controllableactions uses frozen train-wide scale0.4672040164383903 for BOTH total andremainingconditions. No optimizer invoked. Group-specific totalrewardstd can be zero even when suffixcosts vary, so it was rejected before training to avoid artificial suffixadvantage explosions. This scale change is shared by both matchedarms, distinct fromhistoricalGRPO normalization. Record:lab/reports/decision_quality_head_grpo192_20261024/step_credit_dry_run.json. Rawadvantage means differ byconstruction; no policyquality inference.

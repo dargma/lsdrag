@@ -1259,3 +1259,7 @@ Bothtrain/evalDrivearchives independentlysize/SHAverified;verification.json reco
 ## 2026-10-24 — reward replay feasibility and matched comparison plan saved
 
 Verifiedall768qualityMLProllouts:192×4,2925decisions,2851controllable,79144generated reconstructedexactly,2198forcedtailtokens retained, nobranchinterventions. Report reward_replay_feasibility.json. Saved docs/JEV_REWARD_REPLAY_PLAN_20261024.md: exactbehaviorcheckpointreplay, baseline reproduction, actualtokensobjective, rigorouslymatchedtotal-vsremainingcredit, baselinechangecontrol andtrajectorylengthweightingcaveat. No newrewardtraining/evaluation launched, respectinglatest save-first request. Nextneedsfrozenconcreteimplementationbeforeanyexecution. GoalACTIVE.
+
+## 2026-10-24 — step-credit implementation prepared, tests/dry-run only
+
+Implementedsrc/lsdrag/decision_step_credit.py,5tests passed:futureforcedcost/pastcostexclusion,firststepmatch,zerogate,invalidaccounting/interventionrejection. Appliedwithoutoptimizer toall2851controllableactionsfrom768trainrollouts;finitebotharms. Fixedtrain-wide rewardstd.4672040164383903 sharedbytotal/remainingarms replacespotentiallyzeroquestionstd;documentedbeforetraining. No modeltraining, no GPUeval, no newpolicycheckpoint. Save-first scope maintained;goalACTIVE.
