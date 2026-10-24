@@ -1,3 +1,7 @@
+## 2026-10-24 — hypothesis-first, fast direction finding
+
+User explicitly rejects excessive detailed ablation analysis. Investigate whether the action head is a useful state-conditioned policy improving accuracy AND token cost, rather than merely imitating choices. Run one major hypothesis/candidate at a time, judge real closed-loop QA and useful action changes, and expand detailed experiments only after a promising direction emerges. Preserve necessary integrity/heldout checks without making them the research program. Active strategy docs/JEV_DECISION_POLICY_HYPOTHESIS_PLAN_20261024.md. Existing goal remains active.
+
 
 ## 2026-10-24 — offline structure restart and attention expansion
 

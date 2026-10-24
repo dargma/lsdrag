@@ -1,4 +1,15 @@
+> Latest user direction: hypothesis-first, fast single-candidate policy tests; detailed ablations only after direction narrows. Active strategy: `JEV_DECISION_POLICY_HYPOTHESIS_PLAN_20261024.md`. Third48 collection is now complete and independently verified; no new candidate has been fitted yet. Historical runtime descriptions below are preserved as history.
+
 > Latest user override2026-10-24: native ARAG protocol unchanged; action-selection head substitution and policy learning only. Short-reference/ID serialization proposal withdrawn. Older interface-optimization suggestions below are superseded.
+
+> Recovery update2026-10-24: the numbered program and queue descriptions below
+> are historical. Quality-leading MLP + GRPO already completed (F1 34.75,
+> generated150.91). Subsequent offline structure/attention, refreshed targets,
+> direct utility, selective quality correction and cost-priority correction
+> experiments also completed. Current worker collects third48 outcomes using
+> cost-priority MLP e1a630e5 (F1 26.74/generated75.45). See
+> `JEV_DECISION_POLICY_CURRENT_MAP_20261024.md` for lineage and current next step;
+> no old queue should be relaunched from this document.
 
 # Remaining adaptive program and head lineage
 

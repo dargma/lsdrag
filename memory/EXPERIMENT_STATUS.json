@@ -972,7 +972,7 @@
     "updated_utc": "2026-10-24T05:05:24.828840+00:00",
     "reaffirmed_utc": "2026-10-24T09:35:54.089300+00:00",
     "explicit_user_request": "골 모드 진입",
-    "current_phase_protocol": "docs/JEV_COST_POLICY_COVERAGE_PROTOCOL_20261024.md"
+    "current_phase_protocol": "docs/JEV_DECISION_POLICY_HYPOTHESIS_PLAN_20261024.md"
   },
   "opportunity_value_heads": {
     "phase": "complete_joint_target_not_met",
@@ -1104,11 +1104,15 @@
     "goal_achieved": false
   },
   "cost_policy_refresh": {
-    "phase": "running",
-    "pid": 9054,
-    "seconds": 0.0004387189999306429,
-    "child_pid": 9064,
-    "script": "scripts/run_decision_cost_refresh.py",
-    "log": "/content/local_fast/lsdrag-text-v1/logs/refresh48_run_decision_cost_refresh_1792834398.log"
+    "phase": "complete",
+    "pid": null,
+    "seconds": 867.089303189,
+    "report": "/content/local_fast/lsdrag-code/lab/reports/decision_cost_priority_refresh48c_20261024/audit.json",
+    "goal_achieved": false
+  },
+  "hypothesis_policy_replan": {
+    "status": "plan_saved_not_fitted",
+    "collection_complete": true,
+    "next": "Freeze one outcome-supported MLP candidate, then paired development evaluation; defer detailed ablations."
   }
 }

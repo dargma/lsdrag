@@ -1,4 +1,15 @@
+> Latest user direction: hypothesis-first, fast single-candidate policy tests; detailed ablations only after direction narrows. Active strategy: `JEV_DECISION_POLICY_HYPOTHESIS_PLAN_20261024.md`. Third48 collection is now complete and independently verified; no new candidate has been fitted yet. Historical runtime descriptions below are preserved as history.
+
 # Active goal: attached decision policy, not experiment completion
+
+> Recovery update, 2026-10-24: the goal remains ACTIVE. The axis-status table and
+> execution pointers below describe earlier phases, not current workers. The
+> current phase is the third disjoint train48 branch collection under the
+> **cost-priority MLP e1a630e5**, following the completed architecture/GRPO/refresh
+> comparisons. See `JEV_DECISION_POLICY_CURRENT_MAP_20261024.md` and the newest
+> `memory/CURRENT.md` header. Current phase protocol:
+> `JEV_COST_POLICY_COVERAGE_PROTOCOL_20261024.md`. Do not relaunch older phases
+> from this campaign strategy document.
 
 ## Latest authorization
 2026-10-24: user explicitly restarted goal mode. Execute the three proposed experiment axes, add head architecture variants, and if the target is still unmet develop and execute further evidence-driven experiments. Save plans/status/results to Git. This supersedes earlier no-automatic-expansion notes for this campaign. World-model/memory expansion remains deferred.
