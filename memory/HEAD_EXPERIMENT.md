@@ -1,3 +1,9 @@
+## 2026-10-24 — zero-gate intervention verified; paired comparison reporter ready
+
+Concrete progress: independent round0 audit verifies all192 advantage groups,82 all-zero-F1 groups gated,68 cost-only-spread groups suppressed. All768 first-round episodes exactly match ungated r1 answer/support/F1/generated/input/calls/action sequence. GPU replay9.5367e-7 passes unchanged tolerance. Checkpoint9964f132075beac7608ea685ba476ca3d49bf00638061ee867c638aa738521e7. Evidence lab/reports/decision_selected_head_grpo192_20261024_zero_gate/round0_gate_audit.json. This is correct intervention implementation, not efficacy.
+
+scripts/reporting/compare_decision_policy_campaign.py requires completed full64 paired cells, fixed basic-GRPO checkpoint59a0..., same model/corpus/IDs, expected source differences, and exclusion of final80/reserved80. Reports F1/token/input/calls/empty/zero-tool, paired bootstrap, fixed reference provenance and within-body auxiliary comparisons; always marks development-only goal_achieved false. Ran on completed prior r1 and reproduced historical means. New runs cannot be reported until complete. Next invoke --run decision_selected_head_grpo_validation64_20261024_zero_gate and --run decision_opportunity_value_validation64_20261024 after their completion. Goal active; current jobs continue, no duplicate launch.
+
 ## 2026-10-24 — live serialized validation queue
 
 Live follow-up queue verified: coordinator336962, state /content/local_fast/lsdrag-text-v1/results/decision_opportunity_value_coordinator_20261024.json, waiting for live zero_gate coordinator330710. Existing learner330716 at892/1536episodes. Five learned candidate checkpoints already archived to Drive;13,708,770bytes SHAe1b746529189f5f1d2905caad461ad089556c15fe082c749ca705083007524f8, registry archive.json. Five loader/mask/finite smoke checks passed and16regression tests passed. GPU evaluation has NOT started.
