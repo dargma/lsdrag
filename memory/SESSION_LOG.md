@@ -871,3 +871,5 @@ sharedGRPO complete1536eps/5241decisions/2923.93초/660optimizersteps,전체audi
 
 
 2026-10-24: 재개status일관성정리. EXPERIMENT_STATUS의과거root질문수/예산/완료flags는legacy snapshot으로보존하고현재shared corpus run/PID/protocolSHA/teacher192/final80×4로동기화. training_completed=false는후보학습전체, evaluation_completed=false는최종80평가미실행의미. 단계별seed4개는독립4replication아님명시. 실제GRPO완료는nested true/audit/archive로보존.
+
+2026-10-24: 최종selector에대한합성fixture테스트2개통과. 공동목표tradeoff가F1최대후보와다를때선언된규칙대로1후보선택,4조건/80문항만spec작성,예비80중복시실패및spec미작성검증. 실제heldout결과/labels미열람. pytest tests/test_decision_shared_final_selection.py:2passed. activecollector26147638/192문항538eps계속진행.
