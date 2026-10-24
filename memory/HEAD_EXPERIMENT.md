@@ -1,3 +1,11 @@
+## 2026-10-24 — safe stopping fit passes; paired train72 live
+
+Previous turn completed diagnostic/provenance: progress. Frozen protocol JEV_SAFE_STOP72_20261024 before fit f93cf36: currentH3suffix outcomes on same72fit, onlyFINAL/bestcontinue, per-state F1+officialEM nondecrease and aggregatecostcap,129FINALparams,100updates,retention,trainingbacktracking.26targets19q,237retention. Alpha.25 passesKL.00114847/unsupportedchange.0128638 with4supportedmatches3q. FullfrozenH1/tensor/reload and184state tool-logit exact checks passed. Checkpoint963e83d4ac16efd3280fbb853b0f13938fa50cd3360f986e20c3e57c5843da35. This is fit/stability, not QA quality.
+
+Paired train72 evaluator60596 live, execsession3275, log /content/local_fast/lsdrag-text-v1/logs/safe_stop72_train_eval_20261024.log. status /content/local_fast/lsdrag-text-v1/results/decision_safe_stop72_train_eval_20261024/status.json. Protocol gate requires F1/EMnondecrease,costnonincrease,strictimprovement,usefulcorrectgroup savings,no lostcorrect question. Next verify terminal process then scripts/reporting/verify_safe_stop72_train.py, archive; dev only if frozen gate passes. Reserved80 untouched,goalACTIVE.
+
+User explicitly says continue until told to stop. Persist authorization, keep bounded evidence-driven steps; do not wait for repeated approval. No change to independent-confirmation protections.
+
 ## 2026-10-24 — correctness-cost rule applied; H3 state-correction diagnostic complete
 
 Previous goal turn made progress via raw H3 role audit. User now requires correct/incorrect token separation; persisted USER_PREFERENCES. Official EM rescoring of192 development episodes: H3 correct14/mean85.857,incorrect50/61.58; H1 correct14/85.857,incorrect50/72.4; GRPO correct10/92,incorrect54/99.593. H3 versus GRPO paired:bothcorrect8 save188;H3only6 spend148extra;GRPOonly2 save160 withlostcorrectness;bothincorrect48 save1817. H3versusH1 bothcorrect12 save54,H3only2 extra71,H1only2 save163,bothincorrect48 save395. Report lab/reports/decision_h3_role_audit_20261024/correctness_cost.json; script scripts/reporting/report_h3_correctness_cost.py. Positive F1 groups from earlier report remain valid but are NOT exact-correct groups.

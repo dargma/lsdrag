@@ -1,3 +1,7 @@
+## 2026-10-24 — explicit continued execution
+
+User: 그래 계속 진행해 내가 멈추라고 할때까지. Continue the active goal and bounded experiments without repeated approval until explicit stop; preserve quality gates and reserved confirmation.
+
 ## 2026-10-24 — correctness-stratified token reporting required
 
 User: 앞으로 토큰계산은 맞춘 것 틀린 것 분리해서 해야겠네. All future evaluation reports must keep overall tokens AND separate correct/incorrect counts, total and mean generated tokens. Correct means official normalized exact match over answer/aliases; positive F1 is not correctness. Report partial-F1 incorrects separately (and F1=1/nonexact if any). Comparisons must include same-question both-correct/candidate-only-correct/reference-only-correct/both-incorrect groups, each policy token totals/means and signed net savings. Different policy-specific correct subsets must not be treated as a paired efficiency comparison. Preserve overall F1 +5pp/generated<=70% goal; no replacing denominator by only correct answers.

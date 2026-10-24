@@ -1743,3 +1743,13 @@ Frozen preexecution9ee5cd4 protocol docs/JEV_H3_STATE_CORRECTION72_20261024.md e
 
 H3 retained,goalACTIVE; statewise residual superiority remains unproven. Next one bounded quality-preserving stopping improvement from already measured train outcomes, with per-state nondegradation (unlike original aggregate H3 constraint), fixed retention and no devretuning; freeze exact targets/gates beforefit. Require train fullrollout and correct/incorrect accounting before any development rollout. Do not infer success from fittedtargets; preserve reserved80. Two-action probe remains deferred, no architecture sweep.
 
+
+
+## 2026-10-24 — safe stopping fit passes; paired train72 live
+
+Previous turn completed diagnostic/provenance: progress. Frozen protocol JEV_SAFE_STOP72_20261024 before fit f93cf36: currentH3suffix outcomes on same72fit, onlyFINAL/bestcontinue, per-state F1+officialEM nondecrease and aggregatecostcap,129FINALparams,100updates,retention,trainingbacktracking.26targets19q,237retention. Alpha.25 passesKL.00114847/unsupportedchange.0128638 with4supportedmatches3q. FullfrozenH1/tensor/reload and184state tool-logit exact checks passed. Checkpoint963e83d4ac16efd3280fbb853b0f13938fa50cd3360f986e20c3e57c5843da35. This is fit/stability, not QA quality.
+
+Paired train72 evaluator60596 live, execsession3275, log /content/local_fast/lsdrag-text-v1/logs/safe_stop72_train_eval_20261024.log. status /content/local_fast/lsdrag-text-v1/results/decision_safe_stop72_train_eval_20261024/status.json. Protocol gate requires F1/EMnondecrease,costnonincrease,strictimprovement,usefulcorrectgroup savings,no lostcorrect question. Next verify terminal process then scripts/reporting/verify_safe_stop72_train.py, archive; dev only if frozen gate passes. Reserved80 untouched,goalACTIVE.
+
+User explicitly says continue until told to stop. Persist authorization, keep bounded evidence-driven steps; do not wait for repeated approval. No change to independent-confirmation protections.
+
