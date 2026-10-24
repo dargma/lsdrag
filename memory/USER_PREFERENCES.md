@@ -151,3 +151,7 @@ Explicit request: GRPO on measuredF132.45 auxiliaryMLP0a1b..., not historicald98
 
 Remaining priorities and exactbranchlineage saved docs/JEV_REMAINING_ADAPTIVE_PROGRAM_20261024.md. User reiterates continue untilgoal, broadconsideration ofinputs/structure/objective/data/retrieval/argument+answergeneration costs; no automatic goalcompletion afterexperiment. Token-levelattention remainsconditionalcandidate, not an unannounced change tocurrentrun. GoalACTIVE.
 
+
+## 2026-10-24 — additional bounded experiments approved
+
+User asks 그래 몇개 더 해보자. Continue a few hypothesis-driven experiments sequentially after current critic diversity comparison; no broad detailed ablation grid. Preserve reader/native interface/splits and report actual policy quality, not only prediction metrics.

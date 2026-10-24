@@ -1,3 +1,9 @@
+## 2026-10-24 — user authorizes a few further bounded hypotheses
+
+User: 그래 몇개 더 해보자. Finish current fixed diversity48/critic72 comparison first. Then at most two sequential candidates: (1) learn action-relative outcome differences rather than absolute question difficulty; (2) jointly train small post-reader state representation and action policy from measured useful outcomes, rather than frozen128 output-layer-only correction. Reader/native interface/frozen splits remain fixed. These are approved directions, not executable protocols: freeze each objective/gate/manifest before fitting, no architecture/seed grid, no changing current critic72 gate. Earlier absolute-Q failure and current-policy output-layer failure remain preserved. Require actual policy rollout improvements and protected independent confirmation for goal; no predictor-only success claim.
+
+Current collection46170/coordinator46115 and waiting fitter46735 verifiedlive. Independent critic72 verifier scripts/reporting/verify_future_critic72.py prepared: recomputes raw-prediction metrics with separate arithmetic, replays old/new checkpoints, recomputes train-only action means, verifies question separation and Drivebytes. Not yet executed because fit has not completed. Previous goal turn made implementation progress; this turn verified actualwait and prepared independent completion checks. GoalACTIVE.
+
 ## 2026-10-24 — critic72 fitting and audited continuation prepared
 
 Collection coordinator46115/worker46170 revalidated live; no restart. Fixed same-architecture fit72 script scripts/probe_decision_future_critic72.py prepared with exact prior optimizer/100updates/seed, immutable oldcritic, samefresh12 predictions and dual baseline gate. Source/split frozen in lab/registry/decision_future_critic_probe72_20261024/plan.json; pending collection hash prevents premature fit. Collector final hash added only after independent raw audit.
