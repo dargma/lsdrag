@@ -1111,16 +1111,18 @@
     "goal_achieved": false
   },
   "hypothesis_policy_replan": {
-    "status": "plan_saved_not_fitted",
+    "status": "H1_complete_quality_signal_cost_goal_unmet",
     "collection_complete": true,
-    "next": "Freeze one outcome-supported MLP candidate, then paired development evaluation; defer detailed ablations."
+    "next": "Freeze one train-only continuation/stopping-value hypothesis from H1 incumbent; no architecture grid."
   },
   "outcome_policy_h1_evaluation": {
-    "phase": "running",
-    "pid": 15464,
-    "seconds": 0.21529665700018086,
-    "script": "scripts/evaluate_decision_attention.py",
-    "child_pid": 15471,
-    "log": "/content/local_fast/lsdrag-text-v1/logs/value_heads_evaluate_decision_attention_1792835531.log"
+    "phase": "complete",
+    "pid": null,
+    "seconds": 196.78400055700013,
+    "reporting_failure_recovered": "RuntimeError('scripts/reporting/summarize_decision_shared_evaluation.py exited 1; see /content/local_fast/lsdrag-text-v1/logs/value_heads_summarize_decision_shared_evaluation_1792835727.log')",
+    "manual_reporting_recovery": true,
+    "evaluation_rerun": false,
+    "report": "lab/reports/decision_outcome_policy_h1_validation64_20261024/policy_result_check.json",
+    "goal_achieved": false
   }
 }

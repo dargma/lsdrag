@@ -1,0 +1,147 @@
+{
+  "policies": {
+    "selected_reference": {
+      "f1": 0.26741747835497837,
+      "generated_tokens": 75.453125,
+      "prompt_tokens": 3676.171875,
+      "tool_calls": 1.6875,
+      "cost_units": 2.8096484375,
+      "retrieved_support_recall": 0.421875,
+      "all_support_retrieved": 0.21875,
+      "read_support_recall": 0.1484375,
+      "errors": 0
+    },
+    "outcome_policy": {
+      "f1": 0.28304247835497837,
+      "generated_tokens": 75.34375,
+      "prompt_tokens": 3670.03125,
+      "tool_calls": 1.640625,
+      "cost_units": 2.7610656250000005,
+      "retrieved_support_recall": 0.4140625,
+      "all_support_retrieved": 0.234375,
+      "read_support_recall": 0.140625,
+      "errors": 0
+    }
+  },
+  "n": 64,
+  "split": "validation",
+  "counts": {
+    "episodes": 128,
+    "generated": 9651,
+    "inputs": 470157
+  },
+  "corpus_documents": 101962,
+  "original_question_retrieval": {
+    "support_recall_at5": 0.6171875,
+    "all_support_at5": 0.296875
+  },
+  "controlled_latency": false,
+  "note": "Policy provenance is defined by frozen spec checkpoint descriptors; do not infer training environment from evaluator reuse. Native-fast additional generation/prefill costs are counted, and dummy probabilities are removed.",
+  "baseline": "selected_reference",
+  "comparisons_vs_baseline": {
+    "outcome_policy": {
+      "f1": {
+        "delta": 0.015625,
+        "ci95": [
+          0.0,
+          0.046875
+        ]
+      },
+      "generated_tokens": {
+        "delta": -0.109375,
+        "ci95": [
+          -5.734375,
+          7.40625
+        ]
+      },
+      "generated_ratio": {
+        "ratio": 0.9985504245185338,
+        "ci95": [
+          0.9249839800922323,
+          1.10212031024531
+        ]
+      },
+      "prompt_tokens": {
+        "delta": -6.140625,
+        "ci95": [
+          -271.865625,
+          324.47187499999995
+        ]
+      },
+      "tool_calls": {
+        "delta": -0.046875,
+        "ci95": [
+          -0.1875,
+          0.109375
+        ]
+      },
+      "cost_units": {
+        "delta": -0.0485828125,
+        "ci95": [
+          -0.271848125,
+          0.21019449218749992
+        ]
+      },
+      "utility": {
+        "delta": 0.017082484375,
+        "ci95": [
+          -0.004284752343749996,
+          0.05233142929687499
+        ]
+      },
+      "joint_point_target": false,
+      "joint_directional_ci": false,
+      "joint_target_ci": false
+    }
+  },
+  "audit": {
+    "episodes": 128,
+    "unique_cells": 128,
+    "probability_and_cost_checks": true
+  },
+  "single_seed": true,
+  "target": {
+    "f1_delta": 0.05,
+    "generated_ratio": 0.7
+  },
+  "ci_scope": "Marginal95% paired question bootstrap conditional on frozen policies; not training-seed population uncertainty. No multiplicity adjustment. Joint CI flags mean both marginal bounds pass, not a simultaneous95% region.",
+  "comparisons_vs_strong_baselines": {},
+  "validation_subgroups": {
+    "previously_exposed": {
+      "n": 32,
+      "policies": {
+        "selected_reference": {
+          "f1": 0.2611607142857143,
+          "generated_tokens": 69.9375,
+          "prompt_tokens": 3488.71875,
+          "tool_calls": 1.65625
+        },
+        "outcome_policy": {
+          "f1": 0.2924107142857143,
+          "generated_tokens": 64.1875,
+          "prompt_tokens": 3243.46875,
+          "tool_calls": 1.46875
+        }
+      },
+      "note": "Descriptive subgroup means, no candidate selection on final test."
+    },
+    "new_validation": {
+      "n": 32,
+      "policies": {
+        "selected_reference": {
+          "f1": 0.27367424242424243,
+          "generated_tokens": 80.96875,
+          "prompt_tokens": 3863.625,
+          "tool_calls": 1.71875
+        },
+        "outcome_policy": {
+          "f1": 0.27367424242424243,
+          "generated_tokens": 86.5,
+          "prompt_tokens": 4096.59375,
+          "tool_calls": 1.8125
+        }
+      },
+      "note": "Descriptive subgroup means, no candidate selection on final test."
+    }
+  }
+}

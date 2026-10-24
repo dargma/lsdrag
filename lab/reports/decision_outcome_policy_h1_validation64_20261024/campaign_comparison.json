@@ -1,0 +1,256 @@
+{
+  "split": "exposed_validation64",
+  "goal_achieved": false,
+  "policies": {
+    "basic_grpo": {
+      "f1": 0.22500676406926406,
+      "generated_tokens": 98.40625,
+      "prompt_tokens": 4625.3125,
+      "tool_calls": 2.328125,
+      "errors": 0,
+      "zero_tool_episodes": 0,
+      "empty_answers": 18
+    },
+    "native": {
+      "f1": 0.24702380952380953,
+      "generated_tokens": 97.4375,
+      "prompt_tokens": 4691.03125,
+      "tool_calls": 2.375,
+      "errors": 0,
+      "zero_tool_episodes": 1,
+      "empty_answers": 22
+    },
+    "selected_before": {
+      "f1": 0.25179247835497837,
+      "generated_tokens": 76.75,
+      "prompt_tokens": 3870.828125,
+      "tool_calls": 1.78125,
+      "errors": 0,
+      "zero_tool_episodes": 18,
+      "empty_answers": 20
+    },
+    "selected_ungated_grpo": {
+      "f1": 0.22953869047619047,
+      "generated_tokens": 53.1875,
+      "prompt_tokens": 3973.90625,
+      "tool_calls": 1.421875,
+      "errors": 0,
+      "zero_tool_episodes": 33,
+      "empty_answers": 29
+    },
+    "selected_reference": {
+      "f1": 0.26741747835497837,
+      "generated_tokens": 75.453125,
+      "prompt_tokens": 3676.171875,
+      "tool_calls": 1.6875,
+      "errors": 0,
+      "zero_tool_episodes": 19,
+      "empty_answers": 22
+    },
+    "outcome_policy": {
+      "f1": 0.28304247835497837,
+      "generated_tokens": 75.34375,
+      "prompt_tokens": 3670.03125,
+      "tool_calls": 1.640625,
+      "errors": 0,
+      "zero_tool_episodes": 20,
+      "empty_answers": 22
+    }
+  },
+  "comparisons": {
+    "selected_reference__vs__basic_grpo": {
+      "f1_delta": 0.04241071428571429,
+      "f1_ci95": [
+        -0.020089285714285716,
+        0.11160714285714285
+      ],
+      "generated_ratio": 0.7667513496348047,
+      "generated_ratio_ci95": [
+        0.6510867766608535,
+        0.8771249063403
+      ],
+      "wins": 4,
+      "losses": 2,
+      "development_point_threshold_met": false
+    },
+    "selected_reference__vs__native": {
+      "f1_delta": 0.020393668831168832,
+      "f1_ci95": [
+        -0.053267045454545456,
+        0.09993912337662338
+      ],
+      "generated_ratio": 0.7743745991019885,
+      "generated_ratio_ci95": [
+        0.6406034596005257,
+        0.9191241528435031
+      ],
+      "wins": 5,
+      "losses": 4,
+      "development_point_threshold_met": false
+    },
+    "selected_reference__vs__selected_before": {
+      "f1_delta": 0.015625,
+      "f1_ci95": [
+        0.0,
+        0.046875
+      ],
+      "generated_ratio": 0.9831026058631922,
+      "generated_ratio_ci95": [
+        0.887110489519004,
+        1.0728090597395017
+      ],
+      "wins": 1,
+      "losses": 0,
+      "development_point_threshold_met": false
+    },
+    "selected_reference__vs__selected_ungated_grpo": {
+      "f1_delta": 0.03787878787878787,
+      "f1_ci95": [
+        -0.0234375,
+        0.1055871212121212
+      ],
+      "generated_ratio": 1.4186251468860165,
+      "generated_ratio_ci95": [
+        1.067967556582051,
+        1.9406785271995735
+      ],
+      "wins": 6,
+      "losses": 2,
+      "development_point_threshold_met": false
+    },
+    "outcome_policy__vs__basic_grpo": {
+      "f1_delta": 0.05803571428571429,
+      "f1_ci95": [
+        -0.008928571428571432,
+        0.1361607142857143
+      ],
+      "generated_ratio": 0.765639885677993,
+      "generated_ratio_ci95": [
+        0.6548083169182994,
+        0.8717249826095598
+      ],
+      "wins": 5,
+      "losses": 2,
+      "development_point_threshold_met": false
+    },
+    "outcome_policy__vs__native": {
+      "f1_delta": 0.03601866883116883,
+      "f1_ci95": [
+        -0.04352678571428571,
+        0.12195616883116883
+      ],
+      "generated_ratio": 0.77325208466966,
+      "generated_ratio_ci95": [
+        0.6464402741680682,
+        0.9158518971597163
+      ],
+      "wins": 6,
+      "losses": 4,
+      "development_point_threshold_met": false
+    },
+    "outcome_policy__vs__selected_before": {
+      "f1_delta": 0.03125,
+      "f1_ci95": [
+        0.0,
+        0.078125
+      ],
+      "generated_ratio": 0.9816775244299675,
+      "generated_ratio_ci95": [
+        0.8689740579960069,
+        1.111062693978895
+      ],
+      "wins": 2,
+      "losses": 0,
+      "development_point_threshold_met": false
+    },
+    "outcome_policy__vs__selected_ungated_grpo": {
+      "f1_delta": 0.05350378787878787,
+      "f1_ci95": [
+        0.002840909090909092,
+        0.11600378787878787
+      ],
+      "generated_ratio": 1.4165687426556992,
+      "generated_ratio_ci95": [
+        1.0672851779084254,
+        1.941131318731446
+      ],
+      "wins": 6,
+      "losses": 1,
+      "development_point_threshold_met": false
+    },
+    "outcome_policy__vs__selected_reference": {
+      "f1_delta": 0.015625,
+      "f1_ci95": [
+        0.0,
+        0.046875
+      ],
+      "generated_ratio": 0.9985504245185338,
+      "generated_ratio_ci95": [
+        0.9249839800922323,
+        1.10212031024531
+      ],
+      "wins": 1,
+      "losses": 0,
+      "development_point_threshold_met": false
+    }
+  },
+  "provenance": {
+    "basic_grpo": [
+      "decision_shared_validation64_20261023",
+      "shared_grpo"
+    ],
+    "native": [
+      "decision_shared_validation64_20261023",
+      "native_fast"
+    ],
+    "selected_before": [
+      "decision_selected_head_grpo_validation64_20261024_r1",
+      "multi_mlp_outcome"
+    ],
+    "selected_ungated_grpo": [
+      "decision_selected_head_grpo_validation64_20261024_r1",
+      "multi_mlp_outcome_grpo"
+    ],
+    "selected_reference": [
+      "decision_outcome_policy_h1_validation64_20261024",
+      "selected_reference"
+    ],
+    "outcome_policy": [
+      "decision_outcome_policy_h1_validation64_20261024",
+      "outcome_policy"
+    ]
+  },
+  "source_drift": {
+    "decision_shared_validation64_20261023": {
+      "changed": [],
+      "added": []
+    },
+    "decision_selected_head_grpo_validation64_20261024_r1": {
+      "changed": [
+        "src/lsdrag/decision_policy.py"
+      ],
+      "added": []
+    },
+    "decision_outcome_policy_h1_validation64_20261024": {
+      "changed": [
+        "src/lsdrag/decision_policy.py"
+      ],
+      "added": [
+        "scripts/evaluate_decision_attention.py",
+        "scripts/evaluate_decision_structure_adapter.py",
+        "scripts/evaluate_decision_value_heads.py",
+        "scripts/fit_decision_state_heads.py",
+        "src/lsdrag/decision_attention_adapter.py",
+        "src/lsdrag/decision_state_learning.py",
+        "src/lsdrag/decision_structure_adapter.py",
+        "src/lsdrag/decision_value_head.py"
+      ]
+    }
+  },
+  "spec_sha256": {
+    "decision_shared_validation64_20261023": "7e95f6d83a7119117f2a1495fc3d316c21ecd7ad2fddea6565e80c546e091462",
+    "decision_selected_head_grpo_validation64_20261024_r1": "eb45cbf3954f2a46584870cd372137de7f7080a8f57aea6e1556e4611407b56c",
+    "decision_outcome_policy_h1_validation64_20261024": "417f67fd87daa1165fc81dda6fcd172884f4456b41728f6f8d136e07567bcb63"
+  },
+  "note": "Paired64,10000 question bootstrap,marginal95%,single-seed,no multiplicity correction. Development threshold is not goal success. Cached references explicitly identified; prior optional state-storage fix and new checkpoint loader are source differences. Final80/reserved80 excluded."
+}

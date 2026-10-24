@@ -1,3 +1,5 @@
+> H1 execution update: completed. F1 26.74→28.30, generated75.45→75.34. Correct-answer-path savings exist but failed continuations cancel aggregate benefit. Next direction: continuation/stopping value. See `JEV_OUTCOME_POLICY_H1_RESULT_20261024.md`; planning-time execution statements below are historical.
+
 # Decision policy: 큰 가설을 빠르게 검증하는 실행 계획
 
 ## 최신 사용자 방향

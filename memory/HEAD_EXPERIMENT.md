@@ -1,3 +1,11 @@
+## 2026-10-24 — H1 complete: useful policy signal, stopping-value next
+
+Singlecandidate32849a28 paired128episodes complete192.12sec,9651generated/470157input,0errors; exactreference64/rawtotals/DriveSHAverified. Report docs/JEV_OUTCOME_POLICY_H1_RESULT_20261024.md. CurrentMLP26.74/75.45→H1MLP28.30/75.34,1win0loss, F1delta+1.5625ppCI[0,4.6875],tokensessentiallyunchanged. BasicGRPOdelta+5.8036pp/generatedratio.76564: developmentqualitythresholdcrossed,tokenrequirementfails; no independentgoalclaim.
+
+Usefulbehavior:1answerrecoveredbykeyword→semanticfirstaction,saving2tokens;2F1=1questionsretaincorrectanswerswith55+66token savings. Both-zeroquestionsaggregate+116tokens,includingonefailedcontinuation+177, cancelingbenefit. Limiteddevelopmentmechanismsignal supportsdirection, notgeneralizedinformationvalueproof. Nextlargehypothesis: continuation/stopping-value policy, retainH1asincumbent; noarchitecturegrid or detailedablation. Mustuse train-only evidence; currentthird48outcomes belongtoe1suffix,notnewH1. Freezefollowup before launch; reserved80protected.
+
+Coordinator15464/evaluator15471finished. Reporting initially failed for missing historical runtime split manifests; restored exact Git manifests and reran reporting/archive only, noGPUrerun. Failure preserved in coordinator reporting_failure_recovered. State nowcomplete. EvaluationDriveSHA56ad0ef4976a2e3e2bacb65aa1b399c4f194b64782433d1658c2e28ff9a5be83. GoalACTIVE. User hypothesis-first/fastdirectionfinding preference remains governing.
+
 ## 2026-10-24 — H1 paired policy evaluation live
 
 Coordinator15464/evaluator15471 verified live; 69/128episodes saved. State /content/local_fast/lsdrag-text-v1/results/decision_outcome_policy_h1_coordinator_20261024.json;log /content/local_fast/lsdrag-text-v1/logs/value_heads_evaluate_decision_attention_1792835531.log. Singlecandidate32849a28 vs currente1a630e5 onunchangeddev64; no interim selection. Fitarchive already copied/verified bycoordinator. Nextcompletion→pairedresult/usefulcostsummary→backuppush→nextlargehypothesisifneeded. GoalACTIVE,qualityunknown,reserved80untouched. Do not duplicate worker.
