@@ -1710,3 +1710,12 @@ Onlyqualityloss qid2hop__85865_86706: H3actions semantic_search,FINAL vs candida
 
 Archive /content/drive/MyDrive/lsdrag-backups/20261023/decision_shared_residual72_validation64_20261024.tar.gz SHA3e83dca8d1f5cbadbce2d645faaffd01a4229ac3be5a9a741e67cbb7460c50a9. Evaluator53869complete/absent; noactiveworker. GoalACTIVE. Next return to explicitly requested publicD3nano localbenchmark or freeze boundedtwo-decision intervention diagnostic ontrainonly; do notcontinue architecture/critic sweep. Both remain unexecuted, pick one concreteprotocol next.
 
+
+## 2026-10-24 — public D3nano local benchmark completed; gate fails
+
+Explicit publicmodelbenchmark request now includes actualinference, not just literature. Downloaded public2.21B D3nano revision462efc366229ea268cf4eed3738b3fc4415e4817 into local_fast/hf, allfilehashes frozen. Same32trainingqids selected byhash from72fit, onehashselectedstate each, exactcausalprefixhashreconstruction; no gold/futureoutcomes/H3choice inD3request. Protocol docs/JEV_D3_NANO_LOCAL32_20261024.md; 32canonical+4reversedrequests complete3.40s includingload, no inferenceerrors. Runtime torch2.11+cu130/transformers5.18, referencePyTorch linearattentionkernels; not exactofficial5.17/runtime or controlledlatency reproduction.
+
+CachedH3suffix outcome lookup: H3F1.399628/remaininggenerated48.8125 versusD3.364881/82.875.2qualitywins3losses;28keyword/2read/1semantic/1FINAL;H3actionagreement15.625%; permutation1/4flip (tiny diagnostic, not robustestimate). Selectedbranches0errors; diagnosticgateFAILED, nofullD3rollout/promotion. All extra1090tokens, no netusefulsaving. These are one-intervention outcomes from32trainingstates, not fullpolicy QAmetrics or independenttest. Generic typed model transfer does not establish taskpolicy competence.
+
+Run /content/local_fast/lsdrag-text-v1/results/decision_d3_nano_local32_20261024; reports lab/reports/decision_d3_nano_local32_20261024; archive registry. Worker55991complete/absent. H3retained;GoalACTIVE,reserved80protected. Next focus boundedtwo-action coordinated trainintervention hypothesis: test whether H3suffix hides beneficial actioncombinations, rather than newhead/critic/publicmodel sweep. Concrete two-action protocol notyetfrozen. Record requesthash uses sortedJSON so orderhash alone does not distinguishpermutations; order controlledbyfrozenrunner code and ordertag, do not claim independentbyteproof of optionorder.
+

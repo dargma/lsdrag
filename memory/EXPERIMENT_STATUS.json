@@ -1,8 +1,8 @@
 {
-  "phase": "shared_residual72_development_failed",
-  "updated_utc": "2026-10-24T11:50:19.812960+00:00",
-  "protocol": "docs/JEV_SHARED_RESIDUAL_POLICY72_20261024.md",
-  "protocol_sha256": "9afea2c1a03be9d48a8c303ab0efefc7f83877ede0fbd7b2c37ef7b658ce78be",
+  "phase": "d3_nano_local32_complete_gate_failed",
+  "updated_utc": "2026-10-24T11:53:44.369571+00:00",
+  "protocol": "docs/JEV_D3_NANO_LOCAL32_20261024.md",
+  "protocol_sha256": "886967e7c99cd30d69a1fe5c5ced04ea3a6e250762fb4d685cde1edc5e0f6ac2",
   "prompt": "prompts/text_rag_integrated_v5.txt",
   "prompt_sha256": "9d66c290a97bbabb4289dcf262e2b5bc8ba05653f87aed3b693825dbb02d5a97",
   "dataset": "MuSiQue-Ans v1.0, 2-hop",
@@ -38,7 +38,7 @@
   "teacher_collection_started": true,
   "training_completed": true,
   "evaluation_completed": false,
-  "next": "Retain H3; freeze public D3nano benchmark or bounded two-decision train probe, no dev retuning",
+  "next": "Freeze bounded coordinated two-action train probe; no further architecture/model sweep",
   "previous_multimodal_checkpoint_historical_only": {
     "phase": "native2_review_required",
     "run": "/content/local_fast/lsdrag-head-v14/results/native_distillation_12b_20261015",
@@ -1235,5 +1235,10 @@
     "development_goal_screen": false,
     "promoted": false,
     "verified": true
+  },
+  "d3nano_local32": {
+    "completed": true,
+    "diagnostic_gate": false,
+    "new_reader_qa": false
   }
 }

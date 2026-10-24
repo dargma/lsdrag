@@ -1,0 +1,8 @@
+{
+  "path": "/content/drive/MyDrive/lsdrag-backups/20261023/decision_d3_nano_local32_20261024.tar.gz",
+  "sha256": "61f7e7b35b48e5ad64b6fe347c319c9acfdc4f1426f4e886db8f17077cade509",
+  "bytes": 23141,
+  "run": "/content/local_fast/lsdrag-text-v1/results/decision_d3_nano_local32_20261024",
+  "phase": "complete",
+  "backbone_weights_included": false
+}

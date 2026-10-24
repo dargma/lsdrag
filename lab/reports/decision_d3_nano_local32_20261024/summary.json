@@ -1,0 +1,43 @@
+{
+  "verified": true,
+  "n": 32,
+  "requests": 36,
+  "metrics": {
+    "h3": {
+      "f1": 0.3996279761904762,
+      "generated": 48.8125
+    },
+    "d3": {
+      "f1": 0.36488095238095236,
+      "generated": 82.875
+    }
+  },
+  "action_counts": {
+    "keyword_search": 28,
+    "read_chunk": 2,
+    "semantic_search": 1,
+    "FINAL": 1
+  },
+  "h3_action_agreement": 0.15625,
+  "mean_d3_regret": 0.1328373015873016,
+  "quality_wins": 2,
+  "quality_losses": 3,
+  "savings": {
+    "positive_retained": -278,
+    "both_zero": -631,
+    "quality_loss": -113,
+    "quality_gain": -68
+  },
+  "permutation_flips": 1,
+  "permutation_n": 4,
+  "selected_branch_errors": 0,
+  "diagnostic_gate": false,
+  "runtime": {
+    "torch": "2.11.0+cu130",
+    "transformers": "5.18.0",
+    "peak_allocated_bytes": 4675190272,
+    "controlled_latency": false,
+    "model_revision": "462efc366229ea268cf4eed3738b3fc4415e4817"
+  },
+  "scope": "One intervention on32 training states followed by frozenH3; suffix costs overlap no fullpolicy or independenttest claim"
+}
