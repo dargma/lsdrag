@@ -1102,10 +1102,10 @@
   },
   "cost_policy_refresh": {
     "phase": "running",
-    "pid": 408190,
-    "seconds": 0.0004929999995511025,
-    "child_pid": 408200,
+    "pid": 9054,
+    "seconds": 0.0004387189999306429,
+    "child_pid": 9064,
     "script": "scripts/run_decision_cost_refresh.py",
-    "log": "/content/local_fast/lsdrag-text-v1/logs/refresh48_run_decision_cost_refresh_1792833021.log"
+    "log": "/content/local_fast/lsdrag-text-v1/logs/refresh48_run_decision_cost_refresh_1792834398.log"
   }
 }

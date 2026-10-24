@@ -1,3 +1,13 @@
+## 2026-10-24 — runtime reset recovery and explicit experiment resume
+
+User explicitly requested latest Git/Drive check, public model/data restoration into local-fast, and continuation of the interrupted experiment. Restored remote jev_v1.1 at 0a310f27 (newer than jev_v1.2 and the Drive code mirror); retain current user-supplied push target jev_v1.1. Local-fast repository/runtime were absent; stale PIDs408190/408200 do not identify live workers. No third48 partial/completed archive found in current Drive backups, so lost partial results cannot be recovered or claimed complete.
+
+Pinned Qwen13 and embedding15 files verified against Hugging Face blob/LFS hashes. MuSiQue train/dev, shared101962 documents/vectors, cost-priority MLP e1a630e5 and all frozen source hashes match the original third48 manifest. Unique head/corpus archives restored from Drive; public models/data/scorer downloaded from web. Main torch2.11.0+cu130/transformers5.18.0, embedding same torch/transformers5.19.0/sentence-transformers6.1.0 restored. Head load, answer scorer and real GPU query embedding passed. Provenance: lab/registry/recovery_20261024/recovery.json.
+
+Restarted ONLY decision_cost_priority_refresh48c_20261024 with unchanged frozen48 IDs/seed20261065/policy/corpus and caps816episodes/3600seconds after load. Coordinator PID9054, collector PID9064, actual processes verified. State /content/local_fast/lsdrag-text-v1/results/decision_cost_refresh_coordinator_20261024.json; log /content/local_fast/lsdrag-text-v1/logs/refresh48_run_decision_cost_refresh_1792834398.log. Coordinator performs raw audit and verified Drive archive after collection; no automatic fit. This is rerunning the interrupted lost collection, not resuming optimizer state or repeating prior completed batches. Reserved80 remains protected. Research target remains unmet.
+
+Next: verify terminal status/artifacts/Drive SHA; then PYTHONPATH=src:scripts /content/local_fast/lsdrag-text-v1/runtime/bin/python scripts/reporting/audit_current_policy_opportunities.py --run decision_cost_priority_refresh48c_20261024. Freeze any subsequent fit only after completed train-only audit. Do not launch a duplicate while PID/state is live.
+
 
 ## 2026-10-24 — third48 collection live; opportunity audit prepared
 
