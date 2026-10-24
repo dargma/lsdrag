@@ -1024,5 +1024,13 @@
     "pid": 354060,
     "child_pid": 357241,
     "protocol": "docs/JEV_QUALITY_HEAD_GRPO_20261024.md"
+  },
+  "pareto_refresh_evaluation": {
+    "phase": "running",
+    "pid": 367799,
+    "seconds": 0.21525671500421595,
+    "script": "scripts/evaluate_decision_value_heads.py",
+    "child_pid": 367811,
+    "log": "/content/local_fast/lsdrag-text-v1/logs/value_heads_evaluate_decision_value_heads_1792824986.log"
   }
 }

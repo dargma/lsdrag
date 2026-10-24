@@ -1,4 +1,11 @@
 
+## 2026-10-24 — refreshed empirical Pareto head trained; paired evaluation launched
+
+User asks reward alignment and explicitlycontinues. Newfrozenprotocol docs/JEV_PARETO_REFRESH_PROTOCOL_20261024.md. Samepolicyfresh88states fromtrain48subset:105pairs/32states requireminF1(a)>0,minF1(a)>=maxF1(b),maxgenerated(a)<mingenerated(b),2errorfreesamples/action. Empiricalseparationnotconfidenceguarantee. Start0a1bmatchingcollectorpolicy (separatefrompreservedlatestGRPOc6b0).100epochsLR1e-4,KL.1retainsanchoronfresh88+old377train192states;oldBCoutcomevaluesnotused. Three selection tests pass. Only4actor/encoder tensors changed;auxweights/normfrozen,allfinite. Checkpoint238988161761853061c26dd57e61544f34add6da87fb951c040d45dd6d6dc99a.
+
+Evaluationcoordinator367799 launched scripts/coordinate_decision_pareto_evaluation.py, log /content/local_fast/lsdrag-text-v1/logs/pareto_refresh_coordinator.log, state /content/local_fast/lsdrag-text-v1/results/decision_pareto_refresh_coordinator_20261024.json. Archivefit thenquality_start/pareto×64,report/fixedbasiccomparison/archive;no test. Frozenplanregistry decision_pareto_refresh_20261024. GoalACTIVE;no measuredquality/savingsyet.
+
+
 ## 2026-10-24 — quality-leading MLP GRPO paired validation complete; joint goal failed
 
 All128episodes/361.95sec/gen18556/input1086095 complete; coordinator terminalcomplete. Paired64 quality_start F132.4509/gen139.03125/input7671.84375/calls3.40625/zero-tool5/errors2; quality_grpo F134.7454/gen150.90625/input9298.390625/calls3.703125/zero-tool4/errors2. GRPO incrementalF1+2.294pp,95%CI[-3.094,+7.843]pp;gen+8.541%. Versusfixedbasic22.5007/98.40625,qualityimprovespointestimate butgenerationincreases53.35%,jointtargetfalse. Notindependentgeneralization. Actualpolicyupdateverified;qualitygainuncertain,notcausalproof offutureunderstanding.
