@@ -971,5 +971,13 @@
     "continue_after_three_if_unmet": true,
     "architecture_variants_authorized": true,
     "updated_utc": "2026-10-24T05:05:24.828840+00:00"
+  },
+  "opportunity_value_heads": {
+    "phase": "implementation_and_train_cache_audit_complete",
+    "trained": false,
+    "evaluated": false,
+    "tests_passed": 10,
+    "cache_audit": "lab/reports/decision_opportunity_value_20261024/cache_audit.json",
+    "module": "src/lsdrag/decision_value_head.py"
   }
 }

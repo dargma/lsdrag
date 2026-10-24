@@ -1023,3 +1023,14 @@ Coordinator state: `/content/local_fast/lsdrag-text-v1/results/decision_selected
 
 User explicitly requests goal mode, all three axes then further ideas/experiments if unmet, plus head architecture variants. Authority: docs/JEV_DECISION_POLICY_ACTIVE_GOAL_20261024.md. F1+5pp/generated−30% jointly versus fixed basic GRPO AND evidence of useful state-conditioned policy; experiment completion is not goal achievement. Axis1 running; axes2/3 and attention/action-quality-cost structure comparisons authorized but not launched. Preserve heldout during development. Goal remains active.
 
+
+## 2026-10-24 — axes2/3 train-cache audit and structure implementation
+
+Goal remains ACTIVE. Previous goal turn made progress (goal/protocol persisted and pushed); this turn verifies live zero_gate coordinator330710/learner330716 and implements further authorized work without modifying their frozen runtime sources. At last snapshot756/1536 episodes, round0 question189/192; not complete.
+
+Train-only cache audit:377 states/192 questions,2 suffix samples per legal action, SHA f4b9c373625b88d3b76bc69736b2d81ab6eefcd129dfc5efdb14b2a04554723b.212 states have any positive F1;165 all zero. Quality-only continuing better142/stopping better4. Among positive-quality states, cost-adjusted continue better141/stop better71. Raw report lab/reports/decision_opportunity_value_20261024/cache_audit.json; reproducible script scripts/reporting/audit_decision_opportunity_cache.py. Fixed-BC off-policy noisy targets; not current-policy truth or heldout evidence.
+
+New isolated module src/lsdrag/decision_value_head.py: same slots0/1/4 concatMLP or action-query attention, masked policy logits, separate action-quality and log(1+cost) predictors. Pairwise stopping-opportunity supervision excludes all-zero-quality states, weights ranking by observed utility difference; auxiliary regression normalizes over legal actions. Gradients/illegal masking/serialization/stop direction/zero-quality handling plus gate tests10passed. Existing worker/loader unchanged. These structures are IMPLEMENTED ONLY, not trained/evaluated/deployed.
+
+Next: freeze a small matched training protocol using this shared cache; compare MLP policy control, stopping supervision and auxiliary/attention variants without an exhaustive sweep. Distinguish input/body/capacity effects. Then closed-loop validation on fixed64, serialized after active worker. Keep final80/reserved80 protected; no goal completion claim.
+

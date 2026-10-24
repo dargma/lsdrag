@@ -1,0 +1,15 @@
+{
+  "states": 377,
+  "questions": 192,
+  "states_with_any_positive_quality": 212,
+  "quality_continue_better": 142,
+  "quality_stop_better": 4,
+  "positive_quality_states_utility_continue_better": 141,
+  "positive_quality_states_utility_stop_better": 71,
+  "all_zero_quality_states": 165,
+  "samples_per_legal_action": [
+    2
+  ],
+  "states_sha256": "f4b9c373625b88d3b76bc69736b2d81ab6eefcd129dfc5efdb14b2a04554723b",
+  "limitations": "Train-only, two suffix samples/action under fixed BC; noisy off-policy outcomes, not current-policy counterfactual ground truth. No validation/test records read."
+}
