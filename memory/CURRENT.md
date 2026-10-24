@@ -1,4 +1,9 @@
 
+## 2026-10-24 — existing read-candidate coverage bounds measured
+
+Previous turn progress: refreshed target reliability evidence committed. Current GRPO357241 verifiedlive204/768episodes; no change/restart. CPUonly readcoverage on48trainingcollectors:33readcalls/1388tokens;20existingcandidateexactmatches/860tokens,24single-IDreads. Perfectexistingcandidateselection would remove atmost860/5272=16.31% oftraininggeneration, beforefallback/errors. Thus reusealone notexpectedtosolve30%goal; combinequality-preservingpolicyimprovement,notclaimoraclecoverageaslearnedaccuracy. Full1388readtokens ceiling26.33% also below30%. Existingoptions derivepublichistory; questionemptyonlyforreadcoverage,semanticchoicesnotassessed. Sourcehashes/percallcounts:lab/reports/decision_current_policy_refresh48_20261024/read_reuse_coverage.json. ActiveGRPOprotocoluntouched; no newGPUlaunch. GoalACTIVE.
+
+
 ## 2026-10-24 — refreshed training-target reliability measured
 
 Previous goal turn classified progress: generation accounting and adaptive rules committed. Current GRPO worker357241 verified live164/768episodes; no restart. New CPU-only analysis scripts/reporting/analyze_refresh_targets.py compares exactprefix hashes:57matchedstates(48initial),mean absolute actionmeanF1 change.137256 betweenoldBCandquality-policy suffixes. Differentseedsandpoliciesconfounded. Fresh88states/56anypositive;two-sampleF1absolute gap.074927;37nonzero stopping contrasts,signagreement29/37=.783784. Best-action-setoverlap100% is tie-inflated and must not be described as reliablepolicyaccuracy. Oldcache stoppingcontrast124/146=.849315, butdifferentstatepool preventscausalcomparison.

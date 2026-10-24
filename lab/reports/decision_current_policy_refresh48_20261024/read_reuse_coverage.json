@@ -1,0 +1,319 @@
+{
+  "counts": {
+    "read_calls": 33,
+    "read_generated": 1388,
+    "existing_candidate_exact_matches": 20,
+    "exact_match_generated": 860
+  },
+  "selected_id_count_histogram": {
+    "1": 24,
+    "2": 4,
+    "5": 3,
+    "3": 2
+  },
+  "records": [
+    {
+      "qid": "2hop__130823_73753",
+      "turn": 2,
+      "observed_ids": 10,
+      "selected_count": 1,
+      "matching_slot": 0,
+      "generated": 29,
+      "episode_sha256": "0973cabde3d969025c40ad34d0623a3f2c84c33a02fd186daeb5363fa88014d8"
+    },
+    {
+      "qid": "2hop__131509_66214",
+      "turn": 1,
+      "observed_ids": 2,
+      "selected_count": 2,
+      "matching_slot": 1,
+      "generated": 53,
+      "episode_sha256": "64406ef7f5d881cc4e36da826774b6b1bbc50c69c0fa8129b3ec663aae663c2e"
+    },
+    {
+      "qid": "2hop__133237_842239",
+      "turn": 1,
+      "observed_ids": 5,
+      "selected_count": 5,
+      "matching_slot": 1,
+      "generated": 115,
+      "episode_sha256": "47c18705f9d1357ce67e2b3d0c749aa251dfb395e19b926b3d7fc2a002f426f8"
+    },
+    {
+      "qid": "2hop__143485_285802",
+      "turn": 1,
+      "observed_ids": 5,
+      "selected_count": 1,
+      "matching_slot": 2,
+      "generated": 28,
+      "episode_sha256": "8ac109286b1fb21557c9c8384f33c0a52f026dc02ef104b94a63f482e2c22764"
+    },
+    {
+      "qid": "2hop__216682_153528",
+      "turn": 1,
+      "observed_ids": 5,
+      "selected_count": 1,
+      "matching_slot": 4,
+      "generated": 26,
+      "episode_sha256": "dda3102108690c9be6c58a91cfa74e3d8a24c34bef07773c10d4f91d6fafa390"
+    },
+    {
+      "qid": "2hop__224287_15822",
+      "turn": 4,
+      "observed_ids": 5,
+      "selected_count": 1,
+      "matching_slot": 2,
+      "generated": 26,
+      "episode_sha256": "04676ef4315ebf4a76c6fb3fa257344a6963c8e9231f2d2e68a075655fa220f6"
+    },
+    {
+      "qid": "2hop__224287_15822",
+      "turn": 5,
+      "observed_ids": 5,
+      "selected_count": 1,
+      "matching_slot": 0,
+      "generated": 29,
+      "episode_sha256": "04676ef4315ebf4a76c6fb3fa257344a6963c8e9231f2d2e68a075655fa220f6"
+    },
+    {
+      "qid": "2hop__224287_15822",
+      "turn": 6,
+      "observed_ids": 5,
+      "selected_count": 1,
+      "matching_slot": 0,
+      "generated": 29,
+      "episode_sha256": "04676ef4315ebf4a76c6fb3fa257344a6963c8e9231f2d2e68a075655fa220f6"
+    },
+    {
+      "qid": "2hop__224287_15822",
+      "turn": 7,
+      "observed_ids": 5,
+      "selected_count": 1,
+      "matching_slot": 0,
+      "generated": 27,
+      "episode_sha256": "04676ef4315ebf4a76c6fb3fa257344a6963c8e9231f2d2e68a075655fa220f6"
+    },
+    {
+      "qid": "2hop__27742_27668",
+      "turn": 1,
+      "observed_ids": 5,
+      "selected_count": 1,
+      "matching_slot": 0,
+      "generated": 30,
+      "episode_sha256": "ba0a5e276d004c42418d912a4261d6cf00c640b2d660a6e2e74cc88d7a9a905b"
+    },
+    {
+      "qid": "2hop__300052_224276",
+      "turn": 2,
+      "observed_ids": 10,
+      "selected_count": 2,
+      "matching_slot": 0,
+      "generated": 49,
+      "episode_sha256": "55b7e3d06b2240fc1eb945b354a8455d367ba6b6b7c8fc706f250e4b896aeeaa"
+    },
+    {
+      "qid": "2hop__300052_224276",
+      "turn": 5,
+      "observed_ids": 20,
+      "selected_count": 5,
+      "matching_slot": 2,
+      "generated": 125,
+      "episode_sha256": "55b7e3d06b2240fc1eb945b354a8455d367ba6b6b7c8fc706f250e4b896aeeaa"
+    },
+    {
+      "qid": "2hop__300052_224276",
+      "turn": 6,
+      "observed_ids": 20,
+      "selected_count": 1,
+      "matching_slot": 0,
+      "generated": 28,
+      "episode_sha256": "55b7e3d06b2240fc1eb945b354a8455d367ba6b6b7c8fc706f250e4b896aeeaa"
+    },
+    {
+      "qid": "2hop__31867_17274",
+      "turn": 1,
+      "observed_ids": 5,
+      "selected_count": 3,
+      "matching_slot": 0,
+      "generated": 78,
+      "episode_sha256": "a7b28e7d968ccb58b61bd8dccd0853c83c433c495f45f0def217afc1a33ee6dd"
+    },
+    {
+      "qid": "2hop__351246_2702",
+      "turn": 1,
+      "observed_ids": 5,
+      "selected_count": 3,
+      "matching_slot": 0,
+      "generated": 78,
+      "episode_sha256": "dc21cca4a89aa26b4eb8522bd35debcf2c5339ccc137bd86c9ccecf7ee97ae20"
+    },
+    {
+      "qid": "2hop__351246_2702",
+      "turn": 2,
+      "observed_ids": 5,
+      "selected_count": 1,
+      "matching_slot": 0,
+      "generated": 29,
+      "episode_sha256": "dc21cca4a89aa26b4eb8522bd35debcf2c5339ccc137bd86c9ccecf7ee97ae20"
+    },
+    {
+      "qid": "2hop__351246_2702",
+      "turn": 3,
+      "observed_ids": 5,
+      "selected_count": 1,
+      "matching_slot": 4,
+      "generated": 28,
+      "episode_sha256": "dc21cca4a89aa26b4eb8522bd35debcf2c5339ccc137bd86c9ccecf7ee97ae20"
+    },
+    {
+      "qid": "2hop__351246_2702",
+      "turn": 5,
+      "observed_ids": 5,
+      "selected_count": 1,
+      "matching_slot": 1,
+      "generated": 28,
+      "episode_sha256": "dc21cca4a89aa26b4eb8522bd35debcf2c5339ccc137bd86c9ccecf7ee97ae20"
+    },
+    {
+      "qid": "2hop__396382_49333",
+      "turn": 1,
+      "observed_ids": 5,
+      "selected_count": 1,
+      "matching_slot": 2,
+      "generated": 26,
+      "episode_sha256": "07c12d6baea2e111bbad818b4663011c436ee68996d4e50ed270d5ebaa5eea26"
+    },
+    {
+      "qid": "2hop__396382_49333",
+      "turn": 3,
+      "observed_ids": 8,
+      "selected_count": 1,
+      "matching_slot": 4,
+      "generated": 29,
+      "episode_sha256": "07c12d6baea2e111bbad818b4663011c436ee68996d4e50ed270d5ebaa5eea26"
+    },
+    {
+      "qid": "2hop__418766_141689",
+      "turn": 2,
+      "observed_ids": 9,
+      "selected_count": 1,
+      "matching_slot": 4,
+      "generated": 28,
+      "episode_sha256": "33fe652b6db05bb7e5ff70ec08201e5233a6d8f110f9b0a62e109bc68b809389"
+    },
+    {
+      "qid": "2hop__59498_54210",
+      "turn": 1,
+      "observed_ids": 5,
+      "selected_count": 1,
+      "matching_slot": 2,
+      "generated": 27,
+      "episode_sha256": "c6b973a45de628f432af38627cd0a7ec3be23379b6e62eea3df2133fec19f1c9"
+    },
+    {
+      "qid": "2hop__617187_36134",
+      "turn": 1,
+      "observed_ids": 5,
+      "selected_count": 2,
+      "matching_slot": 0,
+      "generated": 46,
+      "episode_sha256": "65cbefff83d3381aa960884bcd85f5200213a22421fd4d08b567f8cba23bca3a"
+    },
+    {
+      "qid": "2hop__61743_5228",
+      "turn": 1,
+      "observed_ids": 5,
+      "selected_count": 1,
+      "matching_slot": 2,
+      "generated": 29,
+      "episode_sha256": "907564de114df5c11d6d1d2465492366a74e6b2d3f24b2c05430e570783e8f70"
+    },
+    {
+      "qid": "2hop__618223_60600",
+      "turn": 1,
+      "observed_ids": 5,
+      "selected_count": 1,
+      "matching_slot": 2,
+      "generated": 28,
+      "episode_sha256": "4623645aa4e4564c8e925afdc4aebdb1148756e83fd159bc2dfccceb5a14b3a0"
+    },
+    {
+      "qid": "2hop__795530_47353",
+      "turn": 1,
+      "observed_ids": 5,
+      "selected_count": 1,
+      "matching_slot": 2,
+      "generated": 30,
+      "episode_sha256": "c277276e5627e19b2d3e35459352f6210fdfaa26261aeb9ec85bfb2c23d6a2cd"
+    },
+    {
+      "qid": "2hop__795530_47353",
+      "turn": 3,
+      "observed_ids": 6,
+      "selected_count": 1,
+      "matching_slot": 4,
+      "generated": 29,
+      "episode_sha256": "c277276e5627e19b2d3e35459352f6210fdfaa26261aeb9ec85bfb2c23d6a2cd"
+    },
+    {
+      "qid": "2hop__795530_47353",
+      "turn": 5,
+      "observed_ids": 7,
+      "selected_count": 1,
+      "matching_slot": 4,
+      "generated": 30,
+      "episode_sha256": "c277276e5627e19b2d3e35459352f6210fdfaa26261aeb9ec85bfb2c23d6a2cd"
+    },
+    {
+      "qid": "2hop__804878_161223",
+      "turn": 2,
+      "observed_ids": 10,
+      "selected_count": 2,
+      "matching_slot": 0,
+      "generated": 52,
+      "episode_sha256": "7f99c37addea2161022dbc05464f162982548eda56738276a185251cd825cb07"
+    },
+    {
+      "qid": "2hop__8531_24846",
+      "turn": 2,
+      "observed_ids": 9,
+      "selected_count": 1,
+      "matching_slot": 3,
+      "generated": 27,
+      "episode_sha256": "6283ccc8062adf3a8fc9ce094b37367dd02a587ae97722329ead5b259e8e60e6"
+    },
+    {
+      "qid": "2hop__89126_11226",
+      "turn": 7,
+      "observed_ids": 3,
+      "selected_count": 1,
+      "matching_slot": 1,
+      "generated": 27,
+      "episode_sha256": "74682efff803d2ba4d76b4c313ead350cf5c22c3cb391607e29731472a5978b6"
+    },
+    {
+      "qid": "2hop__91652_78168",
+      "turn": 1,
+      "observed_ids": 5,
+      "selected_count": 1,
+      "matching_slot": 0,
+      "generated": 24,
+      "episode_sha256": "267d2fa0118de38fd12d6e69e495652099a4aa728c1a9950b46834e7bcdc3a6e"
+    },
+    {
+      "qid": "2hop__93786_85298",
+      "turn": 4,
+      "observed_ids": 6,
+      "selected_count": 5,
+      "matching_slot": 1,
+      "generated": 121,
+      "episode_sha256": "96d2e82d0bcfb2335ef082cc1437790993990c90cf0345b47de0c34fc224d783"
+    }
+  ],
+  "limitations": [
+    "Train48 stochastic collectors only; no evaluation.",
+    "Exact coverage is an oracle upper bound, not learned selector accuracy or measured savings.",
+    "Candidate list uses existing observed public results, without support labels.",
+    "Changing ordering/subsets can change downstream context; retain generation fallback."
+  ]
+}
