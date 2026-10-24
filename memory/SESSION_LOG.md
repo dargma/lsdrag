@@ -1947,3 +1947,10 @@ Strategic next: stop adding stopping-head variants for now; examine argument-gen
 
 Next concrete step inspect existing text-integrated read-slot/argument head code and training coverage before one exact-payload/quality-preserving pointer-or-reuse pilot. Useroriginalintegratedheadscope permits this axis; H2is alreadyoutcome-trained stoppingpolicy, not a new separateLLM. Needtrain-onlyselection/coveragegate; no devargumentlabels forfit. Plan notyetfrozen, no newrun. GoalACTIVE,reserved80untouched;allworkerscomplete. Prior turn madefit/train/devprogress;thisturn addsnegativeevidence plusquantifieddifferentcostroute.
 
+
+## 2026-10-24 — train read coverage rejects simple slot reuse; ordered pointer proposed
+
+Previous goal turn was proposal-only (no progress). This turn adds reproducible train-only evidence: scripts/reporting/audit_train_read_coverage.py verifies 120 H3 reference episodes, raw generated-token totals and train membership; report lab/reports/decision_train_read_coverage_20261024/summary.json includes source episode hashes. Reads:23 calls/21 questions/1112 tokens. Legacy four slots cover11calls/358tokens(32.2%); uncapped groups+singletons14/446(40.1%); ordered observed-ID pointer represents23/1112. These are oracle representational bounds, NOT learned accuracy, H2 coverage or actual savings. Do not extrapolate train H3 percentages to dev H2.
+
+Proposed docs/JEV_H2_READ_POINTER_FEASIBILITY_20261024.md: bounded H2 train48 (hashseed20261087,32fit/16diagnostic), coverage gate before one pointer/fallback fit, actual closed-loop QA and correct/incorrect cost accounting. Exact architecture/checkpoint/source/collection specification still to freeze before execution. Teacher imitation is only efficient execution; future-return document-choice training remains the subsequent research test. No GPU experiment launched in this turn. Goal remains active and unmet; reserved80 untouched. Next inspect H2 loader and causal candidate feature capture, then freeze collection manifest. New user goal continuation authorizes continued bounded work; no old runs resumed.
+

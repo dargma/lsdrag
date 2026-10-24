@@ -1,5 +1,5 @@
 {
-  "phase": "two_action_probe_failed_read_argument_feasibility",
+  "phase": "train_read_coverage_complete_pointer_preparation",
   "updated_utc": "2026-10-24T13:02:35.723774+00:00",
   "protocol": "docs/JEV_TWO_ACTION12_20261024.md",
   "protocol_sha256": "38cf7d17afab9b366e52660a23dc891f1c8ee8241ef3f16fdabb0e24cd6eeb76",
@@ -38,7 +38,7 @@
   "teacher_collection_started": true,
   "training_completed": true,
   "evaluation_completed": false,
-  "next": "Freeze bounded coordinated two-action train probe; no further architecture/model sweep",
+  "next": "Freeze H2 train48 reference collection and causal document candidate features; pointer architecture not yet frozen",
   "previous_multimodal_checkpoint_historical_only": {
     "phase": "native2_review_required",
     "run": "/content/local_fast/lsdrag-head-v14/results/native_distillation_12b_20261015",
@@ -1248,5 +1248,6 @@
     "train_gate": true,
     "report": "/content/local_fast/lsdrag-code/lab/reports/decision_constrained_stop120_train_eval_20261024/verification.json"
   },
-  "coverage120_pipeline_status_path": "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop120_pipeline_20261024.json"
+  "coverage120_pipeline_status_path": "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop120_pipeline_20261024.json",
+  "read_pointer_plan": "docs/JEV_H2_READ_POINTER_FEASIBILITY_20261024.md"
 }
