@@ -1,3 +1,11 @@
+## 2026-10-24 — followup caches and fixed references restored/verified
+
+Previous goal activation turn changed authoritative goal/memory; progress, not completion. Current continuation restored seven unique Drive archives with exact recorded SHA256: original377state train192 cache, first48/82states, second48/87states, quality-correction head, basic/native validation64, selected-before/GRPO validation64, and current cost-priority validation64. All546 training packs finite and train-only; original fit input hashes exact. Every evaluation policy has64 unique complete cells on same frozen validation IDs. Reports lab/registry/recovery_20261024/followup_assets.json and followup_verification.json. No new fit or partial-third48 quality inspection.
+
+Recomputed fixed basic GRPO F1 .2250067641/generated98.40625; development thresholds .2750067641/68.884375. Current cost-priority .2674174784/75.453125 remains below joint target. Independent confirmation and mechanism evidence still required.
+
+Collector9064/coordinator9054 verified live; 162episodes/14questions at 240.1s. Remain in collection, no restart. Next terminal raw audit/archive then completed-train opportunity audit and evidence-based next fit protocol. Goal ACTIVE; reserved80 untouched.
+
 ## 2026-10-24 — goal mode explicitly activated after recovery
 
 User: “골 모드 진입”. Goal tool status ACTIVE, no token budget specified. Objective unchanged: paired F1 +5 percentage points AND generated-token ratio <=0.70 against fixed basic shared-corpus GRPO, plus evidence of useful state-conditioned decisions; exposed development results alone are insufficient. Continue bounded evidence-driven experiments after completed third48 audit, freeze each next protocol before outcomes, protect reserved80 during development. Existing collection9054/9064 verified live at81episodes/7questions; do not duplicate. No target achievement claimed. Current phase docs/JEV_COST_POLICY_COVERAGE_PROTOCOL_20261024.md. Environment-status tool and network-policy snapshot unavailable; actual prior downloads/push succeeded, not a general credential-readiness claim.

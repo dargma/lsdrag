@@ -1,0 +1,78 @@
+{
+  "prior_fit_inputs_verified": true,
+  "training": {
+    "decision_shared_outcomes192_20261023": {
+      "states": 377,
+      "questions": 192,
+      "finite_packs": true
+    },
+    "decision_selected_refresh48_20261024": {
+      "states": 82,
+      "questions": 48,
+      "finite_packs": true
+    },
+    "decision_quality_corrected_refresh48b_20261024": {
+      "states": 87,
+      "questions": 48,
+      "finite_packs": true
+    }
+  },
+  "evaluation": {
+    "decision_shared_validation64_20261023": {
+      "semantic_once": {
+        "n": 64,
+        "f1": 0.24874750064499485,
+        "generated_tokens": 55.90625
+      },
+      "native_fast": {
+        "n": 64,
+        "f1": 0.24702380952380953,
+        "generated_tokens": 97.4375
+      },
+      "shared_bc": {
+        "n": 64,
+        "f1": 0.22500676406926406,
+        "generated_tokens": 101.59375
+      },
+      "policy_iteration_cost003": {
+        "n": 64,
+        "f1": 0.29464285714285715,
+        "generated_tokens": 123.25
+      },
+      "policy_iteration_cost006": {
+        "n": 64,
+        "f1": 0.26078869047619047,
+        "generated_tokens": 112.671875
+      },
+      "shared_grpo": {
+        "n": 64,
+        "f1": 0.22500676406926406,
+        "generated_tokens": 98.40625
+      }
+    },
+    "decision_selected_head_grpo_validation64_20261024_r1": {
+      "multi_mlp_outcome": {
+        "n": 64,
+        "f1": 0.25179247835497837,
+        "generated_tokens": 76.75
+      },
+      "multi_mlp_outcome_grpo": {
+        "n": 64,
+        "f1": 0.22953869047619047,
+        "generated_tokens": 53.1875
+      }
+    },
+    "decision_cost_priority_validation64_20261024": {
+      "selected_reference": {
+        "n": 64,
+        "f1": 0.26406926406926406,
+        "generated_tokens": 81.546875
+      },
+      "cost_priority": {
+        "n": 64,
+        "f1": 0.26741747835497837,
+        "generated_tokens": 75.453125
+      }
+    }
+  }
+}
