@@ -1168,3 +1168,7 @@ Refresh48 complete:48questions/88states/656episodes/1129.48sec,gen60745/input372
 
 Queued quality-head GRPO now LIVE coordinator354060/worker357241; log /content/local_fast/lsdrag-text-v1/logs/selected_grpo_run_decision_quality_head_grpo_1792822792.log. Actual8/768episodes at snapshot. Learner starts exactqualityMLP0a1b...,notconstraineddescendant;refreshinterventions notusedasGRPOsamples. One192×4round thenaudit/pairedvalidation64/archive. GoalACTIVE.
 
+
+## 2026-10-24 — broad autonomous continuation; train-only generation accounting
+
+User reiterates continue ideas/experiments until real goal, consider system broadly. Exact quality-MLP GRPO worker357241 verified live140/768episodes; no post-training score yet. Train48 collectors:5272generated, keyword914/semantic1496/read1388/FINAL1474;9exactrepeatedcalls/148. All48 episode totals reconciled to paired prefill/generation calls; source hashes recorded. This is accounting, not savings or validation evidence. Adaptive branch rules appended docs/JEV_REMAINING_ADAPTIVE_PROGRAM_20261024.md. Current GRPO unchanged; next quality-preserving argument reduction versus refreshed policy targets chosen from final results. Goal ACTIVE.

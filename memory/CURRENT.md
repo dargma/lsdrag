@@ -1,3 +1,8 @@
+
+## 2026-10-24 — broad autonomous continuation; train-only generation accounting
+
+User reiterates continue ideas/experiments until real goal, consider system broadly. Exact quality-MLP GRPO worker357241 verified live140/768episodes; no post-training score yet. Train48 collectors:5272generated, keyword914/semantic1496/read1388/FINAL1474;9exactrepeatedcalls/148. All48 episode totals reconciled to paired prefill/generation calls; source hashes recorded. This is accounting, not savings or validation evidence. Adaptive branch rules appended docs/JEV_REMAINING_ADAPTIVE_PROGRAM_20261024.md. Current GRPO unchanged; next quality-preserving argument reduction versus refreshed policy targets chosen from final results. Goal ACTIVE.
+
 ## 2026-10-24 — current-policy refresh complete; quality-leading MLP GRPO actually started
 
 Refresh48 complete:48questions/88states/656episodes/1129.48sec,gen60745/input3728670,18error episodes retained. Audit passed:FP32packs,prefix/actionidentity,alllegalactions×2,rawtotals,trainpool/testexclusion. statesSHA104a12936424d69ef1ec8c7aba9383ecc5d90ecfbfe6fa17b52d038854dccef7. Drive28,565,149bytes/SHA c82c81ec563550bc06713937f9dc79472cd6027c9dd7a7cee28ebf5030ccca43 independently rehashed. Collection is not learnedpolicyquality evidence.

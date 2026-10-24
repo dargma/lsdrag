@@ -22,3 +22,13 @@ Initial teacher action learning → selected multi-position MLP outcome learning
   - NOW queued: fresh GRPO directly from0a1b..., not from constrained descendants.
 
 The current refresh collector also uses frozen0a1b..., and its counterfactual branch data must not be presented as on-policy GRPO data. The branch structure matters: do not describe all MLP results as receiving GRPO.
+
+## Train-only cost evidence and adaptive decision rule
+
+Latest user reiterates autonomous broad investigation until the actual joint goal. Current exact quality-MLP GRPO remains first priority; do not change its frozen protocol mid-run.
+
+Train48 stochastic collector accounting (not validation): 5272 generated tokens: keyword arguments914 (17.34%), semantic arguments1496 (28.38%), read arguments1388 (26.33%), FINAL1474 (27.96%). Nine exact repeated calls among148 calls. Source hashes and checked pairwise prefill/generation accounting: lab/reports/decision_current_policy_refresh48_20261024/generation_accounting.json. These are opportunities, not demonstrated savings. Removing every read-argument token would still be only an optimistic26.33% ceiling on this training sample.
+
+After current GRPO paired evaluation: (a) if quality remains high but generation is expensive, prioritize a bounded same-checkpoint read-argument selection/reuse pilot, preserving useful search and comparing with always-generate; account for both a matched basic baseline and the fixed historical target. (b) If quality falls with early FINAL, prioritize refreshed current-policy quality-preserving action targets rather than stronger cost penalties. (c) If those targets are reliable but poorly fitted, test the exact-initialization context residual candidate on matched data. Probability confidence may gate selection versus generation, but calibration must be learned/checked on training-only partitions, not assumed from maximum softmax.
+
+No new GPU experiment launched by this accounting. Independent confirmation remains protected; learned policy quality and end-to-end generation engineering must be reported separately.
