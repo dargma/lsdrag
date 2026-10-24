@@ -855,3 +855,5 @@ shared_structure coordinatorPID250404/session59470 실제waiting_main_comparison
 
 worker248069/coordinator248061 유지. iteration0 768trajectory/2632states 업데이트완료,iteration1수집시작. GPU behavior replay gate통과. 독립CPU replay최대오차1.907e-6,nonactor모든값불변/actor4tensor만변경/모든값finite. checkpointSHA4d9b345887a3e658e2b08eb6673c8f95966e528ffc3ef8239b36db88b1ed64b1. 학습state argmax11/2632변경(.42%),평균TV.04517/KL.03105;확률변화이지품질개선증거아님. partialaudit lab/reports/decision_shared_grpo192_20261023/round0_checkpoint_audit.json. checkpoint/manifest/curve/부분audit만Drive묶음백업SHA검증;전체rawbackup은run완료후. 최종test미열람. 다음iteration1완료→전체audit/backup,자동all-action수집은사전계획대로진행.
 
+
+2026-10-24: shared evaluation reporter에native_fast/semantic_once대비paired F1/tokenratio CI추가,개별marginal95%구간/다중비교보정없음을명시. 기존jointCIflag는두개별경계통과이며동시95%보장아님. greedy평가action==argmax/legal/nointervention검사추가. compile 및knownconstantshift/ratiobootstrap수치검사통과. 실험학습코드/목표/후보선정규칙변경없음. GRPO248069 iteration1/920episodes확인.

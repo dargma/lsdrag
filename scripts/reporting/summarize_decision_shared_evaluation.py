@@ -16,6 +16,7 @@ def main():
    if spec['policies'][e['policy']]['kind']=='native':
     assert d['policy_probs'] is None;continue
    probs=np.array(d['policy_probs']);legal=np.array(d['legal']);assert abs(probs.sum()-1)<1e-5 and np.isfinite(probs).all() and (probs[~legal]==0).all()
+   assert legal[d['action']] and d['action']==int(probs.argmax()) and not d['branch_intervention']
  for metric,key in [('generated_tokens','generated'),('prompt_tokens','inputs')]:assert sum(e[metric] for e in eps)==status[key]
  for filename,digest in spec['source_sha256'].items():assert hashlib.sha256((REPO/filename).read_bytes()).hexdigest()==digest,filename
  for desc in spec['policies'].values():
@@ -34,7 +35,16 @@ def main():
    comp[name][metric]={'delta':float(delta.mean()),'ci95':np.quantile(delta[draws].mean(1),[.025,.975]).tolist()}
    if metric=='generated_tokens':comp[name]['generated_ratio']={'ratio':float(a.mean()/b.mean()),'ci95':np.quantile(a[draws].mean(1)/b[draws].mean(1),[.025,.975]).tolist()}
   c=comp[name];c['joint_point_target']=bool(c['f1']['delta']>=.05 and c['generated_ratio']['ratio']<=.7);c['joint_directional_ci']=bool(c['f1']['ci95'][0]>0 and c['generated_ratio']['ci95'][1]<1);c['joint_target_ci']=bool(c['f1']['ci95'][0]>=.05 and c['generated_ratio']['ci95'][1]<=.7)
- result=summary|{'baseline':base,'comparisons_vs_baseline':comp,'audit':{'episodes':len(eps),'unique_cells':len(lookup),'probability_and_cost_checks':True},'single_seed':True,'target':{'f1_delta':.05,'generated_ratio':.7},'ci_scope':'paired question bootstrap conditional on frozen policies; not training-seed population uncertainty'}
+ result=summary|{'baseline':base,'comparisons_vs_baseline':comp,'audit':{'episodes':len(eps),'unique_cells':len(lookup),'probability_and_cost_checks':True},'single_seed':True,'target':{'f1_delta':.05,'generated_ratio':.7},'ci_scope':'Marginal95% paired question bootstrap conditional on frozen policies; not training-seed population uncertainty. No multiplicity adjustment. Joint CI flags mean both marginal bounds pass, not a simultaneous95% region.'}
+ strong={}
+ for reference in ['native_fast','semantic_once']:
+  if reference not in names:continue
+  strong[reference]={}
+  for name in names:
+   if name==reference:continue
+   af=np.array([lookup[name,q]['f1'] for q in qids]);bf=np.array([lookup[reference,q]['f1'] for q in qids]);ag=np.array([lookup[name,q]['generated_tokens'] for q in qids]);bg=np.array([lookup[reference,q]['generated_tokens'] for q in qids])
+   strong[reference][name]={'f1_delta':float((af-bf).mean()),'f1_delta_ci95':np.quantile((af-bf)[draws].mean(1),[.025,.975]).tolist(),'generated_ratio':float(ag.mean()/bg.mean()),'generated_ratio_ci95':np.quantile(ag[draws].mean(1)/bg[draws].mean(1),[.025,.975]).tolist(),'point_no_worse_quality_and_cost':bool(af.mean()>=bf.mean() and ag.mean()<=bg.mean())}
+ result['comparisons_vs_strong_baselines']=strong
  if spec['split']=='validation':
   old=set(read(ROOT/'results/decision_state_outcomes_20261023/manifest.json')['validation'])
   groups={'previously_exposed':[q for q in qids if q in old],'new_validation':[q for q in qids if q not in old]}
@@ -49,6 +59,11 @@ def main():
  lines+=['','## 지정 baseline 대비','']
  for name,c in comp.items():lines += [f"- {name}: F1 delta {100*c['f1']['delta']:+.2f}pp, CI {c['f1']['ci95']}; 생성ratio {c['generated_ratio']}; point목표 {c['joint_point_target']}, 방향CI {c['joint_directional_ci']}, 목표CI {c['joint_target_ci']}."]
  lines+=['','F1+5%p 및생성token−30% 동시목표. 확률은action확률이며정답확률아님. 단일seed/조건부CI/공식train원천의학습/검증가족분리holdout이며공통101962문단검색환경. validation은후보선택자료이므로최종확증아님. 최종test결과로후보재선택금지. 전체학습/수집비용별도보고. 통제latency비교없음.']
+ if strong:
+  lines+=['','## Native and fixed-workflow comparisons','','|Reference|Policy|F1 delta (pp)|Marginal95% CI (pp)|Generated ratio|Marginal95% CI|','|---|---|---:|---|---:|---|']
+  for reference,values in strong.items():
+   for name,c in values.items():lines.append(f"|{reference}|{name}|{100*c['f1_delta']:+.2f}|{[round(100*v,2) for v in c['f1_delta_ci95']]}|{c['generated_ratio']:.4f}|{c['generated_ratio_ci95']}|")
+ lines+=['','CI는개별지표의marginal95%구간이며다중비교보정없음. 두CI조건통과를동시95%보장으로해석하지않는다.']
  if 'validation_subgroups' in result:
   lines+=['','## Validation exposure subgroups','','```json',json.dumps(result['validation_subgroups'],ensure_ascii=False,indent=2),'```']
  if spec['split']=='test':
