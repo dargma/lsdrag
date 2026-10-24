@@ -1523,3 +1523,15 @@ Frozen followup: all54 intermediate nonforced states in34 existing H1 train roll
 
 
 H3 middle collection live: coordinator24893/worker24947 verified by ps; state /content/local_fast/lsdrag-text-v1/results/decision_stop_middle_h3_coordinator_20261024.json; log /content/local_fast/lsdrag-text-v1/logs/refresh48_run_decision_stop_middle_h3_20261024_1792837262.log. Next terminal collection then scripts/reporting/verify_stop_middle_h3.py. Do not duplicate.
+
+## 2026-10-24 — H3 full prefix coverage verified; one fit frozen
+
+Initial middle collection silently selected34of54states due inherited first/middle/last helper. Independent verifier rejected coverage; preserved68episodes and explicit coverage_failure.json. Supplement20states/40episodes completed; combined54states/108new episodes re-scored, exact prefixes/actions/probabilities/counts and both Drive archive bytes verified. No repeated rollout or dev use.
+
+Combined137states/48train questions yields15changed states across11questions, passing>=3gate. Weighted suffix surrogate F1.450562→.457159/generated52.9608→49.6684; not deployable quality/cost proof. One unchanged129parameter stop correction/100updates/.001/seed20261069 frozen in lab/registry/decision_budget_stop_h3_20261024/plan.json. Next fit then paired128development episodes vsH1. Reserved80protected; goalACTIVE.
+
+## 2026-10-24 — H3 fit complete; paired evaluation live
+
+Single stopping candidate936e45925890f1a1da6a411719a092db7fc68f60aee6fd2b68e15e65cb0daf94 fit complete, frozen H1/tool logits and checkpoint reload checks passed. Coordinator26732/evaluator26787 verified live; state /content/local_fast/lsdrag-text-v1/results/decision_budget_stop_h3_coordinator_20261024.json; log /content/local_fast/lsdrag-text-v1/logs/value_heads_evaluate_decision_stop_value_h2_1792837475.log. H1reference/budget_stop paired128episodes underway; no interim selection.
+
+Middle collection counts are108episodes/5200generated/319427input/0errors across two sequential runs. Separate wall durations69.91+48.13seconds; merged verifier counts.seconds inherited first run only, not total wall time. Full coverage verified despite first coordinator incorrectly accepting partial coverage; failure preserved. Next completed evaluation/raw reports/Drive backup. GoalACTIVE,reserved80protected.

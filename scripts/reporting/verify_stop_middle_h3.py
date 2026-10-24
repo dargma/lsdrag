@@ -11,9 +11,14 @@ def main():
  p=ROOT/'results'/NAME
  read=lambda p:json.loads(p.read_text())
  m=read(p/'manifest.json');status=read(p/'status.json');assert status['phase']=='complete'
+ supplement=ROOT/'results/decision_stop_middle_h3_supplement_20261024'
+ sm=read(supplement/'manifest.json');ss=read(supplement/'status.json');assert ss['phase']=='complete'
+ for path,h in sm['input_sha256'].items():assert sha(Path(path))==h
+ for path,h in sm['source_sha256'].items():assert sha(REPO/path)==h
+ status={**status,**{k:status[k]+ss[k] for k in ('episodes','states','generated','inputs')}}
  for path,h in m['input_sha256'].items():assert sha(Path(path))==h
  for path,h in m['source_sha256'].items():assert sha(REPO/path)==h
- records=torch.load(p/'states.pt',weights_only=True)
+ records=torch.load(p/'states.pt',weights_only=True)+torch.load(supplement/'states.pt',weights_only=True)
  parent=Path(m['parent_run']);old=torch.load(parent/'states.pt',weights_only=True)
  expected={}
  for qid in m['train']:
@@ -30,7 +35,7 @@ def main():
  assert set(raw)==set(m['train'])<=set(m['train_pool'])
  assert not set(raw)&set(m['validation']+m['test'])
  sys.path.insert(0,str(ROOT/'source/musique_scorer'));from metrics.answer import compute_f1
- eps=[read(f) for f in (p/'episodes').glob('*.json')];by={(e['qid'],e['tag']):e for e in eps}
+ eps=[read(f) for run in (p,supplement) for f in (run/'episodes').glob('*.json')];by={(e['qid'],e['tag']):e for e in eps}
  assert len(eps)==len(by)==2*len(records)==m['expected_episodes']==status['episodes']
  for r in records:
   d,prefix=expected[r['qid'],r['turn']];assert prefix==r['prefix_sha256']
@@ -45,19 +50,16 @@ def main():
    assert e['decisions'][0]['action']==s['action'] and e['decisions'][0]['branch_intervention']
    assert e['errors']==s['errors'] and e['generated_tokens']==s['generated'] and e['prompt_tokens']==s['inputs']
  for key,field in [('generated','generated_tokens'),('inputs','prompt_tokens')]:assert status[key]==sum(e[field] for e in eps)
- archive=read(REPO/'lab/registry'/NAME/'archive.json')
- print('archive fields',list(archive))
- # Verify archive bytes against every runtime file, without extracting.
- archive_path=Path(archive.get('archive',archive.get('path','')))
- assert archive_path.is_file(),archive
- assert sha(archive_path)==archive['sha256']
- with tarfile.open(archive_path) as tf:
-  files={x.name:x for x in tf.getmembers() if x.isfile()}
-  for f in p.rglob('*'):
-   if f.is_file():
-    matches=[x for x in files if x.endswith('/'+str(f.relative_to(p)))]
-    assert len(matches)==1
-    assert hashlib.sha256(tf.extractfile(files[matches[0]]).read()).hexdigest()==sha(f)
+ for run in (p,supplement):
+  archive=read(REPO/'lab/registry'/run.name/'archive.json')
+  archive_path=Path(archive['path']);assert sha(archive_path)==archive['sha256']
+  with tarfile.open(archive_path) as tf:
+   files={x.name:x for x in tf.getmembers() if x.isfile()}
+   for f in run.rglob('*'):
+    if f.is_file():
+     matches=[x for x in files if x.endswith('/'+str(f.relative_to(run)))]
+     assert len(matches)==1
+     assert hashlib.sha256(tf.extractfile(files[matches[0]]).read()).hexdigest()==sha(f)
  combined=old+records
  assert len({(r['qid'],r['prefix_sha256']) for r in combined})==len(combined)
  labels,evidence=budget_targets(combined)
@@ -67,5 +69,5 @@ def main():
  if evidence['changed_questions']>=3:
   # Separate derived artifact, not a mutation of the archived collection.
   out=ROOT/'results/decision_budget_stop_h3_inputs_20261024';out.mkdir(exist_ok=False)
-  torch.save(combined,out/'states.pt');save(out/'provenance.json',dict(parents={str(parent/'states.pt'):sha(parent/'states.pt'),str(p/'states.pt'):sha(p/'states.pt')},evidence=evidence,labels=labels))
+  torch.save(combined,out/'states.pt');save(out/'provenance.json',dict(parents={str(parent/'states.pt'):sha(parent/'states.pt'),str(p/'states.pt'):sha(p/'states.pt'),str(supplement/'states.pt'):sha(supplement/'states.pt')},evidence=evidence,labels=labels))
 if __name__=='__main__':main()

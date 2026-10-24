@@ -40,3 +40,9 @@ Require prefix hashes, legal actions and original H1 probabilities to replay.
 No new rollin cost is incurred; counts include only new suffix executions.
 After raw audit, combine unique same-policy prefixes with original83 and repeat
 the unchanged training feasibility gate before any fit. No test/dev collection.
+
+Independent coverage audit rejected the first middle collection: inherited
+state_snapshots only returns first/middle/last, yielding34 rather than54states.
+Preserve its68episodes; supplement exactly20missing states (40new episodes)
+with explicit public-prefix reconstruction. Frozen supplement manifest records
+missing turns and prior tensor hash. Only combined full coverage can pass.

@@ -1,0 +1,7 @@
+{
+  "verified": false,
+  "expected_states": 54,
+  "actual_states": 34,
+  "reason": "state_snapshots returns first/middle/last only; all intermediate states not covered",
+  "next_run": "decision_stop_middle_h3_supplement_20261024"
+}

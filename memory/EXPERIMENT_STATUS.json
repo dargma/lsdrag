@@ -1140,11 +1140,25 @@
     "goal_achieved": false
   },
   "stop_middle_h3_collection": {
+    "phase": "complete",
+    "pid": null,
+    "seconds": 75.59124141400025,
+    "report": "/content/local_fast/lsdrag-code/lab/reports/decision_stop_middle_h3_20261024/audit.json",
+    "goal_achieved": false
+  },
+  "stop_middle_h3_supplement_collection": {
+    "phase": "complete",
+    "pid": null,
+    "seconds": 53.35444049099988,
+    "report": "/content/local_fast/lsdrag-code/lab/reports/decision_stop_middle_h3_supplement_20261024/audit.json",
+    "goal_achieved": false
+  },
+  "budget_stop_h3_evaluation": {
     "phase": "running",
-    "pid": 24893,
-    "seconds": 0.0004435299997567199,
-    "child_pid": 24947,
-    "script": "scripts/run_decision_stop_middle_h3_20261024.py",
-    "log": "/content/local_fast/lsdrag-text-v1/logs/refresh48_run_decision_stop_middle_h3_20261024_1792837262.log"
+    "pid": 26732,
+    "seconds": 0.2153070200001821,
+    "script": "scripts/evaluate_decision_stop_value_h2.py",
+    "child_pid": 26787,
+    "log": "/content/local_fast/lsdrag-text-v1/logs/value_heads_evaluate_decision_stop_value_h2_1792837475.log"
   }
 }
