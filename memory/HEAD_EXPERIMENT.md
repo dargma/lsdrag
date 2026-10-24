@@ -1,4 +1,8 @@
 
+## 2026-10-24 — matched-prefix 2x2 offline fit prepared, not launched
+
+Userreaffirmedlocal-fast-only execution; Drivebackup only. Collector388356 live. Newprotocol docs/JEV_MATCHED_REFRESH_FIT_PROTOCOL_20261024.md andfitter scripts/fit_decision_matched_refresh.py compareold/freshtargets×MLP/frozenquestionattention. Exactmatched(qid,prefixhash)states, freshpackusedinallarms, all48qidsrequired,100updates/sameobjective/seed. Collectioncompletion+passedrawaudit gate beforefit, freshSHA boundbeforeoptimization. Thisisolatesinput/state fromtargetsource, butsuffixpolicy/randomsampling remainconfounded. Noheadfitlaunched. GoalACTIVE.
+
 ## 2026-10-24 — selected d987 refresh live
 
 Coordinator388343 andownedcollector388356 verifiedlive. State /content/local_fast/lsdrag-text-v1/results/decision_selected_refresh_coordinator_20261024.json;log /content/local_fast/lsdrag-text-v1/logs/refresh48_run_decision_selected_refresh_1792829012.log. Output decision_selected_refresh48_20261024; max48trainquestions,816episodes. Automaticpostcollectionaudit/Drivearchive configured. Do notduplicate/restartfromstatusalone. GoalACTIVE, newheadtrainingnotstarted.
