@@ -1,3 +1,9 @@
+## 2026-10-24 — H3 mechanism control approved; full method saved
+
+User approves H3 fixed vs constant stopping-offset control before further H4 quality expansion. Scope: isolate H3 added state-dependent residual, not erase inherited H1 state dependence. Calibrate constant using training token cost only; freeze before dev, no dev retuning. H4 expansion deferred. Previous turn was discussion/no experiment progress; this turn saves exact methods and prepares the approved control.
+
+User explicitly requests H3 learning/equations/insights saved. docs/JEV_H3_METHOD_EQUATIONS_INSIGHTS_20261024.md records actual MILP targets, aggregate-vs-individual quality distinction,129parameter residual, margin BCE/reference retention, exact settings/data failure recovery/results/provenance, and limits. GoalACTIVE; no new worker yet.
+
 ## 2026-10-24 — hypothesis-first, fast direction finding
 
 User explicitly rejects excessive detailed ablation analysis. Investigate whether the action head is a useful state-conditioned policy improving accuracy AND token cost, rather than merely imitating choices. Run one major hypothesis/candidate at a time, judge real closed-loop QA and useful action changes, and expand detailed experiments only after a promising direction emerges. Preserve necessary integrity/heldout checks without making them the research program. Active strategy docs/JEV_DECISION_POLICY_HYPOTHESIS_PLAN_20261024.md. Existing goal remains active.

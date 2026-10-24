@@ -1543,3 +1543,9 @@ Candidate936e4592 completed paired128episodes/183.92sec/9103generated/453629inpu
 Net541tokens saved:305both-zero,143quality-loss,33quality-gain,60positive-retained. Therefore cannot claim useful quality-preserving policy dominates savings. Train targets15include2quality-loss trades under aggregatefloor; transfer compensation not guaranteed. RetainH1efficientincumbent;H3cost-focusedbranch,H2qualitybranch. Next direction broaden same-H1 evidence for quality-preserving intermediate stopping, one bounded training expansion/candidate, no devpenaltysweep. Concrete followup notyetfrozen, no nextworker. Reserved80protected,GoalACTIVE.
 
 Coordinator26732/evaluator26787terminalcomplete. Current phase result saved/next planning. Collection first34+supplement20 verified; initial coverage failure preserved. Fit/eval/collection archives copied and SHAverified. Pushjev_v1.1.
+
+## 2026-10-24 — H3 mechanism control approved; full method saved
+
+User approves H3 fixed vs constant stopping-offset control before further H4 quality expansion. Scope: isolate H3 added state-dependent residual, not erase inherited H1 state dependence. Calibrate constant using training token cost only; freeze before dev, no dev retuning. H4 expansion deferred. Previous turn was discussion/no experiment progress; this turn saves exact methods and prepares the approved control.
+
+User explicitly requests H3 learning/equations/insights saved. docs/JEV_H3_METHOD_EQUATIONS_INSIGHTS_20261024.md records actual MILP targets, aggregate-vs-individual quality distinction,129parameter residual, margin BCE/reference retention, exact settings/data failure recovery/results/provenance, and limits. GoalACTIVE; no new worker yet.

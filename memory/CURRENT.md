@@ -1,3 +1,9 @@
+## 2026-10-24 — H3 mechanism control approved; full method saved
+
+User approves H3 fixed vs constant stopping-offset control before further H4 quality expansion. Scope: isolate H3 added state-dependent residual, not erase inherited H1 state dependence. Calibrate constant using training token cost only; freeze before dev, no dev retuning. H4 expansion deferred. Previous turn was discussion/no experiment progress; this turn saves exact methods and prepares the approved control.
+
+User explicitly requests H3 learning/equations/insights saved. docs/JEV_H3_METHOD_EQUATIONS_INSIGHTS_20261024.md records actual MILP targets, aggregate-vs-individual quality distinction,129parameter residual, margin BCE/reference retention, exact settings/data failure recovery/results/provenance, and limits. GoalACTIVE; no new worker yet.
+
 ## 2026-10-24 — H3 complete: cost threshold passes, quality/useful-saving goal fails
 
 Candidate936e4592 completed paired128episodes/183.92sec/9103generated/453629input/0errors; H1reference64exact and raw/Drive bytes verified. H3F127.3158/generated66.8906 vsH128.3042/75.3438;3wins4losses. Fixedbasic+4.8152pp/generated−32.03%; quality27.5007threshold missed, no independent success. Report docs/JEV_BUDGET_STOP_H3_RESULT_20261024.md.
