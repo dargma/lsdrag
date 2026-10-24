@@ -1,0 +1,51 @@
+{
+  "repository": "https://github.com/apple-aiml-research/ml-llarp",
+  "revision": "214c79232f726b5bf9c9c10a4bedc6044977e7df",
+  "source_directory": "/content/local_fast/lsdrag-text-v1/source/ml-llarp-verification",
+  "source_sha256": {
+    "llarp/config/baseline/llarp.yaml": "9498adb05baa8763d7e6f4503913c91e09215a5572c91f7e35a125b22d79c7b8",
+    "llarp/config/baseline/policy/llarp_policy.yaml": "a3e1e9cc37deb2a659a2d3b6e5d2077766cf1b2775b16cab314bda6976596082",
+    "llarp/config/task/language_rearrangement.yaml": "a586cbfd98f0a5a7099f07b621fe35566ef64bfdeb8e302a44ccb4c23e1e7eaa",
+    "llarp/policies/llm_policy.py": "95f9a00e5c64034c1cf0e8b1e577b4194d9cb91cb85943d52eb4ac41cbd06cae",
+    "llarp/policies/action_decoders.py": "12013dfe47c38ebdcadc85d8fd6cd0b47f9f298fa3b59adbb1e6616bf314e3f4",
+    "llarp/policies/utils.py": "3633ba307dccd843692bedcf3af014d84384079ddd2e62762cb54cd6d357f1d4",
+    "llarp/policies/vis_bridge.py": "4f8a7bf242af2c0040f19e70b981e93bd656e936431c44b7b2b6c6d2ebf5a7e1",
+    "llarp/policies/cores/decoder.py": "8e59925606ad8d8eb03e24482e2162e84bed5bde7ca3f7c1b0752ab2b3354459",
+    "llarp/policies/transformer_storage.py": "afa6e7db0c72c969e084b3db1bc8fc917aaeabc211705925f132c35dc5812dc7",
+    "llarp/trainer/transformer_ppo.py": "480f8ee1369c192911b92d1dc82461bd41b27939fd654d9da15a4a2d1ae627ae",
+    "llarp/task/measures.py": "dd70dc4499aa477449bab4144dc3b2946c4e0be0321ad631cd3f52860af2314f",
+    "LICENSE": "050caf2699b5f7ba63751ad969cf5cb499b7822b67024b1a0fd7479b61a584ad"
+  },
+  "scope": "Pinned source inspection and isolated execution of original AST nodes with minimal dependency stubs; not full integration or performance reproduction",
+  "critic": {
+    "output_shape": [
+      3,
+      1
+    ],
+    "parameters": 513,
+    "learned_value_and_shared_feature_gradient": true
+  },
+  "gae": {
+    "gamma": 0.99,
+    "tau": 0.95,
+    "terminal_only_reward": [
+      0,
+      0,
+      1
+    ],
+    "earlier_return_targets": [
+      0.8845402598381042,
+      0.940500020980835,
+      1.0
+    ],
+    "verified": true
+  },
+  "reward": {
+    "invalid_no_progress": 0.0,
+    "valid_no_progress": 0.0,
+    "half_progress": 2.5,
+    "overwritten_invalid_penalty_confirmed": true
+  },
+  "benchmark_reproduced": false,
+  "lsdrag_policy_changed": false
+}

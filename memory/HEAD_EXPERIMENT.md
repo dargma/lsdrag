@@ -1,3 +1,9 @@
+## 2026-10-24 — consolidated actor–critic experiment plan saved
+
+User asks to synthesize the experiment plan after approving actor–critic direction and discussing masks. Plan docs/JEV_DECISION_ACTOR_CRITIC_PLAN_20261024.md: one richer shared post-reader representation, four-action residual actor anchored at H3, separate future-F1/generated-cost critics; existing48 internal36/12 predictive probe first, then at most2 measured current-policy improvements and one development comparison. No new fit or QA launched. Masks, causal prefix boundary, error exclusions and forced-decision exclusion explicit; reader/native contract/splits unchanged, reserved80protected. Critic prediction is not policy improvement; measured rollout and useful-cost gates required. GoalACTIVE.
+
+Pinned LLaRP original critic/GAE/reward isolated tests rerun successfully; source214c7923, evidence lab/reports/llarp_reference_verification_20261024/verification.json. Input bridge+actor+scalarV distinction, paper subgoal reward and public invalid-penalty overwrite recorded; no full benchmark reproduction. Previous answer-only turn was no experimental progress; this turn verified source behavior and saved concrete successor protocol. Next implement stage1 manifest and masked critic probe, not auto PPO or unsupported Q-argmax deployment.
+
 ## 2026-10-24 — conservative48 fit complete; learning-progress gate fails
 
 Additional24train collection complete64states/253episodes/323.23sec/15664generated/992700input/1error; independent rawscore/prefix/referenceanswer/coverage/suffix/Drive verification passed. Combined48q/128states yields30corrections/20q under same categorical terminal objective. One516parameter proposal trained; maxpassing stepalpha.125,KL.000933,unsupported9/507=1.775%. Supportedtargetmatches0/30,so learning_progressFalse: no newQAeval. H3 retained. Report docs/JEV_H3_CONSERVATIVE48_RESULT_20261024.md.
