@@ -1868,3 +1868,8 @@ Previous turn made progress via guardedpipeline preparation and verifiedlive wai
 
 Paired fulltrain120 evaluator68969 confirmedlive; coordinator67692/session17510 waitsforworker. Log /content/local_fast/lsdrag-text-v1/logs/coverage120_evaluate_decision_stop_value_h2_1792844987.log; status /content/local_fast/lsdrag-text-v1/results/decision_constrained_stop120_train_eval_20261024/status.json. Pipeline pointer /content/local_fast/lsdrag-text-v1/results/decision_constrained_stop120_pipeline_20261024.json. Coordinator will official-score120/H3reference-replay/EMseparatecost/strictgate/archive thenSTOP, noautodev. Do notduplicate pipeline or start another evaluation. Onterminal inspect reports/actualprocesses; onlypassingtrain enablesfixeddev64. GoalACTIVE,reserved80untouched.
 
+
+
+## 2026-10-24 — user asks status and ideas during train120
+
+Answered without interrupting active evaluator68969: fit passes but QA quality pending. Proposed next hypotheses (not launched): (1) add exploration-progress representation using current/previous hidden-state change plus new-read/duplicate-retrieval signals; learn from terminal quality/cost, not novelty reward alone; (2) bounded two-action combinations such as search→read, previously deferred; (3) retain H3 on weakly supported changes, distinguishing uncertainty from known-state constraints. Prefer one progress-representation hypothesis only if current coverage experiment fails to transfer. No extra LLM calls assumed for reusing already computed state/trajectory signals; exact runtime overhead and protocol still unverified. Current120experiment and originaljointgoal remain unchanged. Latestactualcheck160/240episodes,evaluator/coordinatorbothlive.
