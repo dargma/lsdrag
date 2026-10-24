@@ -1,0 +1,72 @@
+{
+  "checked_utc": "2026-10-24T01:54:46.283571+00:00",
+  "archive_checks": [
+    {
+      "registry": "lab/registry/decision_grpo96_20261023/archive.json",
+      "sha256_verified": true,
+      "bytes": 576213516
+    },
+    {
+      "registry": "lab/registry/decision_shared_structure_20261023/archive.json",
+      "sha256_verified": true,
+      "bytes": 7420847
+    },
+    {
+      "registry": "lab/registry/decision_shared_initialization_20261023/archive.json",
+      "sha256_verified": true,
+      "bytes": 1275948
+    },
+    {
+      "registry": "lab/registry/decision_shared_structure_validation64_20261023/archive.json",
+      "sha256_verified": true,
+      "bytes": 280367
+    },
+    {
+      "registry": "lab/registry/decision_shared_outcomes192_20261023/archive.json",
+      "sha256_verified": true,
+      "bytes": 165236906
+    },
+    {
+      "registry": "lab/registry/decision_shared_teacher192_20261023/archive.json",
+      "sha256_verified": true,
+      "bytes": 100472288
+    },
+    {
+      "registry": "lab/registry/decision_shared_test80_20261023/archive.json",
+      "sha256_verified": true,
+      "bytes": 629193
+    },
+    {
+      "registry": "lab/registry/decision_shared_initialization_validation16_20261023/archive.json",
+      "sha256_verified": true,
+      "bytes": 39375
+    },
+    {
+      "registry": "lab/registry/decision_shared_grpo192_20261023/archive.json",
+      "sha256_verified": true,
+      "bytes": 791554325
+    },
+    {
+      "registry": "lab/registry/decision_shared_validation64_20261023/archive.json",
+      "sha256_verified": true,
+      "bytes": 864224
+    },
+    {
+      "registry": "lab/registry/decision_shared_calibration16_20261023/archive.json",
+      "sha256_verified": true,
+      "bytes": 92730
+    },
+    {
+      "registry": "lab/registry/decision_shared_outcomes192_20261023/head_archive.json",
+      "sha256_verified": true,
+      "bytes": 2546859
+    }
+  ],
+  "final_questions": 80,
+  "final_episodes": 320,
+  "reserved80_disjoint": true,
+  "campaign_workers_exited": true,
+  "numeric_target_achieved": false,
+  "original_deadline_met": false,
+  "scope_note": "Original8h elapsed; explicitly resumed bounded campaign completed. Numeric target failure retained. Code/report final backup and Git verification follow."
+}

@@ -903,3 +903,12 @@ main coordinator248061 complete. 구조 multiMLP BC/outcome 학습 완료 후 wo
 
 선정기록commit1970df5/push후 final evaluator PID281957/session12090 실행 확인. run /content/local_fast/lsdrag-text-v1/results/decision_shared_test80_20261023;log /content/local_fast/lsdrag-text-v1/logs/decision_shared_test80_20261023.log. 단일GPU lock,최대3600초,320episodes. frozen1후보+3baseline,예비80미사용. 결과로후보재선정금지. 다음 실제complete→reporter --run decision_shared_test80_20261023 --baseline shared_grpo→backup/budgetledger/종합보고서/Git. 목표달성미확정.
 
+
+## 2026-10-24 — 공통코퍼스 최종80×4 완료 / 목표 미달
+
+최종320episodes/547.084초/generated28561/input1319714 완료. 모든 관련worker 종료 확인. GRPO F1 27.20/gen105.7625;선정multiMLP21.24/89.425;native25.88/104.2;semantic_once18.46/57.625. 선정head−GRPO F1−5.9583pp(95%CI−14.5833,+2.1667),생성−15.4473%(ratioCI.689755,1.016062). 검증셋동시개선은최종에서재현안됨. 목표F1+5pp/token−30% 미달,우위/novelty주장없음. GRPO오류1건포함,다른조건0. 도구호출은2.4625→2.55로오히려증가;token감소를step감소로해석금지.
+
+보고서 docs/JEV_DECISION_SHARED_FINAL_REPORT_20261024.md. 최종 raw audit/report/pairedCI/그림 lab/reports/decision_shared_test80_20261023. final archive629193bytes/SHAee4d5dbd7b9d7a982d9c63f45a29b7d373bb4c2e1f3261abd1451751002606a6. 관련12개Drivearchive SHA재검증. 전체budgetledger갱신:shared5448episodes/gen451668/input22802955. 작은pool/historical비용별도. 원8h내완료아니며사용자명시재개후bounded실험,원마감성공주장금지.
+
+계획된학습·검증·선정·최종비교완료. 최종결과로후보교체/재튜닝안함,예비80보존. 새GPU실험/자동실행없음,월드모델/메모리확장없음. 성능목표실패와실험실행완료구분. 다음은사용자와후속연구판단;동일test로계속튜닝금지. 최종코드/보고서bundle 및Git저장은이번마무리에서확인.
+

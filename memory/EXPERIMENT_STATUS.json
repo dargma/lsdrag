@@ -1,6 +1,6 @@
 {
-  "phase": "shared_final80_evaluation",
-  "updated_utc": "2026-10-24T01:45:01.507514+00:00",
+  "phase": "shared_final80_complete_target_not_met",
+  "updated_utc": "2026-10-24T01:56:25.663008+00:00",
   "protocol": "docs/JEV_DECISION_SHARED_CORPUS_RESTART_20261023.md",
   "protocol_sha256": "d1a052da4a5a057b4d173e3c381c66ea876186d2c78f6158ff8dea6c0fac1669",
   "prompt": "prompts/text_rag_integrated_v5.txt",
@@ -32,13 +32,13 @@
   ],
   "worker_wall_budget_minutes": 120,
   "run_planned": "/content/local_fast/lsdrag-text-v1/results/decision_shared_test80_20261023",
-  "pid": 281957,
+  "pid": null,
   "implementation_completed": true,
   "dataset_prepared": true,
   "teacher_collection_started": true,
   "training_completed": true,
-  "evaluation_completed": false,
-  "next": "Complete frozen final80x4; audit/report/archive/budget ledger. No retuning.",
+  "evaluation_completed": true,
+  "next": "Review final report. No automatic expansion or retuning on final80; preserve reserved80.",
   "previous_multimodal_checkpoint_historical_only": {
     "phase": "native2_review_required",
     "run": "/content/local_fast/lsdrag-head-v14/results/native_distillation_12b_20261015",
@@ -174,7 +174,7 @@
   "external_evaluation_completed": true,
   "updated_epoch": 1792161920.7440126,
   "d3_additional_analysis": "withdrawn",
-  "session_id": 12090,
+  "session_id": null,
   "functional_smoke": {
     "passed": true,
     "checks": 7,
@@ -186,7 +186,7 @@
   "speed_gate_passed": true,
   "target_speedup_vs_native": 1.5,
   "target_speedup_measured": false,
-  "run": "/content/local_fast/lsdrag-text-v1/results/decision_policy_20261023_pilot1",
+  "run": "/content/local_fast/lsdrag-text-v1/results/decision_shared_test80_20261023",
   "worker_seconds": 277.1492917609994,
   "contract": "5b64658a2608f883599dbfb36be3758d4f28cc0de63c532ec11f76117a3cecce",
   "teacher_target": 32,
@@ -911,5 +911,16 @@
     "validation_f1_delta": 0.0267857142857143,
     "validation_generated_reduction": 0.22006986344871393,
     "test_outcomes_observed": false
+  },
+  "final_test_completed": true,
+  "numeric_target_achieved": false,
+  "automatic_launch_enabled": false,
+  "shared_final_result": {
+    "report": "docs/JEV_DECISION_SHARED_FINAL_REPORT_20261024.md",
+    "f1_delta": -0.05958333333333334,
+    "generated_ratio": 0.8455265335066776,
+    "target_met": false,
+    "original_eight_hour_deadline_met": false,
+    "execution_resumed_explicitly": true
   }
 }

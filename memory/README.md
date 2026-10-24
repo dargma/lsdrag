@@ -28,3 +28,5 @@ Latest2026-10-17: Astra deep research complete; all-head online outcome/cost pol
 Latest 2026-10-23: active work/push branch is `jev_v1.2`, per explicit user override.
 
 Latest 2026-10-23: authorized decision policy pilot1 completed on jev_v1.2. PPO quality/step improvement not established. Read newest CURRENT/HEAD and JEV_DECISION_POLICY_PILOT1_REPORT_20261023.md. No active worker or automatic expansion.
+
+Latest2026-10-24: shared-corpus final80x4 complete; numeric target not met. Read CURRENT/HEAD top and docs/JEV_DECISION_SHARED_FINAL_REPORT_20261024.md. No active worker or automatic expansion.

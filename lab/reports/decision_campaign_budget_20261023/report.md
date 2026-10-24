@@ -17,10 +17,10 @@ Completed-run totals are checked against raw episodes. Running values are provis
 |shared_corpus_restart|decision_shared_teacher192_20261023|complete|192|20560|927195|
 |shared_corpus_restart|decision_shared_initialization_validation16_20261023|complete|16|1606|76365|
 |shared_corpus_restart|decision_shared_grpo192_20261023|complete|1536|156625|7351308|
-|shared_corpus_restart|decision_shared_outcomes192_20261023|collection|149|8319|502212|
-|shared_corpus_restart|decision_shared_validation64_20261023|not_started|—|—|—|
-|shared_corpus_restart|decision_shared_structure_validation64_20261023|not_started|—|—|—|
-|shared_corpus_restart|decision_shared_test80_20261023|not_started|—|—|—|
+|shared_corpus_restart|decision_shared_outcomes192_20261023|complete|2824|190746|10484261|
+|shared_corpus_restart|decision_shared_validation64_20261023|complete|384|37713|1897481|
+|shared_corpus_restart|decision_shared_structure_validation64_20261023|complete|128|11650|564793|
+|shared_corpus_restart|decision_shared_test80_20261023|complete|320|28561|1319714|
 
 ## Scope
 
