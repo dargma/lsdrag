@@ -1154,12 +1154,11 @@
     "goal_achieved": false
   },
   "budget_stop_h3_evaluation": {
-    "phase": "running",
-    "pid": 35979,
-    "seconds": 0.21551596600056655,
-    "script": "scripts/evaluate_decision_stop_value_h2.py",
-    "child_pid": 36050,
-    "log": "/content/local_fast/lsdrag-text-v1/logs/value_heads_evaluate_decision_stop_value_h2_1792839107.log"
+    "phase": "complete",
+    "pid": null,
+    "seconds": 180.09038687000066,
+    "report": "lab/reports/decision_h3_policy_iteration1_validation64_20261024/report.md",
+    "goal_achieved": false
   },
   "h3_constant_control": {
     "phase": "complete",

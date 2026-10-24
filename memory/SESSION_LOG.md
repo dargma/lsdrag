@@ -1601,3 +1601,11 @@ One516parameter128->4layer update complete100steps/.001/seed20261073,519retentio
 ## 2026-10-24 — first current-policy candidate evaluation live
 
 Coordinator35979/evaluator36050 verifiedlive. State /content/local_fast/lsdrag-text-v1/results/decision_h3_policy_iteration1_coordinator_20261024.json; log /content/local_fast/lsdrag-text-v1/logs/value_heads_evaluate_decision_stop_value_h2_1792839107.log.128paireddevelopment episodes againstH3; no interimselection/no independenttest. Fitarchivealreadyverified. Next terminalreports and raw useful-cost/reference replay checks. GoalACTIVE.
+
+## 2026-10-24 — current-policy action update1 complete; quality fails
+
+One516parameter action updatece0ced9b finished paired128episodes/175.08sec/8213generated/445035input/0errors. H3reference64exact; independent scorer/source/input/checkpointchangedkeys/Drivebytes verified. H3F127.3158/gen66.8906→update21.2255/61.4375;1partialwin7losses,F1−6.0904ppCI[−12.1272,−1.4027]. Goalnotmet; do not promote. Report docs/JEV_H3_POLICY_ITERATION1_RESULT_20261024.md.
+
+Training13targetstates/9q,9targetactions reflected,7unsupportedfreshstatesalsochanged. Net349token savings dominated by271tokens onqualityloss questions;83positive-retained/63bothzero/68extratokensonqualitygain. Inputtokens/toolcallsincrease. Terminal-outcome supervision alone did not ensure useful generalized/composed policyimprovement. Frozenbackbone impossibility is NOT demonstrated.
+
+RetainH3reference. Next hypothesis broader current-H3 training coverage plus conservative policy movement before composing changes; no devcoefficient sweep/newarchitecturegrid. Concrete nextprotocol notyetfrozen/no nextworker. Coordinator35979/evaluator36050terminal/absent. GoalACTIVE,reserved80protected.

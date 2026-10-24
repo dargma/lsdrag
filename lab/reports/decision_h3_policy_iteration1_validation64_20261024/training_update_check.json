@@ -1,0 +1,20 @@
+{
+  "target_matches_before": 0,
+  "target_matches_after": 9,
+  "targets": 13,
+  "all_train_states": 64,
+  "changed_train_states": 16,
+  "changed_unsupported_states": 7,
+  "before_counts": {
+    "0": 16,
+    "1": 23,
+    "3": 24,
+    "2": 1
+  },
+  "after_counts": {
+    "0": 15,
+    "1": 24,
+    "3": 24,
+    "2": 1
+  }
+}
