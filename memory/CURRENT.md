@@ -1,3 +1,9 @@
+## 2026-10-24 — hard-constrained stop fit passes; train72 live
+
+Previous turn completed negative fulltrain evidence: progress. Protocol JEV_CONSTRAINED_STOP72_20261024 frozen6f3f07a beforefit. FromoriginalH3/same72fit:129FINALdelta,convexBCE plusL2, per-retention-state sign constraints and categoricalKL<=.01; no failedcheckpointweights or sweep.114SLSQPiterations converged.26targets/237retention;18supportedmatches16q,all237protectedactionsunchanged,FP32KL.01. Independent263state replay/frozenH1/tool-logit invariance passed.2constraintfunctionaltests pass. Checkpoint90ead6c94dcb58dd505d9ec367a53f55921819fde8e56f47595d9704e51355e3; fitarchive080af20395600a6b05eb9408aed9a9b6279f42d082457f09117f3a0362d58e92. Fit evidence only, no policyqualityclaim.
+
+Paired train72 evaluator63102 confirmedlive,execsession87590. Log /content/local_fast/lsdrag-text-v1/logs/constrained_stop72_train_eval_20261024.log; status /content/local_fast/lsdrag-text-v1/results/decision_constrained_stop72_train_eval_20261024/status.json. Next terminal verification scripts/reporting/verify_constrained_stop72_train.py, archive. Frozen gate same as safe_stop:quality/EMnondecrease,costnonincrease,strictgain,usefulcorrectgroup saving,no lostcorrect question. Onlythen dev64. GoalACTIVE,reserved80protected; continue until userstop.
+
 ## 2026-10-24 — safe stopping full train rollout fails; reject candidate
 
 Completed evaluator60596/session3275:144episodes197.927sec/9122generated/472031input/0errors. Independent officialF1/EM/rawtoken/source/checkpoint/split/H3reference72 replay verified by scripts/reporting/verify_safe_stop72_train.py. H3F1.41482584/gen65.75 vs safe_stop.41019621/60.94444:−.46296pp/−7.3088%tokens. Both22EMcorrect, but1newcorrect/1lostcorrect. Train gate FAILED; no development rollout or alpha/epoch retuning. H3 retained.3target-invariant tests passed. GoalACTIVE,reserved80 untouched.
