@@ -1559,3 +1559,9 @@ Approved mechanism test, not H4. H3fixed936e4592 vs frozenH1+constantFINALoffset
 Coordinator30428/evaluator30488 verified live on train24 calibration,96planned episodes. State /content/local_fast/lsdrag-text-v1/results/decision_h3_constant_coordinator_20261024.json; log /content/local_fast/lsdrag-text-v1/logs/h3_constant_evaluate_decision_stop_value_h2_1792838147557649792.log. Coordinator selects scalar on generation-only train data then freezes paireddev128 automatically; no F1selection/devretune. No duplicate run. GoalACTIVE.
 
 Method document Drive standalone /content/drive/MyDrive/lsdrag-backups/20261024/JEV_H3_METHOD_EQUATIONS_INSIGHTS_20261024.md SHAce8ba84419647937b401855d9df07bd44a86965996da1a303d4fe627479fea21. Code bundle code_h3_method_control_2b326274.tar.gz SHA99cba32ef4fd817d2f7a1a8c3b2c62029a0b9034de4ea95eeb8327cddce5fb34 in same Drive date directory. Both byte-verified; Gitjev_v1.1 pushed.
+
+## 2026-10-24 — H3 control train calibration complete; dev comparison live
+
+Token-only train24calibration selected constant_0 bias−0.0847940594/checkpoint26d065ef. H3mean67.0417 vsconstant67.5833 generated,ratio1.00808 within10%; no F1selection. Other two calibration scalars were not evaluated on dev. Selection saved before devspec/evaluation.
+
+Coordinator30428/evaluator31332 live; state results/decision_h3_constant_coordinator_20261024.json; log /content/local_fast/lsdrag-text-v1/logs/h3_constant_evaluate_decision_stop_value_h2_1792838294989973224.log. Paireddev64×H3/constant128episodes. No dev retuning regardless of budget mismatch/result. GoalACTIVE,reserved80protected.

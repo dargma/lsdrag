@@ -1,3 +1,9 @@
+## 2026-10-24 — H3 control train calibration complete; dev comparison live
+
+Token-only train24calibration selected constant_0 bias−0.0847940594/checkpoint26d065ef. H3mean67.0417 vsconstant67.5833 generated,ratio1.00808 within10%; no F1selection. Other two calibration scalars were not evaluated on dev. Selection saved before devspec/evaluation.
+
+Coordinator30428/evaluator31332 live; state results/decision_h3_constant_coordinator_20261024.json; log /content/local_fast/lsdrag-text-v1/logs/h3_constant_evaluate_decision_stop_value_h2_1792838294989973224.log. Paireddev64×H3/constant128episodes. No dev retuning regardless of budget mismatch/result. GoalACTIVE,reserved80protected.
+
 ## 2026-10-24 — H3 control calibration live; method backed up
 
 Coordinator30428/evaluator30488 verified live on train24 calibration,96planned episodes. State /content/local_fast/lsdrag-text-v1/results/decision_h3_constant_coordinator_20261024.json; log /content/local_fast/lsdrag-text-v1/logs/h3_constant_evaluate_decision_stop_value_h2_1792838147557649792.log. Coordinator selects scalar on generation-only train data then freezes paireddev128 automatically; no F1selection/devretune. No duplicate run. GoalACTIVE.
