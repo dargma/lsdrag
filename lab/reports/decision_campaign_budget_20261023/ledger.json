@@ -1,5 +1,5 @@
 {
-  "snapshot_utc": "2026-10-23T23:57:14.694862+00:00",
+  "snapshot_utc": "2026-10-24T00:33:23.630030+00:00",
   "runs": [
     {
       "group": "historical_grpo_reference",
@@ -160,21 +160,28 @@
     {
       "group": "shared_corpus_restart",
       "run": "decision_shared_grpo192_20261023",
-      "phase": "collection",
+      "phase": "complete",
       "counts": {
-        "episodes": 480,
-        "generated": 49895,
-        "inputs": 2269430
+        "episodes": 1536,
+        "generated": 156625,
+        "inputs": 7351308
       },
-      "seconds": 929.7915376570018,
-      "complete_raw_totals_verified": false,
+      "seconds": 2923.926419619005,
+      "complete_raw_totals_verified": true,
       "status_path": "/content/local_fast/lsdrag-text-v1/results/decision_shared_grpo192_20261023/status.json"
     },
     {
       "group": "shared_corpus_restart",
       "run": "decision_shared_outcomes192_20261023",
-      "phase": "not_started",
-      "counts": null
+      "phase": "collection",
+      "counts": {
+        "episodes": 149,
+        "generated": 8319,
+        "inputs": 502212
+      },
+      "seconds": 163.92580641800305,
+      "complete_raw_totals_verified": false,
+      "status_path": "/content/local_fast/lsdrag-text-v1/results/decision_shared_outcomes192_20261023/status.json"
     },
     {
       "group": "shared_corpus_restart",
@@ -190,7 +197,7 @@
     },
     {
       "group": "shared_corpus_restart",
-      "run": "decision_shared_test160_20261023",
+      "run": "decision_shared_test80_20261023",
       "phase": "not_started",
       "counts": null
     }
@@ -211,16 +218,15 @@
       "uncompleted_runs": []
     },
     "shared_corpus_restart": {
-      "episodes": 256,
-      "generated": 26373,
-      "inputs": 1185398,
-      "completed_runs": 3,
+      "episodes": 1792,
+      "generated": 182998,
+      "inputs": 8536706,
+      "completed_runs": 4,
       "uncompleted_runs": [
-        "decision_shared_grpo192_20261023",
         "decision_shared_outcomes192_20261023",
         "decision_shared_validation64_20261023",
         "decision_shared_structure_validation64_20261023",
-        "decision_shared_test160_20261023"
+        "decision_shared_test80_20261023"
       ]
     }
   },

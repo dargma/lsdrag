@@ -1,6 +1,6 @@
 {
-  "phase": "shared_corpus_grpo_training",
-  "updated_utc": "2026-10-23T23:42:18.254254+00:00",
+  "phase": "shared_corpus_all_action_collection",
+  "updated_utc": "2026-10-24T00:35:08.797378+00:00",
   "protocol": "docs/JEV_DECISION_SHARED_CORPUS_RESTART_20261023.md",
   "protocol_sha256": "0adecb3e30136b974fa1ecfffe74282df019f5ccbe0ece7fdbb6547fa486bc18",
   "prompt": "prompts/text_rag_integrated_v5.txt",
@@ -35,7 +35,7 @@
   "teacher_collection_started": true,
   "training_completed": true,
   "evaluation_completed": true,
-  "next": "Sequential same-init GRPO -> all-action collection/fit -> validation64; audit/archive and freeze final160 candidates.",
+  "next": "Complete all-action collection -> original/structural candidate validation64 -> select one head -> frozen80questions×4conditions final evaluation; preserve remaining80.",
   "previous_multimodal_checkpoint_historical_only": {
     "phase": "native2_review_required",
     "run": "/content/local_fast/lsdrag-head-v14/results/native_distillation_12b_20261015",
@@ -849,11 +849,16 @@
     "teacher_complete": true,
     "initialization_complete": true,
     "learning_coordinator_pid": 248061,
-    "grpo_pid": 248069,
+    "grpo_pid": null,
     "learning_session": 6186,
     "structure_coordinator_pid": 250404,
     "structure_session": 59470,
-    "grpo_completed_iterations": 1,
-    "grpo_current_iteration": 1
+    "grpo_completed_iterations": 2,
+    "grpo_current_iteration": 1,
+    "grpo_complete": true,
+    "outcomes_pid": 261476,
+    "final_test_questions": 80,
+    "final_test_conditions": 4,
+    "reserved_test_questions": 80
   }
 }

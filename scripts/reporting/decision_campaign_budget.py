@@ -16,7 +16,7 @@ GROUPS={
         'decision_shared_calibration16_20261023','decision_shared_teacher192_20261023',
         'decision_shared_initialization_validation16_20261023','decision_shared_grpo192_20261023',
         'decision_shared_outcomes192_20261023','decision_shared_validation64_20261023',
-        'decision_shared_structure_validation64_20261023','decision_shared_test160_20261023']}
+        'decision_shared_structure_validation64_20261023','decision_shared_test80_20261023']}
 
 def main():
     rows=[]

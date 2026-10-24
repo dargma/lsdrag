@@ -1,3 +1,9 @@
+## 2026-10-24 — 최신 확정: 공통코퍼스 유지 / 최종80문항×4조건
+
+사용자가4조건축소제안승인후코퍼스는크게/질문수축소/일관성있는저장/GPU효율요청. 현재정답:101962문단공통pool유지,train192/validation64유지,원미사용test160에서SHA사전고정80만최종평가,나머지80미사용보존. 4조건sharedGRPO/validation선정primaryhead/native_fast/semantic_once,총320episodes. 보조BC/구조warmstart는validation에서만비교,closed_book코드는보존하되최종실행제외. 이전8조건×160/2최종후보계획은취소. primary선정식/목표F1+.05/genratio.70불변. selection_plan에80IDs/예비80IDs/selectorSHA동결,report검사와budgetledger도test80으로동기화. old training manifest의test160은예약pool이며실제평가명단은selection_plan.test_qids가권위.
+
+sharedGRPO complete1536eps/5241decisions/2923.93초/660optimizersteps,전체audit통과,3errors/5cap보존. finalheadSHA59a0f76672a3411abaa53ab8fd8f40e0c8ddc027d26d566fea25a7187e4421ef,Drive791554325bytes/SHA검증완료. heldout품질아직미평가. 현재all-action worker261476/coordinator248061,구조queue250404대기. log /content/local_fast/lsdrag-text-v1/logs/shared_learning_run_decision_shared_outcomes_1792801824.log. 확인시12/192문항156eps21states,실제processlive. GPU한시점81%/11090MiB(전체97887MiB),지속평균/latency측정아님. 캐시재사용/직렬연결유지,추가학습조건무분별확장금지.
+
 ## 2026-10-24 — 최종평가 no-tool baseline 사전추가
 
 main validation/test결과미열람상태에서FINAL-only(closed_book)baseline추가. 현재프롬프트는문항별20문단/p번호가정없음확인. 동일evidence-constrained RAGprompt+FINAL생성경로에서검색없이답하는대조이며무제약사전학습지식능력평가가아님. 후보선정규칙/질문/학습변경없음,최종8조건×160=1280episodes/기존3600초상한. 새module decision_closed_book.py,finalselector는추가sourceSHA검증,pairedreport에도포함. legal FINAL선택수치검사통과. 현재학습중인GRPO/sourcehash대상변경없음;향후evaluation spec은수정된evaluatorhash를생성시동결. 원래7조건계획보다이사전수정우선.

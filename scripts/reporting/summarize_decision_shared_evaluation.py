@@ -23,7 +23,8 @@ def main():
   if 'checkpoint' in desc:assert hashlib.sha256(Path(desc['checkpoint']).read_bytes()).hexdigest()==desc['sha256']
  split=read(ROOT/'results/decision_state_policy_iteration_20261023/manifest.json')
  assert set(qids)<=set(split[spec['split']])
- if spec['split']=='test':assert qids==split['test']
+ if spec['split']=='test':
+  plan=read(REPO/'lab/registry/decision_shared_final_20261023/selection_plan.json');assert qids==plan['test_qids'];assert set(qids).isdisjoint(plan['reserved_qids'])
  rng=np.random.default_rng(20261046);draws=rng.integers(len(qids),size=(10000,len(qids)));comp={}
  base=args.baseline;assert base in names
  for name in names:

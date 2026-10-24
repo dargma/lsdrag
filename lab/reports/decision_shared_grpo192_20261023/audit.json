@@ -1,0 +1,44 @@
+{
+  "audit_passed": true,
+  "episodes": 1536,
+  "decisions": 5241,
+  "rounds": [
+    {
+      "iteration": 0,
+      "states": 2632,
+      "groups": 192,
+      "groups_with_nonzero_reward_spread": 105,
+      "max_cpu_replay_logprob_error": 1.9073486328125e-06,
+      "changed_actor_parameters": [
+        "action.weight",
+        "action.bias",
+        "skip.weight",
+        "skip.bias"
+      ],
+      "optimizer_steps": 332,
+      "checkpoint_sha256": "4d9b345887a3e658e2b08eb6673c8f95966e528ffc3ef8239b36db88b1ed64b1"
+    },
+    {
+      "iteration": 1,
+      "states": 2604,
+      "groups": 192,
+      "groups_with_nonzero_reward_spread": 131,
+      "max_cpu_replay_logprob_error": 1.9073486328125e-06,
+      "changed_actor_parameters": [
+        "action.weight",
+        "action.bias",
+        "skip.weight",
+        "skip.bias"
+      ],
+      "optimizer_steps": 328,
+      "checkpoint_sha256": "59a0f76672a3411abaa53ab8fd8f40e0c8ddc027d26d566fea25a7187e4421ef"
+    }
+  ],
+  "errors": 3,
+  "forced_final": 5,
+  "counts": {
+    "generated": 156625,
+    "inputs": 7351308
+  },
+  "note": "Training audit only. CPU/GPU replay tolerance1e-3; worker checked GPU replay at2e-4 before each update. No heldout quality inference."
+}

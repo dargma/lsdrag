@@ -1,4 +1,4 @@
-"""Select at most two learned candidates using validation only; freeze test spec."""
+"""Select one learned candidate using validation only; freeze test spec."""
 import json
 from pathlib import Path
 from run_decision_policy_pilot import ROOT, REPO, save, sha
@@ -30,18 +30,18 @@ def main():
         scores[name]=dict(f1_delta=delta,generated_reduction=reduction,joint_score=min(delta/.05,reduction/.30),utility=v['f1']-.03*v['cost_units'])
     ranked=sorted(plan['eligible'],key=lambda n:(scores[n]['joint_score'],scores[n]['utility'],n),reverse=True)
     primary=ranked[0]
-    secondary=next(n for n in ranked[1:] if policies[n]['kind']!=policies[primary]['kind'])
-    chosen=[primary,secondary]
-    policies['closed_book']={'kind':'final_only'}
-    conditions=['shared_grpo','shared_bc','semantic_once','closed_book','native_fast',*chosen,'multi_mlp_bc']
+    secondary=None
+    conditions=['shared_grpo',primary,'native_fast','semantic_once']
+    assert len(plan['test_qids'])==80 and set(plan['test_qids']).isdisjoint(plan['reserved_qids'])
+    assert set(plan['test_qids']+plan['reserved_qids'])==set(split['test'])
     assert len(set(conditions))==len(conditions)
     for name in conditions:
         if 'checkpoint' in policies[name]:assert sha(Path(policies[name]['checkpoint']))==policies[name]['sha256']
     assert not (ROOT/'results/decision_shared_test160_20261023').exists()
+    assert not (ROOT/'results/decision_shared_test80_20261023').exists()
     final=read(ROOT/'results'/names[0]/'spec.json')
-    final.update(run_name='decision_shared_test160_20261023',split='test',qids=split['test'],policies={n:policies[n] for n in conditions},selection='Two learned candidates selected from validation only by predeclared joint score, with distinct architecture; fixed baselines and matched multi-MLP warmstart retained.',max_seconds=3600,max_generated=4000000,max_inputs=160000000)
+    final.update(run_name='decision_shared_test80_20261023',split='test',qids=plan['test_qids'],policies={n:policies[n] for n in conditions},selection='One learned candidate selected by the unchanged validation joint score; paired80questions and three fixed baselines; remaining80reserved.',max_seconds=3600,max_generated=4000000,max_inputs=160000000)
     final['source_sha256']={p:sha(REPO/p) for p in final['source_sha256']}
-    final['source_sha256']['src/lsdrag/decision_closed_book.py']=sha(REPO/'src/lsdrag/decision_closed_book.py')
     folder=REPO/'lab/registry/decision_shared_final_20261023'
     assert not (folder/'selection.json').exists() and not (folder/'spec.json').exists()
     save(folder/'selection.json',dict(primary=primary,secondary=secondary,scores=scores,all_validation=values,provenance=provenance,plan_sha256=sha(folder/'selection_plan.json'),test_outcomes_observed=False,warning='Validation selection is not target attainment. Final target is relative to shared GRPO; usefulness must also be assessed against native and semantic-once baselines.'))

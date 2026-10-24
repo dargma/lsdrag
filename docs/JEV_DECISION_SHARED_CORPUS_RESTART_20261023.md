@@ -1,3 +1,5 @@
+> **Active override — 2026-10-24:** Keep the101,962-document shared corpus,train192 andvalidation64. Final evaluation is **80questions×4conditions=320episodes**: sharedGRPO,one selected head,native-fast,semantic-once. Select80 by the frozen SHA order from the untouched160; reserve the other80. Earlier160×8,secondary-candidate andFINAL-only final-test proposals below are historical and superseded. Executable authority: `lab/registry/decision_shared_final_20261023/selection_plan.json`. Joint target remains F1+5pp/generated−30%.
+
 # Shared-corpus decision-policy restart
 
 2026-10-23 user override: question-specific candidate pools may make semantic-search→answer too easy; restarting experiments is authorized. This protocol supersedes the remaining small-pool training/evaluation queue. The 22:48 UTC budget remains; no world-model or memory expansion.

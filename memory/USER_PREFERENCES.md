@@ -95,3 +95,10 @@ validation32만열람후사용자명시상향. 새160test미열람. 이전.03/.8
 
 사용자가 작은 corpus pool의 shortcut 우려 및 필요시 처음부터 재실험 승인. train+validation256 모두 문항별20문단/근거2개, 검색snippet300자/문단중앙395.5자 확인. gold label leakage 증거는 없지만 restricted pool의 강한 이점. 새protocol docs/JEV_DECISION_SHARED_CORPUS_RESTART_20261023.md. coordinator127863만 SIGTERM하여 기존환경 후속fit/eval중지,collector129475는수집완료/보존만. fixed-rule queue미기동/구spec보류. 전체공개train/dev문단을query-independent content-ID corpus로중복제거하는CPU builder실행session84777. 새공통pool에서retrieval calibration→train-only재수집/학습→동일환경GRPO/고정규칙대조→미사용test160. 기존수치와새환경수치혼합금지. 원8hdeadline22:48UTC유지.
 
+
+## 2026-10-24 — 최신 확정: 공통코퍼스 유지 / 최종80문항×4조건
+
+사용자가4조건축소제안승인후코퍼스는크게/질문수축소/일관성있는저장/GPU효율요청. 현재정답:101962문단공통pool유지,train192/validation64유지,원미사용test160에서SHA사전고정80만최종평가,나머지80미사용보존. 4조건sharedGRPO/validation선정primaryhead/native_fast/semantic_once,총320episodes. 보조BC/구조warmstart는validation에서만비교,closed_book코드는보존하되최종실행제외. 이전8조건×160/2최종후보계획은취소. primary선정식/목표F1+.05/genratio.70불변. selection_plan에80IDs/예비80IDs/selectorSHA동결,report검사와budgetledger도test80으로동기화. old training manifest의test160은예약pool이며실제평가명단은selection_plan.test_qids가권위.
+
+sharedGRPO complete1536eps/5241decisions/2923.93초/660optimizersteps,전체audit통과,3errors/5cap보존. finalheadSHA59a0f76672a3411abaa53ab8fd8f40e0c8ddc027d26d566fea25a7187e4421ef,Drive791554325bytes/SHA검증완료. heldout품질아직미평가. 현재all-action worker261476/coordinator248061,구조queue250404대기. log /content/local_fast/lsdrag-text-v1/logs/shared_learning_run_decision_shared_outcomes_1792801824.log. 확인시12/192문항156eps21states,실제processlive. GPU한시점81%/11090MiB(전체97887MiB),지속평균/latency측정아님. 캐시재사용/직렬연결유지,추가학습조건무분별확장금지.
+
