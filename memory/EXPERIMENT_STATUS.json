@@ -939,5 +939,12 @@
     "optimizer_updates": 0,
     "reason": "behavior logprob mismatch",
     "archive": "lab/registry/decision_selected_head_grpo192_20261024/failed_archive.json"
+  },
+  "selected_head_grpo_round0": {
+    "passed": true,
+    "states": 2334,
+    "optimizer_steps": 292,
+    "checkpoint_sha256": "f57b28eb32b696a92ddcbd10441aaef7fb6ee1d86657a59657f81538c3f61d96",
+    "quality_evaluated": false
   }
 }

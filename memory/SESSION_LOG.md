@@ -955,3 +955,10 @@ Coordinator state: `/content/local_fast/lsdrag-text-v1/results/decision_selected
 
 
 r1 actual launch:coordinator308320/session46519,worker308330,log /content/local_fast/lsdrag-text-v1/logs/selected_grpo_run_decision_selected_head_grpo_r1_1792812296.log. Initial collection active; whole-batch replay/update not reached yet. Cost ledger includes failed768/gen61608/input3416046 separately.
+
+## 2026-10-24 — selected-head GRPO r1 첫 업데이트 정상 완료
+
+worker308330/coordinator308320 live,iteration1수집진행. round0 768trajectory/2334states:GPU replay최대9.5367e-7,기존2e-4검사통과. 독립CPU replay7.1526e-7,정규화mean/scale정확고정,MLP net4tensor변경/allfinite,292optimizersteps. cpSHA f57b28eb32b696a92ddcbd10441aaef7fb6ee1d86657a59657f81538c3f61d96. 학습state argmax변경13.84%/clip비율41.77%는학습진단이며품질증거아님. 실패run과새round0의768episodes answer/support/F1/generated/input/toolcalls전부동일. FP32저장수정으로행동수집은유지하면서replay오류해결확인. 독립진단첫시도CPU/CUDA map_location누락은CPU명시후재검사통과;학습worker영향없음.
+
+round0 checkpoint한정Drivebackup은registry/decision_selected_head_grpo192_20261024_r1/round0_archive.json. 전체raw/batch백업은완료후coordinator수행. 다음round1검사/업데이트→fullaudit→validation64전후비교. 목표달성미확정,예비80/원final80미사용.
+

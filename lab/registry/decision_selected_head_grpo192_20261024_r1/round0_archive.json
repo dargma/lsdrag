@@ -1,0 +1,6 @@
+{
+  "path": "/content/drive/MyDrive/lsdrag-backups/20261023/decision_selected_head_grpo192_20261024_r1_round0_checkpoint.tar.gz",
+  "sha256": "fdb4415759a12ae55fe528c02db9ef51a64c597beb4312e6a729f754dddc4d6c",
+  "bytes": 3715419,
+  "scope": "Round0 checkpoint/manifest/replay/audit only; full training archive after completion."
+}
