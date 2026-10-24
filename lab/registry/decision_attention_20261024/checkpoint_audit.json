@@ -1,0 +1,56 @@
+{
+  "selected_reference": {
+    "checkpoint_sha256": "d987142ff7ea00efe06748fa205e84095a500abc675f290f449e035e70eacb99",
+    "finite": true,
+    "legal_mask_passed": true,
+    "parameters": 983684
+  },
+  "control": {
+    "checkpoint_sha256": "274b6c154496839ac1081e5d1016e5067529355759e824c3d40e30b41c90132d",
+    "finite": true,
+    "legal_mask_passed": true,
+    "parameters": 983684
+  },
+  "depth": {
+    "checkpoint_sha256": "4e0f403ba113f1a5118197e91077f52391d1cafe0fa9c7eaa30ab99880026aec",
+    "finite": true,
+    "legal_mask_passed": true,
+    "parameters": 1000260
+  },
+  "input_gate": {
+    "checkpoint_sha256": "4da30e4aee5d8daff745d38fe3236207abe6ec1572905a8ed6237446ba7e6e2f",
+    "finite": true,
+    "legal_mask_passed": true,
+    "parameters": 1106631
+  },
+  "depth_input_gate": {
+    "checkpoint_sha256": "8a7600c810b7f375683a6e1fd6c37ced4a0cac56d69e08e17d956904bbbea802",
+    "finite": true,
+    "legal_mask_passed": true,
+    "parameters": 1123207
+  },
+  "observation": {
+    "checkpoint_sha256": "2364b18204fabbdecd2bc5ee65b6788a7fe1ba9a57ae611110cc4cc1b7cbc9b9",
+    "finite": true,
+    "legal_mask_passed": true,
+    "parameters": 1151780
+  },
+  "question_attention": {
+    "checkpoint_sha256": "493442dff6c0a31cabeb99351801bf2db4ae489f8f7728dc422293ab99ec8c26",
+    "finite": true,
+    "legal_mask_passed": true,
+    "parameters": 1235812
+  },
+  "action_attention": {
+    "checkpoint_sha256": "a1196c3fec5a3c46509b3f34fbe91e9dfbb07ec4f0531968fd9c8d413e47299a",
+    "finite": true,
+    "legal_mask_passed": true,
+    "parameters": 1235844
+  },
+  "action_set": {
+    "checkpoint_sha256": "2c4ad25b0a9ccf452914a8431d28affe16f5e394b175a5588d631b0ac411a261",
+    "finite": true,
+    "legal_mask_passed": true,
+    "parameters": 1240132
+  }
+}

@@ -1,4 +1,13 @@
 
+## 2026-10-24 — offline structure restart and attention expansion
+
+Latest user: use efficient pre-GRPO d987 (F1 25.18/gen76.75), offline training only, no PPO/GRPO; seek decision-policy foundation. Four structure/input candidates fitted on same377states: depth, input_gate, depth_input_gate, observation plus continuation control. First validation intentionally interrupted for requested candidate re-review;8rawepisodes/299generated/16965input preserved/Drive archive hash verified. PIDs379451/379465 absent. No partial F1 used forselection.
+
+User additionally requests attention and borrowing from Jev/other decision architectures. Review docs/JEV_ATTENTION_STRUCTURE_REVIEW_20261024.md; Kev pointer/Jeva set decision source checked, no reproduction claim. Added question_attention/action_attention/action_set,7tests passed. CPU training PID381424 verified live; runtime results/decision_attention_20261024, terminal status must be checked. Inherited d987 already saw alltrain192: cannot use retrospective train split as clean validation loss. Current loss only diagnoses training failure; no loss-only elimination. Native protocol fixed, final80 preserved/reserved80 protected. GoalACTIVE.
+
+Next: verify actual trained paths/hashes, combine7new structures+continuationcontrol+selectedreference in fresh pairedvalidation64 namespace decision_structure_attention_validation64_20261024; preserve interrupted namespace. No independent confirmation or achieved claim. Push per current supplied user instructions to remote jev_v1.1 (local worktree jev_v1.2).
+
+
 ## 2026-10-24 — USER OVERRIDE: native ARAG protocol parity, action-head substitution only
 
 User rejects shortreferenceformat direction ("이런거하지마"), requires sameprotocolasnativeARAG, clarifies intendedspeedupisreplacingdecisionwithselectionhead. ReferencealiasproposalWITHDRAWN;noaliasimplementation/runtimeexperimentwaslaunched. Preservehistoricalanalysis asrejected,notactiveplan. Keepcorpus,retrievalranking/toolsemantics,toolargumentschemas,IDrepresentation,prompt/taskcontract,observationcontent,FINALformat,generationmodel/decoding/limits andscoring consistentwithnativeprofile. Intendedinterventionis head selectingaction instead ofnativeLLMactiongeneration;learnedpolicy maychangelegitimateactionsequence. Do not shortenIDs,compressoutputs,dropfields,altertools or mechanicallycapsteps toclaimsuccess. Existinghead/native decoderpaths differ inactionselection/forcedsyntax handling; auditdifferencesratherthanclaimbitwiseidentity. Explicitlycountgeneratedvsforcedprefix tokens consistently.

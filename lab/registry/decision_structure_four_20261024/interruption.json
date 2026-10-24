@@ -1,0 +1,11 @@
+{
+  "reason": "User requested candidate re-review; owned worker SIGTERM, processes confirmed absent. Not an algorithm failure.",
+  "episodes": 8,
+  "generated": 299,
+  "inputs": 16965,
+  "selection_used_partial_f1": false,
+  "original_status_preserved": true,
+  "archive": "/content/drive/MyDrive/lsdrag-backups/20261023/decision_structure_four_validation64_20261024_interrupted.tar.gz",
+  "sha256": "617831f1daaec2c2aa8f425aa86e9207561180b868b7c0e84228505c2f70d2af",
+  "bytes": 9144
+}
