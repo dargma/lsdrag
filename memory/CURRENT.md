@@ -1,4 +1,9 @@
 
+## 2026-10-24 — reward replay feasibility and matched comparison plan saved
+
+Verifiedall768qualityMLProllouts:192×4,2925decisions,2851controllable,79144generated reconstructedexactly,2198forcedtailtokens retained, nobranchinterventions. Report reward_replay_feasibility.json. Saved docs/JEV_REWARD_REPLAY_PLAN_20261024.md: exactbehaviorcheckpointreplay, baseline reproduction, actualtokensobjective, rigorouslymatchedtotal-vsremainingcredit, baselinechangecontrol andtrajectorylengthweightingcaveat. No newrewardtraining/evaluation launched, respectinglatest save-first request. Nextneedsfrozenconcreteimplementationbeforeanyexecution. GoalACTIVE.
+
+
 ## 2026-10-24 — context comparison complete, verified failure; reward design saved only
 
 Context3×64 complete192episodes/430.65sec/gen22142/input1246289. Quality_start32.45/139.03,ordinaryPareto28.17/104.80,contextPareto26.51/102.140625,input6303.12/calls2.6875/zero-tool7/errors0. Bothreferenceconditions exactlyreproduceall64answers/support/F1/gen/input/calls/errors. ContextvsqualitystartF1-5.94pp CI[-11.65,-1.26]pp,genratio.73466;notjointsuccess. Expandedpooledcontext+differentparameterizationdoesnotimprovequalityinthispilot;notproofallattentionfails.
