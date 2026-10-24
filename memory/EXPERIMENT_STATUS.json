@@ -1,6 +1,6 @@
 {
-  "phase": "qwen35_bootstrap_complete_outcomes48_running",
-  "updated_utc": "2026-10-24T13:02:35.723774+00:00",
+  "phase": "qwen35_base_complete_stop48_running",
+  "updated_utc": "2026-10-24T15:41:45.941502+00:00",
   "protocol": "docs/JEV_QWEN35_9B_H3_GENERALIZATION_20261024.md",
   "protocol_sha256": "e0cd40c9a1b728408047f7aee95bc9849caa698407c243d20df6a991c9260432",
   "prompt": "prompts/text_rag_integrated_v5.txt",
@@ -32,13 +32,13 @@
   ],
   "worker_wall_budget_minutes": 120,
   "run_planned": "/content/local_fast/lsdrag-text-v1/results/decision_h3_policy_coverage24b_20261024",
-  "pid": 125195,
+  "pid": 164402,
   "implementation_completed": true,
   "dataset_prepared": true,
   "teacher_collection_started": true,
   "training_completed": false,
   "evaluation_completed": false,
-  "next": "Monitoroutcomes48; verifier->basefit->stop48->H3/control->dev64 under existingcoordinator",
+  "next": "Verify stop48 -> fitH3/constant -> dev64 -> report/audit",
   "previous_multimodal_checkpoint_historical_only": {
     "phase": "native2_review_required",
     "run": "/content/local_fast/lsdrag-head-v14/results/native_distillation_12b_20261015",
@@ -186,7 +186,7 @@
   "speed_gate_passed": true,
   "target_speedup_vs_native": 1.5,
   "target_speedup_measured": false,
-  "run": "/content/local_fast/lsdrag-text-v1/results/qwen35_9b_outcomes48_20261024",
+  "run": "/content/local_fast/lsdrag-text-v1/results/qwen35_9b_stop48_20261024",
   "worker_seconds": 277.1492917609994,
   "contract": "5b64658a2608f883599dbfb36be3758d4f28cc0de63c532ec11f76117a3cecce",
   "teacher_target": 32,
@@ -509,7 +509,7 @@
   "execution_hold": {
     "active": false,
     "scope": "User-authorized bounded decision-policy pilot2; does not authorize arbitrary expansion",
-    "superseded_by": "2026-10-23 user \uadf8\ub798 \uc2dc\uc791\ud574 and explicit experiment continuation"
+    "superseded_by": "2026-10-23 user 그래 시작해 and explicit experiment continuation"
   },
   "research_review": {
     "phase": "astra_deep_research_complete",
@@ -597,7 +597,7 @@
   "execution_hold_history": [
     {
       "active": true,
-      "user_instruction": "\uc77c\ub2e8 \uc5ec\uae30\uae4c\uc9c0\ub9cc; \uc798 \uc800\uc7a5\ud558\uace0 \ubcf4\uace0\uc11c\ub3c4 \uc791\uc131 git \ubc18\uc601",
+      "user_instruction": "일단 여기까지만; 잘 저장하고 보고서도 작성 git 반영",
       "gpu_experiments_authorized_now": false
     }
   ],
@@ -971,7 +971,7 @@
     "architecture_variants_authorized": true,
     "updated_utc": "2026-10-24T05:05:24.828840+00:00",
     "reaffirmed_utc": "2026-10-24T09:35:54.089300+00:00",
-    "explicit_user_request": "\uace8 \ubaa8\ub4dc \uc9c4\uc785",
+    "explicit_user_request": "골 모드 진입",
     "current_phase_protocol": "docs/JEV_DECISION_POLICY_HYPOTHESIS_PLAN_20261024.md"
   },
   "opportunity_value_heads": {
@@ -1251,8 +1251,15 @@
   "coverage120_pipeline_status_path": "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop120_pipeline_20261024.json",
   "read_pointer_plan": "docs/JEV_H2_READ_POINTER_FEASIBILITY_20261024.md",
   "last_experiment_limit": false,
-  "active_objective": "\ud070 \ubaa8\ub378\ub85c \uc2e4\ud5d8 \uc644\ub8cc\ud558\uae30",
+  "active_objective": "큰 모델로 실험 완료하기",
   "coordinator_pid": 121348,
   "coordinator_status": "/content/local_fast/lsdrag-text-v1/results/qwen35_9b_pipeline_20261024/status.json",
-  "bootstrap_completed": true
+  "bootstrap_completed": true,
+  "qwen35_base_fit": {
+    "complete": true,
+    "checkpoint_sha256": "ef9a0a8235c462c7d413b8d5fb0a4ddc8db7635db03f924fec9571578b6af292",
+    "correction_states": 149,
+    "changed_questions": 42,
+    "quality_evaluated": false
+  }
 }
