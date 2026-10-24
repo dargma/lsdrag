@@ -1082,8 +1082,8 @@
   },
   "matched_refresh_evaluation": {
     "phase": "waiting_for_verified_collection",
-    "pid": 389583,
-    "seconds": 9.000010322779417e-06,
+    "pid": 391074,
+    "seconds": 9.729992598295212e-06,
     "upstream": "/content/local_fast/lsdrag-text-v1/results/decision_selected_refresh_coordinator_20261024.json"
   }
 }

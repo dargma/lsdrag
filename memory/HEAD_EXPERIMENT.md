@@ -1,4 +1,8 @@
 
+## 2026-10-24 — expanded six-policy chain waiting live
+
+Replacementcoordinator391074 verifiedlive, old389583 absent. State /content/local_fast/lsdrag-text-v1/results/decision_matched_refresh_coordinator_r1_20261024.json;log /content/local_fast/lsdrag-text-v1/logs/matched_refresh_coordinator_r1.log. Collector388356 uninterrupted,347episodes/47states/question29atlastcheck. Auditedcompletiontriggerssame-prefixfourarms plusdirectutilityhead then6×64eval/archive. No fitlaunchedyet. GoalACTIVE.
+
 ## 2026-10-24 — user adds direct outcome-based selector to pending comparison
 
 AddedDirectUtilityHead:sharedstate-action scorerpredicts expectedF1andremainingmixedcost; theirutilitydirectlydetermineslegalactionlogits. Freshmatcheddataonly;supervisedloss/500updates/.001 aspredeclared; architectureANDobjectivechangeexplicit. 1functionaltestpassed. Pendingcomparison expands4arms+reference to5arms+reference=6×64;no additionalcollection. Updatedfitterhashesbeforefit. Waitingcoordinator389583 intentionallystopped;collector388356untouched. Replacementr1state avoidsimplicitrestart. GoalACTIVE.
