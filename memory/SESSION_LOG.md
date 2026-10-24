@@ -869,3 +869,5 @@ main validation/test결과미열람상태에서FINAL-only(closed_book)baseline�
 
 sharedGRPO complete1536eps/5241decisions/2923.93초/660optimizersteps,전체audit통과,3errors/5cap보존. finalheadSHA59a0f76672a3411abaa53ab8fd8f40e0c8ddc027d26d566fea25a7187e4421ef,Drive791554325bytes/SHA검증완료. heldout품질아직미평가. 현재all-action worker261476/coordinator248061,구조queue250404대기. log /content/local_fast/lsdrag-text-v1/logs/shared_learning_run_decision_shared_outcomes_1792801824.log. 확인시12/192문항156eps21states,실제processlive. GPU한시점81%/11090MiB(전체97887MiB),지속평균/latency측정아님. 캐시재사용/직렬연결유지,추가학습조건무분별확장금지.
 
+
+2026-10-24: 재개status일관성정리. EXPERIMENT_STATUS의과거root질문수/예산/완료flags는legacy snapshot으로보존하고현재shared corpus run/PID/protocolSHA/teacher192/final80×4로동기화. training_completed=false는후보학습전체, evaluation_completed=false는최종80평가미실행의미. 단계별seed4개는독립4replication아님명시. 실제GRPO완료는nested true/audit/archive로보존.
