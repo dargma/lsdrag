@@ -1071,5 +1071,13 @@
     "seconds": 325.4971176040126,
     "report": "lab/reports/decision_frozen_adapters_validation64_20261024/report.md",
     "goal_achieved": false
+  },
+  "selected_policy_refresh": {
+    "phase": "running",
+    "pid": 388343,
+    "seconds": 0.0004608899907907471,
+    "child_pid": 388356,
+    "script": "scripts/run_decision_selected_refresh.py",
+    "log": "/content/local_fast/lsdrag-text-v1/logs/refresh48_run_decision_selected_refresh_1792829012.log"
   }
 }

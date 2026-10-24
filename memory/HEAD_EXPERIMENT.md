@@ -1,4 +1,8 @@
 
+## 2026-10-24 — selected d987 refresh live
+
+Coordinator388343 andownedcollector388356 verifiedlive. State /content/local_fast/lsdrag-text-v1/results/decision_selected_refresh_coordinator_20261024.json;log /content/local_fast/lsdrag-text-v1/logs/refresh48_run_decision_selected_refresh_1792829012.log. Output decision_selected_refresh48_20261024; max48trainquestions,816episodes. Automaticpostcollectionaudit/Drivearchive configured. Do notduplicate/restartfromstatusalone. GoalACTIVE, newheadtrainingnotstarted.
+
 ## 2026-10-24 — selected d987 outcome refresh protocol frozen
 
 Protocol docs/JEV_SELECTED_POLICY_REFRESH_PROTOCOL_20261024.md;registry decision_selected_refresh48_20261024/manifest.json. Same48trainqids/seed asqualityrefresh butd987roll-in/suffix;max2states/question,2suffix/legalaction,816episodesmax,3600sec,1Mgenerated/60Minput. Offlinecollectiononly,noPPOGRPO. Sampledstate/suffixdata are notdeterministicpolicyQ. Source/inputhashes frozen;publicprefix/hidden parity andraw audit reused. GPUavailable97GB,priorworkerscomplete. Nextlaunchcoordinate_decision_selected_refresh.py thenverifyownedPID; no newheadfitbeforecollectionaudit. GoalACTIVE.
