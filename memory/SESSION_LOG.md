@@ -873,3 +873,12 @@ sharedGRPO complete1536eps/5241decisions/2923.93초/660optimizersteps,전체audi
 2026-10-24: 재개status일관성정리. EXPERIMENT_STATUS의과거root질문수/예산/완료flags는legacy snapshot으로보존하고현재shared corpus run/PID/protocolSHA/teacher192/final80×4로동기화. training_completed=false는후보학습전체, evaluation_completed=false는최종80평가미실행의미. 단계별seed4개는독립4replication아님명시. 실제GRPO완료는nested true/audit/archive로보존.
 
 2026-10-24: 최종selector에대한합성fixture테스트2개통과. 공동목표tradeoff가F1최대후보와다를때선언된규칙대로1후보선택,4조건/80문항만spec작성,예비80중복시실패및spec미작성검증. 실제heldout결과/labels미열람. pytest tests/test_decision_shared_final_selection.py:2passed. activecollector26147638/192문항538eps계속진행.
+
+## 2026-10-24 — shared all-action 수집·검증·두 후보 학습 완료 / validation64 실행
+
+공통코퍼스 train192 수집 완료:377states/2824episodes/6256decisions,3427.75초,generated190746/input10484261. audit_passed=true;15errors/11forced-final을 제외하지 않고 보존. 164/377states에서 행동별 평균 F1 차이>0은 학습자료의 비교 신호이며 heldout 개선 증거가 아님. states SHA f4b9c373625b88d3b76bc69736b2d81ab6eefcd129dfc5efdb14b2a04554723b.
+
+같은 BC에서 lambda.03/.06 후보 학습 완료. weight 직접검사:모든 tensor finite,action/skip4개 tensor만 변경,나머지 초기값과 완전동일;report lab/reports/decision_shared_outcomes192_20261023/head_weight_audit.json. coordinator248061은 audit/fit 통과 후 validation64×6 평가로 전환. workerPID277017,log /content/local_fast/lsdrag-text-v1/logs/shared_learning_evaluate_decision_shared_corpus_1792805270.log. 구조 coordinator250404는 main비교완료 대기. 최종80×4 미시작,예비80보존. 다음 validation검증→구조 warmstart/outcome 비교→1후보선정→최종평가. 원8시간 이후 명시 재개한 bounded실행이며 목표완료 아님.
+
+
+공통 all-action 원자료 Drive backup 완료:165236906bytes, SHA48a62acef21ce9762d765cd8062380a5f900a953b5f0456d9720c786a651e812. registry/decision_shared_outcomes192_20261023/archive.json에 기록.

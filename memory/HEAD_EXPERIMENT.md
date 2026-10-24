@@ -1,3 +1,9 @@
+## 2026-10-24 — shared all-action 수집·검증·두 후보 학습 완료 / validation64 실행
+
+공통코퍼스 train192 수집 완료:377states/2824episodes/6256decisions,3427.75초,generated190746/input10484261. audit_passed=true;15errors/11forced-final을 제외하지 않고 보존. 164/377states에서 행동별 평균 F1 차이>0은 학습자료의 비교 신호이며 heldout 개선 증거가 아님. states SHA f4b9c373625b88d3b76bc69736b2d81ab6eefcd129dfc5efdb14b2a04554723b.
+
+같은 BC에서 lambda.03/.06 후보 학습 완료. weight 직접검사:모든 tensor finite,action/skip4개 tensor만 변경,나머지 초기값과 완전동일;report lab/reports/decision_shared_outcomes192_20261023/head_weight_audit.json. coordinator248061은 audit/fit 통과 후 validation64×6 평가로 전환. workerPID277017,log /content/local_fast/lsdrag-text-v1/logs/shared_learning_evaluate_decision_shared_corpus_1792805270.log. 구조 coordinator250404는 main비교완료 대기. 최종80×4 미시작,예비80보존. 다음 validation검증→구조 warmstart/outcome 비교→1후보선정→최종평가. 원8시간 이후 명시 재개한 bounded실행이며 목표완료 아님.
+
 ## 2026-10-24 — 최신 확정: 공통코퍼스 유지 / 최종80문항×4조건
 
 사용자가4조건축소제안승인후코퍼스는크게/질문수축소/일관성있는저장/GPU효율요청. 현재정답:101962문단공통pool유지,train192/validation64유지,원미사용test160에서SHA사전고정80만최종평가,나머지80미사용보존. 4조건sharedGRPO/validation선정primaryhead/native_fast/semantic_once,총320episodes. 보조BC/구조warmstart는validation에서만비교,closed_book코드는보존하되최종실행제외. 이전8조건×160/2최종후보계획은취소. primary선정식/목표F1+.05/genratio.70불변. selection_plan에80IDs/예비80IDs/selectorSHA동결,report검사와budgetledger도test80으로동기화. old training manifest의test160은예약pool이며실제평가명단은selection_plan.test_qids가권위.
