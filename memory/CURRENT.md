@@ -1,3 +1,11 @@
+## 2026-10-24 — two requested9B hypotheses complete; no efficiency winner
+
+Coordinator283015/evaluator283023 terminal and absent.128newepisodes1179.4140seconds20387generated2236807input0errors. OfficialF1/EM/token/source/model/split/checkpoint and320rawhashes verified (192cached unchangedreference). Report docs/JEV_QWEN35_TWO_PROMISING_RESULTS_20261024.md.
+
+Base F1.4789675245/EM24/gen156.765625. H1conservative F1.4767353817/EM25/gen160.53125; commoncorrect23 costs3305→3495(+5.75%). Valueaux F1.4945925245/EM25/gen158.015625; F1onewin/noloss, retainsall24basecorrect, commoncorrect3485→3493(+0.23%), total+80(+0.80%). Solewin2hop__92768_191233 island→archipelago afteraddingread/search/read,56→130tokens. Usefuladditionalinformationcase, NOTtoken-saving or provenlong-horizonpolicy. BothfixedscreensFAIL. RejectH1conservative, valueauxweakaccuracy-onlylead. Noautofurtherexperiments.
+
+Fitarchive70aa2bd571295fc357c34019f357fbba3abcbce7a96c2e95dd6dfda9f2c99e78;evalarchive19abace3c46b56c0927b9a8bee25d01c2ed566c17838a364a35f7e1bc7cfef28;bothDrivebytesrehashed. Audit lab/reports/qwen35_9b_two_promising_validation64_20261024/completion_audit.json. Protocol andcachedreference limitations preserved; reserved80/final80 untouched. Finalcommit/codearchive follow this completed milestone.
+
 ## 2026-10-24 — two-candidate evaluation live
 
 Actual coordinator283015 and child283023 confirmed; first4of128episodes at50.19seconds. Status /content/local_fast/lsdrag-text-v1/results/qwen35_9b_two_promising_20261024/coordinator_status.json; evaluationrun qwen35_9b_two_promising_validation64_20261024/status.json. Frozen source57bfacc; trainingarchive Drive hash reverified. No newqualityclaim, no retuning despiteH1trainargmax0changes. Wait same process; coordinator owns terminalrawaudit/archive. No duplicate/restart.
