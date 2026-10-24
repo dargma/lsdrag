@@ -1041,3 +1041,5 @@ Five fixed CPU candidates completed in10.03seconds on train-only shared cache. P
 
 Separate evaluator wrapper leaves active GRPO frozen sources unchanged. Queue scripts/coordinate_decision_value_evaluation.py waits for zero_gate coordinator terminal complete, verifies live identity while waiting, then evaluates all5×validation64 and reports/archives. No test access. Checkpoint loader audit uses16training states only. Goal active, numeric success unproven. Training manifest/report saved; no weights inGit.
 
+
+Live follow-up queue verified: coordinator336962, state /content/local_fast/lsdrag-text-v1/results/decision_opportunity_value_coordinator_20261024.json, waiting for live zero_gate coordinator330710. Existing learner330716 at892/1536episodes. Five learned candidate checkpoints already archived to Drive;13,708,770bytes SHAe1b746529189f5f1d2905caad461ad089556c15fe082c749ca705083007524f8, registry archive.json. Five loader/mask/finite smoke checks passed and16regression tests passed. GPU evaluation has NOT started.

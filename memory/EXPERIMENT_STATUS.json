@@ -973,11 +973,20 @@
     "updated_utc": "2026-10-24T05:05:24.828840+00:00"
   },
   "opportunity_value_heads": {
-    "phase": "implementation_and_train_cache_audit_complete",
-    "trained": false,
+    "phase": "trained_archived_validation_queued",
+    "trained": true,
     "evaluated": false,
-    "tests_passed": 10,
+    "tests_passed": 16,
     "cache_audit": "lab/reports/decision_opportunity_value_20261024/cache_audit.json",
-    "module": "src/lsdrag/decision_value_head.py"
+    "module": "src/lsdrag/decision_value_head.py",
+    "coordinator_pid": 336962,
+    "protocol": "docs/JEV_OPPORTUNITY_VALUE_HEADS_20261024.md"
+  },
+  "opportunity_value_evaluation": {
+    "phase": "waiting",
+    "pid": 336962,
+    "seconds": 0.5154263139993418,
+    "predecessor_pid": 330710,
+    "predecessor": "/content/local_fast/lsdrag-text-v1/results/decision_selected_head_grpo_coordinator_20261024_zero_gate.json"
   }
 }

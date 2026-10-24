@@ -1,3 +1,7 @@
+## 2026-10-24 — live serialized validation queue
+
+Live follow-up queue verified: coordinator336962, state /content/local_fast/lsdrag-text-v1/results/decision_opportunity_value_coordinator_20261024.json, waiting for live zero_gate coordinator330710. Existing learner330716 at892/1536episodes. Five learned candidate checkpoints already archived to Drive;13,708,770bytes SHAe1b746529189f5f1d2905caad461ad089556c15fe082c749ca705083007524f8, registry archive.json. Five loader/mask/finite smoke checks passed and16regression tests passed. GPU evaluation has NOT started.
+
 ## 2026-10-24 — opportunity/value/architecture candidates trained; evaluation queued next
 
 Five fixed CPU candidates completed in10.03seconds on train-only shared cache. Protocol docs/JEV_OPPORTUNITY_VALUE_HEADS_20261024.md; frozen plan/inputs/source hashes in lab/registry/decision_opportunity_value_20261024. MLP initialization preserves selected policy exactly; attention100epoch distillation introduces capacity/warmstart differences explicitly recorded. All candidates have common zero-quality utility safeguard. Comparisons isolate stopping loss within MLP and auxiliary loss within each body. No heldout performance inferred from train fits.
