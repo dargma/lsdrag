@@ -1,4 +1,9 @@
 
+## 2026-10-24 — user requests ARAG/head-aware reward ideas, save first
+
+Saved docs/JEV_ARAG_HEAD_REWARD_DESIGN_20261024.md. Verified currentGRPO actor uses episode-levelgroupadvantage repeatedacrosssteps; calculatedremainingreturnsunusedbyactor;inverseepisode_stepsrowweightalreadyavoidslongtrajectoryrowcountbias. Proposal:separatefinalquality/actualgeneratedcost, current-policy step/actioncredit, headprobabilityweightedbaselines, optionaltrain-onlysmallcritics/targethead, adaptivequalityconstraint, FINALopportunitycost. No confidence-as-correctness/no noveltyreward/no testlabels. Previousofflineconstraint/Paretofailures retained as limitations. Newrewardrun NOT launched;currentcontextcomparisoncontinues. UserOK acknowledges saving. GoalACTIVE.
+
+
 ## 2026-10-24 — context-residual matched-data candidate trained and evaluation launched
 
 Protocol docs/JEV_CONTEXT_PARETO_PROTOCOL_20261024.md frozenbeforefit. Same105pairs32states, fresh88/old377retention,100epochsLR1e-4KL.1seed20261060. ContextResidualHead width64 reads32orderedprefixbinmeans,base0a1bfullyfrozen;zerooutputinitiallogitsverifiedexactonallfresh+oldstates. Five tests passed. CPUfit18.14sec,checkpointloadedwithnewwrapper,baseeverytensorexactandoutputresidualnonzero. Actuallearnedqualityunknown. Finalrank.08829/KLold.10725/fresh.53410;notguaranteedqualityretention.
