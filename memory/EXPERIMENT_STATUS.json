@@ -1159,5 +1159,17 @@
     "seconds": 188.80141170600018,
     "report": "lab/reports/decision_budget_stop_h3_validation64_20261024/report.md",
     "goal_achieved": false
+  },
+  "h3_constant_control": {
+    "phase": "running",
+    "pid": 30428,
+    "seconds": 0.4657718750004278,
+    "child_pid": 30488,
+    "script": "scripts/evaluate_decision_stop_value_h2.py",
+    "args": [
+      "--spec",
+      "/content/local_fast/lsdrag-code/lab/registry/decision_h3_constant_control_20261024/calibration_spec.json"
+    ],
+    "log": "/content/local_fast/lsdrag-text-v1/logs/h3_constant_evaluate_decision_stop_value_h2_1792838147557649792.log"
   }
 }

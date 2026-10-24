@@ -1549,3 +1549,7 @@ Coordinator26732/evaluator26787terminalcomplete. Current phase result saved/next
 User approves H3 fixed vs constant stopping-offset control before further H4 quality expansion. Scope: isolate H3 added state-dependent residual, not erase inherited H1 state dependence. Calibrate constant using training token cost only; freeze before dev, no dev retuning. H4 expansion deferred. Previous turn was discussion/no experiment progress; this turn saves exact methods and prepares the approved control.
 
 User explicitly requests H3 learning/equations/insights saved. docs/JEV_H3_METHOD_EQUATIONS_INSIGHTS_20261024.md records actual MILP targets, aggregate-vs-individual quality distinction,129parameter residual, margin BCE/reference retention, exact settings/data failure recovery/results/provenance, and limits. GoalACTIVE; no new worker yet.
+
+## 2026-10-24 — H3 constant residual control frozen
+
+Approved mechanism test, not H4. H3fixed936e4592 vs frozenH1+constantFINALoffset. Calibration proposals use H1/H3 decisions and generation-only train prefix data; no F1. Three offsets−.084794,1.693179,−.765981; actual24train questions×4policies=96episodes, choose closestH3mean generation only. Costmatch tolerance10%, then one frozen paireddev64×2; no devretune. Protocol docs/JEV_H3_CONSTANT_CONTROL_PROTOCOL_20261024.md. Plan/source/input hashes frozen. Nativecontract/model/splits unchanged; reserved80protected. Next coordinator scripts/coordinate_h3_constant_control.py. GoalACTIVE.
