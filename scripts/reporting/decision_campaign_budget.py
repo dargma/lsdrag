@@ -24,7 +24,8 @@ def main():
     GROUPS['offline_structure_and_reward']=[
         'decision_reward_replay_validation64_20261024',
         'decision_structure_four_validation64_20261024',
-        'decision_structure_attention_validation64_20261024']
+        'decision_structure_attention_validation64_20261024',
+        'decision_frozen_adapters_validation64_20261024']
     rows=[]
     for group,names in GROUPS.items():
         for name in names:

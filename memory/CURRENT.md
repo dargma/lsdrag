@@ -1,4 +1,8 @@
 
+## 2026-10-24 — frozen adapter evaluation complete, target unmet
+
+256episodes/320.20sec/16881generated/917532input; coordinatorcomplete. Reference25.18/76.75;depthfrozen19.93/55.44;questionattentionfrozen22.28/55.50;actionattentionfrozen20.06/76.08. Allbeloworiginalquality. FrozenvsfullF1pointrecovery+3.39/+3.91/+2.34pp butall95%CIsincludezero. Report docs/JEV_FROZEN_ADAPTER_RESULT_20261024.md; exactreference64/rawtotals/DriveSHAverified. GoalACTIVE,noindependenttest. Nextprioritycurrentd987policy offlineoutcomerefresh onfixedtrainonlysubset toaddressoldQ/state drift hypothesis,notanotherblindarchitecturegrid. Existingfresh48belongs0a1bqualityhead,notd987. Freezeprotocolbeforecollecting;newrunnotstarted.
+
 ## 2026-10-24 — frozen adapter fit verified, evaluation live
 
 Threefits complete42.7688sec. Independentcheckpointreload confirmed everybase tensor equalsd987. Trainableparameters depth16576/questionatt252128/actionatt252160;trainweightedKL .06374/.07280/.14199. Coordinator385977/evaluation385988 live;state /content/local_fast/lsdrag-text-v1/results/decision_frozen_adapters_coordinator_20261024.json;log /content/local_fast/lsdrag-text-v1/logs/value_heads_evaluate_decision_attention_1792828544.log. Run decision_frozen_adapters_validation64_20261024,4×64episodes,max2400sec. Fitarchive savedverified. Do notduplicateworker. GoalACTIVE, qualitypending.
