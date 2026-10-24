@@ -37,6 +37,8 @@ Completed and failed-run totals are checked against raw episodes. Failed costs r
 |offline_structure_and_reward|decision_structure_four_validation64_20261024|interrupted|8|299|16965|
 |offline_structure_and_reward|decision_structure_attention_validation64_20261024|complete|576|33679|1792143|
 |offline_structure_and_reward|decision_frozen_adapters_validation64_20261024|complete|256|16881|917532|
+|offline_structure_and_reward|decision_selected_refresh48_20261024|complete|608|50869|2671592|
+|offline_structure_and_reward|decision_matched_refresh_validation64_20261024|complete|384|26710|1520659|
 
 ## Scope
 

@@ -1,0 +1,455 @@
+{
+  "policies": {
+    "selected_reference": {
+      "f1": 0.25179247835497837,
+      "generated_tokens": 76.75,
+      "prompt_tokens": 3870.828125,
+      "tool_calls": 1.78125,
+      "cost_units": 2.9358328125,
+      "retrieved_support_recall": 0.4296875,
+      "all_support_retrieved": 0.234375,
+      "read_support_recall": 0.125,
+      "errors": 0
+    },
+    "old_mlp": {
+      "f1": 0.15963541666666664,
+      "generated_tokens": 61.40625,
+      "prompt_tokens": 3862.90625,
+      "tool_calls": 1.71875,
+      "cost_units": 2.734728125,
+      "retrieved_support_recall": 0.2890625,
+      "all_support_retrieved": 0.21875,
+      "read_support_recall": 0.0234375,
+      "errors": 1
+    },
+    "old_question_attention": {
+      "f1": 0.212890625,
+      "generated_tokens": 61.03125,
+      "prompt_tokens": 3154.703125,
+      "tool_calls": 1.28125,
+      "cost_units": 2.2070328125,
+      "retrieved_support_recall": 0.390625,
+      "all_support_retrieved": 0.265625,
+      "read_support_recall": 0.0546875,
+      "errors": 0
+    },
+    "fresh_mlp": {
+      "f1": 0.2335633116883117,
+      "generated_tokens": 77.65625,
+      "prompt_tokens": 4603.484375,
+      "tool_calls": 2.015625,
+      "cost_units": 3.2525359375000003,
+      "retrieved_support_recall": 0.4765625,
+      "all_support_retrieved": 0.296875,
+      "read_support_recall": 0.0703125,
+      "errors": 0
+    },
+    "fresh_question_attention": {
+      "f1": 0.21444128787878788,
+      "generated_tokens": 64.859375,
+      "prompt_tokens": 3726.875,
+      "tool_calls": 1.78125,
+      "cost_units": 2.8025312500000004,
+      "retrieved_support_recall": 0.3125,
+      "all_support_retrieved": 0.15625,
+      "read_support_recall": 0.078125,
+      "errors": 0
+    },
+    "fresh_direct_utility": {
+      "f1": 0.12016369047619047,
+      "generated_tokens": 75.640625,
+      "prompt_tokens": 4541.5,
+      "tool_calls": 1.828125,
+      "cost_units": 3.0699312500000002,
+      "retrieved_support_recall": 0.2734375,
+      "all_support_retrieved": 0.09375,
+      "read_support_recall": 0.015625,
+      "errors": 2
+    }
+  },
+  "n": 64,
+  "split": "validation",
+  "counts": {
+    "episodes": 384,
+    "generated": 26710,
+    "inputs": 1520659
+  },
+  "corpus_documents": 101962,
+  "original_question_retrieval": {
+    "support_recall_at5": 0.6171875,
+    "all_support_at5": 0.296875
+  },
+  "controlled_latency": false,
+  "note": "Policy provenance is defined by frozen spec checkpoint descriptors; do not infer training environment from evaluator reuse. Native-fast additional generation/prefill costs are counted, and dummy probabilities are removed.",
+  "baseline": "selected_reference",
+  "comparisons_vs_baseline": {
+    "old_mlp": {
+      "f1": {
+        "delta": -0.09215706168831168,
+        "ci95": [
+          -0.18058331642316017,
+          -0.011952533143939435
+        ]
+      },
+      "generated_tokens": {
+        "delta": -15.34375,
+        "ci95": [
+          -34.5625,
+          6.969140624999994
+        ]
+      },
+      "generated_ratio": {
+        "ratio": 0.8000814332247557,
+        "ci95": [
+          0.5781693808655413,
+          1.098360581583367
+        ]
+      },
+      "prompt_tokens": {
+        "delta": -7.921875,
+        "ci95": [
+          -974.714453125,
+          1073.512890624999
+        ]
+      },
+      "tool_calls": {
+        "delta": -0.0625,
+        "ci95": [
+          -0.5,
+          0.40625
+        ]
+      },
+      "cost_units": {
+        "delta": -0.20110468750000007,
+        "ci95": [
+          -0.873271796875,
+          0.4867667578124999
+        ]
+      },
+      "utility": {
+        "delta": -0.0861239210633117,
+        "ci95": [
+          -0.17861638193993506,
+          -0.0016843391622700255
+        ]
+      },
+      "joint_point_target": false,
+      "joint_directional_ci": false,
+      "joint_target_ci": false
+    },
+    "old_question_attention": {
+      "f1": {
+        "delta": -0.03890185335497835,
+        "ci95": [
+          -0.11256256764069264,
+          0.03125
+        ]
+      },
+      "generated_tokens": {
+        "delta": -15.71875,
+        "ci95": [
+          -24.391015625,
+          -7.983984375000006
+        ]
+      },
+      "generated_ratio": {
+        "ratio": 0.7951954397394136,
+        "ci95": [
+          0.6888343327023146,
+          0.8922042381051691
+        ]
+      },
+      "prompt_tokens": {
+        "delta": -716.125,
+        "ci95": [
+          -1382.88046875,
+          -136.36289062500018
+        ]
+      },
+      "tool_calls": {
+        "delta": -0.5,
+        "ci95": [
+          -0.8125,
+          -0.25
+        ]
+      },
+      "cost_units": {
+        "delta": -0.7288,
+        "ci95": [
+          -1.1726959765625,
+          -0.3550160937500001
+        ]
+      },
+      "utility": {
+        "delta": -0.017037853354978354,
+        "ci95": [
+          -0.0865658654389881,
+          0.05035527713068181
+        ]
+      },
+      "joint_point_target": false,
+      "joint_directional_ci": false,
+      "joint_target_ci": false
+    },
+    "fresh_mlp": {
+      "f1": {
+        "delta": -0.018229166666666664,
+        "ci95": [
+          -0.0625,
+          0.015625
+        ]
+      },
+      "generated_tokens": {
+        "delta": 0.90625,
+        "ci95": [
+          -10.875,
+          12.1875
+        ]
+      },
+      "generated_ratio": {
+        "ratio": 1.0118078175895766,
+        "ci95": [
+          0.8637622130241722,
+          1.1759085053482137
+        ]
+      },
+      "prompt_tokens": {
+        "delta": 732.65625,
+        "ci95": [
+          -189.60039062499996,
+          1763.45703125
+        ]
+      },
+      "tool_calls": {
+        "delta": 0.234375,
+        "ci95": [
+          -0.125,
+          0.609375
+        ]
+      },
+      "cost_units": {
+        "delta": 0.31670312500000003,
+        "ci95": [
+          -0.22764304687499987,
+          0.8878585156249998
+        ]
+      },
+      "utility": {
+        "delta": -0.027730260416666666,
+        "ci95": [
+          -0.07156793268229167,
+          0.009932816406249989
+        ]
+      },
+      "joint_point_target": false,
+      "joint_directional_ci": false,
+      "joint_target_ci": false
+    },
+    "fresh_question_attention": {
+      "f1": {
+        "delta": -0.03735119047619047,
+        "ci95": [
+          -0.09895833333333333,
+          0.014732142857142859
+        ]
+      },
+      "generated_tokens": {
+        "delta": -11.890625,
+        "ci95": [
+          -26.0625,
+          -0.062109375000005684
+        ]
+      },
+      "generated_ratio": {
+        "ratio": 0.8450732899022801,
+        "ci95": [
+          0.6876392969341296,
+          0.9992181836435925
+        ]
+      },
+      "prompt_tokens": {
+        "delta": -143.953125,
+        "ci95": [
+          -900.3921875,
+          604.3531249999999
+        ]
+      },
+      "tool_calls": {
+        "delta": 0.0,
+        "ci95": [
+          -0.34375,
+          0.34375
+        ]
+      },
+      "cost_units": {
+        "delta": -0.13330156250000008,
+        "ci95": [
+          -0.6479287890625001,
+          0.3738229296874998
+        ]
+      },
+      "utility": {
+        "delta": -0.03335214360119047,
+        "ci95": [
+          -0.0981415964657738,
+          0.02062444592633927
+        ]
+      },
+      "joint_point_target": false,
+      "joint_directional_ci": false,
+      "joint_target_ci": false
+    },
+    "fresh_direct_utility": {
+      "f1": {
+        "delta": -0.1316287878787879,
+        "ci95": [
+          -0.22277462121212122,
+          -0.047105823863636445
+        ]
+      },
+      "generated_tokens": {
+        "delta": -1.109375,
+        "ci95": [
+          -29.34375,
+          30.500390624999994
+        ]
+      },
+      "generated_ratio": {
+        "ratio": 0.9855456026058632,
+        "ci95": [
+          0.642797914577528,
+          1.4234169869934736
+        ]
+      },
+      "prompt_tokens": {
+        "delta": 670.671875,
+        "ci95": [
+          -929.61640625,
+          2411.2343749999995
+        ]
+      },
+      "tool_calls": {
+        "delta": 0.046875,
+        "ci95": [
+          -0.5625,
+          0.6875
+        ]
+      },
+      "cost_units": {
+        "delta": 0.1340984375,
+        "ci95": [
+          -0.8602745312500002,
+          1.1850613671874997
+        ]
+      },
+      "utility": {
+        "delta": -0.13565174100378788,
+        "ci95": [
+          -0.22526329103929923,
+          -0.051559218217329554
+        ]
+      },
+      "joint_point_target": false,
+      "joint_directional_ci": false,
+      "joint_target_ci": false
+    }
+  },
+  "audit": {
+    "episodes": 384,
+    "unique_cells": 384,
+    "probability_and_cost_checks": true
+  },
+  "single_seed": true,
+  "target": {
+    "f1_delta": 0.05,
+    "generated_ratio": 0.7
+  },
+  "ci_scope": "Marginal95% paired question bootstrap conditional on frozen policies; not training-seed population uncertainty. No multiplicity adjustment. Joint CI flags mean both marginal bounds pass, not a simultaneous95% region.",
+  "comparisons_vs_strong_baselines": {},
+  "validation_subgroups": {
+    "previously_exposed": {
+      "n": 32,
+      "policies": {
+        "selected_reference": {
+          "f1": 0.2299107142857143,
+          "generated_tokens": 70.84375,
+          "prompt_tokens": 4073.84375,
+          "tool_calls": 1.875
+        },
+        "old_mlp": {
+          "f1": 0.18125,
+          "generated_tokens": 74.78125,
+          "prompt_tokens": 4178.25,
+          "tool_calls": 1.96875
+        },
+        "old_question_attention": {
+          "f1": 0.234375,
+          "generated_tokens": 54.25,
+          "prompt_tokens": 3178.90625,
+          "tool_calls": 1.28125
+        },
+        "fresh_mlp": {
+          "f1": 0.1986607142857143,
+          "generated_tokens": 71.0625,
+          "prompt_tokens": 4897.28125,
+          "tool_calls": 2.125
+        },
+        "fresh_question_attention": {
+          "f1": 0.196875,
+          "generated_tokens": 61.25,
+          "prompt_tokens": 3519.1875,
+          "tool_calls": 1.8125
+        },
+        "fresh_direct_utility": {
+          "f1": 0.11011904761904762,
+          "generated_tokens": 68.3125,
+          "prompt_tokens": 5221.59375,
+          "tool_calls": 2.0625
+        }
+      },
+      "note": "Descriptive subgroup means, no candidate selection on final test."
+    },
+    "new_validation": {
+      "n": 32,
+      "policies": {
+        "selected_reference": {
+          "f1": 0.27367424242424243,
+          "generated_tokens": 82.65625,
+          "prompt_tokens": 3667.8125,
+          "tool_calls": 1.6875
+        },
+        "old_mlp": {
+          "f1": 0.13802083333333331,
+          "generated_tokens": 48.03125,
+          "prompt_tokens": 3547.5625,
+          "tool_calls": 1.46875
+        },
+        "old_question_attention": {
+          "f1": 0.19140625,
+          "generated_tokens": 67.8125,
+          "prompt_tokens": 3130.5,
+          "tool_calls": 1.28125
+        },
+        "fresh_mlp": {
+          "f1": 0.26846590909090906,
+          "generated_tokens": 84.25,
+          "prompt_tokens": 4309.6875,
+          "tool_calls": 1.90625
+        },
+        "fresh_question_attention": {
+          "f1": 0.23200757575757575,
+          "generated_tokens": 68.46875,
+          "prompt_tokens": 3934.5625,
+          "tool_calls": 1.75
+        },
+        "fresh_direct_utility": {
+          "f1": 0.13020833333333331,
+          "generated_tokens": 82.96875,
+          "prompt_tokens": 3861.40625,
+          "tool_calls": 1.59375
+        }
+      },
+      "note": "Descriptive subgroup means, no candidate selection on final test."
+    }
+  }
+}

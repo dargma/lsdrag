@@ -1,0 +1,10 @@
+{
+  "scope": "58 training states only; not heldout prediction accuracy",
+  "states": 58,
+  "quality_mae": 0.04632345587015152,
+  "mixed_cost_mae": 0.0828346386551857,
+  "utility_mae": 0.04746980220079422,
+  "weighted_empirical_action_regret": 0.03574623912572861,
+  "action_agreement_with_d987": 0.7413793206214905,
+  "empirical_optimal_action_tie_aware_fraction": 0.8103448152542114
+}

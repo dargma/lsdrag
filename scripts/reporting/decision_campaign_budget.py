@@ -25,7 +25,9 @@ def main():
         'decision_reward_replay_validation64_20261024',
         'decision_structure_four_validation64_20261024',
         'decision_structure_attention_validation64_20261024',
-        'decision_frozen_adapters_validation64_20261024']
+        'decision_frozen_adapters_validation64_20261024',
+        'decision_selected_refresh48_20261024',
+        'decision_matched_refresh_validation64_20261024']
     rows=[]
     for group,names in GROUPS.items():
         for name in names:

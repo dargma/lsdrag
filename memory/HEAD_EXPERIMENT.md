@@ -1,4 +1,8 @@
 
+## 2026-10-24 — matched refresh and direct utility complete; no goal success
+
+384dev episodes/527.68sec/26710generated/1520659input. Reference25.18/76.75exact64parity. oldMLP15.96/61.41→freshMLP23.36/77.66(+7.39ppCI[.23,15.34]);oldatt21.29/61.03→freshatt21.44/64.86. Directutility12.02/75.64fails(-13.16ppvsreferenceCI[-22.28,-4.71]). TrainingdirectqualityMAE.0463doesnotpredictclosedloopquality. Allfailjointtarget; sourcepolicy+samplingconfoundeddespitematchedprefixes. Fullreport docs/JEV_MATCHED_REFRESH_RESULT_20261024.md. Rawtotals/referenceparity/DriveSHAverified. Noactiveworker/newrun. Nexttrain-onlyinspect82freshvs58matchedstates andconservativeadvantagecorrection beforemorearchitecture; goalACTIVE,reserved80protected.
+
 ## 2026-10-24 — selected refresh audited and six-policy evaluation live
 
 Selectedd987refreshcomplete48q/82states/608episodes,917.93sec,50869generated/2671592input,15errorepisodespreserved. statesSHA91a1ea1104822632bac332ce37a8f887c975e0e8db4879fdb38e6b251846325c. Rawprefix/legal/repeat/score/tokencountauditpassed;Drivearchiveindependentlyrehashed. Reliability:57anypositive,39nonzerostopcontrast,33/39repeatdirectionagreement;best-setoverlap1.0includesoptimisticties,notpolicyaccuracy.
