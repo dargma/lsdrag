@@ -1779,3 +1779,13 @@ Fullpairedtrain144episodes204.426sec/9395generated/513911input/0errors. Official
 
 Samecandidate90ead6c9 frozen nochange; development64 evaluator64613/session25199 confirmedlive. Spec lab/registry/decision_constrained_stop72_20261024/validation_spec.json committed634e16a beforelaunch. Log /content/local_fast/lsdrag-text-v1/logs/constrained_stop72_validation64_20261024.log; status correspondingresults/status.json. Next terminalverification scripts/reporting/verify_constrained_stop64.py compares fixedGRPO/H3 rawanswers and correctnesscost. Repeatedlyexposeddevelopment,independentconfirmationnotdone,reserved80protected. GoalACTIVE; nodevretune.
 
+
+
+## 2026-10-24 — constrained stop train improvement fails development transfer
+
+Development evaluator64613 terminal:128episodes171.823sec/8090generated/420725input/0errors. RawofficialF1/EM/counts/checkpoint/source/question/model/corpus/H3reference64 replay verified scripts/reporting/verify_constrained_stop64.py. GRPOF1.2250067641/gen98.40625/correct10;H3.2731584821/66.890625/correct14;candidate.2521081349/59.515625/correct13. JointdevscreenFAILS:vsGRPO+2.71014pp/genratio.604795;vsH3−2.10503pp.0qualitywins3losses;0newcorrect1lostcorrect. Rejectcandidate,H3incumbent; no devretuning or independentconfirmation.
+
+H3pairedcorrectcost:bothcorrect13 save25tokens;candidateonly0;H3only1 spends1extra;bothincorrect50 save448. Total472saved. Candidatecorrect13 total1074/mean82.615,incorrect51 total2735/mean53.627;partial6 total393/mean65.5. Alllosses terminate earlier, including q329687_83854 F11→.111111 afterskippingthirdsemantic;q28051_48770 .125→0;q49676_87091 .333333→0. Knowntrainingstates protected successfully, but newstate transfer failed; notproofentireheadapproachimpossible.
+
+Report lab/reports/decision_constrained_stop72_validation64_20261024/verification.json; archivedDrive/registry. Train improvement remains valid but not independenttest. GoalACTIVE, reserved80untouched,allworkerscomplete. Next bounded hypothesis: improve training state coverage rather than another optimizer/architecture sweep. Hashselect48unused questions from frozen train192 excludingall96alreadyH3-collected; collect currentH3 rollins and onlystop/bestcontinue suffixes, retain existing24monitor exclusions. Freeze new48 protocol/datahashes beforecollection; combine with72fit for one sameconstrainedfit120, not select questions usingdevfailures. Exactcollectioncommand notyetfrozen; do notreuse H1suffix targets as H3. This is a data-coverage hypothesis, not an establishedcause.
+

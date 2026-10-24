@@ -1,6 +1,6 @@
 {
-  "phase": "constrained_stop72_dev64_live",
-  "updated_utc": "2026-10-24T12:17:58.487928+00:00",
+  "phase": "constrained_stop72_dev_failed_transfer",
+  "updated_utc": "2026-10-24T12:21:05.973322+00:00",
   "protocol": "docs/JEV_CONSTRAINED_STOP72_20261024.md",
   "protocol_sha256": "27f46efd77c1be353f5f1881ff3027735ca20c06ac26e8caf9f3336b635826ed",
   "prompt": "prompts/text_rag_integrated_v5.txt",
@@ -32,7 +32,7 @@
   ],
   "worker_wall_budget_minutes": 120,
   "run_planned": "/content/local_fast/lsdrag-text-v1/results/decision_h3_policy_coverage24b_20261024",
-  "pid": 64613,
+  "pid": null,
   "implementation_completed": true,
   "dataset_prepared": true,
   "teacher_collection_started": true,
