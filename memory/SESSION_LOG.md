@@ -1491,3 +1491,12 @@ Coordinator18040/collector18051verifiedlive. State /content/local_fast/lsdrag-te
 
 StopValueHead implementation adds129trainableparameters (linear128->1) onlytoFINALlogit, freezingallH1weights/norm/toolranking. Tests3passed:exactinitialization,actualupdatechangesFINALonly/baseunchanged,invalidmaskandzero-quality/errorlabelrejection. Fit/evaluator prepared; nofituntilfullcollection/archiveverification andlabelcoverage. Independentverifierextendedforspecifiedtwoactioncollection,oldallactioncontractpreserved. GoalACTIVE,reserved80protected. Nextverifiedcompletion→singlefit→paired128evaluation; noextraablationgrid.
 
+
+## 2026-10-24 — H2 collection/audit/fit complete; paired evaluation frozen
+
+Deployment-matched H1stop/continuecollection complete48q/83states/214episodes,257.13sec,12977generated/745710input,1errorpreserved. Coordinator/workerabsent; rawandindependentarchive/scorer/legality/countchecks passed. DriveSHA0abca274d53f8117ac79a4b72d3d954dbbb6ca6d9c7dedf267022c953e77db33. Labels48states:continuecovers24q,stop23q,coveragegatepassed; both-zero/errorpairsnotlabels. Exactplan/source/inputhashesfrozenbeforefit.
+
+One129-parameterFINAL-logitcorrection fit1.25sec; allH1weights/norm/tool-logitsexactlyfrozen,zero-initexact/checkpointreloadverified. Checkpoint1b0a8bf8928d918f7501ee428d70374d0d083e303686931b4c83c21ba8e800db.428retentionstates,100updates/.001/seed20261068. Protocol docs/JEV_STOP_VALUE_H2_20261024.md. Candidatequalityunknown,notachieved.
+
+Evaluation spec lab/registry/decision_stop_value_h2_20261024/validation_spec.json:unchangeddev64×H1reference/stop_value=128episodes;referenceis32849a28. Nextlaunch scripts/coordinate_decision_stop_value_h2.py. Noothercandidate/grid/reserved80. GoalACTIVE.
+

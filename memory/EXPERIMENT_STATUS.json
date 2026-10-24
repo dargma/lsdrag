@@ -1126,11 +1126,10 @@
     "goal_achieved": false
   },
   "stop_value_h2_collection": {
-    "phase": "running",
-    "pid": 18040,
-    "seconds": 0.0004218699996272335,
-    "child_pid": 18051,
-    "script": "scripts/run_decision_stop_value_h2_collect.py",
-    "log": "/content/local_fast/lsdrag-text-v1/logs/refresh48_run_decision_stop_value_h2_collect_1792836020.log"
+    "phase": "complete",
+    "pid": null,
+    "seconds": 263.9081021369998,
+    "report": "/content/local_fast/lsdrag-code/lab/reports/decision_stop_value_h2_collect48_20261024/audit.json",
+    "goal_achieved": false
   }
 }
