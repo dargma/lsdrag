@@ -1514,3 +1514,12 @@ Twoimprovements(.5→1,0→.3333)cost172extratokens;alreadycorrectcases+66,both-
 
 Coordinator20114/evaluator20126complete/absent. All collection/fit/eval archives verified. Currentphase nextplanning, notrunning. Userhypothesis-firstspeed/detailedablationdeferpreferencecontinues.
 
+
+## 2026-10-24 — H3 initial gate fails; middle-state collection frozen
+
+Previous turn only explained plan (no progress). Recomputed train-only H3 feasibility:83states/48questions,1changed question; weighted suffix generation52.2292→52.1875. Gate>=3fails; no fit or candidate evaluation. This is a sampled-prefix surrogate, not full-episode savings.
+
+Frozen followup: all54 intermediate nonforced states in34 existing H1 train rollins;108new FINAL/continue suffix episodes,1200seconds afterload; exactprefix/probability replay required. No new questions/rollins or heldout access. Protocol docs/JEV_BUDGET_STOP_H3_20261024.md; manifest lab/registry/decision_stop_middle_h3_20261024/manifest.json. Next run scripts/coordinate_decision_stop_middle_h3.py then audit/combined feasibility. GoalACTIVE.
+
+
+H3 middle collection live: coordinator24893/worker24947 verified by ps; state /content/local_fast/lsdrag-text-v1/results/decision_stop_middle_h3_coordinator_20261024.json; log /content/local_fast/lsdrag-text-v1/logs/refresh48_run_decision_stop_middle_h3_20261024_1792837262.log. Next terminal collection then scripts/reporting/verify_stop_middle_h3.py. Do not duplicate.

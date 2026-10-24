@@ -1,3 +1,11 @@
+
+H3 middle collection live: coordinator24893/worker24947 verified by ps; state /content/local_fast/lsdrag-text-v1/results/decision_stop_middle_h3_coordinator_20261024.json; log /content/local_fast/lsdrag-text-v1/logs/refresh48_run_decision_stop_middle_h3_20261024_1792837262.log. Next terminal collection then scripts/reporting/verify_stop_middle_h3.py. Do not duplicate.
+## 2026-10-24 — H3 initial gate fails; middle-state collection frozen
+
+Previous turn only explained plan (no progress). Recomputed train-only H3 feasibility:83states/48questions,1changed question; weighted suffix generation52.2292→52.1875. Gate>=3fails; no fit or candidate evaluation. This is a sampled-prefix surrogate, not full-episode savings.
+
+Frozen followup: all54 intermediate nonforced states in34 existing H1 train rollins;108new FINAL/continue suffix episodes,1200seconds afterload; exactprefix/probability replay required. No new questions/rollins or heldout access. Protocol docs/JEV_BUDGET_STOP_H3_20261024.md; manifest lab/registry/decision_stop_middle_h3_20261024/manifest.json. Next run scripts/coordinate_decision_stop_middle_h3.py then audit/combined feasibility. GoalACTIVE.
+
 ## 2026-10-24 — H2 complete: quality improves, saving hypothesis fails
 
 H2 stoppingcandidate1b0a8bf8 paired128episodes complete196.93sec/9896generated/491001input/0errors. H1reference64exact,rawcountsandDriveSHAverified. H128.30/75.34→H229.61/79.28;2F1improvements0losses,+1.3021ppCI[0,3.3854],generation+5.23%. Fixedbasic+7.11pp/generated−19.43%;jointgoalunmet. Report docs/JEV_STOP_VALUE_H2_RESULT_20261024.md.

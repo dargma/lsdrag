@@ -1138,5 +1138,13 @@
     "seconds": 201.86881490099995,
     "report": "lab/reports/decision_stop_value_h2_validation64_20261024/report.md",
     "goal_achieved": false
+  },
+  "stop_middle_h3_collection": {
+    "phase": "running",
+    "pid": 24893,
+    "seconds": 0.0004435299997567199,
+    "child_pid": 24947,
+    "script": "scripts/run_decision_stop_middle_h3_20261024.py",
+    "log": "/content/local_fast/lsdrag-text-v1/logs/refresh48_run_decision_stop_middle_h3_20261024_1792837262.log"
   }
 }
