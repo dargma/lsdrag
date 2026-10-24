@@ -1,3 +1,9 @@
+## 2026-10-24 — user prioritizes GRPO on quality-leading MLP; broader adaptive program
+
+Explicit request: GRPO on measuredF132.45 auxiliaryMLP0a1b..., not historicald987head or collapsed constrained descendants. Current refresh continues; next queue scripts/coordinate_decision_quality_head_grpo.py waits for successful collection/audit/archive then freshon-policy192×4×1=768episodes/3600seconds andpairedvalidation64. Encoder/policy tensors train;auxoutputweights/norm/LLMfrozen.14tests passed including exactinitialization/actorupdate/frozenauxnormreference. Protocol docs/JEV_QUALITY_HEAD_GRPO_20261024.md.
+
+Remaining priorities and exactbranchlineage saved docs/JEV_REMAINING_ADAPTIVE_PROGRAM_20261024.md. User reiterates continue untilgoal, broadconsideration ofinputs/structure/objective/data/retrieval/argument+answergeneration costs; no automatic goalcompletion afterexperiment. Token-levelattention remainsconditionalcandidate, not an unannounced change tocurrentrun. GoalACTIVE.
+
 ## 2026-10-24 — current-policy refresh live
 
 Coordinator351564/collector351577 verified; state /content/local_fast/lsdrag-text-v1/results/decision_current_policy_refresh_coordinator_20261024.json; log /content/local_fast/lsdrag-text-v1/logs/refresh48_run_decision_current_policy_refresh_1792821647.log. Model loading at verification. Frozen48subset of unchangedtrain192; publicsamecorpus; quality-leadingpolicy suffixes. Goal ACTIVE.

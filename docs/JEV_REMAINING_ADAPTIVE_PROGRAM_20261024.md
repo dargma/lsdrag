@@ -1,0 +1,24 @@
+# Remaining adaptive program and head lineage
+
+Latest user direction: apply GRPO to the F1 32.45 MLP, continue ideas/experiments until the real goal is achieved, and consider the system broadly rather than only reward coefficients. Keep the frozen reader LLM and head-only trainable-parameter objective.
+
+## Priority order
+
+1. Finish current-policy train48 branch collection already running; audit/archive. It is a fixed subset of unchanged train192, not a new train/test split.
+2. Continue the actual quality-leading auxiliary MLP with GRPO; queued bounded192×4×1pilot. This is the next GPU training experiment explicitly requested. See JEV_QUALITY_HEAD_GRPO_20261024.md.
+3. Use both GRPO results and refreshed branch outcomes to decide the next policy update. Compare quality/cost target reliability and current-policy versus oldBC suffix mismatch. Prefer evidence-supported quality-preserving action preferences or refreshed value estimates over broad stale-cache penalty sweeps. Exact method not frozen yet.
+4. If state information is insufficient, expand what the head can read: actual observation-token features and action-conditioned soft attention, not only three pooled slots. This was discussed as a candidate; existing attention results only tested three summaries and do not rule out token-level inputs. Prepare a controlled same-data comparison only if warranted.
+5. Inspect remaining bottlenecks across query arguments, repeated retrieval, read selection, stopping, final-answer generation, and dataset coverage. Distinguish policy errors from frozen-reader/retrieval limitations. Interface or generation-format changes require matched baselines and explicit protocol/source provenance; do not silently change retrieval or the evaluation task. No backbone weight training, world-model or memory expansion.
+
+Avoid a full factorial grid. Combine shared data collection, reuse train caches and serialize single-GPU execution. Keep failed experiments and account for cost. Frozen independent confirmation is still required; exposed validation gains do not close the goal.
+
+## Exact branches
+
+Initial teacher action learning → selected multi-position MLP outcome learning (d987...):
+- branchA: ordinary GRPO → validationF122.95/gen53.19.
+- branchB: zero-quality-group-gated GRPO →25.96/83.63.
+- branchC: further offline policy+stopping+quality/cost auxiliary →32.45/139.03 (0a1b...). No GRPO on this branch yet at plan creation.
+  - constrained offline budget70/55 descendants failed to retain quality; preserve results.
+  - NOW queued: fresh GRPO directly from0a1b..., not from constrained descendants.
+
+The current refresh collector also uses frozen0a1b..., and its counterfactual branch data must not be presented as on-policy GRPO data. The branch structure matters: do not describe all MLP results as receiving GRPO.

@@ -112,3 +112,10 @@ sharedGRPO complete1536eps/5241decisions/2923.93초/660optimizersteps,전체audi
 
 User explicitly requests goal mode, all three axes then further ideas/experiments if unmet, plus head architecture variants. Authority: docs/JEV_DECISION_POLICY_ACTIVE_GOAL_20261024.md. F1+5pp/generated−30% jointly versus fixed basic GRPO AND evidence of useful state-conditioned policy; experiment completion is not goal achievement. Axis1 running; axes2/3 and attention/action-quality-cost structure comparisons authorized but not launched. Preserve heldout during development. Goal remains active.
 
+
+## 2026-10-24 — user prioritizes GRPO on quality-leading MLP; broader adaptive program
+
+Explicit request: GRPO on measuredF132.45 auxiliaryMLP0a1b..., not historicald987head or collapsed constrained descendants. Current refresh continues; next queue scripts/coordinate_decision_quality_head_grpo.py waits for successful collection/audit/archive then freshon-policy192×4×1=768episodes/3600seconds andpairedvalidation64. Encoder/policy tensors train;auxoutputweights/norm/LLMfrozen.14tests passed including exactinitialization/actorupdate/frozenauxnormreference. Protocol docs/JEV_QUALITY_HEAD_GRPO_20261024.md.
+
+Remaining priorities and exactbranchlineage saved docs/JEV_REMAINING_ADAPTIVE_PROGRAM_20261024.md. User reiterates continue untilgoal, broadconsideration ofinputs/structure/objective/data/retrieval/argument+answergeneration costs; no automatic goalcompletion afterexperiment. Token-levelattention remainsconditionalcandidate, not an unannounced change tocurrentrun. GoalACTIVE.
+
