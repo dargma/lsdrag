@@ -1092,5 +1092,13 @@
     "seconds": 294.9553862210014,
     "report": "lab/reports/decision_anchor_corrections_validation64_20261024/report.md",
     "goal_achieved": false
+  },
+  "corrected_policy_refresh": {
+    "phase": "running",
+    "pid": 399511,
+    "seconds": 0.0004384200001368299,
+    "child_pid": 399521,
+    "script": "scripts/run_decision_corrected_refresh.py",
+    "log": "/content/local_fast/lsdrag-text-v1/logs/refresh48_run_decision_corrected_refresh_1792831243.log"
   }
 }

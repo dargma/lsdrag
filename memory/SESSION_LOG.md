@@ -1383,3 +1383,7 @@ Fitcomplete22.7056sec,2candidates;checkpointhashes/loadverified. 16correctedstat
 ## 2026-10-24 — cost correction signal too sparse; expand disjoint train coverage
 
 Train-only82stateauditrelative26.41MLP found2nonworse-cheaperpairs at1state/question,savings6/1tokens. Noone-statecostfit. Suffixesoldd987soexternalvaliditylimited. Newboundedprotocol docs/JEV_CORRECTED_POLICY_COVERAGE_PROTOCOL_20261024.md: another48qids chosenbyhashseed20261064fromremaining144oftrain192,disjointprevious48;rollin/suffixcurrentquality-correctedMLP;max816episodes/3600sec. Eval64/corpusunchanged;noPPOGRPO. Totalcoverage96distinctquestionsbutdifferentcollectionpolicies,notmergedasoneonpolicydataset. Planfrozen,newcollectionnotyetlaunched. GoalACTIVE.
+
+## 2026-10-24 — disjoint48 current-corrected-policy collection live
+
+Coordinator399511/collector399521verifiedlive. State /content/local_fast/lsdrag-text-v1/results/decision_corrected_refresh_coordinator_20261024.json;log /content/local_fast/lsdrag-text-v1/logs/refresh48_run_decision_corrected_refresh_1792831243.log. Run decision_quality_corrected_refresh48b_20261024. Existingtrain192partition unchanged,new48disjointwithintrain. Audit/Drivebackupautomatic; noheadfitautoaftercollection. GoalACTIVE.
