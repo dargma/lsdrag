@@ -1,3 +1,9 @@
+## 2026-10-24 — H3 control calibration live; method backed up
+
+Coordinator30428/evaluator30488 verified live on train24 calibration,96planned episodes. State /content/local_fast/lsdrag-text-v1/results/decision_h3_constant_coordinator_20261024.json; log /content/local_fast/lsdrag-text-v1/logs/h3_constant_evaluate_decision_stop_value_h2_1792838147557649792.log. Coordinator selects scalar on generation-only train data then freezes paireddev128 automatically; no F1selection/devretune. No duplicate run. GoalACTIVE.
+
+Method document Drive standalone /content/drive/MyDrive/lsdrag-backups/20261024/JEV_H3_METHOD_EQUATIONS_INSIGHTS_20261024.md SHAce8ba84419647937b401855d9df07bd44a86965996da1a303d4fe627479fea21. Code bundle code_h3_method_control_2b326274.tar.gz SHA99cba32ef4fd817d2f7a1a8c3b2c62029a0b9034de4ea95eeb8327cddce5fb34 in same Drive date directory. Both byte-verified; Gitjev_v1.1 pushed.
+
 ## 2026-10-24 — H3 constant residual control frozen
 
 Approved mechanism test, not H4. H3fixed936e4592 vs frozenH1+constantFINALoffset. Calibration proposals use H1/H3 decisions and generation-only train prefix data; no F1. Three offsets−.084794,1.693179,−.765981; actual24train questions×4policies=96episodes, choose closestH3mean generation only. Costmatch tolerance10%, then one frozen paireddev64×2; no devretune. Protocol docs/JEV_H3_CONSTANT_CONTROL_PROTOCOL_20261024.md. Plan/source/input hashes frozen. Nativecontract/model/splits unchanged; reserved80protected. Next coordinator scripts/coordinate_h3_constant_control.py. GoalACTIVE.
