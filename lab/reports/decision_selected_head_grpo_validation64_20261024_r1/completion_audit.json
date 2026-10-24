@@ -1,0 +1,33 @@
+{
+  "checked_utc": "2026-10-24T04:10:28.764851+00:00",
+  "recovery_complete": true,
+  "original_selected_checkpoint_exact": true,
+  "strict_replay_threshold_preserved": true,
+  "rounds_replay_passed": 2,
+  "train192_and_validation64_only": true,
+  "original_final80_and_reserved80_unused": true,
+  "paired_cells": 128,
+  "before_head_reproduced_all64": true,
+  "stage_time_caps_respected": true,
+  "all_workers_exited": true,
+  "runtime_archives": [
+    {
+      "registry": "lab/registry/decision_selected_head_grpo192_20261024/failed_archive.json",
+      "sha256": "0e1230feb36455f8c92e22bcdffd679a471679f07d9ed85d3765f2a406ac0cbc",
+      "verified": true
+    },
+    {
+      "registry": "lab/registry/decision_selected_head_grpo192_20261024_r1/archive.json",
+      "sha256": "2595291dfdeaceea3add60c65041552ed4728e1738ee244bb7416757c11e5749",
+      "verified": true
+    },
+    {
+      "registry": "lab/registry/decision_selected_head_grpo_validation64_20261024_r1/archive.json",
+      "sha256": "c25662380adabfa2b8b2f8457c69e6e8e111a6ee64b2e7c04e5e2ed61031871a",
+      "verified": true
+    }
+  ],
+  "numeric_target_met_on_validation": false,
+  "fresh_test_improvement_established": false,
+  "code_report_backup_pending": true
+}

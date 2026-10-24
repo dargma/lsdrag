@@ -1,6 +1,6 @@
 {
-  "phase": "selected_head_grpo_running",
-  "updated_utc": "2026-10-24T03:24:56.760789+00:00",
+  "phase": "selected_head_grpo_r1_complete_target_not_met",
+  "updated_utc": "2026-10-24T04:10:52.370932+00:00",
   "protocol": "docs/JEV_SELECTED_HEAD_GRPO_CONTINUATION_20261024.md",
   "protocol_sha256": "115cda4de141c12e007c13e3ca7d80d4cb186f1a354b76df6a06eafca6d5e448",
   "prompt": "prompts/text_rag_integrated_v5.txt",
@@ -32,13 +32,13 @@
   ],
   "worker_wall_budget_minutes": 120,
   "run_planned": "/content/local_fast/lsdrag-text-v1/results/decision_shared_test80_20261023",
-  "pid": 308330,
+  "pid": null,
   "implementation_completed": true,
   "dataset_prepared": true,
   "teacher_collection_started": true,
-  "training_completed": false,
-  "evaluation_completed": false,
-  "next": "Finish bounded train/audit/paired validation/archive. No test launch.",
+  "training_completed": true,
+  "evaluation_completed": true,
+  "next": "Review continuation report; no automatic further sweep or final80/reserved80 evaluation.",
   "previous_multimodal_checkpoint_historical_only": {
     "phase": "native2_review_required",
     "run": "/content/local_fast/lsdrag-head-v14/results/native_distillation_12b_20261015",
@@ -174,7 +174,7 @@
   "external_evaluation_completed": true,
   "updated_epoch": 1792161920.7440126,
   "d3_additional_analysis": "withdrawn",
-  "session_id": 46519,
+  "session_id": null,
   "functional_smoke": {
     "passed": true,
     "checks": 7,
@@ -194,7 +194,7 @@
   "frozen_source_commit": "7ff891a",
   "teacher_questions": 32,
   "natural_states": 15,
-  "trained_head": false,
+  "trained_head": true,
   "error": "TypeError: Object of type bool is not JSON serializable",
   "prior_worker_seconds": 421.668342115,
   "reason": "Slower, uncertain, missing bucket coverage or invalid path; no teacher32 expansion",
@@ -208,7 +208,7 @@
   "fixed_state_checks": 15,
   "learned_policy_quality_passed": false,
   "integrated_policy_evaluated": false,
-  "rl_started": false,
+  "rl_started": true,
   "step_compression_started": false,
   "heldout_exposed": true,
   "idea_keep_record": "lab/registry/text_integrated_20261016/KEEP_generation_value_vs_remaining_steps.json",
@@ -924,15 +924,13 @@
     "execution_resumed_explicitly": true
   },
   "selected_head_grpo_continuation": {
-    "phase": "running",
-    "pid": 308320,
-    "seconds": 0.0029237890121294186,
-    "script": "scripts/run_decision_selected_head_grpo_r1.py",
-    "child_pid": 308330,
-    "log": "/content/local_fast/lsdrag-text-v1/logs/selected_grpo_run_decision_selected_head_grpo_r1_1792812296.log",
-    "updated_utc": "2026-10-24T03:24:56.760789+00:00",
-    "run": "decision_selected_head_grpo192_20261024_r1",
-    "exec_session": 46519
+    "phase": "complete",
+    "pid": null,
+    "seconds": 2583.654594520005,
+    "report": "lab/reports/decision_selected_head_grpo_validation64_20261024_r1/report.md",
+    "next": "Review paired validation; no original-final80/reserved80 evaluation or new sweep.",
+    "updated_utc": "2026-10-24T04:08:00.412464+00:00",
+    "run": "decision_selected_head_grpo192_20261024_r1"
   },
   "selected_head_grpo_failed_run": {
     "episodes": 768,
@@ -946,5 +944,17 @@
     "optimizer_steps": 292,
     "checkpoint_sha256": "f57b28eb32b696a92ddcbd10441aaef7fb6ee1d86657a59657f81538c3f61d96",
     "quality_evaluated": false
+  },
+  "selected_head_grpo_result": {
+    "report": "docs/JEV_SELECTED_HEAD_GRPO_RESULT_20261024.md",
+    "f1_before": 0.25179247835497837,
+    "f1_after": 0.22953869047619047,
+    "generated_before": 76.75,
+    "generated_after": 53.1875,
+    "vs_prior_grpo_f1_delta": 0.004531926406926408,
+    "vs_prior_grpo_generated_ratio": 0.5404890441409972,
+    "validation_only": true,
+    "target_met": false,
+    "workers_active": false
   }
 }

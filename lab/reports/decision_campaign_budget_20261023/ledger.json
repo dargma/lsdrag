@@ -1,5 +1,5 @@
 {
-  "snapshot_utc": "2026-10-24T03:25:26.572098+00:00",
+  "snapshot_utc": "2026-10-24T04:08:43.414892+00:00",
   "runs": [
     {
       "group": "historical_grpo_reference",
@@ -256,22 +256,30 @@
     {
       "group": "selected_head_grpo_continuation",
       "run": "decision_selected_head_grpo192_20261024_r1",
-      "phase": "collection",
+      "phase": "complete",
       "counts": {
-        "episodes": 12,
-        "generated": 593,
-        "inputs": 35782
+        "episodes": 1536,
+        "generated": 119793,
+        "inputs": 6566548
       },
-      "seconds": 25.286208759993315,
-      "complete_raw_totals_verified": false,
-      "terminal_raw_totals_verified": false,
+      "seconds": 2284.574557668995,
+      "complete_raw_totals_verified": true,
+      "terminal_raw_totals_verified": true,
       "status_path": "/content/local_fast/lsdrag-text-v1/results/decision_selected_head_grpo192_20261024_r1/status.json"
     },
     {
       "group": "selected_head_grpo_continuation",
       "run": "decision_selected_head_grpo_validation64_20261024_r1",
-      "phase": "not_started",
-      "counts": null
+      "phase": "complete",
+      "counts": {
+        "episodes": 128,
+        "generated": 8316,
+        "inputs": 502063
+      },
+      "seconds": 172.2352241030021,
+      "complete_raw_totals_verified": true,
+      "terminal_raw_totals_verified": true,
+      "status_path": "/content/local_fast/lsdrag-text-v1/results/decision_selected_head_grpo_validation64_20261024_r1/status.json"
     }
   ],
   "completed_totals": {
@@ -315,9 +323,9 @@
       "uncompleted_runs": []
     },
     "selected_head_grpo_continuation": {
-      "episodes": 0,
-      "generated": 0,
-      "inputs": 0,
+      "episodes": 1664,
+      "generated": 128109,
+      "inputs": 7068611,
       "failed_run_costs": {
         "episodes": 768,
         "generated": 61608,
@@ -326,11 +334,9 @@
       "failed_runs": [
         "decision_selected_head_grpo192_20261024"
       ],
-      "completed_runs": 0,
+      "completed_runs": 2,
       "uncompleted_runs": [
-        "decision_selected_head_grpo192_20261024",
-        "decision_selected_head_grpo192_20261024_r1",
-        "decision_selected_head_grpo_validation64_20261024_r1"
+        "decision_selected_head_grpo192_20261024"
       ]
     }
   },

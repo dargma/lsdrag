@@ -1,3 +1,35 @@
+## 2026-10-24 — 선정 head GRPO 복구·추가학습·검증64 완료
+
+r1 train1536episodes/4530decisions/4514학습states/568updates/2284.57초 완료. 두GPU replay최대9.54e-7,기존atol/rtol2e-4유지;fullaudit통과. 최종cpSHA6f9e7bbf0f9cb1e158ec38574f8059c93880cb34e00023ae74b5d3b93e43774c. 동일선정head net전체연속학습,LLM/정규화고정. 오류1/forcedFINAL16보존. failed768/gen61608/input3416046 별도보존 및 비용포함. r1train gen119793/input6566548,eval128 gen8316/input502063. 관련3개archive SHA재검증,모든worker종료.
+
+검증64 전후:선정head F1.251792/gen76.75→추가GRPO .229539/53.1875;F1−2.2254pp(CI−8.333,+3.243),생성−30.7003%. 기존기본headGRPO 검증64 .225007/98.40625 대비F1+.4532pp(CI−7.928,+8.929)/생성−45.9511%. 목표F1+5pp/token−30% 동시미달. Native대비F1−1.7485pp/생성−45.4137%. 정확도향상/비열등성/새heldout우위주장금지. 이전baseline은cache명시;새학습전head64문항답변/F1/token/actions모두기존과정확일치. 원final80과예비80미사용. 새test평가/추가sweep없음.
+
+보고서 docs/JEV_SELECTED_HEAD_GRPO_RESULT_20261024.md;raw검증/pairedCI/crossrun/completionaudit는lab/reports/decision_selected_head_grpo_validation64_20261024_r1. 정밀도수정및학습실행목표완료,성능목표미달구분. 다음사용자후속판단,자동실행없음. 원래실험의최종80에서개선미재현결론은보존.
+
+## 2026-10-24T04:08:00.412464+00:00 — selected-head GRPO continuation: complete
+
+Coordinator state: `/content/local_fast/lsdrag-text-v1/results/decision_selected_head_grpo_coordinator_20261024_r1.json`. Details: `{"phase": "complete", "pid": null, "seconds": 2583.654594520005, "report": "lab/reports/decision_selected_head_grpo_validation64_20261024_r1/report.md", "next": "Review paired validation; no original-final80/reserved80 evaluation or new sweep."}`. Same already-trained selected head continues learning; LLM/normalization fixed. Only train192 and validation64 used; final80/reserved80 protected.
+
+## 2026-10-24T04:08:00.296837+00:00 — selected-head GRPO continuation: running
+
+Coordinator state: `/content/local_fast/lsdrag-text-v1/results/decision_selected_head_grpo_coordinator_20261024_r1.json`. Details: `{"phase": "running", "pid": 308320, "seconds": 2583.538962395003, "script": "scripts/reporting/archive_decision_run.py", "child_pid": 320017, "log": "/content/local_fast/lsdrag-text-v1/logs/selected_grpo_archive_decision_run_1792814880.log"}`. Same already-trained selected head continues learning; LLM/normalization fixed. Only train192 and validation64 used; final80/reserved80 protected.
+
+## 2026-10-24T04:08:00.180664+00:00 — selected-head GRPO continuation: running
+
+Coordinator state: `/content/local_fast/lsdrag-text-v1/results/decision_selected_head_grpo_coordinator_20261024_r1.json`. Details: `{"phase": "running", "pid": 308320, "seconds": 2583.422688621009, "script": "scripts/reporting/summarize_decision_shared_evaluation.py", "child_pid": 320015, "log": "/content/local_fast/lsdrag-text-v1/logs/selected_grpo_summarize_decision_shared_evaluation_1792814880.log"}`. Same already-trained selected head continues learning; LLM/normalization fixed. Only train192 and validation64 used; final80/reserved80 protected.
+
+## 2026-10-24T04:05:03.653591+00:00 — selected-head GRPO continuation: running
+
+Coordinator state: `/content/local_fast/lsdrag-text-v1/results/decision_selected_head_grpo_coordinator_20261024_r1.json`. Details: `{"phase": "running", "pid": 308320, "seconds": 2406.8956892530114, "script": "scripts/evaluate_decision_shared_corpus.py", "child_pid": 319088, "log": "/content/local_fast/lsdrag-text-v1/logs/selected_grpo_evaluate_decision_shared_corpus_1792814703.log"}`. Same already-trained selected head continues learning; LLM/normalization fixed. Only train192 and validation64 used; final80/reserved80 protected.
+
+## 2026-10-24T04:03:08.971205+00:00 — selected-head GRPO continuation: running
+
+Coordinator state: `/content/local_fast/lsdrag-text-v1/results/decision_selected_head_grpo_coordinator_20261024_r1.json`. Details: `{"phase": "running", "pid": 308320, "seconds": 2292.2132324679988, "script": "scripts/reporting/archive_decision_run.py", "child_pid": 318572, "log": "/content/local_fast/lsdrag-text-v1/logs/selected_grpo_archive_decision_run_1792814588.log"}`. Same already-trained selected head continues learning; LLM/normalization fixed. Only train192 and validation64 used; final80/reserved80 protected.
+
+## 2026-10-24T04:03:05.949638+00:00 — selected-head GRPO continuation: running
+
+Coordinator state: `/content/local_fast/lsdrag-text-v1/results/decision_selected_head_grpo_coordinator_20261024_r1.json`. Details: `{"phase": "running", "pid": 308320, "seconds": 2289.1916851910064, "script": "scripts/reporting/audit_decision_selected_head_grpo_r1.py", "child_pid": 318556, "log": "/content/local_fast/lsdrag-text-v1/logs/selected_grpo_audit_decision_selected_head_grpo_r1_1792814585.log"}`. Same already-trained selected head continues learning; LLM/normalization fixed. Only train192 and validation64 used; final80/reserved80 protected.
+
 ## 2026-10-24 — selected-head GRPO r1 첫 업데이트 정상 완료
 
 worker308330/coordinator308320 live,iteration1수집진행. round0 768trajectory/2334states:GPU replay최대9.5367e-7,기존2e-4검사통과. 독립CPU replay7.1526e-7,정규화mean/scale정확고정,MLP net4tensor변경/allfinite,292optimizersteps. cpSHA f57b28eb32b696a92ddcbd10441aaef7fb6ee1d86657a59657f81538c3f61d96. 학습state argmax변경13.84%/clip비율41.77%는학습진단이며품질증거아님. 실패run과새round0의768episodes answer/support/F1/generated/input/toolcalls전부동일. FP32저장수정으로행동수집은유지하면서replay오류해결확인. 독립진단첫시도CPU/CUDA map_location누락은CPU명시후재검사통과;학습worker영향없음.
