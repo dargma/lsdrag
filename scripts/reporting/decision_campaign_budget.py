@@ -18,7 +18,7 @@ GROUPS={
         'decision_shared_outcomes192_20261023','decision_shared_validation64_20261023',
         'decision_shared_structure_validation64_20261023','decision_shared_test80_20261023'],
     'selected_head_grpo_continuation':['decision_selected_head_grpo192_20261024','decision_selected_head_grpo192_20261024_r1','decision_selected_head_grpo_validation64_20261024_r1'],
-    'adaptive_policy_followup':['decision_selected_head_grpo192_20261024_zero_gate','decision_selected_head_grpo_validation64_20261024_zero_gate','decision_opportunity_value_validation64_20261024','decision_constrained_policy_validation64_20261024','decision_current_policy_refresh48_20261024','decision_quality_head_grpo192_20261024','decision_quality_head_grpo_validation64_20261024']}
+    'adaptive_policy_followup':['decision_selected_head_grpo192_20261024_zero_gate','decision_selected_head_grpo_validation64_20261024_zero_gate','decision_opportunity_value_validation64_20261024','decision_constrained_policy_validation64_20261024','decision_current_policy_refresh48_20261024','decision_quality_head_grpo192_20261024','decision_quality_head_grpo_validation64_20261024','decision_pareto_refresh_validation64_20261024','decision_context_pareto_validation64_20261024']}
 
 def main():
     rows=[]

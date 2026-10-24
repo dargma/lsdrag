@@ -1,0 +1,32 @@
+{
+  "raw_totals": {
+    "phase": "complete",
+    "pid": null,
+    "seconds": 430.6537480049883,
+    "episodes": 192,
+    "generated": 22142,
+    "inputs": 1246289
+  },
+  "parity": {
+    "quality_start": 64,
+    "pareto": 64
+  },
+  "archives": {
+    "decision_context_pareto_20261024": {
+      "path": "/content/drive/MyDrive/lsdrag-backups/20261023/decision_context_pareto_20261024.tar.gz",
+      "sha256": "8b1644ac30c1d700a3485ebb11c85531ae420609bd1cccef447d6159123de760",
+      "bytes": 6136117,
+      "run": "/content/local_fast/lsdrag-text-v1/results/decision_context_pareto_20261024",
+      "phase": "complete",
+      "backbone_weights_included": false
+    },
+    "decision_context_pareto_validation64_20261024": {
+      "path": "/content/drive/MyDrive/lsdrag-backups/20261023/decision_context_pareto_validation64_20261024.tar.gz",
+      "sha256": "62abfd42c970f9df3beb256603a27273114213ace5cf582c3299f364c00b5dae",
+      "bytes": 479756,
+      "run": "/content/local_fast/lsdrag-text-v1/results/decision_context_pareto_validation64_20261024",
+      "phase": "complete",
+      "backbone_weights_included": false
+    }
+  }
+}

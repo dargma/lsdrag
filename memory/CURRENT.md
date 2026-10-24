@@ -1,4 +1,11 @@
 
+## 2026-10-24 — context comparison complete, verified failure; reward design saved only
+
+Context3×64 complete192episodes/430.65sec/gen22142/input1246289. Quality_start32.45/139.03,ordinaryPareto28.17/104.80,contextPareto26.51/102.140625,input6303.12/calls2.6875/zero-tool7/errors0. Bothreferenceconditions exactlyreproduceall64answers/support/F1/gen/input/calls/errors. ContextvsqualitystartF1-5.94pp CI[-11.65,-1.26]pp,genratio.73466;notjointsuccess. Expandedpooledcontext+differentparameterizationdoesnotimprovequalityinthispilot;notproofallattentionfails.
+
+Bothtrain/evalDrivearchives independentlysize/SHAverified;verification.json recordsrawtotals/parity/hashes. Costledgerupdatedthroughbothnewcomparisons;failedhistoricalcostspreserved. Noactivecontextworker/coordinatorterminalcomplete. Userlatestrequest: rewardideasandSAVEFIRST;design docs/JEV_ARAG_HEAD_REWARD_DESIGN_20261024.md saved, no newrewardrun. Nextwork: concretebudgetedstep-creditprotocol fromsaveddesign,keepingtestprotected;executionstatusmustremainexplicit. GoalACTIVE, notachieved.
+
+
 ## 2026-10-24 — user requests ARAG/head-aware reward ideas, save first
 
 Saved docs/JEV_ARAG_HEAD_REWARD_DESIGN_20261024.md. Verified currentGRPO actor uses episode-levelgroupadvantage repeatedacrosssteps; calculatedremainingreturnsunusedbyactor;inverseepisode_stepsrowweightalreadyavoidslongtrajectoryrowcountbias. Proposal:separatefinalquality/actualgeneratedcost, current-policy step/actioncredit, headprobabilityweightedbaselines, optionaltrain-onlysmallcritics/targethead, adaptivequalityconstraint, FINALopportunitycost. No confidence-as-correctness/no noveltyreward/no testlabels. Previousofflineconstraint/Paretofailures retained as limitations. Newrewardrun NOT launched;currentcontextcomparisoncontinues. UserOK acknowledges saving. GoalACTIVE.

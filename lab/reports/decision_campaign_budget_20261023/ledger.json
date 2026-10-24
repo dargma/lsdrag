@@ -20,7 +20,7 @@
     "new_llm_rollouts": 0,
     "reuses": "decision_shared_outcomes192_20261023 and decision_shared_teacher192_20261023"
   },
-  "snapshot_utc": "2026-10-24T06:20:37.710853+00:00",
+  "snapshot_utc": "2026-10-24T07:13:16.814806+00:00",
   "runs": [
     {
       "group": "historical_grpo_reference",
@@ -375,22 +375,58 @@
     {
       "group": "adaptive_policy_followup",
       "run": "decision_quality_head_grpo192_20261024",
-      "phase": "collection",
+      "phase": "complete",
       "counts": {
-        "episodes": 20,
-        "generated": 1433,
-        "inputs": 100221
+        "episodes": 768,
+        "generated": 79144,
+        "inputs": 5034458
       },
-      "seconds": 42.1875852420053,
-      "complete_raw_totals_verified": false,
-      "terminal_raw_totals_verified": false,
+      "seconds": 1551.6674041980004,
+      "complete_raw_totals_verified": true,
+      "terminal_raw_totals_verified": true,
       "status_path": "/content/local_fast/lsdrag-text-v1/results/decision_quality_head_grpo192_20261024/status.json"
     },
     {
       "group": "adaptive_policy_followup",
       "run": "decision_quality_head_grpo_validation64_20261024",
-      "phase": "not_started",
-      "counts": null
+      "phase": "complete",
+      "counts": {
+        "episodes": 128,
+        "generated": 18556,
+        "inputs": 1086095
+      },
+      "seconds": 361.953562781011,
+      "complete_raw_totals_verified": true,
+      "terminal_raw_totals_verified": true,
+      "status_path": "/content/local_fast/lsdrag-text-v1/results/decision_quality_head_grpo_validation64_20261024/status.json"
+    },
+    {
+      "group": "adaptive_policy_followup",
+      "run": "decision_pareto_refresh_validation64_20261024",
+      "phase": "complete",
+      "counts": {
+        "episodes": 128,
+        "generated": 15605,
+        "inputs": 842889
+      },
+      "seconds": 304.7875276859995,
+      "complete_raw_totals_verified": true,
+      "terminal_raw_totals_verified": true,
+      "status_path": "/content/local_fast/lsdrag-text-v1/results/decision_pareto_refresh_validation64_20261024/status.json"
+    },
+    {
+      "group": "adaptive_policy_followup",
+      "run": "decision_context_pareto_validation64_20261024",
+      "phase": "complete",
+      "counts": {
+        "episodes": 192,
+        "generated": 22142,
+        "inputs": 1246289
+      },
+      "seconds": 430.6537480049883,
+      "complete_raw_totals_verified": true,
+      "terminal_raw_totals_verified": true,
+      "status_path": "/content/local_fast/lsdrag-text-v1/results/decision_context_pareto_validation64_20261024/status.json"
     }
   ],
   "completed_totals": {
@@ -451,20 +487,17 @@
       ]
     },
     "adaptive_policy_followup": {
-      "episodes": 2832,
-      "generated": 253930,
-      "inputs": 14718051,
+      "episodes": 4048,
+      "generated": 389377,
+      "inputs": 22927782,
       "failed_run_costs": {
         "episodes": 0,
         "generated": 0,
         "inputs": 0
       },
       "failed_runs": [],
-      "completed_runs": 5,
-      "uncompleted_runs": [
-        "decision_quality_head_grpo192_20261024",
-        "decision_quality_head_grpo_validation64_20261024"
-      ]
+      "completed_runs": 9,
+      "uncompleted_runs": []
     }
   },
   "scope": "Named decision-policy campaign only; historical PPO/preparatory runs outside this list are excluded. Shared-corpus and restricted-pool results are separate experimental settings.",

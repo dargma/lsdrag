@@ -1033,11 +1033,10 @@
     "goal_achieved": false
   },
   "context_pareto_evaluation": {
-    "phase": "running",
-    "pid": 370075,
-    "seconds": 0.2654696499957936,
-    "script": "scripts/evaluate_decision_context_head.py",
-    "child_pid": 370082,
-    "log": "/content/local_fast/lsdrag-text-v1/logs/value_heads_evaluate_decision_context_head_1792825424.log"
+    "phase": "complete",
+    "pid": null,
+    "seconds": 435.6970564039948,
+    "report": "lab/reports/decision_context_pareto_validation64_20261024/report.md",
+    "goal_achieved": false
   }
 }
