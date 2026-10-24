@@ -1,3 +1,9 @@
+## 2026-10-24 — constrained policy candidates trained, evaluation next
+
+Protocol docs/JEV_CONSTRAINED_POLICY_20261024.md; plan frozen before fitting. Exact mlp_stop_value warmstart. Two budgets .70/.55 of basicGRPO cache expected suffix generation, qualityfloor Qstart−.02, projected primal/dual300epochs.12tests passed. CPU11.01seconds. budget70 Q.458766/G49.5964 satisfies cachefloor.431121/budget49.6224;budget55 Q.416688/G37.5552 fails qualityfloor despite optimisticLPfeasible. This is offline cache feasibility only. No learned-body/worldmodel expansion.
+
+Next coordinator_decision_constrained_evaluation.py: archive candidates then quality_start+budget70+budget55×validation64,report+pairedcomparison+archive. Baseline unchanged; final80/reserved80 protected. Goal ACTIVE, no actual success claim.
+
 ## 2026-10-24 — three axes evaluated; value auxiliary raises quality/cost, goal active
 
 All5×validation64 complete320eps/803.87sec/gen41550/input2658076;raw totals and train/eval archives verified. docs/JEV_OPPORTUNITY_VALUE_RESULTS_20261024.md. F1/gen:mlpcontrol29.14/114.69;stop29.09/114.80;stop+value32.45/139.03;attentionstop30.21/136.92;attention+value30.21/143.78. BasicGRPO22.50/98.41. Quality-leadingMLP+value delta+9.95pp butgen+41.28%;jointtargetfalse. Stop-only incremental benefit absent;MLPaux+3.365pp overstop butgen+21.11%;attentionauxsameF1/morecost. Exposeddev,single-seed,multiplecandidates;noindependentgeneralizationclaim.

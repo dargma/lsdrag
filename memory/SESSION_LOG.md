@@ -1109,3 +1109,10 @@ All5×validation64 complete320eps/803.87sec/gen41550/input2658076;raw totals and
 
 Workers336962/343828 ended. Next authorized adaptive step: small CPU constrained policy pilot starting quality-leadingMLP+value, separate expected F1 objective/qualityfloor and actual generated-token budget using training cache. Freeze exact protocol before launch, atmost2budgetlevels, preserve all results. If off-policy feasibility fails totransfer, bounded current-policy training counterfactual refresh. Goal ACTIVE; final80/reserved80protected. No new training launched yet.
 
+
+## 2026-10-24 — constrained policy candidates trained, evaluation next
+
+Protocol docs/JEV_CONSTRAINED_POLICY_20261024.md; plan frozen before fitting. Exact mlp_stop_value warmstart. Two budgets .70/.55 of basicGRPO cache expected suffix generation, qualityfloor Qstart−.02, projected primal/dual300epochs.12tests passed. CPU11.01seconds. budget70 Q.458766/G49.5964 satisfies cachefloor.431121/budget49.6224;budget55 Q.416688/G37.5552 fails qualityfloor despite optimisticLPfeasible. This is offline cache feasibility only. No learned-body/worldmodel expansion.
+
+Next coordinator_decision_constrained_evaluation.py: archive candidates then quality_start+budget70+budget55×validation64,report+pairedcomparison+archive. Baseline unchanged; final80/reserved80 protected. Goal ACTIVE, no actual success claim.
+
