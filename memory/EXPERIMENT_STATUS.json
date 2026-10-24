@@ -1,6 +1,6 @@
 {
-  "phase": "qwen35_base_complete_stop48_running",
-  "updated_utc": "2026-10-24T15:41:45.941502+00:00",
+  "phase": "qwen35_h3_control_complete_dev64_evaluation_running",
+  "updated_utc": "2026-10-24T16:11:52.033518+00:00",
   "protocol": "docs/JEV_QWEN35_9B_H3_GENERALIZATION_20261024.md",
   "protocol_sha256": "e0cd40c9a1b728408047f7aee95bc9849caa698407c243d20df6a991c9260432",
   "prompt": "prompts/text_rag_integrated_v5.txt",
@@ -22,8 +22,8 @@
   "image_inputs": false,
   "teacher_questions_planned": 192,
   "teacher_questions_max": 192,
-  "evaluation_questions_planned": 80,
-  "evaluation_conditions": 4,
+  "evaluation_questions_planned": 64,
+  "evaluation_conditions": 3,
   "training_seeds_planned": [
     20261051,
     20261052,
@@ -32,13 +32,13 @@
   ],
   "worker_wall_budget_minutes": 120,
   "run_planned": "/content/local_fast/lsdrag-text-v1/results/decision_h3_policy_coverage24b_20261024",
-  "pid": 164402,
+  "pid": 178400,
   "implementation_completed": true,
   "dataset_prepared": true,
   "teacher_collection_started": true,
-  "training_completed": false,
+  "training_completed": true,
   "evaluation_completed": false,
-  "next": "Verify stop48 -> fitH3/constant -> dev64 -> report/audit",
+  "next": "Verify paired192episodes -> archive -> qualified4B/9B report -> goal audit",
   "previous_multimodal_checkpoint_historical_only": {
     "phase": "native2_review_required",
     "run": "/content/local_fast/lsdrag-head-v14/results/native_distillation_12b_20261015",
@@ -186,7 +186,7 @@
   "speed_gate_passed": true,
   "target_speedup_vs_native": 1.5,
   "target_speedup_measured": false,
-  "run": "/content/local_fast/lsdrag-text-v1/results/qwen35_9b_stop48_20261024",
+  "run": "/content/local_fast/lsdrag-text-v1/results/qwen35_9b_h3_validation64_20261024",
   "worker_seconds": 277.1492917609994,
   "contract": "5b64658a2608f883599dbfb36be3758d4f28cc0de63c532ec11f76117a3cecce",
   "teacher_target": 32,
@@ -1260,6 +1260,16 @@
     "checkpoint_sha256": "ef9a0a8235c462c7d413b8d5fb0a4ddc8db7635db03f924fec9571578b6af292",
     "correction_states": 149,
     "changed_questions": 42,
+    "quality_evaluated": false
+  },
+  "qwen35_h3_fit": {
+    "complete": true,
+    "corrections": 48,
+    "changed_questions": 25,
+    "retention": 1364,
+    "h3_parameters": 129,
+    "constant_parameters": 1,
+    "base_frozen_verified": true,
     "quality_evaluated": false
   }
 }

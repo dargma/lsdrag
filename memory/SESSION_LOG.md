@@ -2077,3 +2077,13 @@ Coordinator121348 froze stop_spec.json and launched child164402, exactprocesscon
 ## 2026-10-24 — freshstop48 interim paired integrity passed
 
 Currentgoalturn verified53completedstates/106stop-continuebranches from12representedtrainquestions while164402and121348remainlive. CheckedFINAL/bestlegalcontinuepaircoverage, samepublicprefix, parentlegal/probs, firstaction, finite37x4096pack, officialF1/EM andrawsample/tokenIDaccounting.0errors. lab/reports/qwen35_9b_stop48_20261024/interim_integrity.json preserves106rawhashes andsnapshothash748582d955abbd7757ca0ba16eaf808bdf9c99ad0b3d272207f4923911e7ca7f. Partialintegrityonly, notterminalcoverage orH3quality. Noexecution/configurationchange. Nextwaitsamecollector thenterminalaudit/H3+constant/eval64 underexistingcoordinator.
+
+
+## 2026-10-24 — stop48 verified, H3/control trained, paireddev64 evaluation live
+
+Stopcollector164402 completed normally:48questions234states516parent/branch episodes1742.8794sec34637generated3672005input0errors. Fullterminalofficialscore/token/prefix/coverage/featureaudit passed, tensorSHA f31b1538c7cd6f0075df735beae896c0a86cc28fd7680b8bc3870a4d3b553cd8. ArchiveDrivebackups20261023/qwen35_9b_stop48_20261024.tar.gz SHA7f5204c7541cfd738308c24533aaef6eac7977ca61d58c74023526ef646b414a.
+
+H3andconstantfit complete, same48correctionstates across25trainquestions and1364retentionstates. H3learned129parameters; constant1. Actual savedbase tensors independentlycompared with originalbase.pt: allidentical inbothcheckpoints. NonFINALlogits identicalon234trainstates. Constantstopweights exactlyzero. Checkpoints results/qwen35_9b_h3_20261024/h3.pt SHA7baf9898b505c89ba9cb37d44931df353a89556fe1c2225913bad581e18b839e;constant.pt SHAcea1eae6d5172babfc514482870389612d50502f8e9ca7019b0815be05c07ce2. BothcheckpointandDrivearchivehashes reverified. FitarchiveSHA8f7362576d272467a8019eecb95881db71a91c68a6ea909bf79b387a207a06f5. Report lab/reports/qwen35_9b_h3_20261024/fit_verification.json. Traininghindsighttargets are overlappingweighted suffixsurrogates,NOTevaluationgains.
+
+Coordinator121348 froze evaluation_spec.json and launched actualevaluationPID178400. Run /content/local_fast/lsdrag-text-v1/results/qwen35_9b_h3_validation64_20261024/status.json; log /content/local_fast/lsdrag-text-v1/logs/qwen35_pipeline_evaluation_20261024.log. First2episodesconfirmedat32.20seconds. Same64questionsxbase/H3/constant,192total planned; noreserved80. Do notduplicate/restart. Nextwaitterminalrawverification/archive ->summarize_qwen35_h3.py ->reviewactualquality/control/4Bdirection ->pushandbackup ->requirementcompletionaudit. Goalnotcomplete; no9Bqualityclaimyet.
+

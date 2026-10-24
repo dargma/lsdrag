@@ -1,0 +1,8 @@
+{
+  "path": "/content/drive/MyDrive/lsdrag-backups/20261023/qwen35_9b_h3_20261024.tar.gz",
+  "sha256": "8f7362576d272467a8019eecb95881db71a91c68a6ea909bf79b387a207a06f5",
+  "bytes": 11868048,
+  "run": "/content/local_fast/lsdrag-text-v1/results/qwen35_9b_h3_20261024",
+  "phase": "complete",
+  "backbone_weights_included": false
+}
