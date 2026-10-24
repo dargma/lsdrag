@@ -1121,3 +1121,10 @@ Next coordinator_decision_constrained_evaluation.py: archive candidates then qua
 
 Actual coordinator349259/worker349266, state /content/local_fast/lsdrag-text-v1/results/decision_constrained_policy_coordinator_20261024.json; log /content/local_fast/lsdrag-text-v1/logs/value_heads_evaluate_decision_value_heads_1792821171.log. Command scripts/coordinate_decision_constrained_evaluation.py. Threeconditions×64; initial model loading. Candidate Drivearchive7,428,014bytes/SHAde4f45ab79b419fb1f94b63aeb7f9a3bf53266d8312d1cbb419036ca3e003779 verified by archiver. CPUfitting11.01seconds/no newLLMrollouts. Numeric goal not established.
 
+
+## 2026-10-24 — constrained evaluation failed joint goal; current-policy refresh prepared
+
+Report docs/JEV_CONSTRAINED_POLICY_RESULT_20261024.md. Budget70 F1.244643/gen79.3125/zero-tool30;budget55F1.033854/gen9.46875/zero-tool64 (collapse). Quality_start.324509/gen139.03125/zero-tool5 reproduced exactly64/64. BasicGRPOdelta budget70+1.9636pp/gen−19.403%;jointtargetfalse. Raw192totals and botharchives verified. Offline constraints did not guarantee actual quality; do not retune broad stale-cache sweeps.
+
+Next prepared bounded train48 refresh under frozen quality-leadingMLP, originaltrain192pool unchanged, first/lastnonforced states/alllegalactions×2,FP32,3600sec/816episodesmax;protocol docs/JEV_CURRENT_POLICY_REFRESH_20261024.md. No test access/worldmodel. Prelaunch inherited old source hash mismatch caught (decision_policy precisionfix), fresh current-source hashes frozen and all input hashes verified before launch; no GPUfailedrun. Goal ACTIVE.
+

@@ -1,0 +1,224 @@
+{
+  "policies": {
+    "quality_start": {
+      "f1": 0.3245088245088245,
+      "generated_tokens": 139.03125,
+      "prompt_tokens": 7671.84375,
+      "tool_calls": 3.40625,
+      "cost_units": 5.5949968750000005,
+      "retrieved_support_recall": 0.546875,
+      "all_support_retrieved": 0.359375,
+      "read_support_recall": 0.2421875,
+      "errors": 2
+    },
+    "budget70": {
+      "f1": 0.24464285714285716,
+      "generated_tokens": 79.3125,
+      "prompt_tokens": 5825.390625,
+      "tool_calls": 2.203125,
+      "cost_units": 3.5787890625,
+      "retrieved_support_recall": 0.3515625,
+      "all_support_retrieved": 0.234375,
+      "read_support_recall": 0.1015625,
+      "errors": 0
+    },
+    "budget55": {
+      "f1": 0.033854166666666664,
+      "generated_tokens": 9.46875,
+      "prompt_tokens": 804.953125,
+      "tool_calls": 0.0,
+      "cost_units": 0.1751828125,
+      "retrieved_support_recall": 0.0,
+      "all_support_retrieved": 0.0,
+      "read_support_recall": 0.0,
+      "errors": 0
+    }
+  },
+  "n": 64,
+  "split": "validation",
+  "counts": {
+    "episodes": 192,
+    "generated": 14580,
+    "inputs": 915340
+  },
+  "corpus_documents": 101962,
+  "original_question_retrieval": {
+    "support_recall_at5": 0.6171875,
+    "all_support_at5": 0.296875
+  },
+  "controlled_latency": false,
+  "note": "Policy provenance is defined by frozen spec checkpoint descriptors; do not infer training environment from evaluator reuse. Native-fast additional generation/prefill costs are counted, and dummy probabilities are removed.",
+  "baseline": "quality_start",
+  "comparisons_vs_baseline": {
+    "budget70": {
+      "f1": {
+        "delta": -0.07986596736596736,
+        "ci95": [
+          -0.16039481351981352,
+          -0.0034819347319347315
+        ]
+      },
+      "generated_tokens": {
+        "delta": -59.71875,
+        "ci95": [
+          -93.687890625,
+          -30.95234375000001
+        ]
+      },
+      "generated_ratio": {
+        "ratio": 0.5704652730950776,
+        "ci95": [
+          0.4108772539785054,
+          0.7513997527757348
+        ]
+      },
+      "prompt_tokens": {
+        "delta": -1846.453125,
+        "ci95": [
+          -3794.8359375,
+          161.84570312499974
+        ]
+      },
+      "tool_calls": {
+        "delta": -1.203125,
+        "ci95": [
+          -1.921875,
+          -0.5
+        ]
+      },
+      "cost_units": {
+        "delta": -2.0162078125000003,
+        "ci95": [
+          -3.179634375,
+          -0.8906864062500001
+        ]
+      },
+      "utility": {
+        "delta": -0.019379732990967367,
+        "ci95": [
+          -0.10471129044835373,
+          0.05783899095552885
+        ]
+      },
+      "joint_point_target": false,
+      "joint_directional_ci": false,
+      "joint_target_ci": false
+    },
+    "budget55": {
+      "f1": {
+        "delta": -0.2906546578421578,
+        "ci95": [
+          -0.3953946444180819,
+          -0.19027586996336995
+        ]
+      },
+      "generated_tokens": {
+        "delta": -129.5625,
+        "ci95": [
+          -158.672265625,
+          -105.60859375000001
+        ]
+      },
+      "generated_ratio": {
+        "ratio": 0.06810519217801753,
+        "ci95": [
+          0.05487584216996553,
+          0.08423325820392223
+        ]
+      },
+      "prompt_tokens": {
+        "delta": -6866.890625,
+        "ci95": [
+          -8446.06015625,
+          -5433.021875000001
+        ]
+      },
+      "tool_calls": {
+        "delta": -3.40625,
+        "ci95": [
+          -3.984375,
+          -2.859375
+        ]
+      },
+      "cost_units": {
+        "delta": -5.4198140625,
+        "ci95": [
+          -6.32504546875,
+          -4.576307734375001
+        ]
+      },
+      "utility": {
+        "delta": -0.12806023596715785,
+        "ci95": [
+          -0.23723534768005433,
+          -0.023933283062900677
+        ]
+      },
+      "joint_point_target": false,
+      "joint_directional_ci": false,
+      "joint_target_ci": false
+    }
+  },
+  "audit": {
+    "episodes": 192,
+    "unique_cells": 192,
+    "probability_and_cost_checks": true
+  },
+  "single_seed": true,
+  "target": {
+    "f1_delta": 0.05,
+    "generated_ratio": 0.7
+  },
+  "ci_scope": "Marginal95% paired question bootstrap conditional on frozen policies; not training-seed population uncertainty. No multiplicity adjustment. Joint CI flags mean both marginal bounds pass, not a simultaneous95% region.",
+  "comparisons_vs_strong_baselines": {},
+  "validation_subgroups": {
+    "previously_exposed": {
+      "n": 32,
+      "policies": {
+        "quality_start": {
+          "f1": 0.3284684065934066,
+          "generated_tokens": 129.90625,
+          "prompt_tokens": 7487.90625,
+          "tool_calls": 3.46875
+        },
+        "budget70": {
+          "f1": 0.2299107142857143,
+          "generated_tokens": 60.28125,
+          "prompt_tokens": 4032.03125,
+          "tool_calls": 1.625
+        },
+        "budget55": {
+          "f1": 0.03125,
+          "generated_tokens": 9.28125,
+          "prompt_tokens": 804.84375,
+          "tool_calls": 0.0
+        }
+      },
+      "note": "Descriptive subgroup means, no candidate selection on final test."
+    },
+    "new_validation": {
+      "n": 32,
+      "policies": {
+        "quality_start": {
+          "f1": 0.32054924242424243,
+          "generated_tokens": 148.15625,
+          "prompt_tokens": 7855.78125,
+          "tool_calls": 3.34375
+        },
+        "budget70": {
+          "f1": 0.259375,
+          "generated_tokens": 98.34375,
+          "prompt_tokens": 7618.75,
+          "tool_calls": 2.78125
+        },
+        "budget55": {
+          "f1": 0.03645833333333333,
+          "generated_tokens": 9.65625,
+          "prompt_tokens": 805.0625,
+          "tool_calls": 0.0
+        }
+      },
+      "note": "Descriptive subgroup means, no candidate selection on final test."
+    }
+  }
+}
