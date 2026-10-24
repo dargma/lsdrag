@@ -1,0 +1,115 @@
+{
+  "status": {
+    "phase": "complete",
+    "pid": null,
+    "seconds": 42.768821506004315
+  },
+  "audits": {
+    "depth": {
+      "initial_logits_exact": true,
+      "normalization_fixed": true,
+      "base_tensors_exact": true,
+      "reference_kl": 0.06374229490756989,
+      "trainable_parameters": 16576,
+      "parameters": 1000260,
+      "context_sensitivity": 2.1865627765655518,
+      "curve": [
+        {
+          "epoch": 0,
+          "loss": -0.004978305660188198
+        },
+        {
+          "epoch": 20,
+          "loss": -0.007298063021153212
+        },
+        {
+          "epoch": 40,
+          "loss": -0.01021482888609171
+        },
+        {
+          "epoch": 60,
+          "loss": -0.013124607503414154
+        },
+        {
+          "epoch": 80,
+          "loss": -0.01554092951118946
+        },
+        {
+          "epoch": 99,
+          "loss": -0.01738077774643898
+        }
+      ]
+    },
+    "question_attention": {
+      "initial_logits_exact": true,
+      "normalization_fixed": true,
+      "base_tensors_exact": true,
+      "reference_kl": 0.07279833406209946,
+      "trainable_parameters": 252128,
+      "parameters": 1235812,
+      "context_sensitivity": 1.9743164777755737,
+      "curve": [
+        {
+          "epoch": 0,
+          "loss": -0.004978305660188198
+        },
+        {
+          "epoch": 20,
+          "loss": -0.0064337230287492275
+        },
+        {
+          "epoch": 40,
+          "loss": -0.009355955757200718
+        },
+        {
+          "epoch": 60,
+          "loss": -0.011280839331448078
+        },
+        {
+          "epoch": 80,
+          "loss": -0.014255424961447716
+        },
+        {
+          "epoch": 99,
+          "loss": -0.017398308962583542
+        }
+      ]
+    },
+    "action_attention": {
+      "initial_logits_exact": true,
+      "normalization_fixed": true,
+      "base_tensors_exact": true,
+      "reference_kl": 0.14198929071426392,
+      "trainable_parameters": 252160,
+      "parameters": 1235844,
+      "context_sensitivity": 2.142449378967285,
+      "curve": [
+        {
+          "epoch": 0,
+          "loss": -0.004978305660188198
+        },
+        {
+          "epoch": 20,
+          "loss": -0.005596912000328302
+        },
+        {
+          "epoch": 40,
+          "loss": -0.009265671484172344
+        },
+        {
+          "epoch": 60,
+          "loss": -0.012563441880047321
+        },
+        {
+          "epoch": 80,
+          "loss": -0.015019351616501808
+        },
+        {
+          "epoch": 99,
+          "loss": -0.01750742271542549
+        }
+      ]
+    }
+  },
+  "independently_reloaded_base_exact": true
+}

@@ -1,4 +1,8 @@
 
+## 2026-10-24 — frozen-base isolation fitting started
+
+Protocol docs/JEV_FROZEN_ADAPTER_PROTOCOL_20261024.md andhashedplan frozenbeforefit. CPUworker385554 fittingfreshdepth/questionattention/actionattention residuals onimmutable d987; noPPOGRPO, same377states/100updates/objective/seed aspriorfulltrain. Initialexactlogits/finalexactbase asserted. Freezingbase doesnotguarantee decisionretention becauseadapter canoverridelogits. Runtime results/decision_frozen_adapters_20261024. Nextverifycompletion/spec then4×64paireddev; originalnativeprotocol/final80/reserved80 preserved. GoalACTIVE.
+
 ## 2026-10-24 — nine-policy evaluation complete; structure continuation fails
 
 576episodes/626.24sec/33679generated/1792143input; coordinator terminalcomplete, worker absent. d987reference25.18/76.75 exactlyreproduces64. Control16.55/50.36;depth16.55/58.61;gate16.55/58.94;depthgate16.55/59.64;observation16.55/58.98;questionattention18.37/51.48;actionattention17.72/62.91;actionset16.55/48.56. Zero-tool18reference→35–38. Bettertrainingloss didnottranslate; allfailjointtarget. Report docs/JEV_STRUCTURE_ATTENTION_RESULT_20261024.md, verification.json checksrawtotals/referenceparity/DrivearchiveSHA. GoalACTIVE. Nextboundedpriority freezeexistingd987base andlearnaddedpaths only(depth/questionattention/actionattention), sameobjective toisolatedestructivebaseupdates; freezeprotocolbeforefit. Noactiveworker/newrunyet.
