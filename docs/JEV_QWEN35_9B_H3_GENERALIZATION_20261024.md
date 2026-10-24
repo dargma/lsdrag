@@ -34,3 +34,13 @@ Initial two smokes failed because token3307 jointly closes argument and outer to
 ## Bounded comparisons
 
 Fresh9Bbase policy versus its H3 correction is primary; state-independent stop bias trained/calibrated only on train is the mechanism control. Report historical4BH1→H3 direction alongside9Bbase→H3, explicitly accounting for base preparation differences. Evaluate all on frozen development64 once, without dev tuning. Prefer this single mechanistic comparison over multiple architecture/ablation variants.
+
+## Frozen sequential implementation
+
+Coordinator scripts/continue_qwen35_h3.py waits for the confirmed teacher PID and requires completed artifacts, then executes a finite pipeline. Source snapshot is pipeline_sources.json. Each dependent stage spec is written once with the actual checkpoint hash before GPU execution. GPU phases check >=40GiB free; other jobs are never terminated. Failed source, coverage, verification, optimization or subprocess stops the coordinator; no automatic retries or hyperparameter variants.
+
+Fresh bootstrap: train192,4096x3 inputs ->128tanh ->4 actions,100AdamW3e-4,seed20261051,.05label smoothing, min5questions/action. Base outcome stage uses ALL nonforced prefixes from fresh bootstrap rollins on the exact historicalH3train48, each legal first action then bootstrap continuation. A single quality-first preference fit requires F1/EM nondecrease and either F1gain or cheaper positive-F1 output;100AdamW1e-4,seed20261066,.5reference-target blend plus equal-group teacher/fresh retention. This is fresh9Bbase preparation, not an identical replay of historical4BH1search.
+
+Stop stage makes fresh rollins with that new9Bbase and evaluates FINAL versus best legal continuation at ALL controllable prefixes on the same48. Original budget_targets and original129parameter H3 fitting rules apply; same targets/retention train a bias-only control with one parameter. Both require >=3changed training questions; otherwise report coverage/feasibility failure without retuning. Source tensor, official scores, prefix identity, state dimensions, sample coverage and rawtoken sums are verified before fitting.
+
+Evaluation: one common-protocol base/H3/constant paired64 run (192episodes), no dev selection. Verify officialF1/EM, frozen sources/checkpoints/splits, exact tokenIDs counts including wrapper-crossing tokens, same-prefix first divergences involving FINAL, correctness-separated costs and pairedgroups. Generation byte/character counts use actual emitted tokenIDs, excluding forced input prefixes. SharedGPU time is descriptive. Archive every completed stage, synthesize4B/9Btrend with stated confounds, then audit objective completion; pipeline terminalstatus alone is not a goal-completion claim.
