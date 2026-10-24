@@ -1873,3 +1873,27 @@ Paired fulltrain120 evaluator68969 confirmedlive; coordinator67692/session17510 
 ## 2026-10-24 — user asks status and ideas during train120
 
 Answered without interrupting active evaluator68969: fit passes but QA quality pending. Proposed next hypotheses (not launched): (1) add exploration-progress representation using current/previous hidden-state change plus new-read/duplicate-retrieval signals; learn from terminal quality/cost, not novelty reward alone; (2) bounded two-action combinations such as search→read, previously deferred; (3) retain H3 on weakly supported changes, distinguishing uncertainty from known-state constraints. Prefer one progress-representation hypothesis only if current coverage experiment fails to transfer. No extra LLM calls assumed for reusing already computed state/trajectory signals; exact runtime overhead and protocol still unverified. Current120experiment and originaljointgoal remain unchanged. Latestactualcheck160/240episodes,evaluator/coordinatorbothlive.
+
+
+## 2026-10-24T12:35:31.792869+00:00 — coverage120 pipeline running
+
+{"phase": "running", "pid": 67692, "updated_utc": "2026-10-24T12:35:31.792869+00:00", "script": "scripts/reporting/verify_constrained_stop120_train.py", "child_pid": 71097, "log": "/content/local_fast/lsdrag-text-v1/logs/coverage120_verify_constrained_stop120_train_1792845331.log"}
+
+Goal ACTIVE; reserved80 protected; no automatic development launch.
+
+
+
+## 2026-10-24T12:35:32.411262+00:00 — coverage120 pipeline running
+
+{"phase": "running", "pid": 67692, "updated_utc": "2026-10-24T12:35:32.411262+00:00", "script": "scripts/reporting/archive_decision_run.py", "child_pid": 71102, "log": "/content/local_fast/lsdrag-text-v1/logs/coverage120_archive_decision_run_1792845332.log"}
+
+Goal ACTIVE; reserved80 protected; no automatic development launch.
+
+
+
+## 2026-10-24T12:35:32.578635+00:00 — coverage120 pipeline complete
+
+{"phase": "complete", "pid": null, "updated_utc": "2026-10-24T12:35:32.578635+00:00", "train_gate": true, "report": "/content/local_fast/lsdrag-code/lab/reports/decision_constrained_stop120_train_eval_20261024/verification.json"}
+
+Goal ACTIVE; reserved80 protected; no automatic development launch.
+

@@ -1,3 +1,21 @@
+## 2026-10-24T12:35:32.578635+00:00 — coverage120 pipeline complete
+
+{"phase": "complete", "pid": null, "updated_utc": "2026-10-24T12:35:32.578635+00:00", "train_gate": true, "report": "/content/local_fast/lsdrag-code/lab/reports/decision_constrained_stop120_train_eval_20261024/verification.json"}
+
+Goal ACTIVE; reserved80 protected; no automatic development launch.
+
+## 2026-10-24T12:35:32.411262+00:00 — coverage120 pipeline running
+
+{"phase": "running", "pid": 67692, "updated_utc": "2026-10-24T12:35:32.411262+00:00", "script": "scripts/reporting/archive_decision_run.py", "child_pid": 71102, "log": "/content/local_fast/lsdrag-text-v1/logs/coverage120_archive_decision_run_1792845332.log"}
+
+Goal ACTIVE; reserved80 protected; no automatic development launch.
+
+## 2026-10-24T12:35:31.792869+00:00 — coverage120 pipeline running
+
+{"phase": "running", "pid": 67692, "updated_utc": "2026-10-24T12:35:31.792869+00:00", "script": "scripts/reporting/verify_constrained_stop120_train.py", "child_pid": 71097, "log": "/content/local_fast/lsdrag-text-v1/logs/coverage120_verify_constrained_stop120_train_1792845331.log"}
+
+Goal ACTIVE; reserved80 protected; no automatic development launch.
+
 ## 2026-10-24 — coverage48 audited; constrained120 fit passes; full train120 live
 
 Previous turn made progress via guardedpipeline preparation and verifiedlive wait. Newcollection complete420.487sec:48questions138states324episodes20815generated1680911input0errors. Independent verifier checked binarycoverage, fulllegalmask, exactprefixes, officialF1/EM, H3suffix/answerreplay, input/source hashes andDrivebytes. Tensor9ce43382940e15820f60951ee302faa3114b598d597416f4fe9c92be4b0b9607;archive5bb5f35ca46ad4f9c65c04c9eb26eaa03cda94b231c3e30d61d387bd578a2eae. Collector66441 terminal. Collectioncost correct91episodes7705tokens,incorrect233/13110; overlappingrollouts,notpolicyperformance.

@@ -1242,12 +1242,11 @@
     "new_reader_qa": false
   },
   "coverage120_pipeline": {
-    "phase": "running",
-    "pid": 67692,
-    "updated_utc": "2026-10-24T12:29:47.626328+00:00",
-    "script": "scripts/evaluate_decision_stop_value_h2.py",
-    "child_pid": 68969,
-    "log": "/content/local_fast/lsdrag-text-v1/logs/coverage120_evaluate_decision_stop_value_h2_1792844987.log"
+    "phase": "complete",
+    "pid": null,
+    "updated_utc": "2026-10-24T12:35:32.578635+00:00",
+    "train_gate": true,
+    "report": "/content/local_fast/lsdrag-code/lab/reports/decision_constrained_stop120_train_eval_20261024/verification.json"
   },
   "coverage120_pipeline_status_path": "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop120_pipeline_20261024.json"
 }
