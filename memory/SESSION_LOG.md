@@ -1771,3 +1771,11 @@ Previous turn completed negative fulltrain evidence: progress. Protocol JEV_CONS
 
 Paired train72 evaluator63102 confirmedlive,execsession87590. Log /content/local_fast/lsdrag-text-v1/logs/constrained_stop72_train_eval_20261024.log; status /content/local_fast/lsdrag-text-v1/results/decision_constrained_stop72_train_eval_20261024/status.json. Next terminal verification scripts/reporting/verify_constrained_stop72_train.py, archive. Frozen gate same as safe_stop:quality/EMnondecrease,costnonincrease,strictgain,usefulcorrectgroup saving,no lostcorrect question. Onlythen dev64. GoalACTIVE,reserved80protected; continue until userstop.
 
+
+
+## 2026-10-24 — constrained train72 passes; fixed development64 live
+
+Fullpairedtrain144episodes204.426sec/9395generated/513911input/0errors. OfficialF1/EM/rawtokens/reference72replay/source/checkpoints/splitverified. H3F1.41482584/gen65.75/correct22 vs constrained.48757716/64.73611/correct28. No lostcorrect,6newcorrect. Jointlycorrect22 saves188tokens;newcorrect6 uses137extra;bothincorrect44 saves22. Overall73saved. Candidatecorrect28 mean79/total2212,incorrect44 mean55.659/2449;partial11 mean73.455. Frozen train gate PASSES; notgeneralization. Archive3bcd77ad291f8346d91037ccbb368229104ba2abab9e9daf5c074bac0c4d41ac. Trainworker63102 terminal.
+
+Samecandidate90ead6c9 frozen nochange; development64 evaluator64613/session25199 confirmedlive. Spec lab/registry/decision_constrained_stop72_20261024/validation_spec.json committed634e16a beforelaunch. Log /content/local_fast/lsdrag-text-v1/logs/constrained_stop72_validation64_20261024.log; status correspondingresults/status.json. Next terminalverification scripts/reporting/verify_constrained_stop64.py compares fixedGRPO/H3 rawanswers and correctnesscost. Repeatedlyexposeddevelopment,independentconfirmationnotdone,reserved80protected. GoalACTIVE; nodevretune.
+
