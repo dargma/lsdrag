@@ -1399,3 +1399,7 @@ Whilecorrected48bcollector399521 remainslive, scripts/reporting/diagnose_trainin
 ## 2026-10-24 — cost-priority paired evaluation live
 
 Coordinator404892/worker404899verifiedlive. State /content/local_fast/lsdrag-text-v1/results/decision_cost_priority_coordinator_20261024.json;log /content/local_fast/lsdrag-text-v1/logs/value_heads_evaluate_decision_attention_1792832376.log. Run decision_cost_priority_validation64_20261024,2×64. Same-runselected_reference denotes26.41MLP here; d987 remainscachedselected_before. Fitarchiveverifiedbycoordinator. GoalACTIVE,quality/costimprovementunknown.
+
+## 2026-10-24 — cost-priority result modest joint improvement, mechanism caveat
+
+Costpriority26.74/75.45 vsanchor26.41/81.55;+.33ppCI[-4.35,+5.02],gen−7.47%. Fixedbasic+4.24pp/gen−23.32%,goalnotmet. Reference64exact/rawcounts/DriveSHAverified. Crucialtrajectoryaudit:4newzero-toolquestionssave403tokens,allF1=0beforeANDafter;other60net+13tokens/F1sum+.214286. Savingsnotdemonstratedefficientcorrectanswerpaths;future-valuepolicyclaimunproven. Report docs/JEV_COST_PRIORITY_RESULT_20261024.md. Noactiveworker. Nextquality-improvingcoverage amongremaining96trainqids,notuniversalstopreward. GoalACTIVE,reserved80protected.

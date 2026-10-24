@@ -1,0 +1,8 @@
+{
+  "path": "/content/drive/MyDrive/lsdrag-backups/20261023/decision_cost_priority_validation64_20261024.tar.gz",
+  "sha256": "238421a3a671e1c24312b6bd545e123b5c4549cf68e2c4c145b48aa4f357e37c",
+  "bytes": 238684,
+  "run": "/content/local_fast/lsdrag-text-v1/results/decision_cost_priority_validation64_20261024",
+  "phase": "complete",
+  "backbone_weights_included": false
+}

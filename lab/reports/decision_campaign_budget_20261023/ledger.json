@@ -20,7 +20,7 @@
     "new_llm_rollouts": 0,
     "reuses": "decision_shared_outcomes192_20261023 and decision_shared_teacher192_20261023"
   },
-  "snapshot_utc": "2026-10-24T08:38:40.978876+00:00",
+  "snapshot_utc": "2026-10-24T09:05:08.780160+00:00",
   "runs": [
     {
       "group": "historical_grpo_reference",
@@ -525,6 +525,34 @@
       "complete_raw_totals_verified": true,
       "terminal_raw_totals_verified": true,
       "status_path": "/content/local_fast/lsdrag-text-v1/results/decision_anchor_corrections_validation64_20261024/status.json"
+    },
+    {
+      "group": "offline_structure_and_reward",
+      "run": "decision_quality_corrected_refresh48b_20261024",
+      "phase": "complete",
+      "counts": {
+        "episodes": 648,
+        "generated": 53259,
+        "inputs": 3053575
+      },
+      "seconds": 974.9441907189903,
+      "complete_raw_totals_verified": true,
+      "terminal_raw_totals_verified": true,
+      "status_path": "/content/local_fast/lsdrag-text-v1/results/decision_quality_corrected_refresh48b_20261024/status.json"
+    },
+    {
+      "group": "offline_structure_and_reward",
+      "run": "decision_cost_priority_validation64_20261024",
+      "phase": "complete",
+      "counts": {
+        "episodes": 128,
+        "generated": 10048,
+        "inputs": 493746
+      },
+      "seconds": 197.33093162199657,
+      "complete_raw_totals_verified": true,
+      "terminal_raw_totals_verified": true,
+      "status_path": "/content/local_fast/lsdrag-text-v1/results/decision_cost_priority_validation64_20261024/status.json"
     }
   ],
   "completed_totals": {
@@ -623,9 +651,9 @@
       "uncompleted_runs": []
     },
     "offline_structure_and_reward": {
-      "episodes": 2144,
-      "generated": 160509,
-      "inputs": 8851716,
+      "episodes": 2920,
+      "generated": 223816,
+      "inputs": 12399037,
       "failed_run_costs": {
         "episodes": 0,
         "generated": 0,
@@ -637,7 +665,7 @@
         "generated": 299,
         "inputs": 16965
       },
-      "completed_runs": 6,
+      "completed_runs": 8,
       "uncompleted_runs": [
         "decision_structure_four_validation64_20261024"
       ]

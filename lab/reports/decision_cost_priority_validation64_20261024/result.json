@@ -1,0 +1,147 @@
+{
+  "policies": {
+    "selected_reference": {
+      "f1": 0.26406926406926406,
+      "generated_tokens": 81.546875,
+      "prompt_tokens": 4038.609375,
+      "tool_calls": 1.9375,
+      "cost_units": 3.1568296875,
+      "retrieved_support_recall": 0.4296875,
+      "all_support_retrieved": 0.234375,
+      "read_support_recall": 0.1171875,
+      "errors": 0
+    },
+    "cost_priority": {
+      "f1": 0.26741747835497837,
+      "generated_tokens": 75.453125,
+      "prompt_tokens": 3676.171875,
+      "tool_calls": 1.6875,
+      "cost_units": 2.8096484375,
+      "retrieved_support_recall": 0.421875,
+      "all_support_retrieved": 0.21875,
+      "read_support_recall": 0.1484375,
+      "errors": 0
+    }
+  },
+  "n": 64,
+  "split": "validation",
+  "counts": {
+    "episodes": 128,
+    "generated": 10048,
+    "inputs": 493746
+  },
+  "corpus_documents": 101962,
+  "original_question_retrieval": {
+    "support_recall_at5": 0.6171875,
+    "all_support_at5": 0.296875
+  },
+  "controlled_latency": false,
+  "note": "Policy provenance is defined by frozen spec checkpoint descriptors; do not infer training environment from evaluator reuse. Native-fast additional generation/prefill costs are counted, and dummy probabilities are removed.",
+  "baseline": "selected_reference",
+  "comparisons_vs_baseline": {
+    "cost_priority": {
+      "f1": {
+        "delta": 0.0033482142857142842,
+        "ci95": [
+          -0.04352678571428571,
+          0.05022321428571429
+        ]
+      },
+      "generated_tokens": {
+        "delta": -6.09375,
+        "ci95": [
+          -14.65625,
+          1.609375
+        ]
+      },
+      "generated_ratio": {
+        "ratio": 0.9252730408124161,
+        "ci95": [
+          0.8244254980687816,
+          1.0206847665081789
+        ]
+      },
+      "prompt_tokens": {
+        "delta": -362.4375,
+        "ci95": [
+          -832.6515625,
+          82.7566406249999
+        ]
+      },
+      "tool_calls": {
+        "delta": -0.25,
+        "ci95": [
+          -0.5,
+          -0.03125
+        ]
+      },
+      "cost_units": {
+        "delta": -0.34718124999999994,
+        "ci95": [
+          -0.700526796875,
+          -0.02651480468750042
+        ]
+      },
+      "utility": {
+        "delta": 0.013763651785714285,
+        "ci95": [
+          -0.03438310987723216,
+          0.061906486272321426
+        ]
+      },
+      "joint_point_target": false,
+      "joint_directional_ci": false,
+      "joint_target_ci": false
+    }
+  },
+  "audit": {
+    "episodes": 128,
+    "unique_cells": 128,
+    "probability_and_cost_checks": true
+  },
+  "single_seed": true,
+  "target": {
+    "f1_delta": 0.05,
+    "generated_ratio": 0.7
+  },
+  "ci_scope": "Marginal95% paired question bootstrap conditional on frozen policies; not training-seed population uncertainty. No multiplicity adjustment. Joint CI flags mean both marginal bounds pass, not a simultaneous95% region.",
+  "comparisons_vs_strong_baselines": {},
+  "validation_subgroups": {
+    "previously_exposed": {
+      "n": 32,
+      "policies": {
+        "selected_reference": {
+          "f1": 0.2611607142857143,
+          "generated_tokens": 71.0625,
+          "prompt_tokens": 3959.9375,
+          "tool_calls": 2.0
+        },
+        "cost_priority": {
+          "f1": 0.2611607142857143,
+          "generated_tokens": 69.9375,
+          "prompt_tokens": 3488.71875,
+          "tool_calls": 1.65625
+        }
+      },
+      "note": "Descriptive subgroup means, no candidate selection on final test."
+    },
+    "new_validation": {
+      "n": 32,
+      "policies": {
+        "selected_reference": {
+          "f1": 0.26697781385281383,
+          "generated_tokens": 92.03125,
+          "prompt_tokens": 4117.28125,
+          "tool_calls": 1.875
+        },
+        "cost_priority": {
+          "f1": 0.27367424242424243,
+          "generated_tokens": 80.96875,
+          "prompt_tokens": 3863.625,
+          "tool_calls": 1.71875
+        }
+      },
+      "note": "Descriptive subgroup means, no candidate selection on final test."
+    }
+  }
+}
