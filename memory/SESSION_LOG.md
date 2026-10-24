@@ -1003,3 +1003,8 @@ r1 train1536episodes/4530decisions/4514학습states/568updates/2284.57초 완료
 
 
 Selected-GRPO final code/report backup f7d54cc3 verified: /content/drive/MyDrive/lsdrag-backups/20261023/code_selected_grpo_f7d54cc3.tar.gz; SHA16b5c75b7f858a14a98960ce8c107bd19cbc56bec3e2744d6e6737d1a3d3b75c. Failed/train/eval raw archives separately verified; numeric target still not met.
+
+## 2026-10-24 — zero-quality group gate approved
+
+User ok authorizes one bounded comparison: docs/JEV_SELECTED_HEAD_ZERO_GATE_20261024.md. New namespace zero_gate; start pre-GRPO selected head. Eleven CPU tests passed; training not yet launched. Prior completed r1 preserved; final80/reserved80 protected.
+

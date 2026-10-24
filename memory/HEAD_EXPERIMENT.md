@@ -1,3 +1,7 @@
+## 2026-10-24 — zero-quality group gate approved
+
+User ok authorizes one bounded comparison: docs/JEV_SELECTED_HEAD_ZERO_GATE_20261024.md. New namespace zero_gate; start pre-GRPO selected head. Eleven CPU tests passed; training not yet launched. Prior completed r1 preserved; final80/reserved80 protected.
+
 ## 2026-10-24 — 선정 head GRPO 복구·추가학습·검증64 완료
 
 r1 train1536episodes/4530decisions/4514학습states/568updates/2284.57초 완료. 두GPU replay최대9.54e-7,기존atol/rtol2e-4유지;fullaudit통과. 최종cpSHA6f9e7bbf0f9cb1e158ec38574f8059c93880cb34e00023ae74b5d3b93e43774c. 동일선정head net전체연속학습,LLM/정규화고정. 오류1/forcedFINAL16보존. failed768/gen61608/input3416046 별도보존 및 비용포함. r1train gen119793/input6566548,eval128 gen8316/input502063. 관련3개archive SHA재검증,모든worker종료.
