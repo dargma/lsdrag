@@ -1,3 +1,7 @@
+## 2026-10-24 — current-policy refresh live
+
+Coordinator351564/collector351577 verified; state /content/local_fast/lsdrag-text-v1/results/decision_current_policy_refresh_coordinator_20261024.json; log /content/local_fast/lsdrag-text-v1/logs/refresh48_run_decision_current_policy_refresh_1792821647.log. Model loading at verification. Frozen48subset of unchangedtrain192; publicsamecorpus; quality-leadingpolicy suffixes. Goal ACTIVE.
+
 ## 2026-10-24 — constrained evaluation failed joint goal; current-policy refresh prepared
 
 Report docs/JEV_CONSTRAINED_POLICY_RESULT_20261024.md. Budget70 F1.244643/gen79.3125/zero-tool30;budget55F1.033854/gen9.46875/zero-tool64 (collapse). Quality_start.324509/gen139.03125/zero-tool5 reproduced exactly64/64. BasicGRPOdelta budget70+1.9636pp/gen−19.403%;jointtargetfalse. Raw192totals and botharchives verified. Offline constraints did not guarantee actual quality; do not retune broad stale-cache sweeps.

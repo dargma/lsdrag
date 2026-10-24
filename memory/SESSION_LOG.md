@@ -1128,3 +1128,8 @@ Report docs/JEV_CONSTRAINED_POLICY_RESULT_20261024.md. Budget70 F1.244643/gen79.
 
 Next prepared bounded train48 refresh under frozen quality-leadingMLP, originaltrain192pool unchanged, first/lastnonforced states/alllegalactions×2,FP32,3600sec/816episodesmax;protocol docs/JEV_CURRENT_POLICY_REFRESH_20261024.md. No test access/worldmodel. Prelaunch inherited old source hash mismatch caught (decision_policy precisionfix), fresh current-source hashes frozen and all input hashes verified before launch; no GPUfailedrun. Goal ACTIVE.
 
+
+## 2026-10-24 — current-policy refresh live
+
+Coordinator351564/collector351577 verified; state /content/local_fast/lsdrag-text-v1/results/decision_current_policy_refresh_coordinator_20261024.json; log /content/local_fast/lsdrag-text-v1/logs/refresh48_run_decision_current_policy_refresh_1792821647.log. Model loading at verification. Frozen48subset of unchangedtrain192; publicsamecorpus; quality-leadingpolicy suffixes. Goal ACTIVE.
+

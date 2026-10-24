@@ -20,7 +20,7 @@
     "new_llm_rollouts": 0,
     "reuses": "decision_shared_outcomes192_20261023 and decision_shared_teacher192_20261023"
   },
-  "snapshot_utc": "2026-10-24T05:53:15.615541+00:00",
+  "snapshot_utc": "2026-10-24T06:01:22.654876+00:00",
   "runs": [
     {
       "group": "historical_grpo_reference",
@@ -347,16 +347,30 @@
     {
       "group": "adaptive_policy_followup",
       "run": "decision_constrained_policy_validation64_20261024",
-      "phase": "evaluation",
+      "phase": "complete",
       "counts": {
-        "episodes": 9,
-        "generated": 509,
-        "inputs": 32391
+        "episodes": 192,
+        "generated": 14580,
+        "inputs": 915340
       },
-      "seconds": 22.14299693099747,
+      "seconds": 291.3165598499909,
+      "complete_raw_totals_verified": true,
+      "terminal_raw_totals_verified": true,
+      "status_path": "/content/local_fast/lsdrag-text-v1/results/decision_constrained_policy_validation64_20261024/status.json"
+    },
+    {
+      "group": "adaptive_policy_followup",
+      "run": "decision_current_policy_refresh48_20261024",
+      "phase": "collection",
+      "counts": {
+        "episodes": 7,
+        "generated": 1073,
+        "inputs": 25478
+      },
+      "seconds": 30.213018919996102,
       "complete_raw_totals_verified": false,
       "terminal_raw_totals_verified": false,
-      "status_path": "/content/local_fast/lsdrag-text-v1/results/decision_constrained_policy_validation64_20261024/status.json"
+      "status_path": "/content/local_fast/lsdrag-text-v1/results/decision_current_policy_refresh48_20261024/status.json"
     }
   ],
   "completed_totals": {
@@ -417,18 +431,18 @@
       ]
     },
     "adaptive_policy_followup": {
-      "episodes": 1984,
-      "generated": 178605,
-      "inputs": 10074041,
+      "episodes": 2176,
+      "generated": 193185,
+      "inputs": 10989381,
       "failed_run_costs": {
         "episodes": 0,
         "generated": 0,
         "inputs": 0
       },
       "failed_runs": [],
-      "completed_runs": 3,
+      "completed_runs": 4,
       "uncompleted_runs": [
-        "decision_constrained_policy_validation64_20261024"
+        "decision_current_policy_refresh48_20261024"
       ]
     }
   },

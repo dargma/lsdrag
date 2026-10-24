@@ -1,7 +1,7 @@
 {
-  "phase": "constrained_policy_validation_running",
+  "phase": "current_policy_refresh_running",
   "updated_utc": "2026-10-24T05:33:44.127736+00:00",
-  "protocol": "docs/JEV_CONSTRAINED_POLICY_20261024.md",
+  "protocol": "docs/JEV_CURRENT_POLICY_REFRESH_20261024.md",
   "protocol_sha256": "58a215a03d96c3738558738d6e7305f2e5f8e8f37c5994cc27cb6e33f30df3a2",
   "prompt": "prompts/text_rag_integrated_v5.txt",
   "prompt_sha256": "9d66c290a97bbabb4289dcf262e2b5bc8ba05653f87aed3b693825dbb02d5a97",
@@ -32,13 +32,13 @@
   ],
   "worker_wall_budget_minutes": 120,
   "run_planned": "/content/local_fast/lsdrag-text-v1/results/decision_shared_test80_20261023",
-  "pid": 349266,
+  "pid": 351577,
   "implementation_completed": true,
   "dataset_prepared": true,
   "teacher_collection_started": true,
   "training_completed": true,
   "evaluation_completed": true,
-  "next": "Complete three-condition validation; compare actual quality/tokens and audit/archive. Goal remains active.",
+  "next": "Complete and audit current-policy training branches, then freeze update protocol; goal active.",
   "previous_multimodal_checkpoint_historical_only": {
     "phase": "native2_review_required",
     "run": "/content/local_fast/lsdrag-head-v14/results/native_distillation_12b_20261015",
@@ -509,7 +509,7 @@
   "execution_hold": {
     "active": false,
     "scope": "User-authorized bounded decision-policy pilot2; does not authorize arbitrary expansion",
-    "superseded_by": "2026-10-23 user 그래 시작해 and explicit experiment continuation"
+    "superseded_by": "2026-10-23 user \uadf8\ub798 \uc2dc\uc791\ud574 and explicit experiment continuation"
   },
   "research_review": {
     "phase": "astra_deep_research_complete",
@@ -597,7 +597,7 @@
   "execution_hold_history": [
     {
       "active": true,
-      "user_instruction": "일단 여기까지만; 잘 저장하고 보고서도 작성 git 반영",
+      "user_instruction": "\uc77c\ub2e8 \uc5ec\uae30\uae4c\uc9c0\ub9cc; \uc798 \uc800\uc7a5\ud558\uace0 \ubcf4\uace0\uc11c\ub3c4 \uc791\uc131 git \ubc18\uc601",
       "gpu_experiments_authorized_now": false
     }
   ],
@@ -1002,5 +1002,13 @@
     "seconds": 296.4031952469959,
     "report": "lab/reports/decision_constrained_policy_validation64_20261024/report.md",
     "goal_achieved": false
+  },
+  "current_policy_refresh": {
+    "phase": "running",
+    "pid": 351564,
+    "seconds": 0.00043886000639759004,
+    "child_pid": 351577,
+    "script": "scripts/run_decision_current_policy_refresh.py",
+    "log": "/content/local_fast/lsdrag-text-v1/logs/refresh48_run_decision_current_policy_refresh_1792821647.log"
   }
 }
