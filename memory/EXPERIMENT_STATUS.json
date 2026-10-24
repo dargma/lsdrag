@@ -1,6 +1,6 @@
 {
-  "phase": "shared_final80_selected_not_started",
-  "updated_utc": "2026-10-24T01:44:42.598693+00:00",
+  "phase": "shared_final80_evaluation",
+  "updated_utc": "2026-10-24T01:45:01.507514+00:00",
   "protocol": "docs/JEV_DECISION_SHARED_CORPUS_RESTART_20261023.md",
   "protocol_sha256": "d1a052da4a5a057b4d173e3c381c66ea876186d2c78f6158ff8dea6c0fac1669",
   "prompt": "prompts/text_rag_integrated_v5.txt",
@@ -32,13 +32,13 @@
   ],
   "worker_wall_budget_minutes": 120,
   "run_planned": "/content/local_fast/lsdrag-text-v1/results/decision_shared_test80_20261023",
-  "pid": null,
+  "pid": 281957,
   "implementation_completed": true,
   "dataset_prepared": true,
   "teacher_collection_started": true,
   "training_completed": true,
   "evaluation_completed": false,
-  "next": "Run frozen final80x4; no candidate retuning; audit/archive/report.",
+  "next": "Complete frozen final80x4; audit/report/archive/budget ledger. No retuning.",
   "previous_multimodal_checkpoint_historical_only": {
     "phase": "native2_review_required",
     "run": "/content/local_fast/lsdrag-head-v14/results/native_distillation_12b_20261015",
@@ -174,7 +174,7 @@
   "external_evaluation_completed": true,
   "updated_epoch": 1792161920.7440126,
   "d3_additional_analysis": "withdrawn",
-  "session_id": null,
+  "session_id": 12090,
   "functional_smoke": {
     "passed": true,
     "checks": 7,
@@ -885,7 +885,7 @@
   "status_scope": "Current shared-corpus campaign; training_completed refers to all planned candidate training, evaluation_completed to final heldout80. Historical nested profiles and archived snapshots are not current progress.",
   "final_test_questions": 80,
   "final_test_reserved": 80,
-  "final_test_started": false,
+  "final_test_started": true,
   "final_selection_plan": "lab/registry/decision_shared_final_20261023/selection_plan.json",
   "shared_outcomes_completion": {
     "complete": true,

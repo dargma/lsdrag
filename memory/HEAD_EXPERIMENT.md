@@ -1,3 +1,7 @@
+## 2026-10-24 — 최종80×4 실제 실행
+
+선정기록commit1970df5/push후 final evaluator PID281957/session12090 실행 확인. run /content/local_fast/lsdrag-text-v1/results/decision_shared_test80_20261023;log /content/local_fast/lsdrag-text-v1/logs/decision_shared_test80_20261023.log. 단일GPU lock,최대3600초,320episodes. frozen1후보+3baseline,예비80미사용. 결과로후보재선정금지. 다음 실제complete→reporter --run decision_shared_test80_20261023 --baseline shared_grpo→backup/budgetledger/종합보고서/Git. 목표달성미확정.
+
 ## 2026-10-24 — 구조 검증 완료 / 최종 후보·80문항 spec 동결
 
 구조 validation64×2 완료:multiMLP BC F1.206778/gen105.28125→outcome.251792/76.75. 자체초기화대비+4.50pp/−27.10%;sharedGRPO대비+2.67857pp/−22.00699%. 선택규칙min(deltaF1/.05,token감소/.30)에서 multi_mlp_outcome score.535714로1위;original.03 −.841537,.06 −.483222. 목표아직미달. 선택은validation만사용,최종결과미열람. selection/spec lab/registry/decision_shared_final_20261023. final조건 shared_grpo/multi_mlp_outcome/native_fast/semantic_once,원예약160중사전SHA선정80,남은80보존. source/corpus/model/qids identity와checkpoint SHA selector검증통과. 다음 final80×4실행(3600초상한),완료후pairedCI/모든비용/최종백업. 이단계에서후보재튜닝없음.
