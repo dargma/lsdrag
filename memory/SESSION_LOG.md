@@ -1634,3 +1634,12 @@ User asks to synthesize the experiment plan after approving actor–critic direc
 
 Pinned LLaRP original critic/GAE/reward isolated tests rerun successfully; source214c7923, evidence lab/reports/llarp_reference_verification_20261024/verification.json. Input bridge+actor+scalarV distinction, paper subgoal reward and public invalid-penalty overwrite recorded; no full benchmark reproduction. Previous answer-only turn was no experimental progress; this turn verified source behavior and saved concrete successor protocol. Next implement stage1 manifest and masked critic probe, not auto PPO or unsupported Q-argmax deployment.
 
+
+## 2026-10-24 — future critic probe complete; predictive gate fails
+
+Implemented one186252parameter shared post-reader encoder with future-F1/cost heads, actor residual zero/frozen. Frozen36/12 question split from existing48; 93fit/34monitor states,1errorstate excluded.100updates seed20261077 completed4.05s. Monitor action-gap MSE .192044 vs action-mean .186558; costMAE25.952 vs22.173; sign79.01% vs81.93%.62informative pairs/9questions: coverage sufficient, predictive gateFAILED. Train gapMSE .021749/costMAE3.399 suggests poor question transfer despite fitting, not absence of training signal. No actor update, no newQA or reserved80 use; H3 retained. Do not proceed to Q-argmax or phase2 with this critic.
+
+Manifest/source/input hashes frozen before fit; excluded-target NaN masking and finite gradients checked; zeroactor/checkpointreload checked; independent rawprediction metric recomputation passed. Run /content/local_fast/lsdrag-text-v1/results/decision_future_critic_probe48_20261024; reports lab/reports/decision_future_critic_probe48_20261024; Drivearchive hash in backup.json. No active worker. Previous goal turn saved plan/source verification; this turn produced new empirical evidence. GoalACTIVE, not achieved.
+
+Next hypothesis to scope: more diverse current-policy training-question coverage rather than another head architecture/seed sweep. Existing48 outcome set did not yield transferable critic estimates in this probe; insufficient data is a hypothesis, not proven cause. Audit remaining train-only coverage and freeze a bounded collection before any expansion; never reuse monitor labels to tune this checkpoint. Preserve failed critic and all prior policies.
+

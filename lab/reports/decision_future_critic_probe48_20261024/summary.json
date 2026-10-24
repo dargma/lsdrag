@@ -1,0 +1,68 @@
+{
+  "status": "complete",
+  "fit_questions": 36,
+  "monitor_questions": 12,
+  "fit_states": 93,
+  "monitor_states": 34,
+  "excluded": [
+    {
+      "qid": "2hop__296175_126060",
+      "turn": 5
+    }
+  ],
+  "monitor": {
+    "gap_mse": 0.19204358756542206,
+    "cost_mae": 25.95201301574707,
+    "gap_sign_accuracy": 0.790079365079365,
+    "informative_pairs": 62,
+    "informative_questions": 9
+  },
+  "baseline": {
+    "gap_mse": 0.18655841052532196,
+    "cost_mae": 22.173124313354492,
+    "gap_sign_accuracy": 0.8193121693121692,
+    "informative_pairs": 62,
+    "informative_questions": 9
+  },
+  "train": {
+    "gap_mse": 0.02174856886267662,
+    "cost_mae": 3.399198055267334,
+    "gap_sign_accuracy": 0.9696969696969696,
+    "informative_pairs": 116,
+    "informative_questions": 22
+  },
+  "gate_passed": false,
+  "coverage_sufficient": true,
+  "curve": [
+    [
+      0,
+      0.3761555254459381
+    ],
+    [
+      20,
+      0.1957278549671173
+    ],
+    [
+      40,
+      0.08250266313552856
+    ],
+    [
+      60,
+      0.044496577233076096
+    ],
+    [
+      80,
+      0.021322792395949364
+    ],
+    [
+      99,
+      0.012532109394669533
+    ]
+  ],
+  "actor_unchanged": true,
+  "masked_loss_verified": true,
+  "checkpoint_sha256": "b91e52ec4085f6882f3f5f7cc85a304a93963f6108dd4d5911f0d5e344c5144c",
+  "seconds": 4.046733006999602,
+  "parameters": 186252,
+  "new_qa_episodes": 0
+}

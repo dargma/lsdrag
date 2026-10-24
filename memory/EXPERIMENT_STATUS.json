@@ -1,6 +1,6 @@
 {
-  "phase": "actor_critic_consolidated_plan_saved",
-  "updated_utc": "2026-10-24T11:20:40.641690+00:00",
+  "phase": "future_critic_probe_gate_failed",
+  "updated_utc": "2026-10-24T11:22:33.720374+00:00",
   "protocol": "docs/JEV_DECISION_ACTOR_CRITIC_PLAN_20261024.md",
   "protocol_sha256": "529be1f5fb707459f840fd56f2c9e886be4c5b2385761ceb7fba674591503c00",
   "prompt": "prompts/text_rag_integrated_v5.txt",
@@ -38,7 +38,7 @@
   "teacher_collection_started": true,
   "training_completed": true,
   "evaluation_completed": false,
-  "next": "Implement/freeze stage1 critic probe manifest on existing48; no new training launched",
+  "next": "Audit remaining train-only current-policy question coverage; freeze one data-diversity hypothesis before collection",
   "previous_multimodal_checkpoint_historical_only": {
     "phase": "native2_review_required",
     "run": "/content/local_fast/lsdrag-head-v14/results/native_distillation_12b_20261015",
@@ -1205,9 +1205,10 @@
   "goal_achieved": false,
   "learning_progress": false,
   "actor_critic_plan": {
-    "status": "saved_not_launched",
-    "critic_trained": false,
+    "status": "stage1_failed_no_actor_update",
+    "critic_trained": true,
     "actor_updated": false,
-    "llarp_isolated_verification": "lab/reports/llarp_reference_verification_20261024/verification.json"
+    "llarp_isolated_verification": "lab/reports/llarp_reference_verification_20261024/verification.json",
+    "result": "/content/local_fast/lsdrag-code/lab/reports/decision_future_critic_probe48_20261024/summary.json"
   }
 }
