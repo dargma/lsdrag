@@ -2072,3 +2072,8 @@ Fresh9Bbase singlefixedfit complete:149correctionstates across42questions,1217re
 
 Coordinator121348 froze stop_spec.json and launched child164402, exactprocessconfirmedlive. Active run /content/local_fast/lsdrag-text-v1/results/qwen35_9b_stop48_20261024/status.json; log /content/local_fast/lsdrag-text-v1/logs/qwen35_pipeline_stop_20261024.log. Firststate3episodes at21.32sec. Newbasefrozen, fresh48rollins compareFINAL vsbestlegalcontinue atallnonforcedprefixes, continuewithsamebase. Do notduplicate/restart. Nextterminalstopverification/archive ->H3andconstantbiasfit/archive ->same64base/H3/constant evaluation/audit/archive ->scripts/reporting/summarize_qwen35_h3.py and substantivequalifiedcrossmodelreport ->finalbackup/Git/completionaudit. Goalnotcomplete, noreserved80.
 
+
+
+## 2026-10-24 — freshstop48 interim paired integrity passed
+
+Currentgoalturn verified53completedstates/106stop-continuebranches from12representedtrainquestions while164402and121348remainlive. CheckedFINAL/bestlegalcontinuepaircoverage, samepublicprefix, parentlegal/probs, firstaction, finite37x4096pack, officialF1/EM andrawsample/tokenIDaccounting.0errors. lab/reports/qwen35_9b_stop48_20261024/interim_integrity.json preserves106rawhashes andsnapshothash748582d955abbd7757ca0ba16eaf808bdf9c99ad0b3d272207f4923911e7ca7f. Partialintegrityonly, notterminalcoverage orH3quality. Noexecution/configurationchange. Nextwaitsamecollector thenterminalaudit/H3+constant/eval64 underexistingcoordinator.
