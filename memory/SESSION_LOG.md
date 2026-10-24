@@ -1329,3 +1329,7 @@ Threefits complete42.7688sec. Independentcheckpointreload confirmed everybase te
 ## 2026-10-24 — frozen adapter evaluation complete, target unmet
 
 256episodes/320.20sec/16881generated/917532input; coordinatorcomplete. Reference25.18/76.75;depthfrozen19.93/55.44;questionattentionfrozen22.28/55.50;actionattentionfrozen20.06/76.08. Allbeloworiginalquality. FrozenvsfullF1pointrecovery+3.39/+3.91/+2.34pp butall95%CIsincludezero. Report docs/JEV_FROZEN_ADAPTER_RESULT_20261024.md; exactreference64/rawtotals/DriveSHAverified. GoalACTIVE,noindependenttest. Nextprioritycurrentd987policy offlineoutcomerefresh onfixedtrainonlysubset toaddressoldQ/state drift hypothesis,notanotherblindarchitecturegrid. Existingfresh48belongs0a1bqualityhead,notd987. Freezeprotocolbeforecollecting;newrunnotstarted.
+
+## 2026-10-24 — selected d987 outcome refresh protocol frozen
+
+Protocol docs/JEV_SELECTED_POLICY_REFRESH_PROTOCOL_20261024.md;registry decision_selected_refresh48_20261024/manifest.json. Same48trainqids/seed asqualityrefresh butd987roll-in/suffix;max2states/question,2suffix/legalaction,816episodesmax,3600sec,1Mgenerated/60Minput. Offlinecollectiononly,noPPOGRPO. Sampledstate/suffixdata are notdeterministicpolicyQ. Source/inputhashes frozen;publicprefix/hidden parity andraw audit reused. GPUavailable97GB,priorworkerscomplete. Nextlaunchcoordinate_decision_selected_refresh.py thenverifyownedPID; no newheadfitbeforecollectionaudit. GoalACTIVE.
