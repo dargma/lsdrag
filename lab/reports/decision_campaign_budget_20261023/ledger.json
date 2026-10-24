@@ -20,7 +20,7 @@
     "new_llm_rollouts": 0,
     "reuses": "decision_shared_outcomes192_20261023 and decision_shared_teacher192_20261023"
   },
-  "snapshot_utc": "2026-10-24T06:09:48.262990+00:00",
+  "snapshot_utc": "2026-10-24T06:20:37.710853+00:00",
   "runs": [
     {
       "group": "historical_grpo_reference",
@@ -361,22 +361,30 @@
     {
       "group": "adaptive_policy_followup",
       "run": "decision_current_policy_refresh48_20261024",
-      "phase": "collection",
+      "phase": "complete",
       "counts": {
-        "episodes": 305,
-        "generated": 29153,
-        "inputs": 1672779
+        "episodes": 656,
+        "generated": 60745,
+        "inputs": 3728670
       },
-      "seconds": 532.9053852310026,
-      "complete_raw_totals_verified": false,
-      "terminal_raw_totals_verified": false,
+      "seconds": 1129.4798220779921,
+      "complete_raw_totals_verified": true,
+      "terminal_raw_totals_verified": true,
       "status_path": "/content/local_fast/lsdrag-text-v1/results/decision_current_policy_refresh48_20261024/status.json"
     },
     {
       "group": "adaptive_policy_followup",
       "run": "decision_quality_head_grpo192_20261024",
-      "phase": "not_started",
-      "counts": null
+      "phase": "collection",
+      "counts": {
+        "episodes": 20,
+        "generated": 1433,
+        "inputs": 100221
+      },
+      "seconds": 42.1875852420053,
+      "complete_raw_totals_verified": false,
+      "terminal_raw_totals_verified": false,
+      "status_path": "/content/local_fast/lsdrag-text-v1/results/decision_quality_head_grpo192_20261024/status.json"
     },
     {
       "group": "adaptive_policy_followup",
@@ -443,18 +451,17 @@
       ]
     },
     "adaptive_policy_followup": {
-      "episodes": 2176,
-      "generated": 193185,
-      "inputs": 10989381,
+      "episodes": 2832,
+      "generated": 253930,
+      "inputs": 14718051,
       "failed_run_costs": {
         "episodes": 0,
         "generated": 0,
         "inputs": 0
       },
       "failed_runs": [],
-      "completed_runs": 4,
+      "completed_runs": 5,
       "uncompleted_runs": [
-        "decision_current_policy_refresh48_20261024",
         "decision_quality_head_grpo192_20261024",
         "decision_quality_head_grpo_validation64_20261024"
       ]

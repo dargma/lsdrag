@@ -1,7 +1,7 @@
 {
-  "phase": "quality_head_grpo_preparing",
-  "updated_utc": "2026-10-24T06:09:22.039321+00:00",
-  "protocol": "docs/JEV_CURRENT_POLICY_REFRESH_20261024.md",
+  "phase": "quality_head_grpo_running",
+  "updated_utc": "2026-10-24T06:19:52.051870+00:00",
+  "protocol": "docs/JEV_QUALITY_HEAD_GRPO_20261024.md",
   "protocol_sha256": "58a215a03d96c3738558738d6e7305f2e5f8e8f37c5994cc27cb6e33f30df3a2",
   "prompt": "prompts/text_rag_integrated_v5.txt",
   "prompt_sha256": "9d66c290a97bbabb4289dcf262e2b5bc8ba05653f87aed3b693825dbb02d5a97",
@@ -32,13 +32,13 @@
   ],
   "worker_wall_budget_minutes": 120,
   "run_planned": "/content/local_fast/lsdrag-text-v1/results/decision_shared_test80_20261023",
-  "pid": null,
+  "pid": 357241,
   "implementation_completed": true,
   "dataset_prepared": true,
   "teacher_collection_started": true,
   "training_completed": false,
   "evaluation_completed": false,
-  "next": "Finish refresh audit/archive, then queued exact quality-head GRPO768 and paired validation; broad adaptive program remains active.",
+  "next": "Complete exact quality MLP GRPO/audit/paired64; inspect refreshed train outcomes on CPU. Goal active.",
   "previous_multimodal_checkpoint_historical_only": {
     "phase": "native2_review_required",
     "run": "/content/local_fast/lsdrag-head-v14/results/native_distillation_12b_20261015",
@@ -1004,24 +1004,26 @@
     "goal_achieved": false
   },
   "current_policy_refresh": {
-    "phase": "running",
-    "pid": 351564,
-    "seconds": 0.00043886000639759004,
-    "child_pid": 351577,
-    "script": "scripts/run_decision_current_policy_refresh.py",
-    "log": "/content/local_fast/lsdrag-text-v1/logs/refresh48_run_decision_current_policy_refresh_1792821647.log"
+    "phase": "complete",
+    "pid": null,
+    "seconds": 1136.6137613950123,
+    "report": "/content/local_fast/lsdrag-code/lab/reports/decision_current_policy_refresh48_20261024/audit.json",
+    "goal_achieved": false
   },
   "quality_head_grpo_continuation": {
-    "phase": "preparing",
+    "phase": "running",
     "pid": 354060,
-    "seconds": 2.8799986466765404e-06,
-    "updated_utc": "2026-10-24T06:09:22.039321+00:00",
+    "seconds": 630.0125043500011,
+    "script": "scripts/run_decision_quality_head_grpo.py",
+    "child_pid": 357241,
+    "log": "/content/local_fast/lsdrag-text-v1/logs/selected_grpo_run_decision_quality_head_grpo_1792822792.log",
+    "updated_utc": "2026-10-24T06:19:52.051870+00:00",
     "run": "decision_quality_head_grpo192_20261024"
   },
   "quality_head_grpo_queue": {
-    "phase": "waiting",
+    "phase": "running",
     "pid": 354060,
-    "predecessor_pid": 351564,
+    "child_pid": 357241,
     "protocol": "docs/JEV_QUALITY_HEAD_GRPO_20261024.md"
   }
 }

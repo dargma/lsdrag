@@ -1156,3 +1156,15 @@ Coordinator354060 verified waiting for current refresh351564; collector351577 li
 Verified pack_hidden37slots includes32ordered full-context-bin means, not individual tokens. Existing historicalPolicyHead already supportsbinattention. New optional ContextResidualHead preserves qualityMLPinitiallogits exactly via zero-outputresidual, freezesbase and reads32bins withquestion-conditionedactionqueries. Candidateonly,nottrained/evaluated,notwiredtorunningcollector/GRPO. docs/JEV_CONTEXT_RESIDUAL_CANDIDATE_20261024.md;2newtests+qualityGRPOregression3passed. This addresses inputaccess without freshLLMfeaturecollection, but is not novelty/equalcapacity/token-levelattention evidence.
 
 Current collector351577 verified364episodes/49states/question28snapshot;GRPOqueue354060 stillwaiting. Original frozenrunssources unchanged. GoalACTIVE.
+
+## 2026-10-24T06:19:52.051870+00:00 — selected-head GRPO continuation: running
+
+Coordinator state: `/content/local_fast/lsdrag-text-v1/results/decision_quality_head_grpo_coordinator_20261024.json`. Details: `{"phase": "running", "pid": 354060, "seconds": 630.0125043500011, "script": "scripts/run_decision_quality_head_grpo.py", "child_pid": 357241, "log": "/content/local_fast/lsdrag-text-v1/logs/selected_grpo_run_decision_quality_head_grpo_1792822792.log"}`. Same already-trained selected head continues learning; LLM/normalization fixed. Only train192 and validation64 used; final80/reserved80 protected.
+
+
+## 2026-10-24 — current-policy refresh complete; quality-leading MLP GRPO actually started
+
+Refresh48 complete:48questions/88states/656episodes/1129.48sec,gen60745/input3728670,18error episodes retained. Audit passed:FP32packs,prefix/actionidentity,alllegalactions×2,rawtotals,trainpool/testexclusion. statesSHA104a12936424d69ef1ec8c7aba9383ecc5d90ecfbfe6fa17b52d038854dccef7. Drive28,565,149bytes/SHA c82c81ec563550bc06713937f9dc79472cd6027c9dd7a7cee28ebf5030ccca43 independently rehashed. Collection is not learnedpolicyquality evidence.
+
+Queued quality-head GRPO now LIVE coordinator354060/worker357241; log /content/local_fast/lsdrag-text-v1/logs/selected_grpo_run_decision_quality_head_grpo_1792822792.log. Actual8/768episodes at snapshot. Learner starts exactqualityMLP0a1b...,notconstraineddescendant;refreshinterventions notusedasGRPOsamples. One192×4round thenaudit/pairedvalidation64/archive. GoalACTIVE.
+
