@@ -1,3 +1,11 @@
+## 2026-10-24 — disjoint H3 binary coverage48 collection live
+
+Previous turn completed constrainedtrain/dev and negative transfer evidence: progress. Frozen353a9aa protocol docs/JEV_H3_STOP_COVERAGE48_20261024.md. SHA20261084first48 of train192 minus all96previousH3outcomeqids; no devfailure selection. Only new to H3branchcollection, not globallyunseen. CurrentH3rollins, allnonforcedstates, exactlyFINAL+bestlegalcontinue, onegreedyH3suffix each, original4actionlegalmask retained. Cap816episodes/1800seconds; reader/model/corpus/nativeinterface unchanged. Trainunion120 and24monitor exclusions frozen. No different critic or architecture.
+
+Collector66441 confirmedlive,execsession89513; embedchild66645. Log /content/local_fast/lsdrag-text-v1/logs/h3_stop_coverage48_20261024.log; status /content/local_fast/lsdrag-text-v1/results/decision_h3_stop_coverage48_20261024/status.json. Firstcheck4questions7states18episodes; actualcoverage only after completionaudit. Next once terminalcomplete: archive_decision_run.py --run decision_h3_stop_coverage48_20261024, then scripts/reporting/verify_h3_stop_coverage48.py. Verifier covers officialF1/EM, rawgenerated/prefixes/binaryactioncoverage/H3suffix/referenceanswerreplay andDrivebytes; correctnesscost here is collectionworkload withoverlaps, notpolicyperformance.
+
+Prepared scripts/prepare_decision_constrained_stop120.py and scripts/fit_decision_constrained_stop120.py: refuse unaudited collection; finalize completedtensorhash then reuse exactconstrained72 learner/targets/objective/constraints/gates fromoriginalH3. No120plan/fit exists yet. Same fitgate then fullpairedtrain120(correct/incorrect) beforeone dev64. GoalACTIVE,reserved80protected,usercontinueuntilstop. No premature fit/scoreclaim.
+
 ## 2026-10-24 — constrained stop train improvement fails development transfer
 
 Development evaluator64613 terminal:128episodes171.823sec/8090generated/420725input/0errors. RawofficialF1/EM/counts/checkpoint/source/question/model/corpus/H3reference64 replay verified scripts/reporting/verify_constrained_stop64.py. GRPOF1.2250067641/gen98.40625/correct10;H3.2731584821/66.890625/correct14;candidate.2521081349/59.515625/correct13. JointdevscreenFAILS:vsGRPO+2.71014pp/genratio.604795;vsH3−2.10503pp.0qualitywins3losses;0newcorrect1lostcorrect. Rejectcandidate,H3incumbent; no devretuning or independentconfirmation.

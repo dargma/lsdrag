@@ -1789,3 +1789,13 @@ H3pairedcorrectcost:bothcorrect13 save25tokens;candidateonly0;H3only1 spends1ext
 
 Report lab/reports/decision_constrained_stop72_validation64_20261024/verification.json; archivedDrive/registry. Train improvement remains valid but not independenttest. GoalACTIVE, reserved80untouched,allworkerscomplete. Next bounded hypothesis: improve training state coverage rather than another optimizer/architecture sweep. Hashselect48unused questions from frozen train192 excludingall96alreadyH3-collected; collect currentH3 rollins and onlystop/bestcontinue suffixes, retain existing24monitor exclusions. Freeze new48 protocol/datahashes beforecollection; combine with72fit for one sameconstrainedfit120, not select questions usingdevfailures. Exactcollectioncommand notyetfrozen; do notreuse H1suffix targets as H3. This is a data-coverage hypothesis, not an establishedcause.
 
+
+
+## 2026-10-24 — disjoint H3 binary coverage48 collection live
+
+Previous turn completed constrainedtrain/dev and negative transfer evidence: progress. Frozen353a9aa protocol docs/JEV_H3_STOP_COVERAGE48_20261024.md. SHA20261084first48 of train192 minus all96previousH3outcomeqids; no devfailure selection. Only new to H3branchcollection, not globallyunseen. CurrentH3rollins, allnonforcedstates, exactlyFINAL+bestlegalcontinue, onegreedyH3suffix each, original4actionlegalmask retained. Cap816episodes/1800seconds; reader/model/corpus/nativeinterface unchanged. Trainunion120 and24monitor exclusions frozen. No different critic or architecture.
+
+Collector66441 confirmedlive,execsession89513; embedchild66645. Log /content/local_fast/lsdrag-text-v1/logs/h3_stop_coverage48_20261024.log; status /content/local_fast/lsdrag-text-v1/results/decision_h3_stop_coverage48_20261024/status.json. Firstcheck4questions7states18episodes; actualcoverage only after completionaudit. Next once terminalcomplete: archive_decision_run.py --run decision_h3_stop_coverage48_20261024, then scripts/reporting/verify_h3_stop_coverage48.py. Verifier covers officialF1/EM, rawgenerated/prefixes/binaryactioncoverage/H3suffix/referenceanswerreplay andDrivebytes; correctnesscost here is collectionworkload withoverlaps, notpolicyperformance.
+
+Prepared scripts/prepare_decision_constrained_stop120.py and scripts/fit_decision_constrained_stop120.py: refuse unaudited collection; finalize completedtensorhash then reuse exactconstrained72 learner/targets/objective/constraints/gates fromoriginalH3. No120plan/fit exists yet. Same fitgate then fullpairedtrain120(correct/incorrect) beforeone dev64. GoalACTIVE,reserved80protected,usercontinueuntilstop. No premature fit/scoreclaim.
+
