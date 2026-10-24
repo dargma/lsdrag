@@ -1,3 +1,9 @@
+## 2026-10-24 — H2 collection live; stopping preference implementation ready
+
+Coordinator18040/collector18051verifiedlive. State /content/local_fast/lsdrag-text-v1/results/decision_stop_value_h2_collect_coordinator_20261024.json;log /content/local_fast/lsdrag-text-v1/logs/refresh48_run_decision_stop_value_h2_collect_1792836020.log. GreedyH1FINALvscontinuation onremaining48train; no duplicateworker. First37episodes/9q saved,qualitynotinspectedmidcollection.
+
+StopValueHead implementation adds129trainableparameters (linear128->1) onlytoFINALlogit, freezingallH1weights/norm/toolranking. Tests3passed:exactinitialization,actualupdatechangesFINALonly/baseunchanged,invalidmaskandzero-quality/errorlabelrejection. Fit/evaluator prepared; nofituntilfullcollection/archiveverification andlabelcoverage. Independentverifierextendedforspecifiedtwoactioncollection,oldallactioncontractpreserved. GoalACTIVE,reserved80protected. Nextverifiedcompletion→singlefit→paired128evaluation; noextraablationgrid.
+
 ## 2026-10-24 — H2 stopping-value hypothesis frozen
 
 One nextlargehypothesis peruserfastdirectionfinding: retainH1usefultoolpolicy,learnwhencontinuedexplorationisworthwhile. Protocol docs/JEV_STOP_VALUE_H2_20261024.md. Frozenremaining48trainqids disjointprior144,seed20261067,currentH132849a28rollin/suffix. Greedydeployment-matched FINALvsbestlegaltool atinitial/lastnonforcedstate;oneexecutionperaction,max240episodes/1800sec;noidenticalgreedyrepeats. Input/sourcehashesandtrain/testseparationverified,compilepassed. Currentcollection notyetlaunchedatthisentry.

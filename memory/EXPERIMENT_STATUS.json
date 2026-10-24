@@ -1124,5 +1124,13 @@
     "evaluation_rerun": false,
     "report": "lab/reports/decision_outcome_policy_h1_validation64_20261024/policy_result_check.json",
     "goal_achieved": false
+  },
+  "stop_value_h2_collection": {
+    "phase": "running",
+    "pid": 18040,
+    "seconds": 0.0004218699996272335,
+    "child_pid": 18051,
+    "script": "scripts/run_decision_stop_value_h2_collect.py",
+    "log": "/content/local_fast/lsdrag-text-v1/logs/refresh48_run_decision_stop_value_h2_collect_1792836020.log"
   }
 }

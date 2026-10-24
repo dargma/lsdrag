@@ -84,10 +84,18 @@ def verify(name):
     expected_keys = {(qid, 'collector') for qid in train}
     for record in states:
         assert record['pack'].dtype == torch.float32 and torch.isfinite(record['pack']).all()
-        assert len(record['samples']) == int(record['legal'].sum()) * manifest['repeats_per_action']
+        actions = {a for a in range(4) if record['legal'][a]}
+        if manifest.get('collection_actions') == 'stop_vs_best_continue':
+            assert manifest['stochastic'] is False and manifest['repeats_per_action'] == 1
+            probabilities = torch.tensor(record['reference_probs'])[:3]
+            expected_continue = int(probabilities.masked_fill(~record['legal'][:3], -1).argmax())
+            assert record['continue_action'] == expected_continue
+            actions = {3, expected_continue}
+            assert all(record['legal'][a] for a in actions)
+        assert len(record['samples']) == len(actions) * manifest['repeats_per_action']
         sample_keys = {(s['action'], s['rep']) for s in record['samples']}
         assert len(sample_keys) == len(record['samples'])
-        assert sample_keys == {(a, rep) for a in range(4) if record['legal'][a]
+        assert sample_keys == {(a, rep) for a in actions
                                for rep in range(manifest['repeats_per_action'])}
         for sample in record['samples']:
             tag = f"t{record['turn']}_a{sample['action']}_r{sample['rep']}"

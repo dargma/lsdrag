@@ -1484,3 +1484,10 @@ One nextlargehypothesis peruserfastdirectionfinding: retainH1usefultoolpolicy,le
 
 Aftercompleteaudit:onezero-initlinearscalaronFINALlogitfromfrozenH1hidden128,tool-logitorderingunchanged. Supportedpositivequality/positive-F1costlabels only,both-zeroambiguous;>=3distinctqidsperlabelgate;100updates1e-3seed20261068,.5referenceblend/equalretentionweight. Noarchitecturegrid,PPOGRPO,newinterface,ordevqidtargeting. Paireddev128afterfit. GoalACTIVE,reserved80protected. Nextlaunch scripts/coordinate_decision_stop_value_h2_collect.py.
 
+
+## 2026-10-24 — H2 collection live; stopping preference implementation ready
+
+Coordinator18040/collector18051verifiedlive. State /content/local_fast/lsdrag-text-v1/results/decision_stop_value_h2_collect_coordinator_20261024.json;log /content/local_fast/lsdrag-text-v1/logs/refresh48_run_decision_stop_value_h2_collect_1792836020.log. GreedyH1FINALvscontinuation onremaining48train; no duplicateworker. First37episodes/9q saved,qualitynotinspectedmidcollection.
+
+StopValueHead implementation adds129trainableparameters (linear128->1) onlytoFINALlogit, freezingallH1weights/norm/toolranking. Tests3passed:exactinitialization,actualupdatechangesFINALonly/baseunchanged,invalidmaskandzero-quality/errorlabelrejection. Fit/evaluator prepared; nofituntilfullcollection/archiveverification andlabelcoverage. Independentverifierextendedforspecifiedtwoactioncollection,oldallactioncontractpreserved. GoalACTIVE,reserved80protected. Nextverifiedcompletion→singlefit→paired128evaluation; noextraablationgrid.
+
