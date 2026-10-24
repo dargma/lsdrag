@@ -1,0 +1,14 @@
+{
+  "verified": true,
+  "run": "decision_quality_corrected_refresh48b_20261024",
+  "questions": 48,
+  "states": 87,
+  "episodes": 648,
+  "generated": 53259,
+  "inputs": 3053575,
+  "errors": 4,
+  "archive_sha256": "3eb5ffb57cb37367ff5996a57f8f9725dce1e531352b9f73c94e14b5314212a1",
+  "archived_files": 653,
+  "scores_recomputed": true,
+  "independent_quality_claim": false
+}

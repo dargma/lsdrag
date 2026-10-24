@@ -1438,3 +1438,12 @@ Recomputed fixed basic GRPO F1 .2250067641/generated98.40625; development thresh
 
 Collector9064/coordinator9054 verified live; 162episodes/14questions at 240.1s. Remain in collection, no restart. Next terminal raw audit/archive then completed-train opportunity audit and evidence-based next fit protocol. Goal ACTIVE; reserved80 untouched.
 
+
+## 2026-10-24 — independent completed-collection verification and correction fit audit
+
+Progress while third48 collector9054/9064 remains live: added scripts/reporting/verify_completed_branch_collection.py. It refuses nonterminal data before reading outcomes; independently checks frozen train split/input hashes, Drive archive SHA and every archived/runtime file, raw F1 recomputation against public answer aliases, duplicate/missing episode/state/sample keys, legal two-repeat action coverage, prefix/action links, finite FP32 packs, count/token caps and summary hashes. Executed successfully on completed48b:48questions/87states/648episodes,653archived files,53259generated/3053575input,4errors retained. Incomplete-third48 guard also verified. Report lab/reports/decision_quality_corrected_refresh48b_20261024/independent_verification.json.
+
+Completed48b correction-fit diagnostic: current cost-priority head adopts18/21 correction targets, increases target probabilities21/21, and changes0/66 uncorrected fresh states. Report lab/reports/decision_cost_priority_20261024/correction_fit_audit.json. This demonstrates fitting on sampled training states, not generalizable future-value selection. Training fit failure is not the main explanation for the observed limited development improvement; broader state coverage/generalization remains to be tested. No partial-third48 fit or outcome inspection, no new GPU worker.
+
+Next after coordinator complete: independent completed-collection verification and opportunity_categories audit on48c, then freeze next fit from full train evidence. Goal ACTIVE; reserved80 untouched.
+
