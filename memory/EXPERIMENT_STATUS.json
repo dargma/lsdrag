@@ -1,5 +1,5 @@
 {
-  "phase": "selected_head_grpo_complete",
+  "phase": "adaptive_three_axes_complete_goal_active",
   "updated_utc": "2026-10-24T05:33:44.127736+00:00",
   "protocol": "docs/JEV_SELECTED_HEAD_ZERO_GATE_20261024.md",
   "protocol_sha256": "58a215a03d96c3738558738d6e7305f2e5f8e8f37c5994cc27cb6e33f30df3a2",
@@ -38,7 +38,7 @@
   "teacher_collection_started": true,
   "training_completed": true,
   "evaluation_completed": true,
-  "next": "Continue fixed opportunity/value-head validation; research goal active.",
+  "next": "Freeze and execute bounded constrained quality/generated-token policy-learning pilot; no test access.",
   "previous_multimodal_checkpoint_historical_only": {
     "phase": "native2_review_required",
     "run": "/content/local_fast/lsdrag-head-v14/results/native_distillation_12b_20261015",
@@ -972,22 +972,22 @@
     "updated_utc": "2026-10-24T05:05:24.828840+00:00"
   },
   "opportunity_value_heads": {
-    "phase": "trained_archived_validation_queued",
+    "phase": "complete_joint_target_not_met",
     "trained": true,
-    "evaluated": false,
+    "evaluated": true,
     "tests_passed": 16,
     "cache_audit": "lab/reports/decision_opportunity_value_20261024/cache_audit.json",
     "module": "src/lsdrag/decision_value_head.py",
-    "coordinator_pid": 336962,
-    "protocol": "docs/JEV_OPPORTUNITY_VALUE_HEADS_20261024.md"
+    "coordinator_pid": null,
+    "protocol": "docs/JEV_OPPORTUNITY_VALUE_HEADS_20261024.md",
+    "report": "docs/JEV_OPPORTUNITY_VALUE_RESULTS_20261024.md"
   },
   "opportunity_value_evaluation": {
-    "phase": "running",
-    "pid": 336962,
-    "seconds": 1410.568392879999,
-    "script": "scripts/evaluate_decision_value_heads.py",
-    "child_pid": 343828,
-    "log": "/content/local_fast/lsdrag-text-v1/logs/value_heads_evaluate_decision_value_heads_1792820052.log"
+    "phase": "complete",
+    "pid": null,
+    "seconds": 2219.1703941519954,
+    "report": "lab/reports/decision_opportunity_value_validation64_20261024/report.md",
+    "goal_achieved": false
   },
   "zero_gate_result": {
     "phase": "complete_target_not_met",

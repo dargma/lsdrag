@@ -1,3 +1,9 @@
+## 2026-10-24 — three axes evaluated; value auxiliary raises quality/cost, goal active
+
+All5×validation64 complete320eps/803.87sec/gen41550/input2658076;raw totals and train/eval archives verified. docs/JEV_OPPORTUNITY_VALUE_RESULTS_20261024.md. F1/gen:mlpcontrol29.14/114.69;stop29.09/114.80;stop+value32.45/139.03;attentionstop30.21/136.92;attention+value30.21/143.78. BasicGRPO22.50/98.41. Quality-leadingMLP+value delta+9.95pp butgen+41.28%;jointtargetfalse. Stop-only incremental benefit absent;MLPaux+3.365pp overstop butgen+21.11%;attentionauxsameF1/morecost. Exposeddev,single-seed,multiplecandidates;noindependentgeneralizationclaim.
+
+Workers336962/343828 ended. Next authorized adaptive step: small CPU constrained policy pilot starting quality-leadingMLP+value, separate expected F1 objective/qualityfloor and actual generated-token budget using training cache. Freeze exact protocol before launch, atmost2budgetlevels, preserve all results. If off-policy feasibility fails totransfer, bounded current-policy training counterfactual refresh. Goal ACTIVE; final80/reserved80protected. No new training launched yet.
+
 ## 2026-10-24 — five-head validation live
 
 Follow-up actual launch verified: coordinator336962/worker343828, log /content/local_fast/lsdrag-text-v1/logs/value_heads_evaluate_decision_value_heads_1792820052.log. Five-candidate validation at12/320episodes; no aggregate quality inference until complete.

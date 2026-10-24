@@ -1,0 +1,24 @@
+{
+  "episodes": 320,
+  "raw_totals_verified": true,
+  "archives_rehashed": [
+    {
+      "path": "/content/drive/MyDrive/lsdrag-backups/20261023/decision_opportunity_value_20261024.tar.gz",
+      "sha256": "e1b746529189f5f1d2905caad461ad089556c15fe082c749ca705083007524f8",
+      "bytes": 13708770,
+      "run": "/content/local_fast/lsdrag-text-v1/results/decision_opportunity_value_20261024",
+      "phase": "complete",
+      "backbone_weights_included": false
+    },
+    {
+      "path": "/content/drive/MyDrive/lsdrag-backups/20261023/decision_opportunity_value_validation64_20261024.tar.gz",
+      "sha256": "d5ca6c4e6cff6d0a8694ce7cb7471c49801453c2bbc71b14a6f3555a2f424c88",
+      "bytes": 885546,
+      "run": "/content/local_fast/lsdrag-text-v1/results/decision_opportunity_value_validation64_20261024",
+      "phase": "complete",
+      "backbone_weights_included": false
+    }
+  ],
+  "research_goal_achieved": false,
+  "test_sets_used": false
+}
