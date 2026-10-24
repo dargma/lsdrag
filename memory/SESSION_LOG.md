@@ -1182,3 +1182,17 @@ Next: finish currentonpolicyGRPO; ifanotherofflinepolicyupdateisneeded, consider
 ## 2026-10-24 — existing read-candidate coverage bounds measured
 
 Previous turn progress: refreshed target reliability evidence committed. Current GRPO357241 verifiedlive204/768episodes; no change/restart. CPUonly readcoverage on48trainingcollectors:33readcalls/1388tokens;20existingcandidateexactmatches/860tokens,24single-IDreads. Perfectexistingcandidateselection would remove atmost860/5272=16.31% oftraininggeneration, beforefallback/errors. Thus reusealone notexpectedtosolve30%goal; combinequality-preservingpolicyimprovement,notclaimoraclecoverageaslearnedaccuracy. Full1388readtokens ceiling26.33% also below30%. Existingoptions derivepublichistory; questionemptyonlyforreadcoverage,semanticchoicesnotassessed. Sourcehashes/percallcounts:lab/reports/decision_current_policy_refresh48_20261024/read_reuse_coverage.json. ActiveGRPOprotocoluntouched; no newGPUlaunch. GoalACTIVE.
+
+## 2026-10-24T06:45:48.311106+00:00 — selected-head GRPO continuation: running
+
+Coordinator state: `/content/local_fast/lsdrag-text-v1/results/decision_quality_head_grpo_coordinator_20261024.json`. Details: `{"phase": "running", "pid": 354060, "seconds": 2186.2717448220064, "script": "scripts/reporting/audit_decision_quality_head_grpo.py", "child_pid": 364599, "log": "/content/local_fast/lsdrag-text-v1/logs/selected_grpo_audit_decision_quality_head_grpo_1792824348.log"}`. Same already-trained selected head continues learning; LLM/normalization fixed. Only train192 and validation64 used; final80/reserved80 protected.
+
+
+## 2026-10-24T06:45:50.931872+00:00 — selected-head GRPO continuation: running
+
+Coordinator state: `/content/local_fast/lsdrag-text-v1/results/decision_quality_head_grpo_coordinator_20261024.json`. Details: `{"phase": "running", "pid": 354060, "seconds": 2188.8925192680035, "script": "scripts/reporting/archive_decision_run.py", "child_pid": 364611, "log": "/content/local_fast/lsdrag-text-v1/logs/selected_grpo_archive_decision_run_1792824350.log"}`. Same already-trained selected head continues learning; LLM/normalization fixed. Only train192 and validation64 used; final80/reserved80 protected.
+
+
+## 2026-10-24 — quality-leading MLP GRPO training complete and audited
+
+Exact0a1bstart continuation complete768episodes/192groups/2925decisions/2851controllablestates,360optimizersteps,1551.67sec. Generated79144/input5034458;4error episodes and74forcedFINAL retained. Independent audit passed; policy_weight/policy_bias/encoder.weight/encoder.bias changed, reference/frozen auxiliary andnorm checks passed. Checkpointc6b0b6aa6456db10e8921733c0a522261766aa1942da77cf43cf08faacad1975. CPUreplaymax7.15e-7;workerGPUstrict2e-4gate passed. This proves execution/update integrity,notquality. Coordinator354060 nowarchives thenpairedquality_start/quality_grpo validation64. No restart, no test access. GoalACTIVE.
