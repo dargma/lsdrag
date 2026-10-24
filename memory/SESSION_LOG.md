@@ -1050,3 +1050,7 @@ Concrete progress: independent round0 audit verifies all192 advantage groups,82 
 
 scripts/reporting/compare_decision_policy_campaign.py requires completed full64 paired cells, fixed basic-GRPO checkpoint59a0..., same model/corpus/IDs, expected source differences, and exclusion of final80/reserved80. Reports F1/token/input/calls/empty/zero-tool, paired bootstrap, fixed reference provenance and within-body auxiliary comparisons; always marks development-only goal_achieved false. Ran on completed prior r1 and reproduced historical means. New runs cannot be reported until complete. Next invoke --run decision_selected_head_grpo_validation64_20261024_zero_gate and --run decision_opportunity_value_validation64_20261024 after their completion. Goal active; current jobs continue, no duplicate launch.
 
+
+## 2026-10-24 — adaptive follow-up cost accounting added
+
+Added zero_gate training/evaluation and five-head validation to decision_campaign_budget.py. Completed and failed runs retain raw-episode reconciliation; active counts remain provisional and pending runs have no invented costs. CPU fitting is recorded separately (five heads,10.03seconds,zero new LLM rollouts, reused teacher/outcome sources). Historical totals remain identical. Live learner330716/coordinator330710 and follow-up waiter336962 verified; no restart or new GPU job. Goal stays active.

@@ -24,6 +24,9 @@ Completed and failed-run totals are checked against raw episodes. Failed costs r
 |selected_head_grpo_continuation|decision_selected_head_grpo192_20261024|failed|768|61608|3416046|
 |selected_head_grpo_continuation|decision_selected_head_grpo192_20261024_r1|complete|1536|119793|6566548|
 |selected_head_grpo_continuation|decision_selected_head_grpo_validation64_20261024_r1|complete|128|8316|502063|
+|adaptive_policy_followup|decision_selected_head_grpo192_20261024_zero_gate|collection|980|78379|4314603|
+|adaptive_policy_followup|decision_selected_head_grpo_validation64_20261024_zero_gate|not_started|—|—|—|
+|adaptive_policy_followup|decision_opportunity_value_validation64_20261024|not_started|—|—|—|
 
 ## Scope
 

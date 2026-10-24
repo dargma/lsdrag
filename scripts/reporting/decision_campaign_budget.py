@@ -17,7 +17,8 @@ GROUPS={
         'decision_shared_initialization_validation16_20261023','decision_shared_grpo192_20261023',
         'decision_shared_outcomes192_20261023','decision_shared_validation64_20261023',
         'decision_shared_structure_validation64_20261023','decision_shared_test80_20261023'],
-    'selected_head_grpo_continuation':['decision_selected_head_grpo192_20261024','decision_selected_head_grpo192_20261024_r1','decision_selected_head_grpo_validation64_20261024_r1']}
+    'selected_head_grpo_continuation':['decision_selected_head_grpo192_20261024','decision_selected_head_grpo192_20261024_r1','decision_selected_head_grpo_validation64_20261024_r1'],
+    'adaptive_policy_followup':['decision_selected_head_grpo192_20261024_zero_gate','decision_selected_head_grpo_validation64_20261024_zero_gate','decision_opportunity_value_validation64_20261024']}
 
 def main():
     rows=[]
@@ -46,7 +47,9 @@ def main():
         totals[group]['failed_runs']=[r['run'] for r in failed]
         totals[group]['completed_runs']=len(completed)
         totals[group]['uncompleted_runs']=[r['run'] for r in rows if r['group']==group and r['phase']!='complete']
-    result=dict(snapshot_utc=datetime.now(timezone.utc).isoformat(),runs=rows,completed_totals=totals,scope='Named decision-policy campaign only; historical PPO/preparatory runs outside this list are excluded. Shared-corpus and restricted-pool results are separate experimental settings.',limitations=['Running counts are status snapshots, not certified terminal totals. Pending runs contribute no invented cost.','CPU cache fitting and corpus embedding/indexing are not LLM generated tokens and are not included in these token totals.','Wall times may include loading/waiting and shared-GPU effects; not controlled comparative latency.','Historical GRPO reference training is separate from new exploration cost; no claim every listed run occurred inside original eight-hour window.'])
+    cpu_path=ROOT/'results/decision_opportunity_value_20261024/status.json'
+    cpu_fit=json.loads(cpu_path.read_text()) if cpu_path.exists() else {'phase':'not_started'}
+    result=dict(cpu_cache_fitting={'run':'decision_opportunity_value_20261024','status':cpu_fit,'new_llm_rollouts':0,'reuses':'decision_shared_outcomes192_20261023 and decision_shared_teacher192_20261023'},snapshot_utc=datetime.now(timezone.utc).isoformat(),runs=rows,completed_totals=totals,scope='Named decision-policy campaign only; historical PPO/preparatory runs outside this list are excluded. Shared-corpus and restricted-pool results are separate experimental settings.',limitations=['Running counts are status snapshots, not certified terminal totals. Pending runs contribute no invented cost.','CPU cache fitting and corpus embedding/indexing are not LLM generated tokens and are not included in these token totals.','Wall times may include loading/waiting and shared-GPU effects; not controlled comparative latency.','Historical GRPO reference training is separate from new exploration cost; no claim every listed run occurred inside original eight-hour window.'])
     out=REPO/'lab/reports/decision_campaign_budget_20261023';out.mkdir(parents=True,exist_ok=True)
     (out/'ledger.json').write_text(json.dumps(result,indent=2)+'\n')
     lines=['# Decision-policy experiment budget','','Completed and failed-run totals are checked against raw episodes. Failed costs remain separate in ledger.json and are not discarded. Running values are provisional status snapshots.','','|Setting|Run|Status|Episodes|Generated tokens|Input tokens|','|---|---|---|---:|---:|---:|']

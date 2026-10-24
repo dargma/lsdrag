@@ -1,5 +1,16 @@
 {
-  "snapshot_utc": "2026-10-24T04:08:43.414892+00:00",
+  "cpu_cache_fitting": {
+    "run": "decision_opportunity_value_20261024",
+    "status": {
+      "phase": "complete",
+      "pid": null,
+      "seconds": 10.032766121003078,
+      "candidates": 5
+    },
+    "new_llm_rollouts": 0,
+    "reuses": "decision_shared_outcomes192_20261023 and decision_shared_teacher192_20261023"
+  },
+  "snapshot_utc": "2026-10-24T05:13:01.773511+00:00",
   "runs": [
     {
       "group": "historical_grpo_reference",
@@ -280,6 +291,32 @@
       "complete_raw_totals_verified": true,
       "terminal_raw_totals_verified": true,
       "status_path": "/content/local_fast/lsdrag-text-v1/results/decision_selected_head_grpo_validation64_20261024_r1/status.json"
+    },
+    {
+      "group": "adaptive_policy_followup",
+      "run": "decision_selected_head_grpo192_20261024_zero_gate",
+      "phase": "collection",
+      "counts": {
+        "episodes": 980,
+        "generated": 78379,
+        "inputs": 4314603
+      },
+      "seconds": 1501.1204512370023,
+      "complete_raw_totals_verified": false,
+      "terminal_raw_totals_verified": false,
+      "status_path": "/content/local_fast/lsdrag-text-v1/results/decision_selected_head_grpo192_20261024_zero_gate/status.json"
+    },
+    {
+      "group": "adaptive_policy_followup",
+      "run": "decision_selected_head_grpo_validation64_20261024_zero_gate",
+      "phase": "not_started",
+      "counts": null
+    },
+    {
+      "group": "adaptive_policy_followup",
+      "run": "decision_opportunity_value_validation64_20261024",
+      "phase": "not_started",
+      "counts": null
     }
   ],
   "completed_totals": {
@@ -337,6 +374,23 @@
       "completed_runs": 2,
       "uncompleted_runs": [
         "decision_selected_head_grpo192_20261024"
+      ]
+    },
+    "adaptive_policy_followup": {
+      "episodes": 0,
+      "generated": 0,
+      "inputs": 0,
+      "failed_run_costs": {
+        "episodes": 0,
+        "generated": 0,
+        "inputs": 0
+      },
+      "failed_runs": [],
+      "completed_runs": 0,
+      "uncompleted_runs": [
+        "decision_selected_head_grpo192_20261024_zero_gate",
+        "decision_selected_head_grpo_validation64_20261024_zero_gate",
+        "decision_opportunity_value_validation64_20261024"
       ]
     }
   },
