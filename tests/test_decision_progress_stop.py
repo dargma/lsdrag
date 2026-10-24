@@ -22,3 +22,9 @@ def test_episode_reset_prevents_cross_question_state_and_preserves_initial_h3():
         assert not torch.equal(first[:,3],second[:,3])
         head.reset_episode();assert torch.equal(first,head(x,legal)[0])
         assert all('previous' not in k and 'turn' not in k for k in head.state_dict())
+
+def test_target_optimizer_cannot_change_initial_action():
+    from lsdrag.decision_progress_targets import progress_stop_targets
+    rows=[dict(qid='q',turn=0,reference_probs=[.8,0,0,.2],legal=torch.tensor([True,False,False,True]),samples=[dict(action=0,f1=0.,em=0,generated=100,errors=[]),dict(action=3,f1=1.,em=1,generated=10,errors=[])])]
+    labels,_=progress_stop_targets(rows)
+    assert labels=={}
