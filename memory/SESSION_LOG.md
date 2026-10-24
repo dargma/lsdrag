@@ -1976,3 +1976,10 @@ Report docs/JEV_FINAL_TOOL_RETURN_RESULT_20261024.md. Fitarchivea7f39c40a174203b
 
 RL clarification: both H3 and final candidate use action rollout terminalQA/futurecost to form supervised policy-improvement preferences. No learnedcritic/PPO-style iterative onpolicy training. Finalcandidate uses H3suffix outcomes and is recursively executed at test; not retrained on ownfutureoutcomes. Failure does not prove general frozen-head/RL impossibility.
 
+
+## 2026-10-24 — renewed9B H3 generalization; GPU20minute-idle gate
+
+User authorizes new experiment despite priorlast4Blimit: latestQwen9B, freshtraining, purpose H3methodgeneralization and model-dependenttendencies. OfficialHF API findsQwen3.5-9B as posttrained9B; pinned c202236235762e1c871ad0ccb60c8ee5ba337b9a. Downloadcomplete72.95sec,4shards19.306GB+tokenizer matched officialLFSsha; actual paths localfast/hf/blobs verified. No4Bhead reuse: hidden4096vs2560.9Btext backbone loaded; artificialsmoke FINALParis passed but keywordargs repeatedzeros/top_k truncated. Preserve attempt1; no learnedqualityclaim. Sourceadapter uses commonJSONtooltemplate plus official closedemptythinkprefix;9Bcontrols must share it, not label unmodifiednativeXML.
+
+Latesthardwareoverride supersedes sharedGPUpermission: start only afterGPUidle20continuousminutes. No live modelworker now; initialsmoke alreadyterminal. CPUmonitor prepared1200seconds,15secsamples,utilization0/noGPUcomputeprocess/>=40GiBfree, resetonactivity/error. Runs actualprompt512-token smokev2 then ONLYifpasses fresh train192 collection; failure stops, no autoretry. Protocol docs/JEV_QWEN35_9B_H3_GENERALIZATION_20261024.md. Registry qwen35_9b_h3_20261024 contains model/download/hash/source/spec/launch records. NoH3fit yet. Need verify livewatchPID then observe staged terminalresults; don'tduplicatewatcher. Frozen splits/reserved80 preserved. Crossmodelgeneration/size/architectureconfounded: primary H3vsbase withinbackbone, no pure sizecausalclaim. Originalgoal notachieved.
+

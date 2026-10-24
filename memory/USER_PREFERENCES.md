@@ -1,3 +1,7 @@
+## 2026-10-24 — Qwen9B method generalization and GPU idle gate
+
+User explicitly renews experiments for H3 generalization/model-dependent trends using latest officialQwen9B, with fresh head training. Latest instruction: GPU must have been idle for at least20continuous minutes before starting. Previous sharedGPUpermission revoked for this work. No4Bhead transplant; compare within-model policy effects and preserve correct/incorrect token reporting.
+
 ## 2026-10-24 — last experiment limit and fair policy comparison
 
 User requests ONE LAST experiment expanding H3 result-based learning to tool choice. Finish this frozen experiment, verify/report/back up, then do not launch additional experiments without renewed instruction. Argument-only savings applied just to the candidate cannot establish policy improvement; a shared mechanism control is required. Pointer experiment is deferred.

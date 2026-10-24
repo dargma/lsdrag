@@ -1,13 +1,13 @@
 {
-  "phase": "last_tool_return_complete_rejected_no_further_experiments",
+  "phase": "qwen35_9b_verified_waiting_idle_monitor_launch",
   "updated_utc": "2026-10-24T13:02:35.723774+00:00",
-  "protocol": "docs/JEV_FINAL_TOOL_RETURN_20261024.md",
+  "protocol": "docs/JEV_QWEN35_9B_H3_GENERALIZATION_20261024.md",
   "protocol_sha256": "3aad00097a9e21aaeff4821e2679cfcf5dd2767a68e78e007a2da895e7db8b8b",
   "prompt": "prompts/text_rag_integrated_v5.txt",
   "prompt_sha256": "9d66c290a97bbabb4289dcf262e2b5bc8ba05653f87aed3b693825dbb02d5a97",
   "dataset": "MuSiQue-Ans v1.0, 2-hop",
-  "model": "Qwen/Qwen3-4B-Instruct-2507",
-  "model_revision": "cdbee75f17c01a7cc42f958dc650907174af0554",
+  "model": "Qwen/Qwen3.5-9B",
+  "model_revision": "c202236235762e1c871ad0ccb60c8ee5ba337b9a",
   "tools": [
     "keyword_search",
     "semantic_search",
@@ -36,9 +36,9 @@
   "implementation_completed": true,
   "dataset_prepared": true,
   "teacher_collection_started": true,
-  "training_completed": true,
-  "evaluation_completed": true,
-  "next": "Report completed final experiment; no further experiments without renewed user instruction",
+  "training_completed": false,
+  "evaluation_completed": false,
+  "next": "GPU20minute-idle monitor -> compatibility smoke -> freshtrain192 only if passed; then fresh9B H3 preparation",
   "previous_multimodal_checkpoint_historical_only": {
     "phase": "native2_review_required",
     "run": "/content/local_fast/lsdrag-head-v14/results/native_distillation_12b_20261015",
@@ -1250,5 +1250,5 @@
   },
   "coverage120_pipeline_status_path": "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop120_pipeline_20261024.json",
   "read_pointer_plan": "docs/JEV_H2_READ_POINTER_FEASIBILITY_20261024.md",
-  "last_experiment_limit": true
+  "last_experiment_limit": false
 }

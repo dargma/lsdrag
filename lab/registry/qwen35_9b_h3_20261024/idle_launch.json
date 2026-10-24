@@ -1,0 +1,52 @@
+{
+  "idle_seconds": 1200,
+  "sample_seconds": 15,
+  "rule": "GPU utilization0%, no compute processes, >=40GiB free, uninterrupted observed window; telemetry errors reset timer",
+  "commands": [
+    {
+      "stage": "compatibility_smoke_v2",
+      "argv": [
+        "/content/local_fast/lsdrag-text-v1/runtime/bin/python",
+        "-u",
+        "scripts/smoke_qwen35_h3.py"
+      ],
+      "log": "/content/local_fast/lsdrag-text-v1/logs/qwen35_h3_smoke_v2_20261024.log"
+    },
+    {
+      "stage": "fresh_teacher192",
+      "argv": [
+        "/content/local_fast/lsdrag-text-v1/runtime/bin/python",
+        "-u",
+        "scripts/collect_qwen35_shared_teacher.py",
+        "--spec",
+        "/content/local_fast/lsdrag-code/lab/registry/qwen35_9b_h3_20261024/teacher_spec.json"
+      ],
+      "log": "/content/local_fast/lsdrag-text-v1/logs/qwen35_teacher192_20261024.log"
+    }
+  ],
+  "hashes": {
+    "/content/local_fast/lsdrag-code/scripts/smoke_qwen35_h3.py": "e18a068d39906a1bd9e4d514043ae7fe890e8d7086043e1ccd0ed4cbb4b5c385",
+    "/content/local_fast/lsdrag-code/scripts/wait_qwen35_gpu_idle.py": "00e89aab814f97bfa0e3a355bec4d06caea4b097e0387da65cdd2cc38408024f",
+    "/content/local_fast/lsdrag-code/scripts/evaluate_decision_shared_corpus.py": "59ddd47f171ec4ec84b2841f7b86bed5b4bd9a3074c031e8a7ed0afd7ba62d54",
+    "/content/local_fast/lsdrag-code/src/lsdrag/decision_policy.py": "28ed32a4cdc9387bb0499ac48d36be619346995650ad4ca4f18486cc0e7a24a3",
+    "/content/local_fast/lsdrag-code/src/lsdrag/decision_rule.py": "e0d47dfe917004a1f8b91a17f24376f7b33beee8e3063f2f0b8ac6b4cbd5232b",
+    "/content/local_fast/lsdrag-code/src/lsdrag/text_decision_benchmark.py": "ad13a85b3af858ec9ecdee8b2796a376c3b9a121e20c2743bf33ed6348135944",
+    "/content/local_fast/lsdrag-code/src/lsdrag/decision_policy_recovery.py": "0a8e6d3b915aacc2114195dd201e5eb5068d6e55cf2bcc56e8fa4d6829b524cc",
+    "/content/local_fast/lsdrag-code/prompts/text_rag_integrated_v5.txt": "9d66c290a97bbabb4289dcf262e2b5bc8ba05653f87aed3b693825dbb02d5a97",
+    "/content/local_fast/lsdrag-code/scripts/evaluate_decision_value_heads.py": "59e69c3969dc0a8b2a19713c66657c6a0290de09afabf04cf68b171fd59ab727",
+    "/content/local_fast/lsdrag-code/src/lsdrag/decision_value_head.py": "0762450117749f13374751cd622fb4de86fb7c0754cd1b1f83b6dd6217844192",
+    "/content/local_fast/lsdrag-code/scripts/fit_decision_state_heads.py": "3078b3fd947d2fae808e9ff9b8ea89e4d286caab5f5c9c0ad3837619de12aa50",
+    "/content/local_fast/lsdrag-code/src/lsdrag/decision_state_learning.py": "e900d36eb59e3d2bcc9310d86b792f5be292af6f145aafd205cda1ec24221d59",
+    "/content/local_fast/lsdrag-code/src/lsdrag/decision_structure_adapter.py": "906a60829d937fc3c6e19749911ba926f58e6eef5ee5a3af2099084301ddcf9a",
+    "/content/local_fast/lsdrag-code/scripts/evaluate_decision_structure_adapter.py": "d44881ac6e9e19d99843c1af4caa022bd16fba47742da4cddcab66cbb4d060b6",
+    "/content/local_fast/lsdrag-code/scripts/evaluate_decision_attention.py": "2bc2c809305a9c3f79564025b679987b23e8ffa527907fc9a4d3fd45b4655559",
+    "/content/local_fast/lsdrag-code/src/lsdrag/decision_attention_adapter.py": "4e8c39884e02321dc9fb6c83824d935844060730a354316429905cfaf86f3bef",
+    "/content/local_fast/lsdrag-code/src/lsdrag/decision_stop_value.py": "833c1d061a76dfb183d874499cd59be7d3cf652672e0f3718e0c4a565711d884",
+    "/content/local_fast/lsdrag-code/scripts/evaluate_decision_stop_value_h2.py": "ac3d2abe31ba65db42cf182109c3069a6ae2657408b5d0591766d5e5ad5725d8",
+    "/content/local_fast/lsdrag-code/src/lsdrag/decision_qwen35_reader.py": "b0ef70dcc1a320caebbeee631945e8ea9a296533e23c8f621ba7766b872d2683",
+    "/content/local_fast/lsdrag-code/scripts/collect_qwen35_shared_teacher.py": "51b6ec318db16d06992f149848477760a0d485f8a5384b35fb72382dc9ff4912",
+    "/content/local_fast/lsdrag-code/scripts/collect_decision_shared_teacher.py": "59f568a61a8d50e3d6d1a5eb923e2977edcdd0ea649d06afcec002722eb16bbc",
+    "/content/local_fast/lsdrag-code/lab/registry/qwen35_9b_h3_20261024/common_chat_template.jinja": "64f85b198065d0fba2a81f37e10ed68161ce2c19a754c7100e67e0ca2ee9c326",
+    "/content/local_fast/lsdrag-code/lab/registry/qwen35_9b_h3_20261024/teacher_spec.json": "81905abc03b91e2b2635c11ce9f537333e3e99c55682df1da0d165bcd1a83faa"
+  }
+}
