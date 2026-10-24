@@ -43,3 +43,13 @@ class Qwen35Reader(RecoveryPolicyReader):
         # These are INPUT tokens, not hidden generated reasoning or free output.
         rendered+='<think>\n\n</think>\n\n'
         return self.tokenizer(rendered,return_tensors='pt').to(self.model.device)
+
+    def continue_cached(self,action,trajectory,deadline=float('inf')):
+        from .decision_qwen35_decode import decode_cached
+        from .text_integrated_aligned import syntax_prefix
+        prefix,argprefix=syntax_prefix(action)
+        return decode_cached(self,action,trajectory,deadline,self.config.max_output_tokens,self.tokenizer.encode(prefix,add_special_tokens=False),argprefix)
+
+    def payload_from_current(self,action,history,initial_text,deadline,token_budget):
+        from .decision_qwen35_decode import decode_cached
+        return decode_cached(self,action,history,deadline,token_budget,[],initial_text)

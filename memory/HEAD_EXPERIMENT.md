@@ -1,3 +1,9 @@
+## 2026-10-24 — immediate shared GPU reauthorized; new goal is complete larger-model experiment
+
+Latest user requests several focused comparisons and immediate execution ifGPUmemory permits;20minuteidle rule superseded. User cleared oldgoal and set active “큰 모델로 실험 완료하기”. OldGRPO+5pp/70% is historicalcontext, not newgoalcompletioncriterion. Mainpurpose H3methodgeneralization/model-dependenttendencies withfresh9Btraining, same-modelbase/H3/constantstopcontrol; no4Bheadreuse. GPUfree94965MiB; stopped OWNCPUwatcher105169 afterconfirmedwaiting, no child launched. UnrelatedGPUprocesses untouched.
+
+Smokev2 withactualprompt failed samekeywordintegerrepetition. Diagnosticrawgreedy token3307 is'}}', closing argument and outertoolwrapper; oldargumentonlymask rejected it and chose nexttoken0. Corrected isolated9Bdecoder accepts only schema-valid argument plusknownouterclosure, chargesfulltoken; appliesbothheadcontinuationandnativefastpayload. BoundaryCPUchecks rejectoverflow/extras. Smokev3 currentlyrunning session60384 log /content/local_fast/lsdrag-text-v1/logs/qwen35_h3_smoke_v3_20261024.log. No teachercollection ornewheadfit yet. Regenerated not-yet-run teacher spec hashes; prioridleversion preserved. Next verifiesall4actions then freshteacher192. No performanceclaim.
+
 ## 2026-10-24 — CPU idle monitor live, other-session GPU activity blocks launch
 
 Monitor PID105169 confirmed live (CPU only), log /content/local_fast/lsdrag-text-v1/logs/qwen35_idle_watch_20261024.log; live status /content/local_fast/lsdrag-text-v1/results/qwen35_9b_idle_gate_20261024/status.json. Initial observation2026-10-24T13:35:10Z GPUutil17%,computePIDs104735/104835/105053,free93938MiB; idlecounter0. NoGPUexperiment launched afternew20minuteidle instruction. Monitor resets window on GPUactivity; do not terminate unrelated processes. Frozen503ffc4launch waits1200continuousseconds before smokev2, then teacher192 onlyifpassed. FreshH3training remains pending, no performanceclaim.

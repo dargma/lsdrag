@@ -1,3 +1,5 @@
+Latest override: user now explicitly permits immediate shared-GPU execution when memory allows;20minute idle monitor cancelled. User replaced previous goal with “큰 모델로 실험 완료하기”. Success means completing and verifying the9Bexperiment, not forcing old+5pp/.70 success. Historical fixed4Bbaseline is retained for context, not the new completion criterion.
+
 # H3 method generalization to Qwen3.5-9B
 
 User renewed authorization after the final4B experiment: download current official9B Qwen and retrain, with H3 generalization and model-dependent tendencies as the purpose. Latest hardware override: start GPU work only after20 uninterrupted minutes of observed GPU idle. Earlier shared-GPU permission is superseded.
@@ -24,3 +26,11 @@ Original immutable4BGRPO goal remains a historical fixed benchmark and must not 
 4. After verified teacher coverage, freeze fresh9Bbase head training and outcome collection, then originalH3 stopping target/fit and paired evaluation. No development labels to select hyperparameters. These stages are not silently substituted with old4B features or pretrained weights.
 
 Monitor launch registry lab/registry/qwen35_9b_h3_20261024/idle_launch.json; live status /content/local_fast/lsdrag-text-v1/results/qwen35_9b_idle_gate_20261024/status.json. Do not duplicate the monitor; exclusive file lock protects it. Inspect actual PID/child and status before recovery.
+
+## Wrapper-aware9B decoder correction
+
+Initial two smokes failed because token3307 jointly closes argument and outer tool-call braces. The argument-only mask rejected the valid native wrapper token and selected zero repeatedly. New adapter accepts schema-valid first argument object plus only the already-open outer brace and optional known closing-tag prefix. Every emitted token is charged; raw generated text and consumed wrapper tail are recorded. Same handling for native-action baseline and head-selected actions. No numeric clamps/answer repair.
+
+## Bounded comparisons
+
+Fresh9Bbase policy versus its H3 correction is primary; state-independent stop bias trained/calibrated only on train is the mechanism control. Report historical4BH1→H3 direction alongside9Bbase→H3, explicitly accounting for base preparation differences. Evaluate all on frozen development64 once, without dev tuning. Prefer this single mechanistic comparison over multiple architecture/ablation variants.

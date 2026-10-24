@@ -1,0 +1,54 @@
+{
+  "passed": true,
+  "model": "/content/local_fast/lsdrag-text-v1/hf/models--Qwen--Qwen3.5-9B/snapshots/c202236235762e1c871ad0ccb60c8ee5ba337b9a",
+  "hidden_shape": [
+    37,
+    4096
+  ],
+  "answer": {
+    "answer": "Paris",
+    "support_ids": [
+      "evidence"
+    ]
+  },
+  "generated": 11,
+  "tool_checks": [
+    {
+      "action": "keyword_search",
+      "arguments": {
+        "keywords": [
+          "capital",
+          "France"
+        ],
+        "top_k": 5
+      },
+      "generated": 15
+    },
+    {
+      "action": "semantic_search",
+      "arguments": {
+        "query": "capital of France",
+        "top_k": 5
+      },
+      "generated": 14
+    },
+    {
+      "action": "read_chunk",
+      "arguments": {
+        "chunk_ids": [
+          "c123"
+        ]
+      },
+      "generated": 10
+    }
+  ],
+  "loading_info": {
+    "missing_keys": "set()",
+    "unexpected_keys": "set()",
+    "mismatched_keys": "set()",
+    "error_msgs": []
+  },
+  "seconds": 2.0468645079999988,
+  "thinking": false,
+  "profile": "Common A-RAG JSON protocol; official empty nonthinking suffix; not native XML tool baseline"
+}

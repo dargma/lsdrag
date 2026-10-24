@@ -1,8 +1,8 @@
 {
-  "phase": "qwen35_9b_waiting_continuous_gpu_idle",
+  "phase": "qwen35_wrapper_compatibility_smoke_v3",
   "updated_utc": "2026-10-24T13:02:35.723774+00:00",
   "protocol": "docs/JEV_QWEN35_9B_H3_GENERALIZATION_20261024.md",
-  "protocol_sha256": "9859948c714b68740bbedb73770800a6d991f1ffcaf7c0197ade56987358847c",
+  "protocol_sha256": "d6bdc49f3927c8ebf075c16e1255ab41a6be21aa1b81733b1eb0f1f843ae0e03",
   "prompt": "prompts/text_rag_integrated_v5.txt",
   "prompt_sha256": "9d66c290a97bbabb4289dcf262e2b5bc8ba05653f87aed3b693825dbb02d5a97",
   "dataset": "MuSiQue-Ans v1.0, 2-hop",
@@ -32,13 +32,13 @@
   ],
   "worker_wall_budget_minutes": 120,
   "run_planned": "/content/local_fast/lsdrag-text-v1/results/decision_h3_policy_coverage24b_20261024",
-  "pid": 105169,
+  "pid": null,
   "implementation_completed": true,
   "dataset_prepared": true,
   "teacher_collection_started": true,
   "training_completed": false,
   "evaluation_completed": false,
-  "next": "GPU20minute-idle monitor -> compatibility smoke -> freshtrain192 only if passed; then fresh9B H3 preparation",
+  "next": "Verify9B all-action smoke then freshteacher192;20minuteidle rule cancelled",
   "previous_multimodal_checkpoint_historical_only": {
     "phase": "native2_review_required",
     "run": "/content/local_fast/lsdrag-head-v14/results/native_distillation_12b_20261015",
@@ -174,7 +174,7 @@
   "external_evaluation_completed": true,
   "updated_epoch": 1792161920.7440126,
   "d3_additional_analysis": "withdrawn",
-  "session_id": null,
+  "session_id": 60384,
   "functional_smoke": {
     "passed": true,
     "checks": 7,
@@ -1250,5 +1250,6 @@
   },
   "coverage120_pipeline_status_path": "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop120_pipeline_20261024.json",
   "read_pointer_plan": "docs/JEV_H2_READ_POINTER_FEASIBILITY_20261024.md",
-  "last_experiment_limit": false
+  "last_experiment_limit": false,
+  "active_objective": "\ud070 \ubaa8\ub378\ub85c \uc2e4\ud5d8 \uc644\ub8cc\ud558\uae30"
 }

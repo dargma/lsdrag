@@ -1,3 +1,7 @@
+## 2026-10-24 — shared GPU reauthorized; larger-model completion goal
+
+User now says GPU사용가능하면바로같이해보자, superseding20minuteidlecondition. Run with sufficientVRAM, do notstopotherjobs. New activegoal: 큰 모델로 실험 완료하기. Focus H3generalization/modeltraits, fresh9Btraining, fewhypothesiscomparisons, correctness-separatedcost. Previous4Bsuccesscriterion is historical, not forced9Bsuccess requirement.
+
 ## 2026-10-24 — Qwen9B method generalization and GPU idle gate
 
 User explicitly renews experiments for H3 generalization/model-dependent trends using latest officialQwen9B, with fresh head training. Latest instruction: GPU must have been idle for at least20continuous minutes before starting. Previous sharedGPUpermission revoked for this work. No4Bhead transplant; compare within-model policy effects and preserve correct/incorrect token reporting.

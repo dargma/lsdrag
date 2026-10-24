@@ -225,10 +225,13 @@
     "src/lsdrag/decision_attention_adapter.py": "4e8c39884e02321dc9fb6c83824d935844060730a354316429905cfaf86f3bef",
     "src/lsdrag/decision_stop_value.py": "833c1d061a76dfb183d874499cd59be7d3cf652672e0f3718e0c4a565711d884",
     "scripts/evaluate_decision_stop_value_h2.py": "ac3d2abe31ba65db42cf182109c3069a6ae2657408b5d0591766d5e5ad5725d8",
-    "src/lsdrag/decision_qwen35_reader.py": "b0ef70dcc1a320caebbeee631945e8ea9a296533e23c8f621ba7766b872d2683",
+    "src/lsdrag/decision_qwen35_reader.py": "728b6518161be07900eb2529f8ff058fbaa07c5f2afba0f907dcef4ff43c8f82",
     "scripts/collect_qwen35_shared_teacher.py": "51b6ec318db16d06992f149848477760a0d485f8a5384b35fb72382dc9ff4912",
     "scripts/collect_decision_shared_teacher.py": "59f568a61a8d50e3d6d1a5eb923e2977edcdd0ea649d06afcec002722eb16bbc",
-    "lab/registry/qwen35_9b_h3_20261024/common_chat_template.jinja": "64f85b198065d0fba2a81f37e10ed68161ce2c19a754c7100e67e0ca2ee9c326"
+    "lab/registry/qwen35_9b_h3_20261024/common_chat_template.jinja": "64f85b198065d0fba2a81f37e10ed68161ce2c19a754c7100e67e0ca2ee9c326",
+    "src/lsdrag/decision_qwen35_decode.py": "def472f75c3c1640e9ce3f81e7cb9d9ddd2a53d28b1c71712b5041f90558c549"
   },
-  "tool_semantics": "Original TextCorpus retrieval unchanged: full vector dot product; literal keyword occurrence score; top_k default5/max20; snippets first300 chars. SQLite index built but unused to avoid changing lexical scoring at the same time as pool scope."
+  "tool_semantics": "Original TextCorpus retrieval unchanged: full vector dot product; literal keyword occurrence score; top_k default5/max20; snippets first300 chars. SQLite index built but unused to avoid changing lexical scoring at the same time as pool scope.",
+  "reader_profile": "qwen35-common-json-wrapper-aware-v1",
+  "hardware": "Shared GPU explicitly reauthorized; >=40GiB free before load; no controlled latency claims"
 }
