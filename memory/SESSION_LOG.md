@@ -1150,3 +1150,9 @@ Coordinator state: `/content/local_fast/lsdrag-text-v1/results/decision_quality_
 
 Coordinator354060 verified waiting for current refresh351564; collector351577 live,290episodes/39states/question22snapshot. Quality queue state /content/local_fast/lsdrag-text-v1/results/decision_quality_head_grpo_coordinator_20261024.json; log /content/local_fast/lsdrag-text-v1/logs/quality_head_grpo_coordinator.log. ExactqualityMLPGRPO training has not started; automatic sequentiallaunch authorized and configured. Goal ACTIVE.
 
+
+## 2026-10-24 — context-input candidate prepared without changing active runs
+
+Verified pack_hidden37slots includes32ordered full-context-bin means, not individual tokens. Existing historicalPolicyHead already supportsbinattention. New optional ContextResidualHead preserves qualityMLPinitiallogits exactly via zero-outputresidual, freezesbase and reads32bins withquestion-conditionedactionqueries. Candidateonly,nottrained/evaluated,notwiredtorunningcollector/GRPO. docs/JEV_CONTEXT_RESIDUAL_CANDIDATE_20261024.md;2newtests+qualityGRPOregression3passed. This addresses inputaccess without freshLLMfeaturecollection, but is not novelty/equalcapacity/token-levelattention evidence.
+
+Current collector351577 verified364episodes/49states/question28snapshot;GRPOqueue354060 stillwaiting. Original frozenrunssources unchanged. GoalACTIVE.
