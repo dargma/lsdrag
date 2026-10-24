@@ -958,5 +958,18 @@
     "target_met": false,
     "workers_active": false
   },
-  "numeric_target_met": false
+  "numeric_target_met": false,
+  "active_research_goal": {
+    "status": "active",
+    "objective_document": "docs/JEV_DECISION_POLICY_ACTIVE_GOAL_20261024.md",
+    "numeric_target": {
+      "f1_delta": 0.05,
+      "generated_ratio": 0.7
+    },
+    "requires_policy_quality_evidence": true,
+    "experiment_completion_is_goal_completion": false,
+    "continue_after_three_if_unmet": true,
+    "architecture_variants_authorized": true,
+    "updated_utc": "2026-10-24T05:05:24.828840+00:00"
+  }
 }

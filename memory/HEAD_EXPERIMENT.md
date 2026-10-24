@@ -1,3 +1,7 @@
+## 2026-10-24 — ACTIVE goal restored; adaptive experiments and head structures authorized
+
+User explicitly requests goal mode, all three axes then further ideas/experiments if unmet, plus head architecture variants. Authority: docs/JEV_DECISION_POLICY_ACTIVE_GOAL_20261024.md. F1+5pp/generated−30% jointly versus fixed basic GRPO AND evidence of useful state-conditioned policy; experiment completion is not goal achievement. Axis1 running; axes2/3 and attention/action-quality-cost structure comparisons authorized but not launched. Preserve heldout during development. Goal remains active.
+
 ## 2026-10-24T04:47:58.251542+00:00 — selected-head GRPO continuation: running
 
 Coordinator state: `/content/local_fast/lsdrag-text-v1/results/decision_selected_head_grpo_coordinator_20261024_zero_gate.json`. Details: `{"phase": "running", "pid": 330710, "seconds": 0.002992448993609287, "script": "scripts/run_decision_selected_head_grpo_zero_gate.py", "child_pid": 330716, "log": "/content/local_fast/lsdrag-text-v1/logs/selected_grpo_run_decision_selected_head_grpo_zero_gate_1792817278.log"}`. Same already-trained selected head continues learning; LLM/normalization fixed. Only train192 and validation64 used; final80/reserved80 protected.
