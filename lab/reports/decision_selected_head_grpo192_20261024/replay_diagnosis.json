@@ -1,0 +1,27 @@
+{
+  "train_only": true,
+  "rows": [
+    {
+      "qid": "2hop__426842_4037",
+      "fp32_vs_bf16_max_legal_logp_error": 0.0017805099487304688,
+      "fp32_bf16_passes_original_tolerance": false,
+      "fp32_batch1_vs32_max_error": 2.384185791015625e-07,
+      "observation_mean_quantization_max": 0.07692718505859375
+    },
+    {
+      "qid": "2hop__247148_838537",
+      "fp32_vs_bf16_max_legal_logp_error": 0.0003943443298339844,
+      "fp32_bf16_passes_original_tolerance": true,
+      "fp32_batch1_vs32_max_error": 2.384185791015625e-07,
+      "observation_mean_quantization_max": 0.17095184326171875
+    },
+    {
+      "qid": "2hop__82744_23249",
+      "fp32_vs_bf16_max_legal_logp_error": 0.0007529258728027344,
+      "fp32_bf16_passes_original_tolerance": false,
+      "fp32_batch1_vs32_max_error": 4.76837158203125e-07,
+      "observation_mean_quantization_max": 0.08630752563476562
+    }
+  ],
+  "note": "Three fresh public training prefixes; no original failed full-batch cache was saved. Quantization cause diagnostic, not full failed-batch replay."
+}

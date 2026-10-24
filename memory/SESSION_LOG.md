@@ -931,3 +931,15 @@ Coordinator state: `/content/local_fast/lsdrag-text-v1/results/decision_selected
 
 
 Selected-head GRPO actual launch verified: coordinator292790/session40877,worker292805;log /content/local_fast/lsdrag-text-v1/logs/selected_grpo_run_decision_selected_head_grpo_1792808749.log. First collection36episodes/9questions completed,raw39atcheck. No optimizer update yet: round0 collection precedes update. Existing selected checkpoint SHA pinned. Automatic sequence train→audit→Drive→paired validation64→report→Drive; no test80/reserved80.
+
+## 2026-10-24T02:45:40.529847+00:00 — selected-head GRPO continuation: failed
+
+Coordinator state: `/content/local_fast/lsdrag-text-v1/results/decision_selected_head_grpo_coordinator_20261024.json`. Details: `{"phase": "failed", "pid": null, "seconds": 1191.3411720950025, "error": "RuntimeError('scripts/run_decision_selected_head_grpo.py exited 1; inspect /content/local_fast/lsdrag-text-v1/logs/selected_grpo_run_decision_selected_head_grpo_1792808749.log')"}`. Same already-trained selected head continues learning; LLM/normalization fixed. Only train192 and validation64 used; final80/reserved80 protected.
+
+
+## 2026-10-24 — selected-head GRPO failure 복구 r1 승인·수정
+
+사용자goal재설정및 "계속 진행 문제는 고치고" 명시. 첫run은768episodes/gen61608/input3416046,1186.36초 후 behavior logprob mismatch로실패,optimizer0/checkpoint없음/batch없음. 실패raw768 Drive백업SHA0e1230feb36455f8c92e22bcdffd679a471679f07d9ed85d3765f2a406ac0cbc. 기존run보존. 학습prefix3개재현:FP32→BF16 logprob최대.00178051,FP32batch1vs32 최대4.77e-7. 진단JSON lab/reports/decision_selected_head_grpo192_20261024/replay_diagnosis.json. 저장정밀도손실이실제확인됨;전체실패batch는저장되지않아재생불가.
+
+rollout에선택적state_storage_dtype추가(기존default BF16유지),새r1만FP32저장. logprob허용오차2e-4유지,batch를검사전에저장. 회귀/GRPO/rule6tests통과. scripts/coordinate_decision_selected_head_grpo_r1.py로동일선정checkpoint에서재실행,train192×4×2/3600초와validation64×2/1200초유지. 실패비용추가집계. 원final80/예비80미사용. 과거manifest sourceSHA는당시Git파일로검증,새실행sourceSHA는r1registry동결.
+

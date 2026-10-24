@@ -1,3 +1,5 @@
+> Recovery r1: 첫 실행은768episode 수집 후 behavior logprob 검사에서 실패했고 optimizer update는0회였다. FP32 평균 hidden을 BF16으로 저장하면 실제 train prefix에서 logprob 오차가 재현됐다. 검사 허용오차는 유지하고, 새 rollout만 FP32 state 저장을 사용한다. batch는 검사 전에 저장한다. 실패 원자료/비용은 별도 보존한다. r1은 같은 원래 선정 checkpoint에서 다시 수집·학습하며 기존 실패run을 덮어쓰지 않는다. 새run은 `decision_selected_head_grpo192_20261024_r1`,새검증은 `decision_selected_head_grpo_validation64_20261024_r1`,실행은 `scripts/coordinate_decision_selected_head_grpo_r1.py`다. 기존 학습예산은 r1에도 동일하게 적용하되 실패비용을 추가로 보고한다.
+
 # 선정 head의 GRPO 추가 학습
 
 사용자 명시 지시: 새 BC부터 시작하지 않고, 이미 outcome 학습된 선정 head 자체를 GRPO로 계속 학습한다. 기존 완료 실험과 별도 후속 실행이며, 결과를 과거 최종평가에 소급 적용하지 않는다.

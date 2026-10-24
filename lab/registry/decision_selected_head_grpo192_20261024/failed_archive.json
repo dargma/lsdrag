@@ -1,0 +1,12 @@
+{
+  "path": "/content/drive/MyDrive/lsdrag-backups/20261023/decision_selected_head_grpo192_20261024_failed.tar.gz",
+  "sha256": "0e1230feb36455f8c92e22bcdffd679a471679f07d9ed85d3765f2a406ac0cbc",
+  "bytes": 2388137,
+  "phase": "failed",
+  "episodes": 768,
+  "generated": 61608,
+  "inputs": 3416046,
+  "optimizer_updates": 0,
+  "batch_cache_saved": false,
+  "note": "Full failed-run raw episodes preserved; unavailable batch not claimed recoverable."
+}

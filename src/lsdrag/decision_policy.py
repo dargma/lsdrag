@@ -229,7 +229,7 @@ class PolicyReader(AlignedReader):
 
 def rollout(reader, question, rows, vectors, embedder, prompt, head, deadline,
             stochastic=False, epsilon=.05, initial=None, first_action=None, historical=None,
-            native_fast=False):
+            native_fast=False, state_storage_dtype=torch.bfloat16):
     """head chooses every suffix step; branch rollouts never enter PPO's on-policy batch."""
     corpus=TextCorpus(rows,vectors,embedder)
     messages=copy.deepcopy(initial['messages']) if initial else [{'role':'system','content':prompt},{'role':'user','content':question}]
@@ -265,7 +265,7 @@ def rollout(reader, question, rows, vectors, embedder, prompt, head, deadline,
         prefix=sum(u.get('prompt_tokens',0) for u in increment)
         # Fixed proxy, not wall time: calls + decode/100 + all prefix tokens/10000.
         cost=(name!='FINAL') + generated/100 + prefix/10000
-        steps.append({'pack':pack.detach().cpu().to(torch.bfloat16),'legal':legal[0].cpu(),'action':action,
+        steps.append({'pack':pack.detach().cpu().to(state_storage_dtype),'legal':legal[0].cpu(),'action':action,
                       'old_logp':logp,'value':float(val[0]),'cost_units':cost,'policy_probs':dist.probs[0].cpu().tolist(),
                       'forced':forced,'branch_intervention':first_action is not None and len(steps)==0})
         if error:

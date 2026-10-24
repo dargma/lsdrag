@@ -1,8 +1,8 @@
 {
-  "phase": "selected_head_grpo_running",
-  "updated_utc": "2026-10-24T02:25:49.191314+00:00",
+  "phase": "selected_head_grpo_r1_prepared",
+  "updated_utc": "2026-10-24T02:45:40.529847+00:00",
   "protocol": "docs/JEV_SELECTED_HEAD_GRPO_CONTINUATION_20261024.md",
-  "protocol_sha256": "82d7d02a8daeed0f355acf1b7071bf1cc137d601ae2e4d78de6d09385a1dbe55",
+  "protocol_sha256": "115cda4de141c12e007c13e3ca7d80d4cb186f1a354b76df6a06eafca6d5e448",
   "prompt": "prompts/text_rag_integrated_v5.txt",
   "prompt_sha256": "9d66c290a97bbabb4289dcf262e2b5bc8ba05653f87aed3b693825dbb02d5a97",
   "dataset": "MuSiQue-Ans v1.0, 2-hop",
@@ -32,7 +32,7 @@
   ],
   "worker_wall_budget_minutes": 120,
   "run_planned": "/content/local_fast/lsdrag-text-v1/results/decision_shared_test80_20261023",
-  "pid": 292805,
+  "pid": null,
   "implementation_completed": true,
   "dataset_prepared": true,
   "teacher_collection_started": true,
@@ -924,14 +924,17 @@
     "execution_resumed_explicitly": true
   },
   "selected_head_grpo_continuation": {
-    "phase": "running",
-    "pid": 292790,
-    "seconds": 0.002782290001050569,
-    "script": "scripts/run_decision_selected_head_grpo.py",
-    "child_pid": 292805,
-    "log": "/content/local_fast/lsdrag-text-v1/logs/selected_grpo_run_decision_selected_head_grpo_1792808749.log",
-    "updated_utc": "2026-10-24T02:25:49.191314+00:00",
-    "run": "decision_selected_head_grpo192_20261024",
-    "exec_session": 40877
+    "phase": "failed",
+    "pid": null,
+    "seconds": 1191.3411720950025,
+    "error": "RuntimeError('scripts/run_decision_selected_head_grpo.py exited 1; inspect /content/local_fast/lsdrag-text-v1/logs/selected_grpo_run_decision_selected_head_grpo_1792808749.log')",
+    "updated_utc": "2026-10-24T02:45:40.529847+00:00",
+    "run": "decision_selected_head_grpo192_20261024"
+  },
+  "selected_head_grpo_failed_run": {
+    "episodes": 768,
+    "optimizer_updates": 0,
+    "reason": "behavior logprob mismatch",
+    "archive": "lab/registry/decision_selected_head_grpo192_20261024/failed_archive.json"
   }
 }
