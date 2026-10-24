@@ -1,0 +1,18 @@
+{
+  "audit_passed": true,
+  "questions": 48,
+  "states": 82,
+  "episodes": 608,
+  "counts": {
+    "phase": "complete",
+    "pid": null,
+    "seconds": 917.930229139005,
+    "episodes": 608,
+    "generated": 50869,
+    "inputs": 2671592,
+    "states": 82
+  },
+  "states_sha256": "91a1ea1104822632bac332ce37a8f887c975e0e8db4879fdb38e6b251846325c",
+  "errors": 15,
+  "note": "Collection consistency only. Fresh current-policy suffix outcomes for train subset; no validation/test quality claim."
+}

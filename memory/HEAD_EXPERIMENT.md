@@ -1,4 +1,10 @@
 
+## 2026-10-24 — selected refresh audited and six-policy evaluation live
+
+Selectedd987refreshcomplete48q/82states/608episodes,917.93sec,50869generated/2671592input,15errorepisodespreserved. statesSHA91a1ea1104822632bac332ce37a8f887c975e0e8db4879fdb38e6b251846325c. Rawprefix/legal/repeat/score/tokencountauditpassed;Drivearchiveindependentlyrehashed. Reliability:57anypositive,39nonzerostopcontrast,33/39repeatdirectionagreement;best-setoverlap1.0includesoptimisticties,notpolicyaccuracy.
+
+Exactmatched58prefixstatescoverall48q. 2x2plusdirectutilityfitscomplete9.05sec;trainarchiveindependentlyrehashed. Evaluator393233verifiedlive undercoordinator391074;state /content/local_fast/lsdrag-text-v1/results/decision_matched_refresh_coordinator_r1_20261024.json;log /content/local_fast/lsdrag-text-v1/logs/value_heads_evaluate_decision_direct_utility_1792829950.log. Run decision_matched_refresh_validation64_20261024,6×64planned;last12episodes. No morecollection/fitneeded;do notduplicate. GoalACTIVE/qualitypending.
+
 ## 2026-10-24 — expanded six-policy chain waiting live
 
 Replacementcoordinator391074 verifiedlive, old389583 absent. State /content/local_fast/lsdrag-text-v1/results/decision_matched_refresh_coordinator_r1_20261024.json;log /content/local_fast/lsdrag-text-v1/logs/matched_refresh_coordinator_r1.log. Collector388356 uninterrupted,347episodes/47states/question29atlastcheck. Auditedcompletiontriggerssame-prefixfourarms plusdirectutilityhead then6×64eval/archive. No fitlaunchedyet. GoalACTIVE.
