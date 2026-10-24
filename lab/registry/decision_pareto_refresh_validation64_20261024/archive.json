@@ -1,0 +1,8 @@
+{
+  "path": "/content/drive/MyDrive/lsdrag-backups/20261023/decision_pareto_refresh_validation64_20261024.tar.gz",
+  "sha256": "eb2cc5fe7fcb438b618222bad56ce171efea0f357fc3c4b7b7fdafafce18e8c7",
+  "bytes": 328997,
+  "run": "/content/local_fast/lsdrag-text-v1/results/decision_pareto_refresh_validation64_20261024",
+  "phase": "complete",
+  "backbone_weights_included": false
+}
