@@ -1140,3 +1140,13 @@ Explicit request: GRPO on measuredF132.45 auxiliaryMLP0a1b..., not historicald98
 
 Remaining priorities and exactbranchlineage saved docs/JEV_REMAINING_ADAPTIVE_PROGRAM_20261024.md. User reiterates continue untilgoal, broadconsideration ofinputs/structure/objective/data/retrieval/argument+answergeneration costs; no automatic goalcompletion afterexperiment. Token-levelattention remainsconditionalcandidate, not an unannounced change tocurrentrun. GoalACTIVE.
 
+
+## 2026-10-24T06:09:22.039321+00:00 — selected-head GRPO continuation: preparing
+
+Coordinator state: `/content/local_fast/lsdrag-text-v1/results/decision_quality_head_grpo_coordinator_20261024.json`. Details: `{"phase": "preparing", "pid": 354060, "seconds": 2.8799986466765404e-06}`. Same already-trained selected head continues learning; LLM/normalization fixed. Only train192 and validation64 used; final80/reserved80 protected.
+
+
+## 2026-10-24 — quality-head GRPO queue live
+
+Coordinator354060 verified waiting for current refresh351564; collector351577 live,290episodes/39states/question22snapshot. Quality queue state /content/local_fast/lsdrag-text-v1/results/decision_quality_head_grpo_coordinator_20261024.json; log /content/local_fast/lsdrag-text-v1/logs/quality_head_grpo_coordinator.log. ExactqualityMLPGRPO training has not started; automatic sequentiallaunch authorized and configured. Goal ACTIVE.
+

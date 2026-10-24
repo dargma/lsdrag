@@ -1,3 +1,11 @@
+## 2026-10-24 — quality-head GRPO queue live
+
+Coordinator354060 verified waiting for current refresh351564; collector351577 live,290episodes/39states/question22snapshot. Quality queue state /content/local_fast/lsdrag-text-v1/results/decision_quality_head_grpo_coordinator_20261024.json; log /content/local_fast/lsdrag-text-v1/logs/quality_head_grpo_coordinator.log. ExactqualityMLPGRPO training has not started; automatic sequentiallaunch authorized and configured. Goal ACTIVE.
+
+## 2026-10-24T06:09:22.039321+00:00 — selected-head GRPO continuation: preparing
+
+Coordinator state: `/content/local_fast/lsdrag-text-v1/results/decision_quality_head_grpo_coordinator_20261024.json`. Details: `{"phase": "preparing", "pid": 354060, "seconds": 2.8799986466765404e-06}`. Same already-trained selected head continues learning; LLM/normalization fixed. Only train192 and validation64 used; final80/reserved80 protected.
+
 ## 2026-10-24 — user prioritizes GRPO on quality-leading MLP; broader adaptive program
 
 Explicit request: GRPO on measuredF132.45 auxiliaryMLP0a1b..., not historicald987head or collapsed constrained descendants. Current refresh continues; next queue scripts/coordinate_decision_quality_head_grpo.py waits for successful collection/audit/archive then freshon-policy192×4×1=768episodes/3600seconds andpairedvalidation64. Encoder/policy tensors train;auxoutputweights/norm/LLMfrozen.14tests passed including exactinitialization/actorupdate/frozenauxnormreference. Protocol docs/JEV_QUALITY_HEAD_GRPO_20261024.md.

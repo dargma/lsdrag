@@ -20,7 +20,7 @@
     "new_llm_rollouts": 0,
     "reuses": "decision_shared_outcomes192_20261023 and decision_shared_teacher192_20261023"
   },
-  "snapshot_utc": "2026-10-24T06:01:22.654876+00:00",
+  "snapshot_utc": "2026-10-24T06:09:48.262990+00:00",
   "runs": [
     {
       "group": "historical_grpo_reference",
@@ -363,14 +363,26 @@
       "run": "decision_current_policy_refresh48_20261024",
       "phase": "collection",
       "counts": {
-        "episodes": 7,
-        "generated": 1073,
-        "inputs": 25478
+        "episodes": 305,
+        "generated": 29153,
+        "inputs": 1672779
       },
-      "seconds": 30.213018919996102,
+      "seconds": 532.9053852310026,
       "complete_raw_totals_verified": false,
       "terminal_raw_totals_verified": false,
       "status_path": "/content/local_fast/lsdrag-text-v1/results/decision_current_policy_refresh48_20261024/status.json"
+    },
+    {
+      "group": "adaptive_policy_followup",
+      "run": "decision_quality_head_grpo192_20261024",
+      "phase": "not_started",
+      "counts": null
+    },
+    {
+      "group": "adaptive_policy_followup",
+      "run": "decision_quality_head_grpo_validation64_20261024",
+      "phase": "not_started",
+      "counts": null
     }
   ],
   "completed_totals": {
@@ -442,7 +454,9 @@
       "failed_runs": [],
       "completed_runs": 4,
       "uncompleted_runs": [
-        "decision_current_policy_refresh48_20261024"
+        "decision_current_policy_refresh48_20261024",
+        "decision_quality_head_grpo192_20261024",
+        "decision_quality_head_grpo_validation64_20261024"
       ]
     }
   },

@@ -1,6 +1,6 @@
 {
-  "phase": "current_policy_refresh_running",
-  "updated_utc": "2026-10-24T05:33:44.127736+00:00",
+  "phase": "quality_head_grpo_preparing",
+  "updated_utc": "2026-10-24T06:09:22.039321+00:00",
   "protocol": "docs/JEV_CURRENT_POLICY_REFRESH_20261024.md",
   "protocol_sha256": "58a215a03d96c3738558738d6e7305f2e5f8e8f37c5994cc27cb6e33f30df3a2",
   "prompt": "prompts/text_rag_integrated_v5.txt",
@@ -32,13 +32,13 @@
   ],
   "worker_wall_budget_minutes": 120,
   "run_planned": "/content/local_fast/lsdrag-text-v1/results/decision_shared_test80_20261023",
-  "pid": 351577,
+  "pid": null,
   "implementation_completed": true,
   "dataset_prepared": true,
   "teacher_collection_started": true,
-  "training_completed": true,
-  "evaluation_completed": true,
-  "next": "Complete and audit current-policy training branches, then freeze update protocol; goal active.",
+  "training_completed": false,
+  "evaluation_completed": false,
+  "next": "Finish refresh audit/archive, then queued exact quality-head GRPO768 and paired validation; broad adaptive program remains active.",
   "previous_multimodal_checkpoint_historical_only": {
     "phase": "native2_review_required",
     "run": "/content/local_fast/lsdrag-head-v14/results/native_distillation_12b_20261015",
@@ -186,7 +186,7 @@
   "speed_gate_passed": true,
   "target_speedup_vs_native": 1.5,
   "target_speedup_measured": false,
-  "run": "/content/local_fast/lsdrag-text-v1/results/decision_selected_head_grpo192_20261024_zero_gate",
+  "run": "/content/local_fast/lsdrag-text-v1/results/decision_quality_head_grpo192_20261024",
   "worker_seconds": 277.1492917609994,
   "contract": "5b64658a2608f883599dbfb36be3758d4f28cc0de63c532ec11f76117a3cecce",
   "teacher_target": 32,
@@ -1010,5 +1010,18 @@
     "child_pid": 351577,
     "script": "scripts/run_decision_current_policy_refresh.py",
     "log": "/content/local_fast/lsdrag-text-v1/logs/refresh48_run_decision_current_policy_refresh_1792821647.log"
+  },
+  "quality_head_grpo_continuation": {
+    "phase": "preparing",
+    "pid": 354060,
+    "seconds": 2.8799986466765404e-06,
+    "updated_utc": "2026-10-24T06:09:22.039321+00:00",
+    "run": "decision_quality_head_grpo192_20261024"
+  },
+  "quality_head_grpo_queue": {
+    "phase": "waiting",
+    "pid": 354060,
+    "predecessor_pid": 351564,
+    "protocol": "docs/JEV_QUALITY_HEAD_GRPO_20261024.md"
   }
 }
