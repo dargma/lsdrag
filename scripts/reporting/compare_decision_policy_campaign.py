@@ -49,6 +49,9 @@ def main():
     comparisons={}
     pairs=[(p,r) for p in candidates for r in references]
     pairs += [(p,'mlp_control') for p in candidates if 'mlp_control' in candidates and p!='mlp_control']
+    # Separate architecture changes from merely continuing the same offline fit.
+    pairs += [(p,'control') for p in candidates if 'control' in candidates and p!='control']
+    pairs += [(p,'selected_reference') for p in candidates if 'selected_reference' in candidates and p!='selected_reference']
     for body in ['mlp','attention']:
         if body+'_stop_value' in candidates and body+'_stop' in candidates:pairs.append((body+'_stop_value',body+'_stop'))
     for candidate,reference in pairs:

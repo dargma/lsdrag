@@ -1,4 +1,8 @@
 
+## 2026-10-24 — matched continuation reporting and cost ledger
+
+Live evaluation381937 verified at160/576episodes,238.35sec; no interim quality-based changes. Campaign comparator now includes eachcandidate versus same-data100-update control and same-run selected_reference, alongside fixedGRPO/native. This separates additional optimization from architecture effect. Costledger includes rewardreplay, fresh9-policy evaluation (provisional), and interrupted8episodes with rawtotals verified and costs separately retained. GoalACTIVE; final64results pending.
+
 ## 2026-10-24 — train-only state association diagnostic
 
 Added scripts/reporting/audit_structure_cached_policy.py; report lab/reports/decision_attention_20261024/cached_policy_audit.json/md. All9checkpoint probabilities evaluated on377train states with same objective/question weights. 100permutations seed20261062 shuffle states within identicallegal masks. ExpectedcachedQ above shuffled .15314reference, .20142control, .20291–.20779newstructures. Trainingloss lower forallcontinuations, entropy falls .4978reference to.2423–.2990. These are in-sample associations with noisyold-policyQ, not causal/generalization evidence or calibratedfuturepredictions. No filtering/threshold changes. Validationworker381937 continues; goalACTIVE.

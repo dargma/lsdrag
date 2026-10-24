@@ -21,6 +21,10 @@ GROUPS={
     'adaptive_policy_followup':['decision_selected_head_grpo192_20261024_zero_gate','decision_selected_head_grpo_validation64_20261024_zero_gate','decision_opportunity_value_validation64_20261024','decision_constrained_policy_validation64_20261024','decision_current_policy_refresh48_20261024','decision_quality_head_grpo192_20261024','decision_quality_head_grpo_validation64_20261024','decision_pareto_refresh_validation64_20261024','decision_context_pareto_validation64_20261024']}
 
 def main():
+    GROUPS['offline_structure_and_reward']=[
+        'decision_reward_replay_validation64_20261024',
+        'decision_structure_four_validation64_20261024',
+        'decision_structure_attention_validation64_20261024']
     rows=[]
     for group,names in GROUPS.items():
         for name in names:
@@ -29,9 +33,13 @@ def main():
                 rows.append(dict(group=group,run=name,phase='not_started',counts=None))
                 continue
             status=json.loads(path.read_text())
+            interruption=run/'interruption.json'
+            if interruption.exists():
+                audit=json.loads(interruption.read_text())
+                status={**status,**{k:audit[k] for k in ['episodes','generated','inputs']},'phase':'interrupted'}
             counts={k:status.get(k,0) for k in ['episodes','generated','inputs']}
             verified=False
-            if status['phase'] in ('complete','failed'):
+            if status['phase'] in ('complete','failed','interrupted'):
                 eps=[json.loads(p.read_text()) for p in (run/'episodes').glob('*.json')]
                 assert len(eps)==counts['episodes'],name
                 assert sum(e['generated_tokens'] for e in eps)==counts['generated'],name
@@ -45,6 +53,8 @@ def main():
         failed=[r for r in rows if r['group']==group and r['phase']=='failed']
         totals[group]['failed_run_costs']={k:sum(r['counts'][k] for r in failed) for k in ['episodes','generated','inputs']}
         totals[group]['failed_runs']=[r['run'] for r in failed]
+        interrupted=[r for r in rows if r['group']==group and r['phase']=='interrupted']
+        totals[group]['interrupted_run_costs']={k:sum(r['counts'][k] for r in interrupted) for k in ['episodes','generated','inputs']}
         totals[group]['completed_runs']=len(completed)
         totals[group]['uncompleted_runs']=[r['run'] for r in rows if r['group']==group and r['phase']!='complete']
     cpu_path=ROOT/'results/decision_opportunity_value_20261024/status.json'

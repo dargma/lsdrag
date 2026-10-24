@@ -33,6 +33,9 @@ Completed and failed-run totals are checked against raw episodes. Failed costs r
 |adaptive_policy_followup|decision_quality_head_grpo_validation64_20261024|complete|128|18556|1086095|
 |adaptive_policy_followup|decision_pareto_refresh_validation64_20261024|complete|128|15605|842889|
 |adaptive_policy_followup|decision_context_pareto_validation64_20261024|complete|192|22142|1246289|
+|offline_structure_and_reward|decision_reward_replay_validation64_20261024|complete|128|17246|1197880|
+|offline_structure_and_reward|decision_structure_four_validation64_20261024|interrupted|8|299|16965|
+|offline_structure_and_reward|decision_structure_attention_validation64_20261024|evaluation|120|9689|468668|
 
 ## Scope
 
