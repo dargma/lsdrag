@@ -1040,11 +1040,10 @@
     "goal_achieved": false
   },
   "reward_replay_evaluation": {
-    "phase": "running",
-    "pid": 374759,
-    "seconds": 0.46574438699462917,
-    "script": "scripts/evaluate_decision_value_heads.py",
-    "child_pid": 374770,
-    "log": "/content/local_fast/lsdrag-text-v1/logs/value_heads_evaluate_decision_value_heads_1792826325.log"
+    "phase": "complete",
+    "pid": null,
+    "seconds": 359.79939730098704,
+    "report": "lab/reports/decision_reward_replay_validation64_20261024/report.md",
+    "goal_achieved": false
   }
 }
