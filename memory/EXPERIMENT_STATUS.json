@@ -1099,5 +1099,13 @@
     "seconds": 981.9912214200012,
     "report": "/content/local_fast/lsdrag-code/lab/reports/decision_quality_corrected_refresh48b_20261024/audit.json",
     "goal_achieved": false
+  },
+  "cost_policy_refresh": {
+    "phase": "running",
+    "pid": 408190,
+    "seconds": 0.0004929999995511025,
+    "child_pid": 408200,
+    "script": "scripts/run_decision_cost_refresh.py",
+    "log": "/content/local_fast/lsdrag-text-v1/logs/refresh48_run_decision_cost_refresh_1792833021.log"
   }
 }

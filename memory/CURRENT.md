@@ -1,4 +1,11 @@
 
+## 2026-10-24 — third48 collection live; opportunity audit prepared
+
+Coordinator408190 / collector408200 verified live by actual processes. State /content/local_fast/lsdrag-text-v1/results/decision_cost_refresh_coordinator_20261024.json; log /content/local_fast/lsdrag-text-v1/logs/refresh48_run_decision_cost_refresh_1792833021.log. New namespace decision_cost_priority_refresh48c_20261024, no duplicate or old run resumed. Completion triggers raw audit/Drive archive only. Next after verified completion: PYTHONPATH=src:scripts runtimePython scripts/reporting/audit_current_policy_opportunities.py --run decision_cost_priority_refresh48c_20261024, then freeze fit based on train-only evidence.
+
+New generic audit verified against completed second48b: 17 positive/nonworse/cheaper pairs in14states/12questions (6continue→FINAL,8between-tools,3FINAL→continue);10 strictquality pairs in8states/7questions (6FINAL→continue,4between-tools). Categories overlap.16all-zero cheaper pairs explicitly excluded from training targets. This is sampled training evidence, not policy improvement or confidence bounds. No partial third48 data analyzed for fitting. GoalACTIVE,reserved80protected.
+
+
 ## 2026-10-24 — third disjoint48 cost-policy collection frozen
 
 Latest goal continuation authorizes bounded execution after prior status-only/no-progress turn. Protocol docs/JEV_COST_POLICY_COVERAGE_PROTOCOL_20261024.md; namespace decision_cost_priority_refresh48c_20261024. Fixed hash seed20261065 selects48 fromremaining96 train192, disjointprevious96. Reference cost-priorityMLP SHA e1a630e50d323b09a93f591c9394bbfe2c8fa8f5bc99f271dd1da180d55f24b7. Same native contract/corpus/frozenLLM; max816episodes/3600sec afterload. Source hashes verified, GPU free~97GB, previouscoordinator terminal andnoactiveexperiment worker. Collection thenaudit/Drivebackup only; postcollection train-only evidence determines nextfit. GoalACTIVE, no target success, reserved80protected. New collection not launched at this entry.

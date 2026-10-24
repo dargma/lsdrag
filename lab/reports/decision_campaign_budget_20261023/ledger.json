@@ -20,7 +20,7 @@
     "new_llm_rollouts": 0,
     "reuses": "decision_shared_outcomes192_20261023 and decision_shared_teacher192_20261023"
   },
-  "snapshot_utc": "2026-10-24T09:05:08.780160+00:00",
+  "snapshot_utc": "2026-10-24T09:11:18.137793+00:00",
   "runs": [
     {
       "group": "historical_grpo_reference",
@@ -553,6 +553,20 @@
       "complete_raw_totals_verified": true,
       "terminal_raw_totals_verified": true,
       "status_path": "/content/local_fast/lsdrag-text-v1/results/decision_cost_priority_validation64_20261024/status.json"
+    },
+    {
+      "group": "offline_structure_and_reward",
+      "run": "decision_cost_priority_refresh48c_20261024",
+      "phase": "collection",
+      "counts": {
+        "episodes": 22,
+        "generated": 1819,
+        "inputs": 183163
+      },
+      "seconds": 52.512720258004265,
+      "complete_raw_totals_verified": false,
+      "terminal_raw_totals_verified": false,
+      "status_path": "/content/local_fast/lsdrag-text-v1/results/decision_cost_priority_refresh48c_20261024/status.json"
     }
   ],
   "completed_totals": {
@@ -667,7 +681,8 @@
       },
       "completed_runs": 8,
       "uncompleted_runs": [
-        "decision_structure_four_validation64_20261024"
+        "decision_structure_four_validation64_20261024",
+        "decision_cost_priority_refresh48c_20261024"
       ]
     }
   },
