@@ -1,0 +1,159 @@
+{
+  "primary": "multi_mlp_outcome",
+  "secondary": null,
+  "scores": {
+    "policy_iteration_cost003": {
+      "f1_delta": 0.06963609307359309,
+      "generated_reduction": -0.2524610987615117,
+      "joint_score": -0.8415369958717056,
+      "utility": 0.13701024776785714
+    },
+    "policy_iteration_cost006": {
+      "f1_delta": 0.0357819264069264,
+      "generated_reduction": -0.14496665608129566,
+      "joint_score": -0.48322218693765223,
+      "utility": 0.12333839360119048
+    },
+    "multi_mlp_outcome": {
+      "f1_delta": 0.0267857142857143,
+      "generated_reduction": 0.22006986344871393,
+      "joint_score": 0.535714285714286,
+      "utility": 0.16371749397997837
+    }
+  },
+  "all_validation": {
+    "semantic_once": {
+      "f1": 0.24874750064499485,
+      "generated_tokens": 55.90625,
+      "prompt_tokens": 2220.421875,
+      "tool_calls": 1.0,
+      "cost_units": 1.7811046874999998,
+      "retrieved_support_recall": 0.5625,
+      "all_support_retrieved": 0.203125,
+      "read_support_recall": 0.0,
+      "errors": 0
+    },
+    "native_fast": {
+      "f1": 0.24702380952380953,
+      "generated_tokens": 97.4375,
+      "prompt_tokens": 4691.03125,
+      "tool_calls": 2.375,
+      "cost_units": 3.8184781250000004,
+      "retrieved_support_recall": 0.546875,
+      "all_support_retrieved": 0.234375,
+      "read_support_recall": 0.21875,
+      "errors": 0
+    },
+    "shared_bc": {
+      "f1": 0.22500676406926406,
+      "generated_tokens": 101.59375,
+      "prompt_tokens": 4748.84375,
+      "tool_calls": 2.390625,
+      "cost_units": 3.881446875,
+      "retrieved_support_recall": 0.5078125,
+      "all_support_retrieved": 0.171875,
+      "read_support_recall": 0.234375,
+      "errors": 0
+    },
+    "policy_iteration_cost003": {
+      "f1": 0.29464285714285715,
+      "generated_tokens": 123.25,
+      "prompt_tokens": 7250.453125,
+      "tool_calls": 3.296875,
+      "cost_units": 5.254420312500001,
+      "retrieved_support_recall": 0.5546875,
+      "all_support_retrieved": 0.265625,
+      "read_support_recall": 0.3125,
+      "errors": 0
+    },
+    "policy_iteration_cost006": {
+      "f1": 0.26078869047619047,
+      "generated_tokens": 112.671875,
+      "prompt_tokens": 6112.078125,
+      "tool_calls": 2.84375,
+      "cost_units": 4.5816765625,
+      "retrieved_support_recall": 0.515625,
+      "all_support_retrieved": 0.21875,
+      "read_support_recall": 0.28125,
+      "errors": 0
+    },
+    "shared_grpo": {
+      "f1": 0.22500676406926406,
+      "generated_tokens": 98.40625,
+      "prompt_tokens": 4625.3125,
+      "tool_calls": 2.328125,
+      "cost_units": 3.77471875,
+      "retrieved_support_recall": 0.515625,
+      "all_support_retrieved": 0.171875,
+      "read_support_recall": 0.21875,
+      "errors": 0
+    },
+    "multi_mlp_bc": {
+      "f1": 0.20677759740259738,
+      "generated_tokens": 105.28125,
+      "prompt_tokens": 4954.0625,
+      "tool_calls": 2.484375,
+      "cost_units": 4.03259375,
+      "retrieved_support_recall": 0.4921875,
+      "all_support_retrieved": 0.15625,
+      "read_support_recall": 0.2109375,
+      "errors": 0
+    },
+    "multi_mlp_outcome": {
+      "f1": 0.25179247835497837,
+      "generated_tokens": 76.75,
+      "prompt_tokens": 3870.828125,
+      "tool_calls": 1.78125,
+      "cost_units": 2.9358328125,
+      "retrieved_support_recall": 0.4296875,
+      "all_support_retrieved": 0.234375,
+      "read_support_recall": 0.125,
+      "errors": 0
+    }
+  },
+  "provenance": {
+    "semantic_once": {
+      "run": "/content/local_fast/lsdrag-text-v1/results/decision_shared_validation64_20261023",
+      "spec_sha256": "7e95f6d83a7119117f2a1495fc3d316c21ecd7ad2fddea6565e80c546e091462",
+      "summary_sha256": "2b7653baae4a221a4e2c4ad5086c9018391c9b46c161b3607a2edf7da9d077f0"
+    },
+    "native_fast": {
+      "run": "/content/local_fast/lsdrag-text-v1/results/decision_shared_validation64_20261023",
+      "spec_sha256": "7e95f6d83a7119117f2a1495fc3d316c21ecd7ad2fddea6565e80c546e091462",
+      "summary_sha256": "2b7653baae4a221a4e2c4ad5086c9018391c9b46c161b3607a2edf7da9d077f0"
+    },
+    "shared_bc": {
+      "run": "/content/local_fast/lsdrag-text-v1/results/decision_shared_validation64_20261023",
+      "spec_sha256": "7e95f6d83a7119117f2a1495fc3d316c21ecd7ad2fddea6565e80c546e091462",
+      "summary_sha256": "2b7653baae4a221a4e2c4ad5086c9018391c9b46c161b3607a2edf7da9d077f0"
+    },
+    "policy_iteration_cost003": {
+      "run": "/content/local_fast/lsdrag-text-v1/results/decision_shared_validation64_20261023",
+      "spec_sha256": "7e95f6d83a7119117f2a1495fc3d316c21ecd7ad2fddea6565e80c546e091462",
+      "summary_sha256": "2b7653baae4a221a4e2c4ad5086c9018391c9b46c161b3607a2edf7da9d077f0"
+    },
+    "policy_iteration_cost006": {
+      "run": "/content/local_fast/lsdrag-text-v1/results/decision_shared_validation64_20261023",
+      "spec_sha256": "7e95f6d83a7119117f2a1495fc3d316c21ecd7ad2fddea6565e80c546e091462",
+      "summary_sha256": "2b7653baae4a221a4e2c4ad5086c9018391c9b46c161b3607a2edf7da9d077f0"
+    },
+    "shared_grpo": {
+      "run": "/content/local_fast/lsdrag-text-v1/results/decision_shared_validation64_20261023",
+      "spec_sha256": "7e95f6d83a7119117f2a1495fc3d316c21ecd7ad2fddea6565e80c546e091462",
+      "summary_sha256": "2b7653baae4a221a4e2c4ad5086c9018391c9b46c161b3607a2edf7da9d077f0"
+    },
+    "multi_mlp_bc": {
+      "run": "/content/local_fast/lsdrag-text-v1/results/decision_shared_structure_validation64_20261023",
+      "spec_sha256": "7b3b035b46f5015921fd513573a8fa77468a8911e7744e4ac6cbfe042c57abf1",
+      "summary_sha256": "77f7daba20be4baefa104eaf8afa865e37392a67fdd7f4ffc2353ef1ccbc7c39"
+    },
+    "multi_mlp_outcome": {
+      "run": "/content/local_fast/lsdrag-text-v1/results/decision_shared_structure_validation64_20261023",
+      "spec_sha256": "7b3b035b46f5015921fd513573a8fa77468a8911e7744e4ac6cbfe042c57abf1",
+      "summary_sha256": "77f7daba20be4baefa104eaf8afa865e37392a67fdd7f4ffc2353ef1ccbc7c39"
+    }
+  },
+  "plan_sha256": "38c5f78d8bf1263020c4433569982bc769e5eb8511ba6a31dfda22ffea8cd068",
+  "test_outcomes_observed": false,
+  "warning": "Validation selection is not target attainment. Final target is relative to shared GRPO; usefulness must also be assessed against native and semantic-once baselines."
+}

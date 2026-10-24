@@ -891,3 +891,10 @@ sharedGRPO complete1536eps/5241decisions/2923.93초/660optimizersteps,전체audi
 
 main coordinator248061 complete. 구조 multiMLP BC/outcome 학습 완료 후 worker280446이 validation64×2 실행,coordinator250404. log /content/local_fast/lsdrag-text-v1/logs/shared_structure_evaluate_decision_shared_corpus_1792806003.log. 구조checkpoint Drive7420847bytes/SHA1033df731df78960e85d58785579e9b9556afc48ab523510411ce27fee04581f;mainvalidation Drive864224bytes/SHA7717a78d3f376ca84ac00bf2f4b950ec0c8128d21134dd3821dee890c9512760. 원래head2개 별도백업도head_archive.json에검증. 다음 구조평가완료→통합validation선정규칙적용→최종80×4,예비80보존. coordinator terminal next의test160문구는과거예약pool설명으로실제selector80×4계획보다우선하지않음.
 
+
+## 2026-10-24 — 구조 검증 완료 / 최종 후보·80문항 spec 동결
+
+구조 validation64×2 완료:multiMLP BC F1.206778/gen105.28125→outcome.251792/76.75. 자체초기화대비+4.50pp/−27.10%;sharedGRPO대비+2.67857pp/−22.00699%. 선택규칙min(deltaF1/.05,token감소/.30)에서 multi_mlp_outcome score.535714로1위;original.03 −.841537,.06 −.483222. 목표아직미달. 선택은validation만사용,최종결과미열람. selection/spec lab/registry/decision_shared_final_20261023. final조건 shared_grpo/multi_mlp_outcome/native_fast/semantic_once,원예약160중사전SHA선정80,남은80보존. source/corpus/model/qids identity와checkpoint SHA selector검증통과. 다음 final80×4실행(3600초상한),완료후pairedCI/모든비용/최종백업. 이단계에서후보재튜닝없음.
+
+구조평가 Drive280367bytes/SHA f85e6877c91d9b8f633ddb6a59ccfc0377844cbad129fe050155d33ccf7ebb04. main/structure coordinator종료,next의구test160문구는superseded이며실제실행spec80이권위.
+

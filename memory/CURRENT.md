@@ -1,3 +1,9 @@
+## 2026-10-24 — 구조 검증 완료 / 최종 후보·80문항 spec 동결
+
+구조 validation64×2 완료:multiMLP BC F1.206778/gen105.28125→outcome.251792/76.75. 자체초기화대비+4.50pp/−27.10%;sharedGRPO대비+2.67857pp/−22.00699%. 선택규칙min(deltaF1/.05,token감소/.30)에서 multi_mlp_outcome score.535714로1위;original.03 −.841537,.06 −.483222. 목표아직미달. 선택은validation만사용,최종결과미열람. selection/spec lab/registry/decision_shared_final_20261023. final조건 shared_grpo/multi_mlp_outcome/native_fast/semantic_once,원예약160중사전SHA선정80,남은80보존. source/corpus/model/qids identity와checkpoint SHA selector검증통과. 다음 final80×4실행(3600초상한),완료후pairedCI/모든비용/최종백업. 이단계에서후보재튜닝없음.
+
+구조평가 Drive280367bytes/SHA f85e6877c91d9b8f633ddb6a59ccfc0377844cbad129fe050155d33ccf7ebb04. main/structure coordinator종료,next의구test160문구는superseded이며실제실행spec80이권위.
+
 ## 2026-10-24 — main validation64 완료 / 구조 후보 평가 실행
 
 64문항×6조건384episodes 완료/707.44초/generated37713/input1897481,모든조건error0. 보고서 lab/reports/decision_shared_validation64_20261023/report.md. sharedGRPO F1 22.50/gen98.41;outcome.03 29.46/123.25(+6.96pp,+25.25%token),outcome.06 26.08/112.67(+3.58pp,+14.50%). semantic_once24.87/55.91,native24.70/97.44,BC22.50/101.59. 정확도·token동시목표 미충족. .03의F1향상은validation에서만 관측,pairedCI하한0이며native대비CI도0포함;확증아님. 신규32에서도 .03 F1.296875 대GRPO.220103이나token133.406 대103.438 증가. 최종평가로 후보재선택 금지.
