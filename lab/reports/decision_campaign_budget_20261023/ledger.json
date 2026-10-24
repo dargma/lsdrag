@@ -10,7 +10,7 @@
     "new_llm_rollouts": 0,
     "reuses": "decision_shared_outcomes192_20261023 and decision_shared_teacher192_20261023"
   },
-  "snapshot_utc": "2026-10-24T05:13:01.773511+00:00",
+  "snapshot_utc": "2026-10-24T05:28:45.363173+00:00",
   "runs": [
     {
       "group": "historical_grpo_reference",
@@ -295,15 +295,15 @@
     {
       "group": "adaptive_policy_followup",
       "run": "decision_selected_head_grpo192_20261024_zero_gate",
-      "phase": "collection",
+      "phase": "complete",
       "counts": {
-        "episodes": 980,
-        "generated": 78379,
-        "inputs": 4314603
+        "episodes": 1536,
+        "generated": 126791,
+        "inputs": 6868988
       },
-      "seconds": 1501.1204512370023,
-      "complete_raw_totals_verified": false,
-      "terminal_raw_totals_verified": false,
+      "seconds": 2409.885998687998,
+      "complete_raw_totals_verified": true,
+      "terminal_raw_totals_verified": true,
       "status_path": "/content/local_fast/lsdrag-text-v1/results/decision_selected_head_grpo192_20261024_zero_gate/status.json"
     },
     {
@@ -377,18 +377,17 @@
       ]
     },
     "adaptive_policy_followup": {
-      "episodes": 0,
-      "generated": 0,
-      "inputs": 0,
+      "episodes": 1536,
+      "generated": 126791,
+      "inputs": 6868988,
       "failed_run_costs": {
         "episodes": 0,
         "generated": 0,
         "inputs": 0
       },
       "failed_runs": [],
-      "completed_runs": 0,
+      "completed_runs": 1,
       "uncompleted_runs": [
-        "decision_selected_head_grpo192_20261024_zero_gate",
         "decision_selected_head_grpo_validation64_20261024_zero_gate",
         "decision_opportunity_value_validation64_20261024"
       ]

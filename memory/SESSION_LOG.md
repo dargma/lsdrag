@@ -1054,3 +1054,18 @@ scripts/reporting/compare_decision_policy_campaign.py requires completed full64 
 ## 2026-10-24 — adaptive follow-up cost accounting added
 
 Added zero_gate training/evaluation and five-head validation to decision_campaign_budget.py. Completed and failed runs retain raw-episode reconciliation; active counts remain provisional and pending runs have no invented costs. CPU fitting is recorded separately (five heads,10.03seconds,zero new LLM rollouts, reused teacher/outcome sources). Historical totals remain identical. Live learner330716/coordinator330710 and follow-up waiter336962 verified; no restart or new GPU job. Goal stays active.
+
+## 2026-10-24T05:28:12.715865+00:00 — selected-head GRPO continuation: running
+
+Coordinator state: `/content/local_fast/lsdrag-text-v1/results/decision_selected_head_grpo_coordinator_20261024_zero_gate.json`. Details: `{"phase": "running", "pid": 330710, "seconds": 2414.4672564229986, "script": "scripts/reporting/audit_decision_selected_head_grpo_zero_gate.py", "child_pid": 342013, "log": "/content/local_fast/lsdrag-text-v1/logs/selected_grpo_audit_decision_selected_head_grpo_zero_gate_1792819692.log"}`. Same already-trained selected head continues learning; LLM/normalization fixed. Only train192 and validation64 used; final80/reserved80 protected.
+
+
+## 2026-10-24T05:28:15.787394+00:00 — selected-head GRPO continuation: running
+
+Coordinator state: `/content/local_fast/lsdrag-text-v1/results/decision_selected_head_grpo_coordinator_20261024_zero_gate.json`. Details: `{"phase": "running", "pid": 330710, "seconds": 2417.538752177992, "script": "scripts/reporting/archive_decision_run.py", "child_pid": 342029, "log": "/content/local_fast/lsdrag-text-v1/logs/selected_grpo_archive_decision_run_1792819695.log"}`. Same already-trained selected head continues learning; LLM/normalization fixed. Only train192 and validation64 used; final80/reserved80 protected.
+
+
+## 2026-10-24 — zero-gate training complete, independent audit passed
+
+1536episodes/4719decisions/4698controllable states/588optimizer updates,2409.89seconds. Generated126791/input6868988. Independent audit passed: both rounds replay, all group advantage gates, finite changed net4tensors, frozen normalizers. Final checkpoint dccbf686944009a72ee43251def7139c0ef676e8c84ccc7b50c290ed611fd61f. Preserved2episode errors and21forcedFINAL. Report lab/reports/decision_selected_head_grpo192_20261024_zero_gate/audit.json. Coordinator330710 now archiving (child342029); follow-up queue336962 still waiting for full predecessor completion. Validation not yet completed; performance/goal success unknown. Next verify archive then64paired evaluation and compare_decision_policy_campaign.py. Goal ACTIVE.
+

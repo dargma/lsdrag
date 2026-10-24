@@ -1,3 +1,15 @@
+## 2026-10-24 — zero-gate training complete, independent audit passed
+
+1536episodes/4719decisions/4698controllable states/588optimizer updates,2409.89seconds. Generated126791/input6868988. Independent audit passed: both rounds replay, all group advantage gates, finite changed net4tensors, frozen normalizers. Final checkpoint dccbf686944009a72ee43251def7139c0ef676e8c84ccc7b50c290ed611fd61f. Preserved2episode errors and21forcedFINAL. Report lab/reports/decision_selected_head_grpo192_20261024_zero_gate/audit.json. Coordinator330710 now archiving (child342029); follow-up queue336962 still waiting for full predecessor completion. Validation not yet completed; performance/goal success unknown. Next verify archive then64paired evaluation and compare_decision_policy_campaign.py. Goal ACTIVE.
+
+## 2026-10-24T05:28:15.787394+00:00 — selected-head GRPO continuation: running
+
+Coordinator state: `/content/local_fast/lsdrag-text-v1/results/decision_selected_head_grpo_coordinator_20261024_zero_gate.json`. Details: `{"phase": "running", "pid": 330710, "seconds": 2417.538752177992, "script": "scripts/reporting/archive_decision_run.py", "child_pid": 342029, "log": "/content/local_fast/lsdrag-text-v1/logs/selected_grpo_archive_decision_run_1792819695.log"}`. Same already-trained selected head continues learning; LLM/normalization fixed. Only train192 and validation64 used; final80/reserved80 protected.
+
+## 2026-10-24T05:28:12.715865+00:00 — selected-head GRPO continuation: running
+
+Coordinator state: `/content/local_fast/lsdrag-text-v1/results/decision_selected_head_grpo_coordinator_20261024_zero_gate.json`. Details: `{"phase": "running", "pid": 330710, "seconds": 2414.4672564229986, "script": "scripts/reporting/audit_decision_selected_head_grpo_zero_gate.py", "child_pid": 342013, "log": "/content/local_fast/lsdrag-text-v1/logs/selected_grpo_audit_decision_selected_head_grpo_zero_gate_1792819692.log"}`. Same already-trained selected head continues learning; LLM/normalization fixed. Only train192 and validation64 used; final80/reserved80 protected.
+
 ## 2026-10-24 — zero-gate intervention verified; paired comparison reporter ready
 
 Concrete progress: independent round0 audit verifies all192 advantage groups,82 all-zero-F1 groups gated,68 cost-only-spread groups suppressed. All768 first-round episodes exactly match ungated r1 answer/support/F1/generated/input/calls/action sequence. GPU replay9.5367e-7 passes unchanged tolerance. Checkpoint9964f132075beac7608ea685ba476ca3d49bf00638061ee867c638aa738521e7. Evidence lab/reports/decision_selected_head_grpo192_20261024_zero_gate/round0_gate_audit.json. This is correct intervention implementation, not efficacy.
