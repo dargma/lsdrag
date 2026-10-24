@@ -1263,3 +1263,9 @@ Verifiedall768qualityMLProllouts:192×4,2925decisions,2851controllable,79144gene
 ## 2026-10-24 — step-credit implementation prepared, tests/dry-run only
 
 Implementedsrc/lsdrag/decision_step_credit.py,5tests passed:futureforcedcost/pastcostexclusion,firststepmatch,zerogate,invalidaccounting/interventionrejection. Appliedwithoutoptimizer toall2851controllableactionsfrom768trainrollouts;finitebotharms. Fixedtrain-wide rewardstd.4672040164383903 sharedbytotal/remainingarms replacespotentiallyzeroquestionstd;documentedbeforetraining. No modeltraining, no GPUeval, no newpolicycheckpoint. Save-first scope maintained;goalACTIVE.
+
+## 2026-10-24 — matched reward replay trained; historical checkpoint exact, evaluation live
+
+Afteruserrequestedideas/savefirstwasfulfilled, activeautonomouscontinuation advanced toconcreteprotocol docs/JEV_REWARD_REPLAY_EXECUTION_20261024.md. Original768onpolicyrollouts reusedat exactbehavior0a1b;no newLLMsampling. HistoricalmixedGRPO reproducedc6b0 ALLTENSORS EXACT(maxerror0),oldlogpreplay7.15e-7. Then twoarms token_total/token_remaining,360updates each,samebatch/order/LR/seed/LOObaseline/globaltrainstd.467204/zerogate/KL/entropy/rowweight. OnlydifferenceBvsC pastcostremoval. Historicalvsnewalsodiffersreward/normalization/baseline,notcredit-only. Fouractor/encodertensorschanged,frozenothersverified.3.57secGPUheadfit;notinferencebenchmark.
+
+Coordinator374759 launched scripts/coordinate_decision_reward_replay.py,log /content/local_fast/lsdrag-text-v1/logs/reward_replay_coordinator.log,state /content/local_fast/lsdrag-text-v1/results/decision_reward_replay_coordinator_20261024.json. Archivefit then2×64validation/report/archive. Protocol/input/source/rawepisodehashesfrozen. GoalACTIVE;no testaccess,qualityunknown.

@@ -1,0 +1,58 @@
+{
+  "audits": {
+    "historical": {
+      "replay_error": 7.152557373046875e-07,
+      "changed": [
+        "policy_weight",
+        "policy_bias",
+        "encoder.weight",
+        "encoder.bias"
+      ],
+      "updates": 360,
+      "max_checkpoint_error": 0.0,
+      "exact_checkpoint_match": true
+    },
+    "token_total": {
+      "replay_error": 7.152557373046875e-07,
+      "changed": [
+        "policy_weight",
+        "policy_bias",
+        "encoder.weight",
+        "encoder.bias"
+      ],
+      "updates": 360
+    },
+    "token_remaining": {
+      "replay_error": 7.152557373046875e-07,
+      "changed": [
+        "policy_weight",
+        "policy_bias",
+        "encoder.weight",
+        "encoder.bias"
+      ],
+      "updates": 360
+    }
+  },
+  "scale": 0.4672040164383903,
+  "new_llm_rollouts": 0,
+  "candidates": {
+    "historical": {
+      "kind": "decision_value",
+      "body": "mlp",
+      "checkpoint": "/content/local_fast/lsdrag-text-v1/results/decision_reward_replay_20261024/historical.pt",
+      "sha256": "7b8cf7f443603d95d3bc60d9fe0f83e835f625795e89ecefde7ba367fdcab8c0"
+    },
+    "token_total": {
+      "kind": "decision_value",
+      "body": "mlp",
+      "checkpoint": "/content/local_fast/lsdrag-text-v1/results/decision_reward_replay_20261024/token_total.pt",
+      "sha256": "d29f7a60a03571e11ff3d5398d526cf12c1a6273917f93fd459425c3b19f2617"
+    },
+    "token_remaining": {
+      "kind": "decision_value",
+      "body": "mlp",
+      "checkpoint": "/content/local_fast/lsdrag-text-v1/results/decision_reward_replay_20261024/token_remaining.pt",
+      "sha256": "d96766f45d84cbb24ca4bedbae8d51f33144cf888bb421d7a131adb4895ab5a3"
+    }
+  }
+}
