@@ -1463,3 +1463,8 @@ Latest hypothesis-first instruction applied. Protocol docs/JEV_OUTCOME_POLICY_H1
 
 Paired dev64 currentreference/outcome128episode spec frozen; currentreference is e1a630e5, not oldd987/f07f. Same native interface, corpus andsourcehashes. No grid, no new data collection, no reserved80. Nextlaunch scripts/coordinate_decision_outcome_h1.py; state results/decision_outcome_policy_h1_coordinator_20261024.json. Evaluation not yet launched at this entry. GoalACTIVE.
 
+
+## 2026-10-24 — H1 paired policy evaluation live
+
+Coordinator15464/evaluator15471 verified live; 69/128episodes saved. State /content/local_fast/lsdrag-text-v1/results/decision_outcome_policy_h1_coordinator_20261024.json;log /content/local_fast/lsdrag-text-v1/logs/value_heads_evaluate_decision_attention_1792835531.log. Singlecandidate32849a28 vs currente1a630e5 onunchangeddev64; no interim selection. Fitarchive already copied/verified bycoordinator. Nextcompletion→pairedresult/usefulcostsummary→backuppush→nextlargehypothesisifneeded. GoalACTIVE,qualityunknown,reserved80untouched. Do not duplicate worker.
+

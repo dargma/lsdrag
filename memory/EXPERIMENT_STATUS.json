@@ -1114,5 +1114,13 @@
     "status": "plan_saved_not_fitted",
     "collection_complete": true,
     "next": "Freeze one outcome-supported MLP candidate, then paired development evaluation; defer detailed ablations."
+  },
+  "outcome_policy_h1_evaluation": {
+    "phase": "running",
+    "pid": 15464,
+    "seconds": 0.21529665700018086,
+    "script": "scripts/evaluate_decision_attention.py",
+    "child_pid": 15471,
+    "log": "/content/local_fast/lsdrag-text-v1/logs/value_heads_evaluate_decision_attention_1792835531.log"
   }
 }

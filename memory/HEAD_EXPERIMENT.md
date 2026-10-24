@@ -1,3 +1,7 @@
+## 2026-10-24 — H1 paired policy evaluation live
+
+Coordinator15464/evaluator15471 verified live; 69/128episodes saved. State /content/local_fast/lsdrag-text-v1/results/decision_outcome_policy_h1_coordinator_20261024.json;log /content/local_fast/lsdrag-text-v1/logs/value_heads_evaluate_decision_attention_1792835531.log. Singlecandidate32849a28 vs currente1a630e5 onunchangeddev64; no interim selection. Fitarchive already copied/verified bycoordinator. Nextcompletion→pairedresult/usefulcostsummary→backuppush→nextlargehypothesisifneeded. GoalACTIVE,qualityunknown,reserved80untouched. Do not duplicate worker.
+
 ## 2026-10-24 — H1 single MLP fit complete; paired evaluation frozen
 
 Latest hypothesis-first instruction applied. Protocol docs/JEV_OUTCOME_POLICY_H1_20261024.md and exact plan/input/source hashes frozen before fit. One candidate from cost-priority e1a630e5, third48 evidence10corrections/9questions; largest repeat-consistent quality gain first, token saving tie-break, excludes zero-quality cheaper targets. Same100updates/1e-4/seed20261066/.5target andretention group. Old caches usedasfeatures only;446retentionstates. CPUfit2.37sec, initialexact/normalization/finiteassertions passed andcheckpoint reloaded. SHA 32849a288d13e53c32bf6b0e950d8dea791e36e0d0aa41114376bcbe01f9658a. No QA improvement claim.
