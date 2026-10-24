@@ -1,4 +1,8 @@
 
+## 2026-10-24 — extracted hidden cache Drive verification
+
+User requested parallel Drive backup and Git commit/push. scripts/maintenance/verify_hidden_backups.py used two CPU workers alongside liveGPUevaluation381937. All8explicit states/teacher/features caches (398559297bytes) verified byte-for-byte SHA256 against Drive backup archive members or verified standalone fallback. Manifest lab/registry/hidden_backup_20261024/manifest.json contains per-file source/backup/member/size/hash. Nohiddenweights committed. Evaluation remainslive,lastchecked34/576episodes; no restart orqualityclaim. GoalACTIVE.
+
 ## 2026-10-24 — nine-policy evaluation launched
 
 Coordinator381926 and owned evaluation worker381937 verified live. State `/content/local_fast/lsdrag-text-v1/results/decision_structure_attention_coordinator_20261024.json`; log `/content/local_fast/lsdrag-text-v1/logs/value_heads_evaluate_decision_attention_1792827733.log`. Training archive saved/verified by coordinator; registry decision_attention_20261024/archive.json. Fresh run decision_structure_attention_validation64_20261024,576paired development episodes planned; no test access. Check live processes and actual status before resuming; do not launch duplicate. Code/protocol commitca9dd46 pushed remotejev_v1.1. GoalACTIVE; quality results pending.
