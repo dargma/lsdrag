@@ -1,0 +1,255 @@
+{
+  "verified": true,
+  "scope": "Training72 full rollouts; not generalization or goal achievement",
+  "policies": {
+    "h3": {
+      "f1": 0.4148258377425044,
+      "all": {
+        "questions": 72,
+        "total_generated": 4734,
+        "mean_generated": 65.75
+      },
+      "correct": {
+        "questions": 22,
+        "total_generated": 1736,
+        "mean_generated": 78.9090909090909
+      },
+      "incorrect": {
+        "questions": 50,
+        "total_generated": 2998,
+        "mean_generated": 59.96
+      },
+      "partial": {
+        "questions": 12,
+        "total_generated": 1189,
+        "mean_generated": 99.08333333333333
+      }
+    },
+    "constrained_stop": {
+      "f1": 0.48757716049382716,
+      "all": {
+        "questions": 72,
+        "total_generated": 4661,
+        "mean_generated": 64.73611111111111
+      },
+      "correct": {
+        "questions": 28,
+        "total_generated": 2212,
+        "mean_generated": 79.0
+      },
+      "incorrect": {
+        "questions": 44,
+        "total_generated": 2449,
+        "mean_generated": 55.65909090909091
+      },
+      "partial": {
+        "questions": 11,
+        "total_generated": 808,
+        "mean_generated": 73.45454545454545
+      }
+    }
+  },
+  "paired": {
+    "both_correct": {
+      "h3": {
+        "questions": 22,
+        "total_generated": 1736,
+        "mean_generated": 78.9090909090909
+      },
+      "candidate": {
+        "questions": 22,
+        "total_generated": 1548,
+        "mean_generated": 70.36363636363636
+      },
+      "saved_tokens": 188
+    },
+    "candidate_only_correct": {
+      "h3": {
+        "questions": 6,
+        "total_generated": 527,
+        "mean_generated": 87.83333333333333
+      },
+      "candidate": {
+        "questions": 6,
+        "total_generated": 664,
+        "mean_generated": 110.66666666666667
+      },
+      "saved_tokens": -137
+    },
+    "h3_only_correct": {
+      "h3": {
+        "questions": 0,
+        "total_generated": 0,
+        "mean_generated": null
+      },
+      "candidate": {
+        "questions": 0,
+        "total_generated": 0,
+        "mean_generated": null
+      },
+      "saved_tokens": 0
+    },
+    "both_incorrect": {
+      "h3": {
+        "questions": 44,
+        "total_generated": 2471,
+        "mean_generated": 56.15909090909091
+      },
+      "candidate": {
+        "questions": 44,
+        "total_generated": 2449,
+        "mean_generated": 55.65909090909091
+      },
+      "saved_tokens": 22
+    }
+  },
+  "errors": 0,
+  "train_gate": true,
+  "h3_reference_replay": 72,
+  "episode_sha256": {
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop72_train_eval_20261024/episodes/constrained_stop_2hop__533801_81842.json": "239a74ec5783a8a3d7f1665631932bdd316704aeedd953311f7d0f1e351333c0",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop72_train_eval_20261024/episodes/h3_2hop__376266_37939.json": "892bef0718bbe51cf7976ca786881fbe132a41810d390766b370316ff130617d",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop72_train_eval_20261024/episodes/h3_2hop__572586_58953.json": "e5b749d05160b229f121db5436df78775eec673d68a7b7f517e1650b74964b1a",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop72_train_eval_20261024/episodes/constrained_stop_2hop__343722_542971.json": "65128de0de471666e52b0e64c6d0d97caacd42db88436a43dd75c593ba051223",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop72_train_eval_20261024/episodes/constrained_stop_2hop__21222_770460.json": "24facff3b0086617728f195ad4cf3b974b03d09e24a75b006e60ab0269a35c82",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop72_train_eval_20261024/episodes/h3_2hop__452796_84477.json": "8fd995c0463a3d54fc93a79858586f5404e7ca1d69050ed3695fd3c66c5d4eda",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop72_train_eval_20261024/episodes/h3_2hop__144760_88472.json": "d16203e4a9074203bddb7adccdf644da1ff322f54827db9a5b12a113af501739",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop72_train_eval_20261024/episodes/constrained_stop_2hop__590911_47465.json": "e9a05123c86a9caeb1a1efb8150c2028487a9ec11027b0de41345651334550c5",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop72_train_eval_20261024/episodes/h3_2hop__178280_79070.json": "cc3742a8e682f4ba7cc31da08292f60b6c09de68f6c6bb53b45572d8c9ddc4e4",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop72_train_eval_20261024/episodes/constrained_stop_2hop__139851_140916.json": "b6df1e0e19b8ce9e95863455cb6d73386bc1f84326fadf84ac5cd33dd42bfd61",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop72_train_eval_20261024/episodes/h3_2hop__497269_82027.json": "ca040be47d6c18545804680fd1b5a0824fd1735fb6dccebf9ad606940f6bba85",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop72_train_eval_20261024/episodes/h3_2hop__660296_36180.json": "b4f6dda1b8327a84399eb548133246bb943a68d2307c6e4e1654f6291b371943",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop72_train_eval_20261024/episodes/h3_2hop__590911_47465.json": "5e604da998db48557406d87d47d3fa69244bfafbd17da58897d3749de5b8e12a",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop72_train_eval_20261024/episodes/h3_2hop__627916_89066.json": "b9a692c46bdb9b729863d22f7405602fff1be9d7f2f97feb33462ed8b50a0b5b",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop72_train_eval_20261024/episodes/h3_2hop__426842_4037.json": "be62f8bf40b475db153068fe4f750a32b5e3b568e6e01f179002a16391c267fa",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop72_train_eval_20261024/episodes/h3_2hop__296175_126060.json": "4ba4761685a81332351daa71fa6623c471eaae3bf6398e92598015383d99a9fa",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop72_train_eval_20261024/episodes/constrained_stop_2hop__178263_52185.json": "cf0ca55326fa488c37c7ade78b5865d756fa1a3500c9b56c86d2962c89cffa47",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop72_train_eval_20261024/episodes/h3_2hop__128395_605235.json": "8f76973380128a86ab28fa1d05481e1499df833eb1f86548b87dce2f6bd507e9",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop72_train_eval_20261024/episodes/h3_2hop__131280_89563.json": "9799636df46b3906c68e277d9638e3259e00e2d351a6cfa353dce5366e48a373",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop72_train_eval_20261024/episodes/constrained_stop_2hop__497269_82027.json": "e50c460aac60e4d8d56263b0ae31a7da028b20f762a3656b15a56ccc7c0e2287",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop72_train_eval_20261024/episodes/constrained_stop_2hop__145221_526735.json": "b2e05dd7067d676b80079e7fecdaa6c1d9829eb10f4f4246ff0863eebd13380b",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop72_train_eval_20261024/episodes/constrained_stop_2hop__128395_605235.json": "4c4926881edb57dfc717bb0bad2eed9340b2dfb996bd208318b6f9d54d3f02b2",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop72_train_eval_20261024/episodes/constrained_stop_2hop__15574_66008.json": "d8737ac537f3c15f91b409e7c96463377f7914647343bf2cfb99e275044bf604",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop72_train_eval_20261024/episodes/h3_2hop__145221_526735.json": "5c15ee76f9df054b08c5e40d4a93fceb2672642c51889cad45058f46f32dbb20",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop72_train_eval_20261024/episodes/h3_2hop__128642_32463.json": "544363faedf1a158daa5574f3ab4806e3b473511e187c089fb0e063474b04b69",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop72_train_eval_20261024/episodes/h3_2hop__652141_36340.json": "01af05f5c0252cf881e5cafcbcd3aba5b7c441fa831c70655d65d8e9e75a2f51",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop72_train_eval_20261024/episodes/constrained_stop_2hop__487591_7672.json": "b96a69d03362f9f32650e8f71e0663422a79d95be7b1b67c602bd1e504a6281b",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop72_train_eval_20261024/episodes/constrained_stop_2hop__806764_47824.json": "899a9d3d9e3e7f15b5cf4c2cd26508b38e050e264e35103d96823bcd83bcae19",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop72_train_eval_20261024/episodes/h3_2hop__554253_86395.json": "478f9c135dbb091e856032214216ae386379c34435a52bc08e2f4698d7ec5c3d",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop72_train_eval_20261024/episodes/h3_2hop__130669_64652.json": "e714e19df063b62f99c88519a154b763eb8e059420363c3f05873446fd02fd3d",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop72_train_eval_20261024/episodes/h3_2hop__130823_73753.json": "2258b22a898bca4fa958eb9cfbbccdcea319c27ff61ba4a92665bab65a5f6b75",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop72_train_eval_20261024/episodes/h3_2hop__82744_23249.json": "b6d0f6ac71ec5019eb66f0eefe1f6e7ee6e97b428aa330a5482f6ee6412b8294",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop72_train_eval_20261024/episodes/constrained_stop_2hop__346214_699835.json": "77f426ff39175d8408054e91db9d4e4b4afb7aa7632d69df06a4dcb65351afe8",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop72_train_eval_20261024/episodes/constrained_stop_2hop__212522_513189.json": "210bb0730319754616213840ecd991c6a6972ef230e3d02d3f950ef4693c5d4f",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop72_train_eval_20261024/episodes/constrained_stop_2hop__558011_64290.json": "91bb4c2dd42e46fdfd367d07aca1de76817c29662b50c1cf5cb75554c2c8c56f",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop72_train_eval_20261024/episodes/constrained_stop_2hop__300052_224276.json": "809c7aea1f60b4168748817c8aed51215a68c7cd175ee0f7fa4609c0af73362a",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop72_train_eval_20261024/episodes/constrained_stop_2hop__133237_842239.json": "230db017ced3aed709eeab8f0a1b80fce0dc926334f91474562cac7a15dc48b3",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop72_train_eval_20261024/episodes/constrained_stop_2hop__27742_27668.json": "007153f0ea90de523e23b5095f99b29883bdfc46aa33217176797cf9f32ef598",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop72_train_eval_20261024/episodes/constrained_stop_2hop__568006_159937.json": "044867bc6d0fd1f2e167287aa46db194ce3f500f828c5bfa2fabcf18c002ba05",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop72_train_eval_20261024/episodes/constrained_stop_2hop__150671_127418.json": "8f6101b535aa9d13b2c8b865aff42930fb3552c6829ce6710e1c9f6307642214",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop72_train_eval_20261024/episodes/constrained_stop_2hop__452796_84477.json": "e37edd499fe875064ec67ef49ace5d10cb06403012d520d9d5ba2b751bed25e2",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop72_train_eval_20261024/episodes/h3_2hop__90877_633514.json": "124996a5c8bfb4b5c65214f7741bee04868b8301acf524fc9fd367a14928116c",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop72_train_eval_20261024/episodes/constrained_stop_2hop__660296_36180.json": "61584e3a3cc77540aec575a214efe5d78ac3cf177a75066fd758c81b7d7de247",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop72_train_eval_20261024/episodes/constrained_stop_2hop__130823_73753.json": "5d99953db4e8cb26070c6dedab8f6f10a21a01772fb88f09325a36cb4f429a13",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop72_train_eval_20261024/episodes/constrained_stop_2hop__325682_3429.json": "8e43d5c2036f3da14cf760c80c05e1f99fd43a06711913f91ed3f9c7fbd1ab55",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop72_train_eval_20261024/episodes/constrained_stop_2hop__554253_86395.json": "410a288e9b4d0954a0b702f5fed7c074df40a7d955f2cbd901d1ac7fe9f2c5ea",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop72_train_eval_20261024/episodes/h3_2hop__178263_52185.json": "d9ad6790c4fb476dd9169cb2f3506dc283828a58f7588e23e73f6ecb24e9526f",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop72_train_eval_20261024/episodes/h3_2hop__150671_127418.json": "606ab8994144b1811726315582c2e1f0da5b9e1728dde328a6f8f67f124e392f",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop72_train_eval_20261024/episodes/h3_2hop__181992_51888.json": "a472066d19fe8ef1461be7b0b37fb14976a81baa37dd44690b5a74e3e7af3696",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop72_train_eval_20261024/episodes/constrained_stop_2hop__90877_633514.json": "9e4777611435fa7565ce00a20bbabc2071f85a40ea384d199d7c185f3b33e02c",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop72_train_eval_20261024/episodes/h3_2hop__25901_872.json": "973c7d4ea300fe222ecd647e6906524a2c0b0a92d12133990f5672893f265176",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop72_train_eval_20261024/episodes/h3_2hop__15574_66008.json": "fc52894b0914f9a09e855b6418b48b34c0e57c18dc0713d7b179ca3e8e01f146",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop72_train_eval_20261024/episodes/constrained_stop_2hop__131280_89563.json": "414e0e18909740d3c804f6e6bb34db1f59c2032435b1bcd92efca63771969d81",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop72_train_eval_20261024/episodes/constrained_stop_2hop__627916_89066.json": "e27a04be702c2753edb3719abb945514db466a3614d44567dd7378c3456913db",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop72_train_eval_20261024/episodes/h3_2hop__22215_22229.json": "d6ba36ea2dea50ab07c488e17643371daba423580d503c3be01e48d90d27baeb",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop72_train_eval_20261024/episodes/h3_2hop__27241_66282.json": "cc50422982d919274dac613775d3ad059de638768c687b38263f0273e336b5f5",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop72_train_eval_20261024/episodes/h3_2hop__142965_178655.json": "10bba56ee45ccfb2c67ba062f67f8c0b2fd3e175e0958bc89cb46b54369497ff",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop72_train_eval_20261024/episodes/h3_2hop__88444_63489.json": "d799f3dae5088f08b0caf56015cf17140eb21d668603ee1a6f94a076d3dd3e9a",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop72_train_eval_20261024/episodes/h3_2hop__9129_79233.json": "cad7c79cb2d47cda6852efe4904c1aed11623af14e2d901a2a6df5209d844766",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop72_train_eval_20261024/episodes/h3_2hop__760250_160798.json": "0247c083d89eff6106279daa055fa081f8587d2cb51a2efafee906547ded6ca7",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop72_train_eval_20261024/episodes/h3_2hop__505712_127008.json": "b957f311c4636be106ec8826283dffddd6c63be1cf3399d45682b9780f0c468c",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop72_train_eval_20261024/episodes/constrained_stop_2hop__505712_127008.json": "130f86c1e794b76118c841b8ce796bce7146f075e55940153055313e36503860",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop72_train_eval_20261024/episodes/h3_2hop__375649_80178.json": "59657134569df9a371f3c44414ad0c5701959cfa3cc318a2f365f8adbcbe62eb",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop72_train_eval_20261024/episodes/constrained_stop_2hop__82744_23249.json": "0825886a93f898430e2bd12402d7f852646bd9eee773deece0b18a2b1feaeb2f",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop72_train_eval_20261024/episodes/h3_2hop__314961_158069.json": "a60ac6246ad401df40b6dc47214ba643ec33a192bdf3f9fb56be90c5044ec27c",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop72_train_eval_20261024/episodes/h3_2hop__829136_131944.json": "80253fdcf39300868af16fbd5f0a35b42d9ec9e9a1590755a59a5aa30ebb3a65",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop72_train_eval_20261024/episodes/constrained_stop_2hop__25478_60641.json": "4cfd5b7ee97ac10a757c449b5bcc42af4b88b68cd32bac357c138ea254e41f17",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop72_train_eval_20261024/episodes/constrained_stop_2hop__27241_66282.json": "4bb8f9b1eef5cb0e9724d5acba04239047ce9a1ad3723921522d91f2a9dbf217",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop72_train_eval_20261024/episodes/h3_2hop__27742_27668.json": "d30c553bc5863c1cb17ac58c833e9794271b055f94c9ae306692ef616d079ccb",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop72_train_eval_20261024/episodes/constrained_stop_2hop__88444_63489.json": "87c91f87d7aa1a8f7521703b4f5684411e554ce55cbc666242496fac5c1a216e",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop72_train_eval_20261024/episodes/constrained_stop_2hop__144760_88472.json": "75e6a300b0feef20257f6249767bb75209f47898e6024ad54d095e989d18cd91",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop72_train_eval_20261024/episodes/constrained_stop_2hop__375649_80178.json": "fb62c5b5ed9aea07d6e700448758bf2f5038cb250f192200415fe72ea19beb44",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop72_train_eval_20261024/episodes/constrained_stop_2hop__426842_4037.json": "cac059dd7b1dea132846eca427599f2640e36cc0795255af599446b974093c83",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop72_train_eval_20261024/episodes/h3_2hop__440195_14904.json": "5df349fbfc648e4e395ddc31fb2ff4bf00ffad2b0a8c6142d6453520d65896bd",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop72_train_eval_20261024/episodes/h3_2hop__533801_81842.json": "e360d9ac775a907ab2421d838bc7fa2f9122c63df89a95d71cbe296cf4c02494",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop72_train_eval_20261024/episodes/h3_2hop__208969_11125.json": "88e5dd4cd5591fca94b4d33c2bdaaf74beaa7ea56d7077a9f4441a5afe5dffcc",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop72_train_eval_20261024/episodes/constrained_stop_2hop__178280_79070.json": "2e10d6d3ba3b5d86b6e2d2a27e625e8357b231acbaa26a073d499fd211dccb98",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop72_train_eval_20261024/episodes/h3_2hop__139851_140916.json": "4ac8f73f2eca6e88df763dad7494ac418efca316ae4099ac4c30af925dc8adcd",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop72_train_eval_20261024/episodes/constrained_stop_2hop__438489_14948.json": "84ced8910fba3cf5edd7cf5bdec50d55f94a6890a382ceea31d8af5cbba81077",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop72_train_eval_20261024/episodes/constrained_stop_2hop__795530_47353.json": "432b9a9fa922de0b63ee113698c841b54cc2306d02ad4e07b5fdd96987401e0d",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop72_train_eval_20261024/episodes/constrained_stop_2hop__572586_58953.json": "bcbdec1fdfa6189c692273300df38fef1a254389d9df455e60fab118eaa2323d",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop72_train_eval_20261024/episodes/h3_2hop__108398_857705.json": "5c3f5b7881c8679249507b49129c9fcb42c36d737f418955c6d7b298ad3189ba",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop72_train_eval_20261024/episodes/h3_2hop__325682_3429.json": "4e64f3f068fd22c86159daecb978b839c3c46b3bd539d9a4d144d6efd1186945",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop72_train_eval_20261024/episodes/h3_2hop__89354_93808.json": "43dd5850798f8d423e9b9daf99fd1ddc9cb739dfe2a95c2ab18289248fb2f9fd",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop72_train_eval_20261024/episodes/constrained_stop_2hop__479640_853000.json": "7ccaf96f91b032fa66ad0d7b608420e8bbd1f64f658cb3c3dd2fe3ed61808c2a",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop72_train_eval_20261024/episodes/h3_2hop__26571_3807.json": "4bfa9a7190620773ffffe5d54a0672cd7ae68f8a4eca41e48ff654ad67e0d62e",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop72_train_eval_20261024/episodes/constrained_stop_2hop__22215_22229.json": "2e3674c26fc9673574037ef8a030e9c63009620d4dbf61b5f4c78cf9d82b4c4b",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop72_train_eval_20261024/episodes/constrained_stop_2hop__128974_571141.json": "0018570012e3eda926a6e13b2e1f9b946c70a42104cf6b94558e6bbd2452cbde",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop72_train_eval_20261024/episodes/h3_2hop__133237_842239.json": "7a0a2c004f96da24a3f686107edd47a6c5237d9ece49ebc6422f194f0eebd67f",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop72_train_eval_20261024/episodes/constrained_stop_2hop__208969_11125.json": "d0c5b7b79985f5e11775edc760faff7438d6d8b5a51d35fa8afd52f9d8234894",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop72_train_eval_20261024/episodes/constrained_stop_2hop__296175_126060.json": "915b2973fda52e5b4d3f846ced7b93fca25939a2082952fe885f9c159d32c4a4",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop72_train_eval_20261024/episodes/h3_2hop__39571_54358.json": "c62ca57ceb1748bd6ac738bb167ab678c4159468eb91ac1791b4034e176d93c5",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop72_train_eval_20261024/episodes/h3_2hop__128974_571141.json": "7c9edee740179428062ae007b76906968cbf861e2d0c1b016d379921607da5dc",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop72_train_eval_20261024/episodes/h3_2hop__487591_7672.json": "f74ecdb22efcbd00342acc0be2d1afb8662228bff4d2490738119330f0be21c7",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop72_train_eval_20261024/episodes/h3_2hop__795530_47353.json": "05ee5ad72046f04c991549e8c8a2e8aa77f7c171d75e2484048a48000192e4f5",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop72_train_eval_20261024/episodes/constrained_stop_2hop__26571_3807.json": "3d806e4c48ec67111b8af8be140780a04d43afdad6b78b7e569a0b4c2ffbbfb1",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop72_train_eval_20261024/episodes/constrained_stop_2hop__60984_44352.json": "38f9bdfb957f06a707349a77ab966f0083bfed9e4c8f7561ec28eb8c337776d1",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop72_train_eval_20261024/episodes/constrained_stop_2hop__181992_51888.json": "e632e9a7421ca8d4bc1e9e3d5c3fef3a53f2968e6b59926c1e5855138befd72f",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop72_train_eval_20261024/episodes/constrained_stop_2hop__142965_178655.json": "35414e199b05f3e10c5cc8c4356cfed6cea1fd08f11301145a469ca5c04f61b5",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop72_train_eval_20261024/episodes/h3_2hop__282175_100321.json": "a7b51048563227f14f4a715d8eee75f8e2d1ea2d3d56336d23df0cd246438416",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop72_train_eval_20261024/episodes/h3_2hop__205146_92853.json": "be9b314d70154270af2622cc72207a9637e5d3980b7f027c593b24439ca45436",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop72_train_eval_20261024/episodes/h3_2hop__346214_699835.json": "fedd305df2d07d90fc4a485115a7d5e6f594799858670e58918f17576e750db2",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop72_train_eval_20261024/episodes/constrained_stop_2hop__128642_32463.json": "524e15a385c99bd7fab3843b2108593a62a14f33920f3523120864a82087369c",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop72_train_eval_20261024/episodes/constrained_stop_2hop__314961_158069.json": "0b0dd5d9b51344586699c706487851806e116be6f866066d02d7dcb7d7989f3d",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop72_train_eval_20261024/episodes/h3_2hop__21222_770460.json": "a154929c87e9080b656bd08e85467d6da16f6f0cb887c39b44a090ec2312d760",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop72_train_eval_20261024/episodes/h3_2hop__806764_47824.json": "8eb3052b7c9060c3ecfc36bd5868f88e243f6cdb8536d64840a1aed036fecb3c",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop72_train_eval_20261024/episodes/constrained_stop_2hop__440195_14904.json": "e7526c9756d6c87d9f3ee4d4f6cfdc7206c3e6e9e4b92363596610c98fbe270e",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop72_train_eval_20261024/episodes/h3_2hop__300052_224276.json": "f5bd63a7e78661a0b929d8170613256ccf440d120ab0ecfe8eef46e05bf649e2",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop72_train_eval_20261024/episodes/constrained_stop_2hop__460439_25111.json": "febd9d9339c626a72457247fa1334e6daedfeedcf87e14370966657e6eccc218",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop72_train_eval_20261024/episodes/constrained_stop_2hop__282175_100321.json": "a37ada9db4dedcffde3bdd0608021ea078d66e3fa014da1a4ef29fe9cecc7990",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop72_train_eval_20261024/episodes/constrained_stop_2hop__760250_160798.json": "984e90266e3b31c20e75951902541e2c9076cc90f10c2220ebce680be01c04fa",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop72_train_eval_20261024/episodes/h3_2hop__103724_90561.json": "1c6b3d3077b370fd780bde1bbcdb11478c41fbec3b4784bec9212f3000fac883",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop72_train_eval_20261024/episodes/h3_2hop__568006_159937.json": "bb97a3dd506e7b96b5d7e5d0c1a14d8dcde21be544a2996da8784f7df771cc7f",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop72_train_eval_20261024/episodes/constrained_stop_2hop__829136_131944.json": "da09a5637a10cc7a3ef19a41be3dd9a1aa8153817bd4838791f427667d74a61c",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop72_train_eval_20261024/episodes/constrained_stop_2hop__769619_162428.json": "4a61f69cc9ad48683b0a3bc2f1f83f996db6c3be317d3f2df42e9c5f747bd44b",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop72_train_eval_20261024/episodes/constrained_stop_2hop__25901_872.json": "cecd3bffabea8b58b8d061061398db2cee51227129034b00b3625b06b955cbaa",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop72_train_eval_20261024/episodes/h3_2hop__60984_44352.json": "ef4dbb00bd48a08f55ce03fb3632561d57d03ced2fdacef60d9b8bac28b02da7",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop72_train_eval_20261024/episodes/constrained_stop_2hop__103724_90561.json": "ababa57cb397d265a25b6a4487f28871e6d2dbccf9724e9e1c9de3e5703e4f78",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop72_train_eval_20261024/episodes/constrained_stop_2hop__129299_45142.json": "528f4bc402925e2054377aa2be3fa2c2f96b6e21acd421129ea4f5d0f48bced7",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop72_train_eval_20261024/episodes/h3_2hop__558011_64290.json": "3f7849a28b4cddd7382325f83a0a72c2885204d2b57bb7eb825dcf6efe10d0ec",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop72_train_eval_20261024/episodes/constrained_stop_2hop__445512_54206.json": "557a77d6aa11cedf87d819a9358d720ca0608dd61675846f91b3e27622cfc9a2",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop72_train_eval_20261024/episodes/constrained_stop_2hop__130669_64652.json": "c89cf5ef86fe3b028b9b2ecdca51b169eef2bb69b1ead37777e54a4bede6dfea",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop72_train_eval_20261024/episodes/constrained_stop_2hop__39571_54358.json": "0bee34e3fb2e8dcf3596033fc5dcbcb0a8ec92395a2f89415ef6d538b651003c",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop72_train_eval_20261024/episodes/h3_2hop__460439_25111.json": "bd49d719daee92a0f1cdec7dcfcacd745e77f0633ef6192fb952e20c8af18d79",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop72_train_eval_20261024/episodes/constrained_stop_2hop__376266_37939.json": "0d64b756b308bbbd89ad844098bb5f431244b8dbd1ddb3df83f37e07decd1b1c",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop72_train_eval_20261024/episodes/h3_2hop__479640_853000.json": "defe771e6df9b1cb736d13ba469d522cf72076dff02320adc19035e3dda8b145",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop72_train_eval_20261024/episodes/h3_2hop__438489_14948.json": "adc6eda2dfa686ef7106603d3642a23a7ba0a41c9be74ff033aeddbe0de0fd4c",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop72_train_eval_20261024/episodes/h3_2hop__25478_60641.json": "3d2569f58cf3d221e8802888fa8e13e081897b89509d2ac6032e9f5343111b6b",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop72_train_eval_20261024/episodes/constrained_stop_2hop__205146_92853.json": "881c35326586bf54a886e1475e5cb4c4129c82cddd273b384b6189e9417f25f4",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop72_train_eval_20261024/episodes/constrained_stop_2hop__108398_857705.json": "12f51a916e2790036549a8da6a2c942010feb5374adee3d4fb6046fafc3e850f",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop72_train_eval_20261024/episodes/h3_2hop__343722_542971.json": "4e1a29c2a8d121e89fac194dc4ab7d1e5c147251b44ec365c9f712c357475129",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop72_train_eval_20261024/episodes/h3_2hop__132015_91253.json": "1d684da73a9af6949cd3b0f540b2b9e6c16c912a14d3b12e52b2c710bbb7829d",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop72_train_eval_20261024/episodes/h3_2hop__276721_124425.json": "adddf627a9d658c75512f2c8112508a521aa69bf60dec48c5af1c8200ca2e3a6",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop72_train_eval_20261024/episodes/constrained_stop_2hop__132015_91253.json": "83cbfd5f72424506043fcf4efccbe12bf76627e912e9f1464e842de22f730d45",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop72_train_eval_20261024/episodes/constrained_stop_2hop__652141_36340.json": "7bd5c75364b31ad298b98c84783eb111d64ad9cbf455c76e209a7c3c72de358f",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop72_train_eval_20261024/episodes/h3_2hop__129299_45142.json": "3c09e74fe95b34b51d7a69c36535344b348dafaf17215be18f32c0506ecc786c",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop72_train_eval_20261024/episodes/h3_2hop__769619_162428.json": "ad865d78fb17c5892ae2e930bdf94b39bf8a198ec626c80b8ee5bcc2861ede5b",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop72_train_eval_20261024/episodes/h3_2hop__445512_54206.json": "9ddc6044598f6de105b2bbcc29c9eb862ff79ff72230372c573bc7a8ecfee22c",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop72_train_eval_20261024/episodes/constrained_stop_2hop__172461_126711.json": "d99bd5975488c94ef2910d9ab4cced283c07a45b1d3c027b68eada2fd799a611",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop72_train_eval_20261024/episodes/constrained_stop_2hop__276721_124425.json": "018addc2b4fb15fd16144e7e2f0e3ee15c257ce504333bedbeabee5ab1aa24de",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop72_train_eval_20261024/episodes/constrained_stop_2hop__9129_79233.json": "098321e8bf852ed4639bba373d716116d5d98a196bab833606aafb6875364cdc",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop72_train_eval_20261024/episodes/h3_2hop__172461_126711.json": "d13ad3fececc999d60e977f72e5a58f4c5004d94127e7b2791f6652b128add1c",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop72_train_eval_20261024/episodes/h3_2hop__212522_513189.json": "3541238c1d384e4c207545b1dc058de6ce9ccfca3101e4c361f489cd1cede371",
+    "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop72_train_eval_20261024/episodes/constrained_stop_2hop__89354_93808.json": "9871b3a119bc42f9467d498570ca21cfa2207037a09f4e9a972158702082738b"
+  }
+}

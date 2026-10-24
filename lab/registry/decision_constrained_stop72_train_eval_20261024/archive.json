@@ -1,0 +1,8 @@
+{
+  "path": "/content/drive/MyDrive/lsdrag-backups/20261023/decision_constrained_stop72_train_eval_20261024.tar.gz",
+  "sha256": "3bcd77ad291f8346d91037ccbb368229104ba2abab9e9daf5c074bac0c4d41ac",
+  "bytes": 248519,
+  "run": "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop72_train_eval_20261024",
+  "phase": "complete",
+  "backbone_weights_included": false
+}
