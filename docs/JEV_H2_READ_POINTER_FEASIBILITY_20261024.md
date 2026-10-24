@@ -1,6 +1,8 @@
+Status override: DEFERRED after user fairness objection. Collection completed with insufficient fit coverage (8 < 12 read questions). No pointer fit or additional collection authorized by this plan. See final H3 tool-return protocol.
+
 # H2 native read-pointer feasibility — 2026-10-24
 
-Status: proposed bounded pilot; no model training or collection launched.
+Status: native H2 reference collection frozen and launched (2026-10-24); no pointer fit yet. Collection specification: lab/registry/decision_h2_read48_20261024/spec.json, SHA256 fda7a5709e66d13b79334653670477e6d313a87900e8f0d484c7cc09a478c837.
 
 Objective remains F1 +5 percentage points and generated tokens <=70% of immutable basic GRPO jointly, useful state-dependent policy evidence, independent frozen confirmation. Reserved80 remains untouched.
 
@@ -23,3 +25,7 @@ Hypothesis: retaining quality-leading H2 action policy while replacing long opaq
 Teacher-ID imitation establishes efficient argument execution only. If feasible, a separate bounded outcome-training step must compare alternative document choices followed by the current policy to terminal answer, using final QA and remaining cost. That later step can test future-return-dependent document choice. It is not authorized by this document to silently expand collection or consume reserved80.
 
 Next executable preparation: inspect H2 loader and shared-reader capture format, implement causal candidate feature extraction and freeze the 48-question collection specification. Existing old per-question-corpus slot checkpoints are historical and cannot substitute for this shared-corpus experiment.
+
+## Frozen collection implementation
+
+ReadCaptureReader passively hooks the existing native prefill once, retaining its final-layer hidden states until the chosen action is known. For reads, it stores mean contextual features of complete latest observed document objects, ordered by most recent result and deduplicated by ID, plus the existing state pack. Exact tokenizer offset roundtrip is required; missing observations fail explicitly. Native argument decoding, payloads and handler remain unchanged. Model/reader/checkpoint/source hashes are frozen in the collection specification. Runtime PID82714/session43644 was confirmed live at launch; use actual status/process checks, not these historical identifiers.

@@ -1,3 +1,7 @@
+## 2026-10-24 — last experiment limit and fair policy comparison
+
+User requests ONE LAST experiment expanding H3 result-based learning to tool choice. Finish this frozen experiment, verify/report/back up, then do not launch additional experiments without renewed instruction. Argument-only savings applied just to the candidate cannot establish policy improvement; a shared mechanism control is required. Pointer experiment is deferred.
+
 ## 2026-10-24 — explicit continued execution
 
 User: 그래 계속 진행해 내가 멈추라고 할때까지. Continue the active goal and bounded experiments without repeated approval until explicit stop; preserve quality gates and reserved confirmation.
