@@ -1,3 +1,5 @@
+> H3 complete: F1 27.32/generated66.89; token threshold passes but quality misses, with most savings on zero-quality or worsened questions. Retain H1. Next direction quality-preserving intermediate stopping coverage; see JEV_BUDGET_STOP_H3_RESULT_20261024.md.
+
 > H2 update: completed, F1 28.30→29.61 but generation75.34→79.28; stopping-value saving hypothesis failed. Retain H1 efficient branch. Next single hypothesis is quality gain relative to continuation cost, using training-only budget-aware targets. See `JEV_STOP_VALUE_H2_RESULT_20261024.md`.
 
 > H1 execution update: completed. F1 26.74→28.30, generated75.45→75.34. Correct-answer-path savings exist but failed continuations cancel aggregate benefit. Next direction: continuation/stopping value. See `JEV_OUTCOME_POLICY_H1_RESULT_20261024.md`; planning-time execution statements below are historical.

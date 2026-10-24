@@ -1,3 +1,11 @@
+## 2026-10-24 — H3 complete: cost threshold passes, quality/useful-saving goal fails
+
+Candidate936e4592 completed paired128episodes/183.92sec/9103generated/453629input/0errors; H1reference64exact and raw/Drive bytes verified. H3F127.3158/generated66.8906 vsH128.3042/75.3438;3wins4losses. Fixedbasic+4.8152pp/generated−32.03%; quality27.5007threshold missed, no independent success. Report docs/JEV_BUDGET_STOP_H3_RESULT_20261024.md.
+
+Net541tokens saved:305both-zero,143quality-loss,33quality-gain,60positive-retained. Therefore cannot claim useful quality-preserving policy dominates savings. Train targets15include2quality-loss trades under aggregatefloor; transfer compensation not guaranteed. RetainH1efficientincumbent;H3cost-focusedbranch,H2qualitybranch. Next direction broaden same-H1 evidence for quality-preserving intermediate stopping, one bounded training expansion/candidate, no devpenaltysweep. Concrete followup notyetfrozen, no nextworker. Reserved80protected,GoalACTIVE.
+
+Coordinator26732/evaluator26787terminalcomplete. Current phase result saved/next planning. Collection first34+supplement20 verified; initial coverage failure preserved. Fit/eval/collection archives copied and SHAverified. Pushjev_v1.1.
+
 
 ## 2026-10-24 — H3 fit complete; paired evaluation live
 

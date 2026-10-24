@@ -1,0 +1,25 @@
+{
+  "reference_exact": 64,
+  "groups": {
+    "both_zero": {
+      "n": 40,
+      "tokens": -305
+    },
+    "quality_gain": {
+      "n": 3,
+      "tokens": -33
+    },
+    "positive_retained": {
+      "n": 17,
+      "tokens": -60
+    },
+    "quality_loss": {
+      "n": 4,
+      "tokens": -143
+    }
+  },
+  "wins": 3,
+  "losses": 4,
+  "archive_sha256": "5255d5c6481b17a390e5eb8b923349ff88fbf5c1d6e6def39f78fad0bdb69cf9",
+  "verified": true
+}
