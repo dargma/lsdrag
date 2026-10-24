@@ -1387,3 +1387,7 @@ Train-only82stateauditrelative26.41MLP found2nonworse-cheaperpairs at1state/ques
 ## 2026-10-24 — disjoint48 current-corrected-policy collection live
 
 Coordinator399511/collector399521verifiedlive. State /content/local_fast/lsdrag-text-v1/results/decision_corrected_refresh_coordinator_20261024.json;log /content/local_fast/lsdrag-text-v1/logs/refresh48_run_decision_corrected_refresh_1792831243.log. Run decision_quality_corrected_refresh48b_20261024. Existingtrain192partition unchanged,new48disjointwithintrain. Audit/Drivebackupautomatic; noheadfitautoaftercollection. GoalACTIVE.
+
+## 2026-10-24 — train-only empirical root-action envelope
+
+Whilecorrected48bcollector399521 remainslive, scripts/reporting/diagnose_training_action_frontier.py analyzesCOMPLETEDfirst48d987cache only. Rootaction2-suffixmeans,LP48questionconstraints,legalactions,randomizedmixtures. Anchorrootchosenaction sampledmeanF1.39757/gen66.8125; hindsightenvelope atbudget68.884375 yieldsmeanF1.51856;worstof2 .47292. TheseareTRAINhindsight,notdeployablequality,notthevalidationgoal,notboundonallRAGpolicies;worstof2notconfidencebound. Noquestion/testlabelsforruntime,nohyperparamchosenfromthisdiagnostic. Evidenceonlythatobservedactionsetcontainsimprovementroom;generalizablepolicyremainsunsolved. Report lab/reports/decision_selected_refresh48_20261024/training_action_frontier.json. GoalACTIVE;currentcollectionunchanged.
