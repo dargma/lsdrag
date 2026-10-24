@@ -10,7 +10,7 @@
     "new_llm_rollouts": 0,
     "reuses": "decision_shared_outcomes192_20261023 and decision_shared_teacher192_20261023"
   },
-  "snapshot_utc": "2026-10-24T05:28:45.363173+00:00",
+  "snapshot_utc": "2026-10-24T05:34:39.735834+00:00",
   "runs": [
     {
       "group": "historical_grpo_reference",
@@ -309,14 +309,30 @@
     {
       "group": "adaptive_policy_followup",
       "run": "decision_selected_head_grpo_validation64_20261024_zero_gate",
-      "phase": "not_started",
-      "counts": null
+      "phase": "complete",
+      "counts": {
+        "episodes": 128,
+        "generated": 10264,
+        "inputs": 546977
+      },
+      "seconds": 202.1133084739995,
+      "complete_raw_totals_verified": true,
+      "terminal_raw_totals_verified": true,
+      "status_path": "/content/local_fast/lsdrag-text-v1/results/decision_selected_head_grpo_validation64_20261024_zero_gate/status.json"
     },
     {
       "group": "adaptive_policy_followup",
       "run": "decision_opportunity_value_validation64_20261024",
-      "phase": "not_started",
-      "counts": null
+      "phase": "evaluation",
+      "counts": {
+        "episodes": 10,
+        "generated": 665,
+        "inputs": 41750
+      },
+      "seconds": 24.391698323990568,
+      "complete_raw_totals_verified": false,
+      "terminal_raw_totals_verified": false,
+      "status_path": "/content/local_fast/lsdrag-text-v1/results/decision_opportunity_value_validation64_20261024/status.json"
     }
   ],
   "completed_totals": {
@@ -377,18 +393,17 @@
       ]
     },
     "adaptive_policy_followup": {
-      "episodes": 1536,
-      "generated": 126791,
-      "inputs": 6868988,
+      "episodes": 1664,
+      "generated": 137055,
+      "inputs": 7415965,
       "failed_run_costs": {
         "episodes": 0,
         "generated": 0,
         "inputs": 0
       },
       "failed_runs": [],
-      "completed_runs": 1,
+      "completed_runs": 2,
       "uncompleted_runs": [
-        "decision_selected_head_grpo_validation64_20261024_zero_gate",
         "decision_opportunity_value_validation64_20261024"
       ]
     }

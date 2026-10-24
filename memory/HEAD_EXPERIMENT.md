@@ -1,3 +1,29 @@
+## 2026-10-24 — five-head validation live
+
+Follow-up actual launch verified: coordinator336962/worker343828, log /content/local_fast/lsdrag-text-v1/logs/value_heads_evaluate_decision_value_heads_1792820052.log. Five-candidate validation at12/320episodes; no aggregate quality inference until complete.
+
+## 2026-10-24 — zero-gate complete, numeric target not met; next evaluation continues
+
+Report docs/JEV_ZERO_GATE_RESULT_20261024.md. Validation64 gated F1.259605/generated83.625/input4675.6875/calls2.015625/zero-tool15/errors0. Versus ordinary selectedGRPO: F1+3.0066pp (CI−2.983,+9.635),generated+57.23%,zero-tool33→15. Versus fixed basicGRPO:F1+3.4598pp(CI−4.464,+12.054),generated−15.0206%;jointtarget NOT met. Exposed validation only. Selected pre-GRPO64episodes exactly match prior. Both training/eval archives independently rehashed. Goal stays ACTIVE; phase completion is not success.
+
+Next fixed five-head evaluation coordinator336962 waits for terminal predecessor, then launches; no fresh-test access. Current next commands: inspect decision_opportunity_value_coordinator_20261024.json, verify actual child; after completion run compare_decision_policy_campaign.py --run decision_opportunity_value_validation64_20261024. Preserve original final80/reserved80.
+
+## 2026-10-24T05:33:44.127736+00:00 — selected-head GRPO continuation: complete
+
+Coordinator state: `/content/local_fast/lsdrag-text-v1/results/decision_selected_head_grpo_coordinator_20261024_zero_gate.json`. Details: `{"phase": "complete", "pid": null, "seconds": 2745.8791708329954, "report": "lab/reports/decision_selected_head_grpo_validation64_20261024_zero_gate/report.md", "next": "Review paired validation; no original-final80/reserved80 evaluation or new sweep."}`. Same already-trained selected head continues learning; LLM/normalization fixed. Only train192 and validation64 used; final80/reserved80 protected.
+
+## 2026-10-24T05:33:44.012025+00:00 — selected-head GRPO continuation: running
+
+Coordinator state: `/content/local_fast/lsdrag-text-v1/results/decision_selected_head_grpo_coordinator_20261024_zero_gate.json`. Details: `{"phase": "running", "pid": 330710, "seconds": 2745.7634581289894, "script": "scripts/reporting/archive_decision_run.py", "child_pid": 343651, "log": "/content/local_fast/lsdrag-text-v1/logs/selected_grpo_archive_decision_run_1792820024.log"}`. Same already-trained selected head continues learning; LLM/normalization fixed. Only train192 and validation64 used; final80/reserved80 protected.
+
+## 2026-10-24T05:33:43.895798+00:00 — selected-head GRPO continuation: running
+
+Coordinator state: `/content/local_fast/lsdrag-text-v1/results/decision_selected_head_grpo_coordinator_20261024_zero_gate.json`. Details: `{"phase": "running", "pid": 330710, "seconds": 2745.6471309049957, "script": "scripts/reporting/summarize_decision_shared_evaluation.py", "child_pid": 343649, "log": "/content/local_fast/lsdrag-text-v1/logs/selected_grpo_summarize_decision_shared_evaluation_1792820023.log"}`. Same already-trained selected head continues learning; LLM/normalization fixed. Only train192 and validation64 used; final80/reserved80 protected.
+
+## 2026-10-24T05:30:16.124019+00:00 — selected-head GRPO continuation: running
+
+Coordinator state: `/content/local_fast/lsdrag-text-v1/results/decision_selected_head_grpo_coordinator_20261024_zero_gate.json`. Details: `{"phase": "running", "pid": 330710, "seconds": 2537.8754296729894, "script": "scripts/evaluate_decision_shared_corpus.py", "child_pid": 342593, "log": "/content/local_fast/lsdrag-text-v1/logs/selected_grpo_evaluate_decision_shared_corpus_1792819816.log"}`. Same already-trained selected head continues learning; LLM/normalization fixed. Only train192 and validation64 used; final80/reserved80 protected.
+
 ## 2026-10-24 — zero-gate training complete, independent audit passed
 
 1536episodes/4719decisions/4698controllable states/588optimizer updates,2409.89seconds. Generated126791/input6868988. Independent audit passed: both rounds replay, all group advantage gates, finite changed net4tensors, frozen normalizers. Final checkpoint dccbf686944009a72ee43251def7139c0ef676e8c84ccc7b50c290ed611fd61f. Preserved2episode errors and21forcedFINAL. Report lab/reports/decision_selected_head_grpo192_20261024_zero_gate/audit.json. Coordinator330710 now archiving (child342029); follow-up queue336962 still waiting for full predecessor completion. Validation not yet completed; performance/goal success unknown. Next verify archive then64paired evaluation and compare_decision_policy_campaign.py. Goal ACTIVE.

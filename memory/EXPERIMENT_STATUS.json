@@ -1,6 +1,6 @@
 {
-  "phase": "selected_head_grpo_running",
-  "updated_utc": "2026-10-24T05:28:15.787394+00:00",
+  "phase": "selected_head_grpo_complete",
+  "updated_utc": "2026-10-24T05:33:44.127736+00:00",
   "protocol": "docs/JEV_SELECTED_HEAD_ZERO_GATE_20261024.md",
   "protocol_sha256": "58a215a03d96c3738558738d6e7305f2e5f8e8f37c5994cc27cb6e33f30df3a2",
   "prompt": "prompts/text_rag_integrated_v5.txt",
@@ -32,13 +32,13 @@
   ],
   "worker_wall_budget_minutes": 120,
   "run_planned": "/content/local_fast/lsdrag-text-v1/results/decision_shared_test80_20261023",
-  "pid": 342029,
+  "pid": null,
   "implementation_completed": true,
   "dataset_prepared": true,
   "teacher_collection_started": true,
   "training_completed": true,
-  "evaluation_completed": false,
-  "next": "Finish bounded train/audit/paired validation/archive. No test launch.",
+  "evaluation_completed": true,
+  "next": "Continue fixed opportunity/value-head validation; research goal active.",
   "previous_multimodal_checkpoint_historical_only": {
     "phase": "native2_review_required",
     "run": "/content/local_fast/lsdrag-head-v14/results/native_distillation_12b_20261015",
@@ -509,7 +509,7 @@
   "execution_hold": {
     "active": false,
     "scope": "User-authorized bounded decision-policy pilot2; does not authorize arbitrary expansion",
-    "superseded_by": "2026-10-23 user 그래 시작해 and explicit experiment continuation"
+    "superseded_by": "2026-10-23 user \uadf8\ub798 \uc2dc\uc791\ud574 and explicit experiment continuation"
   },
   "research_review": {
     "phase": "astra_deep_research_complete",
@@ -597,7 +597,7 @@
   "execution_hold_history": [
     {
       "active": true,
-      "user_instruction": "일단 여기까지만; 잘 저장하고 보고서도 작성 git 반영",
+      "user_instruction": "\uc77c\ub2e8 \uc5ec\uae30\uae4c\uc9c0\ub9cc; \uc798 \uc800\uc7a5\ud558\uace0 \ubcf4\uace0\uc11c\ub3c4 \uc791\uc131 git \ubc18\uc601",
       "gpu_experiments_authorized_now": false
     }
   ],
@@ -924,13 +924,12 @@
     "execution_resumed_explicitly": true
   },
   "selected_head_grpo_continuation": {
-    "phase": "running",
-    "pid": 330710,
-    "seconds": 2417.538752177992,
-    "script": "scripts/reporting/archive_decision_run.py",
-    "child_pid": 342029,
-    "log": "/content/local_fast/lsdrag-text-v1/logs/selected_grpo_archive_decision_run_1792819695.log",
-    "updated_utc": "2026-10-24T05:28:15.787394+00:00",
+    "phase": "complete",
+    "pid": null,
+    "seconds": 2745.8791708329954,
+    "report": "lab/reports/decision_selected_head_grpo_validation64_20261024_zero_gate/report.md",
+    "next": "Review paired validation; no original-final80/reserved80 evaluation or new sweep.",
+    "updated_utc": "2026-10-24T05:33:44.127736+00:00",
     "run": "decision_selected_head_grpo192_20261024_zero_gate"
   },
   "selected_head_grpo_failed_run": {
@@ -983,10 +982,18 @@
     "protocol": "docs/JEV_OPPORTUNITY_VALUE_HEADS_20261024.md"
   },
   "opportunity_value_evaluation": {
-    "phase": "waiting",
+    "phase": "running",
     "pid": 336962,
-    "seconds": 1080.5557523409952,
-    "predecessor_pid": 330710,
-    "predecessor": "/content/local_fast/lsdrag-text-v1/results/decision_selected_head_grpo_coordinator_20261024_zero_gate.json"
+    "seconds": 1410.568392879999,
+    "script": "scripts/evaluate_decision_value_heads.py",
+    "child_pid": 343828,
+    "log": "/content/local_fast/lsdrag-text-v1/logs/value_heads_evaluate_decision_value_heads_1792820052.log"
+  },
+  "zero_gate_result": {
+    "phase": "complete_target_not_met",
+    "report": "docs/JEV_ZERO_GATE_RESULT_20261024.md",
+    "f1": 0.25960497835497837,
+    "generated": 83.625,
+    "goal_achieved": false
   }
 }
