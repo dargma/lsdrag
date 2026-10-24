@@ -30,7 +30,8 @@ def main():
         'decision_matched_refresh_validation64_20261024',
         'decision_anchor_corrections_validation64_20261024',
         'decision_quality_corrected_refresh48b_20261024',
-        'decision_cost_priority_validation64_20261024']
+        'decision_cost_priority_validation64_20261024',
+        'decision_cost_priority_refresh48c_20261024']
     rows=[]
     for group,names in GROUPS.items():
         for name in names:

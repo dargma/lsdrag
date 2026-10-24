@@ -1,4 +1,9 @@
 
+## 2026-10-24 — third disjoint48 cost-policy collection frozen
+
+Latest goal continuation authorizes bounded execution after prior status-only/no-progress turn. Protocol docs/JEV_COST_POLICY_COVERAGE_PROTOCOL_20261024.md; namespace decision_cost_priority_refresh48c_20261024. Fixed hash seed20261065 selects48 fromremaining96 train192, disjointprevious96. Reference cost-priorityMLP SHA e1a630e50d323b09a93f591c9394bbfe2c8fa8f5bc99f271dd1da180d55f24b7. Same native contract/corpus/frozenLLM; max816episodes/3600sec afterload. Source hashes verified, GPU free~97GB, previouscoordinator terminal andnoactiveexperiment worker. Collection thenaudit/Drivebackup only; postcollection train-only evidence determines nextfit. GoalACTIVE, no target success, reserved80protected. New collection not launched at this entry.
+
+
 ## 2026-10-24 — cost-priority result modest joint improvement, mechanism caveat
 
 Costpriority26.74/75.45 vsanchor26.41/81.55;+.33ppCI[-4.35,+5.02],gen−7.47%. Fixedbasic+4.24pp/gen−23.32%,goalnotmet. Reference64exact/rawcounts/DriveSHAverified. Crucialtrajectoryaudit:4newzero-toolquestionssave403tokens,allF1=0beforeANDafter;other60net+13tokens/F1sum+.214286. Savingsnotdemonstratedefficientcorrectanswerpaths;future-valuepolicyclaimunproven. Report docs/JEV_COST_PRIORITY_RESULT_20261024.md. Noactiveworker. Nextquality-improvingcoverage amongremaining96trainqids,notuniversalstopreward. GoalACTIVE,reserved80protected.
