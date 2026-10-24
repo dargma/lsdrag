@@ -1,0 +1,8 @@
+{
+  "verified": true,
+  "kl": 0.002316872589290142,
+  "retention_change": 0.0034722222480922937,
+  "matched": 7,
+  "anchor_immutable": true,
+  "scope": "Training learning/stability gate; not rollout quality"
+}
