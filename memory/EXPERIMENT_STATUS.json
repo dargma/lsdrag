@@ -969,7 +969,10 @@
     "experiment_completion_is_goal_completion": false,
     "continue_after_three_if_unmet": true,
     "architecture_variants_authorized": true,
-    "updated_utc": "2026-10-24T05:05:24.828840+00:00"
+    "updated_utc": "2026-10-24T05:05:24.828840+00:00",
+    "reaffirmed_utc": "2026-10-24T09:35:54.089300+00:00",
+    "explicit_user_request": "골 모드 진입",
+    "current_phase_protocol": "docs/JEV_COST_POLICY_COVERAGE_PROTOCOL_20261024.md"
   },
   "opportunity_value_heads": {
     "phase": "complete_joint_target_not_met",

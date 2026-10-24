@@ -1424,3 +1424,8 @@ Restarted ONLY decision_cost_priority_refresh48c_20261024 with unchanged frozen4
 
 Next: verify terminal status/artifacts/Drive SHA; then PYTHONPATH=src:scripts /content/local_fast/lsdrag-text-v1/runtime/bin/python scripts/reporting/audit_current_policy_opportunities.py --run decision_cost_priority_refresh48c_20261024. Freeze any subsequent fit only after completed train-only audit. Do not launch a duplicate while PID/state is live.
 
+
+## 2026-10-24 — goal mode explicitly activated after recovery
+
+User: “골 모드 진입”. Goal tool status ACTIVE, no token budget specified. Objective unchanged: paired F1 +5 percentage points AND generated-token ratio <=0.70 against fixed basic shared-corpus GRPO, plus evidence of useful state-conditioned decisions; exposed development results alone are insufficient. Continue bounded evidence-driven experiments after completed third48 audit, freeze each next protocol before outcomes, protect reserved80 during development. Existing collection9054/9064 verified live at81episodes/7questions; do not duplicate. No target achievement claimed. Current phase docs/JEV_COST_POLICY_COVERAGE_PROTOCOL_20261024.md. Environment-status tool and network-policy snapshot unavailable; actual prior downloads/push succeeded, not a general credential-readiness claim.
+

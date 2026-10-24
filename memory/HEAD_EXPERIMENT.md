@@ -1,3 +1,7 @@
+## 2026-10-24 — goal mode explicitly activated after recovery
+
+User: “골 모드 진입”. Goal tool status ACTIVE, no token budget specified. Objective unchanged: paired F1 +5 percentage points AND generated-token ratio <=0.70 against fixed basic shared-corpus GRPO, plus evidence of useful state-conditioned decisions; exposed development results alone are insufficient. Continue bounded evidence-driven experiments after completed third48 audit, freeze each next protocol before outcomes, protect reserved80 during development. Existing collection9054/9064 verified live at81episodes/7questions; do not duplicate. No target achievement claimed. Current phase docs/JEV_COST_POLICY_COVERAGE_PROTOCOL_20261024.md. Environment-status tool and network-policy snapshot unavailable; actual prior downloads/push succeeded, not a general credential-readiness claim.
+
 ## 2026-10-24 — runtime reset recovery and explicit experiment resume
 
 User explicitly requested latest Git/Drive check, public model/data restoration into local-fast, and continuation of the interrupted experiment. Restored remote jev_v1.1 at 0a310f27 (newer than jev_v1.2 and the Drive code mirror); retain current user-supplied push target jev_v1.1. Local-fast repository/runtime were absent; stale PIDs408190/408200 do not identify live workers. No third48 partial/completed archive found in current Drive backups, so lost partial results cannot be recovered or claimed complete.
