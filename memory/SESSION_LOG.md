@@ -1500,3 +1500,8 @@ One129-parameterFINAL-logitcorrection fit1.25sec; allH1weights/norm/tool-logitse
 
 Evaluation spec lab/registry/decision_stop_value_h2_20261024/validation_spec.json:unchangeddev64×H1reference/stop_value=128episodes;referenceis32849a28. Nextlaunch scripts/coordinate_decision_stop_value_h2.py. Noothercandidate/grid/reserved80. GoalACTIVE.
 
+
+## 2026-10-24 — H2 paired evaluation live
+
+Coordinator20114/evaluator20126verifiedlive,64/128episodes saved. State /content/local_fast/lsdrag-text-v1/results/decision_stop_value_h2_coordinator_20261024.json;log /content/local_fast/lsdrag-text-v1/logs/value_heads_evaluate_decision_stop_value_h2_1792836370.log. H1reference32849a28vsstoppingcandidate1b0a8bf8,unchangeddev64. No interimqualityselection;fitarchiveverified. Nextterminalpairedresultandbriefusefulcostcheck;goalACTIVE,reserved80protected. Do notduplicateworker.
+

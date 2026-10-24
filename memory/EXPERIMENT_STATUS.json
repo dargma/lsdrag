@@ -1131,5 +1131,13 @@
     "seconds": 263.9081021369998,
     "report": "/content/local_fast/lsdrag-code/lab/reports/decision_stop_value_h2_collect48_20261024/audit.json",
     "goal_achieved": false
+  },
+  "stop_value_h2_evaluation": {
+    "phase": "running",
+    "pid": 20114,
+    "seconds": 0.21535654900026202,
+    "script": "scripts/evaluate_decision_stop_value_h2.py",
+    "child_pid": 20126,
+    "log": "/content/local_fast/lsdrag-text-v1/logs/value_heads_evaluate_decision_stop_value_h2_1792836370.log"
   }
 }

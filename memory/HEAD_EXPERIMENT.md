@@ -1,3 +1,7 @@
+## 2026-10-24 — H2 paired evaluation live
+
+Coordinator20114/evaluator20126verifiedlive,64/128episodes saved. State /content/local_fast/lsdrag-text-v1/results/decision_stop_value_h2_coordinator_20261024.json;log /content/local_fast/lsdrag-text-v1/logs/value_heads_evaluate_decision_stop_value_h2_1792836370.log. H1reference32849a28vsstoppingcandidate1b0a8bf8,unchangeddev64. No interimqualityselection;fitarchiveverified. Nextterminalpairedresultandbriefusefulcostcheck;goalACTIVE,reserved80protected. Do notduplicateworker.
+
 ## 2026-10-24 — H2 collection/audit/fit complete; paired evaluation frozen
 
 Deployment-matched H1stop/continuecollection complete48q/83states/214episodes,257.13sec,12977generated/745710input,1errorpreserved. Coordinator/workerabsent; rawandindependentarchive/scorer/legality/countchecks passed. DriveSHA0abca274d53f8117ac79a4b72d3d954dbbb6ca6d9c7dedf267022c953e77db33. Labels48states:continuecovers24q,stop23q,coveragegatepassed; both-zero/errorpairsnotlabels. Exactplan/source/inputhashesfrozenbeforefit.
