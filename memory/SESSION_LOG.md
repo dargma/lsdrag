@@ -1927,3 +1927,11 @@ Independent322state teacher-prefix causalcache replay matches fitted logits maxe
 
 Fulltrain120 paired240episodes evaluator74128/session36382 confirmedlive. Log /content/local_fast/lsdrag-text-v1/logs/progress_stop120_train_eval_20261024.log; status /content/local_fast/lsdrag-text-v1/results/decision_progress_stop120_train_eval_20261024/status.json. Spec lab/registry/decision_progress_stop120_20261024/train_spec.json committed13f0a03 beforelaunch. Existing evaluatorreset_episodehook clearscausalcacheperquestion, no stochastic/forcedbranchprofile. Next terminalcheck then scripts/reporting/verify_progress_stop120_train.py andarchive. Same frozen stricttraingate/officialEMcorrect-cost accounting; devonlyifpasses. No automaticcoordinator currently,do notduplicate evaluator. GoalACTIVE,reserved80protected. NoQAimprovementclaimyet.
 
+
+
+## 2026-10-24 — progress head full train120 passes; frozen dev64 live
+
+Previous turn fit+causal replay+trainlaunch wasprogress. Evaluator74128 terminal:240episodes350.980sec/16779generated/957352input/0errors. OfficialF1/EM/rawtokens/source/checkpoints/splits/H3reference120 replay verified. Actual120firstdecisions AND policyprobabilities exactlyH3, validatingper-episodecache reset/zeroinitialresidual. H3F1.37945106/gen71.25833/correct36 vs progress.48158781/68.56667/correct48. +10.21368pp onTRAIN;no lostcorrect,12newcorrect. Jointlycorrect36 save407tokens;newcorrect12 spends212extra;bothincorrect72 save128;total323saved. Correct48 total4222/mean87.958,incorrect72 total4006/55.639,partial15 total1235/82.333. FrozenstricttraingatePASS; nottransfer ororiginalgoalachievement. Archive d9ebc81ed18b7b06d1e31c724216ea54368594e6b7f76200ec79ce5658eb1a9f.
+
+Same02da1dcbcandidate frozen7d18b45 beforedevlaunch. Evaluator76260/session46951 loading/evaluation; log /content/local_fast/lsdrag-text-v1/logs/progress_stop120_validation64_20261024.log; status /content/local_fast/lsdrag-text-v1/results/decision_progress_stop120_validation64_20261024/status.json. Next terminalactualprocesscheck then scripts/reporting/verify_progress_stop120_dev64.py andarchive. CompareH3/fixedGRPO, officialcorrectcost,actualfirstH3identity. Same exposeddev64, no retune. GoalACTIVE,reserved80protected. No automaticcoordinator ornewcandidate whilethisruns.
+
