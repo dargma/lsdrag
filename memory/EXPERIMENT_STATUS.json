@@ -1161,15 +1161,39 @@
     "goal_achieved": false
   },
   "h3_constant_control": {
+    "phase": "complete",
+    "pid": null,
+    "seconds": 339.6271762240003,
+    "report": "lab/reports/decision_h3_constant_validation64_20261024/report.md",
+    "selection": {
+      "selected": {
+        "name": "constant_0",
+        "bias": -0.0847940593957901,
+        "proxy_generated": 53.41215277777776
+      },
+      "generated_means": {
+        "h3_reference": 67.04166666666667,
+        "constant_0": 67.58333333333333,
+        "constant_1": 45.125,
+        "constant_2": 88.5
+      },
+      "cost_ratio": 1.0080795525170911,
+      "cost_match_pass": true,
+      "f1_used": false,
+      "checkpoint": {
+        "kind": "stop_value_h2",
+        "checkpoint": "/content/local_fast/lsdrag-text-v1/results/decision_h3_constant_control_20261024/constant_0.pt",
+        "sha256": "26d065ef3f81b43f7ea1b656e0e1e071185bf7f0f44349804968c5ce358ac622"
+      }
+    },
+    "goal_achieved": false
+  },
+  "h3_policy_iteration_collection": {
     "phase": "running",
-    "pid": 30428,
-    "seconds": 147.8980626170005,
-    "child_pid": 31332,
-    "script": "scripts/evaluate_decision_stop_value_h2.py",
-    "args": [
-      "--spec",
-      "/content/local_fast/lsdrag-code/lab/registry/decision_h3_constant_control_20261024/validation_spec.json"
-    ],
-    "log": "/content/local_fast/lsdrag-text-v1/logs/h3_constant_evaluate_decision_stop_value_h2_1792838294989973224.log"
+    "pid": 33447,
+    "seconds": 0.0004443300003913464,
+    "child_pid": 33506,
+    "script": "scripts/run_decision_h3_policy_iteration_collect24_20261024.py",
+    "log": "/content/local_fast/lsdrag-text-v1/logs/refresh48_run_decision_h3_policy_iteration_collect24_20261024_1792838718.log"
   }
 }

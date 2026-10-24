@@ -1,3 +1,9 @@
+## 2026-10-24 — user clarifies shared-backbone long-horizon policy claim
+
+User wants a real decision policy considering future turns, implemented with a small head on the reader LLM rather than separate reader/decision models; selection and generation share backbone computation. Frozen-backbone sufficiency is a hypothesis, not proof from architecture. Persisted docs/JEV_SHARED_BACKBONE_DECISION_RESEARCH_20261024.md with factorized policy/episode objective, primary research, shared-prefill vs literal simultaneous-generation distinction and H3 limitations.
+
+Current H3 already uses terminal F1/cost but under fixed H1suffix; it does not iteratively learn its own future action outcomes and only changes FINAL. Finish approved constant-control diagnostic; next preferred direction bounded current-policy outcome improvement over4actions, frozenreader first, not another stopping-only tweak or architecture grid. Exact newprotocol notfrozen/no newlaunch. GoalACTIVE,reserved80protected.
+
 ## 2026-10-24 — H3 mechanism control approved; full method saved
 
 User approves H3 fixed vs constant stopping-offset control before further H4 quality expansion. Scope: isolate H3 added state-dependent residual, not erase inherited H1 state dependence. Calibrate constant using training token cost only; freeze before dev, no dev retuning. H4 expansion deferred. Previous turn was discussion/no experiment progress; this turn saves exact methods and prepares the approved control.

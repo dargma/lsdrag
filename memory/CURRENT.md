@@ -1,3 +1,21 @@
+## 2026-10-24 — H3 current-policy all-action collection live
+
+User affirmed multi-turn action learning as central. Frozen protocol docs/JEV_H3_CURRENT_POLICY_ITERATION_20261024.md; run decision_h3_policy_iteration_collect24_20261024. Reused24train H3rollins,all64nonforcedstates/231legal branches. Every action followed by H3to terminal answer; no newquestions, no independenttest. Limits231episodes/1800seconds afterload. Source/input/checkpoint/prefix/index hashes frozen; collector and coordinator enforce exact coverage.
+
+Coordinator33447/worker33506 verifiedlive. State /content/local_fast/lsdrag-text-v1/results/decision_h3_policy_iteration_collect_coordinator_20261024.json; log /content/local_fast/lsdrag-text-v1/logs/refresh48_run_decision_h3_policy_iteration_collect24_20261024_1792838718.log. Coordinator rawconsistency+archive only; no auto fit. Next wait terminal, independent rawrescore/prefix/sample/archive audit, then freeze one4action head update from completed train evidence. Old H3 stoppingfit and H1suffix labels are not this run. GoalACTIVE; reserved80protected.
+
+## 2026-10-24 — H3 constant control complete; current-policy multistep direction affirmed
+
+Train calibration constant/H3genratio1.00808 passed, devratio1.16001 failed10%matched-budget gate. DevH327.3158/66.8906 vsconstant28.3042/77.5938; equal-budget mechanism claim inconclusive. No dev retuning. Rawrescoring/reference64exact/checkpointconstant/sourcehash/archivebytes verified; coordinator30428/evaluator31332terminalcomplete. Report docs/JEV_H3_CONSTANT_CONTROL_RESULT_20261024.md.
+
+User agrees current-policy multi-turn action learning is the core. Next bounded H3-current-policy all4action interventions, sameH3suffix to terminal F1/cost; then one head update. Reuse24train H3rollins from calibration,64nonforcedstates/231legal branches; no newquestions/no heldout. Freeze collectionprotocol before launch. Readerbackbone/nativecontract fixed. GoalACTIVE.
+
+## 2026-10-24 — user clarifies shared-backbone long-horizon policy claim
+
+User wants a real decision policy considering future turns, implemented with a small head on the reader LLM rather than separate reader/decision models; selection and generation share backbone computation. Frozen-backbone sufficiency is a hypothesis, not proof from architecture. Persisted docs/JEV_SHARED_BACKBONE_DECISION_RESEARCH_20261024.md with factorized policy/episode objective, primary research, shared-prefill vs literal simultaneous-generation distinction and H3 limitations.
+
+Current H3 already uses terminal F1/cost but under fixed H1suffix; it does not iteratively learn its own future action outcomes and only changes FINAL. Finish approved constant-control diagnostic; next preferred direction bounded current-policy outcome improvement over4actions, frozenreader first, not another stopping-only tweak or architecture grid. Exact newprotocol notfrozen/no newlaunch. GoalACTIVE,reserved80protected.
+
 ## 2026-10-24 — H3 control train calibration complete; dev comparison live
 
 Token-only train24calibration selected constant_0 bias−0.0847940594/checkpoint26d065ef. H3mean67.0417 vsconstant67.5833 generated,ratio1.00808 within10%; no F1selection. Other two calibration scalars were not evaluated on dev. Selection saved before devspec/evaluation.
