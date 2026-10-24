@@ -914,3 +914,8 @@ main coordinator248061 complete. 구조 multiMLP BC/outcome 학습 완료 후 wo
 
 
 Final code/report backup commit805e43c2: /content/drive/MyDrive/lsdrag-backups/20261023/code_final_805e43c2.tar.gz,SHA85825709a9b6a17abf144d3bcedb2892d8c24d1cd0c4a2d4f5a11fc8dc1428da,required members verified. Runtime archives separately preserved. Numeric target not achieved.
+
+## 2026-10-24 — 사용자 요청: 이미 학습된 선정 head 자체에 GRPO 추가
+
+사용자 "지금 학습해놓은 선정헤드에 추가로 grpo" 및 "선택헤드가 계속학습해야" 명시. 새초기화아님. SHA d987142ff7ea00efe06748fa205e84095a500abc675f290f449e035e70eacb99의 multi_mlp_outcome이 실제 learner. 동일head가 trajectory수집→GRPO업데이트→다음수집 반복. 고정복사본은KL기준만. net전체학습,정규화와LLM고정. train192×4×2=1536,학습3600초/관리3900초,후속validation64×2/1200초. 기존final80과예비80미사용. protocol docs/JEV_SELECTED_HEAD_GRPO_CONTINUATION_20261024.md. 별도run decision_selected_head_grpo192_20261024;기존완료결과보존. continuation정확초기화/업데이트/정규화불변+GRPO4tests통과. 새GPU실행은다음coordinator launch에서확인.
+

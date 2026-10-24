@@ -102,3 +102,8 @@ validation32만열람후사용자명시상향. 새160test미열람. 이전.03/.8
 
 sharedGRPO complete1536eps/5241decisions/2923.93초/660optimizersteps,전체audit통과,3errors/5cap보존. finalheadSHA59a0f76672a3411abaa53ab8fd8f40e0c8ddc027d26d566fea25a7187e4421ef,Drive791554325bytes/SHA검증완료. heldout품질아직미평가. 현재all-action worker261476/coordinator248061,구조queue250404대기. log /content/local_fast/lsdrag-text-v1/logs/shared_learning_run_decision_shared_outcomes_1792801824.log. 확인시12/192문항156eps21states,실제processlive. GPU한시점81%/11090MiB(전체97887MiB),지속평균/latency측정아님. 캐시재사용/직렬연결유지,추가학습조건무분별확장금지.
 
+
+## 2026-10-24 — 사용자 요청: 이미 학습된 선정 head 자체에 GRPO 추가
+
+사용자 "지금 학습해놓은 선정헤드에 추가로 grpo" 및 "선택헤드가 계속학습해야" 명시. 새초기화아님. SHA d987142ff7ea00efe06748fa205e84095a500abc675f290f449e035e70eacb99의 multi_mlp_outcome이 실제 learner. 동일head가 trajectory수집→GRPO업데이트→다음수집 반복. 고정복사본은KL기준만. net전체학습,정규화와LLM고정. train192×4×2=1536,학습3600초/관리3900초,후속validation64×2/1200초. 기존final80과예비80미사용. protocol docs/JEV_SELECTED_HEAD_GRPO_CONTINUATION_20261024.md. 별도run decision_selected_head_grpo192_20261024;기존완료결과보존. continuation정확초기화/업데이트/정규화불변+GRPO4tests통과. 새GPU실행은다음coordinator launch에서확인.
+

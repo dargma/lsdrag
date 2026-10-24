@@ -1,3 +1,7 @@
+## 2026-10-24 — 사용자 요청: 이미 학습된 선정 head 자체에 GRPO 추가
+
+사용자 "지금 학습해놓은 선정헤드에 추가로 grpo" 및 "선택헤드가 계속학습해야" 명시. 새초기화아님. SHA d987142ff7ea00efe06748fa205e84095a500abc675f290f449e035e70eacb99의 multi_mlp_outcome이 실제 learner. 동일head가 trajectory수집→GRPO업데이트→다음수집 반복. 고정복사본은KL기준만. net전체학습,정규화와LLM고정. train192×4×2=1536,학습3600초/관리3900초,후속validation64×2/1200초. 기존final80과예비80미사용. protocol docs/JEV_SELECTED_HEAD_GRPO_CONTINUATION_20261024.md. 별도run decision_selected_head_grpo192_20261024;기존완료결과보존. continuation정확초기화/업데이트/정규화불변+GRPO4tests통과. 새GPU실행은다음coordinator launch에서확인.
+
 ## 2026-10-24 — 공통코퍼스 최종80×4 완료 / 목표 미달
 
 최종320episodes/547.084초/generated28561/input1319714 완료. 모든 관련worker 종료 확인. GRPO F1 27.20/gen105.7625;선정multiMLP21.24/89.425;native25.88/104.2;semantic_once18.46/57.625. 선정head−GRPO F1−5.9583pp(95%CI−14.5833,+2.1667),생성−15.4473%(ratioCI.689755,1.016062). 검증셋동시개선은최종에서재현안됨. 목표F1+5pp/token−30% 미달,우위/novelty주장없음. GRPO오류1건포함,다른조건0. 도구호출은2.4625→2.55로오히려증가;token감소를step감소로해석금지.
