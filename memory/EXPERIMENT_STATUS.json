@@ -1240,5 +1240,12 @@
     "completed": true,
     "diagnostic_gate": false,
     "new_reader_qa": false
-  }
+  },
+  "coverage120_pipeline": {
+    "phase": "waiting_collection",
+    "pid": 67692,
+    "updated_utc": "2026-10-24T12:25:26.707155+00:00",
+    "collection_pid": 66441
+  },
+  "coverage120_pipeline_status_path": "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop120_pipeline_20261024.json"
 }

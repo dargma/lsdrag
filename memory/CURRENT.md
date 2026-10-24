@@ -1,3 +1,9 @@
+## 2026-10-24T12:25:26.707155+00:00 — coverage120 pipeline waiting_collection
+
+{"phase": "waiting_collection", "pid": 67692, "updated_utc": "2026-10-24T12:25:26.707155+00:00", "collection_pid": 66441}
+
+Goal ACTIVE; reserved80 protected; no automatic development launch.
+
 ## 2026-10-24 — disjoint H3 binary coverage48 collection live
 
 Previous turn completed constrainedtrain/dev and negative transfer evidence: progress. Frozen353a9aa protocol docs/JEV_H3_STOP_COVERAGE48_20261024.md. SHA20261084first48 of train192 minus all96previousH3outcomeqids; no devfailure selection. Only new to H3branchcollection, not globallyunseen. CurrentH3rollins, allnonforcedstates, exactlyFINAL+bestlegalcontinue, onegreedyH3suffix each, original4actionlegalmask retained. Cap816episodes/1800seconds; reader/model/corpus/nativeinterface unchanged. Trainunion120 and24monitor exclusions frozen. No different critic or architecture.

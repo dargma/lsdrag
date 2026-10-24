@@ -1799,3 +1799,14 @@ Collector66441 confirmedlive,execsession89513; embedchild66645. Log /content/loc
 
 Prepared scripts/prepare_decision_constrained_stop120.py and scripts/fit_decision_constrained_stop120.py: refuse unaudited collection; finalize completedtensorhash then reuse exactconstrained72 learner/targets/objective/constraints/gates fromoriginalH3. No120plan/fit exists yet. Same fitgate then fullpairedtrain120(correct/incorrect) beforeone dev64. GoalACTIVE,reserved80protected,usercontinueuntilstop. No premature fit/scoreclaim.
 
+
+
+## 2026-10-24T12:25:26.707155+00:00 — coverage120 pipeline waiting_collection
+
+{"phase": "waiting_collection", "pid": 67692, "updated_utc": "2026-10-24T12:25:26.707155+00:00", "collection_pid": 66441}
+
+Goal ACTIVE; reserved80 protected; no automatic development launch.
+
+
+
+2026-10-24 continuation: verified existingcollector66441 live; no restart. Prepared fulltrain120 officialF1/EM/pairedcost/H3reference verifier, then coordinator67692/session17510 verifiedwaiting on exactcollectorhandle. Codecommitc29408d: archive→independentbinarycollectionaudit→finalize120inputhash→samefixedconstrainedfit→fitgate→pairedtrain120→verify/archive. Stops after train gate, no automaticdev or reserved80. Status pointer results/decision_constrained_stop120_pipeline_20261024.json; log logs/coverage120_pipeline_20261024.log. Atlastcheckcollection16q48states112episodes. Previousturnactualcollectionlaunch wasprogress; currentturnpreparesverifiedboundedcontinuation, notgoalcompletion.
