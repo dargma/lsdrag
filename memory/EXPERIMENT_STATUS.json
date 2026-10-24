@@ -1194,5 +1194,13 @@
     "seconds": 320.94244488000004,
     "report": "/content/local_fast/lsdrag-code/lab/reports/decision_h3_policy_iteration_collect24_20261024/audit.json",
     "goal_achieved": false
+  },
+  "h3_policy_coverage24b_collection": {
+    "phase": "running",
+    "pid": 38097,
+    "seconds": 0.0004510389999268227,
+    "child_pid": 38151,
+    "script": "scripts/run_decision_h3_policy_coverage24b_20261024.py",
+    "log": "/content/local_fast/lsdrag-text-v1/logs/refresh48_run_decision_h3_policy_coverage24b_20261024_1792839489.log"
   }
 }

@@ -1609,3 +1609,13 @@ One516parameter action updatece0ced9b finished paired128episodes/175.08sec/8213g
 Training13targetstates/9q,9targetactions reflected,7unsupportedfreshstatesalsochanged. Net349token savings dominated by271tokens onqualityloss questions;83positive-retained/63bothzero/68extratokensonqualitygain. Inputtokens/toolcallsincrease. Terminal-outcome supervision alone did not ensure useful generalized/composed policyimprovement. Frozenbackbone impossibility is NOT demonstrated.
 
 RetainH3reference. Next hypothesis broader current-H3 training coverage plus conservative policy movement before composing changes; no devcoefficient sweep/newarchitecturegrid. Concrete nextprotocol notyetfrozen/no nextworker. Coordinator35979/evaluator36050terminal/absent. GoalACTIVE,reserved80protected.
+
+## 2026-10-24 — broader H3 coverage/conservative update frozen
+
+Previous goal turn made progress: first current-policy candidate fully evaluated, negative quality, archived. RetainH3. Next protocol docs/JEV_H3_COVERAGE_CONSERVATIVE_UPDATE_20261024.md frozen before new outcomes. Remaining24oforiginal48train,disjoint firstH3train24; freshH3rollin/allnonforcedstates/alllegalbranches,<=792episodes/1800sec. Next audited48qcombinedtargets,one516parameter proposal,training-only backtracking withKL<=.01andunsupportedargmaxchange<=2%; no devretuning. Reader/nativecontractfixed,reserved80protected. No newfit yet.
+
+## 2026-10-24 — additional H3 train24 live; conservative projection prepared
+
+Coordinator38097/collector38151 verifiedlive (68episodes/17states/8questions observed). State /content/local_fast/lsdrag-text-v1/results/decision_h3_policy_coverage24b_coordinator_20261024.json; log /content/local_fast/lsdrag-text-v1/logs/refresh48_run_decision_h3_policy_coverage24b_20261024_1792839489.log. Do not duplicate. Completion triggers dynamicfullcoverageaudit/archive only.
+
+Prepared conservative_output_update: same516parameter proposal,training-only backtracking alpha1..1/1024,KL<=.01nat andunsupportedargmaxchange<=2%; restoreH3ifnonepasses. Fitter skips meaningful evaluation if no supportedtargetactionlearned. Five tests passed for terminal targetconstraints and actual output-layer backtracking/referenceimmutability/rejectionrestore. Independent new24verifier prepared. No partialoutcome fitting; GoalACTIVE,reserved80protected.
