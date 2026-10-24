@@ -1,4 +1,9 @@
 
+## 2026-10-24 — train reference-ID generation cost identified
+
+Analysis scripts/reporting/analyze_reference_serialization.py on48trainingcollectors:5272actualgenerated, hypotheticalJSONretokenizationdelta1763(33.44%) fromobservedIDshortaliases only;read1038/FINAL725.53readIDs/37knownsupportIDs,2unknownsupportIDsunchanged. No inference/policyperformanceclaim. Reportreference_serialization.json includeshashes/limitations. Nextboundedproposal docs/JEV_REFERENCE_COST_PILOT_PROPOSAL_20261024.md requiresconsistentmappingandmatchedbaselineinterface;separateengineeringgainfromheadpolicycontribution. NoGPUrunlaunched. GoalACTIVE.
+
+
 ## 2026-10-24 — matched reward replay result complete; goal unmet
 
 Bothnewarms evaluated64each;token_totalF135.21/gen142.34375/input9967.67/calls4.109/zero-tool6/errors1;token_remainingF132.92/gen127.125/input8749.20/calls3.766/zero-tool7/errors1. Remainingvstotal F1-2.29ppCI[-7.755,+2.732],genratio.893085CI[.81642,.95911]. Stepcreditreducescostinthismatchedcomparisonbutdoesnotestablishqualitypreservation;fixedbaselinejointtargetfails. Historicalcheckpointreproductionexact,soexecutionintegrityverified.

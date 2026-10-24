@@ -1,0 +1,95 @@
+{
+  "scope": "Train48 stochastic collector episodes only",
+  "totals": {
+    "questions": 48,
+    "actual_generated": 5272
+  },
+  "actions": {
+    "keyword_search": {
+      "actual_generated": 914,
+      "reference_occurrences": 0,
+      "unobserved_references": 0,
+      "hypothetical_payload_token_delta": 0,
+      "calls": 47
+    },
+    "semantic_search": {
+      "actual_generated": 1496,
+      "reference_occurrences": 0,
+      "unobserved_references": 0,
+      "hypothetical_payload_token_delta": 0,
+      "calls": 68
+    },
+    "read_chunk": {
+      "actual_generated": 1388,
+      "reference_occurrences": 53,
+      "unobserved_references": 0,
+      "hypothetical_payload_token_delta": 1038,
+      "calls": 33
+    },
+    "FINAL": {
+      "actual_generated": 1474,
+      "reference_occurrences": 37,
+      "unobserved_references": 2,
+      "hypothetical_payload_token_delta": 725,
+      "calls": 48
+    }
+  },
+  "hypothetical_delta": 1763,
+  "hypothetical_fraction": 0.3344081942336874,
+  "source_sha256": {
+    "2hop__103604_59072_collector.json": "8f216931936a05f558197d5502186e138642fa16a221a25ac87f83b0f9a03f52",
+    "2hop__107878_80674_collector.json": "f66d40e86be2937af98b00bde6fbd6edca175f3d8d0481ad248912ea257e50b3",
+    "2hop__129644_83815_collector.json": "a8feb38622af3112ccee15a144d6a6a4deac3e5208045b6e7e8b15e37ef77787",
+    "2hop__130823_73753_collector.json": "0973cabde3d969025c40ad34d0623a3f2c84c33a02fd186daeb5363fa88014d8",
+    "2hop__130914_24607_collector.json": "8b4d04f1c65c983279ed0faf8ad04e44eee8cc966705b7194ddfc6c8e6535f4d",
+    "2hop__131509_66214_collector.json": "64406ef7f5d881cc4e36da826774b6b1bbc50c69c0fa8129b3ec663aae663c2e",
+    "2hop__133237_842239_collector.json": "47c18705f9d1357ce67e2b3d0c749aa251dfb395e19b926b3d7fc2a002f426f8",
+    "2hop__143485_285802_collector.json": "8ac109286b1fb21557c9c8384f33c0a52f026dc02ef104b94a63f482e2c22764",
+    "2hop__143847_263710_collector.json": "f422e3d12d603585d02f69fbf31befd2c75521bfd254a310f664d78a6edc34cc",
+    "2hop__144760_88472_collector.json": "b190071f9cb78d05bbc2160f229ab6a109bfd5bb70b2231e72eb51c6fc34c939",
+    "2hop__151474_444333_collector.json": "69f67dc8ef0092cc6d147fa12147a6019c77aa8aeb25464573f190314218908c",
+    "2hop__178263_52185_collector.json": "ad2d567047d9c5a63537812b8c341e7db4de64e15b065e7ad7720a63eb5eb1d7",
+    "2hop__181544_82000_collector.json": "dd9e8e3a065833efdbfcbcd1e3ee599157e29f7f285c608ac5d9f91b1005f2cb",
+    "2hop__216682_153528_collector.json": "dda3102108690c9be6c58a91cfa74e3d8a24c34bef07773c10d4f91d6fafa390",
+    "2hop__224287_15822_collector.json": "04676ef4315ebf4a76c6fb3fa257344a6963c8e9231f2d2e68a075655fa220f6",
+    "2hop__24394_15345_collector.json": "92fda500a675f58f4f66d0a22394d3263f7debd84dd5de340d65664ebda4afb6",
+    "2hop__25968_727337_collector.json": "59c03912c85fd889cfeb6dd7a49723cd432cbcf5921dd134cc73e545d517a9a9",
+    "2hop__271309_48850_collector.json": "defdc76a29c54614c4f71575e12062630bcccc4ecb7ea5f47ed3f04b55277a1b",
+    "2hop__27742_27668_collector.json": "ba0a5e276d004c42418d912a4261d6cf00c640b2d660a6e2e74cc88d7a9a905b",
+    "2hop__300052_224276_collector.json": "55b7e3d06b2240fc1eb945b354a8455d367ba6b6b7c8fc706f250e4b896aeeaa",
+    "2hop__31867_17274_collector.json": "a7b28e7d968ccb58b61bd8dccd0853c83c433c495f45f0def217afc1a33ee6dd",
+    "2hop__346214_699835_collector.json": "c1a69af8f38f6eafcf71d8234cf3d92f14014cf19c55c14249063948e9e70219",
+    "2hop__351246_2702_collector.json": "dc21cca4a89aa26b4eb8522bd35debcf2c5339ccc137bd86c9ccecf7ee97ae20",
+    "2hop__357497_74309_collector.json": "27b9f96b750080e447cece1152a289cb167e40c513bb07db168fb1efe96b97d9",
+    "2hop__38200_430_collector.json": "a0f3c17925ab0998cc10070b5f25b837b6887e676b1adaff7c2259f53505e4d6",
+    "2hop__396382_49333_collector.json": "07c12d6baea2e111bbad818b4663011c436ee68996d4e50ed270d5ebaa5eea26",
+    "2hop__418766_141689_collector.json": "33fe652b6db05bb7e5ff70ec08201e5233a6d8f110f9b0a62e109bc68b809389",
+    "2hop__445427_121919_collector.json": "46662c4199882ab2d18dd50283ad345a79f74b9d356637122af61af2b3a06547",
+    "2hop__470630_791590_collector.json": "4e727ae825e1f8979ebd953a00bdc7b2defffed80e0aad0bd3e9d371ee508dc3",
+    "2hop__53479_576533_collector.json": "e465f699d46620b8dcccd60bd6e63901df1dafc37dadba209b2278e9a149ee96",
+    "2hop__550423_80243_collector.json": "00a508042310728123001b1a06856745589659e9132649fe3df43d4892a027fd",
+    "2hop__572586_58953_collector.json": "2c0ee07ae7268a674bced59e1e7cc7e8b5c11612be66ee9cadd74b96c90d877f",
+    "2hop__59498_54210_collector.json": "c6b973a45de628f432af38627cd0a7ec3be23379b6e62eea3df2133fec19f1c9",
+    "2hop__5983_46031_collector.json": "ff2d15a74d708c9cbdd4bdcc56534eebcaccd273e6ff3ffa4c2dcdffa1c7fb79",
+    "2hop__607351_58450_collector.json": "ba84daaf5c19da1f2bbae8dedb241d9a1d446c9f36de4ee542a655ad7c06e11c",
+    "2hop__617187_36134_collector.json": "65cbefff83d3381aa960884bcd85f5200213a22421fd4d08b567f8cba23bca3a",
+    "2hop__61743_5228_collector.json": "907564de114df5c11d6d1d2465492366a74e6b2d3f24b2c05430e570783e8f70",
+    "2hop__618223_60600_collector.json": "4623645aa4e4564c8e925afdc4aebdb1148756e83fd159bc2dfccceb5a14b3a0",
+    "2hop__676157_44637_collector.json": "ec6427a15f4f93df3a3b14f8c98167b84f85c29fa549a1a6023f17371d74d391",
+    "2hop__714327_699691_collector.json": "f352dc52551459ee60d4fb00bdc79d922779346335e49061cab5b335f07ffecf",
+    "2hop__795530_47353_collector.json": "c277276e5627e19b2d3e35459352f6210fdfaa26261aeb9ec85bfb2c23d6a2cd",
+    "2hop__80187_75671_collector.json": "f9ad9e7e4babfd78182f213ed84684808a2ed8459ef2a5ed4935d58d0cf165af",
+    "2hop__804878_161223_collector.json": "7f99c37addea2161022dbc05464f162982548eda56738276a185251cd825cb07",
+    "2hop__82744_23249_collector.json": "61e190a4b210238a7c7df1053a9c223cdf57105c911e4401e595a06cfe1abbab",
+    "2hop__8531_24846_collector.json": "6283ccc8062adf3a8fc9ce094b37367dd02a587ae97722329ead5b259e8e60e6",
+    "2hop__89126_11226_collector.json": "74682efff803d2ba4d76b4c313ead350cf5c22c3cb391607e29731472a5978b6",
+    "2hop__91652_78168_collector.json": "267d2fa0118de38fd12d6e69e495652099a4aa728c1a9950b46834e7bcdc3a6e",
+    "2hop__93786_85298_collector.json": "96d2e82d0bcfb2335ef082cc1437790993990c90cf0345b47de0c34fc224d783"
+  },
+  "limitations": [
+    "JSON re-encoding delta is an accounting estimate, not measured decoder token savings.",
+    "Aliases use prior observed public IDs only, no gold support data.",
+    "Prompt, choices, final answers and trajectories may change under a new interface.",
+    "Both baseline and head policies need matched-interface evaluation; encoding savings are engineering, not learned-policy evidence."
+  ]
+}
