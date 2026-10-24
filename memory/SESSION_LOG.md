@@ -1753,3 +1753,13 @@ Paired train72 evaluator60596 live, execsession3275, log /content/local_fast/lsd
 
 User explicitly says continue until told to stop. Persist authorization, keep bounded evidence-driven steps; do not wait for repeated approval. No change to independent-confirmation protections.
 
+
+
+## 2026-10-24 — safe stopping full train rollout fails; reject candidate
+
+Completed evaluator60596/session3275:144episodes197.927sec/9122generated/472031input/0errors. Independent officialF1/EM/rawtoken/source/checkpoint/split/H3reference72 replay verified by scripts/reporting/verify_safe_stop72_train.py. H3F1.41482584/gen65.75 vs safe_stop.41019621/60.94444:−.46296pp/−7.3088%tokens. Both22EMcorrect, but1newcorrect/1lostcorrect. Train gate FAILED; no development rollout or alpha/epoch retuning. H3 retained.3target-invariant tests passed. GoalACTIVE,reserved80 untouched.
+
+Correctness cost: jointlycorrect21 saves61;candidateonlycorrect1 saves128;H3onlycorrect1 saves29 withqualityloss;bothincorrect49 saves128. Candidatecorrect22 mean75.227/total1655,incorrect50 mean54.66/total2733;H3correct22 mean78.909/1736,incorrect50 mean59.96/2998. Qualitygain q128642_32463 F1.6667→1, actions keyword,keyword,FINAL versus longerH3;qualityloss q130823_73753 F11→.3333, skipsread_chunk atturn2. Localtarget nondegradation did not prevent spillover to retained states; global2%stability gate is not a per-state protection guarantee.
+
+Report lab/reports/decision_safe_stop72_train_eval_20261024/verification.json; archive /content/drive/MyDrive/lsdrag-backups/20261023/decision_safe_stop72_train_eval_20261024.tar.gz SHA1f1f3a6e685768bd65fd112f0e4609479ff279f934724a0d0612467a8438cb88. All workers terminal; no live run. Next bounded hypothesis: fit stopping boundary with explicit constraints forbidding measured harmful stop/continue changes, rather than soft retention plus aggregate changed-state rate. Freeze one constrained fit on same training-only outcomes, check feasibility/supported action progress before any rollout. This is a new candidate, not retroactive retuning of failedsafe_stop; no architecture/seed grid. User explicitly says continue until toldstop.
+
