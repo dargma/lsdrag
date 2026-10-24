@@ -1,7 +1,7 @@
 {
-  "phase": "qwen35_h3_larger_model_experiment_complete",
+  "phase": "qwen35_two_promising_fitted_evaluation_pending",
   "updated_utc": "2026-10-24T16:40:33.655944+00:00",
-  "protocol": "docs/JEV_QWEN35_9B_H3_GENERALIZATION_20261024.md",
+  "protocol": "docs/JEV_QWEN35_TWO_PROMISING_20261024.md",
   "protocol_sha256": "e0cd40c9a1b728408047f7aee95bc9849caa698407c243d20df6a991c9260432",
   "prompt": "prompts/text_rag_integrated_v5.txt",
   "prompt_sha256": "9d66c290a97bbabb4289dcf262e2b5bc8ba05653f87aed3b693825dbb02d5a97",
@@ -23,7 +23,7 @@
   "teacher_questions_planned": 192,
   "teacher_questions_max": 192,
   "evaluation_questions_planned": 64,
-  "evaluation_conditions": 3,
+  "evaluation_conditions": 2,
   "training_seeds_planned": [
     20261051,
     20261052,
@@ -37,8 +37,8 @@
   "dataset_prepared": true,
   "teacher_collection_started": true,
   "training_completed": true,
-  "evaluation_completed": true,
-  "next": "Completed bounded9B experiment; no automatic new runs",
+  "evaluation_completed": false,
+  "next": "Execute frozen2candidate eval128, verify paired correct costs, archive/report/push",
   "previous_multimodal_checkpoint_historical_only": {
     "phase": "native2_review_required",
     "run": "/content/local_fast/lsdrag-head-v14/results/native_distillation_12b_20261015",
@@ -186,7 +186,7 @@
   "speed_gate_passed": true,
   "target_speedup_vs_native": 1.5,
   "target_speedup_measured": false,
-  "run": "/content/local_fast/lsdrag-text-v1/results/qwen35_9b_h3_validation64_20261024",
+  "run": "/content/local_fast/lsdrag-text-v1/results/qwen35_9b_two_promising_validation64_20261024",
   "worker_seconds": 277.1492917609994,
   "contract": "5b64658a2608f883599dbfb36be3758d4f28cc0de63c532ec11f76117a3cecce",
   "teacher_target": 32,

@@ -2094,3 +2094,10 @@ Coordinator121348 and evaluation178400 terminated normally, actual processes abs
 
 Evaluation archive Drive20261023/qwen35_9b_h3_validation64_20261024.tar.gz SHA76701cc460e274b9771ee9b20795c21944fb13ead3768572a0dc93b3c6a5555b. All7stage archives rehashed; frozen sources unchanged; raw192hashes rechecked. Audit lab/reports/qwen35_9b_h3_validation64_20261024/completion_audit.json. Reserved80/final80 excluded; repeateddev64 only. No active experiment and no automatic extension. Final Git push/code backup remains last preservation step of this milestone.
 
+
+## 2026-10-24 — user authorized two promising9B hypotheses; fitted, evaluation next
+
+User requests only two most promising directions after H3 correct-path efficiency disappointment. Selected historical H1 useful-action correction and MLP value-aux quality signal; adapted9B variants, not exact reproduction. Protocol docs/JEV_QWEN35_TWO_PROMISING_20261024.md. Both initialize same9Bbootstrap, reuse verified317train-only all-actionstates48q; frozenreader/interface/splits. H1conservative only516outputparams, value_aux jointlyencoder+policy+training-onlyquality/costpredictor. SameH1quality-preservingtargets149corrections1217retention,100AdamW1e-4seed20261080; noretuning. H1changed0trainingargmax, value61: diagnosticsnotquality. Savedcheckpointkeys/finitevalues/normalizationhashes verified. Plan/source/inputhashes frozen.
+
+Training /content/local_fast/lsdrag-text-v1/results/qwen35_9b_two_promising_20261024 complete. Next exactly2x64 evaluation with unchangedrawcachedbase/H3/constant references and sourcehashchecks, officialrescoring andpairedEMcosts. Primaryscreen F1/EM>=9Bbase AND both-correcttokenreduction AND0errors; repeateddevonly. Noreserved80/final80, noadditionalgrid. Newrun qwen35_9b_two_promising_validation64_20261024. Coordinator scripts/continue_qwen35_two_promising.py sequential archive/train->eval->rawaudit->archive, noautoretry. Status in trainingrun/coordinator_status.json; verifyactualPID beforeaction. Finalreport/memory/push/backups afterterminal. Priorlargermodelgoalcomplete; thisisnewuserauthorizedboundedtask.
+
