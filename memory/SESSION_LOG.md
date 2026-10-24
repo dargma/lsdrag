@@ -1379,3 +1379,7 @@ Fitcomplete22.7056sec,2candidates;checkpointhashes/loadverified. 16correctedstat
 ## 2026-10-24 — local correction complete; modest quality gain, token target unmet
 
 192episodes/289.78sec/15124generated/751910input,referenceexact64parity/rawtotals/DriveSHAverified. CorrectionMLP26.41/81.55 versusd98725.18/76.75: +1.23ppCI[-1.56,+5.13],2wins1loss,tokens+6.25%. AgainstfixedGRPO+3.91pp/tokens−17.13%,jointtargetfails. Frozenquestionattention25.18/78.02,F1identicalreference. Report docs/JEV_ANCHOR_CORRECTION_RESULT_20261024.md. Noactiveworkers. Nexttrainonlyinspectnonworse-cheapercorrections tocomplementqualitycorrections,notnewarchitecturegrid. GoalACTIVE,reserved80protected.
+
+## 2026-10-24 — cost correction signal too sparse; expand disjoint train coverage
+
+Train-only82stateauditrelative26.41MLP found2nonworse-cheaperpairs at1state/question,savings6/1tokens. Noone-statecostfit. Suffixesoldd987soexternalvaliditylimited. Newboundedprotocol docs/JEV_CORRECTED_POLICY_COVERAGE_PROTOCOL_20261024.md: another48qids chosenbyhashseed20261064fromremaining144oftrain192,disjointprevious48;rollin/suffixcurrentquality-correctedMLP;max816episodes/3600sec. Eval64/corpusunchanged;noPPOGRPO. Totalcoverage96distinctquestionsbutdifferentcollectionpolicies,notmergedasoneonpolicydataset. Planfrozen,newcollectionnotyetlaunched. GoalACTIVE.
