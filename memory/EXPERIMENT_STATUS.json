@@ -1,6 +1,6 @@
 {
-  "phase": "selected_head_grpo_prepared",
-  "updated_utc": "2026-10-24T01:56:25.663008+00:00",
+  "phase": "selected_head_grpo_running",
+  "updated_utc": "2026-10-24T02:25:49.191314+00:00",
   "protocol": "docs/JEV_SELECTED_HEAD_GRPO_CONTINUATION_20261024.md",
   "protocol_sha256": "82d7d02a8daeed0f355acf1b7071bf1cc137d601ae2e4d78de6d09385a1dbe55",
   "prompt": "prompts/text_rag_integrated_v5.txt",
@@ -32,13 +32,13 @@
   ],
   "worker_wall_budget_minutes": 120,
   "run_planned": "/content/local_fast/lsdrag-text-v1/results/decision_shared_test80_20261023",
-  "pid": null,
+  "pid": 292805,
   "implementation_completed": true,
   "dataset_prepared": true,
   "teacher_collection_started": true,
   "training_completed": false,
   "evaluation_completed": false,
-  "next": "Launch selected head continuation coordinator; train/audit/paired validation/archive. Protect final80/reserved80.",
+  "next": "Finish bounded train/audit/paired validation/archive. No test launch.",
   "previous_multimodal_checkpoint_historical_only": {
     "phase": "native2_review_required",
     "run": "/content/local_fast/lsdrag-head-v14/results/native_distillation_12b_20261015",
@@ -174,7 +174,7 @@
   "external_evaluation_completed": true,
   "updated_epoch": 1792161920.7440126,
   "d3_additional_analysis": "withdrawn",
-  "session_id": null,
+  "session_id": 40877,
   "functional_smoke": {
     "passed": true,
     "checks": 7,
@@ -186,7 +186,7 @@
   "speed_gate_passed": true,
   "target_speedup_vs_native": 1.5,
   "target_speedup_measured": false,
-  "run": "/content/local_fast/lsdrag-text-v1/results/decision_shared_test80_20261023",
+  "run": "/content/local_fast/lsdrag-text-v1/results/decision_selected_head_grpo192_20261024",
   "worker_seconds": 277.1492917609994,
   "contract": "5b64658a2608f883599dbfb36be3758d4f28cc0de63c532ec11f76117a3cecce",
   "teacher_target": 32,
@@ -922,5 +922,16 @@
     "target_met": false,
     "original_eight_hour_deadline_met": false,
     "execution_resumed_explicitly": true
+  },
+  "selected_head_grpo_continuation": {
+    "phase": "running",
+    "pid": 292790,
+    "seconds": 0.002782290001050569,
+    "script": "scripts/run_decision_selected_head_grpo.py",
+    "child_pid": 292805,
+    "log": "/content/local_fast/lsdrag-text-v1/logs/selected_grpo_run_decision_selected_head_grpo_1792808749.log",
+    "updated_utc": "2026-10-24T02:25:49.191314+00:00",
+    "run": "decision_selected_head_grpo192_20261024",
+    "exec_session": 40877
   }
 }
