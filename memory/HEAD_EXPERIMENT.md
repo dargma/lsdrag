@@ -1,3 +1,7 @@
+## 2026-10-24 — constrained evaluation live
+
+Actual coordinator349259/worker349266, state /content/local_fast/lsdrag-text-v1/results/decision_constrained_policy_coordinator_20261024.json; log /content/local_fast/lsdrag-text-v1/logs/value_heads_evaluate_decision_value_heads_1792821171.log. Command scripts/coordinate_decision_constrained_evaluation.py. Threeconditions×64; initial model loading. Candidate Drivearchive7,428,014bytes/SHAde4f45ab79b419fb1f94b63aeb7f9a3bf53266d8312d1cbb419036ca3e003779 verified by archiver. CPUfitting11.01seconds/no newLLMrollouts. Numeric goal not established.
+
 ## 2026-10-24 — constrained policy candidates trained, evaluation next
 
 Protocol docs/JEV_CONSTRAINED_POLICY_20261024.md; plan frozen before fitting. Exact mlp_stop_value warmstart. Two budgets .70/.55 of basicGRPO cache expected suffix generation, qualityfloor Qstart−.02, projected primal/dual300epochs.12tests passed. CPU11.01seconds. budget70 Q.458766/G49.5964 satisfies cachefloor.431121/budget49.6224;budget55 Q.416688/G37.5552 fails qualityfloor despite optimisticLPfeasible. This is offline cache feasibility only. No learned-body/worldmodel expansion.

@@ -1,7 +1,7 @@
 {
-  "phase": "adaptive_three_axes_complete_goal_active",
+  "phase": "constrained_policy_validation_running",
   "updated_utc": "2026-10-24T05:33:44.127736+00:00",
-  "protocol": "docs/JEV_SELECTED_HEAD_ZERO_GATE_20261024.md",
+  "protocol": "docs/JEV_CONSTRAINED_POLICY_20261024.md",
   "protocol_sha256": "58a215a03d96c3738558738d6e7305f2e5f8e8f37c5994cc27cb6e33f30df3a2",
   "prompt": "prompts/text_rag_integrated_v5.txt",
   "prompt_sha256": "9d66c290a97bbabb4289dcf262e2b5bc8ba05653f87aed3b693825dbb02d5a97",
@@ -32,13 +32,13 @@
   ],
   "worker_wall_budget_minutes": 120,
   "run_planned": "/content/local_fast/lsdrag-text-v1/results/decision_shared_test80_20261023",
-  "pid": null,
+  "pid": 349266,
   "implementation_completed": true,
   "dataset_prepared": true,
   "teacher_collection_started": true,
   "training_completed": true,
   "evaluation_completed": true,
-  "next": "Freeze and execute bounded constrained quality/generated-token policy-learning pilot; no test access.",
+  "next": "Complete three-condition validation; compare actual quality/tokens and audit/archive. Goal remains active.",
   "previous_multimodal_checkpoint_historical_only": {
     "phase": "native2_review_required",
     "run": "/content/local_fast/lsdrag-head-v14/results/native_distillation_12b_20261015",
@@ -995,5 +995,13 @@
     "f1": 0.25960497835497837,
     "generated": 83.625,
     "goal_achieved": false
+  },
+  "constrained_policy_evaluation": {
+    "phase": "running",
+    "pid": 349259,
+    "seconds": 0.31542959199578036,
+    "script": "scripts/evaluate_decision_value_heads.py",
+    "child_pid": 349266,
+    "log": "/content/local_fast/lsdrag-text-v1/logs/value_heads_evaluate_decision_value_heads_1792821171.log"
   }
 }

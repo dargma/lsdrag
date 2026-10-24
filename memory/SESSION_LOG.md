@@ -1116,3 +1116,8 @@ Protocol docs/JEV_CONSTRAINED_POLICY_20261024.md; plan frozen before fitting. Ex
 
 Next coordinator_decision_constrained_evaluation.py: archive candidates then quality_start+budget70+budget55×validation64,report+pairedcomparison+archive. Baseline unchanged; final80/reserved80 protected. Goal ACTIVE, no actual success claim.
 
+
+## 2026-10-24 — constrained evaluation live
+
+Actual coordinator349259/worker349266, state /content/local_fast/lsdrag-text-v1/results/decision_constrained_policy_coordinator_20261024.json; log /content/local_fast/lsdrag-text-v1/logs/value_heads_evaluate_decision_value_heads_1792821171.log. Command scripts/coordinate_decision_constrained_evaluation.py. Threeconditions×64; initial model loading. Candidate Drivearchive7,428,014bytes/SHAde4f45ab79b419fb1f94b63aeb7f9a3bf53266d8312d1cbb419036ca3e003779 verified by archiver. CPUfitting11.01seconds/no newLLMrollouts. Numeric goal not established.
+

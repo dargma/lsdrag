@@ -1,4 +1,14 @@
 {
+  "constrained_cache_fitting": {
+    "run": "decision_constrained_policy_20261024",
+    "status": {
+      "phase": "complete",
+      "pid": null,
+      "seconds": 11.010683408996556,
+      "candidates": 2
+    },
+    "new_llm_rollouts": 0
+  },
   "cpu_cache_fitting": {
     "run": "decision_opportunity_value_20261024",
     "status": {
@@ -10,7 +20,7 @@
     "new_llm_rollouts": 0,
     "reuses": "decision_shared_outcomes192_20261023 and decision_shared_teacher192_20261023"
   },
-  "snapshot_utc": "2026-10-24T05:49:14.492561+00:00",
+  "snapshot_utc": "2026-10-24T05:53:15.615541+00:00",
   "runs": [
     {
       "group": "historical_grpo_reference",
@@ -333,6 +343,20 @@
       "complete_raw_totals_verified": true,
       "terminal_raw_totals_verified": true,
       "status_path": "/content/local_fast/lsdrag-text-v1/results/decision_opportunity_value_validation64_20261024/status.json"
+    },
+    {
+      "group": "adaptive_policy_followup",
+      "run": "decision_constrained_policy_validation64_20261024",
+      "phase": "evaluation",
+      "counts": {
+        "episodes": 9,
+        "generated": 509,
+        "inputs": 32391
+      },
+      "seconds": 22.14299693099747,
+      "complete_raw_totals_verified": false,
+      "terminal_raw_totals_verified": false,
+      "status_path": "/content/local_fast/lsdrag-text-v1/results/decision_constrained_policy_validation64_20261024/status.json"
     }
   ],
   "completed_totals": {
@@ -403,7 +427,9 @@
       },
       "failed_runs": [],
       "completed_runs": 3,
-      "uncompleted_runs": []
+      "uncompleted_runs": [
+        "decision_constrained_policy_validation64_20261024"
+      ]
     }
   },
   "scope": "Named decision-policy campaign only; historical PPO/preparatory runs outside this list are excluded. Shared-corpus and restricted-pool results are separate experimental settings.",
