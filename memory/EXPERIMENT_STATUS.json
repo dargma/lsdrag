@@ -1,5 +1,5 @@
 {
-  "phase": "qwen35_teacher_running_pipeline_waiting",
+  "phase": "qwen35_bootstrap_complete_outcomes48_running",
   "updated_utc": "2026-10-24T13:02:35.723774+00:00",
   "protocol": "docs/JEV_QWEN35_9B_H3_GENERALIZATION_20261024.md",
   "protocol_sha256": "e0cd40c9a1b728408047f7aee95bc9849caa698407c243d20df6a991c9260432",
@@ -32,13 +32,13 @@
   ],
   "worker_wall_budget_minutes": 120,
   "run_planned": "/content/local_fast/lsdrag-text-v1/results/decision_h3_policy_coverage24b_20261024",
-  "pid": 111971,
+  "pid": 125195,
   "implementation_completed": true,
   "dataset_prepared": true,
   "teacher_collection_started": true,
   "training_completed": false,
   "evaluation_completed": false,
-  "next": "Monitor same teacher111971 and corrected coordinator121348; frozenpipeline then final comparison",
+  "next": "Monitoroutcomes48; verifier->basefit->stop48->H3/control->dev64 under existingcoordinator",
   "previous_multimodal_checkpoint_historical_only": {
     "phase": "native2_review_required",
     "run": "/content/local_fast/lsdrag-head-v14/results/native_distillation_12b_20261015",
@@ -174,7 +174,7 @@
   "external_evaluation_completed": true,
   "updated_epoch": 1792161920.7440126,
   "d3_additional_analysis": "withdrawn",
-  "session_id": 1164,
+  "session_id": null,
   "functional_smoke": {
     "passed": true,
     "checks": 7,
@@ -186,11 +186,11 @@
   "speed_gate_passed": true,
   "target_speedup_vs_native": 1.5,
   "target_speedup_measured": false,
-  "run": "/content/local_fast/lsdrag-text-v1/results/qwen35_9b_teacher192_20261024",
+  "run": "/content/local_fast/lsdrag-text-v1/results/qwen35_9b_outcomes48_20261024",
   "worker_seconds": 277.1492917609994,
   "contract": "5b64658a2608f883599dbfb36be3758d4f28cc0de63c532ec11f76117a3cecce",
   "teacher_target": 32,
-  "log": "/content/local_fast/lsdrag-text-v1/logs/qwen35_teacher192_20261024.log",
+  "log": "/content/local_fast/lsdrag-text-v1/logs/qwen35_pipeline_outcomes_20261024.log",
   "frozen_source_commit": "7ff891a",
   "teacher_questions": 32,
   "natural_states": 15,
@@ -1253,5 +1253,6 @@
   "last_experiment_limit": false,
   "active_objective": "\ud070 \ubaa8\ub378\ub85c \uc2e4\ud5d8 \uc644\ub8cc\ud558\uae30",
   "coordinator_pid": 121348,
-  "coordinator_status": "/content/local_fast/lsdrag-text-v1/results/qwen35_9b_pipeline_20261024/status.json"
+  "coordinator_status": "/content/local_fast/lsdrag-text-v1/results/qwen35_9b_pipeline_20261024/status.json",
+  "bootstrap_completed": true
 }
