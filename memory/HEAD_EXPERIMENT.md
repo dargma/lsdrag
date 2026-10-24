@@ -1,3 +1,7 @@
+## 2026-10-24T06:47:04.657377+00:00 — selected-head GRPO continuation: running
+
+Coordinator state: `/content/local_fast/lsdrag-text-v1/results/decision_quality_head_grpo_coordinator_20261024.json`. Details: `{"phase": "running", "pid": 354060, "seconds": 2262.618084080008, "script": "scripts/evaluate_decision_value_heads.py", "child_pid": 364974, "log": "/content/local_fast/lsdrag-text-v1/logs/selected_grpo_evaluate_decision_value_heads_1792824424.log"}`. Same already-trained selected head continues learning; LLM/normalization fixed. Only train192 and validation64 used; final80/reserved80 protected.
+
 
 ## 2026-10-24 — quality-leading MLP GRPO training complete and audited
 

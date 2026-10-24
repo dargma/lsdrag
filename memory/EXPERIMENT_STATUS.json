@@ -1,6 +1,6 @@
 {
   "phase": "quality_head_grpo_running",
-  "updated_utc": "2026-10-24T06:45:50.931872+00:00",
+  "updated_utc": "2026-10-24T06:47:04.657377+00:00",
   "protocol": "docs/JEV_QUALITY_HEAD_GRPO_20261024.md",
   "protocol_sha256": "58a215a03d96c3738558738d6e7305f2e5f8e8f37c5994cc27cb6e33f30df3a2",
   "prompt": "prompts/text_rag_integrated_v5.txt",
@@ -32,7 +32,7 @@
   ],
   "worker_wall_budget_minutes": 120,
   "run_planned": "/content/local_fast/lsdrag-text-v1/results/decision_shared_test80_20261023",
-  "pid": 364611,
+  "pid": 364974,
   "implementation_completed": true,
   "dataset_prepared": true,
   "teacher_collection_started": true,
@@ -1013,11 +1013,11 @@
   "quality_head_grpo_continuation": {
     "phase": "running",
     "pid": 354060,
-    "seconds": 2188.8925192680035,
-    "script": "scripts/reporting/archive_decision_run.py",
-    "child_pid": 364611,
-    "log": "/content/local_fast/lsdrag-text-v1/logs/selected_grpo_archive_decision_run_1792824350.log",
-    "updated_utc": "2026-10-24T06:45:50.931872+00:00",
+    "seconds": 2262.618084080008,
+    "script": "scripts/evaluate_decision_value_heads.py",
+    "child_pid": 364974,
+    "log": "/content/local_fast/lsdrag-text-v1/logs/selected_grpo_evaluate_decision_value_heads_1792824424.log",
+    "updated_utc": "2026-10-24T06:47:04.657377+00:00",
     "run": "decision_quality_head_grpo192_20261024"
   },
   "quality_head_grpo_queue": {
