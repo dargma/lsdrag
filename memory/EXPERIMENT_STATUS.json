@@ -1218,5 +1218,10 @@
     "child_pid": 46170,
     "script": "scripts/run_decision_h3_diversity48_20261024.py",
     "log": "/content/local_fast/lsdrag-text-v1/logs/refresh48_run_decision_h3_diversity48_20261024_1792841017.log"
+  },
+  "critic72_followup": {
+    "pid": 46735,
+    "phase": "waiting_for_verified_collection",
+    "state": "/content/local_fast/lsdrag-text-v1/results/decision_future_critic_probe72_20261024_coordinator.json"
   }
 }

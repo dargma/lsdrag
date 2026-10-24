@@ -1650,3 +1650,10 @@ User ok; bounded data-diversity hypothesis frozen docs/JEV_H3_CRITIC_DIVERSITY48
 
 Coordinator46115/collector46170 verified live. State /content/local_fast/lsdrag-text-v1/results/decision_h3_diversity48_coordinator_20261024.json; log /content/local_fast/lsdrag-text-v1/logs/refresh48_run_decision_h3_diversity48_20261024_1792841017.log. Collection max1584episodes/3600seconds plusload, allnonforcedstates/legalactions, frozenH3suffix; no partialfit. Existing verified collector reused via wrapper and newmanifest; no reader/interface/split changes. Independent verifier scripts/reporting/verify_h3_diversity48.py prepared. Next verify actual worker; wait completion, raw audit/archive then samecriticfit72. GoalACTIVE,reserved80protected.
 
+
+## 2026-10-24 — critic72 fitting and audited continuation prepared
+
+Collection coordinator46115/worker46170 revalidated live; no restart. Fixed same-architecture fit72 script scripts/probe_decision_future_critic72.py prepared with exact prior optimizer/100updates/seed, immutable oldcritic, samefresh12 predictions and dual baseline gate. Source/split frozen in lab/registry/decision_future_critic_probe72_20261024/plan.json; pending collection hash prevents premature fit. Collector final hash added only after independent raw audit.
+
+Followup coordinator46735 launched: /content/local_fast/lsdrag-text-v1/results/decision_future_critic_probe72_20261024_coordinator.json, log /content/local_fast/lsdrag-text-v1/logs/future_critic72_coordinator.log. Waits specific live collection coordinator, runs independent collection verifier, finalizes inputhash, fits once and archives; no automatic actor update. Next inspect actual handles and terminal comparison, independently recompute metrics. GoalACTIVE/reserved80protected.
+

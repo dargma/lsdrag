@@ -1,3 +1,9 @@
+## 2026-10-24 — critic72 fitting and audited continuation prepared
+
+Collection coordinator46115/worker46170 revalidated live; no restart. Fixed same-architecture fit72 script scripts/probe_decision_future_critic72.py prepared with exact prior optimizer/100updates/seed, immutable oldcritic, samefresh12 predictions and dual baseline gate. Source/split frozen in lab/registry/decision_future_critic_probe72_20261024/plan.json; pending collection hash prevents premature fit. Collector final hash added only after independent raw audit.
+
+Followup coordinator46735 launched: /content/local_fast/lsdrag-text-v1/results/decision_future_critic_probe72_20261024_coordinator.json, log /content/local_fast/lsdrag-text-v1/logs/future_critic72_coordinator.log. Waits specific live collection coordinator, runs independent collection verifier, finalizes inputhash, fits once and archives; no automatic actor update. Next inspect actual handles and terminal comparison, independently recompute metrics. GoalACTIVE/reserved80protected.
+
 ## 2026-10-24 — critic diversity48 collection launched
 
 User ok; bounded data-diversity hypothesis frozen docs/JEV_H3_CRITIC_DIVERSITY48_20261024.md. Additional48 selected by hash from train192 minus priorH3outcomes48; first36 adds to old36fit (72 total), last12 freshcriticmonitor; old12monitor excluded. Samecritic architecture/seed100updates; future fixed comparison expandedcritic vs oldcritic and actionmeans on same fresh12. No monitor replacement/tuning, no actor update before predictive and later actual-rollout gates.
