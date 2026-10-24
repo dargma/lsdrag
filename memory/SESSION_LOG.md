@@ -1001,3 +1001,5 @@ r1 train1536episodes/4530decisions/4514학습states/568updates/2284.57초 완료
 
 보고서 docs/JEV_SELECTED_HEAD_GRPO_RESULT_20261024.md;raw검증/pairedCI/crossrun/completionaudit는lab/reports/decision_selected_head_grpo_validation64_20261024_r1. 정밀도수정및학습실행목표완료,성능목표미달구분. 다음사용자후속판단,자동실행없음. 원래실험의최종80에서개선미재현결론은보존.
 
+
+Selected-GRPO final code/report backup f7d54cc3 verified: /content/drive/MyDrive/lsdrag-backups/20261023/code_selected_grpo_f7d54cc3.tar.gz; SHA16b5c75b7f858a14a98960ce8c107bd19cbc56bec3e2744d6e6737d1a3d3b75c. Failed/train/eval raw archives separately verified; numeric target still not met.
