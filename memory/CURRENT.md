@@ -1,3 +1,9 @@
+## 2026-10-24 — H2 stopping-value hypothesis frozen
+
+One nextlargehypothesis peruserfastdirectionfinding: retainH1usefultoolpolicy,learnwhencontinuedexplorationisworthwhile. Protocol docs/JEV_STOP_VALUE_H2_20261024.md. Frozenremaining48trainqids disjointprior144,seed20261067,currentH132849a28rollin/suffix. Greedydeployment-matched FINALvsbestlegaltool atinitial/lastnonforcedstate;oneexecutionperaction,max240episodes/1800sec;noidenticalgreedyrepeats. Input/sourcehashesandtrain/testseparationverified,compilepassed. Currentcollection notyetlaunchedatthisentry.
+
+Aftercompleteaudit:onezero-initlinearscalaronFINALlogitfromfrozenH1hidden128,tool-logitorderingunchanged. Supportedpositivequality/positive-F1costlabels only,both-zeroambiguous;>=3distinctqidsperlabelgate;100updates1e-3seed20261068,.5referenceblend/equalretentionweight. Noarchitecturegrid,PPOGRPO,newinterface,ordevqidtargeting. Paireddev128afterfit. GoalACTIVE,reserved80protected. Nextlaunch scripts/coordinate_decision_stop_value_h2_collect.py.
+
 ## 2026-10-24 — H1 complete: useful policy signal, stopping-value next
 
 Singlecandidate32849a28 paired128episodes complete192.12sec,9651generated/470157input,0errors; exactreference64/rawtotals/DriveSHAverified. Report docs/JEV_OUTCOME_POLICY_H1_RESULT_20261024.md. CurrentMLP26.74/75.45→H1MLP28.30/75.34,1win0loss, F1delta+1.5625ppCI[0,4.6875],tokensessentiallyunchanged. BasicGRPOdelta+5.8036pp/generatedratio.76564: developmentqualitythresholdcrossed,tokenrequirementfails; no independentgoalclaim.

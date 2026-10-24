@@ -1477,3 +1477,10 @@ Usefulbehavior:1answerrecoveredbykeyword→semanticfirstaction,saving2tokens;2F1
 
 Coordinator15464/evaluator15471finished. Reporting initially failed for missing historical runtime split manifests; restored exact Git manifests and reran reporting/archive only, noGPUrerun. Failure preserved in coordinator reporting_failure_recovered. State nowcomplete. EvaluationDriveSHA56ad0ef4976a2e3e2bacb65aa1b399c4f194b64782433d1658c2e28ff9a5be83. GoalACTIVE. User hypothesis-first/fastdirectionfinding preference remains governing.
 
+
+## 2026-10-24 — H2 stopping-value hypothesis frozen
+
+One nextlargehypothesis peruserfastdirectionfinding: retainH1usefultoolpolicy,learnwhencontinuedexplorationisworthwhile. Protocol docs/JEV_STOP_VALUE_H2_20261024.md. Frozenremaining48trainqids disjointprior144,seed20261067,currentH132849a28rollin/suffix. Greedydeployment-matched FINALvsbestlegaltool atinitial/lastnonforcedstate;oneexecutionperaction,max240episodes/1800sec;noidenticalgreedyrepeats. Input/sourcehashesandtrain/testseparationverified,compilepassed. Currentcollection notyetlaunchedatthisentry.
+
+Aftercompleteaudit:onezero-initlinearscalaronFINALlogitfromfrozenH1hidden128,tool-logitorderingunchanged. Supportedpositivequality/positive-F1costlabels only,both-zeroambiguous;>=3distinctqidsperlabelgate;100updates1e-3seed20261068,.5referenceblend/equalretentionweight. Noarchitecturegrid,PPOGRPO,newinterface,ordevqidtargeting. Paireddev128afterfit. GoalACTIVE,reserved80protected. Nextlaunch scripts/coordinate_decision_stop_value_h2_collect.py.
+
