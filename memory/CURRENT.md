@@ -1,3 +1,11 @@
+## 2026-10-24 — conservative48 fit complete; learning-progress gate fails
+
+Additional24train collection complete64states/253episodes/323.23sec/15664generated/992700input/1error; independent rawscore/prefix/referenceanswer/coverage/suffix/Drive verification passed. Combined48q/128states yields30corrections/20q under same categorical terminal objective. One516parameter proposal trained; maxpassing stepalpha.125,KL.000933,unsupported9/507=1.775%. Supportedtargetmatches0/30,so learning_progressFalse: no newQAeval. H3 retained. Report docs/JEV_H3_CONSERVATIVE48_RESULT_20261024.md.
+
+Rawproposal/fullstepunsupported12.82%,.5step4.73%,.25step2.17%,.125step1.78%. Training preservation and useful supported action change not jointly achieved by this update. Not proof frozenLLM impossible or critic required. Next investigate state discrimination/credit signal with one bounded hypothesis; no newrepresentation/critic protocolfrozen or workerlaunched. User askedcritic/reward: clarified nolearnedcritic,currentvaluezero,terminalF1+suffixcost assigned to each counterfactual intermediate action; no dense per-turnqualityreward.
+
+Coordinator38097/worker38151terminalcomplete. Fit325abfbf archived asdiagnostic,notincumbent; SHA099d19317aa976e9c7339f887dae504ddbf3dff9b8cddf981310a3fc8e9832d8. Gate recomputed independently; no GPUworkerrunning. GoalACTIVE,reserved80protected.
+
 ## 2026-10-24 — additional H3 train24 live; conservative projection prepared
 
 Coordinator38097/collector38151 verifiedlive (68episodes/17states/8questions observed). State /content/local_fast/lsdrag-text-v1/results/decision_h3_policy_coverage24b_coordinator_20261024.json; log /content/local_fast/lsdrag-text-v1/logs/refresh48_run_decision_h3_policy_coverage24b_20261024_1792839489.log. Do not duplicate. Completion triggers dynamicfullcoverageaudit/archive only.

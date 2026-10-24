@@ -1,8 +1,8 @@
 {
-  "phase": "quality_head_grpo_complete",
-  "updated_utc": "2026-10-24T06:53:11.301130+00:00",
-  "protocol": "docs/JEV_QUALITY_HEAD_GRPO_20261024.md",
-  "protocol_sha256": "58a215a03d96c3738558738d6e7305f2e5f8e8f37c5994cc27cb6e33f30df3a2",
+  "phase": "h3_conservative48_learning_gate_failed",
+  "updated_utc": "2026-10-24T11:07:40.830984+00:00",
+  "protocol": "docs/JEV_H3_COVERAGE_CONSERVATIVE_UPDATE_20261024.md",
+  "protocol_sha256": "af9ee777430bae1b0954cb6716af4db221386da61b9d4c27976fe86a42829a62",
   "prompt": "prompts/text_rag_integrated_v5.txt",
   "prompt_sha256": "9d66c290a97bbabb4289dcf262e2b5bc8ba05653f87aed3b693825dbb02d5a97",
   "dataset": "MuSiQue-Ans v1.0, 2-hop",
@@ -31,14 +31,14 @@
     20261054
   ],
   "worker_wall_budget_minutes": 120,
-  "run_planned": "/content/local_fast/lsdrag-text-v1/results/decision_shared_test80_20261023",
+  "run_planned": "/content/local_fast/lsdrag-text-v1/results/decision_h3_policy_coverage24b_20261024",
   "pid": null,
   "implementation_completed": true,
   "dataset_prepared": true,
   "teacher_collection_started": true,
   "training_completed": true,
-  "evaluation_completed": true,
-  "next": "Finish bounded train/audit/paired validation/archive. No test launch.",
+  "evaluation_completed": false,
+  "next": "Retain H3. Freeze one next state-discrimination/credit hypothesis; no worker or new evaluation launched.",
   "previous_multimodal_checkpoint_historical_only": {
     "phase": "native2_review_required",
     "run": "/content/local_fast/lsdrag-head-v14/results/native_distillation_12b_20261015",
@@ -509,7 +509,7 @@
   "execution_hold": {
     "active": false,
     "scope": "User-authorized bounded decision-policy pilot2; does not authorize arbitrary expansion",
-    "superseded_by": "2026-10-23 user 그래 시작해 and explicit experiment continuation"
+    "superseded_by": "2026-10-23 user \uadf8\ub798 \uc2dc\uc791\ud574 and explicit experiment continuation"
   },
   "research_review": {
     "phase": "astra_deep_research_complete",
@@ -597,7 +597,7 @@
   "execution_hold_history": [
     {
       "active": true,
-      "user_instruction": "일단 여기까지만; 잘 저장하고 보고서도 작성 git 반영",
+      "user_instruction": "\uc77c\ub2e8 \uc5ec\uae30\uae4c\uc9c0\ub9cc; \uc798 \uc800\uc7a5\ud558\uace0 \ubcf4\uace0\uc11c\ub3c4 \uc791\uc131 git \ubc18\uc601",
       "gpu_experiments_authorized_now": false
     }
   ],
@@ -880,7 +880,7 @@
     "training_completed": true,
     "evaluation_completed": true
   },
-  "active_run": "/content/local_fast/lsdrag-text-v1/results/decision_shared_outcomes192_20261023",
+  "active_run": "/content/local_fast/lsdrag-text-v1/results/decision_h3_conservative48_20261024",
   "seed_scope": "Distinct initialization/GRPO/branch/structure stages, not four independent training replications.",
   "status_scope": "Current shared-corpus campaign; training_completed refers to all planned candidate training, evaluation_completed to final heldout80. Historical nested profiles and archived snapshots are not current progress.",
   "final_test_questions": 80,
@@ -971,7 +971,7 @@
     "architecture_variants_authorized": true,
     "updated_utc": "2026-10-24T05:05:24.828840+00:00",
     "reaffirmed_utc": "2026-10-24T09:35:54.089300+00:00",
-    "explicit_user_request": "골 모드 진입",
+    "explicit_user_request": "\uace8 \ubaa8\ub4dc \uc9c4\uc785",
     "current_phase_protocol": "docs/JEV_DECISION_POLICY_HYPOTHESIS_PLAN_20261024.md"
   },
   "opportunity_value_heads": {
@@ -1196,11 +1196,12 @@
     "goal_achieved": false
   },
   "h3_policy_coverage24b_collection": {
-    "phase": "running",
-    "pid": 38097,
-    "seconds": 0.0004510389999268227,
-    "child_pid": 38151,
-    "script": "scripts/run_decision_h3_policy_coverage24b_20261024.py",
-    "log": "/content/local_fast/lsdrag-text-v1/logs/refresh48_run_decision_h3_policy_coverage24b_20261024_1792839489.log"
-  }
+    "phase": "complete",
+    "pid": null,
+    "seconds": 329.74497971799974,
+    "report": "/content/local_fast/lsdrag-code/lab/reports/decision_h3_policy_coverage24b_20261024/audit.json",
+    "goal_achieved": false
+  },
+  "goal_achieved": false,
+  "learning_progress": false
 }

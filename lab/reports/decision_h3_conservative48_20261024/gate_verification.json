@@ -1,0 +1,12 @@
+{
+  "verified": true,
+  "alpha": 0.125,
+  "kl": 0.0009326224680989981,
+  "unsupported_changes": 9,
+  "unsupported_states": 507,
+  "target_matches": 0,
+  "targets": 30,
+  "learning_progress": false,
+  "evaluation_launched": false,
+  "checkpoint_sha256": "325abfbfef4f23da4ba9eb586c91df808adacb1372f2a1eb5eb40e6bf4057a49"
+}
