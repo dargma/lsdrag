@@ -1,8 +1,8 @@
 {
-  "phase": "selected_head_grpo_r1_complete_target_not_met",
-  "updated_utc": "2026-10-24T04:10:52.370932+00:00",
-  "protocol": "docs/JEV_SELECTED_HEAD_GRPO_CONTINUATION_20261024.md",
-  "protocol_sha256": "115cda4de141c12e007c13e3ca7d80d4cb186f1a354b76df6a06eafca6d5e448",
+  "phase": "selected_head_grpo_running",
+  "updated_utc": "2026-10-24T04:47:58.251542+00:00",
+  "protocol": "docs/JEV_SELECTED_HEAD_ZERO_GATE_20261024.md",
+  "protocol_sha256": "58a215a03d96c3738558738d6e7305f2e5f8e8f37c5994cc27cb6e33f30df3a2",
   "prompt": "prompts/text_rag_integrated_v5.txt",
   "prompt_sha256": "9d66c290a97bbabb4289dcf262e2b5bc8ba05653f87aed3b693825dbb02d5a97",
   "dataset": "MuSiQue-Ans v1.0, 2-hop",
@@ -32,13 +32,13 @@
   ],
   "worker_wall_budget_minutes": 120,
   "run_planned": "/content/local_fast/lsdrag-text-v1/results/decision_shared_test80_20261023",
-  "pid": null,
+  "pid": 330716,
   "implementation_completed": true,
   "dataset_prepared": true,
   "teacher_collection_started": true,
-  "training_completed": true,
-  "evaluation_completed": true,
-  "next": "Review continuation report; no automatic further sweep or final80/reserved80 evaluation.",
+  "training_completed": false,
+  "evaluation_completed": false,
+  "next": "Finish zero-quality-group gate training, audit, validation64 and archives; compare with ungated r1. No test launch.",
   "previous_multimodal_checkpoint_historical_only": {
     "phase": "native2_review_required",
     "run": "/content/local_fast/lsdrag-head-v14/results/native_distillation_12b_20261015",
@@ -186,7 +186,7 @@
   "speed_gate_passed": true,
   "target_speedup_vs_native": 1.5,
   "target_speedup_measured": false,
-  "run": "/content/local_fast/lsdrag-text-v1/results/decision_selected_head_grpo192_20261024_r1",
+  "run": "/content/local_fast/lsdrag-text-v1/results/decision_selected_head_grpo192_20261024_zero_gate",
   "worker_seconds": 277.1492917609994,
   "contract": "5b64658a2608f883599dbfb36be3758d4f28cc0de63c532ec11f76117a3cecce",
   "teacher_target": 32,
@@ -509,7 +509,7 @@
   "execution_hold": {
     "active": false,
     "scope": "User-authorized bounded decision-policy pilot2; does not authorize arbitrary expansion",
-    "superseded_by": "2026-10-23 user 그래 시작해 and explicit experiment continuation"
+    "superseded_by": "2026-10-23 user \uadf8\ub798 \uc2dc\uc791\ud574 and explicit experiment continuation"
   },
   "research_review": {
     "phase": "astra_deep_research_complete",
@@ -597,7 +597,7 @@
   "execution_hold_history": [
     {
       "active": true,
-      "user_instruction": "일단 여기까지만; 잘 저장하고 보고서도 작성 git 반영",
+      "user_instruction": "\uc77c\ub2e8 \uc5ec\uae30\uae4c\uc9c0\ub9cc; \uc798 \uc800\uc7a5\ud558\uace0 \ubcf4\uace0\uc11c\ub3c4 \uc791\uc131 git \ubc18\uc601",
       "gpu_experiments_authorized_now": false
     }
   ],
@@ -924,13 +924,14 @@
     "execution_resumed_explicitly": true
   },
   "selected_head_grpo_continuation": {
-    "phase": "complete",
-    "pid": null,
-    "seconds": 2583.654594520005,
-    "report": "lab/reports/decision_selected_head_grpo_validation64_20261024_r1/report.md",
-    "next": "Review paired validation; no original-final80/reserved80 evaluation or new sweep.",
-    "updated_utc": "2026-10-24T04:08:00.412464+00:00",
-    "run": "decision_selected_head_grpo192_20261024_r1"
+    "phase": "running",
+    "pid": 330710,
+    "seconds": 0.002992448993609287,
+    "script": "scripts/run_decision_selected_head_grpo_zero_gate.py",
+    "child_pid": 330716,
+    "log": "/content/local_fast/lsdrag-text-v1/logs/selected_grpo_run_decision_selected_head_grpo_zero_gate_1792817278.log",
+    "updated_utc": "2026-10-24T04:47:58.251542+00:00",
+    "run": "decision_selected_head_grpo192_20261024_zero_gate"
   },
   "selected_head_grpo_failed_run": {
     "episodes": 768,
@@ -956,5 +957,6 @@
     "validation_only": true,
     "target_met": false,
     "workers_active": false
-  }
+  },
+  "numeric_target_met": false
 }

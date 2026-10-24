@@ -1,3 +1,11 @@
+## 2026-10-24T04:47:58.251542+00:00 — selected-head GRPO continuation: running
+
+Coordinator state: `/content/local_fast/lsdrag-text-v1/results/decision_selected_head_grpo_coordinator_20261024_zero_gate.json`. Details: `{"phase": "running", "pid": 330710, "seconds": 0.002992448993609287, "script": "scripts/run_decision_selected_head_grpo_zero_gate.py", "child_pid": 330716, "log": "/content/local_fast/lsdrag-text-v1/logs/selected_grpo_run_decision_selected_head_grpo_zero_gate_1792817278.log"}`. Same already-trained selected head continues learning; LLM/normalization fixed. Only train192 and validation64 used; final80/reserved80 protected.
+
+## 2026-10-24T04:47:58.248613+00:00 — selected-head GRPO continuation: preparing
+
+Coordinator state: `/content/local_fast/lsdrag-text-v1/results/decision_selected_head_grpo_coordinator_20261024_zero_gate.json`. Details: `{"phase": "preparing", "pid": 330710, "seconds": 3.139997716061771e-06}`. Same already-trained selected head continues learning; LLM/normalization fixed. Only train192 and validation64 used; final80/reserved80 protected.
+
 ## 2026-10-24 — zero-quality group gate approved
 
 User ok authorizes one bounded comparison: docs/JEV_SELECTED_HEAD_ZERO_GATE_20261024.md. New namespace zero_gate; start pre-GRPO selected head. Eleven CPU tests passed; training not yet launched. Prior completed r1 preserved; final80/reserved80 protected.
