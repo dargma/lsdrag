@@ -1,4 +1,8 @@
 
+## 2026-10-24 — local correction complete; modest quality gain, token target unmet
+
+192episodes/289.78sec/15124generated/751910input,referenceexact64parity/rawtotals/DriveSHAverified. CorrectionMLP26.41/81.55 versusd98725.18/76.75: +1.23ppCI[-1.56,+5.13],2wins1loss,tokens+6.25%. AgainstfixedGRPO+3.91pp/tokens−17.13%,jointtargetfails. Frozenquestionattention25.18/78.02,F1identicalreference. Report docs/JEV_ANCHOR_CORRECTION_RESULT_20261024.md. Noactiveworkers. Nexttrainonlyinspectnonworse-cheapercorrections tocomplementqualitycorrections,notnewarchitecturegrid. GoalACTIVE,reserved80protected.
+
 ## 2026-10-24 — anchor correction fit complete and paired evaluation live
 
 Fitcomplete22.7056sec,2candidates;checkpointhashes/loadverified. 16correctedstates+385retentionstates. Coordinator397105/worker397113verifiedlive;state /content/local_fast/lsdrag-text-v1/results/decision_anchor_corrections_coordinator_20261024.json;log /content/local_fast/lsdrag-text-v1/logs/value_heads_evaluate_decision_attention_1792830753.log. Run decision_anchor_corrections_validation64_20261024,3×64,max2400sec. Fitarchived; newqualityunknown. GoalACTIVE,reservedtestprotected.

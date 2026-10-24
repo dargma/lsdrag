@@ -20,7 +20,7 @@
     "new_llm_rollouts": 0,
     "reuses": "decision_shared_outcomes192_20261023 and decision_shared_teacher192_20261023"
   },
-  "snapshot_utc": "2026-10-24T08:29:20.818254+00:00",
+  "snapshot_utc": "2026-10-24T08:38:40.978876+00:00",
   "runs": [
     {
       "group": "historical_grpo_reference",
@@ -511,6 +511,20 @@
       "complete_raw_totals_verified": true,
       "terminal_raw_totals_verified": true,
       "status_path": "/content/local_fast/lsdrag-text-v1/results/decision_matched_refresh_validation64_20261024/status.json"
+    },
+    {
+      "group": "offline_structure_and_reward",
+      "run": "decision_anchor_corrections_validation64_20261024",
+      "phase": "complete",
+      "counts": {
+        "episodes": 192,
+        "generated": 15124,
+        "inputs": 751910
+      },
+      "seconds": 289.7826462709927,
+      "complete_raw_totals_verified": true,
+      "terminal_raw_totals_verified": true,
+      "status_path": "/content/local_fast/lsdrag-text-v1/results/decision_anchor_corrections_validation64_20261024/status.json"
     }
   ],
   "completed_totals": {
@@ -609,9 +623,9 @@
       "uncompleted_runs": []
     },
     "offline_structure_and_reward": {
-      "episodes": 1952,
-      "generated": 145385,
-      "inputs": 8099806,
+      "episodes": 2144,
+      "generated": 160509,
+      "inputs": 8851716,
       "failed_run_costs": {
         "episodes": 0,
         "generated": 0,
@@ -623,7 +637,7 @@
         "generated": 299,
         "inputs": 16965
       },
-      "completed_runs": 5,
+      "completed_runs": 6,
       "uncompleted_runs": [
         "decision_structure_four_validation64_20261024"
       ]

@@ -1,0 +1,13 @@
+{
+  "counts": {
+    "phase": "complete",
+    "pid": null,
+    "seconds": 289.7826462709927,
+    "episodes": 192,
+    "generated": 15124,
+    "inputs": 751910
+  },
+  "reference_exact_parity": 64,
+  "archive_sha256_verified": "8596ef85d34af228b4e4d1e7d7972363593021862c9deb425351d3ebbd41999f",
+  "goal_achieved": false
+}
