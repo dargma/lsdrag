@@ -43,3 +43,9 @@ GRPO: train192 × group4 ×2rounds =1536 fresh online episodes, max3600sec. Acto
 ## One cached structural candidate
 
 Retain the requested input/body axis in the corrected environment: one multi-position(last,question-end,last-observation mean) MLP128, with native-teacher hard-label warmstart and matched all-action improved version. No new trajectory collection. Teacher warmstart100epochs/lr3e-4/legal smoothing.05, outcome100epochs/lr1e-4/lambda.03/KL.02/entropy.01, seed20261054; train-only normalization. Evaluate the two versions on validation64 after main six-condition validation, before final selection. CPU max300sec/evaluation max1200sec. Main-vs-multi comparison changes capacity/trainability/KL reference as well as features, so no pure architecture causal claim. Shared cached Q comes from original BC suffix policy; acknowledge off-policy approximation for the multi warmstart. Frozen plan lab/registry/decision_shared_structure_20261023/plan.json.
+
+## Pre-result baseline amendment
+
+Before main validation64 or final160 results, add a FINAL-only closed-book baseline to final evaluation. It uses the same generator/prompt/FINAL schema and chooses no tools. This distinguishes pretrained answering from retrieval benefits without changing candidate selection or test questions. Final comparison becomes8conditions×160=1280episodes, same3600second cap. No new training or validation sweep. Current prompt was inspected and contains no per-question20-paragraph or p-index assumption.
+
+The no-tool condition retains the evidence-constrained RAG prompt. It measures FINAL-only behavior under the same task instruction, not unrestricted pretrained knowledge capacity; abstention can affect its score.

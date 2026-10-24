@@ -32,7 +32,8 @@ def main():
     primary=ranked[0]
     secondary=next(n for n in ranked[1:] if policies[n]['kind']!=policies[primary]['kind'])
     chosen=[primary,secondary]
-    conditions=['shared_grpo','shared_bc','semantic_once','native_fast',*chosen,'multi_mlp_bc']
+    policies['closed_book']={'kind':'final_only'}
+    conditions=['shared_grpo','shared_bc','semantic_once','closed_book','native_fast',*chosen,'multi_mlp_bc']
     assert len(set(conditions))==len(conditions)
     for name in conditions:
         if 'checkpoint' in policies[name]:assert sha(Path(policies[name]['checkpoint']))==policies[name]['sha256']
@@ -40,6 +41,7 @@ def main():
     final=read(ROOT/'results'/names[0]/'spec.json')
     final.update(run_name='decision_shared_test160_20261023',split='test',qids=split['test'],policies={n:policies[n] for n in conditions},selection='Two learned candidates selected from validation only by predeclared joint score, with distinct architecture; fixed baselines and matched multi-MLP warmstart retained.',max_seconds=3600,max_generated=4000000,max_inputs=160000000)
     final['source_sha256']={p:sha(REPO/p) for p in final['source_sha256']}
+    final['source_sha256']['src/lsdrag/decision_closed_book.py']=sha(REPO/'src/lsdrag/decision_closed_book.py')
     folder=REPO/'lab/registry/decision_shared_final_20261023'
     assert not (folder/'selection.json').exists() and not (folder/'spec.json').exists()
     save(folder/'selection.json',dict(primary=primary,secondary=secondary,scores=scores,all_validation=values,provenance=provenance,plan_sha256=sha(folder/'selection_plan.json'),test_outcomes_observed=False,warning='Validation selection is not target attainment. Final target is relative to shared GRPO; usefulness must also be assessed against native and semantic-once baselines.'))

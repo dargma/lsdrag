@@ -37,7 +37,7 @@ def main():
   c=comp[name];c['joint_point_target']=bool(c['f1']['delta']>=.05 and c['generated_ratio']['ratio']<=.7);c['joint_directional_ci']=bool(c['f1']['ci95'][0]>0 and c['generated_ratio']['ci95'][1]<1);c['joint_target_ci']=bool(c['f1']['ci95'][0]>=.05 and c['generated_ratio']['ci95'][1]<=.7)
  result=summary|{'baseline':base,'comparisons_vs_baseline':comp,'audit':{'episodes':len(eps),'unique_cells':len(lookup),'probability_and_cost_checks':True},'single_seed':True,'target':{'f1_delta':.05,'generated_ratio':.7},'ci_scope':'Marginal95% paired question bootstrap conditional on frozen policies; not training-seed population uncertainty. No multiplicity adjustment. Joint CI flags mean both marginal bounds pass, not a simultaneous95% region.'}
  strong={}
- for reference in ['native_fast','semantic_once']:
+ for reference in ['native_fast','semantic_once','closed_book']:
   if reference not in names:continue
   strong[reference]={}
   for name in names:

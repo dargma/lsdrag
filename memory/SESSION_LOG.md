@@ -857,3 +857,8 @@ worker248069/coordinator248061 유지. iteration0 768trajectory/2632states 업�
 
 
 2026-10-24: shared evaluation reporter에native_fast/semantic_once대비paired F1/tokenratio CI추가,개별marginal95%구간/다중비교보정없음을명시. 기존jointCIflag는두개별경계통과이며동시95%보장아님. greedy평가action==argmax/legal/nointervention검사추가. compile 및knownconstantshift/ratiobootstrap수치검사통과. 실험학습코드/목표/후보선정규칙변경없음. GRPO248069 iteration1/920episodes확인.
+
+## 2026-10-24 — 최종평가 no-tool baseline 사전추가
+
+main validation/test결과미열람상태에서FINAL-only(closed_book)baseline추가. 현재프롬프트는문항별20문단/p번호가정없음확인. 동일evidence-constrained RAGprompt+FINAL생성경로에서검색없이답하는대조이며무제약사전학습지식능력평가가아님. 후보선정규칙/질문/학습변경없음,최종8조건×160=1280episodes/기존3600초상한. 새module decision_closed_book.py,finalselector는추가sourceSHA검증,pairedreport에도포함. legal FINAL선택수치검사통과. 현재학습중인GRPO/sourcehash대상변경없음;향후evaluation spec은수정된evaluatorhash를생성시동결. 원래7조건계획보다이사전수정우선.
+

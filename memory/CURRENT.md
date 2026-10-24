@@ -1,3 +1,7 @@
+## 2026-10-24 — 최종평가 no-tool baseline 사전추가
+
+main validation/test결과미열람상태에서FINAL-only(closed_book)baseline추가. 현재프롬프트는문항별20문단/p번호가정없음확인. 동일evidence-constrained RAGprompt+FINAL생성경로에서검색없이답하는대조이며무제약사전학습지식능력평가가아님. 후보선정규칙/질문/학습변경없음,최종8조건×160=1280episodes/기존3600초상한. 새module decision_closed_book.py,finalselector는추가sourceSHA검증,pairedreport에도포함. legal FINAL선택수치검사통과. 현재학습중인GRPO/sourcehash대상변경없음;향후evaluation spec은수정된evaluatorhash를생성시동결. 원래7조건계획보다이사전수정우선.
+
 ## 2026-10-24 — shared GRPO 첫 업데이트 검증 / 두 번째 라운드 진행
 
 worker248069/coordinator248061 유지. iteration0 768trajectory/2632states 업데이트완료,iteration1수집시작. GPU behavior replay gate통과. 독립CPU replay최대오차1.907e-6,nonactor모든값불변/actor4tensor만변경/모든값finite. checkpointSHA4d9b345887a3e658e2b08eb6673c8f95966e528ffc3ef8239b36db88b1ed64b1. 학습state argmax11/2632변경(.42%),평균TV.04517/KL.03105;확률변화이지품질개선증거아님. partialaudit lab/reports/decision_shared_grpo192_20261023/round0_checkpoint_audit.json. checkpoint/manifest/curve/부분audit만Drive묶음백업SHA검증;전체rawbackup은run완료후. 최종test미열람. 다음iteration1완료→전체audit/backup,자동all-action수집은사전계획대로진행.

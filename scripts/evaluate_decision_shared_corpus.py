@@ -65,7 +65,11 @@ def main():
         from metrics.answer import compute_f1
         heads = {}
         for name, desc in spec['policies'].items():
-            if desc['kind'] == 'rule':
+            if desc['kind'] == 'final_only':
+                assert 'src/lsdrag/decision_closed_book.py' in spec['source_sha256']
+                from lsdrag.decision_closed_book import FinalOnlyHead
+                heads[name] = FinalOnlyHead()
+            elif desc['kind'] == 'rule':
                 heads[name] = SemanticOnceHead()
             elif desc['kind'] == 'native':
                 heads[name] = None

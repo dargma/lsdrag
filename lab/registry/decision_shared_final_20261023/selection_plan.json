@@ -12,12 +12,15 @@
     "shared_bc",
     "semantic_once",
     "native_fast",
-    "multi_mlp_bc"
+    "multi_mlp_bc",
+    "closed_book"
   ],
   "validation_questions": 64,
   "test_questions": 160,
   "test_outcomes_for_selection": false,
   "final_max_seconds": 3600,
-  "selector_sha256": "df83ed61b65d1874faa5fd8a17aab95799cd4c33486d2083d704e0b547117c22",
-  "note": "Predeclared before either validation64 result. Selection is not target success; retain all validation attempts and raw paired test outcomes. No candidate/threshold tuning on final test."
+  "selector_sha256": "dd73afe25f8ae95d4446594706fc10cf2b111c1809dc12d072b8d62baa605f23",
+  "note": "Predeclared before either validation64 result. Selection is not target success; retain all validation attempts and raw paired test outcomes. No candidate/threshold tuning on final test.",
+  "amendment_before_validation_results": "Add FINAL-only baseline on final160 to separate pretrained-answer capability from retrieval benefit. Candidate scoring, train split, validation selection, final question IDs and all existing conditions unchanged. Final8conditions/1280episodes within same3600second cap.",
+  "closed_book_scope": "FINAL-only under the identical evidence-constrained RAG prompt; measures no-tool behavior, not unrestricted pretrained knowledge capacity."
 }
