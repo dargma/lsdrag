@@ -1,0 +1,8 @@
+{
+  "path": "/content/drive/MyDrive/lsdrag-backups/20261023/decision_tool_return_final_dev64_20261024.tar.gz",
+  "sha256": "cdca962c6e5c3a3ea43e9650e56130a7c3ca80541c2f8c094b57b1fe64f2d91e",
+  "bytes": 328173,
+  "run": "/content/local_fast/lsdrag-text-v1/results/decision_tool_return_final_dev64_20261024",
+  "phase": "complete",
+  "backbone_weights_included": false
+}

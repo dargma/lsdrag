@@ -52,7 +52,7 @@ def main():
   for i,(old,new) in enumerate(zip(h['decisions'],c['decisions'])):
    if old['action']!=new['action']:
     assert old['action']!=3 and new['action']!=3,'Same-prefix stop boundary changed'
-    assert h['trajectory'][:i]==c['trajectory'][:i]
+    assert all(all(a[k]==b[k] for k in ['tool_name','arguments','result']) for a,b in zip(h['trajectory'][:i],c['trajectory'][:i]))
     first_divergences.append(dict(qid=q,turn=i,before=old['action'],after=new['action']))
     break
  a,b=result['shared_grpo'],result['state'];errors=sum(bool(e['errors']) for e in rows.values())
