@@ -1,3 +1,7 @@
+## 2026-10-24 — corrected coordinator121348 live; teacher157/192
+
+Teacher111971/session1164 remains samecontinuousrun,157/192 at1511.14sec28054generated2998207input. Coordinator115834 was stoppedONLYwhilewaiting to correct evaluationgoldsource; replacement121348confirmedlivewaiting same111971. Log /content/local_fast/lsdrag-text-v1/logs/qwen35_h3_coordinator_v2_20261024.log; live status results/qwen35_9b_pipeline_20261024/status.json. NoGPUrestart ornewexperiment. Commitb920026preservesv1sourcehashesandfixesonlyofficialtrain+devgoldlookup; experimentaldev64allofficialtrain, disjointexperimentaltrain192. Historical4BrawF1/EM/token/byte/actionreferenceverification passed, finalcomparisonartifactprepared. Nextwaitteacherterminal theninspectaudit/bootstrap/outcome stages fromcoordinator. No duplicatecoordinator.
+
 ## 2026-10-24 — finite9B pipeline frozen and coordinator waiting for live teacher
 
 Previous goal turn madeprogress: wrapperfix passed, freshteacher launched. This turn prepared and froze actual sequential outcome/H3/control collection+fits+rawaudits, not just a proposal. Commit a259f89. Actual9Bfeatures checked37x4096 ->128MLP ->129stop: zero-initidenticalbase, finitegradientsonlystop. Allsourcehashes frozen in lab/registry/qwen35_9b_h3_20261024/pipeline_sources.json.
