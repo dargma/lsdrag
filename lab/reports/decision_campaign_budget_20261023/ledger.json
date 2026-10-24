@@ -1,5 +1,5 @@
 {
-  "snapshot_utc": "2026-10-24T01:54:11.006295+00:00",
+  "snapshot_utc": "2026-10-24T03:25:26.572098+00:00",
   "runs": [
     {
       "group": "historical_grpo_reference",
@@ -12,6 +12,7 @@
       },
       "seconds": 1403.360131636,
       "complete_raw_totals_verified": true,
+      "terminal_raw_totals_verified": true,
       "status_path": "/content/local_fast/lsdrag-text-v1/results/decision_grpo96_20261023/status.json"
     },
     {
@@ -25,6 +26,7 @@
       },
       "seconds": 990.5686826839992,
       "complete_raw_totals_verified": true,
+      "terminal_raw_totals_verified": true,
       "status_path": "/content/local_fast/lsdrag-text-v1/results/decision_state_outcomes_20261023/status.json"
     },
     {
@@ -38,6 +40,7 @@
       },
       "seconds": 292.5355727540009,
       "complete_raw_totals_verified": true,
+      "terminal_raw_totals_verified": true,
       "status_path": "/content/local_fast/lsdrag-text-v1/results/decision_state_validation1_20261023/status.json"
     },
     {
@@ -51,6 +54,7 @@
       },
       "seconds": 68.21684391599774,
       "complete_raw_totals_verified": true,
+      "terminal_raw_totals_verified": true,
       "status_path": "/content/local_fast/lsdrag-text-v1/results/decision_state_validation2_20261023/status.json"
     },
     {
@@ -64,6 +68,7 @@
       },
       "seconds": 82.89645142399968,
       "complete_raw_totals_verified": true,
+      "terminal_raw_totals_verified": true,
       "status_path": "/content/local_fast/lsdrag-text-v1/results/decision_state_validation3_20261023/status.json"
     },
     {
@@ -77,6 +82,7 @@
       },
       "seconds": 1134.576772114,
       "complete_raw_totals_verified": true,
+      "terminal_raw_totals_verified": true,
       "status_path": "/content/local_fast/lsdrag-text-v1/results/decision_grpo_continuation_20261023/status.json"
     },
     {
@@ -90,6 +96,7 @@
       },
       "seconds": 1043.8301773959975,
       "complete_raw_totals_verified": true,
+      "terminal_raw_totals_verified": true,
       "status_path": "/content/local_fast/lsdrag-text-v1/results/decision_state_outcomes_seed2_20261023/status.json"
     },
     {
@@ -103,6 +110,7 @@
       },
       "seconds": 75.17038587900242,
       "complete_raw_totals_verified": true,
+      "terminal_raw_totals_verified": true,
       "status_path": "/content/local_fast/lsdrag-text-v1/results/decision_state_validation_seed2_20261023/status.json"
     },
     {
@@ -116,6 +124,7 @@
       },
       "seconds": 1712.015319334001,
       "complete_raw_totals_verified": true,
+      "terminal_raw_totals_verified": true,
       "status_path": "/content/local_fast/lsdrag-text-v1/results/decision_state_policy_iteration_20261023/status.json"
     },
     {
@@ -129,6 +138,7 @@
       },
       "seconds": 88.41067140899395,
       "complete_raw_totals_verified": true,
+      "terminal_raw_totals_verified": true,
       "status_path": "/content/local_fast/lsdrag-text-v1/results/decision_shared_calibration16_20261023/status.json"
     },
     {
@@ -142,6 +152,7 @@
       },
       "seconds": 425.2754245969991,
       "complete_raw_totals_verified": true,
+      "terminal_raw_totals_verified": true,
       "status_path": "/content/local_fast/lsdrag-text-v1/results/decision_shared_teacher192_20261023/status.json"
     },
     {
@@ -155,6 +166,7 @@
       },
       "seconds": 42.66308380000555,
       "complete_raw_totals_verified": true,
+      "terminal_raw_totals_verified": true,
       "status_path": "/content/local_fast/lsdrag-text-v1/results/decision_shared_initialization_validation16_20261023/status.json"
     },
     {
@@ -168,6 +180,7 @@
       },
       "seconds": 2923.926419619005,
       "complete_raw_totals_verified": true,
+      "terminal_raw_totals_verified": true,
       "status_path": "/content/local_fast/lsdrag-text-v1/results/decision_shared_grpo192_20261023/status.json"
     },
     {
@@ -181,6 +194,7 @@
       },
       "seconds": 3427.7508609580036,
       "complete_raw_totals_verified": true,
+      "terminal_raw_totals_verified": true,
       "status_path": "/content/local_fast/lsdrag-text-v1/results/decision_shared_outcomes192_20261023/status.json"
     },
     {
@@ -194,6 +208,7 @@
       },
       "seconds": 707.4378096810033,
       "complete_raw_totals_verified": true,
+      "terminal_raw_totals_verified": true,
       "status_path": "/content/local_fast/lsdrag-text-v1/results/decision_shared_validation64_20261023/status.json"
     },
     {
@@ -207,6 +222,7 @@
       },
       "seconds": 231.08920310800022,
       "complete_raw_totals_verified": true,
+      "terminal_raw_totals_verified": true,
       "status_path": "/content/local_fast/lsdrag-text-v1/results/decision_shared_structure_validation64_20261023/status.json"
     },
     {
@@ -220,7 +236,42 @@
       },
       "seconds": 547.0840823929975,
       "complete_raw_totals_verified": true,
+      "terminal_raw_totals_verified": true,
       "status_path": "/content/local_fast/lsdrag-text-v1/results/decision_shared_test80_20261023/status.json"
+    },
+    {
+      "group": "selected_head_grpo_continuation",
+      "run": "decision_selected_head_grpo192_20261024",
+      "phase": "failed",
+      "counts": {
+        "episodes": 768,
+        "generated": 61608,
+        "inputs": 3416046
+      },
+      "seconds": 1186.3570075280004,
+      "complete_raw_totals_verified": false,
+      "terminal_raw_totals_verified": true,
+      "status_path": "/content/local_fast/lsdrag-text-v1/results/decision_selected_head_grpo192_20261024/status.json"
+    },
+    {
+      "group": "selected_head_grpo_continuation",
+      "run": "decision_selected_head_grpo192_20261024_r1",
+      "phase": "collection",
+      "counts": {
+        "episodes": 12,
+        "generated": 593,
+        "inputs": 35782
+      },
+      "seconds": 25.286208759993315,
+      "complete_raw_totals_verified": false,
+      "terminal_raw_totals_verified": false,
+      "status_path": "/content/local_fast/lsdrag-text-v1/results/decision_selected_head_grpo192_20261024_r1/status.json"
+    },
+    {
+      "group": "selected_head_grpo_continuation",
+      "run": "decision_selected_head_grpo_validation64_20261024_r1",
+      "phase": "not_started",
+      "counts": null
     }
   ],
   "completed_totals": {
@@ -228,6 +279,12 @@
       "episodes": 1392,
       "generated": 83182,
       "inputs": 5557999,
+      "failed_run_costs": {
+        "episodes": 0,
+        "generated": 0,
+        "inputs": 0
+      },
+      "failed_runs": [],
       "completed_runs": 1,
       "uncompleted_runs": []
     },
@@ -235,6 +292,12 @@
       "episodes": 7474,
       "generated": 313568,
       "inputs": 22425629,
+      "failed_run_costs": {
+        "episodes": 0,
+        "generated": 0,
+        "inputs": 0
+      },
+      "failed_runs": [],
       "completed_runs": 8,
       "uncompleted_runs": []
     },
@@ -242,8 +305,33 @@
       "episodes": 5448,
       "generated": 451668,
       "inputs": 22802955,
+      "failed_run_costs": {
+        "episodes": 0,
+        "generated": 0,
+        "inputs": 0
+      },
+      "failed_runs": [],
       "completed_runs": 8,
       "uncompleted_runs": []
+    },
+    "selected_head_grpo_continuation": {
+      "episodes": 0,
+      "generated": 0,
+      "inputs": 0,
+      "failed_run_costs": {
+        "episodes": 768,
+        "generated": 61608,
+        "inputs": 3416046
+      },
+      "failed_runs": [
+        "decision_selected_head_grpo192_20261024"
+      ],
+      "completed_runs": 0,
+      "uncompleted_runs": [
+        "decision_selected_head_grpo192_20261024",
+        "decision_selected_head_grpo192_20261024_r1",
+        "decision_selected_head_grpo_validation64_20261024_r1"
+      ]
     }
   },
   "scope": "Named decision-policy campaign only; historical PPO/preparatory runs outside this list are excluded. Shared-corpus and restricted-pool results are separate experimental settings.",

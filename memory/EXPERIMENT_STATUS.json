@@ -1,6 +1,6 @@
 {
-  "phase": "selected_head_grpo_r1_prepared",
-  "updated_utc": "2026-10-24T02:45:40.529847+00:00",
+  "phase": "selected_head_grpo_running",
+  "updated_utc": "2026-10-24T03:24:56.760789+00:00",
   "protocol": "docs/JEV_SELECTED_HEAD_GRPO_CONTINUATION_20261024.md",
   "protocol_sha256": "115cda4de141c12e007c13e3ca7d80d4cb186f1a354b76df6a06eafca6d5e448",
   "prompt": "prompts/text_rag_integrated_v5.txt",
@@ -32,7 +32,7 @@
   ],
   "worker_wall_budget_minutes": 120,
   "run_planned": "/content/local_fast/lsdrag-text-v1/results/decision_shared_test80_20261023",
-  "pid": null,
+  "pid": 308330,
   "implementation_completed": true,
   "dataset_prepared": true,
   "teacher_collection_started": true,
@@ -174,7 +174,7 @@
   "external_evaluation_completed": true,
   "updated_epoch": 1792161920.7440126,
   "d3_additional_analysis": "withdrawn",
-  "session_id": 40877,
+  "session_id": 46519,
   "functional_smoke": {
     "passed": true,
     "checks": 7,
@@ -186,7 +186,7 @@
   "speed_gate_passed": true,
   "target_speedup_vs_native": 1.5,
   "target_speedup_measured": false,
-  "run": "/content/local_fast/lsdrag-text-v1/results/decision_selected_head_grpo192_20261024",
+  "run": "/content/local_fast/lsdrag-text-v1/results/decision_selected_head_grpo192_20261024_r1",
   "worker_seconds": 277.1492917609994,
   "contract": "5b64658a2608f883599dbfb36be3758d4f28cc0de63c532ec11f76117a3cecce",
   "teacher_target": 32,
@@ -924,12 +924,15 @@
     "execution_resumed_explicitly": true
   },
   "selected_head_grpo_continuation": {
-    "phase": "failed",
-    "pid": null,
-    "seconds": 1191.3411720950025,
-    "error": "RuntimeError('scripts/run_decision_selected_head_grpo.py exited 1; inspect /content/local_fast/lsdrag-text-v1/logs/selected_grpo_run_decision_selected_head_grpo_1792808749.log')",
-    "updated_utc": "2026-10-24T02:45:40.529847+00:00",
-    "run": "decision_selected_head_grpo192_20261024"
+    "phase": "running",
+    "pid": 308320,
+    "seconds": 0.0029237890121294186,
+    "script": "scripts/run_decision_selected_head_grpo_r1.py",
+    "child_pid": 308330,
+    "log": "/content/local_fast/lsdrag-text-v1/logs/selected_grpo_run_decision_selected_head_grpo_r1_1792812296.log",
+    "updated_utc": "2026-10-24T03:24:56.760789+00:00",
+    "run": "decision_selected_head_grpo192_20261024_r1",
+    "exec_session": 46519
   },
   "selected_head_grpo_failed_run": {
     "episodes": 768,

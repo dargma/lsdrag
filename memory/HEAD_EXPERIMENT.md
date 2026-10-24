@@ -1,3 +1,11 @@
+## 2026-10-24T03:24:56.760789+00:00 — selected-head GRPO continuation: running
+
+Coordinator state: `/content/local_fast/lsdrag-text-v1/results/decision_selected_head_grpo_coordinator_20261024_r1.json`. Details: `{"phase": "running", "pid": 308320, "seconds": 0.0029237890121294186, "script": "scripts/run_decision_selected_head_grpo_r1.py", "child_pid": 308330, "log": "/content/local_fast/lsdrag-text-v1/logs/selected_grpo_run_decision_selected_head_grpo_r1_1792812296.log"}`. Same already-trained selected head continues learning; LLM/normalization fixed. Only train192 and validation64 used; final80/reserved80 protected.
+
+## 2026-10-24T03:24:56.757929+00:00 — selected-head GRPO continuation: preparing
+
+Coordinator state: `/content/local_fast/lsdrag-text-v1/results/decision_selected_head_grpo_coordinator_20261024_r1.json`. Details: `{"phase": "preparing", "pid": 308320, "seconds": 3.3500109566375613e-06}`. Same already-trained selected head continues learning; LLM/normalization fixed. Only train192 and validation64 used; final80/reserved80 protected.
+
 ## 2026-10-24 — selected-head GRPO failure 복구 r1 승인·수정
 
 사용자goal재설정및 "계속 진행 문제는 고치고" 명시. 첫run은768episodes/gen61608/input3416046,1186.36초 후 behavior logprob mismatch로실패,optimizer0/checkpoint없음/batch없음. 실패raw768 Drive백업SHA0e1230feb36455f8c92e22bcdffd679a471679f07d9ed85d3765f2a406ac0cbc. 기존run보존. 학습prefix3개재현:FP32→BF16 logprob최대.00178051,FP32batch1vs32 최대4.77e-7. 진단JSON lab/reports/decision_selected_head_grpo192_20261024/replay_diagnosis.json. 저장정밀도손실이실제확인됨;전체실패batch는저장되지않아재생불가.

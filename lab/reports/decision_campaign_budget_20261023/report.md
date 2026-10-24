@@ -1,6 +1,6 @@
 # Decision-policy experiment budget
 
-Completed-run totals are checked against raw episodes. Running values are provisional status snapshots.
+Completed and failed-run totals are checked against raw episodes. Failed costs remain separate in ledger.json and are not discarded. Running values are provisional status snapshots.
 
 |Setting|Run|Status|Episodes|Generated tokens|Input tokens|
 |---|---|---|---:|---:|---:|
@@ -21,6 +21,9 @@ Completed-run totals are checked against raw episodes. Running values are provis
 |shared_corpus_restart|decision_shared_validation64_20261023|complete|384|37713|1897481|
 |shared_corpus_restart|decision_shared_structure_validation64_20261023|complete|128|11650|564793|
 |shared_corpus_restart|decision_shared_test80_20261023|complete|320|28561|1319714|
+|selected_head_grpo_continuation|decision_selected_head_grpo192_20261024|failed|768|61608|3416046|
+|selected_head_grpo_continuation|decision_selected_head_grpo192_20261024_r1|collection|12|593|35782|
+|selected_head_grpo_continuation|decision_selected_head_grpo_validation64_20261024_r1|not_started|—|—|—|
 
 ## Scope
 

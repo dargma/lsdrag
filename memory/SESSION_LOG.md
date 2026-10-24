@@ -943,3 +943,15 @@ Coordinator state: `/content/local_fast/lsdrag-text-v1/results/decision_selected
 
 rollout에선택적state_storage_dtype추가(기존default BF16유지),새r1만FP32저장. logprob허용오차2e-4유지,batch를검사전에저장. 회귀/GRPO/rule6tests통과. scripts/coordinate_decision_selected_head_grpo_r1.py로동일선정checkpoint에서재실행,train192×4×2/3600초와validation64×2/1200초유지. 실패비용추가집계. 원final80/예비80미사용. 과거manifest sourceSHA는당시Git파일로검증,새실행sourceSHA는r1registry동결.
 
+
+## 2026-10-24T03:24:56.757929+00:00 — selected-head GRPO continuation: preparing
+
+Coordinator state: `/content/local_fast/lsdrag-text-v1/results/decision_selected_head_grpo_coordinator_20261024_r1.json`. Details: `{"phase": "preparing", "pid": 308320, "seconds": 3.3500109566375613e-06}`. Same already-trained selected head continues learning; LLM/normalization fixed. Only train192 and validation64 used; final80/reserved80 protected.
+
+
+## 2026-10-24T03:24:56.760789+00:00 — selected-head GRPO continuation: running
+
+Coordinator state: `/content/local_fast/lsdrag-text-v1/results/decision_selected_head_grpo_coordinator_20261024_r1.json`. Details: `{"phase": "running", "pid": 308320, "seconds": 0.0029237890121294186, "script": "scripts/run_decision_selected_head_grpo_r1.py", "child_pid": 308330, "log": "/content/local_fast/lsdrag-text-v1/logs/selected_grpo_run_decision_selected_head_grpo_r1_1792812296.log"}`. Same already-trained selected head continues learning; LLM/normalization fixed. Only train192 and validation64 used; final80/reserved80 protected.
+
+
+r1 actual launch:coordinator308320/session46519,worker308330,log /content/local_fast/lsdrag-text-v1/logs/selected_grpo_run_decision_selected_head_grpo_r1_1792812296.log. Initial collection active; whole-batch replay/update not reached yet. Cost ledger includes failed768/gen61608/input3416046 separately.
