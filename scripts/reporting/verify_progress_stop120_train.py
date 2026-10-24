@@ -40,11 +40,14 @@ def main():
   if not oldpath.exists():oldpath=ROOT/'results/decision_h3_stop_coverage48_20261024/episodes'/f'{q}_collector.json'
   old=read(oldpath)
   assert all(old[k]==rows['h3',q][k] for k in ['answer','f1','generated_tokens','prompt_tokens'])
+ for q in spec['qids']:
+  h,c=rows['h3',q]['decisions'][0],rows['progress_stop',q]['decisions'][0]
+  assert h['action']==c['action'] and h['policy_probs']==c['policy_probs'],'First decision must match H3'
  a,b=result['h3'],result['progress_stop'];errors=sum(bool(e['errors']) for e in rows.values())
  weak=b['f1']>=a['f1'] and b['correct']['questions']>=a['correct']['questions'] and b['all']['total_generated']<=a['all']['total_generated']
  strict=b['f1']>a['f1'] or b['correct']['questions']>a['correct']['questions'] or b['all']['total_generated']<a['all']['total_generated']
  useful=paired['both_correct']['saved_tokens']>0 or paired['candidate_only_correct']['saved_tokens']>0
  passed=weak and strict and useful and paired['h3_only_correct']['h3']['questions']==0 and errors==0
- report=dict(verified=True,scope='Training120 full rollouts; not generalization or goal achievement',policies=result,paired=paired,errors=errors,train_gate=passed,h3_reference_replay=120,episode_sha256=hashes)
+ report=dict(verified=True,scope='Training120 full rollouts; not generalization or goal achievement',policies=result,paired=paired,errors=errors,train_gate=passed,h3_reference_replay=120,initial_h3_exact=120,episode_sha256=hashes)
  out=REPO/'lab/reports'/NAME;out.mkdir(parents=True,exist_ok=True);(out/'verification.json').write_text(json.dumps(report,indent=2)+'\n');print(json.dumps({k:v for k,v in report.items() if k!='episode_sha256'},indent=2))
 if __name__=='__main__':main()
