@@ -17,7 +17,7 @@
   "scripts/fit_qwen35_outcome_heads.py": "d62038773ba1e6a71f488460ac1617b29f6bd73bf609a120d0711cc05de154e9",
   "scripts/prepare_qwen35_stage.py": "de2d7c81179f3b441609cc01b751f00772f3acb5905adfed07c00e79794a4b3d",
   "scripts/reporting/archive_decision_run.py": "bf2258f5b9d7bfee92620cf7b7f55029143e5891b16f785abe557ac0ce36213f",
-  "scripts/reporting/verify_qwen35_eval.py": "18096b55bc144c517d4372ff9408ea801c4026b4d65c1c75ba14fe06578a60f4",
+  "scripts/reporting/verify_qwen35_eval.py": "44139f1c0eb6b442377c22542203a15189b8af06fbec478b74345752c65b1d6f",
   "scripts/reporting/verify_qwen35_training.py": "5f4a71a322568a7e41c71ed4d393ecb45c73bd8660134605f85b52a44d8c97c9",
   "src/lsdrag/decision_attention_adapter.py": "4e8c39884e02321dc9fb6c83824d935844060730a354316429905cfaf86f3bef",
   "src/lsdrag/decision_budget_targets.py": "ae77ccb3a97bac56d7fb4e4271c28bee516d8b1f9288df54fe32bd23abdc01ff",

@@ -14,7 +14,7 @@ def main():
  for f,h in spec['source_sha256'].items():assert sha(REPO/f)==h
  for v in spec['policies'].values():assert sha(v['checkpoint'])==v['sha256']
  sys.path.insert(0,str(ROOT/'source/musique_scorer'));from metrics.answer import compute_f1,compute_exact
- gold={q['id']:[q['answer']]+q['answer_aliases'] for q in map(json.loads,(ROOT/'source/musique/musique_ans_v1.0_dev.jsonl').open())};rows={};hashes={};errors=0;total=0
+ gold={q['id']:[q['answer']]+q['answer_aliases'] for source_split in ['train','dev'] for q in map(json.loads,(ROOT/f'source/musique/musique_ans_v1.0_{source_split}.jsonl').open())};rows={};hashes={};errors=0;total=0
  for path in sorted((run/'episodes').glob('*.json')):
   e=read(path);assert e['qid'] in spec['qids'] and e['policy'] in spec['policies'];assert abs(e['f1']-max(compute_f1(a,e['answer']) for a in gold[e['qid']]))<1e-10
   assert e['generated_tokens']==sum(u.get('generated_tokens',0) for u in e['reader_calls'])
