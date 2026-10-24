@@ -1,3 +1,5 @@
+> Latest user override2026-10-24: native ARAG protocol unchanged; action-selection head substitution and policy learning only. Short-reference/ID serialization proposal withdrawn. Older interface-optimization suggestions below are superseded.
+
 # Remaining adaptive program and head lineage
 
 Latest user direction: apply GRPO to the F1 32.45 MLP, continue ideas/experiments until the real goal is achieved, and consider the system broadly rather than only reward coefficients. Keep the frozen reader LLM and head-only trainable-parameter objective.

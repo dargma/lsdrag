@@ -1,3 +1,10 @@
+
+## 2026-10-24 — USER OVERRIDE: native ARAG protocol parity, action-head substitution only
+
+User rejects shortreferenceformat direction ("이런거하지마"), requires sameprotocolasnativeARAG, clarifies intendedspeedupisreplacingdecisionwithselectionhead. ReferencealiasproposalWITHDRAWN;noaliasimplementation/runtimeexperimentwaslaunched. Preservehistoricalanalysis asrejected,notactiveplan. Keepcorpus,retrievalranking/toolsemantics,toolargumentschemas,IDrepresentation,prompt/taskcontract,observationcontent,FINALformat,generationmodel/decoding/limits andscoring consistentwithnativeprofile. Intendedinterventionis head selectingaction instead ofnativeLLMactiongeneration;learnedpolicy maychangelegitimateactionsequence. Do not shortenIDs,compressoutputs,dropfields,altertools or mechanicallycapsteps toclaimsuccess. Existinghead/native decoderpaths differ inactionselection/forcedsyntax handling; auditdifferencesratherthanclaimbitwiseidentity. Explicitlycountgeneratedvsforcedprefix tokens consistently.
+
+KeepfixedbasicGRPO jointgoalreferenceandalsoreportnativecomparison;userprotocolparitydoesnotresetbaseline. Reward/headtraining remainsauthorizedwithinthiscontract. Nextpriority returns tostate-conditionedpolicy/valuecredit underunchangedinterface. GoalACTIVE.
+
 ## 2026-10-17 — 개선계획v3 승인·저장: 행동/read head 통합
 
 사용자 “그래 계획 다시 출력하고 저장 배업 git push”. 최신계획 docs/JEV_TEXT_INTEGRATED_IMPROVEMENT_V3_20261017.md 및 lab/registry/text_integrated_20261016/improvement_experiment_plan_v3.json. 순서:1 생성경로진단검토 →2 단일prefill action+read-slot 통합학습(train24/val8),동일checkpoint always-generate/read-selection 비교 →3 설정동결 fresh20 native/primary. 검색인자는항상생성. decision-only/RL/step압축 제외. 이번에는계획·memory저장만; 새실험시작없음/자동실행해제유지. 기존stage1 24상태완료,parity검토pending; 통합학습·평가미실행.

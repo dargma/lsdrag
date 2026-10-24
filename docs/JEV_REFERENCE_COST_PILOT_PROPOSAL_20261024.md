@@ -1,3 +1,5 @@
+> WITHDRAWN by user 2026-10-24: maintain native ARAG protocol; only selection-head substitution/policy learning. Do not implement or launch this proposal. Historical accounting is not an active experiment.
+
 # Reference serialization cost: train-only evidence and next pilot
 
 Train48 stochastic quality-policy collectors generated5272tokens. Existing observed chunkIDs are24-character contenthash strings. Re-encoding only observed chunk_ids/support_ids with short d0,d1 aliases changes JSON tokenization by1763tokens (33.44% of actualgenerated): read1038,FINAL725. Searchtextandanswertext unchanged in accounting.53readreferences/37knownFINALreferences;2unobservedFINALreferences retained unchanged. This is a hypotheticalpayloadencodingdelta, not actualinferencegain, not policyimprovement. Sourcehashes and analysis script saved.
