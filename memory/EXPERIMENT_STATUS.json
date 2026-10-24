@@ -1,8 +1,8 @@
 {
-  "phase": "qwen35_9b_teacher192_running",
+  "phase": "qwen35_teacher_running_pipeline_waiting",
   "updated_utc": "2026-10-24T13:02:35.723774+00:00",
   "protocol": "docs/JEV_QWEN35_9B_H3_GENERALIZATION_20261024.md",
-  "protocol_sha256": "d6bdc49f3927c8ebf075c16e1255ab41a6be21aa1b81733b1eb0f1f843ae0e03",
+  "protocol_sha256": "e0cd40c9a1b728408047f7aee95bc9849caa698407c243d20df6a991c9260432",
   "prompt": "prompts/text_rag_integrated_v5.txt",
   "prompt_sha256": "9d66c290a97bbabb4289dcf262e2b5bc8ba05653f87aed3b693825dbb02d5a97",
   "dataset": "MuSiQue-Ans v1.0, 2-hop",
@@ -38,7 +38,7 @@
   "teacher_collection_started": true,
   "training_completed": false,
   "evaluation_completed": false,
-  "next": "Verify teacher192 and action coverage, freshbootstrap then bounded9Bbase/H3/control",
+  "next": "Monitor finitepipeline; verify each actualstage; final9Bbase/H3/control and qualified4Btrend report",
   "previous_multimodal_checkpoint_historical_only": {
     "phase": "native2_review_required",
     "run": "/content/local_fast/lsdrag-head-v14/results/native_distillation_12b_20261015",
@@ -1251,5 +1251,7 @@
   "coverage120_pipeline_status_path": "/content/local_fast/lsdrag-text-v1/results/decision_constrained_stop120_pipeline_20261024.json",
   "read_pointer_plan": "docs/JEV_H2_READ_POINTER_FEASIBILITY_20261024.md",
   "last_experiment_limit": false,
-  "active_objective": "\ud070 \ubaa8\ub378\ub85c \uc2e4\ud5d8 \uc644\ub8cc\ud558\uae30"
+  "active_objective": "\ud070 \ubaa8\ub378\ub85c \uc2e4\ud5d8 \uc644\ub8cc\ud558\uae30",
+  "coordinator_pid": 115834,
+  "coordinator_status": "/content/local_fast/lsdrag-text-v1/results/qwen35_9b_pipeline_20261024/status.json"
 }
