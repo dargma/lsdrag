@@ -882,3 +882,12 @@ sharedGRPO complete1536eps/5241decisions/2923.93초/660optimizersteps,전체audi
 
 
 공통 all-action 원자료 Drive backup 완료:165236906bytes, SHA48a62acef21ce9762d765cd8062380a5f900a953b5f0456d9720c786a651e812. registry/decision_shared_outcomes192_20261023/archive.json에 기록.
+
+2026-10-24: original outcome head2개 별도 Drive backup 완료,2546859bytes/SHA a8125c5845ced7d74a467147ce8bd68c7891d14b17b514e3b8d90a1992cdeb81. head_archive.json 참조. BC/GRPO checkpoint는 각자 기존 run archive에 별도 보존. validation64 worker277017 계속 실행 중.
+
+## 2026-10-24 — main validation64 완료 / 구조 후보 평가 실행
+
+64문항×6조건384episodes 완료/707.44초/generated37713/input1897481,모든조건error0. 보고서 lab/reports/decision_shared_validation64_20261023/report.md. sharedGRPO F1 22.50/gen98.41;outcome.03 29.46/123.25(+6.96pp,+25.25%token),outcome.06 26.08/112.67(+3.58pp,+14.50%). semantic_once24.87/55.91,native24.70/97.44,BC22.50/101.59. 정확도·token동시목표 미충족. .03의F1향상은validation에서만 관측,pairedCI하한0이며native대비CI도0포함;확증아님. 신규32에서도 .03 F1.296875 대GRPO.220103이나token133.406 대103.438 증가. 최종평가로 후보재선택 금지.
+
+main coordinator248061 complete. 구조 multiMLP BC/outcome 학습 완료 후 worker280446이 validation64×2 실행,coordinator250404. log /content/local_fast/lsdrag-text-v1/logs/shared_structure_evaluate_decision_shared_corpus_1792806003.log. 구조checkpoint Drive7420847bytes/SHA1033df731df78960e85d58785579e9b9556afc48ab523510411ce27fee04581f;mainvalidation Drive864224bytes/SHA7717a78d3f376ca84ac00bf2f4b950ec0c8128d21134dd3821dee890c9512760. 원래head2개 별도백업도head_archive.json에검증. 다음 구조평가완료→통합validation선정규칙적용→최종80×4,예비80보존. coordinator terminal next의test160문구는과거예약pool설명으로실제selector80×4계획보다우선하지않음.
+

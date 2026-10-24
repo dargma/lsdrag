@@ -1,0 +1,8 @@
+{
+  "path": "/content/drive/MyDrive/lsdrag-backups/20261023/decision_shared_validation64_20261023.tar.gz",
+  "sha256": "7717a78d3f376ca84ac00bf2f4b950ec0c8128d21134dd3821dee890c9512760",
+  "bytes": 864224,
+  "run": "/content/local_fast/lsdrag-text-v1/results/decision_shared_validation64_20261023",
+  "phase": "complete",
+  "backbone_weights_included": false
+}
