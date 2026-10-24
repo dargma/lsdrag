@@ -2055,3 +2055,10 @@ After coordinator terminal success, run `python scripts/reporting/summarize_qwen
 ## 2026-10-24 — consistent partial outcome snapshot backed up, liveworker unchanged
 
 Current goal turn made concrete preservation progress during live wait. Collector125195/coordinator121348 confirmedlive; captured77completedstate records and all308corresponding parent/branchJSON files plusfrozen spec in a consistent partial archive. Drive /content/drive/MyDrive/lsdrag-backups/20261024/qwen35_9b_outcomes48_partial_states77_20261024.tar.gz SHA b352d17270f35635fe4f32344ed2a15ce470a5d985742a718d3092bc1b7cb875,40802133bytes. CopiedarchiveSHA and EVERYincludedfileSHA reverified. Registry lab/registry/qwen35_9b_outcomes48_20261024/partial_states77.json. Snapshotcovers11representedquestions, someincomplete; explicitlyNOTterminal andNOTautomaticresume support. No processrestart, no runtimeoutput mutation, no frozen sourcechange. Finalcompletearchive remains required.
+
+
+## 2026-10-24 — near-halfway outcome integrity rechecked and backed up
+
+Collector125195/coordinator121348 remainlive, sameexecution. Captured167completedstates representing24questions (lastquestionpartial),668parent/branchJSONfiles. Recheckedall644branchsamples: legalactioncoverage, parentprefix/probabilities, firstaction/prefixidentity, finite37x4096features, officialF1/EM, rawsamplecorrespondence andgeneratedtokenIDsum. Allpassed,0brancherrors. Thisispartialintegrity, notcomplete48coverage orpolicyquality.
+
+Drive /content/drive/MyDrive/lsdrag-backups/20261024/qwen35_9b_outcomes48_partial_states167_20261024.tar.gz SHA2e244591b0c047ebaa52b3c7fcd748c5a16fb0dbf030b7078d592c2ed7ac3f67,88395816bytes. Archiveandallincludedfilehashesverified; record lab/registry/qwen35_9b_outcomes48_20261024/partial_states167.json. Explicitpartial_snapshot,notterminal,automaticresumeunsupported. NoGPUinterruption orsourcechanges. Goalstillrequiresfullcollection/basefit/stop48/H3andconstantfit/dev64/report/finalaudit.
