@@ -1,0 +1,199 @@
+[
+  {
+    "name": "vllm-sr/d3-nano",
+    "revision": "462efc366229ea268cf4eed3738b3fc4415e4817",
+    "gated": false,
+    "kind": "model",
+    "files": [
+      {
+        "file": "README.md",
+        "sha256": "e741b12755a91c7a002cefe2c29355869c47c5dd9b7891cbef3e711d3f006e1c",
+        "url": "https://huggingface.co/vllm-sr/d3-nano/resolve/462efc366229ea268cf4eed3738b3fc4415e4817/README.md"
+      },
+      {
+        "file": "config.json",
+        "sha256": "9caa6ab8956c859c3852328dda6322893a18b30826d3916db91d938d6c74ac4f",
+        "url": "https://huggingface.co/vllm-sr/d3-nano/resolve/462efc366229ea268cf4eed3738b3fc4415e4817/config.json"
+      },
+      {
+        "file": "decision_config.json",
+        "sha256": "9175a0f42d5886def9c8429fdf8b0be58a3c97d106b94520e2ac38fe326302bf",
+        "url": "https://huggingface.co/vllm-sr/d3-nano/resolve/462efc366229ea268cf4eed3738b3fc4415e4817/decision_config.json"
+      },
+      {
+        "file": "modeling_d3.py",
+        "sha256": "f8f8db23ff58f1a990ffa24977d744a50e1b4446d02a64c22070967705b6dbef",
+        "url": "https://huggingface.co/vllm-sr/d3-nano/resolve/462efc366229ea268cf4eed3738b3fc4415e4817/modeling_d3.py"
+      },
+      {
+        "file": "d3_runtime.py",
+        "sha256": "adf7f7aa085674b5682e492d8b2e3cc4f11c67b0d153515c742e907e9b550917",
+        "url": "https://huggingface.co/vllm-sr/d3-nano/resolve/462efc366229ea268cf4eed3738b3fc4415e4817/d3_runtime.py"
+      },
+      {
+        "file": "requirements.txt",
+        "sha256": "de9defd71ae4e559a7f5bdcc935b23716f9788e8755f2ba6db1ab6862bcda12e",
+        "url": "https://huggingface.co/vllm-sr/d3-nano/resolve/462efc366229ea268cf4eed3738b3fc4415e4817/requirements.txt"
+      }
+    ]
+  },
+  {
+    "name": "vllm-sr/d3-mini",
+    "revision": "bd0090dd758d32ba59ef5c749910a8e87fc4391f",
+    "gated": false,
+    "kind": "model",
+    "files": [
+      {
+        "file": "README.md",
+        "sha256": "57e4fcc4c67283573ee1bd201bb87b0ea9b123d0a6938116fcb3dc7294686b43",
+        "url": "https://huggingface.co/vllm-sr/d3-mini/resolve/bd0090dd758d32ba59ef5c749910a8e87fc4391f/README.md"
+      },
+      {
+        "file": "config.json",
+        "sha256": "8f5f404a71ecc53c4ff26fc42cb4c778ffacfb4c9623f5e2d51245166d6b5057",
+        "url": "https://huggingface.co/vllm-sr/d3-mini/resolve/bd0090dd758d32ba59ef5c749910a8e87fc4391f/config.json"
+      },
+      {
+        "file": "decision_config.json",
+        "sha256": "588bc0ac7644479b9adde0498d80b6fb7c576388992564ac67599c05d29add07",
+        "url": "https://huggingface.co/vllm-sr/d3-mini/resolve/bd0090dd758d32ba59ef5c749910a8e87fc4391f/decision_config.json"
+      }
+    ]
+  },
+  {
+    "name": "LiquidAI/d1-3B",
+    "revision": "051bcc464b01b9f92942b364d9586b0ef5912432",
+    "gated": false,
+    "kind": "model",
+    "files": [
+      {
+        "file": "README.md",
+        "sha256": "175b0bd5f0b4272a67723e16d5e1994e7a8c2d162e7797c9f1c24c01fed83f1d",
+        "url": "https://huggingface.co/LiquidAI/d1-3B/resolve/051bcc464b01b9f92942b364d9586b0ef5912432/README.md"
+      },
+      {
+        "file": "config.json",
+        "sha256": "0cbac0f580bd8036ef94ac83aa632a57a170e66d20f381ef47c3f6486c9a3e8c",
+        "url": "https://huggingface.co/LiquidAI/d1-3B/resolve/051bcc464b01b9f92942b364d9586b0ef5912432/config.json"
+      },
+      {
+        "file": "modeling_d1.py",
+        "sha256": "7fc6a001f80fc2d146f2a51128478f3b3bd4f1423a3ac129bc10f3fd0caf1d98",
+        "url": "https://huggingface.co/LiquidAI/d1-3B/resolve/051bcc464b01b9f92942b364d9586b0ef5912432/modeling_d1.py"
+      },
+      {
+        "file": "api.py",
+        "sha256": "94e9f82eabfdf92c4abe1153e9a6dc4dd9821f9cc2fec3221e79e70723d8ada0",
+        "url": "https://huggingface.co/LiquidAI/d1-3B/resolve/051bcc464b01b9f92942b364d9586b0ef5912432/api.py"
+      }
+    ]
+  },
+  {
+    "name": "jaredpalmer/kev-4b",
+    "revision": "6cfce5c2fa4b4bd64026336ab649c5ca78857d52",
+    "gated": false,
+    "kind": "model",
+    "files": [
+      {
+        "file": "README.md",
+        "sha256": "e423ce0e3caf0a1e6ff996a58522946a97711e0439c5fea332a8861b02498435",
+        "url": "https://huggingface.co/jaredpalmer/kev-4b/resolve/6cfce5c2fa4b4bd64026336ab649c5ca78857d52/README.md"
+      },
+      {
+        "file": "adapter_config.json",
+        "sha256": "8a05dfd6c5e7f61a62e6db5d8de8093a8dbbd105aa7ee7b5e7b73f6249f45617",
+        "url": "https://huggingface.co/jaredpalmer/kev-4b/resolve/6cfce5c2fa4b4bd64026336ab649c5ca78857d52/adapter_config.json"
+      },
+      {
+        "file": "training_config.json",
+        "sha256": "005f939bef00274f49f15282dfa60543f5f82e781268f3c12d8ceeacb9f61f30",
+        "url": "https://huggingface.co/jaredpalmer/kev-4b/resolve/6cfce5c2fa4b4bd64026336ab649c5ca78857d52/training_config.json"
+      }
+    ]
+  },
+  {
+    "name": "multimodalart/jev-decision-index",
+    "revision": "0b5ecaf2396891e76c13a19aa17b874b59abcc37",
+    "gated": false,
+    "kind": "space",
+    "files": [
+      {
+        "file": "data/index.json",
+        "sha256": "68f9211771a3ebb6520fb2dd4d303d4e9c9a9649a65e360436e4f5b3ea1855fe",
+        "url": "https://huggingface.co/spaces/multimodalart/jev-decision-index/resolve/0b5ecaf2396891e76c13a19aa17b874b59abcc37/data/index.json"
+      },
+      {
+        "file": "data/methodology.json",
+        "sha256": "bf299b4961972eae6c8c6924c494e934205e72eab1aa062b9b3457eebcbc1bdc",
+        "url": "https://huggingface.co/spaces/multimodalart/jev-decision-index/resolve/0b5ecaf2396891e76c13a19aa17b874b59abcc37/data/methodology.json"
+      },
+      {
+        "file": "README.md",
+        "sha256": "01122105c47e343a238b0d4b8254cb37ebe36caced9168965da315de3a4ad9df",
+        "url": "https://huggingface.co/spaces/multimodalart/jev-decision-index/resolve/0b5ecaf2396891e76c13a19aa17b874b59abcc37/README.md"
+      }
+    ]
+  },
+  {
+    "name": "perplexity-ai/pplx-decider-flash-v1.2",
+    "kind": "model",
+    "revision": "9ff7cf9838e59df461c276b7699d56b244d2af58",
+    "gated": false,
+    "files": [
+      {
+        "file": "README.md",
+        "url": "https://huggingface.co/perplexity-ai/pplx-decider-flash-v1.2/resolve/9ff7cf9838e59df461c276b7699d56b244d2af58/README.md",
+        "sha256": "7428a155aa3484065fa97a43322a485e851f31e1eb6ea973dfec05ff224a71ad"
+      },
+      {
+        "file": "config.json",
+        "url": "https://huggingface.co/perplexity-ai/pplx-decider-flash-v1.2/resolve/9ff7cf9838e59df461c276b7699d56b244d2af58/config.json",
+        "sha256": "1bdb718faa99e32673f1622ea2f536affe20867bcb4703888aac9a030ec59e22"
+      },
+      {
+        "file": "decision_config.json",
+        "url": "https://huggingface.co/perplexity-ai/pplx-decider-flash-v1.2/resolve/9ff7cf9838e59df461c276b7699d56b244d2af58/decision_config.json",
+        "sha256": "6d59a4e66f459596cad6f3ff932c635e379f1dc1c49819357869de8abe01722f"
+      }
+    ],
+    "anonymous_weight_head_status": 200
+  },
+  {
+    "name": "perplexity-ai/pplx-decider-v1.2",
+    "kind": "model",
+    "revision": "cce0f3f80033e9d89d80831d5281fd72124aacce",
+    "gated": false,
+    "files": [
+      {
+        "file": "README.md",
+        "url": "https://huggingface.co/perplexity-ai/pplx-decider-v1.2/resolve/cce0f3f80033e9d89d80831d5281fd72124aacce/README.md",
+        "sha256": "978562adfa1e70609e0f1ca1376182ff4f7dfba4271ba81ab83a55da40633a9b"
+      },
+      {
+        "file": "config.json",
+        "url": "https://huggingface.co/perplexity-ai/pplx-decider-v1.2/resolve/cce0f3f80033e9d89d80831d5281fd72124aacce/config.json",
+        "sha256": "687f20bf493b8ee787dadaf338cf6df644dad44e32bcd2c3677a47c6c213d8b3"
+      },
+      {
+        "file": "decision_config.json",
+        "url": "https://huggingface.co/perplexity-ai/pplx-decider-v1.2/resolve/cce0f3f80033e9d89d80831d5281fd72124aacce/decision_config.json",
+        "sha256": "ade1801ff9ee38fdeb561f91b808f57aaab547924e72bae0d1c5a795717f497b"
+      }
+    ],
+    "anonymous_weight_head_status": 200
+  },
+  {
+    "name": "StrandsAgents/strands-decider-2B-hobson-v21",
+    "kind": "model",
+    "revision": "2b52a6235c1b8306bbfa30b00b9d4b74b63a39f5",
+    "gated": false,
+    "files": [
+      {
+        "file": "README.md",
+        "url": "https://huggingface.co/StrandsAgents/strands-decider-2B-hobson-v21/resolve/2b52a6235c1b8306bbfa30b00b9d4b74b63a39f5/README.md",
+        "sha256": "d3bdfe9262f80af9ea7bff7e70b188efe764ac55cbc85c8961361db577458c52"
+      }
+    ],
+    "anonymous_weight_head_status": 200
+  }
+]

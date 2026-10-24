@@ -1,0 +1,82 @@
+{
+  "edition": "Decision Index 0.4.1",
+  "generated_utc": "2026-10-22T20:10:35Z",
+  "source_revision": "0b5ecaf2396891e76c13a19aa17b874b59abcc37",
+  "formula": "0.60*private_same_skills + 0.40*private_new_domains, both mapped onto the public scale with untuned stock models",
+  "source_model_count": 229,
+  "rows": [
+    {
+      "name": "Jev 1.14",
+      "engine": "jev",
+      "full_index": 60.24,
+      "public_skill": 60.7,
+      "parameters": null,
+      "model_url": null,
+      "tie_group": 10
+    },
+    {
+      "name": "Strands Decider 2B",
+      "engine": "strands-decider-2b",
+      "full_index": 20.72,
+      "public_skill": 25.41,
+      "parameters": 1900000000,
+      "model_url": "https://huggingface.co/StrandsAgents/strands-decider-2B-hobson-v21",
+      "tie_group": 43
+    },
+    {
+      "name": "LiquidAI d1-3B",
+      "engine": "d1-3b",
+      "full_index": 31.12,
+      "public_skill": 48.99,
+      "parameters": 3120000000,
+      "model_url": "https://huggingface.co/LiquidAI/d1-3B",
+      "tie_group": 35
+    },
+    {
+      "name": "vLLM-SR d3 (27B)",
+      "engine": "vllm-sr-d3-v310",
+      "full_index": 67.15,
+      "public_skill": 65.45,
+      "parameters": 26085330160,
+      "model_url": "https://huggingface.co/vllm-sr/d3/tree/v3.1.0",
+      "tie_group": 4
+    },
+    {
+      "name": "vLLM-SR d3-mini (4B)",
+      "engine": "vllm-sr-d3-mini",
+      "full_index": 49.97,
+      "public_skill": 54.9,
+      "parameters": 4539265536,
+      "model_url": "https://huggingface.co/vllm-sr/d3-mini",
+      "tie_group": 19
+    },
+    {
+      "name": "vLLM-SR d3-nano (2B)",
+      "engine": "vllm-sr-d3-nano",
+      "full_index": 34.3,
+      "public_skill": 42.22,
+      "parameters": 2213241664,
+      "model_url": "https://huggingface.co/vllm-sr/d3-nano",
+      "tie_group": 33
+    },
+    {
+      "name": "Perplexity Decider v1.2 (27B)",
+      "engine": "pplx-decider-v1.2",
+      "full_index": 67.98,
+      "public_skill": 67.74,
+      "parameters": 26085330160,
+      "model_url": "https://huggingface.co/perplexity-ai/pplx-decider-v1.2",
+      "tie_group": 3
+    },
+    {
+      "name": "Perplexity Decider Flash v1.2 (4B)",
+      "engine": "pplx-decider-flash-v1.2",
+      "full_index": 54.29,
+      "public_skill": 60.06,
+      "parameters": 4539265536,
+      "model_url": "https://huggingface.co/perplexity-ai/pplx-decider-flash-v1.2",
+      "tie_group": 16
+    }
+  ],
+  "scope": "Published community benchmark extraction; not local model inference; Full index is not RAG F1"
+}

@@ -1,0 +1,83 @@
+{
+  "status": "complete",
+  "results": {
+    "expanded": {
+      "gap_mse": 0.2691068947315216,
+      "cost_mae": 20.100248336791992,
+      "gap_sign_accuracy": 0.7191358024691358,
+      "informative_pairs": 37,
+      "informative_questions": 9
+    },
+    "old": {
+      "gap_mse": 0.25942811369895935,
+      "cost_mae": 23.523160934448242,
+      "gap_sign_accuracy": 0.7962962962962963,
+      "informative_pairs": 37,
+      "informative_questions": 9
+    },
+    "baseline": {
+      "gap_mse": 0.22545865178108215,
+      "cost_mae": 20.338319778442383,
+      "gap_sign_accuracy": 0.8364197530864197,
+      "informative_pairs": 37,
+      "informative_questions": 9
+    }
+  },
+  "train": {
+    "gap_mse": 0.041708141565322876,
+    "cost_mae": 5.474066257476807,
+    "gap_sign_accuracy": 0.9512626262626263,
+    "informative_pairs": 235,
+    "informative_questions": 44
+  },
+  "coverage_sufficient": true,
+  "gate_passed": false,
+  "curve": [
+    [
+      0,
+      0.3762859106063843
+    ],
+    [
+      20,
+      0.19992171227931976
+    ],
+    [
+      40,
+      0.09879552572965622
+    ],
+    [
+      60,
+      0.05990105867385864
+    ],
+    [
+      80,
+      0.038352422416210175
+    ],
+    [
+      99,
+      0.02532743476331234
+    ]
+  ],
+  "excluded": [
+    {
+      "qid": "2hop__296175_126060",
+      "turn": 5
+    },
+    {
+      "qid": "2hop__39571_54358",
+      "turn": 3
+    },
+    {
+      "qid": "2hop__128642_32463",
+      "turn": 3
+    }
+  ],
+  "fit_questions": 72,
+  "monitor_questions": 12,
+  "fit_states": 181,
+  "monitor_states": 25,
+  "actor_unchanged": true,
+  "new_qa_episodes": 0,
+  "checkpoint_sha256": "05d1675e62cd7752ab05ea4b71898e6f8af7aa6b75944456989c5ca083686217",
+  "seconds": 7.027098247999675
+}

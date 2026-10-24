@@ -1,0 +1,8 @@
+{
+  "path": "/content/drive/MyDrive/lsdrag-backups/20261023/decision_h3_diversity48_20261024.tar.gz",
+  "sha256": "0c6a81207cf7073a113faf36f9f6e1c27e92718dfa950b612b4afdf43fc274ad",
+  "bytes": 36921118,
+  "run": "/content/local_fast/lsdrag-text-v1/results/decision_h3_diversity48_20261024",
+  "phase": "complete",
+  "backbone_weights_included": false
+}

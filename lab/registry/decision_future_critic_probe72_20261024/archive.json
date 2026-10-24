@@ -1,0 +1,8 @@
+{
+  "path": "/content/drive/MyDrive/lsdrag-backups/20261023/decision_future_critic_probe72_20261024.tar.gz",
+  "sha256": "5b24cc893465e53106acae53212916a6439ae2aa7efc2429b8bef591a31fabfe",
+  "bytes": 699207,
+  "run": "/content/local_fast/lsdrag-text-v1/results/decision_future_critic_probe72_20261024",
+  "phase": "complete",
+  "backbone_weights_included": false
+}

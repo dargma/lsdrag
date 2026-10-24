@@ -114,7 +114,8 @@
   },
   "input_sha256": {
     "/content/local_fast/lsdrag-text-v1/results/decision_future_critic_probe48_20261024/critic.pt": "b91e52ec4085f6882f3f5f7cc85a304a93963f6108dd4d5911f0d5e344c5144c",
-    "/content/local_fast/lsdrag-text-v1/results/decision_h3_conservative48_inputs_20261024/states.pt": "7a10276a00ab7e071f88c20d314f6b9d63c754b4db6ac70ed6814b7593e04308"
+    "/content/local_fast/lsdrag-text-v1/results/decision_h3_conservative48_inputs_20261024/states.pt": "7a10276a00ab7e071f88c20d314f6b9d63c754b4db6ac70ed6814b7593e04308",
+    "/content/local_fast/lsdrag-text-v1/results/decision_h3_diversity48_20261024/states.pt": "5b732d2c1a664761d3bbf439f1545792c60db5114e66bd3dd85ec4e3f874e45a"
   },
-  "pending_completed_collection_hash": true
+  "pending_completed_collection_hash": false
 }

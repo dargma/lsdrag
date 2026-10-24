@@ -1,0 +1,32 @@
+{
+  "verified": true,
+  "metrics": {
+    "expanded": {
+      "gap_mse": 0.26910685413809604,
+      "cost_mae": 20.100248063052142,
+      "gap_sign_accuracy": 0.7191358024691358,
+      "informative_pairs": 37,
+      "informative_questions": 9
+    },
+    "old": {
+      "gap_mse": 0.259428108627349,
+      "cost_mae": 23.52316121481083,
+      "gap_sign_accuracy": 0.7962962962962963,
+      "informative_pairs": 37,
+      "informative_questions": 9
+    },
+    "baseline": {
+      "gap_mse": 0.2254586493374671,
+      "cost_mae": 20.338320246449225,
+      "gap_sign_accuracy": 0.8364197530864197,
+      "informative_pairs": 37,
+      "informative_questions": 9
+    }
+  },
+  "gate_passed": false,
+  "actor_zero_verified": true,
+  "checkpoint_replay": true,
+  "split_verified": true,
+  "archive_sha256": "5b24cc893465e53106acae53212916a6439ae2aa7efc2429b8bef591a31fabfe",
+  "scope": "Critic predictive transfer only; no learned-policy improvement claim"
+}

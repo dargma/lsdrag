@@ -1,0 +1,1134 @@
+[
+  {
+    "qid": "2hop__396382_49333",
+    "turn": 0,
+    "prefix_sha256": "6063594e2b20343921203768c34a640797cd4240936ed52e777425d743fdd630",
+    "branches": [
+      {
+        "action": 0,
+        "f1": 0,
+        "generated": 103,
+        "predicted_f1": 0.2287396341562271,
+        "predicted_generated": 85.17572021484375,
+        "old_f1": 0.6649144887924194,
+        "old_generated": 89.45327758789062,
+        "baseline_f1": 0.3644465506076813,
+        "baseline_generated": 81.1983642578125
+      },
+      {
+        "action": 1,
+        "f1": 1.0,
+        "generated": 96,
+        "predicted_f1": 0.25679606199264526,
+        "predicted_generated": 54.46919631958008,
+        "old_f1": 0.5660877823829651,
+        "old_generated": 60.38567352294922,
+        "baseline_f1": 0.40695318579673767,
+        "baseline_generated": 73.12162017822266
+      },
+      {
+        "action": 3,
+        "f1": 0,
+        "generated": 8,
+        "predicted_f1": 0.0654168576002121,
+        "predicted_generated": 8.980803489685059,
+        "old_f1": 0.09856346249580383,
+        "old_generated": 8.525191307067871,
+        "baseline_f1": 0.2335142195224762,
+        "baseline_generated": 18.691871643066406
+      }
+    ]
+  },
+  {
+    "qid": "2hop__396382_49333",
+    "turn": 1,
+    "prefix_sha256": "c9cdd6660eaa08ca7341a82f622ac910a986c6d246e1ace7ad439d8b263b0fed",
+    "branches": [
+      {
+        "action": 0,
+        "f1": 1.0,
+        "generated": 86,
+        "predicted_f1": 0.6353849172592163,
+        "predicted_generated": 59.71187210083008,
+        "old_f1": 0.9293025732040405,
+        "old_generated": 78.73517608642578,
+        "baseline_f1": 0.3644465506076813,
+        "baseline_generated": 81.1983642578125
+      },
+      {
+        "action": 1,
+        "f1": 1.0,
+        "generated": 64,
+        "predicted_f1": 0.8821819424629211,
+        "predicted_generated": 50.15766525268555,
+        "old_f1": 0.9672269225120544,
+        "old_generated": 54.865230560302734,
+        "baseline_f1": 0.40695318579673767,
+        "baseline_generated": 73.12162017822266
+      },
+      {
+        "action": 2,
+        "f1": 1.0,
+        "generated": 90,
+        "predicted_f1": 0.7228596210479736,
+        "predicted_generated": 94.0387954711914,
+        "old_f1": 0.9467586278915405,
+        "old_generated": 104.83438873291016,
+        "baseline_f1": 0.5187749862670898,
+        "baseline_generated": 85.71575164794922
+      },
+      {
+        "action": 3,
+        "f1": 0,
+        "generated": 10,
+        "predicted_f1": 0.3317788541316986,
+        "predicted_generated": 24.548778533935547,
+        "old_f1": 0.6506293416023254,
+        "old_generated": 27.9902286529541,
+        "baseline_f1": 0.2335142195224762,
+        "baseline_generated": 18.691871643066406
+      }
+    ]
+  },
+  {
+    "qid": "2hop__396382_49333",
+    "turn": 2,
+    "prefix_sha256": "66a8af02bdced1278119b32fed47c01132dbc2aca19fc21ac45a88bb525bd4e0",
+    "branches": [
+      {
+        "action": 0,
+        "f1": 1.0,
+        "generated": 69,
+        "predicted_f1": 0.7157483696937561,
+        "predicted_generated": 61.544673919677734,
+        "old_f1": 0.8728518486022949,
+        "old_generated": 66.93466186523438,
+        "baseline_f1": 0.3644465506076813,
+        "baseline_generated": 81.1983642578125
+      },
+      {
+        "action": 1,
+        "f1": 1.0,
+        "generated": 65,
+        "predicted_f1": 0.9388715624809265,
+        "predicted_generated": 41.27806091308594,
+        "old_f1": 0.9773859977722168,
+        "old_generated": 51.23599624633789,
+        "baseline_f1": 0.40695318579673767,
+        "baseline_generated": 73.12162017822266
+      },
+      {
+        "action": 2,
+        "f1": 1.0,
+        "generated": 93,
+        "predicted_f1": 0.9214342832565308,
+        "predicted_generated": 51.8787727355957,
+        "old_f1": 0.9703617095947266,
+        "old_generated": 62.356231689453125,
+        "baseline_f1": 0.5187749862670898,
+        "baseline_generated": 85.71575164794922
+      },
+      {
+        "action": 3,
+        "f1": 1.0,
+        "generated": 42,
+        "predicted_f1": 0.8668380975723267,
+        "predicted_generated": 41.175804138183594,
+        "old_f1": 0.9067513346672058,
+        "old_generated": 43.15683364868164,
+        "baseline_f1": 0.2335142195224762,
+        "baseline_generated": 18.691871643066406
+      }
+    ]
+  },
+  {
+    "qid": "2hop__169861_145386",
+    "turn": 0,
+    "prefix_sha256": "23a00ae7ce7c8bd1360d85d5688817ef513712d1852546940df78b0a7e23c45e",
+    "branches": [
+      {
+        "action": 0,
+        "f1": 1.0,
+        "generated": 90,
+        "predicted_f1": 0.08403697609901428,
+        "predicted_generated": 67.995361328125,
+        "old_f1": 0.04416278749704361,
+        "old_generated": 82.43592071533203,
+        "baseline_f1": 0.3644465506076813,
+        "baseline_generated": 81.1983642578125
+      },
+      {
+        "action": 1,
+        "f1": 0,
+        "generated": 52,
+        "predicted_f1": 0.19514966011047363,
+        "predicted_generated": 55.81511688232422,
+        "old_f1": 0.2690267860889435,
+        "old_generated": 66.80264282226562,
+        "baseline_f1": 0.40695318579673767,
+        "baseline_generated": 73.12162017822266
+      },
+      {
+        "action": 3,
+        "f1": 0,
+        "generated": 14,
+        "predicted_f1": 0.04825913906097412,
+        "predicted_generated": 10.204620361328125,
+        "old_f1": 0.04411230981349945,
+        "old_generated": 11.26010799407959,
+        "baseline_f1": 0.2335142195224762,
+        "baseline_generated": 18.691871643066406
+      }
+    ]
+  },
+  {
+    "qid": "2hop__169861_145386",
+    "turn": 1,
+    "prefix_sha256": "f6065ea6bff5c2ba2ed99ef9005a9e91681c97bb7557a24a3a01c88c8aed7d3c",
+    "branches": [
+      {
+        "action": 0,
+        "f1": 1.0,
+        "generated": 71,
+        "predicted_f1": 0.11092585325241089,
+        "predicted_generated": 65.60554504394531,
+        "old_f1": 0.22583897411823273,
+        "old_generated": 98.470458984375,
+        "baseline_f1": 0.3644465506076813,
+        "baseline_generated": 81.1983642578125
+      },
+      {
+        "action": 1,
+        "f1": 1.0,
+        "generated": 54,
+        "predicted_f1": 0.2605893313884735,
+        "predicted_generated": 61.26560592651367,
+        "old_f1": 0.4632820785045624,
+        "old_generated": 64.70308685302734,
+        "baseline_f1": 0.40695318579673767,
+        "baseline_generated": 73.12162017822266
+      },
+      {
+        "action": 2,
+        "f1": 1.0,
+        "generated": 82,
+        "predicted_f1": 0.2347019910812378,
+        "predicted_generated": 57.18106460571289,
+        "old_f1": 0.4435238540172577,
+        "old_generated": 87.54818725585938,
+        "baseline_f1": 0.5187749862670898,
+        "baseline_generated": 85.71575164794922
+      },
+      {
+        "action": 3,
+        "f1": 0,
+        "generated": 34,
+        "predicted_f1": 0.12352484464645386,
+        "predicted_generated": 25.943124771118164,
+        "old_f1": 0.12567231059074402,
+        "old_generated": 24.59678077697754,
+        "baseline_f1": 0.2335142195224762,
+        "baseline_generated": 18.691871643066406
+      }
+    ]
+  },
+  {
+    "qid": "2hop__161709_69825",
+    "turn": 0,
+    "prefix_sha256": "4b698c274dc9fe8ab1ee75224c8676305014bab21c97c3fde62aa0037f3a4a07",
+    "branches": [
+      {
+        "action": 0,
+        "f1": 0,
+        "generated": 106,
+        "predicted_f1": 0.5425754189491272,
+        "predicted_generated": 121.25863647460938,
+        "old_f1": 0.2422565519809723,
+        "old_generated": 74.69593811035156,
+        "baseline_f1": 0.3644465506076813,
+        "baseline_generated": 81.1983642578125
+      },
+      {
+        "action": 1,
+        "f1": 0,
+        "generated": 89,
+        "predicted_f1": 0.4146000146865845,
+        "predicted_generated": 91.28766632080078,
+        "old_f1": 0.07209479063749313,
+        "old_generated": 62.9030647277832,
+        "baseline_f1": 0.40695318579673767,
+        "baseline_generated": 73.12162017822266
+      },
+      {
+        "action": 3,
+        "f1": 0.5,
+        "generated": 14,
+        "predicted_f1": 0.08992557972669601,
+        "predicted_generated": 7.71279239654541,
+        "old_f1": 0.03755979612469673,
+        "old_generated": 9.03577709197998,
+        "baseline_f1": 0.2335142195224762,
+        "baseline_generated": 18.691871643066406
+      }
+    ]
+  },
+  {
+    "qid": "2hop__143485_285802",
+    "turn": 0,
+    "prefix_sha256": "6ea12f5aa34db63a31e70b8375f7be67e7bb36303ffa77f15ddb263379953ef0",
+    "branches": [
+      {
+        "action": 0,
+        "f1": 0,
+        "generated": 52,
+        "predicted_f1": 0.6131912469863892,
+        "predicted_generated": 132.51712036132812,
+        "old_f1": 0.3873501420021057,
+        "old_generated": 171.91604614257812,
+        "baseline_f1": 0.3644465506076813,
+        "baseline_generated": 81.1983642578125
+      },
+      {
+        "action": 1,
+        "f1": 0,
+        "generated": 33,
+        "predicted_f1": 0.7441902756690979,
+        "predicted_generated": 105.89125061035156,
+        "old_f1": 0.8200554251670837,
+        "old_generated": 125.63775634765625,
+        "baseline_f1": 0.40695318579673767,
+        "baseline_generated": 73.12162017822266
+      },
+      {
+        "action": 3,
+        "f1": 0,
+        "generated": 8,
+        "predicted_f1": 0.14840900897979736,
+        "predicted_generated": 10.017044067382812,
+        "old_f1": 0.24481599032878876,
+        "old_generated": 13.159987449645996,
+        "baseline_f1": 0.2335142195224762,
+        "baseline_generated": 18.691871643066406
+      }
+    ]
+  },
+  {
+    "qid": "2hop__333540_11117",
+    "turn": 0,
+    "prefix_sha256": "5483a978b36d43ca91faf87d49ead7e731a1aecb6a3dcc3d881ae3841cfb7b9c",
+    "branches": [
+      {
+        "action": 0,
+        "f1": 0,
+        "generated": 53,
+        "predicted_f1": 0.07218682020902634,
+        "predicted_generated": 54.032867431640625,
+        "old_f1": 0.40170735120773315,
+        "old_generated": 59.110511779785156,
+        "baseline_f1": 0.3644465506076813,
+        "baseline_generated": 81.1983642578125
+      },
+      {
+        "action": 1,
+        "f1": 0,
+        "generated": 33,
+        "predicted_f1": 0.033819135278463364,
+        "predicted_generated": 38.56414794921875,
+        "old_f1": 0.12103831768035889,
+        "old_generated": 33.92771530151367,
+        "baseline_f1": 0.40695318579673767,
+        "baseline_generated": 73.12162017822266
+      },
+      {
+        "action": 3,
+        "f1": 0,
+        "generated": 7,
+        "predicted_f1": 0.011888503096997738,
+        "predicted_generated": 9.310877799987793,
+        "old_f1": 0.01811225898563862,
+        "old_generated": 7.0186004638671875,
+        "baseline_f1": 0.2335142195224762,
+        "baseline_generated": 18.691871643066406
+      }
+    ]
+  },
+  {
+    "qid": "2hop__333540_11117",
+    "turn": 1,
+    "prefix_sha256": "a38b497709e3f82c1b1d213e71dc3e9f309524b3cb1151a0391f3acfa85cb0c9",
+    "branches": [
+      {
+        "action": 0,
+        "f1": 0.5,
+        "generated": 68,
+        "predicted_f1": 0.29350635409355164,
+        "predicted_generated": 39.41462707519531,
+        "old_f1": 0.8882460594177246,
+        "old_generated": 47.17674255371094,
+        "baseline_f1": 0.3644465506076813,
+        "baseline_generated": 81.1983642578125
+      },
+      {
+        "action": 1,
+        "f1": 0.5,
+        "generated": 54,
+        "predicted_f1": 0.35615068674087524,
+        "predicted_generated": 43.55221939086914,
+        "old_f1": 0.9401909112930298,
+        "old_generated": 35.250797271728516,
+        "baseline_f1": 0.40695318579673767,
+        "baseline_generated": 73.12162017822266
+      },
+      {
+        "action": 2,
+        "f1": 0.5,
+        "generated": 81,
+        "predicted_f1": 0.2972572445869446,
+        "predicted_generated": 104.75902557373047,
+        "old_f1": 0.931367039680481,
+        "old_generated": 98.41716003417969,
+        "baseline_f1": 0.5187749862670898,
+        "baseline_generated": 85.71575164794922
+      },
+      {
+        "action": 3,
+        "f1": 0,
+        "generated": 10,
+        "predicted_f1": 0.11915721744298935,
+        "predicted_generated": 25.070398330688477,
+        "old_f1": 0.6829871535301208,
+        "old_generated": 33.849605560302734,
+        "baseline_f1": 0.2335142195224762,
+        "baseline_generated": 18.691871643066406
+      }
+    ]
+  },
+  {
+    "qid": "2hop__256681_42328",
+    "turn": 0,
+    "prefix_sha256": "dd296501c7368946d15bfe9ad56b1a3c9fed064da0edc92623b4b64dcbf7621d",
+    "branches": [
+      {
+        "action": 0,
+        "f1": 1.0,
+        "generated": 96,
+        "predicted_f1": 0.13019628822803497,
+        "predicted_generated": 107.51728057861328,
+        "old_f1": 0.4261358976364136,
+        "old_generated": 103.21588134765625,
+        "baseline_f1": 0.3644465506076813,
+        "baseline_generated": 81.1983642578125
+      },
+      {
+        "action": 1,
+        "f1": 1.0,
+        "generated": 71,
+        "predicted_f1": 0.03732898458838463,
+        "predicted_generated": 70.54136657714844,
+        "old_f1": 0.07360164821147919,
+        "old_generated": 62.05510330200195,
+        "baseline_f1": 0.40695318579673767,
+        "baseline_generated": 73.12162017822266
+      },
+      {
+        "action": 3,
+        "f1": 0,
+        "generated": 7,
+        "predicted_f1": 0.016246773302555084,
+        "predicted_generated": 9.342912673950195,
+        "old_f1": 0.025629712268710136,
+        "old_generated": 7.4145965576171875,
+        "baseline_f1": 0.2335142195224762,
+        "baseline_generated": 18.691871643066406
+      }
+    ]
+  },
+  {
+    "qid": "2hop__256681_42328",
+    "turn": 1,
+    "prefix_sha256": "fc9a44634e8a6e43fe081f055409dd5f0cffa0020fc5ad94e86ab4ab7ed54491",
+    "branches": [
+      {
+        "action": 0,
+        "f1": 1.0,
+        "generated": 70,
+        "predicted_f1": 0.5937547087669373,
+        "predicted_generated": 93.86943054199219,
+        "old_f1": 0.3946670889854431,
+        "old_generated": 82.67496490478516,
+        "baseline_f1": 0.3644465506076813,
+        "baseline_generated": 81.1983642578125
+      },
+      {
+        "action": 1,
+        "f1": 1.0,
+        "generated": 52,
+        "predicted_f1": 0.5723153948783875,
+        "predicted_generated": 76.22393798828125,
+        "old_f1": 0.3382505476474762,
+        "old_generated": 65.10943603515625,
+        "baseline_f1": 0.40695318579673767,
+        "baseline_generated": 73.12162017822266
+      },
+      {
+        "action": 2,
+        "f1": 1.0,
+        "generated": 104,
+        "predicted_f1": 0.7545400261878967,
+        "predicted_generated": 75.09069061279297,
+        "old_f1": 0.5985590815544128,
+        "old_generated": 93.91136932373047,
+        "baseline_f1": 0.5187749862670898,
+        "baseline_generated": 85.71575164794922
+      },
+      {
+        "action": 3,
+        "f1": 0,
+        "generated": 10,
+        "predicted_f1": 0.18939417600631714,
+        "predicted_generated": 21.060319900512695,
+        "old_f1": 0.05919378623366356,
+        "old_generated": 16.660511016845703,
+        "baseline_f1": 0.2335142195224762,
+        "baseline_generated": 18.691871643066406
+      }
+    ]
+  },
+  {
+    "qid": "2hop__256681_42328",
+    "turn": 2,
+    "prefix_sha256": "da6ca89f5611775a4f9f89183a75fa1a10cc3a7ad13890a3752095948ca87194",
+    "branches": [
+      {
+        "action": 0,
+        "f1": 1.0,
+        "generated": 68,
+        "predicted_f1": 0.3590443730354309,
+        "predicted_generated": 53.98917770385742,
+        "old_f1": 0.48458588123321533,
+        "old_generated": 48.52654266357422,
+        "baseline_f1": 0.3644465506076813,
+        "baseline_generated": 81.1983642578125
+      },
+      {
+        "action": 1,
+        "f1": 1.0,
+        "generated": 78,
+        "predicted_f1": 0.6517417430877686,
+        "predicted_generated": 46.36577224731445,
+        "old_f1": 0.7487607598304749,
+        "old_generated": 23.742979049682617,
+        "baseline_f1": 0.40695318579673767,
+        "baseline_generated": 73.12162017822266
+      },
+      {
+        "action": 2,
+        "f1": 1.0,
+        "generated": 142,
+        "predicted_f1": 0.7745065093040466,
+        "predicted_generated": 36.838130950927734,
+        "old_f1": 0.8712255954742432,
+        "old_generated": 42.21924591064453,
+        "baseline_f1": 0.5187749862670898,
+        "baseline_generated": 85.71575164794922
+      },
+      {
+        "action": 3,
+        "f1": 1.0,
+        "generated": 36,
+        "predicted_f1": 0.7123132348060608,
+        "predicted_generated": 37.6650505065918,
+        "old_f1": 0.6489297151565552,
+        "old_generated": 29.215007781982422,
+        "baseline_f1": 0.2335142195224762,
+        "baseline_generated": 18.691871643066406
+      }
+    ]
+  },
+  {
+    "qid": "2hop__418766_141689",
+    "turn": 0,
+    "prefix_sha256": "d2fcadda566f7911a78494c933eeb3c42aed41de281569e26396cdbd410bf94f",
+    "branches": [
+      {
+        "action": 0,
+        "f1": 0,
+        "generated": 33,
+        "predicted_f1": 0.07737582921981812,
+        "predicted_generated": 44.21968460083008,
+        "old_f1": 0.07688742876052856,
+        "old_generated": 63.860511779785156,
+        "baseline_f1": 0.3644465506076813,
+        "baseline_generated": 81.1983642578125
+      },
+      {
+        "action": 1,
+        "f1": 0,
+        "generated": 58,
+        "predicted_f1": 0.05682458356022835,
+        "predicted_generated": 49.42486572265625,
+        "old_f1": 0.05692777782678604,
+        "old_generated": 43.0516242980957,
+        "baseline_f1": 0.40695318579673767,
+        "baseline_generated": 73.12162017822266
+      },
+      {
+        "action": 3,
+        "f1": 0,
+        "generated": 7,
+        "predicted_f1": 0.017695680260658264,
+        "predicted_generated": 8.199067115783691,
+        "old_f1": 0.017833473160862923,
+        "old_generated": 8.538384437561035,
+        "baseline_f1": 0.2335142195224762,
+        "baseline_generated": 18.691871643066406
+      }
+    ]
+  },
+  {
+    "qid": "2hop__418766_141689",
+    "turn": 1,
+    "prefix_sha256": "1a11ea9e6c6b28d302ba3286f3ca710fbc38056efc9aa0f2b2963490c9f0b1bf",
+    "branches": [
+      {
+        "action": 0,
+        "f1": 0,
+        "generated": 88,
+        "predicted_f1": 0.04887785762548447,
+        "predicted_generated": 52.96753692626953,
+        "old_f1": 0.07354501634836197,
+        "old_generated": 70.77210998535156,
+        "baseline_f1": 0.3644465506076813,
+        "baseline_generated": 81.1983642578125
+      },
+      {
+        "action": 1,
+        "f1": 0,
+        "generated": 67,
+        "predicted_f1": 0.09294745326042175,
+        "predicted_generated": 67.45211791992188,
+        "old_f1": 0.23152108490467072,
+        "old_generated": 53.656707763671875,
+        "baseline_f1": 0.40695318579673767,
+        "baseline_generated": 73.12162017822266
+      },
+      {
+        "action": 2,
+        "f1": 0,
+        "generated": 98,
+        "predicted_f1": 0.08218962699174881,
+        "predicted_generated": 60.723506927490234,
+        "old_f1": 0.09455893188714981,
+        "old_generated": 78.73548889160156,
+        "baseline_f1": 0.5187749862670898,
+        "baseline_generated": 85.71575164794922
+      },
+      {
+        "action": 3,
+        "f1": 0,
+        "generated": 10,
+        "predicted_f1": 0.06676056981086731,
+        "predicted_generated": 21.947799682617188,
+        "old_f1": 0.0648617371916771,
+        "old_generated": 19.01657485961914,
+        "baseline_f1": 0.2335142195224762,
+        "baseline_generated": 18.691871643066406
+      }
+    ]
+  },
+  {
+    "qid": "2hop__807900_748934",
+    "turn": 0,
+    "prefix_sha256": "2e647438cd3e834cf973731d2bf5c8509b239aaa46640f87aeca3b03afbf8a00",
+    "branches": [
+      {
+        "action": 0,
+        "f1": 1.0,
+        "generated": 115,
+        "predicted_f1": 0.44091248512268066,
+        "predicted_generated": 109.82477569580078,
+        "old_f1": 0.13077819347381592,
+        "old_generated": 79.68281555175781,
+        "baseline_f1": 0.3644465506076813,
+        "baseline_generated": 81.1983642578125
+      },
+      {
+        "action": 1,
+        "f1": 0.5,
+        "generated": 64,
+        "predicted_f1": 0.1445726901292801,
+        "predicted_generated": 85.07540130615234,
+        "old_f1": 0.012131381779909134,
+        "old_generated": 76.81050872802734,
+        "baseline_f1": 0.40695318579673767,
+        "baseline_generated": 73.12162017822266
+      },
+      {
+        "action": 3,
+        "f1": 0,
+        "generated": 12,
+        "predicted_f1": 0.05596727505326271,
+        "predicted_generated": 8.961267471313477,
+        "old_f1": 0.04708758741617203,
+        "old_generated": 11.123916625976562,
+        "baseline_f1": 0.2335142195224762,
+        "baseline_generated": 18.691871643066406
+      }
+    ]
+  },
+  {
+    "qid": "2hop__807900_748934",
+    "turn": 1,
+    "prefix_sha256": "d722fa2465cffdb0e89ba8935564cbbaf689c73c30edbc4d9583c36ccd89af44",
+    "branches": [
+      {
+        "action": 0,
+        "f1": 1.0,
+        "generated": 119,
+        "predicted_f1": 0.7248318195343018,
+        "predicted_generated": 93.81661987304688,
+        "old_f1": 0.1466926783323288,
+        "old_generated": 68.04590606689453,
+        "baseline_f1": 0.3644465506076813,
+        "baseline_generated": 81.1983642578125
+      },
+      {
+        "action": 1,
+        "f1": 1.0,
+        "generated": 89,
+        "predicted_f1": 0.6444800496101379,
+        "predicted_generated": 77.19852447509766,
+        "old_f1": 0.10784947127103806,
+        "old_generated": 73.58182525634766,
+        "baseline_f1": 0.40695318579673767,
+        "baseline_generated": 73.12162017822266
+      },
+      {
+        "action": 3,
+        "f1": 0,
+        "generated": 10,
+        "predicted_f1": 0.09434748440980911,
+        "predicted_generated": 11.570762634277344,
+        "old_f1": 0.027512110769748688,
+        "old_generated": 10.195021629333496,
+        "baseline_f1": 0.2335142195224762,
+        "baseline_generated": 18.691871643066406
+      }
+    ]
+  },
+  {
+    "qid": "2hop__807900_748934",
+    "turn": 2,
+    "prefix_sha256": "4ab1592c4e1a22bb7e5dc9d58dedd6bf9064576ebaf9b4f6c1963956503cbd52",
+    "branches": [
+      {
+        "action": 0,
+        "f1": 0.5,
+        "generated": 53,
+        "predicted_f1": 0.5869086384773254,
+        "predicted_generated": 99.97954559326172,
+        "old_f1": 0.23423482477664948,
+        "old_generated": 85.64724731445312,
+        "baseline_f1": 0.3644465506076813,
+        "baseline_generated": 81.1983642578125
+      },
+      {
+        "action": 1,
+        "f1": 1.0,
+        "generated": 67,
+        "predicted_f1": 0.5101361274719238,
+        "predicted_generated": 65.43706512451172,
+        "old_f1": 0.04087322577834129,
+        "old_generated": 60.25345993041992,
+        "baseline_f1": 0.40695318579673767,
+        "baseline_generated": 73.12162017822266
+      },
+      {
+        "action": 2,
+        "f1": 1.0,
+        "generated": 87,
+        "predicted_f1": 0.6882233619689941,
+        "predicted_generated": 85.61841583251953,
+        "old_f1": 0.23849740624427795,
+        "old_generated": 103.99005126953125,
+        "baseline_f1": 0.5187749862670898,
+        "baseline_generated": 85.71575164794922
+      },
+      {
+        "action": 3,
+        "f1": 1.0,
+        "generated": 59,
+        "predicted_f1": 0.6337437033653259,
+        "predicted_generated": 44.21023941040039,
+        "old_f1": 0.1877807229757309,
+        "old_generated": 24.994943618774414,
+        "baseline_f1": 0.2335142195224762,
+        "baseline_generated": 18.691871643066406
+      }
+    ]
+  },
+  {
+    "qid": "2hop__763486_83697",
+    "turn": 0,
+    "prefix_sha256": "10982253fbefafa967a5c3158628563cb4fd047a23593a73f26fb3173aed3188",
+    "branches": [
+      {
+        "action": 0,
+        "f1": 0,
+        "generated": 110,
+        "predicted_f1": 0.3770548403263092,
+        "predicted_generated": 89.28213500976562,
+        "old_f1": 0.33572763204574585,
+        "old_generated": 87.7788314819336,
+        "baseline_f1": 0.3644465506076813,
+        "baseline_generated": 81.1983642578125
+      },
+      {
+        "action": 1,
+        "f1": 0,
+        "generated": 92,
+        "predicted_f1": 0.27145928144454956,
+        "predicted_generated": 73.83480072021484,
+        "old_f1": 0.19074563682079315,
+        "old_generated": 80.89488983154297,
+        "baseline_f1": 0.40695318579673767,
+        "baseline_generated": 73.12162017822266
+      },
+      {
+        "action": 3,
+        "f1": 0,
+        "generated": 7,
+        "predicted_f1": 0.023675059899687767,
+        "predicted_generated": 7.429718971252441,
+        "old_f1": 0.011975155211985111,
+        "old_generated": 8.440447807312012,
+        "baseline_f1": 0.2335142195224762,
+        "baseline_generated": 18.691871643066406
+      }
+    ]
+  },
+  {
+    "qid": "2hop__37476_82045",
+    "turn": 0,
+    "prefix_sha256": "9010f895334ae64e118cbc9ef82b8d52d57376cd6e334301a14ebd470dd49dc5",
+    "branches": [
+      {
+        "action": 0,
+        "f1": 1.0,
+        "generated": 169,
+        "predicted_f1": 0.6248614192008972,
+        "predicted_generated": 99.60630798339844,
+        "old_f1": 0.13327616453170776,
+        "old_generated": 106.33362579345703,
+        "baseline_f1": 0.3644465506076813,
+        "baseline_generated": 81.1983642578125
+      },
+      {
+        "action": 1,
+        "f1": 1.0,
+        "generated": 90,
+        "predicted_f1": 0.7155897617340088,
+        "predicted_generated": 84.86137390136719,
+        "old_f1": 0.10454002022743225,
+        "old_generated": 60.730934143066406,
+        "baseline_f1": 0.40695318579673767,
+        "baseline_generated": 73.12162017822266
+      },
+      {
+        "action": 3,
+        "f1": 0,
+        "generated": 7,
+        "predicted_f1": 0.13980843126773834,
+        "predicted_generated": 7.8988542556762695,
+        "old_f1": 0.04875114932656288,
+        "old_generated": 7.899359703063965,
+        "baseline_f1": 0.2335142195224762,
+        "baseline_generated": 18.691871643066406
+      }
+    ]
+  },
+  {
+    "qid": "2hop__37476_82045",
+    "turn": 1,
+    "prefix_sha256": "6883a5102a3513e1c83e3edb3c277d67a307e453713ab68ff191ccf0ba137efc",
+    "branches": [
+      {
+        "action": 0,
+        "f1": 1.0,
+        "generated": 63,
+        "predicted_f1": 0.5877477526664734,
+        "predicted_generated": 105.43929290771484,
+        "old_f1": 0.0924392119050026,
+        "old_generated": 105.68758392333984,
+        "baseline_f1": 0.3644465506076813,
+        "baseline_generated": 81.1983642578125
+      },
+      {
+        "action": 1,
+        "f1": 1.0,
+        "generated": 57,
+        "predicted_f1": 0.8476799130439758,
+        "predicted_generated": 93.4941635131836,
+        "old_f1": 0.28081822395324707,
+        "old_generated": 54.234439849853516,
+        "baseline_f1": 0.40695318579673767,
+        "baseline_generated": 73.12162017822266
+      },
+      {
+        "action": 2,
+        "f1": 1.0,
+        "generated": 66,
+        "predicted_f1": 0.8720717430114746,
+        "predicted_generated": 73.38646697998047,
+        "old_f1": 0.29074618220329285,
+        "old_generated": 91.79203796386719,
+        "baseline_f1": 0.5187749862670898,
+        "baseline_generated": 85.71575164794922
+      },
+      {
+        "action": 3,
+        "f1": 1.0,
+        "generated": 36,
+        "predicted_f1": 0.8539139628410339,
+        "predicted_generated": 47.092315673828125,
+        "old_f1": 0.4581676423549652,
+        "old_generated": 30.239900588989258,
+        "baseline_f1": 0.2335142195224762,
+        "baseline_generated": 18.691871643066406
+      }
+    ]
+  },
+  {
+    "qid": "2hop__37476_82045",
+    "turn": 2,
+    "prefix_sha256": "15909569ec98ad6912c159c04adc6fbec4b87e7c26ac46edaf709ca4f8b74f32",
+    "branches": [
+      {
+        "action": 0,
+        "f1": 1.0,
+        "generated": 57,
+        "predicted_f1": 0.5258675217628479,
+        "predicted_generated": 113.21551513671875,
+        "old_f1": 0.16209891438484192,
+        "old_generated": 105.48265838623047,
+        "baseline_f1": 0.3644465506076813,
+        "baseline_generated": 81.1983642578125
+      },
+      {
+        "action": 1,
+        "f1": 1.0,
+        "generated": 57,
+        "predicted_f1": 0.8439292907714844,
+        "predicted_generated": 95.31861877441406,
+        "old_f1": 0.5443739295005798,
+        "old_generated": 42.8955078125,
+        "baseline_f1": 0.40695318579673767,
+        "baseline_generated": 73.12162017822266
+      },
+      {
+        "action": 2,
+        "f1": 1.0,
+        "generated": 63,
+        "predicted_f1": 0.8961105942726135,
+        "predicted_generated": 68.5646743774414,
+        "old_f1": 0.661163866519928,
+        "old_generated": 96.72718048095703,
+        "baseline_f1": 0.5187749862670898,
+        "baseline_generated": 85.71575164794922
+      },
+      {
+        "action": 3,
+        "f1": 1.0,
+        "generated": 36,
+        "predicted_f1": 0.9541288018226624,
+        "predicted_generated": 49.937870025634766,
+        "old_f1": 0.864402711391449,
+        "old_generated": 33.17094039916992,
+        "baseline_f1": 0.2335142195224762,
+        "baseline_generated": 18.691871643066406
+      }
+    ]
+  },
+  {
+    "qid": "2hop__25968_727337",
+    "turn": 0,
+    "prefix_sha256": "68f274eabe0affee35a6daf183dca1dd19c896b1b48d1be881721da299daa5ae",
+    "branches": [
+      {
+        "action": 0,
+        "f1": 1.0,
+        "generated": 206,
+        "predicted_f1": 0.07393225282430649,
+        "predicted_generated": 105.67041778564453,
+        "old_f1": 0.369690865278244,
+        "old_generated": 83.58614349365234,
+        "baseline_f1": 0.3644465506076813,
+        "baseline_generated": 81.1983642578125
+      },
+      {
+        "action": 1,
+        "f1": 1.0,
+        "generated": 93,
+        "predicted_f1": 0.09662297368049622,
+        "predicted_generated": 90.83357238769531,
+        "old_f1": 0.2415410280227661,
+        "old_generated": 79.68274688720703,
+        "baseline_f1": 0.40695318579673767,
+        "baseline_generated": 73.12162017822266
+      },
+      {
+        "action": 3,
+        "f1": 0,
+        "generated": 18,
+        "predicted_f1": 0.12155356258153915,
+        "predicted_generated": 14.198652267456055,
+        "old_f1": 0.16613931953907013,
+        "old_generated": 10.240487098693848,
+        "baseline_f1": 0.2335142195224762,
+        "baseline_generated": 18.691871643066406
+      }
+    ]
+  },
+  {
+    "qid": "2hop__130686_70941",
+    "turn": 0,
+    "prefix_sha256": "0d98a82cd6a371d4da5afcdbdffea000dce9fce35d4f66c7a8234d5e0e686e2e",
+    "branches": [
+      {
+        "action": 0,
+        "f1": 1.0,
+        "generated": 104,
+        "predicted_f1": 0.13802345097064972,
+        "predicted_generated": 114.14470672607422,
+        "old_f1": 0.3483213484287262,
+        "old_generated": 104.87184143066406,
+        "baseline_f1": 0.3644465506076813,
+        "baseline_generated": 81.1983642578125
+      },
+      {
+        "action": 1,
+        "f1": 1.0,
+        "generated": 84,
+        "predicted_f1": 0.03297803923487663,
+        "predicted_generated": 88.42728424072266,
+        "old_f1": 0.05049193277955055,
+        "old_generated": 75.8773422241211,
+        "baseline_f1": 0.40695318579673767,
+        "baseline_generated": 73.12162017822266
+      },
+      {
+        "action": 3,
+        "f1": 0,
+        "generated": 7,
+        "predicted_f1": 0.016729675233364105,
+        "predicted_generated": 9.318007469177246,
+        "old_f1": 0.027304286137223244,
+        "old_generated": 6.936465263366699,
+        "baseline_f1": 0.2335142195224762,
+        "baseline_generated": 18.691871643066406
+      }
+    ]
+  },
+  {
+    "qid": "2hop__130686_70941",
+    "turn": 1,
+    "prefix_sha256": "0ce3ec45f9c13398304cde48e84f5d0d65831b61784a77a63e3e7edb6005e3b7",
+    "branches": [
+      {
+        "action": 0,
+        "f1": 1.0,
+        "generated": 77,
+        "predicted_f1": 0.23631501197814941,
+        "predicted_generated": 130.5415496826172,
+        "old_f1": 0.484344482421875,
+        "old_generated": 112.40208435058594,
+        "baseline_f1": 0.3644465506076813,
+        "baseline_generated": 81.1983642578125
+      },
+      {
+        "action": 1,
+        "f1": 1.0,
+        "generated": 58,
+        "predicted_f1": 0.12080254405736923,
+        "predicted_generated": 87.45886993408203,
+        "old_f1": 0.3067043125629425,
+        "old_generated": 63.66572952270508,
+        "baseline_f1": 0.40695318579673767,
+        "baseline_generated": 73.12162017822266
+      },
+      {
+        "action": 2,
+        "f1": 1.0,
+        "generated": 87,
+        "predicted_f1": 0.2863474190235138,
+        "predicted_generated": 107.0820083618164,
+        "old_f1": 0.6459962725639343,
+        "old_generated": 116.40664672851562,
+        "baseline_f1": 0.5187749862670898,
+        "baseline_generated": 85.71575164794922
+      },
+      {
+        "action": 3,
+        "f1": 0,
+        "generated": 10,
+        "predicted_f1": 0.08383836597204208,
+        "predicted_generated": 24.331483840942383,
+        "old_f1": 0.139129176735878,
+        "old_generated": 17.52077293395996,
+        "baseline_f1": 0.2335142195224762,
+        "baseline_generated": 18.691871643066406
+      }
+    ]
+  },
+  {
+    "qid": "2hop__130686_70941",
+    "turn": 2,
+    "prefix_sha256": "e8f44c8aa14049747962c58edc18012754cc490e01986d3fb3171feeb56aa280",
+    "branches": [
+      {
+        "action": 0,
+        "f1": 1.0,
+        "generated": 58,
+        "predicted_f1": 0.2638852894306183,
+        "predicted_generated": 126.7974624633789,
+        "old_f1": 0.3087005317211151,
+        "old_generated": 84.064208984375,
+        "baseline_f1": 0.3644465506076813,
+        "baseline_generated": 81.1983642578125
+      },
+      {
+        "action": 1,
+        "f1": 1.0,
+        "generated": 59,
+        "predicted_f1": 0.30914023518562317,
+        "predicted_generated": 70.44456481933594,
+        "old_f1": 0.5732744336128235,
+        "old_generated": 35.2297248840332,
+        "baseline_f1": 0.40695318579673767,
+        "baseline_generated": 73.12162017822266
+      },
+      {
+        "action": 2,
+        "f1": 1.0,
+        "generated": 68,
+        "predicted_f1": 0.714324414730072,
+        "predicted_generated": 66.19622039794922,
+        "old_f1": 0.8983206152915955,
+        "old_generated": 68.18128967285156,
+        "baseline_f1": 0.5187749862670898,
+        "baseline_generated": 85.71575164794922
+      },
+      {
+        "action": 3,
+        "f1": 1.0,
+        "generated": 38,
+        "predicted_f1": 0.5620708465576172,
+        "predicted_generated": 35.3279914855957,
+        "old_f1": 0.5702567100524902,
+        "old_generated": 24.789501190185547,
+        "baseline_f1": 0.2335142195224762,
+        "baseline_generated": 18.691871643066406
+      }
+    ]
+  }
+]

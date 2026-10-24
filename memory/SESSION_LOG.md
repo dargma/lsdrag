@@ -1671,3 +1671,10 @@ Current diversity48 collection remains live (coordinator46115/worker46170); crit
 
 Implementation reuses original critic72 runner via wrapper; frozen source/split manifest has pending completed-input/reference hashes, cannot run before original collection+critic72 audit. Test verifies per-state offset invariance, illegal NaN exclusion/zero illegal gradients and exact target optimum. No new candidate fit launched. Next wait collection and firstcritic72, run scripts/reporting/verify_future_critic72.py; only then finalize relativecandidate hashes and fit once. GoalACTIVE.
 
+
+## 2026-10-24 — public decision model deep research; critic72 gate failed
+
+User explicitly requests Jev/public decision model benchmarking/deep research. Completed primary paper/model-card/runtime/config review and pinned DecisionIndex0.4.1 raw-data extraction; docs/JEV_PUBLIC_DECISION_MODELS_RESEARCH_20261024.md. Snapshot generated2026-10-22,229rows, Full formula changed from0.3.2; no mixed-version ranking. Source revisions/SHA and benchmark snapshot in lab/reports/decision_model_research_20261024. Public artifacts local_fast/source/decision_model_research_20261024. No external model local inference/newweight download/API benchmark claimed. Nominal4BFlash/D3mini actual4.54B flagged; strict2–4B candidateD3nano. Primary research distinguishes typedchoice from multi-turnpolicy and noncausalreadout from sharedcausalgeneration. Two-turn coordinated intervention idea recorded, not launched.
+
+Diversity48 collection and critic72 coordinator both complete, processes46115/46170/46735 absent. Independent critic72 verifier PASSED including rawlabels/predictions/checkpointreplay/oldcritic/splits/baselines/Drivebytes. Fresh12: expanded gapMSE.269107/costMAE20.1002/sign.71914; old36 .259428/23.5232/.79630; actionmeans .225459/20.3383/.83642.37informativepairs/9q; coverage sufficient, predictivegateFAILED. H3retained; noactorupdate. Relativecandidate prepared but not yet run while responding to research request; preserve authorization and next finalize reference/datahashes then run once. GoalACTIVE, reserved80protected.
+
