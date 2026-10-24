@@ -22,8 +22,8 @@ def main():
     for label in labels:groups[label]['tokens_by_action'][action]+=c['generated_tokens']
   assert n==64
   for group in groups.values():group['mean_generated']=group['total_generated']/group['questions'] if group['questions'] else None
-  reports[name]=dict(f1=f1/n,questions=n,total_generated=sum(sums.values()),mean_generated=sum(sums.values())/n,tokens_by_action=dict(sums),calls_by_action=dict(counts),correctness=groups,all_read_generation_free_upper_bound_mean=(sum(sums.values())-sums[2])/n)
+  reports[name]=dict(f1=f1/n,questions=n,total_generated=sum(sums.values()),mean_generated=sum(sums.values())/n,tokens_by_action=dict(sums),calls_by_action=dict(counts),correctness=groups,optimistic_mean_if_all_read_decode_removed=(sum(sums.values())-sums[2])/n)
  total=reports['h2']['total_generated'];target=.7*6298;needed=math.ceil(total-target)
- result=dict(scope='Repeated development cost profile; zero-read-generation number is an unattained upper bound, not measured acceleration. No output token relabeling permitted.',policies=reports,h2_tokens_to_remove_for_fixed_goal=needed,h2_fraction_read_argument_generation_to_remove=needed/reports['h2']['tokens_by_action'][2],episode_sha256=hashes)
+ result=dict(scope='Repeated development cost profile; zero-read-generation number is an optimistic token-count floor, not measured acceleration. No output token relabeling permitted.',policies=reports,h2_tokens_to_remove_for_fixed_goal=needed,h2_fraction_read_argument_generation_to_remove=needed/reports['h2']['tokens_by_action'][2],episode_sha256=hashes)
  dest=REPO/'lab/reports/decision_argument_cost_feasibility_20261024';dest.mkdir(parents=True,exist_ok=True);(dest/'summary.json').write_text(json.dumps(result,indent=2)+'\n');print(json.dumps({k:v for k,v in result.items() if k!='episode_sha256'},indent=2))
 if __name__=='__main__':main()

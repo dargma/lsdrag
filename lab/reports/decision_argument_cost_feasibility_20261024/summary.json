@@ -1,5 +1,5 @@
 {
-  "scope": "Repeated development cost profile; zero-read-generation number is an unattained upper bound, not measured acceleration. No output token relabeling permitted.",
+  "scope": "Repeated development cost profile; zero-read-generation number is an optimistic token-count floor, not measured acceleration. No output token relabeling permitted.",
   "policies": {
     "h2": {
       "f1": 0.2960633116883117,
@@ -53,7 +53,7 @@
           "mean_generated": 148.625
         }
       },
-      "all_read_generation_free_upper_bound_mean": 59.984375
+      "optimistic_mean_if_all_read_decode_removed": 59.984375
     },
     "h3": {
       "f1": 0.27315848214285715,
@@ -107,7 +107,7 @@
           "mean_generated": 125.0
         }
       },
-      "all_read_generation_free_upper_bound_mean": 59.953125
+      "optimistic_mean_if_all_read_decode_removed": 59.953125
     }
   },
   "h2_tokens_to_remove_for_fixed_goal": 666,
