@@ -1,0 +1,8 @@
+{
+  "path": "/content/drive/MyDrive/lsdrag-backups/20261023/decision_structure_attention_validation64_20261024.tar.gz",
+  "sha256": "cf5073a174e271328e9b25f7b3e9aa166e7cc0b1dd0f17691bd88f76d201b0dc",
+  "bytes": 774341,
+  "run": "/content/local_fast/lsdrag-text-v1/results/decision_structure_attention_validation64_20261024",
+  "phase": "complete",
+  "backbone_weights_included": false
+}

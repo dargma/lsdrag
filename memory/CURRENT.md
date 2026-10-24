@@ -1,4 +1,8 @@
 
+## 2026-10-24 — nine-policy evaluation complete; structure continuation fails
+
+576episodes/626.24sec/33679generated/1792143input; coordinator terminalcomplete, worker absent. d987reference25.18/76.75 exactlyreproduces64. Control16.55/50.36;depth16.55/58.61;gate16.55/58.94;depthgate16.55/59.64;observation16.55/58.98;questionattention18.37/51.48;actionattention17.72/62.91;actionset16.55/48.56. Zero-tool18reference→35–38. Bettertrainingloss didnottranslate; allfailjointtarget. Report docs/JEV_STRUCTURE_ATTENTION_RESULT_20261024.md, verification.json checksrawtotals/referenceparity/DrivearchiveSHA. GoalACTIVE. Nextboundedpriority freezeexistingd987base andlearnaddedpaths only(depth/questionattention/actionattention), sameobjective toisolatedestructivebaseupdates; freezeprotocolbeforefit. Noactiveworker/newrunyet.
+
 ## 2026-10-24 — matched continuation reporting and cost ledger
 
 Live evaluation381937 verified at160/576episodes,238.35sec; no interim quality-based changes. Campaign comparator now includes eachcandidate versus same-data100-update control and same-run selected_reference, alongside fixedGRPO/native. This separates additional optimization from architecture effect. Costledger includes rewardreplay, fresh9-policy evaluation (provisional), and interrupted8episodes with rawtotals verified and costs separately retained. GoalACTIVE; final64results pending.

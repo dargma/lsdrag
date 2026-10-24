@@ -20,7 +20,7 @@
     "new_llm_rollouts": 0,
     "reuses": "decision_shared_outcomes192_20261023 and decision_shared_teacher192_20261023"
   },
-  "snapshot_utc": "2026-10-24T07:45:19.463834+00:00",
+  "snapshot_utc": "2026-10-24T07:53:16.101210+00:00",
   "runs": [
     {
       "group": "historical_grpo_reference",
@@ -459,15 +459,15 @@
     {
       "group": "offline_structure_and_reward",
       "run": "decision_structure_attention_validation64_20261024",
-      "phase": "evaluation",
+      "phase": "complete",
       "counts": {
-        "episodes": 120,
-        "generated": 9689,
-        "inputs": 468668
+        "episodes": 576,
+        "generated": 33679,
+        "inputs": 1792143
       },
-      "seconds": 183.04728938199696,
-      "complete_raw_totals_verified": false,
-      "terminal_raw_totals_verified": false,
+      "seconds": 626.2395821319951,
+      "complete_raw_totals_verified": true,
+      "terminal_raw_totals_verified": true,
       "status_path": "/content/local_fast/lsdrag-text-v1/results/decision_structure_attention_validation64_20261024/status.json"
     }
   ],
@@ -567,9 +567,9 @@
       "uncompleted_runs": []
     },
     "offline_structure_and_reward": {
-      "episodes": 128,
-      "generated": 17246,
-      "inputs": 1197880,
+      "episodes": 704,
+      "generated": 50925,
+      "inputs": 2990023,
       "failed_run_costs": {
         "episodes": 0,
         "generated": 0,
@@ -581,10 +581,9 @@
         "generated": 299,
         "inputs": 16965
       },
-      "completed_runs": 1,
+      "completed_runs": 2,
       "uncompleted_runs": [
-        "decision_structure_four_validation64_20261024",
-        "decision_structure_attention_validation64_20261024"
+        "decision_structure_four_validation64_20261024"
       ]
     }
   },

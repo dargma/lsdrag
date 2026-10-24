@@ -1059,11 +1059,10 @@
     "goal_achieved": false
   },
   "structure_attention_evaluation": {
-    "phase": "running",
-    "pid": 381926,
-    "seconds": 0.5658058800036088,
-    "script": "scripts/evaluate_decision_attention.py",
-    "child_pid": 381937,
-    "log": "/content/local_fast/lsdrag-text-v1/logs/value_heads_evaluate_decision_attention_1792827733.log"
+    "phase": "complete",
+    "pid": null,
+    "seconds": 631.9541211500036,
+    "report": "lab/reports/decision_structure_attention_validation64_20261024/report.md",
+    "goal_achieved": false
   }
 }

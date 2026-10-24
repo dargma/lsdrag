@@ -1,0 +1,17 @@
+{
+  "episodes": 576,
+  "generated": 33679,
+  "inputs": 1792143,
+  "reference_exact_parity_questions": 64,
+  "parity_fields": [
+    "answer",
+    "support_ids",
+    "f1",
+    "generated_tokens",
+    "prompt_tokens",
+    "tool_calls",
+    "errors"
+  ],
+  "drive_archive_sha256_verified": "cf5073a174e271328e9b25f7b3e9aa166e7cc0b1dd0f17691bd88f76d201b0dc",
+  "goal_achieved": false
+}
