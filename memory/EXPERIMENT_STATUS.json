@@ -509,7 +509,7 @@
   "execution_hold": {
     "active": false,
     "scope": "User-authorized bounded decision-policy pilot2; does not authorize arbitrary expansion",
-    "superseded_by": "2026-10-23 user \uadf8\ub798 \uc2dc\uc791\ud574 and explicit experiment continuation"
+    "superseded_by": "2026-10-23 user 그래 시작해 and explicit experiment continuation"
   },
   "research_review": {
     "phase": "astra_deep_research_complete",
@@ -597,7 +597,7 @@
   "execution_hold_history": [
     {
       "active": true,
-      "user_instruction": "\uc77c\ub2e8 \uc5ec\uae30\uae4c\uc9c0\ub9cc; \uc798 \uc800\uc7a5\ud558\uace0 \ubcf4\uace0\uc11c\ub3c4 \uc791\uc131 git \ubc18\uc601",
+      "user_instruction": "일단 여기까지만; 잘 저장하고 보고서도 작성 git 반영",
       "gpu_experiments_authorized_now": false
     }
   ],
@@ -1057,5 +1057,13 @@
     "training_seconds": 62.32639889899292,
     "protocol": "docs/JEV_ATTENTION_STRUCTURE_REVIEW_20261024.md",
     "goal_achieved": false
+  },
+  "structure_attention_evaluation": {
+    "phase": "running",
+    "pid": 381926,
+    "seconds": 0.5658058800036088,
+    "script": "scripts/evaluate_decision_attention.py",
+    "child_pid": 381937,
+    "log": "/content/local_fast/lsdrag-text-v1/logs/value_heads_evaluate_decision_attention_1792827733.log"
   }
 }

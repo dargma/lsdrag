@@ -1,4 +1,8 @@
 
+## 2026-10-24 — nine-policy evaluation launched
+
+Coordinator381926 and owned evaluation worker381937 verified live. State `/content/local_fast/lsdrag-text-v1/results/decision_structure_attention_coordinator_20261024.json`; log `/content/local_fast/lsdrag-text-v1/logs/value_heads_evaluate_decision_attention_1792827733.log`. Training archive saved/verified by coordinator; registry decision_attention_20261024/archive.json. Fresh run decision_structure_attention_validation64_20261024,576paired development episodes planned; no test access. Check live processes and actual status before resuming; do not launch duplicate. Code/protocol commitca9dd46 pushed remotejev_v1.1. GoalACTIVE; quality results pending.
+
 ## 2026-10-24 — attention fits complete and nine-policy validation frozen
 
 CPU fit completed62.3264sec, noLLMrollouts. Three attention variants finite, initial d987 logits exact, fixed normalization, actual377state context sensitivity nonzero. All9checkpoints independently reloaded/hash checked/legal mask passed. Frozen spec lab/registry/decision_attention_20261024/validation_spec.json;9×64episodes,max4500seconds. 7tests passed. Current attention training PID terminal; prepared coordinator scripts/coordinate_decision_attention.py will archive fit, evaluate fresh namespace, summarize/compare/archive. Clean holdout-loss filtering NOT implemented because inherited training exposure; training loss not used forselection. GoalACTIVE.

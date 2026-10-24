@@ -1,0 +1,8 @@
+{
+  "path": "/content/drive/MyDrive/lsdrag-backups/20261023/decision_attention_20261024.tar.gz",
+  "sha256": "0918553ea769d50d2f744ef5180048a3fccd00caae5c055390b56b9e28f384ae",
+  "bytes": 13933989,
+  "run": "/content/local_fast/lsdrag-text-v1/results/decision_attention_20261024",
+  "phase": "complete",
+  "backbone_weights_included": false
+}
