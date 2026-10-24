@@ -1,0 +1,8 @@
+{
+  "path": "/content/drive/MyDrive/lsdrag-backups/20261023/decision_h3_stop_coverage48_20261024.tar.gz",
+  "sha256": "5bb5f35ca46ad4f9c65c04c9eb26eaa03cda94b231c3e30d61d387bd578a2eae",
+  "bytes": 44365000,
+  "run": "/content/local_fast/lsdrag-text-v1/results/decision_h3_stop_coverage48_20261024",
+  "phase": "complete",
+  "backbone_weights_included": false
+}

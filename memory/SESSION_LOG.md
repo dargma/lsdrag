@@ -1810,3 +1810,61 @@ Goal ACTIVE; reserved80 protected; no automatic development launch.
 
 
 2026-10-24 continuation: verified existingcollector66441 live; no restart. Prepared fulltrain120 officialF1/EM/pairedcost/H3reference verifier, then coordinator67692/session17510 verifiedwaiting on exactcollectorhandle. Codecommitc29408d: archive→independentbinarycollectionaudit→finalize120inputhash→samefixedconstrainedfit→fitgate→pairedtrain120→verify/archive. Stops after train gate, no automaticdev or reserved80. Status pointer results/decision_constrained_stop120_pipeline_20261024.json; log logs/coverage120_pipeline_20261024.log. Atlastcheckcollection16q48states112episodes. Previousturnactualcollectionlaunch wasprogress; currentturnpreparesverifiedboundedcontinuation, notgoalcompletion.
+
+
+## 2026-10-24T12:29:36.720826+00:00 — coverage120 pipeline running
+
+{"phase": "running", "pid": 67692, "updated_utc": "2026-10-24T12:29:36.720826+00:00", "script": "scripts/reporting/archive_decision_run.py", "child_pid": 68869, "log": "/content/local_fast/lsdrag-text-v1/logs/coverage120_archive_decision_run_1792844976.log"}
+
+Goal ACTIVE; reserved80 protected; no automatic development launch.
+
+
+
+## 2026-10-24T12:29:40.344033+00:00 — coverage120 pipeline running
+
+{"phase": "running", "pid": 67692, "updated_utc": "2026-10-24T12:29:40.344033+00:00", "script": "scripts/reporting/verify_h3_stop_coverage48.py", "child_pid": 68882, "log": "/content/local_fast/lsdrag-text-v1/logs/coverage120_verify_h3_stop_coverage48_1792844980.log"}
+
+Goal ACTIVE; reserved80 protected; no automatic development launch.
+
+
+
+## 2026-10-24T12:29:43.767131+00:00 — coverage120 pipeline running
+
+{"phase": "running", "pid": 67692, "updated_utc": "2026-10-24T12:29:43.767131+00:00", "script": "scripts/prepare_decision_constrained_stop120.py", "child_pid": 68923, "log": "/content/local_fast/lsdrag-text-v1/logs/coverage120_prepare_decision_constrained_stop120_1792844983.log"}
+
+Goal ACTIVE; reserved80 protected; no automatic development launch.
+
+
+
+## 2026-10-24T12:29:44.135238+00:00 — coverage120 pipeline running
+
+{"phase": "running", "pid": 67692, "updated_utc": "2026-10-24T12:29:44.135238+00:00", "script": "scripts/fit_decision_constrained_stop120.py", "child_pid": 68924, "log": "/content/local_fast/lsdrag-text-v1/logs/coverage120_fit_decision_constrained_stop120_1792844984.log"}
+
+Goal ACTIVE; reserved80 protected; no automatic development launch.
+
+
+
+## 2026-10-24T12:29:47.408102+00:00 — coverage120 pipeline running
+
+{"phase": "running", "pid": 67692, "updated_utc": "2026-10-24T12:29:47.408102+00:00", "script": "scripts/reporting/archive_decision_run.py", "child_pid": 68968, "log": "/content/local_fast/lsdrag-text-v1/logs/coverage120_archive_decision_run_1792844987.log"}
+
+Goal ACTIVE; reserved80 protected; no automatic development launch.
+
+
+
+## 2026-10-24T12:29:47.626328+00:00 — coverage120 pipeline running
+
+{"phase": "running", "pid": 67692, "updated_utc": "2026-10-24T12:29:47.626328+00:00", "script": "scripts/evaluate_decision_stop_value_h2.py", "child_pid": 68969, "log": "/content/local_fast/lsdrag-text-v1/logs/coverage120_evaluate_decision_stop_value_h2_1792844987.log"}
+
+Goal ACTIVE; reserved80 protected; no automatic development launch.
+
+
+
+## 2026-10-24 — coverage48 audited; constrained120 fit passes; full train120 live
+
+Previous turn made progress via guardedpipeline preparation and verifiedlive wait. Newcollection complete420.487sec:48questions138states324episodes20815generated1680911input0errors. Independent verifier checked binarycoverage, fulllegalmask, exactprefixes, officialF1/EM, H3suffix/answerreplay, input/source hashes andDrivebytes. Tensor9ce43382940e15820f60951ee302faa3114b598d597416f4fe9c92be4b0b9607;archive5bb5f35ca46ad4f9c65c04c9eb26eaa03cda94b231c3e30d61d387bd578a2eae. Collector66441 terminal. Collectioncost correct91episodes7705tokens,incorrect233/13110; overlappingrollouts,notpolicyperformance.
+
+120fitplan finalized afteraudit; exactsameconstrainedlearner fromH3 (no72candidateweights).52targets400retention,84solveriterations,KL.01,23supportedmatches18q,all400protectedactionsunchanged. Fit gate PASSES. Independent452state checkpointreplay verifies unchangedH1/tool-logits, source/inputhashes/excludedmonitors,KL.01000001. Candidate efac5d79f3f4707a95ed28685bf6e8bae2411e95989455adaff0c7dbab602549. Report lab/reports/decision_constrained_stop120_20261024/verification.json. No QA successclaim.
+
+Paired fulltrain120 evaluator68969 confirmedlive; coordinator67692/session17510 waitsforworker. Log /content/local_fast/lsdrag-text-v1/logs/coverage120_evaluate_decision_stop_value_h2_1792844987.log; status /content/local_fast/lsdrag-text-v1/results/decision_constrained_stop120_train_eval_20261024/status.json. Pipeline pointer /content/local_fast/lsdrag-text-v1/results/decision_constrained_stop120_pipeline_20261024.json. Coordinator will official-score120/H3reference-replay/EMseparatecost/strictgate/archive thenSTOP, noautodev. Do notduplicate pipeline or start another evaluation. Onterminal inspect reports/actualprocesses; onlypassingtrain enablesfixeddev64. GoalACTIVE,reserved80untouched.
+
