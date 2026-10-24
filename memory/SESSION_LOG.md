@@ -2101,3 +2101,8 @@ User requests only two most promising directions after H3 correct-path efficienc
 
 Training /content/local_fast/lsdrag-text-v1/results/qwen35_9b_two_promising_20261024 complete. Next exactly2x64 evaluation with unchangedrawcachedbase/H3/constant references and sourcehashchecks, officialrescoring andpairedEMcosts. Primaryscreen F1/EM>=9Bbase AND both-correcttokenreduction AND0errors; repeateddevonly. Noreserved80/final80, noadditionalgrid. Newrun qwen35_9b_two_promising_validation64_20261024. Coordinator scripts/continue_qwen35_two_promising.py sequential archive/train->eval->rawaudit->archive, noautoretry. Status in trainingrun/coordinator_status.json; verifyactualPID beforeaction. Finalreport/memory/push/backups afterterminal. Priorlargermodelgoalcomplete; thisisnewuserauthorizedboundedtask.
 
+
+## 2026-10-24 — two-candidate evaluation live
+
+Actual coordinator283015 and child283023 confirmed; first4of128episodes at50.19seconds. Status /content/local_fast/lsdrag-text-v1/results/qwen35_9b_two_promising_20261024/coordinator_status.json; evaluationrun qwen35_9b_two_promising_validation64_20261024/status.json. Frozen source57bfacc; trainingarchive Drive hash reverified. No newqualityclaim, no retuning despiteH1trainargmax0changes. Wait same process; coordinator owns terminalrawaudit/archive. No duplicate/restart.
+

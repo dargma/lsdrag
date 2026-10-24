@@ -1,3 +1,7 @@
+## 2026-10-24 — two-candidate evaluation live
+
+Actual coordinator283015 and child283023 confirmed; first4of128episodes at50.19seconds. Status /content/local_fast/lsdrag-text-v1/results/qwen35_9b_two_promising_20261024/coordinator_status.json; evaluationrun qwen35_9b_two_promising_validation64_20261024/status.json. Frozen source57bfacc; trainingarchive Drive hash reverified. No newqualityclaim, no retuning despiteH1trainargmax0changes. Wait same process; coordinator owns terminalrawaudit/archive. No duplicate/restart.
+
 ## 2026-10-24 — user authorized two promising9B hypotheses; fitted, evaluation next
 
 User requests only two most promising directions after H3 correct-path efficiency disappointment. Selected historical H1 useful-action correction and MLP value-aux quality signal; adapted9B variants, not exact reproduction. Protocol docs/JEV_QWEN35_TWO_PROMISING_20261024.md. Both initialize same9Bbootstrap, reuse verified317train-only all-actionstates48q; frozenreader/interface/splits. H1conservative only516outputparams, value_aux jointlyencoder+policy+training-onlyquality/costpredictor. SameH1quality-preservingtargets149corrections1217retention,100AdamW1e-4seed20261080; noretuning. H1changed0trainingargmax, value61: diagnosticsnotquality. Savedcheckpointkeys/finitevalues/normalizationhashes verified. Plan/source/inputhashes frozen.

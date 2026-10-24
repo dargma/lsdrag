@@ -1,5 +1,5 @@
 {
-  "phase": "qwen35_two_promising_fitted_evaluation_pending",
+  "phase": "qwen35_two_promising_evaluation_running",
   "updated_utc": "2026-10-24T16:40:33.655944+00:00",
   "protocol": "docs/JEV_QWEN35_TWO_PROMISING_20261024.md",
   "protocol_sha256": "e0cd40c9a1b728408047f7aee95bc9849caa698407c243d20df6a991c9260432",
@@ -32,7 +32,7 @@
   ],
   "worker_wall_budget_minutes": 120,
   "run_planned": "/content/local_fast/lsdrag-text-v1/results/decision_h3_policy_coverage24b_20261024",
-  "pid": null,
+  "pid": 283023,
   "implementation_completed": true,
   "dataset_prepared": true,
   "teacher_collection_started": true,
@@ -190,7 +190,7 @@
   "worker_seconds": 277.1492917609994,
   "contract": "5b64658a2608f883599dbfb36be3758d4f28cc0de63c532ec11f76117a3cecce",
   "teacher_target": 32,
-  "log": "/content/local_fast/lsdrag-text-v1/logs/qwen35_pipeline_outcomes_20261024.log",
+  "log": "/content/local_fast/lsdrag-text-v1/logs/qwen35_9b_two_promising_20261024_evaluation.log",
   "frozen_source_commit": "7ff891a",
   "teacher_questions": 32,
   "natural_states": 15,
@@ -1252,7 +1252,7 @@
   "read_pointer_plan": "docs/JEV_H2_READ_POINTER_FEASIBILITY_20261024.md",
   "last_experiment_limit": false,
   "active_objective": "큰 모델로 실험 완료하기",
-  "coordinator_pid": null,
+  "coordinator_pid": 283015,
   "coordinator_status": "/content/local_fast/lsdrag-text-v1/results/qwen35_9b_pipeline_20261024/status.json",
   "bootstrap_completed": true,
   "qwen35_base_fit": {
