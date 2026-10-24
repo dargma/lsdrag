@@ -1,0 +1,1116 @@
+{
+  "scope": "Frozen first81 TRAIN teacher episodes; current common-protocol9B, not learnedH3. First3 chronological examples per exact/partial/zeroF1 stratum; no configuration change or evaluation relabeling.",
+  "counts": {
+    "forced_final": 25,
+    "empty_answer": 12,
+    "answers_over10_words": 2,
+    "first_keyword": 81,
+    "episodes_without_read": 15,
+    "errors": 0,
+    "search_calls": 409,
+    "nonempty_search_no_new_ids": 28,
+    "episodes_with_identical_repeat": 3,
+    "identical_repeated_calls": 3
+  },
+  "groups": {
+    "partial": {
+      "n": 11,
+      "generated_total": 2264,
+      "generated_mean": 205.8181818181818,
+      "forced_final": 4,
+      "mean_tools": 6.454545454545454
+    },
+    "correct": {
+      "n": 36,
+      "generated_total": 6389,
+      "generated_mean": 177.47222222222223,
+      "forced_final": 6,
+      "mean_tools": 5.666666666666667
+    },
+    "zero_f1": {
+      "n": 34,
+      "generated_total": 5809,
+      "generated_mean": 170.85294117647058,
+      "forced_final": 15,
+      "mean_tools": 6.647058823529412
+    }
+  },
+  "correctness": {
+    "correct": {
+      "n": 36,
+      "generated_total": 6389,
+      "generated_mean": 177.47222222222223,
+      "forced_final": 6,
+      "mean_tools": 5.666666666666667
+    },
+    "incorrect": {
+      "n": 45,
+      "generated_total": 8073,
+      "generated_mean": 179.4,
+      "forced_final": 19,
+      "mean_tools": 6.6
+    },
+    "partial_incorrect": {
+      "n": 11,
+      "generated_total": 2264,
+      "generated_mean": 205.8181818181818,
+      "forced_final": 4,
+      "mean_tools": 6.454545454545454
+    }
+  },
+  "mean_answer_words": 2.3209876543209877,
+  "cases": [
+    {
+      "group": "partial",
+      "qid": "2hop__426842_4037",
+      "question": "How many Americans live in the country that encompasses Lubondai?",
+      "gold": "Around 300",
+      "answer": "300",
+      "f1": 0.6666666666666666,
+      "forced_final": false,
+      "generated": 123,
+      "trajectory": [
+        {
+          "tool": "keyword_search",
+          "arguments": {
+            "keywords": [
+              "Lubondai"
+            ]
+          },
+          "titles": [
+            "Lubondai"
+          ]
+        },
+        {
+          "tool": "read_chunk",
+          "arguments": {
+            "chunk_ids": [
+              "cb9f904fbebee0f5ebe4bc5f8"
+            ]
+          },
+          "titles": [
+            "Lubondai"
+          ]
+        },
+        {
+          "tool": "keyword_search",
+          "arguments": {
+            "keywords": [
+              "Democratic Republic of Congo",
+              "population",
+              "Americans"
+            ]
+          },
+          "titles": [
+            "New York City",
+            "Race (human categorization)",
+            "British Isles",
+            "Montana",
+            "Race (human categorization)"
+          ]
+        },
+        {
+          "tool": "semantic_search",
+          "arguments": {
+            "query": "number of Americans living in Democratic Republic of Congo"
+          },
+          "titles": [
+            "Republic of the Congo",
+            "Democratic Republic of the Congo",
+            "Republic of the Congo",
+            "Vietnamese Americans",
+            "Republic of the Congo"
+          ]
+        },
+        {
+          "tool": "read_chunk",
+          "arguments": {
+            "chunk_ids": [
+              "cb040abcc9f488dc74ddcc4cc"
+            ]
+          },
+          "titles": [
+            "Republic of the Congo"
+          ]
+        }
+      ]
+    },
+    {
+      "group": "correct",
+      "qid": "2hop__247148_838537",
+      "question": "Biographies of the composer of Il re pastore is the main subject of what?",
+      "gold": "Wolfgang Amadeus Mozart",
+      "answer": "Wolfgang Amadeus Mozart",
+      "f1": 1.0,
+      "forced_final": false,
+      "generated": 178,
+      "trajectory": [
+        {
+          "tool": "keyword_search",
+          "arguments": {
+            "keywords": [
+              "Il re pastore",
+              "composer",
+              "biographies"
+            ]
+          },
+          "titles": [
+            "Classical music",
+            "Miriam Zach",
+            "Death of a Composer",
+            "Paris",
+            "British Academy of Songwriters, Composers, and Authors"
+          ]
+        },
+        {
+          "tool": "keyword_search",
+          "arguments": {
+            "keywords": [
+              "Il re pastore",
+              "Mozart"
+            ]
+          },
+          "titles": [
+            "Amadeus (film)",
+            "Wolfgang Amadeus Mozart",
+            "Betulia liberata",
+            "Classical music",
+            "Mitridate, re di Ponto"
+          ]
+        },
+        {
+          "tool": "keyword_search",
+          "arguments": {
+            "keywords": [
+              "Il re pastore",
+              "opera",
+              "Mozart"
+            ]
+          },
+          "titles": [
+            "Mitridate, re di Ponto",
+            "Ho Chi Minh trail",
+            "United States Army Special Forces",
+            "Amadeus (film)",
+            "List of Presidential Medal of Freedom recipients"
+          ]
+        },
+        {
+          "tool": "semantic_search",
+          "arguments": {
+            "query": "Il re pastore Mozart opera biography subject"
+          },
+          "titles": [
+            "Il re pastore",
+            "Mitridate, re di Ponto",
+            "Betulia liberata",
+            "Wolfgang Amadeus Mozart",
+            "La pastorella nobile"
+          ]
+        },
+        {
+          "tool": "read_chunk",
+          "arguments": {
+            "chunk_ids": [
+              "c4121d6a46c994b755a17b332"
+            ]
+          },
+          "titles": [
+            "Il re pastore"
+          ]
+        },
+        {
+          "tool": "keyword_search",
+          "arguments": {
+            "keywords": [
+              "Il re pastore",
+              "biography",
+              "subject",
+              "opera",
+              "Mozart"
+            ]
+          },
+          "titles": [
+            "Mitridate, re di Ponto",
+            "Ho Chi Minh trail",
+            "United States Army Special Forces",
+            "Amadeus (film)",
+            "Treaty"
+          ]
+        },
+        {
+          "tool": "semantic_search",
+          "arguments": {
+            "query": "biographies of Mozart composer Il re pastore main subject"
+          },
+          "titles": [
+            "Il re pastore",
+            "Il pastor fido",
+            "La pastorella nobile",
+            "Wolfgang Amadeus Mozart",
+            "Mitridate, re di Ponto"
+          ]
+        }
+      ]
+    },
+    {
+      "group": "correct",
+      "qid": "2hop__82744_23249",
+      "question": "How much of the country with the largest economy in Africa has HIV as of 2012?",
+      "gold": "3.1 percent",
+      "answer": "3.1 percent",
+      "f1": 1.0,
+      "forced_final": false,
+      "generated": 170,
+      "trajectory": [
+        {
+          "tool": "keyword_search",
+          "arguments": {
+            "keywords": [
+              "largest economy Africa",
+              "HIV",
+              "2012"
+            ]
+          },
+          "titles": [
+            "Don't You Worry Child",
+            "List of Property Brothers episodes",
+            "Johnny Manziel",
+            "Celebrate (Whitney Houston and Jordin Sparks song)",
+            "Buster Posey"
+          ]
+        },
+        {
+          "tool": "semantic_search",
+          "arguments": {
+            "query": "country with largest economy in Africa HIV prevalence 2012"
+          },
+          "titles": [
+            "List of countries by HIV/AIDS adult prevalence rate",
+            "List of African countries by GDP (PPP)",
+            "List of African countries by GDP (nominal)",
+            "Nigeria",
+            "Economy of Africa"
+          ]
+        },
+        {
+          "tool": "keyword_search",
+          "arguments": {
+            "keywords": [
+              "Nigeria",
+              "HIV",
+              "2012",
+              "prevalence"
+            ]
+          },
+          "titles": [
+            "Nigerian nationalism",
+            "List of countries by HIV/AIDS adult prevalence rate",
+            "Anthony Enahoro",
+            "History of Nigeria",
+            "Nigeria"
+          ]
+        },
+        {
+          "tool": "read_chunk",
+          "arguments": {
+            "chunk_ids": [
+              "c7922e6feddbfab89778bbda9",
+              "cc321bdc6803f9c11a56851b6"
+            ]
+          },
+          "titles": [
+            "Nigeria",
+            "Nigeria"
+          ]
+        }
+      ]
+    },
+    {
+      "group": "correct",
+      "qid": "2hop__607351_58450",
+      "question": "In the movie I Can Only Imagine, what actress plays the performer of What About the Love?",
+      "gold": "Nicole DuPort",
+      "answer": "Nicole DuPort",
+      "f1": 1.0,
+      "forced_final": true,
+      "generated": 229,
+      "trajectory": [
+        {
+          "tool": "keyword_search",
+          "arguments": {
+            "keywords": [
+              "I Can Only Imagine",
+              "What About the Love",
+              "actress"
+            ]
+          },
+          "titles": [
+            "List of actors nominated for two Academy Awards in the same year",
+            "List of black Primetime Emmy Award winners and nominees",
+            "I Can Only Imagine (MercyMe song)",
+            "I Can Only Imagine (MercyMe song)",
+            "List of most-followed Instagram accounts"
+          ]
+        },
+        {
+          "tool": "keyword_search",
+          "arguments": {
+            "keywords": [
+              "I Can Only Imagine",
+              "movie",
+              "actress",
+              "What About the Love"
+            ]
+          },
+          "titles": [
+            "List of actors nominated for two Academy Awards in the same year",
+            "Brett Dier",
+            "List of black Primetime Emmy Award winners and nominees",
+            "I Can Only Imagine (MercyMe song)",
+            "I Can Only Imagine (MercyMe song)"
+          ]
+        },
+        {
+          "tool": "semantic_search",
+          "arguments": {
+            "query": "movie I Can Only Imagine cast actress plays What About the Love"
+          },
+          "titles": [
+            "I Can Only Imagine (film)",
+            "I Can Only Imagine (film)",
+            "I Can Only Imagine (film)",
+            "I Can Only Imagine (film)",
+            "I Can Only Imagine (film)"
+          ]
+        },
+        {
+          "tool": "read_chunk",
+          "arguments": {
+            "chunk_ids": [
+              "ca506907fb2bba5f096a81dba",
+              "c9fee00c2108ec1e267e43838"
+            ]
+          },
+          "titles": [
+            "I Can Only Imagine (film)",
+            "I Can Only Imagine (film)"
+          ]
+        },
+        {
+          "tool": "keyword_search",
+          "arguments": {
+            "keywords": [
+              "What About the Love",
+              "actress",
+              "I Can Only Imagine",
+              "film"
+            ]
+          },
+          "titles": [
+            "List of actors nominated for two Academy Awards in the same year",
+            "National Film Award for Best Supporting Actress",
+            "Chasing Shakespeare",
+            "National Film Award for Best Actress",
+            "National Film Award for Best Actress"
+          ]
+        },
+        {
+          "tool": "semantic_search",
+          "arguments": {
+            "query": "actress plays Amy Grant I Can Only Imagine movie"
+          },
+          "titles": [
+            "I Can Only Imagine (film)",
+            "I Can Only Imagine (film)",
+            "I Can Only Imagine (film)",
+            "I Can Only Imagine (film)",
+            "I Can Only Imagine (film)"
+          ]
+        },
+        {
+          "tool": "keyword_search",
+          "arguments": {
+            "keywords": [
+              "What About the Love",
+              "Amy Grant",
+              "I Can Only Imagine",
+              "film",
+              "actress"
+            ]
+          },
+          "titles": [
+            "List of actors nominated for two Academy Awards in the same year",
+            "National Film Award for Best Supporting Actress",
+            "Chasing Shakespeare",
+            "National Film Award for Best Actress",
+            "National Film Award for Best Actress"
+          ]
+        },
+        {
+          "tool": "semantic_search",
+          "arguments": {
+            "query": "What About the Love song I Can Only Imagine movie actress"
+          },
+          "titles": [
+            "I Can Only Imagine (film)",
+            "I Can Only Imagine (film)",
+            "I Can Only Imagine (film)",
+            "I Can Only Imagine (film)",
+            "I Can Only Imagine (film)"
+          ]
+        }
+      ]
+    },
+    {
+      "group": "zero_f1",
+      "qid": "2hop__746150_556534",
+      "question": "What is the city where Geo Films is headquartered the capitol of?",
+      "gold": "West Pakistan",
+      "answer": "Sindh",
+      "f1": 0,
+      "forced_final": false,
+      "generated": 168,
+      "trajectory": [
+        {
+          "tool": "keyword_search",
+          "arguments": {
+            "keywords": [
+              "Geo Films",
+              "headquarters",
+              "city"
+            ]
+          },
+          "titles": [
+            "Headquarters of the United Nations",
+            "Scotland Yard",
+            "Dell",
+            "North Carolina",
+            "New York City"
+          ]
+        },
+        {
+          "tool": "keyword_search",
+          "arguments": {
+            "keywords": [
+              "Geo Films",
+              "headquartered"
+            ]
+          },
+          "titles": [
+            "Tennessee",
+            "153rd Infantry Regiment (United States)",
+            "Miami",
+            "Allied Command Europe Mobile Force",
+            "Montana"
+          ]
+        },
+        {
+          "tool": "semantic_search",
+          "arguments": {
+            "query": "Geo Films headquarters location city"
+          },
+          "titles": [
+            "Geo Films",
+            "Ramoji Film City",
+            "General Electric",
+            "Nela Park",
+            "HMD Global"
+          ]
+        },
+        {
+          "tool": "read_chunk",
+          "arguments": {
+            "chunk_ids": [
+              "c4bebc308855987e93eba68ac"
+            ]
+          },
+          "titles": [
+            "Geo Films"
+          ]
+        },
+        {
+          "tool": "keyword_search",
+          "arguments": {
+            "keywords": [
+              "Karachi",
+              "capital",
+              "province",
+              "Pakistan"
+            ]
+          },
+          "titles": [
+            "List of capitals in Pakistan",
+            "India–Pakistan border",
+            "Punjab, Pakistan",
+            "Lâm Đồng Province",
+            "Abrar Hasan"
+          ]
+        },
+        {
+          "tool": "read_chunk",
+          "arguments": {
+            "chunk_ids": [
+              "c0fbed924174ef7a667a3bcf9"
+            ]
+          },
+          "titles": [
+            "List of capitals in Pakistan"
+          ]
+        }
+      ]
+    },
+    {
+      "group": "partial",
+      "qid": "2hop__592717_181429",
+      "question": "What fragrance did the composer of Dope create?",
+      "gold": "Lady Gaga Fame",
+      "answer": "Fame",
+      "f1": 0.5,
+      "forced_final": false,
+      "generated": 163,
+      "trajectory": [
+        {
+          "tool": "keyword_search",
+          "arguments": {
+            "keywords": [
+              "Dope",
+              "composer"
+            ]
+          },
+          "titles": [
+            "Classical music",
+            "Miriam Zach",
+            "Death of a Composer",
+            "Paris",
+            "British Academy of Songwriters, Composers, and Authors"
+          ]
+        },
+        {
+          "tool": "keyword_search",
+          "arguments": {
+            "keywords": [
+              "Dope",
+              "fragrance"
+            ]
+          },
+          "titles": [
+            "Beyoncé",
+            "Lady Gaga Fame",
+            "Estée Lauder (businesswoman)",
+            "Gaspard Ulliel",
+            "Christian Louboutin"
+          ]
+        },
+        {
+          "tool": "keyword_search",
+          "arguments": {
+            "keywords": [
+              "Dope",
+              "rapper",
+              "composer"
+            ]
+          },
+          "titles": [
+            "Classical music",
+            "Miriam Zach",
+            "Death of a Composer",
+            "Paris",
+            "British Academy of Songwriters, Composers, and Authors"
+          ]
+        },
+        {
+          "tool": "semantic_search",
+          "arguments": {
+            "query": "composer of the song Dope fragrance"
+          },
+          "titles": [
+            "Dope (Lady Gaga song)",
+            "Do Re Mi (Blackbear song)",
+            "Perfume (Britney Spears song)",
+            "Nice for What",
+            "Tom Frager"
+          ]
+        },
+        {
+          "tool": "read_chunk",
+          "arguments": {
+            "chunk_ids": [
+              "c39e98e1040a4ecb585d22910",
+              "cc4f1f956b5fb10504fb3b0fa"
+            ]
+          },
+          "titles": [
+            "Dope (Lady Gaga song)",
+            "Lady Gaga Fame"
+          ]
+        }
+      ]
+    },
+    {
+      "group": "zero_f1",
+      "qid": "2hop__22215_22229",
+      "question": "In what year was the death of the person who described the Anglican church as our beloved sister church?",
+      "gold": "1978",
+      "answer": "2005",
+      "f1": 0,
+      "forced_final": true,
+      "generated": 165,
+      "trajectory": [
+        {
+          "tool": "keyword_search",
+          "arguments": {
+            "keywords": [
+              "Anglican church",
+              "beloved sister church"
+            ]
+          },
+          "titles": [
+            "Bergen Anglican Church",
+            "Pope Paul VI",
+            "Andrew Fairfield",
+            "Ordination of women in the Anglican Communion",
+            "Anglican Network in Canada"
+          ]
+        },
+        {
+          "tool": "semantic_search",
+          "arguments": {
+            "query": "person described Anglican church as beloved sister church"
+          },
+          "titles": [
+            "Church of England",
+            "Mary, mother of Jesus",
+            "Bergen Anglican Church",
+            "The Church Lady",
+            "Protestantism"
+          ]
+        },
+        {
+          "tool": "keyword_search",
+          "arguments": {
+            "keywords": [
+              "beloved sister church",
+              "Anglican"
+            ]
+          },
+          "titles": [
+            "Protestantism",
+            "Bergen Anglican Church",
+            "Anglican Network in Canada",
+            "Separation of church and state in the United States",
+            "Andrew Fairfield"
+          ]
+        },
+        {
+          "tool": "semantic_search",
+          "arguments": {
+            "query": "quote \"beloved sister church\" Anglican"
+          },
+          "titles": [
+            "Church of England",
+            "Mary, mother of Jesus",
+            "Charles A. Goodrich",
+            "The Church Lady",
+            "Divine Mercy Sunday"
+          ]
+        },
+        {
+          "tool": "keyword_search",
+          "arguments": {
+            "keywords": [
+              "sister church",
+              "Anglican",
+              "Catholic"
+            ]
+          },
+          "titles": [
+            "University of Notre Dame",
+            "List of Catholic dioceses in the United States",
+            "Catholic Church in the United States",
+            "Armenians",
+            "Protestantism"
+          ]
+        },
+        {
+          "tool": "semantic_search",
+          "arguments": {
+            "query": "quote \"beloved sister church\" Anglican Catholic"
+          },
+          "titles": [
+            "The Church Lady",
+            "Mary, mother of Jesus",
+            "Church of England",
+            "Divine Mercy Sunday",
+            "Charles A. Goodrich"
+          ]
+        },
+        {
+          "tool": "keyword_search",
+          "arguments": {
+            "keywords": [
+              "beloved sister church",
+              "Pope",
+              "Anglican"
+            ]
+          },
+          "titles": [
+            "Protestantism",
+            "Bergen Anglican Church",
+            "Anglican Network in Canada",
+            "Saint",
+            "Pope Paul VI"
+          ]
+        },
+        {
+          "tool": "semantic_search",
+          "arguments": {
+            "query": "Pope Paul VI Anglican sister church"
+          },
+          "titles": [
+            "Pope Paul VI",
+            "Pope Paul VI",
+            "Pope Paul VI",
+            "Pope Paul VI",
+            "Pope Paul VI"
+          ]
+        }
+      ]
+    },
+    {
+      "group": "zero_f1",
+      "qid": "2hop__38200_430",
+      "question": "When did Chopin's family move to the city Eisenhower visited in 1945?",
+      "gold": "October 1810",
+      "answer": "1827",
+      "f1": 0,
+      "forced_final": false,
+      "generated": 177,
+      "trajectory": [
+        {
+          "tool": "keyword_search",
+          "arguments": {
+            "keywords": [
+              "Eisenhower",
+              "1945",
+              "city"
+            ]
+          },
+          "titles": [
+            "Dwight D. Eisenhower",
+            "Dwight D. Eisenhower",
+            "Dwight D. Eisenhower",
+            "Dwight D. Eisenhower",
+            "Dwight D. Eisenhower"
+          ]
+        },
+        {
+          "tool": "keyword_search",
+          "arguments": {
+            "keywords": [
+              "Chopin",
+              "family",
+              "move",
+              "city"
+            ]
+          },
+          "titles": [
+            "Keeping Up with the Kardashians",
+            "Frédéric Chopin",
+            "Beaver Stadium",
+            "Frédéric Chopin",
+            "Ann Arbor, Michigan"
+          ]
+        },
+        {
+          "tool": "read_chunk",
+          "arguments": {
+            "chunk_ids": [
+              "cc676703b8d4318e61f2cc1c8"
+            ]
+          },
+          "titles": [
+            "Frédéric Chopin"
+          ]
+        },
+        {
+          "tool": "keyword_search",
+          "arguments": {
+            "keywords": [
+              "Eisenhower",
+              "Warsaw",
+              "1945"
+            ]
+          },
+          "titles": [
+            "Dwight D. Eisenhower",
+            "Dwight D. Eisenhower",
+            "Dwight D. Eisenhower",
+            "Warsaw",
+            "Dwight D. Eisenhower"
+          ]
+        },
+        {
+          "tool": "semantic_search",
+          "arguments": {
+            "query": "Eisenhower visited Warsaw 1945"
+          },
+          "titles": [
+            "Dwight D. Eisenhower",
+            "Dwight D. Eisenhower",
+            "Dwight D. Eisenhower",
+            "Dwight D. Eisenhower",
+            "Dwight D. Eisenhower"
+          ]
+        },
+        {
+          "tool": "keyword_search",
+          "arguments": {
+            "keywords": [
+              "Eisenhower",
+              "Poland",
+              "1945",
+              "visit"
+            ]
+          },
+          "titles": [
+            "Dwight D. Eisenhower",
+            "Dwight D. Eisenhower",
+            "Dwight D. Eisenhower",
+            "Dwight D. Eisenhower",
+            "Dwight D. Eisenhower"
+          ]
+        },
+        {
+          "tool": "semantic_search",
+          "arguments": {
+            "query": "Eisenhower visited Warsaw 1945"
+          },
+          "titles": [
+            "Dwight D. Eisenhower",
+            "Dwight D. Eisenhower",
+            "Dwight D. Eisenhower",
+            "Dwight D. Eisenhower",
+            "Dwight D. Eisenhower"
+          ]
+        }
+      ]
+    },
+    {
+      "group": "partial",
+      "qid": "2hop__70082_2578",
+      "question": "In what ways did Kanye draw inspiration from U2, Led Zeppelin, and the band that recorded She's Like a Rainbow?",
+      "gold": "melody and chord progression",
+      "answer": "Kanye drew inspiration from U2 by incorporating synthesizers, slower tempos, and electronic music after touring with them; from Led Zeppelin by adopting their melody and chord progression in arena rock style; and from the Rolling Stones (who recorded 'She's Like a Rainbow') by drawing from their musical influence.",
+      "f1": 0.16,
+      "forced_final": true,
+      "generated": 303,
+      "trajectory": [
+        {
+          "tool": "keyword_search",
+          "arguments": {
+            "keywords": [
+              "Kanye",
+              "U2",
+              "Led Zeppelin",
+              "She's Like a Rainbow"
+            ]
+          },
+          "titles": [
+            "Hard rock",
+            "Living Loving Maid (She's Just a Woman)",
+            "Immigrant Song",
+            "Whole Lotta Love",
+            "No Quarter (song)"
+          ]
+        },
+        {
+          "tool": "keyword_search",
+          "arguments": {
+            "keywords": [
+              "Kanye",
+              "U2",
+              "Led Zeppelin",
+              "band",
+              "She's Like a Rainbow"
+            ]
+          },
+          "titles": [
+            "Hard rock",
+            "Living Loving Maid (She's Just a Woman)",
+            "Whole Lotta Love",
+            "Immigrant Song",
+            "Hard rock"
+          ]
+        },
+        {
+          "tool": "semantic_search",
+          "arguments": {
+            "query": "Kanye West inspiration U2 Led Zeppelin She's Like a Rainbow band"
+          },
+          "titles": [
+            "Kanye West",
+            "Kanye West",
+            "Kanye West",
+            "Kanye West",
+            "Kanye West"
+          ]
+        },
+        {
+          "tool": "read_chunk",
+          "arguments": {
+            "chunk_ids": [
+              "cc01a940c35bd7d12ed2f4302"
+            ]
+          },
+          "titles": [
+            "Kanye West"
+          ]
+        },
+        {
+          "tool": "keyword_search",
+          "arguments": {
+            "keywords": [
+              "She's Like a Rainbow",
+              "band",
+              "recorded",
+              "Kanye"
+            ]
+          },
+          "titles": [
+            "Avenged Sevenfold",
+            "Dean Martin Sings",
+            "Slick Aguilar",
+            "Holding Out for a Hero",
+            "Staind"
+          ]
+        },
+        {
+          "tool": "keyword_search",
+          "arguments": {
+            "keywords": [
+              "She's Like a Rainbow",
+              "band",
+              "1970",
+              "recorded"
+            ]
+          },
+          "titles": [
+            "Avenged Sevenfold",
+            "Slick Aguilar",
+            "Dean Martin Sings",
+            "Holding Out for a Hero",
+            "List of Presidential Medal of Freedom recipients"
+          ]
+        },
+        {
+          "tool": "semantic_search",
+          "arguments": {
+            "query": "band that recorded She's Like a Rainbow"
+          },
+          "titles": [
+            "She's a Rainbow",
+            "Nelson (band)",
+            "Love Is Like a Rock",
+            "Since You Been Gone",
+            "Fabulous Five Inc."
+          ]
+        },
+        {
+          "tool": "read_chunk",
+          "arguments": {
+            "chunk_ids": [
+              "cd7858cd0136af4115c57ae15"
+            ]
+          },
+          "titles": [
+            "She's a Rainbow"
+          ]
+        }
+      ]
+    }
+  ],
+  "episode_sha256": {
+    "2hop__426842_4037": "fffccaa07dd48d4612c17bd2a05065b66232aaac37ffd8f51ac73f24ea7a0fcd",
+    "2hop__247148_838537": "20dcf3d7df421903857e12d84f021728cc827ceac665975a257eda8522ee103a",
+    "2hop__82744_23249": "deb9779b4b2538545468fbe47a63db622bac9b3a7f6adec871216b5805c758a6",
+    "2hop__607351_58450": "db8bec8ed091d633b44e8a4cc250a55d008720d05bd2b41f8a18715bab57fb07",
+    "2hop__487591_7672": "fb9f4767c632977271e149db4a20528787659411a3fc5e39cf70fffe2b5d7a40",
+    "2hop__746150_556534": "984aba019017bed9d7596b2dad31900b9de286dbcdc674d513d3ffbc601f688d",
+    "2hop__763486_83697": "b9e1386bac0809d0b319bdc0900885cf42a38d6df31d274fa694b1e191c6b6d5",
+    "2hop__357497_74309": "b43ec4af80281110318219d9db41b702963df05b7f55dae5b2113d15980d9e72",
+    "2hop__592717_181429": "4834c0beed9bb30183b213ce6c027097e7318ffd0b31e55c3cb40e49497e2f9d",
+    "2hop__22215_22229": "8035d03f1ffb0127004724d97a4787d4899756dc450e2c7a35665ae95f78864a",
+    "2hop__38200_430": "33dbb75b780d80cbb8d0aa37ec114c2bbfeaf0a4a1c30b00cf08bc747746ed1d",
+    "2hop__70082_2578": "c70b84beec54f7df78d4d58e00451d7b1320582b356ba88659829cf825dab9f7",
+    "2hop__408076_99606": "281e71949a3c12bb756270e546ae64baff76ddca6c9b7f6fa3d7e001b2fecc2a",
+    "2hop__103724_90561": "8a05390c96ce507dbe15b0a0a55446d1ace5087548c0aa970d1f662a2355a6c1",
+    "2hop__676157_44637": "347c959321f5cde191a8a22cc10a4c6b485f6ae20b650c9cfad42f369935698f",
+    "2hop__709686_26789": "070e394591f49a48ceeafdec246f887d3d9e35b2db94229eaf29bd8c44ca9af4",
+    "2hop__129572_791121": "1b2683e80c168f6cf86e3b19e4df21a405e24fa28c0f78789f7e21274e33a36c",
+    "2hop__128642_32463": "1cf67f88f8eb649b3aee02daf910e43d1a6f6380d7baf8f6c4462d5529d8f81b",
+    "2hop__145016_766780": "c753de10945f1feeaec25bcaa02b04da10bab54fcbd580def1d00780407a9d92",
+    "2hop__153074_79404": "2eb2516cd05e00dfe7c98ab4c589b6fd1a4090a04e8df974dd84a579c98d8391",
+    "2hop__25968_727337": "b6b011b1b981278a8a323db9566f33071b192ca273514a9336051a1f46d64ace",
+    "2hop__438489_14948": "266e9f6217ea51c793140d775490765506ab2e957f36fe08da41b3b1b1cd4d34",
+    "2hop__561810_673383": "c9a73b73add36952b5fe33e2d443a72ef40c0d6df8ac61bf235546e704d763f6",
+    "2hop__568006_159937": "b44a241f0ae3b17b9c3aa12ec674cc6e14393b4f9310ef47921dca0beeb5b754",
+    "2hop__376266_37939": "afd481dfeb50bbcd0754b16baa0f337fd3fb4460b9e923126af5c94074cc4e7d",
+    "2hop__524587_33802": "517fa7595a1b2fb0933bcf4094d8a0e72bc29998ef61479cee9f2b872c030cae",
+    "2hop__108398_857705": "fef41fd41509c632c14d74e657a8ee35b7c88981112bc1d49cf4abf5e04d770d",
+    "2hop__143847_263710": "174fd1a9db00a1217a22431a081b758d79d72dae7643eeb73b4e201213a3e6de",
+    "2hop__8531_24846": "6a2ddfb1ad3ea6ee08a7dbd08e7d379e49b29fd36dd44da0142c1fc3ec1824b5",
+    "2hop__224287_15822": "43bae490a4ff00c03b0cd0873ea4c3e297e5329d2579bbea2bf276925da60a43",
+    "2hop__599824_47878": "b6d4b744a967500f0188e95d0e93107fac9a1dc2a5b049d3a974cdeaf5252343",
+    "2hop__715365_565667": "399219222e5a3d50f8f62ef9fbb56b665ea4927cfc8d6a19c16e0f2d2893ba55",
+    "2hop__131280_89563": "76a65996728bbfca19f4a851be9bbd45055924ae7ec1467e418927e77da80756",
+    "2hop__660296_36180": "be354dc9549e0dfe7aef35925da0f726d9e8b1c8f2380f87c869fe5c0e0b0c97",
+    "2hop__144760_88472": "5b7f25463a509de190baca54f98c4d5b76a8603d8d49ef052e86c94d5ce08099",
+    "2hop__159029_60847": "5e0fd5f052bb566a0ee319b2ee48f6db3382b07b811f302e47922e146770cbe3",
+    "2hop__554253_86395": "d73e0ea41da56662e50d4984fecfe25169acf339570798f31cb4e8b2d1e79287",
+    "2hop__692214_82827": "a53072003531cec5c1320c276e5e35fff447d62f04c13a8ed7ae79c3c68715eb",
+    "2hop__9129_79233": "779106229012c00cc4920734dfcda4a7e46126dd2d0fc2c45e1df89f8249b2fb",
+    "2hop__769619_162428": "47c87ea61dd0b08a99519f54c995e67e0eac42fffa410babbf5ed28c32ced8e2",
+    "2hop__465100_135304": "d2d05e5e9d1184ec4a674d56f7799ed6fdc53fa19c7fb6625ea921055a5a4e40",
+    "2hop__558011_64290": "408bf6d1231552b5e9a18529f5afd5655de0f3ef6286db2b5ddf7f3a113897d0",
+    "2hop__296175_126060": "9af04457eccdcebf42dffb73a155c9ed4854f98a9161f10cf8653b60fa51c439",
+    "2hop__25478_60641": "4d68727e90185a1fd70509aa31c69a9fa672387b73f0b7d65898c4cd017fe009",
+    "2hop__18366_59182": "a07c873f6642f8ca19bb832c3d51283f07cb27360b06a6a41c90eddf047e3c3e",
+    "2hop__89126_11226": "9ee46e40f4bd37d198d66339e642e0fe5ea3fccda0d3bdde0eb9b53f6a45243c",
+    "2hop__376081_127733": "5a54e3fcba9e4de3773ecfc55e7a01f3c5f9bd81fe0d6293bf815d690ac2893b",
+    "2hop__107878_80674": "cc63600813582b19637a1149f62091734c8b97f7bec6d52e8be7ed8da941ebbb",
+    "2hop__795530_47353": "9dfa9291e8346d596e351ce0599ee9d34a4a7c529c7156317d6c7e70dcb725f0",
+    "2hop__314961_158069": "b343c4cd96f02fdfcf6a541bc33bd73a7c08dd5c316138d359540766f05ab6f5",
+    "2hop__52622_83216": "8b2d984f13ae4fd758e13f22b55883548baff60c1e0ac5eddd443d0b0319ed74",
+    "2hop__90877_633514": "9a548087dd4cb1aa70cbc755d388636301a7e17120cf1a61615a7a22871b532e",
+    "2hop__722386_134827": "4218354a44e964e2fc1545b276a84e844d1f07535011aca038829ff47434aa95",
+    "2hop__181544_82000": "2a803fb6799ce105e8214a5381550c1dfbab7b3df2b1159ecbb31df06148d067",
+    "2hop__172461_126711": "aebe5cb6e12b20d9a2d7b676fd821b0d6cade6824e6eb8313a7e711ebed19bb5",
+    "2hop__103604_59072": "9cf8aa70ade73cb010f4d5cfaccff50c59ae67a3e464b33b69c54dc563c8c137",
+    "2hop__804878_161223": "a3ac55aa3ffdc4ea80ae35856c8aeddc4690befbe25d1aa939c7d54f34822a11",
+    "2hop__282175_100321": "1ff9ef44f4d5578b43c70567f5da072eb82820129b308565e38cc7ce2fa52316",
+    "2hop__799211_159363": "00cdff896cb56c9fe271132d4384bd7c5f06449c806b06d6172da2874da25000",
+    "2hop__59498_54210": "7aeee54aff2f809e9c53917fed93e4439055faa0ed5be410c24a2a569a754eaa",
+    "2hop__58256_13787": "9f6d643764e0d09820017ee8c9c1e87edc0a9286046f44b037d7fb1cc40b9392",
+    "2hop__159161_78659": "a69fe6deda4ca185004c14895e94345f8970e4aca1ed53ab91004fd4488f5cd2",
+    "2hop__208969_11125": "48542f47b5d3b6cc1996fdb090968218942163440ffb5167908d1cb68de7ccab",
+    "2hop__203888_37261": "a7e57fbdf746ebecba195be88912accee113df6148f2a3db3cf6ba9d2c33a2aa",
+    "2hop__151474_444333": "d5e141d36aa360339b53e77332f681595c9438f9a25786fb9f117e501017fa57",
+    "2hop__726843_136211": "004d500eb2aa242f08d579872306489f81bf4a8a36f2ea4cd565e0068d3fba07",
+    "2hop__205146_92853": "c8a92439f8950fa7193a10924cf7f8e24c0d9dbdd538b650a282821daa379077",
+    "2hop__617187_36134": "12bfc1452751d60bea902f56870df6e3a37424ad2e1984e31f03fa9731f57bb5",
+    "2hop__144008_208194": "c5ac5329963413cb418bf772a6bf79b778306edb540bde655fa72b44c6a6c7f8",
+    "2hop__150671_127418": "0eae4b35dace48b9dfe75811e04411240a11addad6dd3514f0a3dfab385ae5d8",
+    "2hop__216682_153528": "d655e405bf37951c1ef2ae9ed22fda95fca3d65ce4eaff90c8aa60033ae06cfe",
+    "2hop__97293_297038": "b4b417f1a466f3090b62166555be785b29e7e8847f56fd743589060a996f6123",
+    "2hop__618223_60600": "af24db97b87a9ef59bae72d7ecb5acce276e9737ac73e09f84c6ace75629f7df",
+    "2hop__333540_11117": "9173a4e70be3ab2d34ed3be556f823b9bace60e3fbf7eca09bd15d36815b90fa",
+    "2hop__658198_62302": "984521f51fbdcb70730acab40164f11c88e2c0d63d7d93403ce3a1f4d62277bb",
+    "2hop__632825_34197": "21e7ec3b26197db9be3b3ddd7a9a19f3211bbab55a3805059bd8da9f73ad28d6",
+    "2hop__167674_400874": "3cbeaae8379b6710c13c29f7158071f54da24c23e9608641331b3aa81a12fa24",
+    "2hop__178263_52185": "5cd258b5b7abeb30607179e29b6dee9d7b935f885eee63dc85e116b10cb30ab5",
+    "2hop__396382_49333": "a33c8089ada4ed680140248f17b277d96cfd99132b7a1cd4f0641b4b9fee0e71",
+    "2hop__533801_81842": "adaa9283da2942a235d2a0e956282f94517af819d64ca0709d4c60e75ce5eef9",
+    "2hop__388101_5111": "30153e0817ce4ac991c7fe6bc8b3e2febfd7f8962be9010b957a9eb7a9bdc88b"
+  }
+}

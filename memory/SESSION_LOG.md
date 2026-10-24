@@ -2011,3 +2011,10 @@ Coordinator PID115834 confirmedlive CPUwaiting for teacherPID111971; log /conten
 
 Allcontrollableprefixes used, samehistoricalH3train48questionIDs but entirelyfresh9Brollouts. H3 originalbudget_targets/129params100AdamW.001seed20261069; baseprep onefreshquality-firststep explicitlydiffersfromhistorical4Bsearch. Controlonly1FINALbias; comparepairedF1/cost, not assumedcostmatched. Evalverifier coversofficialscores/rawemittedtokensincludingwrapper/bytesfromtokenIDs/splits/firstsameprefixstopdivergences; noreserved80. Goal “큰 모델로 실험 완료하기” stillincomplete: freshbase/H3fitting, evaluation, synthesis and finalaudit remain. Pipelinecompletestatus alone is notgoalcompletion. Next pollactualprocess/status, inspect stageartifactsgates, thenfinalqualified4B/9Breport. No duplicate coordinator.
 
+
+## 2026-10-24 — user-requested qualitative output audit on fixedfirst81
+
+Userasked출력패턴정성평가. Read actualfirst81completedTRAINteacher outputs, first3per exact/partial/zeroF1stratum, plus underlying readparagraphs/golds forambiguouscases. Report docs/JEV_QWEN35_9B_OUTPUT_QUALITATIVE_20261024.md and reproducible scripts/reporting/qualitative_qwen35_prefix81.py, JSON81hashes/cases. No frozenpipeline/training/prompt/labels altered.
+
+81:exact36,partial11,zeroF134;errors0;meananswer2.32words,>10words2;empty12;forcedFINAL25(correct6,incorrect19);firstkeyword81/81. Identicalcallrepeats3calls/3q (notgeneralexactloops);search409ofwhich28nonempty-no-newIDs. Correct36total6389/mean177.47;incorrect45total8073/179.4;partial11total2264/205.82. Qualitative:answercandidate-containingcastreadfollowed4searches;PopePaulVIfoundbutnotreadandwrongyear;Chopin1827within-citymoveconfusedwith1810move-to-city;shortenednames/modifierscausepartialF1;rareverbositycauseslowF1. GeoFilmsgoldcapitalrelationunclearinprovidedsupport, flaggedonly, no relabel/exclusion. H3couldtestlate-oversearchsavings;terminationalonewon'tfixwrongparagraph/relation. Not9BH3results ormodel-sizecausalclaim.
+
