@@ -1321,3 +1321,7 @@ Live evaluation381937 verified at160/576episodes,238.35sec; no interim quality-b
 ## 2026-10-24 — frozen-base isolation fitting started
 
 Protocol docs/JEV_FROZEN_ADAPTER_PROTOCOL_20261024.md andhashedplan frozenbeforefit. CPUworker385554 fittingfreshdepth/questionattention/actionattention residuals onimmutable d987; noPPOGRPO, same377states/100updates/objective/seed aspriorfulltrain. Initialexactlogits/finalexactbase asserted. Freezingbase doesnotguarantee decisionretention becauseadapter canoverridelogits. Runtime results/decision_frozen_adapters_20261024. Nextverifycompletion/spec then4×64paireddev; originalnativeprotocol/final80/reserved80 preserved. GoalACTIVE.
+
+## 2026-10-24 — frozen adapter fit verified, evaluation live
+
+Threefits complete42.7688sec. Independentcheckpointreload confirmed everybase tensor equalsd987. Trainableparameters depth16576/questionatt252128/actionatt252160;trainweightedKL .06374/.07280/.14199. Coordinator385977/evaluation385988 live;state /content/local_fast/lsdrag-text-v1/results/decision_frozen_adapters_coordinator_20261024.json;log /content/local_fast/lsdrag-text-v1/logs/value_heads_evaluate_decision_attention_1792828544.log. Run decision_frozen_adapters_validation64_20261024,4×64episodes,max2400sec. Fitarchive savedverified. Do notduplicateworker. GoalACTIVE, qualitypending.

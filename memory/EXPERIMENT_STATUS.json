@@ -1064,5 +1064,13 @@
     "seconds": 631.9541211500036,
     "report": "lab/reports/decision_structure_attention_validation64_20261024/report.md",
     "goal_achieved": false
+  },
+  "frozen_adapter_evaluation": {
+    "phase": "running",
+    "pid": 385977,
+    "seconds": 0.515803374000825,
+    "script": "scripts/evaluate_decision_attention.py",
+    "child_pid": 385988,
+    "log": "/content/local_fast/lsdrag-text-v1/logs/value_heads_evaluate_decision_attention_1792828544.log"
   }
 }
