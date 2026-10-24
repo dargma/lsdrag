@@ -1664,3 +1664,10 @@ User: 그래 몇개 더 해보자. Finish current fixed diversity48/critic72 com
 
 Current collection46170/coordinator46115 and waiting fitter46735 verifiedlive. Independent critic72 verifier scripts/reporting/verify_future_critic72.py prepared: recomputes raw-prediction metrics with separate arithmetic, replays old/new checkpoints, recomputes train-only action means, verifies question separation and Drivebytes. Not yet executed because fit has not completed. Previous goal turn made implementation progress; this turn verified actualwait and prepared independent completion checks. GoalACTIVE.
 
+
+## 2026-10-24 — relative-quality candidate protocol and implementation prepared
+
+Current diversity48 collection remains live (coordinator46115/worker46170); critic72 coordinator46735 waits. No duplicate collection or premature fit. Prepared candidate2 docs/JEV_RELATIVE_CRITIC72_PROTOCOL_20261024.md before reading critic72 outcomes: same72fit/12monitor and architecture/seed100updates, replace absolute quality MSE by legal-action-pair difference MSE, costloss unchanged. Gate strictly beats absolutecritic72 and actionmeans on gapMSE/costMAE with>=10 informativepairs/5questions/sign>.5. No monitor retuning. Actor stayszero.
+
+Implementation reuses original critic72 runner via wrapper; frozen source/split manifest has pending completed-input/reference hashes, cannot run before original collection+critic72 audit. Test verifies per-state offset invariance, illegal NaN exclusion/zero illegal gradients and exact target optimum. No new candidate fit launched. Next wait collection and firstcritic72, run scripts/reporting/verify_future_critic72.py; only then finalize relativecandidate hashes and fit once. GoalACTIVE.
+
