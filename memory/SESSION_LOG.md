@@ -1983,3 +1983,8 @@ User authorizes new experiment despite priorlast4Blimit: latestQwen9B, freshtrai
 
 Latesthardwareoverride supersedes sharedGPUpermission: start only afterGPUidle20continuousminutes. No live modelworker now; initialsmoke alreadyterminal. CPUmonitor prepared1200seconds,15secsamples,utilization0/noGPUcomputeprocess/>=40GiBfree, resetonactivity/error. Runs actualprompt512-token smokev2 then ONLYifpasses fresh train192 collection; failure stops, no autoretry. Protocol docs/JEV_QWEN35_9B_H3_GENERALIZATION_20261024.md. Registry qwen35_9b_h3_20261024 contains model/download/hash/source/spec/launch records. NoH3fit yet. Need verify livewatchPID then observe staged terminalresults; don'tduplicatewatcher. Frozen splits/reserved80 preserved. Crossmodelgeneration/size/architectureconfounded: primary H3vsbase withinbackbone, no pure sizecausalclaim. Originalgoal notachieved.
 
+
+## 2026-10-24 — CPU idle monitor live, other-session GPU activity blocks launch
+
+Monitor PID105169 confirmed live (CPU only), log /content/local_fast/lsdrag-text-v1/logs/qwen35_idle_watch_20261024.log; live status /content/local_fast/lsdrag-text-v1/results/qwen35_9b_idle_gate_20261024/status.json. Initial observation2026-10-24T13:35:10Z GPUutil17%,computePIDs104735/104835/105053,free93938MiB; idlecounter0. NoGPUexperiment launched afternew20minuteidle instruction. Monitor resets window on GPUactivity; do not terminate unrelated processes. Frozen503ffc4launch waits1200continuousseconds before smokev2, then teacher192 onlyifpassed. FreshH3training remains pending, no performanceclaim.
+

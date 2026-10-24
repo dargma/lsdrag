@@ -1,3 +1,7 @@
+## 2026-10-24 — CPU idle monitor live, other-session GPU activity blocks launch
+
+Monitor PID105169 confirmed live (CPU only), log /content/local_fast/lsdrag-text-v1/logs/qwen35_idle_watch_20261024.log; live status /content/local_fast/lsdrag-text-v1/results/qwen35_9b_idle_gate_20261024/status.json. Initial observation2026-10-24T13:35:10Z GPUutil17%,computePIDs104735/104835/105053,free93938MiB; idlecounter0. NoGPUexperiment launched afternew20minuteidle instruction. Monitor resets window on GPUactivity; do not terminate unrelated processes. Frozen503ffc4launch waits1200continuousseconds before smokev2, then teacher192 onlyifpassed. FreshH3training remains pending, no performanceclaim.
+
 ## 2026-10-24 — renewed9B H3 generalization; GPU20minute-idle gate
 
 User authorizes new experiment despite priorlast4Blimit: latestQwen9B, freshtraining, purpose H3methodgeneralization and model-dependenttendencies. OfficialHF API findsQwen3.5-9B as posttrained9B; pinned c202236235762e1c871ad0ccb60c8ee5ba337b9a. Downloadcomplete72.95sec,4shards19.306GB+tokenizer matched officialLFSsha; actual paths localfast/hf/blobs verified. No4Bhead reuse: hidden4096vs2560.9Btext backbone loaded; artificialsmoke FINALParis passed but keywordargs repeatedzeros/top_k truncated. Preserve attempt1; no learnedqualityclaim. Sourceadapter uses commonJSONtooltemplate plus official closedemptythinkprefix;9Bcontrols must share it, not label unmodifiednativeXML.
