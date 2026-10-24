@@ -1,3 +1,9 @@
+## 2026-10-24 — H1 single MLP fit complete; paired evaluation frozen
+
+Latest hypothesis-first instruction applied. Protocol docs/JEV_OUTCOME_POLICY_H1_20261024.md and exact plan/input/source hashes frozen before fit. One candidate from cost-priority e1a630e5, third48 evidence10corrections/9questions; largest repeat-consistent quality gain first, token saving tie-break, excludes zero-quality cheaper targets. Same100updates/1e-4/seed20261066/.5target andretention group. Old caches usedasfeatures only;446retentionstates. CPUfit2.37sec, initialexact/normalization/finiteassertions passed andcheckpoint reloaded. SHA 32849a288d13e53c32bf6b0e950d8dea791e36e0d0aa41114376bcbe01f9658a. No QA improvement claim.
+
+Paired dev64 currentreference/outcome128episode spec frozen; currentreference is e1a630e5, not oldd987/f07f. Same native interface, corpus andsourcehashes. No grid, no new data collection, no reserved80. Nextlaunch scripts/coordinate_decision_outcome_h1.py; state results/decision_outcome_policy_h1_coordinator_20261024.json. Evaluation not yet launched at this entry. GoalACTIVE.
+
 ## 2026-10-24 — hypothesis-first policy plan; third48 complete and verified
 
 Latest user asks whether the model is a useful accuracy/token policy rather than choice imitation, explicitly rejects excessive ablation/detail, requests fast hypothesis tests and detailed expansion only once direction narrows. New active strategy docs/JEV_DECISION_POLICY_HYPOTHESIS_PLAN_20261024.md. Preserve goal; one large hypothesis, one candidate, actual closed-loop QA before expanding. First: outcome-supported MLP correction from current e1a630e5, unchanged environment; useful exploration/termination rather than zero-quality savings. No new fit launched during replanning. Next freeze candidate settings and run paired dev; future branch chosen from results, not a matrix.

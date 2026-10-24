@@ -1456,3 +1456,10 @@ Third48 collection complete:48q/79states/584episodes,860.29sec,45337generated/26
 
 Current MLP lineage and results consolidated docs/JEV_DECISION_POLICY_CURRENT_MAP_20261024.md. Old campaign/remaining-program docs contained stale historical queue pointers; added explicit supersession headers. Remote v1.2 9a9ef5b is ancestor of pre-recovery v1.1 0a310f2; recovery did not lose later MLP experiments. High-F1/high-cost34.75MLP+GRPO branch remains distinct from current efficient26.74MLP. Goal ACTIVE; reserved80 protected. Next work is single-candidate hypothesis test, not more standalone analysis/ablation.
 
+
+## 2026-10-24 — H1 single MLP fit complete; paired evaluation frozen
+
+Latest hypothesis-first instruction applied. Protocol docs/JEV_OUTCOME_POLICY_H1_20261024.md and exact plan/input/source hashes frozen before fit. One candidate from cost-priority e1a630e5, third48 evidence10corrections/9questions; largest repeat-consistent quality gain first, token saving tie-break, excludes zero-quality cheaper targets. Same100updates/1e-4/seed20261066/.5target andretention group. Old caches usedasfeatures only;446retentionstates. CPUfit2.37sec, initialexact/normalization/finiteassertions passed andcheckpoint reloaded. SHA 32849a288d13e53c32bf6b0e950d8dea791e36e0d0aa41114376bcbe01f9658a. No QA improvement claim.
+
+Paired dev64 currentreference/outcome128episode spec frozen; currentreference is e1a630e5, not oldd987/f07f. Same native interface, corpus andsourcehashes. No grid, no new data collection, no reserved80. Nextlaunch scripts/coordinate_decision_outcome_h1.py; state results/decision_outcome_policy_h1_coordinator_20261024.json. Evaluation not yet launched at this entry. GoalACTIVE.
+
