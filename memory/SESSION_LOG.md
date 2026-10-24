@@ -1897,3 +1897,13 @@ Goal ACTIVE; reserved80 protected; no automatic development launch.
 
 Goal ACTIVE; reserved80 protected; no automatic development launch.
 
+
+
+## 2026-10-24 — expanded train120 passes; frozen development64 live
+
+Coordinator67692/evaluator68969 completed; no processesremain.240episodes339.774sec/16592generated/944358input/0errors. OfficialF1/EM/rawgenerated/frozeninput+source/checkpoints/H3reference120replay and split verified. H3 F1.3794510582/gen71.25833/correct36 vs constrained120 .4411794533/67.00833/correct44. +6.17284pp/−5.96421%generated on TRAIN only. No lostcorrect;8newcorrect. Bothcorrect36 save442tokens;newcorrect8 extra17;bothincorrect76 save85;total510saved. Candidatecorrect44 total3558/mean80.864,incorrect76 total4483/58.987,partial15/1179/78.6. PriorstricttraingatePASS. Archive8ee04eb70f4c2d5f0b81af8bbd6397d5a6664f1db4c214c2ca8f66bb349285e9. This is fitting evidence, not transfer or originalgoal achievement.
+
+Candidateefac5d79 unchanged; devspec frozen d6c68ee beforelaunch. Evaluator71203/session35137 running loading/evaluation. Log /content/local_fast/lsdrag-text-v1/logs/constrained_stop120_validation64_20261024.log; status results/decision_constrained_stop120_validation64_20261024/status.json. Next verify terminalactualprocess, run scripts/reporting/verify_constrained_stop120_dev64.py thenarchive. Sameexposeddev64/H3/fixedGRPO; do notretune or claimindependenttest. GoalACTIVE,reserved80protected.
+
+Useraskedstatusandideas: answered and preserved progress-state input hypothesis, two-action coordination, selectiveH3fallback. No newideaexperiment launched whilethisruns. Prefer one progress-state hypothesis ifcoveragefails, exactprotocol stillunfrozen. Continueuntiluserstop.
+
