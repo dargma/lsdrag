@@ -2036,3 +2036,10 @@ Freshbootstrap trained100fixedupdates, traininglabelaccuracy1.0 (memorizedteache
 
 Coordinator121348 automatically froze outcomes_spec.json beforelaunch. ActiveGPUcollectorPID125195 atresults/qwen35_9b_outcomes48_20261024/status.json, log /content/local_fast/lsdrag-text-v1/logs/qwen35_pipeline_outcomes_20261024.log; actualprocessconfirmed. At71.15sec20suffix/parentepisodes5states,firstquestion,1554generated151352input. Alllegalfirstactionbranches thenfrozenbootstrapcontinuation,allcontrollableprefixes on48fixedtrainquestions. Thisisfreshoutcomedata,notH3trainedyet. Coordinatorstilllive andownssequentialnextstages; do notduplicate/restart. Nextverifyterminaloutcomes beforeonebasepolicyimprovement, freshstop48, H3+constantbias, paireddev64. Goalstillactive/incomplete; noreserved80.
 
+
+
+## 2026-10-24 — live outcome branch integrity and fullteacher qualitative counts
+
+Previous goal turn produced verified qualitative evidence, not an H3 completion claim. Current coordinator121348 and child125195 confirmed alive via ps with exact commandlines. Same all-action48 collection continues; no restart or newGPUworker. Interim snapshot27completedstates/5startedquestions/103branches passed public-prefix identity, legalfirstactioncoverage, parentprobabilities,37x4096finitepacks, officialF1/EM, sample/raw correspondence and emittedtoken sums;0errors. This is partial integrity, not terminal coverage or learnedquality. Report lab/reports/qwen35_9b_outcomes48_20261024/interim_integrity.json.
+
+Extended qualitative script with --count192 (default81 retained), saved192rawhashes and counts; detailedcases stillfirst3perstratum, no claim192manualreads. Meananswer2.20words,empty20,forced51,firstkeyword192,readabsent26,search936/no-newID61,identicalrepeats4. Correct99mean174.18tokens vsincorrect93mean183.43;partial29mean197.10. Existing report appended fullteacher scope. No frozenpipeline source/prompt/split/targets altered. Remaining objective unchanged: finishallactions48/basefit/stop48/H3andconstant/dev64, verifiedqualifiedcrossmodelreport/backups/Git.

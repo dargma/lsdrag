@@ -34,3 +34,17 @@ Geo Films→Karachi 문항의gold는West Pakistan,출력은Sindh다. 제공된go
 ## 출처
 
 재현 스크립트 scripts/reporting/qualitative_qwen35_prefix81.py. 수치·시간순9사례·81원본해시는 lab/reports/qwen35_9b_qualitative_prefix81_20261024/audit.json. 관찰은기존학습자료한정이며,진행중teacher192수집과고정9Bbase/H3/constant계획은변경하지않았다.
+
+## 완료된 teacher192 전체 통계 추가
+
+최초81개 정성 사례를 유지하고, 완료된192개 전체에 같은 집계를 적용했다. 재현: `PYTHONPATH=src:scripts /content/local_fast/lsdrag-text-v1/runtime/bin/python scripts/reporting/qualitative_qwen35_prefix81.py --count 192`. 원본192개 해시와 집계는 `lab/reports/qwen35_9b_qualitative_prefix192_20261024/audit.json`. 사례 선정은 기존 시간순 층별 첫3개로 유지하며,192개 모두를 수작업 정독했다는 뜻은 아니다.
+
+평균 최종답2.20단어,10단어 초과3개,빈답20개,실행오류0.192개 모두 첫행동keyword_search;26개는read_chunk 없이 종료했다. 도구상한 강제FINAL51개(정답15/오답36). 검색936회 중61회는 비어 있지 않지만 새 문단ID가 없는 결과; 동일호출반복은4문항4회다.
+
+| 공식EM 분류 | 문항 | 생성토큰 총합 | 평균 생성토큰 | 평균 도구호출 |
+|---|---:|---:|---:|---:|
+| 정답 |99|17244|174.18|5.73|
+| 오답(부분F1 포함) |93|17059|183.43|6.49|
+| 그중 부분F1 오답 |29|5716|197.10|6.10|
+
+전체 집계도 최종답 장황함보다는 행동 경로와 종료 판단이 주요 검토 지점임을 뒷받침한다. 단,9B H3 학습결과나 추가행동의 인과적 효과를 입증하지 않는다. 프롬프트·훈련타깃·평가분할은 변경하지 않았다.
