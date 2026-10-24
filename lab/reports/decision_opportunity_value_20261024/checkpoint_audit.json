@@ -1,0 +1,27 @@
+{
+  "mlp_control": {
+    "checkpoint_verified": true,
+    "legal_probability_smoke": true,
+    "finite_predictions": true
+  },
+  "mlp_stop": {
+    "checkpoint_verified": true,
+    "legal_probability_smoke": true,
+    "finite_predictions": true
+  },
+  "mlp_stop_value": {
+    "checkpoint_verified": true,
+    "legal_probability_smoke": true,
+    "finite_predictions": true
+  },
+  "attention_stop": {
+    "checkpoint_verified": true,
+    "legal_probability_smoke": true,
+    "finite_predictions": true
+  },
+  "attention_stop_value": {
+    "checkpoint_verified": true,
+    "legal_probability_smoke": true,
+    "finite_predictions": true
+  }
+}

@@ -1034,3 +1034,10 @@ New isolated module src/lsdrag/decision_value_head.py: same slots0/1/4 concatMLP
 
 Next: freeze a small matched training protocol using this shared cache; compare MLP policy control, stopping supervision and auxiliary/attention variants without an exhaustive sweep. Distinguish input/body/capacity effects. Then closed-loop validation on fixed64, serialized after active worker. Keep final80/reserved80 protected; no goal completion claim.
 
+
+## 2026-10-24 — opportunity/value/architecture candidates trained; evaluation queued next
+
+Five fixed CPU candidates completed in10.03seconds on train-only shared cache. Protocol docs/JEV_OPPORTUNITY_VALUE_HEADS_20261024.md; frozen plan/inputs/source hashes in lab/registry/decision_opportunity_value_20261024. MLP initialization preserves selected policy exactly; attention100epoch distillation introduces capacity/warmstart differences explicitly recorded. All candidates have common zero-quality utility safeguard. Comparisons isolate stopping loss within MLP and auxiliary loss within each body. No heldout performance inferred from train fits.
+
+Separate evaluator wrapper leaves active GRPO frozen sources unchanged. Queue scripts/coordinate_decision_value_evaluation.py waits for zero_gate coordinator terminal complete, verifies live identity while waiting, then evaluates all5×validation64 and reports/archives. No test access. Checkpoint loader audit uses16training states only. Goal active, numeric success unproven. Training manifest/report saved; no weights inGit.
+

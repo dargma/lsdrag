@@ -1,3 +1,9 @@
+## 2026-10-24 — opportunity/value/architecture candidates trained; evaluation queued next
+
+Five fixed CPU candidates completed in10.03seconds on train-only shared cache. Protocol docs/JEV_OPPORTUNITY_VALUE_HEADS_20261024.md; frozen plan/inputs/source hashes in lab/registry/decision_opportunity_value_20261024. MLP initialization preserves selected policy exactly; attention100epoch distillation introduces capacity/warmstart differences explicitly recorded. All candidates have common zero-quality utility safeguard. Comparisons isolate stopping loss within MLP and auxiliary loss within each body. No heldout performance inferred from train fits.
+
+Separate evaluator wrapper leaves active GRPO frozen sources unchanged. Queue scripts/coordinate_decision_value_evaluation.py waits for zero_gate coordinator terminal complete, verifies live identity while waiting, then evaluates all5×validation64 and reports/archives. No test access. Checkpoint loader audit uses16training states only. Goal active, numeric success unproven. Training manifest/report saved; no weights inGit.
+
 ## 2026-10-24 — axes2/3 train-cache audit and structure implementation
 
 Goal remains ACTIVE. Previous goal turn made progress (goal/protocol persisted and pushed); this turn verifies live zero_gate coordinator330710/learner330716 and implements further authorized work without modifying their frozen runtime sources. At last snapshot756/1536 episodes, round0 question189/192; not complete.

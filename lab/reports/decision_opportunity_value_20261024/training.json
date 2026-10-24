@@ -1,0 +1,294 @@
+{
+  "training_complete": true,
+  "validation_complete": false,
+  "status": {
+    "phase": "complete",
+    "pid": null,
+    "seconds": 10.032766121003078,
+    "candidates": 5
+  },
+  "attention_warmstart_train_kl": 0.06541960686445236,
+  "candidates": {
+    "mlp_control": {
+      "kind": "decision_value",
+      "body": "mlp",
+      "checkpoint": "/content/local_fast/lsdrag-text-v1/results/decision_opportunity_value_20261024/mlp_control.pt",
+      "sha256": "bdb5198335b3207e51a6e06d583055baa12a0cde17cb5bb93c90ab6558250c86",
+      "parameters": 984716,
+      "config": {
+        "body": "mlp",
+        "stop_coef": 0.0,
+        "aux_coef": 0.0
+      },
+      "curve": [
+        {
+          "epoch": 0,
+          "policy": -0.004978304263204336,
+          "stop": 0.0997825413942337,
+          "aux": 0.4398530423641205
+        },
+        {
+          "epoch": 20,
+          "policy": -0.01460056658834219,
+          "stop": 0.0640229880809784,
+          "aux": 0.43613505363464355
+        },
+        {
+          "epoch": 40,
+          "policy": -0.02029144950211048,
+          "stop": 0.05044342949986458,
+          "aux": 0.43571901321411133
+        },
+        {
+          "epoch": 60,
+          "policy": -0.02416280284523964,
+          "stop": 0.04343469440937042,
+          "aux": 0.43551871180534363
+        },
+        {
+          "epoch": 80,
+          "policy": -0.026967471465468407,
+          "stop": 0.038035228848457336,
+          "aux": 0.4369792342185974
+        },
+        {
+          "epoch": 99,
+          "policy": -0.028429489582777023,
+          "stop": 0.03506706655025482,
+          "aux": 0.43610551953315735
+        }
+      ],
+      "train_diagnostics": {
+        "cached_expected_utility": 0.4151552617549896,
+        "cached_argmax_changed": 0.05835543945431709,
+        "quality_mse": 0.2235509604215622,
+        "logcost_mse": 0.3886677920818329
+      }
+    },
+    "mlp_stop": {
+      "kind": "decision_value",
+      "body": "mlp",
+      "checkpoint": "/content/local_fast/lsdrag-text-v1/results/decision_opportunity_value_20261024/mlp_stop.pt",
+      "sha256": "f2afbe4b22e56a959cdd7765d4b042faef58fecd7ee63bf95f750c1168d44c6f",
+      "parameters": 984716,
+      "config": {
+        "body": "mlp",
+        "stop_coef": 1.0,
+        "aux_coef": 0.0
+      },
+      "curve": [
+        {
+          "epoch": 0,
+          "policy": -0.004978304263204336,
+          "stop": 0.0997825413942337,
+          "aux": 0.4398530423641205
+        },
+        {
+          "epoch": 20,
+          "policy": -0.008026082068681717,
+          "stop": 0.0191105417907238,
+          "aux": 0.43470868468284607
+        },
+        {
+          "epoch": 40,
+          "policy": -0.016286654397845268,
+          "stop": 0.010536691173911095,
+          "aux": 0.4401520788669586
+        },
+        {
+          "epoch": 60,
+          "policy": -0.02059551328420639,
+          "stop": 0.00757307093590498,
+          "aux": 0.4385829269886017
+        },
+        {
+          "epoch": 80,
+          "policy": -0.02406316250562668,
+          "stop": 0.00579959386959672,
+          "aux": 0.4384399652481079
+        },
+        {
+          "epoch": 99,
+          "policy": -0.025904670357704163,
+          "stop": 0.004748405888676643,
+          "aux": 0.4383813142776489
+        }
+      ],
+      "train_diagnostics": {
+        "cached_expected_utility": 0.4132234454154968,
+        "cached_argmax_changed": 0.10079575330018997,
+        "quality_mse": 0.2262478470802307,
+        "logcost_mse": 0.3870074152946472
+      }
+    },
+    "mlp_stop_value": {
+      "kind": "decision_value",
+      "body": "mlp",
+      "checkpoint": "/content/local_fast/lsdrag-text-v1/results/decision_opportunity_value_20261024/mlp_stop_value.pt",
+      "sha256": "0a1b3547cb22f7df5bc781a8a5b4aaa39843d3d046a4b2a28a2ef7f0df966021",
+      "parameters": 984716,
+      "config": {
+        "body": "mlp",
+        "stop_coef": 1.0,
+        "aux_coef": 0.1
+      },
+      "curve": [
+        {
+          "epoch": 0,
+          "policy": -0.004978304263204336,
+          "stop": 0.0997825413942337,
+          "aux": 0.4398530423641205
+        },
+        {
+          "epoch": 20,
+          "policy": -0.006741675548255444,
+          "stop": 0.020124124363064766,
+          "aux": 0.3365054130554199
+        },
+        {
+          "epoch": 40,
+          "policy": -0.014684982597827911,
+          "stop": 0.011725757271051407,
+          "aux": 0.28169992566108704
+        },
+        {
+          "epoch": 60,
+          "policy": -0.019112637266516685,
+          "stop": 0.008440757170319557,
+          "aux": 0.23869112133979797
+        },
+        {
+          "epoch": 80,
+          "policy": -0.022985275834798813,
+          "stop": 0.006335227284580469,
+          "aux": 0.20478492975234985
+        },
+        {
+          "epoch": 99,
+          "policy": -0.025212695822119713,
+          "stop": 0.005148196592926979,
+          "aux": 0.18049821257591248
+        }
+      ],
+      "train_diagnostics": {
+        "cached_expected_utility": 0.41271281242370605,
+        "cached_argmax_changed": 0.1246684342622757,
+        "quality_mse": 0.1431485116481781,
+        "logcost_mse": 0.08057007938623428
+      }
+    },
+    "attention_stop": {
+      "kind": "decision_value",
+      "body": "attention",
+      "checkpoint": "/content/local_fast/lsdrag-text-v1/results/decision_opportunity_value_20261024/attention_stop.pt",
+      "sha256": "2c2c97f811a1908db1635ab614a813e57fa0c9afac919bdb9aed2e2a54b851df",
+      "parameters": 330252,
+      "config": {
+        "body": "attention",
+        "stop_coef": 1.0,
+        "aux_coef": 0.0
+      },
+      "curve": [
+        {
+          "epoch": 0,
+          "policy": -0.007141368929296732,
+          "stop": 0.13619299232959747,
+          "aux": 0.4230182468891144
+        },
+        {
+          "epoch": 20,
+          "policy": -0.021455183625221252,
+          "stop": 0.05786854401230812,
+          "aux": 0.414492130279541
+        },
+        {
+          "epoch": 40,
+          "policy": -0.030225444585084915,
+          "stop": 0.03379758819937706,
+          "aux": 0.41447678208351135
+        },
+        {
+          "epoch": 60,
+          "policy": -0.03754093497991562,
+          "stop": 0.02430334873497486,
+          "aux": 0.4143338203430176
+        },
+        {
+          "epoch": 80,
+          "policy": -0.04335751384496689,
+          "stop": 0.01900603249669075,
+          "aux": 0.4141252338886261
+        },
+        {
+          "epoch": 99,
+          "policy": -0.0478149950504303,
+          "stop": 0.015590052120387554,
+          "aux": 0.41524991393089294
+        }
+      ],
+      "train_diagnostics": {
+        "cached_expected_utility": 0.38890618085861206,
+        "cached_argmax_changed": 0.21220159530639648,
+        "quality_mse": 0.22421319782733917,
+        "logcost_mse": 0.3592512011528015
+      }
+    },
+    "attention_stop_value": {
+      "kind": "decision_value",
+      "body": "attention",
+      "checkpoint": "/content/local_fast/lsdrag-text-v1/results/decision_opportunity_value_20261024/attention_stop_value.pt",
+      "sha256": "971b05d1b601fea0ec24c972aeadf2f639f8d44f39f9cd0371458d1b1b1950c9",
+      "parameters": 330252,
+      "config": {
+        "body": "attention",
+        "stop_coef": 1.0,
+        "aux_coef": 0.1
+      },
+      "curve": [
+        {
+          "epoch": 0,
+          "policy": -0.007141368929296732,
+          "stop": 0.13619299232959747,
+          "aux": 0.4230182468891144
+        },
+        {
+          "epoch": 20,
+          "policy": -0.020865797996520996,
+          "stop": 0.05832364782691002,
+          "aux": 0.3840741813182831
+        },
+        {
+          "epoch": 40,
+          "policy": -0.0292169451713562,
+          "stop": 0.034341368824243546,
+          "aux": 0.3523856997489929
+        },
+        {
+          "epoch": 60,
+          "policy": -0.0361214317381382,
+          "stop": 0.024497926235198975,
+          "aux": 0.32274383306503296
+        },
+        {
+          "epoch": 80,
+          "policy": -0.04173925518989563,
+          "stop": 0.019477147608995438,
+          "aux": 0.2954084575176239
+        },
+        {
+          "epoch": 99,
+          "policy": -0.04600062221288681,
+          "stop": 0.016233444213867188,
+          "aux": 0.2714807987213135
+        }
+      ],
+      "train_diagnostics": {
+        "cached_expected_utility": 0.3872665762901306,
+        "cached_argmax_changed": 0.24668435752391815,
+        "quality_mse": 0.18253149092197418,
+        "logcost_mse": 0.18427002429962158
+      }
+    }
+  },
+  "note": "Offline fixed-BC cache; train diagnostics only, not current-policy quality or calibrated confidence. MLP starts exactly selected head; attention needs distillation and differs in capacity."
+}
