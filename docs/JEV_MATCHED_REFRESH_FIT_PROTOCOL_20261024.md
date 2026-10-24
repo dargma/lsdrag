@@ -7,3 +7,6 @@ Arms: old-targetMLP, fresh-targetMLP, old-targetfrozen-questionattention, fresh-
 Targetsource changes suffixpolicy andrandomseeds; noisy2samples/action. Matchingprefixcontrolsstate/input,doesnotisolatepolicyfromsamplingnoise. Priorhead already learnedoldtargets; baselinepretrainingexposure disclosed. Freshdata outcomes notindependenttest. Allzeroqualitystates retained undertheunchangedobjective forcausalcomparability; inspecttheirfrequency beforedrawingconclusions.
 
 Afterfittingverifyweights/baseparity andfreeze5×64evaluationspec underunchangednativeprotocol. Reservedtestprotected. Plan isimplemented,notexecuted untilcollectioncomplete. Goal remainsACTIVE.
+
+## Sequential continuation
+Coordinator waits for existing selected-refresh coordinator to completeaudit/archive; verifieslivePID whilewaiting andneverrestartscollector. Thenfit(max600sec),archivefit,evaluate5×64(max3000sec;1Mgenerated/40Minput),reportandarchive. Anyfailedgate haltschain. Validationtemplate is priorunchangednative64spec; candidatecheckpointidentities boundafterfit beforeevaluation. Noindependenttestorautomaticnextcampaign.

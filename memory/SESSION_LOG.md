@@ -1341,3 +1341,7 @@ Coordinator388343 andownedcollector388356 verifiedlive. State /content/local_fas
 ## 2026-10-24 — matched-prefix 2x2 offline fit prepared, not launched
 
 Userreaffirmedlocal-fast-only execution; Drivebackup only. Collector388356 live. Newprotocol docs/JEV_MATCHED_REFRESH_FIT_PROTOCOL_20261024.md andfitter scripts/fit_decision_matched_refresh.py compareold/freshtargets×MLP/frozenquestionattention. Exactmatched(qid,prefixhash)states, freshpackusedinallarms, all48qidsrequired,100updates/sameobjective/seed. Collectioncompletion+passedrawaudit gate beforefit, freshSHA boundbeforeoptimization. Thisisolatesinput/state fromtargetsource, butsuffixpolicy/randomsampling remainconfounded. Noheadfitlaunched. GoalACTIVE.
+
+## 2026-10-24 — matched-refresh continuation chain prepared
+
+Addedcoordinate_decision_matched_refresh.py: waitsforverifiedupstreamcollectioncompletion,checksactualPIDwhilerunning, thenfit/archive/5x64evaluate/report/archive. Doesnotrelaunchcollector oradvanceonfailedgate. Matchedfit sourcehashes remainunchanged; validationtemplate/nativecontractfixed. Comparisonreport nowincludes fresh-minus-oldwithinMLP andquestionattention. Boundedchain only;noreservedtest/newcampaignautolaunch. GoalACTIVE.
