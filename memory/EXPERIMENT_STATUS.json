@@ -852,6 +852,8 @@
     "grpo_pid": 248069,
     "learning_session": 6186,
     "structure_coordinator_pid": 250404,
-    "structure_session": 59470
+    "structure_session": 59470,
+    "grpo_completed_iterations": 1,
+    "grpo_current_iteration": 1
   }
 }

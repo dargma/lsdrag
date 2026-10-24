@@ -1,3 +1,7 @@
+## 2026-10-24 — shared GRPO 첫 업데이트 검증 / 두 번째 라운드 진행
+
+worker248069/coordinator248061 유지. iteration0 768trajectory/2632states 업데이트완료,iteration1수집시작. GPU behavior replay gate통과. 독립CPU replay최대오차1.907e-6,nonactor모든값불변/actor4tensor만변경/모든값finite. checkpointSHA4d9b345887a3e658e2b08eb6673c8f95966e528ffc3ef8239b36db88b1ed64b1. 학습state argmax11/2632변경(.42%),평균TV.04517/KL.03105;확률변화이지품질개선증거아님. partialaudit lab/reports/decision_shared_grpo192_20261023/round0_checkpoint_audit.json. checkpoint/manifest/curve/부분audit만Drive묶음백업SHA검증;전체rawbackup은run완료후. 최종test미열람. 다음iteration1완료→전체audit/backup,자동all-action수집은사전계획대로진행.
+
 ## 2026-10-23 — 구조 후보 직렬 큐 / 최종 후보 선정 규칙 동결
 
 shared_structure coordinatorPID250404/session59470 실제waiting_main_comparison. main248061완료후사전고정multiMLP CPUfit300초→warmstart/outcome validation64두조건1200초→within-pairreport,최종test자동기동없음. 실패/프로세스소실시재시작안함. 현재GRPO248069계속실행,추가GPU작업없음.

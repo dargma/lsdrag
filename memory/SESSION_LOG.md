@@ -850,3 +850,8 @@ shared_structure coordinatorPID250404/session59470 실제waiting_main_comparison
 2026-10-23: scripts/reporting/decision_campaign_budget.py追加、完了rawepisodeとstatusの総費用を照合。historicalGRPO1392eps/gen83182、restrictedpool探索7474/gen313568、shared再開完了256/gen26373。進行中/未実行を別記、embedding/CPUfitはLLMtoken外、原8h内全実行とは主張しない。最終保存前にledger再生成が必要。GRPO248069は引き続き初回collection。
 
 2026-10-24 UTC: code backup code_shared_f6ae6579.tar.gz(29400501bytes) Drive SHA64afacc176abdea8414360386c9c518da3785b0e475c8ceb3fd93802e08acb3b 검증,주요memory/protocol/runner/selector포함확인. registry/decision_shared_corpus_20261023/code_archive.json. GRPO248069 live636episodes/iteration0,coordinator248061/structurequeue250404유지. 연구campaign namespace20261023유지,실제재개실행은날짜를넘겨계속중. 목표완료아님.
+
+## 2026-10-24 — shared GRPO 첫 업데이트 검증 / 두 번째 라운드 진행
+
+worker248069/coordinator248061 유지. iteration0 768trajectory/2632states 업데이트완료,iteration1수집시작. GPU behavior replay gate통과. 독립CPU replay최대오차1.907e-6,nonactor모든값불변/actor4tensor만변경/모든값finite. checkpointSHA4d9b345887a3e658e2b08eb6673c8f95966e528ffc3ef8239b36db88b1ed64b1. 학습state argmax11/2632변경(.42%),평균TV.04517/KL.03105;확률변화이지품질개선증거아님. partialaudit lab/reports/decision_shared_grpo192_20261023/round0_checkpoint_audit.json. checkpoint/manifest/curve/부분audit만Drive묶음백업SHA검증;전체rawbackup은run완료후. 최종test미열람. 다음iteration1완료→전체audit/backup,자동all-action수집은사전계획대로진행.
+
