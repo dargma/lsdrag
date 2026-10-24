@@ -1729,3 +1729,17 @@ H3 vs GRPO +4.81517pp/genratio.679740;7qualitywins5losses. Net2017tokens saved:1
 
 Active direction docs/JEV_H3_ROLE_REFOCUS_20261024.md. Next freeze one training-only existing-outcome diagnostic: actual versus shuffled H3 state corrections while original H1 logits/legal actions stay fixed; assess terminal quality/cost under measured H3 suffix, coverage and limited scope. No architecture sweep or reserved80 launch. Two-action probe deferred. Audit worker58091 terminal; no new experiment launched. Goal ACTIVE with original joint thresholds unchanged.
 
+
+
+## 2026-10-24 — correctness-stratified token reporting required
+
+User: 앞으로 토큰계산은 맞춘 것 틀린 것 분리해서 해야겠네. All future evaluation reports must keep overall tokens AND separate correct/incorrect counts, total and mean generated tokens. Correct means official normalized exact match over answer/aliases; positive F1 is not correctness. Report partial-F1 incorrects separately (and F1=1/nonexact if any). Comparisons must include same-question both-correct/candidate-only-correct/reference-only-correct/both-incorrect groups, each policy token totals/means and signed net savings. Different policy-specific correct subsets must not be treated as a paired efficiency comparison. Preserve overall F1 +5pp/generated<=70% goal; no replacing denominator by only correct answers.
+
+## 2026-10-24 — correctness-cost rule applied; H3 state-correction diagnostic complete
+
+Previous goal turn made progress via raw H3 role audit. User now requires correct/incorrect token separation; persisted USER_PREFERENCES. Official EM rescoring of192 development episodes: H3 correct14/mean85.857,incorrect50/61.58; H1 correct14/85.857,incorrect50/72.4; GRPO correct10/92,incorrect54/99.593. H3 versus GRPO paired:bothcorrect8 save188;H3only6 spend148extra;GRPOonly2 save160 withlostcorrectness;bothincorrect48 save1817. H3versusH1 bothcorrect12 save54,H3only2 extra71,H1only2 save163,bothincorrect48 save395. Report lab/reports/decision_h3_role_audit_20261024/correctness_cost.json; script scripts/reporting/report_h3_correctness_cost.py. Positive F1 groups from earlier report remain valid but are NOT exact-correct groups.
+
+Frozen preexecution9ee5cd4 protocol docs/JEV_H3_STATE_CORRECTION72_20261024.md executed.72fitqids onehashselectederrorfreestate each; excludes24monitor/dev/test/reserved; H3probabilityreplaymatches.71cyclicresidualshifts preserve originalH1logits/legalactions; cachedH3suffix outcomes only,no readercalls. ActualF1.4148258/remaininggen49.93056 vs shuffledmean.4227179/51.62852;actual22EMcorrect versus22.225mean.45questions action-sensitive,coveragepasses,dominancegateFAILS (cost/quality tradeoff). Meanpairedsavedtokens bothcorrect42.93,H3only75.25,controlonly−6.99,bothincorrect11.06. No independentgeneralization or fullpolicy claim. Scalaroutcomes independently recomputed across72conditions;splitandrawhashverified. Report lab/reports/decision_h3_state_correction72_20261024. Worker terminal,no active run.
+
+H3 retained,goalACTIVE; statewise residual superiority remains unproven. Next one bounded quality-preserving stopping improvement from already measured train outcomes, with per-state nondegradation (unlike original aggregate H3 constraint), fixed retention and no devretuning; freeze exact targets/gates beforefit. Require train fullrollout and correct/incorrect accounting before any development rollout. Do not infer success from fittedtargets; preserve reserved80. Two-action probe remains deferred, no architecture sweep.
+

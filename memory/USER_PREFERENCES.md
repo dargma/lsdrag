@@ -1,3 +1,7 @@
+## 2026-10-24 — correctness-stratified token reporting required
+
+User: 앞으로 토큰계산은 맞춘 것 틀린 것 분리해서 해야겠네. All future evaluation reports must keep overall tokens AND separate correct/incorrect counts, total and mean generated tokens. Correct means official normalized exact match over answer/aliases; positive F1 is not correctness. Report partial-F1 incorrects separately (and F1=1/nonexact if any). Comparisons must include same-question both-correct/candidate-only-correct/reference-only-correct/both-incorrect groups, each policy token totals/means and signed net savings. Different policy-specific correct subsets must not be treated as a paired efficiency comparison. Preserve overall F1 +5pp/generated<=70% goal; no replacing denominator by only correct answers.
+
 ## 2026-10-24 — user clarifies shared-backbone long-horizon policy claim
 
 User wants a real decision policy considering future turns, implemented with a small head on the reader LLM rather than separate reader/decision models; selection and generation share backbone computation. Frozen-backbone sufficiency is a hypothesis, not proof from architecture. Persisted docs/JEV_SHARED_BACKBONE_DECISION_RESEARCH_20261024.md with factorized policy/episode objective, primary research, shared-prefill vs literal simultaneous-generation distinction and H3 limitations.

@@ -1,0 +1,806 @@
+{
+  "plan": {
+    "fit": [
+      "2hop__9129_79233",
+      "2hop__132015_91253",
+      "2hop__27241_66282",
+      "2hop__103724_90561",
+      "2hop__128974_571141",
+      "2hop__142965_178655",
+      "2hop__205146_92853",
+      "2hop__558011_64290",
+      "2hop__590911_47465",
+      "2hop__90877_633514",
+      "2hop__150671_127418",
+      "2hop__440195_14904",
+      "2hop__296175_126060",
+      "2hop__438489_14948",
+      "2hop__25901_872",
+      "2hop__128395_605235",
+      "2hop__282175_100321",
+      "2hop__652141_36340",
+      "2hop__212522_513189",
+      "2hop__660296_36180",
+      "2hop__208969_11125",
+      "2hop__343722_542971",
+      "2hop__129299_45142",
+      "2hop__130669_64652",
+      "2hop__145221_526735",
+      "2hop__375649_80178",
+      "2hop__452796_84477",
+      "2hop__314961_158069",
+      "2hop__22215_22229",
+      "2hop__172461_126711",
+      "2hop__26571_3807",
+      "2hop__181992_51888",
+      "2hop__554253_86395",
+      "2hop__376266_37939",
+      "2hop__487591_7672",
+      "2hop__25478_60641",
+      "2hop__131280_89563",
+      "2hop__39571_54358",
+      "2hop__568006_159937",
+      "2hop__806764_47824",
+      "2hop__497269_82027",
+      "2hop__128642_32463",
+      "2hop__760250_160798",
+      "2hop__15574_66008",
+      "2hop__627916_89066",
+      "2hop__795530_47353",
+      "2hop__139851_140916",
+      "2hop__27742_27668",
+      "2hop__572586_58953",
+      "2hop__130823_73753",
+      "2hop__60984_44352",
+      "2hop__133237_842239",
+      "2hop__178280_79070",
+      "2hop__460439_25111",
+      "2hop__505712_127008",
+      "2hop__82744_23249",
+      "2hop__769619_162428",
+      "2hop__88444_63489",
+      "2hop__533801_81842",
+      "2hop__445512_54206",
+      "2hop__178263_52185",
+      "2hop__426842_4037",
+      "2hop__325682_3429",
+      "2hop__479640_853000",
+      "2hop__829136_131944",
+      "2hop__21222_770460",
+      "2hop__144760_88472",
+      "2hop__276721_124425",
+      "2hop__300052_224276",
+      "2hop__346214_699835",
+      "2hop__108398_857705",
+      "2hop__89354_93808"
+    ],
+    "excluded": [
+      "2hop__396382_49333",
+      "2hop__169861_145386",
+      "2hop__161709_69825",
+      "2hop__143485_285802",
+      "2hop__333540_11117",
+      "2hop__256681_42328",
+      "2hop__418766_141689",
+      "2hop__807900_748934",
+      "2hop__763486_83697",
+      "2hop__37476_82045",
+      "2hop__25968_727337",
+      "2hop__130686_70941",
+      "2hop__592717_181429",
+      "2hop__561810_673383",
+      "2hop__58256_13787",
+      "2hop__709686_26789",
+      "2hop__419256_20497",
+      "2hop__131206_69301",
+      "2hop__524587_33802",
+      "2hop__540120_1136",
+      "2hop__129572_791121",
+      "2hop__191818_112624",
+      "2hop__153813_522872",
+      "2hop__863632_8796"
+    ],
+    "inputs": [
+      "/content/local_fast/lsdrag-text-v1/results/decision_h3_conservative48_inputs_20261024/states.pt",
+      "/content/local_fast/lsdrag-text-v1/results/decision_h3_diversity48_20261024/states.pt"
+    ],
+    "head": {
+      "kind": "stop_value_h2",
+      "checkpoint": "/content/local_fast/lsdrag-text-v1/results/decision_budget_stop_h3_20261024/stop.pt",
+      "sha256": "936e45925890f1a1da6a411719a092db7fc68f60aee6fd2b68e15e65cb0daf94"
+    },
+    "collections": [
+      "decision_h3_policy_iteration_collect24_20261024",
+      "decision_h3_policy_coverage24b_20261024",
+      "decision_h3_diversity48_20261024"
+    ],
+    "hashes": {
+      "/content/local_fast/lsdrag-text-v1/results/decision_h3_conservative48_inputs_20261024/states.pt": "7a10276a00ab7e071f88c20d314f6b9d63c754b4db6ac70ed6814b7593e04308",
+      "/content/local_fast/lsdrag-text-v1/results/decision_h3_diversity48_20261024/states.pt": "5b732d2c1a664761d3bbf439f1545792c60db5114e66bd3dd85ec4e3f874e45a",
+      "/content/local_fast/lsdrag-text-v1/results/decision_budget_stop_h3_20261024/stop.pt": "936e45925890f1a1da6a411719a092db7fc68f60aee6fd2b68e15e65cb0daf94",
+      "/content/local_fast/lsdrag-code/scripts/reporting/probe_h3_state_correction.py": "fe69b8ac4790e4233fe3e93526f69cd53eff7517d3d5355a31d41e05ccd7a5db",
+      "/content/local_fast/lsdrag-code/docs/JEV_H3_STATE_CORRECTION72_20261024.md": "3195cf65bc7a58c463f555f4d6006ea4badae9fac366acce7818cfb585a7d969"
+    }
+  },
+  "rows": [
+    {
+      "qid": "2hop__460439_25111",
+      "turn": 0,
+      "prefix_sha256": "a07ac5cb8b379c65fd64a3bb514a04433eef315bc497357b9840e38d9914cbb6",
+      "residual": -0.3779442310333252
+    },
+    {
+      "qid": "2hop__806764_47824",
+      "turn": 1,
+      "prefix_sha256": "6953fce93278ee4e3d7b52646589471d969089355f31d2d4cdf5e9a4dd2cadb5",
+      "residual": 1.863438606262207
+    },
+    {
+      "qid": "2hop__133237_842239",
+      "turn": 0,
+      "prefix_sha256": "7dae11ba50bccb02f7962d7447e5d11ac1a65eb51ce55485465f93a4d511ed52",
+      "residual": -0.3804152011871338
+    },
+    {
+      "qid": "2hop__88444_63489",
+      "turn": 0,
+      "prefix_sha256": "25bba0de2808a8e32ce92f6dc4a1feb4a0bc6e4127f2b359e15f8500127ec72f",
+      "residual": 1.3158299922943115
+    },
+    {
+      "qid": "2hop__9129_79233",
+      "turn": 0,
+      "prefix_sha256": "8384cc66ea1c356449e1ef77e0da466e5aa566694df301c39ec166895a75da5c",
+      "residual": 0.3005615472793579
+    },
+    {
+      "qid": "2hop__760250_160798",
+      "turn": 1,
+      "prefix_sha256": "65c30eb8508229f6e3fe017854605f6cda6b878c6cec891e2ca79a819feac563",
+      "residual": 2.188807725906372
+    },
+    {
+      "qid": "2hop__438489_14948",
+      "turn": 0,
+      "prefix_sha256": "c60e119f2eb2075757cc23542bf30f55058730f5382f1f18734199ea9d992fe2",
+      "residual": -0.3232862949371338
+    },
+    {
+      "qid": "2hop__208969_11125",
+      "turn": 0,
+      "prefix_sha256": "7c20e5bd24e4836038396cef20c7250d156b5efb902f554cbaf4b2ca475401b2",
+      "residual": 0.08577179908752441
+    },
+    {
+      "qid": "2hop__27742_27668",
+      "turn": 2,
+      "prefix_sha256": "9cf138120e8412db0e1d763675903c78686b23908a9a311817e2143450dde069",
+      "residual": -0.40332865715026855
+    },
+    {
+      "qid": "2hop__479640_853000",
+      "turn": 0,
+      "prefix_sha256": "147b9b2ded3aa95806fab5c147a501e87ad4d7b5a9401d6e4b7c77af60b49655",
+      "residual": -0.22790813446044922
+    },
+    {
+      "qid": "2hop__314961_158069",
+      "turn": 0,
+      "prefix_sha256": "445cc344af88fea6060a8cc7f0acd949770c066d157ef06d155867015b6fd257",
+      "residual": -0.7167963981628418
+    },
+    {
+      "qid": "2hop__130669_64652",
+      "turn": 1,
+      "prefix_sha256": "4fc836a173821d331953305bb7a5fd4310f17c1d1c3e85cc4863997088826903",
+      "residual": 0.27296721935272217
+    },
+    {
+      "qid": "2hop__590911_47465",
+      "turn": 3,
+      "prefix_sha256": "627c5477053d7e76bdc8b6e27451c0dd735e3a5ceec50ab49e56d485d230575a",
+      "residual": 0.2053610384464264
+    },
+    {
+      "qid": "2hop__497269_82027",
+      "turn": 1,
+      "prefix_sha256": "a0bef8aa8cf94db768922e51826741c9965bfeb8c4eaa6ed3c6e9a52a445b5b8",
+      "residual": 2.3645107746124268
+    },
+    {
+      "qid": "2hop__27241_66282",
+      "turn": 0,
+      "prefix_sha256": "05111ba79153211c1f4a0a11340b728fc189002f8610a2d371f1a64a9bf1ddd7",
+      "residual": -0.540836751461029
+    },
+    {
+      "qid": "2hop__90877_633514",
+      "turn": 1,
+      "prefix_sha256": "eae7142a061de746295b0ad3e29fe4377e6f1dc3983f59a26fb5665eca6e47dc",
+      "residual": 2.756260395050049
+    },
+    {
+      "qid": "2hop__130823_73753",
+      "turn": 0,
+      "prefix_sha256": "d3b4403babfa2617c34efdd65742accc6962413a00255277d3873e862343407d",
+      "residual": 0.9852087497711182
+    },
+    {
+      "qid": "2hop__829136_131944",
+      "turn": 0,
+      "prefix_sha256": "da45bb122760ac6c18cb058b5f8eb00550f4c573f6c06233b270a96d8828ccb6",
+      "residual": -0.390968918800354
+    },
+    {
+      "qid": "2hop__660296_36180",
+      "turn": 2,
+      "prefix_sha256": "f50bb8d02820481ceee3bb3faf2c1212d11dd49987e6c24bb0e70989e43d717c",
+      "residual": 1.679307222366333
+    },
+    {
+      "qid": "2hop__572586_58953",
+      "turn": 2,
+      "prefix_sha256": "f9d5328dd650d4ab832eab68070117d755be428aa9eace2729499d8393a2f00a",
+      "residual": 0.9716979265213013
+    },
+    {
+      "qid": "2hop__627916_89066",
+      "turn": 0,
+      "prefix_sha256": "e363ac50d09b3b627e1d58eb191b64df2f66fe8b9ddd54e3cf9a6629a80bf4af",
+      "residual": 0.5783094167709351
+    },
+    {
+      "qid": "2hop__445512_54206",
+      "turn": 0,
+      "prefix_sha256": "2ef471c47e7313bb8957182389e5a4141164b98da2940ab65b14ad008f982de1",
+      "residual": 0.5974339246749878
+    },
+    {
+      "qid": "2hop__128642_32463",
+      "turn": 2,
+      "prefix_sha256": "973a6b7f5582bf99a96cb19750dc9c7d3ac2761738d6ee26b9d656538a779b24",
+      "residual": 0.5418787002563477
+    },
+    {
+      "qid": "2hop__652141_36340",
+      "turn": 0,
+      "prefix_sha256": "820bc17f60800a4b7ff261ac2f92b08e7acedbb17e00e2835a90bf1a8316fa36",
+      "residual": -0.6548537015914917
+    },
+    {
+      "qid": "2hop__131280_89563",
+      "turn": 1,
+      "prefix_sha256": "890894e7511c4090ffbb7295fb572f3aa8f61545d775801f10f57c0f884a3e44",
+      "residual": 0.6049294471740723
+    },
+    {
+      "qid": "2hop__26571_3807",
+      "turn": 1,
+      "prefix_sha256": "be3bc30b4da868ba02a1e075ae6f02cad45c11175e58105bf393424bd1cde9eb",
+      "residual": 0.5468125343322754
+    },
+    {
+      "qid": "2hop__568006_159937",
+      "turn": 0,
+      "prefix_sha256": "c544ab955e6436732d5079b939379e74065fdd05e8ef77d164479e397b490770",
+      "residual": -0.19217902421951294
+    },
+    {
+      "qid": "2hop__108398_857705",
+      "turn": 0,
+      "prefix_sha256": "3e490e53f3052d21559336b3eed3c2c421c7629581be5a6bd3e553efc769e40b",
+      "residual": -1.1447019577026367
+    },
+    {
+      "qid": "2hop__21222_770460",
+      "turn": 0,
+      "prefix_sha256": "d4acf707c8549372904dc8d1078af0bada9314e75eee973df245cc87bcb129f8",
+      "residual": -0.5193782448768616
+    },
+    {
+      "qid": "2hop__142965_178655",
+      "turn": 0,
+      "prefix_sha256": "c4f266cc708d2c8a2215936acf52f80a00d9765f1461e5c8162ad167b136c378",
+      "residual": -0.5512142777442932
+    },
+    {
+      "qid": "2hop__426842_4037",
+      "turn": 2,
+      "prefix_sha256": "44095885351c770eb0af99a9e24869f9f8ffa4132dfa6b0ab3379a10784a6a0d",
+      "residual": -0.4913043975830078
+    },
+    {
+      "qid": "2hop__276721_124425",
+      "turn": 1,
+      "prefix_sha256": "20634e437cbba75a30fe2096248345c61f2a3959ea791bcd9bd93400f7d98f0c",
+      "residual": 1.4366300106048584
+    },
+    {
+      "qid": "2hop__39571_54358",
+      "turn": 2,
+      "prefix_sha256": "32ee9828b21d541392b051e628c747c612409c32e3e9dc71570c7746632810ac",
+      "residual": 1.824688196182251
+    },
+    {
+      "qid": "2hop__554253_86395",
+      "turn": 0,
+      "prefix_sha256": "d4f288fc499633d318875a446d948fa0870f432ca1918b689e628f25b2d34083",
+      "residual": 0.5090799331665039
+    },
+    {
+      "qid": "2hop__769619_162428",
+      "turn": 0,
+      "prefix_sha256": "c95a7983ea46d06a7df4911c6c435e6d9ce0d4b6431b9bd22b38ec71dbbf2e2f",
+      "residual": -0.21232664585113525
+    },
+    {
+      "qid": "2hop__178263_52185",
+      "turn": 1,
+      "prefix_sha256": "a635c0f8fe2b87939f4aac1bdeebc92005c9e89fbd4f215a98077460c163ad38",
+      "residual": 2.3193156719207764
+    },
+    {
+      "qid": "2hop__296175_126060",
+      "turn": 6,
+      "prefix_sha256": "de7e3b90991508799db2fe5e155c937d642b7fa3f7b732da7b6dce0ea677017e",
+      "residual": -2.227201461791992
+    },
+    {
+      "qid": "2hop__558011_64290",
+      "turn": 3,
+      "prefix_sha256": "b89ea02addd98bcb0d0a6050cc7c69c263aceb4e6a961507803858b5a3fa1ae3",
+      "residual": -0.3463006019592285
+    },
+    {
+      "qid": "2hop__144760_88472",
+      "turn": 0,
+      "prefix_sha256": "c8be365320b26a18f0ab28ec4da03fb18855def4f866628db1d294f199fd661f",
+      "residual": 0.5021529197692871
+    },
+    {
+      "qid": "2hop__375649_80178",
+      "turn": 1,
+      "prefix_sha256": "e8dac0a6bd5079a1751333023635407b068ed75dfe778badf57c4629740585ba",
+      "residual": 1.7235554456710815
+    },
+    {
+      "qid": "2hop__505712_127008",
+      "turn": 0,
+      "prefix_sha256": "9c0d0f81f5c3fc94c83bfc1319b016e956aa34b8eea6921287fc11193ee35a3d",
+      "residual": -0.12609170377254486
+    },
+    {
+      "qid": "2hop__128974_571141",
+      "turn": 1,
+      "prefix_sha256": "a5fcc2fc3d3a51bf9dcd2fa0d4ca90ded7b4969494b8d17f5ae9b8b06870d8df",
+      "residual": 2.3785407543182373
+    },
+    {
+      "qid": "2hop__178280_79070",
+      "turn": 1,
+      "prefix_sha256": "637cad5d9da9f8c263d5a01f9b0c1f0c1dd5d8b864389809d2484e115ce721b8",
+      "residual": 1.9936386346817017
+    },
+    {
+      "qid": "2hop__15574_66008",
+      "turn": 2,
+      "prefix_sha256": "cbbb519b8e521442f308f790d217fd2c44e09310d14ee0e72d0b4f16ee982e11",
+      "residual": -0.3190929889678955
+    },
+    {
+      "qid": "2hop__533801_81842",
+      "turn": 3,
+      "prefix_sha256": "4dee26acbb2f925a3f1a9b900f0c201b817d752bd3d21b0a2b1c7401c5be6c9b",
+      "residual": -0.2422407865524292
+    },
+    {
+      "qid": "2hop__343722_542971",
+      "turn": 0,
+      "prefix_sha256": "2641459122b20105d59939acb2d0c5f8f3dbc1b689c9c8d49ab659c214cc6936",
+      "residual": -0.2283000946044922
+    },
+    {
+      "qid": "2hop__325682_3429",
+      "turn": 0,
+      "prefix_sha256": "a7f28dee19284bfe431c29cda86957ea9e0edc65b5562d0ae1091cfc49f59fb8",
+      "residual": -0.1193220317363739
+    },
+    {
+      "qid": "2hop__60984_44352",
+      "turn": 0,
+      "prefix_sha256": "420950fd67fc5cb05ae780ae1a550919b356f8cf1f396b2bd142f4e16be21ef3",
+      "residual": -0.6565820574760437
+    },
+    {
+      "qid": "2hop__25478_60641",
+      "turn": 1,
+      "prefix_sha256": "09fd9a5120ced765da7b5c24ea37a0ce7730d9d895b6f89d08e74903176182d3",
+      "residual": 2.133939743041992
+    },
+    {
+      "qid": "2hop__145221_526735",
+      "turn": 0,
+      "prefix_sha256": "724351788d43e497e03023f7644de05bfe76d17bde43992725021da11842f4e9",
+      "residual": -0.4790216088294983
+    },
+    {
+      "qid": "2hop__346214_699835",
+      "turn": 0,
+      "prefix_sha256": "4808e013d5aa007dd658869818f8c8d1a457a18b200ae96ccb8a86e66805486a",
+      "residual": 0.5350854396820068
+    },
+    {
+      "qid": "2hop__212522_513189",
+      "turn": 0,
+      "prefix_sha256": "d3321a0338542d1c9ccd99d19a42b19833ac524625c00c6e9c58066cfafa437e",
+      "residual": -0.25628265738487244
+    },
+    {
+      "qid": "2hop__22215_22229",
+      "turn": 1,
+      "prefix_sha256": "63907d255b487ec19f52c66e78f6076012d02840fc23a51ba40e03b9214455d6",
+      "residual": 1.0232155323028564
+    },
+    {
+      "qid": "2hop__132015_91253",
+      "turn": 1,
+      "prefix_sha256": "c7c4a33aebcf423c1bf0482e64d03ddec09b251e583718482c98ff7af6ebbd5a",
+      "residual": 2.0098395347595215
+    },
+    {
+      "qid": "2hop__129299_45142",
+      "turn": 2,
+      "prefix_sha256": "86a2cef913626fa04d7e80bc3ad36765a324f3df6979468c006ad62e56738513",
+      "residual": 0.9053055047988892
+    },
+    {
+      "qid": "2hop__103724_90561",
+      "turn": 0,
+      "prefix_sha256": "84b2204961e07e17abc1141387136fef97b400452298201a27e2b846b4302e0e",
+      "residual": 1.3253002166748047
+    },
+    {
+      "qid": "2hop__282175_100321",
+      "turn": 0,
+      "prefix_sha256": "0b2027e1a6d727168d8b1e3555fface2d9d75243951d5a1ab2e74d54170d045e",
+      "residual": -0.23619794845581055
+    },
+    {
+      "qid": "2hop__205146_92853",
+      "turn": 0,
+      "prefix_sha256": "ca20384077164b99fcdb5e69efa32bba69f91e39748a177a4fdc593b39b42987",
+      "residual": -0.7056770324707031
+    },
+    {
+      "qid": "2hop__128395_605235",
+      "turn": 1,
+      "prefix_sha256": "6dec716953dbf7704331d82d4f17a1c425d849bbd06200f18ff8fa42a6e59056",
+      "residual": -1.1193629503250122
+    },
+    {
+      "qid": "2hop__487591_7672",
+      "turn": 2,
+      "prefix_sha256": "e1f3a90baaac62be2e8b869f1339d236d4bd6dbe771fffa8580f45413435d14d",
+      "residual": -0.26001572608947754
+    },
+    {
+      "qid": "2hop__795530_47353",
+      "turn": 0,
+      "prefix_sha256": "f4a70905c5caaee658650ace548f0e86e6d9054682e029e22a0465e27f81b910",
+      "residual": -1.1460912227630615
+    },
+    {
+      "qid": "2hop__452796_84477",
+      "turn": 0,
+      "prefix_sha256": "86d799ebcad4b53c2e75151493d96eb71199d58d67dccf0a910d2ed567041f91",
+      "residual": 1.2075400352478027
+    },
+    {
+      "qid": "2hop__300052_224276",
+      "turn": 0,
+      "prefix_sha256": "5cc9c9ca8a110451194668c818082ffede1edffda63051a30374673436ff1bb5",
+      "residual": -0.5374494791030884
+    },
+    {
+      "qid": "2hop__139851_140916",
+      "turn": 0,
+      "prefix_sha256": "03af386450608e058a9a645f781ec2f3a5a66a9392042cbd2c1135f970c9da2d",
+      "residual": 1.101957082748413
+    },
+    {
+      "qid": "2hop__89354_93808",
+      "turn": 0,
+      "prefix_sha256": "a1a187f97de8569755c25fec213d0ec29256d8901f0c358e9fc1f263aeaaa0e4",
+      "residual": 1.0437568426132202
+    },
+    {
+      "qid": "2hop__172461_126711",
+      "turn": 0,
+      "prefix_sha256": "1b3e739bd962baecfffffcc99143f1df6137a1ac5a9a5cd7a33e466edfb04cc7",
+      "residual": -0.21681654453277588
+    },
+    {
+      "qid": "2hop__150671_127418",
+      "turn": 0,
+      "prefix_sha256": "557e8b3a1320d6d97ea4daaaf8452e10cc8f5413f4142327bb6ee7b50fc28d9a",
+      "residual": -0.4756614565849304
+    },
+    {
+      "qid": "2hop__25901_872",
+      "turn": 0,
+      "prefix_sha256": "fb1374e1a678c8a45ae25e82940b060ec4c1dd5d1b3c284c7c8031986e23d121",
+      "residual": -0.7507078647613525
+    },
+    {
+      "qid": "2hop__181992_51888",
+      "turn": 0,
+      "prefix_sha256": "43514d0fa7a8ca854af70d38b1b8faed8e2adb4a380064ab736b2e6a574ef590",
+      "residual": 1.7235584259033203
+    },
+    {
+      "qid": "2hop__376266_37939",
+      "turn": 2,
+      "prefix_sha256": "dbbcff26610751ab6971c60f1d209a2ea908ec3f387ac9b4909a4cd281536154",
+      "residual": -0.06177711486816406
+    },
+    {
+      "qid": "2hop__440195_14904",
+      "turn": 0,
+      "prefix_sha256": "463e36284bfc7b239045fb38ed99982353d4eb0b7523d7248da1f2a89137c532",
+      "residual": 0.948991596698761
+    },
+    {
+      "qid": "2hop__82744_23249",
+      "turn": 0,
+      "prefix_sha256": "0491ea550a7117a58902c9266675600ba3df1ff897727c813283bc9d0ded45b8",
+      "residual": -0.4817470908164978
+    }
+  ],
+  "episode_sha256": {
+    "/content/local_fast/lsdrag-text-v1/results/decision_h3_diversity48_20261024/episodes/2hop__460439_25111_t0_a0_r0.json": "831a994f894b403cc8436628d17c96227f47a722f6a22515c39d78fb1ad0a1b2",
+    "/content/local_fast/lsdrag-text-v1/results/decision_h3_diversity48_20261024/episodes/2hop__460439_25111_t0_a1_r0.json": "113c1dd4ec3e48e00eeb16c4634c0561f3904755ba3ce933696b3571f4481c66",
+    "/content/local_fast/lsdrag-text-v1/results/decision_h3_diversity48_20261024/episodes/2hop__460439_25111_t0_a3_r0.json": "ec40cbe810014e6f012001fffb8078381cccd645d8a9a6e5ef3cfa10db684c15",
+    "/content/local_fast/lsdrag-text-v1/results/decision_h3_diversity48_20261024/episodes/2hop__806764_47824_t1_a0_r0.json": "e5af4a29c23a7f1a1013219cceee8438528f8edb290e9ac2c2a1cb1a05a6b6ad",
+    "/content/local_fast/lsdrag-text-v1/results/decision_h3_diversity48_20261024/episodes/2hop__806764_47824_t1_a1_r0.json": "320163101de3d3dcd5893e6264f442bd26a9060202320c7cc6931f90d841ab04",
+    "/content/local_fast/lsdrag-text-v1/results/decision_h3_diversity48_20261024/episodes/2hop__806764_47824_t1_a2_r0.json": "1061312f415b9e4d14fafa454e36c131b8db829d4b1900dee7ad2b6727be36f4",
+    "/content/local_fast/lsdrag-text-v1/results/decision_h3_diversity48_20261024/episodes/2hop__806764_47824_t1_a3_r0.json": "9876cac366b0c08845418aae4135f7c5fb91cd2f14b46f91351cee5a56b12473",
+    "/content/local_fast/lsdrag-text-v1/results/decision_h3_diversity48_20261024/episodes/2hop__133237_842239_t0_a0_r0.json": "0927768d5858ebd9ccf3a6d86afa45cd809bf183aa35f6ebfbb2f4cc1c03efcc",
+    "/content/local_fast/lsdrag-text-v1/results/decision_h3_diversity48_20261024/episodes/2hop__133237_842239_t0_a1_r0.json": "cc3f087a3bc2f2bbd87f1252aa2ebcc9d3401eb637cdb17272267d2a0a3987e7",
+    "/content/local_fast/lsdrag-text-v1/results/decision_h3_diversity48_20261024/episodes/2hop__133237_842239_t0_a3_r0.json": "49a36046539112487474cf8ce047e063fe7287a9b0fe4b8ab64405ffe9ed0b63",
+    "/content/local_fast/lsdrag-text-v1/results/decision_h3_diversity48_20261024/episodes/2hop__88444_63489_t0_a0_r0.json": "e958cf27a099e79c7b8a6ed0dd539eefab6dcf2b45269bd506d7a8b48aa2b644",
+    "/content/local_fast/lsdrag-text-v1/results/decision_h3_diversity48_20261024/episodes/2hop__88444_63489_t0_a1_r0.json": "f4e696b6b063fec968b5a46f40394d1dfdfaf566a0853870590c82149cf0e82c",
+    "/content/local_fast/lsdrag-text-v1/results/decision_h3_diversity48_20261024/episodes/2hop__88444_63489_t0_a3_r0.json": "68396dbda42c4cbcba77bc8aacd1b8d669279c13abdc3b091b7702b3c4fd16e1",
+    "/content/local_fast/lsdrag-text-v1/results/decision_h3_policy_coverage24b_20261024/episodes/2hop__9129_79233_t0_a0_r0.json": "a07d14fc421d5d37a84d8232525ac8995a96b8e42b73f03f4f3819cfa0e0c1ae",
+    "/content/local_fast/lsdrag-text-v1/results/decision_h3_policy_coverage24b_20261024/episodes/2hop__9129_79233_t0_a1_r0.json": "472ec997cd91ef3f2be37d14d37233847561d7d0457f251da09cc3ad0e43f9cc",
+    "/content/local_fast/lsdrag-text-v1/results/decision_h3_policy_coverage24b_20261024/episodes/2hop__9129_79233_t0_a3_r0.json": "c53e703654844a5952b8401c1518ec9f294d9afff89fbe6881ab90ab991e266b",
+    "/content/local_fast/lsdrag-text-v1/results/decision_h3_diversity48_20261024/episodes/2hop__760250_160798_t1_a0_r0.json": "0ea0e13e24c4a3e4fbf5dddc636f3e20ac4fb0707e342dcf98ee523bc4a4367a",
+    "/content/local_fast/lsdrag-text-v1/results/decision_h3_diversity48_20261024/episodes/2hop__760250_160798_t1_a1_r0.json": "adca948ce3d50fb9cccacccdeb03530e4f9093e634c3eb788ccc2fa6dcb4512f",
+    "/content/local_fast/lsdrag-text-v1/results/decision_h3_diversity48_20261024/episodes/2hop__760250_160798_t1_a2_r0.json": "8c10711d4eee40f74376e034a86e770b5e9165aafe57da7bbb062f0bfc9bda38",
+    "/content/local_fast/lsdrag-text-v1/results/decision_h3_diversity48_20261024/episodes/2hop__760250_160798_t1_a3_r0.json": "d98c3f612c803a41d114e10e00e133fce3c93807c5e7d6f9ed91679b70b3663e",
+    "/content/local_fast/lsdrag-text-v1/results/decision_h3_policy_coverage24b_20261024/episodes/2hop__438489_14948_t0_a0_r0.json": "7f96fc7d29fa6cae4976d9746ce8e739078ebbaddc1b6bbeb66d937b02e7a720",
+    "/content/local_fast/lsdrag-text-v1/results/decision_h3_policy_coverage24b_20261024/episodes/2hop__438489_14948_t0_a1_r0.json": "fcc9b91b1a86b67d969368707775244d22a867b9f3c7e19d08f109f31ce3afae",
+    "/content/local_fast/lsdrag-text-v1/results/decision_h3_policy_coverage24b_20261024/episodes/2hop__438489_14948_t0_a3_r0.json": "8b0f14ea286030ffc7d26fb8d56c0727b6d20a6af36e5d88a2fb186416c9ae82",
+    "/content/local_fast/lsdrag-text-v1/results/decision_h3_policy_iteration_collect24_20261024/episodes/2hop__208969_11125_t0_a0_r0.json": "4bd62e36e132bfbfb42dfe374a277b6a0798f3727162f2f7f4ebe777cb225cc6",
+    "/content/local_fast/lsdrag-text-v1/results/decision_h3_policy_iteration_collect24_20261024/episodes/2hop__208969_11125_t0_a1_r0.json": "25d5c70b2a447114c4c4194b9a9f4ca42133714b8cec04d3e7efd694ddbbf524",
+    "/content/local_fast/lsdrag-text-v1/results/decision_h3_policy_iteration_collect24_20261024/episodes/2hop__208969_11125_t0_a3_r0.json": "a45e4169a54165e8044899d036a54e47a1897486bfe5f49b7ef0debcdbbdfc3a",
+    "/content/local_fast/lsdrag-text-v1/results/decision_h3_diversity48_20261024/episodes/2hop__27742_27668_t2_a0_r0.json": "289410350472a44a3d3fa130f1e59f36ba3b88c1e6251a62e3eaa2246550920e",
+    "/content/local_fast/lsdrag-text-v1/results/decision_h3_diversity48_20261024/episodes/2hop__27742_27668_t2_a1_r0.json": "0c889f93d6e5beadfd6af81207b782eaab5b1e7ac4e6e82a68d904aae77c1041",
+    "/content/local_fast/lsdrag-text-v1/results/decision_h3_diversity48_20261024/episodes/2hop__27742_27668_t2_a2_r0.json": "d5204c6ad4352460e54bbb034973a1b27c334302bd9058b9b816835b6968ea9f",
+    "/content/local_fast/lsdrag-text-v1/results/decision_h3_diversity48_20261024/episodes/2hop__27742_27668_t2_a3_r0.json": "99b21f51690344313ca0576f90fe7cbe79a612ce406955626b88b8980f853d45",
+    "/content/local_fast/lsdrag-text-v1/results/decision_h3_diversity48_20261024/episodes/2hop__479640_853000_t0_a0_r0.json": "880fd567cddb3bdc44b0e42dde88b8bb0117dd61b40adb511f8f3152172d4a82",
+    "/content/local_fast/lsdrag-text-v1/results/decision_h3_diversity48_20261024/episodes/2hop__479640_853000_t0_a1_r0.json": "52f5b481154c2ab0661a9b0588ae2999775415bb3bef7b4fe092488345dd6317",
+    "/content/local_fast/lsdrag-text-v1/results/decision_h3_diversity48_20261024/episodes/2hop__479640_853000_t0_a3_r0.json": "97c8c441340e0727cbfbc99bca3c72b944c58e51f07a1890fc01852f160f9c12",
+    "/content/local_fast/lsdrag-text-v1/results/decision_h3_policy_coverage24b_20261024/episodes/2hop__314961_158069_t0_a0_r0.json": "338c9a9578b71471d149da6c1f6ba9b5d9efd62fb782a99d31f42ce39062979f",
+    "/content/local_fast/lsdrag-text-v1/results/decision_h3_policy_coverage24b_20261024/episodes/2hop__314961_158069_t0_a1_r0.json": "a96fe5ee0730aaf3424d23f5979cdc92d1d268eebaebfbb922414b8b26ab0d21",
+    "/content/local_fast/lsdrag-text-v1/results/decision_h3_policy_coverage24b_20261024/episodes/2hop__314961_158069_t0_a3_r0.json": "26128f97cfec5441b7e911eea235a10be9a750cba35bcabe2a4f0e46c0ed6123",
+    "/content/local_fast/lsdrag-text-v1/results/decision_h3_policy_coverage24b_20261024/episodes/2hop__130669_64652_t1_a0_r0.json": "c40b82b57896b6238d592dc1aec015901d769f2df40955e7608662f18f6ba423",
+    "/content/local_fast/lsdrag-text-v1/results/decision_h3_policy_coverage24b_20261024/episodes/2hop__130669_64652_t1_a1_r0.json": "849a1495264547827541ffb47117a2625775e37e8ae81a75dfa6398d0371e913",
+    "/content/local_fast/lsdrag-text-v1/results/decision_h3_policy_coverage24b_20261024/episodes/2hop__130669_64652_t1_a2_r0.json": "c8c82cfa8f0599525ff7ef53c068b646a97cf81921cbf9ff949b4d7c0e521520",
+    "/content/local_fast/lsdrag-text-v1/results/decision_h3_policy_coverage24b_20261024/episodes/2hop__130669_64652_t1_a3_r0.json": "d88044c7a7f42d5d3f99bfb405f719b6501ee2951485ce833b550627e2b757b8",
+    "/content/local_fast/lsdrag-text-v1/results/decision_h3_policy_iteration_collect24_20261024/episodes/2hop__590911_47465_t3_a0_r0.json": "ee1026c7992d86a96b97f672cebec8f0652fe11fa3f1378ec41cb6cada459a1c",
+    "/content/local_fast/lsdrag-text-v1/results/decision_h3_policy_iteration_collect24_20261024/episodes/2hop__590911_47465_t3_a1_r0.json": "aac1c5adcf4a5e562410841bdac8ab98d3913382d5c46cb530796fedaa4c4941",
+    "/content/local_fast/lsdrag-text-v1/results/decision_h3_policy_iteration_collect24_20261024/episodes/2hop__590911_47465_t3_a2_r0.json": "71dc6bb39ea7bab381eba82cc6d25e9b6d483714f647e07fb61b03334ca8e683",
+    "/content/local_fast/lsdrag-text-v1/results/decision_h3_policy_iteration_collect24_20261024/episodes/2hop__590911_47465_t3_a3_r0.json": "6de4d2569beff2ed75b401919b10ce711d17ddaa0706101d6a6bdce18e35300e",
+    "/content/local_fast/lsdrag-text-v1/results/decision_h3_diversity48_20261024/episodes/2hop__497269_82027_t1_a0_r0.json": "4ce09167dfa288587662db06cf6af09ee5017c669bde523fbb442e81619866b3",
+    "/content/local_fast/lsdrag-text-v1/results/decision_h3_diversity48_20261024/episodes/2hop__497269_82027_t1_a1_r0.json": "286e44519ddb938f4f8204e1718621319de3a45ac1a2708f1e569b380956d7c0",
+    "/content/local_fast/lsdrag-text-v1/results/decision_h3_diversity48_20261024/episodes/2hop__497269_82027_t1_a2_r0.json": "ebb612e243d93c3b0b475145e617f2e81cb9a7b9799ea17ab9932c700fac0fd8",
+    "/content/local_fast/lsdrag-text-v1/results/decision_h3_diversity48_20261024/episodes/2hop__497269_82027_t1_a3_r0.json": "9a49d78279875a9d996b9d3b1719d1d041d82282c6c30bd9503991827ea343e5",
+    "/content/local_fast/lsdrag-text-v1/results/decision_h3_policy_coverage24b_20261024/episodes/2hop__27241_66282_t0_a0_r0.json": "85a0380c83cb935a148c4d9835ea71214d5a2a3d87bb467f35adfe9f9b4becc4",
+    "/content/local_fast/lsdrag-text-v1/results/decision_h3_policy_coverage24b_20261024/episodes/2hop__27241_66282_t0_a1_r0.json": "92c63c847a0354c932304957928e8a6ff7feb4efcfd8f9f457fd1149d084dce1",
+    "/content/local_fast/lsdrag-text-v1/results/decision_h3_policy_coverage24b_20261024/episodes/2hop__27241_66282_t0_a3_r0.json": "7e50a5893543bb7c1986741de5cfc92160ecec2632fdf27e0f2bd17771f89df5",
+    "/content/local_fast/lsdrag-text-v1/results/decision_h3_policy_iteration_collect24_20261024/episodes/2hop__90877_633514_t1_a0_r0.json": "e7c291ded00debf2c435ba1de018a1b4a9b8c4590df7457b92e274b4deee0250",
+    "/content/local_fast/lsdrag-text-v1/results/decision_h3_policy_iteration_collect24_20261024/episodes/2hop__90877_633514_t1_a1_r0.json": "4230893a3ca780a51a71363bd66a210d6f6b8938488fc10c75ba84fc6bb90254",
+    "/content/local_fast/lsdrag-text-v1/results/decision_h3_policy_iteration_collect24_20261024/episodes/2hop__90877_633514_t1_a2_r0.json": "55d49ae683939938eb9d01eeecbb8b3a8acf9b181566eb03424c9515873493c9",
+    "/content/local_fast/lsdrag-text-v1/results/decision_h3_policy_iteration_collect24_20261024/episodes/2hop__90877_633514_t1_a3_r0.json": "0b3b09efc56b79ebf965ce6c17ea9d27b7365bae0a834cfe9eabfe8bc952f487",
+    "/content/local_fast/lsdrag-text-v1/results/decision_h3_diversity48_20261024/episodes/2hop__130823_73753_t0_a0_r0.json": "afcc4bd925d88b24b1e5a0e9cd3baa0df6c6b412f45783242edee6b190840f33",
+    "/content/local_fast/lsdrag-text-v1/results/decision_h3_diversity48_20261024/episodes/2hop__130823_73753_t0_a1_r0.json": "dc1031ec53be7fe74180fd057d5a46d99a479dd87b04c19022963bb7f2f64111",
+    "/content/local_fast/lsdrag-text-v1/results/decision_h3_diversity48_20261024/episodes/2hop__130823_73753_t0_a3_r0.json": "2c5846f70771df216549f4073ebf9c2ae484487785ad76a9b6717de55bfc019c",
+    "/content/local_fast/lsdrag-text-v1/results/decision_h3_diversity48_20261024/episodes/2hop__829136_131944_t0_a0_r0.json": "e13e3a327dfdef0172112afa816f2d38b21a136bf9bd84f6238028a5b8628c0e",
+    "/content/local_fast/lsdrag-text-v1/results/decision_h3_diversity48_20261024/episodes/2hop__829136_131944_t0_a1_r0.json": "5cb41dfee4ac13de3294e783ced3732876a51a067c54bb268b433cd6978acfe4",
+    "/content/local_fast/lsdrag-text-v1/results/decision_h3_diversity48_20261024/episodes/2hop__829136_131944_t0_a3_r0.json": "87b967eb95ad69509a03199f9e181a2d706db21b2d12d2e230ba910d58457282",
+    "/content/local_fast/lsdrag-text-v1/results/decision_h3_policy_iteration_collect24_20261024/episodes/2hop__660296_36180_t2_a0_r0.json": "2ab1ea5f8e05264a616c292399553737ea1769c5496f6830f520e2a602cc04aa",
+    "/content/local_fast/lsdrag-text-v1/results/decision_h3_policy_iteration_collect24_20261024/episodes/2hop__660296_36180_t2_a1_r0.json": "26a54666fdf13c708caa94c0efe127a78c304e032979d9123b5b4cc6e9e2eb2e",
+    "/content/local_fast/lsdrag-text-v1/results/decision_h3_policy_iteration_collect24_20261024/episodes/2hop__660296_36180_t2_a2_r0.json": "a122603d7577da706fd211674d63b3cdf232a406e4faf6fd4ab391de91880d41",
+    "/content/local_fast/lsdrag-text-v1/results/decision_h3_policy_iteration_collect24_20261024/episodes/2hop__660296_36180_t2_a3_r0.json": "f18bfe9606a83b85dd2640ec10126d7945746fbcb35b9d4a07184ef5d0681412",
+    "/content/local_fast/lsdrag-text-v1/results/decision_h3_diversity48_20261024/episodes/2hop__572586_58953_t2_a0_r0.json": "89bdaea4251eaefc6f633666b3a1c4ccb134af206368fa8e080f2605ec8bff1a",
+    "/content/local_fast/lsdrag-text-v1/results/decision_h3_diversity48_20261024/episodes/2hop__572586_58953_t2_a1_r0.json": "968a1554d54404ee51997261f559cdeafcf2ff01d8d0c2fad487fb4936bd1ee9",
+    "/content/local_fast/lsdrag-text-v1/results/decision_h3_diversity48_20261024/episodes/2hop__572586_58953_t2_a2_r0.json": "3da0eb0c422947be2f7f4f3159c5c0fff7b24a4815ccfa2fe715ff67a58b380b",
+    "/content/local_fast/lsdrag-text-v1/results/decision_h3_diversity48_20261024/episodes/2hop__572586_58953_t2_a3_r0.json": "2f42bd509938319a6f736285732975caa649ee8787feace87923782073100bb8",
+    "/content/local_fast/lsdrag-text-v1/results/decision_h3_diversity48_20261024/episodes/2hop__627916_89066_t0_a0_r0.json": "750d601455994df700832b6d9683b1f606483dc14b48499c146794f548fad26f",
+    "/content/local_fast/lsdrag-text-v1/results/decision_h3_diversity48_20261024/episodes/2hop__627916_89066_t0_a1_r0.json": "96b7df85678aa98f577ab359cc5b16b8d1f9faa6d9853a806e4e902746015d54",
+    "/content/local_fast/lsdrag-text-v1/results/decision_h3_diversity48_20261024/episodes/2hop__627916_89066_t0_a3_r0.json": "fe58c61fe49e6b542462e6fa18c8e8ee3890f060675a920275ad87a688a59563",
+    "/content/local_fast/lsdrag-text-v1/results/decision_h3_diversity48_20261024/episodes/2hop__445512_54206_t0_a0_r0.json": "09dafdd39a0d1b9621d4f38164fd793a36274f241bad06ec7fbd2a651a14ffe9",
+    "/content/local_fast/lsdrag-text-v1/results/decision_h3_diversity48_20261024/episodes/2hop__445512_54206_t0_a1_r0.json": "d2e712133c01c64645dad5d9d386d03f5e927cf379a4a03af1bc063231b6cf54",
+    "/content/local_fast/lsdrag-text-v1/results/decision_h3_diversity48_20261024/episodes/2hop__445512_54206_t0_a3_r0.json": "ee7bc1e496368ad636c7f9a2bd73071d93053737d038bd96cdc75cdd428f07c8",
+    "/content/local_fast/lsdrag-text-v1/results/decision_h3_diversity48_20261024/episodes/2hop__128642_32463_t2_a0_r0.json": "7092377c4d42544e172b49246279f56538f7162f0a8176d7b78ce4fe18553f73",
+    "/content/local_fast/lsdrag-text-v1/results/decision_h3_diversity48_20261024/episodes/2hop__128642_32463_t2_a1_r0.json": "427ff1dfd11f8f4389f882773abde8a7a079283d67f748b52919d098483e4348",
+    "/content/local_fast/lsdrag-text-v1/results/decision_h3_diversity48_20261024/episodes/2hop__128642_32463_t2_a2_r0.json": "0563c3281aff20d71871fb8b0a6f2ec7f56ae64418bcfce7db7fb3575b7ec231",
+    "/content/local_fast/lsdrag-text-v1/results/decision_h3_diversity48_20261024/episodes/2hop__128642_32463_t2_a3_r0.json": "48a2ae1e4c56611420a56409058a8b08379a2e95808be7e1409f5433fba2559f",
+    "/content/local_fast/lsdrag-text-v1/results/decision_h3_policy_iteration_collect24_20261024/episodes/2hop__652141_36340_t0_a0_r0.json": "79848f49a7405cd1484d775d044fd32a8fbe7dce9ae22254ba6397bca677822c",
+    "/content/local_fast/lsdrag-text-v1/results/decision_h3_policy_iteration_collect24_20261024/episodes/2hop__652141_36340_t0_a1_r0.json": "af308b672fdd4bc7b2202f1ebae5679f7fd945e4da729304cb7b982856fc3daf",
+    "/content/local_fast/lsdrag-text-v1/results/decision_h3_policy_iteration_collect24_20261024/episodes/2hop__652141_36340_t0_a3_r0.json": "259fbdc4352efa9ce89f1b0e348f95c2990ad97e6917785fbef858bd495e8713",
+    "/content/local_fast/lsdrag-text-v1/results/decision_h3_diversity48_20261024/episodes/2hop__131280_89563_t1_a0_r0.json": "f9f26699ed7328ab2e7620b7d859e29691fb1bc897c10846e201b0d7299f9269",
+    "/content/local_fast/lsdrag-text-v1/results/decision_h3_diversity48_20261024/episodes/2hop__131280_89563_t1_a1_r0.json": "1e478b05b6249e0bc266bcb2cac929e05a34b8d1d8b62358001c5f9b9960775c",
+    "/content/local_fast/lsdrag-text-v1/results/decision_h3_diversity48_20261024/episodes/2hop__131280_89563_t1_a2_r0.json": "2f9fb5e2044562479d26808080f3d2f4690be6f21971f2462e570cc6af8904b4",
+    "/content/local_fast/lsdrag-text-v1/results/decision_h3_diversity48_20261024/episodes/2hop__131280_89563_t1_a3_r0.json": "0bfb8dc1b3597a0c10b4d035c772d4df8bf08781fd6c763c300ddb8087bff055",
+    "/content/local_fast/lsdrag-text-v1/results/decision_h3_policy_coverage24b_20261024/episodes/2hop__26571_3807_t1_a0_r0.json": "b093bba44a2fac1c20d6b9b79a59343c19618bb8eefc111de6bc5fae650fb6b4",
+    "/content/local_fast/lsdrag-text-v1/results/decision_h3_policy_coverage24b_20261024/episodes/2hop__26571_3807_t1_a1_r0.json": "570c0d9a894f061ed7cc5a3056b3217d54249cd6d52ab27557f2bf47e572baab",
+    "/content/local_fast/lsdrag-text-v1/results/decision_h3_policy_coverage24b_20261024/episodes/2hop__26571_3807_t1_a2_r0.json": "69cfb9bba3439d41828c4c08f83c3a93b6c62e67a6108ef5dc8a01c205c8cacc",
+    "/content/local_fast/lsdrag-text-v1/results/decision_h3_policy_coverage24b_20261024/episodes/2hop__26571_3807_t1_a3_r0.json": "df4fd4552d9be6fe607913ede723f03076ed25cf8afdabc7e89e06b073282e0a",
+    "/content/local_fast/lsdrag-text-v1/results/decision_h3_diversity48_20261024/episodes/2hop__568006_159937_t0_a0_r0.json": "c97a4bbc82c852d166d9a2423f10704860d832ebd960ab15845960da2d4f8ffa",
+    "/content/local_fast/lsdrag-text-v1/results/decision_h3_diversity48_20261024/episodes/2hop__568006_159937_t0_a1_r0.json": "8effc67e0ec90708ef9ff6f8fad2d6cf4489042f020c3ca96afc905c8a255478",
+    "/content/local_fast/lsdrag-text-v1/results/decision_h3_diversity48_20261024/episodes/2hop__568006_159937_t0_a3_r0.json": "5aaac3e941b9e026e6919053cbd45a318372f2213fda5de5a22aa723223d75fe",
+    "/content/local_fast/lsdrag-text-v1/results/decision_h3_diversity48_20261024/episodes/2hop__108398_857705_t0_a0_r0.json": "abe5a43e1615bb1b4505345526b33f0b40c70ee0f87a76c9a83d5ac8204b4df1",
+    "/content/local_fast/lsdrag-text-v1/results/decision_h3_diversity48_20261024/episodes/2hop__108398_857705_t0_a1_r0.json": "068567ab1352b0f750376eae7fb288c5f84c9ab87de56d537f65321b55279524",
+    "/content/local_fast/lsdrag-text-v1/results/decision_h3_diversity48_20261024/episodes/2hop__108398_857705_t0_a3_r0.json": "795f664d50ce8989e66f7764464ea451d8c032ea93d37a2499e7b353be4b5f45",
+    "/content/local_fast/lsdrag-text-v1/results/decision_h3_diversity48_20261024/episodes/2hop__21222_770460_t0_a0_r0.json": "e1929284abb5daa4e41b250d28c587209c92cd670bf429062dda27838886473c",
+    "/content/local_fast/lsdrag-text-v1/results/decision_h3_diversity48_20261024/episodes/2hop__21222_770460_t0_a1_r0.json": "e010c29b0b9385e7ec684aa70f2dd98518335d0f3209071bbf8d9b6640f2d80a",
+    "/content/local_fast/lsdrag-text-v1/results/decision_h3_diversity48_20261024/episodes/2hop__21222_770460_t0_a3_r0.json": "ab2a6f3c6eb8091e7b2665bbdb8bff6b1c6ea50566cacc85b4fa84f8fa5088ba",
+    "/content/local_fast/lsdrag-text-v1/results/decision_h3_policy_iteration_collect24_20261024/episodes/2hop__142965_178655_t0_a0_r0.json": "ef79b41b1530bf2a7618526801f773cc0a3e8c452b88686e027b7a11fa9bddd4",
+    "/content/local_fast/lsdrag-text-v1/results/decision_h3_policy_iteration_collect24_20261024/episodes/2hop__142965_178655_t0_a1_r0.json": "3566d6a792f22c5412e42cdd2403afc4e779e6945d81fa9905008a2c30b4d5c1",
+    "/content/local_fast/lsdrag-text-v1/results/decision_h3_policy_iteration_collect24_20261024/episodes/2hop__142965_178655_t0_a3_r0.json": "2baf04c1f6cd6a5ae5b2538bb1d986742d162705e70082982bb704e4803e8058",
+    "/content/local_fast/lsdrag-text-v1/results/decision_h3_diversity48_20261024/episodes/2hop__426842_4037_t2_a0_r0.json": "ded0817de9f6b7c041e38c239c177412840d62fdf424882334ca2813301050d5",
+    "/content/local_fast/lsdrag-text-v1/results/decision_h3_diversity48_20261024/episodes/2hop__426842_4037_t2_a1_r0.json": "a3283ddbb70ad93c9c3fb650b420fb75e9251b61e394b4608cdf20acd69c1890",
+    "/content/local_fast/lsdrag-text-v1/results/decision_h3_diversity48_20261024/episodes/2hop__426842_4037_t2_a2_r0.json": "b2f27826f95c2bb6de3bf476b207a5f0fce8217e4ac8778cc9d5b1a8f0adb8ec",
+    "/content/local_fast/lsdrag-text-v1/results/decision_h3_diversity48_20261024/episodes/2hop__426842_4037_t2_a3_r0.json": "3a9825be1c626fe9df97c0b9c575967ad3016de1dac4063b94689aaa8fffdd65",
+    "/content/local_fast/lsdrag-text-v1/results/decision_h3_diversity48_20261024/episodes/2hop__276721_124425_t1_a0_r0.json": "536d4ba092d0598d42f5930a77d065c5ec37c0b983e6670c40354685f5f777a1",
+    "/content/local_fast/lsdrag-text-v1/results/decision_h3_diversity48_20261024/episodes/2hop__276721_124425_t1_a1_r0.json": "ac6e7e1221dc906f3b8af8a9019cda19d5603aadf71f2f4a17bbfd4cb5bd4220",
+    "/content/local_fast/lsdrag-text-v1/results/decision_h3_diversity48_20261024/episodes/2hop__276721_124425_t1_a2_r0.json": "b37121e2972035810f2a4030164b2ee94adfaa98dc8d220f6797928dafb7e3e4",
+    "/content/local_fast/lsdrag-text-v1/results/decision_h3_diversity48_20261024/episodes/2hop__276721_124425_t1_a3_r0.json": "b75a06c7e8834a4a7cf2a174e252c3cba06295ed524aa971070c7fdc923966fe",
+    "/content/local_fast/lsdrag-text-v1/results/decision_h3_diversity48_20261024/episodes/2hop__39571_54358_t2_a0_r0.json": "86641f58dbcf0bb272b499b469d0d48b32ea44b59368c39219ebc4aeb1810c92",
+    "/content/local_fast/lsdrag-text-v1/results/decision_h3_diversity48_20261024/episodes/2hop__39571_54358_t2_a1_r0.json": "4ebd91a0fee50a425de8464ab48456c82a84a6f5662177b589f9c16185d6355d",
+    "/content/local_fast/lsdrag-text-v1/results/decision_h3_diversity48_20261024/episodes/2hop__39571_54358_t2_a2_r0.json": "c2a7b9fe11ecbe5da878a62123eb37d6c1f192f186b4298b74f8ae50b9386c9e",
+    "/content/local_fast/lsdrag-text-v1/results/decision_h3_diversity48_20261024/episodes/2hop__39571_54358_t2_a3_r0.json": "d16b2b92307e2e7bf376b2880476418af929d23eb84b5b09c7e18a409ee6a926",
+    "/content/local_fast/lsdrag-text-v1/results/decision_h3_policy_coverage24b_20261024/episodes/2hop__554253_86395_t0_a0_r0.json": "29e019168143ff2a2c2860518b810dba3d20588762ec7cc5724a2937db53999e",
+    "/content/local_fast/lsdrag-text-v1/results/decision_h3_policy_coverage24b_20261024/episodes/2hop__554253_86395_t0_a1_r0.json": "5ff0495ad442ddd21b17b319e2b4df1c35b6e6bd678376f83c900e1e633a8693",
+    "/content/local_fast/lsdrag-text-v1/results/decision_h3_policy_coverage24b_20261024/episodes/2hop__554253_86395_t0_a3_r0.json": "9e0ba3d25c5e271ffb1b274876b3e215965dab183ff110d0ac23d4ae8d016444",
+    "/content/local_fast/lsdrag-text-v1/results/decision_h3_diversity48_20261024/episodes/2hop__769619_162428_t0_a0_r0.json": "14bd34f4668266d9e8572ea5dfbd16f1741375b0699ead8b130825787653620f",
+    "/content/local_fast/lsdrag-text-v1/results/decision_h3_diversity48_20261024/episodes/2hop__769619_162428_t0_a1_r0.json": "bd728d933602a0d6aa26aa0f6ad21e294245f9cdff9e128af00ea80c16421cff",
+    "/content/local_fast/lsdrag-text-v1/results/decision_h3_diversity48_20261024/episodes/2hop__769619_162428_t0_a3_r0.json": "8d5ea14c7525732daf09feaf72120c1f9c2cff61a9c6d62a69f5f1fc91e74e62",
+    "/content/local_fast/lsdrag-text-v1/results/decision_h3_diversity48_20261024/episodes/2hop__178263_52185_t1_a0_r0.json": "667825dec86931b112a36974fd2ce41941d94e07219ee1e0e9f9284fa2ea76cf",
+    "/content/local_fast/lsdrag-text-v1/results/decision_h3_diversity48_20261024/episodes/2hop__178263_52185_t1_a1_r0.json": "2a8a3dc0212772abcb06a0ca4f958461d9fc17dcfc7466777b7f760f023bcd5d",
+    "/content/local_fast/lsdrag-text-v1/results/decision_h3_diversity48_20261024/episodes/2hop__178263_52185_t1_a2_r0.json": "5fed4946e9a5c46157dd537030abc8ba3951bff9018ddce0de1b5e30ca9863c3",
+    "/content/local_fast/lsdrag-text-v1/results/decision_h3_diversity48_20261024/episodes/2hop__178263_52185_t1_a3_r0.json": "d6fa4c73a80229372967397341b575a3ae42f04575777c0b878d2e830fe5865d",
+    "/content/local_fast/lsdrag-text-v1/results/decision_h3_policy_coverage24b_20261024/episodes/2hop__296175_126060_t6_a0_r0.json": "56eb7d98ed0ce8b5987e9d7b51c7512f47293a78d80714fb2b6cc57ef3983e7c",
+    "/content/local_fast/lsdrag-text-v1/results/decision_h3_policy_coverage24b_20261024/episodes/2hop__296175_126060_t6_a1_r0.json": "a51f9af071ff53618630fc284a5f7bb8ee0b5668ecb8eda8033f4af4f0f43238",
+    "/content/local_fast/lsdrag-text-v1/results/decision_h3_policy_coverage24b_20261024/episodes/2hop__296175_126060_t6_a2_r0.json": "7a2c43b0b725da7ed3b52bb134eb1e538bcb73cac149bfda12d89d1deccafcfc",
+    "/content/local_fast/lsdrag-text-v1/results/decision_h3_policy_coverage24b_20261024/episodes/2hop__296175_126060_t6_a3_r0.json": "c90ce7a1ee0bbe03714404d28adca548b01e5fb0a92a361e33c0d3da2240cdb2",
+    "/content/local_fast/lsdrag-text-v1/results/decision_h3_policy_iteration_collect24_20261024/episodes/2hop__558011_64290_t3_a0_r0.json": "6c2053c310bd230a465720b2e6fdfc8649888fbc0c986686413787ee8904000e",
+    "/content/local_fast/lsdrag-text-v1/results/decision_h3_policy_iteration_collect24_20261024/episodes/2hop__558011_64290_t3_a1_r0.json": "49e51e14b050624c6c87a97fb75ebaeb7b8f4caa7e7328bdc23964309eb39f74",
+    "/content/local_fast/lsdrag-text-v1/results/decision_h3_policy_iteration_collect24_20261024/episodes/2hop__558011_64290_t3_a2_r0.json": "bdc0de8f3629a548e7b9f642fc644fe98c638de387e6bb049794017c4147e69d",
+    "/content/local_fast/lsdrag-text-v1/results/decision_h3_policy_iteration_collect24_20261024/episodes/2hop__558011_64290_t3_a3_r0.json": "913f06758ca6c75616a49d98a03ab0a09bd51d6fb9df26fbba7a4d512c704511",
+    "/content/local_fast/lsdrag-text-v1/results/decision_h3_diversity48_20261024/episodes/2hop__144760_88472_t0_a0_r0.json": "9fc8f7dd5eaf1ff2badab02077de4a86df6df3275cde30b39d26a6fc0fc2c192",
+    "/content/local_fast/lsdrag-text-v1/results/decision_h3_diversity48_20261024/episodes/2hop__144760_88472_t0_a1_r0.json": "a4dd2fbdc1f9fe2126dc69f6e827523226d2541a298e03542256c7572bb78111",
+    "/content/local_fast/lsdrag-text-v1/results/decision_h3_diversity48_20261024/episodes/2hop__144760_88472_t0_a3_r0.json": "e6a51c95ffd5013c08e99bae4eea4d32b73333c8d237aacd74b382ff785135b2",
+    "/content/local_fast/lsdrag-text-v1/results/decision_h3_policy_coverage24b_20261024/episodes/2hop__375649_80178_t1_a0_r0.json": "2d1b71953c3c706318df8cc0dd4ddeaced815c931815448bb036b67fe5b43262",
+    "/content/local_fast/lsdrag-text-v1/results/decision_h3_policy_coverage24b_20261024/episodes/2hop__375649_80178_t1_a1_r0.json": "1e39bb7058c0bc1a81d14a50a948141675d91a2f593e4547af7fca51f4613f84",
+    "/content/local_fast/lsdrag-text-v1/results/decision_h3_policy_coverage24b_20261024/episodes/2hop__375649_80178_t1_a2_r0.json": "9bd83320259c2c4ac348e5b2a78eb5e51bb20b1ab2524849830c3b40b04d830b",
+    "/content/local_fast/lsdrag-text-v1/results/decision_h3_policy_coverage24b_20261024/episodes/2hop__375649_80178_t1_a3_r0.json": "841cfd6d33d48a88835eb28019a029519afb7847f55e00e4036c4604c94824a2",
+    "/content/local_fast/lsdrag-text-v1/results/decision_h3_diversity48_20261024/episodes/2hop__505712_127008_t0_a0_r0.json": "70e5db790984665bfcc13263b5ea368d8d52dfd0944a8f70e5d13fe31eecff96",
+    "/content/local_fast/lsdrag-text-v1/results/decision_h3_diversity48_20261024/episodes/2hop__505712_127008_t0_a1_r0.json": "60ecd03d922291d85d7790fb539df745fd4c5f479ea08a7655dd2aef8d941f27",
+    "/content/local_fast/lsdrag-text-v1/results/decision_h3_diversity48_20261024/episodes/2hop__505712_127008_t0_a3_r0.json": "2b07e09a9f7194c97dc74d1e145d86352b77f1ced3d751e1a9988c866efc62fe",
+    "/content/local_fast/lsdrag-text-v1/results/decision_h3_policy_iteration_collect24_20261024/episodes/2hop__128974_571141_t1_a0_r0.json": "90d2949656be0b105d9aa31b023579ca34cfb263ae4c2ff7335e368cdc8fc186",
+    "/content/local_fast/lsdrag-text-v1/results/decision_h3_policy_iteration_collect24_20261024/episodes/2hop__128974_571141_t1_a1_r0.json": "5a29b779729a7fa9c75b52e401356e942de93bc5ad88ae830e30fab09ce0abec",
+    "/content/local_fast/lsdrag-text-v1/results/decision_h3_policy_iteration_collect24_20261024/episodes/2hop__128974_571141_t1_a2_r0.json": "17889800b3c0af17790f881e59ea48554f2297812fd13c78792b2ce364f989a9",
+    "/content/local_fast/lsdrag-text-v1/results/decision_h3_policy_iteration_collect24_20261024/episodes/2hop__128974_571141_t1_a3_r0.json": "ca95e63bf5bc8d456fc9c640095044e5e3939ab4790fd948f813c1eac056ebb7",
+    "/content/local_fast/lsdrag-text-v1/results/decision_h3_diversity48_20261024/episodes/2hop__178280_79070_t1_a0_r0.json": "5108607912653f5b063cb79cf92c4a1de825d4e026e0a3e599acf558dfbf6aea",
+    "/content/local_fast/lsdrag-text-v1/results/decision_h3_diversity48_20261024/episodes/2hop__178280_79070_t1_a1_r0.json": "530cc8b7021e7d638c0ff913d5ccfbada07fca90e0aecb0f1f0727c35607ad48",
+    "/content/local_fast/lsdrag-text-v1/results/decision_h3_diversity48_20261024/episodes/2hop__178280_79070_t1_a2_r0.json": "8c804906e62108f7671bba2dd562423047b2bc5a6c22db44eb803f77fac77f84",
+    "/content/local_fast/lsdrag-text-v1/results/decision_h3_diversity48_20261024/episodes/2hop__178280_79070_t1_a3_r0.json": "db47ac6e33eaa8e17ba6cf3ad5c74210a24279234189005440960100be66533d",
+    "/content/local_fast/lsdrag-text-v1/results/decision_h3_diversity48_20261024/episodes/2hop__15574_66008_t2_a0_r0.json": "7db706e13de16f620d5cac3879c5294e80ffe19cd373ebf38b7ba12906d42568",
+    "/content/local_fast/lsdrag-text-v1/results/decision_h3_diversity48_20261024/episodes/2hop__15574_66008_t2_a1_r0.json": "63a1e55df4022b07bb4e48f3518fc58096b816ca9dc2f04831efacecb5de683e",
+    "/content/local_fast/lsdrag-text-v1/results/decision_h3_diversity48_20261024/episodes/2hop__15574_66008_t2_a2_r0.json": "26c8734a89a308fd55223eb39fe5ccb82f6fbcef1b2d6dc20aa8c70de2b17cbd",
+    "/content/local_fast/lsdrag-text-v1/results/decision_h3_diversity48_20261024/episodes/2hop__15574_66008_t2_a3_r0.json": "ec4d7798c8ed68b12c40d8223057a0e135fd06cbf944033b04d48fb416b3a639",
+    "/content/local_fast/lsdrag-text-v1/results/decision_h3_diversity48_20261024/episodes/2hop__533801_81842_t3_a0_r0.json": "2ca185430d1e922542df148ababd26bab3335cf8c9cef1e16873fd591f33a123",
+    "/content/local_fast/lsdrag-text-v1/results/decision_h3_diversity48_20261024/episodes/2hop__533801_81842_t3_a1_r0.json": "e9aecfa4e517460ba90ef907247aee82a7e0e6252f2a749cac90fe3e443cb19a",
+    "/content/local_fast/lsdrag-text-v1/results/decision_h3_diversity48_20261024/episodes/2hop__533801_81842_t3_a2_r0.json": "8a85289b6beb1ef5d7bb7be731837cd6d14f933f1007689efefe521dd766e7d2",
+    "/content/local_fast/lsdrag-text-v1/results/decision_h3_diversity48_20261024/episodes/2hop__533801_81842_t3_a3_r0.json": "4d735086840aac2fd8335a9a5d7471e9e08faec8d362897861e7dfc03e29d500",
+    "/content/local_fast/lsdrag-text-v1/results/decision_h3_policy_coverage24b_20261024/episodes/2hop__343722_542971_t0_a0_r0.json": "541f1d1e2d63fca70790fb571c712e8cb30b8e320d92ad956333febf0334149b",
+    "/content/local_fast/lsdrag-text-v1/results/decision_h3_policy_coverage24b_20261024/episodes/2hop__343722_542971_t0_a1_r0.json": "31882a9c6c4780b8ca91d05251a2dc05b5db0ada71cceefde652a469cf4b60dc",
+    "/content/local_fast/lsdrag-text-v1/results/decision_h3_policy_coverage24b_20261024/episodes/2hop__343722_542971_t0_a3_r0.json": "0219e5d592a847f99b0e7565716693c0098c353f5eaded468d760c12cfabbc51",
+    "/content/local_fast/lsdrag-text-v1/results/decision_h3_diversity48_20261024/episodes/2hop__325682_3429_t0_a0_r0.json": "7268a4a80463bc7ce3b090ef1901e30ed9539465723faa09fd517f020e0ba161",
+    "/content/local_fast/lsdrag-text-v1/results/decision_h3_diversity48_20261024/episodes/2hop__325682_3429_t0_a1_r0.json": "af91f738d876f6ca5ae1614ee53a40031e7f3a8fc3dad4b1389b9a3eb14c1acd",
+    "/content/local_fast/lsdrag-text-v1/results/decision_h3_diversity48_20261024/episodes/2hop__325682_3429_t0_a3_r0.json": "856fc4bc53e75d4848bf8085a57436c43d131971dbb852b1b44eea3d1dcffed7",
+    "/content/local_fast/lsdrag-text-v1/results/decision_h3_diversity48_20261024/episodes/2hop__60984_44352_t0_a0_r0.json": "4d28517733e7ddb6ba80c8c11043db52616b745064f833c988ffe735886f7a04",
+    "/content/local_fast/lsdrag-text-v1/results/decision_h3_diversity48_20261024/episodes/2hop__60984_44352_t0_a1_r0.json": "c0949e497f28df8500c1488de02678f8154ce650d57766a267ab4b57184a05d5",
+    "/content/local_fast/lsdrag-text-v1/results/decision_h3_diversity48_20261024/episodes/2hop__60984_44352_t0_a3_r0.json": "38131193e6709670cbc51fc4e94618c5e333c834194355478874f0d1896e52b5",
+    "/content/local_fast/lsdrag-text-v1/results/decision_h3_policy_iteration_collect24_20261024/episodes/2hop__25478_60641_t1_a0_r0.json": "54bc5cf1b49bf64f3cca09cdfa2046c795b54b84e4cd0ab90fde138bb2bf9222",
+    "/content/local_fast/lsdrag-text-v1/results/decision_h3_policy_iteration_collect24_20261024/episodes/2hop__25478_60641_t1_a1_r0.json": "4d7e4908eafde56fed0fd320d298a2378a081b535e514e139eca898df05315f2",
+    "/content/local_fast/lsdrag-text-v1/results/decision_h3_policy_iteration_collect24_20261024/episodes/2hop__25478_60641_t1_a2_r0.json": "9a07e3cf20f2dff75b7ccdc0afa0ee1441f0ed52f754b10ecab576c10ef0a67c",
+    "/content/local_fast/lsdrag-text-v1/results/decision_h3_policy_iteration_collect24_20261024/episodes/2hop__25478_60641_t1_a3_r0.json": "fa67843409c493b4ebd3c63c0c4ab32affcfac7c698fee996dacb1a1b4045f13",
+    "/content/local_fast/lsdrag-text-v1/results/decision_h3_policy_coverage24b_20261024/episodes/2hop__145221_526735_t0_a0_r0.json": "ad27bc7c17ce76ddfd320bcfc96d6e3c9e4bdd6edf5e2ef397e85884f683a8c7",
+    "/content/local_fast/lsdrag-text-v1/results/decision_h3_policy_coverage24b_20261024/episodes/2hop__145221_526735_t0_a1_r0.json": "1125c39083d24c5122ba63c0c7d4226dd3e1b67b87eb6a78e20c1809bbff6fc0",
+    "/content/local_fast/lsdrag-text-v1/results/decision_h3_policy_coverage24b_20261024/episodes/2hop__145221_526735_t0_a3_r0.json": "0ec02a0e70a17b4763cd02e10105e1fb7c19073c05e268cce48eee93934d4ae7",
+    "/content/local_fast/lsdrag-text-v1/results/decision_h3_diversity48_20261024/episodes/2hop__346214_699835_t0_a0_r0.json": "28e9a7b8ff6fc754475783cbdbbbad2f205a3bf8dc376f1fb31dfa0552f6e766",
+    "/content/local_fast/lsdrag-text-v1/results/decision_h3_diversity48_20261024/episodes/2hop__346214_699835_t0_a1_r0.json": "1bd35631087b72ce779ef2eb6dc2e653ee21fd333766749a0ecccc4e03357f73",
+    "/content/local_fast/lsdrag-text-v1/results/decision_h3_diversity48_20261024/episodes/2hop__346214_699835_t0_a3_r0.json": "97bb10eaee4f3c3d71b44ac18c8b3524b3915be77b1983ba6afcefa41a0bb916",
+    "/content/local_fast/lsdrag-text-v1/results/decision_h3_policy_iteration_collect24_20261024/episodes/2hop__212522_513189_t0_a0_r0.json": "891d4af3703c3931812b7d5a523d97b98f4545db6c0c19d7dafdcd66322c96fe",
+    "/content/local_fast/lsdrag-text-v1/results/decision_h3_policy_iteration_collect24_20261024/episodes/2hop__212522_513189_t0_a1_r0.json": "e75a7ecaa294df03ea4845511b8c4c4feb62b2212b41b2aced52977e5c9ecac3",
+    "/content/local_fast/lsdrag-text-v1/results/decision_h3_policy_iteration_collect24_20261024/episodes/2hop__212522_513189_t0_a3_r0.json": "6e3cba82892918b25ca8cea2e9c81ba7364806d93b7f9146b048869398dfef3f",
+    "/content/local_fast/lsdrag-text-v1/results/decision_h3_policy_iteration_collect24_20261024/episodes/2hop__22215_22229_t1_a0_r0.json": "f8f4e43cb5ee87a19903c39f0568a707012bd83dc291b8c08c56773f2f4dc8b9",
+    "/content/local_fast/lsdrag-text-v1/results/decision_h3_policy_iteration_collect24_20261024/episodes/2hop__22215_22229_t1_a1_r0.json": "dd153f6ddc5fdbbf9a0cd907cbdf08a58e213ec62cf3d91056e67218e47cbe4b",
+    "/content/local_fast/lsdrag-text-v1/results/decision_h3_policy_iteration_collect24_20261024/episodes/2hop__22215_22229_t1_a2_r0.json": "933ce4c95cc010ce4606db5cc59b161a3e26e0ce050f9c09612a369173ea1afb",
+    "/content/local_fast/lsdrag-text-v1/results/decision_h3_policy_iteration_collect24_20261024/episodes/2hop__22215_22229_t1_a3_r0.json": "4e7d91258a797466b6af2bffa518fad3a0265e12166d1fb22e1f92a41e425055",
+    "/content/local_fast/lsdrag-text-v1/results/decision_h3_policy_coverage24b_20261024/episodes/2hop__132015_91253_t1_a0_r0.json": "e658af9813151c733c914a1360e648dcaf74276975b4c08f6b9b9936785f60ea",
+    "/content/local_fast/lsdrag-text-v1/results/decision_h3_policy_coverage24b_20261024/episodes/2hop__132015_91253_t1_a1_r0.json": "926a50653555f9313b90bbd1773466956fdf85c74bfd62b4180f1ea2c710c5d6",
+    "/content/local_fast/lsdrag-text-v1/results/decision_h3_policy_coverage24b_20261024/episodes/2hop__132015_91253_t1_a2_r0.json": "189562f713f3e09b97a9c66f125ff30147a9c68ef495bc7cd234bd7d183ad866",
+    "/content/local_fast/lsdrag-text-v1/results/decision_h3_policy_coverage24b_20261024/episodes/2hop__132015_91253_t1_a3_r0.json": "0e294e0b16b4cd8f15f9fe3f2244c2267bd607c712ef4efff201974e0d6199a1",
+    "/content/local_fast/lsdrag-text-v1/results/decision_h3_policy_iteration_collect24_20261024/episodes/2hop__129299_45142_t2_a0_r0.json": "d926a6a9932a5602b3c925821d966795bab8d84f1e587d752b2202740d494542",
+    "/content/local_fast/lsdrag-text-v1/results/decision_h3_policy_iteration_collect24_20261024/episodes/2hop__129299_45142_t2_a1_r0.json": "37f657446a60db9500a48d5fe15da01b385467457149f681ff0347e2e24570ff",
+    "/content/local_fast/lsdrag-text-v1/results/decision_h3_policy_iteration_collect24_20261024/episodes/2hop__129299_45142_t2_a2_r0.json": "474c8e2d18c9a21f9645c52a5a613c3a12e47945c88f35646442d1022c11f19b",
+    "/content/local_fast/lsdrag-text-v1/results/decision_h3_policy_iteration_collect24_20261024/episodes/2hop__129299_45142_t2_a3_r0.json": "da512dc7e809f4210f1dc811a2d84d208942de431ae83bd10e747904ffead6a2",
+    "/content/local_fast/lsdrag-text-v1/results/decision_h3_policy_coverage24b_20261024/episodes/2hop__103724_90561_t0_a0_r0.json": "047885bf9b2efb084890def50ab39aa0f1261bdb8cdfad35fa072c1c22bee690",
+    "/content/local_fast/lsdrag-text-v1/results/decision_h3_policy_coverage24b_20261024/episodes/2hop__103724_90561_t0_a1_r0.json": "10be9b1e3672360bece943497548a2577441a92887620b8b6427a2e8ce46971c",
+    "/content/local_fast/lsdrag-text-v1/results/decision_h3_policy_coverage24b_20261024/episodes/2hop__103724_90561_t0_a3_r0.json": "477b384b5be635890a56a5568ce381ba5e07cfeeac1d9178c5f25dd95cb5bfd9",
+    "/content/local_fast/lsdrag-text-v1/results/decision_h3_policy_iteration_collect24_20261024/episodes/2hop__282175_100321_t0_a0_r0.json": "9571ba40421ddfd352b615e77aa97ea30b5769bf054ac3b9c860963e2cffb53c",
+    "/content/local_fast/lsdrag-text-v1/results/decision_h3_policy_iteration_collect24_20261024/episodes/2hop__282175_100321_t0_a1_r0.json": "f7c4ff4a6bfc171c5f36f61fd3ecc11e87a73c2ea237e5471d849ec4cd0b4df1",
+    "/content/local_fast/lsdrag-text-v1/results/decision_h3_policy_iteration_collect24_20261024/episodes/2hop__282175_100321_t0_a3_r0.json": "7e4f1548989cb265fe31ac4e90ffb2f508e11ff9240517d92fb2be89add89a87",
+    "/content/local_fast/lsdrag-text-v1/results/decision_h3_policy_coverage24b_20261024/episodes/2hop__205146_92853_t0_a0_r0.json": "21f0194c2364cd05c7cb017443c7ff9d23aa26769f59eb65313749e18f595d96",
+    "/content/local_fast/lsdrag-text-v1/results/decision_h3_policy_coverage24b_20261024/episodes/2hop__205146_92853_t0_a1_r0.json": "8127f84280494cf0bff4d22592aa5816ed75de37dd3aea796b5c3f9922b87874",
+    "/content/local_fast/lsdrag-text-v1/results/decision_h3_policy_coverage24b_20261024/episodes/2hop__205146_92853_t0_a3_r0.json": "8a435e8d0154ebaa2db046e3bc9117ddb3d48ea91d7ed2874c22d194650db77f",
+    "/content/local_fast/lsdrag-text-v1/results/decision_h3_policy_coverage24b_20261024/episodes/2hop__128395_605235_t1_a0_r0.json": "6e89f26bbdb13082042aeed81b31a4c967fceaa09e604965bcb0109b29e4732d",
+    "/content/local_fast/lsdrag-text-v1/results/decision_h3_policy_coverage24b_20261024/episodes/2hop__128395_605235_t1_a1_r0.json": "ae0e29359ff6f3da28f376a358dfb9bc7f3ab17d541c3a1d4f0d9a96fc9dd954",
+    "/content/local_fast/lsdrag-text-v1/results/decision_h3_policy_coverage24b_20261024/episodes/2hop__128395_605235_t1_a3_r0.json": "05074475ba6262398300830322153d2a8fa7810917f4357026ae0b4920e8bfd2",
+    "/content/local_fast/lsdrag-text-v1/results/decision_h3_policy_iteration_collect24_20261024/episodes/2hop__487591_7672_t2_a0_r0.json": "97220c5304ff692567504b98b77289427416ac600402ffd517f8fa415bef1eea",
+    "/content/local_fast/lsdrag-text-v1/results/decision_h3_policy_iteration_collect24_20261024/episodes/2hop__487591_7672_t2_a1_r0.json": "6a5edc5e7cd6e1ac99dd4884030d3ef37accb84a00116ab4c4f6efdcf736c70a",
+    "/content/local_fast/lsdrag-text-v1/results/decision_h3_policy_iteration_collect24_20261024/episodes/2hop__487591_7672_t2_a2_r0.json": "be49aa7752cc87374f393b269d84b96621e677047e8fdffd23c1a1e8cae811dc",
+    "/content/local_fast/lsdrag-text-v1/results/decision_h3_policy_iteration_collect24_20261024/episodes/2hop__487591_7672_t2_a3_r0.json": "90ce3b35121b78a9258544e1530274a3592e6d946db177b48937643a0ba46425",
+    "/content/local_fast/lsdrag-text-v1/results/decision_h3_diversity48_20261024/episodes/2hop__795530_47353_t0_a0_r0.json": "f80f2b42eb628d793b2730c2912f600716dc0c3ae159aa67f4c98c7015dd649e",
+    "/content/local_fast/lsdrag-text-v1/results/decision_h3_diversity48_20261024/episodes/2hop__795530_47353_t0_a1_r0.json": "f1db297ed131024f05097f872e0a9d6e092a1c2c0825ba292b813fe18d0879f7",
+    "/content/local_fast/lsdrag-text-v1/results/decision_h3_diversity48_20261024/episodes/2hop__795530_47353_t0_a3_r0.json": "060be2bc346dc8182352073b9664317aa6082cac43d339e7cabfd6e81037952a",
+    "/content/local_fast/lsdrag-text-v1/results/decision_h3_policy_coverage24b_20261024/episodes/2hop__452796_84477_t0_a0_r0.json": "0e0851f733e314c4a25ef8c73714a52037c9bbbd48804673871f1519c6fd5373",
+    "/content/local_fast/lsdrag-text-v1/results/decision_h3_policy_coverage24b_20261024/episodes/2hop__452796_84477_t0_a1_r0.json": "2e28841508e289ea8c9e42471271e6f51a334f766e1b2a54cf616f6d585956f0",
+    "/content/local_fast/lsdrag-text-v1/results/decision_h3_policy_coverage24b_20261024/episodes/2hop__452796_84477_t0_a3_r0.json": "210e9e2217ac48d9938de9045a40df51c8cc3270d676e21c93fd0d21596a683a",
+    "/content/local_fast/lsdrag-text-v1/results/decision_h3_diversity48_20261024/episodes/2hop__300052_224276_t0_a0_r0.json": "b674caa27cfe456e75c5ffed25fad5d93d134a8bab32fa5997e07a09e5dd3d66",
+    "/content/local_fast/lsdrag-text-v1/results/decision_h3_diversity48_20261024/episodes/2hop__300052_224276_t0_a1_r0.json": "270a576132fe7e6f3d47f133b8cc481490828fc9c8b185ae9c2ff53b976f3207",
+    "/content/local_fast/lsdrag-text-v1/results/decision_h3_diversity48_20261024/episodes/2hop__300052_224276_t0_a3_r0.json": "826f0710c1f55ad01cfb8e29ae2a7cfdac98d00dfe782f4dfc3c7eff1bb7e0ba",
+    "/content/local_fast/lsdrag-text-v1/results/decision_h3_diversity48_20261024/episodes/2hop__139851_140916_t0_a0_r0.json": "d0f5910a884c08cd0c3c12863a119e8fc51df895383e75138bd408cb5f66b17b",
+    "/content/local_fast/lsdrag-text-v1/results/decision_h3_diversity48_20261024/episodes/2hop__139851_140916_t0_a1_r0.json": "a446dbe586588476a6eb2e67ef0610da63432fcef0631850afd526619de9d70c",
+    "/content/local_fast/lsdrag-text-v1/results/decision_h3_diversity48_20261024/episodes/2hop__139851_140916_t0_a3_r0.json": "64f8919060da9afcc8b8f6fedd658094b5858884698b8c449937090b3df3b470",
+    "/content/local_fast/lsdrag-text-v1/results/decision_h3_diversity48_20261024/episodes/2hop__89354_93808_t0_a0_r0.json": "9cde2b29ea1eba1f804fef3af0522d52afb1549e17b15a5f6486e94044414de9",
+    "/content/local_fast/lsdrag-text-v1/results/decision_h3_diversity48_20261024/episodes/2hop__89354_93808_t0_a1_r0.json": "7230c32f930abc4348a3983ba11a9012372a4df293aa6020dfe2bceda005f975",
+    "/content/local_fast/lsdrag-text-v1/results/decision_h3_diversity48_20261024/episodes/2hop__89354_93808_t0_a3_r0.json": "13ce640c4efa412fde2407a95ff1cd161b31b6153361ef692ae2bfff97a7f3e4",
+    "/content/local_fast/lsdrag-text-v1/results/decision_h3_policy_iteration_collect24_20261024/episodes/2hop__172461_126711_t0_a0_r0.json": "8669af57f3911f1d6eb9340d863b394f7207150a46ee24e1a05fe421b1a48488",
+    "/content/local_fast/lsdrag-text-v1/results/decision_h3_policy_iteration_collect24_20261024/episodes/2hop__172461_126711_t0_a1_r0.json": "0e32da4fa6a10b217d56954e378f9cee13632257fa8a638bb4500d69088b4dbd",
+    "/content/local_fast/lsdrag-text-v1/results/decision_h3_policy_iteration_collect24_20261024/episodes/2hop__172461_126711_t0_a3_r0.json": "964055ee2274899090ad481b52b66164d4b9677b137480fcd044c506019d37d3",
+    "/content/local_fast/lsdrag-text-v1/results/decision_h3_policy_iteration_collect24_20261024/episodes/2hop__150671_127418_t0_a0_r0.json": "a666d16e1d47370e733830e20f3e2d11dfb15ccd8c52fd970ec14e54fde49ed8",
+    "/content/local_fast/lsdrag-text-v1/results/decision_h3_policy_iteration_collect24_20261024/episodes/2hop__150671_127418_t0_a1_r0.json": "11c86bb38d8aea4dc43dd1df07b0d5bfb24f26c392303ec0761f9af8f10d8338",
+    "/content/local_fast/lsdrag-text-v1/results/decision_h3_policy_iteration_collect24_20261024/episodes/2hop__150671_127418_t0_a3_r0.json": "aa67a4657dc57423b417e9d47c9a990e216a7a22c4a9f2bd8193aca8ed34e2ce",
+    "/content/local_fast/lsdrag-text-v1/results/decision_h3_policy_coverage24b_20261024/episodes/2hop__25901_872_t0_a0_r0.json": "16f25b904208835307d66b6dd6b32a96079dfe73ff3e689b7e81206a11bb6ae6",
+    "/content/local_fast/lsdrag-text-v1/results/decision_h3_policy_coverage24b_20261024/episodes/2hop__25901_872_t0_a1_r0.json": "44549207bdf96283a928941ea0510e15c7b59d6246e29888f843aebbbd8f5849",
+    "/content/local_fast/lsdrag-text-v1/results/decision_h3_policy_coverage24b_20261024/episodes/2hop__25901_872_t0_a3_r0.json": "6ba4998c7212f2a8857978dbae4351868413234a908d1d3aec41ce7f5ac1bff5",
+    "/content/local_fast/lsdrag-text-v1/results/decision_h3_policy_coverage24b_20261024/episodes/2hop__181992_51888_t0_a0_r0.json": "f21a3bb9b38d0c4b018fd5096b5b364e81212fc26af5ac2e354bdea1d614007b",
+    "/content/local_fast/lsdrag-text-v1/results/decision_h3_policy_coverage24b_20261024/episodes/2hop__181992_51888_t0_a1_r0.json": "c18d9ab087bc4d213b119e7bacbdcb7c9ad4a6948e003c48952e795fa0d9cbaa",
+    "/content/local_fast/lsdrag-text-v1/results/decision_h3_policy_coverage24b_20261024/episodes/2hop__181992_51888_t0_a3_r0.json": "37cb6ec93bf69510f6c64e7c989c7af46598ccdbf88a68096d7a45db696d9051",
+    "/content/local_fast/lsdrag-text-v1/results/decision_h3_policy_coverage24b_20261024/episodes/2hop__376266_37939_t2_a0_r0.json": "772583d552024fdd914e59bf88294bd10456fde1e3bf338ffbc853acf90aeafd",
+    "/content/local_fast/lsdrag-text-v1/results/decision_h3_policy_coverage24b_20261024/episodes/2hop__376266_37939_t2_a1_r0.json": "ef960a6f7890049abf7deda3955ffa5dd5b809f97337a31ccff42de364a918c1",
+    "/content/local_fast/lsdrag-text-v1/results/decision_h3_policy_coverage24b_20261024/episodes/2hop__376266_37939_t2_a2_r0.json": "8df80ba7ef5e2f4c648f9343adb3588a7949cad136f759a0a96296bd33264608",
+    "/content/local_fast/lsdrag-text-v1/results/decision_h3_policy_coverage24b_20261024/episodes/2hop__376266_37939_t2_a3_r0.json": "8ad23540455ed98cbfed47f14a9a55162b8a13c8a813f981e3ef2e7e9878c5d6",
+    "/content/local_fast/lsdrag-text-v1/results/decision_h3_policy_coverage24b_20261024/episodes/2hop__440195_14904_t0_a0_r0.json": "75890118adb5e20337211d0e98424e86dba401ab94287169b0fe17417fd12858",
+    "/content/local_fast/lsdrag-text-v1/results/decision_h3_policy_coverage24b_20261024/episodes/2hop__440195_14904_t0_a1_r0.json": "97b631fc918bbbd9f24463276c91f45b458cf0f6897f5269195eca5cde267e09",
+    "/content/local_fast/lsdrag-text-v1/results/decision_h3_policy_coverage24b_20261024/episodes/2hop__440195_14904_t0_a3_r0.json": "25fe10433c7ac9d1d2f9ec2a0b20ce939a7e3835d3fcdeba5cbc530474879102",
+    "/content/local_fast/lsdrag-text-v1/results/decision_h3_diversity48_20261024/episodes/2hop__82744_23249_t0_a0_r0.json": "646e2bd20a5bf06ac07988f79bc394970a01f087607863e3b26c6f2acd36b8b3",
+    "/content/local_fast/lsdrag-text-v1/results/decision_h3_diversity48_20261024/episodes/2hop__82744_23249_t0_a1_r0.json": "0a53d7213874a84a7ace8f937afd1f6dc9c6f6fcf4d917b3fcbc4b650250c12f",
+    "/content/local_fast/lsdrag-text-v1/results/decision_h3_diversity48_20261024/episodes/2hop__82744_23249_t0_a3_r0.json": "c1d66e25373d6110fa922f549255f26451c084bae4b0dd5162f70bcff9aee44b"
+  }
+}

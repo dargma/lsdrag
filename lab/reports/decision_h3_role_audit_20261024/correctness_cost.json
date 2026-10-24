@@ -1,0 +1,227 @@
+{
+  "verified": true,
+  "correctness": "Official MuSiQue normalized exact match over answer and aliases; partial F1 remains incorrect and is reported separately",
+  "scope": "Repeated development64; per-policy conditional means compare different question subsets; use paired groups for savings attribution. No new inference.",
+  "per_policy": {
+    "h3": {
+      "all": {
+        "questions": 64,
+        "total_generated": 4281,
+        "mean_generated": 66.890625
+      },
+      "groups": {
+        "correct_em1": {
+          "questions": 14,
+          "total_generated": 1202,
+          "mean_generated": 85.85714285714286
+        },
+        "incorrect_em0": {
+          "questions": 50,
+          "total_generated": 3079,
+          "mean_generated": 61.58
+        },
+        "incorrect_partial_f1": {
+          "questions": 7,
+          "total_generated": 875,
+          "mean_generated": 125.0
+        },
+        "incorrect_zero_f1": {
+          "questions": 43,
+          "total_generated": 2204,
+          "mean_generated": 51.25581395348837
+        },
+        "incorrect_full_f1_nonexact": {
+          "questions": 0,
+          "total_generated": 0,
+          "mean_generated": null
+        }
+      }
+    },
+    "h1": {
+      "all": {
+        "questions": 64,
+        "total_generated": 4822,
+        "mean_generated": 75.34375
+      },
+      "groups": {
+        "correct_em1": {
+          "questions": 14,
+          "total_generated": 1202,
+          "mean_generated": 85.85714285714286
+        },
+        "incorrect_em0": {
+          "questions": 50,
+          "total_generated": 3620,
+          "mean_generated": 72.4
+        },
+        "incorrect_partial_f1": {
+          "questions": 8,
+          "total_generated": 1134,
+          "mean_generated": 141.75
+        },
+        "incorrect_zero_f1": {
+          "questions": 42,
+          "total_generated": 2486,
+          "mean_generated": 59.19047619047619
+        },
+        "incorrect_full_f1_nonexact": {
+          "questions": 0,
+          "total_generated": 0,
+          "mean_generated": null
+        }
+      }
+    },
+    "grpo": {
+      "all": {
+        "questions": 64,
+        "total_generated": 6298,
+        "mean_generated": 98.40625
+      },
+      "groups": {
+        "correct_em1": {
+          "questions": 10,
+          "total_generated": 920,
+          "mean_generated": 92.0
+        },
+        "incorrect_em0": {
+          "questions": 54,
+          "total_generated": 5378,
+          "mean_generated": 99.5925925925926
+        },
+        "incorrect_partial_f1": {
+          "questions": 9,
+          "total_generated": 1311,
+          "mean_generated": 145.66666666666666
+        },
+        "incorrect_zero_f1": {
+          "questions": 45,
+          "total_generated": 4067,
+          "mean_generated": 90.37777777777778
+        },
+        "incorrect_full_f1_nonexact": {
+          "questions": 0,
+          "total_generated": 0,
+          "mean_generated": null
+        }
+      }
+    }
+  },
+  "paired": {
+    "grpo": {
+      "both_correct": {
+        "questions": 8,
+        "reference": {
+          "questions": 8,
+          "total_generated": 732,
+          "mean_generated": 91.5
+        },
+        "h3": {
+          "questions": 8,
+          "total_generated": 544,
+          "mean_generated": 68.0
+        },
+        "saved_tokens": 188
+      },
+      "h3_only_correct": {
+        "questions": 6,
+        "reference": {
+          "questions": 6,
+          "total_generated": 510,
+          "mean_generated": 85.0
+        },
+        "h3": {
+          "questions": 6,
+          "total_generated": 658,
+          "mean_generated": 109.66666666666667
+        },
+        "saved_tokens": -148
+      },
+      "reference_only_correct": {
+        "questions": 2,
+        "reference": {
+          "questions": 2,
+          "total_generated": 188,
+          "mean_generated": 94.0
+        },
+        "h3": {
+          "questions": 2,
+          "total_generated": 28,
+          "mean_generated": 14.0
+        },
+        "saved_tokens": 160
+      },
+      "both_incorrect": {
+        "questions": 48,
+        "reference": {
+          "questions": 48,
+          "total_generated": 4868,
+          "mean_generated": 101.41666666666667
+        },
+        "h3": {
+          "questions": 48,
+          "total_generated": 3051,
+          "mean_generated": 63.5625
+        },
+        "saved_tokens": 1817
+      }
+    },
+    "h1": {
+      "both_correct": {
+        "questions": 12,
+        "reference": {
+          "questions": 12,
+          "total_generated": 982,
+          "mean_generated": 81.83333333333333
+        },
+        "h3": {
+          "questions": 12,
+          "total_generated": 928,
+          "mean_generated": 77.33333333333333
+        },
+        "saved_tokens": 54
+      },
+      "h3_only_correct": {
+        "questions": 2,
+        "reference": {
+          "questions": 2,
+          "total_generated": 203,
+          "mean_generated": 101.5
+        },
+        "h3": {
+          "questions": 2,
+          "total_generated": 274,
+          "mean_generated": 137.0
+        },
+        "saved_tokens": -71
+      },
+      "reference_only_correct": {
+        "questions": 2,
+        "reference": {
+          "questions": 2,
+          "total_generated": 220,
+          "mean_generated": 110.0
+        },
+        "h3": {
+          "questions": 2,
+          "total_generated": 57,
+          "mean_generated": 28.5
+        },
+        "saved_tokens": 163
+      },
+      "both_incorrect": {
+        "questions": 48,
+        "reference": {
+          "questions": 48,
+          "total_generated": 3417,
+          "mean_generated": 71.1875
+        },
+        "h3": {
+          "questions": 48,
+          "total_generated": 3022,
+          "mean_generated": 62.958333333333336
+        },
+        "saved_tokens": 395
+      }
+    }
+  }
+}
