@@ -1678,3 +1678,12 @@ User explicitly requests Jev/public decision model benchmarking/deep research. C
 
 Diversity48 collection and critic72 coordinator both complete, processes46115/46170/46735 absent. Independent critic72 verifier PASSED including rawlabels/predictions/checkpointreplay/oldcritic/splits/baselines/Drivebytes. Fresh12: expanded gapMSE.269107/costMAE20.1002/sign.71914; old36 .259428/23.5232/.79630; actionmeans .225459/20.3383/.83642.37informativepairs/9q; coverage sufficient, predictivegateFAILED. H3retained; noactorupdate. Relativecandidate prepared but not yet run while responding to research request; preserve authorization and next finalize reference/datahashes then run once. GoalACTIVE, reserved80protected.
 
+
+## 2026-10-24 — relative-quality critic completed; gate failed
+
+Candidate2 executed once under precommitted protocol on72fit/12monitor,181fit/25monitorstates; threeerrorstates excluded. Samearchitecture/seed100updates,7.06seconds. Relativequality gapMSE.340473/costMAE18.3164/sign.50617 versus absolutecritic72 .269107/20.1002/.71914 and actionmeans .225459/20.3383/.83642. Coverage37informativepairs/9questions sufficient; gateFAILED. Train gapMSE.012525/sign.99242 shows fitting but poor transfer. Do not deploy critic or tune monitor. H3retained; noactorupdate/noQAepisodes; goalnotmet.
+
+Checkpoint ee4870a3eaccbd0ad6913917ff5be97e5f26d2211b490b78a25722058347e167 in /content/local_fast/lsdrag-text-v1/results/decision_relative_critic72_20261024/critic.pt. Independent rawprediction/checkpointreplay/source/input/split/baseline/Drivebytes audit passed using verify_future_critic72 with NAME override. Archive /content/drive/MyDrive/lsdrag-backups/20261023/decision_relative_critic72_20261024.tar.gz SHA8b42ffe506e73183cb59e01d14b702cfdc50cd508b16708e1d442c19274fe803. No liveworker. Previous goalturn completed source research and critic72verification; thisturn newnegative empiricalevidence.
+
+Next authorized candidate3: jointly learn post-reader stateencoder and residualactor from measured useful outcomes, without using failedQ predictions as targets. Freeze objective/retention/gates beforefit; no architecturegrid or monitor tuning. Public D3nano comparison still proposed/not executed, retained as benchmarking work. Two-turn coordinated intervention idea recorded but separate executableprotocol notyetfrozen. GoalACTIVE/reserved80protected.
+

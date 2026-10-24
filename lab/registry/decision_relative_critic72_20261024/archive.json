@@ -1,0 +1,8 @@
+{
+  "path": "/content/drive/MyDrive/lsdrag-backups/20261023/decision_relative_critic72_20261024.tar.gz",
+  "sha256": "8b42ffe506e73183cb59e01d14b702cfdc50cd508b16708e1d442c19274fe803",
+  "bytes": 699474,
+  "run": "/content/local_fast/lsdrag-text-v1/results/decision_relative_critic72_20261024",
+  "phase": "complete",
+  "backbone_weights_included": false
+}
