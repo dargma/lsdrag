@@ -1367,3 +1367,7 @@ Exactmatched58prefixstatescoverall48q. 2x2plusdirectutilityfitscomplete9.05sec;t
 ## 2026-10-24 — matched refresh and direct utility complete; no goal success
 
 384dev episodes/527.68sec/26710generated/1520659input. Reference25.18/76.75exact64parity. oldMLP15.96/61.41→freshMLP23.36/77.66(+7.39ppCI[.23,15.34]);oldatt21.29/61.03→freshatt21.44/64.86. Directutility12.02/75.64fails(-13.16ppvsreferenceCI[-22.28,-4.71]). TrainingdirectqualityMAE.0463doesnotpredictclosedloopquality. Allfailjointtarget; sourcepolicy+samplingconfoundeddespitematchedprefixes. Fullreport docs/JEV_MATCHED_REFRESH_RESULT_20261024.md. Rawtotals/referenceparity/DriveSHAverified. Noactiveworker/newrun. Nexttrain-onlyinspect82freshvs58matchedstates andconservativeadvantagecorrection beforemorearchitecture; goalACTIVE,reserved80protected.
+
+## 2026-10-24 — local anchor-correction pilot fitting
+
+UserOK;train-onlyfresh82auditfound19empiricalpairs/16statesrelativecurrentd987,13pairsFINAL→continue,9pairsnewprefix. Newprotocol docs/JEV_ANCHOR_CORRECTION_PROTOCOL_20261024.md frozenbeforefit. Correctedtarget=.5anchor+.5onehot on16states;385nonconflictingretentionstates anchoronly;equalgroupweights/questionbalance. Thischangesobjectiveexplicitly;notoldmixedQoptimization. TwoarmsMLP/frozenquestionattention,100updates1e-4seed20261061. CPUworker396831 live; no newLLMcollection orPPOGRPO. Nextverifyfit then3×64paireddev. GoalACTIVE.

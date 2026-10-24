@@ -1,0 +1,195 @@
+{
+  "scope": "Train-only empirical2sample corrections relative d987 deterministic action; not statistically certified dominance.",
+  "pairs": [
+    {
+      "state": 3,
+      "qid": "2hop__129644_83815",
+      "turn": 3,
+      "old_action": 1,
+      "new_action": 3,
+      "min_quality_gap": 0.5555555555555556,
+      "max_token_gap": -45,
+      "new_prefix": true
+    },
+    {
+      "state": 11,
+      "qid": "2hop__8531_24846",
+      "turn": 3,
+      "old_action": 3,
+      "new_action": 0,
+      "min_quality_gap": 0.5,
+      "max_token_gap": 23,
+      "new_prefix": true
+    },
+    {
+      "state": 11,
+      "qid": "2hop__8531_24846",
+      "turn": 3,
+      "old_action": 3,
+      "new_action": 2,
+      "min_quality_gap": 0.5,
+      "max_token_gap": 107,
+      "new_prefix": true
+    },
+    {
+      "state": 21,
+      "qid": "2hop__572586_58953",
+      "turn": 3,
+      "old_action": 1,
+      "new_action": 3,
+      "min_quality_gap": 0.0,
+      "max_token_gap": -19,
+      "new_prefix": true
+    },
+    {
+      "state": 37,
+      "qid": "2hop__445427_121919",
+      "turn": 0,
+      "old_action": 1,
+      "new_action": 0,
+      "min_quality_gap": 0.0,
+      "max_token_gap": -1,
+      "new_prefix": false
+    },
+    {
+      "state": 38,
+      "qid": "2hop__93786_85298",
+      "turn": 0,
+      "old_action": 0,
+      "new_action": 3,
+      "min_quality_gap": 0.0,
+      "max_token_gap": -69,
+      "new_prefix": false
+    },
+    {
+      "state": 39,
+      "qid": "2hop__93786_85298",
+      "turn": 3,
+      "old_action": 0,
+      "new_action": 1,
+      "min_quality_gap": 0.6666666666666666,
+      "max_token_gap": -8,
+      "new_prefix": true
+    },
+    {
+      "state": 46,
+      "qid": "2hop__131509_66214",
+      "turn": 2,
+      "old_action": 3,
+      "new_action": 0,
+      "min_quality_gap": 0.0,
+      "max_token_gap": -6,
+      "new_prefix": false
+    },
+    {
+      "state": 46,
+      "qid": "2hop__131509_66214",
+      "turn": 2,
+      "old_action": 3,
+      "new_action": 1,
+      "min_quality_gap": 0.0,
+      "max_token_gap": -1,
+      "new_prefix": false
+    },
+    {
+      "state": 49,
+      "qid": "2hop__224287_15822",
+      "turn": 0,
+      "old_action": 3,
+      "new_action": 0,
+      "min_quality_gap": 0.3333333333333333,
+      "max_token_gap": 270,
+      "new_prefix": false
+    },
+    {
+      "state": 50,
+      "qid": "2hop__224287_15822",
+      "turn": 2,
+      "old_action": 3,
+      "new_action": 2,
+      "min_quality_gap": 0.3333333333333333,
+      "max_token_gap": 48,
+      "new_prefix": false
+    },
+    {
+      "state": 53,
+      "qid": "2hop__103604_59072",
+      "turn": 0,
+      "old_action": 0,
+      "new_action": 1,
+      "min_quality_gap": 0.0,
+      "max_token_gap": -2,
+      "new_prefix": false
+    },
+    {
+      "state": 54,
+      "qid": "2hop__103604_59072",
+      "turn": 4,
+      "old_action": 3,
+      "new_action": 1,
+      "min_quality_gap": 0.0,
+      "max_token_gap": -6,
+      "new_prefix": true
+    },
+    {
+      "state": 58,
+      "qid": "2hop__357497_74309",
+      "turn": 2,
+      "old_action": 3,
+      "new_action": 1,
+      "min_quality_gap": 1.0,
+      "max_token_gap": 44,
+      "new_prefix": true
+    },
+    {
+      "state": 61,
+      "qid": "2hop__31867_17274",
+      "turn": 2,
+      "old_action": 3,
+      "new_action": 0,
+      "min_quality_gap": 0.6,
+      "max_token_gap": 135,
+      "new_prefix": false
+    },
+    {
+      "state": 62,
+      "qid": "2hop__351246_2702",
+      "turn": 0,
+      "old_action": 3,
+      "new_action": 1,
+      "min_quality_gap": 1.0,
+      "max_token_gap": 155,
+      "new_prefix": false
+    },
+    {
+      "state": 64,
+      "qid": "2hop__143485_285802",
+      "turn": 0,
+      "old_action": 3,
+      "new_action": 1,
+      "min_quality_gap": 1.0,
+      "max_token_gap": 98,
+      "new_prefix": false
+    },
+    {
+      "state": 67,
+      "qid": "2hop__59498_54210",
+      "turn": 2,
+      "old_action": 3,
+      "new_action": 1,
+      "min_quality_gap": 1.0,
+      "max_token_gap": 44,
+      "new_prefix": true
+    },
+    {
+      "state": 67,
+      "qid": "2hop__59498_54210",
+      "turn": 2,
+      "old_action": 3,
+      "new_action": 2,
+      "min_quality_gap": 1.0,
+      "max_token_gap": 77,
+      "new_prefix": true
+    }
+  ]
+}
