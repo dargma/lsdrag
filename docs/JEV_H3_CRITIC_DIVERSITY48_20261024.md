@@ -1,0 +1,11 @@
+# H3 critic question-diversity hypothesis
+
+One bounded data expansion after the first critic failed predictive transfer. Keep reader, H3 suffix policy, native interface, action space, critic architecture, optimizer, seed20261077 and100updates unchanged. No architecture/seed sweep; no actor update authorized by prediction alone.
+
+Select48 additional questions from frozen train192 minus the prior H3 outcomes48, sorted by SHA256(`20261078:`+qid). First36 supply additional fitting data, last12 new critic-monitor questions, roles frozen before collecting outcomes. Old12 monitor remain excluded from fitting. New model trains old36+new36=72 questions; compare it and the frozen old36 critic on the SAME new12 monitor. Also compare against fit72 action-mean baseline. These are critic-outcome held-out questions, not unseen backbone/H3 examples or independent research confirmation. Official validation/test/reserved80 untouched.
+
+Collect fresh H3 rollins and every legal action at every nonforced state, followed by frozen greedy H3 to terminal. Exactly one branch per action; record terminalF1 and remaining generated tokens. Bound1584episodes/3600seconds after readerload,1Mgenerated/60Minput tokens; coordinator timeout3900seconds. Preserve execution errors; no partial fit. Verify prefixes, action legality, suffix actions, reference replay, official F1 rescoring and byte backups before fitting.
+
+Next fit only after completed raw audit. Identical final-checkpoint training with question-balanced masked losses. Old critic checkpoint b91e52ec4085f6882f3f5f7cc85a304a93963f6108dd4d5911f0d5e344c5144c must remain immutable. The fresh12 coverage gate requires >=10 unequalF1 pairs over>=5questions. New critic must beat both old critic and fit72 action means on action-gap MSE and costMAE, with signaccuracy>.5. Otherwise no actor update; insufficient pair coverage is inconclusive, no monitor replacement. No fit hyperparameter selection using new12. Evaluate once after fit complete, not while collecting.
+
+This tests whether one fixed larger data fit improves transfer on new questions. More data may fail; success is not causal proof that data scarcity alone caused prior failure. Generation quality/cost policy goal remains unchanged and unproven.

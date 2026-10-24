@@ -1643,3 +1643,10 @@ Manifest/source/input hashes frozen before fit; excluded-target NaN masking and 
 
 Next hypothesis to scope: more diverse current-policy training-question coverage rather than another head architecture/seed sweep. Existing48 outcome set did not yield transferable critic estimates in this probe; insufficient data is a hypothesis, not proven cause. Audit remaining train-only coverage and freeze a bounded collection before any expansion; never reuse monitor labels to tune this checkpoint. Preserve failed critic and all prior policies.
 
+
+## 2026-10-24 — critic diversity48 collection launched
+
+User ok; bounded data-diversity hypothesis frozen docs/JEV_H3_CRITIC_DIVERSITY48_20261024.md. Additional48 selected by hash from train192 minus priorH3outcomes48; first36 adds to old36fit (72 total), last12 freshcriticmonitor; old12monitor excluded. Samecritic architecture/seed100updates; future fixed comparison expandedcritic vs oldcritic and actionmeans on same fresh12. No monitor replacement/tuning, no actor update before predictive and later actual-rollout gates.
+
+Coordinator46115/collector46170 verified live. State /content/local_fast/lsdrag-text-v1/results/decision_h3_diversity48_coordinator_20261024.json; log /content/local_fast/lsdrag-text-v1/logs/refresh48_run_decision_h3_diversity48_20261024_1792841017.log. Collection max1584episodes/3600seconds plusload, allnonforcedstates/legalactions, frozenH3suffix; no partialfit. Existing verified collector reused via wrapper and newmanifest; no reader/interface/split changes. Independent verifier scripts/reporting/verify_h3_diversity48.py prepared. Next verify actual worker; wait completion, raw audit/archive then samecriticfit72. GoalACTIVE,reserved80protected.
+

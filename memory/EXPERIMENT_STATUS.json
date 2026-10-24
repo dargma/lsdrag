@@ -1,8 +1,8 @@
 {
-  "phase": "future_critic_probe_gate_failed",
-  "updated_utc": "2026-10-24T11:22:33.720374+00:00",
-  "protocol": "docs/JEV_DECISION_ACTOR_CRITIC_PLAN_20261024.md",
-  "protocol_sha256": "529be1f5fb707459f840fd56f2c9e886be4c5b2385761ceb7fba674591503c00",
+  "phase": "h3_critic_diversity48_collection_running",
+  "updated_utc": "2026-10-24T11:23:58.743297+00:00",
+  "protocol": "docs/JEV_H3_CRITIC_DIVERSITY48_20261024.md",
+  "protocol_sha256": "3d1c69432a166563a84720b8e798aab15ebafc60161f14587b4c31002e7eca20",
   "prompt": "prompts/text_rag_integrated_v5.txt",
   "prompt_sha256": "9d66c290a97bbabb4289dcf262e2b5bc8ba05653f87aed3b693825dbb02d5a97",
   "dataset": "MuSiQue-Ans v1.0, 2-hop",
@@ -32,13 +32,13 @@
   ],
   "worker_wall_budget_minutes": 120,
   "run_planned": "/content/local_fast/lsdrag-text-v1/results/decision_h3_policy_coverage24b_20261024",
-  "pid": null,
+  "pid": 46170,
   "implementation_completed": true,
   "dataset_prepared": true,
   "teacher_collection_started": true,
   "training_completed": true,
   "evaluation_completed": false,
-  "next": "Audit remaining train-only current-policy question coverage; freeze one data-diversity hypothesis before collection",
+  "next": "Wait actual collector, independent raw audit and archive before critic72 fit",
   "previous_multimodal_checkpoint_historical_only": {
     "phase": "native2_review_required",
     "run": "/content/local_fast/lsdrag-head-v14/results/native_distillation_12b_20261015",
@@ -1210,5 +1210,13 @@
     "actor_updated": false,
     "llarp_isolated_verification": "lab/reports/llarp_reference_verification_20261024/verification.json",
     "result": "/content/local_fast/lsdrag-code/lab/reports/decision_future_critic_probe48_20261024/summary.json"
+  },
+  "h3_diversity48_collection": {
+    "phase": "running",
+    "pid": 46115,
+    "seconds": 0.0004794099995706347,
+    "child_pid": 46170,
+    "script": "scripts/run_decision_h3_diversity48_20261024.py",
+    "log": "/content/local_fast/lsdrag-text-v1/logs/refresh48_run_decision_h3_diversity48_20261024_1792841017.log"
   }
 }
