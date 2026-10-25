@@ -1,6 +1,6 @@
 {
-  "phase": "final_grpo48_complete_evaluation_running",
-  "updated_utc": "2026-10-25T03:33:15.492751+00:00",
+  "phase": "final_grpo_complete_rejected_outcome_gate_failed",
+  "updated_utc": "2026-10-25T03:50:02.269040+00:00",
   "protocol": "docs/JEV_FINAL_GRPO48_PROTOCOL_20261025.md",
   "protocol_sha256": "e0cd40c9a1b728408047f7aee95bc9849caa698407c243d20df6a991c9260432",
   "prompt": "prompts/text_rag_integrated_v5.txt",
@@ -32,13 +32,13 @@
   ],
   "worker_wall_budget_minutes": 120,
   "run_planned": "/content/local_fast/lsdrag-text-v1/results/decision_h3_policy_coverage24b_20261024",
-  "pid": 497053,
+  "pid": null,
   "implementation_completed": true,
   "dataset_prepared": true,
   "teacher_collection_started": true,
   "training_completed": true,
-  "evaluation_completed": false,
-  "next": "Execute one final192trajectoryGRPO and paired128evaluation; audit/archive/report thenSTOP",
+  "evaluation_completed": true,
+  "next": "All bounded experiments and principle study complete; no automatic next experiment",
   "previous_multimodal_checkpoint_historical_only": {
     "phase": "native2_review_required",
     "run": "/content/local_fast/lsdrag-head-v14/results/native_distillation_12b_20261015",
@@ -1252,7 +1252,7 @@
   "read_pointer_plan": "docs/JEV_H2_READ_POINTER_FEASIBILITY_20261024.md",
   "last_experiment_limit": false,
   "active_objective": "큰 모델로 실험 완료하기",
-  "coordinator_pid": 488935,
+  "coordinator_pid": null,
   "coordinator_status": "/content/local_fast/lsdrag-text-v1/results/qwen35_9b_pipeline_20261024/status.json",
   "bootstrap_completed": true,
   "qwen35_base_fit": {
@@ -1272,7 +1272,7 @@
     "base_frozen_verified": true,
     "quality_evaluated": false
   },
-  "final_report": "docs/JEV_FINAL_GRPO_REWARD_SMOKE_RESULT_20261025.md",
+  "final_report": "docs/JEV_FINAL_GRPO_RESULT_20261025.md",
   "quality_superiority_established": false,
   "smoke_training_completed": true,
   "decision1_scope": "Principle research only; zero inferenceAPI calls, no credentials required",
@@ -1292,5 +1292,6 @@
     "predictive_gate_passed": false,
     "policy_evaluation_launched": false,
     "report": "docs/JEV_OUTCOME_RERANK_RESULT_20261025.md"
-  }
+  },
+  "latest_user_dual_mean_screen": false
 }

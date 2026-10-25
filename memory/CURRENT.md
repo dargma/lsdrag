@@ -1,3 +1,11 @@
+## 2026-10-25 — finalGRPO and outcome-readout experiment complete; no winner
+
+Coordinator488935/evaluator497053 completednormally andabsent. Paireddev64x2=128episodes974.6994seconds20462generated2168584input0errors. OfficialF1/EM/tokens/source/split/checkpointauditpassed;before64exactreplayspriorvalue_auxanswers/support/actions/scores/costs/errors. BeforeF1.4945925245/EM25/allmean158.015625/correctmean144.92; afterF1.4789675245/EM24/allmean161.703125/correctmean147.7083333. F1−1.5625pp,overalltokens+2.3336%,correctmean+1.9241%. Commoncorrect24 means143.458333→147.708333(+2.9625%),102extratokens. Lostcorrect1 adds101tokens;bothwrong39adds33;total+236. ZeroF1wins/one loss. BotholdscreenandlatestdualmeancriterionFAIL. RejectGRPOcandidate.
+
+Report docs/JEV_FINAL_GRPO_RESULT_20261025.md includesall3means,questioncounts,exactcorrectgroupsandinterpretation. Learnedshorter-on-wrongsmoke doesNOTdescribefullrun:actualfullrunqualityworse/costhigher. Formatrewardconstant192/192, noincrementallearningsignal. Trainingarchiveb488b987892ded97825962f928cdcea8bef12c887685776578c0dab606a347ef;evalarchive7d1a064615c5e629fa841dbc2faf6e1fc2f7719690e5a118fa54e2ca38c6b8bf. All3phaseDrivearchivesrehashed and128rawhashesrechecked; completionaudit lab/reports/qwen35_final_grpo_validation64_20261025/completion_audit.json.
+
+Additionaloutcome-readoutalreadycompletegateFAIL(costprediction), nopolicyevaluation; reportdocs/JEV_OUTCOME_RERANK_RESULT_20261025.md. Decision-1principles/designsaved; zeroinferenceAPIcalls, noAPIuse/credentialsneeded. UserlatestrequiresoverallANDcorrectmean andpairedcommonmean. Noactiveworkers/noautomaticnextgrid. Allrequestedboundedworkcompleteincludingnegativeoutcomes; finalGit/codebackup follows.
+
 ## 2026-10-25 — GRPOtrained/audited, evalrunning; outcome-readout gate failed
 
 FinalGRPO48 trainingcomplete964.89594sec192episodes21767generated2020945input;880nonforcedstates110optimizersteps,4MLPkeysupdated,normalization/readerfrozen. GPUreplaymax9.5367e-7; independentCPUrawauditpassed. Rewardvary46/48groups,format192/192valid/0groupvariation. Checkpoint492c6cdebcb4813afbce493d977fd3e02c0b8b0b9a2bc7cbad966a6a8a5bc9d8. Archivehashreverified. Coordinator488935 nowowns paireddev64evaluationPID497053,log logs/qwen35_final_grpo48_20261025_evaluation.log. Needwaitactualevaluation/rawaudit/archive thenreportdualmean+pairedcosts.
