@@ -1,4 +1,8 @@
-## 2026-10-25 — 대기 중: ④ 선별을 새 문항에서 검증 (GPU 30분 유휴 시 자동 시작)
+## 2026-10-25 — 계획 수립: native vs head, 둘 다 LoRA+GRPO (6시간). 실행은 사용자 승인 대기
+
+사용자 목적: frozen LLM 위의 head만으로는 정확도 정책을 못 만든다. LLM(LoRA)과 head를 함께 학습할 때 시너지가 나는지 본다(기여 혼합은 감수). 계획 docs/JEV_LORA_GRPO_NATIVE_VS_HEAD_PLAN_20261025.md. A: native+LoRA GRPO(zero-shot 시작). B: value_aux head+LoRA 동시 GRPO. 보상은 입력 토큰 벌점, 어드밴티지는 평균만 뺌, KL 0, 조건당 75분 시간 기준, fresh48 평가.
+
+## (취소) ④ 새 문항 검증 대기 — 사용자가 위 실험으로 전환, 감시 프로세스 종료
 
 사용자 지시: "GPU 30분 이상 쉬면 계획한 실험 진행". 계획된 다음 단계(보고서 docs/JEV_POC_DECISION_AXIS_REPORT_20261025.md)를 작게 실행한다.
 - 문항: MuSiQue dev 2hop 48개. registry 어디에도 없는 id, probe pool과 atomic id 비중복(앞선 registry 문항과는 atomic 겹침 있음). spec lab/registry/poc_idea4_fresh48_20261026/evaluation_spec.json.
