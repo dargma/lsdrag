@@ -1,0 +1,17 @@
+{
+  "phase": "prepared_no_remote_calls",
+  "cases": 32,
+  "questions": 16,
+  "selection": "first and last controllable state of first16fixedtrain48; fill in original state order to32; no outcome-based selection",
+  "files": {
+    "/content/local_fast/lsdrag-text-v1/results/ms_decision1_20261025/requests.jsonl": "e11b08d22b28abdf8d1cd7365cc75cbe9e536c174557d6e23e0221386ce67b03",
+    "/content/local_fast/lsdrag-text-v1/results/ms_decision1_20261025/diagnostic_labels.jsonl": "4166e372afd5f0ac1720d0b2aca2fc2e6f9c9705a816a0b3ab0e3a9998337d1a"
+  },
+  "local_checkpoint_sha256": "5191c60eee742695031856b2c66a2b3581995b65ffa78b6347cc9a84d9b476d7",
+  "states_sha256": "caf2d5c41ac9a6e51926f631e04c45c38966efbe4d42fcf6d609c0c31191bf82",
+  "scope": "Training-state mechanism diagnostic under fixedbootstrap suffix, not heldout/fullpolicy quality",
+  "credentials_present": false,
+  "benchmark_executed": false,
+  "status": "withdrawn_not_for_execution",
+  "inference_api_calls": 0
+}

@@ -1,3 +1,11 @@
+## 2026-10-25 — principle benchmarking only; three insights and dual mean token metrics
+
+User clarifies MicrosoftDecision-1benchmark means studyprinciples, neverinferenceAPI. ZEROinferencecalls, removeuntrackedAPIclients/proberunners; withdrawnprepared32states markednotforexecution. Publicofficialdocs/modelmetadataonly. NoAPIcredentialsneeded. docs/JEV_MS_DECISION1_PRINCIPLES_20261025.md separatesknownsingle-passfixedchoices/calibrationfromunknownarchitecture/loss/backbonefreeze/multi-turnRL. NoMSreproductionorprivateimplementationclaim.
+
+Userendorses distinction: legality/execution, actionselectionprobability, downstreamEMprobabilityaredifferent. Existingvalue_auxusesF1/costauxforrepresentation,notdirectq-basedactionselection. Requests2–3insightsandmovetomainexperiment; keepcurrentfinalGRPOmainrunningunchanged andnarrowadditionaldesign toactualdownstreamEM/cost-basedselection. docs/JEV_DECISION_FOLLOWUP_DESIGN_20261025.md has2hypotheses, noAPI/newGPUcandidateyet. LatestuserrequiresBOTHwhole-setmeanandEM-correctmean tokens; retainpairedboth-correctmean toseparatecompositioneffects, alongsideoverallF1/EM. Do notclaimsuccessfromwrong-onlysavings. FrozenGRPOscreenpreservedandlatestuserdualmeancriterionreportedseparately,notrewritehistory.
+
+Actualcoordinator488935/child488938 confirmedlive, training77/192 at391.51seconds. Pipeline results/qwen35_final_grpo48_20261025_pipeline/status.json, trainingresults/qwen35_final_grpo48_20261025/status.json,log logs/qwen35_final_grpo48_20261025_training.log. Existingfixedtrain/audit/archive/eval/audit/archivecontinues. No newAPIjob orduplicatetraining. Nextverifytrainingterminalthenpaireddev64; report3costmeans andcorrectness.
+
 ## 2026-10-25 — user authorizes final mainGRPO aftersmoke; frozen48x4 + paireddev64
 
 Latestuser 해봐 overrides smoke-onlySTOP for onefinalmainexperiment. Protocol docs/JEV_FINAL_GRPO48_PROTOCOL_20261025.md. Original9Bvalue_aux5191c60e initialization, NOTsmokehead. Fixed48trainq×4freshsampledtrajectories=192, oneGRPOupdatephase2epochsAdamW1e-5clip.2KL.02seed20261085. Reward/format/lengthidenticalsmoke; frozenreader+normalization, actionMLPonly. Noadditionalround/seed/reward/architectureafterresults.
