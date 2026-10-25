@@ -2257,3 +2257,12 @@ GPT outcomes48 아카이브(ad4b8537, 사용자 승인으로 Drive에서 복원,
 - 강제 FINAL 평균 F1 .269(아무 때나 멈추면 나쁨). base 정답 21문항 중 20문항은 더 이른 상태에서 FINAL해도 정답 → 입력 16,530→9,136(−44.7%, oracle). 단 4/20은 이후 다시 오답으로 뒤집힘(비단조).
 - gold 없는 규칙 '답 초안 2회 연속 동일 시 종료': EM 21→15, 입력 −28%. 3회 동일: EM 19, 입력 −12%. 규칙으로는 품질 유지 실패.
 사용자 아이디어(기록): 상위 1/2위 행동으로 처음 2~3단계에서 트리 분기(최대 4~8 궤적). 같은 prefix 쌍으로 결정 단위 credit을 얻는다. GPT는 단일 이탈+greedy suffix(4B H3 diversity48, 9B outcomes48)와 GRPO 확률 샘플 4개만 수행했고, 다중 이탈 트리는 미수행.
+
+### 2026-10-25 — 사용자 지시로 POC 실험 전부 종료
+
+P0+P1 평가(PID 58939)를 17/64문항에서 종료했다. 부분 결과는 results/poc_baselines_dev64_20261025에 보존(68 episode). 4개 정책을 모두 마친 17문항 기준: B0(value_aux) F1 .576/EM 8/입력 15,745/호출 5.41, native F1 .580/EM 8/입력 17,444/호출 5.82, semantic_once F1 .263/EM 3/입력 2,285, closed_book F1 .176/EM 3/입력 827. n=17이라 판정 불가. head와 native는 정확도가 같고 입력은 head가 약 10% 적다.
+S1 멈춤 probe(scripts/poc_stop_probe.py, train48 317상태, 문항 단위 GroupKFold 8):
+- 'FINAL-now 정답': last-token AUC .78 vs turn만 쓴 경우 .64
+- '문항 가망 없음': last-token AUC .62
+- 3-slot 전체 feature는 과적합(.68/.46)
+P2, S2~S4는 미실행. 사용자 결정: 지금까지의 교훈을 바탕으로 새 실험을 설계한다.
