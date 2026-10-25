@@ -2206,3 +2206,8 @@ Actual length coefficient0.50→2.0 (20xoriginal0.10), same originalvalue_aux an
 
 Coordinator601561/evaluator602085. Runtime /content/local_fast/lsdrag-text-v1/results/qwen35_grpo_token20_20261025_pipeline/status.json; log logs/qwen35_grpo_token20_20261025_evaluation.log. 192reusedpaths/880states110updates, reward and checkpointaudit passed. TrainingDrivearchive verified in lab/registry/qwen35_grpo_token20_20261025/archive.json. Next complete128fresh evaluation episodes, verify costs/quality and compare original/.10/.50/2.0; save all artifacts.
 
+
+## 2026-10-25 — token coefficient2.0 complete
+
+User correction executed: actualtokenpenalty0.50→2.0, sameoriginalcheckpoint/192onpolicy paths/seed/optimizer. Fresh128eval+officialscore/rawtoken/checkpoint/before64exactreplayaudit passed. λ2.0 F1.4789675245,EM24/64,allmean161.0625,correctmean146.166667,commoncorrect24mean146.166667; errors0. Versus.50 total−8tokens(correct−4/wrong−4),sameaccuracy; versus.10 −41tokens. Thustestedcoefficients show small monotonic decrease in all/correctmeans, not zeroeffect. Versusoriginaltotal+195tokens,EM−1,F1−1.5625pp; successscreenfalse. No inference about untestedlargercoefficients. Report docs/JEV_GRPO_TOKEN20_RESULT_20261025.md. Pipeline statuscomplete; coordinator601561/evaluator602085 finished. Raw128and2Drivearchives rehashed in lab/reports/qwen35_grpo_token20_validation64_20261025/completion_audit.json. Noactiveexperiment. FinalGit/codebackup follows.
+

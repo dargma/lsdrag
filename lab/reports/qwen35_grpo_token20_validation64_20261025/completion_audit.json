@@ -1,0 +1,54 @@
+{
+  "verified": true,
+  "raw_reverified": 128,
+  "drive_archives": [
+    {
+      "path": "/content/drive/MyDrive/lsdrag-backups/20261025/qwen35_grpo_token20_20261025.tar.gz",
+      "sha256": "7b5c67784749414d7a054931dbd48371d98c92d937f12220d67ddedf5b2635c0",
+      "bytes": 460269140,
+      "run": "/content/local_fast/lsdrag-text-v1/results/qwen35_grpo_token20_20261025",
+      "phase": "complete",
+      "copy_verified": true,
+      "backbone_weights_included": false
+    },
+    {
+      "path": "/content/drive/MyDrive/lsdrag-backups/20261025/qwen35_grpo_token20_validation64_20261025.tar.gz",
+      "sha256": "e16600dfcf3601e392fd1d9ea3a1d12d35392bbdf243059824347bbb817a6bde",
+      "bytes": 665121,
+      "run": "/content/local_fast/lsdrag-text-v1/results/qwen35_grpo_token20_validation64_20261025",
+      "phase": "complete",
+      "copy_verified": true,
+      "backbone_weights_included": false
+    }
+  ],
+  "common_correct_all_four": [
+    "2hop__122021_252931",
+    "2hop__12247_92216",
+    "2hop__132927_120674",
+    "2hop__142146_44326",
+    "2hop__144404_80761",
+    "2hop__160546_26427",
+    "2hop__23139_135703",
+    "2hop__232747_86874",
+    "2hop__27075_5348",
+    "2hop__279822_126539",
+    "2hop__3254_2999",
+    "2hop__404680_47102",
+    "2hop__41723_7756",
+    "2hop__5371_74242",
+    "2hop__581137_10690",
+    "2hop__600780_90697",
+    "2hop__605195_70585",
+    "2hop__612512_10369",
+    "2hop__614618_70625",
+    "2hop__630207_432198",
+    "2hop__686705_99808",
+    "2hop__700641_754472",
+    "2hop__732025_333219",
+    "2hop__92768_191233"
+  ],
+  "saved_vs_point5": 8,
+  "saved_vs_point1": 41,
+  "saved_vs_original": -195,
+  "screen_passed": false
+}
