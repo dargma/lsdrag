@@ -2220,3 +2220,8 @@ Report originalpolicy and coefficients.10/.50/2.0/10.0 with EMaccuracy percentag
 
 Namespace qwen35_grpo_token100_20261025 (100timesoriginal.10); evalqwen35_grpo_token100_validation64_20261025. Coordinator scripts/continue_qwen35_grpo_token100.py; runtime results/qwen35_grpo_token100_20261025_pipeline/status.json. Stoponerror/preserveraws. Complete report/Drive/Git thenSTOP. User sayslast: noautofurthercoefficient,seed,traininground,ornewexperiment.
 
+
+## 2026-10-25 — final coefficient10.0 trained/audited; evaluation active
+
+Coordinator620521/evaluator621558. Runtime /content/local_fast/lsdrag-text-v1/results/qwen35_grpo_token100_20261025_pipeline/status.json; log logs/qwen35_grpo_token100_20261025_evaluation.log. 192reusedpaths/880states110updates, reward/checkpointauditpassed. TrainingDrivearchive in lab/registry/qwen35_grpo_token100_20261025/archive.json. Next128freshrollouts, officialscore andtoken audit, EMaccuracy%/count,F1,all/correct/commoncorrectmeans table, Drive/Git thenSTOP. User explicitlylast, noautomaticextension.
+

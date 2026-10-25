@@ -1,3 +1,7 @@
+## 2026-10-25 — final coefficient10.0 trained/audited; evaluation active
+
+Coordinator620521/evaluator621558. Runtime /content/local_fast/lsdrag-text-v1/results/qwen35_grpo_token100_20261025_pipeline/status.json; log logs/qwen35_grpo_token100_20261025_evaluation.log. 192reusedpaths/880states110updates, reward/checkpointauditpassed. TrainingDrivearchive in lab/registry/qwen35_grpo_token100_20261025/archive.json. Next128freshrollouts, officialscore andtoken audit, EMaccuracy%/count,F1,all/correct/commoncorrectmeans table, Drive/Git thenSTOP. User explicitlylast, noautomaticextension.
+
 ## 2026-10-25 — LAST coefficient10.0 authorized; accuracy table required
 
 User explicitly requests last trial at10 and requires accuracy in table. R=EM+0.25F1−10.0T/(T+256)+0.02format. Actual token penalty increases2.0→10.0; allother settings unchanged: originalvalue_aux checkpoint, exactverified192 originalonpolicy trajectories/880FP32states, frozenQwen3.5-9B reader,2epochs/minibatch16AdamW1e-5/clip.2/KL.02/seed20261085. Reused collectioncost not freshgeneration. Do not initialize from previousGRPO head. Train and independentlyaudit reward/probability/checkpoint; archive; freshpaireddev64 before/after; independentofficialscore/rawtoken/exactreference-replayaudit; archive. Noreserved80/priorfinal80. SharedGPUallowed if40GiBfree; neverterminateotherjobs.
