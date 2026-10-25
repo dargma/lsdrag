@@ -1,6 +1,6 @@
 {
-  "phase": "last_grpo_reward_smoke_prepared",
-  "updated_utc": "2026-10-24T20:36:07.307059+00:00",
+  "phase": "last_grpo_reward_smoke_complete_full_run_not_launched",
+  "updated_utc": "2026-10-25T02:20:46.873247+00:00",
   "protocol": "docs/JEV_FINAL_GRPO_REWARD_SMOKE_20261025.md",
   "protocol_sha256": "e0cd40c9a1b728408047f7aee95bc9849caa698407c243d20df6a991c9260432",
   "prompt": "prompts/text_rag_integrated_v5.txt",
@@ -38,7 +38,7 @@
   "teacher_collection_started": true,
   "training_completed": false,
   "evaluation_completed": false,
-  "next": "One12episode train-only smoke, audit/save then stop; no automatic full run",
+  "next": "STOP: requested smoke and save complete; no automatic full experiment",
   "previous_multimodal_checkpoint_historical_only": {
     "phase": "native2_review_required",
     "run": "/content/local_fast/lsdrag-head-v14/results/native_distillation_12b_20261015",
@@ -1272,6 +1272,7 @@
     "base_frozen_verified": true,
     "quality_evaluated": false
   },
-  "final_report": "docs/JEV_QWEN35_TWO_PROMISING_RESULTS_20261024.md",
-  "quality_superiority_established": false
+  "final_report": "docs/JEV_FINAL_GRPO_REWARD_SMOKE_RESULT_20261025.md",
+  "quality_superiority_established": false,
+  "smoke_training_completed": true
 }

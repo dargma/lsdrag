@@ -1,3 +1,11 @@
+## 2026-10-25 — single finalGRPO smoke complete and verified; STOP
+
+ActualPID461243 completed normally and absent.12episodes37.9812sec677generated38064input;18nonforcedstates4optimizersteps. Reward EM+.25F1-.10T/(T+256)+.02format, frozenreader/normalization; only4MLPkeys changed. GPUreplay4.768e-7, independentCPUreplaypassed, all12officialscores/rewards/tokens/formats/rawhashes/checkpointhashverified. Rewardvariation2/2groups; format8/8valid andvariation0/2, hencebonus cancels.
+
+Train-onlygreedybefore/after: EMcorrectquestion83→83tokens; EMwrongF1.8question68→23samewronganswer. Noaccuracy/correct-pathefficiencyclaim. Allwronggroupcostdifference normalizedto±1; saveknownrisk ofshorterwrongoptimization. Report docs/JEV_FINAL_GRPO_REWARD_SMOKE_RESULT_20261025.md, audit lab/reports/qwen35_grpo_reward_smoke_20261025/audit.json. Checkpoint fb1fd282b99a5a9516cc2b85254526c28745a50809138d44346a3ec364ff1532 isSMOKEONLYnotpromoted.
+
+Drivebackup /content/drive/MyDrive/lsdrag-backups/20261025/qwen35_grpo_reward_smoke_20261025.tar.gz SHAe9796476d263214ecd99b20c7b1adb5bec6a8ff7f0e7324c7b2ab0cd7a04d0ea,bytes15054296;rawepisodes/FP32batch/headincluded, copyhashverified. Latestuser saysonesmoke/savewell: DONE. Noactiveworker/noautomaticfullrun/nosweep. Preservegenuinelylast limit; do not launchfullGRPOwithoutnewinstruction. FinalGit/codebackup follows.
+
 ## 2026-10-25 — lastGRPO request narrowed to one smoke and save
 
 User requests genuinelylast GRPO withaccuracy+shortertoken+formatreward, then says runonesmoke/savewell. Scope now smokeONLY; noautomaticfulltraining. Plan docs/JEV_FINAL_GRPO_REWARD_SMOKE_20261025.md. Starting9Bvalue_aux5191c60e, frozenreader, trainactionMLP. Reward EM+.25F1-.10T/(T+256)+.02format. ExistingFINAL answer/support_ids JSON andtoolargument schemas unchanged; grammarconstrained formatbonuscancelsifconstant. First2train48q x4sampledrollouts +2before+2after=12;2epochsAdamW1e-5,clip.2,KL.02,FP32replay2e-4,oneupdatephase,noextraq/retuning. Planandinput/sourcehashesfrozen, rewardordering/malformedformatchecks passed. Nextactualsmoke, rawaudit, Drive/Gitbackup, thenSTOP. Noqualityclaimfromsmoke.

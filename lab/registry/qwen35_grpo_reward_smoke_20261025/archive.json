@@ -1,0 +1,10 @@
+{
+  "path": "/content/drive/MyDrive/lsdrag-backups/20261025/qwen35_grpo_reward_smoke_20261025.tar.gz",
+  "sha256": "e9796476d263214ecd99b20c7b1adb5bec6a8ff7f0e7324c7b2ab0cd7a04d0ea",
+  "bytes": 15054296,
+  "run": "/content/local_fast/lsdrag-text-v1/results/qwen35_grpo_reward_smoke_20261025",
+  "phase": "complete",
+  "raw_batch_and_head_included": true,
+  "backbone_weights_included": false,
+  "copy_verified": true
+}
