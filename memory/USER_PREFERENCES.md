@@ -1,3 +1,7 @@
+## 2026-10-25 — lastGRPO request narrowed to one smoke and save
+
+User requests genuinelylast GRPO withaccuracy+shortertoken+formatreward, then says runonesmoke/savewell. Scope now smokeONLY; noautomaticfulltraining. Plan docs/JEV_FINAL_GRPO_REWARD_SMOKE_20261025.md. Starting9Bvalue_aux5191c60e, frozenreader, trainactionMLP. Reward EM+.25F1-.10T/(T+256)+.02format. ExistingFINAL answer/support_ids JSON andtoolargument schemas unchanged; grammarconstrained formatbonuscancelsifconstant. First2train48q x4sampledrollouts +2before+2after=12;2epochsAdamW1e-5,clip.2,KL.02,FP32replay2e-4,oneupdatephase,noextraq/retuning. Planandinput/sourcehashesfrozen, rewardordering/malformedformatchecks passed. Nextactualsmoke, rawaudit, Drive/Gitbackup, thenSTOP. Noqualityclaimfromsmoke.
+
 ## 2026-10-24 — shared GPU reauthorized; larger-model completion goal
 
 User now says GPU사용가능하면바로같이해보자, superseding20minuteidlecondition. Run with sufficientVRAM, do notstopotherjobs. New activegoal: 큰 모델로 실험 완료하기. Focus H3generalization/modeltraits, fresh9Btraining, fewhypothesiscomparisons, correctness-separatedcost. Previous4Bsuccesscriterion is historical, not forced9Bsuccess requirement.

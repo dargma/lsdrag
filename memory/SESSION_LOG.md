@@ -2115,3 +2115,8 @@ Base F1.4789675245/EM24/gen156.765625. H1conservative F1.4767353817/EM25/gen160.
 
 Fitarchive70aa2bd571295fc357c34019f357fbba3abcbce7a96c2e95dd6dfda9f2c99e78;evalarchive19abace3c46b56c0927b9a8bee25d01c2ed566c17838a364a35f7e1bc7cfef28;bothDrivebytesrehashed. Audit lab/reports/qwen35_9b_two_promising_validation64_20261024/completion_audit.json. Protocol andcachedreference limitations preserved; reserved80/final80 untouched. Finalcommit/codearchive follow this completed milestone.
 
+
+## 2026-10-25 — lastGRPO request narrowed to one smoke and save
+
+User requests genuinelylast GRPO withaccuracy+shortertoken+formatreward, then says runonesmoke/savewell. Scope now smokeONLY; noautomaticfulltraining. Plan docs/JEV_FINAL_GRPO_REWARD_SMOKE_20261025.md. Starting9Bvalue_aux5191c60e, frozenreader, trainactionMLP. Reward EM+.25F1-.10T/(T+256)+.02format. ExistingFINAL answer/support_ids JSON andtoolargument schemas unchanged; grammarconstrained formatbonuscancelsifconstant. First2train48q x4sampledrollouts +2before+2after=12;2epochsAdamW1e-5,clip.2,KL.02,FP32replay2e-4,oneupdatephase,noextraq/retuning. Planandinput/sourcehashesfrozen, rewardordering/malformedformatchecks passed. Nextactualsmoke, rawaudit, Drive/Gitbackup, thenSTOP. Noqualityclaimfromsmoke.
+

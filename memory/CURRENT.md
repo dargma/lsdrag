@@ -1,3 +1,7 @@
+## 2026-10-25 — lastGRPO request narrowed to one smoke and save
+
+User requests genuinelylast GRPO withaccuracy+shortertoken+formatreward, then says runonesmoke/savewell. Scope now smokeONLY; noautomaticfulltraining. Plan docs/JEV_FINAL_GRPO_REWARD_SMOKE_20261025.md. Starting9Bvalue_aux5191c60e, frozenreader, trainactionMLP. Reward EM+.25F1-.10T/(T+256)+.02format. ExistingFINAL answer/support_ids JSON andtoolargument schemas unchanged; grammarconstrained formatbonuscancelsifconstant. First2train48q x4sampledrollouts +2before+2after=12;2epochsAdamW1e-5,clip.2,KL.02,FP32replay2e-4,oneupdatephase,noextraq/retuning. Planandinput/sourcehashesfrozen, rewardordering/malformedformatchecks passed. Nextactualsmoke, rawaudit, Drive/Gitbackup, thenSTOP. Noqualityclaimfromsmoke.
+
 ## 2026-10-24 — two requested9B hypotheses complete; no efficiency winner
 
 Coordinator283015/evaluator283023 terminal and absent.128newepisodes1179.4140seconds20387generated2236807input0errors. OfficialF1/EM/token/source/model/split/checkpoint and320rawhashes verified (192cached unchangedreference). Report docs/JEV_QWEN35_TWO_PROMISING_RESULTS_20261024.md.
