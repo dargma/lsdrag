@@ -1,3 +1,12 @@
+## 2026-10-25 — 대기 중: ④ 선별을 새 문항에서 검증 (GPU 30분 유휴 시 자동 시작)
+
+사용자 지시: "GPU 30분 이상 쉬면 계획한 실험 진행". 계획된 다음 단계(보고서 docs/JEV_POC_DECISION_AXIS_REPORT_20261025.md)를 작게 실행한다.
+- 문항: MuSiQue dev 2hop 48개. registry 어디에도 없는 id, probe pool과 atomic id 비중복(앞선 registry 문항과는 atomic 겹침 있음). spec lab/registry/poc_idea4_fresh48_20261026/evaluation_spec.json.
+- 1) value_aux head와 native로 에이전트 실행(scripts/evaluate_decision_shared_corpus.py) → results/poc_idea4_fresh48_20261026
+- 2) scripts/poc_idea4_fresh_eval.py: agent / R_all / probe top5(별도 forward) / probe top5(에이전트 자기 컨텍스트 hidden). 규칙 top5 사전 고정, probe는 idea-4 pool feature로 재학습(L16). → results/poc_idea4_fresh48_reanswer_20261026
+- 감시: scripts/poc_idea4_fresh_gpu_wait.sh (util≤5%·free≥40GB가 30분 연속), PID 143386, log logs/poc_idea4_fresh48.log. 다른 GPU 작업은 건드리지 않음.
+- 바닐라(FINAL 없음) 모드는 미구현이라 이번엔 native를 대신 비교군으로 쓴다.
+
 ## 2026-10-25 — Claude 세션: 환경 복원 + head 정책 POC (진행 중)
 
 사용자 질문: selection head가 native A-RAG 대비 정확도/토큰 절감 정책으로 쓰일 수 있는가. 계획 docs/JEV_POC_HEAD_POLICY_20261025.md (P0 B0 재현, P1 9B native/semantic_once/closed_book, P2 오류귀속+oracle 종료 여지, P3 oracle-context 천장). 새 학습 없음, dev64는 진단만, reserved80 미사용.
