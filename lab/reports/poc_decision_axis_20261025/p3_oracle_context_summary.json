@@ -1,0 +1,19 @@
+{
+  "gold_support": {
+    "n": 64,
+    "f1": 0.7383920766733266,
+    "em": 0.640625,
+    "em_count": 41,
+    "prompt_tokens": 331.703125
+  },
+  "all20": {
+    "n": 64,
+    "f1": 0.6041320658508158,
+    "em": 0.5,
+    "em_count": 32,
+    "prompt_tokens": 2517.25
+  },
+  "model": "/content/local_fast/lsdrag-text-v1/hf/models--Qwen--Qwen3.5-9B/snapshots/c202236235762e1c871ad0ccb60c8ee5ba337b9a",
+  "script_sha256": "66225349fccd7d0bde7482bdc24a0073619cbb88cab41b36d91c1e4b5b9ff2e4",
+  "note": "Diagnostic ceiling: gold support given directly (gold_support) or the original 20-paragraph pool (all20). Not a policy; different prompt from the agent."
+}

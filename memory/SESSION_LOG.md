@@ -2310,3 +2310,8 @@ scripts/poc_idea4_selector.py, 결과 results/poc_idea4_selector_20261025.
 - AUC: L16 평균 .972 / L24 .934 / L8 .907 / L32 .908, 질문 유사도 기준선 .888.
 - 재답변(train48): probe 상위5 EM 28/F1 .70(답변 프롬프트 900), 상위3 EM 24, p≥.3 EM 24(472). 비교: 에이전트 21, R_all 23(3.6k), 질문 유사도 상위5 19, R_gold oracle 30.
 - 해석: 선별은 학습 가능하고 oracle 근처까지 간다(n=48, 대략적 POC). 선별 feature는 에이전트 컨텍스트(질문이 앞)에서 이미 계산된 prefill에서 뽑을 수 있어 추가 비용 없이 가능할 것(미검증). 이번 POC는 별도 forward 1회를 사용.
+
+### 2026-10-25 — POC 보고서 저장 및 push
+
+보고서 docs/JEV_POC_DECISION_AXIS_REPORT_20261025.md(④ 전후표: EM 21→28/48, F1 .516→.700, 9승 2패, 답변 컨텍스트 약 900). 결과 요약 lab/reports/poc_decision_axis_20261025/. 실행 중인 작업 없음. 원격 jev_v1.1에 push.
+다음 후보(사용자 결정 대기): ④를 에이전트 루프에 연동(자기 prefill hidden으로 선별) → 매 턴 선별 → 새 문항에서 바닐라 A-RAG 비교.

@@ -1,0 +1,97 @@
+{
+  "questions": 48,
+  "states": 327,
+  "states_with_features": 317,
+  "agent": {
+    "EM": 21,
+    "inputs": 17542
+  },
+  "R_at_agent_end": {
+    "EM": 23,
+    "inputs": 21139
+  },
+  "oracle_stop_R": {
+    "EM": 25,
+    "inputs": 16878
+  },
+  "R_gold_at_agent_end (idea4 oracle)": {
+    "EM": 30,
+    "inputs": 17813
+  },
+  "oracle_stop_R_gold (idea4 oracle)": {
+    "EM": 30,
+    "inputs": 12838
+  },
+  "auc": {
+    "y_now": 0.724,
+    "y_now_with_draft": 0.725,
+    "y_next": 0.705
+  },
+  "curves": {
+    "idea2_threshold_0.3": {
+      "EM": 17,
+      "inputs": 14982
+    },
+    "idea7_draft_threshold_0.3": {
+      "EM": 17,
+      "inputs": 22471
+    },
+    "idea2_threshold_0.4": {
+      "EM": 21,
+      "inputs": 17579
+    },
+    "idea7_draft_threshold_0.4": {
+      "EM": 21,
+      "inputs": 27012
+    },
+    "idea2_threshold_0.5": {
+      "EM": 22,
+      "inputs": 19477
+    },
+    "idea7_draft_threshold_0.5": {
+      "EM": 22,
+      "inputs": 30389
+    },
+    "idea2_threshold_0.6": {
+      "EM": 22,
+      "inputs": 19982
+    },
+    "idea7_draft_threshold_0.6": {
+      "EM": 22,
+      "inputs": 31318
+    },
+    "idea2_threshold_0.7": {
+      "EM": 23,
+      "inputs": 20480
+    },
+    "idea7_draft_threshold_0.7": {
+      "EM": 23,
+      "inputs": 32341
+    },
+    "idea2_threshold_0.8": {
+      "EM": 23,
+      "inputs": 21006
+    },
+    "idea7_draft_threshold_0.8": {
+      "EM": 23,
+      "inputs": 33318
+    },
+    "idea2_voi_margin_-0.1": {
+      "EM": 23,
+      "inputs": 20919
+    },
+    "idea2_voi_margin_0.0": {
+      "EM": 20,
+      "inputs": 17570
+    },
+    "idea2_voi_margin_0.05": {
+      "EM": 20,
+      "inputs": 16586
+    },
+    "idea2_voi_margin_0.1": {
+      "EM": 18,
+      "inputs": 15998
+    }
+  },
+  "note": "train48 bootstrap trajectories; CV probes (GroupKFold 8 by question); EM out of 48; inputs = mean per question. Rough POC."
+}

@@ -1,0 +1,49 @@
+{
+  "pool_questions": 300,
+  "pool_chunks": 6000,
+  "agent_chunks": 860,
+  "agent_gold_rate": 0.09534883720930233,
+  "auc_agent": {
+    "L8_mean": 0.907,
+    "L16_mean": 0.972,
+    "L24_mean": 0.934,
+    "L32_mean": 0.908,
+    "L32_last": 0.884,
+    "question_similarity_baseline": 0.888
+  },
+  "best_block": "L16_mean",
+  "train48_reanswer": {
+    "probe_p>=0.3": {
+      "EM": 24,
+      "F1": 0.594,
+      "kept": 2.9,
+      "answer_prompt": 472
+    },
+    "probe_p>=0.5": {
+      "EM": 24,
+      "F1": 0.581,
+      "kept": 2.1,
+      "answer_prompt": 346
+    },
+    "probe_top2": {
+      "EM": 23,
+      "F1": 0.561,
+      "kept": 2.0,
+      "answer_prompt": 329
+    },
+    "probe_top3": {
+      "EM": 24,
+      "F1": 0.618,
+      "kept": 3.0,
+      "answer_prompt": 517
+    },
+    "probe_top5": {
+      "EM": 28,
+      "F1": 0.7,
+      "kept": 4.9,
+      "answer_prompt": 900
+    }
+  },
+  "reference": "train48: agent EM21; R_all EM23 (~3.6k answer prompt); question-similarity top5 EM19; R_gold EM30",
+  "script_sha256": "7a11784ee6cca4e0685515875ba466a69ee9ddc957741c9b5ea6aedcd077c089"
+}
