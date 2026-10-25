@@ -9,6 +9,14 @@ P0+P1 실행 중: PID 58939, run results/poc_baselines_dev64_20261025, log logs/
 
 사용자 아이디어(보류, 기록만): 관측 중 지울 것을 선택하는 정책(컨텍스트 가지치기). head가 같은 forward에서 슬롯별 keep/drop을 판정하고, train gold로 지도 라벨을 만든다. 비교군 oracle_keep/last_k/native+drop 도구. 사용자 결정으로 head 대 native 판정 이후에만 검토.
 
+### 2026-10-25 추가 — train48 분기 분석 + 트리 탐색 아이디어(기록)
+
+GPT outcomes48 아카이브(ad4b8537, 사용자 승인으로 Drive에서 복원, states.pt 제외)를 scripts/poc_branch_headroom.py로 분석. 기본 궤적의 각 상태에서 행동 하나만 바꾸고 이후 bootstrap greedy suffix로 진행한 결과, 48문항 317상태. 선택한 행동의 branch가 기본 궤적 317/317 재현.
+- 선택 행동 F1 .506 > 대안 평균 .406. 대안이 더 나은 상태 40/317(12.6%), 더 나쁜 상태 110. 단일 이탈 oracle은 EM 21→34/48, F1 .516→.796(여러 branch의 max이므로 상향 편향).
+- 강제 FINAL 평균 F1 .269(아무 때나 멈추면 나쁨). base 정답 21문항 중 20문항은 더 이른 상태에서 FINAL해도 정답 → 입력 16,530→9,136(−44.7%, oracle). 단 4/20은 이후 다시 오답으로 뒤집힘(비단조).
+- gold 없는 규칙 '답 초안 2회 연속 동일 시 종료': EM 21→15, 입력 −28%. 3회 동일: EM 19, 입력 −12%. 규칙으로는 품질 유지 실패.
+사용자 아이디어(기록): 상위 1/2위 행동으로 처음 2~3단계에서 트리 분기(최대 4~8 궤적). 같은 prefix 쌍으로 결정 단위 credit을 얻는다. GPT는 단일 이탈+greedy suffix(4B H3 diversity48, 9B outcomes48)와 GRPO 확률 샘플 4개만 수행했고, 다중 이탈 트리는 미수행.
+
 ## 2026-10-25 — USER STOP: finalλ10 complete; backup and end
 
 Latestuser: onlythisresultthenend,backupwell, nowending. NO newexperiments/automaticresume/bonuspolicytraining. λ10done128eval, before64exactreplay; EM37.5%(24/64) vs39.0625%(25/64), F147.89675%vs49.45925%, allmean155.0625vs158.015625(−1.8689%), correctmean145.208333vs144.92. Paircommoncorrect24means145.541667→145.208333(total−8); allsaving189=8commoncorrect+74lostcorrect+107bothwrong. F1/EMlossmeanssuccessscreenfalse. FINALincludedsteps6.546875→6.484375; tools5.546875→5.484375. Fivepolicycommoncorrect23reportedfairly.
