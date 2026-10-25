@@ -49,6 +49,18 @@ head의 차별점:
 실험 형태: 바닐라 / 바닐라+조기감지 재답변 / head+FINAL 연동 재구성(임계값 sweep). reserved80 또는 새 문항에서 1회 평가.
 순서: E1-lite(재구성 기준 멈춤 라벨 + oracle + probe AUC) → 멈춤 head(frozen, 필요하면 결정 토큰 LoRA) → Pareto 평가. 사용자 지시가 있을 때 시작.
 
+### 2026-10-25 — 1단계 결과(train48, 재구성 R 기준, 대략적 POC)
+
+scripts/poc_stage1_state_answers.py(GPU, 327상태 × R_all/R_gold) + scripts/poc_stage1_analyze.py. 결과 results/poc_stage1_state_answers_20261025/analysis.json. EM은 /48, 입력은 문항당 평균.
+- 에이전트: EM 21 / 입력 17,542
+- 끝에서 R: 23 / 21,139 (R 프롬프트가 추가됨)
+- oracle 멈춤 + R: 25 / 16,878
+- ② probe 멈춤(AUC .72): 임계값을 sweep해도 에이전트(21/17.6k)와 끝-R(23/20.5k) 사이에 머문다. 지배하는 점 없음.
+- ⑦ 초안 신호: AUC 변화 없음(.725). 상태마다 R prefill 비용이 들어 오히려 손해.
+- VOI: 개선 없음.
+- ④ 선별 oracle: 끝에서 R_gold 30 / 17,813, oracle 멈춤 + R_gold 30 / 12,838.
+결론: 멈춤 타이밍(②⑦)은 oracle로도 여지가 작고(+2 EM) frozen probe로는 못 잡는다 → 중단. 여지는 무엇을 남길지(④)에 있다(+7 EM). 다음은 ④ chunk 관련성 학습 가능성 확인.
+
 ## 2026-10-25 — USER STOP: finalλ10 complete; backup and end
 
 Latestuser: onlythisresultthenend,backupwell, nowending. NO newexperiments/automaticresume/bonuspolicytraining. λ10done128eval, before64exactreplay; EM37.5%(24/64) vs39.0625%(25/64), F147.89675%vs49.45925%, allmean155.0625vs158.015625(−1.8689%), correctmean145.208333vs144.92. Paircommoncorrect24means145.541667→145.208333(total−8); allsaving189=8commoncorrect+74lostcorrect+107bothwrong. F1/EMlossmeanssuccessscreenfalse. FINALincludedsteps6.546875→6.484375; tools5.546875→5.484375. Fivepolicycommoncorrect23reportedfairly.
