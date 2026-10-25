@@ -2129,3 +2129,12 @@ Train-onlygreedybefore/after: EMcorrectquestion83→83tokens; EMwrongF1.8questio
 
 Drivebackup /content/drive/MyDrive/lsdrag-backups/20261025/qwen35_grpo_reward_smoke_20261025.tar.gz SHAe9796476d263214ecd99b20c7b1adb5bec6a8ff7f0e7324c7b2ab0cd7a04d0ea,bytes15054296;rawepisodes/FP32batch/headincluded, copyhashverified. Latestuser saysonesmoke/savewell: DONE. Noactiveworker/noautomaticfullrun/nosweep. Preservegenuinelylast limit; do not launchfullGRPOwithoutnewinstruction. FinalGit/codebackup follows.
 
+
+## 2026-10-25 — user authorizes final mainGRPO aftersmoke; frozen48x4 + paireddev64
+
+Latestuser 해봐 overrides smoke-onlySTOP for onefinalmainexperiment. Protocol docs/JEV_FINAL_GRPO48_PROTOCOL_20261025.md. Original9Bvalue_aux5191c60e initialization, NOTsmokehead. Fixed48trainq×4freshsampledtrajectories=192, oneGRPOupdatephase2epochsAdamW1e-5clip.2KL.02seed20261085. Reward/format/lengthidenticalsmoke; frozenreader+normalization, actionMLPonly. Noadditionalround/seed/reward/architectureafterresults.
+
+Pipeline scripts/continue_qwen35_final_grpo48.py: train->independentCPUrawreward/probreplayaudit->Drivearchive->paired64before/after->rawscore/tokencost/exactbefore64replayaudit->archive. Newnamespace qwen35_final_grpo48_20261025, evalqwen35_final_grpo_validation64_20261025. Plan/source/inputhashesfrozen. Training7200sec/1mgen/50minput;eval3600sec;40GiBfreegate. Noretuning;errorshaltandpreserve. Mainqualitynotyetevaluated.
+
+Successscreen keepsF1/EM>=initialvalue_aux andstrictboth-correcttokensaving pluszeroerrors. Allwronggroupcostsignal/formatconstantlimitationspreserved. Repeateddev64only;reserved80/final80protected. Nextlaunchonecoordinator,verifyPID/status,monitoractualartifacts;do notduplicate. Finishreport/backups/Git thenSTOP.
+

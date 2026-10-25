@@ -1,7 +1,7 @@
 {
-  "phase": "last_grpo_reward_smoke_complete_full_run_not_launched",
+  "phase": "final_grpo48_prepared",
   "updated_utc": "2026-10-25T02:20:46.873247+00:00",
-  "protocol": "docs/JEV_FINAL_GRPO_REWARD_SMOKE_20261025.md",
+  "protocol": "docs/JEV_FINAL_GRPO48_PROTOCOL_20261025.md",
   "protocol_sha256": "e0cd40c9a1b728408047f7aee95bc9849caa698407c243d20df6a991c9260432",
   "prompt": "prompts/text_rag_integrated_v5.txt",
   "prompt_sha256": "9d66c290a97bbabb4289dcf262e2b5bc8ba05653f87aed3b693825dbb02d5a97",
@@ -38,7 +38,7 @@
   "teacher_collection_started": true,
   "training_completed": false,
   "evaluation_completed": false,
-  "next": "STOP: requested smoke and save complete; no automatic full experiment",
+  "next": "Execute one final192trajectoryGRPO and paired128evaluation; audit/archive/report thenSTOP",
   "previous_multimodal_checkpoint_historical_only": {
     "phase": "native2_review_required",
     "run": "/content/local_fast/lsdrag-head-v14/results/native_distillation_12b_20261015",
@@ -186,7 +186,7 @@
   "speed_gate_passed": true,
   "target_speedup_vs_native": 1.5,
   "target_speedup_measured": false,
-  "run": "/content/local_fast/lsdrag-text-v1/results/qwen35_grpo_reward_smoke_20261025",
+  "run": "/content/local_fast/lsdrag-text-v1/results/qwen35_final_grpo48_20261025",
   "worker_seconds": 277.1492917609994,
   "contract": "5b64658a2608f883599dbfb36be3758d4f28cc0de63c532ec11f76117a3cecce",
   "teacher_target": 32,

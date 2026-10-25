@@ -1,3 +1,11 @@
+## 2026-10-25 — user authorizes final mainGRPO aftersmoke; frozen48x4 + paireddev64
+
+Latestuser 해봐 overrides smoke-onlySTOP for onefinalmainexperiment. Protocol docs/JEV_FINAL_GRPO48_PROTOCOL_20261025.md. Original9Bvalue_aux5191c60e initialization, NOTsmokehead. Fixed48trainq×4freshsampledtrajectories=192, oneGRPOupdatephase2epochsAdamW1e-5clip.2KL.02seed20261085. Reward/format/lengthidenticalsmoke; frozenreader+normalization, actionMLPonly. Noadditionalround/seed/reward/architectureafterresults.
+
+Pipeline scripts/continue_qwen35_final_grpo48.py: train->independentCPUrawreward/probreplayaudit->Drivearchive->paired64before/after->rawscore/tokencost/exactbefore64replayaudit->archive. Newnamespace qwen35_final_grpo48_20261025, evalqwen35_final_grpo_validation64_20261025. Plan/source/inputhashesfrozen. Training7200sec/1mgen/50minput;eval3600sec;40GiBfreegate. Noretuning;errorshaltandpreserve. Mainqualitynotyetevaluated.
+
+Successscreen keepsF1/EM>=initialvalue_aux andstrictboth-correcttokensaving pluszeroerrors. Allwronggroupcostsignal/formatconstantlimitationspreserved. Repeateddev64only;reserved80/final80protected. Nextlaunchonecoordinator,verifyPID/status,monitoractualartifacts;do notduplicate. Finishreport/backups/Git thenSTOP.
+
 ## 2026-10-25 — lastGRPO request narrowed to one smoke and save
 
 User requests genuinelylast GRPO withaccuracy+shortertoken+formatreward, then says runonesmoke/savewell. Scope now smokeONLY; noautomaticfulltraining. Plan docs/JEV_FINAL_GRPO_REWARD_SMOKE_20261025.md. Starting9Bvalue_aux5191c60e, frozenreader, trainactionMLP. Reward EM+.25F1-.10T/(T+256)+.02format. ExistingFINAL answer/support_ids JSON andtoolargument schemas unchanged; grammarconstrained formatbonuscancelsifconstant. First2train48q x4sampledrollouts +2before+2after=12;2epochsAdamW1e-5,clip.2,KL.02,FP32replay2e-4,oneupdatephase,noextraq/retuning. Planandinput/sourcehashesfrozen, rewardordering/malformedformatchecks passed. Nextactualsmoke, rawaudit, Drive/Gitbackup, thenSTOP. Noqualityclaimfromsmoke.

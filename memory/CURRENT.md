@@ -1,3 +1,11 @@
+## 2026-10-25 — user authorizes final mainGRPO aftersmoke; frozen48x4 + paireddev64
+
+Latestuser 해봐 overrides smoke-onlySTOP for onefinalmainexperiment. Protocol docs/JEV_FINAL_GRPO48_PROTOCOL_20261025.md. Original9Bvalue_aux5191c60e initialization, NOTsmokehead. Fixed48trainq×4freshsampledtrajectories=192, oneGRPOupdatephase2epochsAdamW1e-5clip.2KL.02seed20261085. Reward/format/lengthidenticalsmoke; frozenreader+normalization, actionMLPonly. Noadditionalround/seed/reward/architectureafterresults.
+
+Pipeline scripts/continue_qwen35_final_grpo48.py: train->independentCPUrawreward/probreplayaudit->Drivearchive->paired64before/after->rawscore/tokencost/exactbefore64replayaudit->archive. Newnamespace qwen35_final_grpo48_20261025, evalqwen35_final_grpo_validation64_20261025. Plan/source/inputhashesfrozen. Training7200sec/1mgen/50minput;eval3600sec;40GiBfreegate. Noretuning;errorshaltandpreserve. Mainqualitynotyetevaluated.
+
+Successscreen keepsF1/EM>=initialvalue_aux andstrictboth-correcttokensaving pluszeroerrors. Allwronggroupcostsignal/formatconstantlimitationspreserved. Repeateddev64only;reserved80/final80protected. Nextlaunchonecoordinator,verifyPID/status,monitoractualartifacts;do notduplicate. Finishreport/backups/Git thenSTOP.
+
 ## 2026-10-25 — single finalGRPO smoke complete and verified; STOP
 
 ActualPID461243 completed normally and absent.12episodes37.9812sec677generated38064input;18nonforcedstates4optimizersteps. Reward EM+.25F1-.10T/(T+256)+.02format, frozenreader/normalization; only4MLPkeys changed. GPUreplay4.768e-7, independentCPUreplaypassed, all12officialscores/rewards/tokens/formats/rawhashes/checkpointhashverified. Rewardvariation2/2groups; format8/8valid andvariation0/2, hencebonus cancels.
