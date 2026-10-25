@@ -1,0 +1,9 @@
+{
+  "path": "/content/drive/MyDrive/lsdrag-backups/20261025/qwen35_grpo_token5_20261025.tar.gz",
+  "sha256": "936a5a499aa6407e7c35942d6e73f286d19227fa8621489a9fb51f01c0a583c2",
+  "bytes": 460268646,
+  "run": "/content/local_fast/lsdrag-text-v1/results/qwen35_grpo_token5_20261025",
+  "phase": "complete",
+  "copy_verified": true,
+  "backbone_weights_included": false
+}

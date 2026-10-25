@@ -2186,3 +2186,8 @@ Hypothesis: stronger length preference improves policy efficiency while maintain
 
 Coordinator scripts/continue_qwen35_grpo_token5.py owns train/audit/archive/eval/audit/archive. Runtime results/qwen35_grpo_token5_20261025_pipeline/status.json. Train artifacts/results names use token5 namespace; no overwrites. Require40GiBfree; sharedGPUallowed, no unrelatedprocess termination. Stop on error, retain raw records. Save report/memory/Git/Drive at completion.
 
+
+## 2026-10-25 — token5 training verified; paired64 evaluation active
+
+Coordinator578933/evaluator579483. Runtime /content/local_fast/lsdrag-text-v1/results/qwen35_grpo_token5_20261025_pipeline/status.json; log logs/qwen35_grpo_token5_20261025_evaluation.log. 192 original trajectories reweighted at0.50,880states110updates; audit passed. No fresh training collection. Training archive registry lab/registry/qwen35_grpo_token5_20261025/archive.json. Next verify128 evaluation episodes, all/correct/common-correct means, compare0.10; save report/backups/Git. No secondcandidate.
+

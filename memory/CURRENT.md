@@ -1,3 +1,7 @@
+## 2026-10-25 — token5 training verified; paired64 evaluation active
+
+Coordinator578933/evaluator579483. Runtime /content/local_fast/lsdrag-text-v1/results/qwen35_grpo_token5_20261025_pipeline/status.json; log logs/qwen35_grpo_token5_20261025_evaluation.log. 192 original trajectories reweighted at0.50,880states110updates; audit passed. No fresh training collection. Training archive registry lab/registry/qwen35_grpo_token5_20261025/archive.json. Next verify128 evaluation episodes, all/correct/common-correct means, compare0.10; save report/backups/Git. No secondcandidate.
+
 ## 2026-10-25 — authorized token coefficient0.10→0.50
 
 User explicitly authorizes increased token reward weight, superseding prior stop for this one candidate. R=EM+0.25F1−0.50T/(T+256)+0.02format. Only token coefficient changes from0.10. Original value_aux checkpoint, frozen Qwen3.5-9B reader; reuse exact verified192 on-policy paths/880FP32states from original policy before any update. No stale post-GRPO initialization. Twoepochs/minibatch16/lr1e-5/clip.2/KL.02/seed20261085 and original GPU optimizer ordering retained. Reused collection cost reported separately, no claim of fresh collection. All-wrong group normalization still amplifies length signal; format bonus can cancel.
