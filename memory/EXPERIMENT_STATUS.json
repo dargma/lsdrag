@@ -1280,5 +1280,12 @@
     "overall_mean_generated",
     "EM_correct_mean_generated",
     "paired_both_correct_mean_generated"
-  ]
+  ],
+  "additional_main": {
+    "phase": "prepared",
+    "protocol": "docs/JEV_OUTCOME_RERANK_MAIN_20261025.md",
+    "run": "qwen35_outcome_rerank_20261025",
+    "waits_for": "verified finalGRPO48 fresh data",
+    "inference_api": false
+  }
 }

@@ -2147,3 +2147,12 @@ Userendorses distinction: legality/execution, actionselectionprobability, downst
 
 Actualcoordinator488935/child488938 confirmedlive, training77/192 at391.51seconds. Pipeline results/qwen35_final_grpo48_20261025_pipeline/status.json, trainingresults/qwen35_final_grpo48_20261025/status.json,log logs/qwen35_final_grpo48_20261025_training.log. Existingfixedtrain/audit/archive/eval/audit/archivecontinues. No newAPIjob orduplicatetraining. Nextverifytrainingterminalthenpaireddev64; report3costmeans andcorrectness.
 
+
+## 2026-10-25 — outcome-probability main candidate authorized and frozen
+
+Userrequests2–3insightsanddirectmainexperiment; explicitlyrequireswhole-setmeanANDcorrectmean. Oneadditionalcandidate frozen docs/JEV_OUTCOME_RERANK_MAIN_20261025.md, grounded inchoiceprobability≠downstreamEM, wrong-onlysavings, predictionsmustdriveaction. NoAPI. CurrentGRPOunchanged.
+
+Reusefreshcurrent-policy192GRPOtrajectories AFTERindependenttrainingaudit: behavior+suffix=originalvalue_aux,notupdatedGRPO. First32of48qfit,last16calibration,1032EM/logremainingcostreadoutparams onfrozen128representation,100AdamW.001seed20261086. Onlychosenactionlabeled. Predictivegate:allactionquestioncoverage5fit/2calib, calibrationBrierANDlogcostMAEbeatpropertrainconstantbaselines. Fail->archive/reportSTOP, noGPUcandidate. Pass->waitpriorpipelinecomplete->paired64before/after; exactreference64replay. Fixedchoicegateq>=ref+.05,cost<=.9ref elseexactfallback. Noepoch/thresholdtuning.
+
+Tests passed exactfallback, legalquality/costoverride, illegalactionrejection, frozenbase. Source/planfrozen beforefit. Maincriteria F1/EMmaintained,wholemeanANDcorrectmeandecrease,commoncorrectcostnotincrease,errors0. Noindependentgeneralizationclaimbecausehistoricalbasequestionexposure. Oneboundedcandidateonly; no broadablation. NextqueueCPUcoordinatorwaitingforverifiedGRPOdata; no concurrentGPUlaunch.
+
