@@ -1,15 +1,35 @@
 {
-  "archive": "/content/drive/MyDrive/lsdrag-backups/20261015/decision_rag_20261015/user_stop_20261015_114104.tar.gz",
-  "sha256": "446ad9b0da8125cfb7052804910bb88d0a929abc08f33cd6a3b1986bd6b2c65f",
-  "bytes": 31899717,
-  "members": 240,
-  "code_commit": "b8d2c9db3a421989a3e70a49e7230958ec92ebb0",
-  "phase": "paused_by_user",
-  "contains": [
-    "tracked code, memory, experiment plans and reports",
-    "all v13 runtime results/logs/status",
-    "question/gold data and scorer"
+  "stopped": true,
+  "automatic_resume": false,
+  "latest_run": "qwen35_grpo_token100_20261025",
+  "completion_audit": "lab/reports/qwen35_grpo_token100_validation64_20261025/completion_audit.json",
+  "drive_backup_directory": "/content/drive/MyDrive/lsdrag-backups/20261025",
+  "phase_archives": [
+    {
+      "path": "/content/drive/MyDrive/lsdrag-backups/20261025/qwen35_grpo_token100_20261025.tar.gz",
+      "sha256": "a6c0823c9e0a3731c3195f5e7f89bad9e1ffe8f374ad6a1fe6cc4623c0547221",
+      "bytes": 460268984,
+      "run": "/content/local_fast/lsdrag-text-v1/results/qwen35_grpo_token100_20261025",
+      "phase": "complete",
+      "copy_verified": true,
+      "backbone_weights_included": false
+    },
+    {
+      "path": "/content/drive/MyDrive/lsdrag-backups/20261025/qwen35_grpo_token100_validation64_20261025.tar.gz",
+      "sha256": "a96e10c3fb441b77970b87d7b8fc72f94523bad8d4fb5bb58806558cd317f3ac",
+      "bytes": 657027,
+      "run": "/content/local_fast/lsdrag-text-v1/results/qwen35_grpo_token100_validation64_20261025",
+      "phase": "complete",
+      "copy_verified": true,
+      "backbone_weights_included": false
+    }
   ],
-  "large_public_models": "Remain in local-fast; excluded from duplicate backup. Pinned recovery/provenance in code snapshot.",
-  "automatic_resume": false
+  "logs_archive": {
+    "path": "/content/drive/MyDrive/lsdrag-backups/20261025/qwen35_grpo_token100_logs_stop_20261025.tar.gz",
+    "sha256": "f22510e580701233426b2dc2261f5445b49302e5a60eb3ab10fbce46ddfdbfb2",
+    "bytes": 3241
+  },
+  "code_backup_pattern": "code_final_stop_*.tar.gz",
+  "report": "docs/JEV_GRPO_TOKEN100_RESULT_20261025.md",
+  "bonus_policy_trained": false
 }

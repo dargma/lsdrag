@@ -1,0 +1,17 @@
+{
+  "questions": 48,
+  "rollouts": 192,
+  "unique_action_paths_per_question": {
+    "1": 2,
+    "4": 32,
+    "2": 7,
+    "3": 7
+  },
+  "diverse_questions": 46,
+  "nonforced_decisions": 880,
+  "non_argmax_sampled": 261,
+  "action_sampling": "Categorical policy; epsilon0 means no uniform mixture, not greedy",
+  "seed": "20261085+question_index*10+replicate",
+  "argument_and_answer_generation": "greedy",
+  "coefficient_trials": "All reuse identical original on-policy192paths; one update phase each, not iterative fresh-rollout GRPO"
+}

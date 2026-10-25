@@ -1,3 +1,11 @@
+## 2026-10-25 — USER STOP: finalλ10 complete; backup and end
+
+Latestuser: onlythisresultthenend,backupwell, nowending. NO newexperiments/automaticresume/bonuspolicytraining. λ10done128eval, before64exactreplay; EM37.5%(24/64) vs39.0625%(25/64), F147.89675%vs49.45925%, allmean155.0625vs158.015625(−1.8689%), correctmean145.208333vs144.92. Paircommoncorrect24means145.541667→145.208333(total−8); allsaving189=8commoncorrect+74lostcorrect+107bothwrong. F1/EMlossmeanssuccessscreenfalse. FINALincludedsteps6.546875→6.484375; tools5.546875→5.484375. Fivepolicycommoncorrect23reportedfairly.
+
+Report docs/JEV_GRPO_TOKEN100_RESULT_20261025.md, design/rolloutaudit docs/JEV_LENGTH_REWARD_DESIGN_AUDIT_20261025.md. Randomactionrolloutsverified46/48diverseq,32/48all4different,261/880nonargmax; generatorgreedy. Same192originalpolicyrolloutsreusedacrosscoefficienttrials, notiterativefreshonpolicyGRPO. Bonus+.5EM256/(T+256) implementation/designonly, nottrained.
+
+Coordinator620521/evaluator621558finished; pipelinecomplete. Train/eval/checkpoint/rawlogsDrivearchives rehashed; index lab/reports/qwen35_grpo_token100_validation64_20261025/completion_audit.json. Finalcodearchive/provenance and STOP manifest follows under /content/drive/MyDrive/lsdrag-backups/20261025. Noactiveexperiment. Resumeonlywithnewexplicituserinstruction.
+
 ## 2026-10-25 — principle benchmarking only; three insights and dual mean token metrics
 
 User clarifies MicrosoftDecision-1benchmark means studyprinciples, neverinferenceAPI. ZEROinferencecalls, removeuntrackedAPIclients/proberunners; withdrawnprepared32states markednotforexecution. Publicofficialdocs/modelmetadataonly. NoAPIcredentialsneeded. docs/JEV_MS_DECISION1_PRINCIPLES_20261025.md separatesknownsingle-passfixedchoices/calibrationfromunknownarchitecture/loss/backbonefreeze/multi-turnRL. NoMSreproductionorprivateimplementationclaim.

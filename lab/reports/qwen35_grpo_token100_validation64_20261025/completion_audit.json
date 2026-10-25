@@ -1,0 +1,81 @@
+{
+  "verified": true,
+  "raw_reverified": 128,
+  "phase_archives": [
+    {
+      "path": "/content/drive/MyDrive/lsdrag-backups/20261025/qwen35_grpo_token100_20261025.tar.gz",
+      "sha256": "a6c0823c9e0a3731c3195f5e7f89bad9e1ffe8f374ad6a1fe6cc4623c0547221",
+      "bytes": 460268984,
+      "run": "/content/local_fast/lsdrag-text-v1/results/qwen35_grpo_token100_20261025",
+      "phase": "complete",
+      "copy_verified": true,
+      "backbone_weights_included": false
+    },
+    {
+      "path": "/content/drive/MyDrive/lsdrag-backups/20261025/qwen35_grpo_token100_validation64_20261025.tar.gz",
+      "sha256": "a96e10c3fb441b77970b87d7b8fc72f94523bad8d4fb5bb58806558cd317f3ac",
+      "bytes": 657027,
+      "run": "/content/local_fast/lsdrag-text-v1/results/qwen35_grpo_token100_validation64_20261025",
+      "phase": "complete",
+      "copy_verified": true,
+      "backbone_weights_included": false
+    }
+  ],
+  "logs_archive": {
+    "path": "/content/drive/MyDrive/lsdrag-backups/20261025/qwen35_grpo_token100_logs_stop_20261025.tar.gz",
+    "sha256": "f22510e580701233426b2dc2261f5445b49302e5a60eb3ab10fbce46ddfdbfb2",
+    "bytes": 3241
+  },
+  "common_correct_all_five": [
+    "2hop__122021_252931",
+    "2hop__12247_92216",
+    "2hop__132927_120674",
+    "2hop__142146_44326",
+    "2hop__144404_80761",
+    "2hop__160546_26427",
+    "2hop__23139_135703",
+    "2hop__232747_86874",
+    "2hop__27075_5348",
+    "2hop__279822_126539",
+    "2hop__3254_2999",
+    "2hop__404680_47102",
+    "2hop__41723_7756",
+    "2hop__5371_74242",
+    "2hop__581137_10690",
+    "2hop__600780_90697",
+    "2hop__605195_70585",
+    "2hop__612512_10369",
+    "2hop__614618_70625",
+    "2hop__630207_432198",
+    "2hop__686705_99808",
+    "2hop__700641_754472",
+    "2hop__732025_333219"
+  ],
+  "common_correct_all_five_means": [
+    144.04347826086956,
+    148.47826086956522,
+    148.47826086956522,
+    148.30434782608697,
+    143.69565217391303
+  ],
+  "rollout_sampling": {
+    "questions": 48,
+    "rollouts": 192,
+    "unique_action_paths_per_question": {
+      "1": 2,
+      "4": 32,
+      "2": 7,
+      "3": 7
+    },
+    "diverse_questions": 46,
+    "nonforced_decisions": 880,
+    "non_argmax_sampled": 261,
+    "action_sampling": "Categorical policy; epsilon0 means no uniform mixture, not greedy",
+    "seed": "20261085+question_index*10+replicate",
+    "argument_and_answer_generation": "greedy",
+    "coefficient_trials": "All reuse identical original on-policy192paths; one update phase each, not iterative fresh-rollout GRPO"
+  },
+  "screen_passed": false,
+  "bonus_policy_trained": false,
+  "automatic_resume": false
+}

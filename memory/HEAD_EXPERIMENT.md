@@ -1,3 +1,11 @@
+## 2026-10-25 — USER STOP: finalλ10 complete; backup and end
+
+Latestuser: onlythisresultthenend,backupwell, nowending. NO newexperiments/automaticresume/bonuspolicytraining. λ10done128eval, before64exactreplay; EM37.5%(24/64) vs39.0625%(25/64), F147.89675%vs49.45925%, allmean155.0625vs158.015625(−1.8689%), correctmean145.208333vs144.92. Paircommoncorrect24means145.541667→145.208333(total−8); allsaving189=8commoncorrect+74lostcorrect+107bothwrong. F1/EMlossmeanssuccessscreenfalse. FINALincludedsteps6.546875→6.484375; tools5.546875→5.484375. Fivepolicycommoncorrect23reportedfairly.
+
+Report docs/JEV_GRPO_TOKEN100_RESULT_20261025.md, design/rolloutaudit docs/JEV_LENGTH_REWARD_DESIGN_AUDIT_20261025.md. Randomactionrolloutsverified46/48diverseq,32/48all4different,261/880nonargmax; generatorgreedy. Same192originalpolicyrolloutsreusedacrosscoefficienttrials, notiterativefreshonpolicyGRPO. Bonus+.5EM256/(T+256) implementation/designonly, nottrained.
+
+Coordinator620521/evaluator621558finished; pipelinecomplete. Train/eval/checkpoint/rawlogsDrivearchives rehashed; index lab/reports/qwen35_grpo_token100_validation64_20261025/completion_audit.json. Finalcodearchive/provenance and STOP manifest follows under /content/drive/MyDrive/lsdrag-backups/20261025. Noactiveexperiment. Resumeonlywithnewexplicituserinstruction.
+
 ## 2026-10-25 — length reward audit and correct-short bonus design
 
 User requests verifylengthreward, then keepcurrentlengthterm and addsmallbonus forcorrect+short. Read-onlyaudit confirms192paths/880states reward/token/advantage/weighting, allλapplied. Actualλ10:10/48groupsrewardwrongoveravailablecorrect; .10/.5/2 none. Shortness implemented correctly butweightedobjective doesnotguaranteeaccuracy. Report docs/JEV_LENGTH_REWARD_DESIGN_AUDIT_20261025.md. Implementedproposal Rnew=Rold+.5*EM*256/(T+256), code decision_correct_short_reward.py; propertychecks+192rescores pass, wrongunchanged, shorter-correcthigherbonus. β.5 leaves10conflictinggroups; noqualityclaim. ProposalNOTusedinactiveλ10run, noadditionaltraining/rolloutauthorized/launched forbonus. Coordinator620521/evaluator621558continues unchanged; lastλ10completion/table(withEM%)/backupsremain.
