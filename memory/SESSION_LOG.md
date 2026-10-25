@@ -2273,3 +2273,19 @@ scripts/poc_e0_clean_context.py, 결과 results/poc_e0_clean_context_20261025. �
 - train48(bootstrap 궤적): 에이전트 F1 .516/EM 21(입력 17,542) → 관측 전체 F1 .600/EM 23(재답변 입력 3,597; EM 7승 5패) → 질문 유사도 rerank top5 .504/EM 19(6승 8패), top3 .367/EM 13 → oracle(gold만) .738/EM 30(9승 0패). gold 둘 다 관측한 문항 35/48.
 - dev17(B0): 에이전트 .577/EM 8 → 관측 전체 .635/EM 10(3승 1패) → top5 .577/EM 9 → oracle .528/EM 8. gold를 모두 관측한 문항은 10/17뿐이라, 부분 gold만 남기면 연결 단서를 잃음.
 결론: 누적 이력을 빼고 근거만 깨끗하게 주면 정확도가 오른다(소표본). 질문 유사도 rerank는 2-hop의 두 번째 홉 문단을 놓쳐 실패한다. 선별은 홉을 인지해야 한다(학습된 decision 선별기의 역할).
+
+### 2026-10-25 — 연구 축 확정(사용자): 바닐라 A-RAG가 못 하는 것을 selection head로 한다
+
+공식 A-RAG(Ayanami0730/arag@a44de6b, src/arag/agent/base.py)를 확인. 도구 3개, FINAL 도구 없음. tool_calls가 없는 텍스트 응답이 곧 최종 답이고, max_loops(기본 10)와 토큰 예산을 넘으면 _force_final_answer로 강제 답변.
+우리 native는 FINAL을 추가한 변형이므로, 바닐라와 구분해 보고해야 한다.
+
+head의 차별점:
+1. 생성 전 명시적 FINAL 결정
+2. 확률 임계값으로 멈춤 조절 → 정확도-입력 Pareto
+3. FINAL 결정과 이력 제거·재구성(E0)을 낭비 없이 연동
+4. 같은 forward에서 여러 결정(Kev 방식)
+5. 형식 오류 0
+도구 종류 선택은 차별점에서 제외(데이터상 차이 없음).
+
+실험 형태: 바닐라 / 바닐라+조기감지 재답변 / head+FINAL 연동 재구성(임계값 sweep). reserved80 또는 새 문항에서 1회 평가.
+순서: E1-lite(재구성 기준 멈춤 라벨 + oracle + probe AUC) → 멈춤 head(frozen, 필요하면 결정 토큰 LoRA) → Pareto 평가. 사용자 지시가 있을 때 시작.
