@@ -1,3 +1,12 @@
+## 2026-10-25 — authorized token coefficient0.10→0.50
+
+User explicitly authorizes increased token reward weight, superseding prior stop for this one candidate. R=EM+0.25F1−0.50T/(T+256)+0.02format. Only token coefficient changes from0.10. Original value_aux checkpoint, frozen Qwen3.5-9B reader; reuse exact verified192 on-policy paths/880FP32states from original policy before any update. No stale post-GRPO initialization. Twoepochs/minibatch16/lr1e-5/clip.2/KL.02/seed20261085 and original GPU optimizer ordering retained. Reused collection cost reported separately, no claim of fresh collection. All-wrong group normalization still amplifies length signal; format bonus can cancel.
+
+Hypothesis: stronger length preference improves policy efficiency while maintaining quality. Fresh paireddev64 rollout, exactbefore replay, compare also previous0.10 result. Primary screen: F1/EM≥original, whole-set AND EM-correct mean generatedtokens decrease, common-correct tokens do not increase, errors0. Correctness composition explicitly separated. Repeated development, not independent confirmation. Reserved80 and priorfinal80 untouched. No coefficient sweep or automatic extra round. All shared tools/generator/prompt/corpus unchanged.
+
+Coordinator scripts/continue_qwen35_grpo_token5.py owns train/audit/archive/eval/audit/archive. Runtime results/qwen35_grpo_token5_20261025_pipeline/status.json. Train artifacts/results names use token5 namespace; no overwrites. Require40GiBfree; sharedGPUallowed, no unrelatedprocess termination. Stop on error, retain raw records. Save report/memory/Git/Drive at completion.
+
+
 ## 2026-10-25 — finalGRPO and outcome-readout experiment complete; no winner
 
 Coordinator488935/evaluator497053 completednormally andabsent. Paireddev64x2=128episodes974.6994seconds20462generated2168584input0errors. OfficialF1/EM/tokens/source/split/checkpointauditpassed;before64exactreplayspriorvalue_auxanswers/support/actions/scores/costs/errors. BeforeF1.4945925245/EM25/allmean158.015625/correctmean144.92; afterF1.4789675245/EM24/allmean161.703125/correctmean147.7083333. F1−1.5625pp,overalltokens+2.3336%,correctmean+1.9241%. Commoncorrect24 means143.458333→147.708333(+2.9625%),102extratokens. Lostcorrect1 adds101tokens;bothwrong39adds33;total+236. ZeroF1wins/one loss. BotholdscreenandlatestdualmeancriterionFAIL. RejectGRPOcandidate.
