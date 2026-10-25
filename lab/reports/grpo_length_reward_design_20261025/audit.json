@@ -1,0 +1,223 @@
+{
+  "verified": true,
+  "formula": "EM + 0.25*F1 - lambda*T/(T+256) + 0.02*valid",
+  "scope": "All episode generated argument/final tokens; input/forced prefix excluded; not final-answer-only nor total compute cost",
+  "trials": {
+    "0.1": {
+      "episodes": 192,
+      "states": 880,
+      "tool_generated": 15235,
+      "final_generated": 6532,
+      "forced_final_generated_in_reward": 490,
+      "wrapper_boundary_calls_counted": 530,
+      "cost_penalty_min_median_max": [
+        0.005185185185185186,
+        0.028391468319171248,
+        0.07043879907621248
+      ],
+      "shortest_among_reward_max_groups": 33,
+      "max_reward_wrong_despite_correct_available": 0,
+      "max_reward_below_best_quality_groups": 0,
+      "reward_order_changed_vs_point1": 0,
+      "advantage_sign_changed_groups_vs_point1": 0,
+      "mean_abs_advantage_change_vs_point1": 0.0,
+      "equal_quality_groups": 25,
+      "all_wrong_groups": 16,
+      "constant_valid_format": true,
+      "conflict_examples": []
+    },
+    "0.5": {
+      "episodes": 192,
+      "states": 880,
+      "tool_generated": 15235,
+      "final_generated": 6532,
+      "forced_final_generated_in_reward": 490,
+      "wrapper_boundary_calls_counted": 530,
+      "cost_penalty_min_median_max": [
+        0.025925925925925925,
+        0.1419573415958562,
+        0.35219399538106233
+      ],
+      "shortest_among_reward_max_groups": 33,
+      "max_reward_wrong_despite_correct_available": 0,
+      "max_reward_below_best_quality_groups": 0,
+      "reward_order_changed_vs_point1": 2,
+      "advantage_sign_changed_groups_vs_point1": 1,
+      "mean_abs_advantage_change_vs_point1": 0.02735729801512347,
+      "equal_quality_groups": 25,
+      "all_wrong_groups": 16,
+      "constant_valid_format": true,
+      "conflict_examples": []
+    },
+    "2.0": {
+      "episodes": 192,
+      "states": 880,
+      "tool_generated": 15235,
+      "final_generated": 6532,
+      "forced_final_generated_in_reward": 490,
+      "wrapper_boundary_calls_counted": 530,
+      "cost_penalty_min_median_max": [
+        0.1037037037037037,
+        0.5678293663834248,
+        1.4087759815242493
+      ],
+      "shortest_among_reward_max_groups": 33,
+      "max_reward_wrong_despite_correct_available": 0,
+      "max_reward_below_best_quality_groups": 0,
+      "reward_order_changed_vs_point1": 3,
+      "advantage_sign_changed_groups_vs_point1": 4,
+      "mean_abs_advantage_change_vs_point1": 0.1144237251978034,
+      "equal_quality_groups": 25,
+      "all_wrong_groups": 16,
+      "constant_valid_format": true,
+      "conflict_examples": []
+    },
+    "10.0": {
+      "episodes": 192,
+      "states": 880,
+      "tool_generated": 15235,
+      "final_generated": 6532,
+      "forced_final_generated_in_reward": 490,
+      "wrapper_boundary_calls_counted": 530,
+      "cost_penalty_min_median_max": [
+        0.5185185185185185,
+        2.8391468319171245,
+        7.043879907621247
+      ],
+      "shortest_among_reward_max_groups": 44,
+      "max_reward_wrong_despite_correct_available": 10,
+      "max_reward_below_best_quality_groups": 11,
+      "reward_order_changed_vs_point1": 17,
+      "advantage_sign_changed_groups_vs_point1": 21,
+      "mean_abs_advantage_change_vs_point1": 0.49649679038622807,
+      "equal_quality_groups": 25,
+      "all_wrong_groups": 16,
+      "constant_valid_format": true,
+      "conflict_examples": [
+        {
+          "qid": "2hop__452796_84477",
+          "EM": [
+            0,
+            1,
+            1,
+            1
+          ],
+          "F1": [
+            0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "T": [
+            16,
+            122,
+            141,
+            129
+          ],
+          "rewards": [
+            -0.5682352941176471,
+            -1.9575132275132274,
+            -2.2816372795969775,
+            -2.0806493506493506
+          ],
+          "top_indices": [
+            0
+          ]
+        },
+        {
+          "qid": "2hop__103724_90561",
+          "EM": [
+            0,
+            1,
+            0,
+            0
+          ],
+          "F1": [
+            0.5,
+            1.0,
+            0.5,
+            0.5
+          ],
+          "T": [
+            144,
+            273,
+            54,
+            127
+          ],
+          "rewards": [
+            -3.455,
+            -3.890680529300567,
+            -1.5969354838709677,
+            -3.1709268929503915
+          ],
+          "top_indices": [
+            2
+          ]
+        },
+        {
+          "qid": "2hop__314961_158069",
+          "EM": [
+            0,
+            1,
+            0,
+            0
+          ],
+          "F1": [
+            0,
+            1.0,
+            0,
+            0
+          ],
+          "T": [
+            53,
+            159,
+            106,
+            132
+          ],
+          "rewards": [
+            -1.695210355987055,
+            -2.5613253012048194,
+            -2.9081767955801103,
+            -3.382061855670103
+          ],
+          "top_indices": [
+            0
+          ]
+        },
+        {
+          "qid": "2hop__660296_36180",
+          "EM": [
+            0,
+            1,
+            0,
+            1
+          ],
+          "F1": [
+            0.4,
+            1.0,
+            0.28571428571428575,
+            1.0
+          ],
+          "T": [
+            85,
+            210,
+            18,
+            122
+          ],
+          "rewards": [
+            -2.3726686217008797,
+            -3.2364377682403433,
+            -0.5655057351407716,
+            -1.9575132275132274
+          ],
+          "top_indices": [
+            2
+          ]
+        }
+      ]
+    }
+  },
+  "actor_sign_verified": true,
+  "trajectory_equal_weight_verified": true,
+  "same_original_trajectories_verified": true
+}

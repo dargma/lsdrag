@@ -1,0 +1,37 @@
+{
+  "verified": true,
+  "scope": "Formula/properties and192existingpath rescoring only; NO training or rollout for this bonus",
+  "length_weight": 10,
+  "correct_short_weight": 0.5,
+  "stats": {
+    "base_reward_top_wrong_despite_correct_available": 10,
+    "reward_top_wrong_despite_correct_available": 10
+  },
+  "example": [
+    {
+      "em": 0,
+      "t": 16,
+      "reward": -0.5682352941176471,
+      "base_reward": -0.5682352941176471,
+      "length_penalty": 0.5882352941176471,
+      "correct_short_bonus": 0.0
+    },
+    {
+      "em": 1,
+      "t": 122,
+      "reward": -1.6188888888888888,
+      "base_reward": -1.9575132275132274,
+      "length_penalty": 3.2275132275132274,
+      "correct_short_bonus": 0.3386243386243386
+    }
+  ],
+  "properties": [
+    "wrong reward exactly unchanged",
+    "correct-only positive bonus",
+    "shorter correct gets larger bonus",
+    "beta0 exactly recovers old reward",
+    "base length term unchanged",
+    "algebra checked"
+  ],
+  "limitation": "Adds both an EM bonus and extra correct-only length penalty; does not guarantee long-correct beats short-wrong at lambda10"
+}

@@ -2225,3 +2225,8 @@ Namespace qwen35_grpo_token100_20261025 (100timesoriginal.10); evalqwen35_grpo_t
 
 Coordinator620521/evaluator621558. Runtime /content/local_fast/lsdrag-text-v1/results/qwen35_grpo_token100_20261025_pipeline/status.json; log logs/qwen35_grpo_token100_20261025_evaluation.log. 192reusedpaths/880states110updates, reward/checkpointauditpassed. TrainingDrivearchive in lab/registry/qwen35_grpo_token100_20261025/archive.json. Next128freshrollouts, officialscore andtoken audit, EMaccuracy%/count,F1,all/correct/commoncorrectmeans table, Drive/Git thenSTOP. User explicitlylast, noautomaticextension.
 
+
+## 2026-10-25 — length reward audit and correct-short bonus design
+
+User requests verifylengthreward, then keepcurrentlengthterm and addsmallbonus forcorrect+short. Read-onlyaudit confirms192paths/880states reward/token/advantage/weighting, allλapplied. Actualλ10:10/48groupsrewardwrongoveravailablecorrect; .10/.5/2 none. Shortness implemented correctly butweightedobjective doesnotguaranteeaccuracy. Report docs/JEV_LENGTH_REWARD_DESIGN_AUDIT_20261025.md. Implementedproposal Rnew=Rold+.5*EM*256/(T+256), code decision_correct_short_reward.py; propertychecks+192rescores pass, wrongunchanged, shorter-correcthigherbonus. β.5 leaves10conflictinggroups; noqualityclaim. ProposalNOTusedinactiveλ10run, noadditionaltraining/rolloutauthorized/launched forbonus. Coordinator620521/evaluator621558continues unchanged; lastλ10completion/table(withEM%)/backupsremain.
+
