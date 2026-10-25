@@ -1,3 +1,7 @@
+## 2026-10-25 22:05 UTC — 사용자 지시 "모두중단": 대기 감시 종료, 실행된 실험 없음
+
+LoRA+GRPO native vs head 실험은 GPU가 20분 유휴가 되지 않아 시작 전에 중단했다. S0도 실행하지 않았다. 코드(c9b0de2)와 계획 docs/JEV_LORA_GRPO_NATIVE_VS_HEAD_PLAN_20261025.md는 보존한다. fla는 미설치. 주의: P1의 B0 실행은 Qwen35Reader가 아닌 일반 reader를 써서 GPT 9B 경로와 다르다. 재개는 사용자의 새 지시가 있을 때만 한다.
+
 ## 2026-10-25 — 계획 수립: native vs head, 둘 다 LoRA+GRPO (6시간). 실행은 사용자 승인 대기
 
 사용자 목적: frozen LLM 위의 head만으로는 정확도 정책을 못 만든다. LLM(LoRA)과 head를 함께 학습할 때 시너지가 나는지 본다(기여 혼합은 감수). 계획 docs/JEV_LORA_GRPO_NATIVE_VS_HEAD_PLAN_20261025.md. A: native+LoRA GRPO(zero-shot 시작). B: value_aux head+LoRA 동시 GRPO. 보상은 입력 토큰 벌점, 어드밴티지는 평균만 뺌, KL 0, 조건당 75분 시간 기준, fresh48 평가.
