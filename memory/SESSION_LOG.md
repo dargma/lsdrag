@@ -2201,3 +2201,8 @@ User-authorized0.10→0.50 singlecandidate complete. Same192originalon-policy pa
 
 Actual length coefficient0.50→2.0 (20xoriginal0.10), same originalvalue_aux and192verifiedoriginalon-policy paths, sameoptimizer/seed/2epochs. Protocol docs/JEV_GRPO_TOKEN20_PROTOCOL_20261025.md. Newnamespace qwen35_grpo_token20_20261025; freshpaired64 evalqwen35_grpo_token20_validation64_20261025. Prior0.50 conclusion insufficient to rule out largerweight. Old correctness-dominance assert invalidat2.0 replaced exactrewardchecks; no accuracycoefficientchange. Report wholemean/correctmean/commoncorrect andEM/F1, no hiddenwrong-onlysavings. Nextlaunchcoordinator scripts/continue_qwen35_grpo_token20.py; preserveallpriorartifacts.
 
+
+## 2026-10-25 — coefficient2.0 trained/audited; evaluation active
+
+Coordinator601561/evaluator602085. Runtime /content/local_fast/lsdrag-text-v1/results/qwen35_grpo_token20_20261025_pipeline/status.json; log logs/qwen35_grpo_token20_20261025_evaluation.log. 192reusedpaths/880states110updates, reward and checkpointaudit passed. TrainingDrivearchive verified in lab/registry/qwen35_grpo_token20_20261025/archive.json. Next complete128fresh evaluation episodes, verify costs/quality and compare original/.10/.50/2.0; save all artifacts.
+
