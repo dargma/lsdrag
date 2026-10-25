@@ -1,3 +1,7 @@
+## 2026-10-25 — outcome-readout coordinator495059 queued, GRPO145/192
+
+NewCPUcoordinator495059 waits verifiedoriginalGRPOdata; log /content/local_fast/lsdrag-text-v1/logs/qwen35_outcome_rerank_coordinator_20261025.log, status results/qwen35_outcome_rerank_20261025_pipeline/status.json. NoGPUnewworker. GRPO488938 andcoordinator488935 remainoriginalrun,145/192at758.40seconds. Sources4d7b5bd frozen. Verifyactualstatuses beforecontinuing; no restart/duplicate.
+
 ## 2026-10-25 — outcome-probability main candidate authorized and frozen
 
 Userrequests2–3insightsanddirectmainexperiment; explicitlyrequireswhole-setmeanANDcorrectmean. Oneadditionalcandidate frozen docs/JEV_OUTCOME_RERANK_MAIN_20261025.md, grounded inchoiceprobability≠downstreamEM, wrong-onlysavings, predictionsmustdriveaction. NoAPI. CurrentGRPOunchanged.

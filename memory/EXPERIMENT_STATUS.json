@@ -1,6 +1,6 @@
 {
   "phase": "final_grpo48_training_running",
-  "updated_utc": "2026-10-25T03:23:24.631251+00:00",
+  "updated_utc": "2026-10-25T03:28:02.329168+00:00",
   "protocol": "docs/JEV_FINAL_GRPO48_PROTOCOL_20261025.md",
   "protocol_sha256": "e0cd40c9a1b728408047f7aee95bc9849caa698407c243d20df6a991c9260432",
   "prompt": "prompts/text_rag_integrated_v5.txt",
@@ -1282,10 +1282,12 @@
     "paired_both_correct_mean_generated"
   ],
   "additional_main": {
-    "phase": "prepared",
+    "phase": "waiting_for_verified_grpo_data",
     "protocol": "docs/JEV_OUTCOME_RERANK_MAIN_20261025.md",
     "run": "qwen35_outcome_rerank_20261025",
     "waits_for": "verified finalGRPO48 fresh data",
-    "inference_api": false
+    "inference_api": false,
+    "coordinator_pid": 495059,
+    "status": "/content/local_fast/lsdrag-text-v1/results/qwen35_outcome_rerank_20261025_pipeline/status.json"
   }
 }

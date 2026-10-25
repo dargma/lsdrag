@@ -2156,3 +2156,8 @@ Reusefreshcurrent-policy192GRPOtrajectories AFTERindependenttrainingaudit: behav
 
 Tests passed exactfallback, legalquality/costoverride, illegalactionrejection, frozenbase. Source/planfrozen beforefit. Maincriteria F1/EMmaintained,wholemeanANDcorrectmeandecrease,commoncorrectcostnotincrease,errors0. Noindependentgeneralizationclaimbecausehistoricalbasequestionexposure. Oneboundedcandidateonly; no broadablation. NextqueueCPUcoordinatorwaitingforverifiedGRPOdata; no concurrentGPUlaunch.
 
+
+## 2026-10-25 — outcome-readout coordinator495059 queued, GRPO145/192
+
+NewCPUcoordinator495059 waits verifiedoriginalGRPOdata; log /content/local_fast/lsdrag-text-v1/logs/qwen35_outcome_rerank_coordinator_20261025.log, status results/qwen35_outcome_rerank_20261025_pipeline/status.json. NoGPUnewworker. GRPO488938 andcoordinator488935 remainoriginalrun,145/192at758.40seconds. Sources4d7b5bd frozen. Verifyactualstatuses beforecontinuing; no restart/duplicate.
+
