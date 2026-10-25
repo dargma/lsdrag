@@ -2196,3 +2196,8 @@ Coordinator578933/evaluator579483. Runtime /content/local_fast/lsdrag-text-v1/re
 
 User-authorized0.10→0.50 singlecandidate complete. Same192originalon-policy paths/880states reused, originalvalue_auxcheckpoint, sameGPUoptimizer/seed. Fresh128eval; before64exactreplay; officialscore/token/rawhash audit passed. λ.50 F1.4789675245 EM24/64 allmean161.1875 correctmean146.333333 commoncorrect24mean146.333333; original49.46%/25/158.015625/144.92/common143.458333. λ.10 F1/EMsameas.50,all161.703125/correct147.708333. .50 saves33tokensvs.10 but costs203morethanoriginal and loses1correct. ScreenFAIL. Only2/48rewardrankchanges; groupnormalizationlimitscoefficientscaling. Report docs/JEV_GRPO_TOKEN5_RESULT_20261025.md. Coordinator578933 andevaluator579483 completed; pipeline statuscomplete. Train/evalDrivearchives verified in respective registry archive.json; completionaudit lab/reports/qwen35_grpo_token5_validation64_20261025/completion_audit.json. Noactiveexperiment/noautomaticextension. FinalGit/codebackup follows.
 
+
+## 2026-10-25 — user requests larger token weight;2.0 frozen
+
+Actual length coefficient0.50→2.0 (20xoriginal0.10), same originalvalue_aux and192verifiedoriginalon-policy paths, sameoptimizer/seed/2epochs. Protocol docs/JEV_GRPO_TOKEN20_PROTOCOL_20261025.md. Newnamespace qwen35_grpo_token20_20261025; freshpaired64 evalqwen35_grpo_token20_validation64_20261025. Prior0.50 conclusion insufficient to rule out largerweight. Old correctness-dominance assert invalidat2.0 replaced exactrewardchecks; no accuracycoefficientchange. Report wholemean/correctmean/commoncorrect andEM/F1, no hiddenwrong-onlysavings. Nextlaunchcoordinator scripts/continue_qwen35_grpo_token20.py; preserveallpriorartifacts.
+
