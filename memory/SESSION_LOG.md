@@ -2239,3 +2239,14 @@ Report docs/JEV_GRPO_TOKEN100_RESULT_20261025.md, design/rolloutaudit docs/JEV_L
 
 Coordinator620521/evaluator621558finished; pipelinecomplete. Train/eval/checkpoint/rawlogsDrivearchives rehashed; index lab/reports/qwen35_grpo_token100_validation64_20261025/completion_audit.json. Finalcodearchive/provenance and STOP manifest follows under /content/drive/MyDrive/lsdrag-backups/20261025. Noactiveexperiment. Resumeonlywithnewexplicituserinstruction.
 
+## 2026-10-25 — Claude 세션: 환경 복원 + head 정책 POC (진행 중)
+
+사용자 질문: selection head가 native A-RAG 대비 정확도/토큰 절감 정책으로 쓰일 수 있는가. 계획 docs/JEV_POC_HEAD_POLICY_20261025.md (P0 B0 재현, P1 9B native/semantic_once/closed_book, P2 오류귀속+oracle 종료 여지, P3 oracle-context 천장). 새 학습 없음, dev64는 진단만, reserved80 미사용.
+
+복원(local_fast, 공개 소스): Qwen3.5-9B@c2022362 shard 4개 SHA 일치, Qwen3-4B SHA 일치, MuSiQue train/dev SHA 일치, 공유코퍼스 documents 60561e0e/lexical 791d6a8d/vectors e2b7013c 모두 재빌드로 비트 일치(embedding venv /content/local_fast/lsdrag-v11/embedding-env, sentence-transformers 6.1.0). lm-format-enforcer 0.11.3 설치. MuSiQue scorer StonyBrookNLP/musique@922ac98f. value_aux.pt(5191c60e)만 사용자 승인으로 Drive 아카이브 70aa2bd5에서 복원.
+
+P3 완료: gold support 2문단 직접 제공 F1 73.8/EM 41/64(입력 332), 20문단 pool 1회 F1 60.4/EM 32/64(2,517), B0 기록 F1 49.46/EM 25/64(16,762). 결과 results/poc_oracle_context_dev64_20261025.
+P0+P1 실행 중: PID 58939, run results/poc_baselines_dev64_20261025, log logs/poc_baselines_dev64.log. flash-linear-attention/causal_conv1d 미설치(느린 fallback, 원 환경 버전 기록 없음) → 재현 여부는 P0로 판정.
+
+사용자 아이디어(보류, 기록만): 관측 중 지울 것을 선택하는 정책(컨텍스트 가지치기). head가 같은 forward에서 슬롯별 keep/drop을 판정하고, train gold로 지도 라벨을 만든다. 비교군 oracle_keep/last_k/native+drop 도구. 사용자 결정으로 head 대 native 판정 이후에만 검토.
+
