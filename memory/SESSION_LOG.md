@@ -2266,3 +2266,10 @@ S1 멈춤 probe(scripts/poc_stop_probe.py, train48 317상태, 문항 단위 Grou
 - '문항 가망 없음': last-token AUC .62
 - 3-slot 전체 feature는 과적합(.68/.46)
 P2, S2~S4는 미실행. 사용자 결정: 지금까지의 교훈을 바탕으로 새 실험을 설계한다.
+
+### 2026-10-25 — E0 완료: 관측한 chunk만으로 깨끗한 컨텍스트를 새로 구성해 재답변
+
+scripts/poc_e0_clean_context.py, 결과 results/poc_e0_clean_context_20261025. 새 검색·학습 없음. 같은 9B에 짧은 답변 프롬프트를 사용.
+- train48(bootstrap 궤적): 에이전트 F1 .516/EM 21(입력 17,542) → 관측 전체 F1 .600/EM 23(재답변 입력 3,597; EM 7승 5패) → 질문 유사도 rerank top5 .504/EM 19(6승 8패), top3 .367/EM 13 → oracle(gold만) .738/EM 30(9승 0패). gold 둘 다 관측한 문항 35/48.
+- dev17(B0): 에이전트 .577/EM 8 → 관측 전체 .635/EM 10(3승 1패) → top5 .577/EM 9 → oracle .528/EM 8. gold를 모두 관측한 문항은 10/17뿐이라, 부분 gold만 남기면 연결 단서를 잃음.
+결론: 누적 이력을 빼고 근거만 깨끗하게 주면 정확도가 오른다(소표본). 질문 유사도 rerank는 2-hop의 두 번째 홉 문단을 놓쳐 실패한다. 선별은 홉을 인지해야 한다(학습된 decision 선별기의 역할).
