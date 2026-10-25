@@ -61,6 +61,15 @@ scripts/poc_stage1_state_answers.py(GPU, 327상태 × R_all/R_gold) + scripts/po
 - ④ 선별 oracle: 끝에서 R_gold 30 / 17,813, oracle 멈춤 + R_gold 30 / 12,838.
 결론: 멈춤 타이밍(②⑦)은 oracle로도 여지가 작고(+2 EM) frozen probe로는 못 잡는다 → 중단. 여지는 무엇을 남길지(④)에 있다(+7 EM). 다음은 ④ chunk 관련성 학습 가능성 확인.
 
+### 2026-10-25 — ④ 선별 POC: 9B 자체 hidden으로 남길 chunk 판정
+
+scripts/poc_idea4_selector.py, 결과 results/poc_idea4_selector_20261025.
+- 학습: 실험 split과 atomic id가 겹치지 않는 train 2hop 300문항의 20문단 pool(6,000 chunk). 프롬프트는 질문을 앞에, 문단 구간 hidden 평균.
+- 테스트: train48 에이전트가 실제로 본 chunk 860개(gold 9.5%).
+- AUC: L16 평균 .972 / L24 .934 / L8 .907 / L32 .908, 질문 유사도 기준선 .888.
+- 재답변(train48): probe 상위5 EM 28/F1 .70(답변 프롬프트 900), 상위3 EM 24, p≥.3 EM 24(472). 비교: 에이전트 21, R_all 23(3.6k), 질문 유사도 상위5 19, R_gold oracle 30.
+- 해석: 선별은 학습 가능하고 oracle 근처까지 간다(n=48, 대략적 POC). 선별 feature는 에이전트 컨텍스트(질문이 앞)에서 이미 계산된 prefill에서 뽑을 수 있어 추가 비용 없이 가능할 것(미검증). 이번 POC는 별도 forward 1회를 사용.
+
 ## 2026-10-25 — USER STOP: finalλ10 complete; backup and end
 
 Latestuser: onlythisresultthenend,backupwell, nowending. NO newexperiments/automaticresume/bonuspolicytraining. λ10done128eval, before64exactreplay; EM37.5%(24/64) vs39.0625%(25/64), F147.89675%vs49.45925%, allmean155.0625vs158.015625(−1.8689%), correctmean145.208333vs144.92. Paircommoncorrect24means145.541667→145.208333(total−8); allsaving189=8commoncorrect+74lostcorrect+107bothwrong. F1/EMlossmeanssuccessscreenfalse. FINALincludedsteps6.546875→6.484375; tools5.546875→5.484375. Fivepolicycommoncorrect23reportedfairly.
