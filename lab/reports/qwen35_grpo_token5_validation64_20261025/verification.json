@@ -1,0 +1,333 @@
+{
+  "verified": true,
+  "replayed_reference64": true,
+  "policies": {
+    "before": {
+      "f1": 0.4945925245098039,
+      "all": {
+        "n": 64,
+        "total_generated": 10113,
+        "mean_generated": 158.015625
+      },
+      "correct": {
+        "n": 25,
+        "total_generated": 3623,
+        "mean_generated": 144.92
+      },
+      "incorrect": {
+        "n": 39,
+        "total_generated": 6490,
+        "mean_generated": 166.4102564102564
+      },
+      "partial": {
+        "n": 14,
+        "total_generated": 2773,
+        "mean_generated": 198.07142857142858
+      },
+      "f1_one_nonexact": {
+        "n": 0,
+        "total_generated": 0,
+        "mean_generated": null
+      },
+      "mean_input": 16761.96875,
+      "mean_tools": 5.546875,
+      "errors": 0,
+      "forced_final": 14
+    },
+    "after": {
+      "f1": 0.4789675245098039,
+      "all": {
+        "n": 64,
+        "total_generated": 10316,
+        "mean_generated": 161.1875
+      },
+      "correct": {
+        "n": 24,
+        "total_generated": 3512,
+        "mean_generated": 146.33333333333334
+      },
+      "incorrect": {
+        "n": 40,
+        "total_generated": 6804,
+        "mean_generated": 170.1
+      },
+      "partial": {
+        "n": 14,
+        "total_generated": 2778,
+        "mean_generated": 198.42857142857142
+      },
+      "f1_one_nonexact": {
+        "n": 0,
+        "total_generated": 0,
+        "mean_generated": null
+      },
+      "mean_input": 17077.609375,
+      "mean_tools": 5.609375,
+      "errors": 0,
+      "forced_final": 16
+    }
+  },
+  "groups": {
+    "both_correct": {
+      "qids": [
+        "2hop__23139_135703",
+        "2hop__92768_191233",
+        "2hop__142146_44326",
+        "2hop__160546_26427",
+        "2hop__122021_252931",
+        "2hop__700641_754472",
+        "2hop__5371_74242",
+        "2hop__404680_47102",
+        "2hop__581137_10690",
+        "2hop__279822_126539",
+        "2hop__605195_70585",
+        "2hop__612512_10369",
+        "2hop__41723_7756",
+        "2hop__614618_70625",
+        "2hop__630207_432198",
+        "2hop__732025_333219",
+        "2hop__12247_92216",
+        "2hop__232747_86874",
+        "2hop__132927_120674",
+        "2hop__3254_2999",
+        "2hop__686705_99808",
+        "2hop__27075_5348",
+        "2hop__144404_80761",
+        "2hop__600780_90697"
+      ],
+      "before": {
+        "n": 24,
+        "total_generated": 3443,
+        "mean_generated": 143.45833333333334
+      },
+      "after": {
+        "n": 24,
+        "total_generated": 3512,
+        "mean_generated": 146.33333333333334
+      },
+      "saved_tokens": -69
+    },
+    "gained_correct": {
+      "qids": [],
+      "before": {
+        "n": 0,
+        "total_generated": 0,
+        "mean_generated": null
+      },
+      "after": {
+        "n": 0,
+        "total_generated": 0,
+        "mean_generated": null
+      },
+      "saved_tokens": 0
+    },
+    "lost_correct": {
+      "qids": [
+        "2hop__715703_80884"
+      ],
+      "before": {
+        "n": 1,
+        "total_generated": 180,
+        "mean_generated": 180.0
+      },
+      "after": {
+        "n": 1,
+        "total_generated": 281,
+        "mean_generated": 281.0
+      },
+      "saved_tokens": -101
+    },
+    "both_incorrect": {
+      "qids": [
+        "2hop__85865_86706",
+        "2hop__329687_83854",
+        "2hop__103832_55281",
+        "2hop__121829_89953",
+        "2hop__387970_14970",
+        "2hop__211553_369731",
+        "2hop__646278_3430",
+        "2hop__135584_34638",
+        "2hop__772344_24352",
+        "2hop__651271_705760",
+        "2hop__150582_15815",
+        "2hop__292208_649992",
+        "2hop__180663_501351",
+        "2hop__10692_33145",
+        "2hop__131315_29363",
+        "2hop__712682_217649",
+        "2hop__146469_516766",
+        "2hop__856457_495",
+        "2hop__13705_13676",
+        "2hop__64602_25018",
+        "2hop__28051_48770",
+        "2hop__79728_863462",
+        "2hop__659552_61952",
+        "2hop__660231_406192",
+        "2hop__662379_36741",
+        "2hop__146227_42292",
+        "2hop__53735_88700",
+        "2hop__18025_34455",
+        "2hop__934_1063",
+        "2hop__629786_56101",
+        "2hop__507991_25910",
+        "2hop__243_42892",
+        "2hop__440865_378383",
+        "2hop__49676_87091",
+        "2hop__63539_87370",
+        "2hop__815972_59154",
+        "2hop__366267_185321",
+        "2hop__11785_19219",
+        "2hop__86984_74218"
+      ],
+      "before": {
+        "n": 39,
+        "total_generated": 6490,
+        "mean_generated": 166.4102564102564
+      },
+      "after": {
+        "n": 39,
+        "total_generated": 6523,
+        "mean_generated": 167.25641025641025
+      },
+      "saved_tokens": -33
+    }
+  },
+  "effect": {
+    "f1_delta": -0.015625,
+    "token_ratio": 1.0200731731434787,
+    "f1_wins": 0,
+    "f1_losses": 1
+  },
+  "screen_passed": false,
+  "episode_sha256": {
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_grpo_token5_validation64_20261025/episodes/after_2hop__103832_55281.json": "222f0e680229fa2f4d9c510eeb53dea15247658cf6a5c178d152c951d729096e",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_grpo_token5_validation64_20261025/episodes/after_2hop__10692_33145.json": "b3f63851292016afa7692c14efb2002fe5d73aec4db69fbafb32fcfe859044bf",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_grpo_token5_validation64_20261025/episodes/after_2hop__11785_19219.json": "59ca7eee7d9c9e4f82c07a33f230a467fbce8c287d6e5fc193b4bab6be656aba",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_grpo_token5_validation64_20261025/episodes/after_2hop__121829_89953.json": "0de045d9797432e9ca401dbf49f96b3be2304a071b60ab96071a55e9d2ed7a28",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_grpo_token5_validation64_20261025/episodes/after_2hop__122021_252931.json": "1d92641fb99866d0d92e5179bd8a64a5ad412fc3be3da6e7c05484c52dcef175",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_grpo_token5_validation64_20261025/episodes/after_2hop__12247_92216.json": "05f774cb82e7059a14699bfd6c86abe903a0c4b5703daf5be6319d690738dee5",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_grpo_token5_validation64_20261025/episodes/after_2hop__131315_29363.json": "ab69d9e195c6308f3ee7992f2dfb02d311010e2bba548ac157e59b5acd371754",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_grpo_token5_validation64_20261025/episodes/after_2hop__132927_120674.json": "4a018473f27ccf7443955e457c32ccf141b201a1fc94ff945bd43f804c047064",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_grpo_token5_validation64_20261025/episodes/after_2hop__135584_34638.json": "8d4980228d2f024370da14fb0df681e611f89afdeb6eaa0ae756d7d3d1eebbf5",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_grpo_token5_validation64_20261025/episodes/after_2hop__13705_13676.json": "bd0024058867bf579cfd2cf712feba05489746aa4347a0454168a4ab96d8dc5d",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_grpo_token5_validation64_20261025/episodes/after_2hop__142146_44326.json": "4f7036e41b959756a6d65bcdfbba8c0a231f945908fe750588d47f2184a79726",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_grpo_token5_validation64_20261025/episodes/after_2hop__144404_80761.json": "85ab388baadc9a496168d88ae8a1767faa93ec1d29533bd696d7268633c38f79",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_grpo_token5_validation64_20261025/episodes/after_2hop__146227_42292.json": "febf06337d6da852560c81e83aad89cb12b06328c9a0734a4da4aca80962a5cb",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_grpo_token5_validation64_20261025/episodes/after_2hop__146469_516766.json": "1b3498be2234b289c100d88de13a137c04aee4ea33d943793daaf5ce094adcd1",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_grpo_token5_validation64_20261025/episodes/after_2hop__150582_15815.json": "299f5cb7e7b441792c7288209d85d3ccc25cc6e9ec78bc30c440a763f12c70e6",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_grpo_token5_validation64_20261025/episodes/after_2hop__160546_26427.json": "404bc33a7d1f627b632f8d42a71b92acf4d5acbcdc4a80c87275d9591556bd6e",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_grpo_token5_validation64_20261025/episodes/after_2hop__18025_34455.json": "dc507b3dbbf258b24cf372590136de63e92498563b551d143c39df415512ab27",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_grpo_token5_validation64_20261025/episodes/after_2hop__180663_501351.json": "51c54b92d5b5bbc6784205d1f561b46d49aff6fa702f3cdedf02c79af98c2554",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_grpo_token5_validation64_20261025/episodes/after_2hop__211553_369731.json": "26369d74d4d7c23c29e662ecf29c2333608d8841ec7afca9d130a414c1041e36",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_grpo_token5_validation64_20261025/episodes/after_2hop__23139_135703.json": "14686c07b22289d66dcb9b4f11850439da05ada53e6743230d7032e23ab9ace9",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_grpo_token5_validation64_20261025/episodes/after_2hop__232747_86874.json": "99092b60b02179c307b8d178b0e0c0d41eccad7b2bdfecaa21bfb977843069ed",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_grpo_token5_validation64_20261025/episodes/after_2hop__243_42892.json": "2b744c0b7747b23969bed1841c140feca1389f876bd459976016003be5539906",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_grpo_token5_validation64_20261025/episodes/after_2hop__27075_5348.json": "90c463f3fb4fb912a53c070f593f4ab0b536c39af417c1f566f3ffe57c305664",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_grpo_token5_validation64_20261025/episodes/after_2hop__279822_126539.json": "5dbc267c2253741da80c26f7ad934beae66601b27edf09e7673c3039eed5ce47",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_grpo_token5_validation64_20261025/episodes/after_2hop__28051_48770.json": "1cc229950a2e4446e5bf37527e46da4a948c780991fb2d9703d193fb26da38d5",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_grpo_token5_validation64_20261025/episodes/after_2hop__292208_649992.json": "d5e5f6540f67129cedf437ea681f05bfee6cb47c5dae5d8dff83e7dfbb8326a5",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_grpo_token5_validation64_20261025/episodes/after_2hop__3254_2999.json": "edc7738224a0c2b9a4152c05c4db52661ca6379699490cda4c4f4de8965d625b",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_grpo_token5_validation64_20261025/episodes/after_2hop__329687_83854.json": "4d8cfcf5bf4ad7ed90f54130f6af332a98bf4d9a4e5c1fe76b94cfff17597ab2",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_grpo_token5_validation64_20261025/episodes/after_2hop__366267_185321.json": "79740a92e6dc9072fcb4386ce23fe9fe8022f4b46f4e55029b8486377d5686a8",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_grpo_token5_validation64_20261025/episodes/after_2hop__387970_14970.json": "323165e65be649634438c6f6497337fd3694c7f4b3b31c087da8a42122d6d815",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_grpo_token5_validation64_20261025/episodes/after_2hop__404680_47102.json": "977b4f1311b00e3a81112bcc96747b724059bad4e023aa077138ec1c5355df86",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_grpo_token5_validation64_20261025/episodes/after_2hop__41723_7756.json": "3864e3d71fef4a1a3170d0626a50a21108f9b47eb5abeb3b3f6765dbf300999a",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_grpo_token5_validation64_20261025/episodes/after_2hop__440865_378383.json": "48154b87a9f8bb471ed70f1fe25570d06fcfabf92130fcf6004bec089526c8e8",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_grpo_token5_validation64_20261025/episodes/after_2hop__49676_87091.json": "96c30c408250219cfa347d65bcfba234a072e2a2e3e6f82b23ca152520296e73",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_grpo_token5_validation64_20261025/episodes/after_2hop__507991_25910.json": "f20a25063b97247fbd652b58ea2328a7007946bd427cce3e1e775935c6fb523a",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_grpo_token5_validation64_20261025/episodes/after_2hop__5371_74242.json": "68cbe2990790bcb0d4d78b0baee4e53df39b7e5284d251301e9f35b9db3c8b10",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_grpo_token5_validation64_20261025/episodes/after_2hop__53735_88700.json": "d6cfa4bbb06c6c3676828643d8d5dc696a8b55fd7daf3e2c0a7cb5d1868b6827",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_grpo_token5_validation64_20261025/episodes/after_2hop__581137_10690.json": "dece6c81f082e707515161b311ba670fc5d87ab00a077a39cdd8061370fe2b2b",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_grpo_token5_validation64_20261025/episodes/after_2hop__600780_90697.json": "133fe8a954459dd4cbf31e50061fcff96aa28e46422531a9b5f7e09f5b9222c0",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_grpo_token5_validation64_20261025/episodes/after_2hop__605195_70585.json": "1fa6eede52818b2c933d621b3c0187c3df25387e285b2e3fcbdabd54e520952e",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_grpo_token5_validation64_20261025/episodes/after_2hop__612512_10369.json": "cc3328535b40f52a549e92609feaaa03df6f09235cf076e6d34e5564ae102670",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_grpo_token5_validation64_20261025/episodes/after_2hop__614618_70625.json": "c6242391626ccca4db3a25819412762b2f029e1581492f4248870c31352266a5",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_grpo_token5_validation64_20261025/episodes/after_2hop__629786_56101.json": "d7a1532022e6b7ef63c052e2d8716c1d55390f53e40e2c63aea397fdbb8c0315",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_grpo_token5_validation64_20261025/episodes/after_2hop__630207_432198.json": "9b05ae40cfff3e34b35903c55722c756e947d634a2f13b020b10983a98704c1c",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_grpo_token5_validation64_20261025/episodes/after_2hop__63539_87370.json": "039040946d934c03acb0e73a2fea2d94a48b7359a267ea73f149290d4c45a39c",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_grpo_token5_validation64_20261025/episodes/after_2hop__64602_25018.json": "5af19f45b03d2d885fb7c9311aeeb8d73f6000963058a4889c2e960479d07fe3",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_grpo_token5_validation64_20261025/episodes/after_2hop__646278_3430.json": "5d1756e70a39cfba5b4a9b26ccd1587d65d0f55fc94bf525f903e61088f0d8ee",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_grpo_token5_validation64_20261025/episodes/after_2hop__651271_705760.json": "794914d916ee52714a07939cd61a81bd689c347da4dea062699452f4442311b6",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_grpo_token5_validation64_20261025/episodes/after_2hop__659552_61952.json": "c7fac121c0dd3cbf592cdbdb2719a647999146c9ad8646263a8c01a527613874",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_grpo_token5_validation64_20261025/episodes/after_2hop__660231_406192.json": "2f6e2d9f9b1a79ce86b454a8bf368146596786837990c75b22f0ed85eb89ca04",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_grpo_token5_validation64_20261025/episodes/after_2hop__662379_36741.json": "9322426e7f2cf1e20c182561bd2d776051d4aac73f36db2048e7e9a4a5507f09",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_grpo_token5_validation64_20261025/episodes/after_2hop__686705_99808.json": "d06e2964e495d10c3864181967f6681f46246ea91a45e59822b348d54fff364a",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_grpo_token5_validation64_20261025/episodes/after_2hop__700641_754472.json": "190baa5b2e7656b04f04d41bd6b17ba3c882dd473842b4425eeddcedb4e346b4",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_grpo_token5_validation64_20261025/episodes/after_2hop__712682_217649.json": "5e16b79de5cb936786b62a55d5cf15d62c4b9e4fc9fdb68868ff2ce9c72f9811",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_grpo_token5_validation64_20261025/episodes/after_2hop__715703_80884.json": "ee4c8f5e0104b6083e9ead900a972a55878accda29d252d6341df277349f2cac",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_grpo_token5_validation64_20261025/episodes/after_2hop__732025_333219.json": "a88cba1190cc3af8813eb6ab72715154ce9cf5e2574892bedf47a468a8946d9f",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_grpo_token5_validation64_20261025/episodes/after_2hop__772344_24352.json": "7e7cc9d1bbf8e00ecbad262e88f29a01dd97c26fd2a07cae431d02f81ca92a2e",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_grpo_token5_validation64_20261025/episodes/after_2hop__79728_863462.json": "72df8b7774cc5d425180ad09dba036eb0197cc5d1669e41688bfac971ed82738",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_grpo_token5_validation64_20261025/episodes/after_2hop__815972_59154.json": "0afe4e20fd565e90fbc4877ff6c08ed723485a4d5eb76a930910220a29f07906",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_grpo_token5_validation64_20261025/episodes/after_2hop__856457_495.json": "8e3e72b194f8517f9a90dba775575477a3a0c5b5485694b0b792c38f2fb8bbfd",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_grpo_token5_validation64_20261025/episodes/after_2hop__85865_86706.json": "c63dd05f533aa7bb5c10bea5e30ec87d8ffd89cb9ddb726abfc6657456327d91",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_grpo_token5_validation64_20261025/episodes/after_2hop__86984_74218.json": "af3a73babf9309c06cc28b82d72fb0edeae052e609b418c072b647cf2e3860b5",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_grpo_token5_validation64_20261025/episodes/after_2hop__92768_191233.json": "fa67e6114a6bbcf8fce33019cbdd7ddd6be8066c427903bc1b7a27090d5d92c7",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_grpo_token5_validation64_20261025/episodes/after_2hop__934_1063.json": "605d63cfe022148c146db1d052518fe270c8435aff55b71789401ad4ec34246a",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_grpo_token5_validation64_20261025/episodes/before_2hop__103832_55281.json": "8c55e4b7be7b43dd38abe7e1b9ff5b5473eb0e8bb7385afafb6a6437b89ce59c",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_grpo_token5_validation64_20261025/episodes/before_2hop__10692_33145.json": "f2780112418d41f89f865fdb7b471f2240b55ac68fa43479d7382440a3b9d63f",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_grpo_token5_validation64_20261025/episodes/before_2hop__11785_19219.json": "8d1ba1714968e00379e61c85222b6dd2edeccb42f47c3d8e419f9edc8240f369",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_grpo_token5_validation64_20261025/episodes/before_2hop__121829_89953.json": "66a0825333f93938596db161303d408b5bd253882e80b4f29ccf0bb2ef9b568a",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_grpo_token5_validation64_20261025/episodes/before_2hop__122021_252931.json": "c09404ef00bc0cf0be6dea626afec8fd80b3fa5346fd4c33654fb9d5b1a4e98e",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_grpo_token5_validation64_20261025/episodes/before_2hop__12247_92216.json": "2ff4ab0fa8b07a5be3ba1ceaac64d2647e92b075744a69ff2d98cdd2183a559b",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_grpo_token5_validation64_20261025/episodes/before_2hop__131315_29363.json": "befa633331c1ed315be41179b551531587e2e834bf1d58cb5f211ceb0f3a8fa7",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_grpo_token5_validation64_20261025/episodes/before_2hop__132927_120674.json": "cc7709abb54847c87086357185ce39536f259a1a0a6ff3bbc2cea03779230834",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_grpo_token5_validation64_20261025/episodes/before_2hop__135584_34638.json": "4b458702eed4d885d80aade848297cf238889bc93734a37445924164e7cfb76f",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_grpo_token5_validation64_20261025/episodes/before_2hop__13705_13676.json": "14fa9d5c7e1bee73955530d8b518b3b5bee4b79aa3ed1f1c2f4e1b8e2746b93b",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_grpo_token5_validation64_20261025/episodes/before_2hop__142146_44326.json": "0c65f40835147d129c87bfbaf616fd0359ae538b6680fd989bc59d8b7812c095",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_grpo_token5_validation64_20261025/episodes/before_2hop__144404_80761.json": "e8e96f9b375c46779c392a52f801f998765b6223842fdc9994fa728b04dc5ab3",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_grpo_token5_validation64_20261025/episodes/before_2hop__146227_42292.json": "5db08f4f503bd8368a6caa586dfd9f6249eeda1e9459bb9e9672837066189b51",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_grpo_token5_validation64_20261025/episodes/before_2hop__146469_516766.json": "1a48551543be4c5035624d0c4e4cd2dfebe24ccf71559df64bf18f4852b9e131",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_grpo_token5_validation64_20261025/episodes/before_2hop__150582_15815.json": "89aedb9f4dfefb91e64e000f6e5e08d9f171bfbd06a266bc97d4b2c7e209fff9",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_grpo_token5_validation64_20261025/episodes/before_2hop__160546_26427.json": "43ba5b71618e323348255f6801316c89d045edaca3f2506cca386866b4998b70",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_grpo_token5_validation64_20261025/episodes/before_2hop__18025_34455.json": "fe77e1a6cc1227c860c825e2325b51b6f79b857a161f05ac9dfe212971852fc0",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_grpo_token5_validation64_20261025/episodes/before_2hop__180663_501351.json": "fdcdb59462a52181d910f342d5a79f5de6620a253ca3d144f018e6461699c340",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_grpo_token5_validation64_20261025/episodes/before_2hop__211553_369731.json": "e92ee4f3bdd1b3eb5a2926cbf8661b92ec06b88035cc205bef3154ccf306f3af",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_grpo_token5_validation64_20261025/episodes/before_2hop__23139_135703.json": "c79590a9d28dbdc4cd494c468c26e4ee17f65e0a1c1f7c1600272ad0950871a7",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_grpo_token5_validation64_20261025/episodes/before_2hop__232747_86874.json": "96790f1a7326835ed1a0947dd3d19677a8f9891c13d938336703cd09cfa3825a",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_grpo_token5_validation64_20261025/episodes/before_2hop__243_42892.json": "7097475281518ebdf3d932f2f7acc495bbb18ff6fba9c6384a2ea38de92394c9",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_grpo_token5_validation64_20261025/episodes/before_2hop__27075_5348.json": "3538d60b12f18f571509ed8640a794202cb4a930987c633ec9dbe7be7a1e8402",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_grpo_token5_validation64_20261025/episodes/before_2hop__279822_126539.json": "339d43754ff60ca90dd2065fe8839fa4978cd38a0116d8b1cfdb1d70773fb590",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_grpo_token5_validation64_20261025/episodes/before_2hop__28051_48770.json": "ac847012977f0cc5d345d232e5a768befe52b6b074e6c398e3d5138dc58fa6ee",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_grpo_token5_validation64_20261025/episodes/before_2hop__292208_649992.json": "430f09ec5d0c1d255f1d0277eec2bd41f82a18c56332593cd12822cc127c0d6e",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_grpo_token5_validation64_20261025/episodes/before_2hop__3254_2999.json": "5d2c9a9657c6060137f64c9ab1fb75242b77c9a5c0915f9afdcbb8499fe5c24b",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_grpo_token5_validation64_20261025/episodes/before_2hop__329687_83854.json": "7268f14b1181897e0451110cd9e4a9fb5856d1a68158826bc11548710fd78059",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_grpo_token5_validation64_20261025/episodes/before_2hop__366267_185321.json": "fb71b75de4641e07fafd5f5407a2a0f61c41ea8137a288cec7d479b78d2a247b",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_grpo_token5_validation64_20261025/episodes/before_2hop__387970_14970.json": "6e705173c81aa4973cb2c5c6edbe7d64b2e95cdaef02fb2eb7ff68c86485941c",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_grpo_token5_validation64_20261025/episodes/before_2hop__404680_47102.json": "12372acaa507b241deb89cb3de67f4002b91e243f8bfd9708656681e1219b813",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_grpo_token5_validation64_20261025/episodes/before_2hop__41723_7756.json": "fd15649146b1db988128982b9f7307b739ad81acfdfdfff5962159930f1bbccb",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_grpo_token5_validation64_20261025/episodes/before_2hop__440865_378383.json": "58d4c691d0a3b33fa956fc120be2e9594d3c30bf76927b64912370f1e72e2cfe",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_grpo_token5_validation64_20261025/episodes/before_2hop__49676_87091.json": "7fa1c301955f780c498a9f17a473e09bc033871cc68e1d5b499aa7215c154a2a",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_grpo_token5_validation64_20261025/episodes/before_2hop__507991_25910.json": "2b1c063c95f5aa142ceb699b39eace9abb9ca2ef2817829d267e68da0bf7d2f6",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_grpo_token5_validation64_20261025/episodes/before_2hop__5371_74242.json": "4670c363c0312ce6151a5c59f3883c56d2910832a2f36280ffd766eb845dbc5b",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_grpo_token5_validation64_20261025/episodes/before_2hop__53735_88700.json": "1a5aa59d0fd85162653ddc77578022368b1a7418b0f185cedac706b921abede1",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_grpo_token5_validation64_20261025/episodes/before_2hop__581137_10690.json": "d2c728205205301929642a2dd47d73e9027b440af0de69612ccfa6e9f7403ee6",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_grpo_token5_validation64_20261025/episodes/before_2hop__600780_90697.json": "5d9c87ca946b5306f65eb13a9bf9f2145069d0c4a5041adec35386e18f04cdf6",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_grpo_token5_validation64_20261025/episodes/before_2hop__605195_70585.json": "b7f76d2a84f3750e2cda04e5fed5449adb5103db4b03780f8f88e3bfd44b198e",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_grpo_token5_validation64_20261025/episodes/before_2hop__612512_10369.json": "63ac17d7874742db92722506a75ed1401014c03eedbffac7bde315e4f5096519",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_grpo_token5_validation64_20261025/episodes/before_2hop__614618_70625.json": "3996b5d111af5b810225cf2228f69e378da02eaccd38508880ffa453944c5d4f",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_grpo_token5_validation64_20261025/episodes/before_2hop__629786_56101.json": "fda4ff26deac93410d65692c398eed2026bc7f4512b2ed91ebccab8a39961a3c",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_grpo_token5_validation64_20261025/episodes/before_2hop__630207_432198.json": "a90f9212e86d45f42fc6c2196b24741344376d152e8ecefa832fa4f947e6b2ab",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_grpo_token5_validation64_20261025/episodes/before_2hop__63539_87370.json": "c462cfbe77a5904497e2f6690fd26fd83c8048a4fb95771578343b048cfb0b85",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_grpo_token5_validation64_20261025/episodes/before_2hop__64602_25018.json": "86e2eeddd18814a1950a64641a35fc260ef9c5ef00f570fec83eafcd6bc2bff9",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_grpo_token5_validation64_20261025/episodes/before_2hop__646278_3430.json": "98b4f39bda5b7eee462acc8f557486536e5989832ab7d5e55839eafaa02c0780",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_grpo_token5_validation64_20261025/episodes/before_2hop__651271_705760.json": "931e4ff7adeae11a298a64d54d08e3eee5240af48a8bc57b7f88ce0854dbf8bd",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_grpo_token5_validation64_20261025/episodes/before_2hop__659552_61952.json": "9716e93f044a3f6ec37e4721ded167311b9b28ca87401ff2be352fbe6d3b099c",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_grpo_token5_validation64_20261025/episodes/before_2hop__660231_406192.json": "3d7d67979a915c86663120feae71f23ff509d5f4078386141be846368cb883fc",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_grpo_token5_validation64_20261025/episodes/before_2hop__662379_36741.json": "b9360a4952380565b35a33527eab9c8781b3f04ad0610d1cbd811b13fcd9293c",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_grpo_token5_validation64_20261025/episodes/before_2hop__686705_99808.json": "a7a2209a78ffcb0ff5b59b4e8fcac483c80a01454062b8eb26776ff623c7f45b",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_grpo_token5_validation64_20261025/episodes/before_2hop__700641_754472.json": "c0cc8062859402cc0c2aeac4aef3ffdaf52985fdbce3c754d33b3097c8ac4f98",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_grpo_token5_validation64_20261025/episodes/before_2hop__712682_217649.json": "7cd1ef6492af173359ef67ad1bb4da7acbb048a05fc4a8a1089f02f3cb999b13",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_grpo_token5_validation64_20261025/episodes/before_2hop__715703_80884.json": "830939a9895bbbb9d9a8638895e0655beeb5a82de96c8b488608fdc6bf1d8bf8",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_grpo_token5_validation64_20261025/episodes/before_2hop__732025_333219.json": "82f3d6658166dac320c55598f6dcd3d6f76eecd76c3b9fdaf692bd2d01a8d281",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_grpo_token5_validation64_20261025/episodes/before_2hop__772344_24352.json": "1ae13e6275e8b6d011fd26558660689c361de2a35327033a7dc0e979e5b5df48",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_grpo_token5_validation64_20261025/episodes/before_2hop__79728_863462.json": "87dc93d3f7219bd7aee0fb7d7aaf2d8b6f800bdba02997a2900dc1744848d332",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_grpo_token5_validation64_20261025/episodes/before_2hop__815972_59154.json": "1dbcee2ede83b52e8ab667fff81fbeb34825069ab8bf065bd723decad7d5c7eb",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_grpo_token5_validation64_20261025/episodes/before_2hop__856457_495.json": "9671fffa824c5a494e03d30510d44ae84f1c280b6a35a376baf68bb9e7703b1f",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_grpo_token5_validation64_20261025/episodes/before_2hop__85865_86706.json": "f94bce56ca93a6923b4517445565f057d73eaa9a918127da6e94c9992632139a",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_grpo_token5_validation64_20261025/episodes/before_2hop__86984_74218.json": "8fd3208b530235779d711a2e7c61564a1c3513027cb21fa6819958a02f8d9a3b",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_grpo_token5_validation64_20261025/episodes/before_2hop__92768_191233.json": "31fc564ce83753cda94352d5af48d2adbf8680d32b11cedcfdc8cac67fb3dae3",
+    "/content/local_fast/lsdrag-text-v1/results/qwen35_grpo_token5_validation64_20261025/episodes/before_2hop__934_1063.json": "4f5b497d696eacc0dc591c49ddb2e250b5f6555d26be03b061de50dcf5a17b4a"
+  },
+  "scope": "Final fixed experiment; repeated dev64, no independent confirmation; no controlled latency claim"
+}

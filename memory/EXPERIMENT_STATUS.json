@@ -1,5 +1,5 @@
 {
-  "phase": "token5_evaluation_running",
+  "phase": "token5_complete_rejected",
   "updated_utc": "2026-10-25T03:50:02.269040+00:00",
   "protocol": "docs/JEV_GRPO_TOKEN5_PROTOCOL_20261025.md",
   "protocol_sha256": "e0cd40c9a1b728408047f7aee95bc9849caa698407c243d20df6a991c9260432",
@@ -32,13 +32,13 @@
   ],
   "worker_wall_budget_minutes": 120,
   "run_planned": "/content/local_fast/lsdrag-text-v1/results/decision_h3_policy_coverage24b_20261024",
-  "pid": 579483,
+  "pid": null,
   "implementation_completed": true,
   "dataset_prepared": true,
   "teacher_collection_started": true,
   "training_completed": true,
-  "evaluation_completed": false,
-  "next": "Verify fresh paired64 evaluation; compare token weights0.10 vs0.50",
+  "evaluation_completed": true,
+  "next": "No automatic further experiments; token weight increase insufficient",
   "previous_multimodal_checkpoint_historical_only": {
     "phase": "native2_review_required",
     "run": "/content/local_fast/lsdrag-head-v14/results/native_distillation_12b_20261015",
@@ -1252,7 +1252,7 @@
   "read_pointer_plan": "docs/JEV_H2_READ_POINTER_FEASIBILITY_20261024.md",
   "last_experiment_limit": false,
   "active_objective": "\ud070 \ubaa8\ub378\ub85c \uc2e4\ud5d8 \uc644\ub8cc\ud558\uae30",
-  "coordinator_pid": 578933,
+  "coordinator_pid": null,
   "coordinator_status": "/content/local_fast/lsdrag-text-v1/results/qwen35_9b_pipeline_20261024/status.json",
   "bootstrap_completed": true,
   "qwen35_base_fit": {
