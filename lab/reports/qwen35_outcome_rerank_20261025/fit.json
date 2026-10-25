@@ -1,0 +1,30 @@
+{
+  "fit_complete": true,
+  "predictive_gate_passed": false,
+  "checkpoint": "/content/local_fast/lsdrag-text-v1/results/qwen35_outcome_rerank_20261025/head.pt",
+  "checkpoint_sha256": "466e29096f8eb32f889b853ab1899d304745c58a708c61adbf7b64a02149352c",
+  "source_batch_sha256": "8fb76123156eff78e99f977cc8175d38851da634cae840b9c867f9ffee5937d2",
+  "training_states": 587,
+  "calibration_states": 293,
+  "coverage": {
+    "0": 32,
+    "1": 30,
+    "2": 26,
+    "3": 32
+  },
+  "calibration_coverage": {
+    "0": 16,
+    "1": 16,
+    "2": 15,
+    "3": 16
+  },
+  "calibration_brier": 0.23822176456451416,
+  "constant_action_brier": 0.2569557726383209,
+  "calibration_logcost_mae": 0.3717954158782959,
+  "constant_action_logcost_mae": 0.35816603899002075,
+  "calibration_policy_changes": 59,
+  "base_tensors_identical": true,
+  "trainable_parameters": 1032,
+  "quality_evaluated": false,
+  "scope": "Question-separated new outcome labels; base representation previously saw these questions. Single-sampled action labels, no unseen-action causal certainty."
+}

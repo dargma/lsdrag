@@ -1,0 +1,9 @@
+{
+  "path": "/content/drive/MyDrive/lsdrag-backups/20261025/qwen35_outcome_rerank_20261025.tar.gz",
+  "sha256": "aa6279f5038cd79269e594e4248ce70a97c84669a385e242d841435681cfff1e",
+  "bytes": 5945589,
+  "run": "/content/local_fast/lsdrag-text-v1/results/qwen35_outcome_rerank_20261025",
+  "phase": "complete",
+  "copy_verified": true,
+  "backbone_weights_included": false
+}

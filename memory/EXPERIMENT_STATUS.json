@@ -1,6 +1,6 @@
 {
-  "phase": "final_grpo48_training_running",
-  "updated_utc": "2026-10-25T03:28:02.329168+00:00",
+  "phase": "final_grpo48_complete_evaluation_running",
+  "updated_utc": "2026-10-25T03:33:15.492751+00:00",
   "protocol": "docs/JEV_FINAL_GRPO48_PROTOCOL_20261025.md",
   "protocol_sha256": "e0cd40c9a1b728408047f7aee95bc9849caa698407c243d20df6a991c9260432",
   "prompt": "prompts/text_rag_integrated_v5.txt",
@@ -32,11 +32,11 @@
   ],
   "worker_wall_budget_minutes": 120,
   "run_planned": "/content/local_fast/lsdrag-text-v1/results/decision_h3_policy_coverage24b_20261024",
-  "pid": 488938,
+  "pid": 497053,
   "implementation_completed": true,
   "dataset_prepared": true,
   "teacher_collection_started": true,
-  "training_completed": false,
+  "training_completed": true,
   "evaluation_completed": false,
   "next": "Execute one final192trajectoryGRPO and paired128evaluation; audit/archive/report thenSTOP",
   "previous_multimodal_checkpoint_historical_only": {
@@ -190,7 +190,7 @@
   "worker_seconds": 277.1492917609994,
   "contract": "5b64658a2608f883599dbfb36be3758d4f28cc0de63c532ec11f76117a3cecce",
   "teacher_target": 32,
-  "log": "/content/local_fast/lsdrag-text-v1/logs/qwen35_final_grpo48_20261025_training.log",
+  "log": "/content/local_fast/lsdrag-text-v1/logs/qwen35_final_grpo48_20261025_evaluation.log",
   "frozen_source_commit": "7ff891a",
   "teacher_questions": 32,
   "natural_states": 15,
@@ -1282,12 +1282,15 @@
     "paired_both_correct_mean_generated"
   ],
   "additional_main": {
-    "phase": "waiting_for_verified_grpo_data",
+    "phase": "complete_predictive_gate_failed",
     "protocol": "docs/JEV_OUTCOME_RERANK_MAIN_20261025.md",
     "run": "qwen35_outcome_rerank_20261025",
     "waits_for": "verified finalGRPO48 fresh data",
     "inference_api": false,
-    "coordinator_pid": 495059,
-    "status": "/content/local_fast/lsdrag-text-v1/results/qwen35_outcome_rerank_20261025_pipeline/status.json"
+    "coordinator_pid": null,
+    "status": "/content/local_fast/lsdrag-text-v1/results/qwen35_outcome_rerank_20261025_pipeline/status.json",
+    "predictive_gate_passed": false,
+    "policy_evaluation_launched": false,
+    "report": "docs/JEV_OUTCOME_RERANK_RESULT_20261025.md"
   }
 }

@@ -1,0 +1,9 @@
+{
+  "path": "/content/drive/MyDrive/lsdrag-backups/20261025/qwen35_final_grpo48_20261025.tar.gz",
+  "sha256": "b488b987892ded97825962f928cdcea8bef12c887685776578c0dab606a347ef",
+  "bytes": 460270650,
+  "run": "/content/local_fast/lsdrag-text-v1/results/qwen35_final_grpo48_20261025",
+  "phase": "complete",
+  "copy_verified": true,
+  "backbone_weights_included": false
+}
