@@ -10,7 +10,7 @@ RAG 에이전트(Qwen3-4B-Instruct-2507)에서 매 단계 쓸 도구를 LLM 대�
 | BC head | 22.50 | 101.6 | 4,749 | 2.39 |
 | GRPO head (KL 0.02, 1,536궤적) | 22.50 | 98.4 | 4,625 | 2.33 |
 | GRPO head, KL 0 (1,536궤적) | TBD | TBD | TBD | TBD |
-| GRPO head + LLM LoRA (KL 0.02, 1,536궤적) | TBD | TBD | TBD | TBD |
+| GRPO head + LLM LoRA, KL 0 (1,536궤적) | TBD | TBD | TBD | TBD |
 
 ## 방법
 
@@ -45,7 +45,7 @@ $$\mathcal{L} = \frac{1}{|B|}\sum_{(i,t)\in B} w_{i}\Big[-\min\big(\rho_{i,t} A_
 action·skip 층만 학습. AdamW 1e-4, 192문항 × 4궤적 × 2회, 반복마다 4 epoch.
 
 **LoRA 변형** (`scripts/run_lora_head_grpo.py`)
-- head 업데이트는 위 GRPO와 동일
+- head 업데이트는 위 GRPO와 동일(KL 계수는 `--kl`로 지정, 결과표 실행은 0)
 - LLM의 attention·MLP 층에 LoRA(rank 16) 추가
 - LLM이 temperature 1로 샘플링한 인자·답 토큰에 같은 어드밴티지로 PPO clip 적용
 - 궤적 수, 보상, seed는 GRPO와 동일(192문항 × 4궤적 × 2회)
