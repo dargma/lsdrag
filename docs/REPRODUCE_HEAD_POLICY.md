@@ -37,15 +37,22 @@ python scripts/repro_head_policy.py table
 - transformers 5.6.2, lm-format-enforcer 0.11.3, jsonschema, numpy
 
 ```bash
-pip install -e . "transformers==5.6.2" "lm-format-enforcer==0.11.3" jsonschema
+uv venv --system-site-packages -p $(which python3) /content/local_fast/lsdrag-text-v1/runtime
+uv pip install -p /content/local_fast/lsdrag-text-v1/runtime/bin/python \
+  "transformers==5.6.2" "lm-format-enforcer==0.11.3" jsonschema -e .
 ```
+
+아래 명령의 `python`은 이 runtime venv의 python입니다. 시스템 python에 ensurepip가 없으면 `python -m venv`가 실패하므로 uv를 씁니다.
 
 **임베딩 환경**: `configs/embedding-requirements.txt` (transformers 5.19.0, sentence-transformers 6.1.0)
 
 ```bash
-python -m venv /content/local_fast/lsdrag-v11/embedding-env
-/content/local_fast/lsdrag-v11/embedding-env/bin/pip install torch -r configs/embedding-requirements.txt -e .
+uv venv --system-site-packages -p $(which python3) /content/local_fast/lsdrag-v11/embedding-env
+uv pip install --no-deps -p /content/local_fast/lsdrag-v11/embedding-env/bin/python \
+  "transformers==5.19.0" "sentence-transformers==6.1.0" -e .
 ```
+
+`--no-deps`가 필요합니다. 없으면 uv가 venv 안에 torch를 새 버전으로 따로 설치하고, 그 torch에서는 `PreTrainedModel` import가 실패합니다. 이렇게 하면 시스템 torch 2.11.0을 그대로 씁니다.
 
 임베딩 worker는 이 venv에서 `lsdrag.embeddings`를 import하는 별도 프로세스로 뜹니다.
 
@@ -80,6 +87,7 @@ python scripts/index_decision_shared_corpus.py   # embeddinggemma 768차원 벡�
 ```
 
 - `documents.jsonl` SHA는 원본 기록과 같아야 합니다: `60561e0e…c6252d`. 입력 데이터만으로 결정됩니다.
+- 두 스크립트는 원본 기록 `lab/registry/decision_shared_corpus_20261023/corpus_manifest.json`을 덮어씁니다. 실행 후 `git checkout`으로 되돌리세요. 새 해시는 `ROOT/corpora/.../manifest.json`에 남습니다.
 - `vectors.npy`는 GPU 수치 차이로 원본 SHA(`e2b7013c…`)와 다를 수 있습니다. 다음 단계부터는 새 SHA로 spec을 다시 만듭니다.
 
 ## 3. Teacher 수집 (native 4B, train192)
@@ -138,7 +146,7 @@ GPU 비결정성 때문에 숫자가 정확히 같지는 않습니다. dev64에�
 - 스크립트는 출력 폴더가 이미 있으면 멈춥니다(`exist_ok=False`). 다시 돌리려면 해당 `ROOT/results/<run>`을 옮기거나 지우세요.
 - 원본 기록(`lab/registry/decision_shared_*_20261023/`)은 수정하지 않습니다. 재현 spec은 `lab/registry/repro_head_policy/`에만 씁니다.
 - `ROOT/decision_policy.lock`으로 GPU 단계가 직렬화됩니다. 단계를 동시에 실행하지 마세요.
-- 이 가이드의 전체 GPU 경로는 v2.0 정리 이후 다시 실행해 보지 않았습니다. 0단계 표 출력과 spec 생성만 확인했습니다.
+- 2026-10-28에 확인한 범위: 1단계 전체(모델 다운로드, 데이터 SHA 일치, 두 venv), 2단계 코퍼스 구축(문단 101,962개, `documents.jsonl` SHA 일치), 임베딩 worker와 Qwen 생성 동작. 2단계 임베딩부터 6단계까지는 아직 실행하지 않았습니다.
 
 ## 파일 구성
 
