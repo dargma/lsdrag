@@ -33,7 +33,7 @@
 
 ### 모방 (BC)
 
-$$\mathcal{L}_{BC} = \sum_{s} w_s\Big[\,0.95\,\big(-\log \pi_\theta(a^{t}_s \mid s)\big) + 0.05\,\Big(-\frac{1}{|\mathcal{A}_s|}\sum_{a\in\mathcal{A}_s}\log\pi_\theta(a \mid s)\Big)\Big]$$
+$$\mathcal{L}_{BC} = \sum_{s} w_s\Big[0.95 \cdot \big(-\log \pi_\theta(a^{t}_s \mid s)\big) + 0.05 \cdot \Big(-\frac{1}{|\mathcal{A}_s|}\sum_{a\in\mathcal{A}_s}\log\pi_\theta(a \mid s)\Big)\Big]$$
 
 | 기호 | 의미 |
 |---|---|
@@ -54,7 +54,7 @@ $$R_i = \mathrm{F1}_i - 0.03 \sum_{t} c_{i,t},\qquad c_{i,t} = \mathbf{1}[a_{i,t
 
 $$A_i = \frac{R_i - \mathrm{mean}(R_{1..4})}{\mathrm{std}(R_{1..4}) + 10^{-6}}$$
 
-$$\mathcal{L} = \frac{1}{|B|}\sum_{(i,t)\in B} w_{i}\Big[-\min\big(\rho_{i,t}A_i,\ \mathrm{clip}(\rho_{i,t},0.8,1.2)\,A_i\big) + 0.02\,\mathrm{KL}\big(\pi_\theta\,\|\,\pi_{BC}\big) - 0.01\,H(\pi_\theta)\Big]$$
+$$\mathcal{L} = \frac{1}{|B|}\sum_{(i,t)\in B} w_{i}\Big[-\min\big(\rho_{i,t} A_i,\ \mathrm{clip}(\rho_{i,t},0.8,1.2) \cdot A_i\big) + 0.02 \cdot \mathrm{KL}\big(\pi_\theta \parallel \pi_{BC}\big) - 0.01 \cdot H(\pi_\theta)\Big]$$
 
 | 기호 | 의미 |
 |---|---|
