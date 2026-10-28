@@ -140,6 +140,7 @@ bash scripts/lora_followup_eval.sh lora_grpo
 | `configs/split.json` | train/validation/test 문항 ID |
 | `configs/reference_dev64.json` | 결과표 기준값 |
 | `scripts/repro_head_policy.py` | 설정과 입력 파일 해시로 spec 생성(`$ROOT/specs`), 결과표 출력 |
+| `scripts/compare_dev64.py` | dev64 문항별 paired 비교(ΔF1 bootstrap CI, EM 전환, 토큰 출처), Markdown 저장 |
 | `scripts/common.py` | 공용 경로, 해시, head 로더 |
 | `src/lsdrag/` | 에이전트, reader, 검색 도구, head, LoRA |
 | `tests/` | `PYTHONPATH=src:scripts python -m pytest -q tests` |
