@@ -1,8 +1,0 @@
-{
-  "path": "/content/drive/MyDrive/lsdrag-backups/20261023/decision_frozen_adapters_validation64_20261024.tar.gz",
-  "sha256": "36b21a46de8e8e7c36059ff07609c1d0f5dea56d700c6d2d8bb63860ad9ed440",
-  "bytes": 412461,
-  "run": "/content/local_fast/lsdrag-text-v1/results/decision_frozen_adapters_validation64_20261024",
-  "phase": "complete",
-  "backbone_weights_included": false
-}

@@ -1,9 +1,0 @@
-# Cost-priority local correction — 2026-10-24
-
-New48bcollectioncomplete48q/87states/648episodes,974.94sec,53259generated/3053575input,4errorepisodespreserved. Current26.41MLPpolicyusedforrollin/suffix; source48bhash778cd8b20c857d2a979fe5382161f3715f45e5eed5311879f68748b0f4d523db. Raw audit passed andDrivearchiveSHAverified. Two trainingcollectionscover96disjointqids butdifferentpolicies; only48bOUTCOMESusedfornewcorrection, oldcachesFEATURESonlyforretention.
-
-Train-onlyanalysis:21correctablestates;14states/12qids admitpositivequalitynonworsecheaperactions (17pairs). Relativecurrentanchor require2errorfree samples each; minF1(candidate)>=maxF1(anchor), minF1(candidate)>0, maxgen(candidate)<mingen(anchor). Two-samplenotconfidencecertificate.
-
-OneMLPcandidatefrom26.41checkpoint. At14coststateschoose greatestworstcasesaving,thenqualitygap,thenstableindex. Remaining7stateschoosegreateststrictqualitygain,thencostsaving; thesequalitycorrectionscanincreasecost. Thusno guaranteequality/costimprovement. Target=.5anchor+.5onehot, equalcorrection/retentiongroupweights,questionbalance. Retentionold377+previous82featuresdeduplicatedbyprefix,replacewithfresh87onoverlap; nevercontradictcorrectedtargets. Oldoutcomelabelsnotused. Train100updatesAdamW1e-4/seed20261061/clip1,normalizationfixed,exactinitialreference.
-
-Actualcandidatecountsassert21/14beforeoptimization; no loss/epochselection. Evaluatecurrent26.41referenceandcandidate2×64,unchangedreader/corpus/nativeprotocol;1800sec/800000generated/30Minputbound. Originald987/fixedGRPO/nativecachedcomparatorsretained. Final80/reserved80protected. GoalACTIVE,noPPOGRPO/worldmodel.

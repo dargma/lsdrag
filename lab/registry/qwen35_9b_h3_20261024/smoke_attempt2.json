@@ -1,6 +1,0 @@
-{
-  "status": "failed",
-  "log": "/content/local_fast/lsdrag-text-v1/logs/qwen35_h3_smoke_v2_20261024.log",
-  "cause": "Greedy token3307 decodes to two closing braces, closing argument and outer tool call; argument-only grammar rejected it and selected token15 (zero). Verified raw top logits in qwen35_json_debug.log. Not an observed policy quality failure.",
-  "fix": "Accept only schema-valid argument object followed by its known outer-wrapper closure, counting the entire emitted token; same adapter for all9Bconditions."
-}

@@ -1,9 +1,0 @@
-{
-  "verified": true,
-  "independent_checkpoint_replay_states": 452,
-  "protected_actions_unchanged": 400,
-  "tool_logits_identical": true,
-  "frozen_base": true,
-  "kl": 0.010000006295740604,
-  "input_source_hashes_verified": true
-}

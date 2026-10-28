@@ -1,4 +1,0 @@
-# Parser overlay shares runtime packages but must shadow Transformers 5.6.2.
-# 5.6.2 + vLLM 0.20 fails to initialize MinerU's tied lm_head weight.
-transformers==5.18.0
-tokenizers==0.23.1

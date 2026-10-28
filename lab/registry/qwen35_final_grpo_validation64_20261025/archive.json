@@ -1,9 +1,0 @@
-{
-  "path": "/content/drive/MyDrive/lsdrag-backups/20261025/qwen35_final_grpo_validation64_20261025.tar.gz",
-  "sha256": "7d1a064615c5e629fa841dbc2faf6e1fc2f7719690e5a118fa54e2ca38c6b8bf",
-  "bytes": 665761,
-  "run": "/content/local_fast/lsdrag-text-v1/results/qwen35_final_grpo_validation64_20261025",
-  "phase": "complete",
-  "copy_verified": true,
-  "backbone_weights_included": false
-}

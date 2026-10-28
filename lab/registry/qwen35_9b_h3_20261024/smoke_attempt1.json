@@ -1,6 +1,0 @@
-{
-  "status": "failed",
-  "script_sha256": "853acc2131bb8658f70a40aa489f5df1a5165d008a957bb0593d204feb908400",
-  "failure": "FINAL Paris passed; keyword_search argument generation truncated with repeated zeros in top_k. Artificial smoke system requested final JSON, not full A-RAG protocol. No training started.",
-  "log": "/content/local_fast/lsdrag-text-v1/logs/qwen35_h3_smoke_20261024.log"
-}

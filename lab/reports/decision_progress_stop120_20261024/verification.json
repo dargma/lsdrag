@@ -1,9 +1,0 @@
-{
-  "verified": true,
-  "causal_prefix_replay_states": 322,
-  "initial_h3_exact": 120,
-  "max_logit_error": 4.0531158447265625e-06,
-  "frozen_anchor": true,
-  "protected_actions_verified": 271,
-  "scope": "Teacher-prefix causal cache replay, not full changed-policy trajectories"
-}

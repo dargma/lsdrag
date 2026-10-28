@@ -1,8 +1,0 @@
-{
-  "verified": true,
-  "independent_checkpoint_replay_states": 263,
-  "protected_actions_unchanged": 237,
-  "tool_logits_identical": true,
-  "frozen_base": true,
-  "kl": 0.010000010952353477
-}

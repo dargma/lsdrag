@@ -1,9 +1,0 @@
-# Four architecture/input combinations for a decision-policy foundation
-
-Latestuser explicitly requests at least4newstructure/inputcombinations and immediateexperiments. Reference d987F125.18/gen76.75 offlineoutcomehead;noPPO/GRPO. The initial3fitpilot completedCPUonly andis supersededbeforeevaluation. Preserveitsweights/manifest/sourcecopy, not a hiddenfailedresult.
-
-Fournewcandidates: A depth residual128→64→128onexisting3inputs; B dynamic3inputgates via16hiddenMLP; C combinesA+B; D adds observation-end andlast16tokenmean via2dim→32→128residual. Duses5summarypositions total,notrawtokenattention. ExtraDnormalizationfitonlyontrainingpacks. Allstartwith EXACTd987logits, zeroresidual/neutralgates;allbase/adapterweights train,normalizationfixed. Unchangedstructure continuedtrainingcontrol anduntouchedreference included. Parametercounts differandwillbereported.
-
-Same377states/train192/oldBCsuffixQcache;Q=F1−.03mixedcost;KL.02/entropy.01 anchoredtod987;100epochs/LR1e-4/clip1/seed20261061,finalonly. Samebatch/weights/epochs acrossall5trainedheads. Noheadgenerationprotocolchange, noauxloss,noPPO/GRPO,newrollouts0. Fourarchitectureunitcasespass;assertfulltraininginitialparity/fixedbuffers/finiteweights. Purposeisfuturedecisionpolicyfoundation;classificationaccuracyaloneinsufficient.
-
-Evaluate6conditions×validation64=384episodes, singleGPU/max3000seconds;protocolfrozenbeforefit. IdenticalnativeARAGtools/prompt/IDs/arguments/observations/FINAL/limits/scoring maintained; onlyactionheadchanges. ComparecachednativeandfixedbasicGRPOwithprovenance. Reference+continuedcontrol separatestartingpolicyfromextratraining. Do notrankonoriginalfinal80/reserved80. Inputresponse diagnostics arelimitedsupportingevidence,notfuturevaluecalibration.Independentconfirmationstillrequired.

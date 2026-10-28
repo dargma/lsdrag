@@ -1,8 +1,0 @@
-{
-  "path": "/content/drive/MyDrive/lsdrag-backups/20261023/decision_h3_constant_calibration24_20261024.tar.gz",
-  "sha256": "912a58d34e163e93953a057b9f7b372f37305d1d8929deacc8add9de0d3b2000",
-  "bytes": 182015,
-  "run": "/content/local_fast/lsdrag-text-v1/results/decision_h3_constant_calibration24_20261024",
-  "phase": "complete",
-  "backbone_weights_included": false
-}

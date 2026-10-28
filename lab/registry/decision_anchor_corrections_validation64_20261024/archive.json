@@ -1,8 +1,0 @@
-{
-  "path": "/content/drive/MyDrive/lsdrag-backups/20261023/decision_anchor_corrections_validation64_20261024.tar.gz",
-  "sha256": "8596ef85d34af228b4e4d1e7d7972363593021862c9deb425351d3ebbd41999f",
-  "bytes": 357840,
-  "run": "/content/local_fast/lsdrag-text-v1/results/decision_anchor_corrections_validation64_20261024",
-  "phase": "complete",
-  "backbone_weights_included": false
-}

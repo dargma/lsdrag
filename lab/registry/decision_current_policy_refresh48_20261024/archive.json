@@ -1,8 +1,0 @@
-{
-  "path": "/content/drive/MyDrive/lsdrag-backups/20261023/decision_current_policy_refresh48_20261024.tar.gz",
-  "sha256": "c82c81ec563550bc06713937f9dc79472cd6027c9dd7a7cee28ebf5030ccca43",
-  "bytes": 28565149,
-  "run": "/content/local_fast/lsdrag-text-v1/results/decision_current_policy_refresh48_20261024",
-  "phase": "complete",
-  "backbone_weights_included": false
-}

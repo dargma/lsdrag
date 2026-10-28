@@ -1,8 +1,0 @@
-{
-  "archive": "/content/drive/MyDrive/lsdrag-backups/20261023/decision_policy_stop_results.tar.gz",
-  "sha256": "f40c7fba5befbad1bd4e64dea12cbdaf188d095258da54482ab62de6ee8e2489",
-  "bytes": 3053999,
-  "source": "437ab3b",
-  "episodes": 272,
-  "backbone_weights_included": false
-}

@@ -1,7 +1,0 @@
-{
-  "verified": true,
-  "frozen_base": true,
-  "tool_logits_identical_states": 184,
-  "exact_delta_alpha": 0.25,
-  "checkpoint_sha256": "963e83d4ac16efd3280fbb853b0f13938fa50cd3360f986e20c3e57c5843da35"
-}

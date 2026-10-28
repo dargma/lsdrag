@@ -1,9 +1,0 @@
-{
-  "states": 82,
-  "any_positive_states": 57,
-  "nonzero_stopping_contrast_states": 39,
-  "nonzero_stopping_contrast_sign_agreement": 0.8461538461538461,
-  "action_pair_mean_absolute_f1_gap": 0.08895021645021645,
-  "repeat_best_action_set_overlap_rate": 1.0,
-  "positive_state_repeat_best_action_set_overlap_rate": 1.0
-}

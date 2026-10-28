@@ -1,8 +1,0 @@
-{
-  "path": "/content/drive/MyDrive/lsdrag-backups/20261023/qwen35_9b_outcomes48_20261024.tar.gz",
-  "sha256": "ad4b8537a10572d4c0330431c7aeb3700a7db5499731b515e8aa479e2ea5b266",
-  "bytes": 167239010,
-  "run": "/content/local_fast/lsdrag-text-v1/results/qwen35_9b_outcomes48_20261024",
-  "phase": "complete",
-  "backbone_weights_included": false
-}

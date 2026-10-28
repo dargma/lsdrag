@@ -1,8 +1,0 @@
-{
-  "path": "/content/drive/MyDrive/lsdrag-backups/20261023/decision_stop_middle_h3_supplement_20261024.tar.gz",
-  "sha256": "0a9169442551dd51e409a952f8ddff283859fbbe170ea0bd8e2ab8da95ef4de9",
-  "bytes": 6521702,
-  "run": "/content/local_fast/lsdrag-text-v1/results/decision_stop_middle_h3_supplement_20261024",
-  "phase": "complete",
-  "backbone_weights_included": false
-}

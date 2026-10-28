@@ -92,8 +92,8 @@ action·skip만 학습(trunk 고정), AdamW 1e-4, 반복마다 4 epoch, 총 660 
 
 1. head는 도구 선택기로만 쓰고, 토큰 절감은 공통 정답 문항 기준으로 판정한다.
 2. 정책 레버는 두 가지로 옮긴다.
-   - 컨텍스트에 무엇을 남길지 고르기: 9B 오프라인 POC에서 EM 21 → 28/48. `docs/JEV_POC_DECISION_AXIS_REPORT_20261025.md`
-   - LLM LoRA 학습: `docs/JEV_LORA_GRPO_NATIVE_VS_HEAD_PLAN_20261025.md`, 미실행
+   - 컨텍스트에 무엇을 남길지 고르기: 9B 오프라인 POC에서 EM 21 → 28/48(`jev_v1.1` 브랜치 기록)
+   - LLM LoRA 학습: 계획만 있고 미실행(`jev_v1.1` 브랜치)
 3. LoRA 학습 보상은 입력 토큰 비용, 정답일 때만 길이 보상, std로 나누지 않는 어드밴티지로 설계한다.
 
 ## 출처
@@ -101,7 +101,8 @@ action·skip만 학습(trunk 고정), AdamW 1e-4, 반복마다 4 epoch, 총 660 
 | 내용 | 파일 |
 |---|---|
 | 결과 | `lab/reports/decision_shared_validation64_20261023/report.md` |
-| 모방 정확도 | `memory/CURRENT.md`(teacher192, BC 학습 행동 정확도 .998501), `lab/reports/decision_shared_teacher192_20261023/audit.json` |
+| 모방 정확도 | BC 학습 manifest의 `train_accuracy` .998501(`jev_v1.1`의 `memory/CURRENT.md`에 기록), `lab/reports/decision_shared_teacher192_20261023/audit.json` |
 | 설정 | `lab/registry/decision_shared_grpo192_20261023/manifest.json` |
 | H3 대 GRPO | `lab/reports/decision_h3_role_audit_20261024/correctness_cost.json` |
 | 코드 | `src/lsdrag/decision_policy.py`, `scripts/fit_decision_shared_initialization.py`, `scripts/run_decision_shared_grpo.py` |
+| 재현 | `docs/REPRODUCE_HEAD_POLICY.md` |

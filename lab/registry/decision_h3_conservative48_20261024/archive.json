@@ -1,8 +1,0 @@
-{
-  "path": "/content/drive/MyDrive/lsdrag-backups/20261023/decision_h3_conservative48_20261024.tar.gz",
-  "sha256": "099d19317aa976e9c7339f887dae504ddbf3dff9b8cddf981310a3fc8e9832d8",
-  "bytes": 7427895,
-  "run": "/content/local_fast/lsdrag-text-v1/results/decision_h3_conservative48_20261024",
-  "phase": "complete",
-  "backbone_weights_included": false
-}

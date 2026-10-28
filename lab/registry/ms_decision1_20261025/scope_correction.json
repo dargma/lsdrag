@@ -1,8 +1,0 @@
-{
-  "status": "api_benchmark_withdrawn_by_user_clarification",
-  "inference_api_calls": 0,
-  "scope": "Study published Microsoft-Decision-1 principles only; no inference API use, credential request or hosted benchmark",
-  "local_prepared_probe": "not executed; superseded",
-  "reason": "Assistant misinterpreted benchmarking as API measurement; user means principle-based benchmarking",
-  "runnable_api_scripts_removed": true
-}

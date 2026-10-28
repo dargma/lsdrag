@@ -1,8 +1,0 @@
-{
-  "path": "/content/drive/MyDrive/lsdrag-backups/20261023/decision_constrained_policy_20261024.tar.gz",
-  "sha256": "de4f45ab79b419fb1f94b63aeb7f9a3bf53266d8312d1cbb419036ca3e003779",
-  "bytes": 7428014,
-  "run": "/content/local_fast/lsdrag-text-v1/results/decision_constrained_policy_20261024",
-  "phase": "complete",
-  "backbone_weights_included": false
-}

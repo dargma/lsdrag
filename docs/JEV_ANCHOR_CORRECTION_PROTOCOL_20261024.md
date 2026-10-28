@@ -1,9 +1,0 @@
-# Local empirical policy correction with anchor retention
-
-Train-only fresh82states(d987collection), old377retentionstates. Relative tod987deterministicaction, require2errorfree suffixes/action. Candidatequalifies if minF1(candidate)>maxF1(anchor), OR equalnonzerominquality andmaxgenerated(candidate)<mingenerated(anchor). 19pairs/16states,12strictqualitypairs;13pairs replaceFINALwithsearch/read. Ninepairsoccurin24freshprefixesexcludedbytheprior matched-state comparison. Twosamplesnotstatisticaldominance. Candidateperstatepickedbylargestqualitygap,thengreatesttokenreduction,thenstableactionindex. Positivequality cancostmore; nohiddenassertionbothmetricsimprove.
-
-Targeton16states=.5anchorprob+.5onehotcorrection. Remainingfreshstates retainanchor; oldstateswhoseprefixappearsfresh removedtoavoidconflictingtargets. RetentionusesoldlabelsNO: onlyanchorprobabilitiesonoldfeatures. Groupweights.5correction/.5retention, questionbalancedwithin group. This deliberatelyupweightsrareimprovementstates; mayoverfit. No allzeroqualitycheap-actionreinforcement. Objectivesofttargetcrossentropy,100updatesAdamW1e-4,seed20261061,clip1,finalcheckpointonly.
-
-Twoarms: originalMLPallheadweights trainable; questionattentionwithbasefrozen. Exactbaseinitiallogits/normalizationparity andfiniteweights required. NoPPOGRPO, noLLMdatacollection. Comparebothwithsame-rund9873×64, nofreshtest; nativeprotocolunchanged. This differsfromprior105all-actionParetopairs: onlycorrectionrelativecurrentanchor,qualitygainallowed,andexplicitprobabilityretention. No noveltyclaim.
-
-Afterfitfreeze3-policycheckpointspec, max2400sec/800000generated/30Minput. Allpastfailurespreserved,goalACTIVE.

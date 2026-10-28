@@ -1,8 +1,0 @@
-{
-  "path": "/content/drive/MyDrive/lsdrag-backups/20261023/decision_quality_head_grpo192_20261024.tar.gz",
-  "sha256": "22c4d846060177daf84ef181ee695a28e2ddda0ca2764a1206ab170c6f48fd41",
-  "bytes": 915414681,
-  "run": "/content/local_fast/lsdrag-text-v1/results/decision_quality_head_grpo192_20261024",
-  "phase": "complete",
-  "backbone_weights_included": false
-}

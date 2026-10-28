@@ -1,8 +1,0 @@
-{
-  "path": "/content/drive/MyDrive/lsdrag-backups/20261023/decision_budget_stop_h3_validation64_20261024.tar.gz",
-  "sha256": "5255d5c6481b17a390e5eb8b923349ff88fbf5c1d6e6def39f78fad0bdb69cf9",
-  "bytes": 221819,
-  "run": "/content/local_fast/lsdrag-text-v1/results/decision_budget_stop_h3_validation64_20261024",
-  "phase": "complete",
-  "backbone_weights_included": false
-}

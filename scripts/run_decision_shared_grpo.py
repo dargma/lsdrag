@@ -16,9 +16,9 @@ from run_decision_policy_pilot import ROOT,REPO,PARENT,ORIGIN,sha,save
 OLD=ROOT/'results/decision_policy_20261023_pilot2';REG=REPO/'lab/registry/decision_shared_grpo192_20261023';OUT=ROOT/'results/decision_shared_grpo192_20261023'
 def read(p):return json.loads(p.read_text())
 def main():
- ap=argparse.ArgumentParser();ap.add_argument('--prepare',action='store_true');a=ap.parse_args()
+ ap=argparse.ArgumentParser();ap.add_argument('--prepare',action='store_true');ap.add_argument('--manifest',default=str(REG/'manifest.json'));a=ap.parse_args()
  if a.prepare:raise RuntimeError('Use frozen PPO96 manifest; legacy prepare is disabled')
- m=read(REG/'manifest.json');assert all(sha(REPO/p)==h for p,h in m['source_sha256'].items());assert all(sha(Path(p))==h for p,h in m['input_sha256'].items())
+ m=read(Path(a.manifest));assert all(sha(REPO/p)==h for p,h in m['source_sha256'].items());assert all(sha(Path(p))==h for p,h in m['input_sha256'].items())
  import fcntl
  lock=(ROOT/'decision_policy.lock').open('a');fcntl.flock(lock,fcntl.LOCK_EX|fcntl.LOCK_NB);OUT.mkdir(parents=True,exist_ok=False);save(OUT/'manifest.json',m)
  torch.set_num_threads(2);torch.manual_seed(m['seed']);start=time.perf_counter();embed=None;counts={'episodes':0,'generated':0,'inputs':0}

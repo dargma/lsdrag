@@ -1,8 +1,0 @@
-{
-  "path": "/content/drive/MyDrive/lsdrag-backups/20261023/qwen35_9b_teacher192_20261024.tar.gz",
-  "sha256": "c16ff2dd77f8061cb96284733b2ced4d284030d12675c7d720dc91652942d078",
-  "bytes": 316330518,
-  "run": "/content/local_fast/lsdrag-text-v1/results/qwen35_9b_teacher192_20261024",
-  "phase": "complete",
-  "backbone_weights_included": false
-}

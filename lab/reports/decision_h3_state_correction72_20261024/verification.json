@@ -1,7 +1,0 @@
-{
-  "verified": true,
-  "raw_outcome_recomputed_conditions": 72,
-  "questions": 72,
-  "split_disjoint": true,
-  "scope": "Independent scalar recomputation of frozen chosen actions, not independent action replay or heldout evaluation"
-}

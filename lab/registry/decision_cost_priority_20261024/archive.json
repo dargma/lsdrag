@@ -1,8 +1,0 @@
-{
-  "path": "/content/drive/MyDrive/lsdrag-backups/20261023/decision_cost_priority_20261024.tar.gz",
-  "sha256": "3fe4617dad26b347a930b56224b64313e6bc76363fb66a0cffef23f9177e5a39",
-  "bytes": 3718964,
-  "run": "/content/local_fast/lsdrag-text-v1/results/decision_cost_priority_20261024",
-  "phase": "complete",
-  "backbone_weights_included": false
-}

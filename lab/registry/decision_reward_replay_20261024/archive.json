@@ -1,8 +1,0 @@
-{
-  "path": "/content/drive/MyDrive/lsdrag-backups/20261023/decision_reward_replay_20261024.tar.gz",
-  "sha256": "6df3f5d0650a9cb00bfaedb74c32d63f74debcae7aa3cc73fe495ece8e23a9bc",
-  "bytes": 11208694,
-  "run": "/content/local_fast/lsdrag-text-v1/results/decision_reward_replay_20261024",
-  "phase": "complete",
-  "backbone_weights_included": false
-}

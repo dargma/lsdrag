@@ -1,8 +1,0 @@
-{
-  "path": "/content/drive/MyDrive/lsdrag-backups/20261023/decision_shared_teacher192_20261023.tar.gz",
-  "sha256": "3389754ef9c7ec8380b80ebc93d7e85e5621f807ab1d92b8a97c1088fb9f2f62",
-  "bytes": 100472288,
-  "run": "/content/local_fast/lsdrag-text-v1/results/decision_shared_teacher192_20261023",
-  "phase": "complete",
-  "backbone_weights_included": false
-}

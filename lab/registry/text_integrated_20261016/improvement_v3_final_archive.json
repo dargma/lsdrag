@@ -1,8 +1,0 @@
-{
-  "archive": "/content/drive/MyDrive/lsdrag-backups/20261017/improvement_v3_merged_20261017.tar.gz",
-  "sha256": "93c7883958628ccbacf03aceea533afc844a61ba971eccd15c8b24d85f74a098",
-  "checkpoint_sha256": "534da7b64150878869850cf7ccb735ec0fa8fbd643ddd0a74db19afeea4ebaef",
-  "source_commit": "30a34b8",
-  "validation_episodes": 16,
-  "fresh_evaluation_episodes": 40
-}
