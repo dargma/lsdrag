@@ -128,7 +128,7 @@ $PY scripts/repro_head_policy.py eval --name eval_kl0 --grpo grpo_kl0 --heads-on
 $PY scripts/evaluate_decision_shared_corpus.py --spec $ROOT/specs/eval_kl0_spec.json
 
 # LLM LoRA + head (1,536궤적). 학습 완료 후 dev64 평가
-$PY scripts/run_lora_head_grpo.py --name lora_grpo
+$PY scripts/run_lora_head_grpo.py --name lora_grpo --kl 0
 bash scripts/lora_followup_eval.sh lora_grpo
 ```
 
