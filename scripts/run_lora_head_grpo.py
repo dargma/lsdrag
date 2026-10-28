@@ -26,7 +26,7 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('--name', default='decision_shared_lora_grpo192')
     ap.add_argument('--questions', type=int, default=192, help='first N of train192')
-    ap.add_argument('--iterations', type=int, default=1)
+    ap.add_argument('--iterations', type=int, default=CONFIG['grpo']['iterations'])
     ap.add_argument('--repeats', type=int, default=4)
     ap.add_argument('--kl', type=float, default=.02)
     ap.add_argument('--lr-head', type=float, default=1e-4)
@@ -34,7 +34,7 @@ def main():
     ap.add_argument('--rank', type=int, default=16)
     ap.add_argument('--temperature', type=float, default=1.)
     ap.add_argument('--lora-batch', type=int, default=16, help='trajectories per LoRA optimizer step')
-    ap.add_argument('--max-seconds', type=int, default=10800)
+    ap.add_argument('--max-seconds', type=int, default=18000)
     a = ap.parse_args()
     base = dict(seed=CONFIG['grpo']['seed'], model=CONFIG['model'], corpus=CONFIG['corpus'], reference=CONFIG['bc_head'])
     train = SPLIT['train'][:a.questions]
