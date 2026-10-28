@@ -9,7 +9,7 @@ RAG 에이전트(Qwen3-4B-Instruct-2507)에서 매 단계 쓸 도구를 LLM 대�
 | baseline: LLM이 도구 선택 | 24.70 | 97.4 | 4,691 | 2.38 |
 | BC head | 22.50 | 101.6 | 4,749 | 2.39 |
 | GRPO head (KL 0.02, 1,536궤적) | 22.50 | 98.4 | 4,625 | 2.33 |
-| GRPO head, KL 0 (1,536궤적) | TBD | TBD | TBD | TBD |
+| GRPO head, KL 0 (1,536궤적) | 25.97 | 99.1 | 4,585 | 2.31 |
 | GRPO head + LLM LoRA, KL 0 (1,536궤적) | TBD | TBD | TBD | TBD |
 
 ## 방법
