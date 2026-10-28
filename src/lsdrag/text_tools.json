@@ -1,0 +1,81 @@
+[
+ {
+  "type": "function",
+  "function": {
+   "name": "keyword_search",
+   "description": "Find chunks by literal case-insensitive keywords. Use short specific terms or entity names, 1–3 words each. Returns IDs and abbreviated snippets; read promising chunks before answering.",
+   "parameters": {
+    "type": "object",
+    "properties": {
+     "keywords": {
+      "type": "array",
+      "items": {
+       "type": "string"
+      },
+      "minItems": 1
+     },
+     "top_k": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 20,
+      "default": 5
+     }
+    },
+    "required": [
+     "keywords"
+    ],
+    "additionalProperties": false
+   }
+  }
+ },
+ {
+  "type": "function",
+  "function": {
+   "name": "semantic_search",
+   "description": "Find chunks by semantic similarity when wording is unknown or keyword search is insufficient. Returns IDs and short snippets; use read_chunk for full evidence.",
+   "parameters": {
+    "type": "object",
+    "properties": {
+     "query": {
+      "type": "string",
+      "description": "A natural language description of the evidence to retrieve."
+     },
+     "top_k": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 20,
+      "default": 5
+     }
+    },
+    "required": [
+     "query"
+    ],
+    "additionalProperties": false
+   }
+  }
+ },
+ {
+  "type": "function",
+  "function": {
+   "name": "read_chunk",
+   "description": "Read full text for one to eight chunk IDs observed in search results. Use these text paragraphs to check evidence before answering.",
+   "parameters": {
+    "type": "object",
+    "properties": {
+     "chunk_ids": {
+      "type": "array",
+      "items": {
+       "type": "string"
+      },
+      "minItems": 1,
+      "maxItems": 8
+     }
+    },
+    "required": [
+     "chunk_ids"
+    ],
+    "additionalProperties": false
+   }
+  }
+ }
+]

@@ -13,7 +13,6 @@ import torch
 from common import ROOT, REPO, SPLIT, save, sha, load_head
 from lsdrag.decision_policy import rollout
 from lsdrag.decision_policy_recovery import RecoveryPolicyReader
-from lsdrag.decision_rule import SemanticOnceHead
 from lsdrag.text_decision_benchmark import TextCorpus
 from lsdrag.v11_embedding_worker import V11ProcessEmbedder
 
@@ -67,9 +66,7 @@ def main():
         from metrics.answer import compute_f1
         heads = {}
         for name, desc in spec['policies'].items():
-            if desc['kind'] == 'rule':
-                heads[name] = SemanticOnceHead()
-            elif desc['kind'] == 'native':
+            if desc['kind'] == 'native':
                 heads[name] = None
             else:
                 assert sha(Path(desc['checkpoint'])) == desc['sha256']
