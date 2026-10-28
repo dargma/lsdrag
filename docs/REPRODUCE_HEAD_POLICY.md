@@ -33,7 +33,7 @@ python scripts/repro_head_policy.py table
 
 **실행 환경** (LLM·head)
 - CUDA GPU 1장. bf16 Qwen3-4B 추론과 head 학습을 합니다.
-- torch 2.11.0+cu130 (`configs/runtime-requirements.txt` 기준)
+- torch 2.11.0+cu130
 - transformers 5.6.2, lm-format-enforcer 0.11.3, jsonschema, numpy
 
 ```bash
@@ -44,7 +44,7 @@ uv pip install -p /content/local_fast/lsdrag-text-v1/runtime/bin/python \
 
 아래 명령의 `python`은 이 runtime venv의 python입니다. 시스템 python에 ensurepip가 없으면 `python -m venv`가 실패하므로 uv를 씁니다.
 
-**임베딩 환경**: `configs/embedding-requirements.txt` (transformers 5.19.0, sentence-transformers 6.1.0)
+**임베딩 환경**: transformers 5.19.0, sentence-transformers 6.1.0
 
 ```bash
 uv venv --system-site-packages -p $(which python3) /content/local_fast/lsdrag-v11/embedding-env
@@ -146,6 +146,7 @@ GPU 비결정성 때문에 숫자가 정확히 같지는 않습니다. dev64에�
 - 스크립트는 출력 폴더가 이미 있으면 멈춥니다(`exist_ok=False`). 다시 돌리려면 해당 `ROOT/results/<run>`을 옮기거나 지우세요.
 - 원본 기록(`lab/registry/decision_shared_*_20261023/`)은 수정하지 않습니다. 재현 spec은 `lab/registry/repro_head_policy/`에만 씁니다.
 - `ROOT/decision_policy.lock`으로 GPU 단계가 직렬화됩니다. 단계를 동시에 실행하지 마세요.
+- 원본 산출물(벡터, teacher, BC·GRPO head)은 Drive 백업 `lsdrag-backups/20261023/*.tar.gz`에 있습니다. 2026-10-28 복원 때 SHA가 모두 일치했습니다. 복원하면 ①~④를 건너뛸 수 있습니다.
 - 2026-10-28에 확인한 범위: 1단계 전체(모델 다운로드, 데이터 SHA 일치, 두 venv), 2단계 코퍼스 구축(문단 101,962개, `documents.jsonl` SHA 일치), 임베딩 worker와 Qwen 생성 동작. 2단계 임베딩부터 6단계까지는 아직 실행하지 않았습니다.
 
 ## 파일 구성

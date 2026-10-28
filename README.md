@@ -124,6 +124,7 @@ BC·GRPO head는 HF `sungkwang2/lsdrag-v2-head-policy`(private)에 있습니다.
 |---|---|
 | GRPO에서 head KL 계수 변경 | `repro_head_policy.py grpo --name <run> --kl 0` 후 `run_decision_shared_grpo.py --manifest …/<run>_manifest.json` |
 | LLM에 LoRA를 붙여 head와 함께 GRPO | `run_lora_head_grpo.py --name <run>`. 평가는 `LORA_PATH=ROOT/results/<run>/lora_iteration0.pt $PY scripts/eval_lora_head.py --spec <spec>` |
+| LoRA 학습이 끝나면 자동 평가 | `bash scripts/lora_followup_eval.sh <run>`. LoRA+head와, 같은 궤적 수(768)의 head-only GRPO를 dev64에서 평가 |
 
 ## 코드 구성
 
@@ -135,6 +136,7 @@ BC·GRPO head는 HF `sungkwang2/lsdrag-v2-head-policy`(private)에 있습니다.
 | `src/lsdrag/decision_grpo.py` | 그룹 상대 어드밴티지 |
 | `src/lsdrag/lora4b.py` | LoRA 레이어와 샘플링 reader (변형 실험) |
 | `scripts/repro_head_policy.py` | 재현용 spec 생성과 결과표 출력 |
+| `scripts/run_decision_policy_pilot.py`, `scripts/fit_decision_state_heads.py` | 공용 경로·해시 함수와 head 로더. 다른 스크립트가 import하므로 직접 실행하지 않음 |
 
 ```bash
 PYTHONPATH=src:scripts python -m pytest -q tests     # CPU 단위 테스트
