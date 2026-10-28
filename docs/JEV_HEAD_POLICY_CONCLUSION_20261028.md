@@ -3,11 +3,11 @@
 ## 요약
 
 - head는 **도구 선택**은 잘한다. 고른 행동이 대안보다 낫고, 형식 오류도 없다.
-- head를 **정책**으로 GRPO 학습해도 정확도는 오르지 않았다(4B, 9B 모두).
-- 관측된 **토큰 절감은 대부분 실패 사례**(둘 다 오답, 또는 정답을 잃은 문항)에서 나왔다. 공통 정답 문항에서는 거의 줄지 않았다.
-- 정책이 배운 것은 "정답을 더 효율적으로 찾기"가 아니라 **"가망 없는 문항을 빨리 포기하기"**에 가깝다.
+- head를 **정책**으로 GRPO 학습해도 정확도는 오르지 않았다. 4B와 9B의 대표 설정 모두 그렇다.
+- 토큰도 의미 있게 줄지 않았다. 9B는 오히려 늘었고, 4B는 −3%였다.
+- 다른 설정에서 토큰이 줄었던 경우는 대부분 실패 사례(오답 경로가 짧아짐)였다.
 
-모든 평가는 반복 사용한 개발 문항에서 했다. 독립 일반화 근거는 아니다.
+모든 평가는 반복 사용한 개발 문항(dev64)에서 했다. 독립 일반화 근거는 아니다.
 
 ## 1. 실험 구성
 
@@ -22,11 +22,11 @@
 2. head가 그 hidden으로 행동을 고른다.
 3. LLM이 그 행동의 인자(또는 답 JSON)를 문법 제약 하에 생성한다.
 
-**LLM은 학습하지 않는다.** 아래 모든 실험은 head만 학습했다.
+**LLM은 학습하지 않는다.** head만 학습했다.
 
 ### 1.2 head 구조
 
-| | 9B head (`StateHead`, value_aux) | 4B head (`PolicyHead`) |
+| | 9B head (`StateHead`) | 4B head (`PolicyHead`) |
 |---|---|---|
 | LLM | Qwen3.5-9B (hidden 4096) | Qwen3-4B-Instruct-2507 (hidden 2560) |
 | 입력 위치 | 마지막 층 hidden의 3곳: 마지막 토큰, 질문 끝 토큰, 최근 관측 구간 평균 | 마지막 층 hidden의 마지막 토큰 1곳 |
@@ -38,42 +38,34 @@
 
 ### 1.3 데이터셋
 
-모든 문항은 MuSiQue 2hop이다. 학습과 평가 문항은 서로 겹치지 않는다.
+모든 문항은 MuSiQue 2hop이다. 4B와 9B는 같은 split(`decision_state_policy_iteration_20261023`)을 쓰고, 학습과 평가 문항은 겹치지 않는다.
 
-| 용도 | 문항 | 쓰인 곳 |
+| 단계 | 9B | 4B |
 |---|---|---|
-| head 사전학습(모방) | train192: native 9B가 고른 행동 | 9B bootstrap head |
-| head 결과 학습 | train48(train192의 부분집합): 상태마다 네 행동을 실행해 본 분기 결과 | 9B value_aux head |
-| GRPO 학습 | 9B: train48 × 4궤적 = 192궤적, 결정 880개 | 9B GRPO48, 토큰 벌점 비교 |
-| | 4B: train192 × 4궤적, 2회 반복 | 4B 공유 코퍼스 GRPO |
-| | 4B: train96 × 4궤적, 3회 반복 = 1,152궤적 | 4B GRPO96 |
-| 평가 | dev64: 64문항, 학습 전후를 같은 문항으로 비교 | 9B 전 실험, 4B 공유 코퍼스 |
-| | 새 80문항(decomposition family 비중복) | 4B GRPO96 |
-| 진단 | train48 에이전트 궤적, dev64 | 분기 분석, 천장 실험, ④ 선별 |
-
-- train192와 dev64는 4B와 9B가 같은 split(`decision_state_policy_iteration_20261023`)을 쓴다.
-- GRPO96은 공유 코퍼스 이전 설정이라 다른 결과와 직접 비교하지 않는다.
+| head 사전학습 | train192: native 9B가 고른 행동(모방) → train48: 상태마다 네 행동을 실행해 본 분기 결과로 보정 | train192: native 4B가 고른 행동(모방) |
+| GRPO 학습 | train48 × 4궤적 = 192궤적, 결정 880개, 1회 수집 | train192 × 4궤적 × 2회 반복 = 1,536궤적 |
+| 평가 | dev64 (학습 전후 같은 문항) | dev64 (같음) |
 
 ### 1.4 학습 objective
 
-#### (1) 9B head 사전학습
+#### (1) head 사전학습
 
-**bootstrap (모방):** native 9B 에이전트가 고른 행동 aᵗ를 따라 하도록 학습한다.
+**모방(BC):** native 에이전트가 고른 행동 aᵗ를 따라 하도록 학습한다. 9B와 4B 모두 이 단계를 거친다.
 
 $$\mathcal{L}_{BC} = \sum_s w_s\big[\,0.95\,(-\log \pi_\theta(a^t_s|s)) + 0.05\,(-\tfrac{1}{|\mathcal{A}_s|}\textstyle\sum_{a\in\mathcal{A}_s}\log\pi_\theta(a|s))\big]$$
 
 - 두 번째 항은 가능한 행동 𝒜ₛ에 대한 label smoothing이다.
 - wₛ는 문항별로 합이 같도록 맞춘 가중치다. 상태가 많은 문항이 학습을 지배하지 않게 한다.
-- 설정: AdamW 3e-4, 100 step.
+- 설정(9B, 4B 동일): AdamW 3e-4, 100 step.
 
-**value_aux (결과 기반 보정):** 각 상태에서 네 행동을 모두 실행해 본 결과(F1, 생성 토큰)로 목표 행동 a*를 정한다.
+**결과 기반 보정(9B만, value_aux):** 각 상태에서 네 행동을 모두 실행해 본 결과(F1, 생성 토큰)로 목표 행동 a*를 정한다.
 - a*의 조건: 정답성(EM, F1)이 현재 행동 이상이고, F1이 더 높거나 토큰이 더 적다.
 
 $$\mathcal{L} = \tfrac12\sum_{s\in C} w_s\,\mathrm{CE}\big(\tfrac12\pi_0(\cdot|s)+\tfrac12\,\mathbf{1}_{a^*_s},\ \pi_\theta\big) + \tfrac12\sum_{s\in R} w_s\,\mathrm{CE}\big(\pi_0(\cdot|s),\ \pi_\theta\big) + 0.1\,\mathcal{L}_{aux}$$
 
 $$\mathcal{L}_{aux} = \sum_s w_s\,\tfrac{1}{|\mathcal{A}_s|}\sum_{a\in\mathcal{A}_s}\Big[(\sigma(\hat q_{s,a}) - F1_{s,a})^2 + \mathrm{SmoothL1}\big(\mathrm{softplus}(\hat c_{s,a}),\ \log(1+T_{s,a})\big)\Big]$$
 
-- C는 보정 대상 상태, R은 유지 상태다. π₀는 학습 전 head다.
+- C는 보정 대상 상태, R은 유지 상태다. π₀는 보정 전 head다.
 - 보정 상태에서는 목표를 기존 분포와 a*의 반반으로 둬서 급격한 변화를 막는다.
 - 𝓛_aux는 MLP 중간 표현(128차원)에서 행동별 F1과 log 토큰을 예측하는 보조 손실이다. 추론 때는 쓰지 않는다.
 - 설정: AdamW 1e-4, 100 epoch.
@@ -89,52 +81,45 @@ $$\mathcal{L} = \sum_{i,t} w_{i,t}\Big[-\min\big(\rho_{i,t}A_i,\ \mathrm{clip}(\
 - ρ = π_θ(a|s)/π_old(a|s)는 행동 확률의 비율이다. LLM 토큰은 포함하지 않는다.
 - w는 궤적 길이의 역수 가중치다. 각 궤적이 같은 비중을 갖는다.
 
-| | 9B (GRPO48, 토큰 벌점 비교) | 4B (GRPO96, 공유 코퍼스 GRPO) |
+| | 9B | 4B |
 |---|---|---|
-| 보상 R | EM + 0.25·F1 − λ·T/(T+256) + 0.02·[형식 준수] | F1 − 0.03·cost |
-| 비용 정의 | T = 인자+답의 생성 토큰 수. λ = 0.10, 0.50, 2.0, 10.0 | cost = [도구 호출] + 생성토큰/100 + prefix 토큰/10,000 |
+| 시작 head | value_aux | BC |
+| 보상 R | EM + 0.25·F1 − 0.10·T/(T+256) + 0.02·[형식 준수] | F1 − 0.03·cost |
+| 비용 정의 | T = 인자+답의 생성 토큰 수 | cost = [도구 호출] + 생성토큰/100 + prefix 토큰/10,000 |
 | KL β / 엔트로피 η | 0.02 / 0 | 0.02 / 0.01 |
-| 최적화 | AdamW 1e-5, 2 epoch, minibatch 16 | AdamW 1e-4, 4 epoch, minibatch 32 |
-| 궤적 | 원래 정책의 192궤적 한 묶음을 모든 λ에 재사용(1회 업데이트) | 반복마다 새로 on-policy 수집 |
+| 최적화 | AdamW 1e-5, 2 epoch, minibatch 16 (110 update) | AdamW 1e-4, 4 epoch, minibatch 32 (660 update) |
 
-## 2. 결과: 정확도는 오르지 않음
+## 2. 결과: GRPO 전후 (dev64)
 
-### 9B, dev64
-
-| 지표 | 원래 정책 | λ=.10 | λ=.50 | λ=2.0 | λ=10.0 |
-|---|---:|---:|---:|---:|---:|
-| EM 정답/64 | 25 | 24 | 24 | 24 | 24 |
-| F1 (%) | 49.46 | 47.90 | 47.90 | 47.90 | 47.90 |
-| 전체 평균 생성토큰 | 158.02 | 161.70 | 161.19 | 161.06 | 155.06 |
-| 정답 평균 생성토큰 | 144.92 | 147.71 | 146.33 | 146.17 | 145.21 |
-
-계수를 100배로 키워도 정확도는 그대로였다. 토큰은 λ=10에서만 −1.9% 줄었다.
-
-### 4B
-
-| 실험 | 결과 |
-|---|---|
-| GRPO96, 새 80문항 | F1: 기준 .321, PPO .343, GRPO .334. 차이 신뢰구간이 0 포함 |
-| 공유 코퍼스, dev64 | H3 멈춤 head F1 .273 / EM 14, 기본 GRPO F1 .225 / EM 10 |
-
-## 3. 결과: 토큰 절감은 주로 실패 사례에서
-
-| 비교 | 공통 정답 | 정답 상실 | 둘 다 오답 | 전체 |
+| 지표 | 9B 전 | 9B 후 | 4B 전 | 4B 후 |
 |---|---:|---:|---:|---:|
-| 9B λ=10 vs 원래 정책 (생성 토큰 절약) | 8 (24문항) | 74 (1문항) | 107 (39문항) | 189 |
-| 4B H3 vs 기본 GRPO (H3의 순절약) | 188 (8문항) | 한쪽만 정답 +12 (8문항) | 1,817 (48문항) | 2,017 |
+| F1 (%) | 49.46 | 47.90 | 22.50 | 22.50 |
+| EM 정답/64 | 25 | 24 | — | 10 |
+| 평균 생성 토큰 | 158.02 | 161.70 | 101.59 | 98.41 |
+| 평균 입력 토큰 | 16,762 | 17,122 | 4,749 | 4,625 |
+| 평균 도구 호출 | 5.55 | 5.62 | 2.39 | 2.33 |
+| 오류 | 0 | 0 | 0 | 0 |
 
-- **9B:** 공통 정답 24문항의 평균은 145.54 → 145.21(−0.2%)이다.
-- **4B:** 순절약의 90%가 둘 다 오답인 문항에서 나왔다. H3만 정답인 6문항에서는 148을 더 썼고, GRPO만 정답인 2문항에서는 160을 절약했다.
-- **9B 보상 스모크(train 2문항):** 정답 문항은 83→83 토큰 그대로였다. 오답 문항만 같은 오답을 내며 68→23으로 줄었다.
+- **9B:** 정확도가 떨어지고(EM −1) 토큰은 늘었다. 정오별 토큰은 모든 묶음에서 늘었다.
+
+  | 문항 구분 | 문항 수 | 전→후 총 생성 토큰 |
+  |---|---:|---|
+  | 둘 다 정답 | 24 | 3,443 → 3,545 |
+  | 정답 → 오답 | 1 | 180 → 281 |
+  | 둘 다 오답 | 39 | 6,490 → 6,523 |
+
+- **4B:** F1은 같고 생성 토큰만 −3.1%다. 학습 전 EM은 기록에 없다.
+
+**참고 (대표 설정 밖):** 토큰이 줄었던 다른 설정은 절약 대부분이 실패 사례였다.
+- 9B 생성 토큰 벌점을 100배로 키운 설정: 절약 189 중 둘 다 오답 107, 정답 상실 74, 공통 정답 8
+- 4B H3 head vs GRPO: 순절약 2,017 중 둘 다 오답 1,817
 
 **원인**
-- 길이 벌점이 정답 여부와 무관하다. 그래서 가장 쉽게 줄일 수 있는 오답 경로가 짧아진다.
-  - λ=10에서는 48개 학습 그룹 중 10개에서 짧은 오답이 정답 경로보다 높은 보상을 받았다.
-- 그룹 std 정규화가 길이 차이만 있는 그룹을 ±1 어드밴티지로 증폭하고, λ의 크기 효과는 상쇄한다.
-- 벌점이 생성 토큰에 걸려 있다. 실제 비용의 약 99%는 입력 토큰이다(문항당 입력 약 16.8k, 생성 약 158).
+- 길이 벌점이 정답 여부와 무관해서, 가장 쉽게 줄일 수 있는 오답 경로가 짧아진다.
+- 그룹 std 정규화는 길이 차이만 있는 그룹을 ±1 어드밴티지로 증폭하고, 벌점 계수의 크기 효과는 상쇄한다.
+- 벌점이 생성 토큰에 걸려 있다. 실제 비용의 약 99%는 입력 토큰이다(9B 문항당 입력 약 16.8k, 생성 약 158).
 
-## 4. 왜 head는 정책 레버가 못 되나
+## 3. 왜 head는 정책 레버가 못 되나
 
 **도구 선택은 이미 거의 최선이다 (9B, train48 317상태)**
 
@@ -165,7 +150,7 @@ head가 바꿀 수 있는 것은 "다음 도구"뿐이다. 정확도를 가르�
 
 오프라인 소표본이고, 상위 5개는 사후에 고른 값이다. 새 문항에서는 확인하지 않았다.
 
-## 5. 결론과 다음 방향
+## 4. 결론과 다음 방향
 
 1. **head의 역할:** 도구 선택기로 쓴다. 정확도·토큰 정책으로 쓰는 것은 중단한다.
 2. **토큰 판정 기준:** 공통 정답 문항의 토큰으로 판정한다. 오답 경로 단축은 절감으로 세지 않는다.
@@ -181,8 +166,8 @@ head가 바꿀 수 있는 것은 "다음 도구"뿐이다. 정확도를 가르�
 
 | 내용 | 파일 |
 |---|---|
-| 9B GRPO, 토큰 벌점 비교 | `docs/JEV_FINAL_GRPO_RESULT_20261025.md`, `docs/JEV_GRPO_TOKEN100_RESULT_20261025.md`, `docs/JEV_FINAL_GRPO_REWARD_SMOKE_RESULT_20261025.md` |
-| 4B GRPO96 | `docs/JEV_DECISION_GRPO96_REPORT_20261023.md`, `lab/registry/decision_grpo96_20261023/manifest.json` |
-| 4B 공유 코퍼스, H3 비교 | `lab/registry/decision_shared_grpo192_20261023/manifest.json`, `lab/reports/decision_h3_role_audit_20261024/correctness_cost.json` |
+| 9B GRPO (대표) | `docs/JEV_FINAL_GRPO_RESULT_20261025.md`, `lab/registry/qwen35_final_grpo48_20261025/` |
+| 4B GRPO (대표) | `lab/reports/decision_shared_validation64_20261023/report.md`, `lab/registry/decision_shared_grpo192_20261023/manifest.json`, `docs/JEV_DECISION_SHARED_FINAL_REPORT_20261024.md` |
+| 참고: 9B 벌점 비교, 4B H3 비교 | `docs/JEV_GRPO_TOKEN100_RESULT_20261025.md`, `lab/reports/decision_h3_role_audit_20261024/correctness_cost.json` |
 | 분기, 천장, ④ | `docs/JEV_POC_DECISION_AXIS_REPORT_20261025.md` |
-| head 구조와 학습 코드 | `src/lsdrag/decision_state_learning.py`, `src/lsdrag/decision_policy.py`, `scripts/fit_qwen35_bootstrap.py`, `scripts/fit_qwen35_two_promising.py`, `scripts/run_qwen35_grpo_token100.py`, `scripts/run_decision_grpo96.py`, `scripts/run_decision_shared_grpo.py` |
+| head 구조와 학습 코드 | `src/lsdrag/decision_state_learning.py`, `src/lsdrag/decision_policy.py`, `scripts/fit_qwen35_bootstrap.py`, `scripts/fit_qwen35_two_promising.py`, `scripts/run_qwen35_final_grpo48.py`, `scripts/run_decision_shared_grpo.py` |
