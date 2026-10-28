@@ -18,7 +18,7 @@ def read(p):return json.loads(p.read_text())
 def main():
  ap=argparse.ArgumentParser();ap.add_argument('--prepare',action='store_true');ap.add_argument('--manifest',default=str(REG/'manifest.json'));a=ap.parse_args()
  if a.prepare:raise RuntimeError('Use frozen PPO96 manifest; legacy prepare is disabled')
- m=read(Path(a.manifest));assert all(sha(REPO/p)==h for p,h in m['source_sha256'].items());assert all(sha(Path(p))==h for p,h in m['input_sha256'].items())
+ m=read(Path(a.manifest));OUT=ROOT/'results'/m.get('run_name','decision_shared_grpo192_20261023');assert all(sha(REPO/p)==h for p,h in m['source_sha256'].items());assert all(sha(Path(p))==h for p,h in m['input_sha256'].items())
  import fcntl
  lock=(ROOT/'decision_policy.lock').open('a');fcntl.flock(lock,fcntl.LOCK_EX|fcntl.LOCK_NB);OUT.mkdir(parents=True,exist_ok=False);save(OUT/'manifest.json',m)
  torch.set_num_threads(2);torch.manual_seed(m['seed']);start=time.perf_counter();embed=None;counts={'episodes':0,'generated':0,'inputs':0}
@@ -67,7 +67,7 @@ def main():
      for idx in torch.randperm(len(batch),device='cuda').split(32):
       opts[name].zero_grad();logits,v,_,_=h(x[idx],legal[idx]);dist=distribution(logits,legal[idx]);prob=dist.probs;kl=(prob*(prob.clamp_min(1e-9).log()-ap[idx].clamp_min(1e-9).log())).sum(-1)
       ratio=(dist.log_prob(act[idx])-old[idx]).exp();actor=-torch.minimum(ratio*adv[idx],ratio.clamp(.8,1.2)*adv[idx])
-      loss=(roww[idx]*(actor+.02*kl-.01*dist.entropy())).mean();loss.backward();torch.nn.utils.clip_grad_norm_([p for p in h.parameters() if p.requires_grad],1.);opts[name].step();losses.append(float(loss.detach()))
+      loss=(roww[idx]*(actor+m.get('kl_coef',.02)*kl-.01*dist.entropy())).mean();loss.backward();torch.nn.utils.clip_grad_norm_([p for p in h.parameters() if p.requires_grad],1.);opts[name].step();losses.append(float(loss.detach()))
     with torch.no_grad():
      probs=distribution(h(x,legal)[0],legal).probs;changed=(probs.argmax(-1)!=ap.argmax(-1)).float().mean();ratio=(probs.gather(1,act[:,None]).squeeze().log()-old).exp()
     diagnostic[name]={'loss':float(np.mean(losses)),'changed_vs_anchor':float(changed),'ratio_clip_fraction':float(((ratio-1).abs()>.2).float().mean())}
