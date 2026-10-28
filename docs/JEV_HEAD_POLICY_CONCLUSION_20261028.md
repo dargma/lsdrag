@@ -52,13 +52,7 @@ $$\mathcal{L}_{BC} = \sum_s w_s\big[\,0.95\,(-\log \pi_\theta(a^t_s|s)) + 0.05\,
 - wₛ는 문항별로 합이 같도록 맞춘 가중치다.
 - 설정: AdamW 3e-4, 100 step.
 
-**② 결과 기반 보정(value_aux):** 각 상태에서 목표 행동 a*를 정한다. 조건은 정답성(EM, F1)이 현재 행동 이상이고, F1이 더 높거나 토큰이 더 적은 것이다.
-
-$$\mathcal{L} = \tfrac12\sum_{s\in C} w_s\,\mathrm{CE}\big(\tfrac12\pi_0+\tfrac12\,\mathbf{1}_{a^*_s},\ \pi_\theta\big) + \tfrac12\sum_{s\in R} w_s\,\mathrm{CE}\big(\pi_0,\ \pi_\theta\big) + 0.1\,\mathcal{L}_{aux}$$
-
-- C는 보정 대상 상태, R은 유지 상태, π₀는 ① 결과다. 목표를 기존 분포와 a*의 반반으로 둬서 급격한 변화를 막는다.
-- 𝓛_aux는 MLP 중간 표현에서 행동별 F1과 log 토큰을 예측하는 보조 손실이다(추론 때 미사용).
-- 설정: AdamW 1e-4, 100 epoch.
+그 뒤 ② train48 분기 결과로 한 번 보정한 head(value_aux)를 GRPO 시작점으로 쓴다(보정 목적식은 `scripts/fit_qwen35_two_promising.py`).
 
 **③ GRPO:** 문항마다 4개 궤적을 샘플링하고, 궤적 보상으로 그룹 상대 어드밴티지를 만들어 궤적의 모든 결정에 준다.
 
