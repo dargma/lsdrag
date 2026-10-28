@@ -12,12 +12,10 @@ from lsdrag.text_decision_benchmark import public_paragraphs
 from lsdrag.decision_policy_recovery import RecoveryPolicyReader
 from lsdrag.decision_grpo import group_advantages
 from lsdrag.v11_embedding_worker import V11ProcessEmbedder
-from run_decision_policy_pilot import ROOT,REPO,PARENT,ORIGIN,sha,save
-OLD=ROOT/'results/decision_policy_20261023_pilot2';REG=REPO/'lab/registry/decision_shared_grpo192_20261023';OUT=ROOT/'results/decision_shared_grpo192_20261023'
+from common import ROOT,REPO,sha,save
 def read(p):return json.loads(p.read_text())
 def main():
- ap=argparse.ArgumentParser();ap.add_argument('--prepare',action='store_true');ap.add_argument('--manifest',default=str(REG/'manifest.json'));a=ap.parse_args()
- if a.prepare:raise RuntimeError('Use frozen PPO96 manifest; legacy prepare is disabled')
+ ap=argparse.ArgumentParser();ap.add_argument('--manifest',required=True);a=ap.parse_args()
  m=read(Path(a.manifest));OUT=ROOT/'results'/m.get('run_name','decision_shared_grpo192_20261023');assert all(sha(REPO/p)==h for p,h in m['source_sha256'].items());assert all(sha(Path(p))==h for p,h in m['input_sha256'].items())
  import fcntl
  lock=(ROOT/'decision_policy.lock').open('a');fcntl.flock(lock,fcntl.LOCK_EX|fcntl.LOCK_NB);OUT.mkdir(parents=True,exist_ok=False);save(OUT/'manifest.json',m)

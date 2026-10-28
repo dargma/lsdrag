@@ -53,9 +53,6 @@ def main():
         evaluation_note='Public evaluation document text is searchable, as in open-corpus retrieval. Evaluation questions/answers/support labels are not passed to the corpus builder output or training targets. This is a dataset-derived shared corpus, not full Wikipedia.',
         embeddings_complete=False)
     (OUT/'manifest.json').write_text(json.dumps(manifest, indent=2)+'\n')
-    reg = REPO / 'lab/registry/decision_shared_corpus_20261023'
-    reg.mkdir(parents=True, exist_ok=True)
-    (reg/'corpus_manifest.json').write_text(json.dumps(manifest, indent=2)+'\n')
     print(json.dumps(manifest, indent=2))
 
 if __name__ == '__main__':

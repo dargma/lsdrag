@@ -5,7 +5,7 @@ import torch
 from torch.nn import functional as F
 from lsdrag.decision_policy import PolicyHead
 from lsdrag.decision_policy_followup import state_weights
-from run_decision_policy_pilot import ROOT, save, sha
+from common import ROOT, save, sha
 
 def main():
     run = ROOT/'results/decision_shared_teacher192_20261023'

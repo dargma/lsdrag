@@ -14,9 +14,9 @@ from lsdrag.decision_policy import PolicyHead, rollout, distribution, returns_fo
 from lsdrag.decision_grpo import group_advantages
 from lsdrag.lora4b import SamplingReader, attach_lora, lora_state, segment_logps
 from lsdrag.v11_embedding_worker import V11ProcessEmbedder
-from run_decision_policy_pilot import ROOT, REPO, sha, save
+from common import ROOT, REPO, CONFIG, SPLIT, sha, save
 
-SOURCES = ['scripts/run_lora_head_grpo.py', 'src/lsdrag/lora4b.py', 'src/lsdrag/decision_policy.py',
+SOURCES = ['scripts/run_lora_head_grpo.py', 'scripts/common.py', 'src/lsdrag/lora4b.py', 'src/lsdrag/decision_policy.py',
            'src/lsdrag/decision_policy_recovery.py', 'src/lsdrag/decision_grpo.py', 'prompts/text_rag_integrated_v5.txt']
 
 def read(p):
@@ -36,8 +36,8 @@ def main():
     ap.add_argument('--lora-batch', type=int, default=16, help='trajectories per LoRA optimizer step')
     ap.add_argument('--max-seconds', type=int, default=10800)
     a = ap.parse_args()
-    base = read(REPO/'lab/registry/decision_shared_grpo192_20261023/manifest.json')
-    train = base['train'][:a.questions]
+    base = dict(seed=CONFIG['grpo']['seed'], model=CONFIG['model'], corpus=CONFIG['corpus'], reference=CONFIG['bc_head'])
+    train = SPLIT['train'][:a.questions]
     out = ROOT/'results'/a.name; out.mkdir(parents=True, exist_ok=False)
     m = dict(vars(a), train=train, seed=base['seed'], model=base['model'], corpus=base['corpus'], reference=base['reference'],
              reference_sha256=sha(Path(base['reference'])), source_sha256={p: sha(REPO/p) for p in SOURCES},

@@ -66,7 +66,6 @@ def main():
         path.rename(OUT/'vectors.npy')
         manifest.update(embeddings_complete=True, embedding_model=MODELS['gemma'], vectors_sha256=sha(OUT/'vectors.npy'))
         save(OUT/'manifest.json', manifest)
-        save(REPO/'lab/registry/decision_shared_corpus_20261023/corpus_manifest.json', manifest)
         status('complete', completed=len(rows), documents=len(rows))
     except BaseException as exc:
         status('failed', error=repr(exc))

@@ -1,0 +1,35 @@
+{
+ "native_fast": {
+  "f1": 0.24702380952380953,
+  "generated_tokens": 97.4375,
+  "prompt_tokens": 4691.03125,
+  "tool_calls": 2.375,
+  "cost_units": 3.8184781250000004,
+  "retrieved_support_recall": 0.546875,
+  "all_support_retrieved": 0.234375,
+  "read_support_recall": 0.21875,
+  "errors": 0
+ },
+ "shared_bc": {
+  "f1": 0.22500676406926406,
+  "generated_tokens": 101.59375,
+  "prompt_tokens": 4748.84375,
+  "tool_calls": 2.390625,
+  "cost_units": 3.881446875,
+  "retrieved_support_recall": 0.5078125,
+  "all_support_retrieved": 0.171875,
+  "read_support_recall": 0.234375,
+  "errors": 0
+ },
+ "shared_grpo": {
+  "f1": 0.22500676406926406,
+  "generated_tokens": 98.40625,
+  "prompt_tokens": 4625.3125,
+  "tool_calls": 2.328125,
+  "cost_units": 3.77471875,
+  "retrieved_support_recall": 0.515625,
+  "all_support_retrieved": 0.171875,
+  "read_support_recall": 0.21875,
+  "errors": 0
+ }
+}

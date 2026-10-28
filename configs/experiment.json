@@ -1,0 +1,26 @@
+{
+ "model": "/content/local_fast/lsdrag-text-v1/hf/models--Qwen--Qwen3-4B-Instruct-2507/snapshots/cdbee75f17c01a7cc42f958dc650907174af0554",
+ "corpus": "/content/local_fast/lsdrag-text-v1/corpora/musique_shared_20261023",
+ "bc_head": "/content/local_fast/lsdrag-text-v1/results/decision_shared_initialization_20261023/head.pt",
+ "teacher": {
+  "max_seconds": 3600,
+  "max_generated": 900000,
+  "max_inputs": 45000000
+ },
+ "grpo": {
+  "seed": 20261052,
+  "iterations": 2,
+  "repeats": 4,
+  "budget_episodes": 1536,
+  "lr": 0.0001,
+  "max_seconds": 3600,
+  "max_generated": 1800000,
+  "max_inputs": 100000000,
+  "kl_coef": 0.02
+ },
+ "eval": {
+  "max_seconds": 1800,
+  "max_generated": 1800000,
+  "max_inputs": 60000000
+ }
+}

@@ -10,8 +10,7 @@ import time
 from types import SimpleNamespace
 import numpy as np
 import torch
-from run_decision_policy_pilot import ROOT, REPO, save, sha
-from fit_decision_state_heads import load_head
+from common import ROOT, REPO, save, sha, load_head
 from lsdrag.decision_policy import rollout
 from lsdrag.decision_policy_recovery import RecoveryPolicyReader
 from lsdrag.decision_rule import SemanticOnceHead

@@ -10,8 +10,7 @@ import time
 from types import SimpleNamespace
 import numpy as np
 import torch
-from run_decision_policy_pilot import ROOT, REPO, save, sha
-from fit_decision_state_heads import load_head
+from common import ROOT, REPO, SPLIT, save, sha, load_head
 from lsdrag.decision_policy import rollout
 from lsdrag.decision_policy_recovery import RecoveryPolicyReader
 from lsdrag.decision_rule import SemanticOnceHead
@@ -31,9 +30,8 @@ def main():
     args = parser.parse_args()
     spec = read(Path(args.spec))
     assert spec['split'] == 'train' and set(spec['policies']) == {'native_teacher'}
-    frozen = read(ROOT/'results/decision_state_policy_iteration_20261023/manifest.json')
-    assert spec['qids'] == frozen['train']
-    assert not set(spec['qids']) & set(frozen['validation']+frozen['test'])
+    assert spec['qids'] == SPLIT['train']
+    assert not set(spec['qids']) & set(SPLIT['validation']+SPLIT['test'])
     pool = Path(spec['corpus'])
     manifest = read(pool/'manifest.json')
     assert manifest['embeddings_complete']
