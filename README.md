@@ -10,7 +10,7 @@ RAG 에이전트(Qwen3-4B-Instruct-2507)에서 매 단계 쓸 도구를 LLM 대�
 | BC head | 22.50 | 101.6 | 4,749 | 2.39 |
 | GRPO head (KL 0.02, 1,536궤적) | 22.50 | 98.4 | 4,625 | 2.33 |
 | GRPO head, KL 0 (1,536궤적) | 25.97 | 99.1 | 4,585 | 2.31 |
-| GRPO head + LLM LoRA, KL 0 (1,536궤적) | TBD | TBD | TBD | TBD |
+| GRPO head + LLM LoRA, KL 0 (2회차 업데이트 중 중단, 미평가) | — | — | — | — |
 
 ## 방법
 
