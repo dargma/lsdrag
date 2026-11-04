@@ -41,6 +41,8 @@ def main():
     ap.add_argument('--repeats', type=int, default=8)
     ap.add_argument('--lam', type=float, default=1.)
     ap.add_argument('--gamma', type=float, default=.8, help='discount reward: F1*gamma**tool_calls')
+    ap.add_argument('--token-gamma', type=float, default=1., help='discount reward also multiplies token_gamma**generated_tokens')
+    ap.add_argument('--answer-max-chars', type=int, default=0, help='grammar cap on FINAL answer length (0 = none)')
     ap.add_argument('--proc-alpha', type=float, default=.5); ap.add_argument('--proc-cost', type=float, default=.05)
     ap.add_argument('--reward', choices=['discount', 'latency', 'calls', 'process'], default='discount',
                     help='latency: F1*max(0,1+lam*(1-L/L_ref)), L=.026*gen+.218*input_k seconds proxy; calls: F1*(1+lam*(1-calls/8))')
@@ -87,6 +89,7 @@ def main():
         return max(compute_f1(g, ans) for g in golds), max(compute_exact(g, ans) for g in golds)
     try:
         reader = SampledReader(m['model'], SimpleNamespace(max_output_tokens=512, context_limit=16384)); model = reader.model
+        reader.answer_max_chars = a.answer_max_chars or None
         assert not a.freeze_llm or a.arm == 'head', '--freeze-llm needs the head arm'
         assert a.reward != 'process' or a.freeze_llm, 'process reward is implemented for the head-only arm'
         gold = {}
@@ -150,7 +153,7 @@ def main():
                         sr = evidence_step_rewards(ep, gold[qid], a.proc_alpha, a.proc_cost); rtg = np.cumsum(sr[::-1])[::-1]
                         ep['step_rewards'] = sr; ep['reward'] = float(rtg[0])
                     elif a.reward == 'discount':   # correct answers only; each tool call keeps gamma of the credit, so correct > wrong always
-                        ep['reward'] = ep['f1']*a.gamma**ep['tool_calls']
+                        ep['reward'] = ep['f1']*a.gamma**ep['tool_calls']*a.token_gamma**ep['generated_tokens']
                     else:
                         short = 1-ep['latency_proxy']/a.latency_ref if a.reward == 'latency' else 1-ep['tool_calls']/8
                         cites = ep['answer'] == '' or bool(ep['support_ids'])   # no speed bonus for dropping the citation

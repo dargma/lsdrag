@@ -28,6 +28,7 @@ def prefixes_for(action):
 class SampledReader(RecoveryPolicyReader):
     temperature = 0.
     decision_temperature = None   # native tool-name branches; None = same as temperature
+    answer_max_chars = None       # grammar cap on the FINAL answer string (token constraint)
 
     def _choose(self, logits, allowed=None, temperature=None):
         """Return (token, log-prob at T (1 if greedy), entropy) over allowed ids (or full vocab)."""
@@ -47,6 +48,8 @@ class SampledReader(RecoveryPolicyReader):
     def _payload(self, state, action, trajectory, argprefix, segment, deadline, budget):
         from lmformatenforcer import JsonSchemaParser, TokenEnforcer
         schema = FINAL_SCHEMA if action == 'FINAL' else argument_schema(action, trajectory)
+        if action == 'FINAL' and self.answer_max_chars:
+            schema = json.loads(json.dumps(schema)); schema['properties']['answer']['maxLength'] = self.answer_max_chars
         initial = advance_json_parser(JsonSchemaParser(schema, self.json_config), argprefix); parser = initial
         sequence = segment['context_ids']+segment['tokens']; generated = []; decoded = ''; complete = False; error = None
         for _ in range(budget):
