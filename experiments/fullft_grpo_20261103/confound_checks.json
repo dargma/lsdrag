@@ -1,0 +1,45 @@
+{
+ "A_decision_movement": {
+  "native_LLM_base_to_A1_i4 (T=1)": {
+   "states": 400,
+   "argmax_changed": 0.24,
+   "mean_abs_dp": 0.2161090612148465,
+   "mean_P_FINAL_before": 0.24833746792807893,
+   "mean_P_FINAL_after": 0.18141489999036373,
+   "entropy_before": 0.15692025322130235,
+   "entropy_after": 0.20153042487308304
+  },
+  "head_KL0_to_C1_i4": {
+   "states": 400,
+   "argmax_changed": 0.15,
+   "mean_abs_dp": 0.12589524686336517,
+   "mean_P_FINAL_before": 0.2658699154853821,
+   "mean_P_FINAL_after": 0.2510764002799988,
+   "entropy_before": 0.5295803546905518,
+   "entropy_after": 0.48497703671455383
+  },
+  "note": "native decision gradients were scaled by 1/T_dec = 1/4 during A1 training"
+ },
+ "B_head_capacity_stop_rule": {
+  "states": 4000,
+  "positives": 1002,
+  "test_states": 773,
+  "results": {
+   "KL0 head, untrained": {
+    "test_AUC": 0.8493160951845606,
+    "train_AUC": 0.7397410605439803,
+    "test_balanced_acc@0.5": 0.7877599775154581
+   },
+   "last layer only (action+skip, 10.8k)": {
+    "test_AUC": 0.8673880457185685,
+    "train_AUC": 0.9999747080039051,
+    "test_balanced_acc@0.5": 0.7666198238710886
+   },
+   "full head incl. trunk (340k)": {
+    "test_AUC": 0.8728030728873899,
+    "train_AUC": 1.0,
+    "test_balanced_acc@0.5": 0.7522344013490725
+   }
+  }
+ }
+}

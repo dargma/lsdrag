@@ -291,3 +291,26 @@ B1(head + LLM)은 20:14Z에 자동 시작함.
 - **B1 반전**: iteration 2에서는 호출 −6.0%였지만 iteration 4에서 +6.5%로 바뀜. 생성 토큰은 102.6 → 142.8. 빈 답이 4%까지 줄어 거의 항상 답을 냄
 - **백업**: Drive `lsdrag-backups/20261104/`에 run 결과 11개 아카이브와 A1·B1 iteration 4 LLM 가중치(각 8GB)를 SHA256SUMS와 함께 저장함
 - **git**: jev_v2.1 `bae6229`
+
+## 17. 교란 요인 확인 (2026-11-04, `scripts/check_confounds.py`, `analysis/confound_checks.json`)
+
+**A. native 결정 temperature 4.0의 영향** (결정 gradient가 1/4로 줄어드는 문제)
+- 측정: dev192 학습 전 결정 상태 400개에서, 같은 상태의 학습 전후 결정 분포를 비교함
+- native LLM(base → A1, T=1): argmax 변경 24%, 평균 |Δp| 0.216, P(FINAL) 0.248 → 0.181
+- head(KL0 → C1): argmax 변경 15%, 평균 |Δp| 0.126, P(FINAL) 0.266 → 0.251
+- **결론**: native 결정은 head보다 더 많이 학습됨. temperature 보정 때문에 결정 학습이 막힌 것은 아님. 바뀐 방향이 FINAL 감소(더 찾기)라서 호출 수가 줄지 않았음
+
+**B. head 용량** (trunk 고정 문제)
+- 측정: C1 train 결정 상태 4,000개(양성 1,002), 문항 단위 test 773개
+- 과제: 멈춤 규칙 "근거를 모두 확보했으면 FINAL"을 학습시켜 test AUC를 비교함
+
+| head | test AUC |
+|---|---:|
+| 학습 없는 KL0 head | 0.849 |
+| 마지막 층만 학습 | 0.867 |
+| trunk까지 전체 학습 | 0.873 |
+
+- **결론**: 고정 trunk 특징만으로도 멈춤 규칙을 거의 같은 수준으로 표현함. trunk 고정은 주원인이 아님
+- **병목**: 학습 신호임. 궤적 단위 보상이고, 결정의 51%는 신호가 0임
+
+→ C1-full과 B1-full을 실행하지 않은 결정("그냥 지금대로")은 이 결과로 보아 결론에 큰 영향이 없음

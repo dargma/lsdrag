@@ -20,7 +20,8 @@ RAG 에이전트(Qwen3-4B-Instruct-2507)를 GRPO로 학습함(보상: 정답일 
 
 **Q1. select head가 효율적 도구 호출 정책이 될 수 있나** → 이번 설정에서는 아님
 - head만 학습(C1·C2): 정확도는 소폭 상승(+1.5~+2.2), 도구 호출은 변화 없음(−2.2 ~ +1.5%)
-- lr 4배(C2)도 동일. 한계: GRPO에서 학습한 것은 head 마지막 층 1.08만 파라미터(trunk 고정)
+- lr 4배(C2)도 동일
+- 용량 확인(아래 표 B): 고정 trunk 특징으로도 "근거를 다 보면 멈춤" 규칙 표현 가능. 마지막 층만 학습 AUC 0.867, trunk까지 학습 0.873. 병목은 표현 용량이 아니라 학습 신호
 
 **Q2. LLM과 head가 함께 있을 때 누가 얼마나 기여하나** → 정확도는 LLM, 호출 효율은 둘 다 기여 없음
 - 정확도: LLM만(A1) +5.10 > head만(C1) +2.18. LLM 학습의 주효과는 빈 답 감소(포기 대신 답함)
@@ -29,7 +30,24 @@ RAG 에이전트(Qwen3-4B-Instruct-2507)를 GRPO로 학습함(보상: 정답일 
 **Q3. LLM + head가 LLM만보다 나은가, head가 돕는 이유는** → 나은 근거 없음
 - B1은 A1보다 정확도 향상이 작고(+2.77 vs +5.10) 도구 호출·생성 토큰이 늘어남(호출 +6.5%, 생성 토큰 102.6 → 142.8)
 - iteration 2의 B1은 호출 −6.0%(유의), F1 +2.89였으나 iteration 4에서 반전
-- 원인 후보: head 마지막 층만 학습, native 결정 temperature 4.0 보정(결정 gradient 1/4), B1 시작점이 이미 학습된 head
+- native 결정 temperature 4.0 보정(결정 gradient 1/4)의 영향 확인(아래 표 A): native LLM의 결정은 head보다 더 많이 바뀜(argmax 변경 24% vs 15%). 결정 학습이 막힌 것은 아님. 다만 바뀐 방향이 P(FINAL) 감소(0.25 → 0.18)라서 호출이 줄지 않음
+
+**교란 요인 확인** (`scripts/check_confounds.py`, 추가 학습 없이 저장된 모델과 rollout으로 측정)
+
+A. 결정 정책 변화량 (dev192 학습 전 결정 상태 400개, 같은 상태에서 학습 전 → 후)
+
+| 결정 주체 | argmax 변경 | 평균 \|Δp\| | P(FINAL) | 엔트로피 |
+|---|---:|---:|---|---|
+| native LLM (base → A1, T=1) | 24% | 0.216 | 0.248 → 0.181 | 0.157 → 0.202 |
+| head (KL0 → C1) | 15% | 0.126 | 0.266 → 0.251 | 0.530 → 0.485 |
+
+B. head 용량: 멈춤 규칙(근거 모두 확보 시 FINAL) 적합 (C1 train 결정 상태 4,000개, 문항 단위 80/20 분할, test AUC)
+
+| head | 학습 파라미터 | test AUC | train AUC |
+|---|---:|---:|---:|
+| KL0 head, 학습 없음 | 0 | 0.849 | 0.740 |
+| 마지막 층만 (action + skip) | 1.08만 | 0.867 | 1.000 |
+| 전체 (trunk 포함) | 34만 | 0.873 | 1.000 |
 
 상세(학습 추이, hop별, 토큰 구성, 정확도 변화 출처, iteration 2 비교): `experiments/fullft_grpo_20261103/fullft_report.md`, `fullft_report_i2_all.md`
 
@@ -151,5 +169,6 @@ python scripts/report_fullft.py --out $ROOT/analysis/fullft_report.md   # 표 1~
 | `scripts/calibrate_native_decision_temperature.py` | native 결정 T 보정(엔트로피 일치) |
 | `scripts/compare_fullft_smoke.py` | smoke 비교표 |
 | `scripts/validate_process_reward.py` | 단계 보상 오프라인 검증(실험 C3은 폐기) |
+| `scripts/check_confounds.py` | 교란 요인 확인(결정 정책 변화량, head 용량) |
 | `experiments/fullft_grpo_20261103/` | 설계 문서, 실행 스크립트, 중간·최종 보고서, 진단 결과 |
 | `configs/`, `scripts/` 나머지, `tests/` | 이전 head 재현(`jev_v2.0` README), `PYTHONPATH=src:scripts python -m pytest -q tests` |
