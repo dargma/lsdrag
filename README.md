@@ -29,7 +29,6 @@ RAG 에이전트(Qwen3-4B-Instruct-2507)를 GRPO로 학습함(보상: 정답일 
 
 **Q3. LLM + head가 LLM만보다 나은가, head가 돕는 이유는** → 나은 근거 없음
 - B1은 A1보다 정확도 향상이 작고(+2.77 vs +5.10) 도구 호출·생성 토큰이 늘어남(호출 +6.5%, 생성 토큰 102.6 → 142.8)
-- iteration 2의 B1은 호출 −6.0%(유의), F1 +2.89였으나 iteration 4에서 반전
 - native 결정 temperature 4.0 보정(결정 gradient 1/4)의 영향 확인(아래 표 A): native LLM의 결정은 head보다 더 많이 바뀜(argmax 변경 24% vs 15%). 결정 학습이 막힌 것은 아님. 다만 바뀐 방향이 P(FINAL) 감소(0.25 → 0.18)라서 호출이 줄지 않음
 
 **교란 요인 확인** (`scripts/check_confounds.py`, 추가 학습 없이 저장된 모델과 rollout으로 측정)
@@ -49,7 +48,7 @@ B. head 용량: 멈춤 규칙(근거 모두 확보 시 FINAL) 적합 (C1 train �
 | 마지막 층만 (action + skip) | 1.08만 | 0.867 | 1.000 |
 | 전체 (trunk 포함) | 34만 | 0.873 | 1.000 |
 
-상세(학습 추이, hop별, 토큰 구성, 정확도 변화 출처, iteration 2 비교): `experiments/fullft_grpo_20261103/fullft_report.md`, `fullft_report_i2_all.md`
+상세(학습 추이, hop별, 토큰 구성, 정확도 변화 출처): `experiments/fullft_grpo_20261103/fullft_report.md`
 
 ## 방법
 
