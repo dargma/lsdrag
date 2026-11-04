@@ -36,7 +36,18 @@ RAG 에이전트(Qwen3-4B-Instruct-2507)를 GRPO로 학습해, 정확도는 유�
 **head** (`src/lsdrag/decision_policy.py`의 `PolicyHead`, 33.97만 파라미터, LLM 대비 0.008%)
 - trunk Linear(2560→128)+Tanh → action Linear(128→4), skip Linear(2560→4)를 더함
 - 시작점: `jev_v2.0`의 GRPO head, KL 0 (2hop 학습)
-- GRPO에서는 action·skip 층(1.08만)만 학습, trunk 고정
+- GRPO 학습 범위는 아래 표 참고
+
+**학습 대상과 고정 부분**
+
+| 조건 | LLM 4.02B (36층, 임베딩·lm_head 포함) | head trunk Linear(2560→128) 32.78만 | head action Linear(128→4) + skip Linear(2560→4) 1.08만 | head value·success·cost 0.12만 |
+|---|---|---|---|---|
+| A1 native | **학습** (전체) | 없음 | 없음 | 없음 |
+| B1 head + LLM | **학습** (전체) | 고정 (BC 값) | **학습** | 미사용 |
+| C1·C2 head만 | 고정 | 고정 (BC 값) | **학습** | 미사용 |
+
+- LLM 학습: 모든 파라미터 업데이트. loss는 LLM이 샘플링한 토큰(native는 도구 이름 분기 토큰 포함)에만 걸리고, 문법이 강제한 토큰(`<tool_call>` 구문, `{"answer":` 등)은 loss에서 제외
+- head trunk는 `jev_v2.0`의 BC 단계에서 학습된 값을 그대로 씀
 
 **보상과 어드밴티지**
 
