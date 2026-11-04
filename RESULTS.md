@@ -44,16 +44,22 @@ head 시작점은 BC로 학습한 뒤 GRPO(KL 0, 2hop)로 다듬은 head. A1은 
 
 **보상과 어드밴티지** (문항 q의 궤적 i = 1..8)
 
-$$R_i = \mathrm{F1}_i \cdot 0.8^{\,n_i}, \qquad A_i = R_i - \frac{1}{8}\sum_{j=1}^{8} R_j$$
+$$R_i = \mathrm{F1}_i \cdot 0.8^{n_i}$$
+
+$$A_i = R_i - \frac{1}{8}\sum_{j=1}^{8} R_j$$
 
 - n은 도구 호출 수. 맞혔을 때만 호출이 적을수록 이득이고, 오답·빈 답은 0
 - std로 나누지 않음. 토큰 길이 항 없음
 
 **loss** (PPO-clip, 반복마다 A≠0 궤적을 1 pass, 미니배치 16궤적)
 
-$$\mathcal{L} = \frac{1}{16}\sum_{i\in B}\Big[\sum_{t\in D_i}\ell(\rho_{i,t},A_i) + \sum_{k\in F_i}\ell(\rho_{i,k},A_i) + \beta\sum_{u\in D_i\cup F_i}\mathrm{KL}_{k3}(u)\Big]$$
+$$\mathcal{L} = \frac{1}{16}\sum_{i\in B}\Big[\sum_{t\in D_i}\ell(\rho_{i,t}; A_i) + \sum_{k\in F_i}\ell(\rho_{i,k}; A_i) + \beta\sum_{u\in D_i\cup F_i}\mathrm{KL}_{k3}(u)\Big]$$
 
-$$\ell(\rho,A) = -\min\big(\rho A,\ \mathrm{clip}(\rho,0.8,1.2)\cdot A\big),\qquad \rho = \frac{\pi_\theta}{\pi_{\text{old}}},\qquad \mathrm{KL}_{k3} = e^{\Delta}-\Delta-1,\ \ \Delta = \log\pi_{\text{ref}}-\log\pi_\theta$$
+$$\ell(\rho,A) = -\min\big(\rho \cdot A\ ;\ \mathrm{clip}(\rho;\ 0.8;\ 1.2) \cdot A\big)$$
+
+$$\rho = \frac{\pi_\theta}{\pi_{\text{old}}}$$
+
+$$\mathrm{KL}_{k3} = e^{\Delta} - \Delta - 1 \quad \text{where} \quad \Delta = \log\pi_{\text{ref}} - \log\pi_\theta$$
 
 - D_i (결정)
   - native: 도구 이름 분기 토큰 logprob의 합을 항 하나로 침. temperature 4.0으로 샘플링해 head와 엔트로피(약 0.46)를 맞춤

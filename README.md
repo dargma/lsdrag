@@ -79,14 +79,18 @@ B. head 용량: 멈춤 규칙(근거 모두 확보 시 FINAL) 적합 (C1 train �
 
 **보상과 어드밴티지**
 
-$$R_i = \mathrm{F1}_i \cdot 0.8^{\,n_i},\qquad A_i = R_i - \overline{R}_{\text{group}}$$
+$$R_i = \mathrm{F1}_i \cdot 0.8^{n_i}$$
+
+$$A_i = R_i - \overline{R}_{\text{group}}$$
 
 - n: 도구 호출 수. 맞혔을 때만 호출이 적을수록 이득, 오답은 0
 - 같은 문항 8궤적 평균을 뺌(std 나눗셈 없음)
 
 **loss** (두 arm 공통, 반복마다 A≠0 궤적 1 pass, 미니배치 16궤적)
 
-$$\mathcal{L} = \frac{1}{16}\sum_{i}\Big[\sum_{t\in\text{결정}} \ell(\rho_{i,t},A_i) + \sum_{k\in\text{free 토큰}} \ell(\rho_{i,k},A_i) + 0.02\cdot \mathrm{KL}_{k3}(\pi_{\text{ref}}\,\|\,\pi_\theta)\Big],\quad \ell(\rho,A) = -\min\big(\rho A,\ \mathrm{clip}(\rho,0.8,1.2) \cdot A\big)$$
+$$\mathcal{L} = \frac{1}{16}\sum_{i}\Big[\sum_{t\in\text{결정}} \ell(\rho_{i,t}; A_i) + \sum_{k\in\text{free 토큰}} \ell(\rho_{i,k}; A_i) + 0.02 \cdot \mathrm{KL}_{k3}(\pi_{\text{ref}} \| \pi_\theta)\Big]$$
+
+$$\ell(\rho; A) = -\min\big(\rho \cdot A\ ;\ \mathrm{clip}(\rho;\ 0.8;\ 1.2) \cdot A\big)$$
 
 - 결정: native는 도구 이름 분기 토큰 logprob 합, head는 head logprob
 - free 토큰: LLM이 샘플링한 인자·답 토큰. 문법이 강제한 토큰은 제외
