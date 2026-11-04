@@ -1,0 +1,82 @@
+{
+ "steps": 28,
+ "action_executed": 28,
+ "prefix_is_syntax": 28,
+ "token_prefix_consistent": 0,
+ "head_argmax_same": 20,
+ "max_abs_prob_diff": 0.16687563061714172,
+ "max_rel_pack_diff": 0.03614911064505577,
+ "full_prefill_s": 1.1176542220000556,
+ "incremental_s": 0.6031259579995094,
+ "examples": [
+  {
+   "qid": "2hop__426842_4037",
+   "step": 0,
+   "produced_tail": "top_k\": 5}\n",
+   "next_tail": "top_k\": 5}}\n</tool_call><|im_end|>\n<|im_start|>user\n<tool_response>\n["
+  },
+  {
+   "qid": "2hop__247148_838537",
+   "step": 0,
+   "produced_tail": "top_k\": 5}\n",
+   "next_tail": "top_k\": 5}}\n</tool_call><|im_end|>\n<|im_start|>user\n<tool_response>\n[]\n"
+  },
+  {
+   "qid": "2hop__247148_838537",
+   "step": 1,
+   "produced_tail": "top_k\": 5}\n",
+   "next_tail": "top_k\": 5}}\n</tool_call><|im_end|>\n<|im_start|>user\n<tool_response>\n["
+  }
+ ],
+ "episodes": [
+  {
+   "qid": "2hop__426842_4037",
+   "f1_answer": "",
+   "calls": 1,
+   "errors": []
+  },
+  {
+   "qid": "2hop__247148_838537",
+   "f1_answer": "the libretto",
+   "calls": 3,
+   "errors": []
+  },
+  {
+   "qid": "2hop__82744_23249",
+   "f1_answer": "",
+   "calls": 3,
+   "errors": []
+  },
+  {
+   "qid": "2hop__607351_58450",
+   "f1_answer": "Brody Rose",
+   "calls": 2,
+   "errors": []
+  },
+  {
+   "qid": "2hop__487591_7672",
+   "f1_answer": "1898",
+   "calls": 2,
+   "errors": []
+  },
+  {
+   "qid": "2hop__746150_556534",
+   "f1_answer": "Karachi",
+   "calls": 3,
+   "errors": []
+  },
+  {
+   "qid": "2hop__763486_83697",
+   "f1_answer": "1909",
+   "calls": 3,
+   "errors": []
+  },
+  {
+   "qid": "2hop__357497_74309",
+   "f1_answer": "",
+   "calls": 3,
+   "errors": []
+  }
+ ],
+ "pairs_compared": 20
+}

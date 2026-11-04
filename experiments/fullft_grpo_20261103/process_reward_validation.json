@@ -1,0 +1,123 @@
+{
+ "groups": 768,
+ "trajectories": 6144,
+ "decisions": 21595,
+ "1_need": {
+  "zero_signal_decisions_current": 0.5117851354480204,
+  "zero_signal_decisions_process": 0.10928455661032646,
+  "within_group_corr(coverage,F1)": 0.43953241901572887,
+  "groups_used_for_corr": 280
+ },
+ "2_direction": {
+  "2hop FINAL[after_full_cov]": {
+   "n": 536,
+   "adv_current": 0.0621,
+   "adv_process": 0.0708
+  },
+  "2hop FINAL[before_full_cov]": {
+   "n": 1512,
+   "adv_current": -0.022,
+   "adv_process": -0.0516
+  },
+  "2hop keyword_search": {
+   "n": 1953,
+   "adv_current": -0.0086,
+   "adv_process": -0.0041
+  },
+  "2hop read_chunk": {
+   "n": 892,
+   "adv_current": -0.0176,
+   "adv_process": -0.0397
+  },
+  "2hop semantic_search": {
+   "n": 2099,
+   "adv_current": 0.0122,
+   "adv_process": 0.0397
+  },
+  "3hop FINAL[after_full_cov]": {
+   "n": 127,
+   "adv_current": 0.066,
+   "adv_process": 0.0988
+  },
+  "3hop FINAL[before_full_cov]": {
+   "n": 1921,
+   "adv_current": -0.0044,
+   "adv_process": -0.0112
+  },
+  "3hop keyword_search": {
+   "n": 1593,
+   "adv_current": -0.0108,
+   "adv_process": -0.03
+  },
+  "3hop read_chunk": {
+   "n": 991,
+   "adv_current": -0.0053,
+   "adv_process": -0.0202
+  },
+  "3hop semantic_search": {
+   "n": 2622,
+   "adv_current": 0.0065,
+   "adv_process": 0.0293
+  },
+  "4hop FINAL[after_full_cov]": {
+   "n": 17,
+   "adv_current": -0.0156,
+   "adv_process": -0.0271
+  },
+  "4hop FINAL[before_full_cov]": {
+   "n": 2031,
+   "adv_current": 0.0001,
+   "adv_process": 0.0056
+  },
+  "4hop keyword_search": {
+   "n": 1636,
+   "adv_current": -0.0154,
+   "adv_process": -0.0273
+  },
+  "4hop read_chunk": {
+   "n": 1042,
+   "adv_current": -0.0028,
+   "adv_process": -0.0104
+  },
+  "4hop semantic_search": {
+   "n": 2623,
+   "adv_current": 0.003,
+   "adv_process": 0.017
+  }
+ },
+ "3_effect_clean_minus_wasteful_same_group": {
+  "2hop": {
+   "groups": 142,
+   "dF1": 0.041,
+   "dcalls": -1.34
+  },
+  "3hop": {
+   "groups": 171,
+   "dF1": 0.089,
+   "dcalls": -1.0
+  },
+  "4hop": {
+   "groups": 179,
+   "dF1": 0.034,
+   "dcalls": -1.16
+  }
+ },
+ "3_wasted_call_share": 0.4753737622160378,
+ "4_explore": {
+  "2hop calls>=4": {
+   "share": 0.072265625,
+   "F1_long": 0.323,
+   "F1_short": 0.283
+  },
+  "3hop calls>=4": {
+   "share": 0.11279296875,
+   "F1_long": 0.186,
+   "F1_short": 0.174
+  },
+  "4hop calls>=4": {
+   "share": 0.1142578125,
+   "F1_long": 0.113,
+   "F1_short": 0.179
+  }
+ }
+}
