@@ -55,7 +55,7 @@ $$A_i = R_i - \frac{1}{8}\sum_{j=1}^{8} R_j$$
 
 $$\mathcal{L} = \frac{1}{16}\sum_{i\in B}\Big[\sum_{t\in D_i}\ell(\rho_{i,t}; A_i) + \sum_{k\in F_i}\ell(\rho_{i,k}; A_i) + \beta\sum_{u\in D_i\cup F_i}\mathrm{KL}_{k3}(u)\Big]$$
 
-$$\ell(\rho,A) = -\min\big(\rho \cdot A\ ;\ \mathrm{clip}(\rho;\ 0.8;\ 1.2) \cdot A\big)$$
+$$\ell(\rho; A) = -\min\big(\rho \cdot A; \mathrm{clip}(\rho; 0.8; 1.2) \cdot A\big)$$
 
 $$\rho = \frac{\pi_\theta}{\pi_{\text{old}}}$$
 

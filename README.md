@@ -90,7 +90,7 @@ $$A_i = R_i - \overline{R}_{\text{group}}$$
 
 $$\mathcal{L} = \frac{1}{16}\sum_{i}\Big[\sum_{t\in\text{결정}} \ell(\rho_{i,t}; A_i) + \sum_{k\in\text{free 토큰}} \ell(\rho_{i,k}; A_i) + 0.02 \cdot \mathrm{KL}_{k3}(\pi_{\text{ref}} \| \pi_\theta)\Big]$$
 
-$$\ell(\rho; A) = -\min\big(\rho \cdot A\ ;\ \mathrm{clip}(\rho;\ 0.8;\ 1.2) \cdot A\big)$$
+$$\ell(\rho; A) = -\min\big(\rho \cdot A; \mathrm{clip}(\rho; 0.8; 1.2) \cdot A\big)$$
 
 - 결정: native는 도구 이름 분기 토큰 logprob 합, head는 head logprob
 - free 토큰: LLM이 샘플링한 인자·답 토큰. 문법이 강제한 토큰은 제외
