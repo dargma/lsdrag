@@ -165,6 +165,7 @@ python scripts/report_fullft.py --out $ROOT/analysis/fullft_report.md   # 표 1~
 
 | 경로 | 내용 |
 |---|---|
+| `HANDOVER.md` | 인계서(상태, 위치, 백업 목록, 복원 절차, 남은 일, 주의사항) |
 | `RESULTS.md` | 실험 결과 문서(배경, 데이터셋, 학습 방법·수식, A1/B1/C1 결과, 논의) |
 | `scripts/run_fullft_grpo.py` | GRPO 학습기. `--arm native\|head`, `--freeze-llm`, 보상 `discount\|latency\|calls\|process`, dev 평가, 체크포인트 |
 | `src/lsdrag/fullft.py` | 샘플링 reader(두 arm), segment replay, fp32 master AdamW, 근거 단계 보상 |
