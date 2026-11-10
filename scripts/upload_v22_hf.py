@@ -38,8 +38,9 @@ def remote_sha(api, repo, kind, paths):
 
 def stage_run(name):
     run = ROOT/'results'/name
-    assert (run/'status.json').exists(), run
-    assert json.loads((run/'status.json').read_text())['phase'] in ('complete', 'failed', 'gate_failed'), name
+    assert run.is_dir(), run
+    if (run/'status.json').exists():  # CPU-only gate runs write no status file
+        assert json.loads((run/'status.json').read_text())['phase'] in ('complete', 'failed', 'gate_failed'), name
     STAGE.mkdir(parents=True, exist_ok=True)
     out = {}
     small = STAGE/f'{name}.tar.gz'
