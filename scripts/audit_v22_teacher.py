@@ -62,6 +62,9 @@ def main():
             assert actual_ids == r['teacher_chunk_ids']
             target, source = pointer_target(candidate_ids, actual_ids, gold[r['qid']]) if actual_ids else (None, 'invalid_teacher')
             assert target == r['pointer_target'] and source == r['pointer_source']
+            if target is not None:
+                assert 1 <= len(actual_ids) <= 8 and len(actual_ids) == len(set(actual_ids))
+                assert set(actual_ids) <= set(candidate_ids), 'Invalid teacher read must not contribute pointer supervision'
             assert r['gold_candidate_indices'] == [i for i, cid in enumerate(candidate_ids) if cid in gold[r['qid']]]
         else:
             assert r['pointer_target'] is None and r['pointer_source'] == 'not_read'
