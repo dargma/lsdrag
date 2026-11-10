@@ -201,5 +201,61 @@
     "sha256": "306465fb982eb11cb29b94273d50a4ff4c1c235f4869a83f6df53299384aabf3",
     "bytes": 29629,
     "verified_utc": "2026-11-10T11:10:53.373641+00:00"
+  },
+  {
+    "repo": "sungkwang2/lsdrag-v22-checkpoints",
+    "path": "native_i2/model/model.safetensors",
+    "sha256": "4f5ade00ffbb894d9a18c694f022756a2da8e81b0c00d4f2f1c03f52392dba8e",
+    "bytes": 8044982080,
+    "verified_utc": "2026-11-10T12:47:17.386778+00:00"
+  },
+  {
+    "repo": "sungkwang2/lsdrag-v22-generated",
+    "path": "claude_runs/20261110/results/v22_s4_main_native_collect2.tar.gz",
+    "sha256": "ee03081a6782e4496f6a94640677225e87a855e7fdc7219b237076fa8a0f8446",
+    "bytes": 1951657,
+    "verified_utc": "2026-11-10T12:47:57.549894+00:00"
+  },
+  {
+    "repo": "sungkwang2/lsdrag-v22-generated",
+    "path": "claude_runs/20261110/groups/v22_s4_main_native_collect2_groups.tar",
+    "sha256": "0c9920dceb64f06b81c5ce286b97a5a416d99cf48bdf24e848f54a48964ab2ac",
+    "bytes": 1200896000,
+    "verified_utc": "2026-11-10T12:47:58.583098+00:00"
+  },
+  {
+    "repo": "sungkwang2/lsdrag-v22-generated",
+    "path": "claude_runs/20261110/results/v22_s4_main_native_update2.tar.gz",
+    "sha256": "8998f170630a384499bbe6e9756cfef105c2fe07d345e6bba9cb06eb4ccb5b76",
+    "bytes": 30134,
+    "verified_utc": "2026-11-10T12:47:58.679855+00:00"
+  },
+  {
+    "repo": "sungkwang2/lsdrag-v22-generated",
+    "path": "claude_runs/20261110/results/v22_s4_main_head_dev192_i1.tar.gz",
+    "sha256": "7ecef83f52f4edbdc1318cc4762d48b19b67bbc6a21b4dfa494552649817ed4b",
+    "bytes": 1541356,
+    "verified_utc": "2026-11-10T12:47:58.681206+00:00"
+  },
+  {
+    "repo": "sungkwang2/lsdrag-v22-generated",
+    "path": "claude_runs/20261110/results/v22_s4_main_head_dev192_i2.tar.gz",
+    "sha256": "b3c67ece76d56f23819788cb9b29bd359cab1cc0e5cf96fab644a3901a644dc6",
+    "bytes": 1484733,
+    "verified_utc": "2026-11-10T12:47:58.682584+00:00"
+  },
+  {
+    "repo": "sungkwang2/lsdrag-v22-generated",
+    "path": "claude_runs/20261110/results/v22_s4_main_native_dev192_i1.tar.gz",
+    "sha256": "e954846de1246d0a1aca33cfc528ff685aa525a6319bbe08273c33285af4a65f",
+    "bytes": 1683971,
+    "verified_utc": "2026-11-10T12:47:58.684122+00:00"
+  },
+  {
+    "repo": "sungkwang2/lsdrag-v22-generated",
+    "path": "claude_runs/20261110/results/v22_s4_main_native_dev192_i2.tar.gz",
+    "sha256": "9dfa503653e2b939cc5231fd81e5ef2dec1808babcb3f26280cb1b08077b8855",
+    "bytes": 1591700,
+    "verified_utc": "2026-11-10T12:47:58.685603+00:00"
   }
 ]
