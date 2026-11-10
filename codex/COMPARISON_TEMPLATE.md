@@ -14,6 +14,21 @@
 H-RL과 N-RL은 같은 reward, 질문, rollout8, 학습 반복 수와 tool/context cap을 사용함.
 추가 action-only GRPO는 현재 필수 실행에 포함하지 않음. 따라서 RL 후 차이를 pointer 단독 효과로 분해하지 않음.
 
+## 조건부 원인 진단 — 필수 비교 아님
+
+트리거: 같은 공통 계약의 dev192에서 H0-P의 EM 또는 F1 점추정이 N0보다 낮을 때만 실행. 두 지표 모두 N0 이상이면 H0-G는 미실행으로 기록함. 미실행 칸을 0으로 채우지 않음.
+
+H0-G는 동일한 base LLM·KD tool checkpoint·미독 후보 mask·답 cap·문항·greedy 설정을 유지하고, read ID만 pointer 대신 LLM이 생성함. N0가 옛 legacy 설정이면 직접 트리거 비교하지 않고 공통 계약 N0를 사용함.
+
+| 진단 조건 | 실행 사유 | EM | F1 | tool calls | 생성 토큰 | 오류 |
+|---|---|---:|---:|---:|---:|---:|
+| H0-G | 조건 충족 시만 | — | — | — | — | — |
+
+- H0-G vs N0: tool head/KD 경로의 변화 진단.
+- H0-P vs H0-G: 같은 tool checkpoint에서 read 선택 경로 전환의 영향 진단. 이후 trajectory 상호작용 포함.
+- H0-G도 나쁘면 tool/KD 문제가 있을 가능성, H0-G에서 회복되면 pointer 경로의 기여 가능성을 사례·오류와 함께 확인. 단일 원인을 단정하지 않음.
+- 선택적으로 실행한 사후 진단으로 명시하며 주 네 조건 표/성공 gate/GRPO 비교 조건을 바꾸지 않음. dev 기반 재학습·온도/보상 튜닝 금지.
+
 ## 주 결과 표 — 같은 문항, 사전 고정 최종 checkpoint
 
 | 조건 | 문항 수 | EM | F1 | agent iteration | tool calls | 생성 토큰 | 입력 토큰 | 빈 답 | 오류 |

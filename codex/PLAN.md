@@ -1,6 +1,6 @@
-# jev_v2.2 계획 — 선택은 head, 내용은 LLM (개정 3)
+# jev_v2.2 계획 — 선택은 head, 내용은 LLM (개정 4)
 
-2026-11-10. 개정3: 사용자 지시로 도구 head만+ID 생성 조건 및 모든 관련 비교 폐기. 전체 실행 승인 후 S0 진행 중; gate는 유지함.
+2026-11-10. 개정4: 최신 사용자 지시로 H0-G는 필수 비교에서 제외하고 품질 하락 때만 조건부 진단으로 허용. 전체 실행 승인 후 S0 진행 중; gate는 유지함.
 기준: REVIEW_04_plan_rev1_final.md; 이전 PLAN 89e4898e6c6a. 이 문서가 이전 PLAN/RESPONSE의 미확정 제안보다 우선함.
 모델·데이터 파일 복원은 RESTORE_VERIFIED.json에서 확인됨. 실행 환경·새 runner 준비 완료를 뜻하지 않음.
 
@@ -19,7 +19,8 @@ pointer는 read 선택 후에만 실행. 현재 입력의 후보 title/snippet h
 원본 Qwen3-4B-Instruct-2507(cdbee75f17c01a7cc42f958dc650907174af0554), embeddinggemma-2(914f7f89142e33e77833254d9c9b90c3cef7303b), non-thinking 유지.
 shared corpus101,962/768차원; split_mixhop.json 고정: train576(각192), dev192(각64), test320(160/80/80). dev는 기존 노출셋, test는 최종 동결 전 사용 금지.
 두 GRPO arm은 같은 base LLM에서 별도로 시작. head arm만 KD 초기화 비용 추가. 이전 full-FT A1/B1 또는 KL0를 시작점으로 섞지 않음.
-N0(native constrained), H0-P(KD tool+pointer), H-RL, N-RL 네 조건만 비교. tool-only/ID 생성 head 조건은 실행하지 않음. pointer 단독 효과를 분리한 비교라고 주장하지 않음.
+필수 비교는 N0(native constrained), H0-P(KD tool+pointer), H-RL, N-RL 네 조건. H0-G(KD tool+LLM ID 생성)는 H0-P의 dev192 EM 또는 F1 점추정이 같은 공통 계약의 N0보다 낮을 때만 원인 진단으로 실행함. 둘 다 N0 이상이면 실행하지 않음.
+조건부 H0-G는 H0-P와 동일한 base LLM·KD tool checkpoint·후보 mask·답 cap·문항·greedy 설정을 사용하고 read ID 처리만 생성으로 바꿈. H0-G vs N0는 tool/KD 변화, H0-P vs H0-G는 read pointer 전환의 영향을 진단하되 상호작용과 trajectory 변화를 함께 보고함. 선택적 사후 진단이며 필수 주 비교·성공 gate에 추가하지 않고, dev 결과로 재학습/튜닝/판정 시점 변경하지 않음.
 최대 tool8/context16384/생성 budget512(기존 prefix 포함 규칙)을 공통 적용. pointer 내부 선택은 tool call이 아님. seed20261110.
 
 ## 실행 단계
@@ -30,7 +31,7 @@ N0(native constrained), H0-P(KD tool+pointer), H-RL, N-RL 네 조건만 비교. 
 |---|---|---|---|
 | S0 복원/감사 | `python scripts/preflight_v22.py` 및 `PYTHONPATH=src:scripts python -m pytest -q tests` | 자산 hash 일치100%, 테스트 실패0(과거18개, 실제 수 기록), train smoke16의 구현 오류0 | 설치 포함30~90분 |
 | S1 라벨/KD | `python scripts/collect_decision_shared_teacher.py --spec <teacher576.json>` → `python scripts/fit_decision_shared_initialization.py --spec <kd.json>` | smoke16→greedy576; ID/span 매핑100%, 불법/중복/빈 선택0; 각 hop read 검증 qid≥10, 유효 read fit qid≥100 | 수집·KD1~3시간 |
-| S2 KD 평가 | `python scripts/evaluate_decision_shared_corpus.py --spec <eval_kd.json>` | train smoke8 오류0/read ID decode0; H0-P dev192 보고. 품질 손실을 숨기거나 dev로 재학습하지 않음 | 30~60분 |
+| S2 KD 평가 | `python scripts/evaluate_decision_shared_corpus.py --spec <eval_kd.json>` | train smoke8 오류0/read ID decode0; H0-P dev192 보고. EM 또는 F1이 N0 미만일 때만 H0-G 진단. dev로 재학습하지 않음 | 30~60분 |
 | S3 신호/보상 | `python scripts/check_v22_reward_gate.py --spec <pilot24x8.json>` | 두 arm train24(각hop8)×8, 업데이트 없이 비교; 아래 보상·다양성 gate | 수집 포함30~90분 |
 | S4 GRPO | `python scripts/run_fullft_grpo.py --arm head --pointer --manifest <head.json>` / `--arm native --manifest <native.json>` | 먼저 train16×8/2 optimizer step smoke; 통과 뒤 각각192문항×8×2 iteration. 주 판정iteration2 | smoke30~60분+각3~5시간 |
 | S5 보고 | `python scripts/report_fullft.py --manifest <comparison.json>` | i0/i1/i2 dev192, 동결 i2 test320. 전체 문항·실패 포함, paired 결과 | 평가 포함1~2시간 |

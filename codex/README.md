@@ -1,4 +1,4 @@
-현재 단계: S0 legacy dev192 재현 중; 개정3에서 tool-only 조건 폐기
+현재 단계: S0 legacy dev192 재현 중; 개정4: H0-G는 H0-P 품질 하락 시만 진단
 마지막으로 통과한 gate: train16 smoke 오류0; 자산 hash100%, 기존 tests18/18
 실행 중 PID: 41418; exec session35227
 결과 경로: /content/local_fast/lsdrag-text-v1/results/v22_legacy_dev192
@@ -12,3 +12,5 @@ claude/INSTRUCT_codex.md 및 OBS_01을 읽었음. RESPONSE_OBS_01.md 참고.
 본 실험·KD·GRPO 미시작. gate 실패 시 중단·보고·백업하며 사용자 확인 지점은 반드시 질문함.
 
 검토 요청: PLAN.md, GATES.md, RESPONSE_OBS_01.md
+
+최신 조건부 진단: H0-P가 공통 N0보다 EM 또는 F1이 낮을 때만 H0-G 실행. 필수 비교는 네 조건 유지. PLAN 개정4 우선.
