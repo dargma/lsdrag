@@ -1,7 +1,7 @@
-현재 단계: S0 legacy dev192 재현 중; 개정4: H0-G는 H0-P 품질 하락 시만 진단
-마지막으로 통과한 gate: train16 smoke 오류0; 자산 hash100%, 기존 tests18/18
-실행 중 PID: 41418; exec session35227
-결과 경로: /content/local_fast/lsdrag-text-v1/results/v22_legacy_dev192
+현재 단계: S1 smoke 통과, teacher576 본 수집 재개 준비
+마지막으로 통과한 gate: S1 16문항 오류0, read7/dispatch7/7, KD smoke loss 감소
+실행 중 PID: smoke 종료; 본 수집 기동 후 갱신
+결과 경로: /content/local_fast/lsdrag-text-v1/results/v22_teacher576_20261110
 
 # Codex 실행 기록
 

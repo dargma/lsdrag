@@ -1,0 +1,11 @@
+{
+  "phase": "smoke_complete",
+  "train_states": 58,
+  "read_states": 7,
+  "dispatch_checks": 7,
+  "loss_before": 2.3999414443969727,
+  "loss_after": 1.8029745817184448,
+  "passed": true,
+  "training_weights_discarded": true,
+  "teacher_states_sha256": "5309cfd6fa1533c98e35d839213e1450c758c22a0e5a41830a9f6abc6093c217"
+}

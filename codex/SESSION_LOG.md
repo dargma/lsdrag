@@ -10,3 +10,9 @@ H0-G 전면 폐기를 대체: 필수 비교 제외, H0-P EM 또는 F1이 공통 
 
 ## 2026-11-10T04:58:55.295428+00:00 S0 legacy baseline완전 재현
 192/192 answer+trajectory 일치、F1.193436598/EM.145833333/calls2.479166667/gen107.807291667、errors0。archive hash 검증 완료. 다음은 v22 unread+cap60 teacher smoke16.
+
+## 2026-11-10T05:00:47.734078+00:00 S1 smoke16
+S0 완전재현 gate 통과 후 source_snapshots/v22_s1으로 teacher spec576 동결. 첫16 fit qid만 --limit16 수집 중, PID49267/session88967. 수집 계약·라벨은 PLAN 개정4. source commit f5423a9.
+
+## 2026-11-10T05:04:28.320286+00:00 S1 smoke 통과 / 보상 사전 탐색 승인
+사용자: 저장 rollout으로 보상·weight 사전 최적화, 필요하면 smoke 몇 회 반복 허용. PLAN 개정5에 offline12 후보/15보정9확인/최대3round×2update/arm과 gate 유지 명시. S1 smoke16 오류0/58states/read7/dispatch7pass/CPU KD loss감소. 임시KD weights 버림. 다음 동일teacher spec --resume로 나머지560 수집.

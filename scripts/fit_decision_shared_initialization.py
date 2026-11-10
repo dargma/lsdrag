@@ -10,6 +10,61 @@ from lsdrag.decision_policy_followup import state_weights
 from common import ROOT, save, sha, load_head
 
 
+def smoke_v22(spec):
+    """One CPU KD update on the completed fit-only smoke; weights discarded."""
+    from lsdrag.chunk_pointer import ChunkPointer
+    from lsdrag.text_decision_benchmark import TextCorpus
+    from common import CONFIG
+    teacher = Path(spec['teacher'])
+    assert json.loads((teacher/'status.json').read_text())['phase'] == 'smoke_complete'
+    rows = torch.load(teacher/'teacher_states.pt', weights_only=True)
+    fit_ids = set(json.loads(Path(spec['split']).read_text())['fit'])
+    assert {r['qid'] for r in rows} <= fit_ids
+    read = [r for r in rows if r['pointer_target'] is not None]
+    assert read, 'Smoke has no read states; do not claim pointer validation'
+    torch.manual_seed(spec['seed']); torch.set_num_threads(2)
+    tool = load_head({'checkpoint': spec['bc_head']})
+    pointer = ChunkPointer()
+    for name, p in tool.named_parameters():
+        p.requires_grad_(name.startswith(('trunk.', 'action.', 'skip.')))
+    params = [p for p in tool.parameters() if p.requires_grad] + list(pointer.parameters())
+    opt = torch.optim.AdamW(params, lr=3e-4)
+    def loss():
+        x = torch.stack([r['pack'][0:1] for r in rows]).float()
+        legal = torch.stack([r['legal'] for r in rows])
+        labels = torch.tensor([r['action'] for r in rows])
+        t = F.cross_entropy(tool(x, legal)[0], labels)
+        p = []
+        for r in read:
+            chosen, events = pointer.select(r['pack'][0].float(), r['candidate_features'].float(), targets=r['pointer_target'])
+            assert chosen == r['pointer_target']
+            p.append(-torch.stack([e['logp'] for e in events]).mean())
+        return t + torch.stack(p).mean()
+    before = loss(); assert torch.isfinite(before)
+    before.backward()
+    assert all(p.grad is None or torch.isfinite(p.grad).all() for p in params)
+    torch.nn.utils.clip_grad_norm_(params, 1.); opt.step()
+    with torch.no_grad():
+        after = loss()
+        # Verify index->ID->real immutable read handler on observed candidate IDs.
+        docs = [json.loads(line) for line in (Path(CONFIG['corpus'])/'documents.jsonl').open()]
+        corpus = TextCorpus(docs, None, None)
+        checked = 0
+        for r in read:
+            selected, _ = pointer.select(r['pack'][0].float(), r['candidate_features'].float())
+            ids = [r['candidate_ids'][i] for i in selected]
+            returned = corpus.call('read_chunk', {'chunk_ids': ids})
+            assert [d['chunk_id'] for d in returned] == ids
+            checked += 1
+    report = dict(phase='smoke_complete' if after < before else 'gate_failed',
+                  train_states=len(rows), read_states=len(read), dispatch_checks=checked,
+                  loss_before=float(before.detach()), loss_after=float(after),
+                  passed=bool(after < before), training_weights_discarded=True,
+                  teacher_states_sha256=sha(teacher/'teacher_states.pt'))
+    save(Path(spec['output'])/'summary.json', report)
+    print(json.dumps(report, indent=2))
+
+
 def fit_v22(spec):
     """Fixed backbone, all used tool/pointer layers; internal-qid validation only."""
     from lsdrag.chunk_pointer import ChunkPointer
@@ -120,6 +175,8 @@ def main():
     if args.spec:
         spec = json.loads(Path(args.spec).read_text())
         assert spec['profile'] == 'v22'
+        if spec.get('smoke'):
+            return smoke_v22(spec)
         return fit_v22(spec)
     run = ROOT/'results/decision_shared_teacher192_20261023'
     out = ROOT/'results/decision_shared_initialization_20261023'

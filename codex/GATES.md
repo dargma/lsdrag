@@ -14,3 +14,4 @@
 | 구현 CPU | 정답 우선/단계 credit/부호 있는 A_t | 3 passed | PASS(함수) | tests/test_v22_reward.py | 2026-11-10T04:57:27.900737+00:00 |
 | 구현 CPU | 실제 tokenizer 후보 span 매핑 | 2/2 exact span | PASS(작은 smoke) | specs/v22/span_smoke.json | 2026-11-10T04:57:27.900737+00:00 |
 | S0 legacy dev192 | 과거192문항 trajectory/answer 및 주요 집계 재현 | 192/192 일치、F1/EM/calls/tokens 차이0、errors0 | PASS | codex/S0_LEGACY_AUDIT.json | 2026-11-10T04:58:55.295428+00:00 |
+| S1 smoke16 | errors0/span 및 ID 매핑/1-step KD 손실 감소 | 16episodes errors0; read7; dispatch7/7; loss2.399941→1.802975 | PASS(기능) | codex/S1_SMOKE.json; results/v22_teacher576_20261110 | 2026-11-10T05:04:28.320286+00:00 |
