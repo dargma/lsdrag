@@ -60,7 +60,7 @@ def main():
                     raw[q['id']] = q
         assert set(raw) == set(spec['qids'])
         sys.path.insert(0, str(ROOT/'source/musique_scorer'))
-        from metrics.answer import compute_f1
+        from metrics.answer import compute_f1, compute_exact
         heads = {}
         for name, desc in spec['policies'].items():
             if desc['kind'] == 'native':
@@ -68,7 +68,11 @@ def main():
             else:
                 assert sha(Path(desc['checkpoint'])) == desc['sha256']
                 heads[name] = load_head(desc, 'cuda')
-        reader = RecoveryPolicyReader(spec['model'], SimpleNamespace(max_output_tokens=512, context_limit=16384))
+        reader_class = RecoveryPolicyReader
+        if spec.get('reader_profile') == 'fullft':
+            from lsdrag.fullft import SampledReader
+            reader_class = SampledReader
+        reader = reader_class(spec['model'], SimpleNamespace(max_output_tokens=512, context_limit=16384))
         embed = V11ProcessEmbedder()
         corpus = TextCorpus(rows, vectors, embed)
         prompt = (REPO/'prompts/text_rag_integrated_v5.txt').read_text()
@@ -80,7 +84,7 @@ def main():
             # Gold is scorer-only; rollout sees question and the identical full corpus.
             gold = {document_id(p) for p in q['paragraphs'] if p['is_supporting']}
             assert gold <= corpus.by_id.keys()
-            found = corpus.call('semantic_search', dict(query=q['question'], top_k=5))
+            found = corpus.call('semantic_search', dict(query=q['question'], top_k=5)) if spec.get('original_query_diagnostic', True) else []
             hit = {r['chunk_id'] for r in found}
             diagnostics.append(dict(qid=qid, support_recall_at5=len(gold & hit)/len(gold), all_support_at5=gold <= hit, retrieved_ids=sorted(hit)))
             for name, head in heads.items():
@@ -101,7 +105,7 @@ def main():
                     observed |= ids
                     if step['tool_name'] == 'read_chunk':
                         read_ids |= ids
-                ep.update(qid=qid, policy=name, f1=max(compute_f1(a, ep['answer']) for a in [q['answer']]+q['answer_aliases']), retrieved_support_recall=len(gold & observed)/len(gold), all_support_retrieved=gold <= observed, read_support_recall=len(gold & read_ids)/len(gold))
+                ep.update(qid=qid, policy=name, f1=max(compute_f1(a, ep['answer']) for a in [q['answer']]+q['answer_aliases']), em=max(compute_exact(a, ep['answer']) for a in [q['answer']]+q['answer_aliases']), retrieved_support_recall=len(gold & observed)/len(gold), all_support_retrieved=gold <= observed, read_support_recall=len(gold & read_ids)/len(gold))
                 save(out/'episodes'/f'{name}_{qid}.json', ep)
                 episodes.append(ep)
                 counts['episodes'] += 1
@@ -112,7 +116,7 @@ def main():
         policies = {}
         for name in heads:
             subset = [e for e in episodes if e['policy']==name]
-            policies[name] = {k:float(np.mean([e[k] for e in subset])) for k in ['f1', 'generated_tokens', 'prompt_tokens', 'tool_calls', 'cost_units', 'retrieved_support_recall', 'all_support_retrieved', 'read_support_recall']}
+            policies[name] = {k:float(np.mean([e[k] for e in subset])) for k in ['f1', 'em', 'generated_tokens', 'prompt_tokens', 'tool_calls', 'cost_units', 'retrieved_support_recall', 'all_support_retrieved', 'read_support_recall']}
             policies[name]['errors'] = sum(bool(e['errors']) for e in subset)
         summary = dict(policies=policies, n=len(spec['qids']), split=spec['split'], counts=counts, corpus_documents=len(rows), original_question_retrieval={k:float(np.mean([r[k] for r in diagnostics])) for k in ['support_recall_at5', 'all_support_at5']}, controlled_latency=False, note='Policy provenance is defined by frozen spec checkpoint descriptors; do not infer training environment from evaluator reuse. Native-fast additional generation/prefill costs are counted, and dummy probabilities are removed.')
         save(out/'summary.json', summary)

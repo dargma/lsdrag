@@ -1,122 +1,99 @@
-# jev_v2.2 계획 — 선택은 head, 내용은 LLM
+# jev_v2.2 계획 — 선택은 head, 내용은 LLM (개정 2)
 
-작성일: 2026-11-10. 상태: 계획 초안, 실행 미승인/미시작. 규모·계수는 아래 제안값을 구현 전 검증하고 동결함.
+2026-11-10. REVIEW_04 및 GPU·RAM·디스크 운영 검토 반영. 계획만 개정하며 구현·수집·학습·평가는 실행하지 않음.
+기준: REVIEW_04_plan_rev1_final.md; 이전 PLAN 89e4898e6c6a. 이 문서가 이전 PLAN/RESPONSE의 미확정 제안보다 우선함.
+모델·데이터 파일 복원은 RESTORE_VERIFIED.json에서 확인됨. 실행 환경·새 runner 준비 완료를 뜻하지 않음.
 
-## 1. 목표와 범위
+## 고정 구조·비교 계약
 
-MuSiQue mixed-hop에서 정확도를 유지·개선하면서 agent iteration과 생성 토큰을 줄이는 PoC.
-별도 결정 모델 없이 Qwen3-4B-Instruct-2507의 hidden을 사용함. 메모리 agent 확장, Q-head, 별도 value/process reward는 이번 범위에서 제외함.
+| 번호 | 도구 | 선택 뒤 처리 |
+|---:|---|---|
+| 0 | keyword_search | 도구 prefix를 기존 KV에 forward → LLM keywords/top_k 생성 |
+| 1 | semantic_search | 도구 prefix를 기존 KV에 forward → LLM query/top_k 생성 |
+| 2 | read_chunk | pointer 선택 → 실제 ID 매핑 → chunk_ids 조립·실행, ID 생성0 |
+| 3 | FINAL | LLM answer/support_ids 생성. 두 arm 모두 support_ids 생성 유지 |
 
-## 2. 도구와 인자 처리
+pointer는 read 선택 후에만 실행. 현재 입력의 후보 title/snippet hidden을 pooling하여 같은 scoring 함수를 후보별 적용함. K는 동적이며 최신 검색5개로 제한하지 않음.
+후보 ID 순서·token span을 저장하고 이미 읽은 ID는 두 arm 모두 mask. 미독 후보0이면 read 금지. 미래 본문·gold를 policy 입력에 넣지 않음.
+순차 pointer+STOP: 첫 STOP 금지, 이미 고른 후보 mask, 1~8개 선택; 8개/후보 소진은 강제 종료로 STOP loss 없음. LLM 재호출 없이 선택 요약을 갱신함.
+원본 Qwen3-4B-Instruct-2507(cdbee75f17c01a7cc42f958dc650907174af0554), embeddinggemma-2(914f7f89142e33e77833254d9c9b90c3cef7303b), non-thinking 유지.
+shared corpus101,962/768차원; split_mixhop.json 고정: train576(각192), dev192(각64), test320(160/80/80). dev는 기존 노출셋, test는 최종 동결 전 사용 금지.
+두 GRPO arm은 같은 base LLM에서 별도로 시작. head arm만 KD 초기화 비용 추가. 이전 full-FT A1/B1 또는 KL0를 시작점으로 섞지 않음.
+N0(native constrained), H0-G(KD tool+ID 생성), H0-P(KD tool+pointer), H-RL, N-RL을 비교. H0-G/H0-P는 동일 tool checkpoint.
+최대 tool8/context16384/생성 budget512(기존 prefix 포함 규칙)을 공통 적용. pointer 내부 선택은 tool call이 아님. seed20261110.
 
-| action 번호 | 이름 | 선택 이후 | 실행 인자/출력 |
-|---:|---|---|---|
-| 0 | keyword_search | 선택 도구 prefix를 같은 KV cache에 처리하고 LLM 생성 | keywords, top_k |
-| 1 | semantic_search | 선택 도구 prefix를 같은 KV cache에 처리하고 LLM 생성 | query, top_k |
-| 2 | read_chunk | 전용 pointer head 실행, 인덱스를 실제 ID로 매핑 | chunk_ids 1~8개 |
-| 3 | FINAL | answer prefix 후 LLM 생성 | answer, support_ids |
+## 실행 단계
 
-도구 선택 → 인자 완성 → 실제 함수 실행 → 호출과 결과를 다음 턴 입력에 기록함.
-도구 번호는 텍스트 토큰으로 생성하지 않음. 검색 prefix는 현재처럼 모델 forward를 실제로 통과시키므로 이후 생성은 선택한 도구에 조건화됨.
+단일 새 pipeline은 만들지 않음. 기존 collector/KD/evaluator/GRPO/report 스크립트를 확장하고 preflight·reward gate만 새로 작성함. 아래 명령은 수정 후 CLI 계약이며 신규 옵션은 현재 미구현; 실행 가능한 현 명령으로 해석하지 않음. 시간은 공유 GPU에서 미측정 추정치.
 
-### 동적 청크 head
+| 단계 | 명령(예정 CLI) | 확인할 숫자·통과 기준 | 예상 시간 |
+|---|---|---|---|
+| S0 복원/감사 | `python scripts/preflight_v22.py` 및 `PYTHONPATH=src:scripts python -m pytest -q tests` | 자산 hash 일치100%, 테스트 실패0(과거18개, 실제 수 기록), train smoke16의 구현 오류0 | 설치 포함30~90분 |
+| S1 라벨/KD | `python scripts/collect_decision_shared_teacher.py --spec <teacher576.json>` → `python scripts/fit_decision_shared_initialization.py --spec <kd.json>` | smoke16→greedy576; ID/span 매핑100%, 불법/중복/빈 선택0; 각 hop read 검증 qid≥10, 유효 read fit qid≥100 | 수집·KD1~3시간 |
+| S2 KD 평가 | `python scripts/evaluate_decision_shared_corpus.py --spec <eval_kd.json>` | train smoke8 오류0/read ID decode0; H0-G/H0-P dev192 보고. 품질 손실을 숨기거나 dev로 재학습하지 않음 | 30~60분 |
+| S3 신호/보상 | `python scripts/check_v22_reward_gate.py --spec <pilot24x8.json>` | 두 arm train24(각hop8)×8, 업데이트 없이 비교; 아래 보상·다양성 gate | 수집 포함30~90분 |
+| S4 GRPO | `python scripts/run_fullft_grpo.py --arm head --pointer --manifest <head.json>` / `--arm native --manifest <native.json>` | 먼저 train16×8/2 optimizer step smoke; 통과 뒤 각각192문항×8×2 iteration. 주 판정iteration2 | smoke30~60분+각3~5시간 |
+| S5 보고 | `python scripts/report_fullft.py --manifest <comparison.json>` | i0/i1/i2 dev192, 동결 i2 test320. 전체 문항·실패 포함, paired 결과 | 평가 포함1~2시간 |
+### S0: baseline와 줄일 여유
 
-고정 Linear(hidden,5)가 아니라 후보마다 같은 scoring 함수를 적용함.
-현재 상태 h와 후보 표현 c_i를 받아 s_i=f(h,c_i,선택된 후보 요약)를 계산함. 후보 5개면 점수 5개, 8개면 점수 8개임.
-read_chunk가 선택된 뒤에만 실행하며, 도구별 전용 분기 자체가 action 조건임. 첫 prefill의 hidden을 재사용하는 경로를 주안으로 함.
-후보 표현은 현재 입력에 실제 보이는 각 청크의 title/snippet 또는 이미 읽은 본문 구간에서 pooling함. 아직 읽지 않은 원문을 corpus에서 몰래 가져오지 않음.
-후보는 현재 관측 ID의 중복 제거 목록이며 정렬과 ID 매핑을 저장함. 최신 검색 5개로 임의 제한하지 않음.
-구간 매핑은 tokenizer offset으로 검증하며 실패하면 명시적 오류 처리함. 관측 후보가 없으면 read_chunk를 마스킹함.
+legacy 설정 N0를 먼저 별도 재현하여 F1≈19.3/calls≈2.48/tokens≈107.8과 차이를 조사함. 재현 불일치는 원인을 설명하기 전 통과하지 않음. 새 unread mask/답 cap 적용 N0는 별도 기준으로 저장하며 옛 수치 일치를 요구하지 않음.
+train의 정답/alias 길이, teacher read의 근거 precision/recall, FINAL 때 근거 확보, 반복 검색·재읽기·새 정보 없는 호출 비율을 측정함. 비근거 문서를 곧바로 낭비라 부르지 않음.
+상한 후보 C=max(60,train576 문항별 최단 유효 정답/alias 정규형 길이의99백분위). 공식 normalize_answer 후 Unicode 문자수, nearest-rank ceil(0.99*n)으로 계산하고 원문 길이도 보고함. 빈 정규형은 별도 오류 감사. 답 문자열만 제한하며 두 arm 동일 적용.
 
-복수 읽기는 후보 선택을 반복하며 이미 선택한 후보는 마스킹하고 STOP으로 끝냄. 첫 선택 전 STOP 금지, 최대 8개 또는 모든 후보 선택 시 강제 종료함.
-선택 순서를 보존하여 기존 read 결과 순서와 연결함. 반복은 작은 head 내부 연산이며 LLM 재호출이나 환경 tool call이 아님.
-STOP은 전체 agent FINAL과 다름. 번호/ID 문자열은 생성하지 않고 실행기가 chunk_ids JSON을 조립함.
+C를 넘는 정답/alias 개수와 등록된 모든 정답 정규형이 C를 넘는 qid 수·목록을 기록함. 후자가0이면 채택; >0이면 S1 전에 상한 유지/확대의 정확도 제약을 보고하여 결정함. 해당 질문 제외·qid별 cap·test 기반 조정은 금지. 이렇게 이상치 자동 확대와 정답 제약의 은폐를 모두 피함.
+### S1: 라벨 충돌 없는 teacher KD + gold-pointer 지도 (R03-1/2)
 
-## 3. 고정 자산과 데이터
+tool 초기값은 복원 BC head(head.pt SHA256 0023dd45dee8…); pointer는 seed 신규 초기화. LLM frozen, 사용하는 tool trunk/action/skip·pointer 전 층 학습. 미사용 value/success/cost는 제외.
+수집 전 hop별153 fit/39 내부검증 qid를 고정(459/117), family 중복을 감사·보고. 내부검증 qid의 모든 rollout은 KD fit에서 제외. 해당 qid를 후속 GRPO에 사용하면 최종 holdout으로 부르지 않음.
+N0 greedy576을 1회 수집. smoke16은 fit에서 선택하며 계약이 동일하면 본 수집에 재사용하여 중복 생성하지 않음. 실패 QA도 보존하고 dummy uniform policy_probs를 teacher target으로 사용하지 않음.
+라벨 규칙은 하나: tool은 teacher action; 실제 teacher read 상태에서 미독 gold 후보가 있으면 그 후보들이 pointer 주 라벨, 없으면 유효한 teacher 선택. 한 상태에 상충하는 teacher/gold CE를 동시에 넣지 않음.
+gold 후보는 저장된 후보 순서로 정렬하고 최대8개; teacher fallback은 원 순서를 유지. 오류/중복/범위 밖 teacher read는 pointer 라벨 제외, 유효 tool 라벨은 유지. 출처·제외 건수와 STOP을 기록.
+gold는 train/internal-validation의 오프라인 라벨·채점용일 뿐 추론 입력에 없음. gold 전부 읽음→FINAL 강제 라벨은 사용하지 않음. 이 단계는 pure KD가 아닌 teacher KD+gold supervision으로 보고함.
+loss는 질문 균형 tool CE + 질문 균형 read sequence 평균 CE(각 가중1). AdamW lr3e-4, 최대100 epoch, 내부검증 합산 CE 최소 checkpoint(동률은 이른 것), smoothing0.05는 tool에만 적용.
+내부검증의 gold-present read에서 pointer support set-F1≥같은 상태의 teacher set-F1을 요구하고 teacher-fallback 일치율도 별도 보고. coverage/품질 미달이면 본 GRPO로 가지 않음; 추가 수집은 마지막 표의 규칙을 따름.
+### S3: 보상과 단계 보상 채택 분기 (R03-4)
 
-- LLM: Qwen/Qwen3-4B-Instruct-2507, revision cdbee75f17c01a7cc42f958dc650907174af0554. non-thinking.
-- Embedding: google/embeddinggemma-2, revision 914f7f89142e33e77833254d9c9b90c3cef7303b.
-- MuSiQue answerable v1.0 train/dev, shared corpus 101,962문단 및 768차원 인덱스.
-- configs/split_mixhop.json 유지: train576(각 hop192), validation192(각64), test320(2hop160/3hop80/4hop80).
-- 기존 dev192는 이미 관측된 개발셋임. untouched라고 부르지 않음. test320은 계획/설정 동결 전 열지 않음.
-- 원본·모델 LFS·코퍼스·벡터 해시 검증 완료. RESTORE_VERIFIED.json 참고.
-- base 모델과 BC/KL0 head 복원 완료. 이전 A1/B1의 full-FT 가중치는 이번 새 비교의 시작점으로 사용하지 않음.
+기본 terminal reward: `Q=0.8*EM+0.2*F1; R=Q*(1-0.10*T/(T+128))-0.15*EM*N/8`. official alias-max EM/F1; N은 tool 수, T는 실제 decode한 episode 전체 토큰. 공급 prefix·입력·pointer 연산은 별도 비용.
+정답 R≥0.75, 비정답 R≤0.2; F1=0 오답에는 효율 보너스 없음. 실패/빈 답/잘린 JSON은 품질0, 인프라 실패는 별도 기록. reward 성분별 로그 필수.
+train24×8에서 terminal-only의 `A=R-그룹평균`을 계산. forced event 제외 환경 결정 기준으로 |A|≤1e−8의 비율을 셈. 두 arm 각각 무신호 결정<20%면 단계 보상 없이 진행.
+어느 arm이든 ≥20%면 두 arm에 공통 근거 단계 보상을 구현하고 동일 pilot을 재채점: `r_t=0.05*새 검색 gold 수/전체gold 수 + 0.05*첫 read gold 수/전체gold 수`, 마지막에 terminal R. 각각 처음1회만 credit, 중복0, episode 보너스합≤0.10.
+그러면 전체 return은 정답≥0.75, 비정답≤0.30으로 순위 보존. gold 근거 수집 자체를 장려하는 추가 목적이며 평가의 QA 품질과 구분함. |전체 return|만으로 성공을 판정하지 않음.
+단계 mode는 return-to-go에서 같은 qid의 다른7개 rollout의 같은 단계 RTG 평균을 뺌(이미 종료된 rollout RTG=0). std로 나누지 않음. 같은 단계의 tool/pointer/생성 토큰에 같은 부호 있는 A_t를 연결함.
+수정 필수: 기존 process 경로의 head-only 제한·max(abs(step_adv))로 토큰 advantage를 대체하는 코드를 그대로 사용 금지. 업데이트 포함 여부 플래그와 실제 advantage를 분리. 단계 ID 단위 hand-check를 양 arm에서 검증.
+순위 역전0, EM=1·같은 토큰이면 calls 감소 시 reward 증가100%, Q>0·같은 품질/calls이면 tokens 감소 시 증가100%를 검사. EM=0의 call 감점 없음/Q=0 동률을 명시. 전체 return의 비교는 단계 보너스까지 동일할 때 적용함.
+각 arm에서 EM 정답≥2개이고 그 정답들의 calls가 서로 다른 그룹 수/전체 유효24그룹 수를 보고함(분자·분모 명시). <10%면 호출 절감의 직접 비교 신호가 희소하다고 S4 전에 보고하고 본 실행 진행 여부를 사용자에게 확인; 계수 자동 증폭·목표 사후 교체 금지. 이는 충분한 신호의 진단이지 학습 가능성의 필요조건/불가능성 증명이 아님.
+전체 학습 reward가 다른 그룹≥50%, 서로 다른 tool 행동열≥2개인 그룹≥50%를 각 arm pilot gate로 함. temperature 후보{1,2,4}를 train pilot에서만 비교하고 두 gate를 만족하는 가장 낮은 값을 arm별 동결; payload T=1 유지.
+단계 보상 후에도 무신호≥20% 또는 탐색 gate 미달이면 본 실행 중단·보고. 온도/보상/표본을 평가 결과로 무제한 조정하지 않음. gold 근거가 같으면 calls/token 단조성도 유지되나 서로 다른 근거량 간 효율 우선은 보장되지 않음.
 
-## 4. 1차 — teacher 라벨 생성 → head KD
+### S4: 실제 전체 unfrozen 학습과 수치 gate
 
-LLM은 고정하고 도구 head 및 청크 head를 지도학습함. teacher는 같은 base LLM의 native constrained 경로임.
+구현은 기존 run_fullft_grpo.py/fullft.py에 pointer·step_id·manifest 계약을 추가함. 검증된 fp32 master optimizer와 기존 replay 경로를 보존하고 새 경로의 회귀검사를 추가함. 과거 replay 약0.02는 새 pointer 경로의 통과 근거가 아님.
+H-RL은 base LLM+S1 heads 전 층, N-RL은 같은 base LLM 전체를 학습. replay에서 현재 prefix hidden·후보 표현을 재계산하여 tool/pointer loss가 backbone까지 흐르게 함. detached feature로 대체 금지.
+old/new logprob는 후보·선택 순서·mask·temperature·grammar 분포 동일. forced syntax/STOP은 loss 제외, grammar fallback은 실제 분포 replay가 검증된 토큰만 포함. 단계 mode의 A_t는 동일 step의 모든 sampled event에 적용.
+smoke gate: ID/span 오류0, 비유한 loss/gradient0, tool/pointer/LLM 사용 경로 gradient 존재; 업데이트 전 BF16 단위 action/token max logprob 오차≤0.05, FP32 소형 진단≤1e−4. 저장/재로드 동일 greedy 출력, 실패 시 임의 기준 완화 금지.
+공통 PPO clip0.2, KL beta0.02(각 arm i0 frozen reference), batch16 trajectories, LLM lr1e−6/head lr5e−5, gradient clip1, update1 pass/iteration. sampled event loss 합을 batch trajectory 수로 나누고 별도 길이 정규화 없음; gradient 규모와 길이 의존성 보고.
+각 iteration 같은 train192(hop별64)×8, seed/qid 순서 공통, 총2 iteration. i0는 base/KD 해시 참조, i1/i2의 LLM·heads·manifest 보존. optimizer·master·RNG·scheduler는 현재 arm 최신 재개 상태를 원자적으로 교체하며 최종 재개 상태는 해시 확인한 Drive 백업에 보존. 마지막 i2가 주 checkpoint. pilot 가중치는 본 실행에 이어 쓰지 않음.
 
-수집 제안: frozen train576에서 hop별64, 총192문항. 이 안에서 학습144/내부검증48을 qid 단위로 사전 분리함. 질문 family 중복도 audit하고 확정 목록·seed·해시를 저장함. 아직 목록 선정은 하지 않음.
+## 자원 운영 — 점유율보다 전체 완료 시간
 
-각 상태 라벨:
-- 현재 messages/history, qid/turn, context hash, 합법 도구 mask, teacher 선택 도구.
-- read 상태에서 현재 후보 ID 목록·순서·visible token spans와 teacher가 생성한 chunk_ids.
-- teacher 선택 ID를 후보 인덱스 순서로 매핑하고 마지막 STOP 추가. 8개 선택/후보 소진의 강제 종료에는 STOP loss를 추가하지 않음.
-- 오류/중복 ID/매핑 실패는 별도 기록하고 pointer 라벨에서 제외. 유효한 action 라벨은 별도 유지함. 성공 QA만 남기는 필터는 사용하지 않음.
-- 정답·support labels는 scorer와 사후 분석용이며 policy 입력이나 KD 정답으로 섞지 않음.
+04:41:41 UTC 실측: GPU RTX PRO6000 97,887MiB, 사용0/여유97,251MiB, util0%; RAM available173GiB, local-fast 여유179GB, CPU48. 순간값이며 다른 작업 점유는 기동 전 재확인함.
+GPU 작업은 하나의 실행 큐로 관리함. 같은 checkpoint의 수집·평가를 묶어 가능한 범위에서 모델 load를 재사용. head/native full-FT 동시 실행 금지(각 약70GB는 과거 추정). 공유 GPU라도 여유가 충분하면 진행하며 타 작업은 종료하지 않음.
+CPU는 feature 매핑·라벨·KD·보상검사·보고·Drive 백업을 수행. S1 수집 뒤 CPU KD 중 동일 base의 N0 평가를 실행할 수 있음. 데이터 의존성·gate를 건너뛰지 않음. manifest/checkpoint/prompt/문항/greedy 설정이 동일한 N0만 i0 평가에 재사용함.
+full-FT 첫 smoke는 여유≥80GiB에서 시작하는 보수적 기준. 이후 단계별 실제 peak reserved/프로세스 점유량을 측정해 예상 추가 사용+max(8GiB,15%) 여유가 확보될 때만 기동. 임베딩/KV/reference/master/optimizer를 모두 포함함. 30초 간격 상태를 기록하고 문항·update 경계에서 재검사, 부족하면 자체 작업만 안전 중지/재개함.
+rollout8은 통계적 그룹 크기이며 GPU 동시 batch8을 뜻하지 않음. 먼저 microbatch1로 측정하고 여유가 있으면2→4를 smoke에서 시험; 실제 episode/s가 개선되고 replay/메모리 gate를 만족할 때만 채택. gradient accumulation으로 batch16 유지. 모델을 unload하지 않은 반복 rollout→update를 우선하며 새 배치 최적화가 PoC 병목이면 기존 경로로 진행함.
+현재179GB 여유에서4B optimizer/master는 대략48GB, 모델은약8GB 규모이므로 모든 iteration optimizer 복제는 금지. 다음 원자적 저장·동시 임시파일·백업 staging의 실측 합+20GiB가 없으면 저장 전에 정리/대기. 이 실험의 중복 checkpoint만 Drive byte-hash 확인 후 정리하며 마지막 검증 재개본을 먼저 지우지 않음. mutable 학습 상태를 백업 thread가 직접 읽지 않음.
+GPU가 gate/복사 때문에 쉬는 시간을 별도 기록하고 CPU 작업과 겹치되, idle을 채우기 위한 불필요한 rollout은 금지. S0/S1/S3/smoke 실측 episode/s·update시간·복사시간으로 남은 ETA를 갱신함. smoke에서 이득을 입증하지 못한 packing/일괄 forward 최적화는 본 실행 중 도입하지 않음.
 
-KD는 우선 hard-label distillation(CE/behavior cloning)임. teacher soft distribution을 수집하지 않았는데 KL distillation이라고 부르지 않음. native collector의 dummy uniform policy_probs를 teacher target으로 사용 금지.
+## 비교·판정과 남은 분기
 
-loss = 질문별 균형 action CE + read 질문별 균형 pointer sequence CE. pointer 손실은 read 상태에서만 계산함. 긴 episode/많은 선택의 과대 가중을 피하도록 상태 및 sequence 평균을 명시함.
-LLM frozen, 기존 tool head의 trunk/action/skip과 새 pointer의 query/key/STOP/선택요약 파라미터 모두 학습함. 미사용 value/success/cost는 학습 대상에서 제거함.
-초기값·학습률·epoch는 수집 분포 확인 뒤 내부 train/validation만으로 동결함. BC 시작과 KL0 시작을 섞어 비교하지 않음.
+전체 EM/F1/calls/tokens와 정답 획득·손실, 양쪽 정답의 비용을 함께 보고. H-RL vs N-RL이 주 비교이며 각 arm 전후와 H0-P vs H0-G도 유지. 목표는 정확도 유지/개선+calls10% 감소+tokens 감소; 목표 미달을 다른 지표로 교체하지 않음.
+비유의를 품질 유지로 해석하지 않음. paired bootstrap 95% 구간을 보고하고 비열등성은 사전 허용손실 margin 미합의 시 주장하지 않음. seed1 PoC·KD 추가 지도·공유 GPU 비용을 명시함. 기존 COMPARISON_TEMPLATE의 실험 전 빈 표는 유지하되 설정 충돌 시 이 PLAN을 우선함.
+| 미확정/조건부 항목 | 언제·무엇으로 결정 |
+|---|---|
+| coverage 부족 시 추가 수집 | S1 gate 미달일 때만 train fit qid에 샘플1회 보강하는 별도 예산안 제출. dev/test 사용 금지 |
+| 답 cap 실제 숫자 | S0의99백분위 후보·전체 alias가 막히는 qid 수를 보고 결정; 양 arm 동일, test 열람 전 동결 |
+| terminal vs 단계 reward·온도 | S3의 수치 분기로 선택·manifest 기록. 추가 계수 sweep 없이 실패면 보고 |
+| 호출 절감 신호 희소 | S3 직접 비교 그룹<10%면 S4 전에 보고·진행 결정. 계수 자동 변경 없음 |
+| 통계적 비열등성 margin | 본 실행 전 사용자 허용 품질손실을 확정하지 못하면 우월/비열등 단정 없이 구간 보고 |
 
-먼저 train에서 24문항 smoke. read 라벨 수, hop별 coverage, K 분포, 선택 수, STOP 비율, 오류율을 확인함. 192문항에도 read 라벨이 부족하면 coverage 미달로 보고하며 heldout을 가져오거나 무단 확대하지 않음.
-기능 gate: K=1/5/8 및 그 이상 가변 길이 처리, ID mapping 100%, 범위 밖 선택/중복/빈 선택 0, future-content leakage 0. KD imitation 성능은 별도 지표이며 QA 개선과 구분함.
-
-## 5. 2차 — LLM + 전체 head GRPO
-
-1차 KD head를 동일한 base LLM에 붙임. LLM 전체와 사용되는 head 구조 전체를 unfrozen함.
-문항당 rollout 8개. tool 선택, pointer 선택/STOP, LLM 인자·답 생성 모두 sampled policy action으로 기록함.
-
-중요 구현 변경:
-- 현재 run_fullft_grpo.py는 head action/skip만 학습하고 수집한 detached pack으로 head loss를 계산함. 그대로 사용 금지.
-- 업데이트 때 당시 prefix로 현재 LLM hidden과 후보 표현을 gradient-enabled forward로 재계산해야 함.
-- tool/pointer loss도 LLM backbone까지 역전파됨을 gradient smoke로 확인함.
-- 수집 시의 old logprob는 고정하고, replay 시 동일 mask·후보 순서·선택 순서·temperature·grammar 분포로 new logprob를 계산함.
-- 공동 logprob는 tool + pointer의 각 선택/STOP + 생성 토큰 logprob로 구성함. 강제 구문/강제 종료는 sampled decision loss에서 제외함.
-- grammar fallback에서 실제 선택한 제한 분포와 학습 분포를 일치시키거나 해당 토큰을 명시적으로 제외함.
-
-먼저 24문항×8×1회 pilot을 제안함. gate 통과 후 본 실행 제안은 iteration당 train192×8, 4회 반복. 최종 횟수/예산/평가 시점은 실행 전에 동결함.
-각 iteration 모델·head를 저장함. 결과를 보고 유리한 iteration을 최종 판정점으로 바꾸지 않음.
-
-## 6. 3차 — head 없는 LLM GRPO 대조군
-
-2차 결과를 이어받지 않고 같은 base LLM에서 시작함. 도구 이름·read ID·검색 인자·답변을 LLM이 선택/생성함.
-현재 native constrained trie 및 observed-ID schema를 유지하는 강한 대조군임. 자유 JSON 생성 baseline이라고 부르지 않음.
-LLM 전체 unfrozen, 문항당 rollout8. train qids·질문 순서·iteration·보상·context/tool/output budget·채점·평가 시점을 2차와 동일하게 함.
-KD는 head arm에만 있는 추가 지도비용이므로 이를 별도 보고함. head 구조만의 순수 인과 효과라고 주장하지 않음.
-동일 sampling temperature를 초기안으로 두고 실제 entropy/중복 rollout/그룹 reward variance를 기록함. native만 다른 temperature를 쓸 경우 별도 사전 보정 근거를 남김.
-
-## 7. 정확도 우선 보상 초안
-
-공식 scorer의 alias-max normalized EM(E)와 token F1(F)을 사용함.
-
-Q = 0.8 E + 0.2 F
-R = Q * (1 - 0.10 T/(T+128)) - 0.15 E * N/8
-
-- E는 0/1, F는 0~1. N은 실제 tool call 수(0~8), FINAL 및 head 내부 pointer 선택은 N에서 제외함.
-- agent iteration은 통상 N+1이며 학습 iteration과 구분함.
-- T는 episode 전체에서 실제 autoregressive decode한 토큰 수. 검색 인자, read ID, 답변, native 도구명 분기, grammar 대체 생성 포함. runtime이 공급한 prefix와 입력·tool 결과는 별도 집계함.
-- 정답일 때만 호출 감점 적용. 토큰 감점은 정확도 점수에 비례하고 상한 10%.
-- 정답 보상은 최소 0.75, 비정답 보상은 최대 0.2. 짧은 오답이 긴 정답보다 높아지지 않음.
-- E=F=0이면 R=0이므로 빈 답/빠른 포기에 효율 보너스가 생기지 않음.
-- 모든 rollout이 틀린 그룹은 신호가 없을 수 있음. 부분 F1을 남겨 완화하지만 해결 보장은 아님. fraction_zero_adv를 필수 보고함.
-- 긴 부분정답의 점수 악용은 완전히 제거되지 않음. 긴 오답/정답 포함 부정문/answer stuffing을 별도 audit함.
-- 계수와 128은 제안값이며 train-only offline reward sweep·순위검사 후 동결함. dev/test로 계수를 튜닝하지 않음.
-- 파싱 실패/빈 답/잘린 출력은 품질0. truncation 별도 집계. 인프라 실패는 모델 오답과 구분하여 사전 재시도 규칙 적용.
-
-GRPO advantage 초안: A_i=R_i-mean(R_1..R_8). 그룹별 std로 나누지 않음. 항별 재표준화로 계수 의미를 없애지 않음.
-PPO clip, KL, loss 정규화도 양 arm에서 같은 원칙으로 고정함. 생성 토큰 수와 head decision 수의 차이가 gradient 규모에 미치는 영향을 smoke에서 확인하고 고정 normalization을 기록함. 이 부분은 구현 전 확정 필요 항목임.
-
-근거: MuSiQue 공식 metric은 EM/F1 및 alias-max를 제공함. ShorterBetter는 correctness를 고려한 길이 절감을 연구하고, DAPO는 overlong 처리와 길이 편향 문제를 다룸. 위 식은 논문 식의 재현이 아니라 이번 PoC용 제안임.
-- https://github.com/StonyBrookNLP/musique/blob/main/metrics/answer.py
-- https://arxiv.org/abs/2504.21370
-- https://arxiv.org/abs/2503.14476
-
-## 8. 사전 검증과 보류
-
-CPU: ID/span/schema/mask 계약, 보상 순위, split disjointness.
-GPU smoke: cache prefix 경로, 실제 ID dispatch, tool/pointer/LLM 모든 사용 층의 유한 gradient, 업데이트 전 replay old/new logprob 일치 허용오차를 dtype별 설정, 전체 checkpoint 저장/재로드 동일 greedy 출력.
-공유 GPU latency는 통제된 speedup으로 주장하지 않음. 다른 작업을 종료하지 않음.
-실험은 현재 미시작. 모델/데이터 파일은 확보했으나 Python runtime·실행 smoke 미완료.
+범위 밖: Q-head, 별도 critic, 메모리 agent 확장, 자동 추가 iteration. Claude 파일·코드는 이번 개정에서 수정하지 않음. 본문 시간/threshold는 사전 설계이지 측정 결과가 아님.

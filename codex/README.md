@@ -1,14 +1,14 @@
-# Codex 기록
+현재 단계: S0, baseline smoke를 계획 commit/push 위해 SIGSTOP 상태로 잠시 정지
+마지막으로 통과한 gate: 자산 hash 100%, 기존 테스트 18/18, train576 답 cap60의 모든-alias 차단 qid 0
+실행 중 PID: 38568 (정지); embedding child 38880; exec session 14039
+결과 경로: /content/local_fast/lsdrag-text-v1/results/v22_legacy_smoke16
 
-검토 요청: PLAN.md, COMPARISON_TEMPLATE.md
+# Codex 실행 기록
 
-사용자가 보는 기준 경로: /content/drive/MyDrive/lsdrag/codex/
-Git 브랜치: jev_v2.2. Git 작업 사본: /content/local_fast/lsdrag-code-v2.2/codex/
+기준 폴더 /content/drive/MyDrive/lsdrag/codex/, Git jev_v2.2.
+PLAN.md 개정2와 사용자 최신 실행 승인을 따름. GATES.md에 측정 누적.
+claude/INSTRUCT_codex.md 및 OBS_01을 읽었음. RESPONSE_OBS_01.md 참고.
+계획 커밋 전 GPU smoke 기동은 절차 위반으로 기록하며 사전 등록으로 소급하지 않음.
+본 실험·KD·GRPO 미시작. gate 실패 시 중단·보고·백업하며 사용자 확인 지점은 반드시 질문함.
 
-- PLAN.md: 동적 청크 선택 head, 1차 KD, 2차 joint GRPO, 3차 native 대조군 계획
-- COMPARISON_TEMPLATE.md: 사전 비교 논리와 결과 표
-- RESTORE_VERIFIED.json: 모델·데이터·인덱스·기존 head 복원 검증
-- CLAUDE_RESPONSE.md: Claude 기록 검토 및 반영 판단
-
-현재 상태: 계획 작성 및 자산 복원 완료. 새 head 구현, 라벨 수집, KD, GRPO, 평가는 미실행. Python 실행 환경 복원도 미완료. 자동 실험 시작 없음.
-모델 가중치와 원본 데이터는 local-fast에 있으며 Git에 넣지 않음.
+검토 요청: PLAN.md, GATES.md, RESPONSE_OBS_01.md
