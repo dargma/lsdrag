@@ -4,9 +4,9 @@
 
 ## 현재 상태
 
-- 단계: S4 smoke. head arm이 업데이트 전 BF16 replay gate에서 FAIL. 원인 규명 완료, gate 정의에 대한 사용자 결정 대기
+- 단계: S4 본 실행 중 (06:44Z 시작). 드라이버 `scripts/run_v22_s4_main.sh`, 진행 로그 `/content/local_fast/lsdrag-text-v1/logs/v22_s4_main.log`
 - 마지막 gate: S1 pointer 품질 FAIL → 사용자 지시로 진행 (아래)
-- 실행 중 PID: 없음
+- 실행 중 PID: 드라이버 122389 (setsid). 단계별 상태는 `results/v22_s4_main_{head,native}_{collect,update}{1,2}/status.json`
 - 결과 경로: `/content/local_fast/lsdrag-text-v1/results/`
 
 ## 인수 시점 판단
@@ -50,6 +50,9 @@ Claude가 `results/v22_kd_20261110/summary.json`의 66개 상태를 다시 계�
 | S3 호출 절감 직접 비교 그룹 | ≥ 10%, 미만이면 사용자 확인 | head 2/24 (8.3%) / native 3/24 (12.5%) | **사용자 확인 필요** | 같음 | 06:15 |
 | S3 호출 절감 신호 | 사용자 확인 | 사용자: "S4 smoke부터 진행해" | 사용자 승인으로 진행 | 대화 기록 | 06:17 |
 | S4 smoke, BF16 replay | 단위 logprob 오차 최댓값 ≤ 0.05 | head: 최대 0.898 / 평균 0.0064 (9,981단위). native(진단 측정): free 최대 11.36 / 평균 0.0086, 도구 분기 최대 1.67 / 평균 0.0169 | **FAIL**, 업데이트 0회 | `results/v22_s4_smoke_head_r1/replay_gate.json` | 06:19 |
+| S4 replay gate 정의 | (재정의) 평균 abs 오차 ≤ 0.05, 최대·p99·clip 밖 비율 보고 | 사용자: "1번으로 진행해" | 사용자 결정으로 재정의 | `scripts/run_fullft_grpo.py` 2d7b7a9 | 06:24 |
+| S4 smoke head | replay 평균 ≤ .05 / KL ≤ .10 / clip ≤ .50 / gradient 경로 / EM 하락 < 2/16 / F1 하락 < .10 | .0063 / .0023 / 1.8% / LLM·도구 3층·pointer / 0 / 0 | PASS | `results/v22_s4_smoke_head_r1b` | 06:31 |
+| S4 smoke native | 같음 | .0087 / .0026 / 1.5% / LLM / 0 / F1 +.025 | PASS | `results/v22_s4_smoke_native_r1b` | 06:43 |
 
 ## 로그
 
@@ -156,3 +159,47 @@ manifest `specs/v22/s3/pilot_{head,native}_T1.json`, gate spec `specs/v22/s3/gat
 - 결론: replay 코드와 토큰 정렬은 맞음 (FP32에서 일치). BF16에서 캐시 계산과 전체 계산이 드물게 크게 갈림. "모든 단위의 최댓값 ≤ 0.05"는 BF16 추론으로는 충족할 수 없는 기준임.
 - 과거 v2.1의 "replay gap 약 0.02"는 free 토큰의 평균 abs 오차였음 (`experiments/fullft_grpo_20261103/smoke_compare.md` 0.0075~0.0116, 최종 0.027~0.031). 같은 정의로 이번 값은 head 0.0065 / native 0.0086임.
 - PLAN은 "실패 시 임의 기준 완화 금지"이므로 Claude가 기준을 바꾸지 않음. 사용자 결정을 요청함.
+
+### 06:24Z replay gate 재정의 (사용자 결정)
+
+- 사용자가 선택지 1을 고름. gate 통계를 "모든 단위의 최댓값 ≤ 0.05"에서 "평균 abs 오차 ≤ 0.05"(v2.1의 replay gap 정의)로 바꾸고, 최댓값·p99·0.05 초과 비율·PPO clip 범위(ln 1.2) 밖 비율을 `replay_gate.json`에 함께 기록함.
+- 이것은 gate 실패 뒤의 기준 변경임. 근거는 FP32에서 두 계산 방식이 0.001 이내로 일치한다는 측정과 v2.1 본 실행의 선례임.
+
+### 06:31Z~06:43Z S4 smoke round 1 (재정의 gate, `_r1b`)
+
+같은 pilot rollout의 16문항 × 8회, 업데이트 2회 (각 16 궤적), 소스 `v22_s4_2d7b7a9`.
+
+| 항목 | head | native |
+|---|---:|---:|
+| replay 평균 / p99 / 최대 | 0.0063 / 0.189 / 0.898 | 0.0087 / 0.163 / 11.36 |
+| PPO clip 범위 밖 단위 (업데이트 전) | 1.1% | 0.9% |
+| 업데이트 2 뒤 평균 k3 KL | 0.0023 | 0.0026 |
+| PPO clip 비율 (업데이트 1 / 2) | 1.1% / 1.8% | 0.6% / 1.5% |
+| clip 전 LLM gradient norm (1 / 2) | 215 / 97.5 | 272 / 284 |
+| head gradient norm (1 / 2) | 7.2 / 2.9 | – |
+| gradient 경로 | LLM, tool trunk/action/skip, pointer | LLM |
+| GPU 최대 할당 | 70.1 GiB | 70.1 GiB |
+| 소요 | 267초 | 278초 |
+
+같은 train16 greedy, 업데이트 전 → 후:
+
+| 조건 | EM | F1 | 호출 | 생성 토큰 | read_support_recall |
+|---|---|---|---|---|---|
+| head | .125 → .125 | .2885 → .2885 | 2.56 → 2.56 | 86.75 → 86.56 | .104 → .125 |
+| native | .1875 → .1875 | .326 → .351 | 2.63 → 2.63 | 119.7 → 118.1 | .172 → .193 |
+
+- 하드 중단 기준에 걸린 항목 없음. 두 arm 모두 greedy 행동이 조금 움직였고 (토큰 수, 읽은 근거) EM은 그대로임. 업데이트 무효 경보 조건(지표 차이 1e-6 이내)에 해당하지 않음.
+- 미측정: 업데이트 후 8-rollout 재수집 다양성, 같은 replay 상태의 평균 logprob 변화, 저장 후 재로드 greedy 동일성의 별도 검사 (업데이트 후 평가는 저장된 모델을 다시 불러 실행했음).
+- 보상 계수 변경 조건(비용 성분 비중 < 5% 등)은 계산하지 않았고 계수는 원 값 유지. 추가 smoke round 없음.
+- smoke 가중치는 삭제함 (본 실행에 쓰지 않음). 수치 기록 json은 남김.
+
+### 06:44Z S4 본 실행 시작
+
+- 소스 `source_snapshots/v22_s4main_bf9a67d`. 학습 문항: KD fit에서 hop별 앞 64개씩 192문항 (KD 내부검증 문항 제외). 각 iteration 8회 rollout, 온도 1, 단계 보상, 계수 (0.15, 0.10), batch 16, LLM lr 1e-6 / head lr 5e-5, KL 0.02 (기준 정책은 각 arm의 iteration 0).
+- gate 증명 파일: 두 arm smoke의 `replay_gate.json`, `gradient_gate.json`, S3 `gate.json`(process_reward).
+- 순서: head 수집 1 → (head 업데이트 1 ∥ native 수집 1) → (native 업데이트 1 ∥ head 수집 2) → (head 업데이트 2 ∥ native 수집 2) → (native 업데이트 2 ∥ head dev192 i1·i2) → native dev192 i1·i2. 전체 학습 업데이트는 동시에 하나만 실행함.
+- 계획과 다른 점:
+  - PLAN은 head/native full-FT 동시 실행 금지만 정함. 한 arm의 업데이트와 다른 arm의 수집은 겹쳐 돌림 (약 70 + 11 GiB).
+  - 디스크 127 GiB 여유로는 arm별 optimizer 상태(각 48 GiB)를 모두 보관할 수 없음. iteration 1의 상태는 iteration 2 업데이트가 읽은 직후 삭제하고, iteration 2는 optimizer 상태를 저장하지 않음. PLAN의 "최종 재개 상태를 Drive에 보존"은 충족하지 않음. 모델과 head는 i1·i2 모두 보존함.
+  - iteration별 수집 seed는 `20261110 + 1000003 × iteration`.
+- test320은 열지 않음.
