@@ -130,10 +130,20 @@ class PolicyReader(AlignedReader):
         observation = next((m['content'] for m in reversed(messages) if m['role']=='tool'), question)
         qs = matched_span(self.tokenizer, ids, question)
         obs = matched_span(self.tokenizer, ids, observation, last=bool(history))
+        candidate_ids, candidate_spans = [], []
+        if getattr(self, 'v22', False):
+            from .chunk_pointer import visible_candidate_spans
+            candidate_ids, candidate_spans = visible_candidate_spans(self.tokenizer, ids, history)
         self._sync(); tick = time.perf_counter()
         with torch.inference_mode():
             out = self.model.model(**inputs, use_cache=True, return_dict=True)
             pack = pack_hidden(out.last_hidden_state[0], qs, obs)
+            if getattr(self, 'v22', False):
+                from .chunk_pointer import pool_candidates
+                self.candidate_features = pool_candidates(out.last_hidden_state[0], candidate_spans)
+                self.capture_record = {'context_ids': ids, 'candidate_ids': candidate_ids,
+                                       'candidate_spans': candidate_spans,
+                                       'question_span': qs, 'observation_span': obs}
         self.pending = {'past':out.past_key_values, 'ids':ids, 'mask':inputs['attention_mask'],
                         'last_hidden':out.last_hidden_state[:,-1].detach().clone()}
         self._sync()
@@ -240,6 +250,8 @@ def rollout(reader, question, rows, vectors, embedder, prompt, head, deadline,
         forced=len(history)>=8
         pack, cu=reader.capture_pack(messages,history,deadline);usage.append(cu)
         legal=torch.tensor([[any(o['action']==a for o in options_for(question,history)) for a in ACTIONS]],device=pack.device)
+        if getattr(reader, 'v22', False):
+            legal[0, 2] = bool(reader.capture_record['candidate_ids'])
         if forced:legal[:]=False;legal[:,3]=True
         with torch.no_grad():
             if historical is not None:
@@ -248,7 +260,8 @@ def rollout(reader, question, rows, vectors, embedder, prompt, head, deadline,
             elif head is not None:
                 logits,val,_,_=head(pack.unsqueeze(0),legal)
             else:logits=torch.zeros((1,4),device=pack.device);val=torch.zeros(1,device=pack.device)
-            dist=distribution(logits,legal,epsilon if stochastic else 0.)
+            decision_temperature = (getattr(reader, 'head_temperature', 1.) if stochastic else 1.)
+            dist=distribution(logits / decision_temperature,legal,epsilon if stochastic else 0.)
             action=int(dist.sample()) if stochastic else int(dist.probs.argmax())
             if first_action is not None and not steps:
                 action=first_action;assert bool(legal[0,action])
@@ -256,9 +269,28 @@ def rollout(reader, question, rows, vectors, embedder, prompt, head, deadline,
         if len(snapshots)<2 and not forced:
             snapshots.append({'messages':copy.deepcopy(messages),'history':copy.deepcopy(history)})
         name=ACTIONS[action]
+        capture = None
+        if getattr(reader, 'v22', False):
+            capture = dict(reader.capture_record)
+            capture['candidate_features'] = reader.candidate_features.detach().cpu().to(state_storage_dtype)
+        pointer_events = []
         if native_fast and not forced:
             name,payload,pu,tu,error=reader.fast_native(history,deadline);usage.extend([pu,tu]);action=ACTIONS.index(name)
             increment=[cu,pu,tu]
+        elif name == 'read_chunk' and getattr(reader, 'pointer_head', None) is not None:
+            tick = time.perf_counter()
+            with torch.no_grad():
+                selected, events = reader.pointer_head.select(pack[0], reader.candidate_features,
+                    stochastic=stochastic, temperature=decision_temperature)
+            payload = {'chunk_ids': [capture['candidate_ids'][i] for i in selected]}
+            pointer_events = [{'choice': e['choice'], 'stop': e['stop'],
+                               'old_logp': float(e['logp']), 'entropy': float(e['entropy'])} for e in events]
+            reader.pending = None
+            tu = {'generated_tokens': 0, 'completion_tokens': 0, 'prompt_tokens': 0,
+                  'full_prefill_count': 0, 'seconds': time.perf_counter()-tick, 'mode': 'chunk_pointer',
+                  'selected_indices': selected, 'candidate_count': len(capture['candidate_ids'])}
+            error = None
+            usage.append(tu); increment = [cu, tu]
         else:
             payload,tu,error=reader.continue_cached(name,history,deadline);usage.append(tu);increment=[cu,tu]
         generated=sum(u.get('generated_tokens',0) for u in increment)
@@ -268,10 +300,16 @@ def rollout(reader, question, rows, vectors, embedder, prompt, head, deadline,
         steps.append({'pack':pack.detach().cpu().to(state_storage_dtype),'legal':legal[0].cpu(),'action':action,
                       'old_logp':logp,'value':float(val[0]),'cost_units':cost,'policy_probs':dist.probs[0].cpu().tolist(),
                       'forced':forced,'branch_intervention':first_action is not None and len(steps)==0})
+        if capture is not None:
+            steps[-1].update(capture=capture, pointer_events=pointer_events,
+                             temperature=decision_temperature, step_id=len(steps)-1)
+            if native_fast:
+                steps[-1]['old_logp'] = None
+                steps[-1]['policy_probs'] = None
         if error:
             errors.append(error);break
         if name=='FINAL':final=payload;break
-        validate(payload,argument_schema(name,history))
+        validate(payload, reader.payload_schema(name, history) if getattr(reader, 'v22', False) else argument_schema(name,history))
         tick=time.perf_counter();result=corpus.call(name,payload)
         history.append({'tool_name':name,'arguments':payload,'result':result,'argument_reused':False,'seconds':time.perf_counter()-tick})
         tc={'id':f'call_{len(history)-1}','type':'function','function':{'name':name,'arguments':canonical(payload)}}
@@ -284,5 +322,5 @@ def rollout(reader, question, rows, vectors, embedder, prompt, head, deadline,
              'prompt_tokens':sum(u.get('prompt_tokens',0) for u in usage),
              'forced_prefix_tokens':sum(u.get('forced_prefix_tokens',0) for u in usage),
              'cost_units':sum(s['cost_units'] for s in steps),
-             'decisions':[{k:v for k,v in s.items() if k not in ('pack','legal')}|{'legal':s['legal'].tolist()} for s in steps]}
+             'decisions':[{k:v for k,v in s.items() if k not in ('pack','legal','capture')}|{'legal':s['legal'].tolist()} for s in steps]}
     return episode,steps,snapshots

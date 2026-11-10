@@ -26,9 +26,24 @@ def prefixes_for(action):
 
 
 class SampledReader(RecoveryPolicyReader):
+    v22 = False
+    pointer_head = None
+    head_temperature = 1.
     temperature = 0.
     decision_temperature = None   # native tool-name branches; None = same as temperature
     answer_max_chars = None       # grammar cap on the FINAL answer string (token constraint)
+
+    def payload_schema(self, action, history):
+        schema = FINAL_SCHEMA if action == 'FINAL' else argument_schema(action, history)
+        if self.v22 and action == 'read_chunk':
+            from .chunk_pointer import unread_candidates
+            ids = [cid for cid, _ in unread_candidates(history)]
+            if not ids:
+                raise ValueError('read_chunk has no unread candidate')
+            schema['properties']['chunk_ids']['items']['enum'] = ids
+            schema['properties']['chunk_ids']['maxItems'] = min(8, len(ids))
+            schema['properties']['chunk_ids']['uniqueItems'] = True
+        return schema
 
     def _choose(self, logits, allowed=None, temperature=None):
         """Return (token, log-prob at T (1 if greedy), entropy) over allowed ids (or full vocab)."""
@@ -47,7 +62,7 @@ class SampledReader(RecoveryPolicyReader):
 
     def _payload(self, state, action, trajectory, argprefix, segment, deadline, budget):
         from lmformatenforcer import JsonSchemaParser, TokenEnforcer
-        schema = FINAL_SCHEMA if action == 'FINAL' else argument_schema(action, trajectory)
+        schema = self.payload_schema(action, trajectory)
         if action == 'FINAL' and self.answer_max_chars:
             schema = json.loads(json.dumps(schema)); schema['properties']['answer']['maxLength'] = self.answer_max_chars
         initial = advance_json_parser(JsonSchemaParser(schema, self.json_config), argprefix); parser = initial
@@ -102,7 +117,12 @@ class SampledReader(RecoveryPolicyReader):
 
     def fast_native(self, history, deadline):
         """Native arm: the LLM chooses the tool name among legal trie branches (sampled at temperature), then the payload."""
-        legal = [a for a in ACTIONS if a != 'read_chunk' or observed_ids(history)]
+        if self.v22:
+            from .chunk_pointer import unread_candidates
+            candidates = unread_candidates(history)
+        else:
+            candidates = observed_ids(history)
+        legal = [a for a in ACTIONS if a != 'read_chunk' or candidates]
         prefixes = {a: prefixes_for(a) for a in legal}
         sequences = {a: self.tokenizer.encode(v[0], add_special_tokens=False) for a, v in prefixes.items()}
         pending = self.pending; self.pending = None; start = time.perf_counter()
@@ -212,3 +232,58 @@ def evidence_step_rewards(episode, gold, alpha=.5, cost=.05):
         out.append(alpha*credit/max(1, len(gold))-cost)
     out += [episode['f1']]*(len(episode['decisions'])-len(out))
     return out
+
+
+def v22_terminal_reward(episode):
+    """Bounded accuracy-first objective; never replaces the QA scorer."""
+    valid = not episode.get('errors') and bool(episode.get('answer', '').strip())
+    em = float(episode['em']) if valid else 0.
+    f1 = float(episode['f1']) if valid else 0.
+    n, tokens = episode['tool_calls'], episode['generated_tokens']
+    if not (em in (0., 1.) and 0 <= f1 <= 1 and 0 <= n <= 8 and tokens >= 0):
+        raise ValueError('Invalid reward inputs')
+    quality = .8*em + .2*f1
+    token_cost = .10*quality*tokens/(tokens+128)
+    call_cost = .15*em*n/8
+    return dict(quality=quality, token_cost=token_cost, call_cost=call_cost,
+                terminal=quality-token_cost-call_cost)
+
+
+def v22_step_rewards(episode, gold, process=False):
+    """One reward per actual environment decision, including final/error step."""
+    rewards = [0.] * len(episode['decisions'])
+    if not rewards:
+        raise ValueError('An episode must have at least one decision')
+    rewards[-1] += v22_terminal_reward(episode)['terminal']
+    seen, read = set(), set()
+    if process:
+        if not gold:
+            raise ValueError('Process reward needs train-only support IDs')
+        for i, turn in enumerate(episode['trajectory']):
+            if turn['tool_name'] == 'read_chunk':
+                ids = set(turn['arguments']['chunk_ids']) & gold
+                rewards[i] += .05*len(ids-read)/len(gold)
+                read |= ids
+            else:
+                ids = {r['chunk_id'] for r in turn['result']} & gold
+                rewards[i] += .05*len(ids-seen)/len(gold)
+                seen |= ids
+    return rewards
+
+
+def v22_group_advantages(episodes, gold, process=False):
+    """Group8 scalar centering or signed per-step leave-one-out RTG centering."""
+    if len(episodes) != 8:
+        raise ValueError('v2.2 requires exactly 8 rollouts per question')
+    qids = {ep.get('qid') for ep in episodes}
+    if len(qids) != 1:
+        raise ValueError('Cannot center advantages across different questions')
+    rewards = [v22_step_rewards(ep, gold, process) for ep in episodes]
+    if not process:
+        totals = [sum(r) for r in rewards]
+        mean = sum(totals)/8
+        return [[t-mean]*len(ep['decisions']) for t, ep in zip(totals, episodes)]
+    returns = [[sum(r[t:]) for t in range(len(r))] for r in rewards]
+    return [[rtg - sum(other[t] if t < len(other) else 0.
+                       for j, other in enumerate(returns) if i != j)/7
+             for t, rtg in enumerate(row)] for i, row in enumerate(returns)]

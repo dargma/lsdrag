@@ -1,7 +1,7 @@
-# Current 2026-11-10T04:48:55.987999+00:00
+# Current 2026-11-10T04:55:31.522682+00:00
 
-최신 사용자 실행 승인: 계획 전체 수행·보고서·Drive/Git 백업. 추가 지시: claude/INSTRUCT_codex.md 그대로 준수. gate 실패 시 멈추고 보고·백업, 사용자 확인 지점은 질문.
+S0 legacy dev192 PID41418/session35227 진행. 고정 소스 source_snapshots/v22_s0, 로그 logs/v22_legacy_dev192.log. train16 오류0, 테스트18 pass, pointer CPU 테스트7 pass(후보0 예외 누락 수정 후).
 
-S0 환경 복원: runtime transformers5.6.2/lm-format-enforcer0.11.3, embedding-env transformers5.19.0/sentence-transformers6.1.0. 현재 torch2.14.1+cu130으로 과거2.11과 차이가 있음. legacy 재현 차이의 후보 요인으로 기록.
+사용자 최신 override: H0-G 필수 비교 제외, H0-P EM 또는 F1이 공통 계약 N0보다 낮을 때만 진단. PLAN 개정4.
 
-PID38568 smoke는 계획 사전 커밋 누락으로 임시 정지. 다음 명령: commit/push 확인 후 kill -CONT 38568, exec14039/status/log 관찰. train16 통과 후 frozen source_s0로 legacy dev192 실행. 다른 GPU 작업은 종료하지 않음.
+새 chunk_pointer.py와 capture/rollout, collector/KD 확장 구현 중, 아직 GPU 실행 전. S0 결과가 기존과 다르면 원인 조사 후에만 다음 단계. claude/OBS_NN 신규 파일을 다음 단계 전에 읽음.
