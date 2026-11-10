@@ -270,3 +270,15 @@ head arm sampled 지표 (같은 192문항 × 8회, 온도 1, 수집 seed는 iter
 - greedy 평가에서는 0건: dev192 N0/H0-P/H0-G 576 에피소드, smoke 후 train16 평가 32 에피소드 모두 `top_k`는 5 또는 3뿐. 시작 확률이 0.5를 넘지 않는 한 greedy에는 나타나지 않음.
 - 학습 영향: 해당 에피소드는 보상 0이고, 폭주 구간 토큰은 확률이 약 1이라 gradient가 거의 없음. 낭비는 head 수집 2 생성 토큰의 약 6%. 일부 배치의 KL 급등과 관련이 있는지는 미확인.
 - 조치: 이번 실행에서는 iteration 간 조건을 같게 두기 위해 문법을 바꾸지 않음. 다음 실행에서는 `top_k`를 schema에서 정수 범위(예: 1~10)나 enum으로 제한할 것.
+
+### 11:10Z 정리와 HF 백업 (사용자 요청 "불필요 파일 정리, 백업 필요한 건 git이나 HF에")
+
+- HF 비공개 저장소 두 곳에 29개 파일, 26.2 GiB를 올리고 원격 sha256을 로컬과 대조함. 목록과 해시는 `claude/HF_BACKUP.json`.
+  - 데이터셋 `sungkwang2/lsdrag-v22-generated`, 경로 `claude_runs/20261110/`: 끝난 실행 폴더마다 작은 파일(episodes, json) tar.gz 하나와 수집 group tensor tar 하나.
+  - 모델 `sungkwang2/lsdrag-v22-checkpoints` (새로 만듦, private): `head_i1/`, `native_i1/`, `head_i2/` (model safetensors, head.pt, manifest·gate json). optimizer 상태는 올리지 않음.
+- 로컬에서 지운 것 (모두 HF 해시 확인 후, 남은 단계가 읽지 않는 것):
+  - group tensor: head 수집 1·2, native 수집 1, S3 pilot 두 arm. 각 폴더에 `groups_on_hf.json`으로 위치를 남김.
+  - `/dev/shm/v22_head_update1_resume.pt` (45 GiB RAM). head 업데이트 2가 끝나 더 쓰지 않음.
+  - 작업 임시 폴더의 AtomMem 저장소 사본과 진단 스크립트. 진단 스크립트는 `scripts/diag/`로 git에 넣음.
+- 남겨 둔 것: 모델 폴더 i1·i2 (dev192 평가가 아직 읽음), `native_update1/resume.pt` (native 업데이트 2가 읽은 뒤 스스로 지움), native 수집 2 (진행 중), 모든 episode·json·spec·snapshot (작음).
+- 실행이 끝나면 `scripts/upload_v22_hf.py`로 native i2 모델, native 수집 2, dev192 평가 결과를 같은 방식으로 올림.

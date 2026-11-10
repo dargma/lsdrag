@@ -1,0 +1,205 @@
+[
+  {
+    "repo": "sungkwang2/lsdrag-v22-checkpoints",
+    "path": "head_i1/head.pt",
+    "sha256": "09b5e4afdcbaaa5f88e05b005bbca7a7b4c6d35db999a55b65e76b21dc4d6de0",
+    "bytes": 3394427,
+    "verified_utc": "2026-11-10T11:02:52.421605+00:00"
+  },
+  {
+    "repo": "sungkwang2/lsdrag-v22-checkpoints",
+    "path": "head_i1/model/model.safetensors",
+    "sha256": "8b26bef78a51b7eae970aec433ab3c43c63d33fbafb5b9902490bd96ab3b870f",
+    "bytes": 8044982080,
+    "verified_utc": "2026-11-10T11:03:03.835091+00:00"
+  },
+  {
+    "repo": "sungkwang2/lsdrag-v22-checkpoints",
+    "path": "native_i1/model/model.safetensors",
+    "sha256": "aca3bf9de97bb233fcb259113e71f380be9d6ac8e7281220dc9c498a676d1518",
+    "bytes": 8044982080,
+    "verified_utc": "2026-11-10T11:05:05.205617+00:00"
+  },
+  {
+    "repo": "sungkwang2/lsdrag-v22-generated",
+    "path": "claude_runs/20261110/results/v22_s2_smoke8.tar.gz",
+    "sha256": "288527569e42aa1d75a1fc27352826961ac20e796896518478a25b23705049e6",
+    "bytes": 138211,
+    "verified_utc": "2026-11-10T11:07:53.291462+00:00"
+  },
+  {
+    "repo": "sungkwang2/lsdrag-v22-generated",
+    "path": "claude_runs/20261110/results/v22_s2_dev192.tar.gz",
+    "sha256": "aebe8f02ec8d2b57bef2364bc41aa6e37be1f5134c6d0157f6b8687700690d7b",
+    "bytes": 3228470,
+    "verified_utc": "2026-11-10T11:07:53.295909+00:00"
+  },
+  {
+    "repo": "sungkwang2/lsdrag-v22-generated",
+    "path": "claude_runs/20261110/results/v22_s2_dev192_h0g.tar.gz",
+    "sha256": "3a2be1f75f22380d3394d473d904dc56f59a276cdd1389bd4c1cb834fadd98ed",
+    "bytes": 1768394,
+    "verified_utc": "2026-11-10T11:07:53.298928+00:00"
+  },
+  {
+    "repo": "sungkwang2/lsdrag-v22-generated",
+    "path": "claude_runs/20261110/results/v22_s3_pilot_head_T1.tar.gz",
+    "sha256": "d984b90552acca2ee058dd54176a4c44cc44222f0f63f2c9f182c50d4ede1b90",
+    "bytes": 265119,
+    "verified_utc": "2026-11-10T11:07:53.299582+00:00"
+  },
+  {
+    "repo": "sungkwang2/lsdrag-v22-generated",
+    "path": "claude_runs/20261110/groups/v22_s3_pilot_head_T1_groups.tar",
+    "sha256": "909b85bf1fad122483d1ce02e50d291e6a44188bb296338be9b46e059c29bc01",
+    "bytes": 149473280,
+    "verified_utc": "2026-11-10T11:07:53.473582+00:00"
+  },
+  {
+    "repo": "sungkwang2/lsdrag-v22-generated",
+    "path": "claude_runs/20261110/results/v22_s3_pilot_native_T1.tar.gz",
+    "sha256": "82a68f7bbba085cb566d8bbce40e259ab96eb117ff77b283cf18238ede86bc74",
+    "bytes": 239020,
+    "verified_utc": "2026-11-10T11:07:53.493260+00:00"
+  },
+  {
+    "repo": "sungkwang2/lsdrag-v22-generated",
+    "path": "claude_runs/20261110/groups/v22_s3_pilot_native_T1_groups.tar",
+    "sha256": "a340cd9a1f05bdec0453af957c7ae5c7844cb63a57d79e5a9784781fd813674c",
+    "bytes": 151869440,
+    "verified_utc": "2026-11-10T11:07:53.678903+00:00"
+  },
+  {
+    "repo": "sungkwang2/lsdrag-v22-generated",
+    "path": "claude_runs/20261110/results/v22_s3_gate_T1.tar.gz",
+    "sha256": "7c59eb34dd294be2b143ef9768f22a3eb2a7ab1fcdf64a8085941916edab6a8c",
+    "bytes": 12497,
+    "verified_utc": "2026-11-10T11:07:53.708906+00:00"
+  },
+  {
+    "repo": "sungkwang2/lsdrag-v22-generated",
+    "path": "claude_runs/20261110/results/v22_s4_smoke_head_r1.tar.gz",
+    "sha256": "682062244272989ce59fd6c6389073c5a0556ee8d04a28aa138eea2ee500e982",
+    "bytes": 5102,
+    "verified_utc": "2026-11-10T11:07:53.709034+00:00"
+  },
+  {
+    "repo": "sungkwang2/lsdrag-v22-generated",
+    "path": "claude_runs/20261110/results/v22_s4_smoke_head_r1b.tar.gz",
+    "sha256": "ce3a483e4c837866bbf3a05afd1849b9d68a8687cc0ca640d302fc1d3dfca009",
+    "bytes": 3126967,
+    "verified_utc": "2026-11-10T11:07:53.712531+00:00"
+  },
+  {
+    "repo": "sungkwang2/lsdrag-v22-generated",
+    "path": "claude_runs/20261110/results/v22_s4_smoke_native_r1b.tar.gz",
+    "sha256": "b08c1c54955a9ee946d31969faaeb35674b13db39c1eef3684d117f8f05de44b",
+    "bytes": 5920,
+    "verified_utc": "2026-11-10T11:07:53.713187+00:00"
+  },
+  {
+    "repo": "sungkwang2/lsdrag-v22-generated",
+    "path": "claude_runs/20261110/results/v22_s4_smoke_pre_train16.tar.gz",
+    "sha256": "c66f35a42fb75141e039164188739aaa811f5a62552d7d8226318a73369a9679",
+    "bytes": 271759,
+    "verified_utc": "2026-11-10T11:07:53.713577+00:00"
+  },
+  {
+    "repo": "sungkwang2/lsdrag-v22-generated",
+    "path": "claude_runs/20261110/results/v22_s4_smoke_post_head_r1b.tar.gz",
+    "sha256": "d29db6e7e1336de7fd6835b71de6bb85c017d8360dd71811d33b01f2fb75eaad",
+    "bytes": 126963,
+    "verified_utc": "2026-11-10T11:07:53.714025+00:00"
+  },
+  {
+    "repo": "sungkwang2/lsdrag-v22-generated",
+    "path": "claude_runs/20261110/results/v22_s4_smoke_post_native_r1b.tar.gz",
+    "sha256": "8c84ee3a36dea7bac6d7758d7a221b0491bc7fdd4cb68505a457a3fb272d0576",
+    "bytes": 149979,
+    "verified_utc": "2026-11-10T11:07:53.714346+00:00"
+  },
+  {
+    "repo": "sungkwang2/lsdrag-v22-generated",
+    "path": "claude_runs/20261110/results/v22_s4_main_head_collect1.tar.gz",
+    "sha256": "dc2df5320cc51cff7583f9e79d930d2451c00f0ca1374447aff46be79b680405",
+    "bytes": 2087404,
+    "verified_utc": "2026-11-10T11:07:53.716921+00:00"
+  },
+  {
+    "repo": "sungkwang2/lsdrag-v22-generated",
+    "path": "claude_runs/20261110/groups/v22_s4_main_head_collect1_groups.tar",
+    "sha256": "fb88960186051a5a1a29b0f89ba6bde73e8191829672729128aab4be69805759",
+    "bytes": 1199790080,
+    "verified_utc": "2026-11-10T11:07:55.136853+00:00"
+  },
+  {
+    "repo": "sungkwang2/lsdrag-v22-generated",
+    "path": "claude_runs/20261110/results/v22_s4_main_native_collect1.tar.gz",
+    "sha256": "04f31144f007a3ca24193bee48bbeca07ad86825e56fa0c408a4c1070a65099a",
+    "bytes": 1854412,
+    "verified_utc": "2026-11-10T11:07:55.283889+00:00"
+  },
+  {
+    "repo": "sungkwang2/lsdrag-v22-generated",
+    "path": "claude_runs/20261110/groups/v22_s4_main_native_collect1_groups.tar",
+    "sha256": "2c51c72147a53476e2d7e4ed1242148e90e4f1a41168dcfcf28824cf31442bcb",
+    "bytes": 1203353600,
+    "verified_utc": "2026-11-10T11:07:56.760461+00:00"
+  },
+  {
+    "repo": "sungkwang2/lsdrag-v22-generated",
+    "path": "claude_runs/20261110/results/v22_s4_main_native_update1_failed_disk.tar.gz",
+    "sha256": "a166dc5877e365b9bacbc15e339d4a9763650deba2941242e1f54bd7ca29c056",
+    "bytes": 29481,
+    "verified_utc": "2026-11-10T11:07:56.917311+00:00"
+  },
+  {
+    "repo": "sungkwang2/lsdrag-v22-checkpoints",
+    "path": "head_i2/head.pt",
+    "sha256": "d1a1f63327454890b06e801d171b3049816086fbccfca6d4e78e15b58c942061",
+    "bytes": 3394427,
+    "verified_utc": "2026-11-10T11:10:05.858390+00:00"
+  },
+  {
+    "repo": "sungkwang2/lsdrag-v22-checkpoints",
+    "path": "head_i2/model/model.safetensors",
+    "sha256": "9f92052b1b8d6bf7f6b290975904e3be2177a6e81450bcd2641b17edaa3ea60a",
+    "bytes": 8044982080,
+    "verified_utc": "2026-11-10T11:10:15.350397+00:00"
+  },
+  {
+    "repo": "sungkwang2/lsdrag-v22-generated",
+    "path": "claude_runs/20261110/results/v22_s4_main_head_collect2.tar.gz",
+    "sha256": "7627aaf87c12a0d4facdeb491cec282240cbd8ceda3a4c41578b70a3895532a0",
+    "bytes": 2220312,
+    "verified_utc": "2026-11-10T11:10:51.291738+00:00"
+  },
+  {
+    "repo": "sungkwang2/lsdrag-v22-generated",
+    "path": "claude_runs/20261110/groups/v22_s4_main_head_collect2_groups.tar",
+    "sha256": "027bd94e2cdc3dcb1440367ff31c0f57fe66d2271a7ea98ca1700adbcb5e22bb",
+    "bytes": 1206118400,
+    "verified_utc": "2026-11-10T11:10:53.218260+00:00"
+  },
+  {
+    "repo": "sungkwang2/lsdrag-v22-generated",
+    "path": "claude_runs/20261110/results/v22_s4_main_head_update1.tar.gz",
+    "sha256": "bcab7c92208aa087af9e5feb574382fb65a8d50a7b08d850efd3ce02f378f4c5",
+    "bytes": 3151614,
+    "verified_utc": "2026-11-10T11:10:53.369387+00:00"
+  },
+  {
+    "repo": "sungkwang2/lsdrag-v22-generated",
+    "path": "claude_runs/20261110/results/v22_s4_main_head_update2.tar.gz",
+    "sha256": "3908c9f93208a6fe90d080abb6636792d60732857763b7cd6bb7aa164cc8580d",
+    "bytes": 3152045,
+    "verified_utc": "2026-11-10T11:10:53.373040+00:00"
+  },
+  {
+    "repo": "sungkwang2/lsdrag-v22-generated",
+    "path": "claude_runs/20261110/results/v22_s4_main_native_update1.tar.gz",
+    "sha256": "306465fb982eb11cb29b94273d50a4ff4c1c235f4869a83f6df53299384aabf3",
+    "bytes": 29629,
+    "verified_utc": "2026-11-10T11:10:53.373641+00:00"
+  }
+]
