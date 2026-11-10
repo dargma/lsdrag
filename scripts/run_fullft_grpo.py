@@ -30,10 +30,316 @@ def k3(ref, new):
     d = ref-new
     return d.exp()-d-1
 
+
+def collect_v22_manifest(args):
+    """Frozen, train-only group8 evidence for reward diagnosis; no optimizer."""
+    import hashlib
+    import fcntl
+    from lsdrag.chunk_pointer import ChunkPointer
+    from lsdrag.decision_policy import PolicyHead
+    from lsdrag.fullft import v22_terminal_reward
+    spec = json.loads(Path(args.manifest).read_text())
+    assert spec['profile'] == 'v22' and spec['stage'] in ('reward_pilot', 'training_collection')
+    assert spec['arm'] == args.arm and spec['repeats'] == 8
+    assert args.collect_only
+    split = json.loads((REPO/'configs/split_mixhop.json').read_text())
+    assert set(spec['qids']) <= set(split['train'])
+    expected = 24 if spec['stage'] == 'reward_pilot' else 192
+    assert len(set(spec['qids'])) == len(spec['qids']) == expected
+    assert all(sum(q.startswith(h) for q in spec['qids']) == expected//3 for h in ('2hop','3hop','4hop'))
+    for name, digest in spec['source_sha256'].items():
+        assert sha(REPO/name) == digest, name
+    lock = (ROOT/'decision_policy.lock').open('a')
+    fcntl.flock(lock, fcntl.LOCK_EX | fcntl.LOCK_NB)
+    out = Path(spec['output']); out.mkdir(parents=True, exist_ok=False)
+    save(out/'manifest.json', spec)
+    start = time.perf_counter(); counts = dict(episodes=0, generated=0, inputs=0)
+    def phase(name, **kw):
+        save(out/'status.json', dict(phase=name, pid=None if name in ('complete','failed') else os.getpid(),
+            seconds=time.perf_counter()-start, **counts, **kw))
+    phase('loading'); embed = None
+    torch.set_num_threads(2); torch.manual_seed(spec['seed'])
+    try:
+        raw = {}
+        for line in (ROOT/'source/musique/musique_ans_v1.0_train.jsonl').open():
+            q = json.loads(line)
+            if q['id'] in spec['qids']:
+                raw[q['id']] = q
+        assert set(raw) == set(spec['qids'])
+        cm = json.loads((Path(spec['corpus'])/'manifest.json').read_text())
+        assert sha(Path(spec['corpus'])/'documents.jsonl') == cm['document_sha256']
+        assert sha(Path(spec['corpus'])/'vectors.npy') == cm['vectors_sha256']
+        rows = [json.loads(line) for line in (Path(spec['corpus'])/'documents.jsonl').open()]
+        vectors = np.load(Path(spec['corpus'])/'vectors.npy', mmap_mode='r')
+        reader = SampledReader(spec['model'], SimpleNamespace(max_output_tokens=512, context_limit=16384))
+        reader.v22 = True; reader.answer_max_chars = spec['answer_max_chars']
+        reader.temperature = 1.; reader.decision_temperature = spec['decision_temperature']
+        reader.head_temperature = spec['decision_temperature']
+        head = None
+        if args.arm == 'head':
+            assert args.pointer
+            assert sha(Path(spec['head_checkpoint'])) == spec['head_sha256']
+            ck = torch.load(spec['head_checkpoint'], weights_only=True, map_location='cpu')
+            head = PolicyHead(); head.load_state_dict(ck['tool']); head = head.cuda().eval()
+            pointer = ChunkPointer(); pointer.load_state_dict(ck['pointer']); reader.pointer_head = pointer.cuda().eval()
+        embed = V11ProcessEmbedder()
+        prompt = (REPO/'prompts/text_rag_integrated_v5.txt').read_text()
+        sys.path.insert(0, str(ROOT/'source/musique_scorer'))
+        from metrics.answer import compute_exact, compute_f1
+        deadline = time.perf_counter()+spec['max_seconds']
+        paths, groups, supports = [], [], {}
+        for qi, qid in enumerate(spec['qids']):
+            q = raw[qid]
+            supports[qid] = ['c'+hashlib.sha256(json.dumps([p['title'],p['paragraph_text']], ensure_ascii=False,
+                              separators=(',',':')).encode()).hexdigest()[:24] for p in q['paragraphs'] if p['is_supporting']]
+            group = []
+            for rep in range(8):
+                torch.manual_seed(spec['seed']+qi*8+rep)
+                ep, steps, _ = rollout(reader, q['question'], rows, vectors, embed, prompt, head, deadline,
+                    stochastic=args.arm == 'head', epsilon=0., native_fast=args.arm == 'native')
+                aliases = [q['answer']]+q['answer_aliases']
+                ep.update(qid=qid, arm=args.arm, rep=rep,
+                          em=max(compute_exact(a,ep['answer']) for a in aliases),
+                          f1=max(compute_f1(a,ep['answer']) for a in aliases))
+                ep['reward_components_default'] = v22_terminal_reward(ep)
+                for usage in ep['reader_calls']:
+                    usage.pop('segment', None)
+                path = out/f'episodes/{qid}_r{rep}.json'
+                save(path, ep); paths.append(str(path))
+                group.append(dict(episode=ep, steps=steps))
+                counts['episodes'] += 1; counts['generated'] += ep['generated_tokens']; counts['inputs'] += ep['prompt_tokens']
+                phase('collection', question=qi+1, repetition=rep+1)
+                if counts['generated'] > spec['max_generated'] or counts['inputs'] > spec['max_inputs']:
+                    raise RuntimeError('Frozen pilot token budget exceeded')
+            gp = out/f'groups/{qid}.pt'; gp.parent.mkdir(exist_ok=True)
+            torch.save(group, gp); groups.append(str(gp))
+        save(out/'evidence.json', dict(episode_files=paths, episode_sha256={p:sha(Path(p)) for p in paths},
+             group_files=groups, group_sha256={p:sha(Path(p)) for p in groups}, train_support_ids=supports,
+             qids=spec['qids'], updates=0, model_sha_contract=spec['model'], decision_temperature=spec['decision_temperature']))
+        phase('complete', updates=0)
+    except BaseException as exc:
+        phase('failed', error=repr(exc)); raise
+    finally:
+        if embed:
+            embed.close()
+
+
+def update_v22_manifest(args):
+    """Update from immutable on-policy group8 evidence, preserving full replay.
+
+    A separate frozen manifest connects collection, update, evaluation and gates.
+    No automatic continuation or policy/reward search is performed here.
+    """
+    import shutil
+    from lsdrag.chunk_pointer import ChunkPointer
+    from lsdrag.decision_policy import PolicyHead
+    from lsdrag.fullft import replay_v22_step, v22_group_advantages
+    spec = json.loads(Path(args.manifest).read_text())
+    assert spec['profile'] == 'v22' and spec['stage'] in ('update_smoke', 'grpo_update')
+    assert spec['arm'] == args.arm
+    assert spec['repeats'] == 8 and spec['batch'] == 16 and spec['update_passes'] == 1
+    split = json.loads((REPO/'configs/split_mixhop.json').read_text())
+    expected_questions = 16 if spec['stage'] == 'update_smoke' else 192
+    assert len(spec['qids']) == len(set(spec['qids'])) == expected_questions
+    assert set(spec['qids']) <= set(split['train'])
+    collection_path = Path(spec['collection_manifest'])
+    assert sha(collection_path) == spec['collection_manifest_sha256']
+    collection = json.loads(collection_path.read_text())
+    assert json.loads((collection_path.parent/'status.json').read_text())['phase'] == 'complete'
+    for key in ('arm', 'model', 'decision_temperature'):
+        assert collection[key] == spec[key], ('on-policy contract', key)
+    assert collection['repeats'] == 8 and collection['answer_max_chars'] == 60
+    assert set(spec['qids']) <= set(collection['qids'])
+    if args.arm == 'head':
+        assert collection['head_sha256'] == spec['head_sha256']
+    for name, digest in spec['source_sha256'].items():
+        assert sha(REPO/name) == digest, name
+    if spec['stage'] == 'grpo_update':
+        assert spec['gate_proofs'], 'Main update requires frozen gate proof files'
+    for proof in spec['gate_proofs']:
+        path = Path(proof['path'])
+        assert sha(path) == proof['sha256']
+        record = json.loads(path.read_text())
+        assert record[proof['field']] == proof['value']
+    out = Path(spec['output']); out.mkdir(parents=True, exist_ok=False)
+    save(out/'manifest.json', spec)
+    start = time.perf_counter()
+    def phase(name, **kw):
+        save(out/'status.json', dict(phase=name, pid=None if name in ('complete','failed','gate_failed') else os.getpid(),
+             seconds=time.perf_counter()-start, **kw))
+    phase('loading_evidence')
+    torch.set_num_threads(2); torch.manual_seed(spec['seed'])
+    try:
+        groups, trajectories, seen_qids = [], [], set()
+        for path in spec['group_files']:
+            assert sha(Path(path)) == spec['group_sha256'][path]
+            group = torch.load(path, weights_only=True, map_location='cpu')
+            assert len(group) == 8 and {g['episode']['rep'] for g in group} == set(range(8))
+            qid = group[0]['episode']['qid']
+            assert qid not in seen_qids
+            seen_qids.add(qid)
+            assert qid in spec['qids'] and all(g['episode']['qid'] == qid for g in group)
+            assert all(g['episode']['arm'] == args.arm for g in group)
+            adv = v22_group_advantages([g['episode'] for g in group], set(spec['train_support_ids'][qid]),
+                      spec['process_reward'], spec['call_weight'], spec['token_weight'])
+            for g, a in zip(group, adv):
+                assert len(g['steps']) == len(a)
+                g['advantages'] = a
+            groups.append(group); trajectories.extend(group)
+        assert len(groups) == len(spec['qids']) and len(trajectories) == 8*len(spec['qids'])
+        assert seen_qids == set(spec['qids'])
+        free_gb = torch.cuda.mem_get_info()[0]/2**30
+        if free_gb < spec.get('minimum_free_vram_gib', 80):
+            raise RuntimeError(f'Insufficient VRAM before full-FT: {free_gb:.2f} GiB')
+        reader = SampledReader(spec['model'], SimpleNamespace(max_output_tokens=512, context_limit=16384))
+        model = reader.model
+        ref_reader = SampledReader(spec['reference_model'], SimpleNamespace(max_output_tokens=512, context_limit=16384))
+        reference = ref_reader.model.eval().requires_grad_(False)
+        head = pointer = ref_head = ref_pointer = None
+        if args.arm == 'head':
+            assert args.pointer
+            def heads(path, expected):
+                assert sha(Path(path)) == expected
+                ck = torch.load(path, weights_only=True, map_location='cpu')
+                h, p = PolicyHead(), ChunkPointer()
+                h.load_state_dict(ck['tool']); p.load_state_dict(ck['pointer'])
+                return h.cuda().eval(), p.cuda().eval()
+            head, pointer = heads(spec['head_checkpoint'], spec['head_sha256'])
+            ref_head, ref_pointer = heads(spec['reference_head'], spec['reference_head_sha256'])
+            ref_head.requires_grad_(False); ref_pointer.requires_grad_(False)
+        # Full collection-time distributions must replay before any update.
+        phase('replay_gate')
+        gaps = []
+        with torch.no_grad():
+            for trajectory in trajectories:
+                for step in trajectory['steps']:
+                    _, delta = replay_v22_step(model, step, head, pointer)
+                    if delta.numel():
+                        gaps.extend(delta.abs().cpu().tolist())
+        gate = dict(unit_logprob_max_abs_error=max(gaps, default=0.), units=len(gaps),
+                    passed=bool(gaps) and max(gaps) <= .05, threshold=.05, dtype='bfloat16')
+        save(out/'replay_gate.json', gate)
+        if not gate['passed']:
+            phase('gate_failed', gate='bf16_replay'); return
+        for p in model.parameters():
+            p.requires_grad_(True)
+        model.gradient_checkpointing_enable(); model.config.use_cache = False
+        params = list(model.parameters())
+        opt = MasterAdamW(params, lr=1e-6)
+        head_params = []
+        if head is not None:
+            for name, p in head.named_parameters():
+                p.requires_grad_(name.startswith(('trunk.', 'action.', 'skip.')))
+            pointer.requires_grad_(True)
+            head_params = [p for p in head.parameters() if p.requires_grad] + list(pointer.parameters())
+        head_opt = torch.optim.AdamW(head_params, lr=5e-5, weight_decay=0.) if head_params else None
+        if spec.get('optimizer_resume'):
+            resume = Path(spec['optimizer_resume'])
+            assert sha(resume) == spec['optimizer_resume_sha256']
+            state = torch.load(resume, weights_only=True, map_location='cpu')
+            opt.load_state_dict(state['master_optimizer'])
+            if head_opt:
+                head_opt.load_state_dict(state['head_optimizer'])
+            del state
+        model.train()
+        if head is not None:
+            head.train(); pointer.train()
+        active = [g for g in trajectories if any(abs(a) > 1e-8 for a in g['advantages'])]
+        np.random.default_rng(spec['seed']).shuffle(active)
+        if not active:
+            phase('gate_failed', gate='zero_active_trajectories'); return
+        stats = []; updates = 0; gradient_seen = set()
+        max_updates = 2 if spec['stage'] == 'update_smoke' else None
+        for first in range(0, len(active), 16):
+            if max_updates is not None and updates >= max_updates:
+                break
+            opt.zero_grad()
+            if head_opt:
+                head_opt.zero_grad(set_to_none=True)
+            kls, clips, losses = [], [], []
+            for trajectory in active[first:first+16]:
+                for step, advantage in zip(trajectory['steps'], trajectory['advantages']):
+                    if abs(advantage) <= 1e-8:
+                        continue
+                    with torch.no_grad():
+                        ref_events, _ = replay_v22_step(reference, step, ref_head, ref_pointer)
+                    events, _ = replay_v22_step(model, step, head, pointer)
+                    assert [e['kind'] for e in events] == [e['kind'] for e in ref_events]
+                    if not events:
+                        continue
+                    new = torch.stack([e['new'] for e in events])
+                    old = new.new_tensor([e['old'] for e in events])
+                    refp = torch.stack([e['new'] for e in ref_events])
+                    ratio = (new-old).exp(); kl = k3(refp, new)
+                    loss = (-torch.minimum(ratio*advantage, ratio.clamp(.8,1.2)*advantage)+.02*kl).sum()/16
+                    if not torch.isfinite(loss):
+                        raise FloatingPointError('Nonfinite joint GRPO loss')
+                    loss.backward()
+                    kls.extend(kl.detach().cpu().tolist()); clips.extend(((ratio.detach() < .8)|(ratio.detach() > 1.2)).cpu().tolist())
+                    losses.append(float(loss.detach()))
+                    del events, ref_events, new, old, refp, ratio, kl, loss
+            norm = torch.nn.utils.clip_grad_norm_(params, 1.)
+            if not torch.isfinite(norm):
+                raise FloatingPointError('Nonfinite LLM gradient norm')
+            if any(p.grad is not None and p.grad.abs().sum() > 0 for p in params):
+                gradient_seen.add('llm')
+            hn = 0.
+            if head_opt:
+                hn = float(torch.nn.utils.clip_grad_norm_(head_params, 1.))
+                if not np.isfinite(hn):
+                    raise FloatingPointError('Nonfinite head gradient norm')
+                for label, module in [('tool_trunk', head.trunk), ('tool_action', head.action),
+                                      ('tool_skip', head.skip), ('pointer', pointer)]:
+                    if any(p.grad is not None and p.grad.abs().sum() > 0 for p in module.parameters()):
+                        gradient_seen.add(label)
+            opt.step()
+            if head_opt:
+                head_opt.step()
+            updates += 1
+            stats.append(dict(update=updates, trajectories=min(first+16,len(active)), loss=sum(losses),
+                              mean_kl=float(np.mean(kls)) if kls else 0., clip_fraction=float(np.mean(clips)) if clips else 0.,
+                              llm_gradient_norm=float(norm), head_gradient_norm=hn,
+                              gpu_peak_gib=torch.cuda.max_memory_allocated()/2**30))
+            save(out/'updates.json', stats)
+            phase('update', updates=updates, **stats[-1])
+            if spec['stage'] == 'update_smoke' and (stats[-1]['mean_kl'] > .10 or stats[-1]['clip_fraction'] > .50):
+                phase('gate_failed', gate='smoke_kl_or_clip', updates=updates); return
+        opt.zero_grad()
+        if head_opt:
+            head_opt.zero_grad(set_to_none=True)
+        expected = {'llm'} | ({'tool_trunk','tool_action','tool_skip','pointer'} if head is not None else set())
+        gradient_gate = dict(observed=sorted(gradient_seen), expected=sorted(expected), passed=expected <= gradient_seen)
+        save(out/'gradient_gate.json', gradient_gate)
+        if not gradient_gate['passed']:
+            phase('gate_failed', gate='missing_gradient_path'); return
+        # Keep at least 20GiB beyond the estimated model + optimizer atomic save.
+        needed = sum(p.numel() for p in params)*14 + 20*2**30
+        if shutil.disk_usage(out).free < needed:
+            raise RuntimeError('Insufficient space for checkpoint+resume+20GiB reserve')
+        phase('saving', updates=updates)
+        model.eval(); model.save_pretrained(out/'model', safe_serialization=True)
+        reader.tokenizer.save_pretrained(out/'model')
+        if head is not None:
+            torch.save({'format':'v22-tool-pointer-v1','tool':head.state_dict(),'pointer':pointer.state_dict()},out/'head.pt')
+        resume = dict(master_optimizer=opt.state_dict(), head_optimizer=head_opt.state_dict() if head_opt else None,
+                      torch_rng=torch.get_rng_state(), cuda_rng=torch.cuda.get_rng_state_all(),
+                      updates=updates, completed_iteration=spec['iteration'])
+        torch.save(resume, out/'resume.pt.tmp'); (out/'resume.pt.tmp').replace(out/'resume.pt')
+        save(out/'checkpoint.json', dict(model=str(out/'model'), head=str(out/'head.pt') if head else None,
+             files={str(p.relative_to(out)):sha(p) for p in out.rglob('*') if p.is_file() and p.suffix in ('.safetensors','.pt')},
+             iteration=spec['iteration'], updates=updates, smoke=spec['stage']=='update_smoke'))
+        phase('complete', updates=updates, gradient_paths=sorted(gradient_seen))
+    except BaseException as exc:
+        phase('failed', error=repr(exc)); raise
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('--arm', choices=['native', 'head'], required=True)
-    ap.add_argument('--name', required=True)
+    ap.add_argument('--name')
+    ap.add_argument('--manifest', help='v2.2 frozen manifest')
+    ap.add_argument('--pointer', action='store_true')
+    ap.add_argument('--collect-only', action='store_true')
+    ap.add_argument('--update-only', action='store_true')
     ap.add_argument('--questions', type=int, default=192, help='train questions per iteration')
     ap.add_argument('--split', default=str(REPO/'configs/split.json'))
     ap.add_argument('--resample', action='store_true', help='each iteration draws --questions from the train pool, equal per hop type')
@@ -60,6 +366,12 @@ def main():
     ap.add_argument('--freeze-llm', action='store_true', help='arm C: reader LLM frozen, only the head is trained (head arm only)')
     ap.add_argument('--max-seconds', type=int, default=60*60*20)
     a = ap.parse_args()
+    if a.manifest:
+        if a.update_only:
+            return update_v22_manifest(a)
+        return collect_v22_manifest(a)
+    if not a.name:
+        ap.error('--name is required for the legacy experiment')
     out = ROOT/'results'/a.name; out.mkdir(parents=True, exist_ok=False)
     SPLIT = json.loads(Path(a.split).read_text()); seed = CONFIG['grpo']['seed']
     pool = SPLIT['train']; train = pool[:a.questions]

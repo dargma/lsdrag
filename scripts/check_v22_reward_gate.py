@@ -25,6 +25,7 @@ def score_groups(groups, qids, supports, process, call_weight, token_weight):
     for arm in ('head', 'native'):
         signal_groups = diverse_groups = direct_groups = rank_correct = rank_total = 0
         zeros = units = 0
+        correct_pairs = conflicting_pairs = 0
         advantage_sizes = []
         details = []
         for qid in qids:
@@ -44,6 +45,14 @@ def score_groups(groups, qids, supports, process, call_weight, token_weight):
             correct = [i for i, e in enumerate(episodes) if e['em'] == 1 and not e['errors']]
             direct = len(correct) >= 2 and len({episodes[i]['tool_calls'] for i in correct}) >= 2
             direct_groups += direct
+            pair_count = conflict_count = 0
+            for pos, i in enumerate(correct):
+                for j in correct[pos+1:]:
+                    dn = episodes[i]['tool_calls']-episodes[j]['tool_calls']
+                    dt = episodes[i]['generated_tokens']-episodes[j]['generated_tokens']
+                    pair_count += 1
+                    conflict_count += dn*dt < 0
+            correct_pairs += pair_count; conflicting_pairs += conflict_count
             if direct:
                 best_cost = min((episodes[i]['tool_calls'], episodes[i]['generated_tokens']) for i in correct)
                 top = max(returns)
@@ -52,12 +61,14 @@ def score_groups(groups, qids, supports, process, call_weight, token_weight):
                              for i in winners)
                 rank_correct += agrees; rank_total += 1
             details.append(dict(qid=qid, correct_count=len(correct), direct_call_signal=direct,
+                                correct_pairs=pair_count, conflicting_call_token_pairs=conflict_count,
                                 unique_tool_sequences=len(patterns), returns=returns))
         result[arm] = dict(questions=len(qids), reward_varying_groups=signal_groups,
                            reward_varying_fraction=signal_groups/len(qids),
                            diverse_tool_groups=diverse_groups, diverse_tool_fraction=diverse_groups/len(qids),
                            zero_adv_decisions=zeros, decisions=units, zero_adv_fraction=zeros/units if units else 1.,
                            direct_call_groups=direct_groups, direct_call_fraction=direct_groups/len(qids),
+                           correct_pairs=correct_pairs, conflicting_call_token_pairs=conflicting_pairs,
                            ranking_groups=rank_total, ranking_agreement=rank_correct/rank_total if rank_total else None,
                            mean_abs_advantage=sum(advantage_sizes)/max(1, len(advantage_sizes)), details=details)
     return result

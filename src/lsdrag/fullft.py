@@ -204,6 +204,25 @@ class MasterAdamW:
         for p in self.params:
             p.grad = None
 
+    def state_dict(self):
+        # Must be saved synchronously between updates; do not mutate while saving.
+        return {'format': 'fp32-master-adamw-v1',
+                'shapes': [list(p.shape) for p in self.params],
+                'masters': [self.master[id(p)] for p in self.params],
+                'optimizers': [opt.state_dict() for opt in self.opts]}
+
+    @torch.no_grad()
+    def load_state_dict(self, state):
+        if state['format'] != 'fp32-master-adamw-v1' or state['shapes'] != [list(p.shape) for p in self.params]:
+            raise ValueError('Master optimizer checkpoint layout mismatch')
+        if len(state['optimizers']) != len(self.opts):
+            raise ValueError('Master optimizer chunking changed')
+        for p, saved in zip(self.params, state['masters']):
+            self.master[id(p)].copy_(saved)
+            p.copy_(self.master[id(p)])
+        for opt, saved in zip(self.opts, state['optimizers']):
+            opt.load_state_dict(saved)
+
     @torch.no_grad()
     def step(self):
         for c, opt in zip(self.chunks, self.opts):

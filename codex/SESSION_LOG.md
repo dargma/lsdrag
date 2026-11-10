@@ -19,3 +19,7 @@ S0 완전재현 gate 통과 후 source_snapshots/v22_s1으로 teacher spec576 �
 
 ## 2026-11-10T05:11:22.896125+00:00 OBS_02 반영
 offline 자동 계수선정 철회, 원(.15,.10) 유지+12후보 진단으로 개정6. 반복smoke 숫자조건 고정. S1 수집 계속. 새 replay FP32 cache/fullprefix 일치 및 tool/pointer/backbone gradient CPU2테스트 통과.
+
+## 2026-11-10T05:23:53.412026+00:00 — S1 진행 확인 및 full-FT 구현 보강
+
+PID52782 live, teacher 457/576. 새 OBS 없음. collect/update manifest 경로와 optimizer 재개 직렬화 구현, 수집 모델·head 일치/중복 qid 차단 보강. 대형 checkpoint SHA는 streaming. CPU43 tests pass; 실제4B BF16 replay/gradient/full-FT 품질은 아직 미측정. 완료 teacher의 모든 후보 span/오프라인 라벨/coverage 감사 스크립트 추가. 실행 전 소스 커밋·동결을 유지.
