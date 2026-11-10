@@ -20,3 +20,5 @@ S2 자율QA 비교, S3 보상pilot, full-FT smoke, H-RL/N-RL GRPO, test320 미�
 새 지시 없이 후속 실험 자동실행하지 않음. Claude 파일은 읽기 전용이며 OBS02까지 반영했다.
 
 - [최종 KD·보고서·소스 Drive 백업](FINAL_BACKUP.json)
+
+후속 실행 담당: Claude. [실행 인계 문서](HANDOFF_TO_CLAUDE.md). Codex는 새 worker를 시작하지 않음.

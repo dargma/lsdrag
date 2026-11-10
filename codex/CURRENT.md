@@ -1,3 +1,7 @@
+## 실행 담당 인계 2026-11-10T05:40:10.650140+00:00
+
+사용자가 Claude의 후속 실험 진행을 지정함. Codex 신규실행 없음. `HANDOFF_TO_CLAUDE.md` 참조. 아래 S1 FAIL은 보존하며 다음 실험은 별도 변경·실행 기록으로 구분.
+
 # Current 2026-11-10T05:36:11.842711+00:00
 
 S1 pointer 품질 gate 실패로 후속 실험 중단. teacher576/2065states 감사·coverage 통과, KD100epoch 완료·validation CE최소 epoch14 선택. 내부검증 gold-present66qid pointer supportF1 .69797979798 < 같은상태 teacher .71414141414. PLAN6/claude INSTRUCT에 따라 S2/S3/fullFTsmoke/GRPO/test320 미실행. 자동재학습/추가수집 금지.
