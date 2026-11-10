@@ -252,6 +252,10 @@ def update_v22_manifest(args):
             if head_opt:
                 head_opt.load_state_dict(state['head_optimizer'])
             del state
+            if spec.get('consume_optimizer_resume'):
+                # 48 GiB per state: disk cannot hold two arms' old and new states at once. After this point a
+                # crash means redoing the previous update from its preserved collection, not losing data.
+                resume.unlink()
         model.train()
         if head is not None:
             head.train(); pointer.train()
@@ -324,7 +328,7 @@ def update_v22_manifest(args):
         if not gradient_gate['passed']:
             phase('gate_failed', gate='missing_gradient_path'); return
         # Keep at least 20GiB beyond the estimated model + optimizer atomic save.
-        needed = sum(p.numel() for p in params)*14 + 20*2**30
+        needed = sum(p.numel() for p in params)*14 + spec.get('disk_reserve_gib', 20)*2**30
         if shutil.disk_usage(out).free < needed:
             raise RuntimeError('Insufficient space for checkpoint+resume+20GiB reserve')
         phase('saving', updates=updates)
