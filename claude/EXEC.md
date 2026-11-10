@@ -4,9 +4,9 @@
 
 ## 현재 상태
 
-- 단계: S4 본 실행 중 (06:44Z 시작). 드라이버 `scripts/run_v22_s4_main.sh`, 진행 로그 `/content/local_fast/lsdrag-text-v1/logs/v22_s4_main.log`
+- 단계: S4 본 실행 중. native 업데이트 1을 디스크 검사 실패 뒤 09:33Z에 재실행. 드라이버 `scripts/run_v22_s4_main_resume.sh`, 진행 로그 `/content/local_fast/lsdrag-text-v1/logs/v22_s4_main.log`
 - 마지막 gate: S1 pointer 품질 FAIL → 사용자 지시로 진행 (아래)
-- 실행 중 PID: 드라이버 122389 (setsid). 단계별 상태는 `results/v22_s4_main_{head,native}_{collect,update}{1,2}/status.json`
+- 실행 중 PID: 재개 드라이버 349848 (setsid, 첫 드라이버 122389는 head 수집 2가 끝나면 실패로 종료됨). 단계별 상태는 `results/v22_s4_main_{head,native}_{collect,update}{1,2}/status.json`
 - 결과 경로: `/content/local_fast/lsdrag-text-v1/results/`
 
 ## 인수 시점 판단
@@ -53,6 +53,8 @@ Claude가 `results/v22_kd_20261110/summary.json`의 66개 상태를 다시 계�
 | S4 replay gate 정의 | (재정의) 평균 abs 오차 ≤ 0.05, 최대·p99·clip 밖 비율 보고 | 사용자: "1번으로 진행해" | 사용자 결정으로 재정의 | `scripts/run_fullft_grpo.py` 2d7b7a9 | 06:24 |
 | S4 smoke head | replay 평균 ≤ .05 / KL ≤ .10 / clip ≤ .50 / gradient 경로 / EM 하락 < 2/16 / F1 하락 < .10 | .0063 / .0023 / 1.8% / LLM·도구 3층·pointer / 0 / 0 | PASS | `results/v22_s4_smoke_head_r1b` | 06:31 |
 | S4 smoke native | 같음 | .0087 / .0026 / 1.5% / LLM / 0 / F1 +.025 | PASS | `results/v22_s4_smoke_native_r1b` | 06:43 |
+| S4 head 업데이트 1 | replay 평균 ≤ .05, gradient 경로 | .0060 (119,791단위), 전 경로 | PASS | `results/v22_s4_main_head_update1` | 08:16 |
+| S4 native 업데이트 1 (1차) | 같음 + 저장 | replay .0051 PASS, 79 step 완료 후 디스크 검사에서 실패 | **FAIL(인프라)**, 체크포인트 없음 | `results/v22_s4_main_native_update1_failed_disk` | 09:26 |
 
 ## 로그
 
@@ -213,3 +215,31 @@ manifest `specs/v22/s3/pilot_{head,native}_T1.json`, gate spec `specs/v22/s3/gat
 - 판단: 중단 기준에 걸린 항목 없음. 모델이 실제로 망가졌는지는 head 수집 2의 sampled EM/F1(수집 1: .134 / .177)과 dev192 i1 평가로 확인함.
 - native 수집 1: 08:16Z 기준 749/1,536. head 업데이트와 겹쳐 돌아 느렸음.
 - 디스크 여유 69 GiB. native 재개 상태(48 GiB)와 모델(8 GiB)이 더 쌓이면 최저 약 10 GiB까지 내려갈 것으로 계산됨 (추정). 지켜봄.
+
+### 08:16Z head 업데이트 1 완료
+
+- 90 step, 사용 궤적 1,432 / 1,536, 48분. replay 평균 0.0060 (최대 2.02, clip 범위 밖 1.0%), pointer 2,133단위 오차 0.
+- KL 중앙값 0.032 (마지막 10 step 0.036). KL > 1인 배치 7개 (최대 35,263), 모두 다음 배치에서 복귀. clip 비율 중앙값 4.0%, 최대 6.5%. clip 전 LLM gradient norm 중앙값 190, 1,000 초과 18회. GPU 최대 할당 70.6 GiB.
+- 수집 1 (업데이트 전 정책, 192문항 × 8회, 온도 1): head EM .134 / F1 .177 / 호출 2.54 / 토큰 75.1 / 빈 답 38.1% / read당 1.26개 / 오류 2. native EM .145 / F1 .190 / 호출 2.54 / 토큰 113.2 / 빈 답 30.5% / read당 1.73개 / 오류 6.
+
+### 08:55Z 접합 부위 감사 (사용자 질문)
+
+head 수집 1 (1,536 에피소드, 도구 단계 3,898, read 948), H0-P dev192, native 수집 1을 단계별로 대조함. 불일치 0건: 선택한 도구 = 실행한 도구, 허용 mask, 후보 목록 = 미독 관측 청크, pointer 번호 → ID, 중복·재읽기, 요청 ID = 반환 청크, 결정 수 = 호출 수 + 1, 8회 초과 없음. 오류 에피소드는 head 2건 모두 생성 잘림, native 6건 중 4건은 LLM이 쓴 청크 ID 검증 실패.
+
+### 09:26Z native 업데이트 1 실패와 복구
+
+- 79 step을 마친 뒤 저장 전 디스크 검사에서 `Insufficient space`로 실패함. 08:17Z에 여유 66 GiB (필요 60.5 GiB)였으나 09:23Z에 다른 프로젝트(AtomMem 세션)가 `/content/local_fast/atommem`에 모델 약 16 GiB를 복사해 52 GiB가 됨. 그 복사는 Claude가 09:15Z에 써 준 안내 문서의 권고를 따른 것임.
+- 잃은 것: native 업데이트 1의 가중치 (약 40분). 수집 1 rollout과 head arm 결과물은 온전함. 실패한 실행의 `updates.json`·`replay_gate.json`은 `_failed_disk` 폴더에 보존.
+- 복구: head 업데이트 1의 `resume.pt`(45 GiB)를 `/dev/shm`으로 옮기고 원래 경로에 symlink를 둠 (sha256 일치 확인, 4d53fa48…). 디스크 여유 97 GiB. 09:33Z에 native 업데이트 1을 같은 manifest 내용으로 재실행.
+- 재실행은 같은 수집 데이터·seed를 쓰지만 BF16 비결정성 때문에 1차와 비트 단위로 같다고 보장하지 않음.
+- 남은 순서: (native 업데이트 1 재실행 ∥ head 수집 2 마무리) → (head 업데이트 2 ∥ native 수집 2) → (native 업데이트 2 ∥ head dev192) → native dev192. 종료 예상 약 13:45Z.
+
+### 09:22Z head arm, 업데이트 1 전후 (같은 107문항 × 8회, 온도 1, 수집 중간 집계)
+
+| | EM | F1 | 호출 | 생성 토큰 | 토큰(잘림 제외) | 빈 답 | read당 청크 | 잘림 오류 |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|
+| 업데이트 전 | .164 | .209 | 2.48 | 72.1 | 71.0 | 33.9% | 1.25 | 2 |
+| 업데이트 후 | .178 | .229 | 2.50 | 80.0 | 75.3 | 21.5% | 1.28 | 9 |
+
+- 붕괴 없음. 빈 답이 줄고 EM·F1 점추정이 조금 오름. 호출 수는 그대로.
+- 정답 에피소드의 토큰은 줄었고 (50문항 기준 90.8 → 82.4), 전체 증가분의 절반 이상은 토큰 한도 512에서 잘린 에피소드가 늘어난 데서 옴. 잘림은 업데이트 후 늘어난 현상이라 iteration 2에서 다시 확인함.
