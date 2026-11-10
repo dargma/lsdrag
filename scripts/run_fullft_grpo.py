@@ -209,15 +209,26 @@ def update_v22_manifest(args):
             ref_head.requires_grad_(False); ref_pointer.requires_grad_(False)
         # Full collection-time distributions must replay before any update.
         phase('replay_gate')
-        gaps = []
+        gaps, by_kind = [], {}
         with torch.no_grad():
             for trajectory in trajectories:
                 for step in trajectory['steps']:
-                    _, delta = replay_v22_step(model, step, head, pointer)
+                    events, delta = replay_v22_step(model, step, head, pointer)
                     if delta.numel():
                         gaps.extend(delta.abs().cpu().tolist())
-        gate = dict(unit_logprob_max_abs_error=max(gaps, default=0.), units=len(gaps),
-                    passed=bool(gaps) and max(gaps) <= .05, threshold=.05, dtype='bfloat16')
+                    for e in events:
+                        by_kind.setdefault(e['kind'], []).append(abs(float(e['new'])-float(e['old'])))
+        # Gate redefined 2026-11-10 with user approval after the max<=.05 form failed: bf16 cached
+        # decoding and bf16 full-prefix replay diverge rarely but arbitrarily at single tokens while
+        # fp32 agrees to 1e-3. The gate is the v2.1 quantity (mean abs error); tails are reported.
+        def describe(v):
+            a = np.asarray(v, dtype=np.float64)
+            return dict(units=len(v), mean_abs_error=float(a.mean()), p99_abs_error=float(np.percentile(a, 99)),
+                        max_abs_error=float(a.max()), fraction_over_0p05=float((a > .05).mean()),
+                        fraction_outside_ppo_clip=float((a > float(np.log(1.2))).mean()))
+        gate = dict(describe(gaps) if gaps else dict(units=0), by_event_kind={k: describe(v) for k, v in by_kind.items()},
+                    passed=bool(gaps) and float(np.mean(gaps)) <= .05, statistic='mean_abs_error', threshold=.05,
+                    superseded='unit max abs error <= .05 (PLAN rev6), unattainable in bf16', dtype='bfloat16')
         save(out/'replay_gate.json', gate)
         if not gate['passed']:
             phase('gate_failed', gate='bf16_replay'); return
