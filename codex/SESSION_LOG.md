@@ -7,3 +7,6 @@ H0-G 및 관련 평가/비교 폐기. 네 조건 N0/H0-P/H-RL/N-RL 유지. 현�
 
 ## 2026-11-10T04:52:34.203696+00:00 사용자 조건부 진단 override
 H0-G 전면 폐기를 대체: 필수 비교 제외, H0-P EM 또는 F1이 공통 N0보다 낮을 때만 진단. PLAN 개정4/템플릿에 동일 checkpoint·공통 계약·사후 진단·dev튜닝 금지 명시. 아직 H0-P/H0-G 미실행.
+
+## 2026-11-10T04:58:55.295428+00:00 S0 legacy baseline완전 재현
+192/192 answer+trajectory 일치、F1.193436598/EM.145833333/calls2.479166667/gen107.807291667、errors0。archive hash 검증 완료. 다음은 v22 unread+cap60 teacher smoke16.

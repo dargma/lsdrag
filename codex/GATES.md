@@ -13,3 +13,4 @@
 | 구현 CPU | pointer 가변 K/마스크/gradient/replay | 7 passed | PASS(기능) | tests/test_chunk_pointer.py | 2026-11-10T04:57:27.900737+00:00 |
 | 구현 CPU | 정답 우선/단계 credit/부호 있는 A_t | 3 passed | PASS(함수) | tests/test_v22_reward.py | 2026-11-10T04:57:27.900737+00:00 |
 | 구현 CPU | 실제 tokenizer 후보 span 매핑 | 2/2 exact span | PASS(작은 smoke) | specs/v22/span_smoke.json | 2026-11-10T04:57:27.900737+00:00 |
+| S0 legacy dev192 | 과거192문항 trajectory/answer 및 주요 집계 재현 | 192/192 일치、F1/EM/calls/tokens 차이0、errors0 | PASS | codex/S0_LEGACY_AUDIT.json | 2026-11-10T04:58:55.295428+00:00 |

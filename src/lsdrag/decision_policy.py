@@ -302,7 +302,8 @@ def rollout(reader, question, rows, vectors, embedder, prompt, head, deadline,
                       'forced':forced,'branch_intervention':first_action is not None and len(steps)==0})
         if capture is not None:
             steps[-1].update(capture=capture, pointer_events=pointer_events,
-                             temperature=decision_temperature, step_id=len(steps)-1)
+                             temperature=decision_temperature, step_id=len(steps)-1,
+                             candidate_ids=capture['candidate_ids'])
             if native_fast:
                 steps[-1]['old_logp'] = None
                 steps[-1]['policy_probs'] = None

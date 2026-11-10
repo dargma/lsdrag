@@ -65,14 +65,29 @@ def main():
         for name, desc in spec['policies'].items():
             if desc['kind'] == 'native':
                 heads[name] = None
+            elif desc['kind'] in ('v22_pointer', 'v22_generate'):
+                from lsdrag.decision_policy import PolicyHead
+                assert sha(Path(desc['checkpoint'])) == desc['sha256']
+                ck = torch.load(desc['checkpoint'], weights_only=True, map_location='cpu')
+                h = PolicyHead(); h.load_state_dict(ck['tool']); heads[name] = h.to('cuda').eval()
             else:
                 assert sha(Path(desc['checkpoint'])) == desc['sha256']
                 heads[name] = load_head(desc, 'cuda')
         reader_class = RecoveryPolicyReader
-        if spec.get('reader_profile') == 'fullft':
+        if spec.get('reader_profile') == 'fullft' or spec.get('profile') == 'v22':
             from lsdrag.fullft import SampledReader
             reader_class = SampledReader
         reader = reader_class(spec['model'], SimpleNamespace(max_output_tokens=512, context_limit=16384))
+        if spec.get('profile') == 'v22':
+            reader.v22 = True
+            reader.answer_max_chars = spec['answer_max_chars']
+        pointers = {}
+        for name, desc in spec['policies'].items():
+            if desc['kind'] == 'v22_pointer':
+                from lsdrag.chunk_pointer import ChunkPointer
+                ptr = ChunkPointer()
+                ptr.load_state_dict(torch.load(desc['checkpoint'], weights_only=True, map_location='cpu')['pointer'])
+                pointers[name] = ptr.to('cuda').eval()
         embed = V11ProcessEmbedder()
         corpus = TextCorpus(rows, vectors, embed)
         prompt = (REPO/'prompts/text_rag_integrated_v5.txt').read_text()
@@ -88,6 +103,7 @@ def main():
             hit = {r['chunk_id'] for r in found}
             diagnostics.append(dict(qid=qid, support_recall_at5=len(gold & hit)/len(gold), all_support_at5=gold <= hit, retrieved_ids=sorted(hit)))
             for name, head in heads.items():
+                reader.pointer_head = pointers.get(name)
                 if hasattr(head, 'reset_episode'):
                     head.reset_episode()
                 assert counts['generated']+4608 < spec['max_generated']

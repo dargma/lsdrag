@@ -1,0 +1,35 @@
+{
+  "questions": 192,
+  "means": {
+    "f1": {
+      "old": 0.1934365981240981,
+      "new": 0.1934365981240981,
+      "delta": 0.0
+    },
+    "em": {
+      "old": 0.14583333333333334,
+      "new": 0.14583333333333334,
+      "delta": 0.0
+    },
+    "tool_calls": {
+      "old": 2.4791666666666665,
+      "new": 2.4791666666666665,
+      "delta": 0.0
+    },
+    "generated_tokens": {
+      "old": 107.80729166666667,
+      "new": 107.80729166666667,
+      "delta": 0.0
+    },
+    "prompt_tokens": {
+      "old": 5028.848958333333,
+      "new": 5028.848958333333,
+      "delta": 0.0
+    }
+  },
+  "exact_answer_and_trajectory_matches": 192,
+  "mismatches": [],
+  "new_errors": 0,
+  "source_spec_sha256": "96f3f2dea3daa65a0c70f649c10bb5112636bcb495cba5d62267f1925198d47d",
+  "exact_reproduction": true
+}
