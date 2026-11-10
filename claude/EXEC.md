@@ -203,3 +203,13 @@ manifest `specs/v22/s3/pilot_{head,native}_T1.json`, gate spec `specs/v22/s3/gat
   - 디스크 127 GiB 여유로는 arm별 optimizer 상태(각 48 GiB)를 모두 보관할 수 없음. iteration 1의 상태는 iteration 2 업데이트가 읽은 직후 삭제하고, iteration 2는 optimizer 상태를 저장하지 않음. PLAN의 "최종 재개 상태를 Drive에 보존"은 충족하지 않음. 모델과 head는 i1·i2 모두 보존함.
   - iteration별 수집 seed는 `20261110 + 1000003 × iteration`.
 - test320은 열지 않음.
+
+### 08:17Z S4 본 실행 중간 점검 (head iteration 1 수집·업데이트 완료)
+
+- head 수집 1 (06:44~07:28Z): 1,536 에피소드, 오류 2건. sampled EM .134 / F1 .177 / 호출 2.54 / 생성 토큰 75.1 / 빈 답 38%.
+- head 업데이트 1 (07:28~08:16Z): 90회, GPU 최대 70.6 GiB. replay 평균 오차 0.0060 (119,791단위, 최대 2.02). 모델·head·재개 상태(48 GiB) 저장 완료.
+- KL: 중앙값 0.032. 90회 중 0.1 초과 23회, 1 초과 7회, 최대 35,263 (업데이트 55). 급등은 모두 1회짜리이고 다음 업데이트에서 0.02~0.3으로 돌아옴. gradient는 norm 1로 clip됨. v2.1 A1에서 본 일시 급등(`HANDOVER.md` 7절)과 같은 양상임. 원인은 미확인 (BF16 이상치 토큰의 k3 항으로 추정).
+- PPO clip 비율: 처음 10회 평균 2.5% → 마지막 10회 4.9%.
+- 판단: 중단 기준에 걸린 항목 없음. 모델이 실제로 망가졌는지는 head 수집 2의 sampled EM/F1(수집 1: .134 / .177)과 dev192 i1 평가로 확인함.
+- native 수집 1: 08:16Z 기준 749/1,536. head 업데이트와 겹쳐 돌아 느렸음.
+- 디스크 여유 69 GiB. native 재개 상태(48 GiB)와 모델(8 GiB)이 더 쌓이면 최저 약 10 GiB까지 내려갈 것으로 계산됨 (추정). 지켜봄.
