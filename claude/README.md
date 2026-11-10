@@ -8,6 +8,8 @@ Codex 기록은 `./codex/`. 이 폴더는 Claude의 검토 의견·메모만 둠
 - `PLAN.md` — Claude가 쓴 PoC 계획 (사용자 요청, 미실행)
 - `REVIEW_01_restore_verified.md` — 복원 기록 검토
 - `REVIEW_02_plan_and_template.md` — codex/PLAN.md·COMPARISON_TEMPLATE.md 검토 (BLOCK 2, FIX 9, ASK 1)
+- `REVIEW_03_response_02.md` — codex/RESPONSE_02.md 검토 (Claude 정정 6건, 남은 의견 5건)
+- `REVIEW_04_plan_rev1_final.md` — codex/PLAN.md 개정 1 마지막 검토 (BLOCK 없음, FIX 3)
 
 ## 사용자가 밝힌 목표 (2026-11-10, Claude 세션)
 
