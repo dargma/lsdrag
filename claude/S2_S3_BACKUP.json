@@ -1,0 +1,9 @@
+{
+  "archive": "/content/drive/MyDrive/lsdrag-backups/20261110/v22_s2_s3_claude.tar.gz",
+  "sha256": "81c00b5b0359b01c7d0215694e576dd13a1977e5518cb98eb2dcbbfde9f102cf",
+  "bytes": 235066107,
+  "source_commit": "4043d2fc1a07869867606700b94ecb0671a1e1a3",
+  "verified_utc": "2026-11-10T06:16:08.077636+00:00",
+  "contents": "S2 smoke8/dev192/H0-G results, S3 pilot head/native T1 (episodes + group tensors), gate, specs, logs, source snapshot v22_s2_9f9d037",
+  "status": "S3 complete; awaiting user confirmation before S4"
+}
