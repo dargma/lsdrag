@@ -1,6 +1,6 @@
-# jev_v2.2 계획 — 선택은 head, 내용은 LLM (개정 2)
+# jev_v2.2 계획 — 선택은 head, 내용은 LLM (개정 3)
 
-2026-11-10. REVIEW_04 및 GPU·RAM·디스크 운영 검토 반영. 계획만 개정하며 구현·수집·학습·평가는 실행하지 않음.
+2026-11-10. 개정3: 사용자 지시로 도구 head만+ID 생성 조건 및 모든 관련 비교 폐기. 전체 실행 승인 후 S0 진행 중; gate는 유지함.
 기준: REVIEW_04_plan_rev1_final.md; 이전 PLAN 89e4898e6c6a. 이 문서가 이전 PLAN/RESPONSE의 미확정 제안보다 우선함.
 모델·데이터 파일 복원은 RESTORE_VERIFIED.json에서 확인됨. 실행 환경·새 runner 준비 완료를 뜻하지 않음.
 
@@ -19,7 +19,7 @@ pointer는 read 선택 후에만 실행. 현재 입력의 후보 title/snippet h
 원본 Qwen3-4B-Instruct-2507(cdbee75f17c01a7cc42f958dc650907174af0554), embeddinggemma-2(914f7f89142e33e77833254d9c9b90c3cef7303b), non-thinking 유지.
 shared corpus101,962/768차원; split_mixhop.json 고정: train576(각192), dev192(각64), test320(160/80/80). dev는 기존 노출셋, test는 최종 동결 전 사용 금지.
 두 GRPO arm은 같은 base LLM에서 별도로 시작. head arm만 KD 초기화 비용 추가. 이전 full-FT A1/B1 또는 KL0를 시작점으로 섞지 않음.
-N0(native constrained), H0-G(KD tool+ID 생성), H0-P(KD tool+pointer), H-RL, N-RL을 비교. H0-G/H0-P는 동일 tool checkpoint.
+N0(native constrained), H0-P(KD tool+pointer), H-RL, N-RL 네 조건만 비교. tool-only/ID 생성 head 조건은 실행하지 않음. pointer 단독 효과를 분리한 비교라고 주장하지 않음.
 최대 tool8/context16384/생성 budget512(기존 prefix 포함 규칙)을 공통 적용. pointer 내부 선택은 tool call이 아님. seed20261110.
 
 ## 실행 단계
@@ -30,7 +30,7 @@ N0(native constrained), H0-G(KD tool+ID 생성), H0-P(KD tool+pointer), H-RL, N-
 |---|---|---|---|
 | S0 복원/감사 | `python scripts/preflight_v22.py` 및 `PYTHONPATH=src:scripts python -m pytest -q tests` | 자산 hash 일치100%, 테스트 실패0(과거18개, 실제 수 기록), train smoke16의 구현 오류0 | 설치 포함30~90분 |
 | S1 라벨/KD | `python scripts/collect_decision_shared_teacher.py --spec <teacher576.json>` → `python scripts/fit_decision_shared_initialization.py --spec <kd.json>` | smoke16→greedy576; ID/span 매핑100%, 불법/중복/빈 선택0; 각 hop read 검증 qid≥10, 유효 read fit qid≥100 | 수집·KD1~3시간 |
-| S2 KD 평가 | `python scripts/evaluate_decision_shared_corpus.py --spec <eval_kd.json>` | train smoke8 오류0/read ID decode0; H0-G/H0-P dev192 보고. 품질 손실을 숨기거나 dev로 재학습하지 않음 | 30~60분 |
+| S2 KD 평가 | `python scripts/evaluate_decision_shared_corpus.py --spec <eval_kd.json>` | train smoke8 오류0/read ID decode0; H0-P dev192 보고. 품질 손실을 숨기거나 dev로 재학습하지 않음 | 30~60분 |
 | S3 신호/보상 | `python scripts/check_v22_reward_gate.py --spec <pilot24x8.json>` | 두 arm train24(각hop8)×8, 업데이트 없이 비교; 아래 보상·다양성 gate | 수집 포함30~90분 |
 | S4 GRPO | `python scripts/run_fullft_grpo.py --arm head --pointer --manifest <head.json>` / `--arm native --manifest <native.json>` | 먼저 train16×8/2 optimizer step smoke; 통과 뒤 각각192문항×8×2 iteration. 주 판정iteration2 | smoke30~60분+각3~5시간 |
 | S5 보고 | `python scripts/report_fullft.py --manifest <comparison.json>` | i0/i1/i2 dev192, 동결 i2 test320. 전체 문항·실패 포함, paired 결과 | 평가 포함1~2시간 |
@@ -86,7 +86,7 @@ GPU가 gate/복사 때문에 쉬는 시간을 별도 기록하고 CPU 작업과 
 
 ## 비교·판정과 남은 분기
 
-전체 EM/F1/calls/tokens와 정답 획득·손실, 양쪽 정답의 비용을 함께 보고. H-RL vs N-RL이 주 비교이며 각 arm 전후와 H0-P vs H0-G도 유지. 목표는 정확도 유지/개선+calls10% 감소+tokens 감소; 목표 미달을 다른 지표로 교체하지 않음.
+전체 EM/F1/calls/tokens와 정답 획득·손실, 양쪽 정답의 비용을 함께 보고. H-RL vs N-RL이 주 비교이며 각 arm 전후와 H0-P vs N0도 유지(구조+KD의 결합 효과). 목표는 정확도 유지/개선+calls10% 감소+tokens 감소; 목표 미달을 다른 지표로 교체하지 않음.
 비유의를 품질 유지로 해석하지 않음. paired bootstrap 95% 구간을 보고하고 비열등성은 사전 허용손실 margin 미합의 시 주장하지 않음. seed1 PoC·KD 추가 지도·공유 GPU 비용을 명시함. 기존 COMPARISON_TEMPLATE의 실험 전 빈 표는 유지하되 설정 충돌 시 이 PLAN을 우선함.
 | 미확정/조건부 항목 | 언제·무엇으로 결정 |
 |---|---|

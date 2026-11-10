@@ -9,3 +9,4 @@
 | S0 train16 smoke | 구현 오류0 | 미측정 | PENDING | results/v22_legacy_smoke16 | 2026-11-10T04:48:55.987999+00:00 |
 | S0 legacy dev192 | 기존 수치와 차이 조사 완료 | 미측정 | PENDING | specs/v22/legacy_dev192.json | 2026-11-10T04:48:55.987999+00:00 |
 | S1~S5 | PLAN.md 기준 | 미측정 | NOT STARTED | PLAN.md | 2026-11-10T04:48:55.987999+00:00 |
+| S0 train16 smoke | 구현 오류0 | 16/16 완료, 오류0 | PASS(구현) | results/v22_legacy_smoke16/summary.json | 2026-11-10T04:50:48.815327+00:00 |

@@ -1,7 +1,7 @@
-현재 단계: S0, baseline smoke를 계획 commit/push 위해 SIGSTOP 상태로 잠시 정지
-마지막으로 통과한 gate: 자산 hash 100%, 기존 테스트 18/18, train576 답 cap60의 모든-alias 차단 qid 0
-실행 중 PID: 38568 (정지); embedding child 38880; exec session 14039
-결과 경로: /content/local_fast/lsdrag-text-v1/results/v22_legacy_smoke16
+현재 단계: S0 legacy dev192 재현 중; 개정3에서 tool-only 조건 폐기
+마지막으로 통과한 gate: train16 smoke 오류0; 자산 hash100%, 기존 tests18/18
+실행 중 PID: 41418; exec session35227
+결과 경로: /content/local_fast/lsdrag-text-v1/results/v22_legacy_dev192
 
 # Codex 실행 기록
 

@@ -7,12 +7,10 @@
 | ID | 조건 | 시작점 | 목적 |
 |---|---|---|---|
 | N0 | native constrained, 학습 전 | 공통 base LLM | native 출발점 |
-| H0-G | KD tool head + ID 생성 | base LLM + 같은 KD tool head | pointer 분리 비교 |
 | H0-P | KD tool + pointer | base LLM + KD heads | 제안 구조의 출발점 |
 | H-RL | LLM 전체 + heads 전체 GRPO | H0-P | 2차 주실험 |
 | N-RL | LLM 전체 native GRPO | N0 | 3차 대조군 |
 
-H0-G/H0-P는 동일 tool head checkpoint를 사용하며 read ID 처리만 다름.
 H-RL과 N-RL은 같은 reward, 질문, rollout8, 학습 반복 수와 tool/context cap을 사용함.
 추가 action-only GRPO는 현재 필수 실행에 포함하지 않음. 따라서 RL 후 차이를 pointer 단독 효과로 분해하지 않음.
 
@@ -21,7 +19,6 @@ H-RL과 N-RL은 같은 reward, 질문, rollout8, 학습 반복 수와 tool/conte
 | 조건 | 문항 수 | EM | F1 | agent iteration | tool calls | 생성 토큰 | 입력 토큰 | 빈 답 | 오류 |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
 | N0 | — | — | — | — | — | — | — | — | — |
-| H0-G | — | — | — | — | — | — | — | — | — |
 | H0-P | — | — | — | — | — | — | — | — | — |
 | H-RL | — | — | — | — | — | — | — | — | — |
 | N-RL | — | — | — | — | — | — | — | — | — |
@@ -30,7 +27,7 @@ H-RL과 N-RL은 같은 reward, 질문, rollout8, 학습 반복 수와 tool/conte
 
 ## 핵심 비교와 해석
 
-1. H0-P 대 H0-G: 같은 tool head에서 pointer로 바꾼 효과. read ID 생성량과 QA 품질 변화 확인.
+1. H0-P 대 N0: tool+pointer 구조와 KD의 결합 변화. pointer 단독 인과 효과를 주장하지 않음.
 2. H-RL 대 H0-P / N-RL 대 N0: 각각의 학습 전후 변화.
 3. H-RL 대 N-RL: 동일 GRPO rollout 예산에서 최종 시스템 비교. head arm의 추가 KD 비용 별도 기재.
 4. 차이의 차이: (H-RL−H0-P)−(N-RL−N0). 초기 성능 차이를 보완하는 기술통계이며 무작위 인과 증명 아님.
@@ -41,7 +38,6 @@ qid-paired bootstrap CI와 wins/losses/ties는 별도 부록. 작은 점추정 �
 
 | 비교 | 둘 다 정답 | 정답 획득 | 정답 손실 | 둘 다 오답 | 둘 다 정답에서 Δcalls | 둘 다 정답에서 Δtokens |
 |---|---:|---:|---:|---:|---:|---:|
-| H0-P vs H0-G | — | — | — | — | — | — |
 | H-RL vs H0-P | — | — | — | — | — | — |
 | N-RL vs N0 | — | — | — | — | — | — |
 | H-RL vs N-RL | — | — | — | — | — | — |
@@ -54,7 +50,7 @@ qid-paired bootstrap CI와 wins/losses/ties는 별도 부록. 작은 점추정 �
 
 ## 청크 선택 진단
 
-| 항목 | H0-G | H0-P | H-RL |
+| 항목 | N0/teacher 관측 | H0-P | H-RL |
 |---|---:|---:|---:|
 | read 상태/고유 질문 수 | — | — | — |
 | 후보 K: median/p95/max | — | — | — |
