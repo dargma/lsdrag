@@ -1,0 +1,96 @@
+{
+  "phase": "stopped_at_S1_pointer_quality_gate",
+  "coverage": {
+    "fit_read_qids": 280,
+    "validation_read_qids_by_hop": {
+      "2hop": 25,
+      "3hop": 26,
+      "4hop": 27
+    },
+    "passed": true
+  },
+  "episodes": 576,
+  "states": 2065,
+  "errors": 1,
+  "label_sources": {
+    "not_read": 1706,
+    "gold_present": 296,
+    "teacher_fallback": 62,
+    "invalid_teacher": 1
+  },
+  "candidate_counts": {
+    "10": 100,
+    "5": 149,
+    "8": 48,
+    "6": 15,
+    "4": 4,
+    "9": 16,
+    "2": 2,
+    "7": 17,
+    "3": 6,
+    "1": 1
+  },
+  "pointer_support_f1": 0.6979797979797979,
+  "teacher_support_f1": 0.7141414141414142,
+  "delta": -0.016161616161616155,
+  "internal_paired_bootstrap95_exploratory": [
+    -0.10959595959595958,
+    0.07828282828282827
+  ],
+  "gold_validation_qids": 66,
+  "wins": 16,
+  "losses": 17,
+  "ties": 33,
+  "per_hop": {
+    "2hop": {
+      "qids": 23,
+      "pointer_f1": 0.7246376811594203,
+      "teacher_f1": 0.8318840579710145
+    },
+    "3hop": {
+      "qids": 24,
+      "pointer_f1": 0.8333333333333334,
+      "teacher_f1": 0.7625
+    },
+    "4hop": {
+      "qids": 19,
+      "pointer_f1": 0.49473684210526314,
+      "teacher_f1": 0.5105263157894737
+    }
+  },
+  "fallback_states": 12,
+  "fallback_ordered_exact": 0.5,
+  "pointer_selected_mean": 1.0303030303030303,
+  "gold_target_mean": 1.2575757575757576,
+  "selected_checkpoint": {
+    "epoch": 14,
+    "tool_train_ce": 0.3153206706047058,
+    "pointer_train_ce": 0.8159220814704895,
+    "validation_ce": 1.2388672828674316,
+    "tool_validation_accuracy": 0.9307875633239746
+  },
+  "last_epoch": {
+    "epoch": 99,
+    "tool_train_ce": 0.2640555799007416,
+    "pointer_train_ce": 0.07022383064031601,
+    "validation_ce": 1.677000880241394,
+    "tool_validation_accuracy": 0.9427207708358765
+  },
+  "not_run": [
+    "S2 common-contract N0/H0-P dev192",
+    "conditional H0-G",
+    "S3 group8 reward pilot",
+    "full-FT update smoke",
+    "H-RL and N-RL GRPO",
+    "i1/i2 dev192 and final test320"
+  ],
+  "head_sha256": "86b163fa2106a98bf66fb8ed3ab6027fab2c53df6a397923b2b077bce7d06781",
+  "teacher_sha256": "08fd04bd0158064fc84622c407c32a57a775c4f6ce1bebfe12f573443b9591fb",
+  "evidence": {
+    "/content/local_fast/lsdrag-text-v1/results/v22_kd_20261110/summary.json": "cf23c57819da537b3025075342d09a38e8daad86747c5fdbbb39ec7df6a9b82a",
+    "/content/local_fast/lsdrag-text-v1/results/v22_kd_20261110/status.json": "b583f2185ff55e43eda5b1607ff50f963c9ce8f96e093111c8e4c008113625e5",
+    "/content/local_fast/lsdrag-text-v1/results/v22_kd_20261110/spec.json": "5e886e6d354904fff26b0e4476863d200a98ccebe50c675636cb29386f366f02",
+    "/content/local_fast/lsdrag-text-v1/results/v22_teacher576_20261110/summary.json": "a36d9d9f63eab4f5a1a898383d5b10a29cc2e1e609f108f240aa3ec88226a411",
+    "/content/local_fast/lsdrag-text-v1/specs/v22/teacher_audit.json": "bd0006f944eeed5e310783aa78fbb5bd803311e8f887cde7d4838632e5e60146"
+  }
+}

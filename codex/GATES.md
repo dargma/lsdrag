@@ -19,3 +19,5 @@
 | 구현 CPU | 전체 회귀 및 optimizer 재개 다음 step 일치 | 43 passed | PASS(기능만) | tests/; 실제 full-FT 미실행 | 2026-11-10T05:23:53.412026+00:00 |
 | S1 teacher audit | 576 QA/모든 상태 후보span·라벨 provenance 일치 | 576 QA / 2065states 일치, invalid read1 제외 | PASS | codex/S1_TEACHER_AUDIT.json | 2026-11-10T05:32:59.009866+00:00 |
 | S1 coverage | fit read>=100; val hop별>=10 | fit280; 2hop25/3hop26/4hop27 | PASS | codex/S1_TEACHER_AUDIT.json | 2026-11-10T05:32:59.009866+00:00 |
+| S1 pointer quality | 내부검증 gold-present qid균형 support F1>=teacher | pointer .69797979798 < teacher .71414141414 (66qid) | FAIL — S2~S4 중단 | results/v22_kd_20261110/summary.json; codex/REPORT_S1.json | 2026-11-10T05:36:11.842711+00:00 |
+| HF 생성데이터 | 원격hash 및 load_dataset 재로딩 | 58files 일치; episodes459/117,labels1646/419 | PASS | codex/HF_DATASET.json | 2026-11-10T05:36:11.842711+00:00 |

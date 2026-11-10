@@ -1,9 +1,9 @@
-# Current 2026-11-10T05:32:59.009866+00:00
+# Current 2026-11-10T05:36:11.842711+00:00
 
-S1 teacher576 종료, 2065states, valid read358. audit 전체통과, fit read280 / 내부검증2·3·4hop25·26·27로 coverage 통과. 중복ID 실패1QA 보존, 해당 pointer 제외1; 유효tool 유지. raw/archive Drive SHA검증 완료: S1_BACKUP.json.
+S1 pointer 품질 gate 실패로 후속 실험 중단. teacher576/2065states 감사·coverage 통과, KD100epoch 완료·validation CE최소 epoch14 선택. 내부검증 gold-present66qid pointer supportF1 .69797979798 < 같은상태 teacher .71414141414. PLAN6/claude INSTRUCT에 따라 S2/S3/fullFTsmoke/GRPO/test320 미실행. 자동재학습/추가수집 금지.
 
-S1 KD100epochs CPU 실행 중 PID75120/session93573. source /content/local_fast/lsdrag-text-v1/source_snapshots/v22_s1_audit_6a51973, spec /content/local_fast/lsdrag-text-v1/specs/v22/kd.json, log /content/local_fast/lsdrag-text-v1/logs/v22_kd.log, output /content/local_fast/lsdrag-text-v1/results/v22_kd_20261110. 종료 후 status/summary quality gate 확인, 실패면 S2~S4 자동진행 금지·보고·백업. 성공이면 S2 N0/H0-P 공통계약 dev192 평가 spec 동결.
+보고서 codex/REPORT_S1.md 및 REPORT_S1.json. S0legacy192완전재현,CPU43검사통과와 실제QA/GRPO미실행을 구분. teacher/KD PID52782/75120 종료 확인. KD artifact /content/local_fast/lsdrag-text-v1/results/v22_kd_20261110, source snapshot v22_s1_audit_6a51973, head SHA86b163fa2106a98bf66fb8ed3ab6027fab2c53df6a397923b2b077bce7d06781.
 
-새 사용자 요청: 생성 데이터 HF업로드. sungkwang2 계정 인증 확인. 기본 비공개 sungkwang2/lsdrag-v22-generated 생성, upload/remote hash 및 load_dataset 검증 진행 session67415. package /content/local_fast/lsdrag-text-v1/exports/v22_teacher_hf_20261110. episodes459/117, labels1646/419 parquet + 원본teacher_states.pt + split/스키마/provenance. 검증 완료 증거는 HF_DATASET.json에 저장 예정. 개인정보/token/모델weights 업로드없음.
+HF 비공개 sungkwang2/lsdrag-v22-generated 업로드 및58파일hash/episodes·labels load_dataset 검증 완료, HF_DATASET.json 참조. HF에 KD gate결과 provenance 추가 예정. 생성데이터 episode459/117 및 state1646/419, 원본tensor포함. Teacher Drive archive 검증완료 S1_BACKUP.json. 최종KD+report/source/metadata Drive archive와 Git push 마무리 중.
 
-PLAN6/OBS02 조건 유지. S2~S5 미실행. fullFT CPU43 tests pass, 실제4B BF16 replay/gradient/품질 미측정. 현재 새로운 Claude OBS없음. 다음 단계 전 재확인.
+후속 행동: 백업/업로드 최종검증·보고. 사용자 새 실험 재개 지시 없으면 GPU 작업 자동실행하지 않음. 새 Claude OBS확인. gate실패는 학습불가능 증명이 아니며 결과보고시미실행을 명시.

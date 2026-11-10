@@ -1,0 +1,21 @@
+{
+  "repo_id": "sungkwang2/lsdrag-v22-generated",
+  "url": "https://huggingface.co/datasets/sungkwang2/lsdrag-v22-generated",
+  "private": true,
+  "revision": "0afa9ef4eb6ce85d0b263d7fde12969f5526ec67",
+  "verified_files": 62,
+  "counts": {
+    "episodes": {
+      "train": 459,
+      "validation": 117
+    },
+    "labels": {
+      "train": 1646,
+      "validation": 419
+    }
+  },
+  "verified_utc": "2026-11-10T05:36:40.926188+00:00",
+  "local_package": "/content/local_fast/lsdrag-text-v1/exports/v22_teacher_hf_20261110",
+  "initial_revision": "05459457272b3256027a7dfc5dd71a73d8ee50b2",
+  "kd_quality_gate_passed": false
+}
