@@ -1,6 +1,6 @@
-현재 단계: S1 smoke 통과, teacher576 본 수집 재개 준비
-마지막으로 통과한 gate: S1 16문항 오류0, read7/dispatch7/7, KD smoke loss 감소
-실행 중 PID: smoke 종료; 본 수집 기동 후 갱신
+현재 단계: S1 teacher576 본 수집 진행
+마지막으로 통과한 gate: S0 완전재현; S1 smoke16 오류0/read7/KD loss 감소
+실행 중 PID: 52782; exec session32760
 결과 경로: /content/local_fast/lsdrag-text-v1/results/v22_teacher576_20261110
 
 # Codex 실행 기록

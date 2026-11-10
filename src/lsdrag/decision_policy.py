@@ -304,6 +304,8 @@ def rollout(reader, question, rows, vectors, embedder, prompt, head, deadline,
             steps[-1].update(capture=capture, pointer_events=pointer_events,
                              temperature=decision_temperature, step_id=len(steps)-1,
                              candidate_ids=capture['candidate_ids'])
+            steps[-1]['segment'] = tu.get('segment', {'context_ids': capture['context_ids'],
+                'tokens': [], 'kinds': [], 'old_logp': [], 'choices': {}})
             if native_fast:
                 steps[-1]['old_logp'] = None
                 steps[-1]['policy_probs'] = None
@@ -323,5 +325,5 @@ def rollout(reader, question, rows, vectors, embedder, prompt, head, deadline,
              'prompt_tokens':sum(u.get('prompt_tokens',0) for u in usage),
              'forced_prefix_tokens':sum(u.get('forced_prefix_tokens',0) for u in usage),
              'cost_units':sum(s['cost_units'] for s in steps),
-             'decisions':[{k:v for k,v in s.items() if k not in ('pack','legal','capture')}|{'legal':s['legal'].tolist()} for s in steps]}
+             'decisions':[{k:v for k,v in s.items() if k not in ('pack','legal','capture','segment')}|{'legal':s['legal'].tolist()} for s in steps]}
     return episode,steps,snapshots

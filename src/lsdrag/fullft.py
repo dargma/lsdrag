@@ -234,7 +234,7 @@ def evidence_step_rewards(episode, gold, alpha=.5, cost=.05):
     return out
 
 
-def v22_terminal_reward(episode):
+def v22_terminal_reward(episode, call_weight=.15, token_weight=.10):
     """Bounded accuracy-first objective; never replaces the QA scorer."""
     valid = not episode.get('errors') and bool(episode.get('answer', '').strip())
     em = float(episode['em']) if valid else 0.
@@ -243,18 +243,20 @@ def v22_terminal_reward(episode):
     if not (em in (0., 1.) and 0 <= f1 <= 1 and 0 <= n <= 8 and tokens >= 0):
         raise ValueError('Invalid reward inputs')
     quality = .8*em + .2*f1
-    token_cost = .10*quality*tokens/(tokens+128)
-    call_cost = .15*em*n/8
+    if call_weight < 0 or token_weight < 0 or call_weight+token_weight >= .7:
+        raise ValueError('Coefficients violate the correctness-first margin with shaping')
+    token_cost = token_weight*quality*tokens/(tokens+128)
+    call_cost = call_weight*em*n/8
     return dict(quality=quality, token_cost=token_cost, call_cost=call_cost,
                 terminal=quality-token_cost-call_cost)
 
 
-def v22_step_rewards(episode, gold, process=False):
+def v22_step_rewards(episode, gold, process=False, call_weight=.15, token_weight=.10):
     """One reward per actual environment decision, including final/error step."""
     rewards = [0.] * len(episode['decisions'])
     if not rewards:
         raise ValueError('An episode must have at least one decision')
-    rewards[-1] += v22_terminal_reward(episode)['terminal']
+    rewards[-1] += v22_terminal_reward(episode, call_weight, token_weight)['terminal']
     seen, read = set(), set()
     if process:
         if not gold:
@@ -271,14 +273,14 @@ def v22_step_rewards(episode, gold, process=False):
     return rewards
 
 
-def v22_group_advantages(episodes, gold, process=False):
+def v22_group_advantages(episodes, gold, process=False, call_weight=.15, token_weight=.10):
     """Group8 scalar centering or signed per-step leave-one-out RTG centering."""
     if len(episodes) != 8:
         raise ValueError('v2.2 requires exactly 8 rollouts per question')
     qids = {ep.get('qid') for ep in episodes}
     if len(qids) != 1:
         raise ValueError('Cannot center advantages across different questions')
-    rewards = [v22_step_rewards(ep, gold, process) for ep in episodes]
+    rewards = [v22_step_rewards(ep, gold, process, call_weight, token_weight) for ep in episodes]
     if not process:
         totals = [sum(r) for r in rewards]
         mean = sum(totals)/8
@@ -287,3 +289,64 @@ def v22_group_advantages(episodes, gold, process=False):
     return [[rtg - sum(other[t] if t < len(other) else 0.
                        for j, other in enumerate(returns) if i != j)/7
              for t, rtg in enumerate(row)] for i, row in enumerate(returns)]
+
+
+def replay_v22_step(model, step, tool_head=None, pointer_head=None, payload_temperature=1.):
+    """One differentiable full-prefix replay for head decisions AND generated tail.
+
+    Nothing here uses the cached collection-time feature pack. Candidate features
+    and tool state are rebuilt from this model's current hidden states. Call with
+    no_grad for the immutable reference policy; identical observation contract.
+    """
+    from .chunk_pointer import pool_candidates
+    from .decision_policy import distribution
+    segment = step['segment']
+    context, tokens = segment['context_ids'], segment['tokens']
+    if context != step['capture']['context_ids']:
+        raise ValueError('Head and payload context must be identical')
+    device = next(model.parameters()).device
+    ids = torch.tensor([context + tokens], dtype=torch.long, device=device)
+    hidden = model.model(input_ids=ids, use_cache=False, return_dict=True).last_hidden_state[0]
+    state = hidden[len(context)-1].float()
+    events = []
+    units = []
+    temperature = step['temperature']
+    if tool_head is not None and not step['forced']:
+        legal = step['legal'].to(device).unsqueeze(0)
+        logits = tool_head(state[None, None], legal)[0]/temperature
+        new = distribution(logits, legal).log_prob(torch.tensor([step['action']], device=device)).squeeze(0)
+        events.append({'kind': 'tool', 'new': new, 'old': step['old_logp']})
+        units.append(new-torch.as_tensor(step['old_logp'], device=device))
+    if step['pointer_events']:
+        if pointer_head is None:
+            raise ValueError('Pointer events require the pointer policy')
+        candidates = pool_candidates(hidden[:len(context)], step['capture']['candidate_spans'])
+        targets = [e['choice'] for e in step['pointer_events'] if not e['stop']]
+        selected, replay = pointer_head.select(state, candidates, temperature=temperature, targets=targets)
+        if len(replay) != len(step['pointer_events']):
+            raise ValueError('Pointer replay event count differs')
+        for event, old in zip(replay, step['pointer_events']):
+            if event['choice'] != old['choice']:
+                raise ValueError('Pointer replay choices differ')
+            events.append({'kind': 'pointer', 'new': event['logp'], 'old': old['old_logp']})
+            units.append(event['logp']-torch.as_tensor(old['old_logp'], device=device))
+    want = [i for i, k in enumerate(segment['kinds']) if k in ('free', 'branch')]
+    if want:
+        pos = torch.tensor([len(context)-1+i for i in want], device=device)
+        raw = model.lm_head(hidden[pos]).float()
+        branch_new, branch_old = [], []
+        for row, i in enumerate(want):
+            if segment['kinds'][i] == 'free':
+                new = (raw[row]/payload_temperature).log_softmax(-1)[tokens[i]]
+                old = segment['old_logp'][i]
+                events.append({'kind': 'free', 'new': new, 'old': old})
+            else:
+                choices = segment['choices'].get(i, segment['choices'].get(str(i)))
+                dt = segment.get('decision_temperature') or payload_temperature
+                new = (raw[row, choices]/dt).log_softmax(-1)[choices.index(tokens[i])]
+                old = segment['old_logp'][i]
+                branch_new.append(new); branch_old.append(old)
+            units.append(new-torch.as_tensor(old, device=device))
+        if branch_new:
+            events.append({'kind': 'native_tool', 'new': torch.stack(branch_new).sum(), 'old': sum(branch_old)})
+    return events, torch.stack(units) if units else hidden.new_empty((0,))

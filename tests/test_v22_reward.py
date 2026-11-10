@@ -43,3 +43,12 @@ def test_signed_step_advantage_and_ended_trajectory_baseline():
     assert scalar[-1] == pytest.approx([reward*7/8]*2)
     with pytest.raises(ValueError):
         v22_group_advantages(group[:7], {'a'})
+
+
+@pytest.mark.parametrize('cw', [.05, .10, .15, .20])
+@pytest.mark.parametrize('tw', [.05, .10, .15])
+def test_offline_grid_preserves_correctness_margin(cw, tw):
+    correct = v22_terminal_reward(ep(calls=8, tokens=10**9), cw, tw)['terminal']
+    incorrect = v22_terminal_reward(ep(0, 1., calls=0, tokens=0), cw, tw)['terminal']
+    assert correct >= .65 and correct > incorrect + .10
+    assert v22_terminal_reward(ep(calls=2), cw, tw)['terminal'] > v22_terminal_reward(ep(calls=3), cw, tw)['terminal']

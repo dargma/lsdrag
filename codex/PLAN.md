@@ -1,6 +1,6 @@
-# jev_v2.2 계획 — 선택은 head, 내용은 LLM (개정 5)
+# jev_v2.2 계획 — 선택은 head, 내용은 LLM (개정 6)
 
-2026-11-10. 개정5: H0-G 조건부 진단 유지. 사용자 승인으로 저장 rollout 기반 보상 가중치 사전 선정 및 필요시 제한된 smoke 반복 추가. 전체 실행 승인 후 S0 진행 중; gate는 유지함.
+2026-11-10. 개정6: OBS_02 반영. offline 계수 자동선정 폐기, 원 계수 유지+진단. 반복 smoke 계속/중단 조건 사전 고정. 전체 실행 승인 후 S0 진행 중; gate는 유지함.
 기준: REVIEW_04_plan_rev1_final.md; 이전 PLAN 89e4898e6c6a. 이 문서가 이전 PLAN/RESPONSE의 미확정 제안보다 우선함.
 모델·데이터 파일 복원은 RESTORE_VERIFIED.json에서 확인됨. 실행 환경·새 runner 준비 완료를 뜻하지 않음.
 
@@ -73,11 +73,18 @@ train24×8에서 terminal-only의 `A=R-그룹평균`을 계산. forced event 제
 1. KD 후 두 arm의 train24×8 rollout을 고정 저장. 동일 데이터에 CPU 재채점하며 후보마다 재생성하지 않음. hop별8 qid 중 해시순5는 보정(총15), 나머지3은 확인(총9). 이 분할은 보상을 보기 전에 manifest에 기록함.
 2. 첫 후보군은 정확도 Q=0.8EM+0.2F1와 토큰 스케일128을 고정하고 calls 계수 {0.05,0.10,0.15,0.20} × token 계수 {0.05,0.10,0.15}의 12개. 공통 과정 보상 모드는 원 gate에 따라 선택. 정답 최소≥0.65, 오답+과정 최대≤0.30인 범위만 허용함.
 3. 후보마다 정답/오답 역전, 단조성, 무신호, 정답≥2+다른 호출 그룹, efficiency advantage 크기, 빈 답/긴 부분정답 순위를 보고함. 정답이 여럿인 그룹에서는 적은 호출→동률이면 적은 토큰을 선호하는 순위와의 일치도를 계산함. 이는 정답을 알고 하는 offline 진단이며 실행 정책 성능이 아님.
-4. 보정15에서 양 arm의 최소 순위 일치도가 가장 높은 후보를 우선하고 동률은 원 계수(.15,.10)와 L1 거리 최소, 이후 사전 정렬 순서로 선택함. 확인9는 선택 후 한 번만 평가하고, 확인 결과로 다시 후보를 고르지 않음. 근거 그룹이 없으면 최적계수를 찾았다고 주장하지 않음.
-5. 필요시 최대3회 총 smoke round를 허용. 각 round는 양 arm 각각 fit train16×8, optimizer update 최대2, 동일 출발 체크포인트로 초기화. 기존 rollout을 재사용할 수 있는 것은 policy checkpoint/temperature/grammar 계약이 동일할 때뿐임. 각 round 전 후보 식·계수·이유를 commit. 한 번에 한 설계 요인만 바꾸며 확인9/dev/test를 튜닝에 쓰지 않음.
-6. 첫 round는 위 선정식. 이후 보상식 변경은 실제 실패 양상에 근거해 별도 manifest에 정확한 식을 적고 CPU 정답우선·단조성 검사부터 재실행함. 추가 round가 유용할 근거가 없으면 반복하지 않음. 최대 budget을 넘기는 새 탐색은 자동 실행하지 않음.
-7. smoke는 replay/KL/gradient/신호와 train 내 행동 변화 진단이며 충분한 QA 성능 증명이 아님. 모든 smoke 모델·optimizer는 본 실행 시작점에서 제외. 최종 공통 reward를 동결한 후에만 H-RL/N-RL 두 본 실행을 수행함.
-8. 기존 사용자 확인 gate(호출 절감 직접 비교 그룹<10%)와 S1 coverage/quality gate는 그대로 유지. smoke 허용을 본 실행 gate 자동 통과로 해석하지 않음.
+4. OBS_02 권고(a) 채택: 원 계수(.15,.10)를 유지. 12개 후보는 제약·신호·엇갈리는 정답 쌍의 수를 보고하는 진단일 뿐 자동선정/최적화에 사용하지 않음. 보정15/확인9 모두 기술통계이며 확인9로 계수를 고르지 않음. 비용 우선 순위 일치도를 높였다는 이유로 큰 호출 계수를 선택하지 않음.
+5. 필요시 최대3회 총 smoke round. 각 round는 양 arm 각각 같은 fit train16×8, optimizer update 최대2, 같은 출발 checkpoint로 초기화. 기존 rollout 재사용은 checkpoint/temperature/grammar가 같을 때만 허용. 각 round 전 식·계수·이유 commit. smoke 전후 같은 train16 greedy 평가와 선택 분포 변화를 측정하며 dev/test는 사용하지 않음.
+6. 각 round 필수 기록: 전후 EM/F1(0~1), calls/tokens, 8개 중 도구열>=2인 그룹 비율, sampled-event 평균 k3 KL, PPO clip fraction, clip 전 gradient norm, 업데이트 전 replay gap 및 업데이트 후 평균 abs logprob 변화.
+7. 하드 중단 기준(어느 arm이든): 기존 replay/ID/유한 gradient gate 실패; post-update 평균 k3 KL>0.10; PPO clip fraction>0.50; EM 하락>=2/16; F1 하락>=0.10; 재수집8-rollout을 수행한 경우 도구열 다양성 그룹<25%. 해당 시 본 실행 금지·원인 보고. 기본적으로 추가 재수집은 하지 않고 pre-update 그룹 다양성과 greedy 행동 변화만 기록하며 post-update 다양성을 측정했다고 쓰지 않음.
+8. 업데이트 무효 경보: 전후 EM/F1/calls/tokens 차이가 각각1e-6 이내이고, 같은 replay 상태의 평균 abs logprob 변화<1e-5이면 보상 변경 반복을 멈추고 gradient/업데이트 경로를 조사. 2 update에서 greedy 품질 개선이 없다는 이유만으로 학습 불가능이라 하지 않음. 분포가 움직이고 하드 gate가 통과하면 작은 smoke는 기능 검증으로 충분함.
+9. 다음 reward round를 여는 조건은 아래 두 가지뿐이며 품질 점추정 EM/F1이 모두 하락하지 않아야 함. S3의 직접 호출 비교 그룹>=10%와 signal/diversity gate 통과도 전제함.
+   - 호출 항: 전체 terminal reward 성분의 centered absolute 크기 합 중 호출 성분 비중<5%, greedy calls가 줄지 않음 → call 계수 .15에서 .20으로 한 번만 증가.
+   - 토큰 항: 같은 정의의 token 성분 비중<5%, greedy 생성토큰이 10% 초과 증가 → token 계수 .10에서 .15로 한 번만 증가.
+   성분은 Q, 음의 token cost, 음의 call cost로 분리하고 qid 그룹 평균을 각각 뺌. 분모0이면 비율 미정/무신호이며 자동계수변경 금지. 과정 보상은 별도 보고하여 terminal 비중과 혼동하지 않음. 양 조건이 동시에 맞으면 호출 항 먼저, 다음 round에서 나머지 조건 재확인. 조건이 없으면 추가 round 없이 종료.
+10. round3 뒤에도 동일 비용 약신호 경보가 남거나 하드 gate가 미달이면 본 실행하지 않고 보고함. gate threshold는 낮추지 않음. 현재 허용된 변경은 위 두 bounded 계수 변경뿐이며 추가 수식 변경이 꼭 필요하면 실패 근거와 정확한 대체 식·예산을 별도 사전 기록하여 검토함. 승인된 일반 smoke 허용을 무제한 식 탐색으로 해석하지 않음.
+11. 모든 smoke 가중치는 본 실행에 이어 쓰지 않음. 최종 공통 reward를 동결한 뒤 두 본 실행을 시작함. 이것은 검증된 최적 reward를 보장하지 않음.
+12. 기존 사용자 확인 gate(호출 절감 직접 비교 그룹<10%), S1 coverage/quality, S3 signal/diversity gate는 유지. smoke 허용이 본 실행 gate 자동 통과를 뜻하지 않음.
 
 ### S4: 실제 전체 unfrozen 학습과 수치 gate
 

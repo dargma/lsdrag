@@ -16,3 +16,6 @@ S0 완전재현 gate 통과 후 source_snapshots/v22_s1으로 teacher spec576 �
 
 ## 2026-11-10T05:04:28.320286+00:00 S1 smoke 통과 / 보상 사전 탐색 승인
 사용자: 저장 rollout으로 보상·weight 사전 최적화, 필요하면 smoke 몇 회 반복 허용. PLAN 개정5에 offline12 후보/15보정9확인/최대3round×2update/arm과 gate 유지 명시. S1 smoke16 오류0/58states/read7/dispatch7pass/CPU KD loss감소. 임시KD weights 버림. 다음 동일teacher spec --resume로 나머지560 수집.
+
+## 2026-11-10T05:11:22.896125+00:00 OBS_02 반영
+offline 자동 계수선정 철회, 원(.15,.10) 유지+12후보 진단으로 개정6. 반복smoke 숫자조건 고정. S1 수집 계속. 새 replay FP32 cache/fullprefix 일치 및 tool/pointer/backbone gradient CPU2테스트 통과.
