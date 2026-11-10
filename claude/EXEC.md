@@ -4,7 +4,7 @@
 
 ## 현재 상태
 
-- 단계: S2 완료, 조건부 H0-G 진단 실행 중 → 다음 S3 pilot
+- 단계: S2 및 조건부 H0-G 진단 완료, S3 pilot 수집 중 (head/native, 온도 1)
 - 마지막 gate: S1 pointer 품질 FAIL → 사용자 지시로 진행 (아래)
 - 실행 중 PID: 없음
 - 결과 경로: `/content/local_fast/lsdrag-text-v1/results/`
@@ -42,6 +42,7 @@ Claude가 `results/v22_kd_20261110/summary.json`의 66개 상태를 다시 계�
 | S1 pointer 품질 | pointer support F1 ≥ teacher | 0.6980 < 0.7141 (66문항) | FAIL, 사용자 지시로 진행 | `codex/REPORT_S1.md` | 05:40 |
 | S2 smoke8 | 오류 0, read ID decode 0 | N0/H0-P 16 에피소드 오류 0 | PASS(기능) | `results/v22_s2_smoke8` | 05:40 |
 | S2 dev192 | 보고 (통과 기준 없음) | H0-P EM .1250 / F1 .1714, N0 EM .1458 / F1 .1934 | 보고 완료, H0-G 트리거 충족 | `results/v22_s2_dev192/paired_H0P_vs_N0.json` | 05:53 |
+| S2 H0-G 진단 | 조건부 사후 진단 (통과 기준 없음) | H0-G EM .1198 / F1 .1723 | 보고 완료 | `results/v22_s2_dev192_h0g/paired_H0G_vs_*.json` | 06:00 |
 
 ## 로그
 
@@ -64,3 +65,22 @@ Claude가 `results/v22_kd_20261110/summary.json`의 66개 상태를 다시 계�
 - pointer가 read당 1개만 고르는 현상이 자율 실행에서도 유지됨. S1에서 본 것과 같음.
 - 공통 계약 N0의 EM/F1은 legacy N0와 같음.
 - H0-P의 EM·F1 점추정이 모두 N0보다 낮으므로 PLAN의 조건부 H0-G 진단을 실행함 (`specs/v22/s2_dev192_h0g.json`).
+
+### 06:00Z 조건부 H0-G 진단 (dev192)
+
+같은 KD checkpoint의 도구 head를 쓰고 read ID만 LLM이 생성함. spec `specs/v22/s2_dev192_h0g.json`, 192 에피소드, 오류 0. 트리거 충족 후 실행한 사후 진단이며 주 비교·성공 gate에는 넣지 않음.
+
+| 지표 | N0 | H0-G | H0-P |
+|---|---:|---:|---:|
+| EM | 0.1458 | 0.1198 | 0.1250 |
+| F1 | 0.1934 | 0.1723 | 0.1714 |
+| 도구 호출 | 2.479 | 2.536 | 2.536 |
+| 생성 토큰 | 107.6 | 105.9 | 72.9 |
+| read당 청크 수 | 1.72 | 1.78 | 1.02 |
+| read_support_recall | 0.169 | 0.174 | 0.130 |
+| retrieved_support_recall | 0.407 | 0.377 | 0.377 |
+
+- H0-G vs N0: EM −0.026 [−0.057, +0.005], 획득 2 / 손실 7. H0-P vs N0와 같은 크기의 하락임.
+- H0-P vs H0-G: EM +0.005 (H0-P가 1문항 더 맞음), 도구 호출과 retrieved_support_recall은 192문항 전부 같음. 생성 토큰 −33.0 [−38.9, −27.6], read_support_recall −0.044 [−0.068, −0.021].
+- 해석: N0 대비 정확도 하락은 pointer가 없어도 나타나므로 도구 head(KD) 경로에서 온 것으로 보임. pointer는 토큰을 줄였고 정답률은 바꾸지 않았음. pointer가 1개만 읽어 읽은 근거는 줄었으나 EM/F1 차이로 이어지지 않았음.
+- 한계: seed 1, dev192, 구간이 0을 포함하는 차이가 많음. 도구 head가 원인이라는 것은 이 진단이 가리키는 방향이며 단일 원인으로 확정하지 않음.
