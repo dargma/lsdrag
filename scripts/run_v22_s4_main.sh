@@ -35,13 +35,6 @@ evaluate() {  # arm iteration
   $PY -u $S/scripts/evaluate_decision_shared_corpus.py --spec $m > logs/v22_s4_main_$1_dev192_i$2.log 2>&1 || return 1
   say "done dev192 $1 i$2"
 }
-archive_resume() {  # arm: final optimizer state -> Drive (write-only backup), then free local disk for the other arm
-  local f=results/v22_s4_main_$1_update2/resume.pt d=/content/drive/MyDrive/lsdrag-backups/20261110
-  local h; h=$(sha256sum $f | cut -d' ' -f1)
-  if timeout 3000 cp $f $d/v22_s4_main_$1_i2_resume.pt; then say "resume $1 copied to Drive sha256 $h"; else say "resume $1 Drive copy FAILED sha256 $h"; fi
-  echo "{\"arm\": \"$1\", \"sha256\": \"$h\", \"drive\": \"$d/v22_s4_main_$1_i2_resume.pt\"}" > results/v22_s4_main_$1_update2/resume_archive.json
-  rm -f $f
-}
 both() {  # run two steps concurrently, fail if either fails
   "${@:1:3}" & local a=$!
   "${@:4:3}" & local b=$!
@@ -56,12 +49,9 @@ both update head 1 collect native 1 || fail "update head 1 / collect native 1"
 both update native 1 collect head 2 || fail "update native 1 / collect head 2"
 both update head 2 collect native 2 || fail "update head 2 / collect native 2"
 update native 2 & U=$!
-archive_resume head & A=$!
 evaluate head 1 && evaluate head 2; E=$?
-wait $A
 wait $U || fail "update native 2"
 [ $E -eq 0 ] || fail "dev192 head"
-archive_resume native
 evaluate native 1 || fail "dev192 native 1"
 evaluate native 2 || fail "dev192 native 2"
 say "S4 main complete"

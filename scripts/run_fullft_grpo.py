@@ -328,7 +328,8 @@ def update_v22_manifest(args):
         if not gradient_gate['passed']:
             phase('gate_failed', gate='missing_gradient_path'); return
         # Keep at least 20GiB beyond the estimated model + optimizer atomic save.
-        needed = sum(p.numel() for p in params)*14 + spec.get('disk_reserve_gib', 20)*2**30
+        keep_resume = spec.get('save_resume', True)
+        needed = sum(p.numel() for p in params)*(14 if keep_resume else 2) + spec.get('disk_reserve_gib', 20)*2**30
         if shutil.disk_usage(out).free < needed:
             raise RuntimeError('Insufficient space for checkpoint+resume+20GiB reserve')
         phase('saving', updates=updates)
@@ -336,10 +337,11 @@ def update_v22_manifest(args):
         reader.tokenizer.save_pretrained(out/'model')
         if head is not None:
             torch.save({'format':'v22-tool-pointer-v1','tool':head.state_dict(),'pointer':pointer.state_dict()},out/'head.pt')
-        resume = dict(master_optimizer=opt.state_dict(), head_optimizer=head_opt.state_dict() if head_opt else None,
-                      torch_rng=torch.get_rng_state(), cuda_rng=torch.cuda.get_rng_state_all(),
-                      updates=updates, completed_iteration=spec['iteration'])
-        torch.save(resume, out/'resume.pt.tmp'); (out/'resume.pt.tmp').replace(out/'resume.pt')
+        if keep_resume:
+            resume = dict(master_optimizer=opt.state_dict(), head_optimizer=head_opt.state_dict() if head_opt else None,
+                          torch_rng=torch.get_rng_state(), cuda_rng=torch.cuda.get_rng_state_all(),
+                          updates=updates, completed_iteration=spec['iteration'])
+            torch.save(resume, out/'resume.pt.tmp'); (out/'resume.pt.tmp').replace(out/'resume.pt')
         save(out/'checkpoint.json', dict(model=str(out/'model'), head=str(out/'head.pt') if head else None,
              files={str(p.relative_to(out)):sha(p) for p in out.rglob('*') if p.is_file() and p.suffix in ('.safetensors','.pt')},
              iteration=spec['iteration'], updates=updates, smoke=spec['stage']=='update_smoke'))

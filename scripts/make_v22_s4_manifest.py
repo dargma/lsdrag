@@ -33,6 +33,7 @@ def main():
     ap.add_argument('--arm', choices=['head', 'native'], required=True)
     ap.add_argument('--iteration', type=int, required=True, help='collect/update: 1..; eval: 0..')
     ap.add_argument('--tag', default='main')
+    ap.add_argument('--last', type=int, default=2, help='final iteration: its optimizer state is not written (disk)')
     ap.add_argument('--proofs', nargs='*', default=[], help='path:field for gate proof records whose field is true')
     args = ap.parse_args()
     pre = json.loads((ROOT/'specs/v22/preflight.json').read_text())
@@ -66,7 +67,7 @@ def main():
                     model=model, reference_model=ref['model'], gate_proofs=proofs,
                     group_files=ev['group_files'], group_sha256=ev['group_sha256'],
                     train_support_ids=ev['train_support_ids'], process_reward=True, call_weight=.15, token_weight=.10,
-                    minimum_free_vram_gib=75, disk_reserve_gib=8, output=str(run_dir(args.tag, args.arm, 'update', i)))
+                    minimum_free_vram_gib=75, disk_reserve_gib=8, save_resume=i < args.last, output=str(run_dir(args.tag, args.arm, 'update', i)))
         if head:
             spec.update(head_checkpoint=head, head_sha256=sha(Path(head)),
                         reference_head=str(KD_HEAD), reference_head_sha256=sha(KD_HEAD))
