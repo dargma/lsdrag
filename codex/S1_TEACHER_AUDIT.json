@@ -1,0 +1,37 @@
+{
+  "audit_passed": true,
+  "episodes": 576,
+  "records": 2065,
+  "episodes_with_errors": 1,
+  "coverage": {
+    "fit_read_qids": 280,
+    "validation_read_qids_by_hop": {
+      "2hop": 25,
+      "3hop": 26,
+      "4hop": 27
+    },
+    "passed": true
+  },
+  "label_sources": {
+    "not_read": 1706,
+    "gold_present": 296,
+    "teacher_fallback": 62,
+    "invalid_teacher": 1
+  },
+  "candidate_counts": {
+    "10": 100,
+    "5": 149,
+    "8": 48,
+    "6": 15,
+    "4": 4,
+    "9": 16,
+    "2": 2,
+    "7": 17,
+    "3": 6,
+    "1": 1
+  },
+  "teacher_sha256": "08fd04bd0158064fc84622c407c32a57a775c4f6ce1bebfe12f573443b9591fb",
+  "spec_sha256": "8ea7aabfffb3ce896a20e5d77048569d2d6cd47de0dbd6922356507bc78e6124",
+  "split_sha256": "809b71edf215cf55f59fc3961e080a9c006c59ecb4922c04029dffb88dbe3cba",
+  "source_sha256": "02f9c530e69b1518db9ffbf2d6251a4555ce52d5267c65e523d1f40c05644e84"
+}

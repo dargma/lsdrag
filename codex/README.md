@@ -1,7 +1,7 @@
-현재 단계: S1 teacher576 수집 (457/576 관측)
-마지막으로 통과한 gate: S0 완전재현; S1 smoke16 오류0/read7/KD loss 감소
-실행 중 PID: 52782; 완료 여부는 status와 process 재확인
-결과 경로: /content/local_fast/lsdrag-text-v1/results/v22_teacher576_20261110
+현재 단계: S1 KD 학습 (teacher576 완료·감사 통과)
+마지막으로 통과한 gate: S1 audit2065states; coverage fit280/val25·26·27
+실행 중 PID: 75120; KD exec session93573
+결과 경로: /content/local_fast/lsdrag-text-v1/results/v22_kd_20261110
 
 # Codex 실행 기록
 

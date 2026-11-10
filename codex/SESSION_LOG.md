@@ -23,3 +23,7 @@ offline 자동 계수선정 철회, 원(.15,.10) 유지+12후보 진단으로 �
 ## 2026-11-10T05:23:53.412026+00:00 — S1 진행 확인 및 full-FT 구현 보강
 
 PID52782 live, teacher 457/576. 새 OBS 없음. collect/update manifest 경로와 optimizer 재개 직렬화 구현, 수집 모델·head 일치/중복 qid 차단 보강. 대형 checkpoint SHA는 streaming. CPU43 tests pass; 실제4B BF16 replay/gradient/full-FT 품질은 아직 미측정. 완료 teacher의 모든 후보 span/오프라인 라벨/coverage 감사 스크립트 추가. 실행 전 소스 커밋·동결을 유지.
+
+## 2026-11-10T05:32:59.009866+00:00 — S1 teacher 완료/감사·coverage 통과, KD 실행 및 HF 백업
+
+Teacher576 전체완료 2065states,358validread,실패QA1보존/invalidpointer1제외. 후보K1~10 실제관측. 전체후보span/라벨검증통과. fitread280/val25·26·27. Drive원본archive357600628bytes hash검증(S1_BACKUP.json). KD source6a51973 동결 PID75120/session93573,quality 미측정. 사용자 새 HF업로드 요청으로 private sungkwang2/lsdrag-v22-generated 생성/업로드 검증 중; 이후생성artifact도 단계별 추가할 것.

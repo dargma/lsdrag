@@ -17,3 +17,5 @@
 | S1 smoke16 | errors0/span 및 ID 매핑/1-step KD 손실 감소 | 16episodes errors0; read7; dispatch7/7; loss2.399941→1.802975 | PASS(기능) | codex/S1_SMOKE.json; results/v22_teacher576_20261110 | 2026-11-10T05:04:28.320286+00:00 |
 | 구현 CPU replay | FP32 cached vs fullprefix 단위logp 오차<=1e-4/실제 backbone gradient | 소형 Qwen 2 tests PASS | PASS(작은 FP32) | tests/test_v22_replay.py; 실제4B BF16미측정 | 2026-11-10T05:12:05.648317+00:00 |
 | 구현 CPU | 전체 회귀 및 optimizer 재개 다음 step 일치 | 43 passed | PASS(기능만) | tests/; 실제 full-FT 미실행 | 2026-11-10T05:23:53.412026+00:00 |
+| S1 teacher audit | 576 QA/모든 상태 후보span·라벨 provenance 일치 | 576 QA / 2065states 일치, invalid read1 제외 | PASS | codex/S1_TEACHER_AUDIT.json | 2026-11-10T05:32:59.009866+00:00 |
+| S1 coverage | fit read>=100; val hop별>=10 | fit280; 2hop25/3hop26/4hop27 | PASS | codex/S1_TEACHER_AUDIT.json | 2026-11-10T05:32:59.009866+00:00 |
