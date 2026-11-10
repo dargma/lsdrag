@@ -1,0 +1,69 @@
+{
+  "training_started": false,
+  "gpu_model_loaded": false,
+  "models": [
+    {
+      "repo": "Qwen/Qwen3-4B-Instruct-2507",
+      "revision": "cdbee75f17c01a7cc42f958dc650907174af0554",
+      "path": "/content/local_fast/lsdrag-text-v1/hf/models--Qwen--Qwen3-4B-Instruct-2507/snapshots/cdbee75f17c01a7cc42f958dc650907174af0554",
+      "files": 13,
+      "lfs_hash_verified": [
+        "model-00001-of-00003.safetensors",
+        "model-00002-of-00003.safetensors",
+        "model-00003-of-00003.safetensors",
+        "tokenizer.json"
+      ]
+    },
+    {
+      "repo": "google/embeddinggemma-2",
+      "revision": "914f7f89142e33e77833254d9c9b90c3cef7303b",
+      "path": "/content/local_fast/lsdrag-v11/hf/models--google--embeddinggemma-2/snapshots/914f7f89142e33e77833254d9c9b90c3cef7303b",
+      "files": 15,
+      "lfs_hash_verified": [
+        "model.safetensors",
+        "tokenizer.json",
+        "tokenizer.model"
+      ]
+    }
+  ],
+  "corpus": {
+    "path": "/content/local_fast/lsdrag-text-v1/corpora/musique_shared_20261023",
+    "documents_sha256": "60561e0ef06f0f76cbde036d87e7c5853655fc5b7ded908d5f981b4981c6252d",
+    "vectors_sha256": "e2b7013c600e57c36ca9b26db94906ce20bc8ab231972e30da664566d9505e42",
+    "vectors_shape": [
+      101962,
+      768
+    ]
+  },
+  "split": {
+    "train": {
+      "n": 576,
+      "hops": {
+        "2": 192,
+        "3": 192,
+        "4": 192
+      }
+    },
+    "validation": {
+      "n": 192,
+      "hops": {
+        "2": 64,
+        "3": 64,
+        "4": 64
+      }
+    },
+    "test": {
+      "n": 320,
+      "hops": {
+        "2": 160,
+        "3": 80,
+        "4": 80
+      }
+    }
+  },
+  "heads": {
+    "/content/local_fast/lsdrag-text-v1/results/decision_shared_grpo192_kl0/grpo_iteration1.pt": "f121cb9f64750f0614c1836f947a79d713b873160dbe71a47c29a75cc98b9aea",
+    "/content/local_fast/lsdrag-text-v1/results/decision_shared_grpo192_kl0/grpo_iteration0.pt": "84b08ff76c0baeeb3de75654aabffef8c1ae5e21df25a7181b96a3552e943156",
+    "/content/local_fast/lsdrag-text-v1/results/decision_shared_initialization_20261023/head.pt": "0023dd45dee8ffc92825dddd21cd4ffe5b3e2c9b5386ccf1aacbf034c55bf46c"
+  }
+}
