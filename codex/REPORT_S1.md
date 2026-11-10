@@ -80,3 +80,5 @@ R=Q×(1-.10T/(T+128))-.15EM×N/8로 그대로 보존한다.
 - [기계 판독 보고서](REPORT_S1.json), [gate 누적](GATES.md), [사전 계획](PLAN.md), [비교 템플릿](COMPARISON_TEMPLATE.md).
 
 추가 수집·학습은 자동으로 시작하지 않는다. 후속 검토 시 이번 실패를 근거로 별도 계획을 먼저 정해야 한다.
+
+최종 KD checkpoint·보고서·소스·HF 메타데이터 Drive archive: [FINAL_BACKUP.json](FINAL_BACKUP.json).

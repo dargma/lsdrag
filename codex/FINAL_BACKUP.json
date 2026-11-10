@@ -1,0 +1,10 @@
+{
+  "archive": "/content/drive/MyDrive/lsdrag-backups/20261110/v22_s1_gate_stop_final.tar.gz",
+  "sha256": "a2b7e25cde089ab509387d67534bbbc054cea700b037b51aa7a7ea7e099a3da4",
+  "bytes": 8954760,
+  "source_commit": "4751a0f1eacf11e5dce4ed27e8e1e067b187f2c6",
+  "verified_utc": "2026-11-10T05:37:32.716616+00:00",
+  "kd_head_sha256": "86b163fa2106a98bf66fb8ed3ab6027fab2c53df6a397923b2b077bce7d06781",
+  "teacher_tensor_backup": "S1_BACKUP.json",
+  "status": "gate_failed_stop_reported; S2-S4 not run"
+}
