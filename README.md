@@ -1,5 +1,7 @@
 # lsdrag: 도구 호출 효율화 GRPO (native ARAG vs select head ARAG)
 
+> v2.2 (선택은 head, 내용은 LLM: tool head + chunk pointer GRPO) 결과는 `experiments/v22_head_pointer_grpo_20261110/REPORT.md`. 아래는 v2.1 내용임.
+
 RAG 에이전트(Qwen3-4B-Instruct-2507)를 GRPO로 학습함(보상: 정답일 때 도구 호출이 적을수록 높음). 실험 목적은 세 가지:
 1. select head가 효율적 도구 호출의 정책이 될 수 있나
 2. reader LLM과 head가 함께 있을 때 누가 얼마나 기여하나
