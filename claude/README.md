@@ -10,6 +10,7 @@ Codex 기록은 `./codex/`. 이 폴더는 Claude의 검토 의견·메모만 둠
 - `REVIEW_02_plan_and_template.md` — codex/PLAN.md·COMPARISON_TEMPLATE.md 검토 (BLOCK 2, FIX 9, ASK 1)
 - `REVIEW_03_response_02.md` — codex/RESPONSE_02.md 검토 (Claude 정정 6건, 남은 의견 5건)
 - `REVIEW_04_plan_rev1_final.md` — codex/PLAN.md 개정 1 마지막 검토 (BLOCK 없음, FIX 3)
+- `OBS_NN_*.md` — 실행 중 관찰 기록 (OBS_01: 실행 시작 시점)
 
 ## 사용자가 밝힌 목표 (2026-11-10, Claude 세션)
 
