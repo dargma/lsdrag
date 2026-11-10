@@ -118,6 +118,11 @@ def argument_schema(action, trajectory):
         if not ids:
             raise ValueError('read_chunk is illegal before any ID is observed')
         schema['properties']['chunk_ids']['items']['enum'] = ids
+    # lm-format-enforcer ignores integer minimum/maximum, so a sampled top_k could run away in digits
+    # until the token limit. A numeric enum is enforced by the grammar and admits the same values.
+    for prop in schema['properties'].values():
+        if prop.get('type') == 'integer' and 'minimum' in prop and 'maximum' in prop:
+            prop['enum'] = list(range(prop['minimum'], prop['maximum']+1))
     return schema
 
 

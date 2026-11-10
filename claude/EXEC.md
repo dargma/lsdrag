@@ -282,3 +282,18 @@ head arm sampled 지표 (같은 192문항 × 8회, 온도 1, 수집 seed는 iter
   - 작업 임시 폴더의 AtomMem 저장소 사본과 진단 스크립트. 진단 스크립트는 `scripts/diag/`로 git에 넣음.
 - 남겨 둔 것: 모델 폴더 i1·i2 (dev192 평가가 아직 읽음), `native_update1/resume.pt` (native 업데이트 2가 읽은 뒤 스스로 지움), native 수집 2 (진행 중), 모든 episode·json·spec·snapshot (작음).
 - 실행이 끝나면 `scripts/upload_v22_hf.py`로 native i2 모델, native 수집 2, dev192 평가 결과를 같은 방식으로 올림.
+
+### 11:27Z `top_k` 폭주 수정 (다음 실행부터)과 남은 단계 점검
+
+Fable 모델 하위 에이전트에게 CPU 작업으로 맡기고 Claude가 diff와 테스트를 확인함.
+
+- 원인: `src/lsdrag/text_tools.json`은 `top_k`를 정수 1~20으로 정의하고 실행 후 검증도 함. 그러나 lm-format-enforcer 0.11.3이 정수 `minimum`/`maximum`을 무시해 생성 중에는 자릿수 제한이 없었음. 숫자 `enum`은 강제함.
+- 수정: `argument_schema`가 범위가 있는 정수 인자에 `enum: [1..20]`을 붙임 (`src/lsdrag/text_integrated.py`). 허용값은 도구 정의·프롬프트와 같음. native·head 두 경로와 이전 profile의 reader 모두 이 함수를 거침. `read_chunk` schema와 프롬프트는 그대로.
+- 테스트: `tests/test_top_k_bound.py` 5개 추가 (schema가 50000000·21·0·−1 거부, 5·3·1·20 허용. 문법 parser가 ` 5`·` 20` 뒤 숫자를 막음). 전체 48 통과. 실제 Qwen tokenizer 경로는 실행하지 않음.
+- 지금 실행은 스냅샷 `v22_s4main_bf9a67d`로 돌므로 이 수정의 영향을 받지 않음.
+
+남은 단계 점검 (실패할 지점 없음):
+- CPU dry-run으로 확인: eval manifest의 모델 경로·소스 해시, run 이름 충돌 없음, head.pt 형식, 세 체크포인트의 tokenizer·chat template이 base와 같음, eval spec이 N0/H0-P 기준 실행과 모델·정책·이름만 다름, native 업데이트 2가 읽을 `resume.pt` 존재.
+- 코드로 확인: 업데이트는 잠금을 잡지 않음, VRAM 검사(75 GiB)는 eval 11.7 GiB와 겹쳐도 통과, 최종 저장 15.5 GiB + `resume.pt` 삭제로 약 81 GiB 여유, bash 종료 코드 처리 정상.
+- 주의: head dev192는 native 업데이트와 겹쳐 돌고 native dev192는 단독으로 돌아 episode별 wall-clock은 비교 불가. EM·F1·호출·토큰은 greedy라 영향 없음. 이번 보고는 지연 시간을 주장하지 않음.
+- 정리: 11:19Z에 Claude가 만들다 남은 `specs/v22/s4/main_head_eval2.json`을 지움 (드라이버가 같은 내용으로 다시 만듦).
