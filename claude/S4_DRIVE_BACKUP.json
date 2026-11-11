@@ -1,0 +1,10 @@
+{
+  "archive": "/content/drive/MyDrive/lsdrag-backups/20261110/v22_s4_final_claude.tar.gz",
+  "sha256": "797afed3f341c3daf3edc3847457776dbb459558808346b55373b8ef751adf6c",
+  "bytes": 32720794,
+  "size_matches": true,
+  "verification": "write-only Drive policy: sha256 computed on the local archive before copy; Drive copy checked by size only, not read back",
+  "written_utc": "2026-11-11T03:46:49.791897+00:00",
+  "source_commit": "52415ca",
+  "contents": "S4 main and smoke runs (episodes, json, gates, updates), vLLM replay timing, S4 specs and logs, source snapshots v22_s4_2d7b7a9 and v22_s4main_bf9a67d, HF upload list. Model weights and optimizer states excluded (weights on HF sungkwang2/lsdrag-v22-checkpoints)."
+}

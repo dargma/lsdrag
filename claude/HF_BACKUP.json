@@ -257,5 +257,12 @@
     "sha256": "9dfa503653e2b939cc5231fd81e5ef2dec1808babcb3f26280cb1b08077b8855",
     "bytes": 1591700,
     "verified_utc": "2026-11-10T12:47:58.685603+00:00"
+  },
+  {
+    "repo": "sungkwang2/lsdrag-v22-generated",
+    "path": "claude_runs/20261110/results/v22_vllm_replay_20261111T0332.tar.gz",
+    "sha256": "6a3cb7072ae509815f429d5cafd6d8baf65560ab49da2666a03b467126e14301",
+    "bytes": 26239,
+    "verified_utc": "2026-11-11T03:33:04.278916+00:00"
   }
 ]
